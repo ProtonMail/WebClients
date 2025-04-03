@@ -5461,8 +5461,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Unele dintre fișiere nu mai sunt accesibile. Restaurați accesul la fișiere. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Unele fotografii din acest album nu sunt salvate în cronologie. Ștergerea acestui album va șterge definitiv acele fotografii."
+      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Unele fotografii din acest album ar putea să nu fie salvate în cronologie. Ștergerea acestui album va șterge definitiv acele fotografii."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
@@ -6043,11 +6043,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "Your photo has been removed from the album": [
-        "Fotografiile au fost eliminate din album.",
-        "Fotografiile au fost eliminate din album.",
-        "Fotografiile au fost eliminate din album."
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Locul unde vă aflați este vizibil și poate fi folosit pentru a vă restricționa accesul la internet."
@@ -7264,29 +7259,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planuri începând de la ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -7308,6 +7280,29 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planuri începând de la ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8279,10 +8274,20 @@
         "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }",
         "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }"
       ],
+      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
+        "Fotografii care nu s-au putut elimina din albumul ${ albumLink.name }: ${ nbFailures }",
+        "Fotografii care nu s-au putut elimina din albumul ${ albumLink.name }: ${ nbFailures }",
+        "Fotografii care nu s-au putut elimina din albumul ${ albumLink.name }: ${ nbFailures }"
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }",
         "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }",
         "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }"
+      ],
+      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
+        "Fotografii eliminate din albumul ${ albumLink.name }: ${ nbSuccesses }",
+        "Fotografii eliminate din albumul ${ albumLink.name }: ${ nbSuccesses }",
+        "Fotografii eliminate din albumul ${ albumLink.name }: ${ nbSuccesses }"
       ],
       "${ numberOfItems } item deleted": [
         "Articole șterse: ${ numberOfItems }",
@@ -9953,47 +9958,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -10258,6 +10222,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {

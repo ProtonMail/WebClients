@@ -152,11 +152,11 @@
       "Create": [
         "Buat"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Buat akun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Buat Akun ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Buat akun ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Buat alias"
@@ -247,9 +247,6 @@
       ],
       "Done": [
         "Selesai"
-      ],
-      "Download": [
-        "Unduh"
       ],
       "Download this CSV template": [
         "Unduh template CSV ini"
@@ -467,9 +464,6 @@
       "Remove member": [
         "Hapus anggota"
       ],
-      "Rename": [
-        "Ubah nama"
-      ],
       "Request a feature": [
         "Minta fitur"
       ],
@@ -484,6 +478,9 @@
       ],
       "Reset": [
         "Atur ulang"
+      ],
+      "Reset history": [
+        "Atur ulang riwayat"
       ],
       "Restore": [
         "Pulihkan"
@@ -830,6 +827,9 @@
       "Deleting item failed": [
         "Item gagal dihapus"
       ],
+      "Deleting item history failed": [
+        "Riwayat item gagal dihapus"
+      ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal dihapus"
       ],
@@ -1081,9 +1081,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Terdapat suatu kesalahan. Silakan muat ulang ekstensi ${ PASS_APP_NAME }. Masalah ini telah dicatat"
-      ],
-      "The file you are trying to import is empty": [
-        "Berkas yang ingin Anda impor kosong"
       ],
       "The URL is in the list": [
         "URL ada dalam daftar ini"
@@ -1741,9 +1738,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
-      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -2061,6 +2055,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Kata sandi tambahan ini akan dibutuhkan untuk dapat menggunakan ${ PASS_APP_NAME }. Kata sandi ini berfungsi sebagai kata sandi kedua yang merangkapi kata sandi ${ BRAND_NAME } Anda."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } item berikut tidak dapat diimpor."
       ],
       "The secure link has been removed": [
         "Tautan aman telah dihapus"
@@ -2613,9 +2610,6 @@
       "Field name": [
         "Nama kolom"
       ],
-      "File": [
-        "Berkas"
-      ],
       "File format": [
         "Format berkas"
       ],
@@ -2864,6 +2858,9 @@
       ],
       "Personal website": [
         "Situs web pribadi"
+      ],
+      "PGP-encrypted (recommended)": [
+        "Terenkripsi PGP (direkomendasikan)"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -3126,6 +3123,9 @@
       "Your domain": [
         "Domain Anda"
       ],
+      "ZIP": [
+        "Kode pos"
+      ],
       "ZIP or Postal code": [
         "ZIP atau kode pos"
       ]
@@ -3178,6 +3178,56 @@
       ],
       "Underscores": [
         "Garis bawah"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" tidak dapat diimpor."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" terlalu besar untuk diunggah. Ukuran maksimum yang diperkenankan adalah (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } berkas"
+      ],
+      "Choose a file or drag it here": [
+        "Pilih berkas atau seret berkas ke layar ini"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Hapus ${ deleteFile.state.name }"
+      ],
+      "Do you want to remove all the files?": [
+        "Apakah Anda ingin menghapus seluruh berkas?"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Karena batasan yang ada pada Firefox, ${ PASS_APP_NAME } perlu untuk dibuka pada jendala baru sebelum Anda dapat mengunggah berkas."
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Apabila diaktifkan, seluruh berkas Anda akan diunduh pada saat mengekspor. Proses ini dapat memakan waktu sejenak tergantung dari koneksi internet Anda."
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Ruang penyimpanan yang tersedia tidak memadai untuk berkas yang dipilih."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Setelah dihapus, berkas ini akan tetap dapat dipulihkan dari riwayat item."
+      ],
+      "Open new window to upload files": [
+        "Buka jendela baru untuk mengunggah berkas"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Mohon bersabar selagi berkas Anda diunduh."
+      ],
+      "The file you are trying to import is empty": [
+        "Berkas yang ingin Anda impor kosong"
+      ],
+      "Upload files from your device.": [
+        "Unggah berkas dari perangkat Anda."
+      ],
+      "You can attach files to items for a better organization": [
+        "Anda dapat melampirkan berkas ke item untuk pengelolaan yang lebih baik"
+      ],
+      "You may close this window after saving the file.": [
+        "Anda dapat menutup jendela ini setelah menyimpan berkas."
       ]
     },
     "Placeholder": {
@@ -3419,6 +3469,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "Log ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Pengaturan ${ PASS_APP_NAME }"
       ],
@@ -3439,9 +3492,6 @@
       ],
       "Aliases": [
         "Alias"
-      ],
-      "Attachments": [
-        "Lampiran"
       ],
       "Auto create/on the fly alias": [
         "Pembuatan alias otomatis"
@@ -3539,6 +3589,9 @@
       "Email": [
         "Email"
       ],
+      "Encrypted import": [
+        "Impor terenkripsi"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
       ],
@@ -3586,6 +3639,9 @@
       ],
       "Import to vault(s)": [
         "Impor ke brankas"
+      ],
+      "Importing your data": [
+        "Mengimpor data Anda"
       ],
       "Item": [
         "Item"
@@ -3682,6 +3738,9 @@
       ],
       "Remove secure link?": [
         "Hapus tautan aman?"
+      ],
+      "Reset history for this item?": [
+        "Atur ulang riwayat untuk item ini?"
       ],
       "Restore this version?": [
         "Pulihkan versi ini?"

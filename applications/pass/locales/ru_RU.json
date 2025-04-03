@@ -385,11 +385,11 @@
       "Move to another vault": [
         "Переместить в другое хранилище"
       ],
-      "Move to trash": [
-        "Переместить в Корзину"
-      ],
       "Move to Trash": [
         "Переместить в корзину"
+      ],
+      "Move to trash": [
+        "Переместить в Корзину"
       ],
       "Multiple select": [
         "Множественный выбор"
@@ -471,6 +471,9 @@
       ],
       "Resend invitation": [
         "Отправить повторное приглашение"
+      ],
+      "Reset": [
+        "Сбросить"
       ],
       "Restore": [
         "Восстановить"
@@ -997,9 +1000,6 @@
       "File could not be parsed": [
         "Файл не может быть обработан"
       ],
-      "File could not be read": [
-        "Файл не может быть прочитан"
-      ],
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
       ],
@@ -1080,9 +1080,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Что-то пошло не так. Пожалуйста, войдите снова."
-      ],
-      "The file you are trying to import is empty": [
-        "Файл, который вы пытаетесь импортировать, пуст"
       ],
       "The session has expired. Please sign in again.": [
         "Время сеанса истекло. Пожалуйста, войдите снова."
@@ -1505,9 +1502,6 @@
       "Drop to import": [
         "Импортировать"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "В связи с ограничением расширений браузера Safari после экспорта данных в расширении файла будет отсутствовать \".pgp\". После экспорта переименуйте файл, изменив его расширение на .pgp (например, file.pgp)."
-      ],
       "Editor": [
         "Редактор"
       ],
@@ -1631,17 +1625,8 @@
       "Identity confirmed": [
         "Личные данные подтверждены"
       ],
-      "Import in progress:": [
-        "Выполняется импорт:"
-      ],
       "Import the CSV file below.": [
         "Импортируйте файл CSV ниже."
-      ],
-      "Imported ${ payload.total } item": [
-        "Импортирован ${ payload.total } элемент",
-        "Импортировано ${ payload.total } элемента",
-        "Импортировано ${ payload.total } элементов",
-        "Импортировано ${ payload.total } элемента"
       ],
       "Imported on ${ date }": [
         "Импортировано ${ date }"
@@ -1681,12 +1666,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
-      ],
-      "item": [
-        "элемент",
-        "элемента",
-        "элементов",
-        "элементов"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Элемент \"${ payload.item.data.metadata.name }\" создан"
@@ -2092,12 +2071,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Следующий ${ result.ignored.length } элемент не может быть импортирован:",
-        "Следующие ${ result.ignored.length } элемента не могут быть импортированы:",
-        "Следующие ${ result.ignored.length } элементов не могут быть импортированы:",
-        "Следующие ${ result.ignored.length } элемента не могут быть импортированы:"
       ],
       "The secure link has been removed": [
         "Защищенная ссылка удалена"
@@ -2892,9 +2865,6 @@
       ],
       "Personal website": [
         "Личный сайт"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON с PGP-шифрованием (рекомендуется)"
       ],
       "Phone number": [
         "Номер телефона"
@@ -4059,9 +4029,6 @@
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Для файла экспорта с шифрованием в PGP требуется парольная фраза"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Убедитесь, что расширение правильно установлено и включено."

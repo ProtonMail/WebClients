@@ -185,9 +185,6 @@
       "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Remove background color": [
-        "ფონის ფერის წაშლა"
-      ],
       "Remove link": [
         "ბმულის წაშლა"
       ],
@@ -555,14 +552,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } ფონის ფერი და თეთრი ტექსტის ფერი"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } ტექსტის ფერი და გამოკვეთა"
+      ],
+      "${ name } text color with no background": [
+        "${ name } ტექსტის ფერი ფონის გარეშე"
+      ],
       "Add link": [
         "ბმულის დამატება"
       ],
       "Align": [
         "სწორება"
-      ],
-      "Background colour": [
-        "ფონის ფერი"
       ],
       "Change image size": [
         "გამოსახულების ზომის შეცვლა"
@@ -645,8 +648,8 @@
       "Replace link": [
         "ბმულის ჩანაცვლება"
       ],
-      "Text colour": [
-        "ტექსტის ფერი"
+      "Text and highlight color": [
+        "ტექსტი და გამოკვეთის ფერი"
       ],
       "with \"${ replaceWith }\"": [
         "\"${ replaceWith }\"-ით"

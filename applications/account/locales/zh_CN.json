@@ -916,10 +916,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -2734,6 +2734,11 @@
         "Yomi"
       ]
     },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "${ selectedCitiesCount } 个城市已选择"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "阿布哈兹"
@@ -3578,7 +3583,7 @@
     },
     "cta": {
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ]
     },
     "customer_support.feature.all": {
@@ -3625,7 +3630,7 @@
         "每 ${ interval } 天"
       ],
       "until ${ dateString }": [
-        "直到${ dateString }"
+        "直到 ${ dateString }"
       ]
     },
     "Daily recurring event, frequency (times)": {
@@ -3638,7 +3643,7 @@
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
-        "每天，直到 ${ untilString }"
+        "每天，直到${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
@@ -4515,7 +4520,7 @@
     },
     "email_forwarding_2023: Link": {
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ]
     },
     "email_forwarding_2023: Outgoing forwarding tab name": {
@@ -6805,9 +6810,6 @@
       "Open your ${ yahooMailLink } contacts.": [
         "打开您的 ${ yahooMailLink } 通讯录。"
       ],
-      "Select ${ boldExportCSV }.": [
-        "选择 ${ boldExportCSV }"
-      ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "将 Yahoo 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
@@ -6951,8 +6953,8 @@
       ]
     },
     "Info": {
-      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "${ amountUsers } / ${ totalUsers } 用户目前可以访问共享服务器。"
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
@@ -7221,11 +7223,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "Active": [
-        "已启用"
-      ],
       "active": [
         "启用"
+      ],
+      "Active": [
+        "已启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7656,10 +7658,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -10505,7 +10507,7 @@
         "了解如何操作"
       ],
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ]
     },
     "Label": {
@@ -10653,10 +10655,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -10865,6 +10867,9 @@
       ],
       "Could you please specify?": [
         "您能具体说明一下吗？"
+      ],
+      "Countries": [
+        "国家/地区"
       ],
       "Country": [
         "国家/地区"
@@ -11082,10 +11087,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
       "Import all messages": [
@@ -11289,13 +11294,13 @@
       "Optional": [
         "非必填"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11926,10 +11931,10 @@
         "从您的活动会话中执行密码重置"
       ],
       "Privacy policy": [
-        "隐私协议"
+        "隐私政策"
       ],
       "privacy policy": [
-        "隐私条款"
+        "隐私政策"
       ],
       "Reactivate now": [
         "立即重新激活"
@@ -12521,32 +12526,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -12574,6 +12553,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13921,6 +13926,17 @@
         "电脑版"
       ]
     },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14149,17 +14165,6 @@
       ],
       "Trash": [
         "回收站"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
       ]
     },
     "Option delay send seconds": {
@@ -17101,41 +17106,6 @@
         "总计${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -17306,7 +17276,7 @@
         "使用我们的网页端、iOS、Android、Windows、Mac 和 Linux 应用程序，让您的团队随时随地保持安全。"
       ],
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ],
       "Learn more about our impact": [
         "进一步了解我们的影响"
@@ -17418,6 +17388,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -20454,9 +20465,6 @@
       "Weekly on ${ multipleDaysString }": [
         "每周的 ${ multipleDaysString }"
       ],
-      "Weekly on all days": [
-        "每周所有天"
-      ],
       "Weekly on Friday": [
         "每周星期五"
       ],
@@ -20500,9 +20508,6 @@
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "每周${ multipleDaysString }，${ timesString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "每周所有天数，${ timesString }。"
       ],
       "Weekly on Friday, ${ timesString }": [
         "每周星期五，${ timesString }"
@@ -20553,12 +20558,6 @@
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "每 ${ interval } 周星期三，${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "每周${ multipleDaysString }，${ untilString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "每天，直到${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
         "每周星期五，直到${ untilString }"
@@ -20616,17 +20615,11 @@
     "Yearly recurring event, frequency (times)": {
       "Every ${ interval } year, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
-      ],
-      "Yearly, ${ timesString }": [
-        "每年, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
       "Every ${ interval } year, ${ untilString }": [
         "每 ${ interval } 年，直到 ${ untilString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "每年, ${ untilString }"
       ]
     }
   }

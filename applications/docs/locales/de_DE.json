@@ -36,8 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "Accept": [
-        "Annehmen"
+      "Accept invitation": [
+        "Einladung annehmen"
+      ],
+      "Accept invitation to document": [
+        "Einladung zum Dokument annehmen"
       ],
       "Activate recovery": [
         "Wiederherstellung aktivieren"
@@ -88,7 +91,7 @@
         "Übernehmen"
       ],
       "Ask me next time": [
-        "Frag mich das nächste Mal"
+        "Frage mich das nächste Mal"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
@@ -196,6 +199,9 @@
       "Copy invite link": [
         "Einladungslink kopieren"
       ],
+      "Copy version number to clipboard": [
+        "Versionsnummer in die Zwischenablage kopieren"
+      ],
       "Create": [
         "Erstellen"
       ],
@@ -223,8 +229,11 @@
       "Customize import": [
         "Import anpassen"
       ],
-      "Decline": [
-        "Ablehnen"
+      "Decline invitation": [
+        "Einladung ablehnen"
+      ],
+      "Decline invitation to document": [
+        "Einladung zum Dokument ablehnen"
       ],
       "Decline invite": [
         "Einladung ablehnen"
@@ -525,6 +534,9 @@
       "Refresh the page": [
         "Seite aktualisieren"
       ],
+      "Reload": [
+        "Neu laden"
+      ],
       "Remove": [
         "Entfernen"
       ],
@@ -591,8 +603,8 @@
       "Search countries": [
         "Länder durchsuchen"
       ],
-      "Search documents": [
-        "Dokumente durchsuchen"
+      "Search recent documents": [
+        "Aktuelle Dokumente suchen"
       ],
       "See how": [
         "Siehe wie"
@@ -765,9 +777,6 @@
       ]
     },
     "Actions": {
-      "Last modified first": [
-        "Letzte Änderungen zuerst"
-      ],
       "Last viewed first": [
         "Letzte Anzeigen zuerst"
       ],
@@ -3938,14 +3947,14 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ein VPN ist ein sicherer Tunnel zwischen deinem Gerät und dem Internet. Er verbirgt deinen Standort und deine Aktivitäten vor deinem Internetdienstanbieter (ISP) und den von dir besuchten Websites."
       ],
+      "Accept/decline": [
+        "Annehmen/Ablehnen"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
-      ],
-      "Actions": [
-        "Aktionen"
       ],
       "Ad targeting": [
         "Zielgruppenorientierte Werbung"
@@ -4062,7 +4071,7 @@
         "Kontakt von Gruppe ${ contactGroupName } entfernt"
       ],
       "Converting document...": [
-        "Dokument wird konvertiert..."
+        "Dokument umwandeln..."
       ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
@@ -4090,14 +4099,14 @@
         "Erstelle eine sichere Cloud für ${ value } Mitglied",
         "Erstelle eine sichere Cloud für ${ value } Mitglieder"
       ],
+      "Create an encrypted document.": [
+        "Ein verschlüsseltes Dokument erstellen."
+      ],
       "Create in": [
         "Erstellen in"
       ],
       "Create public link": [
         "Öffentlichen Link erstellen"
-      ],
-      "Create your end-to-end encrypted document": [
-        "Erstelle dein Ende-zu-Ende-verschlüsseltes Dokument"
       ],
       "Create your first folder and start moving your files.": [
         "Erstelle deinen ersten Ordner und beginne mit dem Verschieben deiner Dateien."
@@ -4109,7 +4118,7 @@
         "Link zum Ordner wird erstellt"
       ],
       "Creating new document...": [
-        "Neues Dokument wird erstellt..."
+        "Neues Dokument erstellen..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -4229,7 +4238,7 @@
         "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Fehler beim Konvertieren des Dokuments: ${ errorMessage }"
+        "Fehler beim Umwandeln des Dokuments: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
         "Fehler beim Laden des Dokuments ${ errorDetail }"
@@ -4370,9 +4379,6 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
-      "Invite": [
-        "Einladen"
-      ],
       "Invite link copied": [
         "Einladungslink kopiert"
       ],
@@ -4443,7 +4449,7 @@
         "Niedrige Priorität"
       ],
       "Making a copy...": [
-        "Kopie wird erstellt..."
+        "Kopie erstellen..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -4499,6 +4505,9 @@
       ],
       "No recent documents": [
         "Keine kürzlichen Dokumente"
+      ],
+      "No recent documents match your search.": [
+        "Keine aktuellen Dokumente entsprechen deiner Suche."
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -4556,6 +4565,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
+      ],
+      "Pending invitations": [
+        "Ausstehende Einladungen"
       ],
       "People with access": [
         "Personen mit Zugriff"
@@ -4636,9 +4648,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Öffentliche Dokumente sind für deine Organisation noch nicht aktiviert."
-      ],
-      "Recently deleted": [
-        "Kürzlich gelöscht"
       ],
       "Recents": [
         "Letzte"
@@ -4791,6 +4800,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
       ],
+      "There are no documents in the trash.": [
+        "Es befinden sich keine Dokumente im Papierkorb."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Diese Aktion löscht den Link und der Zugang für alle Benutzer wird widerrufen."
       ],
@@ -4800,11 +4812,11 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Für dieses Dokument findet viel Aktivität statt. Einige Funktionen sind möglicherweise vorübergehend nicht verfügbar."
       ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Dieses Dokument existiert möglicherweise nicht, oder es gibt Probleme beim Laden. Bitte lade die Seite neu und versuche es erneut."
+      ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Möglicherweise existiert dieses Dokument nicht, oder du hast keine Berechtigung, es anzuzeigen. Du kannst versuchen, die Seite neu zu laden, um zu sehen, ob das Problem weiterhin besteht, oder dich an den Besitzer wenden, um Zugang zu erhalten."
-      ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Möglicherweise existiert dieses Dokument nicht, oder du hast keine Berechtigung, es anzuzeigen. Probiere es mit einem anderen Konto oder kontaktiere den Besitzer, um Zugang zu erhalten."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Das ist nun deine ${ defaultEmailAddress } für das Senden von Nachrichten."
@@ -4902,6 +4914,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "Übertragung des Ordners „${ folderName }“ wurde übersprungen"
       ],
+      "Trashed": [
+        "Gelöscht"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
@@ -4910,6 +4925,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Leider scheint es, dass die Datei oder einige ihrer Daten nicht entschlüsselt werden können."
+      ],
+      "Update recent documents": [
+        "Neue Dokumente aktualisieren"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
@@ -4931,6 +4949,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Verifizierung öffnet einen neuen Tab — bitte deaktiviere daher alle Pop-up-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Verifizierung der Karte verwendet wird, wird sofort zurückerstattet."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer erfolgreich in die Zwischenablage kopiert"
       ],
       "View only": [
         "Nur anzeigen"
@@ -5063,6 +5084,9 @@
       "You cannot undo this action.": [
         "Diese Aktion kann nicht widerrufen werden."
       ],
+      "You don't have access": [
+        "Du hast keinen Zugriff"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du wirst benachrichtigt, wenn dein Passwort oder andere Daten vom Dienst eines Drittanbieters preisgegeben wurden."
       ],
@@ -5074,6 +5098,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Du wirst möglicherweise zur Website deiner Bank weitergeleitet."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Möglicherweise verfügst du nicht über die erforderlichen Berechtigungen, um es mit deinem ausgewählten Konto anzuzeigen. Versuche es mit einem anderen Konto oder kontaktiere den Besitzer, um Zugang zu erhalten."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement downgraden kannst."
@@ -5716,6 +5743,9 @@
       ],
       "To: ${ toEmail }": [
         "An: ${ toEmail }"
+      ],
+      "Trash": [
+        "Papierkorb"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -7388,6 +7418,9 @@
       "Public link update access failed ": [
         "Update-Zugriff auf öffentlichen Link fehlgeschlagen "
       ],
+      "Recent documents updated.": [
+        "Neue Dokumente aktualisiert"
+      ],
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
       ],
@@ -7563,6 +7596,20 @@
       ],
       "Merge with calendar": [
         "Mit Kalender zusammenführen"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "Favoriten"
+      ],
+      "Recents": [
+        "Letzte"
+      ],
+      "Searching": [
+        "Suche"
+      ],
+      "Trashed": [
+        "Gelöscht"
       ]
     },
     "Participant name": {
@@ -7952,6 +7999,9 @@
       "Created by": [
         "Erstellt von"
       ],
+      "Deleted": [
+        "Gelöscht"
+      ],
       "Earlier": [
         "Früher"
       ],
@@ -7969,6 +8019,9 @@
       ],
       "Previous 7 days": [
         "Letzte 7 Tage"
+      ],
+      "Search results": [
+        "Suchergebnisse"
       ],
       "Today": [
         "Heute"
@@ -8682,6 +8735,25 @@
         "Für ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
@@ -8721,25 +8793,6 @@
       ],
       "Your privacy is our mission": [
         "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } Speicherplatz pro Benutzer"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigene E-Mail-Domain",
-        "${ planNumberOfDomains } eigene E-Mail-Domains"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } E-Mail-Adresse",
-        "${ planNumberOfEmails } E-Mail-Adressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "Subscription renewal state": {

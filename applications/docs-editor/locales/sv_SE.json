@@ -185,9 +185,6 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
-      "Remove background color": [
-        "Ta bort bakgrundsfärg"
-      ],
       "Remove link": [
         "Ta bort länk"
       ],
@@ -555,14 +552,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } bakgrundsfärg och vit textfärg"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } textfärg och markering"
+      ],
+      "${ name } text color with no background": [
+        "${ name } textfärg utan bakgrund"
+      ],
       "Add link": [
         "Lägg till länk"
       ],
       "Align": [
         "Justera"
-      ],
-      "Background colour": [
-        "Bakgrundsfärg"
       ],
       "Change image size": [
         "Ändra bildstorlek"
@@ -645,8 +648,8 @@
       "Replace link": [
         "Ersätt länk"
       ],
-      "Text colour": [
-        "Textfärg"
+      "Text and highlight color": [
+        "Text- och markeringsfärg"
       ],
       "with \"${ replaceWith }\"": [
         "med ”${ replaceWith }”"

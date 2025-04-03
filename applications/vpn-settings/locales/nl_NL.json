@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
@@ -520,11 +520,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -1506,6 +1506,12 @@
     "Confirmation title": {
       "Delete payment method": [
         "Betalingsmethode verwijderen"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "${ selectedCitiesCount } geselecteerd",
+        "${ selectedCitiesCount } geselecteerd"
       ]
     },
     "Country name": {
@@ -3828,8 +3834,8 @@
       ]
     },
     "Info": {
-      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } gebruikers hebben momenteel toegang tot gedeelde servers.",
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } gebruiker heeft momenteel toegang tot gedeelde servers.",
         "${ amountUsers }/${ totalUsers } gebruikers hebben momenteel toegang tot gedeelde servers."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -4259,11 +4265,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -6093,6 +6099,9 @@
       "Could you please specify?": [
         "Kunt u nader specificeren?"
       ],
+      "Countries": [
+        "Landen"
+      ],
       "Country": [
         "Land"
       ],
@@ -6921,6 +6930,29 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Account verwijderen"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Gebruik ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behouden"
+      ],
+      "Keep account": [
+        "Account behouden"
+      ],
+      "Switch plan": [
+        "Van abonnement wisselen"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
@@ -6945,29 +6977,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Account verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Gebruik ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Kies ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behouden"
-      ],
-      "Keep account": [
-        "Account behouden"
-      ],
-      "Switch plan": [
-        "Van abonnement wisselen"
       ]
     },
     "new_plans: feature": {
@@ -8164,6 +8173,17 @@
         "Welkom bij ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Landconfiguraties"
@@ -8221,17 +8241,6 @@
       ],
       "The whole organization": [
         "De hele organisatie"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
       ]
     },
     "Organization capacity error": {
@@ -10081,47 +10090,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -10410,6 +10378,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {

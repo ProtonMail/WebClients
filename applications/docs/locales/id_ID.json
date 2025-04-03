@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Terima"
-      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -86,9 +83,6 @@
       ],
       "Apply": [
         "Terapkan"
-      ],
-      "Ask me next time": [
-        "Tanyakan saya lain kali"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
@@ -195,6 +189,9 @@
       "Copy invite link": [
         "Salin tautan undangan"
       ],
+      "Copy version number to clipboard": [
+        "Salin nomor versi ke papan klip"
+      ],
       "Create": [
         "Buat"
       ],
@@ -221,9 +218,6 @@
       ],
       "Customize import": [
         "Sesuaikan impor"
-      ],
-      "Decline": [
-        "Tolak"
       ],
       "Decline invite": [
         "Tolak undangan"
@@ -522,6 +516,9 @@
       "Refresh the page": [
         "Muat ulang halaman"
       ],
+      "Reload": [
+        "Muat ulang"
+      ],
       "Remove": [
         "Hapus"
       ],
@@ -579,17 +576,14 @@
       "Save changes": [
         "Simpan perubahan"
       ],
-      "Save preferences": [
-        "Simpan preferensi"
-      ],
       "Search": [
         "Cari"
       ],
       "Search countries": [
         "Cari negara"
       ],
-      "Search documents": [
-        "Cari dokumen"
+      "Search recent documents": [
+        "Cari dokumen terkini"
       ],
       "See how": [
         "Lihat caranya"
@@ -761,9 +755,6 @@
       ]
     },
     "Actions": {
-      "Last modified first": [
-        "Terakhir diubah terlebih dahulu"
-      ],
       "Last viewed first": [
         "Terakhir dilihat terlebih dahulu"
       ],
@@ -3891,9 +3882,6 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
-      "Actions": [
-        "Tindakan"
-      ],
       "Ad targeting": [
         "Penargetan iklan"
       ],
@@ -4005,9 +3993,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Mengonversi dokumen..."
-      ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
       ],
@@ -4032,14 +4017,14 @@
       "Create a secure cloud for ${ value } member": [
         "Buat ruang cloud yang aman untuk ${ value } anggota"
       ],
+      "Create an encrypted document.": [
+        "Buat dokumen yang terenkripsi."
+      ],
       "Create in": [
         "Buat di"
       ],
       "Create public link": [
         "Buat tautan publik"
-      ],
-      "Create your end-to-end encrypted document": [
-        "Buat dokumen terenkripsi end-to-end Anda"
       ],
       "Create your first folder and start moving your files.": [
         "Buat folder pertama Anda dan pindahkan berkas Anda."
@@ -4049,9 +4034,6 @@
       ],
       "Creating link to folder": [
         "Menghasilkan tautan folder"
-      ],
-      "Creating new document...": [
-        "Membuat dokumen baru..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -4170,12 +4152,6 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Terdapat kesalahan dalam mengonversi dokumen: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Terjadi kesalahan memuat dokumen: ${ errorDetail }a"
-      ],
       "Error Syncing": [
         "Terjadi Kesalahan Menyinkronkan"
       ],
@@ -4235,12 +4211,6 @@
       ],
       "Geoblocking": [
         "Pemblokiran wilayah"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Dapatkan pembaruan email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
-      ],
-      "Get Notified About Comments": [
-        "Beri Tahu Tentang Komentar"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Tuju ${ DRIVE_APP_NAME }"
@@ -4311,9 +4281,6 @@
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
       ],
-      "Invite": [
-        "Undang"
-      ],
       "Invite link copied": [
         "Tautan undangan disalin"
       ],
@@ -4383,9 +4350,6 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
-      "Making a copy...": [
-        "Membuat salinan..."
-      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4425,9 +4389,6 @@
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Tidak ada dokumen yang diterakan pada URL. Kembali ke ${ DRIVE_APP_NAME } dan pilih dokumen."
-      ],
       "No email address": [
         "Tidak ada alamat email"
       ],
@@ -4439,6 +4400,9 @@
       ],
       "No recent documents": [
         "Tidak ada dokumen terkini"
+      ],
+      "No recent documents match your search.": [
+        "Tidak ada dokumen terkini yang sesuai dengan pencarian Anda."
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -4497,6 +4461,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
+      "Pending invitations": [
+        "Undangan yang belum ditanggapi"
+      ],
       "People with access": [
         "Orang-orang dengan akses"
       ],
@@ -4525,7 +4492,7 @@
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
+        "Mohon diperhatikan bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
@@ -4574,9 +4541,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Dokumen publik belum diaktifkan untuk organisasi Anda."
-      ],
-      "Recently deleted": [
-        "Baru dihapus"
       ],
       "Recents": [
         "Terkini"
@@ -4728,6 +4692,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
+      "There are no documents in the trash.": [
+        "Tidak ada dokumen di sampah."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Tindakan ini akan menghapus tautan yang bersangkutan dan mencabut akses bagi seluruh pengguna."
       ],
@@ -4739,9 +4706,6 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Dokumen ini mungkin tidak ada, atau Anda mungkin tidak memiliki izin untuk menampilkan dokumen ini. Anda dapat mencoba memuat ulang halaman untuk melihat apakah masalah ini terus berlanjut atau menghubungi pemilik dokumen untuk meminta akses."
-      ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Dokumen ini tidak ada, atau Anda mungkin tidak memiliki izin yang memadai untuk menampilkan dokumen ini dengan akun yang Anda pilih. Silakan coba dengan akun yang berbeda atau hubungi pemilik dokumen untuk meminta akses."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
@@ -4839,6 +4803,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "Transfer untuk folder \"${ folderName }\" dilewati"
       ],
+      "Trashed": [
+        "Dibuang"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
@@ -4868,6 +4835,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir pop-up mana pun yang sedang aktif. Anda tidak akan dikenakan biaya sepeser pun. Seluruh dana yang digunakan untuk memverifikasi kartu akan langsung dikembalikan."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Nomor versi berhasil disalin ke papan klip"
       ],
       "View only": [
         "Hanya lihat"
@@ -5398,9 +5368,6 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
-      "Enable email notifications": [
-        "Aktifkan notifikasi email"
-      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
@@ -5454,9 +5421,6 @@
       ],
       "Import to:": [
         "Impor ke:"
-      ],
-      "Include document name in notification": [
-        "Sertakan nama dokumen dalam notifikasi"
       ],
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama berkas dalam email undangan"
@@ -5646,6 +5610,9 @@
       ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
+      ],
+      "Trash": [
+        "Sampah"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -8533,6 +8500,23 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
@@ -8572,23 +8556,6 @@
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } alamat email khusus"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } alamat email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {
