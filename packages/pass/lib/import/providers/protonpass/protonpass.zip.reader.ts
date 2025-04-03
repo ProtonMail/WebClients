@@ -1,17 +1,10 @@
-import { c } from 'ttag';
-
 import { decryptPassExport } from '@proton/pass/lib/crypto/utils/export';
 import { archivePath } from '@proton/pass/lib/export/archive';
-import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
-import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
+import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import { type ItemImportIntent, ItemState } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
-import { prop } from '@proton/pass/utils/fp/lens';
+import { readProtonPassJSON } from '@proton/pass/lib/import/providers/protonpass/protonpass.json.reader';
+import type { ImportReaderResult } from '@proton/pass/lib/import/types';
 import { logger } from '@proton/pass/utils/logger';
-import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type ProtonPassReaderPayload = {
@@ -22,24 +15,6 @@ type ProtonPassReaderPayload = {
     passphrase?: string;
     userId?: string;
     onPassphrase: () => Promise<string>;
-};
-
-export const decryptProtonPassImport = async (file: File, passphrase?: string): Promise<Uint8Array> => {
-    try {
-        return await decryptPassExport(await file.text(), passphrase ?? '');
-    } catch (err: unknown) {
-        if (err instanceof Error) {
-            const errorDetail = err.message.includes('Error decrypting message')
-                ? c('Error').t`Passphrase is incorrect`
-                : c('Error').t`File could not be parsed`;
-
-            throw new ImportReaderError(
-                c('Error').t`Decrypting your ${PASS_APP_NAME} export file failed. ${errorDetail}`
-            );
-        }
-
-        throw err;
-    }
 };
 
 export const readProtonPassZIP = async (file: File, payload: ProtonPassReaderPayload): Promise<ImportReaderResult> => {
@@ -64,69 +39,8 @@ export const readProtonPassZIP = async (file: File, payload: ProtonPassReaderPay
             return '';
         })();
 
-        if (!exportData) throw new Error('Invalid archive');
-        const parsedExport = JSON.parse(exportData) as ExportData;
-        const { userId } = parsedExport;
-
-        /* when trying to import alias items : make sure the userId between
-         * the exported file and the current userId match. We won't be able
-         * to re-create the aliases if they're not user-owned */
-        const aliasOwnedByUser = (item: ExportedItem) =>
-            item.data.type === 'alias' ? userId === payload.userId : true;
-
-        const vaults = Object.values(parsedExport.vaults).map<{ vault: ImportVault; ignored: string[] }>(
-            ({ name, items }) => {
-                const [itemsToImport, ignoredAliases] = partition(items, aliasOwnedByUser);
-
-                return {
-                    vault: {
-                        name: name,
-                        shareId: null,
-                        items: itemsToImport.reduce<ItemImportIntent[]>((acc, item) => {
-                            /* Don't import existing aliases */
-                            if (
-                                item.data.type === 'alias' &&
-                                item.aliasEmail &&
-                                payload.currentAliases.includes(item.aliasEmail)
-                            ) {
-                                return acc;
-                            }
-
-                            /* Migrate username to itemEmail */
-                            if (semver(parsedExport.version) < semver('1.18.0')) {
-                                if (item.data.type === 'login' && 'username' in item.data.content) {
-                                    const { username } = item.data.content;
-                                    item.data.content.itemEmail = typeof username === 'string' ? username : '';
-                                    item.data.content.itemUsername = '';
-                                    delete item.data.content.username;
-                                }
-                            }
-
-                            acc.push({
-                                ...obfuscateItem({
-                                    ...item.data,
-                                    ...(item.data.type === 'alias'
-                                        ? { extraData: { aliasEmail: item.aliasEmail! } }
-                                        : {}),
-                                }),
-                                trashed: item.state === ItemState.Trashed,
-                                createTime: item.createTime,
-                                modifyTime: item.modifyTime,
-                                files: item.files?.map((filename) => archivePath(filename, 'files')) ?? [],
-                            } as ItemImportIntent);
-
-                            return acc;
-                        }, []),
-                    },
-                    ignored: ignoredAliases.map((item) => `[Alias] ${item.aliasEmail}`),
-                };
-            }
-        );
-
         return {
-            vaults: vaults.map(prop('vault')),
-            ignored: vaults.flatMap(prop('ignored')),
-            warnings: [],
+            ...readProtonPassJSON(exportData, payload, true),
             fileReader,
         };
     } catch (e) {
