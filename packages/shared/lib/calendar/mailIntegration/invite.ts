@@ -688,8 +688,14 @@ const createUpdateMessage = ({
     // If there's updated text or just a comment update, we should show "Here's what changed"
     if (hasUpdatedText || hasUpdatedComment) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
-        return c('Email body for invitation')
-            .t`${messageIntro} Here's what changed:${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`;
+
+        return (
+            messageIntro +
+            ' ' +
+            c('Email body for invitation').t`Here's what changed:` +
+            ' ' +
+            `${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`
+        );
     }
 
     // Add comment status if present without extra newlines
