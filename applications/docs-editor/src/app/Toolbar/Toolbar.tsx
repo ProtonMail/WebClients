@@ -950,9 +950,9 @@ export default function DocumentEditorToolbar({
           },
           hasCaret: false,
           label: (target) => (
-            <>
+            <div className="h-4 w-4">
               <div
-                className="border-weak bg-norm relative h-4 w-4 rounded-[4px] border text-[0.75rem]"
+                className="border-weak bg-norm absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-[4px] border text-[1rem]"
                 aria-hidden="true"
                 style={{
                   backgroundColor,
@@ -962,7 +962,7 @@ export default function DocumentEditorToolbar({
                 <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">A</span>
               </div>
               <span className={target === 'toolbar' ? 'sr-only' : 'mr-auto'}>{c('Action').t`Colour`}</span>
-            </>
+            </div>
           ),
           menu: (
             <FontColorMenu
