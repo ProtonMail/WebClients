@@ -689,13 +689,7 @@ const createUpdateMessage = ({
     if (hasUpdatedText || hasUpdatedComment) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
 
-        return (
-            messageIntro +
-            ' ' +
-            c('Email body for invitation').t`Here's what changed:` +
-            ' ' +
-            `${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`
-        );
+        return `${messageIntro} ${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${formattedComment}`;
     }
 
     // Add comment status if present without extra newlines
@@ -740,7 +734,7 @@ const createResponseMessage = ({
     // Only show "Here's what changed" if there was an actual change (updated text or updated comment)
     if (hasUpdatedText || hasUpdatedComment) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
-        return `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`;
+        return `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText || ''}${formattedComment}`;
     }
 
     // If there's no change but there is a comment, just add the comment with proper spacing
@@ -780,10 +774,10 @@ const createCancellationMessage = ({
 
         return (
             messageIntro +
-            ' ' +
+            '\n\n\n' +
             c('Email body for invitation').t`Here's what changed:` +
-            ' ' +
-            `${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`
+            (updateEventDetailsText ? `\n\n${updateEventDetailsText}` : '') +
+            formattedComment
         );
     }
 
