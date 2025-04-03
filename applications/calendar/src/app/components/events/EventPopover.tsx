@@ -8,7 +8,6 @@ import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiveBreakpoint } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { CryptoProxy } from '@proton/crypto/lib';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
@@ -18,13 +17,12 @@ import {
     getIsSubscribedCalendar,
     getIsUnknownCalendar,
 } from '@proton/shared/lib/calendar/calendar';
-import { ATTENDEE_COMMENT_ENCRYPTION_TYPE, ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
-import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
+import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { getEncryptedRSVPComment } from '@proton/shared/lib/calendar/crypto/helpers';
 import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type {
@@ -214,24 +212,13 @@ const EventPopover = ({
             });
             const [commentAuthorPrimaryKey] = await getAddressKeys(selfAddressID);
 
-            // Signature will be inside message.
-            const encryptResult = await CryptoProxy.encryptMessage({
-                textData: partstatData.Comment,
-                signingKeys: [commentAuthorPrimaryKey.privateKey],
-                signatureContext: {
-                    value: getSignatureContext('calendar.rsvp.comment', targetEvent.data.eventData.SharedEventID),
-                    critical: true,
-                },
+            comment = await getEncryptedRSVPComment({
+                authorPrivateKey: commentAuthorPrimaryKey.privateKey,
+                comment: partstatData.Comment,
                 sessionKey,
-                format: 'binary',
+                sharedEventID: targetEvent.data.eventData.SharedEventID,
             });
 
-            const base64EncryptedComment = uint8ArrayToBase64String(encryptResult.message);
-
-            comment = {
-                Message: base64EncryptedComment,
-                Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED_AND_SIGNED,
-            };
             commentClearText = partstatData.Comment;
         }
 
