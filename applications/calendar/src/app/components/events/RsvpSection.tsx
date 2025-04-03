@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CalendarInviteButtons, Spotlight, useActiveBreakpoint } from '@proton/components';
+import { CalendarInviteButtons, Spotlight, Tooltip, useActiveBreakpoint } from '@proton/components';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import {
@@ -221,14 +221,16 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                                 isAboveModal
                             >
                                 <div className={isDrawerOrResponsiveView ? 'text-left' : 'text-right'}>
-                                    <Button
-                                        className={clsx('text-sm color-weak', isDrawerOrResponsiveView && 'mt-2')}
-                                        shape="underline"
-                                        onClick={handleReplyWithNote}
-                                        disabled={disabled}
-                                    >
-                                        {c('Action').t`Reply with a note`}
-                                    </Button>
+                                    <Tooltip title={disabled ? c('Info').t`Calendar is disabled` : ''}>
+                                        <Button
+                                            className={clsx('text-sm color-weak', isDrawerOrResponsiveView && 'mt-2')}
+                                            shape="underline"
+                                            onClick={handleReplyWithNote}
+                                            disabled={disabled}
+                                        >
+                                            {c('Action').t`Reply with a note`}
+                                        </Button>
+                                    </Tooltip>
                                 </div>
                             </Spotlight>
                         )}
