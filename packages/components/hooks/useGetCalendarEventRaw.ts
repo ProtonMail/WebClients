@@ -27,6 +27,7 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
             const {
                 CalendarID,
                 ID,
+                UID,
                 SharedEvents,
                 CalendarEvents,
                 AttendeesEvents,
@@ -34,7 +35,6 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                 Notifications,
                 Color,
                 FullDay,
-                SharedEventID,
             } = Event;
             const encryptingAddressID = getIsAutoAddedInvite(Event) ? Event.AddressID : undefined;
             const addresses = await getAddresses();
@@ -71,8 +71,8 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                     FullDay,
                     CalendarID,
                     ID,
+                    UID,
                     Color,
-                    SharedEventID,
                 },
                 publicKeysMap,
                 sharedSessionKey,
