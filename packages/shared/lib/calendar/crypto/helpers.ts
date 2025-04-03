@@ -6,28 +6,31 @@ import { ATTENDEE_COMMENT_ENCRYPTION_TYPE } from '../constants';
 
 type SignatureContext = 'calendar.sharing.invite' | 'calendar.rsvp.comment';
 
+/**
+ * @param eventUID we use the eventUID because it's the same for all events accross attendees, main series and single edits
+ */
 export function getSignatureContext(context: 'calendar.sharing.invite'): 'calendar.sharing.invite';
 export function getSignatureContext<TEventID extends string>(
     context: 'calendar.rsvp.comment',
-    sharedEventID: TEventID
+    eventUID: TEventID
 ): `calendar.rsvp.comment.${TEventID}`;
-export function getSignatureContext(context: SignatureContext, eventID?: string) {
+export function getSignatureContext(context: SignatureContext, eventUID?: string) {
     switch (context) {
         case 'calendar.sharing.invite':
             return 'calendar.sharing.invite';
         case 'calendar.rsvp.comment':
-            return `calendar.rsvp.comment.${eventID}`;
+            return `calendar.rsvp.comment.${eventUID}`;
     }
 }
 
 export const getDecryptedRSVPComment = async ({
-    sharedEventID,
+    eventUID,
     sharedSessionKey,
     encryptedMessage,
     attendeeVerificationPreferences,
 }: {
     encryptedMessage: string;
-    sharedEventID: string;
+    eventUID: string;
     sharedSessionKey: SessionKey;
     attendeeVerificationPreferences: VerificationPreferences;
 }) => {
@@ -39,7 +42,7 @@ export const getDecryptedRSVPComment = async ({
             ? {
                   verificationKeys: attendeeVerificationPreferences.verifyingKeys,
                   signatureContext: {
-                      value: getSignatureContext('calendar.rsvp.comment', sharedEventID),
+                      value: getSignatureContext('calendar.rsvp.comment', eventUID),
                       required: true,
                   },
               }
@@ -52,12 +55,12 @@ export const getDecryptedRSVPComment = async ({
 export const getEncryptedRSVPComment = async ({
     comment,
     authorPrivateKey,
-    sharedEventID,
+    eventUID,
     sessionKey,
 }: {
     comment: string;
     authorPrivateKey: PrivateKeyReference;
-    sharedEventID: string;
+    eventUID: string;
     sessionKey: SessionKey | undefined;
 }) => {
     const encryptResult = await CryptoProxy.encryptMessage({
@@ -66,7 +69,7 @@ export const getEncryptedRSVPComment = async ({
         sessionKey,
         signingKeys: [authorPrivateKey],
         signatureContext: {
-            value: getSignatureContext('calendar.rsvp.comment', sharedEventID),
+            value: getSignatureContext('calendar.rsvp.comment', eventUID),
             critical: true,
         },
     });
