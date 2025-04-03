@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Accept": [
-        "Accepter"
-      ],
       "Activate recovery": [
         "Aktiver gendannelse"
       ],
@@ -86,9 +83,6 @@
       ],
       "Apply": [
         "Anvend"
-      ],
-      "Ask me next time": [
-        "Spørg mig næste gang"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Højst ${ maxContacts } kontakt er tilladt pr. kontaktgruppe",
@@ -196,6 +190,9 @@
       "Copy invite link": [
         "Kopiér invitationslink"
       ],
+      "Copy version number to clipboard": [
+        "Kopier versionsnummer til udklipsholder"
+      ],
       "Create": [
         "Opret"
       ],
@@ -222,9 +219,6 @@
       ],
       "Customize import": [
         "Tilpas import"
-      ],
-      "Decline": [
-        "Afslå"
       ],
       "Decline invite": [
         "Afslå invitation"
@@ -528,6 +522,9 @@
       "Refresh the page": [
         "Opdater siden"
       ],
+      "Reload": [
+        "Genindlæs"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -584,9 +581,6 @@
       ],
       "Save changes": [
         "Gem ændringer"
-      ],
-      "Save preferences": [
-        "Gem præferencer"
       ],
       "Search": [
         "Søg"
@@ -3864,9 +3858,6 @@
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
-      "Actions": [
-        "Handlinger"
-      ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
@@ -3972,9 +3963,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Konverterer dokument..."
-      ],
       "Copy the link to clipboard": [
         "Kopiér linket til udklipsholder"
       ],
@@ -4007,9 +3995,6 @@
       "Create public link": [
         "Opret offentligt link"
       ],
-      "Create your end-to-end encrypted document": [
-        "Opret dit end-to-end-krypterede dokument"
-      ],
       "Create your first folder and start moving your files.": [
         "Opret din første mappe og begynd at flytte dine filer."
       ],
@@ -4018,9 +4003,6 @@
       ],
       "Creating link to folder": [
         "Opretter link til mappe"
-      ],
-      "Creating new document...": [
-        "Opretter nyt dokument..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
@@ -4139,12 +4121,6 @@
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Fejl ved dokumentkonvertering: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Fejl ved indlæsning af dokument${ errorDetail }"
-      ],
       "Error Syncing": [
         "Fejlsynkronisering"
       ],
@@ -4198,12 +4174,6 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypteret lagerplads til at starte med"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Få e-mailopdateringer om kommentarer og forslag, der tilføjes til dine dokumenter."
-      ],
-      "Get Notified About Comments": [
-        "Få besked om kommentarer"
       ],
       "here": [
         "her"
@@ -4265,9 +4235,6 @@
       ],
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
-      ],
-      "Invite": [
-        "Invitér"
       ],
       "Invite link copied": [
         "Invitationslink kopieret"
@@ -4335,9 +4302,6 @@
       "Low Priority": [
         "Lav prioritet"
       ],
-      "Making a copy...": [
-        "Laver en kopi..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -4374,9 +4338,6 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Intet dokument angivet i URL. Gå tilbage til ${ DRIVE_APP_NAME }, og vælg et dokument."
       ],
       "No email address": [
         "Ingen e-mailadresse"
@@ -4663,9 +4624,6 @@
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Dette dokument findes muligvis ikke, eller du har ikke tilladelse til at se det. Du kan prøve at genindlæse siden for at se, om problemet fortsætter, eller kontakte ejeren for at få adgang."
       ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Dette dokument findes muligvis ikke, eller du har måske ikke de nødvendige tilladelser til at se det med din valgte konto. Prøv en anden konto, eller kontakt ejeren for at få adgang."
-      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
       ],
@@ -4782,6 +4740,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke blive debiteret. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer er kopieret til udklipsholder"
       ],
       "View only": [
         "Kun visning"
@@ -5267,9 +5228,6 @@
       "Emails (last month)": [
         "E-mails (seneste måned)"
       ],
-      "Enable email notifications": [
-        "Aktivér e-mailnotifikationer"
-      ],
       "Encrypt emails": [
         "Kryptér e-mails"
       ],
@@ -5323,9 +5281,6 @@
       ],
       "Import to:": [
         "Importer til:"
-      ],
-      "Include document name in notification": [
-        "Inkluder dokumentnavn i notifikation"
       ],
       "Include message and file name in invite email": [
         "Medtag besked og filnavn i invitationsmail"
@@ -5509,6 +5464,9 @@
       ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
+      ],
+      "Trash": [
+        "Papirkurv"
       ],
       "Upload picture": [
         "Upload billede"
@@ -8251,6 +8209,25 @@
         "Til ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagerplads pr. bruger"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagerplads"
@@ -8290,25 +8267,6 @@
       ],
       "Your privacy is our mission": [
         "Dit privatliv er vores mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagerplads pr. bruger"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } tilpasset e-maildomæne",
-        "${ planNumberOfDomains } tilpassede e-maildomæner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadresse",
-        "${ planNumberOfEmails } e-mailadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mapper, etiketter og brugerdefinerede filtre"
       ]
     },
     "Subscription renewal state": {

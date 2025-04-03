@@ -3220,6 +3220,9 @@
       "Try using only letters, numerals, and _.-": [
         "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN-ის სამუშაო მაგიდის ჩატვირთვა შეუძლებელია. გადაამოწმეთ თქვენი კავშირი და თავიდან სცადეთ."
+      ],
       "Unable to set photo as cover": [
         "სურათის ყდად დაყენება შეუძლებელია"
       ],
@@ -4287,12 +4290,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } უკვე არსებობს."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } ნიღბავს თქვენს IP მისამართს და ვებგვერდები თქვენს იდენტიფიკაციას ვერ მოახდენენ."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /თვეში)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**ავტოდაკავშირება**: გახსნის და დააკავშირებს VPN-ს მაშინვე, როცა თქვენს მოწყობილობას ჩართავთ."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
@@ -4483,6 +4495,9 @@
       ],
       "Conflict": [
         "კონფლიქტი"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "მიუერთდით ${ VPN_APP_NAME } ინტერნეტში უსაფრთხოდ სამუშაოდ"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "კონტაქტი მინიჭებულია ჯგუფზე ${ contactGroupName }"
@@ -4810,6 +4825,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
       ],
+      "In restrictive countries": [
+        "აკრძალვების მქონე ქვეყნებში"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
       ],
@@ -4848,6 +4866,9 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "ელემენტები, რომლებიც ნაგვის ყუთში გადაიტანეთ, იქ წაშლამდე დარჩება"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "საუკეთესო გზაა, VPN ყოველთვის გამოიყენოთ. მაგრამ ეს ადგილებია, სადაც კიბერუსაფრთხოების საფრთხეები ყველაზე დიდია:"
       ],
       "It’s easy and secure": [
         "ეს ადვილია და დაცულია"
@@ -5005,6 +5026,9 @@
       ],
       "of": [
         "-დან"
+      ],
+      "On public WiFi networks": [
+        "ან საჯარო WiFi ქსელები"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "ერთ-ერთი თქვენი დაშიფრული დისკი დაბლოკილია. ალბათ, ახლახანს პაროლი შეცვალეთ."
@@ -5215,6 +5239,9 @@
       "Scan issue": [
         "სკანირების შეცდომა"
       ],
+      "Scan the QR code with your mobile device": [
+        "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
+      ],
       "Search cannot be enabled in this browser": [
         "ამ ბრაუზერში ძებნის ჩართვა შეუძლებელია"
       ],
@@ -5311,6 +5338,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
       ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
@@ -5398,6 +5428,9 @@
       ],
       "This month": [
         "ამ თვეში"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "ეს, მხოლოდ, ალბომს წაშლის. თქვენი ფოტოები დარჩება სადაც იყვნენ. ეს ქმედება შეუქცევადია."
       ],
       "This will permanently delete the file you uploaded.": [
         "ეს თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
@@ -5624,6 +5657,12 @@
       "What would you like to do?": [
         "რას იზამდით?"
       ],
+      "When working remotely": [
+        "დისტანციურად მუშაობისას"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
@@ -5804,8 +5843,14 @@
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "თქვენს პროვაიდერს შეუძლია თქვენი მონიტორინგი და, ხანდახან, თქვენი მონაცემების გაყიდვა და შეზღუდვა, სად შეგიძლიათ შესვლა."
+      ],
       "Your IP": [
         "თქვენი IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "თქვენი IP მისამართი ხილულია და შეიძლება, თქვენი ინტერნეტში მუშაობის ტრეკინგისთვის იქნეს გამოყენებული."
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
@@ -5816,15 +5861,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
       ],
+      "Your online activity is protected": [
+        "თქვენი აქტივობა ინტერნეეტში დაცულია"
+      ],
       "Your password was leaked:": [
         "თქვენი პაროლი გაჟონილია:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
       ],
-      "Your photo has been removed from the album": [
-        "თქვენი სურათი წაიშალა ალბომიდან",
-        "თქვენი სურათები წაიშალა ალბომიდან"
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "თქვენი ფიზიკური მდებარეობა ხილულია და, შეიძლება, თქვენთვის ინტერნთან წვდომის შესაზღუდად იქნეს გამოყენებული."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "თქვენი გეგმა 7 დღეში 10 ვერსიითაა შეზღუდული"
@@ -7026,29 +7073,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -7070,6 +7094,29 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8013,9 +8060,17 @@
         "ჩავარდა ${ nbFailures } სურათის დამატება \"${ albumName }\"-ში",
         "ჩავარდა ${ nbFailures } სურათის დამატება \"${ albumName }\"-ში"
       ],
+      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
+        "${ nbFailures } სურათის წაშლა ცავარდა ალბომიდან ${ albumLink.name }",
+        "${ nbFailures } სურათის წაშლა ცავარდა ალბომიდან ${ albumLink.name }"
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "${ nbSuccesses } სურათი დაემატა \"${ albumName }\"-ში",
         "${ nbSuccesses } სურათი დაემატა \"${ albumName }\"-ში"
+      ],
+      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
+        "${ nbSuccesses } სურათი წაიშალა ალბომიდან ${ albumLink.name }",
+        "${ nbSuccesses } სურათი წაიშალა ალბომიდან ${ albumLink.name }"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } ელემენტის წაიშალა",
@@ -8263,6 +8318,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } შეუზღუდავი 12 თვით"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } 12 თვით"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
@@ -8661,6 +8722,13 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "სპეციალურად დაკლებული ფასები ${ priceWithDiscount }-მდე ვარგისია პირველი ${ subscriptionLength } თვეში.",
+        "სპეციალურად დაკლებული ფასები ${ priceWithDiscount }-მდე ვარგისია პირველი ${ subscriptionLength } თვეში."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -9610,47 +9678,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -9906,6 +9933,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -10531,6 +10599,9 @@
       "Hm, we couldn't find that one": [
         "ეგ ვერ ვიპოვეთ"
       ],
+      "How does it all work?": [
+        "როგორ მუშაობს ეს ყველაფერი?"
+      ],
       "Human verification": [
         "ადამიანის შემოწმება"
       ],
@@ -10564,6 +10635,9 @@
       ],
       "Location": [
         "მდებარეობა"
+      ],
+      "Make a secure connection your default": [
+        "დაცული კავშირის გამოყენება ნაგულისხმევად"
       ],
       "Manage secure link": [
         "დაცული ბმულის მორგება"
@@ -10651,6 +10725,9 @@
       ],
       "Preview": [
         "გადახედვა"
+      ],
+      "Private browsing vs VPN": [
+        "კონფიდენციალური რეჟიმი vs VPN"
       ],
       "Processing...": [
         "დამუშავება..."
@@ -10842,11 +10919,17 @@
       "Warning: suspected fake website": [
         "გაფრთხილება: დიდი ალბათობით, ვებგვერდი ყალბია"
       ],
+      "What can a VPN protect you from?": [
+        "რისგან გიცავთ VPN?"
+      ],
       "What is a VPN?": [
         "რა არის VPN?"
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
+      ],
+      "When is it most important to use a VPN?": [
+        "როდისაა VPN-ის გამოყენება ყველაზე მნიშვნელოვანი?"
       ],
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
