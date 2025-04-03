@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
 interface Props {
     actions: FetchedBreaches['actions'];
@@ -84,11 +84,11 @@ const BreachRecommendations = ({ actions, inModal = false }: Props) => {
         return null;
     }
 
-    const staySaferOnlineLink = (
-        <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} key="link">
+    const dataLeakedLink = (
+        <Href href={getBlogURL('/breach-recommendations')} key="link">
             {
-                // translator: full sentence is: Learn how to <stay safer online>
-                c('Link').t`stay safer online`
+                // translator: full sentence is: Learn what to do <if your data is leaked>
+                c('Link').t`if your data is leaked`
             }
         </Href>
     );
@@ -110,8 +110,8 @@ const BreachRecommendations = ({ actions, inModal = false }: Props) => {
                 })}
                 <li className="py-3 px-4 border-top border-bottom border-weak color-weak text-sm">
                     {
-                        // translator: full sentence is: Learn how to <stay safer online>
-                        c('Info').jt`Learn how to ${staySaferOnlineLink}`
+                        // translator: full sentence is: Learn what to do <if your data is leaked>
+                        c('Info').jt`Learn what to do ${dataLeakedLink}`
                     }
                 </li>
             </ul>
