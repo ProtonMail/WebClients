@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
-      "Accept": [
-        "Hyväksy"
-      ],
       "Activate recovery": [
         "Aktivoi palautus"
       ],
@@ -86,9 +83,6 @@
       ],
       "Apply": [
         "Toteuta"
-      ],
-      "Ask me next time": [
-        "Kysy seuraavalla kerralla"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
@@ -196,6 +190,9 @@
       "Copy invite link": [
         "Kopioi kutsulinkki"
       ],
+      "Copy version number to clipboard": [
+        "Kopioi versionumero leikepöydälle"
+      ],
       "Create": [
         "Luo"
       ],
@@ -222,9 +219,6 @@
       ],
       "Customize import": [
         "Mukauta tuontia"
-      ],
-      "Decline": [
-        "Kieltäydy"
       ],
       "Decline invite": [
         "Kieltäydy kutsusta"
@@ -525,6 +519,9 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
+      "Reload": [
+        "Päivitä"
+      ],
       "Remove": [
         "Poista"
       ],
@@ -581,9 +578,6 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
-      ],
-      "Save preferences": [
-        "Tallenna asetukset"
       ],
       "Search": [
         "Hae"
@@ -759,6 +753,11 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
+      ]
+    },
+    "Actions": {
+      "Name": [
+        "Nimi"
       ]
     },
     "Actions message": {
@@ -2375,6 +2374,17 @@
         "${ PLAN_NAMES[PLANS.PASS] }-tilauksesi on erityishintaan ${ price } vuodessa. Jos vaihdat maksuttomaan tilaukseen, menetät alennuksen ikuisesti, vaikka päivittäisit uudelleen tulevaisuudessa."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Lataa Linuxille"
+      ],
+      "Download for macOS": [
+        "Lataa macOS:lle"
+      ],
+      "Download for Windows": [
+        "Lataa Windowsille"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Avaa ${ DRIVE_SHORT_APP_NAME }ssä"
@@ -3854,12 +3864,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } löytyy jo tästä sijainnista."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } naamioi IP-osoitteesi, jotta verkkosivustot eivät voi tunnistaa sinua."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/kuukausi)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automaattinen yhdistäminen**: Avaa ja muodostaa VPN-yhteyden heti, kun käynnistät laitteen."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } lisätallennustilaa"
@@ -3880,8 +3899,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Suojattu yhteys on välttämätön etätyöskenneltäessä. VPN suojaa yrityksen tietoja kyberuhkilta ja pitää työsi yksityisenä."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN on suojattu tunneli laitteesi ja Internetin välillä. Se piilottaa sijaintisi ja toimintasi Internet-palveluntarjoajaltasi (ISP) ja verkkosivustoilta, joilla vierailet."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ole yhteydessä ylläpitoosi."
@@ -3889,8 +3914,8 @@
       "Account successfully updated": [
         "Tili on päivitetty"
       ],
-      "Actions": [
-        "Toiminnot"
+      "Ad targeting": [
+        "Mainosten kohdentaminen"
       ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
@@ -3991,14 +4016,14 @@
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
       ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Yhdistä ${ VPN_APP_NAME }:ään selataksesi yksityisesti"
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
-      ],
-      "Converting document...": [
-        "Muunnetaan dokumenttia..."
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
@@ -4032,9 +4057,6 @@
       "Create public link": [
         "Luo julkinen linkki"
       ],
-      "Create your end-to-end encrypted document": [
-        "Luo päästä päähän -salattu dokumenttisi"
-      ],
       "Create your first folder and start moving your files.": [
         "Luo ensimmäinen kansiosi ja aloita tiedostojen siirto."
       ],
@@ -4043,9 +4065,6 @@
       ],
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
-      ],
-      "Creating new document...": [
-        "Luodaan uutta dokumenttia..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
@@ -4164,12 +4183,6 @@
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Virhe ladattaessa dokumenttia: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4190,6 +4203,9 @@
       ],
       "Failing signatures will be re-signed by you": [
         "Epäonnistuneet allekirjoitukset korvataan omalla allekirjoituksellasi"
+      ],
+      "Favorites": [
+        "Suosikit"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" poistettiin latauksen aikana"
@@ -4224,11 +4240,11 @@
       "Free 5GB encrypted storage to get started": [
         "5 Gt ilmaista salattua tallennustilaa päästäksesi alkuun"
       ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Saat sähköpostipäivityksiä dokumentteihisi lisätyistä kommenteista ja ehdotuksista."
+      "Geoblocking": [
+        "Geoblokkaus"
       ],
-      "Get Notified About Comments": [
-        "Saat ilmoituksia kommenteista"
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Avaa ${ DRIVE_APP_NAME }"
       ],
       "here": [
         "tässä"
@@ -4273,6 +4289,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "Rajoittavissa maissa"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
@@ -4291,14 +4310,14 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
-      "Invite": [
-        "Kutsu"
-      ],
       "Invite link copied": [
         "Kutsulinkki kopioitiin"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
       ],
       "JCB logo": [
         "JCB-logo"
@@ -4360,9 +4379,6 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
-      "Making a copy...": [
-        "Luodaan kopiota..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
@@ -4391,6 +4407,9 @@
       "Monitor accounts": [
         "Valvo tilejä"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Useimmat julkiset WiFi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
@@ -4399,9 +4418,6 @@
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Annetusta URL-osoitteesta ei löytynyt dokumenttia. Palaa ${ DRIVE_APP_NAME }en ja valitse dokumentti."
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
@@ -4427,11 +4443,17 @@
       "Not a valid URL": [
         "Virheellinen URL"
       ],
+      "Not connected": [
+        "Ei yhdistetty"
+      ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
       "Offline": [
         "Ei yhteyttä"
+      ],
+      "On public WiFi networks": [
+        "Julkisissa WiFi-verkoissa"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
@@ -4543,6 +4565,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Julkiset dokumentit eivät ole vielä käytössä organisaatiollasi."
       ],
+      "Recents": [
+        "Viimeisimmät"
+      ],
       "recommended browser": [
         "suositeltujen selainten"
       ],
@@ -4566,6 +4591,9 @@
       ],
       "Saving...": [
         "Tallennetaan..."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Skannaa QR-koodi mobiililaitteellasi"
       ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
@@ -4627,11 +4655,20 @@
       "Some edits are taking longer to sync than expected.": [
         "Joidenkin muokkausten synkronoinnissa kestää odotettua kauemmin."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Jotkut viranomaiset estävät tai rajoittavat pääsyä tietyille verkkosivustoille. VPN auttaa ohittamaan sensuurin ja pitämään toimintasi ja identiteettisi yksityisenä."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Jotkin verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:n avulla voit kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
+      ],
       "Something went wrong": [
         "Jotain meni pieleen"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Pysy vaivattomasti yhdistettynä ottamalla käyttöön seuraavat VPN-asetukset:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
@@ -4645,6 +4682,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Tarkkailu"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
@@ -4696,6 +4736,9 @@
       ],
       "This message will be presented again later": [
         "Tämä viesti näytetään myöhemmin uudelleen"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
       ],
       "This will permanently delete the file you uploaded.": [
         "Tämä poistaa lähettämäsi tiedoston pysyvästi."
@@ -4754,6 +4797,9 @@
       "Total VPN connections": [
         "VPN-yhteyksiä yhteensä"
       ],
+      "Tracking": [
+        "Seuranta"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Tiedoston \"${ name }\" siirto peruttiin"
       ],
@@ -4796,11 +4842,17 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Vahvistus avaa uuden välilehden, joten poista kaikki ponnahdusestot käytöstä. Sinua ei veloiteta ja kortin vahvistukseen käytetty summa palautetaan välittömästi."
       ],
+      "Version number successfully copied to clipboard": [
+        "Versionumero kopioitiin leikepöydälle"
+      ],
       "View only": [
         "Vain tarkastelu"
       ],
       "Visa Secure logo": [
         "Visa Secure -logo"
+      ],
+      "VPN IP": [
+        "VPN:n IP-osoite"
       ],
       "Warning": [
         "Varoitus"
@@ -4849,6 +4901,9 @@
       ],
       "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
         "Kun ikkuna avautuu, valitse vasemmasta alakulmasta \"PDF\", sitten paina Tallenna."
+      ],
+      "When working remotely": [
+        "Etätyöskennellessä"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
@@ -5009,6 +5064,15 @@
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Internet-palveluntarjoajasi voi valvoa ja saattaa myydä tietojasi tai jopa rajoittaa, mitä verkkosivustoja voit käyttää."
+      ],
+      "Your IP": [
+        "Sinun IP:si"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "IP-osoitteesi on havaittavissa, ja sitä voidaan käyttää verkkotoimintasi seuraamiseen."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
       ],
@@ -5018,11 +5082,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
+      "Your online activity is protected": [
+        "Verkkotoimintasi on suojattu"
+      ],
       "Your password was leaked:": [
         "Salasanasi paljastui:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Fyysinen sijaintisi on havaittavissa, ja sitä voidaan käyttää Internet-käyttösi rajoittamiseen."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
@@ -5293,9 +5363,6 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
-      "Enable email notifications": [
-        "Ota sähköposti-ilmoitukset käyttöön"
-      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -5349,9 +5416,6 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
-      ],
-      "Include document name in notification": [
-        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -5409,6 +5473,9 @@
       ],
       "Move to Inbox": [
         "Siirrä saapuneisiin"
+      ],
+      "My files": [
+        "Omat tiedostot"
       ],
       "Navigation": [
         "Navigaatio"
@@ -5539,6 +5606,9 @@
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
       ],
+      "Trash": [
+        "Roskakori"
+      ],
       "Upload picture": [
         "Lataa kuva"
       ],
@@ -5559,6 +5629,15 @@
       ],
       "Your alias": [
         "Sinun aliaksesi"
+      ],
+      "Your IP": [
+        "Sinun IP:si"
+      ],
+      "Your ISP": [
+        "Sinun ISP:si"
+      ],
+      "Your location": [
+        "Sinun sijaintisi"
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
@@ -7192,6 +7271,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited 12 kuukaudeksi"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } 12 kuukaudeksi"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tarjous päättyy tänään!"
       ],
@@ -7425,6 +7510,10 @@
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
+        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
+      ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
       ]
@@ -7642,6 +7731,32 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "Recent documents table header": {
+      "Earlier": [
+        "Aiemmin"
+      ],
+      "Location": [
+        "Sijainti"
+      ],
+      "Modified": [
+        "Muokattu"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "Previous 30 days": [
+        "Edelliset 30 päivää"
+      ],
+      "Previous 7 days": [
+        "Edelliset 7 päivää"
+      ],
+      "Today": [
+        "Tänään"
+      ],
+      "Yesterday": [
+        "Eilen"
       ]
     },
     "Safety review": {
@@ -8346,6 +8461,25 @@
         "Hintaan ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tallennustilaa/käyttäjä"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } oma verkkotunnus",
+        "${ planNumberOfDomains } omaa verkkotunnusta"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } sähköpostiosoite",
+        "${ planNumberOfEmails } sähköpostiosoitetta"
+      ],
+      "Folders, labels, and custom filters": [
+        "Kansioita, tunnisteita ja omia suodattimia"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Gt tallennustilaa"
@@ -8385,25 +8519,6 @@
       ],
       "Your privacy is our mission": [
         "Yksityisyytesi on tehtävämme"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } tallennustilaa/käyttäjä"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } oma verkkotunnus",
-        "${ planNumberOfDomains } omaa verkkotunnusta"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } sähköpostiosoite",
-        "${ planNumberOfEmails } sähköpostiosoitetta"
-      ],
-      "Folders, labels, and custom filters": [
-        "Kansioita, tunnisteita ja omia suodattimia"
       ]
     },
     "Subscription renewal state": {
@@ -8779,6 +8894,9 @@
       "Day theme": [
         "Päiväteema"
       ],
+      "Decline invitation?": [
+        "Kieltäydytäänkö kutsusta?"
+      ],
       "Delete": [
         "Poista"
       ],
@@ -8805,6 +8923,9 @@
       "Deleting contacts": [
         "Poistetaan yhteystietoja"
       ],
+      "Desktop": [
+        "Työpöytä"
+      ],
       "Details": [
         "Lisätiedot"
       ],
@@ -8828,6 +8949,9 @@
       ],
       "Download ${ date }": [
         "Lataa ${ date }"
+      ],
+      "Download the app": [
+        "Lataa sovellus"
       ],
       "Download unverified file?": [
         "Ladataanko vahvistamaton tiedosto?"
@@ -8907,6 +9031,9 @@
       "High security for your account": [
         "Vahva suojaus tilillesi"
       ],
+      "How does it all work?": [
+        "Miten se kaikki toimii?"
+      ],
       "Human verification": [
         "Ihmisvahvistus"
       ],
@@ -8949,6 +9076,9 @@
       ],
       "Minicalendar": [
         "Pienoiskalenteri"
+      ],
+      "Mobile": [
+        "Mobiili"
       ],
       "My files": [
         "Omat tiedostot"
@@ -9000,6 +9130,9 @@
       ],
       "Photos": [
         "Kuvat"
+      ],
+      "Private browsing vs VPN": [
+        "Yksityinen selaus vs VPN"
       ],
       "Processing...": [
         "Käsitellään..."
@@ -9118,8 +9251,17 @@
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
       ],
+      "What can a VPN protect you from?": [
+        "Miltä VPN voi suojata sinua?"
+      ],
+      "What is a VPN?": [
+        "Mikä on VPN?"
+      ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Milloin VPN:n käyttäminen on tärkeintä?"
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
