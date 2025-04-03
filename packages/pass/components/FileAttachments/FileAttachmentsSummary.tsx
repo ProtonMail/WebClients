@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from 'react';
+import { type FC, type PropsWithChildren, useContext } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/index';
 import Icon from '@proton/components/components/icon/Icon';
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { UpsellingContext } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { selectUserStorageAllowed } from '@proton/pass/store/selectors';
@@ -29,11 +29,14 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
     onDelete,
 }) => {
     const canUseStorage = useSelector(selectUserStorageAllowed);
-    const upsell = useUpselling();
-
     const deleteFile = useAsyncModalHandles<void, object>({ getInitialModalState: () => ({}) });
     const canDelete = filesCount > 0 && onDelete;
     const handleDeleteAll = () => deleteFile.handler({ onSubmit: () => onDelete?.() });
+
+    /** Using the `UpsellingContext` directly instead of the
+     * safe `useUpsell` hook as this component may be loaded
+     * in a public-view where the provider isn't mounted. */
+    const upsell = useContext(UpsellingContext);
 
     return (
         <div>
@@ -56,7 +59,7 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                         })()}
                     </div>
                 </div>
-                {!canUseStorage && (
+                {!canUseStorage && upsell && (
                     <PassPlusPromotionButton
                         onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
                     />
