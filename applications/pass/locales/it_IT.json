@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Sposta in un'altra cassaforte"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Sposta nel cestino"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Sposta nel cestino"
       ],
       "Multiple select": [
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Invia nuovamente l'invito"
+      ],
+      "Reset": [
+        "Reimposta"
+      ],
+      "Reset history": [
+        "Azzera cronologia"
       ],
       "Restore": [
         "Ripristina"
@@ -796,6 +802,9 @@
       "Alias options could not be resolved": [
         "Impossibile determinare le opzioni alias"
       ],
+      "An error occured during the import process": [
+        "Si è verificato un errore durante il processo di importazione"
+      ],
       "An error occurred while resuming your session": [
         "Si è verificato un errore durante la ripresa della sessione"
       ],
@@ -859,6 +868,9 @@
       ],
       "Deleting item failed": [
         "Eliminazione dell'elemento non riuscita"
+      ],
+      "Deleting item history failed": [
+        "Eliminazione della cronologia degli elementi non riuscita"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Eliminazione della cassaforte \"${ payload.content.name }\" non riuscita"
@@ -1020,9 +1032,6 @@
       "File could not be parsed": [
         "Impossibile analizzare il file"
       ],
-      "File could not be read": [
-        "Non è stato possibile leggere il file"
-      ],
       "File does not match expected format": [
         "Il formato del file non è corretto"
       ],
@@ -1103,9 +1112,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Qualcosa è andato storto. Accedi di nuovo."
-      ],
-      "The file you are trying to import is empty": [
-        "Il file che stai tentando di importare è vuoto"
       ],
       "The session has expired. Please sign in again.": [
         "La sessione è scaduta. Effettua di nuovo il login."
@@ -1534,9 +1540,6 @@
       "Drop to import": [
         "Trascina per importare"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "A causa di una limitazione delle estensioni del browser Safari, dopo l'esportazione dei dati mancherà l'estensione del file \".pgp\". Rinomina il file per includere l'estensione .pgp (ad esempio file.pgp) dopo l'esportazione."
-      ],
       "Editor": [
         "Editor"
       ],
@@ -1662,15 +1665,8 @@
       "Identity confirmed": [
         "Identità confermata"
       ],
-      "Import in progress:": [
-        "Importazione in corso:"
-      ],
       "Import the CSV file below.": [
         "Importa il file CSV qui sotto."
-      ],
-      "Imported ${ payload.total } item": [
-        "Importato ${ payload.total } elemento",
-        "Importati ${ payload.total } elementi"
       ],
       "Imported on ${ date }": [
         "Importato il ${ date }"
@@ -1711,15 +1707,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembra che tu abbia già effettuato l'accesso a ${ PASS_APP_NAME }. Se stai provando ad accedere con un account differente, prima disconnetti l'estensione."
       ],
-      "item": [
-        "elemento",
-        "elementi"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elemento \"${ payload.item.data.metadata.name }\" creato"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Elemento \"${ payload.item.data.metadata.name }\" aggiornato"
+      ],
+      "Item history permanently deleted": [
+        "Cronologia elementi eliminata definitivamente"
       ],
       "Item moved to trash": [
         "Elemento spostato nel cestino"
@@ -1980,6 +1975,9 @@
       "Please follow the steps below to set up your domain.": [
         "Segui i passaggi seguenti per configurare il tuo dominio."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Tieni aperta questa finestra durante l'importazione dei dati. Questo processo potrebbe richiedere alcuni minuti."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. Magari preferisci disabilitare l'alias?"
       ],
@@ -2024,6 +2022,9 @@
       ],
       "Removing secure link...": [
         "Rimozione del link sicuro..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "La reimpostazione della cronologia eliminerà definitivamente tutte le versioni precedenti degli elementi e non potrà essere annullata."
       ],
       "Restoring items from trash": [
         "Ripristino degli elementi dal cestino"
@@ -2130,9 +2131,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Imposta una password aggiuntiva necessaria per accedere a ${ PASS_APP_NAME }. Verrà aggiunta una password oltre a quella dell'account ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Impossibile importare il seguente ${ result.ignored.length } elemento:",
-        "Impossibile importare i seguenti ${ result.ignored.length } elementi:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Impossibile importare il seguente ${ totalIgnored } elemento:",
+        "Impossibile importare i seguenti ${ totalIgnored } elementi:"
       ],
       "The secure link has been removed": [
         "Il link sicuro è stato rimosso"
@@ -2934,8 +2935,8 @@
       "Personal website": [
         "Sito web personale"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON crittografato PGP (consigliato)"
+      "PGP-encrypted (recommended)": [
+        "Crittografia PGP (consigliata)"
       ],
       "Phone number": [
         "Numero di telefono"
@@ -3189,6 +3190,9 @@
       "Your domain": [
         "Il tuo dominio"
       ],
+      "ZIP": [
+        "CAP"
+      ],
       "ZIP or Postal code": [
         "CAP"
       ]
@@ -3265,6 +3269,105 @@
       ],
       "Underscores": [
         "Trattini bassi"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Impossibile caricare \"${ file.name }\"."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Impossibile importare \"${ filename }\"."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" è troppo grande per essere caricato. La dimensione massima consentita è (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } file",
+        "${ filesCount } file"
+      ],
+      "Attachments": [
+        "Allegati"
+      ],
+      "Choose a file or drag it here": [
+        "Scegli un file o trascinalo qui"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Elimina ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Elimina tutti i file"
+      ],
+      "Do you want to remove all the files?": [
+        "Vuoi rimuovere tutti i file?"
+      ],
+      "Download": [
+        "Scarica"
+      ],
+      "Download file": [
+        "Scarica file"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "A causa di una limitazione su Firefox, ${ PASS_APP_NAME } deve essere riaperto in una nuova finestra prima di poter caricare file."
+      ],
+      "Exporting files": [
+        "Esportazione dei file"
+      ],
+      "File": [
+        "File"
+      ],
+      "File attachments": [
+        "File allegati"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Se abilitato, tutti i file verranno scaricati durante l'esportazione. L'operazione potrebbe richiedere del tempo a seconda della connessione Internet."
+      ],
+      "Include file attachments": [
+        "Includi file allegati"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Non hai abbastanza spazio per i file selezionati."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Anche se eliminato, questo file potrà ancora essere recuperato dalla cronologia dell'elemento."
+      ],
+      "Open new window to upload files": [
+        "Apri una nuova finestra per caricare i file."
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Attendi durante il download dei file."
+      ],
+      "Remove all files": [
+        "Rimuovi tutti i file"
+      ],
+      "Rename": [
+        "Rinomina"
+      ],
+      "Restore": [
+        "Ripristina"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Alcuni file sono troppo grandi per essere caricati. La dimensione massima consentita è (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Gli allegati dei file esportati non verranno crittografati."
+      ],
+      "The file you are trying to import is empty": [
+        "Il file che stai tentando di importare è vuoto"
+      ],
+      "Total files: ": [
+        "File totali: "
+      ],
+      "Total imported files: ": [
+        "File importati totali: "
+      ],
+      "Upload files from your device.": [
+        "Carica file dal tuo dispositivo."
+      ],
+      "You can attach files to items for a better organization": [
+        "Puoi allegare file agli elementi per una migliore organizzazione."
+      ],
+      "Your current plan does not support importing files": [
+        "Il tuo piano attuale non supporta l'importazione di file"
       ]
     },
     "Placeholder": {
@@ -3661,6 +3764,9 @@
       "Domain ownership verification": [
         "Verifica della proprietà del dominio"
       ],
+      "Encrypted import": [
+        "Importazione crittografata"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
       ],
@@ -3702,6 +3808,9 @@
       ],
       "Import your data": [
         "Importa i tuoi dati"
+      ],
+      "Importing your data": [
+        "Importazione dei tuoi dati"
       ],
       "Inactive 2FA": [
         "2FA inattivi"
@@ -3828,6 +3937,9 @@
       ],
       "Remove secure link?": [
         "Vuoi rimuovere il link sicuro?"
+      ],
+      "Reset history for this item?": [
+        "Reimpostare la cronologia per questo elemento?"
       ],
       "Resolved breaches": [
         "Violazioni di dati risolte"
@@ -4015,6 +4127,9 @@
       "An error occurred while exporting your data": [
         "Si è verificato un errore durante l'esportazione dei dati"
       ],
+      "An error occurred while importing your data.": [
+        "Si è verificato un errore durante l'importazione dei dati."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Sei sicuro di voler spostare ${ trashedItemsCount } elemento nel cestino?",
         "Sei sicuro di voler spostare ${ trashedItemsCount } elementi nel cestino?"
@@ -4158,9 +4273,6 @@
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "L'esportazione del file crittografato mediante PGP richiede una passphrase"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Verifica che l'estensione sia installata e abilitata correttamente"

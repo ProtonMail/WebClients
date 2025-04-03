@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
       ],
-      "Move to trash": [
-        "Перамясціць у сметніцу"
-      ],
       "Move to Trash": [
         "Перамясціць у Сметніцу"
+      ],
+      "Move to trash": [
+        "Перамясціць у сметніцу"
       ],
       "Multiple select": [
         "Выбар некалькіх элементаў"
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
+      ],
+      "Reset": [
+        "Скінуць"
+      ],
+      "Reset history": [
+        "Скінуць гісторыю"
       ],
       "Restore": [
         "Аднавіць"
@@ -802,6 +808,9 @@
       "Alias options could not be resolved": [
         "Не атрымалася вызначыць параметры псеўданіма"
       ],
+      "An error occured during the import process": [
+        "Адбылася памылка пры працэсе імпартавання"
+      ],
       "An error occurred while resuming your session": [
         "Адбылася памылка падчас узнаўлення вашага сеанса"
       ],
@@ -867,6 +876,9 @@
       ],
       "Deleting item failed": [
         "Збой выдалення элемента"
+      ],
+      "Deleting item history failed": [
+        "Збой выдалення гісторыі элемента"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Збой выдалення сховішча \"${ payload.content.name }\""
@@ -1030,9 +1042,6 @@
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
       ],
-      "File could not be read": [
-        "Не атрымалася прачытаць файл"
-      ],
       "File does not match expected format": [
         "Файл не адпавядае фармату, які чакаўся"
       ],
@@ -1113,9 +1122,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Нешта пайшло не так. Увайдзіце яшчэ раз."
-      ],
-      "The file you are trying to import is empty": [
-        "Файл, які вы спрабуеце імпартаваць нічога не змяшчае"
       ],
       "The session has expired. Please sign in again.": [
         "Час сеансу пратэрмінаваны. Увайдзіце яшчэ раз."
@@ -1574,9 +1580,6 @@
       "Drop to import": [
         "Перацягніце для імпартавання"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Па прычыне абмежавання пашырэнняў браўзера Safari, пасля экспартавання даных будзе адсутнічаць пашырэнне файла \".pgp\". Змяніце назву файла, каб яно ўключала пашырэнне .pgp пасля экспартавання (напрыклад, file.pgp)"
-      ],
       "Editor": [
         "Рэдактар​​"
       ],
@@ -1706,17 +1709,8 @@
       "Identity confirmed": [
         "Ідэнтычнасць пацверджана"
       ],
-      "Import in progress:": [
-        "Выконваецца імпартаванне:"
-      ],
       "Import the CSV file below.": [
         "Імпартуйце файл CSV ніжэй."
-      ],
-      "Imported ${ payload.total } item": [
-        "Імпартаваны ${ payload.total } элемент",
-        "Імпартавана ${ payload.total } элементы",
-        "Імпартавана ${ payload.total } элементаў",
-        "Імпартавана ${ payload.total } элементаў"
       ],
       "Imported on ${ date }": [
         "Імпартавана ${ date }"
@@ -1757,17 +1751,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Спачатку выйдзіце з уліковага запісу ў пашырэнні, калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
       ],
-      "item": [
-        "элемент",
-        "элементы",
-        "элементаў",
-        "элементаў"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Створаны элемент \"${ payload.item.data.metadata.name }\""
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Элемент \"${ payload.item.data.metadata.name }\" абноўлены"
+      ],
+      "Item history permanently deleted": [
+        "Гісторыя элемента незваротна выдалена"
       ],
       "Item moved to trash": [
         "Элемент перамешчаны ў сметніцу"
@@ -2036,6 +2027,9 @@
       "Please follow the steps below to set up your domain.": [
         "Прытрымлівайцеся крокаў ніжэй, каб наладзіць свой дамен."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Пакіньце гэта акно адкрытым падчас імпартавання сваіх даных. Гэты працэс можа заняць некалькі хвілін."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Магчыма, што вы захочаце адключыць яго замест таго, каб выдаляць незваротна?"
       ],
@@ -2080,6 +2074,9 @@
       ],
       "Removing secure link...": [
         "Выдаленне бяспечнай спасылкі..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Скіданне гісторыі прывядзе да незваротнага выдалення ўсіх мінулых версій элемента і гэту аперацыю немагчыма будзе адрабіць."
       ],
       "Restoring items from trash": [
         "Аднаўленне элементаў са сметніцы"
@@ -2186,11 +2183,11 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
-        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
-        "Не атрымалася імпартаваць наступных ${ result.ignored.length } элементаў:",
-        "Не атрымалася імпартаваць наступных ${ result.ignored.length } элементаў:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Не атрымалася імпартаваць наступны ${ totalIgnored } элемент:",
+        "Не атрымалася імпартаваць наступныя ${ totalIgnored } элементы:",
+        "Не атрымалася імпартаваць наступных ${ totalIgnored } элементаў:",
+        "Не атрымалася імпартаваць наступных ${ totalIgnored } элементаў:"
       ],
       "The secure link has been removed": [
         "Бяспечная спасылка выдалена"
@@ -3028,8 +3025,8 @@
       "Personal website": [
         "Асабісты вэб-сайт"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON зашыфраваны PGP (рэкамендавана)"
+      "PGP-encrypted (recommended)": [
+        "Зашыфравана PGP (рэкамендавана)"
       ],
       "Phone number": [
         "Нумар тэлефона"
@@ -3283,6 +3280,9 @@
       "Your domain": [
         "Ваш дамен"
       ],
+      "ZIP": [
+        "Паштовы індэкс"
+      ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
       ]
@@ -3363,6 +3363,107 @@
       ],
       "Underscores": [
         "Падкрэсліванні"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Немагчыма запампаваць \"${ file.name }\"."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Немагчыма імпартаваць \"${ filename }\"."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Файл \"${ filename }\" занадта вялікі для запампоўкі. Максімальна дазволены памер (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } файл",
+        "${ filesCount } файлы",
+        "${ filesCount } файлаў",
+        "${ filesCount } файлаў"
+      ],
+      "Attachments": [
+        "Далучэнні"
+      ],
+      "Choose a file or drag it here": [
+        "Выберыце файл або перацягніце яго сюды"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Выдаліць ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Выдаліць усе файлы"
+      ],
+      "Do you want to remove all the files?": [
+        "Вы хочаце выдаліць усе файлы?"
+      ],
+      "Download": [
+        "Спампаваць"
+      ],
+      "Download file": [
+        "Спампаваць файл"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "${ PASS_APP_NAME } неабходна яшчэ раз адкрыць у новым акне перад тым, як вы зможаце запампаваць файлы. Гэта звязана з абмежаваннямі браўзера Firefox."
+      ],
+      "Exporting files": [
+        "Экспартаваныя файлы"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "File attachments": [
+        "Далучэнні файлаў"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Калі гэта ўключана, усе вашы файлы будуць спампаваны пры экспарце. Гэта можа заняць некаторы час у залежнасці ад вашага інтэрнэт-падключэння."
+      ],
+      "Include file attachments": [
+        "Уключыць далучаныя файлы"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Недастаткова даступнай прасторы ў сховішчы для выбраных файлаў."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Пасля выдалення гэты файл усё яшчэ можна аднавіць з гісторыі элемента."
+      ],
+      "Open new window to upload files": [
+        "Адкрыйце новае акно, каб запампаваць файлы"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Будзьце цярплівыя, пакуль вашы файлы спампоўваюцца."
+      ],
+      "Remove all files": [
+        "Выдаліць усе файлы"
+      ],
+      "Rename": [
+        "Перайменаваць"
+      ],
+      "Restore": [
+        "Аднавіць"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Некаторыя файлы занадта вялікія для запампоўвання. Максімальна дазволены памер (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Экспартаваныя далучэнні файлаў не будуць зашыфраваны."
+      ],
+      "The file you are trying to import is empty": [
+        "Файл, які вы спрабуеце імпартаваць нічога не змяшчае"
+      ],
+      "Total files: ": [
+        "Усяго файлаў: "
+      ],
+      "Total imported files: ": [
+        "Усяго імпартаваных файлаў: "
+      ],
+      "Upload files from your device.": [
+        "Запампаваць файлы з вашай прылады."
+      ],
+      "You can attach files to items for a better organization": [
+        "Вы можаце далучаць файлы да элементаў для лепшай арганізацыі"
+      ],
+      "Your current plan does not support importing files": [
+        "Ваш бягучы тарыфны план не падтрымлівае імпартаванне файлаў"
       ]
     },
     "Placeholder": {
@@ -3765,6 +3866,9 @@
       "Domain ownership verification": [
         "Праверка ўладальніка дамена"
       ],
+      "Encrypted import": [
+        "Зашыфраванае імпартаванне"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
       ],
@@ -3805,6 +3909,9 @@
         "Імпартаванне ў сховішча(-ы)"
       ],
       "Import your data": [
+        "Імпартаванне вашых даных"
+      ],
+      "Importing your data": [
         "Імпартаванне вашых даных"
       ],
       "Inactive 2FA": [
@@ -3938,6 +4045,9 @@
       ],
       "Remove secure link?": [
         "Выдаліць бяспечную спасылку?"
+      ],
+      "Reset history for this item?": [
+        "Скінуць гісторыю для гэтага элемента?"
       ],
       "Resolved breaches": [
         "Вырашаныя парушэнні"
@@ -4129,6 +4239,9 @@
       "An error occurred while exporting your data": [
         "Адбылася памылка падчас экспартавання вашых даных"
       ],
+      "An error occurred while importing your data.": [
+        "Падчас імпартавання вашых даных адбылася памылка."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элемент у сметніцу?",
         "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
@@ -4278,9 +4391,6 @@
       ],
       "Passwords do not match": [
         "Паролі не супадаюць"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Пераканайцеся, што пашырэнне правільна ўсталявана і ўключана"

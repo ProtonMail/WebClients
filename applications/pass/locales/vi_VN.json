@@ -281,11 +281,11 @@
       "Move to another vault": [
         "Chuyển đến kho lưu trữ khác"
       ],
-      "Move to trash": [
-        "Di chuyển vào thùng rác"
-      ],
       "Move to Trash": [
         "Chuyển tới thùng rác"
+      ],
+      "Move to trash": [
+        "Di chuyển vào thùng rác"
       ],
       "Multiple select": [
         "Lựa chọn nhiều nội dung"
@@ -340,6 +340,9 @@
       ],
       "Resend invitation": [
         "Gửi lại lời mời"
+      ],
+      "Reset": [
+        "Đặt lại"
       ],
       "Restore": [
         "Khôi phục"
@@ -622,9 +625,6 @@
       "File could not be parsed": [
         "Không thể phân tích cú pháp tệp."
       ],
-      "File could not be read": [
-        "Không thể đọc tập tin"
-      ],
       "File does not match expected format": [
         "Tệp không khớp với định dạng được mong chờ"
       ],
@@ -693,9 +693,6 @@
       ],
       "Something went wrong": [
         "Đã xảy ra sự cố"
-      ],
-      "The file you are trying to import is empty": [
-        "Tệp mà bạn đang cố gắng nhập vào là trống"
       ],
       "The session has expired. Please sign in again.": [
         "Phiên đã hết hạn. Vui lòng đăng nhập lại."
@@ -968,9 +965,6 @@
       "Drop to import": [
         "Thả để nhập"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Do một hạn chế của trình mở rộng trên Safari, tập tin sau khi được xuất ra sẽ thiếu phần mở rộng \".pgp\". Vui lòng thêm mở rộng \".pgp\" vào tập tin sau khi xuất ra (ví dụ file.pgp)."
-      ],
       "Editor": [
         "Biên tập viên"
       ],
@@ -1028,14 +1022,8 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Nhận không giới hạn bí danh, tận hưởng các tính năng độc quyền, vầ hỗ trợ chúng tôi bằng việc đăng ký gói Pass Plus."
       ],
-      "Import in progress:": [
-        "Đang nhập:"
-      ],
       "Import the CSV file below.": [
         "Nhập tệp CSV vào bên dưới."
-      ],
-      "Imported ${ payload.total } item": [
-        "Đã nhập ${ payload.total } nội dung"
       ],
       "Imported on ${ date }": [
         "Đã nhập vào ${ date }"
@@ -1063,9 +1051,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Có vẻ như bạn đã đăng nhập vào ${ PASS_APP_NAME }. Nếu bạn đang muốn đăng nhập bằng tài khoản khác, hãy đăng xuất khỏi trình mở rộng này trước nhé."
-      ],
-      "item": [
-        "nội dung"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã được tạo"
@@ -1309,9 +1294,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } nội dung không thể nhập vào:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
@@ -2451,9 +2433,6 @@
       ],
       "Passwords do not match": [
         "Mất khẩu không hợp lệ"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Xuất file mã hóa bằng PGP yêu cầu mật khẩu"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vui lòng xác nhận địa chỉ email của bạn để sử dụng tính năng bí danh email"
