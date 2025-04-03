@@ -20,7 +20,7 @@ import { getUpdatePersonalPartOperation } from './getUpdatePersonalPartActions';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
-export const getUpdatePartstatOperation = async ({
+export const getUpdatePartstatOperation = ({
     eventComponent,
     event,
     inviteActions,
@@ -32,7 +32,7 @@ export const getUpdatePartstatOperation = async ({
     inviteActions: InviteActions;
     timestamp: number;
     silence: boolean;
-}): Promise<UpdatePartstatOperation | undefined> => {
+}): UpdatePartstatOperation | undefined => {
     const { partstat, selfAttendeeIndex, comment } = inviteActions;
     if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(eventComponent)) {
         return;
@@ -138,7 +138,7 @@ const getChangePartstatActions = async ({
     const timestamp = isProtonProtonInvite
         ? +serverTime()
         : (await sendIcs({ inviteActions, vevent: eventComponent })).timestamp;
-    const partstatOperation = await getUpdatePartstatOperation({
+    const partstatOperation = getUpdatePartstatOperation({
         eventComponent,
         event,
         inviteActions,

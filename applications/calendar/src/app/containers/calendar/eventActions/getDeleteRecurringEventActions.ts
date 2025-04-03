@@ -91,7 +91,7 @@ export const getDeleteRecurringEventActions = async ({
             updatedInviteActions = cleanInviteActions;
             // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
             // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
-            const updatePartstatOperation = await getUpdatePartstatOperation({
+            const updatePartstatOperation = getUpdatePartstatOperation({
                 eventComponent: oldVeventComponent,
                 event: oldEvent,
                 timestamp,
@@ -226,7 +226,7 @@ export const getDeleteRecurringEventActions = async ({
             updatedInviteActions = cleanInviteActions;
             // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
             // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
-            const updatePartstatOperation = await getUpdatePartstatOperation({
+            const updatePartstatOperation = getUpdatePartstatOperation({
                 eventComponent: originalVeventComponent,
                 event: originalEvent,
                 timestamp,
