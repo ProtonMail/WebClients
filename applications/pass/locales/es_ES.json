@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Mover a otra caja fuerte"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Reenviar la invitación"
+      ],
+      "Reset": [
+        "Restablecer"
+      ],
+      "Reset history": [
+        "Restablecer el historial"
       ],
       "Restore": [
         "Restaurar"
@@ -796,6 +802,9 @@
       "Alias options could not be resolved": [
         "No se han podido resolver las opciones de alias."
       ],
+      "An error occured during the import process": [
+        "Se ha producido un error durante el proceso de importación."
+      ],
       "An error occurred while resuming your session": [
         "Ha ocurrido un error al reanudar tu sesión."
       ],
@@ -859,6 +868,9 @@
       ],
       "Deleting item failed": [
         "Error al eliminar el elemento"
+      ],
+      "Deleting item history failed": [
+        "Error al eliminar el historial de elementos"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Error al eliminar la caja fuerte \"${ payload.content.name }\""
@@ -1020,9 +1032,6 @@
       "File could not be parsed": [
         "No se ha podido analizar el archivo."
       ],
-      "File could not be read": [
-        "No se ha podido leer el archivo."
-      ],
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado."
       ],
@@ -1103,9 +1112,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Se ha producido un error. Inicia sesión de nuevo."
-      ],
-      "The file you are trying to import is empty": [
-        "El archivo que intentas importar está vacío."
       ],
       "The session has expired. Please sign in again.": [
         "Tu sesión ha expirado. Inicia sesión de nuevo."
@@ -1534,9 +1540,6 @@
       "Drop to import": [
         "Suelta aquí para importar"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Debido a una limitación de las extensiones en el navegador Safari, perderás la extensión de archivo «*.pgp» después de exportar los datos. Cambia el nombre del archivo para incluir la extensión «*.pgp» (p. ej. archivo.pgp) después de exportarlo."
-      ],
       "Editor": [
         "Editor"
       ],
@@ -1662,15 +1665,8 @@
       "Identity confirmed": [
         "Se ha confirmado la identidad."
       ],
-      "Import in progress:": [
-        "Importación en progreso:"
-      ],
       "Import the CSV file below.": [
         "Importa el archivo CSV a continuación."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } elemento importado",
-        "${ payload.total } elementos importados"
       ],
       "Imported on ${ date }": [
         "Importado el ${ date }"
@@ -1711,15 +1707,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que ya habías iniciado sesión en ${ PASS_APP_NAME }. Si quieres iniciar sesión con una cuenta diferente, cierra previamente la sesión actual."
       ],
-      "item": [
-        "elemento",
-        "elementos"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elemento \"${ payload.item.data.metadata.name }\" creado"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Elemento \"${ payload.item.data.metadata.name }\" actualizado"
+      ],
+      "Item history permanently deleted": [
+        "Historial de artículos eliminado permanentemente"
       ],
       "Item moved to trash": [
         "Elemento movido a la papelera"
@@ -1980,6 +1975,9 @@
       "Please follow the steps below to set up your domain.": [
         "Sigue los pasos a continuación para configurar tu dominio."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Mantén esta ventana abierta mientras tus datos son importados. Este proceso puede tomar unos minutos."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás deseas desactivarlo en su lugar?"
       ],
@@ -2024,6 +2022,9 @@
       ],
       "Removing secure link...": [
         "Borrando el enlace seguro..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Al restablecer el historial se eliminará permanentemente todas las versiones anteriores y no se podrá deshacer."
       ],
       "Restoring items from trash": [
         "Restaurando los elementos de la papelera"
@@ -2130,9 +2131,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de tu contraseña de ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } elemento no ha podido importarse:",
-        "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "El siguiente elemento ${ totalIgnored } no pudo ser importado:",
+        "No se han podido importar los ${ totalIgnored } siguientes elementos:"
       ],
       "The secure link has been removed": [
         "Se ha eliminado el enlace seguro."
@@ -2934,8 +2935,8 @@
       "Personal website": [
         "Sitio web personal"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON cifrado con PGP (recomendado)"
+      "PGP-encrypted (recommended)": [
+        "Cifrado PGP (recomendado)"
       ],
       "Phone number": [
         "Número de teléfono"
@@ -3189,6 +3190,9 @@
       "Your domain": [
         "Tu dominio"
       ],
+      "ZIP": [
+        "Archivo ZIP"
+      ],
       "ZIP or Postal code": [
         "Código postal"
       ]
@@ -3265,6 +3269,105 @@
       ],
       "Underscores": [
         "Guiones bajos"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "No se ha podido cargar «${ file.name }»."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "No se ha podido importar «${ filename }»."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "«${ filename }» es demasiado grande para cargarlo. El tamaño máximo permitido es ${ maxFileSizeInMB }."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } archivo",
+        "${ filesCount } archivos"
+      ],
+      "Attachments": [
+        "Archivos adjuntos"
+      ],
+      "Choose a file or drag it here": [
+        "Elige un archivo o arrástralo aquí"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Eliminar ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Borrar todos los archivos"
+      ],
+      "Do you want to remove all the files?": [
+        "¿Desea eliminar todos los archivos?"
+      ],
+      "Download": [
+        "Descargar"
+      ],
+      "Download file": [
+        "Descargar el archivo"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Por una limitación de Firefox, ${ PASS_APP_NAME } necesita abrir nuevamente en una nueva ventana antes de que pueda cargar archivos."
+      ],
+      "Exporting files": [
+        "Exportando archivos"
+      ],
+      "File": [
+        "Archivo"
+      ],
+      "File attachments": [
+        "Archivos adjuntos"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Si está activado, todos tus archivos se descargarán al exportar. Esto puede tardar algún tiempo dependiendo de tu conexión a internet."
+      ],
+      "Include file attachments": [
+        "Incluir archivos adjuntos"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "No hay espacio de almacenamiento disponible para los archivos seleccionados."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Una vez eliminado, aún se puede recuperar este archivo desde el historial del elemento."
+      ],
+      "Open new window to upload files": [
+        "Abre una nueva ventana para cargar archivos."
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Ten paciencia mientras tus archivos se están descargando."
+      ],
+      "Remove all files": [
+        "Eliminar todos los archivos"
+      ],
+      "Rename": [
+        "Cambiar el nombre"
+      ],
+      "Restore": [
+        "Restaurar"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Algunos archivos son demasiado grandes para cargarlos. El tamaño máximo permitido es ${ maxFileSizeInMB }."
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Los archivos adjuntos exportados no serán cifrados."
+      ],
+      "The file you are trying to import is empty": [
+        "El archivo que intentas importar está vacío."
+      ],
+      "Total files: ": [
+        "Total de archivos: "
+      ],
+      "Total imported files: ": [
+        "Total de archivos importados: "
+      ],
+      "Upload files from your device.": [
+        "Carga archivos desde el dispositivo."
+      ],
+      "You can attach files to items for a better organization": [
+        "Puedes adjuntar archivos a los elementos para una mejor organización."
+      ],
+      "Your current plan does not support importing files": [
+        "Tu plan actual no admite la importación de archivos."
       ]
     },
     "Placeholder": {
@@ -3661,6 +3764,9 @@
       "Domain ownership verification": [
         "Verificación de la propiedad del dominio"
       ],
+      "Encrypted import": [
+        "Importación cifrada"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando de ${ PASS_APP_NAME }?"
       ],
@@ -3702,6 +3808,9 @@
       ],
       "Import your data": [
         "Importa los datos"
+      ],
+      "Importing your data": [
+        "Importando sus datos"
       ],
       "Inactive 2FA": [
         "2FA inactiva"
@@ -3828,6 +3937,9 @@
       ],
       "Remove secure link?": [
         "¿Eliminar el enlace seguro?"
+      ],
+      "Reset history for this item?": [
+        "¿Deseas restablecer el historial de este elemento?"
       ],
       "Resolved breaches": [
         "Vulneraciones resueltas"
@@ -4015,6 +4127,9 @@
       "An error occurred while exporting your data": [
         "Se ha producido un error al exportar tus datos."
       ],
+      "An error occurred while importing your data.": [
+        "Se ha producido un error al importar sus datos."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "¿Estás seguro de que quieres mover ${ trashedItemsCount } elemento a la papelera?",
         "¿Estás seguro de que quieres mover ${ trashedItemsCount } elementos a la papelera?"
@@ -4158,9 +4273,6 @@
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "El archivo de exportación cifrado con PGP requiere una frase de contraseña."
       ],
       "Please check that the extension is properly installed and enabled": [
         "Comprueba que la extensión está instalada y activada correctamente."

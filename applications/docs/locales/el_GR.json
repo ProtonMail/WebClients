@@ -36,8 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Accept": [
-        "Αποδοχή"
+      "Accept invitation": [
+        "Αποδοχή πρόσκλησης"
+      ],
+      "Accept invitation to document": [
+        "Αποδοχή πρόσκλησης στο έγγραφο"
       ],
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
@@ -196,6 +199,9 @@
       "Copy invite link": [
         "Αντιγραφή συνδέσμου πρόσκλησης"
       ],
+      "Copy version number to clipboard": [
+        "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
+      ],
       "Create": [
         "Δημιουργία"
       ],
@@ -223,8 +229,11 @@
       "Customize import": [
         "Προσαρμοσμένη εισαγωγή"
       ],
-      "Decline": [
-        "Απόρριψη"
+      "Decline invitation": [
+        "Απόρριψη πρόσκλησης"
+      ],
+      "Decline invitation to document": [
+        "Απόρριψη πρόσκλησης στο έγγραφο"
       ],
       "Decline invite": [
         "Απόρριψη πρόσκλησης"
@@ -525,6 +534,9 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
+      "Reload": [
+        "Ανανέωση"
+      ],
       "Remove": [
         "Αφαίρεση"
       ],
@@ -591,8 +603,8 @@
       "Search countries": [
         "Αναζήτηση χωρών"
       ],
-      "Search documents": [
-        "Αναζήτηση εγγράφου(ων)"
+      "Search recent documents": [
+        "Αναζήτηση πρόσφατων εγγράφων"
       ],
       "See how": [
         "Δείτε πώς"
@@ -765,9 +777,6 @@
       ]
     },
     "Actions": {
-      "Last modified first": [
-        "Τελευταία τροποποίηση πρώτα"
-      ],
       "Last viewed first": [
         "Τελευταία προβολή πρώτα"
       ],
@@ -3938,14 +3947,14 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ένα VPN είναι μια ασφαλής σήραγγα μεταξύ της συσκευής σας και του διαδικτύου. Αποκρύπτει την τοποθεσία και τη δραστηριότητά σας από τον πάροχο υπηρεσιών διαδικτύου (ISP) και τους ιστότοπους που επισκέπτεστε."
       ],
+      "Accept/decline": [
+        "Αποδοχή/απόρριψη"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
-      ],
-      "Actions": [
-        "Ενέργειες"
       ],
       "Ad targeting": [
         "Στόχευση διαφημίσεων"
@@ -4090,14 +4099,14 @@
         "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
         "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
       ],
+      "Create an encrypted document.": [
+        "Δημιουργία κρυπτογραφημένου έγγραφου."
+      ],
       "Create in": [
         "Δημιουργία σε"
       ],
       "Create public link": [
         "Δημιουργία δημόσιου συνδέσμου"
-      ],
-      "Create your end-to-end encrypted document": [
-        "Δημιουργήστε το κρυπτογραφημένο έγγραφό σας από άκρο σε άκρο"
       ],
       "Create your first folder and start moving your files.": [
         "Δημιουργήστε τον πρώτο σας φάκελο και αρχίστε να μετακινείτε τα αρχεία σας."
@@ -4295,10 +4304,10 @@
         "Γεωγραφικός αποκλεισμός"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Λάβετε ενημερωτικά email για σχόλια και προτάσεις που προστίθενται στα έγγραφά σας."
+        "Λάβετε ενημερώσεις μέσω ηλεκτρονικού ταχυδρομείου για σχόλια και προτάσεις που προστίθενται στα έγγραφά σας."
       ],
       "Get Notified About Comments": [
-        "Λάβετε ειδοποιήσεις για Σχόλια"
+        "Λάβετε Ειδοποιήσεις για Σχόλια"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Πηγαίνετε στο ${ DRIVE_APP_NAME }"
@@ -4369,9 +4378,6 @@
       ],
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
-      ],
-      "Invite": [
-        "Πρόσκληση"
       ],
       "Invite link copied": [
         "Ο σύνδεσμος πρόσκλησης αντιγράφηκε"
@@ -4500,6 +4506,9 @@
       "No recent documents": [
         "Δεν υπάρχουν πρόσφατα έγγραφα"
       ],
+      "No recent documents match your search.": [
+        "Κανένα πρόσφατο έγγραφο δεν ταιριάζει με την αναζήτησή σας."
+      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
@@ -4556,6 +4565,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
+      ],
+      "Pending invitations": [
+        "Προσκλήσεις σε αναμονή"
       ],
       "People with access": [
         "Άτομα με πρόσβαση"
@@ -4636,9 +4648,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Τα δημόσια έγγραφα δεν έχουν ενεργοποιηθεί ακόμα για τον οργανισμό σας."
-      ],
-      "Recently deleted": [
-        "Προσφάτως διαγραφέντα"
       ],
       "Recents": [
         "Πρόσφατα"
@@ -4791,6 +4800,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
+      "There are no documents in the trash.": [
+        "Δεν υπάρχουν έγγραφα στον κάδο απορριμμάτων."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Αυτή η ενέργεια θα διαγράψει τον σύνδεσμο και θα ανακαλέσει την πρόσβαση για όλους τους χρήστες."
       ],
@@ -4800,11 +4812,11 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Αυτό το έγγραφο έχει πολλή δραστηριότητα. Ορισμένες δυνατότητες ενδέχεται να μην είναι διαθέσιμες προσωρινά."
       ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Αυτό το έγγραφο ενδέχεται να μην υπάρχει ή αντιμετωπίζουμε προβλήματα με τη φόρτωσή του. Παρακαλούμε φορτώστε ξανά τη σελίδα και προσπαθήστε ξανά."
+      ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Αυτό το έγγραφο ενδέχεται να μην υπάρχει ή να μην έχετε δικαίωμα προβολής του. Μπορείτε να δοκιμάσετε να φορτώσετε ξανά τη σελίδα για να δείτε εάν το πρόβλημα παραμένει ή να επικοινωνήσετε με τον κάτοχο για πρόσβαση."
-      ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Αυτό το έγγραφο ενδέχεται να μην υπάρχει ή να μην έχετε τα απαραίτητα δικαιώματα για να το προβάλετε με τον επιλεγμένο λογαριασμό σας. Δοκιμάστε έναν άλλο λογαριασμό ή επικοινωνήστε με τον κάτοχο για πρόσβαση."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
@@ -4902,6 +4914,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "Η μεταφορά του φακέλου \"${ folderName }\" παραλείφθηκε"
       ],
+      "Trashed": [
+        "Διαγράφηκε"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -4910,6 +4925,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Δυστυχώς, φαίνεται ότι το αρχείο ή ορισμένα από τα δεδομένα του δεν μπορούν να αποκρυπτογραφηθούν."
+      ],
+      "Update recent documents": [
+        "Ενημέρωση πρόσφατων εγγράφων"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
@@ -4931,6 +4949,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλώ απενεργοποιήστε τον αποκλεισμό αναδυόμενων παραθύρων. Δεν θα χρεωθείτε. Κάθε ποσό που χρησιμοποιείται για την επαλήθευση της κάρτας θα επιστραφεί αμέσως."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Ο αριθμός έκδοσης αντιγράφηκε με επιτυχία στο πρόχειρο"
       ],
       "View only": [
         "Ανάγνωση μόνο"
@@ -5074,6 +5095,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Ενδέχεται να μην έχετε τα απαραίτητα δικαιώματα για να το προβάλετε με τον επιλεγμένο λογαριασμό σας. Δοκιμάστε έναν άλλο λογαριασμό ή επικοινωνήστε με τον κάτοχο για πρόσβαση."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Για να κάνετε εφικτή την υποβάθμιση, πρέπει να απενεργοποιήσετε ή αφαιρέσετε τυχόν πλεονάζοντες χρήστες, διευθύνσεις και τομείς του ${ MAIL_APP_NAME }."
@@ -5469,7 +5493,7 @@
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
       "Enable email notifications": [
-        "Ενεργοποίηση ειδοποιήσεων email"
+        "Ενεργοποίηση ειδοποιήσεων ηλεκτρονικού ταχυδρομείου"
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
@@ -5716,6 +5740,9 @@
       ],
       "To: ${ toEmail }": [
         "Προς: ${ toEmail }"
+      ],
+      "Trash": [
+        "Διαγραμμένα"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -7331,6 +7358,9 @@
       "Public link update access failed ": [
         "Αποτυχία ενημέρωσης πρόσβασης σε δημόσιο σύνδεσμο "
       ],
+      "Recent documents updated.": [
+        "Πρόσφατα έγγραφα ενημερώθηκαν."
+      ],
       "Root folder failed to be loaded": [
         "Απέτυχε η φόρτωση του ριζικού φακέλου"
       ],
@@ -7506,6 +7536,20 @@
       ],
       "Merge with calendar": [
         "Συγχώνευση με ημερολόγιο"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "Αγαπημένα"
+      ],
+      "Recents": [
+        "Πρόσφατα"
+      ],
+      "Searching": [
+        "Γίνεται αναζήτηση"
+      ],
+      "Trashed": [
+        "Διαγραμμένα"
       ]
     },
     "Participant name": {
@@ -7895,6 +7939,9 @@
       "Created by": [
         "Δημιουργήθηκε από"
       ],
+      "Deleted": [
+        "Διαγραμμένα"
+      ],
       "Earlier": [
         "Νωρίτερα"
       ],
@@ -7912,6 +7959,9 @@
       ],
       "Previous 7 days": [
         "Προηγούμενες 7 ημέρες"
+      ],
+      "Search results": [
+        "Αποτελέσματα αναζήτησης"
       ],
       "Today": [
         "Σήμερα"
@@ -8625,6 +8675,25 @@
         "Για ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -8664,25 +8733,6 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
-        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } διεύθυνση email",
-        "${ planNumberOfEmails } διευθύνσεις email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {

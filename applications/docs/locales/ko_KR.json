@@ -36,8 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "Accept": [
-        "수락"
+      "Accept invitation": [
+        "초대 수락"
+      ],
+      "Accept invitation to document": [
+        "문서 초대 수락"
       ],
       "Activate recovery": [
         "복구 활성화"
@@ -86,9 +89,6 @@
       ],
       "Apply": [
         "적용"
-      ],
-      "Ask me next time": [
-        "다음에 내게 묻기"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
@@ -195,6 +195,9 @@
       "Copy invite link": [
         "초대 링크 복사"
       ],
+      "Copy version number to clipboard": [
+        "버전 넘버를 클립보드에 복사하기"
+      ],
       "Create": [
         "생성"
       ],
@@ -222,8 +225,11 @@
       "Customize import": [
         "사용자 지정 설정값 가져오기"
       ],
-      "Decline": [
-        "거절"
+      "Decline invitation": [
+        "초대 거절"
+      ],
+      "Decline invitation to document": [
+        "문서 초대 거절"
       ],
       "Decline invite": [
         "초대 거부"
@@ -522,6 +528,9 @@
       "Refresh the page": [
         "페이지 새로 고침"
       ],
+      "Reload": [
+        "새로고침"
+      ],
       "Remove": [
         "삭제"
       ],
@@ -579,17 +588,14 @@
       "Save changes": [
         "변경 사항 저장"
       ],
-      "Save preferences": [
-        "환경설정 저장"
-      ],
       "Search": [
         "검색"
       ],
       "Search countries": [
         "국가 검색"
       ],
-      "Search documents": [
-        "문서 검색"
+      "Search recent documents": [
+        "최근 문서 검색"
       ],
       "See how": [
         "방법 보기"
@@ -3879,14 +3885,14 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN은 기기와 인터넷 사이의 안전한 터널입니다. 인터넷 서비스 공급자(ISP)와 방문하는 웹사이트로부터 사용자의 위치와 활동을 숨기죠."
       ],
+      "Accept/decline": [
+        "수락/거절"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
       ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
-      ],
-      "Actions": [
-        "작업"
       ],
       "Ad targeting": [
         "광고 트래킹"
@@ -3999,9 +4005,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
       ],
-      "Converting document...": [
-        "문서 변환 중..."
-      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -4026,14 +4029,14 @@
       "Create a secure cloud for ${ value } member": [
         "${ value }명의 구성원을 위한 보안 클라우드 만들기"
       ],
+      "Create an encrypted document.": [
+        "암호화된 문서를 생성하세요."
+      ],
       "Create in": [
         "만들기"
       ],
       "Create public link": [
         "공개 링크 생성"
-      ],
-      "Create your end-to-end encrypted document": [
-        "종단간 암호화 문서 생성"
       ],
       "Create your first folder and start moving your files.": [
         "첫 폴더를 생성하고 파일을 이동시켜 보세요."
@@ -4043,9 +4046,6 @@
       ],
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
-      ],
-      "Creating new document...": [
-        "새 문서 생성 중..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -4164,12 +4164,6 @@
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
-      "Error converting document: ${ errorMessage }": [
-        "문서 변환 오류: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "문서 불러오기 실패 ${ errorDetail }"
-      ],
       "Error Syncing": [
         "동기화 오류"
       ],
@@ -4229,12 +4223,6 @@
       ],
       "Geoblocking": [
         "차단된 콘텐츠"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "문서에 추가된 댓글과 제안 사항에 대한 이메일 업데이트를 받아보세요."
-      ],
-      "Get Notified About Comments": [
-        "댓글 알림 받기"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }로 이동"
@@ -4305,9 +4293,6 @@
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
       ],
-      "Invite": [
-        "초대"
-      ],
       "Invite link copied": [
         "초대 링크를 복사했습니다"
       ],
@@ -4377,9 +4362,6 @@
       "Low Priority": [
         "중요도 낮음"
       ],
-      "Making a copy...": [
-        "복사본 만드는 중..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
@@ -4419,9 +4401,6 @@
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
       ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL에 제공된 문서 없음. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
-      ],
       "No email address": [
         "이메일 주소 없음"
       ],
@@ -4433,6 +4412,9 @@
       ],
       "No recent documents": [
         "최근 문서 없음"
+      ],
+      "No recent documents match your search.": [
+        "검색한 내용과 일치하는 최근 문서가 존재하지 않습니다."
       ],
       "No results found": [
         "결과를 찾을 수 없음"
@@ -4490,6 +4472,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
+      ],
+      "Pending invitations": [
+        "초대 보류 중"
       ],
       "People with access": [
         "접근 권한이 있는 사람"
@@ -4568,9 +4553,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "공개 문서는 사용자의 조직에 활성화되지 않았습니다."
-      ],
-      "Recently deleted": [
-        "최근 삭제됨"
       ],
       "Recents": [
         "최근"
@@ -4722,6 +4704,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
+      "There are no documents in the trash.": [
+        "휴지통 내에 문서가 존재하지 않습니다."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "이 작업은 링크를 삭제하고 모든 사용자의 접근을 취소합니다."
       ],
@@ -4733,9 +4718,6 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "문서가 존재하지 않거나 볼 권한이 없을수도 있습니다. 페이지를 새로고침하여 문제가 지속되는지 확인하거나 소유자에게 연락해 접근 권한 부탁하세요."
-      ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "이 문서는 존재하지 않을 수 있거나, 선택한 계정으로 확인할 수 있는 권한이 없을 수도 있습니다. 다른 계정을 시도하거나 접근 권한에 대한 소유자에게 문의하십시오."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
@@ -4833,6 +4815,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "폴더 \"${ folderName }\" 의 이동 생략됨"
       ],
+      "Trashed": [
+        "휴지통 이동됨"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
@@ -4862,6 +4847,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
+      ],
+      "Version number successfully copied to clipboard": [
+        "버전 넘버를 클립보드에 복사했습니다"
       ],
       "View only": [
         "보기 전용"
@@ -5392,9 +5380,6 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
-      "Enable email notifications": [
-        "이메일 알림 활성화"
-      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -5448,9 +5433,6 @@
       ],
       "Import to:": [
         "가져오기:"
-      ],
-      "Include document name in notification": [
-        "알림 내에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -5640,6 +5622,9 @@
       ],
       "To: ${ toEmail }": [
         "받는 사람: ${ toEmail }"
+      ],
+      "Trash": [
+        "휴지통"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -7761,8 +7746,14 @@
       "Created by": [
         "만든이"
       ],
+      "Deleted": [
+        "삭제됨"
+      ],
       "Location": [
         "위치"
+      ],
+      "Modified": [
+        "수정됨"
       ],
       "Name": [
         "이름"
@@ -8461,6 +8452,23 @@
         "${ totalPrice }용"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "사용자 당 ${ planMaxSpace } 스토리지"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -8500,23 +8508,6 @@
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "사용자 당 ${ planMaxSpace } 스토리지"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }개 이메일 주소"
-      ],
-      "Folders, labels, and custom filters": [
-        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {
@@ -9234,6 +9225,9 @@
       ],
       "Verifying your payment...": [
         "결제 수단을 인증하는 중..."
+      ],
+      "VPN explained": [
+        "VPN 심층탐구"
       ],
       "Warning": [
         "경고"

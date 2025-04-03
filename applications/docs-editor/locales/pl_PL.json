@@ -185,9 +185,6 @@
       "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Remove background color": [
-        "Usuń kolor tła"
-      ],
       "Remove link": [
         "Usuń link"
       ],
@@ -217,6 +214,9 @@
       ],
       "Submit": [
         "Wyślij"
+      ],
+      "Table of contents": [
+        "Spis treści"
       ],
       "Table options": [
         "Opcje tabeli"
@@ -489,6 +489,9 @@
         "${ usersTranslation } piszą...",
         "${ usersTranslation } piszą..."
       ],
+      "Alpha only experimental feature": [
+        "Tylko eksperymentalna funkcja Alpha"
+      ],
       "Are you sure you want to delete this comment?": [
         "Czy na pewno chcesz usunąć ten komentarz?"
       ],
@@ -506,6 +509,9 @@
       ],
       "Font size": [
         "Rozmiar czcionki"
+      ],
+      "Headings you add to the document will appear here.": [
+        "W tym miejscu pojawią się nagłówki dodane do dokumentu."
       ],
       "Highlight": [
         "Wyróżnij"
@@ -551,14 +557,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } kolor tła i biały kolor tekstu"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } kolor tekstu i wyróżnienia"
+      ],
+      "${ name } text color with no background": [
+        "${ name } kolor tekstu bez tła"
+      ],
       "Add link": [
         "Dodaj link"
       ],
       "Align": [
         "Wyrównaj"
-      ],
-      "Background colour": [
-        "Kolor tła"
       ],
       "Change image size": [
         "Zmień rozmiar obrazu"
@@ -641,8 +653,8 @@
       "Replace link": [
         "Zastąp link"
       ],
-      "Text colour": [
-        "Kolor tekstu"
+      "Text and highlight color": [
+        "Tekst i kolor wyróżenienia"
       ],
       "with \"${ replaceWith }\"": [
         "przez \"${ replaceWith }\""

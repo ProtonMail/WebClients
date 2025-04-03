@@ -36,8 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Accept": [
-        "Accepteren"
+      "Accept invitation": [
+        "Accepteer uitnodiging"
+      ],
+      "Accept invitation to document": [
+        "Uitnodiging voor document accepteren"
       ],
       "Activate recovery": [
         "Herstel activeren"
@@ -196,6 +199,9 @@
       "Copy invite link": [
         "Uitnodigingslink kopiëren"
       ],
+      "Copy version number to clipboard": [
+        "Kopieer versienummer naar klembord"
+      ],
       "Create": [
         "Aanmaken"
       ],
@@ -223,8 +229,11 @@
       "Customize import": [
         "Importeren aanpassen"
       ],
-      "Decline": [
-        "Afwijzen"
+      "Decline invitation": [
+        "Uitnodiging afwijzen"
+      ],
+      "Decline invitation to document": [
+        "Uitnodiging voor document afwijzen"
       ],
       "Decline invite": [
         "Weiger de uitnodiging"
@@ -525,6 +534,9 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
+      "Reload": [
+        "Opnieuw laden"
+      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -591,8 +603,8 @@
       "Search countries": [
         "Zoek landen"
       ],
-      "Search documents": [
-        "Documenten doorzoeken"
+      "Search recent documents": [
+        "Doorzoek recente documenten"
       ],
       "See how": [
         "Zie hoe"
@@ -765,9 +777,6 @@
       ]
     },
     "Actions": {
-      "Last modified first": [
-        "Laatst gewijzigd eerst"
-      ],
       "Last viewed first": [
         "Laatst bekeken eerst"
       ],
@@ -3938,14 +3947,14 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt je locatie en activiteit van je internetprovider (ISP) en de websites die je bezoekt."
       ],
+      "Accept/decline": [
+        "Accepteren/weigeren"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
-      ],
-      "Actions": [
-        "Acties"
       ],
       "Ad targeting": [
         "Advertentie targeting"
@@ -4090,14 +4099,14 @@
         "Maak een beveiligde cloud voor ${ value } lid",
         "Maak een beveiligde cloud voor ${ value } leden"
       ],
+      "Create an encrypted document.": [
+        "Maak een versleuteld document."
+      ],
       "Create in": [
         "Maak in"
       ],
       "Create public link": [
         "Maak een publieke link"
-      ],
-      "Create your end-to-end encrypted document": [
-        "Maak uw end-to-end versleutelde document"
       ],
       "Create your first folder and start moving your files.": [
         "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
@@ -4109,7 +4118,7 @@
         "Link naar map maken"
       ],
       "Creating new document...": [
-        "Nieuw document wordt aangemaakt..."
+        "Nieuw document maken..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -4232,7 +4241,7 @@
         "Fout bij het converteren van document: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "Fout bij laden document${ errorDetail }"
+        "Fout bij laden document ${ errorDetail }"
       ],
       "Error Syncing": [
         "Synchronisatiefout"
@@ -4370,9 +4379,6 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
-      "Invite": [
-        "Uitnodigen"
-      ],
       "Invite link copied": [
         "Link met uitnodiging gekopieerd"
       ],
@@ -4443,7 +4449,7 @@
         "Lage Prioriteit"
       ],
       "Making a copy...": [
-        "Kopie maken..."
+        "Een kopie maken..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -4499,6 +4505,9 @@
       ],
       "No recent documents": [
         "Geen recente documenten"
+      ],
+      "No recent documents match your search.": [
+        "Er komen geen recente documenten overeen met uw zoekopdracht."
       ],
       "No results found": [
         "Geen resultaten gevonden"
@@ -4556,6 +4565,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
+      ],
+      "Pending invitations": [
+        "Openstaande uitnodigingen"
       ],
       "People with access": [
         "Personen met toegang"
@@ -4636,9 +4648,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Openbare documenten zijn nog niet ingeschakeld voor uw organisatie."
-      ],
-      "Recently deleted": [
-        "Recent verwijderd"
       ],
       "Recents": [
         "Recente"
@@ -4791,6 +4800,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
+      "There are no documents in the trash.": [
+        "Er zijn geen documenten in de prullenbak."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
       ],
@@ -4800,11 +4812,11 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dit document heeft veel activiteit. Sommige functies zijn mogelijk tijdelijk niet beschikbaar."
       ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Dit document bestaat mogelijk niet of we ondervinden problemen bij het laden. Herlaad de pagina en probeer het opnieuw."
+      ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Dit document bestaat mogelijk niet of u hebt geen toestemming om het te bekijken. U kunt de pagina proberen te herladen om te zien of het probleem zich blijft voordoen."
-      ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Dit document bestaat mogelijk niet of u hebt niet de benodigde rechten om het te bekijken met uw geselecteerde account. Probeer een ander account of neem contact op met de eigenaar om toegang te krijgen."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
@@ -4902,6 +4914,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "Overdracht overgeslagen voor map \"${ folderName }\""
       ],
+      "Trashed": [
+        "Verwijderd"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -4910,6 +4925,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Helaas lijkt het erop dat het bestand of een deel van de gegevens ervan niet kan worden gedecodeerd."
+      ],
+      "Update recent documents": [
+        "Recente documenten bijwerken"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
@@ -4931,6 +4949,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versienummer succesvol gekopieerd naar klembord"
       ],
       "View only": [
         "Alleen weergeven"
@@ -5063,6 +5084,9 @@
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
       ],
+      "You don't have access": [
+        "U hebt geen toegang."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
@@ -5074,6 +5098,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "U wordt mogelijk doorverwezen naar de website van uw bank."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "U heeft mogelijk niet de benodigde rechten om het te bekijken met uw geselecteerde account. Probeer een ander account of neem contact op met de eigenaar voor toegang."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
@@ -5716,6 +5743,9 @@
       ],
       "To: ${ toEmail }": [
         "Naar: ${ toEmail }"
+      ],
+      "Trash": [
+        "Prullenbak"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -7331,6 +7361,9 @@
       "Public link update access failed ": [
         "Toegang publieke link kon niet aangepast worden "
       ],
+      "Recent documents updated.": [
+        "Recente documenten bijgewerkt."
+      ],
       "Root folder failed to be loaded": [
         "Hoofdmap kon niet geladen worden"
       ],
@@ -7506,6 +7539,20 @@
       ],
       "Merge with calendar": [
         "Samenvoegen met agenda"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "Favorieten"
+      ],
+      "Recents": [
+        "Laatst gebruikte"
+      ],
+      "Searching": [
+        "Bezig met zoeken"
+      ],
+      "Trashed": [
+        "Verwijderd"
       ]
     },
     "Participant name": {
@@ -7895,6 +7942,9 @@
       "Created by": [
         "Gemaakt door"
       ],
+      "Deleted": [
+        "Verwijderd"
+      ],
       "Earlier": [
         "Eerder"
       ],
@@ -7912,6 +7962,9 @@
       ],
       "Previous 7 days": [
         "Afgelopen 7 dagen"
+      ],
+      "Search results": [
+        "Zoekresultaten"
       ],
       "Today": [
         "Vandaag"
@@ -8625,6 +8678,25 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -8664,25 +8736,6 @@
       ],
       "Your privacy is our mission": [
         "Uw privacy is onze missie"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } opslagruimte per gebruiker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappen, labels en aangepaste filters"
       ]
     },
     "Subscription renewal state": {

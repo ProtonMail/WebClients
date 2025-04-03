@@ -397,10 +397,10 @@
       "Move to another vault": [
         "移至另一个保险库"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至回收站"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至回收站"
       ],
       "Multiple select": [
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "重新发送邀请"
+      ],
+      "Reset": [
+        "重置"
+      ],
+      "Reset history": [
+        "重置历史记录"
       ],
       "Restore": [
         "还原"
@@ -793,6 +799,9 @@
       "Alias options could not be resolved": [
         "无法解决别名选项问题"
       ],
+      "An error occured during the import process": [
+        "导入过程中出现错误"
+      ],
       "An error occurred while resuming your session": [
         "恢复会话时发生错误"
       ],
@@ -855,6 +864,9 @@
       ],
       "Deleting item failed": [
         "删除项目失败"
+      ],
+      "Deleting item history failed": [
+        "删除项目历史失败"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "删除保险库 “${ payload.content.name }” 失败"
@@ -1015,9 +1027,6 @@
       "File could not be parsed": [
         "文件无法解析"
       ],
-      "File could not be read": [
-        "文件无法读取"
-      ],
       "File does not match expected format": [
         "文件与预期格式不匹配"
       ],
@@ -1098,9 +1107,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "出错了。请重新登录。"
-      ],
-      "The file you are trying to import is empty": [
-        "您正在尝试导入的文件为空"
       ],
       "The session has expired. Please sign in again.": [
         "登录状态已过期，请重新登录。"
@@ -1514,9 +1520,6 @@
       "Drop to import": [
         "拖至此处即可导入"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "由于 Safari 浏览器扩展的限制，导出数据后文件扩展名将缺少“.pgp”。请在导出后重命名文件，使其包含 .pgp 扩展名（如 file.pgp）。"
-      ],
       "Editor": [
         "编辑者"
       ],
@@ -1640,14 +1643,8 @@
       "Identity confirmed": [
         "身份已确认"
       ],
-      "Import in progress:": [
-        "正在导入:"
-      ],
       "Import the CSV file below.": [
         "导入以下 CSV 文件。"
-      ],
-      "Imported ${ payload.total } item": [
-        "已导入 ${ payload.total } 项"
       ],
       "Imported on ${ date }": [
         "导入 ${ date }"
@@ -1688,14 +1685,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已登录到 ${ PASS_APP_NAME } 。如果您正在尝试使用不同的账户登录，请先从扩展中登出。"
       ],
-      "item": [
-        "项目"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "项目 “${ payload.item.data.metadata.name }” 已创建"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "项目 “${ payload.item.data.metadata.name }” 已更新"
+      ],
+      "Item history permanently deleted": [
+        "项目历史已永久删除"
       ],
       "Item moved to trash": [
         "项目已经移至回收站"
@@ -1952,6 +1949,9 @@
       "Please follow the steps below to set up your domain.": [
         "请按照下面的步骤设置您的域。"
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "在导入数据时，请不要关闭此窗口。这个过程可能需要几分钟。"
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "请注意别名一旦删除就无法恢复。也许您想禁用别名？"
       ],
@@ -1996,6 +1996,9 @@
       ],
       "Removing secure link...": [
         "正在删除安全链接..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "重置历史记录将永久删除所有过去的项目版本，且无法撤销。"
       ],
       "Restoring items from trash": [
         "正在从回收站中恢复项目"
@@ -2102,8 +2105,8 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "使用 ${ PASS_APP_NAME } 时需要输入额外密码。它是 ${ BRAND_NAME } 密码之外的附加密码。"
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "无法导入以下 ${ result.ignored.length } 项："
+      "The following ${ totalIgnored } item could not be imported:": [
+        "无法导入以下 ${ totalIgnored } 项："
       ],
       "The secure link has been removed": [
         "安全链接已删除"
@@ -2753,7 +2756,7 @@
         "最近一次导入"
       ],
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ],
       "License": [
         "许可协议"
@@ -2884,8 +2887,8 @@
       "Personal website": [
         "个人网站"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP 加密的 JSON (推荐)"
+      "PGP-encrypted (recommended)": [
+        "PGP 加密（推荐）"
       ],
       "Phone number": [
         "电话号码"
@@ -3139,6 +3142,9 @@
       "Your domain": [
         "您的域名"
       ],
+      "ZIP": [
+        "邮政编码"
+      ],
       "ZIP or Postal code": [
         "邮政编码"
       ]
@@ -3213,6 +3219,104 @@
       ],
       "Underscores": [
         "下划线"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "无法上传 \"${ file.name }\"。"
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "无法导入 \"${ filename }\"。"
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" 文件过大，无法上传。允许的最大文件大小为 (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } 个文件"
+      ],
+      "Attachments": [
+        "附件"
+      ],
+      "Choose a file or drag it here": [
+        "选择文件或将文件拖至此处"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "删除 ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "删除所有文件"
+      ],
+      "Do you want to remove all the files?": [
+        "您想删除移除文件吗？"
+      ],
+      "Download": [
+        "下载"
+      ],
+      "Download file": [
+        "下载文件"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "由于 Firefox 浏览器的限制，${ PASS_APP_NAME } 需要在新窗口中重新打开后才能上传文件。"
+      ],
+      "Exporting files": [
+        "正在导出文件"
+      ],
+      "File": [
+        "文件"
+      ],
+      "File attachments": [
+        "文件附件"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "如果启用此选项，导出时将下载您的所有文件。该操作可能需要一定时间，具体取决于您的网络连接状况。"
+      ],
+      "Include file attachments": [
+        "包含文件附件"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "所选文件的可用存储空间不足。"
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "此文件删除后，仍可从历史版本中恢复。"
+      ],
+      "Open new window to upload files": [
+        "打开新窗口上传文件"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "请耐心等待您的文件下载。"
+      ],
+      "Remove all files": [
+        "移除所有文件"
+      ],
+      "Rename": [
+        "重命名"
+      ],
+      "Restore": [
+        "恢复"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "某些文件过大，无法上传。允许的最大文件大小为 (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "导出的文件附件将不会被加密。"
+      ],
+      "The file you are trying to import is empty": [
+        "您尝试导入的文件是空的"
+      ],
+      "Total files: ": [
+        "总文件数： "
+      ],
+      "Total imported files: ": [
+        "总导入文件数： "
+      ],
+      "Upload files from your device.": [
+        "从您的设备上传文件。"
+      ],
+      "You can attach files to items for a better organization": [
+        "您可以将文件附加到项目上，以便更好地进行整理"
+      ],
+      "Your current plan does not support importing files": [
+        "您当前的计划不支持导入文件"
       ]
     },
     "Placeholder": {
@@ -3606,6 +3710,9 @@
       "Domain ownership verification": [
         "域名所有权验证"
       ],
+      "Encrypted import": [
+        "已加密导入"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "喜欢 ${ PASS_APP_NAME } 吗？"
       ],
@@ -3647,6 +3754,9 @@
       ],
       "Import your data": [
         "导入您的数据"
+      ],
+      "Importing your data": [
+        "正在导入您的数据"
       ],
       "Inactive 2FA": [
         "未启用 2FA"
@@ -3770,6 +3880,9 @@
       ],
       "Remove secure link?": [
         "移除安全链接？"
+      ],
+      "Reset history for this item?": [
+        "重置此项目的历史记录？"
       ],
       "Resolved breaches": [
         "已解决的泄露信息"
@@ -3955,6 +4068,9 @@
       "An error occurred while exporting your data": [
         "导出数据时发生错误"
       ],
+      "An error occurred while importing your data.": [
+        "导入您的数据时发生了错误。"
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "您确定要将 ${ trashedItemsCount } 项移至回收站吗？"
       ],
@@ -4095,9 +4211,6 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP加密的导出文件需要密码"
       ],
       "Please check that the extension is properly installed and enabled": [
         "请检查扩展是否正确安装并启用"

@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Схвалити"
-      ],
       "Activate recovery": [
         "Активувати відновлення"
       ],
@@ -83,9 +80,6 @@
       ],
       "Apply": [
         "Застосувати"
-      ],
-      "Ask me next time": [
-        "Запитати наступного разу"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "До групи можна додати не більше ${ maxContacts } контакту",
@@ -192,6 +186,9 @@
       "Copy invite link": [
         "Копіювати посилання запрошення"
       ],
+      "Copy version number to clipboard": [
+        "Копіювати номер версії в буфер обміну"
+      ],
       "Create": [
         "Створити"
       ],
@@ -218,9 +215,6 @@
       ],
       "Customize import": [
         "Налаштувати імпорт"
-      ],
-      "Decline": [
-        "Відхилити"
       ],
       "Decline invite": [
         "Відхилити запрошення"
@@ -513,6 +507,9 @@
       "Refresh the page": [
         "Оновити сторінку"
       ],
+      "Reload": [
+        "Перезавантажити"
+      ],
       "Remove": [
         "Вилучити"
       ],
@@ -569,9 +566,6 @@
       ],
       "Save changes": [
         "Зберегти зміни"
-      ],
-      "Save preferences": [
-        "Зберегти налаштування"
       ],
       "Search": [
         "Пошук"
@@ -3901,9 +3895,6 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
-      "Actions": [
-        "Дії"
-      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
@@ -4015,9 +4006,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Контакт непризначений з групи ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Перетворення документа..."
-      ],
       "Copy the link to clipboard": [
         "Копіювати посилання в буфер обміну"
       ],
@@ -4054,9 +4042,6 @@
       "Create public link": [
         "Створити загальнодоступне посилання"
       ],
-      "Create your end-to-end encrypted document": [
-        "Створити документ із наскрізним шифруванням"
-      ],
       "Create your first folder and start moving your files.": [
         "Створіть свою першу теку та почніть переміщувати свої файли."
       ],
@@ -4065,9 +4050,6 @@
       ],
       "Creating link to folder": [
         "Створення посилання на теку"
-      ],
-      "Creating new document...": [
-        "Створення нового документа..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
@@ -4174,12 +4156,6 @@
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Помилка перетворення документа: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Помилка при завантаженні документа ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Помилка синхронізації"
       ],
@@ -4233,12 +4209,6 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Безплатно 5Гб зашифрованого сховища для початку"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Отримуйте оновлення е-поштою щодо коментарів і пропозицій, доданих до ваших документів."
-      ],
-      "Get Notified About Comments": [
-        "Отримуйте сповіщення про коментарі"
       ],
       "here": [
         "тут"
@@ -4302,9 +4272,6 @@
       ],
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
-      ],
-      "Invite": [
-        "Запросити"
       ],
       "Invite link copied": [
         "Посилання на запрошення скопійовано"
@@ -4372,9 +4339,6 @@
       "Low Priority": [
         "Низький пріоритет"
       ],
-      "Making a copy...": [
-        "Створення копії..."
-      ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
@@ -4413,9 +4377,6 @@
       ],
       "No contacts added yet": [
         "Контактів ще не додано"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "У URL-адресі не вказано жодного документа. Поверніться до ${ DRIVE_APP_NAME } та виберіть документ."
       ],
       "No email address": [
         "Немає адреси е-пошти"
@@ -4788,6 +4749,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Номер версії успішно скопійовано до буфера обміну"
       ],
       "View only": [
         "Лише перегляд"
@@ -5271,9 +5235,6 @@
       "Emails (last month)": [
         "Е-пошта (останній місяць)"
       ],
-      "Enable email notifications": [
-        "Увімкнути сповіщення е-поштою"
-      ],
       "Encrypt emails": [
         "Шифрувати листи"
       ],
@@ -5327,9 +5288,6 @@
       ],
       "Import to:": [
         "Імпортувати до:"
-      ],
-      "Include document name in notification": [
-        "Додати назву документа в сповіщення"
       ],
       "Include message and file name in invite email": [
         "Додайте повідомлення та ім'я файлу до листа-запрошення"
@@ -5510,6 +5468,9 @@
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
+      ],
+      "Trash": [
+        "Смітник"
       ],
       "Upload picture": [
         "Завантажити зображення"
@@ -8313,6 +8274,29 @@
         "За ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний домен електронної пошти",
+        "${ planNumberOfDomains } власні домени електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адреса електронної пошти",
+        "${ planNumberOfEmails } адреси електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти"
+      ],
+      "Folders, labels, and custom filters": [
+        "Теки, мітки та користувацькі фільтри"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховища"
@@ -8352,29 +8336,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватність є нашою місією"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } сховища на користувача"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний домен електронної пошти",
-        "${ planNumberOfDomains } власні домени електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адреса електронної пошти",
-        "${ planNumberOfEmails } адреси електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти"
-      ],
-      "Folders, labels, and custom filters": [
-        "Теки, мітки та користувацькі фільтри"
       ]
     },
     "Subscription renewal state": {

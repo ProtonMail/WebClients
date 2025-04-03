@@ -152,10 +152,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -203,12 +203,6 @@
       "Delete all": [
         "Eliminar todo"
       ],
-      "Delete all files": [
-        "Eliminar todos los archivos"
-      ],
-      "Delete file: ${ deleteFile.state.name }": [
-        "Eliminar archivo: ${ deleteFile.state.name }"
-      ],
       "Delete it, I will never need it": [
         "Eliminarlo, nunca lo necesitaré"
       ],
@@ -253,12 +247,6 @@
       ],
       "Done": [
         "Hecho"
-      ],
-      "Download": [
-        "Descargar"
-      ],
-      "Download file": [
-        "Descargar archivo"
       ],
       "Download this CSV template": [
         "Descargar esta plantilla CSV"
@@ -425,9 +413,6 @@
       "Open navigation": [
         "Abrir navegación"
       ],
-      "Open new window to upload files": [
-        "Abra una nueva ventana para cargar los archivos"
-      ],
       "Open web app": [
         "Abrir aplicación web"
       ],
@@ -473,17 +458,11 @@
       "Remove all expired links (${ inactiveLinkCount })": [
         "Eliminar todos los enlaces expirados (${ inactiveLinkCount })"
       ],
-      "Remove all files": [
-        "Borrar todos los archivos"
-      ],
       "Remove link": [
         "Eliminar el enlace"
       ],
       "Remove member": [
         "Eliminar el miembro"
-      ],
-      "Rename": [
-        "Renombrar"
       ],
       "Request a feature": [
         "Solicitar una característica"
@@ -773,12 +752,6 @@
       ]
     },
     "Error": {
-      "\"${ file.name }\" could not be uploaded.": [
-        "\"${ file.name }\" no se pudo cargar."
-      ],
-      "\"${ filename }\" could not be imported.": [
-        "\"${ filename }\" no se puede importar"
-      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se pudo analizar el archivo de ${ provider }. ${ errorDetail }"
       ],
@@ -1069,9 +1042,6 @@
       "Network error": [
         "Error de red"
       ],
-      "Not enough available storage space for the selected files.": [
-        "No hay espacio de almacenamiento disponible para los archivos seleccionados."
-      ],
       "Passphrase is incorrect": [
         "La frase contraseña es incorrecta"
       ],
@@ -1111,9 +1081,6 @@
       "Signature verification failed": [
         "Error en la verificación de la firma"
       ],
-      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Algunos archivos son muy pesados para la carga. El tamaño máximo permitido es (${ maxFileSizeInMB })"
-      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Algunas bóvedas ya no son accesibles debido a un restablecimiento de contraseña. Reactive las claves de la cuenta para recuperar el acceso. ${ reactivateLink }"
       ],
@@ -1122,12 +1089,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Ocurrió un error. Recargue la extensión ${ PASS_APP_NAME }. Este problema ha sido registrado."
-      ],
-      "The file \"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "El archivo \"${ filename }\" es muy pesado para la carga. El tamaño máximo permitido es (${ maxFileSizeInMB })"
-      ],
-      "The file you are trying to import is empty": [
-        "El archivo que intenta importar está vacío"
       ],
       "The URL is in the list": [
         "La URL está en la lista."
@@ -1566,9 +1527,6 @@
       "DNS changes could take up to 24 hours to update.": [
         "Los cambios de DNS pueden tardar hasta 24 horas en actualizarse."
       ],
-      "Do you want to remove all the files?": [
-        "¿Desea borrar todos los archivos?"
-      ],
       "Domain: ${ domainPath } or @": [
         "Dominio: ${ domainPath } o @"
       ],
@@ -1577,9 +1535,6 @@
       ],
       "Drop to import": [
         "Suelte aquí para importar"
-      ],
-      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
-        "Por una limitación de Firefox, ${ PASS_APP_NAME } necesita abrir nuevamente en una nueva ventana antes de que pueda subir archivos."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importe fácilmente sus contraseñas existentes a ${ PASS_APP_NAME }."
@@ -1653,9 +1608,6 @@
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
       ],
-      "Exporting files": [
-        "Exportando archivos"
-      ],
       "Exporting your data...": [
         "Exportando sus datos..."
       ],
@@ -1664,9 +1616,6 @@
       ],
       "Extra password successfully removed": [
         "Se eliminó la contraseña adicional."
-      ],
-      "File attachments": [
-        "Archivos adjuntos"
       ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
@@ -1712,9 +1661,6 @@
       "Identity confirmed": [
         "Se confirmó la identidad."
       ],
-      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
-        "Si se activa, todos sus archivos se van a descargar al exportar. Esto puede tomar un tiempo dependiendo de su conexión de internet"
-      ],
       "Import the CSV file below.": [
         "Importe el archivo CSV a continuación."
       ],
@@ -1726,9 +1672,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, conceda los permisos necesarios de la extensión"
-      ],
-      "Include file attachments": [
-        "Incluir archivos adjuntos"
       ],
       "Internet connection lost": [
         "Sin conexión a Internet"
@@ -1826,8 +1769,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -1867,9 +1809,6 @@
       ],
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
-      ],
-      "Once deleted, this file can still be recovered from the item's history.": [
-        "Una vez eliminado, este archivo aún se puede recuperar del historial de elementos."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
@@ -1913,9 +1852,6 @@
       ],
       "Pinning item...": [
         "Fijando elemento..."
-      ],
-      "Please be patient while your files are being downloaded.": [
-        "Espere pacientemente mientras se descargan sus archivos."
       ],
       "Please check your spam folder or try resending the code.": [
         "Compruebe la carpeta de spam o intente reenviar el código."
@@ -2325,9 +2261,6 @@
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
         "También puede definir un código PIN para desbloquear ${ PASS_APP_NAME }."
       ],
-      "You can attach files to items for a better organization": [
-        "Puede adjuntar archivos a los elementos para una mejor organización."
-      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ahora puede usar la contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2362,9 +2295,6 @@
       ],
       "You may close this tab.": [
         "Puede cerrar esta pestaña."
-      ],
-      "You may close this window after saving the file.": [
-        "Puede cerrar esta ventana después de guardar el archivo."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Necesita una bóveda con permisos de edición para que pueda importar elementos."
@@ -2737,9 +2667,6 @@
       ],
       "Field name": [
         "Nombre del campo"
-      ],
-      "File": [
-        "Archivo"
       ],
       "File format": [
         "Formato de archivo"
@@ -3149,12 +3076,6 @@
       "Today": [
         "Hoy"
       ],
-      "Total files: ": [
-        "Archivos totales: "
-      ],
-      "Total imported files: ": [
-        "Número total de archivos importados: "
-      ],
       "Total imported items: ": [
         "Número total de elementos importados: "
       ],
@@ -3261,7 +3182,7 @@
         "Su dominio"
       ],
       "ZIP": [
-        "ZIP"
+        "Archivo ZIP"
       ],
       "ZIP or Postal code": [
         "Código postal"
@@ -3317,6 +3238,111 @@
       ],
       "Underscores": [
         "Guiones bajos"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "No se pudo cargar «${ file.name }»."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "No se pudo importar «${ filename }»."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "«${ filename }» es demasiado grande para cargarlo. El tamaño máximo permitido es ${ maxFileSizeInMB }."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } archivo",
+        "${ filesCount } archivos"
+      ],
+      "Attachments": [
+        "Archivos adjuntos"
+      ],
+      "Choose a file or drag it here": [
+        "Elija un archivo o arrástrelo aquí"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Eliminar ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Borrar todos los archivos"
+      ],
+      "Do you want to remove all the files?": [
+        "¿Desea eliminar todos los archivos?"
+      ],
+      "Download": [
+        "Descargar"
+      ],
+      "Download \"${ filename }\"": [
+        "Descargar «${ filename }»"
+      ],
+      "Download file": [
+        "Descargar el archivo"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Por una limitación de Firefox, ${ PASS_APP_NAME } necesita abrir nuevamente en una nueva ventana antes de que pueda cargar archivos."
+      ],
+      "Exporting files": [
+        "Exportando archivos"
+      ],
+      "File": [
+        "Archivo"
+      ],
+      "File attachments": [
+        "Archivos adjuntos"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Si se activa, todos sus archivos se van a descargar al exportar. Esto puede tomar un tiempo dependiendo de su conexión de internet"
+      ],
+      "Include file attachments": [
+        "Incluir archivos adjuntos"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "No hay espacio de almacenamiento disponible para los archivos seleccionados."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Una vez eliminado, aún se puede recuperar este archivo desde el historial del elemento."
+      ],
+      "Open new window to upload files": [
+        "Abra una nueva ventana para cargar archivos."
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Tenga paciencia mientras sus archivos se están descargando."
+      ],
+      "Remove all files": [
+        "Eliminar todos los archivos"
+      ],
+      "Rename": [
+        "Cambiar el nombre"
+      ],
+      "Restore": [
+        "Restaurar"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Algunos archivos son demasiado grandes para cargarlos. El tamaño máximo permitido es ${ maxFileSizeInMB }."
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Los archivos adjuntos exportados no serán cifrados."
+      ],
+      "The file you are trying to import is empty": [
+        "El archivo que intenta importar está vacío."
+      ],
+      "Total files: ": [
+        "Total de archivos: "
+      ],
+      "Total imported files: ": [
+        "Total de archivos importados: "
+      ],
+      "Upload files from your device.": [
+        "Cargue archivos desde el dispositivo."
+      ],
+      "You can attach files to items for a better organization": [
+        "Puede adjuntar archivos a los elementos para una mejor organización."
+      ],
+      "You may close this window after saving the file.": [
+        "Puede cerrar esta ventana después de guardar el archivo."
+      ],
+      "Your current plan does not support importing files": [
+        "El plan actual no admite importar archivos."
       ]
     },
     "Placeholder": {
@@ -3560,10 +3586,6 @@
       ]
     },
     "Title": {
-      "${ filesCount } file": [
-        "${ filesCount } archivo",
-        "${ filesCount } archivos"
-      ],
       "${ PASS_APP_NAME } Logs": [
         "Registro de ${ PASS_APP_NAME }"
       ],
@@ -3587,9 +3609,6 @@
       ],
       "Aliases": [
         "Alias"
-      ],
-      "Attachments": [
-        "Archivos adjuntos"
       ],
       "Auto create/on the fly alias": [
         "Crear automáticamente un alias sobre la marcha"
@@ -3684,9 +3703,6 @@
       ],
       "Domain ownership verification": [
         "Verificación de la propiedad del dominio"
-      ],
-      "Download \"${ filename }\"": [
-        "Descargar \"${ filename }\""
       ],
       "Email": [
         "Correo"
@@ -3919,9 +3935,6 @@
       "Update available": [
         "Actualización disponible"
       ],
-      "Upload files from your device.": [
-        "Cargar archivos desde el dispositivo."
-      ],
       "Use my email": [
         "Usar mi correo"
       ],
@@ -4008,11 +4021,11 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos sus elementos en papelera serán eliminados permanentemente. No puede deshacer esta acción."
       ],
-      "An error occured while importing your data.": [
-        "Ocurrió un error al importar los datos."
-      ],
       "An error occurred while exporting your data": [
         "Ocurrió un error al exportar sus datos"
+      ],
+      "An error occurred while importing your data.": [
+        "Ocurrió un error al importar los datos."
       ],
       "An error occurred while resuming your session": [
         "Ocurrió un error al reanudar la sesión."
@@ -4235,9 +4248,6 @@
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "El administrador necesita crear una bóveda para usted antes de que pueda crear elementos"
-      ],
-      "Your current plan does not support importing files": [
-        "El plan actual no admite importar archivos"
       ],
       "Your organization does not allow creating a vault": [
         "Su organización no permite crear una bóveda."
