@@ -22,6 +22,7 @@ export type RecoveryMethod = 'email' | 'sms' | 'login' | 'mnemonic';
 export type AccountType = 'internal' | 'external';
 
 export interface ValidateResetTokenResponse {
+    UserID: string;
     Addresses: Address[];
     ToMigrate: 0 | 1;
     SupportPgpV6Keys: 0 | 1;
