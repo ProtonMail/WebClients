@@ -61,12 +61,18 @@ export const DirectSharingListInvitation = ({
     const handleResendInvitationEmail = () => withIsLoading(onResendInvitationEmail(invitationId));
 
     return (
-        <div className="flex my-4 justify-space-between items-center" data-testid="share-members">
-            <div className="flex items-center gap-2">
+        <div className="flex flex-nowrap my-4 justify-space-between items-center" data-testid="share-members">
+            <div className="flex flex-nowrap items-center gap-2">
                 <UserAvatar name={contactName || contactEmail} />
                 <p className="flex flex-column p-0 m-0">
-                    <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
-                    {contactName ? <span className="color-weak">{contactEmail}</span> : null}
+                    <span className="w-full text-semibold text-ellipsis" title={contactName ? undefined : contactEmail}>
+                        {contactName ? contactName : contactEmail}
+                    </span>
+                    {contactName ? (
+                        <span className="w-full color-weak text-ellipsis" title={contactEmail}>
+                            {contactEmail}
+                        </span>
+                    ) : null}
                 </p>
             </div>
             <PermissionsDropdownMenu
