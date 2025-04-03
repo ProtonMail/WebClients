@@ -17,7 +17,7 @@ import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import type { ImportProgress, ImportReport } from '@proton/pass/lib/import/helpers/report';
 import { computeProgress, getImportCounts } from '@proton/pass/lib/import/helpers/report';
 import { importReader } from '@proton/pass/lib/import/reader';
-import type { ImportPayload } from '@proton/pass/lib/import/types';
+import type { ImportFileReader, ImportPayload } from '@proton/pass/lib/import/types';
 import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItems, importReport } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
@@ -119,10 +119,8 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
         if (!values.provider) return setBusy(false);
         setBusy(true);
 
-        /** Report is dispatched from the UI to allow catching
-         * aborts
-         */
         let report: MaybeNull<ImportReport> = null;
+        let reader: MaybeNull<ImportFileReader> = null;
 
         try {
             /** 1. Try to read the imported file. If files are included,
@@ -152,8 +150,9 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
                 throw new ImportReaderError(c('Pass_file_attachments').t`The file you are trying to import is empty`);
             }
 
-            const { fileReader, ...data } = result;
             const { provider } = values;
+            const { fileReader, ...data } = result;
+            reader = fileReader ?? null;
 
             /** 2. Prompt the user for vault selection. This
              * can potentially mutate the import payload. */
@@ -195,6 +194,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
             setProgress(null);
             setBusy(false);
             ctrl.current = null;
+            reader?.close();
         }
     }, []);
 

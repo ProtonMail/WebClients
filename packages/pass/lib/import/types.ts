@@ -143,6 +143,7 @@ export interface ImportFileReader {
     files: Set<string>;
     dirs: Set<string>;
     getFile(filename: string): Promise<MaybeNull<Blob>>;
+    close: () => void;
 }
 
 export type ImportReaderResult = ImportPayload & { fileReader?: ImportFileReader };
