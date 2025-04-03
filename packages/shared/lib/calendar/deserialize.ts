@@ -229,8 +229,8 @@ interface ReadCalendarEventArguments {
         | 'FullDay'
         | 'CalendarID'
         | 'ID'
+        | 'UID'
         | 'Color'
-        | 'SharedEventID'
     >;
     publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
     sharedSessionKey?: SessionKey;
@@ -252,7 +252,7 @@ export const readCalendarEvent = async ({
         CalendarID: calendarID,
         ID: eventID,
         Color,
-        SharedEventID,
+        UID: eventUID,
     },
     publicKeysMap = {},
     addresses,
@@ -307,7 +307,7 @@ export const readCalendarEvent = async ({
                 parsedComponent,
                 AttendeesInfo?.Attendees || [],
                 sharedSessionKey,
-                SharedEventID,
+                eventUID,
                 getAttendeeVerificationPreferences
             );
         })

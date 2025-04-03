@@ -228,7 +228,7 @@ const EventPopover = ({
                 authorPrivateKey: commentAuthorPrimaryKey.privateKey,
                 comment: partstatData.Comment,
                 sessionKey,
-                sharedEventID: targetEvent.data.eventData.SharedEventID,
+                eventUID: targetEvent.data.eventData.UID,
             });
 
             commentClearText = partstatData.Comment;
