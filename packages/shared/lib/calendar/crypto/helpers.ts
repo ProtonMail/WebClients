@@ -1,6 +1,7 @@
 import { CryptoProxy, type PrivateKeyReference, type SessionKey } from '@proton/crypto/lib';
 
-import { uint8ArrayToBase64String } from '../../helpers/encoding';
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '../../helpers/encoding';
+import type { VerificationPreferences } from '../../interfaces/VerificationPreferences';
 import { ATTENDEE_COMMENT_ENCRYPTION_TYPE } from '../constants';
 
 type SignatureContext = 'calendar.sharing.invite' | 'calendar.rsvp.comment';
@@ -18,6 +19,35 @@ export function getSignatureContext(context: SignatureContext, eventID?: string)
             return `calendar.rsvp.comment.${eventID}`;
     }
 }
+
+export const getDecryptedRSVPComment = async ({
+    sharedEventID,
+    sharedSessionKey,
+    encryptedMessage,
+    attendeeVerificationPreferences,
+}: {
+    encryptedMessage: string;
+    sharedEventID: string;
+    sharedSessionKey: SessionKey;
+    attendeeVerificationPreferences: VerificationPreferences;
+}) => {
+    const binaryMessage = base64StringToUint8Array(encryptedMessage);
+    const decryptedMessageResult = await CryptoProxy.decryptMessage({
+        sessionKeys: [sharedSessionKey],
+        binaryMessage,
+        ...(attendeeVerificationPreferences.verifyingKeys.length
+            ? {
+                  verificationKeys: attendeeVerificationPreferences.verifyingKeys,
+                  signatureContext: {
+                      value: getSignatureContext('calendar.rsvp.comment', sharedEventID),
+                      required: true,
+                  },
+              }
+            : {}),
+    });
+
+    return decryptedMessageResult;
+};
 
 export const getEncryptedRSVPComment = async ({
     comment,
