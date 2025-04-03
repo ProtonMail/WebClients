@@ -9,6 +9,7 @@ import { useLoading } from '@proton/hooks';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 import noop from '@proton/utils/noop';
 
 import Text from '../public/Text';
@@ -44,6 +45,10 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, recoveryM
 
         return getPrimaryAddress(addresses)?.Email || addresses[0].Email;
     }, [resetResponse?.Addresses, getPrimaryAddress]);
+
+    const hasRecoveryFile = useMemo(() => {
+        return Boolean(resetResponse?.UserID && getHasRecoveryMessage(resetResponse.UserID));
+    }, [resetResponse?.UserID]);
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -90,6 +95,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, recoveryM
                 open={confirmModal}
                 recoveryMethods={recoveryMethods}
                 address={address}
+                hasRecoveryFile={hasRecoveryFile}
             />
             {(method === 'sms' || method === 'email') && (
                 <RequestNewCodeModal
