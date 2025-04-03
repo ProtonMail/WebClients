@@ -935,6 +935,11 @@
       "Trust": [
         "Vjeruj"
       ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
+      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -4880,10 +4885,10 @@
       "Also archive": [
         "Također i arhivu"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -5042,11 +5047,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5138,14 +5143,14 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Participants": [
         "Sudionici"
@@ -5709,14 +5714,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5726,6 +5723,14 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6690,17 +6695,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -6713,6 +6707,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
