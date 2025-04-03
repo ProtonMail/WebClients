@@ -1121,6 +1121,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów hide-my-email, udostępnianie, zintegrowaną aplikację uwierzytelniającą, ${ DARK_WEB_MONITORING_NAME } i wiele więcej."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje ${ addresses } adres e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej.",
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje ${ addresses } adresy e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej.",
@@ -3495,6 +3498,9 @@
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nie można załadować pulpitu VPN. Sprawdź połączenie i spróbuj ponownie."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Wystąpił nieoczekiwany błąd. Nie możemy zaimportować kontaktów"
       ],
@@ -4610,6 +4616,9 @@
         "Zaktualizowano ${ updated } kontaktów.",
         "Zaktualizowano ${ updated } kontaktów."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskuje Twój adres IP, dzięki czemu strony internetowe nie mogą Cię zidentyfikować."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } członek)",
         "(${ memberCount } członków)",
@@ -4618,6 +4627,12 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } / miesiąc)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatyczne połączenie**: Łączy się z siecią VPN zaraz po włączeniu urządzenia."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill Switch**: Zatrzymuje wycieki danych, blokując dostęp do Internetu w przypadku nieoczekiwanego przerwania połączenia VPN."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -4643,14 +4658,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Bezpieczne połączenie jest niezbędne podczas pracy zdalnej. VPN chroni firmowe dane przed cyfrowymi zagrożeniami i zapewnia prywatność pracy."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Usługa VPN szyfruje połączenie i ukrywa adres IP, co znacznie utrudnia śledzenie lub monitorowanie aktywności online."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN ukrywa Twój adres IP i szyfruje aktywność przeglądania, utrudniając stronom internetowym, reklamodawcom oraz dostawcom Internetu śledzenie Cię online."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN to bezpieczny tunel między urządzeniem a Internetem. Ukrywa on Twoją lokalizację i aktywność przed dostawcą Internetu (ISP) i odwiedzanymi stronami internetowymi."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
       ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
+      ],
+      "Ad targeting": [
+        "Kierowanie reklam"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Dodani i usunięci uczestnicy zostaną powiadomieni o wszystkich wydarzeniach w tej serii."
@@ -4663,6 +4693,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ten adres posiada włączoną weryfikację z zaufanymi kluczami. Zaufaj kluczom publicznym, aby wysyłać wiadomości na ten adres."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Reklamodawcy śledzą Cię, aby wyświetlać ukierunkowane reklamy. ${ VPN_APP_NAME } blokuje elementy śledzące i reklamy, przyspieszając połączenie oraz poprawiając komfort korzystania z Internetu."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
@@ -4731,7 +4764,7 @@
         "Na podstawie strefy czasowej"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
+        "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder spam i poprawność adresu ${ strong }."
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
@@ -4777,6 +4810,9 @@
       ],
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Połącz się z ${ VPN_APP_NAME }, aby przeglądać Internet prywatnie"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt został przypisany do grupy ${ contactGroupName }"
@@ -4905,7 +4941,7 @@
         "Wiadomości są automatyczne podpisywane"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni, zostaną automatycznie usunięte."
+        "Wiadomości, które znajdują się w koszu lub spamie dłużej niż 30 dni, zostaną automatycznie usunięte."
       ],
       "Enabling auto-deletion…": [
         "Włączanie automatycznego usuwania…"
@@ -4955,6 +4991,12 @@
       "Frequency modifications will be lost.": [
         "Zmiany powtórzeń zostaną utracone."
       ],
+      "Geoblocking": [
+        "Blokada geograficzna"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Rządy i dostawcy Internetu mogą monitorować Twoją aktywność online. Ukrywając swój prawdziwy adres IP i szyfrując połączenie, przeglądanie staje się prywatne."
+      ],
       "here": [
         "tutaj"
       ],
@@ -4971,7 +5013,7 @@
         "Jeśli anulujesz subskrypcję ${ planTitle }, nie zostanie ona odnowiona po terminie wygaśnięcia ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
+        "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME } i usługi ${ VPN_APP_NAME }."
@@ -5003,6 +5045,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "W krajach restrykcyjnych"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "W następnym kroku wyślesz środki za pomocą adresu Bitcoin."
       ],
@@ -5026,6 +5071,9 @@
       ],
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Najlepiej jest korzystać z połączenie VPN przez cały czas. Ale właśnie wtedy cyfrowe zagrożenia mogą być największe:"
       ],
       "JCB logo": [
         "Logo JCB"
@@ -5105,6 +5153,9 @@
       "Monthly ${ onDayString }": [
         "Co miesiąc ${ onDayString }"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Większość publicznych sieci Wi-Fi jest bezpieczna, ale niektóre z nich nie posiadają zabezpieczeń, narażając Cię na cyfrowe zagrożenia. VPN zapewnia ochronę, szyfrując ruch."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
       ],
@@ -5135,6 +5186,9 @@
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
       ],
+      "Not connected": [
+        "Nie połączono"
+      ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
@@ -5143,6 +5197,9 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Powtórzenia zaktualizowane wcześniej przez organizatora pozostaną zachowane."
+      ],
+      "On public WiFi networks": [
+        "W publicznych sieciach Wi-Fi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
@@ -5240,6 +5297,9 @@
       "Primary": [
         "Główny"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Przeglądanie prywatne (lub tryb incognito) jest przydatny tylko do ukrywania aktywności na urządzeniu. Uniemożliwia on przeglądarce zapisywanie historii i plików cookie, ale nie czyni użytkownika niewidzialnym. Dostawca Internetu, administrator sieci i odwiedzane strony internetowe nadal mogą zobaczyć, co robisz online."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
       ],
@@ -5257,6 +5317,9 @@
         "Zapisywanie wydarzeń...",
         "Zapisywanie wydarzeń...",
         "Zapisywanie wydarzeń..."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Zeskanuj kod QR za pomocą urządzenia mobilnego"
       ],
       "Select a service provider to start": [
         "Aby rozpocząć, wybierz dostawcę usługi"
@@ -5291,20 +5354,38 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Niektóre rządy blokują lub ograniczają dostęp do niektórych stron internetowych. VPN pomaga ominąć cenzurę, zachowując prywatność użytkownika."
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Część Twoich odpowiedzi na powtórzenia, zaktualizowane wcześniej przez organizatora, zostanie utracona."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Niektóre strony internetowe i usługi streamingu blokują geograficznie treści. VPN pozwala ominąć te ograniczenia i uzyskać swobodny dostęp do Internetu."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
       ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Bądź połączony bez trudu, włączając następujące ustawienia VPN:"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Subskrypcja odnowi się automatycznie co ${ cycle } miesiąc.",
+        "Subskrypcja odnowi się automatycznie co ${ cycle } miesiące.",
+        "Subskrypcja odnowi się automatycznie co ${ cycle } miesięcy.",
+        "Subskrypcja odnowi się automatycznie co ${ cycle } miesiąca."
       ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Inwigilacja"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -5369,6 +5450,12 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Oznacza to, że dostawca Internetu i odwiedzane strony internetowe nie mogą łączyć Twoich danych z aktywnością online."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Ten unikalny kod może być wykorzystywany przez strony internetowe i dostawcę Internetu (ISP) do powiązania lokalizacji i historii przeglądania z urządzeniem użytkownika"
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
       ],
@@ -5401,6 +5488,9 @@
       ],
       "Total VPN connections": [
         "Połączenia VPN"
+      ],
+      "Tracking": [
+        "Śledzenie"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
@@ -5464,6 +5554,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Widoki tygodnia oraz miesiąca dostępne są tylko na komputerze."
+      ],
+      "When working remotely": [
+        "Podczas pracy zdalnej"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Usługa VPN wykorzystuje szyfrowanie, aby ukryć Twój adres IP (unikalny kod przypisany do Twojego urządzenia)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
@@ -5612,6 +5708,12 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Zaktualizujesz wszystkie wydarzenia w tej serii. Usunięci uczestnicy zostaną powiadomieni."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
+        "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }.",
+        "Następnie zapłacisz co ${ renewCycle } miesięcy ${ renewAmountStr }.",
+        "Następnie zapłacisz co ${ renewCycle } miesiąca ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Osiągnięto maksymalną liczbę adresów w grupach kontaktów:"
       ],
@@ -5663,8 +5765,14 @@
       "Your information was found on ${ displayedDate }": [
         "Twoje informacje zostały znalezione w dniu: ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Dostawca Internetu może monitorować i czasami sprzedawać dane użytkowników, a nawet ograniczać dostęp do stron internetowych."
+      ],
       "Your IP": [
         "Twój adres IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Twój adres IP jest widoczny i może zostać wykorzystany do śledzenia Cię online."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -5675,11 +5783,23 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
       ],
+      "Your online activity is protected": [
+        "Twoja aktywność online jest chroniona"
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Fizyczna lokalizacja użytkownika jest widoczna i może zostać wykorzystana do ograniczenia dostępu do Internetu."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co ${ cycle } miesiąc.",
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co ${ cycle } miesiące.",
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co ${ cycle } miesięcy.",
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co ${ cycle } miesięca."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
@@ -6033,6 +6153,9 @@
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
       ],
+      "Enable desktop notifications": [
+        "Włączyć powiadomienia na pulpicie"
+      ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
@@ -6302,6 +6425,9 @@
       ],
       "Your IP": [
         "Twój adres IP"
+      ],
+      "Your ISP": [
+        "Twój ISP"
       ],
       "Your location": [
         "Twoja lokalizacja"
@@ -6839,26 +6965,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -6880,6 +6986,26 @@
       ],
       "Switch plan": [
         "Zmień plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7064,10 +7190,10 @@
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie Spamu i Kosza"
+        "Automatyczne usuwanie spamu i kosza"
       ],
       "Auto-delete spam and trashed messages": [
-        "Automatyczne usuwanie Spamu i Kosza"
+        "Automatyczne usuwanie spamu i kosza"
       ],
       "Auto-reply": [
         "Autoresponder"
@@ -7567,7 +7693,7 @@
         "Umożliwia skonfigurowanie autorespondera na przychodzące wiadomości"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni"
+        "Automatycznie usuwaj wiadomości, które znajdują się w koszu lub spamie dłużej niż 30 dni"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Automatyczne przekierowanie wiadomości do konta ${ MAIL_APP_NAME } lub na inny adres e-mail."
@@ -8049,6 +8175,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited na 12 miesięcy"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } na 12 miesięcy"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
@@ -8366,6 +8498,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "W tym czasie nie będzie można edytować lub anulować subskrypcji. Poczekaj na zakończenie płatności przed dokonaniem zmian. Dziękujemy za cierpliwość."
+      ],
       "Got it": [
         "Ok"
       ],
@@ -8407,6 +8542,27 @@
         "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
         "Kupon jest ważny na ${ couponRedemptions } odnowień.",
         "Kupon jest ważny na ${ couponRedemptions } odnowień."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy ${ subscriptionLength } miesiąc.",
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiące.",
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy.",
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiąca."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowienie. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowienia. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiąc. Możesz anulować w dowolnym momencie.",
+        "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiące. Możesz anulować w dowolnym momencie.",
+        "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie.",
+        "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiąca. Możesz anulować w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -9127,6 +9283,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Subskrypcja będzie automatycznie odnawiana co 2 lata po tej samej cenie do momentu jej anulowania."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Subskrypcja będzie odnawiana co roku w tej samej cenie."
       ]
     },
     "specialoffer: Link": {
@@ -9433,6 +9592,12 @@
         "${ n } połączenia VPN na użytkownika",
         "${ n } połączeń VPN na użytkownika",
         "${ n } połączeń VPN na użytkownika"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Połączenie VPN na ${ n } urządzenie na użytkownika",
+        "Połączenie VPN na ${ n } urządzenia na użytkownika",
+        "Połączenie VPN na ${ n } urządzeń na użytkownika",
+        "Połączenie VPN na ${ n } urządzeń na użytkownika"
       ]
     },
     "Subscription change warning": {
@@ -9471,47 +9636,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription reminder": {
@@ -9784,6 +9908,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -10336,6 +10501,9 @@
       "Deleting contacts": [
         "Usuwanie kontaktów"
       ],
+      "Desktop": [
+        "Komputer"
+      ],
       "Details": [
         "Szczegóły"
       ],
@@ -10347,6 +10515,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Obniżyć plan do wersji ${ downgradedPlanName }?"
+      ],
+      "Download the app": [
+        "Pobierz aplikację"
       ],
       "Drop to upload": [
         "Upuść, aby przesłać"
@@ -10414,6 +10585,9 @@
       "Get advanced protection": [
         "Uzyskaj zaawansowaną ochronę"
       ],
+      "Get more from your VPN": [
+        "Uzyskaj więcej z VPN"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Pobierz aplikacje ${ appName[APP_NAME] }"
       ],
@@ -10437,6 +10611,9 @@
       ],
       "High security for your account": [
         "Wysoki poziom bezpieczeństwa konta"
+      ],
+      "How does it all work?": [
+        "Jak to działa?"
       ],
       "Human verification": [
         "Weryfikacja antyspamowa"
@@ -10464,6 +10641,9 @@
       ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
+      ],
+      "Make a secure connection your default": [
+        "Ustaw bezpieczne połączenie jako domyślne"
       ],
       "Merge contacts": [
         "Scal kontakty"
@@ -10521,6 +10701,9 @@
       ],
       "Phone numbers": [
         "Numery telefonów"
+      ],
+      "Private browsing vs VPN": [
+        "Prywatne przeglądanie Internetu a VPN"
       ],
       "Processing...": [
         "Przetwarzanie..."
@@ -10660,6 +10843,9 @@
       "Verifying your payment...": [
         "Weryfikowanie płatności..."
       ],
+      "VPN explained": [
+        "Wyjaśnienie zasady działania VPN"
+      ],
       "Warning": [
         "Ostrzeżenie"
       ],
@@ -10675,11 +10861,17 @@
       "We've locked your calendars to protect your data": [
         "Zablokowaliśmy kalendarze, aby chronić Twoje dane"
       ],
+      "What can a VPN protect you from?": [
+        "Przed czym VPN może chronić?"
+      ],
       "What is a VPN?": [
         "Co to jest VPN?"
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kiedy korzystanie z VPN jest najważniejsze?"
       ],
       "You can now create unlimited folders and labels": [
         "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
@@ -10885,6 +11077,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Następnie zapłacisz co 12 miesięcy ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",

@@ -5979,6 +5979,9 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
+      "Enable desktop notifications": [
+        "Schakel bureaubladmeldingen in"
+      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -6098,6 +6101,9 @@
       ],
       "Notifications": [
         "Meldingen"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Notificaties zijn uitgeschakeld, wijzig de browserinstellingen om ze in te schakelen."
       ],
       "On": [
         "Op"
@@ -6773,26 +6779,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -6814,6 +6800,26 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9278,47 +9284,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -9577,6 +9542,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
