@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
@@ -98,7 +98,7 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                     publicKey.getAlgorithmInfo(),
                     ...publicKey.subkeys.map((subkey) => subkey.getAlgorithmInfo()),
                 ];
-                const algo = getFormattedAlgorithmNames(algoInfos);
+                const algo = getFormattedAlgorithmNames(algoInfos, publicKey.getVersion());
                 const isExpired = await CryptoProxy.isExpiredKey({ key: publicKey });
                 const isRevoked = await CryptoProxy.isRevokedKey({ key: publicKey });
                 const isTrusted = model.trustedFingerprints.has(fingerprint);
@@ -162,29 +162,31 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
         <Table hasActions>
             <thead>
                 <tr>
-                    <th scope="col" className="text-ellipsis" title={c('Table header').t`Fingerprint`}>{c(
+                    <th scope="col" className="text-ellipsis w-1/5" title={c('Table header').t`Fingerprint`}>{c(
                         'Table header'
                     ).t`Fingerprint`}</th>
                     {!viewportWidth['<=small'] && (
-                        <th scope="col" className="text-ellipsis" title={c('Table header').t`Created`}>{c(
+                        <th scope="col" className="text-ellipsis w-1/6" title={c('Table header').t`Created`}>{c(
                             'Table header'
                         ).t`Created`}</th>
                     )}
                     {!viewportWidth.xsmall && (
-                        <th scope="col" className="w-1/10 text-ellipsis" title={c('Table header').t`Expires`}>{c(
+                        <th scope="col" className="text-ellipsis w-1/10" title={c('Table header').t`Expires`}>{c(
                             'Table header'
                         ).t`Expires`}</th>
                     )}
                     {!viewportWidth['<=small'] && (
-                        <th scope="col" className="text-ellipsis" title={c('Table header').t`Type`}>{c('Table header')
-                            .t`Type`}</th>
+                        <th scope="col" className="text-ellipsis w-3/10" title={c('Table header').t`Type`}>{c(
+                            'Table header'
+                        ).t`Type`}</th>
                     )}
                     <th scope="col" className="text-ellipsis w-1/6" title={c('Table header').t`Status`}>{c(
                         'Table header'
                     ).t`Status`}</th>
                     <th
                         scope="col"
-                        className={clsx(['text-ellipsis', viewportWidth['<=small'] && 'w-2/5'])}
+                        className={clsx(['text-ellipsis', 'w-custom'])}
+                        style={{ '--w-custom': '9em' }}
                         title={c('Table header').t`Actions`}
                     >{c('Table header').t`Actions`}</th>
                 </tr>
@@ -353,7 +355,7 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                         }
 
                         const cells = [
-                            <div key={fingerprint} title={fingerprint} className="flex flex-nowrap">
+                            <div key={0} title={fingerprint} className="flex flex-nowrap">
                                 <ContactKeyWarningIcon
                                     className="mr-2 shrink-0 self-center my-auto"
                                     publicKey={publicKey}
@@ -364,11 +366,11 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                                 <span className="flex-1 text-ellipsis">{fingerprint}</span>
                             </div>,
                             !viewportWidth['<=small'] &&
-                                (isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '-'),
+                                (isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '—'),
                             !viewportWidth.xsmall &&
-                                (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '-'),
+                                (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '—'),
                             !viewportWidth['<=small'] && algo,
-                            <Fragment key={fingerprint}>
+                            <div key={1} className="flex gap-1">
                                 {isUsedForSending ? (
                                     <Badge
                                         type="primary"
@@ -409,7 +411,7 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                                 {isTrusted ? <Badge type="success">{trustedText}</Badge> : null}
                                 {isRevoked ? <Badge type="error">{revokedText}</Badge> : null}
                                 {isExpired ? <Badge type="error">{expiredText}</Badge> : null}
-                            </Fragment>,
+                            </div>,
                             <DropdownActions key={fingerprint} size="small" list={list} />,
                         ].filter(Boolean);
                         return <TableRow key={fingerprint} cells={cells} />;
