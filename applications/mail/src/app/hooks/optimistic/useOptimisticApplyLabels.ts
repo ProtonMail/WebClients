@@ -12,6 +12,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
@@ -29,8 +30,14 @@ import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,
 } from '../../store/conversations/conversationsActions';
-import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../store/elements/elementsActions';
-import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../store/messages/optimistic/messagesOptimisticActions';
+import {
+    optimisticApplyLabels as optimisticApplyLabelsElementsAction,
+    optimisticMarkAs as optimisticMarkAsElementsAction,
+} from '../../store/elements/elementsActions';
+import {
+    optimisticApplyLabels as optimisticApplyLabelsMessageAction,
+    optimisticMarkAs as optimisticMarkAsMessageAction,
+} from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
@@ -161,12 +168,83 @@ export const useOptimisticApplyLabels = () => {
                         if (isMessage) {
                             const message = element as Message;
                             elementsUnreadStatuses.push({ id: message.ID, unread: message.Unread });
+
+                            /*
+                             * Mark message element as read when moving to trash
+                             *
+                             * To have a real clean state when moving a message to trash, we should update:
+                             * 1- The message element in the Elements state
+                             * 2- The conversation associated conversation element in the Element state (if it exists)
+                             * 3- The message in the Message state
+                             * 4- The conversation in the Conversation state (if it exists)
+                             *
+                             * This is not a trivial task, and since we want a quick fix so that elements from the list are
+                             * marked as read when moving a message to trash, we will only update the Elements state for now.
+                             * Updating the message state is also easy, so in that case we can do it.
+                             *
+                             * We think that the code from optimistic hooks is too old,
+                             * so if we want to get a perfect state using robust optimistic, we should rework them completely.
+                             */
+                            const updatedElement = {
+                                ...message,
+                                Unread: 0,
+                            };
+
+                            dispatch(
+                                optimisticMarkAsMessageAction({
+                                    ID: message.ID,
+                                    changes: { status: MARK_AS_STATUS.READ },
+                                })
+                            );
+
+                            dispatch(
+                                optimisticMarkAsElementsAction({
+                                    isMove,
+                                    elements: [updatedElement],
+                                    markAsStatus: MARK_AS_STATUS.READ,
+                                    elementTotalAdjustment: inputElementTotalAdjustment,
+                                })
+                            );
                         } else {
                             const conversation = element as Conversation;
                             elementsUnreadStatuses.push({
                                 id: conversation.ID ? conversation.ID : '',
                                 unread: conversation.NumUnread ? conversation.NumUnread : 0,
                             });
+
+                            /*
+                             * Mark conversation element as read when moving to trash
+                             *
+                             * To have a real clean state when moving a conversation to trash, we should update:
+                             * 1- The conversation element in the Elements state
+                             * 2- Messages associated to the conversation element in the Element state (if they exist)
+                             * 3- The conversation in the Conversation state
+                             * 4- Messages associated to the conversation in the Message state (if they exist)
+                             *
+                             * This is not a trivial task, and since we want a quick fix so that elements from the list are
+                             * marked as read when moving a conversation to trash, we will only update the Elements state for now.
+                             *
+                             * We think that the code from optimistic hooks is too old,
+                             * so if we want to get a perfect state using robust optimistic, we should rework them completely.
+                             */
+                            const updatedElement = {
+                                ...element,
+                                NumUnread: 0,
+                                ContextNumUnread: 0,
+                            };
+
+                            (updatedElement as Conversation).Labels?.forEach((label) => {
+                                return { ...label, ContextNumUnread: 0 };
+                            });
+
+                            dispatch(
+                                optimisticMarkAsElementsAction({
+                                    isMove,
+                                    elements: [updatedElement],
+                                    markAsStatus: MARK_AS_STATUS.READ,
+                                    elementTotalAdjustment: inputElementTotalAdjustment,
+                                })
+                            );
                         }
                     }
 
