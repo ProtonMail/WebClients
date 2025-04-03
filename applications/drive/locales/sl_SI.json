@@ -5635,12 +5635,6 @@
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
       ],
-      "Your photo has been removed from the album": [
-        "Vaša slika je bila odstranjena iz albuma.",
-        "Vaši sliki sta bili odstranjeni iz albuma.",
-        "Vaše slike so bile odstranjene iz albuma.",
-        "Vaše slike so bile odstranjene iz albuma."
-      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Vaš paket je omejen na 10 različic do 7 dni"
       ],
@@ -6804,23 +6798,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6842,6 +6819,23 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -9158,47 +9152,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
@@ -9361,6 +9314,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {

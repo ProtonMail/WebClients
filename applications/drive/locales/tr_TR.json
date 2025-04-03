@@ -5378,9 +5378,6 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Bazı dosyalarınıza artık erişilemiyor. Dosyalara yeniden erişim kazanın. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Bu albümdeki bazı fotoğraflar zaman akışınıza kaydedilmez. Bu albümü silindiğinde bu fotoğraflar kalıcı olarak silinir."
-      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Bazı siteler ve yayın akışı hizmetleri içeriği bölgelere göre engeller. Bir VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
       ],
@@ -5952,10 +5949,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your photo has been removed from the album": [
-        "Fotoğrafınız albümden kaldırıldı",
-        "Fotoğraflarınız albümden kaldırıldı"
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Fiziksel konumunuz görülebilir ve internete erişiminizi kısıtlamak için kullanılabilir."
@@ -7160,29 +7153,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus } tutarından başlayan tarifeler"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7204,6 +7174,29 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus } tutarından başlayan tarifeler"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -9771,47 +9764,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -10070,6 +10022,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {

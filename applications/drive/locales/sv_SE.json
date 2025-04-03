@@ -5375,7 +5375,7 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Vissa av dina filer är inte längre åtkomliga. Återställ åtkomsten till dina filer. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Några foton i detta album sparas inte på din tidslinje. Att ta bort detta album kommer ta bort dessa foton permanent."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
@@ -5941,10 +5941,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
-      ],
-      "Your photo has been removed from the album": [
-        "Ditt foto har tagits bort från albumet",
-        "Dina foton har tagits bort från albumet"
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiska plats är synlig och kan användas för att begränsa din åtkomst till internet."
@@ -7205,29 +7201,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket startar från ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7249,6 +7222,29 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket startar från ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8145,7 +8141,7 @@
         "“${ name }“ skapades utan problem"
       ],
       "\"${ name }\" deleted": [
-        "\"${ name }\" borttagen"
+        "“${ name }“ borttagen"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "“${ name }“ togs bort permanent från papperskorg"
@@ -8154,7 +8150,7 @@
         "“${ name }“ misslyckades att skapas"
       ],
       "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" kunde inte tas bort"
+        "“${ name }“ misslyckades att tas bort"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "“${ name }“ misslyckades att tas bort permanent från papperskorg"
@@ -8197,9 +8193,17 @@
         "${ nbFailures } fotot kunde inte läggas till i ”${ albumName }”",
         "${ nbFailures } foton kunde inte läggas till i ”${ albumName }”"
       ],
+      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
+        "${ nbFailures } foto misslyckades att tas bort från ${ albumLink.name }",
+        "${ nbFailures } foton misslyckades att tas bort från ${ albumLink.name }"
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "${ nbSuccesses } foto läggs till i ”${ albumName }”",
         "${ nbSuccesses } foton läggs till i ”${ albumName }”"
+      ],
+      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
+        "${ nbSuccesses } foto borttaget från ${ albumLink.name }",
+        "${ nbSuccesses } foton borttagna från ${ albumLink.name }"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } objekt borttaget",
@@ -8210,8 +8214,8 @@
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg"
       ],
       "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } objekt kunde inte tas bort",
-        "${ numberOfItems } objekt kunde inte tas bort"
+        "${ numberOfItems } objekt misslyckades att tas bort",
+        "${ numberOfItems } objekt misslyckades att tas bort"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "“${ numberOfItems }“ fil misslyckades att tas bort permanent från papperskorgen",
@@ -9809,47 +9813,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10108,6 +10071,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {

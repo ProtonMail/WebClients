@@ -5378,8 +5378,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Ορισμένες φωτογραφίες σε αυτό το άλμπουμ δεν αποθηκεύονται στο χρονολόγιό σας. Η διαγραφή αυτού του άλμπουμ θα διαγράψει οριστικά αυτές τις φωτογραφίες."
+      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Ορισμένες φωτογραφίες σε αυτό το άλμπουμ ενδέχεται να μην αποθηκεύονται στο χρονολόγιό σας. Η διαγραφή αυτού του άλμπουμ θα διαγράψει οριστικά αυτές τις φωτογραφίες."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
@@ -5952,10 +5952,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your photo has been removed from the album": [
-        "Η φωτογραφία σας έχει αφαιρεθεί από το άλμπουμ.",
-        "Οι φωτογραφίες σας έχουν αφαιρεθεί από το άλμπουμ"
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Η φυσική σας τοποθεσία είναι ορατή και μπορεί να χρησιμοποιηθεί για να περιορίσει την πρόσβασή σας στο διαδίκτυο."
@@ -7160,29 +7156,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7204,6 +7177,29 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8147,9 +8143,17 @@
         "${ nbFailures } φωτογραφία απέτυχε να προστεθεί στο \"${ albumName }\"",
         "${ nbFailures } φωτογραφίες απέτυχαν να προστεθούν στο \"${ albumName }\""
       ],
+      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
+        "${ nbFailures } φωτογραφία απέτυχε να αφαιρεθεί από το \"${ albumLink.name }",
+        "${ nbFailures } φωτογραφίες απέτυχαν να αφαιρεθούν από το \"${ albumLink.name }"
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "${ nbSuccesses } φωτογραφία προστέθηκε στο \"${ albumName }\"",
         "${ nbSuccesses } φωτογραφίες προστέθηκαν στο \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
+        "${ nbSuccesses } φωτογραφία αφαιρέθηκε από το \"${ albumLink.name }",
+        "${ nbSuccesses } φωτογραφίες αφαιρέθηκαν από το \"${ albumLink.name }"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } στοιχείο διαγράφηκε",
@@ -9771,47 +9775,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -10070,6 +10033,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {

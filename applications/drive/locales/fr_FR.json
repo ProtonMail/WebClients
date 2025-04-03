@@ -5378,8 +5378,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Certaines photos de cet album ne sont pas enregistrées dans votre fil d’actualité. La suppression de cet album supprimera définitivement ces photos."
+      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Certaines photos de cet album peuvent ne pas être enregistrées dans votre fil d’actualité. La suppression de cet album supprimera définitivement ces photos."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Des sites internet et services de streaming bloquent certains contenus par région. Un VPN vous permet de contourner ces restrictions et d'accéder librement à internet."
@@ -5952,10 +5952,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
-      ],
-      "Your photo has been removed from the album": [
-        "Votre photo a été retirée de l'album.",
-        "Vos photos ont été retirées de l'album."
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Votre emplacement physique est visible et peut être utilisé pour restreindre votre accès à internet."
@@ -7223,29 +7219,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Commencez pour ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements à partir de ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "À partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -7267,6 +7240,29 @@
       ],
       "Switch plan": [
         "Changer d'abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Commencez pour ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements à partir de ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "À partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8210,9 +8206,17 @@
         "L'ajout d'${ nbFailures } photo à « ${ albumName } » n'a pas abouti.",
         "L'ajout de ${ nbFailures } photos à « ${ albumName } » n'a pas abouti."
       ],
+      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
+        "Le retrait d'${ nbFailures } photo à ${ albumLink.name } n'a pas abouti.",
+        "Le retrait de ${ nbFailures } photos à ${ albumLink.name } n'a pas abouti."
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "${ nbSuccesses } photo a été ajoutée à « ${ albumName } ».",
         "${ nbSuccesses } photos ont été ajoutées à « ${ albumName } »."
+      ],
+      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
+        "${ nbSuccesses } photo a été retirée de ${ albumLink.name }",
+        "${ nbSuccesses } photos ont été retirées de ${ albumLink.name }"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } élément supprimé",
@@ -9834,47 +9838,6 @@
         "Pour ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -10133,6 +10096,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
