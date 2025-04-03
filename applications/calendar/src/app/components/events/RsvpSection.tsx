@@ -225,6 +225,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                                         className={clsx('text-sm color-weak', isDrawerOrResponsiveView && 'mt-2')}
                                         shape="underline"
                                         onClick={handleReplyWithNote}
+                                        disabled={disabled}
                                     >
                                         {c('Action').t`Reply with a note`}
                                     </Button>
