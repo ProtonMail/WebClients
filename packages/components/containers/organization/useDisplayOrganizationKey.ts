@@ -35,7 +35,7 @@ const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
         const fingerprint = parsedKey?.getFingerprint() ?? '';
         const isDecrypted = parsedKey?.isPrivate() ?? false;
         return {
-            algorithm: algorithmInfo ? getFormattedAlgorithmName(algorithmInfo) : '',
+            algorithm: algorithmInfo ? getFormattedAlgorithmName(algorithmInfo, parsedKey!.getVersion()) : '',
             fingerprint,
             isDecrypted,
         };

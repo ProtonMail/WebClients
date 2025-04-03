@@ -12,12 +12,16 @@ import { KeyType } from './interface';
 interface Arguments {
     User: UserModel;
     Address?: Address;
+    creationDate: Date;
     fingerprint: string;
+    version: number;
     isDecrypted: boolean;
     isLoading: boolean;
     Key: Key;
     algorithmInfos: AlgorithmInfo[];
     signedKeyListMap: SimpleMap<SignedKeyListItem | undefined>;
+    /** whether a v6 primary key is present in the set of keys being parsed */
+    existsPrimaryKeyV6: boolean;
     isWeak: boolean;
     isE2EEForwardingKey: boolean;
 }
@@ -27,9 +31,12 @@ export const getDisplayKey = ({
     Address,
     algorithmInfos,
     fingerprint,
+    version,
+    creationDate,
     isDecrypted,
     isLoading,
     signedKeyListMap,
+    existsPrimaryKeyV6,
     Key,
     isWeak,
     isE2EEForwardingKey,
@@ -46,6 +53,7 @@ export const getDisplayKey = ({
     const isAddressDisabled = Address?.Status === 0;
 
     const isPrimary = primary === 1;
+    const isPrimaryCompatibility = existsPrimaryKeyV6 && isPrimary && version !== 6;
 
     // Flags undefined for user keys
     const canEncrypt = flags === undefined ? true : hasBit(flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
@@ -59,6 +67,7 @@ export const getDisplayKey = ({
     const status: KeyStatus = {
         isAddressDisabled,
         isPrimary,
+        isPrimaryCompatibility,
         isDecrypted,
         isLoading,
         isCompromised,
@@ -73,12 +82,14 @@ export const getDisplayKey = ({
 
     return {
         ID,
+        creationDate,
         fingerprint,
         algorithmInfos,
         type: isAddressKey ? KeyType.Address : KeyType.User,
         flags,
         primary,
-        algorithm: getFormattedAlgorithmNames(algorithmInfos),
+        version,
+        algorithm: getFormattedAlgorithmNames(algorithmInfos, version),
         status,
         permissions: getPermissions({
             ...status,
