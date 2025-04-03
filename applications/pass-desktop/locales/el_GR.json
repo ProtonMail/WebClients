@@ -214,12 +214,6 @@
       "Delete all": [
         "Διαγραφή όλων"
       ],
-      "Delete all files": [
-        "Διαγραφή όλων των αρχείων"
-      ],
-      "Delete file: ${ deleteFile.state.name }": [
-        "Διαγραφή αρχείου: ${ deleteFile.state.name }"
-      ],
       "Delete it, I will never need it": [
         "Διαγράψτε το, δε θα το χρειαστώ ποτέ"
       ],
@@ -252,12 +246,6 @@
       ],
       "Dismiss": [
         "Παράβλεψη"
-      ],
-      "Download": [
-        "Λήψη"
-      ],
-      "Download file": [
-        "Λήψη αρχείου"
       ],
       "Download this CSV template": [
         "Κατεβάστε αυτό το πρότυπο CSV"
@@ -412,10 +400,10 @@
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
       "Multiple select": [
@@ -435,9 +423,6 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
-      ],
-      "Open new window to upload files": [
-        "Άνοιγμα νέου παραθύρου για μεταφόρτωση αρχείων"
       ],
       "Pass for Android": [
         "Έγκριση για το Android"
@@ -490,17 +475,11 @@
       "Remove all expired links (${ inactiveLinkCount })": [
         "Κατάργηση όλων των συνδέσμων που έχουν λήξει (${ inactiveLinkCount })"
       ],
-      "Remove all files": [
-        "Κατάργηση όλων των αρχείων"
-      ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"
       ],
       "Remove member": [
         "Αφαίρεση μέλους"
-      ],
-      "Rename": [
-        "Μετονομασία"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -840,12 +819,6 @@
       ]
     },
     "Error": {
-      "\"${ file.name }\" could not be uploaded.": [
-        "Δεν ήταν δυνατή η μεταφόρτωση του \"${ file.name }\"."
-      ],
-      "\"${ filename }\" could not be imported.": [
-        "Δεν ήταν δυνατή η εισαγωγή του \"${ filename }\"."
-      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
       ],
@@ -1127,9 +1100,6 @@
       "Network error": [
         "Σφάλμα δικτύου"
       ],
-      "Not enough available storage space for the selected files.": [
-        "Δεν υπάρχει αρκετός διαθέσιμος χώρος αποθήκευσης για τα επιλεγμένα αρχεία."
-      ],
       "Offline mode is currently not available for two password mode.": [
         "Η λειτουργία χωρίς σύνδεση δεν είναι προς το παρόν διαθέσιμη για τη λειτουργία δύο κωδικών πρόσβασης."
       ],
@@ -1166,9 +1136,6 @@
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
       ],
-      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Ορισμένα αρχεία είναι πολύ μεγάλα για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
-      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Ορισμένα θησαυροφυλάκια δεν είναι πλέον προσβάσιμα λόγω επαναφοράς κωδικού πρόσβασης. Ενεργοποιήστε ξανά τα κλειδιά του λογαριασμού σας για να αποκτήσετε ξανά πρόσβαση. ${ reactivateLink }"
       ],
@@ -1177,12 +1144,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε συνδεθείτε ξανά."
-      ],
-      "The file \"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Το αρχείο \"${ filename }\" είναι πολύ μεγάλο για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
-      ],
-      "The file you are trying to import is empty": [
-        "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
       ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
@@ -1624,9 +1585,6 @@
       "DNS changes could take up to 24 hours to update.": [
         "Οι αλλαγές DNS μπορεί να χρειαστούν έως και 24 ώρες για να ενημερωθούν."
       ],
-      "Do you want to remove all the files?": [
-        "Θέλετε να καταργήσετε όλα τα αρχεία;"
-      ],
       "Domain: ${ domainPath } or @": [
         "Τομέας: ${ domainPath } ή @"
       ],
@@ -1635,9 +1593,6 @@
       ],
       "Drop to import": [
         "Απόθεση για εισαγωγή"
-      ],
-      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
-        "Λόγω περιορισμού στο Firefox, το ${ PASS_APP_NAME } πρέπει να ανοίξει ξανά σε νέο παράθυρο για να μπορέσετε να ανεβάσετε αρχεία."
       ],
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
@@ -1708,9 +1663,6 @@
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
       ],
-      "Exporting files": [
-        "Εξαγωγή αρχείων"
-      ],
       "Exporting your data...": [
         "Γίνεται εξαγωγή των δεδομένων σας..."
       ],
@@ -1719,9 +1671,6 @@
       ],
       "Extra password successfully removed": [
         "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
-      ],
-      "File attachments": [
-        "Συνημμένα αρχεία"
       ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
@@ -1770,9 +1719,6 @@
       "Identity confirmed": [
         "Η ταυτότητα επιβεβαιώθηκε"
       ],
-      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
-        "Εάν ενεργοποιηθεί, όλα τα αρχεία σας θα ληφθούν κατά την εξαγωγή. Αυτό μπορεί να διαρκέσει λίγο, ανάλογα με τη σύνδεσή σας στο διαδίκτυο."
-      ],
       "Import the CSV file below.": [
         "Εισαγάγετε το παρακάτω αρχείο CSV."
       ],
@@ -1784,9 +1730,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα προέκτασης"
-      ],
-      "Include file attachments": [
-        "Συμπερίληψη συνημμένων αρχείων"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Εγκαταστήστε το ${ PASS_APP_NAME } για ${ browser.title } για γρήγορη αυτόματη συμπλήρωση των στοιχείων της σύνδεσής σας."
@@ -1949,9 +1892,6 @@
       "Offline support successfully disabled": [
         "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
       ],
-      "Once deleted, this file can still be recovered from the item's history.": [
-        "Μόλις διαγραφεί, αυτό το αρχείο μπορεί ακόμα να ανακτηθεί από το ιστορικό του στοιχείου."
-      ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
       ],
@@ -1988,9 +1928,6 @@
       ],
       "Pinning item...": [
         "Καρφίτσωμα στοιχείου..."
-      ],
-      "Please be patient while your files are being downloaded.": [
-        "Παρακαλούμε να είστε υπομονετικοί κατά τη λήψη των αρχείων σας."
       ],
       "Please check your spam folder or try resending the code.": [
         "Παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας ή δοκιμάστε να στείλετε ξανά τον κωδικό."
@@ -2396,9 +2333,6 @@
       ],
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
         "Μπορείτε, επίσης, να ορίσετε έναν κωδικό PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
-      ],
-      "You can attach files to items for a better organization": [
-        "Μπορείτε να επισυνάψετε αρχεία στα στοιχεία για καλύτερη οργάνωση"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Τώρα μπορείτε να χρησιμοποιήσετε τον κωδικό πρόσβασης ${ BRAND_NAME } σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
@@ -2822,9 +2756,6 @@
       ],
       "Field name": [
         "Όνομα πεδίου"
-      ],
-      "File": [
-        "Αρχείο"
       ],
       "File format": [
         "Μορφή αρχείου"
@@ -3288,12 +3219,6 @@
       "Today": [
         "Σήμερα"
       ],
-      "Total files: ": [
-        "Συνολικοί φάκελοι: "
-      ],
-      "Total imported files: ": [
-        "Σύνολο εισαγόμενων φακέλων: "
-      ],
       "Total imported items: ": [
         "Σύνολο εισαγόμενων αντικείμενων: "
       ],
@@ -3495,6 +3420,105 @@
       ],
       "Underscores": [
         "Κάτω παύλες"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Δεν ήταν δυνατή η μεταφόρτωση του \"${ file.name }\"."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Δεν ήταν δυνατή η εισαγωγή του \"${ filename }\"."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Το \"${ filename }\" είναι πολύ μεγάλο για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } αρχείο",
+        "${ filesCount } αρχεία"
+      ],
+      "Attachments": [
+        "Συνημμένα"
+      ],
+      "Choose a file or drag it here": [
+        "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Διαγραφή ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Διαγραφή όλων των αρχείων"
+      ],
+      "Do you want to remove all the files?": [
+        "Θέλετε να καταργήσετε όλα τα αρχεία;"
+      ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Download file": [
+        "Λήψη αρχείου"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Λόγω περιορισμού στο Firefox, το ${ PASS_APP_NAME } πρέπει να ανοίξει ξανά σε νέο παράθυρο για να μπορέσετε να ανεβάσετε αρχεία."
+      ],
+      "Exporting files": [
+        "Εξαγωγή αρχείων"
+      ],
+      "File": [
+        "Αρχείο"
+      ],
+      "File attachments": [
+        "Συνημμένα αρχεία"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Εάν ενεργοποιηθεί, όλα τα αρχεία σας θα ληφθούν κατά την εξαγωγή. Αυτό μπορεί να διαρκέσει λίγο, ανάλογα με τη σύνδεσή σας στο διαδίκτυο."
+      ],
+      "Include file attachments": [
+        "Συμπερίληψη συνημμένων αρχείων"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Δεν υπάρχει αρκετός διαθέσιμος χώρος αποθήκευσης για τα επιλεγμένα αρχεία."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Μόλις διαγραφεί, αυτό το αρχείο μπορεί ακόμα να ανακτηθεί από το ιστορικό του στοιχείου."
+      ],
+      "Open new window to upload files": [
+        "Άνοιγμα νέου παραθύρου για μεταφόρτωση αρχείων"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Παρακαλούμε να είστε υπομονετικοί κατά τη λήψη των αρχείων σας."
+      ],
+      "Remove all files": [
+        "Κατάργηση όλων των αρχείων"
+      ],
+      "Rename": [
+        "Μετονομασία"
+      ],
+      "Restore": [
+        "Επαναφορά"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Ορισμένα αρχεία είναι πολύ μεγάλα για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Τα εξαγόμενα συνημμένα αρχεία δεν θα κρυπτογραφηθούν."
+      ],
+      "The file you are trying to import is empty": [
+        "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
+      ],
+      "Total files: ": [
+        "Συνολικοί φάκελοι: "
+      ],
+      "Total imported files: ": [
+        "Σύνολο εισαγόμενων φακέλων: "
+      ],
+      "Upload files from your device.": [
+        "Ανεβάστε αρχεία από τη συσκευή σας."
+      ],
+      "You can attach files to items for a better organization": [
+        "Μπορείτε να επισυνάψετε αρχεία στα στοιχεία για καλύτερη οργάνωση"
+      ],
+      "Your current plan does not support importing files": [
+        "Το τρέχον πλάνο σας δεν υποστηρίζει την εισαγωγή αρχείων"
       ]
     },
     "Placeholder": {
@@ -3755,10 +3779,6 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } διευθύνσεις"
       ],
-      "${ filesCount } file": [
-        "${ filesCount } αρχείο",
-        "${ filesCount } αρχεία"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
@@ -3782,9 +3802,6 @@
       ],
       "Aliases": [
         "Ψευδώνυμα"
-      ],
-      "Attachments": [
-        "Συνημμένα"
       ],
       "Auto create/on the fly alias": [
         "Αυτόματη δημιουργία ψευδώνυμου"
@@ -4163,9 +4180,6 @@
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
       ],
-      "Upload files from your device.": [
-        "Ανεβάστε αρχεία από τη συσκευή σας."
-      ],
       "Vault": [
         "Κρύπτη"
       ],
@@ -4261,11 +4275,11 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Όλα τα απορριφθέντα στοιχεία σας θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
-      "An error occured while importing your data.": [
-        "Παρουσιάστηκε σφάλμα κατά την εισαγωγή των δεδομένων σας."
-      ],
       "An error occurred while exporting your data": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή των δεδομένων σας"
+      ],
+      "An error occurred while importing your data.": [
+        "Παρουσιάστηκε σφάλμα κατά την εισαγωγή των δεδομένων σας."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχείο στον κάδο απορριμμάτων;",
@@ -4506,9 +4520,6 @@
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Ο διαχειριστής σας πρέπει να δημιουργήσει μια κρύπτη για εσάς για να μπορέσετε να δημιουργήσετε στοιχεία"
-      ],
-      "Your current plan does not support importing files": [
-        "Το τρέχον πλάνο σας δεν υποστηρίζει την εισαγωγή αρχείων"
       ],
       "Your organization does not allow creating a vault": [
         "Ο οργανισμός σας δεν επιτρέπει τη δημιουργία κρύπτης"

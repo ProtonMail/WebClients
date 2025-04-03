@@ -247,9 +247,6 @@
       "Dismiss": [
         "Descarta"
       ],
-      "Download": [
-        "Baixa"
-      ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
       ],
@@ -403,10 +400,10 @@
       "Move to another vault": [
         "Mou a una altra caixa forta"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mou a la paperera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mou a la paperera"
       ],
       "Multiple select": [
@@ -484,9 +481,6 @@
       "Remove member": [
         "Esborra el membre"
       ],
-      "Rename": [
-        "Canvia el nom"
-      ],
       "Request a feature": [
         "Demaneu una nova característica"
       ],
@@ -501,6 +495,9 @@
       ],
       "Reset": [
         "Restablir"
+      ],
+      "Reset history": [
+        "Restableix l'historial"
       ],
       "Restore": [
         "Restaura"
@@ -837,6 +834,9 @@
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
       ],
+      "An error occured during the import process": [
+        "S'ha produït un error durant el procés d'importació."
+      ],
       "An error occurred while resuming your session": [
         "S'ha produït un error en reprendre la vostra sessió."
       ],
@@ -900,6 +900,9 @@
       ],
       "Deleting item failed": [
         "No s'ha pogut eliminar l'element"
+      ],
+      "Deleting item history failed": [
+        "No s'ha pogut eliminar l'historial de l'element."
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
@@ -1141,9 +1144,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Alguna cosa ha anat malament. Torneu a iniciar la sessió."
-      ],
-      "The file you are trying to import is empty": [
-        "El fitxer que esteu intentant importar està buit"
       ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
@@ -1767,6 +1767,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "S'ha actualitzat l'element \"${ payload.item.data.metadata.name }\""
       ],
+      "Item history permanently deleted": [
+        "L'historial de l'element s'ha suprimit permanentment."
+      ],
       "Item moved to trash": [
         "L'element s'ha mogut a la paperera"
       ],
@@ -2022,6 +2025,9 @@
       "Please follow the steps below to set up your domain.": [
         "Seguiu els passos següents per configurar el vostre domini."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Manteniu aquesta finestra oberta mentre s'importen les vostres dades. Aquest procés pot trigar uns minuts."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. Potser voleu desactivar l'àlies?"
       ],
@@ -2066,6 +2072,9 @@
       ],
       "Removing secure link...": [
         "S'està eliminant l'enllaç segur..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "En restablir l'historial, se suprimiran permanentment tots els elements anteriors i no es podran desfer."
       ],
       "Restoring items from trash": [
         "S'estan restaurant els elements de la paperera"
@@ -2174,6 +2183,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "No s'ha pogut importar ${ totalIgnored } element:",
+        "No s'han pogut importar els ${ totalIgnored } elements següents:"
       ],
       "The secure link has been removed": [
         "S'ha eliminat l'enllaç segur."
@@ -2744,9 +2757,6 @@
       "Field name": [
         "Nom del camp"
       ],
-      "File": [
-        "Fitxer"
-      ],
       "File format": [
         "Format de fitxer"
       ],
@@ -3032,6 +3042,9 @@
       "Personalize": [
         "Personalitza"
       ],
+      "PGP-encrypted (recommended)": [
+        "Xifrat amb PGP (recomanat)"
+      ],
       "Phone number": [
         "Número de telèfon"
       ],
@@ -3314,6 +3327,9 @@
       "Your passwords. Everywhere.": [
         "Les vostres contrasenyes allà on sigueu."
       ],
+      "ZIP": [
+        "Fitxer ZIP"
+      ],
       "ZIP or Postal code": [
         "Codi postal"
       ]
@@ -3404,6 +3420,105 @@
       ],
       "Underscores": [
         "Guions baixos"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "No s'ha pogut carregar «${ file.name }»."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "No s'ha pogut importar «${ filename }»."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "«${ filename }» és massa gran per carregar-lo. La mida màxima permesa és ${ maxFileSizeInMB }."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fitxer",
+        "${ filesCount } fitxers"
+      ],
+      "Attachments": [
+        "Fitxers adjunts"
+      ],
+      "Choose a file or drag it here": [
+        "Trieu un fitxer o arrossegueu-lo aquí"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Elimina ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Elimina tots els fitxers"
+      ],
+      "Do you want to remove all the files?": [
+        "Voleu esborrar tots els fitxers?"
+      ],
+      "Download": [
+        "Descarrega"
+      ],
+      "Download file": [
+        "Descarrega el fitxer"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "A causa d'una limitació del Firefox, ${ PASS_APP_NAME } s'ha de tornar a obrir en una finestra nova abans de poder carregar fitxers."
+      ],
+      "Exporting files": [
+        "Exportació de fitxers"
+      ],
+      "File": [
+        "Fitxer"
+      ],
+      "File attachments": [
+        "Fitxers adjunts"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Si està activat, es descarregaran tots els fitxers en exportar. Això pot trigar una mica depenent de la vostra connexió a internet."
+      ],
+      "Include file attachments": [
+        "Inclou fitxers adjunts"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "No hi ha prou espai d'emmagatzematge disponible per als fitxers seleccionats."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Un cop suprimit, aquest fitxer encara es pot recuperar de l'historial de l'element."
+      ],
+      "Open new window to upload files": [
+        "Obre una finestra nova per carregar fitxers"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Tingueu paciència mentre es descarreguen els vostres fitxers."
+      ],
+      "Remove all files": [
+        "Elimina tots els fitxers"
+      ],
+      "Rename": [
+        "Canvia el nom"
+      ],
+      "Restore": [
+        "Restaura"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Alguns fitxers són massa grans per carregar-los. La mida màxima permesa és ${ maxFileSizeInMB }."
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Els fitxers adjunts exportats no es xifraran."
+      ],
+      "The file you are trying to import is empty": [
+        "El fitxer que esteu intentant importar està buit."
+      ],
+      "Total files: ": [
+        "Nombre total de fitxers: "
+      ],
+      "Total imported files: ": [
+        "Total de fitxers importats: "
+      ],
+      "Upload files from your device.": [
+        "Carregueu fitxers des del vostre dispositiu."
+      ],
+      "You can attach files to items for a better organization": [
+        "Podeu adjuntar fitxers als elements per a una millor organització."
+      ],
+      "Your current plan does not support importing files": [
+        "El vostre pla actual no admet la importació de fitxers."
       ]
     },
     "Placeholder": {
@@ -3688,9 +3803,6 @@
       "Aliases": [
         "Àlies"
       ],
-      "Attachments": [
-        "Adjunts"
-      ],
       "Auto create/on the fly alias": [
         "Crear automàticament un àlies sobre la marxa"
       ],
@@ -3803,6 +3915,9 @@
       "Domain ownership verification": [
         "Verificació de la propietat del domini"
       ],
+      "Encrypted import": [
+        "Importació xifrada"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
       ],
@@ -3844,6 +3959,9 @@
       ],
       "Import your data": [
         "Importeu les vostres dades"
+      ],
+      "Importing your data": [
+        "Importació de les vostres dades"
       ],
       "Inactive 2FA": [
         "2FA inactiva"
@@ -3970,6 +4088,9 @@
       ],
       "Remove secure link?": [
         "Voleu esborrar l'enllaç segur?"
+      ],
+      "Reset history for this item?": [
+        "Voleu restablir l'historial d'aquest element?"
       ],
       "Resolved breaches": [
         "Infraccions resoltes"
@@ -4156,6 +4277,9 @@
       ],
       "An error occurred while exporting your data": [
         "S'ha produït un error en exportar les dades."
+      ],
+      "An error occurred while importing your data.": [
+        "S'ha produït un error en importar les dades."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Esteu segur que voleu moure ${ trashedItemsCount } element a la paperera?",
