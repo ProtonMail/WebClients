@@ -36,8 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Accept": [
-        "Acceptera"
+      "Accept invitation": [
+        "Acceptera inbjudan"
+      ],
+      "Accept invitation to document": [
+        "Acceptera inbjudan till dokument"
       ],
       "Activate recovery": [
         "Aktivera återställning"
@@ -196,6 +199,9 @@
       "Copy invite link": [
         "Kopiera inbjudningslänk"
       ],
+      "Copy version number to clipboard": [
+        "Kopiera versionsnummer till urklipp"
+      ],
       "Create": [
         "Skapa"
       ],
@@ -223,8 +229,11 @@
       "Customize import": [
         "Anpassa import"
       ],
-      "Decline": [
-        "Avböj"
+      "Decline invitation": [
+        "Avböj inbjudan"
+      ],
+      "Decline invitation to document": [
+        "Avböj inbjudan till dokument"
       ],
       "Decline invite": [
         "Avvisa inbjudan"
@@ -525,6 +534,9 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
+      "Reload": [
+        "Ladda om"
+      ],
       "Remove": [
         "Ta bort"
       ],
@@ -591,8 +603,8 @@
       "Search countries": [
         "Sök länder"
       ],
-      "Search documents": [
-        "Sök dokument"
+      "Search recent documents": [
+        "Sök i aktuella dokument"
       ],
       "See how": [
         "Se hur"
@@ -765,9 +777,6 @@
       ]
     },
     "Actions": {
-      "Last modified first": [
-        "Senast ändrad först"
-      ],
       "Last viewed first": [
         "Senast visad först"
       ],
@@ -3935,14 +3944,14 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "En VPN är en säker tunnel mellan din enhet och internet. Det döljer din plats och aktivitet från din internetleverantör (ISP) och de webbplatser du besöker."
       ],
+      "Accept/decline": [
+        "Acceptera/avböj"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
       ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
-      ],
-      "Actions": [
-        "Åtgärder"
       ],
       "Ad targeting": [
         "Målgruppsanpassning av annonser"
@@ -4087,14 +4096,14 @@
         "Skapa ett säkert moln för ${ value } medlem",
         "Skapa ett säkert moln för ${ value } medlemmar"
       ],
+      "Create an encrypted document.": [
+        "Skapa ett krypterat dokument."
+      ],
       "Create in": [
         "Skapa i"
       ],
       "Create public link": [
         "Skapa offentlig länk"
-      ],
-      "Create your end-to-end encrypted document": [
-        "Skapa ditt end-to-end-krypterade dokument"
       ],
       "Create your first folder and start moving your files.": [
         "Skapa din första mapp och börja flytta dina filer."
@@ -4367,9 +4376,6 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
-      "Invite": [
-        "Bjud in"
-      ],
       "Invite link copied": [
         "Inbjudningslänk kopierad"
       ],
@@ -4497,6 +4503,9 @@
       "No recent documents": [
         "Inga nyliga dokument"
       ],
+      "No recent documents match your search.": [
+        "Inga aktuella dokument motsvarar din sökning."
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -4553,6 +4562,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
+      ],
+      "Pending invitations": [
+        "Väntande inbjudningar"
       ],
       "People with access": [
         "Personer med åtkomst"
@@ -4633,9 +4645,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Offentliga dokument är inte aktiverade för din organisation än."
-      ],
-      "Recently deleted": [
-        "Nyligen borttaget"
       ],
       "Recents": [
         "Senaste"
@@ -4784,6 +4793,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
+      "There are no documents in the trash.": [
+        "Det finns inga dokument i papperskorgen."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
       ],
@@ -4793,11 +4805,11 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Detta dokument har mycket aktivitet. Vissa funktioner kan vara tillfälligt otillgängliga."
       ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Detta dokument kanske inte finns eller så har vi problem med att ladda det. Ladda om sidan och försök igen."
+      ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Detta dokument kanske inte finns eller så har du kanske inte behörighet att visa det. Du kan prova ladda om sidan för att se om problemet kvarstår eller kontakta ägaren för åtkomst."
-      ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Detta dokument kanske inte finns eller så har du inte de nödvändiga behörigheterna för att visa det med ditt valda konto. Prova ett annat konto eller kontakta ägaren för åtkomst."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
@@ -4895,6 +4907,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "Överföring hoppades över för mapp ”${ folderName }”"
       ],
+      "Trashed": [
+        "Kastade"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -4903,6 +4918,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Tyvärr verkar det som om filen eller en del av dess data inte kan dekrypteras."
+      ],
+      "Update recent documents": [
+        "Uppdatera senaste dokument"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
@@ -4924,6 +4942,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifiering kommer öppna en ny flik. Inaktivera alla popup-blockerare. Du kommer inte att debiteras. Eventuellt belopp som används för att verifiera kortet kommer att återbetalas omedelbart."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer kopierat till urklipp"
       ],
       "View only": [
         "Endast visa"
@@ -5056,6 +5077,9 @@
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
       ],
+      "You don't have access": [
+        "Du har inte åtkomst"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
@@ -5067,6 +5091,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigerad till webbplatsen för din bank."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Du kanske inte har de nödvändiga behörigheterna för att visa det med ditt valda konto. Prova ett annat konto eller kontakta ägaren för åtkomst."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du måste inaktivera eller ta bort eventuella ytterligare ${ MAIL_APP_NAME }-användare, adresser och anpassade domäner innan du kan nedgradera."
@@ -5704,6 +5731,9 @@
       ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
+      ],
+      "Trash": [
+        "Papperskorg"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -7193,7 +7223,7 @@
         "“${ name }“ skapades utan problem"
       ],
       "\"${ name }\" deleted": [
-        "\"${ name }\" borttagen"
+        "“${ name }“ borttagen"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "“${ name }“ togs bort permanent från papperskorg"
@@ -7202,7 +7232,7 @@
         "“${ name }“ misslyckades att skapas"
       ],
       "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" kunde inte tas bort"
+        "“${ name }“ misslyckades att tas bort"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "“${ name }“ misslyckades att tas bort permanent från papperskorg"
@@ -7250,8 +7280,8 @@
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg"
       ],
       "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } objekt kunde inte tas bort",
-        "${ numberOfItems } objekt kunde inte tas bort"
+        "${ numberOfItems } objekt misslyckades att tas bort",
+        "${ numberOfItems } objekt misslyckades att tas bort"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "“${ numberOfItems }“ fil misslyckades att tas bort permanent från papperskorgen",
@@ -7380,6 +7410,9 @@
       ],
       "Public link update access failed ": [
         "Uppdatering av offentlig länkåtkomst misslyckades "
+      ],
+      "Recent documents updated.": [
+        "Nya dokument uppdaterade."
       ],
       "Root folder failed to be loaded": [
         "Misslyckades att ladda rotmapp"
@@ -7556,6 +7589,20 @@
       ],
       "Merge with calendar": [
         "Slå samman med kalender"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "Favoriter"
+      ],
+      "Recents": [
+        "Senaste"
+      ],
+      "Searching": [
+        "Söker"
+      ],
+      "Trashed": [
+        "Kastade"
       ]
     },
     "Participant name": {
@@ -7933,6 +7980,9 @@
       "Created by": [
         "Skapad av"
       ],
+      "Deleted": [
+        "Borttagen"
+      ],
       "Earlier": [
         "Tidigare"
       ],
@@ -7950,6 +8000,9 @@
       ],
       "Previous 7 days": [
         "Senaste 7 dagarna"
+      ],
+      "Search results": [
+        "Sökresultat"
       ],
       "Today": [
         "Idag"
@@ -8663,6 +8716,25 @@
         "För ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsutrymme per användare"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } anpassad e-postdomän",
+        "${ planNumberOfDomains } anpassade e-postdomäner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadress",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappar, etiketter och anpassade filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -8702,25 +8774,6 @@
       ],
       "Your privacy is our mission": [
         "Din integritet är vårt uppdrag"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsutrymme per användare"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } anpassad e-postdomän",
-        "${ planNumberOfDomains } anpassade e-postdomäner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadress",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappar, etiketter och anpassade filter"
       ]
     },
     "Subscription renewal state": {

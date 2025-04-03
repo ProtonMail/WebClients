@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Accept": [
-        "Kabul et"
-      ],
       "Activate recovery": [
         "Kurtarma özelliğini aç"
       ],
@@ -86,9 +83,6 @@
       ],
       "Apply": [
         "Uygula"
-      ],
-      "Ask me next time": [
-        "Gelecek sefer yeniden sor"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
@@ -196,6 +190,9 @@
       "Copy invite link": [
         "Davet bağlantısını kopyala"
       ],
+      "Copy version number to clipboard": [
+        "Sürüm numarasını kopyala"
+      ],
       "Create": [
         "Ekle"
       ],
@@ -222,9 +219,6 @@
       ],
       "Customize import": [
         "İçe aktarmayı özelleştir"
-      ],
-      "Decline": [
-        "Reddet"
       ],
       "Decline invite": [
         "Daveti reddet"
@@ -525,6 +519,9 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
+      "Reload": [
+        "Yenile"
+      ],
       "Remove": [
         "Kaldır"
       ],
@@ -582,17 +579,11 @@
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
-      "Save preferences": [
-        "Ayarları kaydet"
-      ],
       "Search": [
         "Arama"
       ],
       "Search countries": [
         "Ülke ara"
-      ],
-      "Search documents": [
-        "Belgeleri ara"
       ],
       "See how": [
         "Nasıl yapıldığını görün"
@@ -765,9 +756,6 @@
       ]
     },
     "Actions": {
-      "Last modified first": [
-        "Son değiştirilen üstte"
-      ],
       "Last viewed first": [
         "Son görüntülenen üstte"
       ],
@@ -3944,9 +3932,6 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
-      "Actions": [
-        "İşlemler"
-      ],
       "Ad targeting": [
         "Hedeflenmiş reklam"
       ],
@@ -4061,9 +4046,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubundan çıkarıldı"
       ],
-      "Converting document...": [
-        "Belge dönüştürülüyor..."
-      ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
@@ -4096,9 +4078,6 @@
       "Create public link": [
         "Herkese açık bağlantı ekle"
       ],
-      "Create your end-to-end encrypted document": [
-        "Uçtan uca şifrelenmiş belgenizi oluşturun"
-      ],
       "Create your first folder and start moving your files.": [
         "İlk klasörünüzü ekleyin ve dosyalarınızı taşımaya başlayın."
       ],
@@ -4107,9 +4086,6 @@
       ],
       "Creating link to folder": [
         "Klasör bağlantısı oluşturuluyor"
-      ],
-      "Creating new document...": [
-        "Yeni belge oluşturuluyor..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -4228,12 +4204,6 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Belge yüklenirken sorun çıktı ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Eşitleme sorunu"
       ],
@@ -4293,12 +4263,6 @@
       ],
       "Geoblocking": [
         "Coğrafi engelleme"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Belgelerinize eklenen yorum ve öneriler için e-posta bildirimleri alın."
-      ],
-      "Get Notified About Comments": [
-        "Yorumlar bildirilsin"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasına git"
@@ -4370,9 +4334,6 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
-      "Invite": [
-        "Davet et"
-      ],
       "Invite link copied": [
         "Davet bağlantısı kopyalandı"
       ],
@@ -4442,9 +4403,6 @@
       "Low Priority": [
         "Düşük Öncelik"
       ],
-      "Making a copy...": [
-        "Kopyalanıyor..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
       ],
@@ -4484,9 +4442,6 @@
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Adreste bir belge belirtilmemiş. ${ DRIVE_APP_NAME } uygulamasına dönüp bir belge seçin."
       ],
       "No email address": [
         "E-posta adresi yok"
@@ -4636,9 +4591,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Kuruluşunuzda herkese açık belgeler henüz kullanıma alınmamış."
-      ],
-      "Recently deleted": [
-        "Son silinenler"
       ],
       "Recents": [
         "Son kullanılanlar"
@@ -4803,9 +4755,6 @@
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Bu belge var olmayabilir veya onu görüntüleme izniniz olmayabilir. Sorun sürüyor mu anlamak için sayfayı yeniden yüklemeyi ya da erişim izni vermesi için sahibi ile görüşmeyi deneyebilirsiniz."
       ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Bu belge var olmayabilir veya seçilmiş hesabınızda belgeyi görüntülemek için gerekli izinler olmayabilir. Farklı bir hesap kullanmayı deneyin veya erişim izni vermesi için belge sahibiyle görüşün."
-      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
       ],
@@ -4931,6 +4880,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar hemen geri ödenir."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Sürüm numarası kopyalandı"
       ],
       "View only": [
         "Yalnızca görüntüleme"
@@ -5468,9 +5420,6 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
-      "Enable email notifications": [
-        "E-posta bildirimlerini aç"
-      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -5524,9 +5473,6 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
-      ],
-      "Include document name in notification": [
-        "Bildirime belge adı eklensin"
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
@@ -5716,6 +5662,9 @@
       ],
       "To: ${ toEmail }": [
         "Kime: ${ toEmail }"
+      ],
+      "Trash": [
+        "Çöp kutusu"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -8625,6 +8574,25 @@
         "${ totalPrice } için"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8664,25 +8632,6 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
