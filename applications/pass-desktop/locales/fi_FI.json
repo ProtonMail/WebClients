@@ -247,9 +247,6 @@
       "Dismiss": [
         "Sulje"
       ],
-      "Download": [
-        "Lataa"
-      ],
       "Download this CSV template": [
         "Lataa tämä CSV-malli"
       ],
@@ -403,10 +400,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -484,9 +481,6 @@
       "Remove member": [
         "Poista jäsen"
       ],
-      "Rename": [
-        "Nimeä uudelleen"
-      ],
       "Request a feature": [
         "Pyydä ominaisuutta"
       ],
@@ -501,6 +495,9 @@
       ],
       "Reset": [
         "Tyhjennä"
+      ],
+      "Reset history": [
+        "Nollaa historia"
       ],
       "Restore": [
         "Palauta"
@@ -880,6 +877,9 @@
       "Deleting item failed": [
         "Kohteen poisto epäonnistui"
       ],
+      "Deleting item history failed": [
+        "Kohteen historian poisto epäonnistui"
+      ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" poisto epäonnistui"
       ],
@@ -1120,9 +1120,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Jotain meni pieleen. Kirjaudu sisään uudelleen."
-      ],
-      "The file you are trying to import is empty": [
-        "Tiedosto, jota yrität tuoda, on tyhjä"
       ],
       "The session has expired. Please sign in again.": [
         "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
@@ -1739,6 +1736,9 @@
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Kohde \"${ payload.item.data.metadata.name }\" päivitettiin"
+      ],
+      "Item history permanently deleted": [
+        "Kohdehistoria poistettiin pysyvästi"
       ],
       "Item moved to trash": [
         "Kohde siirrettiin roskakoriin"
@@ -2708,9 +2708,6 @@
       "Field name": [
         "Kentän nimi"
       ],
-      "File": [
-        "Tiedosto"
-      ],
       "File format": [
         "Tiedostomuoto"
       ],
@@ -2996,6 +2993,9 @@
       "Personalize": [
         "Mukauta"
       ],
+      "PGP-encrypted (recommended)": [
+        "PGP-salattu (suositus)"
+      ],
       "Phone number": [
         "Puhelinnumero"
       ],
@@ -3277,6 +3277,9 @@
       ],
       "Your passwords. Everywhere.": [
         "Sinun salasanasi. Kaikkialla."
+      ],
+      "ZIP": [
+        "Postinumero"
       ],
       "ZIP or Postal code": [
         "Postinumero"
@@ -3652,9 +3655,6 @@
       "Aliases": [
         "Aliakset"
       ],
-      "Attachments": [
-        "Liitteet"
-      ],
       "Auto create/on the fly alias": [
         "Automaattiluotu/lennossa -alias"
       ],
@@ -3767,6 +3767,9 @@
       "Domain ownership verification": [
         "Verkkotunnuksen omistajuuden vahvistus"
       ],
+      "Encrypted import": [
+        "Salattu vienti"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
       ],
@@ -3808,6 +3811,9 @@
       ],
       "Import your data": [
         "Tuo tietosi"
+      ],
+      "Importing your data": [
+        "Tietojasi tuodaan"
       ],
       "Inactive 2FA": [
         "2FA ei ole käytössä"
@@ -3934,6 +3940,9 @@
       ],
       "Remove secure link?": [
         "Poistetaanko suojattu linkki?"
+      ],
+      "Reset history for this item?": [
+        "Nollataanko tämän kohteen historia?"
       ],
       "Resolved breaches": [
         "Ratkaistut tietomurrot"

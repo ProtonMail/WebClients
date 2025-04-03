@@ -214,12 +214,6 @@
       "Delete all": [
         "Alles verwijderen"
       ],
-      "Delete all files": [
-        "Verwijder alle bestanden"
-      ],
-      "Delete file: ${ deleteFile.state.name }": [
-        "Verwijder bestand: ${ deleteFile.state.name }"
-      ],
       "Delete it, I will never need it": [
         "Verwijder het, ik heb het nooit nodig"
       ],
@@ -252,12 +246,6 @@
       ],
       "Dismiss": [
         "Negeren"
-      ],
-      "Download": [
-        "Downloaden"
-      ],
-      "Download file": [
-        "Download bestand"
       ],
       "Download this CSV template": [
         "Download dit CSV-sjabloon"
@@ -412,11 +400,11 @@
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
-      "Move to Trash": [
-        "Verplaats naar prullenbak"
-      ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "Move to Trash": [
+        "Verplaats naar prullenbak"
       ],
       "Multiple select": [
         "Meervoudige selectie"
@@ -435,9 +423,6 @@
       ],
       "Open navigation": [
         "Navigatie openen"
-      ],
-      "Open new window to upload files": [
-        "Open een nieuw venster om bestanden op te laden"
       ],
       "Pass for Android": [
         "Proton Pass voor Android"
@@ -490,17 +475,11 @@
       "Remove all expired links (${ inactiveLinkCount })": [
         "Verwijder alle verlopen links (${ inactiveLinkCount })"
       ],
-      "Remove all files": [
-        "Verwijder alle bestanden"
-      ],
       "Remove link": [
         "Link verwijderen"
       ],
       "Remove member": [
         "Lid verwijderen"
-      ],
-      "Rename": [
-        "Hernoem"
       ],
       "Request a feature": [
         "Vraag een functie aan"
@@ -840,12 +819,6 @@
       ]
     },
     "Error": {
-      "\"${ file.name }\" could not be uploaded.": [
-        "\"${ file.name }\" kon niet worden opgeladen."
-      ],
-      "\"${ filename }\" could not be imported.": [
-        "\"${ filename }\" kon niet worden geïmporteerd."
-      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
       ],
@@ -1127,9 +1100,6 @@
       "Network error": [
         "Netwerkfout"
       ],
-      "Not enough available storage space for the selected files.": [
-        "Niet genoeg opslagruimte beschikbaar voor de geselecteerde bestanden."
-      ],
       "Offline mode is currently not available for two password mode.": [
         "Offline-modus is momenteel niet beschikbaar voor twee wachtwoordmodus."
       ],
@@ -1166,9 +1136,6 @@
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
-      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Sommige bestanden zijn te groot om op te laden. De maximaal toegestane grootte is (${ maxFileSizeInMB })"
-      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Sommige kluizen zijn niet langer toegankelijk door een wachtwoordreset. Activeer uw accountsleutels opnieuw om terug toegang te krijgen. ${ reactivateLink }"
       ],
@@ -1177,12 +1144,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Er is iets fout gegaan. Log opnieuw in."
-      ],
-      "The file \"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Het bestand \"${ filename }\" is te groot om op te laden. De maximaal toegestane grootte is (${ maxFileSizeInMB })"
-      ],
-      "The file you are trying to import is empty": [
-        "Het bestand dat u probeert te importeren is leeg"
       ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
@@ -1624,9 +1585,6 @@
       "DNS changes could take up to 24 hours to update.": [
         "Het kan tot 24 uur duren om de DNS-wijzigingen bij te werken."
       ],
-      "Do you want to remove all the files?": [
-        "Wilt u alle bestanden verwijderen?"
-      ],
       "Domain: ${ domainPath } or @": [
         "Domein: ${ domainPath } of @"
       ],
@@ -1635,9 +1593,6 @@
       ],
       "Drop to import": [
         "Neerzetten om te importeren"
-      ],
-      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
-        "Vanwege een beperking in Firefox, moet ${ PASS_APP_NAME } opnieuw worden geopend in een nieuw venster voordat u bestanden kunt opladen."
       ],
       "Editor": [
         "Bewerker"
@@ -1708,9 +1663,6 @@
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
       ],
-      "Exporting files": [
-        "Bestanden exporteren"
-      ],
       "Exporting your data...": [
         "Uw gegevens exporteren..."
       ],
@@ -1719,9 +1671,6 @@
       ],
       "Extra password successfully removed": [
         "Extra wachtwoord succesvol verwijderd"
-      ],
-      "File attachments": [
-        "Bestandsbijlagen"
       ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
@@ -1770,9 +1719,6 @@
       "Identity confirmed": [
         "Identiteit bevestigd"
       ],
-      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
-        "Indien ingeschakeld, zullen al uw bestanden worden gedownload bij het exporteren. Afhankelijk van uw internetverbinding kan dit enige tijd duren."
-      ],
       "Import the CSV file below.": [
         "Importeer het CSV-bestand hieronder."
       ],
@@ -1784,9 +1730,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Geef de benodigde extensierechten om de beste ervaring uit ${ PASS_APP_NAME } te halen"
-      ],
-      "Include file attachments": [
-        "Bijlages toevoegen"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Installeer ${ PASS_APP_NAME } voor ${ browser.title } om uw inloggegevens snel automatisch in te vullen."
@@ -1949,9 +1892,6 @@
       "Offline support successfully disabled": [
         "Offline ondersteuning succesvol uitgeschakeld"
       ],
-      "Once deleted, this file can still be recovered from the item's history.": [
-        "Eenmaal verwijderd, kan dit bestand nog steeds worden hersteld uit de item historiek"
-      ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
       ],
@@ -1988,9 +1928,6 @@
       ],
       "Pinning item...": [
         "Item vastzetten..."
-      ],
-      "Please be patient while your files are being downloaded.": [
-        "Even geduld, uw bestanden worden gedownload."
       ],
       "Please check your spam folder or try resending the code.": [
         "Controleer uw spam map of probeer de code opnieuw te versturen."
@@ -2396,9 +2333,6 @@
       ],
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
         "U kunt ook een pincode definiëren om ${ PASS_APP_NAME } te ontgrendelen"
-      ],
-      "You can attach files to items for a better organization": [
-        "U kunt bestanden toevoegen aan items voor een betere organisatie"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "U kunt nu uw ${ BRAND_NAME }-wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
@@ -2822,9 +2756,6 @@
       ],
       "Field name": [
         "Veldnaam"
-      ],
-      "File": [
-        "Bestand"
       ],
       "File format": [
         "Bestandsformaat"
@@ -3288,12 +3219,6 @@
       "Today": [
         "Vandaag"
       ],
-      "Total files: ": [
-        "Totaal aantal bestanden: "
-      ],
-      "Total imported files: ": [
-        "Totaal aantal geïmporteerde bestanden: "
-      ],
       "Total imported items: ": [
         "Totaal geïmporteerde items: "
       ],
@@ -3495,6 +3420,105 @@
       ],
       "Underscores": [
         "Onderstrepingstekens"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\" kon niet worden geüpload."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" kon niet worden geïmporteerd."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" is te groot om te uploaden. De maximaal toegestane grootte is (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } bestand",
+        "${ filesCount } bestanden"
+      ],
+      "Attachments": [
+        "Bijlagen"
+      ],
+      "Choose a file or drag it here": [
+        "Kies een bestand of sleep het hierheen"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Verwijder ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Verwijder alle bestanden"
+      ],
+      "Do you want to remove all the files?": [
+        "Wilt u alle bestanden verwijderen?"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download file": [
+        "Bestand downloaden"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Wegens een beperking in Firefox, moet ${ PASS_APP_NAME } worden geopend in een nieuw venster voordat u bestanden kunt uploaden."
+      ],
+      "Exporting files": [
+        "Bestanden exporteren"
+      ],
+      "File": [
+        "Bestand"
+      ],
+      "File attachments": [
+        "Bestandsbijlagen"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Indien ingeschakeld, zullen al uw bestanden worden gedownload bij het exporteren. Afhankelijk van uw internetverbinding kan dit enige tijd duren."
+      ],
+      "Include file attachments": [
+        "Bestandsbijlagen opnemen"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Niet genoeg opslagruimte beschikbaar voor de geselecteerde bestanden."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Eenmaal verwijderd, kan dit bestand nog steeds worden hersteld uit de artikelgeschiedenis."
+      ],
+      "Open new window to upload files": [
+        "Open een nieuw venster om bestanden te uploaden"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Even geduld, uw bestanden worden gedownload."
+      ],
+      "Remove all files": [
+        "Verwijder alle bestanden"
+      ],
+      "Rename": [
+        "Hernoemen"
+      ],
+      "Restore": [
+        "Herstellen"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Sommige bestanden zijn te groot om te uploaden. De maximaal toegestane grootte is (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "De geëxporteerde bijlagen worden niet versleuteld."
+      ],
+      "The file you are trying to import is empty": [
+        "Het bestand dat u probeert te importeren is leeg"
+      ],
+      "Total files: ": [
+        "Totaal aantal bestanden: "
+      ],
+      "Total imported files: ": [
+        "Totaal aantal geïmporteerde bestanden: "
+      ],
+      "Upload files from your device.": [
+        "Bestanden uploaden van uw computer."
+      ],
+      "You can attach files to items for a better organization": [
+        "U kunt bestanden toevoegen aan items voor een betere organisatie"
+      ],
+      "Your current plan does not support importing files": [
+        "Uw huidige abonnement ondersteunt het importeren van bestanden niet"
       ]
     },
     "Placeholder": {
@@ -3755,10 +3779,6 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adressen"
       ],
-      "${ filesCount } file": [
-        "${ filesCount } bestand",
-        "${ filesCount } bestanden"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
@@ -3782,9 +3802,6 @@
       ],
       "Aliases": [
         "Aliassen"
-      ],
-      "Attachments": [
-        "Bijlagen"
       ],
       "Auto create/on the fly alias": [
         "Automatisch aanmaken van instant alias"
@@ -4163,9 +4180,6 @@
       "Update available": [
         "Update beschikbaar"
       ],
-      "Upload files from your device.": [
-        "Bestanden opladen van uw computer."
-      ],
       "Vault": [
         "Kluis"
       ],
@@ -4261,11 +4275,11 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Al uw weggegooide items worden permanent verwijderd. U kunt deze actie niet ongedaan maken."
       ],
-      "An error occured while importing your data.": [
-        "Er is een fout opgetreden bij het exporteren van uw gegevens."
-      ],
       "An error occurred while exporting your data": [
         "Er is een fout opgetreden bij het exporteren van uw gegevens"
+      ],
+      "An error occurred while importing your data.": [
+        "Er is een fout opgetreden bij het importeren van uw gegevens."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Weet u zeker dat u ${ trashedItemsCount } item naar de prullenbak wilt verplaatsen?",
@@ -4506,9 +4520,6 @@
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Uw beheerder moet een kluis aanmaken voor u voordat u items kunt aanmaken"
-      ],
-      "Your current plan does not support importing files": [
-        "Uw huidig abonnement laat niet toe om bestanden te importeren"
       ],
       "Your organization does not allow creating a vault": [
         "Uw organisatie staat het aanmaken van een kluis niet toe"
