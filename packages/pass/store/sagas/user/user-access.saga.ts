@@ -10,8 +10,10 @@ import {
     getUserAccessSuccess,
     importReport,
     itemCreate,
+    itemDelete,
     itemDeleteRevisions,
     itemEdit,
+    vaultDeleteSuccess,
 } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
@@ -44,7 +46,10 @@ const matchRevalidateUserAccess = (action: unknown) => {
     if (fileLinkPending.success.match(action)) return true;
     if (importReport.match(action)) return true;
     if (itemDeleteRevisions.success.match(action)) return true;
+    if (vaultDeleteSuccess.match(action)) return true;
     if (or(itemEdit.success.match, itemCreate.success.match)(action)) return hasAttachments(action.payload.item);
+    if (itemDelete.success.match(action)) return action.payload.hadFiles;
+
     return false;
 };
 
