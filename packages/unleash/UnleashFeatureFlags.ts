@@ -106,6 +106,7 @@ enum DriveFeatureFlag {
     DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
     // Experiment
     DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
+    DriveWebSafariSearch = 'DriveWebSafariSearch',
     // Albums
     DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
