@@ -34,3 +34,14 @@ export const Opened = () => {
         </>
     );
 };
+
+export const Triangle = () => {
+    return (
+        <>
+            <Details>
+                <Summary useTriangle>Here a summary with triangle icon</Summary>
+                Lorem Ipsum dolor si amet.
+            </Details>
+        </>
+    );
+};
