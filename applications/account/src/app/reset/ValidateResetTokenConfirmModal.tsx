@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface ModalProps {
     onClose: () => void;
@@ -12,9 +13,22 @@ interface ModalProps {
     recoveryMethods: RecoveryMethod[];
     open: boolean;
     address?: string;
+    hasRecoveryFile: boolean;
 }
 
-const ValidateResetTokenConfirmModal = ({ onClose, onConfirm, open, address, recoveryMethods }: ModalProps) => {
+const ValidateResetTokenConfirmModal = ({
+    onClose,
+    onConfirm,
+    open,
+    address,
+    recoveryMethods,
+    hasRecoveryFile,
+}: ModalProps) => {
+    const deviceLink = (
+        <Href key="learn-more" href={getKnowledgeBaseUrl('/device-data-recovery')}>
+            {c('Info').t`trusted device`}
+        </Href>
+    );
     return (
         <ModalTwo open={open} onClose={onClose} size="small">
             <ModalTwoHeader title={c('Title').t`Reset password?`} subline={address} />
@@ -43,6 +57,22 @@ const ValidateResetTokenConfirmModal = ({ onClose, onConfirm, open, address, rec
                         )}
                     </li>
                 </ul>
+                {hasRecoveryFile && (
+                    <div className="p-3 border border-weak rounded">
+                        <div className="flex flex-nowrap gap-2">
+                            <div className="flex shrink-0 mt-0.5">
+                                <Icon className="color-success" name="checkmark-circle-filled" />
+                            </div>
+                            <div>
+                                <div className="mb-1">
+                                    <b>{c('Info').t`Data recoverable on this device`}</b>
+                                </div>
+                                {c('Info')
+                                    .jt`We stored a backup file in this browser because you allowed data recovery on this ${deviceLink}. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.`}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
