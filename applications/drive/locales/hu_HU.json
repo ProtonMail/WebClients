@@ -418,6 +418,9 @@
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
       ],
+      "Hide download options": [
+        "Letöltési opciók elrejtése"
+      ],
       "Image could not be loaded with tracker protection.": [
         "A képet nem lehetett betölteni a nyomkövető védelemmel."
       ],
@@ -459,6 +462,9 @@
       ],
       "Learn more": [
         "További információk"
+      ],
+      "Learn more.": [
+        "Tudjon meg többet."
       ],
       "Leave": [
         "Kilépés"
@@ -756,6 +762,9 @@
       ],
       "Show advanced PGP settings": [
         "Haladó PGP beállítások megjelenítése"
+      ],
+      "Show more download options": [
+        "Több letöltési opció megjelenítése"
       ],
       "Show navigation bar": [
         "Navigációs sáv mutatása"
@@ -2337,6 +2346,11 @@
         "A CSV fájl az alábbi mezőket tartalmazza. Válassza ki, hogy melyeket szeretné importálni."
       ]
     },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Az együttműködés még egyszerűbbé vált. Mostantól bárki javasolhat módosításokat anélkül, hogy a dokumentumot megváltoztatná."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Hibák vagy minőségi problémák"
@@ -2583,6 +2597,18 @@
       "Error decrypting a computer": [
         "Hiba egy számítógép visszafejtése közben"
       ],
+      "External accounts are not supported yet": [
+        "A külső fiókok még nincsenek támogatva"
+      ],
+      "External invitations are not available yet.": [
+        "Külső meghívók még nem érhetők el."
+      ],
+      "External invitations are temporarily disabled.": [
+        "A külső meghívók átmenetileg le vannak tiltva."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "A külső meghívók ideiglenesen le vannak tiltva. Kérjük, próbálja meg később újra"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "A fájl: \"${ item.name }\", hiba miatt nem tölthető fel: \"${ error }\""
       ],
@@ -2715,6 +2741,9 @@
       "Payment process not supported": [
         "Fizetési folyamat nem támogatott"
       ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "A fényképek feltöltése ideiglenesen le van tiltva. Kérjük, próbálja meg később újra."
+      ],
       "Please activate your search again": [
         "Aktiválja újra a keresést"
       ],
@@ -2807,6 +2836,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "A meghívó teljesítése még nem lehetséges. Kérjük, próbálja később újra."
+      ],
+      "The invitation doesn't exist anymore": [
+        "A meghívó már nem létezik"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Ez a címkenév érvénytelen. Adjon meg egy másik nevet."
       ],
@@ -2864,6 +2899,9 @@
       "Try using only letters, numerals, and _.-": [
         "Próbáljon csak betűket, számokat és _.-t használni"
       ],
+      "Unable to set photo as cover": [
+        "Nem lehet beállítani a fényképet borítóként"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Váratlan hiba történt, a névjegyek importálása nem sikerült"
       ],
@@ -2872,6 +2910,9 @@
       ],
       "Unknown payment token status": [
         "Ismeretlen fizetési token állapot"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "A mappa feltöltése ideiglenesen le van tiltva"
       ],
       "Username must begin with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
@@ -3689,6 +3730,9 @@
         "${ addressCount } e-mail cím",
         "${ addressCount } e-mail cím"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } sikeresen törölve lett"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
@@ -3771,6 +3815,10 @@
       "${ pausedCount } paused": [
         "${ pausedCount } felfüggesztve",
         "${ pausedCount } felfüggesztve"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } elem",
+        "${ photoCount } elem"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
@@ -4137,6 +4185,9 @@
       "Drop files here": [
         "Húzza ide a fájlokat"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "A fájlokat helyezze ide a feltöltéshez, vagy kattintson a feltöltés gombra."
+      ],
       "Drop to import": [
         "Húzza ide az importáláshoz"
       ],
@@ -4266,6 +4317,12 @@
       ],
       "from the version history?": [
         "az előző változatok közül?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Szerezze be az alkalmazást a telefonjáról készült fényképek biztonsági mentéséhez, vagy töltse fel őket ide."
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Szerezze be az alkalmazást a fényképek biztonsági mentéséhez a telefonjáról."
       ],
       "Get the desktop app to sync files from your computer.": [
         "Töltse le az asztali alkalmazást a számítógépén lévő fájlok szinkronizálásához."
@@ -4479,6 +4536,9 @@
       "No": [
         "Nem"
       ],
+      "No Albums": [
+        "Nincsenek albumok"
+      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
       ],
@@ -4515,6 +4575,9 @@
       "of": [
         "/"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Miután ez a folyamat befejeződött, a helyreállított adatok másolatát egy új mappában találja, amelynek neve „Automated Recovery (mai dátum)”. Az adatoknak ez a másolata nem számít bele a tárolási korlátba."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Az egyik titkosított felhőtárolója le van zárva. A legvalószínűbb oka egy nemrégi jelszó-újraállítás lehet."
       ],
@@ -4539,6 +4602,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
       ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Rendszereink azt észlelték, hogy az előző helyreállítás nem fejeződött be sikeresen, és előfordulhat, hogy egyes fájlok nem lettek teljesen helyreállítva. Automatikusan újraindítottuk a helyreállítási folyamatot, így biztosítjuk, hogy minden teljesen helyre legyen állítva."
+      ],
       "Owner": [
         "Tulajdonos"
       ],
@@ -4562,6 +4628,15 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "A PGP/MIME automatikusan a szerkesztőablak módja szerinti formátumban küldi az üzenetet."
+      ],
+      "Photo is not saved to your library": [
+        "A fénykép nincs elmentve a könyvtárába"
+      ],
+      "Photo is set as album cover": [
+        "A fénykép az album borítójaként lett beállítva"
+      ],
+      "Photos have been successfully recovered.": [
+        "A fényképek sikeresen helyreállítva."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Kérjük kérje meg a dokumentum tulajdonosát hogy hívja meg."
@@ -4667,6 +4742,9 @@
       "Queued": [
         "Sorba állítva"
       ],
+      "Ready to add some photos?": [
+        "Készen áll néhány fénykép hozzáadására?"
+      ],
       "recommended browser": [
         "ajánlott böngésző"
       ],
@@ -4699,6 +4777,9 @@
       ],
       "Restored files ${ formattedDate }": [
         "Helyreálíltott fájlok ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Fotók helyreállítása... Kérjük, tartsa nyitva a lapot"
       ],
       "Saving...": [
         "Mentés..."
@@ -4808,6 +4889,9 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
+      "The albums you create are shown here.": [
+        "Az Ön által létrehozott albumok itt láthatók."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A letöltések száma tartalmazza a tényleges letöltéseket és az előnézet megtekintéseit is."
       ],
@@ -4870,6 +4954,15 @@
       ],
       "This month": [
         "Ebben a hónapban"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Ez a művelet véglegesen törli az Ön által feltöltött fájlt."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Ez véglegesen törli az Ön által feltöltött mappát."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Ez véglegesen törli a kiválasztott, feltöltött elemeket."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Ez eltávolítja a ${ deviceName } szinkronizált eszközt a ${ DRIVE_APP_NAME }-ból és az összes adatot a ${ DRIVE_APP_NAME }-ból. Mappák, amiket hozzáadott a Számítógépeimhez többé nem fognak szinkronizálódni."
@@ -4973,11 +5066,17 @@
       "Unsupported file": [
         "Ismeretlen file"
       ],
+      "Untitled": [
+        "Névtelen"
+      ],
       "Updating drive search...": [
         "Felhőtárban keresés frissítése..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
+      ],
+      "upgrade your storage": [
+        "növelje a tárhelyét"
       ],
       "Uploaded": [
         "Feltöltve"
@@ -5018,8 +5117,14 @@
       "Visa Secure logo": [
         "Visa biztonsági logó"
       ],
+      "Want to sync files faster?": [
+        "Szeretné gyorsabban szinkronizálni a fájlokat?"
+      ],
       "Warning": [
         "Figyelmeztetés"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Így tovább, most 5 GB-ra növelte a tárhelyét!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Műszaki problémák merültek fel. Az új fényképek feltöltése ideiglenesen nem lehetséges."
@@ -5038,6 +5143,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "A befizetését hitelesítenünk kell a bankjánál."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Elnézést kérünk a kellemetlenségekért, amelyeket ez okozhatott Önnek."
       ],
       "We use 3-D Secure to protect your payments": [
         "Erős ügyfélhitelesítést használunk az Ön fizetésének biztonsága érdekében."
@@ -5069,6 +5177,9 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "visszaállításra kerül, a(z) ${ formattedRevisionDate } dátumú változatból. Minden további változat továbbra is elérhető marad."
       ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "${ DRIVE_APP_NAME } használatával adatai végponttól végpontig tartó titkosítással vannak védve."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
@@ -5077,6 +5188,13 @@
       ],
       "Would you like to restore your files?": [
         "Szeretné helyreállítani a fájljait?"
+      ],
+      "Would you like to save it before removing?": [
+        "Szeretné elmenteni, mielőtt eltávolítja?",
+        "Szeretné elmenteni, mielőtt eltávolítja?"
+      ],
+      "Would you like to save them before removing?": [
+        "Szeretné elmenteni őket eltávolítás előtt?"
       ],
       "Writing assistant": [
         "Írási segéd"
@@ -5210,6 +5328,9 @@
       ],
       "Your email address was exposed:": [
         "Az e-mail címét felfedték:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Az Ön e-mail címe a hivatkozás tulajdonosaként lesz látható a megosztási oldalon."
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -5370,6 +5491,9 @@
       ],
       "Anderson": [
         "Kovács"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Az interneten bárki, aki rendelkezik a hivatkozással, szerkesztheti"
       ],
       "Anyone on the Internet with the link can view": [
         "Bárki az Interneten ezzel a hivatkozással megtudja nézni"
@@ -5552,6 +5676,9 @@
       "Enter device name": [
         "Írja be az eszköz nevét"
       ],
+      "Erase this link and remove everyone with access": [
+        "Törölje ezt a hivatkozást, és távolítsa el a hozzáféréssel rendelkezőket"
+      ],
       "Expiration (${ patternExpiration })": [
         "Lejárta (${ patternExpiration })"
       ],
@@ -5671,6 +5798,9 @@
       ],
       "Move to Inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
+      ],
+      "My Albums": [
+        "Saját albumok"
       ],
       "Name": [
         "Név"
@@ -5858,6 +5988,9 @@
       "Upload your first file": [
         "Töltsön fel fájlokat"
       ],
+      "Uploaded by": [
+        "Feltöltötte"
+      ],
       "VAT": [
         "ÁFA"
       ],
@@ -5939,6 +6072,9 @@
       "Add a gift code": [
         "Ajándék kód hozzáadása"
       ],
+      "Albums": [
+        "Albumok"
+      ],
       "All mail": [
         "Összes levél"
       ],
@@ -6007,6 +6143,11 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Szintén tartalmazza:"
       ]
     },
     "Loading info": {
@@ -6123,6 +6264,12 @@
       ]
     },
     "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP audio/video konténer"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2 audio/video konténer"
+      ],
       "7-zip archive": [
         "7-zip archive"
       ],
@@ -6132,14 +6279,26 @@
       "AbiWord document": [
         "AbiWord dokumentum"
       ],
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe Portable Document Format (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle eBook formátum"
+      ],
       "Android Package": [
         "Android csomag"
+      ],
+      "Apple Installer Package": [
+        "Apple Installer Package"
       ],
       "Archive document": [
         "Dokumentum archiválása"
       ],
       "Audio file": [
         "Hangfájl"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 Image File Format (AVIF)"
       ],
       "AVI video": [
         "AVI videofájl"
@@ -6162,11 +6321,23 @@
       "Cascading Style Sheets (CSS)": [
         "Cascading Style Sheets (CSS)"
       ],
+      "Comma-separated values (CSV)": [
+        "Vesszővel elválasztott értékek (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Electronic publication (EPUB)"
+      ],
       "Flash Video": [
         "Flash videofájl"
       ],
+      "Graphics Interchange Format (GIF)": [
+        "Graphics Interchange Format (GIF)"
+      ],
       "GZip Archive": [
         "GZip archívum"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "HyperText Markup Language (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
         "Hypertext Preprocessor (Személyes Kezdő Oldal)"
@@ -6195,11 +6366,23 @@
       "MS Embedded OpenType fonts": [
         "MS Embedded OpenType betűtípusok"
       ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Musical Instrument Digital Interface (MIDI)"
+      ],
       "OGG audio": [
         "OGG hangfájl"
       ],
       "OGG video": [
         "OGG videofájl"
+      ],
+      "OpenDocument presentation document": [
+        "OpenDocument prezentációs dokumentum"
+      ],
+      "OpenDocument spreadsheet document": [
+        "OpenDocument táblázatkezelő dokumentum"
+      ],
+      "OpenDocument text document": [
+        "OpenDocument szöveges dokumentum"
       ],
       "OpenType font": [
         "OpenType betűtípus"
@@ -6212,6 +6395,18 @@
       ],
       "RAR archive": [
         "RAR archive"
+      ],
+      "Rich Text Format (RTF)": [
+        "Rich Text Format (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Scalable Vector Graphics (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "Small web format (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Tagged Image File Format (TIFF)"
       ],
       "Tape Archive (TAR)": [
         "Tape Archive (TAR)"
@@ -6227,6 +6422,12 @@
       ],
       "Video file": [
         "Videofájl"
+      ],
+      "Waveform Audio Format": [
+        "Waveform Audio Format"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
       ],
       "WEBM audio": [
         "WEBM hangfájl"
@@ -6283,17 +6484,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6315,6 +6505,17 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -7100,6 +7301,12 @@
       "Access updated": [
         "Hozzáférés frissítve"
       ],
+      "Album failed to be renamed": [
+        "Album átnevezése sikertelen"
+      ],
+      "Album renamed successfully": [
+        "Album átnevezve"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
       ],
@@ -7268,6 +7475,9 @@
       "Continue": [
         "Tovább"
       ],
+      "Create a document": [
+        "Dokumentum létrehozása"
+      ],
       "Get started": [
         "Kezdés"
       ],
@@ -7306,6 +7516,15 @@
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Fájlokhoz való hozzáférés útközben"
+      ],
+      "Drag and drop your files here": [
+        "Húzza át a fájlokat ide"
+      ],
+      "Edit documents online": [
+        "Dokumentumok online szerkesztése"
+      ],
       "Final approval in progress": [
         "Utolsó jóváhagyás folyamatban"
       ],
@@ -7317,6 +7536,12 @@
       ],
       "Get the mobile app": [
         "Mobilalkalmazás beszerzése"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Android készüléke van? Mi gondoskodunk Önről."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "iPhone-ja van? Mi gondoskodunk Önről."
       ],
       "Hang tight": [
         "Tartson ki!"
@@ -7333,8 +7558,14 @@
       "Manage access": [
         "Hozzáférés kezelése"
       ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Védje pénzügyi dokumentumait, igazolványait, projektfájljait, fényképeit és még sok mást a végponttól végpontig terjedő titkosítással."
+      ],
       "Scan the QR code to install the mobile app": [
         "Olvassa be a QR-kódot a mobil applikáció telepítéséhez"
+      ],
+      "Securely share files and folders": [
+        "Fájlok és mappák biztonságos megosztása"
       ],
       "Share files & folders": [
         "Fájlok és mappák megosztása"
@@ -8278,32 +8509,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -8460,6 +8665,32 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -8757,6 +8988,12 @@
       "Album": [
         "Album"
       ],
+      "Album details": [
+        "Album részletei"
+      ],
+      "Albums": [
+        "Albumok"
+      ],
       "All": [
         "Mind"
       ],
@@ -8781,6 +9018,9 @@
       ],
       "Auto-deletion is active": [
         "Az automatikus törlés aktív"
+      ],
+      "Automatic Recovery in Progress": [
+        "Automatikus helyreállítás folyamatban"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -8812,6 +9052,9 @@
       "Change password": [
         "Jelszó megváltoztatása"
       ],
+      "Check for malicious files": [
+        "Rosszindulatú fájlok keresése"
+      ],
       "Clearing data": [
         "Adatok törlése"
       ],
@@ -8826,6 +9069,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } kedvezmények lemondásának megerősítése"
+      ],
+      "Confirmation required": [
+        "Megerősítés szükséges"
       ],
       "Contact Details": [
         "Névjegy részletei"
@@ -8878,6 +9124,9 @@
       "Day theme": [
         "Nappali téma"
       ],
+      "Decline invitation?": [
+        "Meghívó visszautasítása?"
+      ],
       "Delete": [
         "Törlés"
       ],
@@ -8888,6 +9137,9 @@
       "Delete ${ count } contact group": [
         "${ count } névjegy csoport törlése",
         "${ count } névjegy csoport törlése"
+      ],
+      "Delete ${ name }?": [
+        "${ name } törlése?"
       ],
       "Delete ${ value }": [
         "${ value } törlése"
@@ -9139,6 +9391,10 @@
       ],
       "Remove device?": [
         "Eszköz eltávolítása?"
+      ],
+      "Remove item?": [
+        "Elem eltávolítása?",
+        "Elemek eltávolítása?"
       ],
       "Rename a file": [
         "Fájl átnevezése"
