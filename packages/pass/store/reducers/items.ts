@@ -200,7 +200,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
              * This allows this item to be correctly marked as failed.
              * Optimistically update the item attachment flags for UI purposes. */
             const revision = existing.revision + 1;
-            const flags = files.toAdd ? existing.flags | ItemFlag.HasAttachments : existing.flags;
+            const flags = files.toAdd.length ? existing.flags | ItemFlag.HasAttachments : existing.flags;
 
             return updateItem({ shareId, itemId, data: item, revision, flags })(state);
         }
