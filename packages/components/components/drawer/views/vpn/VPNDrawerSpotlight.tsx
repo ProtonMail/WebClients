@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useRef } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,9 +11,15 @@ import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useApi from '@proton/components/hooks/useApi';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import { PLANS } from '@proton/payments/index';
+import {
+    type ConnectionInformationResult,
+    getConnectionInformation,
+} from '@proton/shared/lib/api/core/connection-information';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { SentryMailInitiatives } from '@proton/shared/lib/helpers/sentry';
@@ -30,7 +36,10 @@ interface Props {
 }
 
 const VPNDrawerSpotlight = ({ children }: Props) => {
+    const api = useApi();
+    const silentApi = getSilentApi(api);
     const [user] = useUser();
+    const [showSpotlight, setShowSpotlight] = useState(false);
     const [subscription] = useSubscription();
     const { toggleDrawerApp } = useDrawer();
     const { Name: planName } = getPlan(subscription) || {};
@@ -58,15 +67,24 @@ const VPNDrawerSpotlight = ({ children }: Props) => {
 
     useEffect(() => {
         if (shouldShowSpotlight) {
-            spotlightIsDisplayed();
+            const run = async () => {
+                const result = await silentApi<ConnectionInformationResult>(getConnectionInformation());
+                // Only show the spotlight if Proton VPN is not connected
+                setShowSpotlight(!result.IsVpnConnection);
+            };
+
+            void run();
         }
     }, [shouldShowSpotlight]);
 
     return (
         <Spotlight
             originalPlacement="left"
-            show={shouldShowSpotlight}
-            onDisplayed={onDisplayed}
+            show={showSpotlight}
+            onDisplayed={() => {
+                spotlightIsDisplayed();
+                onDisplayed();
+            }}
             onClose={handleClose}
             anchorRef={anchorRef}
             className="drawer-vpn-view-spotlight"
