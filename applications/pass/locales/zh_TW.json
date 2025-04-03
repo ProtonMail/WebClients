@@ -289,10 +289,10 @@
       "Move to another vault": [
         "移動到另一個保管庫"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至垃圾桶"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至垃圾桶"
       ],
       "Multiple select": [
@@ -363,6 +363,9 @@
       ],
       "Resend invitation": [
         "重新發送邀請"
+      ],
+      "Reset": [
+        "重設"
       ],
       "Restore": [
         "還原"
@@ -704,9 +707,6 @@
       "Something went wrong": [
         "發生錯誤"
       ],
-      "The file you are trying to import is empty": [
-        "您匯入的檔案為空白的"
-      ],
       "The session has expired. Please sign in again.": [
         "工作階段已逾期。請重新登入。"
       ],
@@ -969,14 +969,8 @@
       "How does monitoring work?": [
         "監控如何工作"
       ],
-      "Import in progress:": [
-        "匯入進行中:"
-      ],
       "Import the CSV file below.": [
         "於底下匯入CSV。"
-      ],
-      "Imported ${ payload.total } item": [
-        "匯入${ payload.total }項目"
       ],
       "Imported on ${ date }": [
         "匯入於${ date }"
@@ -1004,9 +998,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已經登入 ${ PASS_APP_NAME }。若您嘗試使用其他帳號登入，請先從擴充套件登出。"
-      ],
-      "item": [
-        "項目"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "項目${ payload.item.data.metadata.name }以新增"
@@ -1202,9 +1193,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "以下${ result.ignored.length }項目無法匯入:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
@@ -2441,9 +2429,6 @@
       ],
       "Passwords do not match": [
         "密碼不一致"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP加密匯出需要驗證短語"
       ],
       "Please check that the extension is properly installed and enabled": [
         "請檢查此擴充功能為完整下載或啟用"

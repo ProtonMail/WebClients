@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
+      ],
+      "Reset": [
+        "Tyhjennä"
+      ],
+      "Reset history": [
+        "Nollaa historia"
       ],
       "Restore": [
         "Palauta"
@@ -839,6 +845,9 @@
       "Deleting item failed": [
         "Kohteen poisto epäonnistui"
       ],
+      "Deleting item history failed": [
+        "Kohteen historian poisto epäonnistui"
+      ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" poisto epäonnistui"
       ],
@@ -999,9 +1008,6 @@
       "File could not be parsed": [
         "Tiedostoa ei voitu jäsentää"
       ],
-      "File could not be read": [
-        "Tiedostoa ei voitu lukea"
-      ],
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
       ],
@@ -1082,9 +1088,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Jotain meni pieleen. Kirjaudu sisään uudelleen."
-      ],
-      "The file you are trying to import is empty": [
-        "Tiedosto, jota yrität tuoda, on tyhjä"
       ],
       "The session has expired. Please sign in again.": [
         "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
@@ -1507,9 +1510,6 @@
       "Drop to import": [
         "Tuo pudottamalla"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safarin laajennusrajoitusten vuoksi tiedostopääte \".pgp\" puuttuu tietojen viennin jälkeen. Uudelleennimeä tiedosto viennin jälkeen siten, että sillä on \".pgp\" -pääte (esim. tiedosto.pgp)."
-      ],
       "Editor": [
         "Muokkaus"
       ],
@@ -1635,15 +1635,8 @@
       "Identity confirmed": [
         "Identiteetti vahvistettiin"
       ],
-      "Import in progress:": [
-        "Tuonti on käynnissä:"
-      ],
       "Import the CSV file below.": [
         "Tuo CSV-tiedosto alta."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } kohde tuotiin",
-        "${ payload.total } kohdetta tuotiin"
       ],
       "Imported on ${ date }": [
         "Tuotu ${ date }"
@@ -1684,15 +1677,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Näyttää siltä, että olet jo kirjautunut ${ PASS_APP_NAME }iin. Jos yrität kirjautua eri tilillä, kirjaa laajennus ensin ulos."
       ],
-      "item": [
-        "kohde",
-        "kohdetta"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Kohde \"${ payload.item.data.metadata.name }\" luotiin"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Kohde \"${ payload.item.data.metadata.name }\" päivitettiin"
+      ],
+      "Item history permanently deleted": [
+        "Kohdehistoria poistettiin pysyvästi"
       ],
       "Item moved to trash": [
         "Kohde siirrettiin roskakoriin"
@@ -2099,10 +2091,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Lisäsalasana tarvitaan ${ PASS_APP_NAME }in käyttöön ja se vaaditaan ${ BRAND_NAME }-tilisi salasanan lisäksi."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
-        "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
       ],
       "The secure link has been removed": [
         "Suojattu linkki poistettiin"
@@ -2898,8 +2886,8 @@
       "Personal website": [
         "Henkilökohtainen verkkosivusto"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-salattu JSON-tiedosto (suositus)"
+      "PGP-encrypted (recommended)": [
+        "PGP-salattu (suositus)"
       ],
       "Phone number": [
         "Puhelinnumero"
@@ -3152,6 +3140,9 @@
       ],
       "Your domain": [
         "Sinun verkkotunnuksesi"
+      ],
+      "ZIP": [
+        "Postinumero"
       ],
       "ZIP or Postal code": [
         "Postinumero"
@@ -3625,6 +3616,9 @@
       "Domain ownership verification": [
         "Verkkotunnuksen omistajuuden vahvistus"
       ],
+      "Encrypted import": [
+        "Salattu vienti"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
       ],
@@ -3666,6 +3660,9 @@
       ],
       "Import your data": [
         "Tuo tietosi"
+      ],
+      "Importing your data": [
+        "Tietojasi tuodaan"
       ],
       "Inactive 2FA": [
         "2FA ei ole käytössä"
@@ -3792,6 +3789,9 @@
       ],
       "Remove secure link?": [
         "Poistetaanko suojattu linkki?"
+      ],
+      "Reset history for this item?": [
+        "Nollataanko tämän kohteen historia?"
       ],
       "Resolved breaches": [
         "Ratkaistut tietomurrot"
@@ -4122,9 +4122,6 @@
       ],
       "Passwords do not match": [
         "Salasanat eivät täsmää"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP-salattu vientitiedosto vaatii salalauseen"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Tarkista, että laajennus on asennettu oikein ja otettu käyttöön"
