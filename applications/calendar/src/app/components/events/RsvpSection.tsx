@@ -219,7 +219,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                                 className="ml-3"
                                 isAboveModal
                             >
-                                <div className={clsx(isDrawerOrResponsiveView ? 'text-left' : 'text-right')}>
+                                <div className={isDrawerOrResponsiveView ? 'text-left' : 'text-right'}>
                                     <Button
                                         className={clsx('text-sm color-weak', isDrawerOrResponsiveView && 'mt-2')}
                                         shape="underline"
@@ -264,7 +264,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                     />
                     <InputFieldTwo
                         autoFocus
-                        className={clsx('mt-4 resize-none')}
+                        className="mt-4 resize-none"
                         assistContainerClassName="m-0"
                         id="rsvp-modal"
                         as={TextAreaWithCounter}
