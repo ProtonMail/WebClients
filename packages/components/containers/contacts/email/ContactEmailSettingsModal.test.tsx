@@ -872,7 +872,7 @@ END:VCARD`;
             expect(screen.queryByTestId('koo-origin-label')).toBeNull();
         });
 
-        it('internal contact with v6 address keys: should display primary label for v6 primary key only, and allow pinning it based on user settings', async () => {
+        it('internal contact with v6 address keys: should display primary label for one primary key only, and allow pinning it based on user settings', async () => {
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({
@@ -912,22 +912,35 @@ END:VCARD`;
                 const table = await screen.findByTestId('contact-keys-table');
                 const rows = await within(table).findAllByRole('row');
                 expect(rows.length).toBe(2);
-                // first table row
-                const v6KeyFingerprint = await within(rows[0]).findByText('internally mocked armored key v6');
+
+                const expectedRowPrimaryKeyV6 = rows[withV6Support ? 0 : 1];
+                const expectedRowPrimaryKeyV4 = rows[withV6Support ? 1 : 0];
+
+                const v6KeyFingerprint = await within(expectedRowPrimaryKeyV6).findByText(
+                    'internally mocked armored key v6'
+                );
                 expect(v6KeyFingerprint).toBeVisible();
-                const primaryLabel = await within(rows[0]).findByTestId('primary-key-label');
-                expect(primaryLabel).toBeVisible();
+
                 if (withV6Support) {
-                    // cannot trust a v6 key unless user settings declare support for it
+                    // primary label should only be displayed for the first primary key listed
+                    const primaryLabel = await within(expectedRowPrimaryKeyV6).findByTestId('primary-key-label');
+                    expect(primaryLabel).toBeVisible();
+                    expect(within(expectedRowPrimaryKeyV4).queryByTestId('primary-key-label')).toBeNull();
+                    // the v6 can only be trusted if user settings declare support for it
                     expect(within(rows[0]).getByTitle('Open actions dropdown')).toBeVisible();
                 } else {
-                    expect(within(rows[0]).queryByTitle('Open actions dropdown')).toBeNull();
+                    const primaryLabel = await within(expectedRowPrimaryKeyV4).findByTestId('primary-key-label');
+                    expect(primaryLabel).toBeVisible();
+                    expect(within(expectedRowPrimaryKeyV6).queryByTestId('primary-key-label')).toBeNull();
+
+                    expect(within(expectedRowPrimaryKeyV6).queryByTitle('Open actions dropdown')).toBeNull();
                 }
 
-                // second table row
-                const v4KeyFingerprint = await within(rows[1]).findByText('internally mocked armored key v4');
+                const v4KeyFingerprint = await within(expectedRowPrimaryKeyV4).findByText(
+                    'internally mocked armored key v4'
+                );
                 expect(v4KeyFingerprint).toBeVisible();
-                expect(within(rows[1]).getByTitle('Open actions dropdown')).toBeVisible(); // can trust a v4 key
+                expect(within(expectedRowPrimaryKeyV4).getByTitle('Open actions dropdown')).toBeVisible(); // can trust a v4 key
 
                 unmount();
             };
