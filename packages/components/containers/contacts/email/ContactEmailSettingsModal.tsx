@@ -251,14 +251,14 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                 obsoleteFingerprints,
                 compromisedFingerprints,
                 primaryKeyFingerprints,
-                preferV6Keys: true,
+                preferV6Keys: supportV6Keys,
             });
             const pinnedKeys = sortPinnedKeys({
                 keys: publicKeys.pinnedKeys,
                 obsoleteFingerprints,
                 compromisedFingerprints,
                 encryptionCapableFingerprints,
-                preferV6Keys: true,
+                preferV6Keys: supportV6Keys,
             });
             const verifyingPinnedKeys = getVerifyingKeys(pinnedKeys, model.compromisedFingerprints);
 
@@ -299,6 +299,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     }, [isMimeTypeFixed, hasPGPInline]);
 
     return (
+        // NB: actual modal size defined by custom CSS targeting `.contacts-modal`
         <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalTwoHeader
                 title={c('Title').t`Edit email settings`}
