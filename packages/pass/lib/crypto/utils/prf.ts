@@ -2,7 +2,7 @@ import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { MaybeNull } from '@proton/pass/types/utils';
-import { isChromiumBased, isMinimumSafariVersion } from '@proton/shared/lib/helpers/browser';
+import { isChromiumBased, isMinimumSafariVersion, isWindows } from '@proton/shared/lib/helpers/browser';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { PassCryptoError } from './errors';
@@ -13,11 +13,11 @@ const CHALLENGE = new Uint8Array([1]);
 const FIRST_SALT = stringToUint8Array('proton.pass.webauthn.prf.firstSalt').buffer;
 const HKDF_INFO = stringToUint8Array('proton.pass.webauthn.prf');
 
-/** Until PRF is more widely adopted, we additionaly restrict
- *  this to Safari >= 18 and Chromium-based browsers */
+/** Until PRF is more widely adopted, we additionaly restrict this
+ *  to exclude Windows, Safari < 18, and non-Chromium-based browsers */
 export const isPRFSupported = async (): Promise<boolean> => {
     try {
-        if (!(isChromiumBased() || isMinimumSafariVersion(18))) return false;
+        if (isWindows() || !(isChromiumBased() || isMinimumSafariVersion(18))) return false;
         return await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
     } catch {
         return false;
