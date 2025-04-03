@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Přijmout"
-      ],
       "Activate recovery": [
         "Aktivovat obnovení"
       ],
@@ -86,9 +83,6 @@
       ],
       "Apply": [
         "Použít"
-      ],
-      "Ask me next time": [
-        "Zeptat se příště"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
@@ -198,6 +192,9 @@
       "Copy invite link": [
         "Kopírovat odkaz pozvánky"
       ],
+      "Copy version number to clipboard": [
+        "Zkopírovat číslo verze do schránky"
+      ],
       "Create": [
         "Vytvořit"
       ],
@@ -224,9 +221,6 @@
       ],
       "Customize import": [
         "Přizpůsobit import"
-      ],
-      "Decline": [
-        "Odmítnout"
       ],
       "Decline invite": [
         "Odmítnout pozvánku"
@@ -531,6 +525,9 @@
       "Refresh the page": [
         "Obnovit stránku"
       ],
+      "Reload": [
+        "Znovu načíst"
+      ],
       "Remove": [
         "Odstranit"
       ],
@@ -588,17 +585,11 @@
       "Save changes": [
         "Uložit změny"
       ],
-      "Save preferences": [
-        "Uložit předvolby"
-      ],
       "Search": [
         "Vyhledat"
       ],
       "Search countries": [
         "Vyhledat země"
-      ],
-      "Search documents": [
-        "Hledat dokumenty"
       ],
       "See how": [
         "Podívejte se, jak"
@@ -773,9 +764,6 @@
       ]
     },
     "Actions": {
-      "Last modified first": [
-        "Naposledy upravené jako první"
-      ],
       "Last viewed first": [
         "Naposledy zobrazené jako první"
       ],
@@ -4050,9 +4038,6 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
-      "Actions": [
-        "Akce"
-      ],
       "Ad targeting": [
         "Cílení reklamy"
       ],
@@ -4173,9 +4158,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Převádění dokumentu..."
-      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -4212,9 +4194,6 @@
       "Create public link": [
         "Vytvořit veřejný odkaz"
       ],
-      "Create your end-to-end encrypted document": [
-        "Vytvořte svůj koncově šifrovaný dokument"
-      ],
       "Create your first folder and start moving your files.": [
         "Vytvořte první složku a přesuňte soubory."
       ],
@@ -4223,9 +4202,6 @@
       ],
       "Creating link to folder": [
         "Vytváření odkazu na složku"
-      ],
-      "Creating new document...": [
-        "Vytváření nového dokumentu..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -4344,12 +4320,6 @@
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Chyba při převodu dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Chyba při načítání dokumentu${ errorDetail }"
-      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4409,12 +4379,6 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
-      ],
-      "Get Notified About Comments": [
-        "Buďte upozorněni na komentáře"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Jít do ${ DRIVE_APP_NAME }"
@@ -4488,9 +4452,6 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
-      "Invite": [
-        "Pozvat"
-      ],
       "Invite link copied": [
         "Odkaz na pozvánku zkopírován"
       ],
@@ -4560,9 +4521,6 @@
       "Low Priority": [
         "Nízká priorita"
       ],
-      "Making a copy...": [
-        "Vytváření kopie..."
-      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4604,9 +4562,6 @@
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "V adrese URL nebyl zadán žádný dokument. Vraťte se na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žádná e-mailová adresa"
@@ -4760,9 +4715,6 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Veřejné dokumenty zatím nejsou pro vaši organizaci povoleny."
-      ],
-      "Recently deleted": [
-        "Nedávno smazané"
       ],
       "Recents": [
         "Nedávné"
@@ -4929,9 +4881,6 @@
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Tento dokument nemusí existovat nebo k jeho zobrazení nemáte oprávnění. Můžete zkusit znovu načíst stránku a zjistit, zda problém přetrvává nebo se obrátit na vlastníka a požádat ho o přístup."
       ],
-      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Je možné, že tento dokument neexistuje, nebo nemáte potřebná oprávnění k jeho zobrazení pomocí vybraného účtu. Zkuste použít jiný účet nebo se obraťte na vlastníka a požádejte ho o přístup."
-      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je nyní vaše ${ defaultEmailAddress } pro odesílání nových zpráv."
       ],
@@ -5057,6 +5006,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Nebude účtován žádný poplatek. Jakákoli částka použitá pro ověření karty bude obratem vrácena."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verze úspěšně zkopírováno do schránky"
       ],
       "View only": [
         "Pouze prohlížení"
@@ -5608,9 +5560,6 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
-      "Enable email notifications": [
-        "Povolit e-mailová upozornění"
-      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -5664,9 +5613,6 @@
       ],
       "Import to:": [
         "Importovat do:"
-      ],
-      "Include document name in notification": [
-        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -5856,6 +5802,9 @@
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
+      ],
+      "Trash": [
+        "Koš"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -8923,6 +8872,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložiště na uživatele"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastní e-mailová doména",
+        "${ planNumberOfDomains } vlastní e-mailové domény",
+        "${ planNumberOfDomains } vlastních e-mailových domén",
+        "${ planNumberOfDomains } vlastních e-mailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailová adresa",
+        "${ planNumberOfEmails } e-mailové adresy",
+        "${ planNumberOfEmails } e-mailových adres",
+        "${ planNumberOfEmails } e-mailových adres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Složky, štítky a vlastní filtry"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložiště"
@@ -8962,29 +8934,6 @@
       ],
       "Your privacy is our mission": [
         "Vaše soukromí je naším posláním"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložiště na uživatele"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastní e-mailová doména",
-        "${ planNumberOfDomains } vlastní e-mailové domény",
-        "${ planNumberOfDomains } vlastních e-mailových domén",
-        "${ planNumberOfDomains } vlastních e-mailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailová adresa",
-        "${ planNumberOfEmails } e-mailové adresy",
-        "${ planNumberOfEmails } e-mailových adres",
-        "${ planNumberOfEmails } e-mailových adres"
-      ],
-      "Folders, labels, and custom filters": [
-        "Složky, štítky a vlastní filtry"
       ]
     },
     "Subscription renewal state": {

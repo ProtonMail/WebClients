@@ -185,9 +185,6 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
-      "Remove background color": [
-        "Esborra el color de fons"
-      ],
       "Remove link": [
         "Esborra l'enllaç"
       ],
@@ -558,14 +555,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "Color de fons en ${ name } i color de text en blanc"
+      ],
+      "${ name } text color and highlight": [
+        "Color del text i de ressaltat en ${ name }"
+      ],
+      "${ name } text color with no background": [
+        "Color del text en ${ name } sense fons"
+      ],
       "Add link": [
         "Afegeix un enllaç"
       ],
       "Align": [
         "Alinea"
-      ],
-      "Background colour": [
-        "Color de fons"
       ],
       "Change image size": [
         "Canvia la mida de la imatge"
@@ -648,8 +651,8 @@
       "Replace link": [
         "Substitueix l'enllaç"
       ],
-      "Text colour": [
-        "Color del text"
+      "Text and highlight color": [
+        "Color del text i de ressaltat"
       ],
       "with \"${ replaceWith }\"": [
         "per «${ replaceWith }»"

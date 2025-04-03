@@ -152,10 +152,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create alias": [
@@ -247,9 +247,6 @@
       ],
       "Done": [
         "მზადაა"
-      ],
-      "Download": [
-        "გადმოწერა"
       ],
       "Download this CSV template": [
         "გადმოწერეთ ეს CSV ნიმუში"
@@ -467,9 +464,6 @@
       "Remove member": [
         "წევრის წაშლა"
       ],
-      "Rename": [
-        "სახელის გადარქმევა"
-      ],
       "Request a feature": [
         "თვისების მოთხოვნა"
       ],
@@ -484,6 +478,9 @@
       ],
       "Reset": [
         "თავიდან"
+      ],
+      "Reset history": [
+        "ისტორიის ჩამოყრა"
       ],
       "Restore": [
         "აღდგენა"
@@ -752,6 +749,9 @@
       "Alias options could not be resolved": [
         "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
       ],
+      "An error occured during the import process": [
+        "აღმოჩენილია შეცდომა შემოტანის პროცესში"
+      ],
       "Authentication error": [
         "ავთენტიკაციის შეცდომა"
       ],
@@ -815,6 +815,9 @@
       ],
       "Deleting item failed": [
         "ელემენტის წაშლის შეცდომა"
+      ],
+      "Deleting item history failed": [
+        "ელემენტის ისტორიის წაშლა ჩავარდა"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "საცავის \"${ payload.content.name }\" წაშლის შეცდომა"
@@ -1068,9 +1071,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "რაღაც არასწორად წავიდა. გადატვრთეთ გაფართოება ${ PASS_APP_NAME }. ეს პრობლემა ჩავიწერეთ."
-      ],
-      "The file you are trying to import is empty": [
-        "ფაილი, რომლის შემოტანასაც ცდილობთ, ცარიელია"
       ],
       "The URL is in the list": [
         "ბმული უკვე სიაშია"
@@ -1331,6 +1331,12 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
+      ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "ფსევდონიმი წარმატებით გაითიშა. ახლა ელფოსტებს, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან, ვეღარ მიიღებთ"
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "ფსევდონიმი წარმატებით ჩაირთო. ახლა შეგძლიათ, მიიღოთ ელფოსტები, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "ფსევდონიმების სინქრონიზაცია თქვენს ${ BRAND_NAME }-ისა და SimpleLogin-ის ანგარიშებს შორის აქტიურია."
@@ -1670,6 +1676,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "ელემენტი \"${ payload.item.data.metadata.name }\" განახლდა"
       ],
+      "Item history permanently deleted": [
+        "ელემენტის ისტორია სამუდამოდ წაიშალა"
+      ],
       "Item moved to trash": [
         "ელემენტი გადატანილია ნაგვის ყუთში"
       ],
@@ -1734,10 +1743,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -1902,6 +1907,9 @@
       "Please follow the steps below to set up your domain.": [
         "მიჰყევით შემდეგ ნაბიჯებს ქვემოთ, რომ თქვენი დომენი მოირგოთ."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "დატოვეთ ეს ფანჯარა ღია, სანამ მონაცემების შემოტანა მიმდინარეობს. ამას რამდენიმე წუთი შეიძლება, დასჭირდეს."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "დაიმახსოვრეთ, რომ ფსევდონიმის აღდგენა შეუქცევადია. შეიძლება, მისი, უბრალოდ გათიშვა გნებავთ?"
       ],
@@ -1949,6 +1957,9 @@
       ],
       "Removing secure link...": [
         "დაცული ბმულის წაშლა..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "ისტორიის ჩამოყრა სამუდამოდ წაშლის ყველა ძველ ვერსიას და ეს ქმედება შეუქცევადია."
       ],
       "Restoring items from trash": [
         "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
@@ -2051,6 +2062,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "დამატებითი პაროლი აუცილებელია ${ PASS_APP_NAME }-ის გამოყენებისას. ის ${ BRAND_NAME }-ის პაროლთან ერთად დამატებით პაროლად გამოიყენება."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
+        "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
       ],
       "The secure link has been removed": [
         "დაცული ბმული წაიშალა"
@@ -2617,9 +2632,6 @@
       "Field name": [
         "ველის სახელწოდება"
       ],
-      "File": [
-        "ფაილი"
-      ],
       "File format": [
         "ფაილის ფორმატი"
       ],
@@ -2868,6 +2880,9 @@
       ],
       "Personal website": [
         "პირადი ვებგვერდი"
+      ],
+      "PGP-encrypted (recommended)": [
+        "PGP-ით დაშიფრული (რეკომენდებულია)"
       ],
       "Phone number": [
         "ტელეფონის ნომერი"
@@ -3130,6 +3145,9 @@
       "Your domain": [
         "თქვენი დომენი"
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "Zip ან საფოსტო კოდი"
       ]
@@ -3184,6 +3202,105 @@
       ],
       "Underscores": [
         "ხაზგასმები"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "ფაილის \"${ file.name }\" ატვირთვა შეუძლებელია."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "ფაილის \"${ filename }\" შემოტანა შეუძლებელია."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "ფაილი \"${ filename }\" მეტისმეტად დიდია ასატვირთად. მაქსიმალური დაშვებული ზომაა (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } ფაილი",
+        "${ filesCount } ფაილი"
+      ],
+      "Attachments": [
+        "მიმაგრებული ფაილები"
+      ],
+      "Choose a file or drag it here": [
+        "აირჩიეთ ფაილი ან გადმოათრიეთ აქ"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "${ deleteFile.state.name }-ის წაშლა"
+      ],
+      "Delete all files": [
+        "ყველა ფაილის წაშლა"
+      ],
+      "Do you want to remove all the files?": [
+        "მართლა გნებავთ ყველა ფაილის წაშლა?"
+      ],
+      "Download": [
+        "გადმოწერა"
+      ],
+      "Download \"${ filename }\"": [
+        "\"${ filename }\"-ის გადმოწერა"
+      ],
+      "Download file": [
+        "ფაილის გადმოწერა"
+      ],
+      "Exporting files": [
+        "ფაილების გატანა"
+      ],
+      "File": [
+        "ფაილი"
+      ],
+      "File attachments": [
+        "მიმაგრებული ფაილები"
+      ],
+      "Include file attachments": [
+        "მიმაგრებული ფაილების ჩათვლით"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "საცავზე ადგილი მონიშნული ფაილებისთვის საკმარისი არაა."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "როცა წაშლით, ამ ფაილის აღდგენა მაინც შესაძლებელია ელემენტის ისტორიიდან."
+      ],
+      "Open new window to upload files": [
+        "ახალი ფანჯრის გახსნა ფაილების ასატვირთად"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "მოითმინეთ. მიმდინარეობს თქვენი ფაილების გადმოწერა."
+      ],
+      "Remove all files": [
+        "ყველა ფაილის წაშლა"
+      ],
+      "Rename": [
+        "სახელის გადარქმევა"
+      ],
+      "Restore": [
+        "აღდგენა"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "ზოგიერთი ფაილი ასატვირთად მეტისმეტად დიდია. მაქსიმალური დაშვებული ზომაა (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "გატანილი მიმაგრებული ფაილები დაშიფრული არ იქნება."
+      ],
+      "The file you are trying to import is empty": [
+        "ფაილი, რომლის შემოტანასაც ცდილობთ, ცარიელია"
+      ],
+      "Total files: ": [
+        "სულ ფაილი: "
+      ],
+      "Total imported files: ": [
+        "შემოტანილი ფაილები სულ: "
+      ],
+      "Upload files from your device.": [
+        "ატვირთეთ ფაილები თქვენი მოწყობილობიდან."
+      ],
+      "You can attach files to items for a better organization": [
+        "უკეთესად ორგანიზმებისთვის ელემენტებს, შეგიძლიათ, ფაილები მიამაგროთ"
+      ],
+      "You may close this window after saving the file.": [
+        "ფაილის შენახვის შემდეგ შეგიძლიათ, დახუროთ ეს ფანჯარა."
+      ],
+      "Your current plan does not support importing files": [
+        "თქვენს მიმდინარე სატარიფო გეგმას ფაილების შემოტანის მხარდაჭერა არ გააჩნია"
       ]
     },
     "Placeholder": {
@@ -3427,6 +3544,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME }-ის ჟურნალი"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-ის მორგება"
       ],
@@ -3447,9 +3567,6 @@
       ],
       "Aliases": [
         "ფსევდონიმები"
-      ],
-      "Attachments": [
-        "მიმაგრებები"
       ],
       "Auto create/on the fly alias": [
         "ავტოშექმნა/ფსევდონიმები საჭიროებისამებრ"
@@ -3548,6 +3665,9 @@
       "Email": [
         "ელ-ფოსტა"
       ],
+      "Encrypted import": [
+        "დაშიფრული შემოტანა"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
       ],
@@ -3595,6 +3715,9 @@
       ],
       "Import to vault(s)": [
         "საცავ(ებ)-ში შემოტანა"
+      ],
+      "Importing your data": [
+        "თქვენი მონაცემების შემოტანა"
       ],
       "Item": [
         "ელემენტი"
@@ -3694,6 +3817,9 @@
       ],
       "Remove secure link?": [
         "წავშალო დაცული ბმული?"
+      ],
+      "Reset history for this item?": [
+        "ჩამოვყარო ისტორია ამ ელემენტისთვის?"
       ],
       "Restore this version?": [
         "ამ ვერსიის აღდგენა?"
@@ -3855,6 +3981,9 @@
       ],
       "An error occurred while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
+      ],
+      "An error occurred while importing your data.": [
+        "შეცდომა თქვენი მონაცემების შემოტანისას."
       ],
       "An error occurred while resuming your session": [
         "შეცდომა თქვენი სესიის გაგრძელებისას"

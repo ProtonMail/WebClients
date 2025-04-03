@@ -185,9 +185,6 @@
       "Refresh the page": [
         "Абнавіць старонку"
       ],
-      "Remove background color": [
-        "Выдаліць колер фону"
-      ],
       "Remove link": [
         "Выдаліць спасылку"
       ],
@@ -560,14 +557,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "Колер фону ${ name } і белы колер тэксту"
+      ],
+      "${ name } text color and highlight": [
+        "Колер тэксту ${ name } і вылучэнне"
+      ],
+      "${ name } text color with no background": [
+        "Колер тэксту ${ name } без фону"
+      ],
       "Add link": [
         "Дадаць спасылку"
       ],
       "Align": [
         "Выраўноўванне"
-      ],
-      "Background colour": [
-        "Колер фону"
       ],
       "Change image size": [
         "Змяніць памер відарыса"
@@ -650,8 +653,8 @@
       "Replace link": [
         "Замяніць спасылку"
       ],
-      "Text colour": [
-        "Колер тэксту"
+      "Text and highlight color": [
+        "Колер тэксту і вылучэнне"
       ],
       "with \"${ replaceWith }\"": [
         "з дапамогай \"${ replaceWith }\""

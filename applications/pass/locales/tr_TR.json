@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
       "Multiple select": [
@@ -483,6 +483,9 @@
       ],
       "Resend invitation": [
         "Daveti yeniden gönder"
+      ],
+      "Reset": [
+        "Sıfırla"
       ],
       "Restore": [
         "Geri yükle"
@@ -1020,9 +1023,6 @@
       "File could not be parsed": [
         "Dosya işlenemedi"
       ],
-      "File could not be read": [
-        "Dosya okunamadı"
-      ],
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
@@ -1103,9 +1103,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Bir sorun çıktı. Lütfen yeniden oturum açın."
-      ],
-      "The file you are trying to import is empty": [
-        "İçe aktarmak istediğiniz dosya boş"
       ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
@@ -1534,9 +1531,6 @@
       "Drop to import": [
         "İçe aktarmak için bırakın"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safari tarayıcı eklentilerindeki bir sınırlama nedeniyle, verileri dışa aktardıktan sonra \".pgp\" dosya uzantısı eksik kalır. Lütfen dışa aktardıktan sonra dosyayı yeniden adlandırın ve .pgp uzantısını ekleyin (örnek: dosya.pgp)."
-      ],
       "Editor": [
         "Düzenleyici"
       ],
@@ -1662,15 +1656,8 @@
       "Identity confirmed": [
         "Kimlik onaylandı"
       ],
-      "Import in progress:": [
-        "İçe aktarılıyor:"
-      ],
       "Import the CSV file below.": [
         "Aşağıdan CSV dosyasını içe aktarın."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } öge içe aktarıldı",
-        "${ payload.total } öge içe aktarıldı"
       ],
       "Imported on ${ date }": [
         "${ date } tarihinde içe aktarıldı"
@@ -1710,10 +1697,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
-      ],
-      "item": [
-        "öge",
-        "öge"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "\"${ payload.item.data.metadata.name }\" ögesi oluşturuldu"
@@ -2129,10 +2112,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Şu ${ result.ignored.length } öge içe aktarılamadı:",
-        "Şu ${ result.ignored.length } öge içe aktarılamadı:"
       ],
       "The secure link has been removed": [
         "Güvenli bağlantı kaldırıldı"
@@ -2933,9 +2912,6 @@
       ],
       "Personal website": [
         "Kişisel site"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP ile şifrelenmiş JSON (önerilir)"
       ],
       "Phone number": [
         "Telefon numarası"
@@ -4158,9 +4134,6 @@
       ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Lütfen eklentinin düzgün olarak kurulduğundan ve etkin olduğundan emin olun"

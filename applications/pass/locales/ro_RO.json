@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Mutare în alt seif"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mutare în «Gunoi»"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mutare în «Gunoi»"
       ],
       "Multiple select": [
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Retrimitere invitație"
+      ],
+      "Reset": [
+        "Resetare"
+      ],
+      "Reset history": [
+        "Resetare istoric"
       ],
       "Restore": [
         "Restaurare"
@@ -799,6 +805,9 @@
       "Alias options could not be resolved": [
         "Opțiunile pentru alias nu au putu fi rezolvate."
       ],
+      "An error occured during the import process": [
+        "A apărut o eroare în timpul procesului de importare."
+      ],
       "An error occurred while resuming your session": [
         "A apărut o eroare la reluarea sesiunii."
       ],
@@ -863,6 +872,9 @@
       ],
       "Deleting item failed": [
         "Ștergerea articolelor a eșuat."
+      ],
+      "Deleting item history failed": [
+        "Ștergerea istoricului articolului a eșuat."
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Ștergerea seifului „${ payload.content.name }” a eșuat."
@@ -1025,9 +1037,6 @@
       "File could not be parsed": [
         "Fișierul nu a putut fi analizat."
       ],
-      "File could not be read": [
-        "Fișierul nu a putut fi citit."
-      ],
       "File does not match expected format": [
         "Fișierul nu are formatul așteptat."
       ],
@@ -1108,9 +1117,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Ceva nu a funcționat bine. Reconectați-vă."
-      ],
-      "The file you are trying to import is empty": [
-        "Fișierul pe care încercați să îl importați este gol."
       ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
@@ -1554,9 +1560,6 @@
       "Drop to import": [
         "Plasare pentru importare"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Din cauza unei limitări a extensiilor navigatorului web Safari, după exportarea datelor, va lipsi extensia „.pgp” din numele fișierului. Redenumiți fișierul pentru a include extensia .pgp (de exemplu, fișier.pgp) după exportare."
-      ],
       "Editor": [
         "Editor"
       ],
@@ -1684,16 +1687,8 @@
       "Identity confirmed": [
         "Identitate confirmată."
       ],
-      "Import in progress:": [
-        "Importare în derulare:"
-      ],
       "Import the CSV file below.": [
         "Importați mai jos fișierul CSV."
-      ],
-      "Imported ${ payload.total } item": [
-        "S-a importat ${ payload.total } element.",
-        "S-au importat ${ payload.total } articole.",
-        "S-au importat ${ payload.total } de articole."
       ],
       "Imported on ${ date }": [
         "Importat la ${ date }"
@@ -1734,16 +1729,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Se pare că deja v-ați conectat la ${ PASS_APP_NAME }. Dacă încercați să vă autentificați cu un alt cont, deconectați-vă mai întâi de la extensie."
       ],
-      "item": [
-        "element",
-        "articole",
-        "de articole"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Articolul „${ payload.item.data.metadata.name }” a fost creat."
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Articolul „${ payload.item.data.metadata.name }” a fost actualizat."
+      ],
+      "Item history permanently deleted": [
+        "Istoricul articolelor a fost șters definitiv."
       ],
       "Item moved to trash": [
         "Articolul s-a mutat în gunoi."
@@ -2008,6 +2001,9 @@
       "Please follow the steps below to set up your domain.": [
         "Urmați pașii de mai jos pentru a vă seta domeniul."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Păstrați această fereastră deschisă cât timp datele se importă. Acest proces poate dura câteva minute."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "După ștergere, aliasul nu mai poate fi restaurat. Doriți să-l dezactivați în schimb?"
       ],
@@ -2052,6 +2048,9 @@
       ],
       "Removing secure link...": [
         "Se elimină legătura web securizată..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Resetarea istoricului va șterge definitiv toate articolele anterioare și nu poate fi anulată."
       ],
       "Restoring items from trash": [
         "Se restaurează articolele din gunoi."
@@ -2158,10 +2157,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Va fi necesară o parolă suplimentară pentru a utiliza ${ PASS_APP_NAME }. Acționează ca o parolă adițională pe lângă parola ${ BRAND_NAME } principală."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Nu s-a putut importa ${ result.ignored.length } articol:",
-        "Nu s-au putut importa ${ result.ignored.length } articole:",
-        "Nu s-au putut importa ${ result.ignored.length } de articole:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Nu s-a putut importa ${ totalIgnored } articol:",
+        "Nu s-au putut importa ${ totalIgnored } articole:",
+        "Nu s-au putut importa ${ totalIgnored } de articole:"
       ],
       "The secure link has been removed": [
         "Legătura web securizată a fost eliminată."
@@ -2981,8 +2980,8 @@
       "Personal website": [
         "Site web personal"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON cu criptare PGP (recomandat)"
+      "PGP-encrypted (recommended)": [
+        "Criptat cu PGP (recomandat)"
       ],
       "Phone number": [
         "Număr de telefon"
@@ -3236,6 +3235,9 @@
       "Your domain": [
         "Domeniul personal"
       ],
+      "ZIP": [
+        "Cod poștal"
+      ],
       "ZIP or Postal code": [
         "Cod poștal"
       ]
@@ -3314,6 +3316,106 @@
       ],
       "Underscores": [
         "Subliniere"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "„${ file.name }” nu s-a putut încărca."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "„${ filename }” nu s-a putut importa."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "„${ filename }” este prea mare pentru a fi încărcat. Mărimea maximă e de ${ maxFileSizeInMB }."
+      ],
+      "${ filesCount } file": [
+        "Fișiere: ${ filesCount }",
+        "Fișiere: ${ filesCount }",
+        "Fișiere: ${ filesCount }"
+      ],
+      "Attachments": [
+        "Fișiere atașate"
+      ],
+      "Choose a file or drag it here": [
+        "Alegeți un fișier sau trageți-l aici"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Ștergere ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Ștergere toate fișierele"
+      ],
+      "Do you want to remove all the files?": [
+        "Doriți să ștergeți toate fișierele?"
+      ],
+      "Download": [
+        "Descărcare"
+      ],
+      "Download file": [
+        "Descarcă fișier"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Datorită unei limitări din Firefox, ${ PASS_APP_NAME } trebuie deschis într-o fereastră nouă înainte de a putea încărca fișiere."
+      ],
+      "Exporting files": [
+        "Se exportă fișierele"
+      ],
+      "File": [
+        "Fișier"
+      ],
+      "File attachments": [
+        "Fișiere atașate"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Dacă e activată, la exportare, vor fi descărcate toate fișierele. Aceasta ar putea dura în funcție de viteza conexiuni la internet."
+      ],
+      "Include file attachments": [
+        "Includere fișiere atașate"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Nu există spațiu liber suficient pentru fișierele selectate."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "După ștergere, acest fișier poate fi recuperat din istoricul articolelor."
+      ],
+      "Open new window to upload files": [
+        "Deschidere fereastră nouă pentru încărcare fișiere"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Așteptați până când se descarcă fișierele."
+      ],
+      "Remove all files": [
+        "Ștergere toate fișierele"
+      ],
+      "Rename": [
+        "Redenumire"
+      ],
+      "Restore": [
+        "Restaurare"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Unele fișiere sunt prea mari pentru a fi încărcate. Mărimea maximă e de ${ maxFileSizeInMB }."
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Fișierele atașate exportate nu vor fi criptate."
+      ],
+      "The file you are trying to import is empty": [
+        "Fișierul pe care încercați să îl importați este gol."
+      ],
+      "Total files: ": [
+        "Total fișiere: "
+      ],
+      "Total imported files: ": [
+        "Total fișiere importate: "
+      ],
+      "Upload files from your device.": [
+        "Încărcare fișiere din dispozitiv."
+      ],
+      "You can attach files to items for a better organization": [
+        "Puteți atașa fișiere la articole pentru o organizare mai bună."
+      ],
+      "Your current plan does not support importing files": [
+        "Planul actual nu suportă importarea fișierelor."
       ]
     },
     "Placeholder": {
@@ -3713,6 +3815,9 @@
       "Domain ownership verification": [
         "Verificarea deținerii domeniului"
       ],
+      "Encrypted import": [
+        "Importare criptată"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
       ],
@@ -3754,6 +3859,9 @@
       ],
       "Import your data": [
         "Importați-vă datele"
+      ],
+      "Importing your data": [
+        "Se importă datele"
       ],
       "Inactive 2FA": [
         "A2F inactive"
@@ -3883,6 +3991,9 @@
       ],
       "Remove secure link?": [
         "Eliminați legătura web securizată?"
+      ],
+      "Reset history for this item?": [
+        "Resetați istoricul pentru acest articol?"
       ],
       "Resolved breaches": [
         "Divulgări rezolvate"
@@ -4072,6 +4183,9 @@
       "An error occurred while exporting your data": [
         "A apărut o eroare în timpul exportării datelor."
       ],
+      "An error occurred while importing your data.": [
+        "A apărut o eroare în timpul importării datelor."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Sigur doriți să mutați ${ trashedItemsCount } articol în gunoi?",
         "Sigur doriți să mutați ${ trashedItemsCount } articole în gunoi?",
@@ -4218,9 +4332,6 @@
       ],
       "Passwords do not match": [
         "Parolele nu coincid."
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Fișierul criptat PGP exportat necesită o frază de acces."
       ],
       "Please check that the extension is properly installed and enabled": [
         "Verificați dacă extensia este instalată și activată corect."

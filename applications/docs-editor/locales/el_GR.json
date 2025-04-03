@@ -185,9 +185,6 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
-      "Remove background color": [
-        "Κατάργηση χρώματος φόντου"
-      ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"
       ],
@@ -558,14 +555,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } χρώμα φόντου και λευκό χρώμα κειμένου"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } χρώμα κειμένου και επισήμανση"
+      ],
+      "${ name } text color with no background": [
+        "${ name } χρώμα κειμένου χωρίς φόντο"
+      ],
       "Add link": [
         "Προσθήκη συνδέσμου"
       ],
       "Align": [
         "Στοίχιση"
-      ],
-      "Background colour": [
-        "Χρώμα φόντου"
       ],
       "Change image size": [
         "Αλλαγή μεγέθους εικόνας"
@@ -648,8 +651,8 @@
       "Replace link": [
         "Αντικατάσταση συνδέσμου"
       ],
-      "Text colour": [
-        "Χρώμα κειμένου"
+      "Text and highlight color": [
+        "Χρώμα κειμένου και επισήμανσης"
       ],
       "with \"${ replaceWith }\"": [
         "με \"${ replaceWith }\""

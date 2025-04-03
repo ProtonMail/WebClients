@@ -152,11 +152,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Vytvoriť účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvoriť ${ BRAND_NAME } účet"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvoriť účet ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Vytvoriť alias"
@@ -247,9 +247,6 @@
       ],
       "Done": [
         "Hotovo"
-      ],
-      "Download": [
-        "Stiahnuť"
       ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
@@ -466,9 +463,6 @@
       ],
       "Remove member": [
         "Odstániť člena"
-      ],
-      "Rename": [
-        "Premenovať"
       ],
       "Request a feature": [
         "Požiadavka na funkciu"
@@ -1096,9 +1090,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Niečo sa pokazilo. Znovu, prosím, načítajte rozšírenie ${ PASS_APP_NAME }. Tento problém bol zaznamenaný."
-      ],
-      "The file you are trying to import is empty": [
-        "Súbor, ktorý sa pokúšate importovať, je prázdny"
       ],
       "The URL is in the list": [
         "URL je na zozname"
@@ -1812,12 +1803,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2742,9 +2727,6 @@
       "Field name": [
         "Názov poľa"
       ],
-      "File": [
-        "Súbor"
-      ],
       "File format": [
         "Formát súboru"
       ],
@@ -3580,9 +3562,6 @@
       ],
       "Aliases": [
         "Aliasy"
-      ],
-      "Attachments": [
-        "Prílohy"
       ],
       "Auto create/on the fly alias": [
         "Automatické vytváranie aliasov za behu"
