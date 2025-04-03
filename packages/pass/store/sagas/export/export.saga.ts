@@ -113,6 +113,8 @@ export const exportUserData = createRequestSaga({
             }
 
             switch (format) {
+                case ExportFormat.JSON:
+                    throw new Error('Unsupported');
                 case ExportFormat.CSV: {
                     state.filename = getArchiveName('csv');
                     state.mimeType = 'text/csv;charset=utf-8;';
