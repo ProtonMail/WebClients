@@ -152,10 +152,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create alias": [
@@ -247,9 +247,6 @@
       ],
       "Done": [
         "Valmis"
-      ],
-      "Download": [
-        "Lataa"
       ],
       "Download this CSV template": [
         "Lataa tämä CSV-malli"
@@ -467,9 +464,6 @@
       "Remove member": [
         "Poista jäsen"
       ],
-      "Rename": [
-        "Nimeä uudelleen"
-      ],
       "Request a feature": [
         "Pyydä ominaisuutta"
       ],
@@ -484,6 +478,9 @@
       ],
       "Reset": [
         "Tyhjennä"
+      ],
+      "Reset history": [
+        "Nollaa historia"
       ],
       "Restore": [
         "Palauta"
@@ -813,6 +810,9 @@
       "Deleting item failed": [
         "Kohteen poisto epäonnistui"
       ],
+      "Deleting item history failed": [
+        "Kohteen historian poisto epäonnistui"
+      ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" poisto epäonnistui"
       ],
@@ -1065,9 +1065,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Jotain meni pieleen. Lataa ${ PASS_APP_NAME } -laajennus uudelleen. Ongelma kirjattiin lokiin."
-      ],
-      "The file you are trying to import is empty": [
-        "Tiedosto, jota yrität tuoda, on tyhjä"
       ],
       "The URL is in the list": [
         "URL-osoite on jo listalla"
@@ -1673,6 +1670,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Kohde \"${ payload.item.data.metadata.name }\" päivitettiin"
       ],
+      "Item history permanently deleted": [
+        "Kohdehistoria poistettiin pysyvästi"
+      ],
       "Item moved to trash": [
         "Kohde siirrettiin roskakoriin"
       ],
@@ -1737,10 +1737,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2620,9 +2616,6 @@
       "Field name": [
         "Kentän nimi"
       ],
-      "File": [
-        "Tiedosto"
-      ],
       "File format": [
         "Tiedostomuoto"
       ],
@@ -2871,6 +2864,9 @@
       ],
       "Personal website": [
         "Henkilökohtainen verkkosivusto"
+      ],
+      "PGP-encrypted (recommended)": [
+        "PGP-salattu (suositus)"
       ],
       "Phone number": [
         "Puhelinnumero"
@@ -3132,6 +3128,9 @@
       ],
       "Your domain": [
         "Sinun verkkotunnuksesi"
+      ],
+      "ZIP": [
+        "Postinumero"
       ],
       "ZIP or Postal code": [
         "Postinumero"
@@ -3430,6 +3429,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME }-lokit"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } -asetukset"
       ],
@@ -3450,9 +3452,6 @@
       ],
       "Aliases": [
         "Aliakset"
-      ],
-      "Attachments": [
-        "Liitteet"
       ],
       "Auto create/on the fly alias": [
         "Automaattiluotu/lennossa -alias"
@@ -3551,6 +3550,9 @@
       "Email": [
         "Sähköposti"
       ],
+      "Encrypted import": [
+        "Salattu vienti"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
       ],
@@ -3598,6 +3600,9 @@
       ],
       "Import to vault(s)": [
         "Tuo holviin/holveihin"
+      ],
+      "Importing your data": [
+        "Tietojasi tuodaan"
       ],
       "Item": [
         "Kohde"
@@ -3697,6 +3702,9 @@
       ],
       "Remove secure link?": [
         "Poistetaanko suojattu linkki?"
+      ],
+      "Reset history for this item?": [
+        "Nollataanko tämän kohteen historia?"
       ],
       "Restore this version?": [
         "Palautetaanko tämä versio?"

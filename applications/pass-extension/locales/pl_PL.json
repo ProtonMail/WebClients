@@ -66,16 +66,16 @@
         "Zablokuj kontakt"
       ],
       "Bulk delete items from trash": [
-        "Usuń elementy z Kosza"
+        "Usuń elementy z kosza"
       ],
       "Bulk move items to another vault": [
         "Przenieś elementy do innego sejfu"
       ],
       "Bulk move items to trash": [
-        "Przenieś elementy do Kosza"
+        "Przenieś elementy do kosza"
       ],
       "Bulk restore items from trash": [
-        "Przywróć elementy z Kosza"
+        "Przywróć elementy z kosza"
       ],
       "Bulk select items": [
         "Zaznacz elementy"
@@ -140,6 +140,9 @@
       "Copy and close": [
         "Kopiuj i zamknij"
       ],
+      "Copy forwarding address": [
+        "Kopiuj adres przekierowania"
+      ],
       "Copy link": [
         "Kopiuj link"
       ],
@@ -149,10 +152,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -244,9 +247,6 @@
       ],
       "Done": [
         "Gotowe"
-      ],
-      "Download": [
-        "Pobierz"
       ],
       "Download this CSV template": [
         "Pobierz szablon pliku CSV"
@@ -390,10 +390,10 @@
         "Przenieś do innego sejfu"
       ],
       "Move to Trash": [
-        "Przenieś do Kosza"
+        "Przenieś do kosza"
       ],
       "Move to trash": [
-        "Przenieś do Kosza"
+        "Przenieś do kosza"
       ],
       "Multiple select": [
         "Zaznacz"
@@ -464,9 +464,6 @@
       "Remove member": [
         "Usuń użytkownika"
       ],
-      "Rename": [
-        "Zmień nazwę"
-      ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
       ],
@@ -481,6 +478,9 @@
       ],
       "Reset": [
         "Resetuj"
+      ],
+      "Reset history": [
+        "Usuń historię"
       ],
       "Restore": [
         "Przywróć"
@@ -600,7 +600,7 @@
         "Zmień właściciela"
       ],
       "Trash": [
-        "Przenieś do Kosza"
+        "Przenieś do kosza"
       ],
       "Try again": [
         "Spróbuj ponownie"
@@ -706,17 +706,44 @@
       "Add the following CNAME DNS records to your domain.": [
         "Dodaj następujący rekord CNAME do domeny."
       ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Dodaj następujący rekord MX domeny. Pamiętaj, że na końcu adresów docelowych znajduje się kropka (.). Jeśli rejestrator domeny nie zezwala na końcową kropkę, usuń ją podczas dodawania rekordu DNS."
+      ],
       "Add the following TXT DNS record to your domain.": [
         "Dodaj następujący rekord TXT do domeny."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } to metoda uwierzytelniania poczty e-mail zaprojektowana w celu uniknięcia fałszowania wiadomości. Konfiguracja DKIM jest wysoce zalecana, aby zmniejszyć ryzyko, że wiadomości trafią do spamu odbiorcy."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } ma na celu ochronę domeny przed fałszowaniem wiadomości, powszechnie znanym jako spoofing domeny. Wraz z zabezpieczeniami SPF i DKIM, polityka DMARC informuje serwer odbierający pocztę, co zrobić, jeśli żadna z tych metod uwierzytelniania nie przejdzie pomyślnie."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Jeśli używasz subdomeny, np. ${ subdomainExample }, musisz użyć ${ dmarcExampleSubdomain } jako domeny."
+      ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Jeśli korzystasz z Cloudflare, upewnij się, że nie wybrano opcji proxy."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane.${ infoText }"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Niektórzy rejestratorzy mogą wymagać pełnej ścieżki rekordu. W takim przypadku użyj ${ domain } jako wartości domeny."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Niektórzy rejestratorzy domen (Namecheap, Cloudflare itp.) mogą również używać @ dla domeny głównej."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } to metoda uwierzytelniania poczty e-mail zaprojektowana w celu uniknięcia fałszowania nadawców wiadomości. Konfiguracja SPF jest wysoce zalecana, aby zmniejszyć ryzyko, że wiadomości trafią do spamu odbiorcy."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Konto jest zagrożone. Przejdź do usługi i zmień hasło."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Usługa oferuje uwierzytelnianie dwustopniowe. Włącz je, aby zwiększyć bezpieczeństwo konta."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Aby zweryfikować domenę, dodaj następujący rekord TXT. Niektórzy rejestratorzy domen (Namecheap, Cloudflare itp.) mogą używać @ dla domeny głównej."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odblokuj zaawansowane funkcje bezpieczeństwa i szczegółowe logi, aby chronić się w Internecie."
@@ -739,6 +766,9 @@
       ],
       "Alias options could not be resolved": [
         "Nie można załadować opcji aliasu"
+      ],
+      "An error occured during the import process": [
+        "Wystąpił błąd podczas procesu importowania"
       ],
       "Authentication error": [
         "Błąd uwierzytelniania"
@@ -806,6 +836,9 @@
       "Deleting item failed": [
         "Usuwanie elementu nie powiodło się"
       ],
+      "Deleting item history failed": [
+        "Nie udało się usunąć historii elementu"
+      ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Usuwanie sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
@@ -828,7 +861,7 @@
         "Plik CSV jest pusty"
       ],
       "Emptying trash failed": [
-        "Opróżnienie Kosza nie powiodło się"
+        "Opróżnienie kosza nie powiodło się"
       ],
       "Encrypted JSON not supported": [
         "Zaszyfrowany plik JSON nie jest obsługiwany"
@@ -900,7 +933,7 @@
         "Nie udało się przenieść elementów"
       ],
       "Failed to move items to trash": [
-        "Nie udało się przenieść elementów do Kosza"
+        "Nie udało się przenieść elementów do kosza"
       ],
       "Failed to pin item": [
         "Nie udało się przypiąć elementu"
@@ -918,7 +951,7 @@
         "Nie udało się oznaczyć wycieków dla tego adresu jako rozwiązane"
       ],
       "Failed to restore items from trash": [
-        "Nie udało się przywrócić elementów z Kosza"
+        "Nie udało się przywrócić elementów z kosza"
       ],
       "Failed to set default mailbox": [
         "Nie udało się ustawić domyślnej skrzynki pocztowej"
@@ -1060,9 +1093,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Coś poszło nie tak. Odśwież rozszerzenie ${ PASS_APP_NAME }. Problem został zarejestrowany"
-      ],
-      "The file you are trying to import is empty": [
-        "Plik, który próbujesz zaimportować, jest pusty"
       ],
       "The URL is in the list": [
         "Adres URL jest na liście"
@@ -1267,6 +1297,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } będzie zgodny z motywem systemowym."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } wygeneruje adres przekierowania (alias odwrotny), który możesz skopiować do schowka."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek, kart płatniczych i tożsamości."
       ],
@@ -1351,14 +1384,23 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
       ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias został wyłączony. Nie będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias został włączony. Będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
+      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Synchronizacja aliasów ${ BRAND_NAME } i SimpleLogin jest aktywna."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Aliasy w Koszu będą nadal przekierowywać wiadomości. Wyłącz alias, jeśli chcesz zatrzymać otrzymywanie wiadomości na ten adres."
+        "Aliasy w koszu będą nadal przekierowywać wiadomości. Wyłącz alias, jeśli chcesz zatrzymać otrzymywanie wiadomości na ten adres."
       ],
       "Aliases out of sync (${ aliasCount })": [
         "Aliasy nie są zsynchronizowane (${ aliasCount })"
+      ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Wszystkie aliasy używające skrzynki pocztowej ${ emailJSX } zostaną również usunięte."
       ],
       "All breaches for this address were resolved": [
         "Wszystkie wycieki dla tego adresu zostały oznaczone jako rozwiązane"
@@ -1381,8 +1423,14 @@
       "An item previously shared with you was removed": [
         "Poprzednio udostępniony element został usunięty"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Czy na pewno chcesz usunąć ${ emailJSX } ze swoich skrzynek pocztowych?"
+      ],
       "Are you sure you want to remove the link?": [
         "Czy na pewno chcesz usunąć link?"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Automatycznie utworzone aliasy są własnością następujących skrzynek pocztowych:"
       ],
       "Auto-lock successfully disabled.": [
         "Automatyczna blokada została wyłączona."
@@ -1405,11 +1453,29 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometria zostanie wyłączona i będzie musiała zostać ponownie włączona."
       ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Ustaw własną domenę. Nie musisz kupować kolejnej poczty e-mail."
+      ],
       "Built in 2FA authenticator": [
         "Wbudowana aplikacja uwierzytelniająca"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Dodając swoją domenę, można tworzyć aliasy, takie jak hej@moja-domena.pl."
+      ],
       "Can be viewed": [
         "Maksymalna liczba dostępów"
+      ],
+      "Can create, edit, and delete items in this vault.": [
+        "Może edytować i usuwać elementy w sejfie."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Może edytować i usuwać element."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Może usuwać i zarządzać elementem."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Zarządza dostępem do elementu."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Zarządza dostępem do sejfu."
@@ -1467,6 +1533,9 @@
       ],
       "Decrypting your data": [
         "Odszyfrowywanie danych"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Domyślna nazwa wyświetlana dla aliasów utworzonych za pomocą domeny ${ domainDisplay }, chyba że zostanie nadpisana przez nazwę wyświetlaną aliasu."
       ],
       "Deleted items will be moved here first": [
         "Usunięte elementy zostaną przeniesione tutaj"
@@ -1526,7 +1595,7 @@
         "Wiadomości wysyłane do aliasów są przekierowywane do skrzynek pocztowych. Alias może mieć więcej niż jedną skrzynkę pocztową."
       ],
       "Emptying trash...": [
-        "Opróżnianie Kosza..."
+        "Opróżnianie kosza..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Włącz ${ PASS_APP_NAME }, łącząc swoje konto ${ BRAND_NAME }"
@@ -1563,6 +1632,9 @@
       ],
       "Enter your PIN code": [
         "Wpisz kod PIN"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Za każdym razem, gdy Twój alias odbierze wiadomość, automatycznie tworzony jest nowy kontakt."
       ],
       "Expires in": [
         "Wygasa za"
@@ -1630,6 +1702,9 @@
       "Imported on ${ date }": [
         "Zaimportowano: ${ date }"
       ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "W ${ PASS_SHORT_APP_NAME } notatka o elemencie jest szyfrowana kluczem szyfrowania elementu i tylko użytkownicy, którzy mają dostęp do elementu, mogą ją zobaczyć. Nawet ${ BRAND_NAME } lub SimpleLogin nie mogą jej odczytać."
+      ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Przyznaj niezbędne uprawnienia dla rozszerzenia ${ PASS_APP_NAME }, aby uzyskać najlepsze wrażenia z jego korzystania"
       ],
@@ -1660,8 +1735,11 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Element \"${ payload.item.data.metadata.name }\" został zaktualizowany"
       ],
+      "Item history permanently deleted": [
+        "Historia elementu została trwale usunięta"
+      ],
       "Item moved to trash": [
-        "Element został przeniesiony do Kosza"
+        "Element został przeniesiony do kosza"
       ],
       "Item permanently deleted": [
         "Element został trwale usunięty"
@@ -1729,6 +1807,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+      ],
       "Moving items": [
         "Przenoszenie elementów"
       ],
@@ -1739,7 +1820,10 @@
         "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii."
       ],
       "Moving items to trash": [
-        "Przenoszenie elementów do Kosza"
+        "Przenoszenie elementów do kosza"
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Chcesz wysłać wiadomość, ale nie chcesz udostępnić swojego adresu e-mail? Skonfiguruj alias kontaktu."
       ],
       "Never": [
         "Nigdy"
@@ -1811,7 +1895,7 @@
         "Przypinanie elementu..."
       ],
       "Please check your spam folder or try resending the code.": [
-        "Sprawdź folder Spam lub wyślij ponownie kod."
+        "Sprawdź folder spam lub wyślij ponownie kod."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
@@ -1897,6 +1981,9 @@
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Pamiętaj, że usuniętego aliasu nie można przywrócić. Alias jest wyłączony i nie przekierowuje wiadomości do skrzynki odbiorczej."
       ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Użyj pełnej ścieżki domeny, np. domena.pl lub subdomena.domena.pl, jeśli używasz subdomeny."
+      ],
       "Press Enter to copy": [
         "Kliknij Enter, aby skopiować"
       ],
@@ -1937,7 +2024,7 @@
         "Usuwanie linku..."
       ],
       "Restoring items from trash": [
-        "Przywracanie elementów z Kosza"
+        "Przywracanie elementów z kosza"
       ],
       "Restoring trashed items...": [
         "Przywracanie usuniętych elementów..."
@@ -1967,10 +2054,10 @@
         "Zaznaczone elementy zostały trwale usunięte"
       ],
       "Selected items successfully moved to trash": [
-        "Zaznaczone elementy zostały przeniesione do Kosza"
+        "Zaznaczone elementy zostały przeniesione do kosza"
       ],
       "Selected items successfully restored from trash": [
-        "Zaznaczone elementy zostały przywrócone z Kosza"
+        "Zaznaczone elementy zostały przywrócone z kosza"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -2002,6 +2089,9 @@
       "Signing you in": [
         "Logowanie"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Notatka SimpleLogin jest przechowywana wraz z adresem aliasu i nie jest szyfrowana end-to-end. Każdy, kto ma dostęp do bazy danych SimpleLogin, może ją odczytać."
+      ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Użyj adresu ${ emailBold }, kiedy będziesz potrzebować aliasu. Będzie on ${ automaticallyBold } utworzony za pierwszym razem, gdy otrzymasz wiadomość. Aby mieć bardziej szczegółową kontrolę, możesz również ustawić ${ rulesHyperLink }."
       ],
@@ -2022,6 +2112,9 @@
       ],
       "Syncing your vaults…": [
         "Synchronizowanie sejfów…"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Kliknij ikonę ${ gearIcon }, aby dostosować alias."
       ],
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
@@ -2050,6 +2143,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
       ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Element nie jest udostępniony. Zaproś do niego użytkowników."
+      ],
       "This mailbox will use your previous email.": [
         "Skrzynka pocztowa będzie korzystać z poprzedniego adresu e-mail."
       ],
@@ -2058,6 +2154,9 @@
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Operacja jest nieodwracalna. Wszystkie aliasy domeny ${ domainTextBold } zostaną usunięte. Pamiętaj, że przywrócenie usuniętych aliasów jest niemożliwe."
+      ],
+      "This option is currently not available on your browser.": [
+        "Funkcja nie jest dostępna w tej przeglądarce."
       ],
       "This option is currently not available on your device.": [
         "Funkcja nie jest dostępna na tym urządzeniu."
@@ -2076,6 +2175,9 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Odrzuci to urządzenie **${ name }**, które próbowało zalogować się na konto ${ BRAND_NAME } **${ date }**."
+      ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Aby nadal otrzymywać wiadomości, przenieś te aliasy do innej skrzynki pocztowej:"
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Aby ukryć osobisty adres e-mail, możesz utworzyć alias."
@@ -2229,6 +2331,12 @@
       ],
       "You may close this tab.": [
         "Możesz zamknąć tę kartę."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Aby móc importować elementy, potrzebujesz sejfu z uprawnieniem do edycji."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Po zweryfikowaniu domeny będziesz mógł dostosować ustawienia domeny (aliasy catch-all, domyślna nazwa wyświetlana aliasów itp.)."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Konieczne będzie ponowne zalogowanie się na wszystkich urządzeniach."
@@ -2399,6 +2507,9 @@
       ],
       "Account": [
         "Konto"
+      ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Dodaj losowy przedrostek domeny podczas tworzenia nowego aliasu."
       ],
       "Add section": [
         "Dodaj sekcję"
@@ -2593,7 +2704,7 @@
         "Adres e-mail lub nazwa użytkownika"
       ],
       "Empty trash": [
-        "Opróżnij Kosz"
+        "Opróżnij kosz"
       ],
       "Enter email or username": [
         "Wpisz adres e-mail lub nazwę użytkownika"
@@ -2618,9 +2729,6 @@
       ],
       "Field name": [
         "Nazwa pola"
-      ],
-      "File": [
-        "Plik"
       ],
       "File format": [
         "Format pliku"
@@ -2953,7 +3061,7 @@
         "Wybierz menadżer haseł"
       ],
       "Selected": [
-        "Zaznaczone"
+        "Zaznaczono"
       ],
       "Settings": [
         "Ustawienia"
@@ -3192,6 +3300,56 @@
         "Podkreślenia"
       ]
     },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Plik \"${ file.name }\" nie mógł zostać przesłany."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } plik",
+        "${ filesCount } pliki",
+        "${ filesCount } plików",
+        "${ filesCount } plików"
+      ],
+      "Attachments": [
+        "Załączniki"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Usuń plik ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Usuń wszystkie pliki"
+      ],
+      "Do you want to remove all the files?": [
+        "Czy chcesz usunąć wszystkie pliki?"
+      ],
+      "Download": [
+        "Pobierz"
+      ],
+      "Download \"${ filename }\"": [
+        "Pobierz \"${ filename }\""
+      ],
+      "Download file": [
+        "Pobierz plik"
+      ],
+      "File": [
+        "Plik"
+      ],
+      "Remove all files": [
+        "Usuń wszystkie pliki"
+      ],
+      "Rename": [
+        "Zmień nazwę"
+      ],
+      "Restore": [
+        "Przywróć"
+      ],
+      "Upload files from your device.": [
+        "Prześlij pliki ze swojego urządzenia."
+      ],
+      "You may close this window after saving the file.": [
+        "Możesz zamknąć to okno po zapisaniu pliku."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Dodaj sekret TOTP"
@@ -3241,6 +3399,9 @@
       "my-domain.com": [
         "moja-domena.pl"
       ],
+      "Name to display when sending an email": [
+        "Nazwa wyświetlana podczas wysyłania wiadomości"
+      ],
       "Note from SimpleLogin": [
         "Notatka z SimpleLogin"
       ],
@@ -3259,6 +3420,9 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Przeszukaj ${ pluralItemType } w sejfie ${ vaultName }"
       ],
+      "Search ${ pluralItemType } in all items": [
+        "Przeszukaj ${ pluralItemType } we wszystkich sejfach"
+      ],
       "Search in ${ vaultName }": [
         "Przeszukaj sejf ${ vaultName }"
       ],
@@ -3266,7 +3430,7 @@
         "Przeszukaj wszystkie elementy"
       ],
       "Search in Trash": [
-        "Przeszukaj Kosz"
+        "Przeszukaj kosz"
       ],
       "Select a suffix": [
         "Wybierz przyrostek"
@@ -3385,6 +3549,12 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domena została zweryfikowana. Domena może odbierać wiadomości i tworzyć aliasy"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Elementy nie mogą zawierać więcej niż ${ share.targetMaxMembers } użytkownika.",
+        "Elementy nie mogą zawierać więcej niż ${ share.targetMaxMembers } użytkowników.",
+        "Elementy nie mogą zawierać więcej niż ${ share.targetMaxMembers } użytkowników.",
+        "Elementy nie mogą zawierać więcej niż ${ share.targetMaxMembers } użytkowników."
+      ],
       "Mailbox change successfully cancelled": [
         "Zmiana skrzynki pocztowej została anulowana"
       ],
@@ -3403,6 +3573,12 @@
       "Random prefix generation successfully enabled": [
         "Generowanie losowego przedrostka zostało włączone"
       ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Sejfy nie mogą zawierać więcej niż ${ targetMaxMembers } użytkownika.",
+        "Sejfy nie mogą zawierać więcej niż ${ targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ targetMaxMembers } użytkowników."
+      ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Wiadomość weryfikacyjna została wysłana. Sprawdź skrzynkę odbiorczą"
       ]
@@ -3419,6 +3595,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "Logi ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Ustawienia ${ PASS_APP_NAME }"
       ],
@@ -3439,9 +3618,6 @@
       ],
       "Aliases": [
         "Aliasy"
-      ],
-      "Attachments": [
-        "Załączniki"
       ],
       "Auto create/on the fly alias": [
         "Automatyczne tworzenie aliasu \"w locie\""
@@ -3590,6 +3766,9 @@
       "Import to vault(s)": [
         "Importuj do sejfów"
       ],
+      "Importing your data": [
+        "Importowanie danych"
+      ],
       "Item": [
         "Element"
       ],
@@ -3630,10 +3809,10 @@
         "Przenieś ${ count } elementów do sejfu ${ vaultName }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
-        "Przenieść ${ trashedItemsCount } element do Kosza?",
-        "Przenieść ${ trashedItemsCount } elementy do Kosza?",
-        "Przenieść ${ trashedItemsCount } elementów do Kosza?",
-        "Przenieść ${ trashedItemsCount } elementów do Kosza?"
+        "Przenieść ${ trashedItemsCount } element do kosza?",
+        "Przenieść ${ trashedItemsCount } elementy do kosza?",
+        "Przenieść ${ trashedItemsCount } elementów do kosza?",
+        "Przenieść ${ trashedItemsCount } elementów do kosza?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
@@ -3694,6 +3873,9 @@
       ],
       "Remove secure link?": [
         "Usunąć link?"
+      ],
+      "Reset history for this item?": [
+        "Usunąć historię elementu?"
       ],
       "Restore this version?": [
         "Przywrócić tę wersję?"
@@ -3846,8 +4028,11 @@
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
       ],
+      "Addresses already invited.": [
+        "Adresy zostały już zaproszone."
+      ],
       "Aliases in trash will continue forwarding emails.": [
-        "Aliasy w Koszu nadal będą przekierowywać wiadomości."
+        "Aliasy w koszu nadal będą przekierowywać wiadomości."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Wszystkie elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
@@ -3855,14 +4040,17 @@
       "An error occurred while exporting your data": [
         "Wystąpił błąd podczas eksportowania danych"
       ],
+      "An error occurred while importing your data.": [
+        "Wystąpił błąd podczas importowania danych."
+      ],
       "An error occurred while resuming your session": [
         "Wystąpił błąd podczas wznawiania sesji"
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Czy na pewno chcesz przenieść ${ trashedItemsCount } element do Kosza?",
-        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementy do Kosza?",
-        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do Kosza?",
-        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do Kosza?"
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } element do kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementy do kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do kosza?"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } element?",
@@ -3958,7 +4146,7 @@
         "Brak przyrostka aliasu"
       ],
       "Move to trash": [
-        "Przenieś do Kosza"
+        "Przenieś do kosza"
       ],
       "Name is required": [
         "Nazwa jest wymagana"
@@ -3967,7 +4155,7 @@
         "Brak elementów"
       ],
       "No items in trash matching": [
-        "Brak pasujących elementów w Koszu"
+        "Brak pasujących elementów w koszu"
       ],
       "No items matching": [
         "Brak pasujących elementów"
@@ -3980,6 +4168,9 @@
       ],
       "No secure links matching": [
         "Brak pasujących linków"
+      ],
+      "No shared items matching": [
+        "Brak pasujących udostępnionych elementów"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Usunięcie aliasów w ${ PASS_SHORT_APP_NAME } spowoduje również ich usunięcie w SimpleLogin."
@@ -4008,6 +4199,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Niektóre elementy są obecnie udostępnione. Usunięcie ich spowoduje zatrzymanie udostępniania."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Niektóre elementy są obecnie udostępnione. Przeniesienie ich do innego sejfu spowoduje zatrzymanie udostępniania."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Coś poszło nie tak podczas uruchamiania rozszerzenia ${ PASS_APP_NAME }. Odśwież rozszerzenie"
       ],
@@ -4016,6 +4213,12 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Alias \"${ aliasEmail }\" jest wykorzystywany w danych logowania \"${ relatedLoginName }\"."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Element jest obecnie udostępniony. Usunięcie go spowoduje zatrzymanie udostępniania."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Element jest obecnie udostępniony. Przeniesienie go do innego sejfu spowoduje zatrzymanie udostępniania."
       ],
       "Title is required": [
         "Tytuł jest wymagany"
@@ -4038,8 +4241,14 @@
       "Verification code is required": [
         "Kod weryfikacyjny jest wymagany"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Osiągnięto maksymalną liczbę użytkowników elementu."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Osiągnięto maksymalną liczbę użytkowników sejfu."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Osiągnięto maksymalną liczbę użytkowników elementu. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Osiągnięto maksymalną liczbę użytkowników w sejfie. ${ upgradeLink }"
@@ -4053,8 +4262,14 @@
       "You must select at least one mailbox": [
         "Wybierz, co najmniej jedną skrzynkę pocztową"
       ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Stracisz dostęp do tego elementu i jego szczegółów. Czy chcesz kontynuować?"
+      ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Nie masz dostępu do tego sejfu. Jeśli chcesz ponownie dołączyć do sejfu, potrzebujesz nowego zaproszenia."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Aby móc tworzyć elementy, administrator musi najpierw utworzyć sejf dla Ciebie"
       ],
       "Your organization does not allow sharing individual items": [
         "Twoja organizacja nie pozwala na udostępnianie pojedynczych elementów"

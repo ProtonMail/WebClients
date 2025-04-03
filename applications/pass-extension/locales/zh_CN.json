@@ -152,10 +152,10 @@
       "Create": [
         "创建"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
       "Create alias": [
@@ -203,12 +203,6 @@
       "Delete all": [
         "全部删除"
       ],
-      "Delete all files": [
-        "删除全部文件"
-      ],
-      "Delete file: ${ deleteFile.state.name }": [
-        "删除文件：${ deleteFile.state.name }"
-      ],
       "Delete it, I will never need it": [
         "删除它，我不在需要这个了"
       ],
@@ -253,12 +247,6 @@
       ],
       "Done": [
         "完成"
-      ],
-      "Download": [
-        "下载"
-      ],
-      "Download file": [
-        "下载文件"
       ],
       "Download this CSV template": [
         "下载CSV模板"
@@ -425,9 +413,6 @@
       "Open navigation": [
         "打开导航栏"
       ],
-      "Open new window to upload files": [
-        "打开新窗口上传文件"
-      ],
       "Open web app": [
         "打开网页应用程序"
       ],
@@ -473,17 +458,11 @@
       "Remove all expired links (${ inactiveLinkCount })": [
         "移除所有过期链接 (${ inactiveLinkCount })"
       ],
-      "Remove all files": [
-        "移除所有文件"
-      ],
       "Remove link": [
         "移除链接"
       ],
       "Remove member": [
         "移除成员"
-      ],
-      "Rename": [
-        "重命名"
       ],
       "Request a feature": [
         "功能建议"
@@ -770,12 +749,6 @@
       ]
     },
     "Error": {
-      "\"${ file.name }\" could not be uploaded.": [
-        "无法上传 “${ file.name }”。"
-      ],
-      "\"${ filename }\" could not be imported.": [
-        "无法导入 “${ filename }”。"
-      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "无法解析 ${ provider } 文件。${ errorDetail }"
       ],
@@ -1103,9 +1076,6 @@
       "Signature verification failed": [
         "签名验证失败"
       ],
-      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "某些文件过大，无法上传。最大允许的大小为（${ maxFileSizeInMB }）"
-      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "由于密码重置，有些保险库已无法访问。请重新激活您的账户密钥，以重新获得访问权。${ reactivateLink }"
       ],
@@ -1114,12 +1084,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "出错了。请重新加载 ${ PASS_APP_NAME } 扩展。此问题已被记录"
-      ],
-      "The file \"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "文件 “${ filename }” 过大，无法上传。最大允许的大小为（${ maxFileSizeInMB }）"
-      ],
-      "The file you are trying to import is empty": [
-        "您正在尝试导入的文件为空"
       ],
       "The URL is in the list": [
         "网址在列表中"
@@ -1543,9 +1507,6 @@
       "DNS changes could take up to 24 hours to update.": [
         "DNS更改可能需要长达24小时才能更新。"
       ],
-      "Do you want to remove all the files?": [
-        "您想删除全部文件吗？"
-      ],
       "Domain: ${ domainPath } or @": [
         "域名：${ domainPath } 或 @"
       ],
@@ -1554,9 +1515,6 @@
       ],
       "Drop to import": [
         "拖至此处即可导入"
-      ],
-      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
-        "由于 Firefox 浏览器的限制，${ PASS_APP_NAME } 需要在新窗口中重新打开后才能上传文件。"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "轻松将您现有的密码导入到 ${ PASS_APP_NAME } 。"
@@ -1630,9 +1588,6 @@
       "Expires in ${ remainingTime }": [
         "在 ${ remainingTime } 后过期"
       ],
-      "Exporting files": [
-        "正在导出文件"
-      ],
       "Exporting your data...": [
         "正在导出您的数据..."
       ],
@@ -1641,9 +1596,6 @@
       ],
       "Extra password successfully removed": [
         "成功删除额外密码"
-      ],
-      "File attachments": [
-        "文件附件"
       ],
       "Fill in the CSV with your data": [
         "在 CSV 中填入您的数据"
@@ -1687,9 +1639,6 @@
       "Identity confirmed": [
         "身份已确认"
       ],
-      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
-        "如果启用，导出时将下载所有文件。这可能需要一些时间，具体取决于您的网络连接。"
-      ],
       "Import the CSV file below.": [
         "导入以下 CSV 文件。"
       ],
@@ -1701,9 +1650,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "为了获得 ${ PASS_APP_NAME } 的最佳体验，请授予必要的扩展权限"
-      ],
-      "Include file attachments": [
-        "包含文件附件"
       ],
       "Internet connection lost": [
         "网络连接已断开"
@@ -1799,7 +1745,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -1881,9 +1827,6 @@
       ],
       "Pinning item...": [
         "正在固定项目..."
-      ],
-      "Please be patient while your files are being downloaded.": [
-        "请耐心等待您的文件下载。"
       ],
       "Please check your spam folder or try resending the code.": [
         "请检查您的垃圾邮件文件夹或尝试重新发送代码。"
@@ -2290,9 +2233,6 @@
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
         "您也可以定义一个 PIN 码来解锁 ${ PASS_APP_NAME }"
       ],
-      "You can attach files to items for a better organization": [
-        "您可以将文件附加到项目上，以便更好地进行整理"
-      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "您现在可以使用您的 ${ BRAND_NAME } 密码离线访问 ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2325,9 +2265,6 @@
       ],
       "You may close this tab.": [
         "您可以关闭此标签页。"
-      ],
-      "You may close this window after saving the file.": [
-        "保存文件后，您可以关闭此窗口。"
       ],
       "You need a vault with edit permission before you can import items.": [
         "在导入项目之前，您需要拥有一个具备编辑权限的加密库。"
@@ -2685,9 +2622,6 @@
       "Field name": [
         "字段名称"
       ],
-      "File": [
-        "文件"
-      ],
       "File format": [
         "文件格式"
       ],
@@ -2800,7 +2734,7 @@
         "最近一次导入"
       ],
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ],
       "License": [
         "许可协议"
@@ -3096,12 +3030,6 @@
       "Today": [
         "今天"
       ],
-      "Total files: ": [
-        "总文件数："
-      ],
-      "Total imported files: ": [
-        "总导入文件数"
-      ],
       "Total imported items: ": [
         "总导入项目数："
       ],
@@ -3262,6 +3190,110 @@
       ],
       "Underscores": [
         "下划线"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "无法上传 \"${ file.name }\"。"
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "无法导入 \"${ filename }\"。"
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" 文件过大，无法上传。允许的最大文件大小为 (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } 个文件"
+      ],
+      "Attachments": [
+        "附件"
+      ],
+      "Choose a file or drag it here": [
+        "选择文件或将文件拖至此处"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "删除 ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "删除所有文件"
+      ],
+      "Do you want to remove all the files?": [
+        "您想删除移除文件吗？"
+      ],
+      "Download": [
+        "下载"
+      ],
+      "Download \"${ filename }\"": [
+        "下载 \"${ filename }\""
+      ],
+      "Download file": [
+        "下载文件"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "由于 Firefox 浏览器的限制，${ PASS_APP_NAME } 需要在新窗口中重新打开后才能上传文件。"
+      ],
+      "Exporting files": [
+        "正在导出文件"
+      ],
+      "File": [
+        "文件"
+      ],
+      "File attachments": [
+        "文件附件"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "如果启用此选项，导出时将下载您的所有文件。该操作可能需要一定时间，具体取决于您的网络连接状况。"
+      ],
+      "Include file attachments": [
+        "包含文件附件"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "所选文件的可用存储空间不足。"
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "此文件删除后，仍可从历史版本中恢复。"
+      ],
+      "Open new window to upload files": [
+        "打开新窗口上传文件"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "请耐心等待您的文件下载。"
+      ],
+      "Remove all files": [
+        "移除所有文件"
+      ],
+      "Rename": [
+        "重命名"
+      ],
+      "Restore": [
+        "恢复"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "某些文件过大，无法上传。允许的最大文件大小为 (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "导出的文件附件将不会被加密。"
+      ],
+      "The file you are trying to import is empty": [
+        "您尝试导入的文件是空的"
+      ],
+      "Total files: ": [
+        "总文件数： "
+      ],
+      "Total imported files: ": [
+        "总导入文件数： "
+      ],
+      "Upload files from your device.": [
+        "从您的设备上传文件。"
+      ],
+      "You can attach files to items for a better organization": [
+        "您可以将文件附加到项目上，以便更好地进行整理"
+      ],
+      "You may close this window after saving the file.": [
+        "保存文件后，您可以关闭此窗口。"
+      ],
+      "Your current plan does not support importing files": [
+        "您当前的计划不支持导入文件"
       ]
     },
     "Placeholder": {
@@ -3503,9 +3535,6 @@
       ]
     },
     "Title": {
-      "${ filesCount } file": [
-        "${ filesCount } 个文件"
-      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } 日志"
       ],
@@ -3529,9 +3558,6 @@
       ],
       "Aliases": [
         "别名"
-      ],
-      "Attachments": [
-        "附件"
       ],
       "Auto create/on the fly alias": [
         "自动创建/在运行中创建别名"
@@ -3625,9 +3651,6 @@
       ],
       "Domain ownership verification": [
         "域名所有权验证"
-      ],
-      "Download \"${ filename }\"": [
-        "下载 “${ filename }”"
       ],
       "Email": [
         "邮件"
@@ -3857,9 +3880,6 @@
       "Update available": [
         "有可用更新"
       ],
-      "Upload files from your device.": [
-        "从您的设备上传文件。"
-      ],
       "Use my email": [
         "使用我的电子邮箱"
       ],
@@ -3945,11 +3965,11 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "回收站中的项目会被永久删除。您将无法撤销这一操作。"
       ],
-      "An error occured while importing your data.": [
-        "导入数据时发生错误。"
-      ],
       "An error occurred while exporting your data": [
         "导出数据时发生错误"
+      ],
+      "An error occurred while importing your data.": [
+        "导入您的数据时发生了错误。"
       ],
       "An error occurred while resuming your session": [
         "恢复会话时发生错误"
@@ -4169,9 +4189,6 @@
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "在创建项目之前，您的管理员需要为您创建一个保险库"
-      ],
-      "Your current plan does not support importing files": [
-        "您当前的计划不支持导入文件"
       ],
       "Your organization does not allow creating a vault": [
         "您的组织不允许创建保险库"

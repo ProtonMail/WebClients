@@ -152,10 +152,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -247,9 +247,6 @@
       ],
       "Done": [
         "Utført"
-      ],
-      "Download": [
-        "Last ned"
       ],
       "Download this CSV template": [
         "Last ned denne CSV-malen"
@@ -467,9 +464,6 @@
       "Remove member": [
         "Fjern medlem"
       ],
-      "Rename": [
-        "Gi nytt navn"
-      ],
       "Request a feature": [
         "Be om en funksjon"
       ],
@@ -484,6 +478,9 @@
       ],
       "Reset": [
         "Tilbakestill"
+      ],
+      "Reset history": [
+        "Tilbakestill historikk"
       ],
       "Restore": [
         "Gjenopprett"
@@ -770,6 +767,9 @@
       "Alias options could not be resolved": [
         "Aliasalternativene kunne ikke løses"
       ],
+      "An error occured during the import process": [
+        "Det oppstod en feil under importprosessen"
+      ],
       "Authentication error": [
         "Autentiseringsfeil"
       ],
@@ -833,6 +833,9 @@
       ],
       "Deleting item failed": [
         "Sletting av element mislyktes"
+      ],
+      "Deleting item history failed": [
+        "Sletting av elementhistorikk mislyktes"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Sletting av hvelv \"${ payload.content.name }\" mislyktes."
@@ -1086,9 +1089,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Noe gikk galt. Last inn ${ PASS_APP_NAME }-utvidelsen på nytt. Problemet er loggført."
-      ],
-      "The file you are trying to import is empty": [
-        "Filen du prøver å importere er tom"
       ],
       "The URL is in the list": [
         "Nettadressen er i listen"
@@ -1700,6 +1700,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Element \"${ payload.item.data.metadata.name }\" oppdatert"
       ],
+      "Item history permanently deleted": [
+        "Elementhistorikk slettet permanent"
+      ],
       "Item moved to trash": [
         "Element flyttet til papirkurven"
       ],
@@ -1764,10 +1767,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -1932,6 +1931,9 @@
       "Please follow the steps below to set up your domain.": [
         "Følg trinnene nedenfor for å sette opp domenet ditt."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Hold dette vinduet åpent mens dataene dine importeres. Denne prosessen kan ta noen minutter."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
       ],
@@ -1979,6 +1981,9 @@
       ],
       "Removing secure link...": [
         "Fjerner sikker kobling..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Tilbakestilling av historikk vil slette alle tidligere elementversjoner permanent og kan ikke angres."
       ],
       "Restoring items from trash": [
         "Gjenoppretter elementer fra papirkurven"
@@ -2087,6 +2092,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Det ekstra passordet kreves for å bruke ${ PASS_APP_NAME }. Det fungerer som et ekstra passord på toppen av ${ BRAND_NAME }-passordet ditt."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Følgende ${ totalIgnored } element kunne ikke importeres:",
+        "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
       ],
       "The secure link has been removed": [
         "Den sikre koblingen er fjernet"
@@ -2656,9 +2665,6 @@
       "Field name": [
         "Feltnavn"
       ],
-      "File": [
-        "Fil"
-      ],
       "File format": [
         "Filformat"
       ],
@@ -2907,6 +2913,9 @@
       ],
       "Personal website": [
         "Personlig nettside"
+      ],
+      "PGP-encrypted (recommended)": [
+        "PGP-kryptert (anbefalt)"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -3169,6 +3178,9 @@
       "Your domain": [
         "Ditt domene"
       ],
+      "ZIP": [
+        "Postnummer"
+      ],
       "ZIP or Postal code": [
         "Postnummer"
       ]
@@ -3223,6 +3235,111 @@
       ],
       "Underscores": [
         "Understrekingstegn"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\" kunne ikke lastes opp."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" kunne ikke importeres."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" er for stor til å lastes opp. Maksimal tillatt størrelse er (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fil",
+        "${ filesCount } filer"
+      ],
+      "Attachments": [
+        "Vedlegg"
+      ],
+      "Choose a file or drag it here": [
+        "Velg en fil eller dra den hit"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Slett ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Slett alle filer"
+      ],
+      "Do you want to remove all the files?": [
+        "Vil du fjerne alle filene?"
+      ],
+      "Download": [
+        "Last ned"
+      ],
+      "Download \"${ filename }\"": [
+        "Last ned \"${ filename }\""
+      ],
+      "Download file": [
+        "Last ned fil"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "På grunn av en begrensning på Firefox, må ${ PASS_APP_NAME } gjenåpnes i et nytt vindu før du kan laste opp filer."
+      ],
+      "Exporting files": [
+        "Eksporterer filer"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "File attachments": [
+        "Filvedlegg"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Hvis aktivert, vil alle filene dine lastes ned når du eksporterer. Dette kan ta litt tid avhengig av internettforbindelsen din."
+      ],
+      "Include file attachments": [
+        "Inkluder filvedlegg"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Ikke nok tilgjengelig lagringsplass for de valgte filene."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Når den er slettet, kan denne filen fortsatt gjenopprettes fra elementets historikk."
+      ],
+      "Open new window to upload files": [
+        "Åpne nytt vindu for å laste opp filer"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Vær tålmodig mens filene dine lastes ned."
+      ],
+      "Remove all files": [
+        "Fjern alle filer"
+      ],
+      "Rename": [
+        "Gi nytt navn"
+      ],
+      "Restore": [
+        "Gjenopprett"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Noen filer er for store til å lastes opp. Maksimal tillatt størrelse er (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "De eksporterte filvedleggene vil ikke bli kryptert."
+      ],
+      "The file you are trying to import is empty": [
+        "Filen du prøver å importere er tom"
+      ],
+      "Total files: ": [
+        "Totalt antall filer: "
+      ],
+      "Total imported files: ": [
+        "Totalt antall importerte filer: "
+      ],
+      "Upload files from your device.": [
+        "Last opp filer fra enheten din."
+      ],
+      "You can attach files to items for a better organization": [
+        "Du kan legge ved filer til elementer for en bedre organisering"
+      ],
+      "You may close this window after saving the file.": [
+        "Du kan lukke dette vinduet etter at du har lagret filen."
+      ],
+      "Your current plan does not support importing files": [
+        "Din nåværende plan støtter ikke import av filer"
       ]
     },
     "Placeholder": {
@@ -3466,6 +3583,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME }-logger"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Innstillinger for ${ PASS_APP_NAME }"
       ],
@@ -3486,9 +3606,6 @@
       ],
       "Aliases": [
         "Aliaser"
-      ],
-      "Attachments": [
-        "Vedlegg"
       ],
       "Auto create/on the fly alias": [
         "Automatisk oppretting/på farten-alias"
@@ -3587,6 +3704,9 @@
       "Email": [
         "E-post"
       ],
+      "Encrypted import": [
+        "Kryptert import"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Koser du deg med ${ PASS_APP_NAME }?"
       ],
@@ -3634,6 +3754,9 @@
       ],
       "Import to vault(s)": [
         "Importer til hvelv"
+      ],
+      "Importing your data": [
+        "Importerer dataene dine"
       ],
       "Item": [
         "Element"
@@ -3733,6 +3856,9 @@
       ],
       "Remove secure link?": [
         "Fjerne sikker kobling?"
+      ],
+      "Reset history for this item?": [
+        "Tilbakestille historikken for dette elementet?"
       ],
       "Restore this version?": [
         "Gjenopprette denne versjonen?"
@@ -3894,6 +4020,9 @@
       ],
       "An error occurred while exporting your data": [
         "Det oppstod en feil under eksport av dataene dine"
+      ],
+      "An error occurred while importing your data.": [
+        "Det oppstod en feil under import av dataene dine."
       ],
       "An error occurred while resuming your session": [
         "Det oppstod en feil under gjenopptakelse av økten"

@@ -152,10 +152,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -247,9 +247,6 @@
       ],
       "Done": [
         "Klar"
-      ],
-      "Download": [
-        "Ladda ner"
       ],
       "Download this CSV template": [
         "Ladda ner denna CSV-mall"
@@ -467,9 +464,6 @@
       "Remove member": [
         "Ta bort medlem"
       ],
-      "Rename": [
-        "Ändra namn"
-      ],
       "Request a feature": [
         "Begär en funktion"
       ],
@@ -484,6 +478,9 @@
       ],
       "Reset": [
         "Återställ"
+      ],
+      "Reset history": [
+        "Återställ historik"
       ],
       "Restore": [
         "Återställ"
@@ -770,6 +767,9 @@
       "Alias options could not be resolved": [
         "Alternativ för alias kunde inte lösas"
       ],
+      "An error occured during the import process": [
+        "Ett fel inträffade under importprocessen"
+      ],
       "Authentication error": [
         "Autentiseringsfel"
       ],
@@ -833,6 +833,9 @@
       ],
       "Deleting item failed": [
         "Misslyckades att ta bort objekt"
+      ],
+      "Deleting item history failed": [
+        "Borttagning av objekthistorik misslyckades"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Misslyckades att ta bort valv ”${ payload.content.name }”"
@@ -1086,9 +1089,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Något gick fel. Ladda om tillägget ${ PASS_APP_NAME }. Detta problem har loggats"
-      ],
-      "The file you are trying to import is empty": [
-        "Filen du försöker importera är tom"
       ],
       "The URL is in the list": [
         "URL:en finns i listan"
@@ -1700,6 +1700,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Objekt ”${ payload.item.data.metadata.name }” uppdaterades"
       ],
+      "Item history permanently deleted": [
+        "Objekthistorik permanent borttaget"
+      ],
       "Item moved to trash": [
         "Objekt flyttat till papperskorg"
       ],
@@ -1764,10 +1767,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -1932,6 +1931,9 @@
       "Please follow the steps below to set up your domain.": [
         "Följ stegen nedan för att ställa in din domän."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Håll det här fönstret öppet medan dina data importeras. Denna process kan ta några minuter."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Observera att när aliaset väl har tagits bort kan det inte återställas. Kanske vill du inaktivera aliaset istället?"
       ],
@@ -1979,6 +1981,9 @@
       ],
       "Removing secure link...": [
         "Tar bort säker länk …"
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Återställning av historik kommer att ta bort alla tidigare versioner permanent och kan inte ångras."
       ],
       "Restoring items from trash": [
         "Återställer objekt från papperskorg"
@@ -2087,6 +2092,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Extralösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Följande ${ totalIgnored } objekt kunde inte importeras:",
+        "Följande ${ totalIgnored } objekten kunde inte importeras:"
       ],
       "The secure link has been removed": [
         "Den säkra länken har tagits bort"
@@ -2656,9 +2665,6 @@
       "Field name": [
         "Fältnamn"
       ],
-      "File": [
-        "Fil"
-      ],
       "File format": [
         "Filformat"
       ],
@@ -2907,6 +2913,9 @@
       ],
       "Personal website": [
         "Personlig webbplats"
+      ],
+      "PGP-encrypted (recommended)": [
+        "PGP-krypterad (rekommenderas)"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -3169,6 +3178,9 @@
       "Your domain": [
         "Din domän"
       ],
+      "ZIP": [
+        "Postnummer"
+      ],
       "ZIP or Postal code": [
         "Postnummer"
       ]
@@ -3223,6 +3235,105 @@
       ],
       "Underscores": [
         "Understreck"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "“${ file.name }“ kunde inte laddas upp."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "“${ filename }“ kunde inte importeras."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "“${ filename }“ är för stora för att laddas upp. Den maximalt tillåtna storleken är (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fil",
+        "${ filesCount } filer"
+      ],
+      "Attachments": [
+        "Bilagor"
+      ],
+      "Choose a file or drag it here": [
+        "Välj en fil eller dra den hit"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Ta bort ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Ta bort alla filer"
+      ],
+      "Do you want to remove all the files?": [
+        "Vill du ta bort alla filer?"
+      ],
+      "Download": [
+        "Ladda ner"
+      ],
+      "Download \"${ filename }\"": [
+        "Ladda ner “${ filename }“"
+      ],
+      "Download file": [
+        "Ladda ner fil"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "På grund av en begränsning på Firefox måste ${ PASS_APP_NAME } öppnas igen i ett nytt fönster innan du kan ladda upp filer."
+      ],
+      "Exporting files": [
+        "Exporterar filer"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "File attachments": [
+        "Filbilagor"
+      ],
+      "Include file attachments": [
+        "Inkludera filbilagor"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Inte tillräckligt tillgängligt lagringsutrymme för de valda filerna."
+      ],
+      "Open new window to upload files": [
+        "Öppna nytt fönster för att ladda upp filer"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Ha tålamod medan dina filer laddas ner."
+      ],
+      "Remove all files": [
+        "Ta bort alla filer"
+      ],
+      "Rename": [
+        "Byt namn"
+      ],
+      "Restore": [
+        "Återställ"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Några filer är för stora för att laddas upp. Den maximalt tillåtna storleken är (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "De exporterade filbilagorna kommer inte att krypteras."
+      ],
+      "The file you are trying to import is empty": [
+        "Filen du försöker importera är tom"
+      ],
+      "Total files: ": [
+        "Totalt antal filer: "
+      ],
+      "Total imported files: ": [
+        "Totalt antal importerade filer: "
+      ],
+      "Upload files from your device.": [
+        "Ladda upp filer från din enhet."
+      ],
+      "You can attach files to items for a better organization": [
+        "Du kan bifoga filer till objekt för en bättre organisering"
+      ],
+      "You may close this window after saving the file.": [
+        "Du kan stänga detta fönster efter att ha sparat filen."
+      ],
+      "Your current plan does not support importing files": [
+        "Ditt nuvarande paket stöder inte import av filer"
       ]
     },
     "Placeholder": {
@@ -3466,6 +3577,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME } Logg"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Inställningar för ${ PASS_APP_NAME }"
       ],
@@ -3486,9 +3600,6 @@
       ],
       "Aliases": [
         "Alias"
-      ],
-      "Attachments": [
-        "Bilagor"
       ],
       "Auto create/on the fly alias": [
         "Autoskapat/på-språng-alias"
@@ -3587,6 +3698,9 @@
       "Email": [
         "E-post"
       ],
+      "Encrypted import": [
+        "Krypterad import"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
       ],
@@ -3634,6 +3748,9 @@
       ],
       "Import to vault(s)": [
         "Importera till valv"
+      ],
+      "Importing your data": [
+        "Importerar din data"
       ],
       "Item": [
         "Objekt"
@@ -3733,6 +3850,9 @@
       ],
       "Remove secure link?": [
         "Tar bort säker länk?"
+      ],
+      "Reset history for this item?": [
+        "Återställ historik för detta objekt?"
       ],
       "Restore this version?": [
         "Återställ denna version?"
@@ -3894,6 +4014,9 @@
       ],
       "An error occurred while exporting your data": [
         "Ett fel uppstod när dina data exporterades"
+      ],
+      "An error occurred while importing your data.": [
+        "Ett fel uppstod vid importen av dina data."
       ],
       "An error occurred while resuming your session": [
         "Ett fel uppstod vid återupptagning av din session"
