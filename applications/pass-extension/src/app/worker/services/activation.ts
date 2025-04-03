@@ -318,11 +318,11 @@ export const createActivationService = () => {
         if (payload.current) {
             const tab = first(await browser.tabs.query({ active: true, currentWindow: true }));
             if (!(tab && tab?.id)) throw new Error('No active tabs');
-            return { tabId: tab.id, url: parseUrl(tab.url) };
+            return { tabId: tab.id, url: parseUrl(tab.url), senderTabId: sender.tab?.id };
         }
 
         if (!sender.tab?.id) throw new Error('Invalid sender tab');
-        return { tabId: sender.tab.id, url: parseUrl(sender.tab.url) };
+        return { tabId: sender.tab.id, url: parseUrl(sender.tab.url), senderTabId: sender.tab.id };
     };
 
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
