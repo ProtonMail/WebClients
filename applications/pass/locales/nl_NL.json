@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
-      "Move to trash": [
-        "Naar prullenbak verplaatsen"
-      ],
       "Move to Trash": [
         "Verplaats naar prullenbak"
+      ],
+      "Move to trash": [
+        "Naar prullenbak verplaatsen"
       ],
       "Multiple select": [
         "Meervoudige selectie"
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Uitnodiging opnieuw verzenden"
+      ],
+      "Reset": [
+        "Resetten"
+      ],
+      "Reset history": [
+        "Reset historiek"
       ],
       "Restore": [
         "Herstel"
@@ -796,6 +802,9 @@
       "Alias options could not be resolved": [
         "Alias-opties konden niet worden opgevraagd"
       ],
+      "An error occured during the import process": [
+        "Er is een probleem opgetreden tijdens het importeer proces"
+      ],
       "An error occurred while resuming your session": [
         "Er is een fout opgetreden tijdens het hervatten van uw sessie"
       ],
@@ -859,6 +868,9 @@
       ],
       "Deleting item failed": [
         "Item verwijderen mislukt"
+      ],
+      "Deleting item history failed": [
+        "Verwijderen van item geschiedenis is mislukt"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Verwijderen kluis \"${ payload.content.name }\" mislukt"
@@ -1020,9 +1032,6 @@
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
       ],
-      "File could not be read": [
-        "Bestand kon niet worden gelezen"
-      ],
       "File does not match expected format": [
         "Bestand komt niet overeen met verwacht formaat"
       ],
@@ -1103,9 +1112,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Er is iets fout gegaan. Log opnieuw in."
-      ],
-      "The file you are trying to import is empty": [
-        "Het bestand dat u probeert te importeren is leeg"
       ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
@@ -1534,9 +1540,6 @@
       "Drop to import": [
         "Neerzetten om te importeren"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Door een beperking van de Safari-browserextensies ontbreekt na het exporteren van de gegevens de bestandsextensie “.pgp”. Geef het bestand na het exporteren een andere naam met de extensie .pgp (bijv. file.pgp)."
-      ],
       "Editor": [
         "Bewerker"
       ],
@@ -1662,15 +1665,8 @@
       "Identity confirmed": [
         "Identiteit bevestigd"
       ],
-      "Import in progress:": [
-        "Bezig met importeren:"
-      ],
       "Import the CSV file below.": [
         "Importeer het CSV-bestand hieronder."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } item geïmporteerd",
-        "${ payload.total } items geïmporteerd"
       ],
       "Imported on ${ date }": [
         "Geïmporteerd op ${ date }"
@@ -1711,15 +1707,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Het lijkt erop dat u al bent aangemeld bij ${ PASS_APP_NAME }. Als u probeert in te loggen met een ander account, log dan eerst uit bij de extensie."
       ],
-      "item": [
-        "item",
-        "items"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" aangemaakt"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Item \"${ payload.item.data.metadata.name }\" bijgewerkt"
+      ],
+      "Item history permanently deleted": [
+        "Item historiek permanent verwijderd"
       ],
       "Item moved to trash": [
         "Item verplaatst naar prullenbak"
@@ -1980,6 +1975,9 @@
       "Please follow the steps below to set up your domain.": [
         "Volg onderstaande stappen om uw domein in te stellen."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Houd dit venster open terwijl uw gegevens worden geïmporteerd. Dit proces kan enkele minuten duren."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Let op: eenmaal verwijderd, de alias kan niet worden hersteld. Misschien wilt u de alias in plaats daarvan uitschakelen?"
       ],
@@ -2024,6 +2022,9 @@
       ],
       "Removing secure link...": [
         "Beveiligde koppeling verwijderen..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Het resetten van de historiek zal alle voorgaande versies definitief verwijderen en kan niet ongedaan worden gemaakt."
       ],
       "Restoring items from trash": [
         "Items herstellen uit prullenbak"
@@ -2130,9 +2131,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Het extra wachtwoord is nodig om ${ PASS_APP_NAME }te gebruiken. Het werkt als een extra wachtwoord bovenop uw ${ BRAND_NAME } wachtwoord."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Het volgende ${ result.ignored.length } item kon niet geïmporteerd worden:",
-        "De volgende ${ result.ignored.length } items konden niet geïmporteerd worden:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Het volgende ${ totalIgnored } item kon niet geïmporteerd worden:",
+        "De volgende ${ totalIgnored } items konden niet geïmporteerd worden:"
       ],
       "The secure link has been removed": [
         "De beveiligde link is verwijderd"
@@ -2934,8 +2935,8 @@
       "Personal website": [
         "Persoonlijke website"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON PGP-versleuteld (aanbevolen)"
+      "PGP-encrypted (recommended)": [
+        "PGP-versleuteld (aanbevolen)"
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -3189,6 +3190,9 @@
       "Your domain": [
         "Uw domein"
       ],
+      "ZIP": [
+        "Postcode"
+      ],
       "ZIP or Postal code": [
         "Postcode"
       ]
@@ -3265,6 +3269,105 @@
       ],
       "Underscores": [
         "Onderstrepingstekens"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\" kon niet worden geüpload."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" kon niet worden geïmporteerd."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" is te groot om te uploaden. De maximaal toegestane grootte is (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } bestand",
+        "${ filesCount } bestanden"
+      ],
+      "Attachments": [
+        "Bijlagen"
+      ],
+      "Choose a file or drag it here": [
+        "Kies een bestand of sleep het hierheen"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Verwijder ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Verwijder alle bestanden"
+      ],
+      "Do you want to remove all the files?": [
+        "Wilt u alle bestanden verwijderen?"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download file": [
+        "Bestand downloaden"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Wegens een beperking in Firefox, moet ${ PASS_APP_NAME } worden geopend in een nieuw venster voordat u bestanden kunt uploaden."
+      ],
+      "Exporting files": [
+        "Bestanden exporteren"
+      ],
+      "File": [
+        "Bestand"
+      ],
+      "File attachments": [
+        "Bestandsbijlagen"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Indien ingeschakeld, zullen al uw bestanden worden gedownload bij het exporteren. Afhankelijk van uw internetverbinding kan dit enige tijd duren."
+      ],
+      "Include file attachments": [
+        "Bestandsbijlagen opnemen"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Niet genoeg opslagruimte beschikbaar voor de geselecteerde bestanden."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Eenmaal verwijderd, kan dit bestand nog steeds worden hersteld uit de artikelgeschiedenis."
+      ],
+      "Open new window to upload files": [
+        "Open een nieuw venster om bestanden te uploaden"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Even geduld, uw bestanden worden gedownload."
+      ],
+      "Remove all files": [
+        "Verwijder alle bestanden"
+      ],
+      "Rename": [
+        "Hernoemen"
+      ],
+      "Restore": [
+        "Herstellen"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Sommige bestanden zijn te groot om te uploaden. De maximaal toegestane grootte is (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "De geëxporteerde bijlagen worden niet versleuteld."
+      ],
+      "The file you are trying to import is empty": [
+        "Het bestand dat u probeert te importeren is leeg"
+      ],
+      "Total files: ": [
+        "Totaal aantal bestanden: "
+      ],
+      "Total imported files: ": [
+        "Totaal aantal geïmporteerde bestanden: "
+      ],
+      "Upload files from your device.": [
+        "Bestanden uploaden van uw computer."
+      ],
+      "You can attach files to items for a better organization": [
+        "U kunt bestanden toevoegen aan items voor een betere organisatie"
+      ],
+      "Your current plan does not support importing files": [
+        "Uw huidige abonnement ondersteunt het importeren van bestanden niet"
       ]
     },
     "Placeholder": {
@@ -3661,6 +3764,9 @@
       "Domain ownership verification": [
         "Domeineigendom verificatie"
       ],
+      "Encrypted import": [
+        "Versleutelde import"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
       ],
@@ -3701,6 +3807,9 @@
         "Importeren naar kluis/kluizen"
       ],
       "Import your data": [
+        "Uw gegevens importeren"
+      ],
+      "Importing your data": [
         "Uw gegevens importeren"
       ],
       "Inactive 2FA": [
@@ -3828,6 +3937,9 @@
       ],
       "Remove secure link?": [
         "Beveiligde koppeling verwijderen?"
+      ],
+      "Reset history for this item?": [
+        "Historiek van dit item resetten"
       ],
       "Resolved breaches": [
         "Opgeloste inbreuken"
@@ -4015,6 +4127,9 @@
       "An error occurred while exporting your data": [
         "Er is een fout opgetreden bij het exporteren van uw gegevens"
       ],
+      "An error occurred while importing your data.": [
+        "Er is een fout opgetreden bij het importeren van uw gegevens."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Weet u zeker dat u ${ trashedItemsCount } item naar de prullenbak wilt verplaatsen?",
         "Weet u zeker dat u ${ trashedItemsCount } items naar de prullenbak wilt verplaatsen?"
@@ -4158,9 +4273,6 @@
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP-versleuteld exportbestand vereist wachtzin"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Controleer of de extensie correct is geïnstalleerd en ingeschakeld"

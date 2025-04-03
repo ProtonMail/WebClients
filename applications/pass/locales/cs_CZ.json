@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Přesunout do jiného trezoru"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Přesunout do koše"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Přesunout do koše"
       ],
       "Multiple select": [
@@ -483,6 +483,9 @@
       ],
       "Resend invitation": [
         "Znovu poslat pozvánku"
+      ],
+      "Reset": [
+        "Resetovat"
       ],
       "Restore": [
         "Obnovit"
@@ -1030,9 +1033,6 @@
       "File could not be parsed": [
         "Soubor nelze analyzovat"
       ],
-      "File could not be read": [
-        "Soubor nelze přečíst"
-      ],
       "File does not match expected format": [
         "Soubor neodpovídá očekávanému formátu"
       ],
@@ -1113,9 +1113,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Něco se pokazilo. Přihlaste se prosím znovu."
-      ],
-      "The file you are trying to import is empty": [
-        "Soubor, který se snažíte importovat, je prázdný"
       ],
       "The session has expired. Please sign in again.": [
         "Platnost relace vypršela. Znovu se přihlaste."
@@ -1574,9 +1571,6 @@
       "Drop to import": [
         "Přetažením provedete import"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Kvůli omezení rozšíření prohlížeče Safari bude po exportu dat chybět souboru přípona \".pgp\". Po exportu soubor přejmenujte tak, aby obsahoval příponu .pgp (např. soubor.pgp)."
-      ],
       "Editor": [
         "Editor"
       ],
@@ -1706,17 +1700,8 @@
       "Identity confirmed": [
         "Identita potvrzena"
       ],
-      "Import in progress:": [
-        "Import probíhá:"
-      ],
       "Import the CSV file below.": [
         "CSV soubor importujte níže."
-      ],
-      "Imported ${ payload.total } item": [
-        "Importována ${ payload.total } položka",
-        "Importovány ${ payload.total } položky",
-        "Importováno ${ payload.total } položek",
-        "Importováno ${ payload.total } položek"
       ],
       "Imported on ${ date }": [
         "Importováno ${ date }"
@@ -1756,12 +1741,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zdá se, že jste již přihlášeni do ${ PASS_APP_NAME }. Pokud se snažíte přihlásit pomocí jiného účtu, nejprve se z rozšíření odhlaste."
-      ],
-      "item": [
-        "položka",
-        "položky",
-        "položek",
-        "položek"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Položka \"${ payload.item.data.metadata.name }\" byla vytvořena"
@@ -2185,12 +2164,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Pro použití ${ PASS_APP_NAME } bude vyžadováno dodatečné heslo. Slouží jako doplněk k vašemu heslu ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Následující ${ result.ignored.length } položku nelze importovat:",
-        "Následující ${ result.ignored.length } položky nelze importovat:",
-        "Následujících ${ result.ignored.length } položek nelze importovat:",
-        "Následujících ${ result.ignored.length } položek nelze importovat:"
       ],
       "The secure link has been removed": [
         "Bezpečný odkaz byl odebrán"
@@ -3027,9 +3000,6 @@
       ],
       "Personal website": [
         "Osobní web"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-šifrovaný JSON (doporučeno)"
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -4278,9 +4248,6 @@
       ],
       "Passwords do not match": [
         "Hesla se neshodují"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Zkontrolujte prosím, že je rozšíření správně nainstalováno a povoleno"

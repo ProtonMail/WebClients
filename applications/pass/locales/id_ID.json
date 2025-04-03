@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to trash": [
-        "Pindahkan ke sampah"
-      ],
       "Move to Trash": [
         "Pindahkan ke Sampah"
+      ],
+      "Move to trash": [
+        "Pindahkan ke sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Kirim ulang undangan"
+      ],
+      "Reset": [
+        "Atur ulang"
+      ],
+      "Reset history": [
+        "Atur ulang riwayat"
       ],
       "Restore": [
         "Pulihkan"
@@ -856,6 +862,9 @@
       "Deleting item failed": [
         "Item gagal dihapus"
       ],
+      "Deleting item history failed": [
+        "Riwayat item gagal dihapus"
+      ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal dihapus"
       ],
@@ -1015,9 +1024,6 @@
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
       ],
-      "File could not be read": [
-        "Berkas tidak dapat dibaca"
-      ],
       "File does not match expected format": [
         "Berkas tidak cocok dengan format yang diharapkan"
       ],
@@ -1098,9 +1104,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Terdapat suatu kesalahan. Silakan masuk kembali."
-      ],
-      "The file you are trying to import is empty": [
-        "Berkas yang ingin Anda impor kosong"
       ],
       "The session has expired. Please sign in again.": [
         "Masa berlaku sesi telah habis. Silakan masuk lagi."
@@ -1514,9 +1517,6 @@
       "Drop to import": [
         "Lepaskan untuk mengimpor"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Karena batasan pada ekstensi browser Safari, data yang diekspor tidak akan mengandung ekstensi \".pgp\". Silakan ubah nama berkas yang bersangkutan untuk menyertakan ekstensi .pgp (mis. file.pgp) setelah mengekspor."
-      ],
       "Editor": [
         "Penyunting"
       ],
@@ -1640,14 +1640,8 @@
       "Identity confirmed": [
         "Identitas terkonfirmasi"
       ],
-      "Import in progress:": [
-        "Impor yang sedang berlangsung:"
-      ],
       "Import the CSV file below.": [
         "Impor CSV pada kolom di bawah ini."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } item diimpor"
       ],
       "Imported on ${ date }": [
         "Diimpor pada tanggal ${ date }"
@@ -1687,9 +1681,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sepertinya Anda telah masuk ke ${ PASS_APP_NAME }. Apabila Anda mencoba masuk dengan akun lain, silakan keluar dari ekstensi terlebih dahulu."
-      ],
-      "item": [
-        "item"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" dibuat"
@@ -2102,8 +2093,8 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Kata sandi tambahan ini akan dibutuhkan untuk dapat menggunakan ${ PASS_APP_NAME }. Kata sandi ini berfungsi sebagai kata sandi kedua yang merangkapi kata sandi ${ BRAND_NAME } Anda."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } item berikut tidak dapat diimpor:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } item berikut tidak dapat diimpor."
       ],
       "The secure link has been removed": [
         "Tautan aman telah dihapus"
@@ -2887,8 +2878,8 @@
       "Personal website": [
         "Situs web pribadi"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON yang terenkripsi PGP (direkomendasikan)"
+      "PGP-encrypted (recommended)": [
+        "Terenkripsi PGP (direkomendasikan)"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -3142,6 +3133,9 @@
       "Your domain": [
         "Domain Anda"
       ],
+      "ZIP": [
+        "Kode pos"
+      ],
       "ZIP or Postal code": [
         "ZIP atau kode pos"
       ]
@@ -3216,6 +3210,53 @@
       ],
       "Underscores": [
         "Garis bawah"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" tidak dapat diimpor."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" terlalu besar untuk diunggah. Ukuran maksimum yang diperkenankan adalah (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } berkas"
+      ],
+      "Choose a file or drag it here": [
+        "Pilih berkas atau seret berkas ke layar ini"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Hapus ${ deleteFile.state.name }"
+      ],
+      "Do you want to remove all the files?": [
+        "Apakah Anda ingin menghapus seluruh berkas?"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Karena batasan yang ada pada Firefox, ${ PASS_APP_NAME } perlu untuk dibuka pada jendala baru sebelum Anda dapat mengunggah berkas."
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Apabila diaktifkan, seluruh berkas Anda akan diunduh pada saat mengekspor. Proses ini dapat memakan waktu sejenak tergantung dari koneksi internet Anda."
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Ruang penyimpanan yang tersedia tidak memadai untuk berkas yang dipilih."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Setelah dihapus, berkas ini akan tetap dapat dipulihkan dari riwayat item."
+      ],
+      "Open new window to upload files": [
+        "Buka jendela baru untuk mengunggah berkas"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Mohon bersabar selagi berkas Anda diunduh."
+      ],
+      "The file you are trying to import is empty": [
+        "Berkas yang ingin Anda impor kosong"
+      ],
+      "Upload files from your device.": [
+        "Unggah berkas dari perangkat Anda."
+      ],
+      "You can attach files to items for a better organization": [
+        "Anda dapat melampirkan berkas ke item untuk pengelolaan yang lebih baik"
       ]
     },
     "Placeholder": {
@@ -3609,6 +3650,9 @@
       "Domain ownership verification": [
         "Verifikasi kepemilikan domain"
       ],
+      "Encrypted import": [
+        "Impor terenkripsi"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
       ],
@@ -3650,6 +3694,9 @@
       ],
       "Import your data": [
         "Impor data Anda"
+      ],
+      "Importing your data": [
+        "Mengimpor data Anda"
       ],
       "Inactive 2FA": [
         "2FA yang tidak aktif"
@@ -3773,6 +3820,9 @@
       ],
       "Remove secure link?": [
         "Hapus tautan aman?"
+      ],
+      "Reset history for this item?": [
+        "Atur ulang riwayat untuk item ini?"
       ],
       "Resolved breaches": [
         "Kebocoran yang telah terselesaikan"
@@ -4098,9 +4148,6 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak sesuai"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah aktif"

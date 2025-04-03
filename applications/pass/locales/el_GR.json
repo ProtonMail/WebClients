@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
       "Multiple select": [
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Επανάληψη αποστολής πρόσκλησης"
+      ],
+      "Reset": [
+        "Επαναφορά"
+      ],
+      "Reset history": [
+        "Επαναφορά ιστορικού"
       ],
       "Restore": [
         "Επαναφορά"
@@ -796,6 +802,9 @@
       "Alias options could not be resolved": [
         "Δεν ήταν δυνατή η επίλυση των επιλογών ψευδωνύμου"
       ],
+      "An error occured during the import process": [
+        "Παρουσιάστηκε σφάλμα κατά τη διαδικασία εισαγωγής"
+      ],
       "An error occurred while resuming your session": [
         "Παρουσιάστηκε σφάλμα κατά τη συνέχιση της συνεδρίας σας"
       ],
@@ -859,6 +868,9 @@
       ],
       "Deleting item failed": [
         "Η διαγραφή στοιχείου απέτυχε"
+      ],
+      "Deleting item history failed": [
+        "Η διαγραφή ιστορικού στοιχείου απέτυχε"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Η διαγραφή της κρύπτης \"${ payload.content.name }\" απέτυχε"
@@ -1020,9 +1032,6 @@
       "File could not be parsed": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου"
       ],
-      "File could not be read": [
-        "Δεν ήταν δυνατή η ανάγνωση του αρχείου"
-      ],
       "File does not match expected format": [
         "Το αρχείο δεν ταιριάζει με την αναμενόμενη μορφή"
       ],
@@ -1103,9 +1112,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε συνδεθείτε ξανά."
-      ],
-      "The file you are trying to import is empty": [
-        "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
       ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
@@ -1534,9 +1540,6 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Λόγω περιορισμού των προεκτάσεων του προγράμματος περιήγησης Safari, μετά την εξαγωγή των δεδομένων θα λείπει η επέκταση αρχείου \".pgp\". Μετονομάστε το αρχείο για να συμπεριλάβετε την επέκταση .pgp (π.χ. file.pgp) μετά την εξαγωγή."
-      ],
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
       ],
@@ -1662,15 +1665,8 @@
       "Identity confirmed": [
         "Η ταυτότητα επιβεβαιώθηκε"
       ],
-      "Import in progress:": [
-        "Εισαγωγή σε εξέλιξη:"
-      ],
       "Import the CSV file below.": [
         "Εισαγάγετε το παρακάτω αρχείο CSV."
-      ],
-      "Imported ${ payload.total } item": [
-        "Εισαγόμενο ${ payload.total } στοιχείο",
-        "Εισαγόμενα ${ payload.total } στοιχεία"
       ],
       "Imported on ${ date }": [
         "Εισήχθη στις ${ date }"
@@ -1711,15 +1707,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Φαίνεται ότι είστε ήδη συνδεδεμένοι στο ${ PASS_APP_NAME }. Εάν προσπαθείτε να συνδεθείτε με διαφορετικό λογαριασμό, αποσυνδεθείτε πρώτα από την προέκταση."
       ],
-      "item": [
-        "στοιχείο",
-        "στοιχεία"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" δημιουργήθηκε"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" ενημερώθηκε"
+      ],
+      "Item history permanently deleted": [
+        "Το ιστορικό στοιχείου διαγράφηκε οριστικά"
       ],
       "Item moved to trash": [
         "Το στοιχείο μετακινήθηκε στον κάδο απορριμμάτων"
@@ -1980,6 +1975,9 @@
       "Please follow the steps below to set up your domain.": [
         "Ακολουθήστε τα παρακάτω βήματα για να ρυθμίσετε τον τομέα σας."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Παρακαλούμε διατηρήστε αυτό το παράθυρο ανοιχτό κατά την εισαγωγή των δεδομένων σας. Αυτή η διαδικασία μπορεί να διαρκέσει μερικά λεπτά."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
       ],
@@ -2024,6 +2022,9 @@
       ],
       "Removing secure link...": [
         "Αφαίρεση ασφαλούς συνδέσμου..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Η επαναφορά ιστορικού θα διαγράψει οριστικά όλες τις παλαιότερες εκδόσεις του στοιχείου και δεν είναι δυνατό να αναιρεθεί."
       ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
@@ -2130,9 +2131,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Ο επιπλέον κωδικός πρόσβασης θα απαιτηθεί για τη χρήση του ${ PASS_APP_NAME }. Λειτουργεί ως πρόσθετος κωδικός πρόσβασης πάνω από τον κωδικό πρόσβασης ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
-        "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Δεν ήταν δυνατή η εισαγωγή του ${ totalIgnored } στοιχείου:",
+        "Δεν ήταν δυνατή η εισαγωγή των ${ totalIgnored } στοιχείων:"
       ],
       "The secure link has been removed": [
         "Ο ασφαλής σύνδεσμος καταργήθηκε"
@@ -2934,8 +2935,8 @@
       "Personal website": [
         "Προσωπικός ιστότοπος"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON με κρυπτογράφηση PGP (συνιστάται)"
+      "PGP-encrypted (recommended)": [
+        "Κρυπτογραφημένο με PGP (συνιστάται)"
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -3189,6 +3190,9 @@
       "Your domain": [
         "Ο τομέας σας"
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
       ]
@@ -3265,6 +3269,105 @@
       ],
       "Underscores": [
         "Κάτω παύλες"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Δεν ήταν δυνατή η μεταφόρτωση του \"${ file.name }\"."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Δεν ήταν δυνατή η εισαγωγή του \"${ filename }\"."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Το \"${ filename }\" είναι πολύ μεγάλο για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } αρχείο",
+        "${ filesCount } αρχεία"
+      ],
+      "Attachments": [
+        "Συνημμένα"
+      ],
+      "Choose a file or drag it here": [
+        "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Διαγραφή ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Διαγραφή όλων των αρχείων"
+      ],
+      "Do you want to remove all the files?": [
+        "Θέλετε να καταργήσετε όλα τα αρχεία;"
+      ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Download file": [
+        "Λήψη αρχείου"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Λόγω περιορισμού στο Firefox, το ${ PASS_APP_NAME } πρέπει να ανοίξει ξανά σε νέο παράθυρο για να μπορέσετε να ανεβάσετε αρχεία."
+      ],
+      "Exporting files": [
+        "Εξαγωγή αρχείων"
+      ],
+      "File": [
+        "Αρχείο"
+      ],
+      "File attachments": [
+        "Συνημμένα αρχεία"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Εάν ενεργοποιηθεί, όλα τα αρχεία σας θα ληφθούν κατά την εξαγωγή. Αυτό μπορεί να διαρκέσει λίγο, ανάλογα με τη σύνδεσή σας στο διαδίκτυο."
+      ],
+      "Include file attachments": [
+        "Συμπερίληψη συνημμένων αρχείων"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Δεν υπάρχει αρκετός διαθέσιμος χώρος αποθήκευσης για τα επιλεγμένα αρχεία."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Μόλις διαγραφεί, αυτό το αρχείο μπορεί ακόμα να ανακτηθεί από το ιστορικό του στοιχείου."
+      ],
+      "Open new window to upload files": [
+        "Άνοιγμα νέου παραθύρου για μεταφόρτωση αρχείων"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Παρακαλούμε να είστε υπομονετικοί κατά τη λήψη των αρχείων σας."
+      ],
+      "Remove all files": [
+        "Κατάργηση όλων των αρχείων"
+      ],
+      "Rename": [
+        "Μετονομασία"
+      ],
+      "Restore": [
+        "Επαναφορά"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Ορισμένα αρχεία είναι πολύ μεγάλα για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Τα εξαγόμενα συνημμένα αρχεία δεν θα κρυπτογραφηθούν."
+      ],
+      "The file you are trying to import is empty": [
+        "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
+      ],
+      "Total files: ": [
+        "Συνολικοί φάκελοι: "
+      ],
+      "Total imported files: ": [
+        "Σύνολο εισαγόμενων φακέλων: "
+      ],
+      "Upload files from your device.": [
+        "Ανεβάστε αρχεία από τη συσκευή σας."
+      ],
+      "You can attach files to items for a better organization": [
+        "Μπορείτε να επισυνάψετε αρχεία στα στοιχεία για καλύτερη οργάνωση"
+      ],
+      "Your current plan does not support importing files": [
+        "Το τρέχον πλάνο σας δεν υποστηρίζει την εισαγωγή αρχείων"
       ]
     },
     "Placeholder": {
@@ -3661,6 +3764,9 @@
       "Domain ownership verification": [
         "Επαλήθευση ιδιοκτησίας τομέα"
       ],
+      "Encrypted import": [
+        "Κρυπτογραφημένη εισαγωγή"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
       ],
@@ -3702,6 +3808,9 @@
       ],
       "Import your data": [
         "Εισαγωγή των δεδομένων σας"
+      ],
+      "Importing your data": [
+        "Γίνεται εισαγωγή των δεδομένων σας"
       ],
       "Inactive 2FA": [
         "Απενεργοποιημένο 2FA"
@@ -3828,6 +3937,9 @@
       ],
       "Remove secure link?": [
         "Αφαίρεση ασφαλούς συνδέσμου;"
+      ],
+      "Reset history for this item?": [
+        "Να γίνει επαναφορά ιστορικού για αυτό το στοιχείο;"
       ],
       "Resolved breaches": [
         "Επιλυμένες παραβιάσεις"
@@ -4015,6 +4127,9 @@
       "An error occurred while exporting your data": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή των δεδομένων σας"
       ],
+      "An error occurred while importing your data.": [
+        "Παρουσιάστηκε σφάλμα κατά την εισαγωγή των δεδομένων σας."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχείο στον κάδο απορριμμάτων;",
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχεία στον κάδο απορριμμάτων;"
@@ -4158,9 +4273,6 @@
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Παρακαλούμε ελέγξτε ότι η προέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"

@@ -397,10 +397,10 @@
       "Move to another vault": [
         "別の保管庫に移動"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ごみ箱に移動"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ごみ箱に移動"
       ],
       "Multiple select": [
@@ -483,6 +483,9 @@
       ],
       "Resend invitation": [
         "招待の再送"
+      ],
+      "Reset": [
+        "リセット"
       ],
       "Restore": [
         "復元"
@@ -1015,9 +1018,6 @@
       "File could not be parsed": [
         "ファイルを解析できませんでした。"
       ],
-      "File could not be read": [
-        "ファイルを読み込むことができませんでした"
-      ],
       "File does not match expected format": [
         "予期しないファイル形式です"
       ],
@@ -1098,9 +1098,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "問題が発生しました。もう一度ログインしてください。"
-      ],
-      "The file you are trying to import is empty": [
-        "インポートしようとしているファイルは空です。"
       ],
       "The session has expired. Please sign in again.": [
         "セッションがタイムアウトしました。再度サインインしてください。"
@@ -1514,9 +1511,6 @@
       "Drop to import": [
         "ドロップしてインポート"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safariブラウザ拡張機能の制限が原因で、データをエクスポートした後、ファイル拡張子\".pgp\"がなくなってしまいます。エクスポートした後は、ファイルを .pgpを含む名前でリネームしてください。(例えば、file.pgpのように)"
-      ],
       "Editor": [
         "編集者"
       ],
@@ -1640,14 +1634,8 @@
       "Identity confirmed": [
         "本人確認済み"
       ],
-      "Import in progress:": [
-        "インポートが進行中:"
-      ],
       "Import the CSV file below.": [
         "以下のCSVファイルをインポートします。"
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } 件のアイテムをインポートしました"
       ],
       "Imported on ${ date }": [
         "${ date } にインポートされました"
@@ -1687,9 +1675,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "すでに ${ PASS_APP_NAME } にログインしているようです。 別のアカウントでログインしようとしている場合は、まず拡張機能からログアウトしてください。"
-      ],
-      "item": [
-        "アイテム"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "アイテム「${ payload.item.data.metadata.name }」が作成されました"
@@ -2101,9 +2086,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } を使用するには追加パスワードが必要になります。追加パスワードは ${ BRAND_NAME } のパスワードに加えて、さらに追加して必要になるパスワードとして機能します。"
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "次の ${ result.ignored.length } 個のアイテムをインポート出来ませんでした:"
       ],
       "The secure link has been removed": [
         "セキュアリンクは削除されました"
@@ -2886,9 +2868,6 @@
       ],
       "Personal website": [
         "個人ウェブサイト"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP 暗号化 JSON (推奨)"
       ],
       "Phone number": [
         "電話番号"
@@ -4098,9 +4077,6 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP暗号化エクスポートファイルにはパスフレーズが必要です"
       ],
       "Please check that the extension is properly installed and enabled": [
         "拡張機能が正しくインストールされ、有効になっていることを確認してください。"

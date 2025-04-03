@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flyt til papirkurv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flyt til papirkurv"
       ],
       "Multiple select": [
@@ -483,6 +483,9 @@
       ],
       "Resend invitation": [
         "Gensend invitation"
+      ],
+      "Reset": [
+        "Nulstil"
       ],
       "Restore": [
         "Gendan"
@@ -1020,9 +1023,6 @@
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
       ],
-      "File could not be read": [
-        "Filen kunne ikke læses"
-      ],
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
       ],
@@ -1103,9 +1103,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Noget gik galt. Du bedes logge ind igen."
-      ],
-      "The file you are trying to import is empty": [
-        "Filen du prøver at importere er tom"
       ],
       "The session has expired. Please sign in again.": [
         "Din session er udløbet. Log venligst ind igen."
@@ -1528,9 +1525,6 @@
       "Drop to import": [
         "Slip for at importere"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Pga. en begrænsning i Safari-browserudvidelser mangler filtypen \".pgp\" efter eksport af data. Omdøb venligst filen, så den indeholder .pgp-udvidelsen (f.eks. fil.pgp) efter eksport."
-      ],
       "Editor": [
         "Redaktør"
       ],
@@ -1656,15 +1650,8 @@
       "Identity confirmed": [
         "Identitet bekræftet"
       ],
-      "Import in progress:": [
-        "Import i gang:"
-      ],
       "Import the CSV file below.": [
         "Importér CSV-filen nedenfor."
-      ],
-      "Imported ${ payload.total } item": [
-        "Importerede ${ payload.total } element",
-        "Importerede ${ payload.total } elementer"
       ],
       "Imported on ${ date }": [
         "Importeret ${ date }"
@@ -1704,10 +1691,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
-      ],
-      "item": [
-        "element",
-        "elementer"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elementet \"${ payload.item.data.metadata.name }\" blev oprettet"
@@ -2120,10 +2103,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Følgende ${ result.ignored.length } element kunne ikke importeres:",
-        "Følgende ${ result.ignored.length } elementer kunne ikke importeres:"
       ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
@@ -2907,9 +2886,6 @@
       ],
       "Personal website": [
         "Personligt websted"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-krypteret JSON (anbefales)"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -4102,9 +4078,6 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP-krypteret eksportfil kræver adgangssætning"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Tjek venligst, om udvidelsen er korrekt installeret og aktiveret"

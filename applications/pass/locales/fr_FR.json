@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
-      ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
+      ],
+      "Move to trash": [
+        "Déplacer dans le dossier Corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "Renvoyer l'invitation"
+      ],
+      "Reset": [
+        "Réinitialiser"
+      ],
+      "Reset history": [
+        "Réinitialiser l'historique"
       ],
       "Restore": [
         "Restaurer"
@@ -796,6 +802,9 @@
       "Alias options could not be resolved": [
         "Les options d'alias n'ont pas pu être obtenues."
       ],
+      "An error occured during the import process": [
+        "Une erreur est survenue lors de l'importation."
+      ],
       "An error occurred while resuming your session": [
         "Une erreur s'est produite lors de la reprise de votre session."
       ],
@@ -859,6 +868,9 @@
       ],
       "Deleting item failed": [
         "La suppression de l'élément n'a pas abouti."
+      ],
+      "Deleting item history failed": [
+        "La suppression de l'historique de cet élément n'a pas abouti."
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "La suppression du coffre-fort « ${ payload.content.name } » n'a pas abouti."
@@ -1020,9 +1032,6 @@
       "File could not be parsed": [
         "Le fichier n'a pas pu être analysé."
       ],
-      "File could not be read": [
-        "Le fichier n'a pas pu être lu."
-      ],
       "File does not match expected format": [
         "Le fichier ne correspond pas au format attendu."
       ],
@@ -1103,9 +1112,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Une erreur s'est produite. Veuillez vous reconnecter."
-      ],
-      "The file you are trying to import is empty": [
-        "Le fichier que vous essayez d'importer est vide."
       ],
       "The session has expired. Please sign in again.": [
         "La session a expiré. Nous vous invitons à vous reconnecter."
@@ -1534,9 +1540,6 @@
       "Drop to import": [
         "Déposez ici pour importer"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "En raison de la limitation des extensions du navigateur Safari, l'extension de fichier « *.pgp » sera manquante après l'exportation des données. Veuillez renommer le fichier pour y ajouter l'extension *.pgp (par ex. fichier.pgp) après l'avoir exporté."
-      ],
       "Editor": [
         "Éditeur"
       ],
@@ -1662,15 +1665,8 @@
       "Identity confirmed": [
         "L'identité a été confirmée."
       ],
-      "Import in progress:": [
-        "L'importation est en cours :"
-      ],
       "Import the CSV file below.": [
         "Importez le fichier CSV ci-dessous."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } élément importé",
-        "${ payload.total } éléments importés"
       ],
       "Imported on ${ date }": [
         "Importé le ${ date }"
@@ -1711,15 +1707,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Vous semblez déjà connecté à ${ PASS_APP_NAME }. Si vous essayez de vous connecter avec un autre compte, déconnectez-vous d'abord de l'extension."
       ],
-      "item": [
-        "élément",
-        "éléments"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "L'élément « ${ payload.item.data.metadata.name } » a été créé."
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "L'élément « ${ payload.item.data.metadata.name } » a été mis à jour."
+      ],
+      "Item history permanently deleted": [
+        "L'historique de l'élément a été supprimé définitivement."
       ],
       "Item moved to trash": [
         "L'élément a été déplacé dans la corbeille."
@@ -1980,6 +1975,9 @@
       "Please follow the steps below to set up your domain.": [
         "Veuillez suivre les étapes ci-dessous pour configurer votre domaine."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Veuillez garder cette fenêtre ouverte pendant l'importation de vos données. Ce processus peut prendre quelques minutes."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Une fois supprimé, l'alias ne pourra pas être restauré. Voulez-vous plutôt le désactiver ?"
       ],
@@ -2024,6 +2022,9 @@
       ],
       "Removing secure link...": [
         "Retrait du lien sécurisé…"
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "La réinitialisation de l'historique supprimera définitivement toutes les versions précédentes de l'élément et ne peut pas être annulée."
       ],
       "Restoring items from trash": [
         "Restauration des éléments depuis la corbeille"
@@ -2130,9 +2131,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Ce mot de passe supplémentaire vous sera demandé pour utiliser ${ PASS_APP_NAME }. Il fonctionne comme un mot de passe supplémentaire en plus de votre mot de passe ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } élément n'a pas pu être importé :",
-        "${ result.ignored.length } éléments n'ont pas pu être importés :"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "L'importation pour ${ totalIgnored } élément n'a pas abouti :",
+        "L'importation pour les ${ totalIgnored } éléments suivants n'a pas abouti :"
       ],
       "The secure link has been removed": [
         "Le lien sécurisé a été supprimé."
@@ -2934,8 +2935,8 @@
       "Personal website": [
         "Site internet personnel"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON chiffré en PGP (recommandé)"
+      "PGP-encrypted (recommended)": [
+        "Chiffré en PGP (recommandé)"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -3189,6 +3190,9 @@
       "Your domain": [
         "Votre domaine"
       ],
+      "ZIP": [
+        "Fichier ZIP"
+      ],
       "ZIP or Postal code": [
         "Code postal"
       ]
@@ -3265,6 +3269,105 @@
       ],
       "Underscores": [
         "Tirets bas (underscore)"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "L'importation de « ${ file.name } » n'a pas abouti."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "L'importation de « ${ filename } » n'a pas abouti."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "« ${ filename } » est trop volumineux pour être téléchargé. La taille maximale autorisée est de ${ maxFileSizeInMB }."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fichier",
+        "${ filesCount } fichiers"
+      ],
+      "Attachments": [
+        "Pièces jointes"
+      ],
+      "Choose a file or drag it here": [
+        "Sélectionnez un fichier ou faites-le glisser ici"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Supprimer ${ deleteFile.state.name } "
+      ],
+      "Delete all files": [
+        "Supprimer tous les fichiers"
+      ],
+      "Do you want to remove all the files?": [
+        "Voulez-vous retirer tous les fichiers ?"
+      ],
+      "Download": [
+        "Télécharger"
+      ],
+      "Download file": [
+        "Télécharger le fichier"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "En raison d'une limitation sur Firefox, ${ PASS_APP_NAME } doit être rouvert dans une nouvelle fenêtre avant de pouvoir importer des fichiers."
+      ],
+      "Exporting files": [
+        "Exportation des fichiers"
+      ],
+      "File": [
+        "Fichier"
+      ],
+      "File attachments": [
+        "Fichiers joints"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Si cette option est activée, tous vos fichiers seront téléchargés lors de l'exportation. Cette opération peut prendre un certain temps selon votre connexion internet."
+      ],
+      "Include file attachments": [
+        "Inclure les pièces jointes des fichiers"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Vous ne disposez pas d'assez d'espace de stockage disponible pour les fichiers sélectionnés."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Une fois supprimé, ce fichier peut toujours être récupéré à partir de l'historique de l'élément."
+      ],
+      "Open new window to upload files": [
+        "Ouvrez une nouvelle fenêtre pour importer des fichiers."
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Veuillez patienter pendant le téléchargement de vos fichiers."
+      ],
+      "Remove all files": [
+        "Retirer tous les fichiers"
+      ],
+      "Rename": [
+        "Modifier le nom"
+      ],
+      "Restore": [
+        "Restaurer"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Certains fichiers sont trop volumineux pour être téléchargés. La taille maximale autorisée est de ${ maxFileSizeInMB }."
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Les pièces jointes exportées ne seront pas chiffrées."
+      ],
+      "The file you are trying to import is empty": [
+        "Le fichier que vous essayez d'importer est vide."
+      ],
+      "Total files: ": [
+        "Nombre total de fichiers : "
+      ],
+      "Total imported files: ": [
+        "Nombre total de fichiers importés : "
+      ],
+      "Upload files from your device.": [
+        "Importez des fichiers depuis votre ordinateur."
+      ],
+      "You can attach files to items for a better organization": [
+        "Vous pouvez joindre des fichiers aux éléments pour mieux vous organiser."
+      ],
+      "Your current plan does not support importing files": [
+        "Votre abonnement actuel ne permet pas l'importation de fichiers."
       ]
     },
     "Placeholder": {
@@ -3661,6 +3764,9 @@
       "Domain ownership verification": [
         "Vérification de la propriété d'un domaine"
       ],
+      "Encrypted import": [
+        "Importation chiffrée"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
       ],
@@ -3702,6 +3808,9 @@
       ],
       "Import your data": [
         "Importer vos données"
+      ],
+      "Importing your data": [
+        "Importation de vos données"
       ],
       "Inactive 2FA": [
         "A2F inactive"
@@ -3828,6 +3937,9 @@
       ],
       "Remove secure link?": [
         "Retirer le lien sécurisé ?"
+      ],
+      "Reset history for this item?": [
+        "Voulez-vous réinitialiser l'historique de cet élément ?"
       ],
       "Resolved breaches": [
         "Fuites de données résolues"
@@ -4015,6 +4127,9 @@
       "An error occurred while exporting your data": [
         "Une erreur s'est produite pendant l'exportation de vos données."
       ],
+      "An error occurred while importing your data.": [
+        "Une erreur s'est produite pendant l'importation de vos données."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Voulez-vous vraiment envoyer ${ trashedItemsCount } élément à la corbeille ?",
         "Voulez-vous vraiment envoyer ${ trashedItemsCount } éléments à la corbeille ?"
@@ -4158,9 +4273,6 @@
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Les fichiers d'exportation chiffrés en PGP nécessitent une phrase secrète."
       ],
       "Please check that the extension is properly installed and enabled": [
         "Assurez-vous que l'extension est installée et activée correctement."
