@@ -760,6 +760,7 @@ const createCancellationMessage = ({
     eventTitle,
     commentStatus,
     updateEventDetailsText,
+    hasUpdatedComment,
 }: {
     isSingleOccurrence: boolean;
     eventTitle: string;
@@ -771,9 +772,19 @@ const createCancellationMessage = ({
         ? c('Email body for invitation').t`This event occurrence was canceled.`
         : c('Email body for invitation').t`${eventTitle} was canceled.`;
 
-    // For cancellations with a comment, the test expects to see "Here's what changed"
-    if (commentStatus) {
-        return `${messageIntro}\n\n\nHere's what changed:\n\n${commentStatus}`;
+    const hasUpdatedText = updateEventDetailsText && updateEventDetailsText.trim() !== '';
+
+    // If there's updated text or a comment, we should show "Here's what changed"
+    if (hasUpdatedText || hasUpdatedComment || commentStatus) {
+        const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
+
+        return (
+            messageIntro +
+            ' ' +
+            c('Email body for invitation').t`Here's what changed:` +
+            ' ' +
+            `${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`
+        );
     }
 
     // Regular cancellation without comment
