@@ -33,8 +33,6 @@ import { createIntermediateEvent } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 
-// import { getAuthorPublicKeysMap } from '@proton/shared/lib/calendar/author';
-
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;
 
 interface SaveEventHelperArguments {
