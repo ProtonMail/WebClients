@@ -23,6 +23,7 @@ import { useDocsNotifications } from '../../__utils/notifications-context'
 import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
+import { useLocation } from 'react-router-dom-v5-compat'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
@@ -217,6 +218,8 @@ function Content({
     return null
   }, [openAction])
 
+  const { search } = useLocation()
+
   if (isCreatingNewDocument || openAction?.mode === 'new') {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
@@ -248,6 +251,14 @@ function Content({
     !openAction.linkId ||
     !nodeMeta
   ) {
+    const isURLTruncatedBySlack = search.includes('[%E2%80%A6]')
+    if (isURLTruncatedBySlack) {
+      return (
+        <div className="m-auto max-w-prose text-center" data-testid="invalid-openaction-error">{c('Info')
+          .t`The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose "Copy link" rather than copy the truncated URL text directly.`}</div>
+      )
+    }
+
     return (
       <div className="m-auto" data-testid="invalid-openaction-error">{c('Info')
         .jt`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`}</div>
