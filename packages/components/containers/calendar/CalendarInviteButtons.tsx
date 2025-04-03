@@ -35,6 +35,14 @@ enum ATTENDEE_RESPONE_TYPE {
     DECLINED = 2,
 }
 
+const RESPONSE_TYPE_MAP = {
+    [ICAL_ATTENDEE_STATUS.NEEDS_ACTION]: undefined,
+    [ICAL_ATTENDEE_STATUS.DELEGATED]: undefined,
+    [ICAL_ATTENDEE_STATUS.ACCEPTED]: ATTENDEE_RESPONE_TYPE.ACCEPTED,
+    [ICAL_ATTENDEE_STATUS.TENTATIVE]: ATTENDEE_RESPONE_TYPE.TENTATIVE,
+    [ICAL_ATTENDEE_STATUS.DECLINED]: ATTENDEE_RESPONE_TYPE.DECLINED,
+};
+
 const CalendarInviteButtons = ({
     actions,
     originalPartstat,
@@ -54,18 +62,10 @@ const CalendarInviteButtons = ({
 
     const { accept, acceptTentatively, decline } = actions;
 
-    const responseTypeMap = {
-        [ICAL_ATTENDEE_STATUS.NEEDS_ACTION]: undefined,
-        [ICAL_ATTENDEE_STATUS.DELEGATED]: undefined,
-        [ICAL_ATTENDEE_STATUS.ACCEPTED]: ATTENDEE_RESPONE_TYPE.ACCEPTED,
-        [ICAL_ATTENDEE_STATUS.TENTATIVE]: ATTENDEE_RESPONE_TYPE.TENTATIVE,
-        [ICAL_ATTENDEE_STATUS.DECLINED]: ATTENDEE_RESPONE_TYPE.DECLINED,
-    };
-
-    const [selectedAnswer, setSelectedAnswer] = useState(responseTypeMap[partstat]);
+    const [selectedAnswer, setSelectedAnswer] = useState(RESPONSE_TYPE_MAP[partstat]);
 
     useEffect(() => {
-        setSelectedAnswer(responseTypeMap[partstat]);
+        setSelectedAnswer(RESPONSE_TYPE_MAP[partstat]);
     }, [partstat]);
 
     const onAccept = () => {
