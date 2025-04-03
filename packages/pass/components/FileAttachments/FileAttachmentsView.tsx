@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from 'react';
+import { type FC, type PropsWithChildren } from 'react';
 import { useSelector } from 'react-redux';
 
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
