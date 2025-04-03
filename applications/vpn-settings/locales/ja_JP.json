@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -520,10 +520,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -3800,9 +3800,6 @@
       ]
     },
     "Info": {
-      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } ユーザーは現在共有サーバーにアクセスできます。"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -4208,10 +4205,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }アプリの外観をカスタマイズ"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -6843,6 +6840,29 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "アカウントを削除"
+      ],
+      "Downgrade account": [
+        "アカウントをダウングレード"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "無料で ${ BRAND_NAME } を入手"
+      ],
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } を使い続ける"
+      ],
+      "Keep account": [
+        "アカウントを削除しない"
+      ],
+      "Switch plan": [
+        "プランを変更"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
@@ -6867,29 +6887,6 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "無料で ${ BRAND_NAME } を入手"
-      ],
-      "Get ${ planName }": [
-        "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
       ]
     },
     "new_plans: feature": {
@@ -8059,6 +8056,17 @@
         "${ appName } へようこそ"
       ]
     },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
+      ]
+    },
     "Option": {
       "Country configs": [
         "各国の設定ファイル"
@@ -8116,17 +8124,6 @@
       ],
       "The whole organization": [
         "組織全体"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
       ]
     },
     "Organization capacity error": {
@@ -9922,47 +9919,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -10245,6 +10201,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
