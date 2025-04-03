@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Accept": [
-        "Принять"
-      ],
       "Activate recovery": [
         "Активировать восстановление"
       ],
@@ -83,9 +80,6 @@
       ],
       "Apply": [
         "Применить"
-      ],
-      "Ask me next time": [
-        "Спросить в следующий раз"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "В группе может быть не больше ${ maxContacts } контакта",
@@ -195,6 +189,9 @@
       "Copy invite link": [
         "Скопировать ссылку-приглашение"
       ],
+      "Copy version number to clipboard": [
+        "Скопировать номер версии в буфер обмена"
+      ],
       "Create": [
         "Создать"
       ],
@@ -221,9 +218,6 @@
       ],
       "Customize import": [
         "Настроить импорт"
-      ],
-      "Decline": [
-        "Отклонить"
       ],
       "Decline invite": [
         "Отклонить приглашение"
@@ -522,6 +516,9 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "Reload": [
+        "Перезагрузить"
+      ],
       "Remove": [
         "Удалить"
       ],
@@ -578,9 +575,6 @@
       ],
       "Save changes": [
         "Сохранить изменения"
-      ],
-      "Save preferences": [
-        "Сохранить настройки"
       ],
       "Search": [
         "Поиск"
@@ -3946,9 +3940,6 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
-      "Actions": [
-        "Действия"
-      ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
@@ -4060,9 +4051,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Контакт откреплен от группы ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Преобразование документа..."
-      ],
       "Copy the link to clipboard": [
         "Скопировать ссылку в буфер обмена"
       ],
@@ -4096,9 +4084,6 @@
       "Create public link": [
         "Создать публичную ссылку"
       ],
-      "Create your end-to-end encrypted document": [
-        "Создайте документ, зашифрованный сквозным методом"
-      ],
       "Create your first folder and start moving your files.": [
         "Создайте свою первую папку и начните перемещать файлы."
       ],
@@ -4107,9 +4092,6 @@
       ],
       "Creating link to folder": [
         "Создание ссылки на папку"
-      ],
-      "Creating new document...": [
-        "Создание нового документа..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
@@ -4225,12 +4207,6 @@
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Ошибка преобразования документа: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Ошибка скачивания документа: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Ошибка синхронизации"
       ],
@@ -4284,9 +4260,6 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Бесплатное зашифрованное хранилище объемом 5ГБ для начала работы"
-      ],
-      "Get Notified About Comments": [
-        "Получить уведомления о комментариях"
       ],
       "here": [
         "здесь"
@@ -4350,9 +4323,6 @@
       ],
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
-      ],
-      "Invite": [
-        "Пригласить"
       ],
       "Invite link copied": [
         "Ссылка для приглашения скопирована."
@@ -4420,9 +4390,6 @@
       "Low Priority": [
         "Низкий приоритет"
       ],
-      "Making a copy...": [
-        "Создание копии..."
-      ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
@@ -4461,9 +4428,6 @@
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Документ не указан в URL. Вернитесь к ${ DRIVE_APP_NAME } и выберите документ."
       ],
       "No email address": [
         "Нет адреса электронной почты"
@@ -4854,6 +4818,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Номер версии скопирован в буфер обмена"
       ],
       "View only": [
         "Режим просмотра"
@@ -5342,9 +5309,6 @@
       "Emails (last month)": [
         "Письма (последний месяц)"
       ],
-      "Enable email notifications": [
-        "Включить уведомления по электронной почте"
-      ],
       "Encrypt emails": [
         "Шифровать письма"
       ],
@@ -5398,9 +5362,6 @@
       ],
       "Import to:": [
         "Импортировать в:"
-      ],
-      "Include document name in notification": [
-        "Включить имя документа в уведомление"
       ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
@@ -5587,6 +5548,9 @@
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
+      ],
+      "Trash": [
+        "Корзина"
       ],
       "Upload picture": [
         "Загрузить изображение"
@@ -8529,6 +8493,29 @@
         "За ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилища"
@@ -8568,29 +8555,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватность является нашей задачей"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Объем хранилища на пользователя: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } пользовательский домен электронной почты",
-        "${ planNumberOfDomains } пользовательских домена электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрес электронной почты",
-        "${ planNumberOfEmails } адреса электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папки, ярлыки и пользовательские фильтры"
       ]
     },
     "Subscription renewal state": {
