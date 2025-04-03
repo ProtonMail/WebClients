@@ -1,5 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 
+import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
 import { deleteItemRevisions, deleteItems } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { filesResolve, itemDelete, itemDeleteRevisions } from '@proton/pass/store/actions';
@@ -8,6 +9,7 @@ import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
 import type { ItemRevision, Maybe } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
+import { or } from '@proton/pass/utils/fp/predicates';
 
 const removeItems = createRequestSaga({
     actions: itemDelete,
@@ -31,7 +33,7 @@ const removeItems = createRequestSaga({
         );
 
         onItemsUpdated?.();
-        return selectedItem;
+        return { ...selectedItem, hadFiles: or(hasAttachments, hasHadAttachments)(item) };
     },
 });
 

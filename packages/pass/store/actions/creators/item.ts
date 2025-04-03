@@ -253,7 +253,7 @@ export const itemBulkTrashSuccess = createAction(
     )
 );
 
-export const itemDelete = requestActionsFactory<SelectedItem, SelectedItem>('item::delete')({
+export const itemDelete = requestActionsFactory<SelectedItem, SelectedItem & { hadFiles: boolean }>('item::delete')({
     key: getItemKey,
     failure: {
         prepare: (error, payload) =>
