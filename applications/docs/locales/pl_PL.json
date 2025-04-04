@@ -774,7 +774,7 @@
     },
     "Actions": {
       "Last viewed first": [
-        "Ostatnio oglądane"
+        "Ostatnio oglądano"
       ],
       "Name": [
         "Nazwa"
@@ -2260,6 +2260,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2338,11 +2343,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4512,11 +4512,11 @@
       "Large imports can take several days.": [
         "Importowanie dużej ilości danych może potrwać kilka dni."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Dowiedz się, jak ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Dowiedz się co możesz zrobić ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Ograniczona dostępność"
@@ -4904,6 +4904,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Adres URL został nieprawidłowo skopiowany ze Slacka. Zamiast bezpośrednio kopiować skrócony adresu URL, kliknij link prawym przyciskiem, a następnie wybierz opcję \"Kopiuj adres linku\"."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
@@ -5726,7 +5729,7 @@
         "Oznacz jako zweryfikowany"
       ],
       "Move to Archive": [
-        "Przenieś do Archiwum"
+        "Przenieś do archiwum"
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
@@ -5966,6 +5969,9 @@
       "How to pay with Bitcoin?": [
         "Jak zapłacić Bitcoinami?"
       ],
+      "if your data is leaked": [
+        "w przypadku wycieku danych"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
@@ -5980,9 +5986,6 @@
       ],
       "settings": [
         "ustawieniach"
-      ],
-      "stay safer online": [
-        "zachować bezpieczeństwo online"
       ],
       "What’s this?": [
         "Co to jest?"
@@ -9507,9 +9510,6 @@
       "Desktop": [
         "Komputer"
       ],
-      "Details": [
-        "Szczegóły"
-      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -9635,6 +9635,9 @@
       ],
       "Import groups": [
         "Importuj grupy"
+      ],
+      "Information exposed in breach": [
+        "Ujawnione informacje w wycieku"
       ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
@@ -9934,6 +9937,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Wiadomość i nazwa pliku w zaproszeniu są szyfrowane"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nie wszystkie wymienione tutaj informacje zostały ujawnione wszystkim użytkownikom."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
       ],
@@ -9954,6 +9960,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nowa subskrypcja rozpocznie się ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Zaszyfrowane hasła (nawet ujawnione) pozostaną bezpieczne, dopóki nie zostaną odszyfrowane."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
