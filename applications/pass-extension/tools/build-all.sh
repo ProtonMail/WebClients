@@ -94,6 +94,7 @@ function build_firefox_prod {
         -x "*/.DS_Store" \
         -x "*/node_modules/*" \
         -x "packages/config/*" \
+        -x "packages/raw-images/tests/*" \
         -x "applications/pass-extension/dist/*" \
         -x "applications/pass-extension/*.md" \
         -x ".yarn/install-state.gz" \
