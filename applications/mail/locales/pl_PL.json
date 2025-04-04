@@ -832,7 +832,7 @@
         "Przenieś"
       ],
       "Move all to archive": [
-        "Przenieś wszystko do Archiwum"
+        "Przenieś wszystko do archiwum"
       ],
       "Move all to trash": [
         "Przenieś wszystko do kosza"
@@ -844,7 +844,7 @@
         "Przenieś do"
       ],
       "Move to archive": [
-        "Przenieś do Archiwum"
+        "Przenieś do archiwum"
       ],
       "Move to inbox": [
         "Przenieś do Odebranych"
@@ -1125,10 +1125,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1327,10 +1327,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -2536,7 +2533,7 @@
         "Utwórz nową etykietę"
       ],
       "Go to Archive": [
-        "Przejdź do Archiwum"
+        "Przejdź do archiwum"
       ],
       "Go to Drafts": [
         "Przejdź do Szkiców"
@@ -6413,7 +6410,7 @@
         "Czy na pewno chcesz odrzucić swój import?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Czy na pewno chcesz przenieść wszystkie wiadomości do Archiwum?"
+        "Czy na pewno chcesz przenieść wszystkie wiadomości do archiwum?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "Czy na pewno chcesz przenieść wszystkie wiadomości do kosza?"
@@ -6971,7 +6968,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7024,14 +7024,14 @@
       "Large imports can take several days.": [
         "Importowanie dużej ilości danych może potrwać kilka dni."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Dowiedz się, jak ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
       "Learn more about the writing assistant": [
         "Dowiedz się więcej o asystencie pisania"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Dowiedz się co możesz zrobić ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Od lewej do prawej"
@@ -8474,7 +8474,7 @@
         "Przejdź do Wszystkich wiadomości"
       ],
       "Go to Archive": [
-        "Przejdź do Archiwum"
+        "Przejdź do archiwum"
       ],
       "Go to Drafts": [
         "Przejdź do Szkiców"
@@ -8531,7 +8531,7 @@
         "W prawo / rozwiń"
       ],
       "Move to Archive": [
-        "Przenieś do Archiwum"
+        "Przenieś do archiwum"
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
@@ -8675,11 +8675,11 @@
       "Always move sender's emails": [
         "Zawsze przenieś wiadomości nadawców"
       ],
-      "And": [
-        "oraz"
-      ],
       "AND": [
         "ORAZ"
+      ],
+      "And": [
+        "oraz"
       ],
       "and": [
         "i"
@@ -8909,11 +8909,11 @@
       "IBAN": [
         "Numer IBAN"
       ],
-      "If": [
-        "Jeśli"
-      ],
       "IF": [
         "JEŚLI"
+      ],
+      "If": [
+        "Jeśli"
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
@@ -8985,7 +8985,7 @@
         "Przenieś do"
       ],
       "Move to Archive": [
-        "Przenieś do Archiwum"
+        "Przenieś do archiwum"
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
@@ -9011,6 +9011,9 @@
       "Notification": [
         "Powiadomienie"
       ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Powiadomienia są wyłączone. Zmień ustawienia przeglądarki, aby je włączyć."
+      ],
       "Open in a new tab": [
         "Otwórz w nowej karcie"
       ],
@@ -9023,14 +9026,14 @@
       "Optional": [
         "Opcjonalnie"
       ],
+      "OR": [
+        "LUB"
+      ],
       "or": [
         "lub"
       ],
       "Or": [
         "lub"
-      ],
-      "OR": [
-        "LUB"
       ],
       "Original link": [
         "Oryginalny link"
@@ -9356,6 +9359,9 @@
       "How to pay with Bitcoin?": [
         "Jak zapłacić Bitcoinami?"
       ],
+      "if your data is leaked": [
+        "w przypadku wycieku danych"
+      ],
       "Inbox": [
         "Odebrane"
       ],
@@ -9430,9 +9436,6 @@
       ],
       "Starred": [
         "Wyróżnione"
-      ],
-      "stay safer online": [
-        "zachować bezpieczeństwo online"
       ],
       "Terms": [
         "Regulamin"
@@ -9858,29 +9861,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Usuń konto"
-      ],
-      "Downgrade account": [
-        "Obniż plan"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Uzyskaj ${ BRAND_NAME } za darmo"
-      ],
-      "Get ${ planName }": [
-        "Wybierz plan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Zachowaj plan ${ plan }"
-      ],
-      "Keep account": [
-        "Zachowaj konto"
-      ],
-      "Switch plan": [
-        "Zmień plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
@@ -9902,6 +9882,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Ulepsz do planu ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Usuń konto"
+      ],
+      "Downgrade account": [
+        "Obniż plan"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Uzyskaj ${ BRAND_NAME } za darmo"
+      ],
+      "Get ${ planName }": [
+        "Wybierz plan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Zachowaj plan ${ plan }"
+      ],
+      "Keep account": [
+        "Zachowaj konto"
+      ],
+      "Switch plan": [
+        "Zmień plan"
       ]
     },
     "new_plans: feature": {
@@ -13895,9 +13898,6 @@
       "Desktop": [
         "Komputer"
       ],
-      "Details": [
-        "Szczegóły"
-      ],
       "Discover your subscription benefits": [
         "Odkryj zalety subskrypcji"
       ],
@@ -14045,6 +14045,9 @@
       "Increase your privacy with more addresses": [
         "Zwiększ swoją prywatność dzięki większej liczbie adresów"
       ],
+      "Information exposed in breach": [
+        "Ujawnione informacje w wycieku"
+      ],
       "Insert contacts": [
         "Wstaw kontakty"
       ],
@@ -14133,7 +14136,7 @@
         "Przenieś wszystkie wiadomości"
       ],
       "Move all messages to archive": [
-        "Przenieś wszystkie wiadomości do Archiwum"
+        "Przenieś wszystkie wiadomości do archiwum"
       ],
       "Move all messages to trash": [
         "Przenieś wszystkie wiadomości do kosza"
@@ -14556,6 +14559,9 @@
       "Load image": [
         "Załaduj zdjęcie"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nie wszystkie wymienione tutaj informacje zostały ujawnione wszystkim użytkownikom."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
       ],
@@ -14588,6 +14594,9 @@
       ],
       "This feature is only available for paid users": [
         "Ta funkcja jest dostępna tylko dla użytkowników płatnego planu"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Zaszyfrowane hasła (nawet ujawnione) pozostaną bezpieczne, dopóki nie zostaną odszyfrowane."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"

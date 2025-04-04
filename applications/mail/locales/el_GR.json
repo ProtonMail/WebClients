@@ -1117,11 +1117,11 @@
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
-      "Select all": [
-        "Επιλογή όλων"
-      ],
       "Select All": [
         "Επιλογή Όλων"
+      ],
+      "Select all": [
+        "Επιλογή όλων"
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
@@ -1317,10 +1317,6 @@
       ],
       "Trust": [
         "Αξιόπιστο"
-      ],
-      "Trust key": [
-        "Εμπιστοσύνη στο κλειδί",
-        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -6749,7 +6745,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -6802,14 +6799,14 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
       "Learn more about the writing assistant": [
         "Μάθετε περισσότερα σχετικά με τον βοηθό γραφής"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Μάθετε τι να κάνετε ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
@@ -8393,11 +8390,11 @@
       "Always move sender's emails": [
         "Μετακινείτε πάντα τα μηνύματα ηλεκτρονικού ταχυδρομείου του αποστολέα"
       ],
-      "And": [
-        "Και"
-      ],
       "AND": [
         "ΚΑΙ"
+      ],
+      "And": [
+        "Και"
       ],
       "and": [
         "και"
@@ -8627,11 +8624,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Αν"
-      ],
       "IF": [
         "ΑΝ"
+      ],
+      "If": [
+        "Αν"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -8744,14 +8741,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
+      "OR": [
+        "'Η"
+      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
-      ],
-      "OR": [
-        "'Η"
       ],
       "Original link": [
         "Αρχικός σύνδεσμος"
@@ -9077,6 +9074,9 @@
       "How to pay with Bitcoin?": [
         "Πώς να πληρώσετε με Bitcoin;"
       ],
+      "if your data is leaked": [
+        "εάν τα δεδομένα σας υποστούν διαρρεύσει"
+      ],
       "Inbox": [
         "Εισερχόμενα"
       ],
@@ -9151,9 +9151,6 @@
       ],
       "Starred": [
         "Με αστέρι"
-      ],
-      "stay safer online": [
-        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ],
       "Terms": [
         "Όροι"
@@ -9563,29 +9560,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Διαγραφή λογαριασμού"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Απόκτηση ${ BRAND_NAME } δωρεάν"
-      ],
-      "Get ${ planName }": [
-        "Απόκτηση ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Διατήρηση ${ plan }"
-      ],
-      "Keep account": [
-        "Διατήρηση λογαριασμού"
-      ],
-      "Switch plan": [
-        "Αλλαγή προγράμματος"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
@@ -9607,6 +9581,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Διαγραφή λογαριασμού"
+      ],
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Απόκτηση ${ BRAND_NAME } δωρεάν"
+      ],
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Διατήρηση ${ plan }"
+      ],
+      "Keep account": [
+        "Διατήρηση λογαριασμού"
+      ],
+      "Switch plan": [
+        "Αλλαγή προγράμματος"
       ]
     },
     "new_plans: feature": {
@@ -13378,9 +13375,6 @@
       "Desktop": [
         "Υπολογιστής"
       ],
-      "Details": [
-        "Λεπτομέρειες"
-      ],
       "Discover your subscription benefits": [
         "Ανακαλύψτε τα πλεονεκτήματα της συνδρομής σας"
       ],
@@ -13525,6 +13519,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Αυξήστε το απόρρητό σας με περισσότερες διευθύνσεις"
+      ],
+      "Information exposed in breach": [
+        "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
       "Insert contacts": [
         "Εισαγωγή επαφών"
@@ -14033,6 +14030,9 @@
       "Load image": [
         "Φόρτωση εικόνας"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
       ],
@@ -14065,6 +14065,9 @@
       ],
       "This feature is only available for paid users": [
         "Αυτή η δυνατότητα είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
