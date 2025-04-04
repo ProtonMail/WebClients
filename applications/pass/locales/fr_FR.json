@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to Trash": [
-        "Déplacer dans la corbeille"
-      ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
+      ],
+      "Move to Trash": [
+        "Déplacer dans la corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Se déconnecter"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Quelqu'un a partagé un élément avec vous sur ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Trier les éléments du coffre-fort"
@@ -1124,9 +1121,6 @@
       ],
       "Trashing item failed": [
         "La suppression de l'élément n'a pas abouti."
-      ],
-      "Try reaching out to the link owner.": [
-        "Essayez de contacter le propriétaire du lien."
       ],
       "Unable to generate an OTP code for this item": [
         "Impossible de générer un mot de passe à usage unique (code OTP) pour cet élément."
@@ -1747,8 +1741,8 @@
       "Latest breach on ${ formattedDate }": [
         "Dernière fuite de données le ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Découvrez comment ${ staySaferOnlineLink }."
+      "Learn what to do ${ dataLeakedLink }": [
+        "Apprenez ce qu'il faut faire ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Vous quittez l'élément..."
@@ -1795,10 +1789,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3082,9 +3072,6 @@
       "Theme": [
         "Thème"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Cet élément est accessible jusqu'au ${ date } ou jusqu'à ce que la limite de visualisation soit atteinte."
-      ],
       "Title": [
         "Titre"
       ],
@@ -3201,11 +3188,11 @@
       "auto create rules ››": [
         "créer automatiquement des règles ››"
       ],
+      "if your data is leaked": [
+        "si vos données sont divulguées"
+      ],
       "Learn more": [
         "En savoir plus"
-      ],
-      "stay safer online": [
-        "améliorer votre sécurité en ligne"
       ]
     },
     "Log preference": {
@@ -3743,9 +3730,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Voulez-vous supprimer le coffre-fort « ${ vaultName } » ?"
       ],
-      "Details": [
-        "Informations"
-      ],
       "Did you know?": [
         "Le saviez-vous ?"
       ],
@@ -3814,6 +3798,9 @@
       ],
       "Inactive 2FA": [
         "A2F inactive"
+      ],
+      "Information exposed in breach": [
+        "Informations divulguées lors de la fuite de données"
       ],
       "Install extension": [
         "Installer l'extension"
@@ -4074,6 +4061,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
       ]
     },
     "Validation": {

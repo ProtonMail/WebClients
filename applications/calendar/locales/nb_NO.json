@@ -4948,11 +4948,11 @@
       "Large imports can take several days.": [
         "Store importer kan ta flere dager."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lær hvordan du ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Lær mer"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Finn ut hva du kan gjøre ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
@@ -6349,6 +6349,9 @@
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
       ],
+      "if your data is leaked": [
+        "hvis dataene dine er lekket"
+      ],
       "Inbox": [
         "Innboks"
       ],
@@ -6387,9 +6390,6 @@
       ],
       "Starred": [
         "Stjernemerket"
-      ],
-      "stay safer online": [
-        "vær sikrere på nettet"
       ],
       "Trash": [
         "Papirkurv"
@@ -6779,6 +6779,26 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -6800,26 +6820,6 @@
       ],
       "Switch plan": [
         "Bytt plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10112,9 +10112,6 @@
       "Desktop": [
         "Skrivebord"
       ],
-      "Details": [
-        "Detaljer"
-      ],
       "Does not repeat": [
         "Gjentas ikke"
       ],
@@ -10241,6 +10238,9 @@
       ],
       "Import groups": [
         "Importer grupper"
+      ],
+      "Information exposed in breach": [
+        "Informasjon avslørt i brudd"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
@@ -10570,6 +10570,9 @@
       "Load image": [
         "Last inn bilde"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."
       ],
@@ -10590,6 +10593,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementssyklusen starter ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Med mindre de blir dechiffrert, forblir krypterte passord sikre selv om de blir eksponert."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."

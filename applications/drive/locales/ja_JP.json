@@ -4848,9 +4848,6 @@
       "Last week": [
         "先週"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink } の使い方を学ぶ"
-      ],
       "Learn more": [
         "詳細"
       ],
@@ -6673,9 +6670,6 @@
       "Starred": [
         "スター付き"
       ],
-      "stay safer online": [
-        "オンラインでの安全性を高める"
-      ],
       "Trash": [
         "ごみ箱"
       ],
@@ -7047,29 +7041,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "無料で ${ BRAND_NAME } を入手"
-      ],
-      "Get ${ planName }": [
-        "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
@@ -7091,6 +7062,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "アカウントを削除"
+      ],
+      "Downgrade account": [
+        "アカウントをダウングレード"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "無料で ${ BRAND_NAME } を入手"
+      ],
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } を使い続ける"
+      ],
+      "Keep account": [
+        "アカウントを削除しない"
+      ],
+      "Switch plan": [
+        "プランを変更"
       ]
     },
     "new_plans: feature": {
@@ -10358,9 +10352,6 @@
       ],
       "Desktop": [
         "デスクトップ"
-      ],
-      "Details": [
-        "詳細"
       ],
       "Discard": [
         "破棄"

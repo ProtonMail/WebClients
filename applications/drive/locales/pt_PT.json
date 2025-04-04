@@ -4931,11 +4931,11 @@
       "Last week": [
         "A semana passada"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda como ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Saiba o que fazer ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
@@ -6735,6 +6735,9 @@
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
       ],
+      "if your data is leaked": [
+        "se os seus dados vazarem"
+      ],
       "Inbox": [
         "Caixa de entrada"
       ],
@@ -6776,9 +6779,6 @@
       ],
       "Starred": [
         "Com estrela"
-      ],
-      "stay safer online": [
-        "fique mais seguro online"
       ],
       "Trash": [
         "Lixo"
@@ -7156,29 +7156,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Apagar conta"
-      ],
-      "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter o ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conservar ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar a conta"
-      ],
-      "Switch plan": [
-        "Alterar o plano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Mudar para ${ downgradedPlanName }"
@@ -7200,6 +7177,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Apagar conta"
+      ],
+      "Downgrade account": [
+        "Mudar para uma conta com menos funcionalidades"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter o ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Conservar ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar a conta"
+      ],
+      "Switch plan": [
+        "Alterar o plano"
       ]
     },
     "new_plans: feature": {
@@ -10578,9 +10578,6 @@
       "Desktop": [
         "Área de trabalho"
       ],
-      "Details": [
-        "Detalhes"
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -10720,6 +10717,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Information exposed in breach": [
+        "Informação exposta na violação"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -11128,6 +11128,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "A mensagem e o nome do ficheiro são armazenados com encriptação de \"acesso zero\" quando incluídos no e-mail."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nem todas as informações aqui listadas foram expostas para todos os utilizadores."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a utilizar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
       ],
@@ -11151,6 +11154,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de subscrição começa em ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que sejam decifradas, as palavras-passe encriptadas permanecem seguras mesmo que sejam expostas."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."

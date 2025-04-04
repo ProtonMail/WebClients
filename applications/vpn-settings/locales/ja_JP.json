@@ -520,10 +520,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -637,10 +637,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
       "Send code": [
@@ -5348,11 +5348,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "username": [
-        "ユーザー名"
-      ],
       "Username": [
         "ユーザーネーム"
+      ],
+      "username": [
+        "ユーザー名"
       ],
       "Users": [
         "ユーザー"
@@ -5881,10 +5881,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6840,29 +6840,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "無料で ${ BRAND_NAME } を入手"
-      ],
-      "Get ${ planName }": [
-        "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
@@ -6887,6 +6864,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "アカウントを削除"
+      ],
+      "Downgrade account": [
+        "アカウントをダウングレード"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "無料で ${ BRAND_NAME } を入手"
+      ],
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } を使い続ける"
+      ],
+      "Keep account": [
+        "アカウントを削除しない"
+      ],
+      "Switch plan": [
+        "プランを変更"
       ]
     },
     "new_plans: feature": {
@@ -8056,17 +8056,6 @@
         "${ appName } へようこそ"
       ]
     },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
-      ]
-    },
     "Option": {
       "Country configs": [
         "各国の設定ファイル"
@@ -8124,6 +8113,17 @@
       ],
       "The whole organization": [
         "組織全体"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
       ]
     },
     "Organization capacity error": {
@@ -10741,10 +10741,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [

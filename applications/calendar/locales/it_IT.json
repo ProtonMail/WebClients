@@ -4948,11 +4948,11 @@
       "Large imports can take several days.": [
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Scopri come ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Scopri cosa fare ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
@@ -5982,6 +5982,9 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Enable desktop notifications": [
+        "Abilitare le notifiche desktop"
+      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
@@ -6101,6 +6104,9 @@
       ],
       "Notifications": [
         "Notifiche"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Le notifiche sono disabilitate, per abilitarle modificare le impostazioni del browser."
       ],
       "On": [
         "Attivo"
@@ -6346,6 +6352,9 @@
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
       ],
+      "if your data is leaked": [
+        "se i tuoi dati vengono divulgati"
+      ],
       "Inbox": [
         "Posta in arrivo"
       ],
@@ -6384,9 +6393,6 @@
       ],
       "Starred": [
         "Importante"
-      ],
-      "stay safer online": [
-        "stai più sicuro online"
       ],
       "Trash": [
         "Cestino"
@@ -6776,6 +6782,26 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Inizia per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partire da ${ pricing }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -6797,26 +6823,6 @@
       ],
       "Switch plan": [
         "Cambia piano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Inizia per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partire da ${ pricing }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Effettua l'upgrade a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7413,11 +7419,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7430,6 +7431,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10114,9 +10120,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Dettagli"
-      ],
       "Does not repeat": [
         "Nessuna ripetizione"
       ],
@@ -10243,6 +10246,9 @@
       ],
       "Import groups": [
         "Importa gruppi"
+      ],
+      "Information exposed in breach": [
+        "Informazioni esposte in caso di violazioni"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -10572,6 +10578,9 @@
       "Load image": [
         "Carica l'immagine"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Non tutte le informazioni elencate qui sono state esposte per tutti gli utenti."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
@@ -10592,6 +10601,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Il nuovo ciclo di abbonamento inizia il ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"

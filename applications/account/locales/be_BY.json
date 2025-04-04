@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "Select file": [
-        "Выбраць файл"
-      ],
       "select file": [
         "выбраць файл"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Select files": [
         "Выбраць файлы"
@@ -8579,9 +8579,6 @@
       "Large imports can take several days.": [
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Даведайцеся, як ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Даведайцеся, як увайсці ў ${ VPN_APP_NAME } з дапамогай старонніх праграм VPN."
       ],
@@ -9797,11 +9794,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -10561,9 +10558,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Актыўны"
-      ],
       "Compromised": [
         "Скампраметаваны"
       ],
@@ -10985,10 +10979,10 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11000,10 +10994,10 @@
       "Amount due": [
         "Да аплаты"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
       "and": [
@@ -11432,11 +11426,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Калі"
-      ],
       "IF": [
         "КАЛІ"
+      ],
+      "If": [
+        "Калі"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -11639,14 +11633,14 @@
       "Optional": [
         "Неабавязкова"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -12278,11 +12272,11 @@
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
       ],
-      "Privacy policy": [
-        "Палітыка прыватнасці"
-      ],
       "privacy policy": [
         "палітыкай прыватнасці"
+      ],
+      "Privacy policy": [
+        "Палітыка прыватнасці"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -12298,9 +12292,6 @@
       ],
       "Sign in": [
         "Увайсці"
-      ],
-      "stay safer online": [
-        "застацца абароненым у інтэрнэце"
       ],
       "switch account": [
         "змяніць уліковы запіс"
@@ -13723,14 +13714,6 @@
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -13749,6 +13732,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -14400,17 +14391,6 @@
         "Працоўны стол"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10-ае чысло месяца"
@@ -14639,6 +14619,17 @@
       ],
       "Trash": [
         "Сметніца"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
       ]
     },
     "Option delay send seconds": {
@@ -18833,10 +18824,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -19066,9 +19057,6 @@
       ],
       "Description": [
         "Апісанне"
-      ],
-      "Details": [
-        "Падрабязнасці"
       ],
       "Device": [
         "Прылада"
@@ -20072,9 +20060,6 @@
       "Fingerprint": [
         "Адбітак пальца"
       ],
-      "Key type": [
-        "Тып ключа"
-      ],
       "Status": [
         "Статус"
       ]
@@ -20123,9 +20108,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Карыстальнікі ${ MAIL_APP_NAME } будуць выкарыстоўваць дадзены ключ для адпраўкі ў якасці прадвызначанага"
-      ],
       "Account is disconnected": [
         "Уліковы запіс адключаны"
       ],
@@ -20329,9 +20311,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Калі вы перамясціце ліст у спам, ваша падпіска будзе скасавана аўтаматычна ў спісе рассылкі адпраўніка."
-      ],
-      "You have locally decrypted this key": [
-        "Вы расшыфравалі гэты ключ лакальна"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Ваша паштовая скрыня ${ MAIL_APP_NAME } амаль запоўнена"

@@ -1090,10 +1090,10 @@
       "Select country ${ country }": [
         "Land ${ country } auswählen"
       ],
-      "Select file": [
+      "select file": [
         "Datei auswählen"
       ],
-      "select file": [
+      "Select file": [
         "Datei auswählen"
       ],
       "Select files": [
@@ -7000,6 +7000,14 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Bei erneuter Aktivierung wird der Schlüssel für die Entschlüsselung verwendet."
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Bei erneuter Aktivierung wird der Schlüssel zur Entschlüsselung und Verifizierung verwendet."
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } Benutzer hat derzeit Zugang zu gemeinsamen Servern.",
@@ -7741,6 +7749,9 @@
       "Data locked": [
         "Daten gesperrt"
       ],
+      "Data recoverable on this device": [
+        "Daten, die auf diesem Gerät wiederhergestellt werden können"
+      ],
       "Dedicated servers": [
         "Dezidierte Server"
       ],
@@ -8411,9 +8422,6 @@
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Erfahre, wie man ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
       ],
@@ -8428,6 +8436,9 @@
       ],
       "Learn more about single sign-on": [
         "Erfahre mehr über Single Sign-on"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Erfahre, was zu tun ist ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Von links nach rechts"
@@ -9491,6 +9502,9 @@
       "Total VPN connections": [
         "Anzahl VPN‐Verbindungen"
       ],
+      "trusted device": [
+        "Vertrauenswürdiges Gerät"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Teste ${ productName } völlig risikofrei - wenn du aus irgendeinem Grund deine Meinung änderst, erhältst du eine volle Rückerstattung. Es werden keine Fragen gestellt."
       ],
@@ -9605,10 +9619,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -9724,6 +9738,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Wir speichern die Wiederherstellungsinformationen sicher auf deinem vertrauenswürdigen Gerät, um zu verhindern, dass du deine Daten verlierst."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Wir haben eine Sicherungsdatei in diesem Browser gespeichert, da du die Datenwiederherstellung auf diesem ${ deviceLink } zugelassen hast. Wenn die Sicherungsdatei gültig ist, erhältst du sofort vollständigen oder teilweisen Zugriff auf deine verschlüsselten Daten."
       ],
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
@@ -10314,6 +10331,17 @@
         "Abonnement"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Entschlüsselung"
+      ],
+      "Decryption, verification": [
+        "Entschlüsselung, Verifizierung"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Verschlüsselung, Entschlüsselung, Signierung, Verifizierung"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Schlüssel generieren"
@@ -10341,8 +10369,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktiv"
+      "Compatibility": [
+        "Kompatibilität"
       ],
       "Compromised": [
         "Kompromittiert"
@@ -10757,10 +10785,10 @@
       "Allow sharing outside the organization": [
         "Teilen außerhalb der Organisation erlauben"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Erlaubte Domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Erlaubte Domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10772,11 +10800,11 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
-      "And": [
-        "Und"
-      ],
       "AND": [
         "UND"
+      ],
+      "And": [
+        "Und"
       ],
       "and": [
         "und"
@@ -11204,11 +11232,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Wenn"
-      ],
       "IF": [
         "WENN"
+      ],
+      "If": [
+        "Wenn"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -11411,14 +11439,14 @@
       "Optional": [
         "Optional"
       ],
+      "OR": [
+        "ODER"
+      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
-      ],
-      "OR": [
-        "ODER"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -12027,6 +12055,9 @@
       "How to unlock data": [
         "Wie Daten entsperrt werden"
       ],
+      "if your data is leaked": [
+        "wenn deine Daten offengelegt wurden"
+      ],
       "Import/export": [
         "Import/Export"
       ],
@@ -12048,10 +12079,10 @@
       "perform a password reset from your active session": [
         "dein Passwort in deiner aktiven Sitzung zurücksetzen"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "Datenschutzerklärung"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "Datenschutzerklärung"
       ],
       "Reactivate now": [
@@ -12068,9 +12099,6 @@
       ],
       "Sign in": [
         "Anmelden"
-      ],
-      "stay safer online": [
-        "online sicherer wird"
       ],
       "switch account": [
         "Konto wechseln"
@@ -13423,14 +13451,6 @@
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -13449,6 +13469,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -14086,17 +14114,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. des Monats"
@@ -14325,6 +14342,17 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Option delay send seconds": {
@@ -18383,11 +18411,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -18612,9 +18640,6 @@
       ],
       "Description": [
         "Beschreibung"
-      ],
-      "Details": [
-        "Details"
       ],
       "Device": [
         "Gerät"
@@ -18941,6 +18966,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
+      ],
+      "Information exposed in breach": [
+        "Informationen, die bei einem Datenleck offengelegt wurden"
       ],
       "Integrations": [
         "Integrationen"
@@ -19609,14 +19637,20 @@
       "Actions": [
         "Aktionen"
       ],
+      "Creation date": [
+        "Erstellungsdatum"
+      ],
       "Fingerprint": [
         "Fingerabdruck"
       ],
-      "Key type": [
-        "Schlüsseltyp"
+      "Function": [
+        "Funktion"
       ],
       "Status": [
         "Status"
+      ],
+      "Type": [
+        "Typ"
       ]
     },
     "Title header for members table": {
@@ -19663,9 +19697,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME }-Benutzer verwenden diesen Schlüssel standardmäßig für das Versenden."
-      ],
       "Account is disconnected": [
         "Die Verbindung zum Konto ist unterbrochen"
       ],
@@ -19756,6 +19787,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nicht alle hier aufgeführten Informationen wurden für alle Benutzer offengelegt."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Entferne Metadaten aus Bildern, um deine Privatsphäre zu schützen."
       ],
@@ -19828,6 +19862,12 @@
       "This feature is only available on Beta": [
         "Diese Funktion ist nur in der Beta-Version verfügbar."
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Dies ist der Standard-Schlüssel, der von anderen ${ MAIL_APP_NAME }-Benutzern in älteren Mobile-Apps verwendet wird, um Daten zu verschlüsseln, die sie dir senden."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Dies ist der Standard-Schlüssel, der von anderen ${ MAIL_APP_NAME }-Benutzern verwendet wird, um Daten zu verschlüsseln, die sie dir senden"
+      ],
       "This key cannot be used for encryption": [
         "Dieser Schlüssel kann nicht zur Verschlüsselung verwendet werden."
       ],
@@ -19839,6 +19879,9 @@
       ],
       "This key is used for email forwarding": [
         "Dieser Schlüssel wird zur E-Mail-Weiterleitung verwendet."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Verwende die standardmäßigen Bildlaufleisten deines Browsers. Diese sind normalerweise größer und leichter zu bedienen."
@@ -19869,9 +19912,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Wenn du eine E-Mail in den Spam-Ordner verschiebst, wirst du automatisch von den Verteilerlisten des Absenders abgemeldet."
-      ],
-      "You have locally decrypted this key": [
-        "Du hast diesen Schlüssel lokal entschlüsselt."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Dein ${ MAIL_APP_NAME }-Posteingang ist fast voll."

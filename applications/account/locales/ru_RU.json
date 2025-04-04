@@ -1060,11 +1060,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Select files": [
         "Выбрать файлы"
@@ -8217,9 +8217,6 @@
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Узнайте, как ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как войти в ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
@@ -9393,11 +9390,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -10130,9 +10127,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Активно"
-      ],
       "Compromised": [
         "Скомпрометирован"
       ],
@@ -10551,11 +10545,11 @@
       "Allow sharing outside the organization": [
         "Разрешить совместное использование вне организации"
       ],
-      "Allowed Domain": [
-        "Разрешённый Домен"
-      ],
       "Allowed domain": [
         "Разрешённый домен"
+      ],
+      "Allowed Domain": [
+        "Разрешённый Домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -10566,10 +10560,10 @@
       "Amount due": [
         "К оплате"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
       "and": [
@@ -10995,11 +10989,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Если"
-      ],
       "IF": [
         "ЕСЛИ"
+      ],
+      "If": [
+        "Если"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -11202,14 +11196,14 @@
       "Optional": [
         "Необязательно"
       ],
+      "OR": [
+        "ИЛИ"
+      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
-      ],
-      "OR": [
-        "ИЛИ"
       ],
       "Organization name": [
         "Название организации"
@@ -11841,11 +11835,11 @@
       "perform a password reset from your active session": [
         "выполнить сброс пароля из вашего активного сеанса"
       ],
-      "Privacy policy": [
-        "Политика конфиденциальности"
-      ],
       "privacy policy": [
         "политика конфиденциальности"
+      ],
+      "Privacy policy": [
+        "Политика конфиденциальности"
       ],
       "Reactivate now": [
         "Восстановить подписку"
@@ -11861,9 +11855,6 @@
       ],
       "Sign in": [
         "Войти"
-      ],
-      "stay safer online": [
-        "будьте в большей безопасности в Интернете"
       ],
       "switch account": [
         "переключить аккаунт"
@@ -13271,14 +13262,6 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -13297,6 +13280,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -13942,17 +13933,6 @@
         "Рабочий стол"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10-ое число месяца"
@@ -14181,6 +14161,17 @@
       ],
       "Trash": [
         "Корзина"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
       ]
     },
     "Option delay send seconds": {
@@ -18252,10 +18243,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -18479,9 +18470,6 @@
       ],
       "Description": [
         "Описание"
-      ],
-      "Details": [
-        "Информация"
       ],
       "Device": [
         "Устройство"
@@ -19467,9 +19455,6 @@
       "Fingerprint": [
         "Отпечаток"
       ],
-      "Key type": [
-        "Тип ключа"
-      ],
       "Status": [
         "Статус"
       ]
@@ -19518,9 +19503,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Пользователи ${ MAIL_APP_NAME } будут использовать по умолчанию этот ключ для отправки"
-      ],
       "Account is disconnected": [
         "Учётная запись отсоединена"
       ],
@@ -19724,9 +19706,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Когда вы перемещаете письмо в спам, вы автоматически отписываетесь от списков рассылки отправителя."
-      ],
-      "You have locally decrypted this key": [
-        "Вы локально расшифровали этот ключ"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Ваш почтовый ящик ${ MAIL_APP_NAME } почти заполнен"

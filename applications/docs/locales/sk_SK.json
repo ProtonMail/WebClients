@@ -2251,6 +2251,11 @@
         "Faktúra po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2329,11 +2334,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4485,11 +4485,11 @@
       "Large imports can take several days.": [
         "Import veľkého množstva údajov môže trvať niekoľko dní."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zistite, ako ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Zistiť viac"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zistite, čo robiť ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Obmedzená dostupnosť"
@@ -5906,6 +5906,9 @@
       "How to pay with Bitcoin?": [
         "Ako platiť Bitcoinom?"
       ],
+      "if your data is leaked": [
+        "ak dôjde k úniku vašich údajov"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -5920,9 +5923,6 @@
       ],
       "settings": [
         "nastavenia"
-      ],
-      "stay safer online": [
-        "zostať bezpečnejší online"
       ],
       "What’s this?": [
         "Čo je to?"
@@ -9367,9 +9367,6 @@
       "Desktop": [
         "Počítač"
       ],
-      "Details": [
-        "Podrobnosti"
-      ],
       "Discard": [
         "Zahodiť"
       ],
@@ -9495,6 +9492,9 @@
       ],
       "Import groups": [
         "Importovať skupiny"
+      ],
+      "Information exposed in breach": [
+        "Informácie odhalené pri úniku"
       ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
@@ -9794,6 +9794,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Správa a názov súboru sú uložené so šifrovaním s nulovým prístupom, ak sú súčasťou emailu"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nie všetky informácie, ktoré sú tu uvedené, boli sprístupnené všetkým používateľom."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schému, ktorá sa použije pri podpisovaní, alebo šifrovanie užívateľa. Nezabudnite, že PGP/Inline vyžaduje správy vo formáte obyčajného textu"
       ],
@@ -9814,6 +9817,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus predplatného začína ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"

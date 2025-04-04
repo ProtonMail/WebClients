@@ -1117,10 +1117,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
       ],
-      "Select all": [
+      "Select All": [
         "Alle auswählen"
       ],
-      "Select All": [
+      "Select all": [
         "Alle auswählen"
       ],
       "Select all messages": [
@@ -1317,10 +1317,6 @@
       ],
       "Trust": [
         "Vertrauen"
-      ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -6749,7 +6745,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -6802,14 +6799,14 @@
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Erfahre, wie man ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Mehr erfahren"
       ],
       "Learn more about the writing assistant": [
         "Mehr erfahren über den Schreibassistenten"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Erfahre, was zu tun ist ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Von links nach rechts"
@@ -8393,11 +8390,11 @@
       "Always move sender's emails": [
         "Nachrichten dieses Absenders immer verschieben"
       ],
-      "And": [
-        "Und"
-      ],
       "AND": [
         "UND"
+      ],
+      "And": [
+        "Und"
       ],
       "and": [
         "und"
@@ -8627,11 +8624,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Wenn"
-      ],
       "IF": [
         "WENN"
+      ],
+      "If": [
+        "Wenn"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -8744,14 +8741,14 @@
       "Optional": [
         "Optional"
       ],
+      "OR": [
+        "ODER"
+      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
-      ],
-      "OR": [
-        "ODER"
       ],
       "Original link": [
         "Original-Link"
@@ -9077,6 +9074,9 @@
       "How to pay with Bitcoin?": [
         "Wie bezahlt man mit Bitcoin?"
       ],
+      "if your data is leaked": [
+        "wenn deine Daten offengelegt wurden"
+      ],
       "Inbox": [
         "Posteingang"
       ],
@@ -9151,9 +9151,6 @@
       ],
       "Starred": [
         "Markiert"
-      ],
-      "stay safer online": [
-        "online sicherer wird"
       ],
       "Terms": [
         "AGB"
@@ -9563,29 +9560,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Konto löschen"
-      ],
-      "Downgrade account": [
-        "Konto downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } kostenlos holen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } holen"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behalten"
-      ],
-      "Keep account": [
-        "Konto behalten"
-      ],
-      "Switch plan": [
-        "Abonnement wechseln"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
@@ -9607,6 +9581,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Konto löschen"
+      ],
+      "Downgrade account": [
+        "Konto downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } kostenlos holen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } holen"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behalten"
+      ],
+      "Keep account": [
+        "Konto behalten"
+      ],
+      "Switch plan": [
+        "Abonnement wechseln"
       ]
     },
     "new_plans: feature": {
@@ -13378,9 +13375,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Details"
-      ],
       "Discover your subscription benefits": [
         "Entdecke die Vorteile deines Abonnements"
       ],
@@ -13525,6 +13519,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
+      ],
+      "Information exposed in breach": [
+        "Informationen, die bei einem Datenleck offengelegt wurden"
       ],
       "Insert contacts": [
         "Kontakte einfügen"
@@ -14033,6 +14030,9 @@
       "Load image": [
         "Bild laden"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nicht alle hier aufgeführten Informationen wurden für alle Benutzer offengelegt."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
       ],
@@ -14065,6 +14065,9 @@
       ],
       "This feature is only available for paid users": [
         "Diese Funktion ist nur für zahlende Benutzer verfügbar"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"

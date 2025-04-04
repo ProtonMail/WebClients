@@ -4848,9 +4848,6 @@
       "Last week": [
         "지난 주"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink }하는 법 알아보기"
-      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -6676,9 +6673,6 @@
       "Starred": [
         "별표 표시됨"
       ],
-      "stay safer online": [
-        "온라인 상에서 안전하게"
-      ],
       "Trash": [
         "휴지통"
       ],
@@ -7047,29 +7041,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "계정 삭제"
-      ],
-      "Downgrade account": [
-        "계정 다운그레이드"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "무료로 ${ BRAND_NAME } 받기"
-      ],
-      "Get ${ planName }": [
-        "${ planName } 받기"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }  유지"
-      ],
-      "Keep account": [
-        "계정 유지"
-      ],
-      "Switch plan": [
-        "플랜 변경"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
@@ -7091,6 +7062,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName }(으)로 업그레이드"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "계정 삭제"
+      ],
+      "Downgrade account": [
+        "계정 다운그레이드"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "무료로 ${ BRAND_NAME } 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }  유지"
+      ],
+      "Keep account": [
+        "계정 유지"
+      ],
+      "Switch plan": [
+        "플랜 변경"
       ]
     },
     "new_plans: feature": {
@@ -10364,9 +10358,6 @@
       ],
       "Desktop": [
         "데스크톱"
-      ],
-      "Details": [
-        "세부 사항"
       ],
       "Discard": [
         "취소"

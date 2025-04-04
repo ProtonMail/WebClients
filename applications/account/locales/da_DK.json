@@ -1024,11 +1024,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "Select file": [
-        "Vælg fil"
-      ],
       "select file": [
         "vælg fil"
+      ],
+      "Select file": [
+        "Vælg fil"
       ],
       "Select files": [
         "Vælg filer"
@@ -7785,9 +7785,6 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lær, hvordan du ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær, hvordan du logger på ${ VPN_APP_NAME } med tredjeparts VPN-applikationer."
       ],
@@ -8841,11 +8838,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "username": [
-        "brugernavn"
-      ],
       "Username": [
         "Brugernavn"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -9512,9 +9509,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktiv"
-      ],
       "Compromised": [
         "Kompromitteret"
       ],
@@ -9907,10 +9901,10 @@
       "Allow recovery using a trusted device": [
         "Tillad gendannelse ved hjælp af en betroet enhed"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tilladt domæne"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tilladt domæne"
       ],
       "Amount": [
@@ -9919,11 +9913,11 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -10327,11 +10321,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -10516,14 +10510,14 @@
       "Optional": [
         "Valgfrit"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -11123,9 +11117,6 @@
       ],
       "Sign in": [
         "Log ind"
-      ],
-      "stay safer online": [
-        "bliv mere sikker online"
       ],
       "switch account": [
         "skift konto"
@@ -12428,14 +12419,6 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12454,6 +12437,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -13046,17 +13037,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Månedligt d. 10."
@@ -13270,6 +13250,17 @@
       ],
       "Trash": [
         "Papirkurv"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -16932,11 +16923,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -17137,9 +17128,6 @@
       ],
       "Description": [
         "Beskrivelse"
-      ],
-      "Details": [
-        "Detaljer"
       ],
       "Device": [
         "Enhed"
@@ -18047,9 +18035,6 @@
       "Fingerprint": [
         "Fingeraftryk"
       ],
-      "Key type": [
-        "Nøgletype"
-      ],
       "Status": [
         "Status"
       ]
@@ -18098,9 +18083,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Brugere af ${ MAIL_APP_NAME } vil som standard bruge denne nøgle til afsendelse"
-      ],
       "Account is disconnected": [
         "Kontoforbindelse er afbrudt"
       ],
@@ -18274,9 +18256,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Når du flytter en e-mail til spam, bliver du automatisk afmeldt fra afsenderens mailinglister."
-      ],
-      "You have locally decrypted this key": [
-        "Du har dekrypteres denne nøgle lokalt"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Din indbakke i ${ MAIL_APP_NAME } er næsten fuld"

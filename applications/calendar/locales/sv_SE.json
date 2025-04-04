@@ -4945,11 +4945,11 @@
       "Large imports can take several days.": [
         "Stora importer kan ta flera dagar."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lär dig hur man ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lär dig vad du ska göra ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
@@ -5967,6 +5967,9 @@
       "Emails (last month)": [
         "E-post (senaste månaden)"
       ],
+      "Enable desktop notifications": [
+        "Aktivera aviseringar för stationär dator"
+      ],
       "Encrypt emails": [
         "Kryptera e-post"
       ],
@@ -6086,6 +6089,9 @@
       ],
       "Notifications": [
         "Aviseringar"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Meddelanden är inaktiverade, för att aktivera dem ändrar du webbläsarinställningarna."
       ],
       "On": [
         "På"
@@ -6331,6 +6337,9 @@
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
       ],
+      "if your data is leaked": [
+        "om dina uppgifter läcker ut"
+      ],
       "Inbox": [
         "Inkorg"
       ],
@@ -6369,9 +6378,6 @@
       ],
       "Starred": [
         "Stjärnmärkt"
-      ],
-      "stay safer online": [
-        "var säkrare online"
       ],
       "Trash": [
         "Papperskorg"
@@ -6761,6 +6767,26 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -6782,26 +6808,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7398,11 +7404,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7415,6 +7416,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10087,9 +10093,6 @@
       "Desktop": [
         "Stationär dator"
       ],
-      "Details": [
-        "Detaljer"
-      ],
       "Does not repeat": [
         "Upprepas inte"
       ],
@@ -10216,6 +10219,9 @@
       ],
       "Import groups": [
         "Importera grupper"
+      ],
+      "Information exposed in breach": [
+        "Information exponerad vid intrång"
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
@@ -10545,6 +10551,9 @@
       "Load image": [
         "Läs in bild"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "All information som anges här har inte exponerats för alla användare."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
       ],
@@ -10565,6 +10574,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nya prenumerationscykeln startar den ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"

@@ -4931,11 +4931,11 @@
       "Last week": [
         "Ultima settimana"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Scopri come ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Scopri cosa fare ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
@@ -6738,6 +6738,9 @@
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
       ],
+      "if your data is leaked": [
+        "se i tuoi dati vengono divulgati"
+      ],
       "Inbox": [
         "Posta in arrivo"
       ],
@@ -6779,9 +6782,6 @@
       ],
       "Starred": [
         "Importante"
-      ],
-      "stay safer online": [
-        "stai più sicuro online"
       ],
       "Trash": [
         "Cestino"
@@ -7207,29 +7207,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina l'account"
-      ],
-      "Downgrade account": [
-        "Esegui il downgrade dell'account"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Ottieni ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Ottieni il piano ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Mantieni ${ plan }"
-      ],
-      "Keep account": [
-        "Mantieni l'account"
-      ],
-      "Switch plan": [
-        "Cambia piano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
@@ -7251,6 +7228,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Effettua l'upgrade a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina l'account"
+      ],
+      "Downgrade account": [
+        "Esegui il downgrade dell'account"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Ottieni ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Ottieni il piano ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Mantieni ${ plan }"
+      ],
+      "Keep account": [
+        "Mantieni l'account"
+      ],
+      "Switch plan": [
+        "Cambia piano"
       ]
     },
     "new_plans: feature": {
@@ -7847,11 +7847,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7864,6 +7859,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10634,9 +10634,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Dettagli"
-      ],
       "Discard": [
         "Scarta"
       ],
@@ -10776,6 +10773,9 @@
       ],
       "Import groups": [
         "Importa gruppi"
+      ],
+      "Information exposed in breach": [
+        "Informazioni esposte in caso di violazioni"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -11184,6 +11184,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Il messaggio e il nome del file vengono archiviati con crittografia ad accesso zero quando inclusi nell'email"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Non tutte le informazioni elencate qui sono state esposte per tutti gli utenti."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
@@ -11207,6 +11210,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Il nuovo ciclo di abbonamento inizia il ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"

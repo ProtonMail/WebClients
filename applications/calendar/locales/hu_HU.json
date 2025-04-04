@@ -831,6 +831,15 @@
         "${ ips } szerver",
         "${ ips } szerver"
       ],
+      "${ price } per dedicated server": [
+        "${ price } / dedikált szerver"
+      ],
+      "${ price } per domain": [
+        "${ price } / domain"
+      ],
+      "${ price } per user": [
+        "${ price } felhasználónként"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } írási segéd licenc",
         "${ seats } írási segéd licenc"
@@ -4603,9 +4612,6 @@
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Tudja meg hogyan kell ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "További információk"
       ],
@@ -5921,9 +5927,6 @@
       "Starred": [
         "Csillagozott"
       ],
-      "stay safer online": [
-        "legyen biztonságosabb online"
-      ],
       "Trash": [
         "Lomtár"
       ],
@@ -6288,6 +6291,17 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6309,17 +6323,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -8965,9 +8968,6 @@
       ],
       "Deleting contacts": [
         "Névjegyek törlése"
-      ],
-      "Details": [
-        "Részletek"
       ],
       "Does not repeat": [
         "Nem ismétlődik"

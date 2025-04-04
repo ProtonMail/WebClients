@@ -4848,11 +4848,11 @@
       "Last week": [
         "上周"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "学习如何 ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "了解详情"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "请通过 ${ dataLeakedLink } 了解应对措施"
       ],
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
@@ -6634,6 +6634,9 @@
       "How to pay with Bitcoin?": [
         "如何使用比特币支付？"
       ],
+      "if your data is leaked": [
+        "如果您的数据遭到泄露"
+      ],
       "Inbox": [
         "收件箱"
       ],
@@ -6675,9 +6678,6 @@
       ],
       "Starred": [
         "星标邮件"
-      ],
-      "stay safer online": [
-        "安全上网"
       ],
       "Trash": [
         "回收站"
@@ -7050,29 +7050,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "删除账户"
-      ],
-      "Downgrade account": [
-        "降级账户"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "免费获得 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "开通 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保持计划 ${ plan }"
-      ],
-      "Keep account": [
-        "保留账户"
-      ],
-      "Switch plan": [
-        "切换计划"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降级至 ${ downgradedPlanName }"
@@ -7094,6 +7071,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升级至 ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "删除账户"
+      ],
+      "Downgrade account": [
+        "降级账户"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "免费获得 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保持计划 ${ plan }"
+      ],
+      "Keep account": [
+        "保留账户"
+      ],
+      "Switch plan": [
+        "切换计划"
       ]
     },
     "new_plans: feature": {
@@ -10368,9 +10368,6 @@
       "Desktop": [
         "桌面版"
       ],
-      "Details": [
-        "详细信息"
-      ],
       "Discard": [
         "放弃"
       ],
@@ -10508,6 +10505,9 @@
       ],
       "Import groups": [
         "导入群组"
+      ],
+      "Information exposed in breach": [
+        "数据外泄事件中泄露的信息"
       ],
       "Invalid verification code": [
         "验证码无效"
@@ -10915,6 +10915,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "消息和文件名包含在电子邮件中时，将以零访问加密存储"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "并非所有用户都能查看此处列出的全部信息。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
@@ -10938,6 +10941,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的计费周期将从 ${ formattedTime } 开始"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"

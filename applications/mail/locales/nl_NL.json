@@ -1117,10 +1117,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -1319,8 +1319,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -6749,7 +6748,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -6802,14 +6802,14 @@
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Leer ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Meer informatie"
       ],
       "Learn more about the writing assistant": [
         "Meer informatie over de schrijfhulp"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Leer wat te doen ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -8393,11 +8393,11 @@
       "Always move sender's emails": [
         "Verplaats altijd mails van afzenders"
       ],
-      "And": [
-        "En"
-      ],
       "AND": [
         "EN"
+      ],
+      "And": [
+        "En"
       ],
       "and": [
         "en"
@@ -8627,11 +8627,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Als"
-      ],
       "IF": [
         "ALS"
+      ],
+      "If": [
+        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -8744,14 +8744,14 @@
       "Optional": [
         "Optioneel"
       ],
+      "OR": [
+        "OF"
+      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
-      ],
-      "OR": [
-        "OF"
       ],
       "Original link": [
         "Originele link"
@@ -9077,6 +9077,9 @@
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
       ],
+      "if your data is leaked": [
+        "als uw gegevens zijn gelekt"
+      ],
       "Inbox": [
         "Inbox"
       ],
@@ -9151,9 +9154,6 @@
       ],
       "Starred": [
         "Met ster"
-      ],
-      "stay safer online": [
-        "blijf veilig online"
       ],
       "Terms": [
         "Voorwaarden"
@@ -9563,29 +9563,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Account verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Gebruik ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Kies ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behouden"
-      ],
-      "Keep account": [
-        "Account behouden"
-      ],
-      "Switch plan": [
-        "Van abonnement wisselen"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
@@ -9607,6 +9584,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Account verwijderen"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Gebruik ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behouden"
+      ],
+      "Keep account": [
+        "Account behouden"
+      ],
+      "Switch plan": [
+        "Van abonnement wisselen"
       ]
     },
     "new_plans: feature": {
@@ -13378,9 +13378,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Details"
-      ],
       "Discover your subscription benefits": [
         "Ontdek uw abonnementsvoordelen"
       ],
@@ -13525,6 +13522,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Verbeter uw privacy met meer adressen"
+      ],
+      "Information exposed in breach": [
+        "Informatie die is blootgesteld bij datalek"
       ],
       "Insert contacts": [
         "Contacten invoegen"
@@ -14033,6 +14033,9 @@
       "Load image": [
         "Laad foto"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
@@ -14065,6 +14068,9 @@
       ],
       "This feature is only available for paid users": [
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
