@@ -1077,10 +1077,10 @@
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Вибрати все"
       ],
-      "Select All": [
+      "Select all": [
         "Вибрати все"
       ],
       "Select all messages": [
@@ -1268,12 +1268,6 @@
       ],
       "Trust": [
         "Довіряти"
-      ],
-      "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -6716,9 +6710,6 @@
       "Initializing…": [
         "Ініціалізація…"
       ],
-      "Insert image": [
-        "Вставити зображення"
-      ],
       "Insert link": [
         "Вставити посилання"
       ],
@@ -6760,9 +6751,6 @@
       ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Дізнайтеся, як ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Докладніше"
@@ -8275,11 +8263,11 @@
       "Always move sender's emails": [
         "Завжди переміщувати е-пошту відправника"
       ],
-      "And": [
-        "Та"
-      ],
       "AND": [
         "ТА"
+      ],
+      "And": [
+        "Та"
       ],
       "and": [
         "та"
@@ -8503,11 +8491,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Якщо"
-      ],
       "IF": [
         "ЯКЩО"
+      ],
+      "If": [
+        "Якщо"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -8617,14 +8605,14 @@
       "Optional": [
         "Необов'язково"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Original link": [
         "Оригінальне посилання"
@@ -9009,9 +8997,6 @@
       ],
       "Starred": [
         "Із зірочкою"
-      ],
-      "stay safer online": [
-        "бути в безпеці онлайн"
       ],
       "Terms": [
         "Умови"
@@ -9431,6 +9416,23 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -9452,23 +9454,6 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Отримати ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -13202,9 +13187,6 @@
       ],
       "Deleting contacts": [
         "Видалення контактів"
-      ],
-      "Details": [
-        "Подробиці"
       ],
       "Don't give spam a chance": [
         "Не дайте спаму жодних шансів"

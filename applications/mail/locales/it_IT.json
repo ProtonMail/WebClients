@@ -1117,11 +1117,11 @@
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
       ],
-      "Select all": [
-        "Seleziona tutti"
-      ],
       "Select All": [
         "Seleziona tutto"
+      ],
+      "Select all": [
+        "Seleziona tutti"
       ],
       "Select all messages": [
         "Seleziona tutti i messaggi"
@@ -1317,10 +1317,6 @@
       ],
       "Trust": [
         "Considera attendibile"
-      ],
-      "Trust key": [
-        "Considera attendibile la chiave",
-        "Considera attendibili le chiavi"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -6749,7 +6745,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -6802,14 +6799,14 @@
       "Large imports can take several days.": [
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Scopri come ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Scopri di più"
       ],
       "Learn more about the writing assistant": [
         "Scopri di più sull'assistente alla scrittura"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Scopri cosa fare ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Da sinistra a destra"
@@ -8396,10 +8393,10 @@
       "Always move sender's emails": [
         "Sposta sempre le email del mittente"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -8582,6 +8579,9 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Enable desktop notifications": [
+        "Abilitare le notifiche desktop"
+      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
@@ -8627,11 +8627,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
@@ -8729,6 +8729,9 @@
       "Notification": [
         "Notifica"
       ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Le notifiche sono disabilitate, per abilitarle modificare le impostazioni del browser."
+      ],
       "Open in a new tab": [
         "Apri in una nuova scheda"
       ],
@@ -8741,13 +8744,13 @@
       "Optional": [
         "Facoltativo"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -9074,6 +9077,9 @@
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
       ],
+      "if your data is leaked": [
+        "se i tuoi dati vengono divulgati"
+      ],
       "Inbox": [
         "Posta in arrivo"
       ],
@@ -9148,9 +9154,6 @@
       ],
       "Starred": [
         "Importante"
-      ],
-      "stay safer online": [
-        "stai più sicuro online"
       ],
       "Terms": [
         "Termini"
@@ -9560,29 +9563,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina l'account"
-      ],
-      "Downgrade account": [
-        "Esegui il downgrade dell'account"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Ottieni ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Ottieni il piano ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Mantieni ${ plan }"
-      ],
-      "Keep account": [
-        "Mantieni l'account"
-      ],
-      "Switch plan": [
-        "Cambia piano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
@@ -9604,6 +9584,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Effettua l'upgrade a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina l'account"
+      ],
+      "Downgrade account": [
+        "Esegui il downgrade dell'account"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Ottieni ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Ottieni il piano ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Mantieni ${ plan }"
+      ],
+      "Keep account": [
+        "Mantieni l'account"
+      ],
+      "Switch plan": [
+        "Cambia piano"
       ]
     },
     "new_plans: feature": {
@@ -10200,11 +10203,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -10217,6 +10215,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -13380,9 +13383,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Dettagli"
-      ],
       "Discover your subscription benefits": [
         "Scopri i vantaggi del tuo abbonamento"
       ],
@@ -13527,6 +13527,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Aumenta la tua privacy con più indirizzi"
+      ],
+      "Information exposed in breach": [
+        "Informazioni esposte in caso di violazioni"
       ],
       "Insert contacts": [
         "Inserisci dei contatti"
@@ -14035,6 +14038,9 @@
       "Load image": [
         "Carica l'immagine"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Non tutte le informazioni elencate qui sono state esposte per tutti gli utenti."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
@@ -14067,6 +14073,9 @@
       ],
       "This feature is only available for paid users": [
         "Questa funzionalità è disponibile solo per utenti paganti"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
