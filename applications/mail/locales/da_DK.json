@@ -1111,10 +1111,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1305,10 +1305,6 @@
       ],
       "Trust": [
         "Hav tillid til"
-      ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -6627,7 +6623,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -6676,9 +6673,6 @@
       ],
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lær, hvordan du ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -8189,11 +8183,11 @@
       "Always move sender's emails": [
         "Flyt altid afsenders e-mails"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -8420,11 +8414,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -8534,14 +8528,14 @@
       "Optional": [
         "Valgfrit"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Oprindeligt link"
@@ -8929,9 +8923,6 @@
       ],
       "Starred": [
         "Stjernemarkeret"
-      ],
-      "stay safer online": [
-        "bliv mere sikker online"
       ],
       "Terms": [
         "Betingelser"
@@ -9335,6 +9326,26 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -9356,26 +9367,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Få ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12957,9 +12948,6 @@
       ],
       "Deleting contacts": [
         "Sletter kontakter"
-      ],
-      "Details": [
-        "Detaljer"
       ],
       "Don't give spam a chance": [
         "Lad ikke spam få en chance"

@@ -1077,11 +1077,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select all": [
-        "Označi vse"
-      ],
       "Select All": [
         "Izberi vse"
+      ],
+      "Select all": [
+        "Označi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -1262,12 +1262,6 @@
       ],
       "Trust": [
         "Zaupaj"
-      ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -6539,9 +6533,6 @@
       "Initializing…": [
         "Zagon …"
       ],
-      "Insert image": [
-        "Vstavi sliko"
-      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -6580,9 +6571,6 @@
       ],
       "Large imports can take several days.": [
         "Uvažanje večjega števila sporočil lahko traja tudi več dni."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Naučite se ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Več o tem"
@@ -8005,11 +7993,11 @@
       "Always move sender's emails": [
         "Vedno premakni pošiljateljeva sporočila"
       ],
-      "And": [
-        "In"
-      ],
       "AND": [
         "IN"
+      ],
+      "And": [
+        "In"
       ],
       "and": [
         "in"
@@ -8233,11 +8221,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Če"
-      ],
       "IF": [
         "ČE"
+      ],
+      "If": [
+        "Če"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -8341,14 +8329,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "OR": [
+        "ALI"
+      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
-      ],
-      "OR": [
-        "ALI"
       ],
       "Original link": [
         "Izvorna povezava"
@@ -8724,9 +8712,6 @@
       ],
       "Starred": [
         "Z zvezdico"
-      ],
-      "stay safer online": [
-        "izboljšajte svojo spletno varnost"
       ],
       "Terms": [
         "Pogoji"
@@ -9146,6 +9131,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -9167,23 +9169,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -12632,9 +12617,6 @@
       ],
       "Deleting contacts": [
         "Brisanje stikov"
-      ],
-      "Details": [
-        "Podrobnosti"
       ],
       "Don't give spam a chance": [
         "Ne dajmo priložnosti neželeni pošti."

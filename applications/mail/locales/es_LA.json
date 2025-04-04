@@ -1117,10 +1117,10 @@
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -1319,8 +1319,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -6749,7 +6748,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -6802,14 +6802,14 @@
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda cómo ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Más información"
       ],
       "Learn more about the writing assistant": [
         "Más información sobre el asistente de escritura"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprenda qué hacer ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Izquierda a derecha"
@@ -8396,10 +8396,10 @@
       "Always move sender's emails": [
         "Mover siempre los correos de remitentes"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
       "and": [
@@ -8630,11 +8630,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -8733,7 +8733,7 @@
         "Notificación"
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
-        "Las notificaciones están desactivadas; para activarlas, cambie los ajustes del navegador"
+        "Las notificaciones están desactivadas. Para activarlas cambie los ajustes del navegador."
       ],
       "Open in a new tab": [
         "Abrir en una pestaña nueva"
@@ -8747,13 +8747,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -9080,6 +9080,9 @@
       "How to pay with Bitcoin?": [
         "¿Cómo pagar con Bitcoin?"
       ],
+      "if your data is leaked": [
+        "si sus datos son filtrados"
+      ],
       "Inbox": [
         "Buzón"
       ],
@@ -9154,9 +9157,6 @@
       ],
       "Starred": [
         "Destacados"
-      ],
-      "stay safer online": [
-        "mantener su seguridad en línea"
       ],
       "Terms": [
         "Términos"
@@ -9566,29 +9566,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Eliminar cuenta"
-      ],
-      "Downgrade account": [
-        "Pasar a un plan inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtener ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Obtener ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Seguir en ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar cuenta"
-      ],
-      "Switch plan": [
-        "Cambiar plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Bajar a ${ downgradedPlanName }"
@@ -9610,6 +9587,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Mejorar a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Eliminar cuenta"
+      ],
+      "Downgrade account": [
+        "Pasar a un plan inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtener ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Seguir en ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar cuenta"
+      ],
+      "Switch plan": [
+        "Cambiar plan"
       ]
     },
     "new_plans: feature": {
@@ -13387,9 +13387,6 @@
       "Desktop": [
         "Escritorio"
       ],
-      "Details": [
-        "Detalles"
-      ],
       "Discover your subscription benefits": [
         "Descubra los beneficios de su suscripción"
       ],
@@ -13534,6 +13531,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Incremente su privacidad con más direcciones"
+      ],
+      "Information exposed in breach": [
+        "Información expuesta en la vulneración"
       ],
       "Insert contacts": [
         "Insertar contactos"
@@ -14042,6 +14042,9 @@
       "Load image": [
         "Cargar imagen"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No toda la información aquí mencionada fue expuesta para todos los usuarios."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
@@ -14074,6 +14077,9 @@
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
