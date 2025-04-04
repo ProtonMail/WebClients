@@ -1801,8 +1801,8 @@
       "Latest breach on ${ formattedDate }": [
         "Τελευταία παραβίαση στις ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Μάθετε τι να κάνετε ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Αποχώρηση από το στοιχείο..."
@@ -3338,11 +3338,11 @@
       "auto create rules ››": [
         "αυτόματη δημιουργία κανόνων ››"
       ],
+      "if your data is leaked": [
+        "εάν τα δεδομένα σας υποστούν διαρρεύσει"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
-      ],
-      "stay safer online": [
-        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ]
     },
     "Log preference": {
@@ -3894,9 +3894,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Διαγραφή κρύπτης \"${ vaultName }\";"
       ],
-      "Details": [
-        "Λεπτομέρειες"
-      ],
       "Did you know?": [
         "Γνωρίζατε;"
       ],
@@ -3965,6 +3962,9 @@
       ],
       "Inactive 2FA": [
         "Απενεργοποιημένο 2FA"
+      ],
+      "Information exposed in breach": [
+        "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
       "Install extension": [
         "Εγκατάσταση προέκτασης"
@@ -4225,6 +4225,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
       ]
     },
     "Validation": {
