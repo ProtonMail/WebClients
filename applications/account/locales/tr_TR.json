@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -8401,9 +8401,6 @@
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Nasıl ${ staySaferOnlineLink } öğrenin"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
       ],
@@ -9595,11 +9592,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -10331,9 +10328,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Etkin"
-      ],
       "Compromised": [
         "Ele geçirilmiş"
       ],
@@ -10747,10 +10741,10 @@
       "Allow sharing outside the organization": [
         "Kuruluş dışına paylaşım yapılabilsin"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10762,11 +10756,11 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "And": [
-        "Ve"
-      ],
       "AND": [
         "VE"
+      ],
+      "And": [
+        "Ve"
       ],
       "and": [
         "ve"
@@ -11191,11 +11185,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Eğer"
-      ],
       "IF": [
         "EĞER"
+      ],
+      "If": [
+        "Eğer"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -11398,14 +11392,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
+      "OR": [
+        "VEYA"
+      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
-      ],
-      "OR": [
-        "VEYA"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -12035,11 +12029,11 @@
       "perform a password reset from your active session": [
         "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
       ],
-      "Privacy policy": [
-        "Gizlilik ilkesi"
-      ],
       "privacy policy": [
         "gizlilik ilkesi"
+      ],
+      "Privacy policy": [
+        "Gizlilik ilkesi"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
@@ -12055,9 +12049,6 @@
       ],
       "Sign in": [
         "Oturum aç"
-      ],
-      "stay safer online": [
-        "çevrim içi ortamda daha güvende kalın"
       ],
       "switch account": [
         "hesabı değiştir"
@@ -13410,14 +13401,6 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -13436,6 +13419,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -14073,17 +14064,6 @@
         "Bilgisayar"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ayın 10. günü"
@@ -14312,6 +14292,17 @@
       ],
       "Trash": [
         "Çöpe at"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
       ]
     },
     "Option delay send seconds": {
@@ -18370,10 +18361,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -18599,9 +18590,6 @@
       ],
       "Description": [
         "Açıklama"
-      ],
-      "Details": [
-        "Ayrıntılar"
       ],
       "Device": [
         "Aygıt"
@@ -19599,9 +19587,6 @@
       "Fingerprint": [
         "Parmak izi"
       ],
-      "Key type": [
-        "Anahtar türü"
-      ],
       "Status": [
         "Durum"
       ]
@@ -19650,9 +19635,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } kullanıcıları, gönderim için varsayılan olarak bu anahtarı kullanacak"
-      ],
       "Account is disconnected": [
         "Hesap bağlantısı kesildi"
       ],
@@ -19856,9 +19838,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Bir e-postayı İstenmeyen kutusuna taşımanız göndericinin e-posta listesinden otomatik olarak ayrılmanızı sağlar."
-      ],
-      "You have locally decrypted this key": [
-        "Bu anahtarın şifresini yerel olarak çözdünüz"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "${ MAIL_APP_NAME } gelen kutunuz dolmak üzere"

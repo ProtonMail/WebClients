@@ -520,11 +520,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar arquivo"
-      ],
       "select file": [
         "selecionar arquivo"
+      ],
+      "Select file": [
+        "Selecionar arquivo"
       ],
       "Send code": [
         "Enviar um código"
@@ -5424,10 +5424,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -5970,10 +5970,10 @@
       "Allow recovery by phone": [
         "Permitir a recuperação por telefone"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6936,29 +6936,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Excluir conta"
-      ],
-      "Downgrade account": [
-        "Fazer downgrade da conta"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter o ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Manter o ${ plan }"
-      ],
-      "Keep account": [
-        "Manter conta"
-      ],
-      "Switch plan": [
-        "Mudar de plano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
@@ -6983,6 +6960,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Excluir conta"
+      ],
+      "Downgrade account": [
+        "Fazer downgrade da conta"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Manter o ${ plan }"
+      ],
+      "Keep account": [
+        "Manter conta"
+      ],
+      "Switch plan": [
+        "Mudar de plano"
       ]
     },
     "new_plans: feature": {
@@ -8182,17 +8182,6 @@
         "Bem-vindo ao ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Configurações do país"
@@ -8259,6 +8248,17 @@
       ],
       "UDP": [
         "UDP"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Organization capacity error": {
@@ -10943,11 +10943,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"

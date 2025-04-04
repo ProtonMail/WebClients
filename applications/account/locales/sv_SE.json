@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "Select file": [
-        "Välj fil"
-      ],
       "select file": [
         "välj fil"
+      ],
+      "Select file": [
+        "Välj fil"
       ],
       "Select files": [
         "Välj filer"
@@ -8387,9 +8387,6 @@
       "Large imports can take several days.": [
         "Stora importer kan ta flera dagar."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lär dig hur man ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lär dig hur du loggar in på ${ VPN_APP_NAME } med VPN-appar från tredje part."
       ],
@@ -8404,6 +8401,9 @@
       ],
       "Learn more about single sign-on": [
         "Lär dig mer om enkel inloggning"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lär dig vad du ska göra ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Vänster till höger"
@@ -9573,11 +9573,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -10271,6 +10271,11 @@
         "Prenumeration"
       ]
     },
+    "Key function description": {
+      "Encryption, decryption, signing, verification": [
+        "Kryptering, dekryptering, signering, verifiering"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Generera nyckel"
@@ -10298,8 +10303,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktiv"
+      "Compatibility": [
+        "Kompatibilitet"
       ],
       "Compromised": [
         "Komprometterad"
@@ -10714,10 +10719,10 @@
       "Allow sharing outside the organization": [
         "Tillåt delning utanför organisationen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10729,11 +10734,11 @@
       "Amount due": [
         "Att betala"
       ],
-      "And": [
-        "Och"
-      ],
       "AND": [
         "OCH"
+      ],
+      "And": [
+        "Och"
       ],
       "and": [
         "och"
@@ -11161,11 +11166,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Om"
-      ],
       "IF": [
         "OM"
+      ],
+      "If": [
+        "Om"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -11368,14 +11373,14 @@
       "Optional": [
         "Valfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -11987,6 +11992,9 @@
       "How to unlock data": [
         "Hur man låser upp data"
       ],
+      "if your data is leaked": [
+        "om dina uppgifter läcker ut"
+      ],
       "Import/export": [
         "Importera/exportera"
       ],
@@ -12008,11 +12016,11 @@
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
       ],
-      "Privacy policy": [
-        "Integritetspolicy"
-      ],
       "privacy policy": [
         "integritetspolicy"
+      ],
+      "Privacy policy": [
+        "Integritetspolicy"
       ],
       "Reactivate now": [
         "Återaktivera nu"
@@ -12028,9 +12036,6 @@
       ],
       "Sign in": [
         "Logga in"
-      ],
-      "stay safer online": [
-        "var säkrare online"
       ],
       "switch account": [
         "byt konto"
@@ -13383,17 +13388,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -13412,6 +13406,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -14049,17 +14054,6 @@
         "Stationär dator"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10:e dagen i månaden"
@@ -14309,6 +14303,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -18348,10 +18353,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -18577,9 +18582,6 @@
       ],
       "Description": [
         "Beskrivning"
-      ],
-      "Details": [
-        "Detaljer"
       ],
       "Device": [
         "Enhet"
@@ -18909,6 +18911,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Öka din integritet med fler adresser"
+      ],
+      "Information exposed in breach": [
+        "Information exponerad vid intrång"
       ],
       "Integrations": [
         "Integrationer"
@@ -19586,9 +19591,6 @@
       "Fingerprint": [
         "Fingeravtryck"
       ],
-      "Key type": [
-        "Nyckeltyp"
-      ],
       "Status": [
         "Status"
       ]
@@ -19637,9 +19639,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Användare av ${ MAIL_APP_NAME } kommer använda denna nyckel som standard för att skicka"
-      ],
       "Account is disconnected": [
         "Kontot är frånkopplat"
       ],
@@ -19724,6 +19723,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meddelanden i mappen “Skickat“ eller “Utkast“ kommer att fortsätta att visas i den mappen även om du flyttar dem till en annan mapp."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "All information som anges här har inte exponerats för alla användare."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Ta bort metadata från bilder för att skydda din integritet."
       ],
@@ -19796,6 +19798,12 @@
       "This feature is only available on Beta": [
         "Denna funktion är endast tillgänglig på Beta"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare i äldre mobilappar för att kryptera data som de skickar till dig"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare för att kryptera data som de skickar till dig"
+      ],
       "This key cannot be used for encryption": [
         "Denna nyckel kan inte användas för kryptering"
       ],
@@ -19807,6 +19815,9 @@
       ],
       "This key is used for email forwarding": [
         "Denna nyckel används för vidarebefordran av e-post"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Använd din webbläsares standardrullningslister. Dessa är vanligtvis större och enklare att använda"
@@ -19837,9 +19848,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "När du flyttar ett e-postmeddelande till skräppost kommer du automatiskt avsluta prenumeration från avsändarens e-postlistor."
-      ],
-      "You have locally decrypted this key": [
-        "Du har dekrypterat denna nyckel lokalt"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Din inkorg för ${ MAIL_APP_NAME } är nästan full"

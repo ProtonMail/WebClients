@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -7000,6 +7000,14 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Indien opnieuw geactiveerd, wordt de sleutel gebruikt voor decryptie"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Indien opnieuw geactiveerd, wordt de sleutel gebruikt voor decryptie en verificatie"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } gebruiker heeft momenteel toegang tot gedeelde servers.",
@@ -7741,6 +7749,9 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
+      "Data recoverable on this device": [
+        "Gegevens herstelbaar op dit apparaat"
+      ],
       "Dedicated servers": [
         "Dedicated servers"
       ],
@@ -8411,9 +8422,6 @@
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Leer ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
       ],
@@ -8428,6 +8436,9 @@
       ],
       "Learn more about single sign-on": [
         "Meer informatie over single sign-on"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Leer wat te doen ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -9491,6 +9502,9 @@
       "Total VPN connections": [
         "Totale VPN-verbindingen"
       ],
+      "trusted device": [
+        "vertrouwd apparaat"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
       ],
@@ -9605,11 +9619,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -9724,6 +9738,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Wij slaan herstelinformatie veilig op uw vertrouwde apparaat op om te voorkomen dat u uw gegevens verliest"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Wij hebben een back-upbestand in deze browser opgeslagen omdat u gegevens herstellen voor dit ${ deviceLink } toestond. Als het back-upbestand geldig is, krijgt u onmiddellijk volledige of gedeeltelijke toegang tot uw versleutelde gegevens."
       ],
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
@@ -10314,6 +10331,17 @@
         "Abonnement"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Decryptie"
+      ],
+      "Decryption, verification": [
+        "Decryptie, verificatie"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Encryptie, decryptie, ondertekening, verificatie"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Genereer sleutel"
@@ -10341,8 +10369,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Actief"
+      "Compatibility": [
+        "Compatibiliteit"
       ],
       "Compromised": [
         "Uitgelekt"
@@ -10757,11 +10785,11 @@
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
-      "Allowed Domain": [
-        "Toegestaan domein"
-      ],
       "Allowed domain": [
         "Domein toegestaan"
+      ],
+      "Allowed Domain": [
+        "Toegestaan domein"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -10772,11 +10800,11 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "And": [
-        "En"
-      ],
       "AND": [
         "EN"
+      ],
+      "And": [
+        "En"
       ],
       "and": [
         "en"
@@ -11204,11 +11232,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Als"
-      ],
       "IF": [
         "ALS"
+      ],
+      "If": [
+        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -11411,14 +11439,14 @@
       "Optional": [
         "Optioneel"
       ],
+      "OR": [
+        "OF"
+      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
-      ],
-      "OR": [
-        "OF"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -12027,6 +12055,9 @@
       "How to unlock data": [
         "Hoe gegevens ontgrendelen"
       ],
+      "if your data is leaked": [
+        "als uw gegevens zijn gelekt"
+      ],
       "Import/export": [
         "Importeren/exporteren"
       ],
@@ -12048,11 +12079,11 @@
       "perform a password reset from your active session": [
         "mogelijk een wachtwoord reset vanuit uw actieve sessie uitvoeren"
       ],
-      "Privacy policy": [
-        "Privacybeleid"
-      ],
       "privacy policy": [
         "privacybeleid"
+      ],
+      "Privacy policy": [
+        "Privacybeleid"
       ],
       "Reactivate now": [
         "Nu heractiveren"
@@ -12068,9 +12099,6 @@
       ],
       "Sign in": [
         "Inloggen"
-      ],
-      "stay safer online": [
-        "blijf veilig online"
       ],
       "switch account": [
         "account wisselen"
@@ -13423,14 +13451,6 @@
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -13449,6 +13469,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -14086,17 +14114,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10e dag van de maand"
@@ -14325,6 +14342,17 @@
       ],
       "Trash": [
         "Prullenbak"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
       ]
     },
     "Option delay send seconds": {
@@ -18383,11 +18411,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -18612,9 +18640,6 @@
       ],
       "Description": [
         "Beschrijving"
-      ],
-      "Details": [
-        "Details"
       ],
       "Device": [
         "Apparaat"
@@ -18941,6 +18966,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Verbeter uw privacy met meer adressen"
+      ],
+      "Information exposed in breach": [
+        "Informatie die is blootgesteld bij datalek"
       ],
       "Integrations": [
         "Integraties"
@@ -19609,14 +19637,20 @@
       "Actions": [
         "Acties"
       ],
+      "Creation date": [
+        "Aanmaakdatum"
+      ],
       "Fingerprint": [
         "Vingerafdruk"
       ],
-      "Key type": [
-        "Sleuteltype"
+      "Function": [
+        "Functie"
       ],
       "Status": [
         "Status"
+      ],
+      "Type": [
+        "Type"
       ]
     },
     "Title header for members table": {
@@ -19663,9 +19697,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME }-gebruikers zullen deze sleutel standaard gebruiken voor het verzenden"
-      ],
       "Account is disconnected": [
         "Account is verbroken"
       ],
@@ -19756,6 +19787,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Berichten in de map Verzonden of Concepten blijven in die map verschijnen, zelfs als u ze naar een andere map verplaatst."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Verwijder metadata van afbeeldingen om uw privacy te beschermen"
       ],
@@ -19828,6 +19862,12 @@
       "This feature is only available on Beta": [
         "Deze functionaliteit is alleen beschikbaar in Bèta"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Dit is de standaard sleutel die door andere ${ MAIL_APP_NAME }-gebruikers op oudere mobiele apps wordt gebruikt om gegevens te versleutelen die ze naar u verzenden"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Dit is de standaard sleutel die door andere ${ MAIL_APP_NAME } gebruikers wordt gebruikt om gegevens te versleutelen die ze naar u verzenden."
+      ],
       "This key cannot be used for encryption": [
         "Deze sleutel kan niet worden gebruikt voor versleuteling"
       ],
@@ -19839,6 +19879,9 @@
       ],
       "This key is used for email forwarding": [
         "Deze sleutel wordt gebruikt voor e-mail doorsturen"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Gebruik de standaard schuifbalken van uw browser. Deze zijn meestal groter en gemakkelijker te gebruiken"
@@ -19869,9 +19912,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Wanneer u een e-mail verplaatst naar spam, zult u automatisch afgemeld worden van de verzender zijn mailinglijst."
-      ],
-      "You have locally decrypted this key": [
-        "U heeft deze sleutel lokaal ontsleuteld"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Uw ${ MAIL_APP_NAME }-inbox zit bijna vol"

@@ -4960,6 +4960,17 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -4978,17 +4989,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -6523,9 +6523,6 @@
       ],
       "Deleting contacts": [
         "Tukksa n yinermisen"
-      ],
-      "Details": [
-        "Ifatusen"
       ],
       "Downgrade account": [
         "Sider aswir n umiḍan"

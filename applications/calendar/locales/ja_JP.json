@@ -4871,9 +4871,6 @@
       "Large imports can take several days.": [
         "膨大なインポートには数日かかる場合があります。"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink } の使い方を学ぶ"
-      ],
       "Learn more": [
         "詳細"
       ],
@@ -6291,9 +6288,6 @@
       "Starred": [
         "スター付き"
       ],
-      "stay safer online": [
-        "オンラインでの安全性を高める"
-      ],
       "Trash": [
         "ごみ箱"
       ],
@@ -6674,6 +6668,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -6695,26 +6709,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -9903,9 +9897,6 @@
       ],
       "Desktop": [
         "デスクトップ"
-      ],
-      "Details": [
-        "詳細"
       ],
       "Does not repeat": [
         "繰り返さない"

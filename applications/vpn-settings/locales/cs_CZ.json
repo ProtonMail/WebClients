@@ -520,11 +520,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -1526,6 +1526,14 @@
     "Confirmation title": {
       "Delete payment method": [
         "Smazat platební metodu"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "Vybráno: ${ selectedCitiesCount }",
+        "Vybráno: ${ selectedCitiesCount }",
+        "Vybráno: ${ selectedCitiesCount }",
+        "Vybráno: ${ selectedCitiesCount }"
       ]
     },
     "Country name": {
@@ -3878,6 +3886,12 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů mají aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -5534,11 +5548,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -6106,10 +6120,10 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6237,6 +6251,9 @@
       ],
       "Could you please specify?": [
         "Můžete to prosím upřesnit?"
+      ],
+      "Countries": [
+        "Země"
       ],
       "Country": [
         "Země"
@@ -7071,29 +7088,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -7118,6 +7112,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
       ]
     },
     "new_plans: feature": {
@@ -8368,17 +8385,6 @@
         "Vítejte v ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8457,6 +8463,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Organization capacity error": {
@@ -11257,10 +11274,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [

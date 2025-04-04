@@ -4931,11 +4931,11 @@
       "Last week": [
         "La semaine dernière"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Découvrez comment ${ staySaferOnlineLink }."
-      ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Apprenez ce qu'il faut faire ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
@@ -6741,6 +6741,9 @@
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
       ],
+      "if your data is leaked": [
+        "si vos données sont divulguées"
+      ],
       "Inbox": [
         "Boite de réception"
       ],
@@ -6782,9 +6785,6 @@
       ],
       "Starred": [
         "Favoris"
-      ],
-      "stay safer online": [
-        "améliorer votre sécurité en ligne"
       ],
       "Trash": [
         "Corbeille"
@@ -7219,29 +7219,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Supprimer le compte"
-      ],
-      "Downgrade account": [
-        "Passer à un abonnement inférieur"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtenir gratuitement ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "Obtenir ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conserver ${ plan }"
-      ],
-      "Keep account": [
-        "Conserver le compte"
-      ],
-      "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
@@ -7263,6 +7240,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Passer à ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Supprimer le compte"
+      ],
+      "Downgrade account": [
+        "Passer à un abonnement inférieur"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtenir gratuitement ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Conserver ${ plan }"
+      ],
+      "Keep account": [
+        "Conserver le compte"
+      ],
+      "Switch plan": [
+        "Changer d'abonnement"
       ]
     },
     "new_plans: feature": {
@@ -10641,9 +10641,6 @@
       "Desktop": [
         "Bureau"
       ],
-      "Details": [
-        "Informations"
-      ],
       "Discard": [
         "Abandonner"
       ],
@@ -10783,6 +10780,9 @@
       ],
       "Import groups": [
         "Importer des groupes"
+      ],
+      "Information exposed in breach": [
+        "Informations divulguées lors de la fuite de données"
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
@@ -11191,6 +11191,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Le message et le nom de fichier sont stockés avec un chiffrement zéro accès lorsqu'ils sont inclus dans l'e-mail."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
       ],
@@ -11214,6 +11217,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."

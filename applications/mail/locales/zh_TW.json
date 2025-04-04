@@ -1095,11 +1095,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select all": [
-        "全選"
-      ],
       "Select All": [
         "選擇全部"
+      ],
+      "Select all": [
+        "全選"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1292,9 +1292,6 @@
       ],
       "Trust": [
         "信任"
-      ],
-      "Trust key": [
-        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -6521,7 +6518,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
@@ -6570,9 +6567,6 @@
       ],
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "了解如何 ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -8048,10 +8042,10 @@
       "Always move sender's emails": [
         "總是移動寄件者的電子郵件"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -8279,10 +8273,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
       "Import all messages": [
@@ -8393,13 +8387,13 @@
       "Optional": [
         "自由列席"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Original link": [
@@ -8791,9 +8785,6 @@
       ],
       "Starred": [
         "已加星號"
-      ],
-      "stay safer online": [
-        "保持在線安全"
       ],
       "Terms": [
         "條款"
@@ -9192,29 +9183,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
@@ -9236,6 +9204,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
       ]
     },
     "new_plans: feature": {
@@ -12785,9 +12776,6 @@
       ],
       "Deleting contacts": [
         "正在刪除聯絡人"
-      ],
-      "Details": [
-        "詳細資訊"
       ],
       "Discover your subscription benefits": [
         "探索您訂閱的各項福利"

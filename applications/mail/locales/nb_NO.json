@@ -1117,10 +1117,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -1317,10 +1317,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -6749,7 +6745,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -6802,14 +6799,14 @@
       "Large imports can take several days.": [
         "Store importer kan ta flere dager."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lær hvordan du ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Lær mer"
       ],
       "Learn more about the writing assistant": [
         "Lær mer om skriveassistenten"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Finn ut hva du kan gjøre ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Venstre til høyre"
@@ -8393,11 +8390,11 @@
       "Always move sender's emails": [
         "Alltid flytt avsenderens e-poster"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -8627,11 +8624,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -8744,14 +8741,14 @@
       "Optional": [
         "Valgfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Opprinnelig kobling"
@@ -9077,6 +9074,9 @@
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
       ],
+      "if your data is leaked": [
+        "hvis dataene dine er lekket"
+      ],
       "Inbox": [
         "Innboks"
       ],
@@ -9151,9 +9151,6 @@
       ],
       "Starred": [
         "Stjernemerket"
-      ],
-      "stay safer online": [
-        "vær sikrere på nettet"
       ],
       "Terms": [
         "Vilkår"
@@ -9563,29 +9560,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -9607,6 +9581,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -13378,9 +13375,6 @@
       "Desktop": [
         "Skrivebord"
       ],
-      "Details": [
-        "Detaljer"
-      ],
       "Discover your subscription benefits": [
         "Oppdag abonnementsfordelene dine"
       ],
@@ -13525,6 +13519,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Øk personvernet ditt med flere adresser"
+      ],
+      "Information exposed in breach": [
+        "Informasjon avslørt i brudd"
       ],
       "Insert contacts": [
         "Sett inn kontakter"
@@ -14033,6 +14030,9 @@
       "Load image": [
         "Last inn bilde"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."
       ],
@@ -14065,6 +14065,9 @@
       ],
       "This feature is only available for paid users": [
         "Denne funksjonen er bare tilgjengelig for betalende brukere."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Med mindre de blir dechiffrert, forblir krypterte passord sikre selv om de blir eksponert."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."

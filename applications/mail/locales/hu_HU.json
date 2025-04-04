@@ -1048,10 +1048,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
-      "Select all": [
+      "Select All": [
         "Összes kijelölése"
       ],
-      "Select All": [
+      "Select all": [
         "Összes kijelölése"
       ],
       "Select all messages": [
@@ -1221,10 +1221,6 @@
       ],
       "Trust": [
         "Megbízható"
-      ],
-      "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1433,6 +1429,15 @@
       "${ ips } server": [
         "${ ips } szerver",
         "${ ips } szerver"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } / dedikált szerver"
+      ],
+      "${ price } per domain": [
+        "${ price } / domain"
+      ],
+      "${ price } per user": [
+        "${ price } felhasználónként"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } írási segéd licenc",
@@ -6217,6 +6222,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -6254,9 +6260,6 @@
       ],
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Tudja meg hogyan kell ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "További információk"
@@ -7700,11 +7703,11 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze mappába"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -7919,11 +7922,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -8030,14 +8033,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Original link": [
         "Eredeti hivatkozás"
@@ -8413,9 +8416,6 @@
       ],
       "Starred": [
         "Csillagozott"
-      ],
-      "stay safer online": [
-        "legyen biztonságosabb online"
       ],
       "Terms": [
         "Feltételek"
@@ -8801,6 +8801,20 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -8822,20 +8836,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } beszerzése"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11798,9 +11798,6 @@
       ],
       "Deleting contacts": [
         "Névjegyek törlése"
-      ],
-      "Details": [
-        "Részletek"
       ],
       "Distraction-free emailing": [
         "Figyelemelterelés nélküli e-mail"

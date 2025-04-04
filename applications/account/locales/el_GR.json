@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "Select file": [
-        "Επιλέξτε αρχείο"
-      ],
       "select file": [
         "επιλέξτε αρχείο"
+      ],
+      "Select file": [
+        "Επιλέξτε αρχείο"
       ],
       "Select files": [
         "Επιλέξτε αρχεία"
@@ -7000,6 +7000,14 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Εάν ενεργοποιηθεί ξανά, το κλειδί θα χρησιμοποιηθεί για την αποκρυπτογράφηση"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Εάν ενεργοποιηθεί ξανά, το κλειδί θα χρησιμοποιηθεί για την αποκρυπτογράφηση και την επαλήθευση"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } χρήστης διαθέτει προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές",
@@ -7741,6 +7749,9 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
+      "Data recoverable on this device": [
+        "Δεδομένα ανακτήσιμα σε αυτήν τη συσκευή"
+      ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
       ],
@@ -8411,9 +8422,6 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Μάθετε πώς μπορείτε να συνδεθείτε στο ${ VPN_APP_NAME } με VPN εφαρμογές τρίτων."
       ],
@@ -8428,6 +8436,9 @@
       ],
       "Learn more about single sign-on": [
         "Μάθετε περισσότερα σχετικά με την ενιαία πρόσβαση"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Μάθετε τι να κάνετε ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
@@ -9491,6 +9502,9 @@
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
       ],
+      "trusted device": [
+        "αξιόπιστη συσκευή"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
       ],
@@ -9605,11 +9619,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -9724,6 +9738,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Αποθηκεύουμε με ασφάλεια πληροφορίες ανάκτησης στην αξιόπιστη συσκευή σας για να αποτρέψουμε την απώλεια των δεδομένων σας"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Αποθηκεύσαμε ένα αρχείο αντίγραφου ασφαλείας σε αυτό το πρόγραμμα περιήγησης, επειδή επιτρέψατε την ανάκτηση δεδομένων στη συσκευή ${ deviceLink }. Εάν το αρχείο αντίγραφου ασφαλείας είναι έγκυρο, θα αποκτήσετε αμέσως πλήρη ή μερική πρόσβαση στα κρυπτογραφημένα δεδομένα σας."
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
@@ -10314,6 +10331,17 @@
         "Συνδρομή"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Αποκρυπτογράφηση"
+      ],
+      "Decryption, verification": [
+        "Αποκρυπτογράφηση, επαλήθευση"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Κρυπτογράφηση, αποκρυπτογράφηση, υπογραφή, επαλήθευση"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Δημιουργία κλειδιού"
@@ -10341,8 +10369,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Ενεργό"
+      "Compatibility": [
+        "Συμβατότητα"
       ],
       "Compromised": [
         "Εκτεθειμένο"
@@ -10757,11 +10785,11 @@
       "Allow sharing outside the organization": [
         "Να επιτρέπεται η κοινή χρήση εκτός του οργανισμού"
       ],
-      "Allowed Domain": [
-        "Επιτρεπόμενος Τομέας"
-      ],
       "Allowed domain": [
         "Επιτρεπόμενος τομέας"
+      ],
+      "Allowed Domain": [
+        "Επιτρεπόμενος Τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -10772,11 +10800,11 @@
       "Amount due": [
         "Οφειλόμενο ποσό"
       ],
-      "And": [
-        "Και"
-      ],
       "AND": [
         "ΚΑΙ"
+      ],
+      "And": [
+        "Και"
       ],
       "and": [
         "και"
@@ -11204,11 +11232,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Αν"
-      ],
       "IF": [
         "ΑΝ"
+      ],
+      "If": [
+        "Αν"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -11411,14 +11439,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
+      "OR": [
+        "'Η"
+      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
-      ],
-      "OR": [
-        "'Η"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -12027,6 +12055,9 @@
       "How to unlock data": [
         "Πώς να ξεκλειδώσετε τα δεδομένα"
       ],
+      "if your data is leaked": [
+        "εάν τα δεδομένα σας υποστούν διαρρεύσει"
+      ],
       "Import/export": [
         "Εισαγωγή/εξαγωγή"
       ],
@@ -12048,11 +12079,11 @@
       "perform a password reset from your active session": [
         "εκτελέστε επαναφορά κωδικού πρόσβασης από την ενεργή περίοδο λειτουργίας σας"
       ],
-      "Privacy policy": [
-        "Πολιτική απορρήτου"
-      ],
       "privacy policy": [
         "πολιτική απορρήτου"
+      ],
+      "Privacy policy": [
+        "Πολιτική απορρήτου"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -12068,9 +12099,6 @@
       ],
       "Sign in": [
         "Είσοδος"
-      ],
-      "stay safer online": [
-        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ],
       "switch account": [
         "εναλλαγή λογαριασμού"
@@ -13423,14 +13451,6 @@
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -13449,6 +13469,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium δυνατότητες με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -14086,17 +14114,6 @@
         "Υπολογιστής"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10η του μήνα"
@@ -14325,6 +14342,17 @@
       ],
       "Trash": [
         "Διαγραμμένα"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
       ]
     },
     "Option delay send seconds": {
@@ -18380,10 +18408,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -18609,9 +18637,6 @@
       ],
       "Description": [
         "Περιγραφή"
-      ],
-      "Details": [
-        "Λεπτομέρειες"
       ],
       "Device": [
         "Συσκευή"
@@ -18938,6 +18963,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Αυξήστε το απόρρητό σας με περισσότερες διευθύνσεις"
+      ],
+      "Information exposed in breach": [
+        "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
       "Integrations": [
         "Ενσωματώσεις"
@@ -19606,14 +19634,20 @@
       "Actions": [
         "Ενέργειες"
       ],
+      "Creation date": [
+        "Ημερομηνία δημιουργίας"
+      ],
       "Fingerprint": [
         "Δακτυλικό αποτύπωμα"
       ],
-      "Key type": [
-        "Τύπος κλειδιού"
+      "Function": [
+        "Λειτουργία"
       ],
       "Status": [
         "Κατάσταση"
+      ],
+      "Type": [
+        "Τύπος"
       ]
     },
     "Title header for members table": {
@@ -19660,9 +19694,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Οι χρήστες ${ MAIL_APP_NAME } θα χρησιμοποιούν αυτό το κλειδί για αποστολή από προεπιλογή"
-      ],
       "Account is disconnected": [
         "Ο λογαριασμός είναι αποσυνδεδεμένος"
       ],
@@ -19753,6 +19784,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Καταργήστε τα μεταδεδομένα από τις εικόνες για να προστατεύσετε την ιδιωτικότητά σας."
       ],
@@ -19825,6 +19859,12 @@
       "This feature is only available on Beta": [
         "Αυτή η δυνατότητα είναι διαθέσιμη μόνο στην έκδοση Beta"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Αυτό είναι το προεπιλεγμένο κλειδί που χρησιμοποιείται από άλλους ${ MAIL_APP_NAME } χρήστες σε παλαιότερες εφαρμογές για κινητά για την κρυπτογράφηση δεδομένων που σας στέλνουν"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Αυτό είναι το προεπιλεγμένο κλειδί που χρησιμοποιείται από άλλους ${ MAIL_APP_NAME } χρήστες για την κρυπτογράφηση δεδομένων που σας στέλνουν"
+      ],
       "This key cannot be used for encryption": [
         "Αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
       ],
@@ -19836,6 +19876,9 @@
       ],
       "This key is used for email forwarding": [
         "Αυτό το κλειδί χρησιμοποιείται για προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Χρησιμοποιήστε τις προεπιλεγμένες γραμμές κύλισης του προγράμματος περιήγησής σας. Αυτές είναι συνήθως μεγαλύτερες και ευκολότερες στη χρήση"
@@ -19866,9 +19909,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Όταν μετακινείτε ένα μήνυμα στα ανεπιθύμητα, θα διαγράφεστε αυτόματα από τις λίστες αλληλογραφίας του αποστολέα."
-      ],
-      "You have locally decrypted this key": [
-        "Έχετε αποκρυπτογραφήσει τοπικά αυτό το κλειδί"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Η θυρίδα σας ${ MAIL_APP_NAME } είναι σχεδόν γεμάτη"

@@ -4812,9 +4812,6 @@
       "Large imports can take several days.": [
         "Uvažanje večjega števila sporočil lahko traja tudi več dni."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Naučite se ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Več o tem"
       ],
@@ -6071,9 +6068,6 @@
       "Starred": [
         "Z zvezdico"
       ],
-      "stay safer online": [
-        "izboljšajte svojo spletno varnost"
-      ],
       "Trash": [
         "Smetnjak"
       ],
@@ -6475,6 +6469,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6496,23 +6507,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -9568,9 +9562,6 @@
       ],
       "Deleting contacts": [
         "Brisanje stikov"
-      ],
-      "Details": [
-        "Podrobnosti"
       ],
       "Downgrade account": [
         "Zmanjšaj račun"

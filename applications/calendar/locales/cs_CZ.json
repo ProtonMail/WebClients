@@ -5096,11 +5096,11 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zjistěte, jak ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zjistěte, co dělat, ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
@@ -6153,6 +6153,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Enable desktop notifications": [
+        "Povolit upozornění na plochu"
+      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -6272,6 +6275,9 @@
       ],
       "Notifications": [
         "Upozornění"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Upozornění jsou deaktivována, chcete-li je povolit, změňte nastavení prohlížeče."
       ],
       "On": [
         "Zap."
@@ -6519,6 +6525,9 @@
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
       ],
+      "if your data is leaked": [
+        "když dojde k úniku vašich dat"
+      ],
       "Inbox": [
         "Doručená pošta"
       ],
@@ -6557,9 +6566,6 @@
       ],
       "Starred": [
         "S hvězdičkou"
-      ],
-      "stay safer online": [
-        "zůstaňte v bezpečí online"
       ],
       "Trash": [
         "Koš"
@@ -6965,6 +6971,26 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -6986,26 +7012,6 @@
       ],
       "Switch plan": [
         "Změnit tarif"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10507,9 +10513,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Podrobnosti"
-      ],
       "Does not repeat": [
         "Neopakovat"
       ],
@@ -10638,6 +10641,9 @@
       ],
       "Import groups": [
         "Importovat skupiny"
+      ],
+      "Information exposed in breach": [
+        "Informace odhalené při úniku informací"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -10967,6 +10973,9 @@
       "Load image": [
         "Načíst obrázek"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
@@ -10987,6 +10996,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus předplatného začíná ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"

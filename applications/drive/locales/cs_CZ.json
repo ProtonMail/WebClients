@@ -5091,11 +5091,11 @@
       "Last week": [
         "Minulý týden"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zjistěte, jak ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zjistěte, co dělat, ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
@@ -5543,6 +5543,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
+      ],
+      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Některé fotky v tomto albu se nemusí uložit na časovou osu. Smazáním tohoto alba budou tyto fotky trvale smazány."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Některé webové stránky a streamovací služby blokují obsah podle regionu. VPN umožňuje tato omezení obejít a volně přistupovat k internetu."
@@ -6928,6 +6931,9 @@
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
       ],
+      "if your data is leaked": [
+        "když dojde k úniku vašich dat"
+      ],
       "Inbox": [
         "Doručená pošta"
       ],
@@ -6969,9 +6975,6 @@
       ],
       "Starred": [
         "S hvězdičkou"
-      ],
-      "stay safer online": [
-        "zůstaňte v bezpečí online"
       ],
       "Trash": [
         "Koš"
@@ -7359,29 +7362,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -7403,6 +7383,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
       ]
     },
     "new_plans: feature": {
@@ -8402,11 +8405,23 @@
         "${ nbFailures } fotek se nepodařilo přidat do \"${ albumName }\"",
         "${ nbFailures } fotek se nepodařilo přidat do \"${ albumName }\""
       ],
+      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
+        "${ nbFailures } fotku se nepodařilo odebrat z ${ albumLink.name }",
+        "${ nbFailures } fotky se nepodařilo odebrat z ${ albumLink.name }",
+        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }",
+        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }"
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "${ nbSuccesses } fotka přidána do \"${ albumName }\"",
         "${ nbSuccesses } fotky přidány do \"${ albumName }\"",
         "${ nbSuccesses } fotek přidáno do \"${ albumName }\"",
         "${ nbSuccesses } fotek přidáno do \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
+        "${ nbSuccesses } fotka odebrána z ${ albumLink.name }",
+        "${ nbSuccesses } fotky odebrány z ${ albumLink.name }",
+        "${ nbSuccesses } fotek odebráno z ${ albumLink.name }",
+        "${ nbSuccesses } fotek odebráno z ${ albumLink.name }"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka smazána",
@@ -10977,9 +10992,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Podrobnosti"
-      ],
       "Discard": [
         "Zahodit"
       ],
@@ -11123,6 +11135,9 @@
       ],
       "Import groups": [
         "Importovat skupiny"
+      ],
+      "Information exposed in breach": [
+        "Informace odhalené při úniku informací"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -11533,6 +11548,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Zpráva a název souboru jsou uloženy s šifrováním s nulovým přístupem, pokud jsou součástí e-mailu"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
@@ -11556,6 +11574,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus předplatného začíná ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
