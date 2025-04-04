@@ -20,6 +20,7 @@ import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/ca
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
@@ -37,7 +38,7 @@ export type HydrationResult = { fromCache: boolean; version?: string };
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
-    { getCache, getAuthStore, getSettings, getConfig, onBeforeHydrate }: RootSagaOptions
+    { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate }: RootSagaOptions
 ): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
@@ -66,6 +67,17 @@ export function* hydrate(
             userState.plan.Type === PlanType.BUSINESS
                 ? (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
                 : null;
+
+        /** Only web & desktop use second password, not extension */
+        if (!EXTENSION_BUILD) {
+            const twoPasswordMode = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+
+            if (twoPasswordMode !== authStore.getTwoPasswordMode()) {
+                authStore.setTwoPasswordMode(twoPasswordMode);
+                const auth = getAuthService();
+                yield auth.persistSession();
+            }
+        }
 
         /** Note: Settings may have been modified offline, thus they might not align
          * with the cached state settings. Since caching requests cannot be triggered

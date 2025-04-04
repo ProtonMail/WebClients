@@ -18,10 +18,9 @@ import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectLockTTL, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
+import { selectHasTwoPasswordMode, selectLockMode, selectLockTTL, selectPassPlan } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 type LockState = {
@@ -72,7 +71,7 @@ export const useLockSetup = (): LockSetup => {
     const currentLockMode = useSelector(selectLockMode);
     const lockTTL = useSelector(selectLockTTL);
 
-    const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
+    const hasTwoPasswordMode = useSelector(selectHasTwoPasswordMode);
     const plan = useSelector(selectPassPlan);
     const isFreePlan = !isPaidPlan(plan);
 
@@ -136,6 +135,8 @@ export const useLockSetup = (): LockSetup => {
                                             .t`Please confirm your extra password in order to auto-lock with biometrics.`,
                                         sso: c('Info')
                                             .t`Please confirm your backup password in order to auto-lock with biometrics.`,
+                                        twoPwd: c('Info')
+                                            .t`Please confirm your second password in order to auto-lock with biometrics.`,
                                         default: c('Info')
                                             .t`Please confirm your password in order to auto-lock with biometrics.`,
                                     });
@@ -145,6 +146,8 @@ export const useLockSetup = (): LockSetup => {
                                             .t`Please confirm your extra password in order to unregister your current lock.`,
                                         sso: c('Info')
                                             .t`Please confirm your backup password in order to unregister your current lock.`,
+                                        twoPwd: c('Info')
+                                            .t`Please confirm your second password in order to unregister your current lock.`,
                                         default: c('Info')
                                             .t`Please confirm your password in order to unregister your current lock.`,
                                     });
@@ -195,6 +198,8 @@ export const useLockSetup = (): LockSetup => {
                         extra: c('Info')
                             .t`Please confirm your extra password in order to auto-lock with your extra password.`,
                         sso: c('Info').t`Please confirm your backup password in order to auto-lock with your password.`,
+                        twoPwd: c('Info')
+                            .t`Please confirm your second password in order to auto-lock with your password.`,
                         default: c('Info').t`Please confirm your password in order to auto-lock with your password.`,
                     }),
                 });
@@ -216,6 +221,7 @@ export const useLockSetup = (): LockSetup => {
                     message: passwordTypeSwitch({
                         extra: c('Info').t`Please confirm your extra password in order to auto-lock with biometrics.`,
                         sso: c('Info').t`Please confirm your backup password in order to auto-lock with biometrics.`,
+                        twoPwd: c('Info').t`Please confirm your second password in order to auto-lock with biometrics.`,
                         default: c('Info').t`Please confirm your password in order to auto-lock with biometrics.`,
                     }),
                 });
@@ -243,6 +249,7 @@ export const useLockSetup = (): LockSetup => {
                     message: passwordTypeSwitch({
                         extra: c('Info').t`Please confirm your extra password in order to update the auto-lock time.`,
                         sso: c('Info').t`Please confirm your backup password in order to update the auto-lock time.`,
+                        twoPwd: c('Info').t`Please confirm your second password in order to update the auto-lock time.`,
                         default: c('Info').t`Please confirm your password in order to update the auto-lock time.`,
                     }),
                 });
@@ -292,11 +299,9 @@ export const useLockSetup = (): LockSetup => {
 
     const password = useMemo(
         () => ({
-            enabled:
-                !EXTENSION_BUILD &&
-                (pwdMode !== SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE || (authStore?.hasOfflinePassword() ?? false)),
+            enabled: !EXTENSION_BUILD && (!hasTwoPasswordMode || (authStore?.hasOfflinePassword() ?? false)),
         }),
-        [pwdMode]
+        [hasTwoPasswordMode]
     );
 
     return {
