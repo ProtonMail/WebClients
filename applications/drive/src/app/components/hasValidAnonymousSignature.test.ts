@@ -23,7 +23,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(true);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true, haveParentAccess: true })).toBe(true);
     });
 
     it('should return false when thumbnail is signed', () => {
@@ -34,7 +34,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true, haveParentAccess: true })).toBe(false);
         expect(console.warn).toHaveBeenCalledWith(
             'thumbnail signature should not be signed in case of anonymous upload'
         );
@@ -48,7 +48,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true, haveParentAccess: true })).toBe(false);
         expect(console.warn).toHaveBeenCalledWith('blocks signature should not be signed in case of anonymous upload');
     });
 
@@ -60,7 +60,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true, haveParentAccess: true })).toBe(false);
     });
 
     it('should return false when non-thumbnail/blocks signatures are not signed', () => {
@@ -71,19 +71,42 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true, haveParentAccess: true })).toBe(false);
     });
 
     it('should return true for Proton document without signature issues', () => {
-        expect(hasValidAnonymousSignature(undefined, { mimeType: PROTON_DOC_MIMETYPE, isFile: true })).toBe(true);
+        expect(
+            hasValidAnonymousSignature(undefined, {
+                mimeType: PROTON_DOC_MIMETYPE,
+                isFile: true,
+                haveParentAccess: true,
+            })
+        ).toBe(true);
     });
 
     it('should return true for non-file without signature issues', () => {
-        expect(hasValidAnonymousSignature(undefined, { isFile: false })).toBe(true);
+        expect(hasValidAnonymousSignature(undefined, { isFile: false, haveParentAccess: true })).toBe(true);
     });
 
     it('should return false for regular file without signature issues', () => {
-        expect(hasValidAnonymousSignature(undefined, { mimeType: SupportedMimeTypes.jpg, isFile: true })).toBe(false);
+        expect(
+            hasValidAnonymousSignature(undefined, {
+                mimeType: SupportedMimeTypes.jpg,
+                isFile: true,
+                haveParentAccess: true,
+            })
+        ).toBe(false);
         expect(console.warn).toHaveBeenCalledWith('Anonymous uploaded files should have thumbnail and blocks unsigned');
+    });
+
+    it('should return true when there are signature issues but no parent access', () => {
+        const signatureIssues: SignatureIssues = {
+            manifest: VERIFICATION_STATUS.SIGNED_AND_INVALID,
+            thumbnail: VERIFICATION_STATUS.SIGNED_AND_VALID,
+            blocks: VERIFICATION_STATUS.SIGNED_AND_VALID,
+            passphrase: VERIFICATION_STATUS.NOT_SIGNED,
+        };
+
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true, haveParentAccess: false })).toBe(true);
     });
 });
