@@ -52,6 +52,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
                 isFile={item.isFile}
                 mimeType={item.mimeType}
                 className="mr-2 shrink-0"
+                haveParentAccess={!!item.parentLinkId}
             />
             <NameCellBase name={item.name} />
         </TableCell>
