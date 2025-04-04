@@ -520,11 +520,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "Select file": [
-        "Επιλέξτε αρχείο"
-      ],
       "select file": [
         "επιλέξτε αρχείο"
+      ],
+      "Select file": [
+        "Επιλέξτε αρχείο"
       ],
       "Send code": [
         "Αποστολή κωδικού"
@@ -4265,6 +4265,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
+      "Data recoverable on this device": [
+        "Δεδομένα ανακτήσιμα σε αυτήν τη συσκευή"
+      ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
       ],
@@ -5352,6 +5355,9 @@
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
       ],
+      "trusted device": [
+        "αξιόπιστη συσκευή"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
       ],
@@ -5421,11 +5427,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -5510,6 +5516,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Αντί για αυτό, συνιστούμε χρήση της φράσης σας ανάκτησης."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Αποθηκεύσαμε ένα αρχείο αντίγραφου ασφαλείας σε αυτό το πρόγραμμα περιήγησης, επειδή επιτρέψατε την ανάκτηση δεδομένων στη συσκευή ${ deviceLink }. Εάν το αρχείο αντίγραφου ασφαλείας είναι έγκυρο, θα αποκτήσετε αμέσως πλήρη ή μερική πρόσβαση στα κρυπτογραφημένα δεδομένα σας."
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
@@ -5967,11 +5976,11 @@
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
-      "Allowed Domain": [
-        "Επιτρεπόμενος Τομέας"
-      ],
       "Allowed domain": [
         "Επιτρεπόμενος τομέας"
+      ],
+      "Allowed Domain": [
+        "Επιτρεπόμενος Τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -6930,29 +6939,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Διαγραφή λογαριασμού"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Απόκτηση ${ BRAND_NAME } δωρεάν"
-      ],
-      "Get ${ planName }": [
-        "Απόκτηση ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Διατήρηση ${ plan }"
-      ],
-      "Keep account": [
-        "Διατήρηση λογαριασμού"
-      ],
-      "Switch plan": [
-        "Αλλαγή προγράμματος"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
@@ -6977,6 +6963,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Διαγραφή λογαριασμού"
+      ],
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Απόκτηση ${ BRAND_NAME } δωρεάν"
+      ],
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Διατήρηση ${ plan }"
+      ],
+      "Keep account": [
+        "Διατήρηση λογαριασμού"
+      ],
+      "Switch plan": [
+        "Αλλαγή προγράμματος"
       ]
     },
     "new_plans: feature": {
@@ -8173,17 +8182,6 @@
         "Καλώς ήρθατε στο ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Διαμορφώσεις χώρας"
@@ -8241,6 +8239,17 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
       ]
     },
     "Organization capacity error": {
@@ -10916,10 +10925,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [

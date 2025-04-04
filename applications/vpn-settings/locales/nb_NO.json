@@ -520,11 +520,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "Select file": [
-        "Velg fil"
-      ],
       "select file": [
         "velg fil"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -5424,11 +5424,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -5970,10 +5970,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6936,29 +6936,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -6983,6 +6960,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -8179,17 +8179,6 @@
         "Velkommen til ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8268,6 +8257,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -10943,10 +10943,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [

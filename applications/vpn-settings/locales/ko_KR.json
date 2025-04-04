@@ -520,11 +520,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Remove": [
         "삭제"
@@ -637,10 +637,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
       "Send code": [
@@ -5362,10 +5362,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -5895,10 +5895,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6857,29 +6857,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "계정 삭제"
-      ],
-      "Downgrade account": [
-        "계정 다운그레이드"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "무료로 ${ BRAND_NAME } 받기"
-      ],
-      "Get ${ planName }": [
-        "${ planName } 받기"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }  유지"
-      ],
-      "Keep account": [
-        "계정 유지"
-      ],
-      "Switch plan": [
-        "플랜 변경"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
@@ -6904,6 +6881,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName }(으)로 업그레이드"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "계정 삭제"
+      ],
+      "Downgrade account": [
+        "계정 다운그레이드"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "무료로 ${ BRAND_NAME } 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }  유지"
+      ],
+      "Keep account": [
+        "계정 유지"
+      ],
+      "Switch plan": [
+        "플랜 변경"
       ]
     },
     "new_plans: feature": {
@@ -8070,17 +8070,6 @@
         "${ appName }에 오신 것을 환영합니다"
       ]
     },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8159,6 +8148,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Organization capacity error": {
@@ -10773,11 +10773,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"

@@ -493,11 +493,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -610,11 +610,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -5177,11 +5177,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -5722,11 +5722,11 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allowed Domain": [
-        "Разрешённый Домен"
-      ],
       "Allowed domain": [
         "Разрешённый домен"
+      ],
+      "Allowed Domain": [
+        "Разрешённый Домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -6681,29 +6681,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Удалить аккаунт"
-      ],
-      "Downgrade account": [
-        "Перейти на более дешевую версию аккаунта"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Получить ${ BRAND_NAME } бесплатно"
-      ],
-      "Get ${ planName }": [
-        "Получить ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Сохранить ${ plan }"
-      ],
-      "Keep account": [
-        "Сохранить аккаунт"
-      ],
-      "Switch plan": [
-        "Сменить тариф"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
@@ -6728,6 +6705,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Улучшить на ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Downgrade account": [
+        "Перейти на более дешевую версию аккаунта"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Получить ${ BRAND_NAME } бесплатно"
+      ],
+      "Get ${ planName }": [
+        "Получить ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Сохранить ${ plan }"
+      ],
+      "Keep account": [
+        "Сохранить аккаунт"
+      ],
+      "Switch plan": [
+        "Сменить тариф"
       ]
     },
     "new_plans: feature": {
@@ -7960,17 +7960,6 @@
         "Добро пожаловать в ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Конфигурации стран"
@@ -8028,6 +8017,17 @@
       ],
       "The whole organization": [
         "Вся организация"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
       ]
     },
     "Organization capacity error": {
@@ -10731,10 +10731,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
