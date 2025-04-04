@@ -166,6 +166,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                             hasValidAnonymousSignature(signatureIssues, {
                                 mimeType: link.mimeType,
                                 isFile: link.isFile,
+                                haveParentAccess: !!link.parentLinkId,
                             }))
                     ) {
                         return;
