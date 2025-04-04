@@ -7957,7 +7957,7 @@ __metadata:
     "@types/react": "npm:^18.3.20"
     "@types/react-dom": "npm:^18.3.6"
     "@types/react-router-dom": "npm:^5.3.3"
-    "@types/webextension-polyfill": "npm:^0.12.3"
+    "@types/webextension-polyfill": "npm:^0.12.1"
     "@zip.js/zip.js": "npm:^2.7.60"
     circular-dependency-plugin: "npm:^5.2.2"
     client-zip: "npm:^2.5.0"
@@ -12593,10 +12593,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webextension-polyfill@npm:^0.12.3":
-  version: 0.12.3
-  resolution: "@types/webextension-polyfill@npm:0.12.3"
-  checksum: 10c0/0f0cea5ab70a3958f7eca61168b8b431288c35ee7e8f052f5b3bf6a6aa101183aa760addd4dcf408027d558731aa8a8f107e47a373bb7c347cb7cba807fe46e6
+"@types/webextension-polyfill@npm:^0.12.1":
+  version: 0.12.1
+  resolution: "@types/webextension-polyfill@npm:0.12.1"
+  checksum: 10c0/d6e6253bbd020dcfa40391112212e3486320760d12c58854d0410140bda7ad0476749b9476e18d6888a1b04092662715b488f470c3aa29b44768990ffaf6d194
   languageName: node
   linkType: hard
 
@@ -36286,7 +36286,7 @@ __metadata:
     "@proton/pass": "workspace:^"
     "@redux-devtools/remote": "npm:^0.9.3"
     "@types/react-helmet": "npm:^6.1.11"
-    "@types/webextension-polyfill": "npm:^0.12.3"
+    "@types/webextension-polyfill": "npm:^0.12.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
