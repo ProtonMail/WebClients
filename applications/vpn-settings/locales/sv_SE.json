@@ -520,11 +520,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "Select file": [
-        "Välj fil"
-      ],
       "select file": [
         "välj fil"
+      ],
+      "Select file": [
+        "Välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -5404,11 +5404,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -5939,10 +5939,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6905,29 +6905,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ta bort konto"
-      ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Skaffa ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behåll ${ plan }"
-      ],
-      "Keep account": [
-        "Behåll konto"
-      ],
-      "Switch plan": [
-        "Byt paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
@@ -6952,6 +6929,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ta bort konto"
+      ],
+      "Downgrade account": [
+        "Nedgradera konto"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Skaffa ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behåll ${ plan }"
+      ],
+      "Keep account": [
+        "Behåll konto"
+      ],
+      "Switch plan": [
+        "Byt paket"
       ]
     },
     "new_plans: feature": {
@@ -8148,17 +8148,6 @@
         "Välkommen till ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8237,6 +8226,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -10896,10 +10896,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [

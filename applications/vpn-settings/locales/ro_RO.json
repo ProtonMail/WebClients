@@ -520,11 +520,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Remove": [
         "Eliminare"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "Select file": [
-        "Selectare fișier"
-      ],
       "select file": [
         "selectați fișierul"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Send code": [
         "Trimitere cod"
@@ -5486,11 +5486,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -6045,10 +6045,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7012,29 +7012,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
@@ -7059,6 +7036,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Trecere la ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ștergere cont"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Păstrare ${ plan }"
+      ],
+      "Keep account": [
+        "Păstrare cont"
+      ],
+      "Switch plan": [
+        "Schimbare plan"
       ]
     },
     "new_plans: feature": {
@@ -8282,17 +8282,6 @@
         "Bun venit la ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8371,6 +8360,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
       ]
     },
     "Organization capacity error": {
@@ -11110,10 +11110,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [

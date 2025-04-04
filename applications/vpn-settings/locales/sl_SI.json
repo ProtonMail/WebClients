@@ -463,11 +463,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Remove": [
         "Odstrani"
@@ -574,11 +574,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "Select file": [
-        "Izberite datoteko"
-      ],
       "select file": [
         "izberite datoteko"
+      ],
+      "Select file": [
+        "Izberite datoteko"
       ],
       "Send code": [
         "Pošlji kodo"
@@ -4620,11 +4620,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -5069,10 +5069,10 @@
       "Allow recovery by phone": [
         "Omogoči obnovitev po telefonu."
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
       "Amount": [
@@ -5927,29 +5927,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Izbriši račun"
-      ],
-      "Downgrade account": [
-        "Zmanjšaj račun"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Pridobite ${ BRAND_NAME } brezplačno"
-      ],
-      "Get ${ planName }": [
-        "Pridobi ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ohrani ${ plan }."
-      ],
-      "Keep account": [
-        "Ohrani račun"
-      ],
-      "Switch plan": [
-        "Zamenjaj paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
@@ -5971,6 +5948,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Nadgradi na ${ planName }."
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Izbriši račun"
+      ],
+      "Downgrade account": [
+        "Zmanjšaj račun"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Pridobite ${ BRAND_NAME } brezplačno"
+      ],
+      "Get ${ planName }": [
+        "Pridobi ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ohrani ${ plan }."
+      ],
+      "Keep account": [
+        "Ohrani račun"
+      ],
+      "Switch plan": [
+        "Zamenjaj paket"
       ]
     },
     "new_plans: feature": {
@@ -9287,10 +9287,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

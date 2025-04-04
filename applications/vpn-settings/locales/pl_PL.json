@@ -520,10 +520,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Remove": [
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "Select file": [
-        "Wybierz plik"
-      ],
       "select file": [
         "wybierz plik"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Send code": [
         "Wyślij kod"
@@ -1526,6 +1526,14 @@
     "Confirmation title": {
       "Delete payment method": [
         "Usuń metodę płatności"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "${ selectedCitiesCount }",
+        "${ selectedCitiesCount }",
+        "${ selectedCitiesCount }",
+        "${ selectedCitiesCount }"
       ]
     },
     "Country name": {
@@ -4007,6 +4015,12 @@
         "${ remainingAddresses.length } adresów więcej",
         "${ remainingAddresses.length } adresów więcej"
       ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length }",
+        "${ selectedEntities.length }",
+        "${ selectedEntities.length }",
+        "${ selectedEntities.length }"
+      ],
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
       ],
@@ -4348,6 +4362,9 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
+      ],
+      "Data recoverable on this device": [
+        "Dane możliwe do odzyskania na tym urządzeniu"
       ],
       "Dedicated servers": [
         "Dedykowane serwery"
@@ -5349,7 +5366,7 @@
         "Tej akcji nie można cofnąć."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Ten proces może chwile potrwać. Nie zamykaj strony lub nie rozłączaj się z Internetem."
+        "Proces może zająć trochę czasu. Nie zamykaj strony lub nie rozłączaj się z Internetem."
       ],
       "This file is too large to preview": [
         "Plik jest zbyt duży do podglądu"
@@ -5462,6 +5479,9 @@
       "Total VPN connections": [
         "Połączenia VPN"
       ],
+      "trusted device": [
+        "zaufane urządzenie"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Wypróbuj ${ productName } bez ryzyka — jeśli zmienisz zdanie, otrzymasz pełny zwrot pieniędzy. Bez zadawania pytań."
       ],
@@ -5531,11 +5551,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -5620,6 +5640,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Zamiast tego zalecamy użycie hasła odzyskiwania."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Zapisaliśmy plik kopii zapasowej w tej przeglądarce, ponieważ zezwoliłeś na odzyskiwanie danych na ${ deviceLink }. Jeśli plik kopii zapasowej jest prawidłowy, odzyskasz pełny lub częściowy dostęp do zaszyfrowanych danych."
       ],
       "We use 3-D Secure to protect your payments": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności"
@@ -6103,10 +6126,10 @@
       "Allow recovery by phone": [
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7068,29 +7091,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Usuń konto"
-      ],
-      "Downgrade account": [
-        "Obniż plan"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Uzyskaj ${ BRAND_NAME } za darmo"
-      ],
-      "Get ${ planName }": [
-        "Wybierz plan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Zachowaj plan ${ plan }"
-      ],
-      "Keep account": [
-        "Zachowaj konto"
-      ],
-      "Switch plan": [
-        "Zmień plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
@@ -7115,6 +7115,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Ulepsz do planu ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Usuń konto"
+      ],
+      "Downgrade account": [
+        "Obniż plan"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Uzyskaj ${ BRAND_NAME } za darmo"
+      ],
+      "Get ${ planName }": [
+        "Wybierz plan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Zachowaj plan ${ plan }"
+      ],
+      "Keep account": [
+        "Zachowaj konto"
+      ],
+      "Switch plan": [
+        "Zmień plan"
       ]
     },
     "new_plans: feature": {
@@ -8365,17 +8388,6 @@
         "Witaj w ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Wszyscy"
-      ],
-      "Group members": [
-        "Użytkownicy grupy"
-      ],
-      "No one": [
-        "Nikt"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Konfiguracje kraju"
@@ -8433,6 +8445,17 @@
       ],
       "The whole organization": [
         "Cała organizacja"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Wszyscy"
+      ],
+      "Group members": [
+        "Użytkownicy grupy"
+      ],
+      "No one": [
+        "Nikt"
       ]
     },
     "Organization capacity error": {
@@ -11233,10 +11256,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
