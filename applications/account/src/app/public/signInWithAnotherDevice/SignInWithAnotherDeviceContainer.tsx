@@ -1,207 +1,229 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/index';
-import { type OnLoginCallback, QRCode, SkeletonLoader } from '@proton/components';
+import SignInWithAnotherDeviceQRCode from '@proton/account/signInWithAnotherDevice/SignInWithAnotherDeviceQRCode';
+import {
+    GiveUpError,
+    type SignInWithAnotherDeviceResult,
+    signInWithAnotherDevicePull,
+} from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
+import { Button, ButtonLike } from '@proton/atoms/index';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { getForks, pullForkSession } from '@proton/shared/lib/api/auth';
+import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useLocalState } from '@proton/components/index';
+import metrics from '@proton/metrics/index';
+import observeApiError from '@proton/metrics/lib/observeApiError';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
-import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
-import { type APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { type APP_NAMES, BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Api } from '@proton/shared/lib/interfaces';
-import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
+import { useFlagsStatus } from '@proton/unleash/index';
+import useFlag from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
+import type { Paths } from '../../content/helper';
+import userExclamation from '../../public/user-exclamation.svg';
+import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';
 import Content from '../Content';
 import Header from '../Header';
 import Layout from '../Layout';
 import Main from '../Main';
-import protonQRLogo from './proton-qr-logo.svg';
-
-export const generateRandomBytes = () => {
-    const length = 32;
-    return crypto.getRandomValues(new Uint8Array(length));
-};
-
-const POLL_INTERVAL = 10_000;
-const QrCode = ({ selector, userCode, api }: { userCode: string; selector: string; api: Api }) => {
-    const base64EncodedRandomBytes = uint8ArrayToBase64String(generateRandomBytes());
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const { UID, AccessToken, RefreshToken, Payload } = await api<PullForkResponse>(pullForkSession(selector));
-
-            // Decrypt payload with base64EncodedRandomBytes
-            // {keyPassword} = resolveForkPasswords
-            // persistSession
-
-            // persist - read from local storage
-
-            // onLogin
-
-            // {
-            //     "Code": 1000,
-            //     "Payload": null,
-            //     "LocalID": 0,
-            //     "ExpiresIn": 86400,
-            //     "TokenType": "Bearer",
-            //     "Scope": "full self organization payments keys parent user loggedin paid nondelinquent mail vpn calendar drive docs pass verified settings wallet neutron lumo",
-            //     "Scopes": [
-            //         "full",
-            //         "self",
-            //         "organization",
-            //         "payments",
-            //         "keys",
-            //         "parent",
-            //         "user",
-            //         "loggedin",
-            //         "paid",
-            //         "nondelinquent",
-            //         "mail",
-            //         "vpn",
-            //         "calendar",
-            //         "drive",
-            //         "docs",
-            //         "pass",
-            //         "verified",
-            //         "settings",
-            //         "wallet",
-            //         "neutron",
-            //         "lumo"
-            //     ],
-            //     "UID": "zjqmhxllrf3eza7fm2qp56lebvlhwavj",
-            //     "UserID": "vh8ln9w_1EtKti5UiWzfCF9fGMFeTIm9jlEfoRK0hdV_7gnPE54tywkK76ETiX5dKMivQP2sz-PdXPOzLjU8Gg==",
-            //     "AccessToken": "attzxgkpzxbusyhhpzvtyn7cebfesh6n",
-            //     "RefreshToken": "tqqlxnrhakngiy6bamhm2zr25tur6xqq"
-            // }
-
-            return { UID };
-        };
-
-        const interval = setInterval(() => {
-            void fetchData()
-                .then(({ UID }) => {
-                    console.log('UID', UID);
-                    // TODO: create session etc
-
-                    // const authApi = getAuthAPI(UID, AccessToken, silentApi);
-                    // await api(
-                    //     withAuthHeaders(
-                    //         UID,
-                    //         newAccessToken,
-                    //         setCookies({
-                    //             Persistent: false,
-                    //             UID,
-                    //             RefreshToken,
-                    //             State: getRandomString(24),
-                    //         })
-                    //     )
-                    // );
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        }, POLL_INTERVAL);
-
-        return () => clearInterval(interval); // Cleanup on unmount
-    }, []);
-
-    const qrCodeData = `${userCode}:${base64EncodedRandomBytes}:web-account`; // TODO: app_name
-
-    return (
-        <>
-            <QRCode
-                className="bg-norm flex w-custom fade-in"
-                style={{ '--w-custom': '9rem' }}
-                value={qrCodeData}
-                fgColor="#15006F"
-                imageSettings={{
-                    src: protonQRLogo,
-                    height: 44,
-                    width: 44,
-                    excavate: false,
-                }}
-            />
-            {/* {qrCodeData} */}
-        </>
-    );
-};
+import { defaultPersistentKey, getContinueToString } from '../helper';
 
 interface Props {
     onLogin: OnLoginCallback;
-    onUsed: () => void;
     productParam: ProductParam;
     toAppName?: string;
     toApp?: APP_NAMES;
-    onPreSubmit?: () => Promise<void>;
-    onPreload?: () => void;
+    onStartAuth: () => Promise<void>;
     api: Api;
-    unauthenticatedApi: UnauthenticatedApi;
+    paths: Paths;
 }
 
-const SignInWithAnotherDeviceContainer = ({
-    api,
-    unauthenticatedApi,
-    onPreload,
-    onPreSubmit,
-    onLogin,
-    onUsed,
-    toApp,
-    productParam,
-}: Props) => {
-    const [forkResponse, setForkResponse] = useState<{ Selector: string; UserCode: string }>();
+type State =
+    | { type: 'init'; qrCode: string }
+    | { type: 'error'; errorMessage: string; error: any }
+    | { type: 'done' }
+    | null;
+
+const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartAuth }: Props) => {
+    const [result, setResult] = useState<State>(null);
+    const qrCodeSignInEnabled = useFlag('QRCodeSignIn');
+    const { flagsReady } = useFlagsStatus();
+    const { APP_NAME } = useConfig();
+    const [persistent] = useLocalState(false, defaultPersistentKey);
+    const getKtActivation = useGetAccountKTActivation();
+    const errorHandler = useErrorHandler();
+
+    const restartRef = useRef<null | (() => Promise<void>)>(null);
 
     useEffect(() => {
-        const run = async () => {
-            const forkResponse = await api<{ Selector: string; UserCode: string }>(getForks());
-            setForkResponse(forkResponse);
+        const abortController = new AbortController();
+
+        const handleSession = async ({
+            session,
+            forkDurationTime,
+        }: Extract<SignInWithAnotherDeviceResult, { type: 'session' }>['payload']) => {
+            metrics.core_edm_pull_total.increment({ status: 'success' });
+            metrics.core_edm_pull_histogram.observe({ Value: Math.round(forkDurationTime / SECOND), Labels: {} });
+            await metrics.processAllRequests().catch(noop);
+            await onLogin({ data: session });
         };
 
-        void run();
+        const initProcess = async () => {
+            await onStartAuth().catch(noop);
+
+            metrics.core_edm_pull_total.increment({ status: 'init' });
+
+            const start = signInWithAnotherDevicePull({
+                abortController,
+                config: {
+                    appName: APP_NAME,
+                    persistent,
+                    ktActivation: await getKtActivation(),
+                },
+                api: getSilentApi(api),
+                onResult: (data) => {
+                    if (data.type === 'init') {
+                        setResult({ type: 'init', qrCode: data.payload.qrCode });
+                    }
+                    if (data.type === 'error') {
+                        const error = data.payload.error;
+                        observeApiError(error, (status) => metrics.core_edm_pull_total.increment({ status }));
+                        errorHandler(error, { notify: false });
+                        setResult({
+                            type: 'error',
+                            errorMessage: getNonEmptyErrorMessage(error),
+                            error,
+                        });
+                    }
+                    if (data.type === 'session') {
+                        setResult({ type: 'done' });
+                        handleSession(data.payload).catch((error) => {
+                            errorHandler(error, { notify: false });
+                            setResult({
+                                type: 'error',
+                                errorMessage: getNonEmptyErrorMessage(error),
+                                error,
+                            });
+                        });
+                    }
+                },
+            });
+
+            restartRef.current = async () => {
+                await onStartAuth().catch(noop);
+                return start();
+            };
+
+            return start();
+        };
+
+        initProcess().catch(noop);
+
+        return () => {
+            restartRef.current = null;
+            abortController.abort();
+        };
     }, []);
 
     const toAppName = getToAppName(toApp);
+
+    if (flagsReady && !qrCodeSignInEnabled) {
+        return <Redirect to={paths.login} />;
+    }
+
+    if (result?.type === 'error') {
+        return (
+            <Layout hasDecoration={true} toApp={toApp}>
+                <Main>
+                    <Content>
+                        <div className="text-center">
+                            <div className="mb-6">
+                                <img src={userExclamation} alt="" />
+                            </div>
+                            <div className="h2 text-bold mb-2">
+                                {(() => {
+                                    if (result.error instanceof GiveUpError) {
+                                        return c('edm').t`QR code expired`;
+                                    }
+                                    return c('Error').t`Something went wrong`;
+                                })()}
+                            </div>
+                            <div className="mb-4 color-weak">
+                                <div>{c('edm').t`We couldn't sign you in`}</div>
+                                <div className="mb-2">{c('edm').t`Please scan a new QR code to try again`}</div>
+                                {(() => {
+                                    if (result.error instanceof GiveUpError) {
+                                        return null;
+                                    }
+                                    if (result.errorMessage) {
+                                        return <div>Error: {result.errorMessage}</div>;
+                                    }
+                                })()}
+                            </div>
+                            <div className="flex flex-column gap-2">
+                                <Button
+                                    size="large"
+                                    onClick={() => {
+                                        setResult(null);
+                                        restartRef.current?.().catch(noop);
+                                    }}
+                                    color="norm"
+                                    fullWidth
+                                >
+                                    {c('edm').t`New QR code`}
+                                </Button>
+                                <ButtonLike size="large" as={Link} to={paths.login} fullWidth>
+                                    {c('Action').t`Sign in with ${BRAND_NAME}`}
+                                </ButtonLike>
+                            </div>
+                        </div>
+                    </Content>
+                </Main>
+            </Layout>
+        );
+    }
 
     return (
         <Layout hasDecoration={true} toApp={toApp}>
             <Main>
                 <Header
-                    title={c('Title').t`Sign in with another device`}
-                    subTitle={toAppName && c('Title').t`to continue to ${toAppName}`}
+                    title={c('edm').t`Sign in with another device`}
+                    subTitle={toAppName ? getContinueToString(toAppName) : ''}
                 />
                 <Content>
                     <div className="ui-standard flex justify-center items-center mb-6">
                         <div className="p-4 bg-norm border border-weak rounded-lg lh100">
-                            {forkResponse ? (
-                                <QrCode api={api} selector={forkResponse.Selector} userCode={forkResponse.UserCode} />
+                            {result?.type === 'init' ? (
+                                <SignInWithAnotherDeviceQRCode data={result.qrCode} />
                             ) : (
-                                <SkeletonLoader width={'9rem'} height={'9rem'} className="bg-primary" />
+                                <SkeletonLoader width="9rem" height="9rem" className="bg-primary" />
                             )}
                         </div>
                     </div>
                     <div className="flex flex-column gap-4">
                         <p className="m-0">
-                            {c('Info')
-                                .t`Scan this QR code in the ${BRAND_NAME} app on your phone to sign in instantly.`}{' '}
-                            <a href={getKnowledgeBaseUrl('/')} target="_blank">
-                                {c('Action').t`Learn more`}
-                            </a>
+                            {c('edm').t`Scan this QR code in the ${BRAND_NAME} app on your phone to sign in instantly.`}
                         </p>
                         <ol className="m-0 pl-4">
-                            <li className="mb-2">{c('Info').t`Open the ${BRAND_NAME} app on your phone`}</li>
+                            <li className="mb-2">{c('edm').t`Open the ${BRAND_NAME} app on your phone`}</li>
                             <li className="mb-2">
                                 {getBoldFormattedText(
-                                    c('Info').t`Tap into **Settings**, then tap **Sign in to another device**`
+                                    c('edm').t`Tap into **Settings**, then tap **Sign in to another device**`
                                 )}
                             </li>
-                            <li className="mb-2">{getBoldFormattedText(c('Info').t`Tap **Scan QR code**`)}</li>
+                            <li className="mb-2">{getBoldFormattedText(c('edm').t`Tap **Scan QR code**`)}</li>
                         </ol>
 
-                        <ButtonLike as={Link} to={SSO_PATHS.LOGIN} color="weak" fullWidth>
+                        <ButtonLike size="large" as={Link} to={paths.login} color="weak" fullWidth>
                             {c('Action').t`Cancel`}
                         </ButtonLike>
                     </div>
@@ -212,24 +234,3 @@ const SignInWithAnotherDeviceContainer = ({
 };
 
 export default SignInWithAnotherDeviceContainer;
-
-/*
-const emulateQrCodeScan = async ({ UserCode }) => {
-    await fetch(`${window.location.origin}/api/auth/sessions/forks`, {
-        headers: {
-            'content-type': 'application/json',
-            'x-pm-appversion': 'web-account@5.0.999.999',
-            'x-pm-uid': JSON.parse(window.localStorage.getItem(`ps-${window.location.pathname.match(/(\d+)/)[1]}`))
-                .UID,
-        },
-        body: JSON.stringify({
-            ChildClientID: 'web-account',
-            Independent: 0,
-            UserCode,
-        }),
-        method: 'POST',
-        credentials: 'include',
-    }).then((x) => x.json());
-};
-await emulateQrCodeScan({UserCode: ''});
-*/
