@@ -38,7 +38,9 @@ const AccountSessionsSwitcher = ({
                     shape="ghost"
                     size="small"
                     type="button"
-                    content={<Icon name="three-dots-vertical" size={4} />}
+                    content={
+                        <Icon name="three-dots-vertical" size={4} alt={c('Action').t`More options for accounts`} />
+                    }
                     icon
                     data-testid="sessions:other-accounts:more"
                     hasCaret={false}
