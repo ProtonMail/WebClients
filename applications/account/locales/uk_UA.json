@@ -1006,11 +1006,11 @@
       "Select country": [
         "Виберіть країну"
       ],
-      "Select file": [
-        "Вибрати файл"
-      ],
       "select file": [
         "виберіть файл"
+      ],
+      "Select file": [
+        "Вибрати файл"
       ],
       "Select files": [
         "Вибрати файли"
@@ -7955,9 +7955,6 @@
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Дізнайтеся, як ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
       ],
@@ -9059,11 +9056,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "username": [
-        "ім'я користувача"
-      ],
       "Username": [
         "Ім’я користувача"
+      ],
+      "username": [
+        "ім'я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -9768,9 +9765,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Активний"
-      ],
       "Compromised": [
         "Скомпрометований"
       ],
@@ -10147,10 +10141,10 @@
       "Allow recovery using a trusted device": [
         "Дозволити відновлення за допомогою довіреного пристрою"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10162,11 +10156,11 @@
       "Amount due": [
         "До сплати"
       ],
-      "And": [
-        "Та"
-      ],
       "AND": [
         "ТА"
+      ],
+      "And": [
+        "Та"
       ],
       "and": [
         "та"
@@ -10576,11 +10570,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Якщо"
-      ],
       "IF": [
         "ЯКЩО"
+      ],
+      "If": [
+        "Якщо"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -10777,14 +10771,14 @@
       "Optional": [
         "Необов'язково"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Organization name": [
         "Назва організації"
@@ -11400,9 +11394,6 @@
       ],
       "Sign in": [
         "Увійти"
-      ],
-      "stay safer online": [
-        "бути в безпеці онлайн"
       ],
       "switch account": [
         "перемкнути обліковий запис"
@@ -12763,14 +12754,6 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -12789,6 +12772,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -13338,17 +13329,6 @@
         "Вітаємо у ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Будь-хто"
-      ],
-      "Group members": [
-        "Учасники групи"
-      ],
-      "No one": [
-        "Ніхто"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10-е число місяця"
@@ -13571,6 +13551,17 @@
       ],
       "Trash": [
         "Смітник"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
+      "Group members": [
+        "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
       ]
     },
     "Option delay send seconds": {
@@ -17559,11 +17550,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-All address": [
-        "Catch-All адреса"
-      ],
       "Catch-all address": [
         "Catch-all адреси"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -17774,9 +17765,6 @@
       ],
       "Description": [
         "Опис"
-      ],
-      "Details": [
-        "Подробиці"
       ],
       "Device": [
         "Пристрій"
@@ -18696,9 +18684,6 @@
       "Fingerprint": [
         "Цифровий відбиток"
       ],
-      "Key type": [
-        "Тип ключа"
-      ],
       "Status": [
         "Стан"
       ]
@@ -18747,9 +18732,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Користувачі ${ MAIL_APP_NAME } типово застосовуватимуть цей ключ для надсилання"
-      ],
       "Account is disconnected": [
         "Обліковий запис від'єднано"
       ],
@@ -18944,9 +18926,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Коли ви переміщуєте електронний лист у спам, ви автоматично будете вилучені зі списків розсилки відправника."
-      ],
-      "You have locally decrypted this key": [
-        "Ви локально розшифрували цей ключ"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Ваша поштова скринька ${ MAIL_APP_NAME } майже заповнена"

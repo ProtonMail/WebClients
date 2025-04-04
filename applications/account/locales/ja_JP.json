@@ -1090,10 +1090,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
       "Select files": [
@@ -8316,9 +8316,6 @@
       "Large imports can take several days.": [
         "膨大なインポートには数日かかる場合があります。"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink } の使い方を学ぶ"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "サードパーティの VPN アプリを使用して、${ VPN_APP_NAME } にサインインする方法を学ぶ"
       ],
@@ -9498,11 +9495,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "username": [
-        "ユーザー名"
-      ],
       "Username": [
         "ユーザーネーム"
+      ],
+      "username": [
+        "ユーザー名"
       ],
       "Users": [
         "ユーザー"
@@ -10220,9 +10217,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "アクティブ"
-      ],
       "Compromised": [
         "侵害された"
       ],
@@ -10632,10 +10626,10 @@
       "Allow sharing outside the organization": [
         "組織外の共有を許可"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10647,11 +10641,11 @@
       "Amount due": [
         "支払い総額"
       ],
-      "And": [
-        "と"
-      ],
       "AND": [
         "かつ"
+      ],
+      "And": [
+        "と"
       ],
       "and": [
         "と"
@@ -11076,10 +11070,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
       "Import all messages": [
@@ -11283,13 +11277,13 @@
       "Optional": [
         "任意"
       ],
+      "OR": [
+        "または"
+      ],
       "or": [
         "または"
       ],
       "Or": [
-        "または"
-      ],
-      "OR": [
         "または"
       ],
       "Organization name": [
@@ -11919,10 +11913,10 @@
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "プライバシーポリシー"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "プライバシーポリシー"
       ],
       "Reactivate now": [
@@ -11939,9 +11933,6 @@
       ],
       "Sign in": [
         "サインイン"
-      ],
-      "stay safer online": [
-        "オンラインでの安全性を高める"
       ],
       "switch account": [
         "アカウントを切り替える"
@@ -13259,14 +13250,6 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -13285,6 +13268,14 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -13915,17 +13906,6 @@
         "デスクトップ"
       ]
     },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "毎月 10 日"
@@ -14154,6 +14134,17 @@
       ],
       "Trash": [
         "ごみ箱"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
       ]
     },
     "Option delay send seconds": {
@@ -18144,10 +18135,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -18371,9 +18362,6 @@
       ],
       "Description": [
         "説明"
-      ],
-      "Details": [
-        "詳細"
       ],
       "Device": [
         "デバイス"
@@ -19368,9 +19356,6 @@
       "Fingerprint": [
         "フィンガープリント"
       ],
-      "Key type": [
-        "鍵の種類"
-      ],
       "Status": [
         "ステータス"
       ]
@@ -19419,9 +19404,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } のユーザーは、既定でこの鍵を使用して送信します"
-      ],
       "Account is disconnected": [
         "アカウントは切断されました"
       ],
@@ -19625,9 +19607,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "メールをスパムに移動すると、送信者のメーリング リストから自動的に登録が解除されます。"
-      ],
-      "You have locally decrypted this key": [
-        "復号された鍵をローカルに所持します。"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "${ MAIL_APP_NAME } 受信トレイはもうすぐでいっぱいになります"

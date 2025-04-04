@@ -1090,10 +1090,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
       "Select files": [
@@ -6952,6 +6952,14 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "如果重新激活，该密钥将用于解密"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "如果重新激活，此密钥将用于解密和验证"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
@@ -7658,6 +7666,9 @@
       "Data locked": [
         "数据已锁定"
       ],
+      "Data recoverable on this device": [
+        "此设备上的数据可能被恢复"
+      ],
       "Dedicated servers": [
         "专用服务器"
       ],
@@ -8324,9 +8335,6 @@
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "学习如何 ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "了解如何使用第三方 VPN 应用程序登录 ${ VPN_APP_NAME }。"
       ],
@@ -8341,6 +8349,9 @@
       ],
       "Learn more about single sign-on": [
         "进一步了解单点登录"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "请通过 ${ dataLeakedLink } 了解应对措施"
       ],
       "Left to Right": [
         "从左到右"
@@ -9392,6 +9403,9 @@
       "Total VPN connections": [
         "VPN 同时在线设备总数"
       ],
+      "trusted device": [
+        "可信设备"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "试用 ${ productName } 完全无风险 - 如果你因任何原因改变主意，你将获得全额退款。无任何问题。"
       ],
@@ -9506,10 +9520,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
       "Users": [
@@ -9625,6 +9639,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "我们会将账户恢复信息安全地存储在您的可信设备上，避免数据意外丢失"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "我们在此浏览器中存储了一份备份文件，因为您在此 ${ deviceLink } 启用了数据恢复功能。如果备份文件有效，您将立即恢复对加密数据的完整或部分访问权限。"
       ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
@@ -10201,6 +10218,17 @@
         "订购"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "解密"
+      ],
+      "Decryption, verification": [
+        "解密、验证"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "加密、解密、签名、验证"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "生成密钥"
@@ -10228,8 +10256,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "已激活"
+      "Compatibility": [
+        "兼容性"
       ],
       "Compromised": [
         "已泄露"
@@ -10640,10 +10668,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10655,10 +10683,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -11087,10 +11115,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
       "Import all messages": [
@@ -11294,13 +11322,13 @@
       "Optional": [
         "非必填"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11909,6 +11937,9 @@
       "How to unlock data": [
         "如何解锁数据"
       ],
+      "if your data is leaked": [
+        "如果您的数据遭到泄露"
+      ],
       "Import/export": [
         "导入/导出"
       ],
@@ -11930,10 +11961,10 @@
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隐私政策"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隐私政策"
       ],
       "Reactivate now": [
@@ -11950,9 +11981,6 @@
       ],
       "Sign in": [
         "登录"
-      ],
-      "stay safer online": [
-        "安全上网"
       ],
       "switch account": [
         "切换账户"
@@ -13270,14 +13298,6 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -13296,6 +13316,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -13926,17 +13954,6 @@
         "电脑版"
       ]
     },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14165,6 +14182,17 @@
       ],
       "Trash": [
         "回收站"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
       ]
     },
     "Option delay send seconds": {
@@ -18152,10 +18180,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -18379,9 +18407,6 @@
       ],
       "Description": [
         "描述"
-      ],
-      "Details": [
-        "详细信息"
       ],
       "Device": [
         "台设备"
@@ -18706,6 +18731,9 @@
       ],
       "Increase your privacy with more addresses": [
         "通过更多地址增强您的隐私"
+      ],
+      "Information exposed in breach": [
+        "数据外泄事件中泄露的信息"
       ],
       "Integrations": [
         "集成"
@@ -19373,14 +19401,20 @@
       "Actions": [
         "操作"
       ],
+      "Creation date": [
+        "创建日期"
+      ],
       "Fingerprint": [
         "指纹"
       ],
-      "Key type": [
-        "密钥类型"
+      "Function": [
+        "功能"
       ],
       "Status": [
         "状态"
+      ],
+      "Type": [
+        "类型"
       ]
     },
     "Title header for members table": {
@@ -19427,9 +19461,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } 用户默认使用这个密钥发送邮件"
-      ],
       "Account is disconnected": [
         "账户已断开连接"
       ],
@@ -19520,6 +19551,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "并非所有用户都能查看此处列出的全部信息。"
+      ],
       "Remove metadata from images to protect your privacy.": [
         "从图像中移除元数据以保护您的隐私。"
       ],
@@ -19592,6 +19626,12 @@
       "This feature is only available on Beta": [
         "此功能仅限测试版使用"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "这是其他 ${ MAIL_APP_NAME } 用户在旧版移动应用上使用的默认密钥，用于加密他们发送给你的数据"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "这是其他 ${ MAIL_APP_NAME } 用户在向你发送数据时默认使用的加密密钥"
+      ],
       "This key cannot be used for encryption": [
         "此密钥不能用于加密"
       ],
@@ -19603,6 +19643,9 @@
       ],
       "This key is used for email forwarding": [
         "此密钥用于电子邮件转发"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "滚动条还原为浏览器预置的样式，通常更宽且更易用"
@@ -19633,9 +19676,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "标为垃圾邮件时自动退订来自对方的同类邮件。"
-      ],
-      "You have locally decrypted this key": [
-        "此密钥已在本机解密"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "您的 ${ MAIL_APP_NAME } 邮箱空间不足"

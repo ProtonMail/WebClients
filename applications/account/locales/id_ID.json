@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "Select file": [
-        "Pilih berkas"
-      ],
       "select file": [
         "pilih berkas"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -8327,9 +8327,6 @@
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Pelajari cara untuk ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Pelajari cara untuk masuk ke ${ VPN_APP_NAME } menggunakan aplikasi VPN pihak ketiga."
       ],
@@ -9509,11 +9506,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "username": [
-        "nama pengguna"
-      ],
       "Username": [
         "Nama pengguna"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -10231,9 +10228,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktif"
-      ],
       "Compromised": [
         "Bocor"
       ],
@@ -10643,11 +10637,11 @@
       "Allow sharing outside the organization": [
         "Izinkan pembagian di luar organisasi"
       ],
-      "Allowed Domain": [
-        "Domain yang Diizinkan"
-      ],
       "Allowed domain": [
         "Domain yang diizinkan"
+      ],
+      "Allowed Domain": [
+        "Domain yang Diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -10658,11 +10652,11 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
-      "And": [
-        "Dan"
-      ],
       "AND": [
         "DAN"
+      ],
+      "And": [
+        "Dan"
       ],
       "and": [
         "dan"
@@ -11087,11 +11081,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jika"
-      ],
       "IF": [
         "JIKA"
+      ],
+      "If": [
+        "Jika"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -11294,14 +11288,14 @@
       "Optional": [
         "Opsional"
       ],
+      "OR": [
+        "ATAU"
+      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
-      ],
-      "OR": [
-        "ATAU"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -11927,11 +11921,11 @@
       "perform a password reset from your active session": [
         "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
       ],
-      "Privacy policy": [
-        "Kebijakan privasi"
-      ],
       "privacy policy": [
         "kebijakan privasi"
+      ],
+      "Privacy policy": [
+        "Kebijakan privasi"
       ],
       "Reactivate now": [
         "Aktifkan kembali"
@@ -11947,9 +11941,6 @@
       ],
       "Sign in": [
         "Masuk"
-      ],
-      "stay safer online": [
-        "beraktivitas online secara lebih aman"
       ],
       "switch account": [
         "ganti akun"
@@ -13267,14 +13258,6 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -13293,6 +13276,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -13923,17 +13914,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Semua orang"
-      ],
-      "Group members": [
-        "Anggota grup"
-      ],
-      "No one": [
-        "Tidak seorang pun"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Tanggal 10"
@@ -14162,6 +14142,17 @@
       ],
       "Trash": [
         "Buang ke Sampah"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Semua orang"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "No one": [
+        "Tidak seorang pun"
       ]
     },
     "Option delay send seconds": {
@@ -18152,11 +18143,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -18379,9 +18370,6 @@
       ],
       "Description": [
         "Deskripsi"
-      ],
-      "Details": [
-        "Rincian"
       ],
       "Device": [
         "Perangkat"
@@ -19376,9 +19364,6 @@
       "Fingerprint": [
         "Sidik jari"
       ],
-      "Key type": [
-        "Jenis kunci"
-      ],
       "Status": [
         "Status"
       ]
@@ -19427,9 +19412,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Pengguna ${ MAIL_APP_NAME } akan menggunakan kunci enkripsi ini secara bawaan untuk mengirim pesan"
-      ],
       "Account is disconnected": [
         "Akun terputus"
       ],
@@ -19633,9 +19615,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Pada saat Anda memindahkan email ke spam, Anda akan secara otomatis membatalkan seluruh langganan milis yang berasal dari alamat pengirim."
-      ],
-      "You have locally decrypted this key": [
-        "Anda telah mendekripsi kunci ini secara lokal"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Kotak masuk ${ MAIL_APP_NAME } Anda hampir penuh"

@@ -1090,10 +1090,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
       "Select files": [
@@ -8358,9 +8358,6 @@
       "Large imports can take several days.": [
         "დიდი მოცულობით ინფორმაციის შემოტანას შეიძლება რამდენიმე დღე დასჭირდეს."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "ნახეთ, მესამე პირების მიერ შექმნილი VPN აპლიკაციებით ${ VPN_APP_NAME }-ში როგორ უნდა შეხვიდეთ."
       ],
@@ -9537,10 +9534,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -10259,9 +10256,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "აქტიური"
-      ],
       "Compromised": [
         "კომპრომეტირებულია"
       ],
@@ -10675,10 +10669,10 @@
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10690,10 +10684,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -11119,10 +11113,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -11326,13 +11320,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -11963,11 +11957,11 @@
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
       ],
-      "Privacy policy": [
-        "პირადულობის დაცვა"
-      ],
       "privacy policy": [
         "კონფიდენციალობის პოლიტიკა"
+      ],
+      "Privacy policy": [
+        "პირადულობის დაცვა"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
@@ -11983,9 +11977,6 @@
       ],
       "Sign in": [
         "შესვლა"
-      ],
-      "stay safer online": [
-        "იყავით უსაფრთხოდ ინტერნეტში"
       ],
       "switch account": [
         "ანგარიშის გადართვა"
@@ -13338,14 +13329,6 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -13364,6 +13347,14 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -14001,17 +13992,6 @@
         "სამუშაო მაგიდა"
       ]
     },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "თვის მეათე დღე"
@@ -14240,6 +14220,17 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
       ]
     },
     "Option delay send seconds": {
@@ -18269,10 +18260,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -18498,9 +18489,6 @@
       ],
       "Description": [
         "აღწერა"
-      ],
-      "Details": [
-        "დეტალები"
       ],
       "Device": [
         "მოწყობილობა"
@@ -19498,9 +19486,6 @@
       "Fingerprint": [
         "ანაბეჭდი"
       ],
-      "Key type": [
-        "გასაღების ტიპი"
-      ],
       "Status": [
         "სტატუსი"
       ]
@@ -19549,9 +19534,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME }-ის მომხმარებლები ამ გასაღებს გაგზავნისას ნაგულისხმებად გამოიყენებენ"
-      ],
       "Account is disconnected": [
         "ანგარიში გათიშულია"
       ],
@@ -19752,9 +19734,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "როცა ელფოსტას სპამში გადაიტანთ, თქვენ ავტომატურად მოგეხსნებათ დაგზავნის სიის გამოწერაც."
-      ],
-      "You have locally decrypted this key": [
-        "თქვენ ეს გასაღები ადგილობრივად გაშიფრეთ"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "თქვენი საფოსტო ყუთი ${ MAIL_APP_NAME }, თითქმის, სავსეა"

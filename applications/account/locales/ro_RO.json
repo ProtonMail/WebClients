@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "Select file": [
-        "Selectare fișier"
-      ],
       "select file": [
         "selectați fișierul"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -7045,6 +7045,14 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Dacă este reactivată, cheia va fi folosită pentru decriptare."
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Dacă este reactivată, cheia va fi folosită pentru decriptare și verificare"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
@@ -8495,9 +8503,6 @@
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aflați cum să ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aflați cum să vă conectați la ${ VPN_APP_NAME } cu aplicații VPN terțe."
       ],
@@ -8512,6 +8517,9 @@
       ],
       "Learn more about single sign-on": [
         "Aflați mai multe despre autentificarea unică"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aflați ce aveți de făcut ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "De la stânga la dreapta"
@@ -9704,11 +9712,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -10427,6 +10435,17 @@
         "Abonament"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Decriptare"
+      ],
+      "Decryption, verification": [
+        "Decriptare, verificare"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Criptare, decriptare, semnare, verificare"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Generare cheie"
@@ -10454,8 +10473,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Activă"
+      "Compatibility": [
+        "Compatibilitate"
       ],
       "Compromised": [
         "Compromisă"
@@ -10874,10 +10893,10 @@
       "Allow sharing outside the organization": [
         "Permitere partajare în afara organizației"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10889,11 +10908,11 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "And": [
-        "Şi"
-      ],
       "AND": [
         "ȘI"
+      ],
+      "And": [
+        "Şi"
       ],
       "and": [
         "și"
@@ -11321,11 +11340,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Dacă"
-      ],
       "IF": [
         "DACĂ"
+      ],
+      "If": [
+        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -11528,14 +11547,14 @@
       "Optional": [
         "Opțional"
       ],
+      "OR": [
+        "SAU"
+      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
-      ],
-      "OR": [
-        "SAU"
       ],
       "Organization name": [
         "Nume organizație"
@@ -12148,6 +12167,9 @@
       "How to unlock data": [
         "Cum se deblochează datele"
       ],
+      "if your data is leaked": [
+        "dacă datele v-au fost divulgate"
+      ],
       "Import/export": [
         "Importare/Exportare"
       ],
@@ -12169,11 +12191,11 @@
       "perform a password reset from your active session": [
         "efectuați o resetare a parolei din sesiunea activă"
       ],
-      "Privacy policy": [
-        "Politica de confidențialitate"
-      ],
       "privacy policy": [
         "politica de confidențialitate"
+      ],
+      "Privacy policy": [
+        "Politica de confidențialitate"
       ],
       "Reactivate now": [
         "Reactivare"
@@ -12189,9 +12211,6 @@
       ],
       "Sign in": [
         "Autentificare"
-      ],
-      "stay safer online": [
-        "rămâneți în siguranță online"
       ],
       "switch account": [
         "schimbați contul"
@@ -13579,14 +13598,6 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -13605,6 +13616,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -14249,17 +14268,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ziua 10 a lunii"
@@ -14509,6 +14517,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
       ]
     },
     "Option delay send seconds": {
@@ -18635,10 +18654,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -18866,9 +18885,6 @@
       ],
       "Description": [
         "Descriere"
-      ],
-      "Details": [
-        "Detalii"
       ],
       "Device": [
         "Dispozitiv"
@@ -19197,6 +19213,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Măriți-vă intimitatea cu adrese mai multe"
+      ],
+      "Information exposed in breach": [
+        "Informații expuse în divulgare"
       ],
       "Integrations": [
         "Integrări"
@@ -19866,14 +19885,20 @@
       "Actions": [
         "Acțiuni"
       ],
+      "Creation date": [
+        "Dată creare"
+      ],
       "Fingerprint": [
         "Amprenta"
       ],
-      "Key type": [
-        "Tip cheie"
+      "Function": [
+        "Funcție"
       ],
       "Status": [
         "Stare"
+      ],
+      "Type": [
+        "Tip"
       ]
     },
     "Title header for members table": {
@@ -19920,9 +19945,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Utilizatorii ${ MAIL_APP_NAME } vor folosi această cheie în mod implicit pentru trimiteri."
-      ],
       "Account is disconnected": [
         "Contul este deconectat"
       ],
@@ -20013,6 +20035,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Mesajele din folderul «Trimise» sau «Ciorne» vor continua să apară în acel folder, chiar dacă le mutați în altul."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Eliminați metadatele din imagini pentru a vă proteja confidențialitatea."
       ],
@@ -20085,6 +20110,12 @@
       "This feature is only available on Beta": [
         "Această funcție este disponibilă doar în versiunea beta."
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Aceasta este cheia implicită folosită de alți utilizatori ${ MAIL_APP_NAME } din aplicațiile mobile mai vechi pentru a cripta datele pe care vi le trimit."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Aceasta este cheia implicită folosită de alți utilizatori ${ MAIL_APP_NAME } pentru a cripta datele pe care vi le trimit."
+      ],
       "This key cannot be used for encryption": [
         "Această cheie nu poate fi folosită pentru criptare."
       ],
@@ -20096,6 +20127,9 @@
       ],
       "This key is used for email forwarding": [
         "Această cheie este folosită pentru redirecționarea mesajelor."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Dacă nu sunt decriptate, parolele criptate rămân în siguranță chiar dacă au fost expuse."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Folosire bare de derulare implicite din navigator. De obicei sunt mai mari și mai ușor de folosit."
@@ -20126,9 +20160,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Când mutați un mesaj în folderul «Nedorite», se va face și dezabonarea automată de la lista de adrese a expeditorului."
-      ],
-      "You have locally decrypted this key": [
-        "Ați decriptat local această cheie."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Spațiul de stocare din ${ MAIL_APP_NAME } este aproape plin."

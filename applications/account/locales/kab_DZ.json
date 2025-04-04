@@ -818,11 +818,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "Select file": [
-        "Fren afaylu"
-      ],
       "select file": [
         "fren afaylu"
+      ],
+      "Select file": [
+        "Fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -6167,9 +6167,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Urmid"
-      ],
       "Compromised": [
         "Tettwaker"
       ],
@@ -6514,11 +6511,11 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "And": [
-        "Akked"
-      ],
       "AND": [
         "AKKED"
+      ],
+      "And": [
+        "Akked"
       ],
       "and": [
         "akked"
@@ -6850,11 +6847,11 @@
       "I understand the risk": [
         "Gziɣ imihi"
       ],
-      "If": [
-        "Ma"
-      ],
       "IF": [
         "MA"
+      ],
+      "If": [
+        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6997,14 +6994,14 @@
       "Optional": [
         "Afrayan"
       ],
+      "OR": [
+        "NEƔ"
+      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
-      ],
-      "OR": [
-        "NEƔ"
       ],
       "Organization name": [
         "Isem n tuddsa"
@@ -8144,14 +8141,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8161,6 +8150,14 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -10093,10 +10090,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [
@@ -10261,9 +10258,6 @@
       ],
       "Description": [
         "Aglam"
-      ],
-      "Details": [
-        "Ifatusen"
       ],
       "Device connected!": [
         "Ibenk yeqqnen!"
@@ -10903,9 +10897,6 @@
       "Fingerprint": [
         "Adsil umdin"
       ],
-      "Key type": [
-        "Anaw n tsarutt"
-      ],
       "Status": [
         "Aẓayer"
       ]
@@ -10954,9 +10945,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Iseqdacen n ${ MAIL_APP_NAME } ad sqedcen tasarut-agi s lexṣas i tuzzna"
-      ],
       "Account is disconnected": [
         "Yeffeɣ umiḍan seg tuqqna"
       ],
@@ -11034,9 +11022,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Mi ara tsiteḍ ɣef useɣwen, tamahilt-a n mgal takerḍa ad ak·am-d-tsuter ad tesnetmeḍ URL n usebter web."
-      ],
-      "You have locally decrypted this key": [
-        "Tewglehneḍ tasarut-agi s wudem adigan"
       ],
       "Your DKIM signing is working.": [
         "Azmul-inek·inem DKIM iteddu."
