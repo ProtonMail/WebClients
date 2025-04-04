@@ -1796,8 +1796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-? "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.5, @babel/runtime@npm:^7.23.6, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.24.1, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.24.7, @babel/runtime@npm:^7.24.8, @babel/runtime@npm:^7.25.6, @babel/runtime@npm:^7.27.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.6.3, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2"
-:
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.6, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.24.7, @babel/runtime@npm:^7.24.8, @babel/runtime@npm:^7.25.6, @babel/runtime@npm:^7.26.9, @babel/runtime@npm:^7.27.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.6.3, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
   version: 7.27.0
   resolution: "@babel/runtime@npm:7.27.0"
   dependencies:
@@ -7126,7 +7125,7 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     "@types/deep-freeze": "npm:^0.1.5"
@@ -7157,7 +7156,7 @@ __metadata:
     "@proton/styles": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
@@ -7267,7 +7266,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     eslint: "npm:^8.57.1"
@@ -7708,7 +7707,7 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     ts-jest: "npm:^29.3.1"
@@ -7834,7 +7833,7 @@ __metadata:
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/styles": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     eslint: "npm:^8.57.1"
@@ -7943,7 +7942,7 @@ __metadata:
     "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@protontech/pass-rust-core": "npm:0.12.0"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -7993,7 +7992,7 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/testing": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@swc/jest": "npm:^0.2.37"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
@@ -8068,7 +8067,7 @@ __metadata:
   dependencies:
     "@proton/shared": "workspace:^"
     "@proton/unleash": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
   languageName: unknown
@@ -8085,7 +8084,7 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
   languageName: unknown
@@ -8096,7 +8095,7 @@ __metadata:
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
     "@proton/react-redux-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     eslint: "npm:^8.57.1"
@@ -8328,7 +8327,7 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/andromeda": "workspace:packages/wasm/andromeda"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^14.3.1"
     "@vitest/coverage-v8": "npm:^1.6.1"
@@ -8532,18 +8531,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redux-devtools/core@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@redux-devtools/core@npm:4.0.0"
+"@redux-devtools/core@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@redux-devtools/core@npm:4.1.1"
   dependencies:
-    "@babel/runtime": "npm:^7.23.5"
+    "@babel/runtime": "npm:^7.26.9"
     "@redux-devtools/instrument": "npm:^2.2.0"
-    lodash: "npm:^4.17.21"
   peerDependencies:
-    react: ^16.8.4 || ^17.0.0 || ^18.0.0
+    react: ^16.8.4 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-redux: ^7.0.0 || ^8.0.0 || ^9.0.0
     redux: ^3.5.2 || ^4.0.0 || ^5.0.0
-  checksum: 10c0/dcd07c9964f7aa799b8c436268060ce720d5a1d29ab8304194263f504b1c7085ea488f5aa6610ec7e49655beb6aa999aa6928717955c03d5eae759e68b438572
+  checksum: 10c0/02a436c3c3f46a29e03f12b2659ed48c3952b8ee984fb997401b0fdf84e3df12f65b6fe73679a4d45efa12eff8e202460da1d68e981502514507c0b5abae4676
   languageName: node
   linkType: hard
 
@@ -8559,20 +8557,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redux-devtools/remote@npm:^0.9.3":
-  version: 0.9.3
-  resolution: "@redux-devtools/remote@npm:0.9.3"
+"@redux-devtools/remote@npm:^0.9.5":
+  version: 0.9.5
+  resolution: "@redux-devtools/remote@npm:0.9.5"
   dependencies:
-    "@babel/runtime": "npm:^7.24.1"
+    "@babel/runtime": "npm:^7.26.9"
     "@redux-devtools/instrument": "npm:^2.2.0"
-    "@redux-devtools/utils": "npm:^3.0.0"
+    "@redux-devtools/utils": "npm:^3.1.1"
     jsan: "npm:^3.1.14"
-    querystring: "npm:^0.2.1"
     rn-host-detect: "npm:^1.2.0"
-    socketcluster-client: "npm:^19.1.0"
+    socketcluster-client: "npm:^19.2.3"
   peerDependencies:
     redux: ^3.5.2 || ^4.0.0 || ^5.0.0
-  checksum: 10c0/d106675ce7f58477667536cc20c2e5f5cbeeb8ccc1e6b5372a0b7f48704766d821612cf19c6972764fdfa5a68ae995e1e033645e455545f98b77133b4f882e4c
+  checksum: 10c0/ecb13fe01008afe25d860221c505a97774e43c81f04c2e381ec9a56e2f64c6ee3eb204ad34142f7d9149db8b64be1607e824d82a79eea3e5d99fe399b9805236
   languageName: node
   linkType: hard
 
@@ -8588,25 +8585,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redux-devtools/utils@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@redux-devtools/utils@npm:3.0.0"
+"@redux-devtools/utils@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@redux-devtools/utils@npm:3.1.1"
   dependencies:
-    "@babel/runtime": "npm:^7.23.5"
-    "@redux-devtools/core": "npm:^4.0.0"
+    "@babel/runtime": "npm:^7.26.9"
+    "@redux-devtools/core": "npm:^4.1.1"
     "@redux-devtools/serialize": "npm:^0.4.2"
     "@types/get-params": "npm:^0.1.2"
     get-params: "npm:^0.1.2"
-    immutable: "npm:^4.3.4"
+    immutable: "npm:^4.3.7"
     jsan: "npm:^3.1.14"
-    lodash: "npm:^4.17.21"
-    nanoid: "npm:^5.0.4"
-    redux: "npm:^4.2.1"
+    nanoid: "npm:^5.1.2"
+    redux: "npm:^5.0.1"
   peerDependencies:
-    "@redux-devtools/core": ^4.0.0
-    immutable: ^4.3.4
+    "@redux-devtools/core": ^4.1.1
+    immutable: ^4.3.7
     redux: ^4.0.0 || ^5.0.0
-  checksum: 10c0/7a04ce4c474df0f469b54a8074ebee31ca4f35860f98ecd38dba9c5a8a1d611b5781f0e5742fa79023cc3992f7714412e4315fadb0b2e7e39bf8dc5bca01bbf9
+  checksum: 10c0/ea03fee3e633329d0d8cb84d7fb3aa739302b5e190fed23987e0663de4654e1d26be1ea01a61082b7497b8ac11a029fc4516a9f26d7aa057b5056e53fff170a0
   languageName: node
   linkType: hard
 
@@ -8665,9 +8661,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "@reduxjs/toolkit@npm:2.5.1"
+"@reduxjs/toolkit@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "@reduxjs/toolkit@npm:2.6.1"
   dependencies:
     immer: "npm:^10.0.3"
     redux: "npm:^5.0.1"
@@ -8681,7 +8677,7 @@ __metadata:
       optional: true
     react-redux:
       optional: true
-  checksum: 10c0/e25dd4085e5611d21d4e8d47716072e12318ef8171323d40a80c5b8e79e6d514a973718eb44e41f8491355f7a15e488a0e9f88a97c237327de2615a00b470929
+  checksum: 10c0/6ae5db267f2b0a9da8b59080797c5adb1b92b50c0f2bdd933470206285d684b79ed2b1c4e2d7a0fb4aa9e3772d0e215fdcd3a8e4a4a2aac81400fcd790dbd6cd
   languageName: node
   linkType: hard
 
@@ -26581,7 +26577,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"immutable@npm:^4.0.0, immutable@npm:^4.3.4":
+"immutable@npm:^4.0.0, immutable@npm:^4.3.7":
   version: 4.3.7
   resolution: "immutable@npm:4.3.7"
   checksum: 10c0/9b099197081b22f6433003e34929da8ecddbbdc1474cdc8aa3b7669dee4adda349c06143de22def36016d1b6de5322b043eccd7a11db1dad2ca85dad4fff5435
@@ -31828,12 +31824,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^5.0.4":
-  version: 5.0.7
-  resolution: "nanoid@npm:5.0.7"
+"nanoid@npm:^5.0.4, nanoid@npm:^5.1.2":
+  version: 5.1.5
+  resolution: "nanoid@npm:5.1.5"
   bin:
     nanoid: bin/nanoid.js
-  checksum: 10c0/a3fb1c157e3e35378f44e5a7130c70f80c9037f66c9a37285e5e3d8298e8405fcb2399baaa420980b0fe5fd9c2e4186a6a31c3526f21de03cf34c1b459871401
+  checksum: 10c0/e6004f1ad6c7123eeb037062c4441d44982037dc043aabb162457ef6986e99964ba98c63c975f96c547403beb0bf95bc537bd7bf9a09baf381656acdc2975c3c
   languageName: node
   linkType: hard
 
@@ -35888,7 +35884,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.3.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -36140,7 +36136,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.18.3"
-    "@reduxjs/toolkit": "npm:^2.5.1"
+    "@reduxjs/toolkit": "npm:^2.6.1"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
@@ -36230,7 +36226,7 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
-    "@redux-devtools/remote": "npm:^0.9.3"
+    "@redux-devtools/remote": "npm:^0.9.5"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/webextension-polyfill": "npm:^0.12.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
@@ -36669,13 +36665,6 @@ __metadata:
   version: 0.2.1
   resolution: "querystring-es3@npm:0.2.1"
   checksum: 10c0/476938c1adb45c141f024fccd2ffd919a3746e79ed444d00e670aad68532977b793889648980e7ca7ff5ffc7bfece623118d0fbadcaf217495eeb7059ae51580
-  languageName: node
-  linkType: hard
-
-"querystring@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "querystring@npm:0.2.1"
-  checksum: 10c0/6841b32bec4f16ffe7f5b5e4373b47ad451f079cde3a7f45e63e550f0ecfd8f8189ef81fb50079413b3fc1c59b06146e4c98192cb74ed7981aca72090466cd94
   languageName: node
   linkType: hard
 
@@ -38310,15 +38299,6 @@ __metadata:
   peerDependencies:
     redux: ^5.0.0
   checksum: 10c0/21557f6a30e1b2e3e470933247e51749be7f1d5a9620069a3125778675ce4d178d84bdee3e2a0903427a5c429e3aeec6d4df57897faf93eb83455bc1ef7b66fd
-  languageName: node
-  linkType: hard
-
-"redux@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "redux@npm:4.2.1"
-  dependencies:
-    "@babel/runtime": "npm:^7.9.2"
-  checksum: 10c0/136d98b3d5dbed1cd6279c8c18a6a74c416db98b8a432a46836bdd668475de6279a2d4fd9d1363f63904e00f0678a8a3e7fa532c897163340baf1e71bb42c742
   languageName: node
   linkType: hard
 
@@ -40407,9 +40387,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socketcluster-client@npm:^19.1.0":
-  version: 19.2.2
-  resolution: "socketcluster-client@npm:19.2.2"
+"socketcluster-client@npm:^19.2.3":
+  version: 19.2.3
+  resolution: "socketcluster-client@npm:19.2.3"
   dependencies:
     ag-auth: "npm:^2.1.0"
     ag-channel: "npm:^5.0.0"
@@ -40423,8 +40403,8 @@ __metadata:
     stream-demux: "npm:^10.0.1"
     uuid: "npm:^8.3.2"
     vinyl-buffer: "npm:^1.0.1"
-    ws: "npm:^8.9.0"
-  checksum: 10c0/ed736ec432318e534463b80eda5a81473ffef0baf950e586ae909ad9019229f59002511a0bbd07f1c9f84bb613af3ac39673d1ada697a51a8698b2db45d879f7
+    ws: "npm:^8.18.0"
+  checksum: 10c0/7d29c07f58489335aec1782352989e0facc8454475b9252a3115febac360a8211c9d8617a802e698c8a2a24a73fb8d6c136b2a67d4c874419566220bbaa12299
   languageName: node
   linkType: hard
 
@@ -45939,7 +45919,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.18.0, ws@npm:^8.11.0, ws@npm:^8.12.0, ws@npm:^8.13.0, ws@npm:^8.18.0, ws@npm:^8.2.3, ws@npm:^8.9.0":
+"ws@npm:8.18.0, ws@npm:^8.11.0, ws@npm:^8.12.0, ws@npm:^8.13.0, ws@npm:^8.18.0, ws@npm:^8.2.3":
   version: 8.18.0
   resolution: "ws@npm:8.18.0"
   peerDependencies:
