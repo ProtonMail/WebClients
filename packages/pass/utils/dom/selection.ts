@@ -1,18 +1,24 @@
+import type { MaybeNull } from '@proton/pass/types';
+
 export const SelectionManager = (() => {
-    let hasSelection = false;
+    let selection: MaybeNull<Selection> = null;
 
     const onSelectionChange = () => {
-        const selection = window.getSelection();
-        hasSelection = selection !== null && selection.toString().length > 0;
+        selection = window.getSelection();
     };
 
     document.addEventListener('selectionchange', onSelectionChange);
 
-    return {
-        get selection() {
-            return hasSelection;
-        },
+    const hasAny = () => selection !== null && selection.toString().length > 0;
 
-        disconnect: () => document.removeEventListener('selectionchange', onSelectionChange),
+    const hasChildOf = (el: Element) =>
+        hasAny() && selection !== null && (el.contains(selection.anchorNode) || el.contains(selection.focusNode));
+
+    const disconnect = () => document.removeEventListener('selectionchange', onSelectionChange);
+
+    return {
+        hasAny,
+        hasChildOf,
+        disconnect,
     };
 })();
