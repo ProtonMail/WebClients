@@ -4948,11 +4948,11 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Més informació sobre com ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Més informació"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
@@ -5982,6 +5982,9 @@
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
+      "Enable desktop notifications": [
+        "Activa les notificacions d'escriptori"
+      ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
@@ -6101,6 +6104,9 @@
       ],
       "Notifications": [
         "Notificacions"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Les notificacions estan desactivades. Per activar-les, canvieu les preferències del navegador."
       ],
       "On": [
         "Activat"
@@ -6346,6 +6352,9 @@
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
       ],
+      "if your data is leaked": [
+        "si es filtren les vostres dades"
+      ],
       "Inbox": [
         "Safata d'entrada"
       ],
@@ -6384,9 +6393,6 @@
       ],
       "Starred": [
         "Destacats"
-      ],
-      "stay safer online": [
-        "millorar la vostra seguretat en línia"
       ],
       "Trash": [
         "Paperera"
@@ -6776,6 +6782,26 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -6797,26 +6823,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10109,9 +10115,6 @@
       "Desktop": [
         "Escriptori"
       ],
-      "Details": [
-        "Detalls"
-      ],
       "Does not repeat": [
         "No es repeteix"
       ],
@@ -10238,6 +10241,9 @@
       ],
       "Import groups": [
         "Importa grups"
+      ],
+      "Information exposed in breach": [
+        "Informació exposada en la infracció"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
@@ -10567,6 +10573,9 @@
       "Load image": [
         "Carrega la imatge"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
@@ -10587,6 +10596,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nou cicle de subscripció comença el ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"

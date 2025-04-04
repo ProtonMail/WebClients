@@ -4948,11 +4948,11 @@
       "Large imports can take several days.": [
         "Les importations volumineuses peuvent prendre plusieurs jours."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Découvrez comment ${ staySaferOnlineLink }."
-      ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Apprenez ce qu'il faut faire ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
@@ -6105,6 +6105,9 @@
       "Notifications": [
         "Notifications"
       ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Les notifications sont désactivées. Pour les activer, modifiez les paramètres du navigateur."
+      ],
       "On": [
         "Activé"
       ],
@@ -6349,6 +6352,9 @@
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
       ],
+      "if your data is leaked": [
+        "si vos données sont divulguées"
+      ],
       "Inbox": [
         "Boite de réception"
       ],
@@ -6387,9 +6393,6 @@
       ],
       "Starred": [
         "Favoris"
-      ],
-      "stay safer online": [
-        "améliorer votre sécurité en ligne"
       ],
       "Trash": [
         "Corbeille"
@@ -6779,6 +6782,26 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Commencez pour ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "À partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -6800,26 +6823,6 @@
       ],
       "Switch plan": [
         "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Commencez pour ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "À partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10112,9 +10115,6 @@
       "Desktop": [
         "Bureau"
       ],
-      "Details": [
-        "Informations"
-      ],
       "Does not repeat": [
         "Ne pas répéter"
       ],
@@ -10241,6 +10241,9 @@
       ],
       "Import groups": [
         "Importer des groupes"
+      ],
+      "Information exposed in breach": [
+        "Informations divulguées lors de la fuite de données"
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
@@ -10570,6 +10573,9 @@
       "Load image": [
         "Charger l'image"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
       ],
@@ -10590,6 +10596,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
