@@ -21,7 +21,6 @@
 	transform: translateX(-50%);
 	overflow: auto;
 	scrollbar-width: auto !important;
-	padding-block-end: 0.25rem;
 
 	[contenteditable='true'] & {
 		margin-block-end: 1.65rem;
