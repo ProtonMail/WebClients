@@ -187,8 +187,8 @@ const MailboxContainer = ({
 
     const onCompose = useOnCompose();
 
-    useMailboxPageTitle(labelID, location);
-    useMailboxFavicon(labelID, location);
+    useMailboxPageTitle(labelID);
+    useMailboxFavicon(labelID);
     useInboxDesktopBadgeCount();
     useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 

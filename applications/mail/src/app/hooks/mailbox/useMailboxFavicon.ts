@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
-
-import type { Location } from 'history';
+import { useLocation } from 'react-router-dom';
 
 import { useDynamicFavicon } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
@@ -13,7 +12,9 @@ import favicons, { baseFavicon } from '../../../assets/favicons';
 import { getCountersByLabelId } from '../../helpers/counter';
 import { isConversationMode } from '../../helpers/mailSettings';
 
-export const useMailboxFavicon = (labelID: string, location: Location) => {
+export const useMailboxFavicon = (labelID: string) => {
+    const location = useLocation();
+
     const mailSettings = useMailModel('MailSettings');
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
