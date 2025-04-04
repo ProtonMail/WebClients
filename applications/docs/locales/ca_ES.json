@@ -2251,6 +2251,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2329,11 +2334,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4415,11 +4415,11 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Més informació sobre com ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Més informació"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Disponibilitat limitada"
@@ -5853,6 +5853,9 @@
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
       ],
+      "if your data is leaked": [
+        "si es filtren les vostres dades"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -5867,9 +5870,6 @@
       ],
       "settings": [
         "preferències"
-      ],
-      "stay safer online": [
-        "millorar la vostra seguretat en línia"
       ],
       "What’s this?": [
         "Què és això?"
@@ -9206,9 +9206,6 @@
       "Desktop": [
         "Escriptori"
       ],
-      "Details": [
-        "Detalls"
-      ],
       "Discard": [
         "Descarta"
       ],
@@ -9332,6 +9329,9 @@
       ],
       "Import groups": [
         "Importa grups"
+      ],
+      "Information exposed in breach": [
+        "Informació exposada en la infracció"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
@@ -9631,6 +9631,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "El missatge i el nom del fitxer s'emmagatzemen amb un xifratge d'accés zero quan s'inclouen al correu electrònic"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
@@ -9651,6 +9654,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nou cicle de subscripció comença el ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
