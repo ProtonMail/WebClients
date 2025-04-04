@@ -16,7 +16,13 @@ import.meta.webpackHot?.decline();
 
 export type ExtensionContextType = {
     endpoint: ClientEndpoint;
+    /** The currently active tab's ID. In popup contexts,
+     * represents the focused tab visible to the user. */
     tabId: TabId;
+    /** The tab ID that originated the context. Matches `tabId`
+     * for content scripts and extension pages, but differs in
+     * popup contexts where it represents the popup's source tab. */
+    senderTabId: TabId;
     port: Runtime.Port;
     url: MaybeNull<ParsedUrl>;
     destroy: () => void;
@@ -41,18 +47,24 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
     const logCtx = `Context::Extension::${options.endpoint}`;
 
     try {
-        const { tabId, url } = await sendMessage.on(
+        const {
+            tabId = 0,
+            senderTabId = 0,
+            url = null,
+        } = await sendMessage.on(
             message({
                 type: WorkerMessageType.TABS_QUERY,
                 payload: { current: options.endpoint === 'popup' },
             }),
             (res) => {
-                if (res.type === 'error') return { tabId: 0, url: null };
-                return { tabId: res.tabId, url: res.url };
+                if (res.type === 'error') return { tabId: 0, url: null, senderTabId: 0 };
+                return res;
             }
         );
 
-        const name = generatePortName(options.endpoint, tabId);
+        /** Generate a unique port name by combining the endpoint and sender tab ID.
+         * This ensures requests are properly associated with their originating tab context */
+        const name = generatePortName(options.endpoint, senderTabId);
         const port = browser.runtime.connect(browser.runtime.id, { name });
 
         logger.info(`[${logCtx}] tabId resolved & port opened`);
@@ -82,7 +94,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         const destroy = pipe(disconnectPort, ExtensionContext.clear);
         port.onDisconnect.addListener(onPortDisconnect);
 
-        return ExtensionContext.set({ endpoint: options.endpoint, port, tabId, url, destroy });
+        return ExtensionContext.set({ endpoint: options.endpoint, port, tabId, senderTabId, url, destroy });
     } catch (error) {
         logger.info(`[${logCtx}] fatal error`, error);
 

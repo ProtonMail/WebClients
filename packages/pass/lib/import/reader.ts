@@ -4,6 +4,11 @@ import { ExportFormat } from '@proton/pass/lib/export/types';
 import { read1Password1PifArchiveData } from '@proton/pass/lib/import/providers/1password/1pif.archive.reader';
 import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky/kaspersky.reader';
 import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.reader';
+import { readProtonPassJSON } from '@proton/pass/lib/import/providers/protonpass/protonpass.json.reader';
+import {
+    decryptProtonPassImport,
+    getProtonPassImportPGPType,
+} from '@proton/pass/lib/import/providers/protonpass/utils';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { read1Password1PifData } from './providers/1password/1pif.reader';
@@ -18,7 +23,7 @@ import { readKeePassData } from './providers/keepass/keepass.reader';
 import { readKeeperData } from './providers/keeper/keeper.reader';
 import { readLastPassData } from './providers/lastpass/lastpass.reader';
 import { readNordPassData } from './providers/nordpass/nordpass.reader';
-import { decryptProtonPassImport, readProtonPassZIP } from './providers/protonpass/protonpass.zip.reader';
+import { readProtonPassZIP } from './providers/protonpass/protonpass.zip.reader';
 import { readRoboformData } from './providers/roboform/roboform.reader';
 import { readSafariData } from './providers/safari/safari.reader';
 import type { ImportReaderResult } from './types';
@@ -66,6 +71,7 @@ export const importReader = async (payload: ImportReaderPayload): Promise<Import
         case ImportProvider.PROTONPASS:
             const { options, userId, onPassphrase } = payload;
             const { currentAliases = [] } = options ?? {};
+            const readerOpts = { userId, currentAliases, onPassphrase };
 
             switch (fileExtension) {
                 case ExportFormat.CSV:
@@ -73,12 +79,21 @@ export const importReader = async (payload: ImportReaderPayload): Promise<Import
                 case ExportFormat.PGP:
                     const passphrase = await onPassphrase();
                     const decrypted = await decryptProtonPassImport(file, passphrase);
+                    const format = await getProtonPassImportPGPType(decrypted);
+
+                    if (format === ExportFormat.JSON) {
+                        /** If a user tries to import the .pgp file
+                         * from an encrypted pass archive export */
+                        const decoded = new TextDecoder().decode(decrypted);
+                        return readProtonPassJSON(decoded, readerOpts, false);
+                    }
+
                     /** Legacy format: the whole ZIP file has been PGP encrypted.
                      * Decrypt it via the `prepare` function and extract the zip */
                     const zip = new File([decrypted], 'data.zip');
-                    return readProtonPassZIP(zip, { userId, currentAliases, onPassphrase });
+                    return readProtonPassZIP(zip, readerOpts);
                 case ExportFormat.ZIP:
-                    return readProtonPassZIP(file, { userId, currentAliases, onPassphrase });
+                    return readProtonPassZIP(file, readerOpts);
                 default:
                     throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
             }

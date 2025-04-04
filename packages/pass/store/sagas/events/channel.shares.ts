@@ -9,6 +9,7 @@ import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
 import { sharesEventNew, sharesEventSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
+import type { EventChannel } from '@proton/pass/store/sagas/events/types';
 import { selectAllShares } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ShareGetResponse } from '@proton/pass/types';
@@ -85,9 +86,9 @@ function* onNewLocalShare(api: Api, options: RootSagaOptions) {
     });
 }
 
-function* onNewRemoteShares(newSharesChannel: NewSharesChannel, api: Api, options: RootSagaOptions) {
-    while (true) {
-        try {
+export function* onNewRemoteShares(newSharesChannel: NewSharesChannel, api: Api, options: RootSagaOptions): Generator {
+    try {
+        while (true) {
             const shares: ShareGetResponse[] = yield take(newSharesChannel);
             logger.info(`[ServerEvents::Shares]`, `${shares.length} remote share(s) not in cache`);
 
@@ -112,25 +113,34 @@ function* onNewRemoteShares(newSharesChannel: NewSharesChannel, api: Api, option
                     yield fork(getShareChannelForks(api, options), share);
                 }
             }
-        } catch {}
-    }
-}
-
-export function* sharesChannel(api: Api, options: RootSagaOptions): Generator {
-    const newSharesChannel = channel<ShareGetResponse[]>();
-
-    try {
-        logger.info(`[ServerEvents::Shares] start polling for new shares`);
-
-        const eventsChannel = createSharesChannel(api, newSharesChannel);
-
-        const events = fork(channelEvents<SharesGetResponse>, eventsChannel, options);
-        const wakeup = fork(channelInitalize<SharesGetResponse>, eventsChannel, options);
-        const newLocalShare = fork(onNewLocalShare, api, options);
-        const newRemoteShares = fork(onNewRemoteShares, newSharesChannel, api, options);
-
-        yield all([events, wakeup, newLocalShare, newRemoteShares]);
+        }
     } finally {
         if (yield cancelled()) newSharesChannel.close();
     }
+}
+
+export const createNewSharesChannel = () => channel<ShareGetResponse[]>();
+
+type SharesChannelDeps = {
+    eventsChannel: EventChannel<SharesGetResponse>;
+    newSharesChannel: Channel<ShareGetResponse[]>;
+};
+
+export function* sharesChannel(
+    api: Api,
+    options: RootSagaOptions,
+    /** unit-testing purposes */
+    deps?: SharesChannelDeps
+): Generator {
+    const newSharesChannel = deps?.newSharesChannel ?? createNewSharesChannel();
+    const eventsChannel = deps?.eventsChannel ?? createSharesChannel(api, newSharesChannel);
+
+    logger.info(`[ServerEvents::Shares] start polling for new shares`);
+
+    const events = fork(channelEvents<SharesGetResponse>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<SharesGetResponse>, eventsChannel, options);
+    const newLocalShare = fork(onNewLocalShare, api, options);
+    const newRemoteShares = fork(onNewRemoteShares, newSharesChannel, api, options);
+
+    yield all([events, wakeup, newLocalShare, newRemoteShares]);
 }
