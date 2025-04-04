@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "Select file": [
-        "Selecciona un fitxer"
-      ],
       "select file": [
         "selecciona un fitxer"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -8411,9 +8411,6 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Més informació sobre com ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
       ],
@@ -8428,6 +8425,9 @@
       ],
       "Learn more about single sign-on": [
         "Obteniu més informació sobre l'inici de sessió únic"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -9605,11 +9605,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -10341,9 +10341,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Actiu"
-      ],
       "Compromised": [
         "Compromesa"
       ],
@@ -10757,10 +10754,10 @@
       "Allow sharing outside the organization": [
         "Permet la compartició fora de l'organització"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10772,10 +10769,10 @@
       "Amount due": [
         "Import a deure"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -11204,11 +11201,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -11411,13 +11408,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Organization name": [
@@ -12027,6 +12024,9 @@
       "How to unlock data": [
         "Com desbloquejar les dades"
       ],
+      "if your data is leaked": [
+        "si es filtren les vostres dades"
+      ],
       "Import/export": [
         "Importa/exporta"
       ],
@@ -12048,11 +12048,11 @@
       "perform a password reset from your active session": [
         "realitzar un restabliment de contrasenya des de la vostra sessió activa"
       ],
-      "Privacy policy": [
-        "Política de privacitat"
-      ],
       "privacy policy": [
         "política de privacitat"
+      ],
+      "Privacy policy": [
+        "Política de privacitat"
       ],
       "Reactivate now": [
         "Reactiva ara"
@@ -12068,9 +12068,6 @@
       ],
       "Sign in": [
         "Inicia la sessió"
-      ],
-      "stay safer online": [
-        "millorar la vostra seguretat en línia"
       ],
       "switch account": [
         "canvieu de compte"
@@ -13423,14 +13420,6 @@
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -13449,6 +13438,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14086,17 +14083,6 @@
         "Escriptori"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10 del mes"
@@ -14325,6 +14311,17 @@
       ],
       "Trash": [
         "Paperera"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Option delay send seconds": {
@@ -18386,10 +18383,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -18615,9 +18612,6 @@
       ],
       "Description": [
         "Descripció"
-      ],
-      "Details": [
-        "Detalls"
       ],
       "Device": [
         "Dispositiu"
@@ -18944,6 +18938,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Augmenteu la vostra privacitat amb més adreces"
+      ],
+      "Information exposed in breach": [
+        "Informació exposada en la infracció"
       ],
       "Integrations": [
         "Integracions"
@@ -19615,9 +19612,6 @@
       "Fingerprint": [
         "Empremta digital"
       ],
-      "Key type": [
-        "Tipus de clau"
-      ],
       "Status": [
         "Estat"
       ]
@@ -19666,9 +19660,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Els usuaris de ${ MAIL_APP_NAME } utilitzaran aquesta clau per defecte per a l'enviament"
-      ],
       "Account is disconnected": [
         "El compte està desconnectat"
       ],
@@ -19759,6 +19750,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Elimineu les metadades de les imatges per protegir la vostra privadesa."
       ],
@@ -19843,6 +19837,9 @@
       "This key is used for email forwarding": [
         "Aquesta clau s'utilitza per al reenviament de correu electrònic"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utilitzeu les barres de desplaçament predeterminades del navegador. Normalment són més grans i més fàcils d'utilitzar"
       ],
@@ -19872,9 +19869,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Quan moveu un correu electrònic al correu brossa, automàticament se us cancel·larà la subscripció a les llistes de correu del remitent."
-      ],
-      "You have locally decrypted this key": [
-        "Heu desxifrat aquesta clau localment."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "La vostra safata d'entrada de ${ MAIL_APP_NAME } està gairebé plena."
