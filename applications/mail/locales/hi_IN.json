@@ -1102,10 +1102,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1301,8 +1301,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
+        "विश्वसनीय चाबी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -6635,7 +6634,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -6684,9 +6684,6 @@
       ],
       "Large imports can take several days.": [
         "बड़े आयात में कई दिन लग सकते हैं।"
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "जानें कैसे ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "और जानें"
@@ -8189,10 +8186,10 @@
       "Always move sender's emails": [
         "भेजनेवाले के ईमेल हमेशा ले जाएं"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
       "and": [
@@ -8420,10 +8417,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
       "Import all messages": [
@@ -8534,13 +8531,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
+      "OR": [
+        "या"
+      ],
       "or": [
         "या"
       ],
       "Or": [
-        "या"
-      ],
-      "OR": [
         "या"
       ],
       "Original link": [
@@ -8932,9 +8929,6 @@
       ],
       "Starred": [
         "तारांकित"
-      ],
-      "stay safer online": [
-        "ऑनलाइन सुरक्षित रहें"
       ],
       "Terms": [
         "शर्ते"
@@ -9341,29 +9335,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -9385,6 +9356,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -13090,9 +13084,6 @@
       ],
       "Deleting contacts": [
         "संपर्क हट रहे है"
-      ],
-      "Details": [
-        "विवरण"
       ],
       "Discover your subscription benefits": [
         "अपनी सदस्यता के लाभ खोजें"

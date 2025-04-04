@@ -2248,6 +2248,11 @@
         "Fattura scaduta"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con un monitoraggio dedicato 24 ore su 24, 7 giorni su 7, delle attività sospette, incluso l'inoltro agli specialisti della sicurezza."
@@ -2326,11 +2331,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4412,11 +4412,11 @@
       "Large imports can take several days.": [
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Scopri come ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Scopri cosa fare ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Disponibilità limitata"
@@ -4796,6 +4796,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "L'URL che hai inserito sembra essere stato copiato da Slack in modo errato. Quando copi collegamenti lunghi da Slack, fai clic con il pulsante destro del mouse sul collegamento, quindi scegli \"Copia collegamento\" anziché copiare direttamente il testo dell'URL tagliato."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
@@ -5850,6 +5853,9 @@
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
       ],
+      "if your data is leaked": [
+        "se i tuoi dati vengono divulgati"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -5864,9 +5870,6 @@
       ],
       "settings": [
         "impostazioni"
-      ],
-      "stay safer online": [
-        "stai più sicuro online"
       ],
       "What’s this?": [
         "Cos'è questo?"
@@ -6929,11 +6932,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -6946,6 +6944,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9199,9 +9202,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Dettagli"
-      ],
       "Discard": [
         "Scarta"
       ],
@@ -9325,6 +9325,9 @@
       ],
       "Import groups": [
         "Importa gruppi"
+      ],
+      "Information exposed in breach": [
+        "Informazioni esposte in caso di violazioni"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -9624,6 +9627,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Il messaggio e il nome del file vengono archiviati con crittografia ad accesso zero quando inclusi nell'email"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Non tutte le informazioni elencate qui sono state esposte per tutti gli utenti."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
@@ -9644,6 +9650,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Il nuovo ciclo di abbonamento inizia il ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"

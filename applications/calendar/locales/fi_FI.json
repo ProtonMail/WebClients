@@ -4927,9 +4927,6 @@
       "Large imports can take several days.": [
         "Suuret tuonnit saattavat kestää useita päiviä."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Opi ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -6349,9 +6346,6 @@
       "Starred": [
         "Tähdelliset"
       ],
-      "stay safer online": [
-        "suojautumaan verkossa paremmin"
-      ],
       "Trash": [
         "Roskakori"
       ],
@@ -6737,6 +6731,26 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -6758,26 +6772,6 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10025,9 +10019,6 @@
       ],
       "Desktop": [
         "Työpöytä"
-      ],
-      "Details": [
-        "Lisätiedot"
       ],
       "Does not repeat": [
         "Ei toistu"

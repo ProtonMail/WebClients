@@ -4766,9 +4766,6 @@
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "了解如何 ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -6102,9 +6099,6 @@
       "Starred": [
         "已加星號"
       ],
-      "stay safer online": [
-        "保持在線安全"
-      ],
       "Trash": [
         "垃圾桶"
       ],
@@ -6482,6 +6476,26 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6503,26 +6517,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9601,9 +9595,6 @@
       ],
       "Deleting contacts": [
         "正在刪除聯絡人"
-      ],
-      "Details": [
-        "詳細資訊"
       ],
       "Does not repeat": [
         "不重複"

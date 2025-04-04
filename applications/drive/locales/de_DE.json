@@ -4931,11 +4931,11 @@
       "Last week": [
         "Letzte Woche"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Erfahre, wie man ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Erfahre, was zu tun ist ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
@@ -6735,6 +6735,9 @@
       "How to pay with Bitcoin?": [
         "Wie bezahlt man mit Bitcoin?"
       ],
+      "if your data is leaked": [
+        "wenn deine Daten offengelegt wurden"
+      ],
       "Inbox": [
         "Posteingang"
       ],
@@ -6776,9 +6779,6 @@
       ],
       "Starred": [
         "Markiert"
-      ],
-      "stay safer online": [
-        "online sicherer wird"
       ],
       "Trash": [
         "Papierkorb"
@@ -7213,29 +7213,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Konto löschen"
-      ],
-      "Downgrade account": [
-        "Konto downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } kostenlos holen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } holen"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behalten"
-      ],
-      "Keep account": [
-        "Konto behalten"
-      ],
-      "Switch plan": [
-        "Abonnement wechseln"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
@@ -7257,6 +7234,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Konto löschen"
+      ],
+      "Downgrade account": [
+        "Konto downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } kostenlos holen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } holen"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behalten"
+      ],
+      "Keep account": [
+        "Konto behalten"
+      ],
+      "Switch plan": [
+        "Abonnement wechseln"
       ]
     },
     "new_plans: feature": {
@@ -10635,9 +10635,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Details"
-      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -10777,6 +10774,9 @@
       ],
       "Import groups": [
         "Gruppen importieren"
+      ],
+      "Information exposed in breach": [
+        "Informationen, die bei einem Datenleck offengelegt wurden"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
@@ -11185,6 +11185,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Nachricht und Dateiname werden mit Null-Zugriff-Verschlüsselung gespeichert, wenn sie in der E-Mail enthalten sind."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nicht alle hier aufgeführten Informationen wurden für alle Benutzer offengelegt."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
       ],
@@ -11208,6 +11211,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"

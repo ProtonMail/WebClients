@@ -2245,6 +2245,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2323,11 +2328,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4409,11 +4409,11 @@
       "Large imports can take several days.": [
         "Stora importer kan ta flera dagar."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lär dig hur man ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lär dig vad du ska göra ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Begränsad tillgänglighet"
@@ -5835,6 +5835,9 @@
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
       ],
+      "if your data is leaked": [
+        "om dina uppgifter läcker ut"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -5849,9 +5852,6 @@
       ],
       "settings": [
         "inställningar"
-      ],
-      "stay safer online": [
-        "var säkrare online"
       ],
       "What’s this?": [
         "Vad är detta?"
@@ -6923,11 +6923,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -6940,6 +6935,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9181,9 +9181,6 @@
       "Desktop": [
         "Stationär dator"
       ],
-      "Details": [
-        "Detaljer"
-      ],
       "Discard": [
         "Förkasta"
       ],
@@ -9307,6 +9304,9 @@
       ],
       "Import groups": [
         "Importera grupper"
+      ],
+      "Information exposed in breach": [
+        "Information exponerad vid intrång"
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
@@ -9606,6 +9606,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Meddelande och filnamn lagras med kryptering med noll åtkomst när de inkluderas i e-portmeddelandet"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "All information som anges här har inte exponerats för alla användare."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
       ],
@@ -9626,6 +9629,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nya prenumerationscykeln startar den ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"

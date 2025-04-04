@@ -1113,11 +1113,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select all": [
-        "전체 선택"
-      ],
       "Select All": [
         "모두 선택"
+      ],
+      "Select all": [
+        "전체 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -1313,9 +1313,6 @@
       ],
       "Trust": [
         "신뢰"
-      ],
-      "Trust key": [
-        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -6691,9 +6688,6 @@
       "Large imports can take several days.": [
         "가져올 내용이 많은 경우 며칠 정도 걸릴 수 있습니다."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink }하는 법 알아보기"
-      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -8252,11 +8246,11 @@
       "Always move sender's emails": [
         "항상 보낸 사람 이메일 이동"
       ],
-      "And": [
-        "그리고"
-      ],
       "AND": [
         "및"
+      ],
+      "And": [
+        "그리고"
       ],
       "and": [
         "그리고"
@@ -8483,10 +8477,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
       "Import all messages": [
@@ -8597,13 +8591,13 @@
       "Optional": [
         "선택 사항"
       ],
+      "OR": [
+        "또는"
+      ],
       "or": [
         "또는"
       ],
       "Or": [
-        "또는"
-      ],
-      "OR": [
         "또는"
       ],
       "Original link": [
@@ -9005,9 +8999,6 @@
       "Starred": [
         "별표 표시됨"
       ],
-      "stay safer online": [
-        "온라인 상에서 안전하게"
-      ],
       "Terms": [
         "조건"
       ],
@@ -9405,29 +9396,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "계정 삭제"
-      ],
-      "Downgrade account": [
-        "계정 다운그레이드"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "무료로 ${ BRAND_NAME } 받기"
-      ],
-      "Get ${ planName }": [
-        "${ planName } 받기"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }  유지"
-      ],
-      "Keep account": [
-        "계정 유지"
-      ],
-      "Switch plan": [
-        "플랜 변경"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
@@ -9449,6 +9417,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName }(으)로 업그레이드"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "계정 삭제"
+      ],
+      "Downgrade account": [
+        "계정 다운그레이드"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "무료로 ${ BRAND_NAME } 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }  유지"
+      ],
+      "Keep account": [
+        "계정 유지"
+      ],
+      "Switch plan": [
+        "플랜 변경"
       ]
     },
     "new_plans: feature": {
@@ -13108,9 +13099,6 @@
       ],
       "Desktop": [
         "데스크톱"
-      ],
-      "Details": [
-        "세부 사항"
       ],
       "Discover your subscription benefits": [
         "구독 혜택을 알아보세요"

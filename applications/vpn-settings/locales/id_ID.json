@@ -520,11 +520,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Remove": [
         "Hapus"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "Select file": [
-        "Pilih berkas"
-      ],
       "select file": [
         "pilih berkas"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Send code": [
         "Kirim kode"
@@ -5359,11 +5359,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "username": [
-        "nama pengguna"
-      ],
       "Username": [
         "Nama pengguna"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -5892,11 +5892,11 @@
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
       ],
-      "Allowed Domain": [
-        "Domain yang Diizinkan"
-      ],
       "Allowed domain": [
         "Domain yang diizinkan"
+      ],
+      "Allowed Domain": [
+        "Domain yang Diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -6848,29 +6848,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Hapus akun"
-      ],
-      "Downgrade account": [
-        "Turunkan jenis akun"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
-      ],
-      "Get ${ planName }": [
-        "Dapatkan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Pertahankan ${ plan }"
-      ],
-      "Keep account": [
-        "Pertahankan akun"
-      ],
-      "Switch plan": [
-        "Ganti paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
@@ -6895,6 +6872,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Tingkatkan ke ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Hapus akun"
+      ],
+      "Downgrade account": [
+        "Turunkan jenis akun"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Pertahankan ${ plan }"
+      ],
+      "Keep account": [
+        "Pertahankan akun"
+      ],
+      "Switch plan": [
+        "Ganti paket"
       ]
     },
     "new_plans: feature": {
@@ -8064,17 +8064,6 @@
         "Selamat datang di ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Semua orang"
-      ],
-      "Group members": [
-        "Anggota grup"
-      ],
-      "No one": [
-        "Tidak seorang pun"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Konfigurasi negara"
@@ -8132,6 +8121,17 @@
       ],
       "The whole organization": [
         "Seluruh organisasi"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Semua orang"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "No one": [
+        "Tidak seorang pun"
       ]
     },
     "Organization capacity error": {
@@ -10749,11 +10749,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"

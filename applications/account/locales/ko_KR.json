@@ -1090,10 +1090,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -8327,9 +8327,6 @@
       "Large imports can take several days.": [
         "가져올 내용이 많은 경우 며칠 정도 걸릴 수 있습니다."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink }하는 법 알아보기"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "서드 파티 VPN 애플리케이션을 사용하여 ${ VPN_APP_NAME }에 로그인하는 방법을 알아보세요."
       ],
@@ -9512,10 +9509,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -10234,9 +10231,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "활성"
-      ],
       "Compromised": [
         "유출됨"
       ],
@@ -10646,10 +10640,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10661,11 +10655,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "And": [
-        "그리고"
-      ],
       "AND": [
         "및"
+      ],
+      "And": [
+        "그리고"
       ],
       "and": [
         "그리고"
@@ -11093,10 +11087,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
       "Import all messages": [
@@ -11300,13 +11294,13 @@
       "Optional": [
         "선택 사항"
       ],
+      "OR": [
+        "또는"
+      ],
       "or": [
         "또는"
       ],
       "Or": [
-        "또는"
-      ],
-      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -11939,11 +11933,11 @@
       "perform a password reset from your active session": [
         "활성 세션에서 비밀번호 재설정을 수행하세요"
       ],
-      "Privacy policy": [
-        "개인 정보 정책"
-      ],
       "privacy policy": [
         "개인정보 취급방침"
+      ],
+      "Privacy policy": [
+        "개인 정보 정책"
       ],
       "Reactivate now": [
         "지금 재활성화"
@@ -11959,9 +11953,6 @@
       ],
       "Sign in": [
         "로그인"
-      ],
-      "stay safer online": [
-        "온라인 상에서 안전하게"
       ],
       "switch account": [
         "계정 전환"
@@ -13273,14 +13264,6 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -13299,6 +13282,14 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -13929,17 +13920,6 @@
         "데스크탑"
       ]
     },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "매월 10일"
@@ -14189,6 +14169,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Option delay send seconds": {
@@ -18173,11 +18164,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -18400,9 +18391,6 @@
       ],
       "Description": [
         "설명"
-      ],
-      "Details": [
-        "세부 사항"
       ],
       "Device": [
         "기기"
@@ -19397,9 +19385,6 @@
       "Fingerprint": [
         "지문"
       ],
-      "Key type": [
-        "키 유형"
-      ],
       "Status": [
         "상태"
       ]
@@ -19448,9 +19433,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } 사용자들이 전송을 위해 기본으로 이 키를 사용합니다."
-      ],
       "Account is disconnected": [
         "계정이 연결되지 않음"
       ],
@@ -19654,9 +19636,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "이메일을 스팸으로 옮기면, 발신자의 메일링 리스트에서 자동으로 구독이 취소됩니다."
-      ],
-      "You have locally decrypted this key": [
-        "이 키를 로컬에서 복호화 하였습니다"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "사용자의 ${ MAIL_APP_NAME } 편지함이 거의 찼습니다"

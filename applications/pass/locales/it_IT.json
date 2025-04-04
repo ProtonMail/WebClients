@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Sposta in un'altra cassaforte"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Sposta nel cestino"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Sposta nel cestino"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Esci dall'account"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Qualcuno ha condiviso un elemento con te su ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordina gli elementi della cassaforte"
@@ -1124,9 +1121,6 @@
       ],
       "Trashing item failed": [
         "Cancellazione dell'elemento non riuscita"
-      ],
-      "Try reaching out to the link owner.": [
-        "Prova a contattare il proprietario del link."
       ],
       "Unable to generate an OTP code for this item": [
         "Impossibile generare il codice OTP per questo elemento"
@@ -1747,8 +1741,8 @@
       "Latest breach on ${ formattedDate }": [
         "Ultima violazione di dati il ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Scopri come ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Scopri cosa fare ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Lasciando questo elemento"
@@ -1795,10 +1789,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3082,9 +3072,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Questo elemento è accessibile fino al ${ date } o fino al raggiungimento del limite di visualizzazioni."
-      ],
       "Title": [
         "Titolo"
       ],
@@ -3201,11 +3188,11 @@
       "auto create rules ››": [
         "regole di creazione automatica ››"
       ],
+      "if your data is leaked": [
+        "se i tuoi dati vengono divulgati"
+      ],
       "Learn more": [
         "Scopri di più"
-      ],
-      "stay safer online": [
-        "stai più sicuro online"
       ]
     },
     "Log preference": {
@@ -3743,9 +3730,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Eliminare cassaforte \"${ vaultName }\"?"
       ],
-      "Details": [
-        "Dettagli"
-      ],
       "Did you know?": [
         "Lo sapevi?"
       ],
@@ -3814,6 +3798,9 @@
       ],
       "Inactive 2FA": [
         "2FA inattivi"
+      ],
+      "Information exposed in breach": [
+        "Informazioni esposte in caso di violazioni"
       ],
       "Install extension": [
         "Installa l'estensione"
@@ -4074,6 +4061,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Non tutte le informazioni elencate qui sono state esposte per tutti gli utenti."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."
       ]
     },
     "Validation": {

@@ -1801,8 +1801,8 @@
       "Latest breach on ${ formattedDate }": [
         "Última vulneración en ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprende cómo ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprende qué hacer ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Dejando el elemento..."
@@ -1846,6 +1846,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -3338,11 +3341,11 @@
       "auto create rules ››": [
         "crear reglas automáticamente ››"
       ],
+      "if your data is leaked": [
+        "si tus datos son filtrados"
+      ],
       "Learn more": [
         "Más información"
-      ],
-      "stay safer online": [
-        "mantén tu seguridad online"
       ]
     },
     "Log preference": {
@@ -3894,9 +3897,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "¿Eliminar la caja fuerte «${ vaultName }»?"
       ],
-      "Details": [
-        "Detalles"
-      ],
       "Did you know?": [
         "¿Lo sabías?"
       ],
@@ -3965,6 +3965,9 @@
       ],
       "Inactive 2FA": [
         "2FA inactiva"
+      ],
+      "Information exposed in breach": [
+        "Información expuesta en la vulneración"
       ],
       "Install extension": [
         "Instalar la extensión"
@@ -4225,6 +4228,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "No toda la información aquí mencionada fue expuesta para todos los usuarios."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ]
     },
     "Validation": {

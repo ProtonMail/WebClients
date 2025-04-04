@@ -2251,6 +2251,11 @@
         "Facture impayée"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2329,11 +2334,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4415,11 +4415,11 @@
       "Large imports can take several days.": [
         "Les importations volumineuses peuvent prendre plusieurs jours."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Découvrez comment ${ staySaferOnlineLink }."
-      ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Apprenez ce qu'il faut faire ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Disponibilité limitée"
@@ -5853,6 +5853,9 @@
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
       ],
+      "if your data is leaked": [
+        "si vos données sont divulguées"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -5867,9 +5870,6 @@
       ],
       "settings": [
         "paramètres"
-      ],
-      "stay safer online": [
-        "améliorer votre sécurité en ligne"
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
@@ -9206,9 +9206,6 @@
       "Desktop": [
         "Bureau"
       ],
-      "Details": [
-        "Informations"
-      ],
       "Discard": [
         "Abandonner"
       ],
@@ -9332,6 +9329,9 @@
       ],
       "Import groups": [
         "Importer des groupes"
+      ],
+      "Information exposed in breach": [
+        "Informations divulguées lors de la fuite de données"
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
@@ -9631,6 +9631,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Le message et le nom de fichier sont stockés avec un chiffrement zéro accès lorsqu'ils sont inclus dans l'e-mail."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
       ],
@@ -9651,6 +9654,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."

@@ -5022,11 +5022,11 @@
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aflați cum să ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Detalii"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aflați ce aveți de făcut ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
@@ -6066,6 +6066,9 @@
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
+      "Enable desktop notifications": [
+        "Activare notificări pe desktop"
+      ],
       "Encrypt emails": [
         "Criptare mesaje"
       ],
@@ -6185,6 +6188,9 @@
       ],
       "Notifications": [
         "Notificări"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Notificările sunt dezactivate. Pentru a le activa modificați setările navigatorului web."
       ],
       "On": [
         "Activat"
@@ -6431,6 +6437,9 @@
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
       ],
+      "if your data is leaked": [
+        "dacă datele v-au fost divulgate"
+      ],
       "Inbox": [
         "Primite"
       ],
@@ -6469,9 +6478,6 @@
       ],
       "Starred": [
         "Cu stea"
-      ],
-      "stay safer online": [
-        "rămâneți în siguranță online"
       ],
       "Trash": [
         "Gunoi"
@@ -6869,6 +6875,26 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -6890,26 +6916,6 @@
       ],
       "Switch plan": [
         "Schimbare plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10305,9 +10311,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Detalii"
-      ],
       "Does not repeat": [
         "Nu se repetă"
       ],
@@ -10435,6 +10438,9 @@
       ],
       "Import groups": [
         "Importare grupuri"
+      ],
+      "Information exposed in breach": [
+        "Informații expuse în divulgare"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
@@ -10764,6 +10770,9 @@
       "Load image": [
         "Încărcare imagine"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
@@ -10784,6 +10793,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Noul ciclu de abonament începe la ${ formattedTime }."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Dacă nu sunt decriptate, parolele criptate rămân în siguranță chiar dacă au fost expuse."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
