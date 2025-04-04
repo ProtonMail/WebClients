@@ -152,10 +152,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -721,6 +721,9 @@
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Jeśli używasz subdomeny, np. ${ subdomainExample }, musisz użyć ${ dmarcExampleSubdomain } jako domeny."
       ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Jeśli używasz subdomeny, np. subdomena.domena.pl, musisz użyć ${ domainKeyExampleSubdomain } jako domeny. Oznacza to, że jeśli Twoja domena to poczta.domena.pl, to wpisz ${ domainKeyExampleMail } jako domenę."
+      ],
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Jeśli korzystasz z Cloudflare, upewnij się, że nie wybrano opcji proxy."
       ],
@@ -760,6 +763,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Błąd] Element nie mógł zostać przetworzony"
+      ],
+      "A domain ownership must be verified first.": [
+        "Najpierw zweryfikuj domenę."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias nie może zostać zaktualizowany. Spróbuj ponownie później"
@@ -1675,6 +1681,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Adres przekierowania został skopiowany do schowka. Wyślij wiadomość na ten adres, aby dostarczyć pośrednio wiadomość na adres ${ Email }."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień.",
         "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnie.",
@@ -1808,7 +1817,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -1975,6 +1987,9 @@
       "Please follow the steps below to set up your domain.": [
         "Wykonaj poniższe kroki, aby skonfigurować domenę."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Pozostaw to okno otwarte podczas importowania danych. Proces może potrwać kilka minut."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Pamiętaj, że usuniętego aliasu nie można przywrócić. Czy chcesz, zamiast tego wyłączyć alias?"
       ],
@@ -2022,6 +2037,9 @@
       ],
       "Removing secure link...": [
         "Usuwanie linku..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Usunięcie historii spowoduje trwałe usunięcie wszystkich poprzednich wersji elementów. Nie możesz cofnąć tej akcji."
       ],
       "Restoring items from trash": [
         "Przywracanie elementów z kosza"
@@ -2130,6 +2148,12 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Dodatkowe hasło ${ BRAND_NAME } będzie wymagane do korzystania z ${ PASS_APP_NAME }."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Nie można zaimportować następującego ${ totalIgnored } elementu:",
+        "Nie można zaimportować następujących ${ totalIgnored } elementów:",
+        "Nie można zaimportować następujących ${ totalIgnored } elementów:",
+        "Nie można zaimportować następujących ${ totalIgnored } elementów:"
       ],
       "The secure link has been removed": [
         "Link został usunięty"
@@ -2286,6 +2310,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Pole 'nazwa użytkownika' będzie zawsze widoczne podczas edytowania danych logowania w ${ PASS_APP_NAME }."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Po wysłaniu wiadomości z tego aliasu, odbiorca zobaczy adres ${ emailSender } jako nadawcę."
       ],
       "You are about to create:": [
         "Utworzysz:"
@@ -2979,6 +3006,9 @@
       "Personal website": [
         "Osobista strona internetowa"
       ],
+      "PGP-encrypted (recommended)": [
+        "Zaszyfrowany PGP (zalecany)"
+      ],
       "Phone number": [
         "Numer telefonu"
       ],
@@ -3240,6 +3270,9 @@
       "Your domain": [
         "Twoja domena"
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "Kod pocztowy"
       ]
@@ -3304,6 +3337,12 @@
       "\"${ file.name }\" could not be uploaded.": [
         "Plik \"${ file.name }\" nie mógł zostać przesłany."
       ],
+      "\"${ filename }\" could not be imported.": [
+        "Plik \"${ filename }\" nie mógł zostać zaimportowany."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Plik \"${ filename }\" jest zbyt duży. Maksymalny rozmiar pliku to ${ maxFileSizeInMB }"
+      ],
       "${ filesCount } file": [
         "${ filesCount } plik",
         "${ filesCount } pliki",
@@ -3312,6 +3351,9 @@
       ],
       "Attachments": [
         "Załączniki"
+      ],
+      "Choose a file or drag it here": [
+        "Wybierz plik lub przeciągnij go tutaj"
       ],
       "Delete ${ deleteFile.state.name }": [
         "Usuń plik ${ deleteFile.state.name }"
@@ -3331,8 +3373,35 @@
       "Download file": [
         "Pobierz plik"
       ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Ze względu na ograniczenia przeglądarki Firefox, ${ PASS_APP_NAME } musi zostać ponownie otwarty w nowym oknie, aby przesłać pliki."
+      ],
+      "Exporting files": [
+        "Eksportowanie plików"
+      ],
       "File": [
         "Plik"
+      ],
+      "File attachments": [
+        "Załączniki"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Włączenie opcji spowoduje pobranie wszystkich plików podczas eksportowania. Proces może zająć trochę czasu w zależności od połączenia internetowego."
+      ],
+      "Include file attachments": [
+        "Dołącz załączniki"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Brak wystarczającej przestrzeni dyskowej dla wybranych plików."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Usunięty załącznik może zostać odzyskany z historii elementu."
+      ],
+      "Open new window to upload files": [
+        "Otwórz nowe okno, aby przesłać pliki"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Zachowaj cierpliwość podczas pobierania plików."
       ],
       "Remove all files": [
         "Usuń wszystkie pliki"
@@ -3343,11 +3412,32 @@
       "Restore": [
         "Przywróć"
       ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Niektóre pliki są zbyt duże, aby je przesłać. Maksymalny rozmiar to ${ maxFileSizeInMB }"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Wyeksportowane załączniki nie będą zaszyfrowane."
+      ],
+      "The file you are trying to import is empty": [
+        "Importowany plik jest pusty"
+      ],
+      "Total files: ": [
+        "Pliki: "
+      ],
+      "Total imported files: ": [
+        "Zaimportowane pliki: "
+      ],
       "Upload files from your device.": [
         "Prześlij pliki ze swojego urządzenia."
       ],
+      "You can attach files to items for a better organization": [
+        "Do elementów możesz dodawać pliki w celu lepszej organizacji"
+      ],
       "You may close this window after saving the file.": [
         "Możesz zamknąć to okno po zapisaniu pliku."
+      ],
+      "Your current plan does not support importing files": [
+        "Obecny plan nie obsługuje importowania plików"
       ]
     },
     "Placeholder": {
@@ -3717,6 +3807,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Encrypted import": [
+        "Zaszyfrowany import"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Lubisz ${ PASS_APP_NAME }?"
@@ -4270,6 +4363,9 @@
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Aby móc tworzyć elementy, administrator musi najpierw utworzyć sejf dla Ciebie"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Twoja organizacja nie pozwala na tworzenie sejfów"
       ],
       "Your organization does not allow sharing individual items": [
         "Twoja organizacja nie pozwala na udostępnianie pojedynczych elementów"
