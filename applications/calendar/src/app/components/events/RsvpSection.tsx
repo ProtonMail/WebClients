@@ -243,8 +243,15 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                                 </div>
                                 {!isSearchView && (
                                     <div className="flex flex-none">
-                                        <EditNoteButton onEdit={() => setDisplayNoteOverlay(!displayNoteOverlay)} />
-                                        <DeleteNoteButton onDelete={handleDeleteComment} loading={loadingDelete} />
+                                        <EditNoteButton
+                                            onEdit={() => setDisplayNoteOverlay(!displayNoteOverlay)}
+                                            disabled={disabled}
+                                        />
+                                        <DeleteNoteButton
+                                            onDelete={handleDeleteComment}
+                                            loading={loadingDelete}
+                                            disabled={disabled}
+                                        />
                                     </div>
                                 )}
                             </div>
