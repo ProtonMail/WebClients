@@ -3,7 +3,7 @@ import { throwError } from '@proton/pass/utils/fp/throw';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 
-import { WASM_PROCEDURE_TIMEOUT } from './constants';
+import { WASM_PROCEDURE_TIMEOUT, WASM_WORKER_READY_EVENT } from './constants';
 
 /** Creates a `PassCoreService` instance which spawns the `PassRustCore`
  * binary in a dedicated worker. Communication occurs via postMessaging
@@ -18,7 +18,7 @@ export const createPassCoreWorkerService = (): PassCoreService => {
     );
 
     const onReady = (event: MessageEvent) => {
-        if (event.data?.type === 'PassCoreUI::worker_ready') {
+        if (event.data?.type === WASM_WORKER_READY_EVENT) {
             logger.info('[PassCoreWorker] Worker is ready');
             worker.removeEventListener('message', onReady);
             state.ready = true;
