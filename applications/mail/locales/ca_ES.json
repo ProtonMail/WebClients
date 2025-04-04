@@ -1117,10 +1117,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1317,10 +1317,6 @@
       ],
       "Trust": [
         "De confiança"
-      ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -6749,7 +6745,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -6802,14 +6799,14 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Més informació sobre com ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Més informació"
       ],
       "Learn more about the writing assistant": [
         "Més informació sobre l'assistent d'escriptura"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -8396,10 +8393,10 @@
       "Always move sender's emails": [
         "Mou sempre els correus electrònics del remitent"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -8582,6 +8579,9 @@
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
+      "Enable desktop notifications": [
+        "Activa les notificacions d'escriptori"
+      ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
@@ -8627,11 +8627,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -8729,6 +8729,9 @@
       "Notification": [
         "Notificació"
       ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Les notificacions estan desactivades. Per activar-les, canvieu les preferències del navegador."
+      ],
       "Open in a new tab": [
         "Obre en una pestanya nova"
       ],
@@ -8741,13 +8744,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -9074,6 +9077,9 @@
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
       ],
+      "if your data is leaked": [
+        "si es filtren les vostres dades"
+      ],
       "Inbox": [
         "Safata d'entrada"
       ],
@@ -9148,9 +9154,6 @@
       ],
       "Starred": [
         "Destacats"
-      ],
-      "stay safer online": [
-        "millorar la vostra seguretat en línia"
       ],
       "Terms": [
         "Termes"
@@ -9560,29 +9563,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina el compte"
-      ],
-      "Downgrade account": [
-        "Passa a un pla inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtén ${ BRAND_NAME } gratuïtament"
-      ],
-      "Get ${ planName }": [
-        "Obteniu ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Segueix amb ${ plan }"
-      ],
-      "Keep account": [
-        "Conserva el compte"
-      ],
-      "Switch plan": [
-        "Canvia de pla"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
@@ -9604,6 +9584,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina el compte"
+      ],
+      "Downgrade account": [
+        "Passa a un pla inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtén ${ BRAND_NAME } gratuïtament"
+      ],
+      "Get ${ planName }": [
+        "Obteniu ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Segueix amb ${ plan }"
+      ],
+      "Keep account": [
+        "Conserva el compte"
+      ],
+      "Switch plan": [
+        "Canvia de pla"
       ]
     },
     "new_plans: feature": {
@@ -13381,9 +13384,6 @@
       "Desktop": [
         "Escriptori"
       ],
-      "Details": [
-        "Detalls"
-      ],
       "Discover your subscription benefits": [
         "Descobriu els avantatges de la vostra subscripció"
       ],
@@ -13528,6 +13528,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Augmenteu la vostra privacitat amb més adreces"
+      ],
+      "Information exposed in breach": [
+        "Informació exposada en la infracció"
       ],
       "Insert contacts": [
         "Introdueix els contactes"
@@ -14036,6 +14039,9 @@
       "Load image": [
         "Carrega la imatge"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
@@ -14068,6 +14074,9 @@
       ],
       "This feature is only available for paid users": [
         "Aquesta funció només està disponible per a usuaris de pagament"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"

@@ -821,10 +821,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -934,11 +934,6 @@
       ],
       "Trust": [
         "Vjeruj"
-      ],
-      "Trust key": [
-        "Ključ povjerenja",
-        "Ključevi povjerenja",
-        "Ključevi povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -4143,9 +4138,6 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
-      "Insert image": [
-        "Umetni sliku"
-      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -4166,9 +4158,6 @@
       ],
       "Labels:": [
         "Oznake:"
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Saznajte kako ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Saznajte više"
@@ -4885,10 +4874,10 @@
       "Also archive": [
         "Također i arhivu"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -5047,11 +5036,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "If": [
-        "Ako"
-      ],
       "IF": [
         "AKO"
+      ],
+      "If": [
+        "Ako"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5143,14 +5132,14 @@
       "Optional": [
         "Neobavezno"
       ],
+      "OR": [
+        "ILI"
+      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
-      ],
-      "OR": [
-        "ILI"
       ],
       "Participants": [
         "Sudionici"
@@ -5714,6 +5703,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5723,14 +5720,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -7218,9 +7207,6 @@
       ],
       "Deleting contacts": [
         "Brisanje kontakata"
-      ],
-      "Details": [
-        "Pojedinosti"
       ],
       "Downgrade account": [
         "Smanjite svoj plan"

@@ -1117,10 +1117,10 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Valitse kaikki"
       ],
-      "Select All": [
+      "Select all": [
         "Valitse kaikki"
       ],
       "Select all messages": [
@@ -1314,10 +1314,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -6722,7 +6718,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -6771,9 +6768,6 @@
       ],
       "Large imports can take several days.": [
         "Suuret tuonnit saattavat kestää useita päiviä."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Opi ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Lue lisää"
@@ -8348,11 +8342,11 @@
       "Always move sender's emails": [
         "Siirrä lähettäjän viestit aina"
       ],
-      "And": [
-        "Ja"
-      ],
       "AND": [
         "JA"
+      ],
+      "And": [
+        "Ja"
       ],
       "and": [
         "ja"
@@ -8579,11 +8573,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jos"
-      ],
       "IF": [
         "JOS"
+      ],
+      "If": [
+        "Jos"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -8693,14 +8687,14 @@
       "Optional": [
         "Valinnainen"
       ],
+      "OR": [
+        "TAI"
+      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
-      ],
-      "OR": [
-        "TAI"
       ],
       "Original link": [
         "Alkuperäinen linkki"
@@ -9100,9 +9094,6 @@
       ],
       "Starred": [
         "Tähdelliset"
-      ],
-      "stay safer online": [
-        "suojautumaan verkossa paremmin"
       ],
       "Terms": [
         "Ehdot"
@@ -9509,29 +9500,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Poista tili"
-      ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Hanki ${ BRAND_NAME } ilmaiseksi"
-      ],
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Säilytä ${ plan }"
-      ],
-      "Keep account": [
-        "Säilytä tili"
-      ],
-      "Switch plan": [
-        "Vaihda tilausta"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
@@ -9553,6 +9521,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Poista tili"
+      ],
+      "Downgrade account": [
+        "Alenna tili"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Hanki ${ BRAND_NAME } ilmaiseksi"
+      ],
+      "Get ${ planName }": [
+        "Hanki ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Säilytä ${ plan }"
+      ],
+      "Keep account": [
+        "Säilytä tili"
+      ],
+      "Switch plan": [
+        "Vaihda tilausta"
       ]
     },
     "new_plans: feature": {
@@ -13273,9 +13264,6 @@
       ],
       "Desktop": [
         "Työpöytä"
-      ],
-      "Details": [
-        "Lisätiedot"
       ],
       "Discover your subscription benefits": [
         "Tutustu tilauksesi etuihin"

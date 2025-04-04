@@ -1110,11 +1110,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select all": [
-        "Выделить все"
-      ],
       "Select All": [
         "Выбрать все"
+      ],
+      "Select all": [
+        "Выделить все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1307,12 +1307,6 @@
       ],
       "Trust": [
         "Доверять"
-      ],
-      "Trust key": [
-        "Доверять ключу",
-        "Доверять ключам",
-        "Доверять ключам",
-        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -6853,9 +6847,6 @@
       "Initializing…": [
         "Инициализация…"
       ],
-      "Insert image": [
-        "Вставить изображение"
-      ],
       "Insert link": [
         "Вставить ссылку"
       ],
@@ -6903,9 +6894,6 @@
       ],
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Узнайте, как ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Узнать больше"
@@ -8462,10 +8450,10 @@
       "Always move sender's emails": [
         "Всегда перемещать сообщения отправителя"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
       "and": [
@@ -8693,11 +8681,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Если"
-      ],
       "IF": [
         "ЕСЛИ"
+      ],
+      "If": [
+        "Если"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -8807,14 +8795,14 @@
       "Optional": [
         "Необязательно"
       ],
+      "OR": [
+        "ИЛИ"
+      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
-      ],
-      "OR": [
-        "ИЛИ"
       ],
       "Original link": [
         "Оригинальная ссылка"
@@ -9205,9 +9193,6 @@
       ],
       "Starred": [
         "Отмеченные *"
-      ],
-      "stay safer online": [
-        "будьте в большей безопасности в Интернете"
       ],
       "Terms": [
         "Правила"
@@ -9630,29 +9615,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Удалить аккаунт"
-      ],
-      "Downgrade account": [
-        "Перейти на более дешевую версию аккаунта"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Получить ${ BRAND_NAME } бесплатно"
-      ],
-      "Get ${ planName }": [
-        "Получить ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Сохранить ${ plan }"
-      ],
-      "Keep account": [
-        "Сохранить аккаунт"
-      ],
-      "Switch plan": [
-        "Сменить тариф"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
@@ -9674,6 +9636,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Улучшить на ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Downgrade account": [
+        "Перейти на более дешевую версию аккаунта"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Получить ${ BRAND_NAME } бесплатно"
+      ],
+      "Get ${ planName }": [
+        "Получить ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Сохранить ${ plan }"
+      ],
+      "Keep account": [
+        "Сохранить аккаунт"
+      ],
+      "Switch plan": [
+        "Сменить тариф"
       ]
     },
     "new_plans: feature": {
@@ -13591,9 +13576,6 @@
       ],
       "Deleting contacts": [
         "Удаление контактов"
-      ],
-      "Details": [
-        "Информация"
       ],
       "Discover your subscription benefits": [
         "Откройте для себя преимущества подписки"
