@@ -7240,7 +7240,7 @@ __metadata:
     "@types/react": "npm:^18.3.20"
     "@types/react-dom": "npm:^18.3.6"
     "@types/tinycolor2": "npm:^1.4.6"
-    babel-loader: "npm:^9.2.1"
+    babel-loader: "npm:^10.0.0"
     chalk: "npm:^4.1.2"
     commander: "npm:^12.1.0"
     eslint: "npm:^8.57.1"
@@ -7881,7 +7881,7 @@ __metadata:
     "@swc/core": "npm:^1.11.16"
     "@types/webpack": "npm:^5.28.5"
     autoprefixer: "npm:^10.4.21"
-    babel-loader: "npm:^9.2.1"
+    babel-loader: "npm:^10.0.0"
     babel-plugin-transform-react-remove-prop-types: "npm:^0.4.24"
     chalk: "npm:4.1.2"
     commander: "npm:^12.1.0"
@@ -15461,6 +15461,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-loader@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "babel-loader@npm:10.0.0"
+  dependencies:
+    find-up: "npm:^5.0.0"
+  peerDependencies:
+    "@babel/core": ^7.12.0
+    webpack: ">=5.61.0"
+  checksum: 10c0/882dfacde3ee24b432ad57e468832cd0821e2a410f6c5b75ff945f069a8956592b28c6c357df5bb03db73d2741ec3db5febb106ac0bb3591c3d4288f2cf4df0e
+  languageName: node
+  linkType: hard
+
 "babel-loader@npm:^8.0.0":
   version: 8.4.1
   resolution: "babel-loader@npm:8.4.1"
@@ -15473,19 +15485,6 @@ __metadata:
     "@babel/core": ^7.0.0
     webpack: ">=2"
   checksum: 10c0/efdca9c3ef502af58b923a32123d660c54fd0be125b7b64562c8a43bda0a3a55dac0db32331674104e7e5184061b75c3a0e395b2c5ccdc7cb2125dd9ec7108d2
-  languageName: node
-  linkType: hard
-
-"babel-loader@npm:^9.2.1":
-  version: 9.2.1
-  resolution: "babel-loader@npm:9.2.1"
-  dependencies:
-    find-cache-dir: "npm:^4.0.0"
-    schema-utils: "npm:^4.0.0"
-  peerDependencies:
-    "@babel/core": ^7.12.0
-    webpack: ">=5"
-  checksum: 10c0/efb82faff4c7c27e9c15bb28bf11c73200e61cf365118a9514e8d74dd489d0afc2a0d5aaa62cb4254eefc2ab631579224d95a03fd245410f28ea75e24de54ba4
   languageName: node
   linkType: hard
 
@@ -23777,16 +23776,6 @@ __metadata:
     make-dir: "npm:^3.0.2"
     pkg-dir: "npm:^4.1.0"
   checksum: 10c0/92747cda42bff47a0266b06014610981cfbb71f55d60f2c8216bc3108c83d9745507fb0b14ecf6ab71112bed29cd6fb1a137ee7436179ea36e11287e3159e587
-  languageName: node
-  linkType: hard
-
-"find-cache-dir@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "find-cache-dir@npm:4.0.0"
-  dependencies:
-    common-path-prefix: "npm:^3.0.0"
-    pkg-dir: "npm:^7.0.0"
-  checksum: 10c0/0faa7956974726c8769671de696d24c643ca1e5b8f7a2401283caa9e07a5da093293e0a0f4bd18c920ec981d2ef945c7f5b946cde268dfc9077d833ad0293cff
   languageName: node
   linkType: hard
 
@@ -36309,7 +36298,7 @@ __metadata:
     "@types/react": "npm:^18.3.20"
     "@types/react-dom": "npm:^18.3.6"
     "@types/react-router-dom": "npm:^5.3.3"
-    babel-loader: "npm:^9.2.1"
+    babel-loader: "npm:^10.0.0"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
     eslint-plugin-storybook: "npm:^0.12.0"
