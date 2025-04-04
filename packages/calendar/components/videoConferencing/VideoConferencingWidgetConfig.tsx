@@ -8,6 +8,7 @@ import { VideoConferencingWidget } from './VideoConferencingWidget';
 import { SEPARATOR_GOOGLE_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import { getGoogleMeetDataFromDescription, getGoogleMeetDataFromLocation } from './googleMeet/googleMeetHelpers';
 import { getVideoConferencingData } from './modelHelpers';
+import { getSkypeDataFromString } from './skype/skypeHelpers';
 import { VideoConferenceSource, useVideoConfTelemetry } from './useVideoConfTelemetry';
 import { getZoomDataFromLocation, getZoomFromDescription } from './zoom/zoomHelpers';
 
@@ -83,6 +84,12 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
             sendTelemetryReport(VideoConferenceSource.google_meet_desc);
             return <VideoConferencingWidget location={widgetLocation} data={googleData} />;
         }
+
+        if (data.description.includes('join.skype.com')) {
+            const skypeData = getSkypeDataFromString(data.description);
+            sendTelemetryReport(VideoConferenceSource.skype_desc);
+            return <VideoConferencingWidget location={widgetLocation} data={skypeData} />;
+        }
     }
 
     // Event containing a location field with a supported video conferencing link
@@ -97,6 +104,12 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
             const googleData = getGoogleMeetDataFromLocation(data.location);
             sendTelemetryReport(VideoConferenceSource.google_meet_loc);
             return <VideoConferencingWidget location={widgetLocation} data={googleData} />;
+        }
+
+        if (data.location.includes('join.skype.com')) {
+            const skypeData = getSkypeDataFromString(data.location);
+            sendTelemetryReport(VideoConferenceSource.skype_loc);
+            return <VideoConferencingWidget location={widgetLocation} data={skypeData} />;
         }
     }
 
