@@ -4871,11 +4871,11 @@
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "学习如何 ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "了解详情"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "请通过 ${ dataLeakedLink } 了解应对措施"
       ],
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
@@ -5889,6 +5889,9 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
+      "Enable desktop notifications": [
+        "开启推送通知"
+      ],
       "Encrypt emails": [
         "加密电子邮件"
       ],
@@ -6008,6 +6011,9 @@
       ],
       "Notifications": [
         "通知"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "通知功能已被禁用，如需启用请调整浏览器设置。"
       ],
       "On": [
         "在"
@@ -6252,6 +6258,9 @@
       "How to pay with Bitcoin?": [
         "如何使用比特币支付？"
       ],
+      "if your data is leaked": [
+        "如果您的数据遭到泄露"
+      ],
       "Inbox": [
         "收件箱"
       ],
@@ -6290,9 +6299,6 @@
       ],
       "Starred": [
         "星标邮件"
-      ],
-      "stay safer online": [
-        "安全上网"
       ],
       "Trash": [
         "回收站"
@@ -6674,6 +6680,26 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6695,26 +6721,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9904,9 +9910,6 @@
       "Desktop": [
         "桌面版"
       ],
-      "Details": [
-        "详细信息"
-      ],
       "Does not repeat": [
         "不重复"
       ],
@@ -10032,6 +10035,9 @@
       ],
       "Import groups": [
         "导入群组"
+      ],
+      "Information exposed in breach": [
+        "数据外泄事件中泄露的信息"
       ],
       "Invalid verification code": [
         "验证码无效"
@@ -10361,6 +10367,9 @@
       "Load image": [
         "加载图片"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "并非所有用户都能查看此处列出的全部信息。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
@@ -10381,6 +10390,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的计费周期将从 ${ formattedTime } 开始"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"

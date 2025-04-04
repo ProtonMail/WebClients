@@ -4917,9 +4917,6 @@
       "Large imports can take several days.": [
         "დიდი მოცულობით ინფორმაციის შემოტანას შეიძლება რამდენიმე დღე დასჭირდეს."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "მეტის ნახვა"
       ],
@@ -5927,6 +5924,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable desktop notifications": [
+        "Სამუშაო მაგიდის გაფრთხილებების ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -6046,6 +6046,9 @@
       ],
       "Notifications": [
         "შეტყობინებები"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "გაფრთხილებები გამორთულია. მათ ჩასართავად შეცვალეთ ბრაუზერის პარამეტრები."
       ],
       "On": [
         "ჩართ"
@@ -6329,9 +6332,6 @@
       ],
       "Starred": [
         "ვარსკვლავიანები"
-      ],
-      "stay safer online": [
-        "იყავით უსაფრთხოდ ინტერნეტში"
       ],
       "Trash": [
         "ნაგვის ყუთი"
@@ -6721,6 +6721,26 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6742,26 +6762,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10036,9 +10036,6 @@
       ],
       "Desktop": [
         "სამუშაო მაგიდა"
-      ],
-      "Details": [
-        "დეტალები"
       ],
       "Does not repeat": [
         "არ მეორდება"
