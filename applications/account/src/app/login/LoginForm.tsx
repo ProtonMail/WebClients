@@ -40,6 +40,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Unwrap } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
@@ -138,6 +139,7 @@ const LoginForm = ({
     const [maybePersistent, setPersistent] = useLocalState(false, defaultPersistentKey);
     const persistent = isElectronApp ? true : maybePersistent;
     const { createNotification } = useNotifications();
+    const qrCodeSignInEnabled = useFlag('QRCodeSignIn');
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
@@ -384,6 +386,7 @@ const LoginForm = ({
     };
 
     const usernameParams = username ? `?username=${username}` : '';
+    const signinHelpPath = `${paths.signinHelp}${usernameParams}`;
     const resetPath = `${paths.reset}${usernameParams}`;
     const forgotUsernamePath = `${paths.forgotUsername}${usernameParams}`;
 
@@ -540,7 +543,14 @@ const LoginForm = ({
                                 <input id="username" readOnly value={username} hidden />
                                 {passwordEl()}
                                 <div className="mb-4">
-                                    <Link to={resetPath}>{c('Link').t`Forgot password?`}</Link>
+                                    <Link
+                                        to={
+                                            // Checking the path here because VPN doesn't support the sign in with another device functionality
+                                            qrCodeSignInEnabled && paths.signinHelp ? signinHelpPath : resetPath
+                                        }
+                                    >
+                                        {c('Link').t`Forgot password?`}
+                                    </Link>
                                 </div>
                                 {errorEl && <div className="mt-4">{errorEl}</div>}
                                 <Button
@@ -679,6 +689,18 @@ const LoginForm = ({
                                                 <Icon name="user-circle" />
                                                 {c('Link').t`Forgot username?`}
                                             </Link>
+                                            {
+                                                /* VPN unsupported, check path */
+                                                qrCodeSignInEnabled && paths.signinAnotherDevice && (
+                                                    <Link
+                                                        to={paths.signinAnotherDevice}
+                                                        className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
+                                                    >
+                                                        <Icon name="qr-code" />
+                                                        {c('edm').t`Sign in with another device`}
+                                                    </Link>
+                                                )
+                                            }
                                         </SupportDropdown>
                                     </div>
                                 </>

@@ -61,10 +61,12 @@ const getPaths = (maybeLocalePrefix: string): Paths => {
     return {
         login: `${prefix}${publicRoutes.login}`,
         signup: `${prefix}${publicRoutes.signup}`,
+        signinHelp: '',
         reset: `${prefix}${publicRoutes.reset}`,
         forgotUsername: `${prefix}${publicRoutes.forgotUsername}`,
         reauth: '',
         appSwitcher: '',
+        signinAnotherDevice: '',
     };
 };
 

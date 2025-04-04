@@ -70,9 +70,11 @@ import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import OAuthPartnersContainer, { type OAuthPartnersCallbackState } from '../public/OAuthPartnersContainer';
 import ReAuthContainer from '../public/ReAuthContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
+import SigninHelpContainer from '../public/SigninHelpContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import { readForkState } from '../public/persistedForkState';
+import SignInWithAnotherDeviceContainer from '../public/signInWithAnotherDevice/SignInWithAnotherDeviceContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { type ProductParams, getProductParams, getThemeFromLocation } from '../signup/searchParams';
@@ -575,6 +577,19 @@ const BasePublicApp = () => {
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
+                                                <Route path={SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}>
+                                                    <UnAuthenticated>
+                                                        <SignInWithAnotherDeviceContainer
+                                                            paths={paths}
+                                                            api={extraThunkArguments.api}
+                                                            onStartAuth={handleStartAuth}
+                                                            onLogin={handleLogin}
+                                                            productParam={productParam}
+                                                            toAppName={toAppName}
+                                                            toApp={maybePreAppIntent}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
                                                 <Route path={SSO_PATHS.SWITCH}>
                                                     <UnAuthenticated>
                                                         <SwitchAccountContainer
@@ -672,6 +687,11 @@ const BasePublicApp = () => {
                                                             }
                                                             onInvalid={() => history.push(paths.signup)}
                                                         />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path={SSO_PATHS.SIGNIN_HELP}>
+                                                    <UnAuthenticated>
+                                                        <SigninHelpContainer toApp={maybePreAppIntent} paths={paths} />
                                                     </UnAuthenticated>
                                                 </Route>
                                                 <Route path={SSO_PATHS.RESET_PASSWORD}>

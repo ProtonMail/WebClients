@@ -20,9 +20,9 @@ import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getUser } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';
+import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -128,10 +128,7 @@ const JoinMagicLinkContainer = ({
                         addresses,
                         data: unprivatizationData,
                     },
-                ] = await Promise.all([
-                    authApi<{ User: User }>(getUser()).then(({ User }) => User),
-                    getUnprivatizationContextData({ api: authApi }),
-                ]);
+                ] = await Promise.all([getUser(authApi), getUnprivatizationContextData({ api: authApi })]);
                 const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
                 const ktActivation = await getKtActivation();
                 await validateUnprivatizationData({

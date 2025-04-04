@@ -322,6 +322,7 @@ export const SSO_PATHS = {
     APP_SWITCHER: '/apps',
     RESET_PASSWORD: '/reset-password',
     FORGOT_USERNAME: '/forgot-username',
+    SIGNIN_HELP: '/signin-help',
     MAIL_SIGNUP: '/mail/signup',
     MAIL_SIGNUP_B2B: '/mail/signup/business',
     MAIL_SIGN_IN: '/mail',
@@ -351,6 +352,7 @@ export const SSO_PATHS = {
     JOIN_MAGIC_LINK: '/join',
     PORKBUN_SIGNUP: '/partner/porkbun/signup',
     PORKBUN_SIGN_IN: '/partner/porkbun/login',
+    SIGN_IN_WITH_ANOTHER_DEVICE: '/sign-in-with-another-device',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 

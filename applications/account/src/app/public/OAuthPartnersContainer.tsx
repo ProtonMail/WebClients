@@ -10,11 +10,11 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { auth, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getUser } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { ProtonForkData } from '@proton/shared/lib/authentication/fork/interface';
 import { oauthAuthorizePartner } from '@proton/shared/lib/authentication/fork/oauth2';
+import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import {
     GetActiveSessionType,
@@ -29,7 +29,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
-import type { Api, User as tsUser } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
@@ -157,7 +157,7 @@ const handleCallback = async ({
         throw e;
     }
 
-    const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    const user = await getUser(api);
 
     const resumedSessionResult = await maybeResumeSessionByUser({ api, User: user, options: { source: null } });
     if (resumedSessionResult) {
