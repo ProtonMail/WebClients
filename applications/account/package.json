@@ -47,8 +47,8 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@types/react": "^18.3.18",
-        "@types/react-dom": "^18.3.5",
+        "@types/react": "^18.3.20",
+        "@types/react-dom": "^18.3.6",
         "@types/react-router-dom": "^5.3.3",
         "@types/webpack": "^5.28.5",
         "date-fns": "^2.30.0",
@@ -59,7 +59,7 @@
         "ttag": "^1.8.7"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "^7.26.0",
+        "@babel/preset-typescript": "^7.27.0",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
@@ -68,13 +68,13 @@
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.1",
         "@types/jest": "^29.5.14",
-        "@webgpu/types": "^0.1.54",
+        "@webgpu/types": "^0.1.60",
         "babel-jest": "^29.7.0",
         "cross-env": "^7.0.3",
         "eslint": "^8.57.1",
         "jest": "^29.7.0",
         "jest-junit": "^16.0.0",
-        "prettier": "^3.5.1",
+        "prettier": "^3.5.3",
         "typescript": "^5.7.3"
     }
 }
