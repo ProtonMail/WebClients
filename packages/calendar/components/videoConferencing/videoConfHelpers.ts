@@ -22,4 +22,8 @@ export const getVideoConfCopy = (service: VIDEO_CONF_SERVICES) => {
     if (service === VIDEO_CONF_SERVICES.SLACK) {
         return c('Slack').t`Join Slack huddle`;
     }
+
+    if (service === VIDEO_CONF_SERVICES.TEAMS) {
+        return c('Teams').t`Join Teams meeting`;
+    }
 };
