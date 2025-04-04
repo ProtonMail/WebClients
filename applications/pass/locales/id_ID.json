@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Keluar"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Seseorang telah membagikan item kepada Anda di ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortir item brankas"
@@ -1116,9 +1113,6 @@
       ],
       "Trashing item failed": [
         "Item gagal dibuang"
-      ],
-      "Try reaching out to the link owner.": [
-        "Cobalah untuk menghubungi pemilik tautan."
       ],
       "Unable to generate an OTP code for this item": [
         "Kode OTP untuk item ini tidak dapat dibuat"
@@ -1718,9 +1712,6 @@
       "Latest breach on ${ formattedDate }": [
         "Kebocoran terkini pada ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Pelajari cara untuk ${ staySaferOnlineLink }"
-      ],
       "Leaving item...": [
         "Meninggalkan item..."
       ],
@@ -1765,9 +1756,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -3025,9 +3013,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
-      ],
       "Title": [
         "Judul"
       ],
@@ -3146,9 +3131,6 @@
       ],
       "Learn more": [
         "Lebih lanjut"
-      ],
-      "stay safer online": [
-        "beraktivitas online secara lebih aman"
       ]
     },
     "Log preference": {
@@ -3628,9 +3610,6 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Hapus brankas \"${ vaultName }\"?"
-      ],
-      "Details": [
-        "Rincian"
       ],
       "Did you know?": [
         "Tahukah Anda?"
