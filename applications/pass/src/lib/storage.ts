@@ -32,11 +32,11 @@ export const clearUserLocalData = (localID: number) => {
     localStorage.removeItem(getSpotlightStorageKey(localID));
     localStorage.removeItem(getBiometricsStorageKey(localID));
 
-    /** Web app may have multiple tabs opened : avoid
-     * wiping the full storage when clearing user data.
-     * Prefer targetting this client's GC queue */
-    if (DESKTOP_BUILD) void fileStorage.clearAll();
-    else void fileStorage.gc?.clear();
+    /** Completely wipes all data from file storage on logout.
+     * Note: If multiple tabs are open, this may interfere with
+     * ongoing read/write operations in other tabs. This is considered
+     * an acceptable edge-case for ensuring thorough data cleanup */
+    void fileStorage.clearAll();
 };
 
 export const localGarbageCollect = async (encryptedSessions: EncryptedAuthSession[]) => {
