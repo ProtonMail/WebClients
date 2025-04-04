@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { type RefObject, useCallback, useRef } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { useUserSettings } from '@proton/account';
@@ -9,6 +9,7 @@ import clsx from '@proton/utils/clsx';
 
 import List from 'proton-mail/components/list/List';
 import { type SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
 import { usePermanentDelete } from 'proton-mail/hooks/actions/delete/usePermanentDelete';
@@ -25,6 +26,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
+import { useGetElementParams } from './hooks/useGetElementParams';
 import type { MailboxActions, RouterNavigation } from './interface';
 
 interface Props {
@@ -85,6 +87,9 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
     const isComposerOpened = composersCount > 0;
     const showPlaceholder =
         !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
+
+    const elementParams = useGetElementParams({ params, navigation });
+    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, elementParams.search]);
 
     const { commanderList } = useMailCommander();
 

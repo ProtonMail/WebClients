@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-
-import type { Location } from 'history';
+import { useLocation } from 'react-router-dom';
 
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
@@ -15,7 +14,9 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { getCountersByLabelId } from '../../helpers/counter';
 import { isConversationMode } from '../../helpers/mailSettings';
 
-export const useMailboxPageTitle = (labelID: string, location: Location) => {
+export const useMailboxPageTitle = (labelID: string) => {
+    const location = useLocation();
+
     const mailSettings = useMailModel('MailSettings');
     const [labels] = useLabels();
     const [folders] = useFolders();
