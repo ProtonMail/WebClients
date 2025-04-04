@@ -6,6 +6,7 @@ import {
     InboxQuickSettingsAppButton,
     PrivateMainArea,
     useActiveBreakpoint,
+    useInboxDesktopBadgeCount,
 } from '@proton/components';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
@@ -14,6 +15,8 @@ import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
+import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
+import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/useMailboxPageTitle';
 import { paramsSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -39,6 +42,10 @@ export const RouterMailboxContainer = () => {
     const { labelID, elementID } = params;
     const { elements, loading, placeholderCount } = elementsData;
     const { selectedIDs } = actions;
+
+    useMailboxPageTitle(labelID);
+    useMailboxFavicon(labelID);
+    useInboxDesktopBadgeCount();
 
     const breakpoints = useActiveBreakpoint();
     const { columnMode } = useMailboxLayoutProvider();
