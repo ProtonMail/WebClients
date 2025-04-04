@@ -15,7 +15,7 @@ export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className
     const getValue = () => (value instanceof Function ? value() : value);
 
     const handleClick = (evt: MouseEvent) => {
-        if (SelectionManager.selection) evt.preventDefault();
+        if (ref.current && SelectionManager.hasChildOf(ref.current)) evt.preventDefault();
         else if (value) void copyToClipboard(getValue());
     };
 
