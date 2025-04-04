@@ -60,7 +60,7 @@ const useDynamicFavicon = (faviconSrc: string) => {
                 faviconRef.current = faviconSrc;
             };
 
-            run();
+            void run();
         },
         // isPossiblyOffline is a dependency so that we re-try to update the favicon when going offline and back online
         [faviconSrc, isPossiblyOffline]
