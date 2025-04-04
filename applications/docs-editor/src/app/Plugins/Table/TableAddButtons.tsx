@@ -141,7 +141,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
 
       const containerOffset = rootParent.scrollTop - containerRect.top
 
-      rowAddButton.style.transform = `translate(${Math.max(containerPaddingLeft, tableRect.left)}px, ${tableWrapperRect.bottom + containerOffset + 1}px)`
+      rowAddButton.style.transform = `translate(${Math.max(containerPaddingLeft, tableRect.left)}px, ${tableWrapperRect.bottom + containerOffset}px)`
       columnAddButton.style.transform = `translate(${tableRect.width > containerRect.width ? tableWrapperRect.right - columnAddButtonRect.width / 2 : tableRect.right + 1}px, ${tableRect.top + containerOffset}px)`
     }, 10)
 
