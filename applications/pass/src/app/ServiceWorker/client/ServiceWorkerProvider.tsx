@@ -10,7 +10,9 @@ import {
 } from 'react';
 
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
 import type { MaybeNull } from '@proton/pass/types';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { type ServiceWorkerClient, createServiceWorkerClient } from './client';
@@ -30,15 +32,27 @@ export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         const onBeforeUnload = () => {
-            /** Avoids flagging update available during a hard-refresh */
+            /** Prevent update notifications during hard refresh */
             unloading.current = true;
 
-            if (client) {
-                /** Ask service worker for pending files deletion.
-                 * These operations are async and cannot be guaranteed
-                 * to succeed during the `unload` event */
-                const filenames = fileStorage.gc?.queued() ?? [];
-                client.send({ type: 'fs_gc', filenames });
+            if (fileStorage.gc) {
+                const filenames = fileStorage.gc.queued() ?? [];
+
+                /** Request file deletion via service worker as browsers
+                 * may terminate async operations during `beforeunload`
+                 * so we can't rely on async file operations completing */
+                if (client) client.send({ type: 'fs_gc', filenames });
+                else {
+                    /** Fallback: synchronously update localStorage deletion queue
+                     * when service worker unavailable, as `beforeunload` doesn't
+                     * guarantee completion of async operations */
+                    const queueKey = FileStorageGarbageCollector.STORAGE_KEY;
+                    const data = localStorage.getItem(queueKey);
+                    const queue = safeCall((): string[] => (data ? JSON.parse(data) : []))() ?? [];
+                    const pending = new Set(queue);
+                    filenames.forEach((file) => pending.add(file));
+                    localStorage.setItem(queueKey, JSON.stringify(Array.from(pending)));
+                }
             }
         };
 
