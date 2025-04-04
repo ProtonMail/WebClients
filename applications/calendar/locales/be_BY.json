@@ -5096,9 +5096,6 @@
       "Large imports can take several days.": [
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Даведайцеся, як ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -6564,9 +6561,6 @@
       "Starred": [
         "З зорачкай"
       ],
-      "stay safer online": [
-        "застацца абароненым у інтэрнэце"
-      ],
       "Trash": [
         "Сметніца"
       ],
@@ -6971,6 +6965,26 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -6992,26 +7006,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10509,9 +10503,6 @@
       ],
       "Desktop": [
         "Для камп'ютара"
-      ],
-      "Details": [
-        "Падрабязнасці"
       ],
       "Does not repeat": [
         "Не паўтараецца"

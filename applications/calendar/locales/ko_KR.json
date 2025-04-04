@@ -4874,9 +4874,6 @@
       "Large imports can take several days.": [
         "가져올 내용이 많은 경우 며칠 정도 걸릴 수 있습니다."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink }하는 법 알아보기"
-      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -6294,9 +6291,6 @@
       "Starred": [
         "별표 표시됨"
       ],
-      "stay safer online": [
-        "온라인 상에서 안전하게"
-      ],
       "Trash": [
         "휴지통"
       ],
@@ -6674,6 +6668,26 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6695,26 +6709,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -9903,9 +9897,6 @@
       ],
       "Desktop": [
         "데스크톱"
-      ],
-      "Details": [
-        "세부 사항"
       ],
       "Does not repeat": [
         "반복하지 않음"

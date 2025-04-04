@@ -4948,11 +4948,11 @@
       "Large imports can take several days.": [
         "As importações grandes podem demorar vários dias."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda como ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Saiba o que fazer ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
@@ -5979,6 +5979,9 @@
       "Emails (last month)": [
         "Emails (mês passado)"
       ],
+      "Enable desktop notifications": [
+        "Ativar as notificações na área de trabalho"
+      ],
       "Encrypt emails": [
         "Encriptar os e-mails"
       ],
@@ -6098,6 +6101,9 @@
       ],
       "Notifications": [
         "Notificações"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "As notificações estão desativadas. Para ativá-las, altere as definições do navegador."
       ],
       "On": [
         "Ativado"
@@ -6343,6 +6349,9 @@
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
       ],
+      "if your data is leaked": [
+        "se os seus dados vazarem"
+      ],
       "Inbox": [
         "Caixa de entrada"
       ],
@@ -6381,9 +6390,6 @@
       ],
       "Starred": [
         "Com estrela"
-      ],
-      "stay safer online": [
-        "fique mais seguro online"
       ],
       "Trash": [
         "Lixo"
@@ -6773,6 +6779,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -6794,26 +6820,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10106,9 +10112,6 @@
       "Desktop": [
         "Área de trabalho"
       ],
-      "Details": [
-        "Detalhes"
-      ],
       "Does not repeat": [
         "Não se repete"
       ],
@@ -10235,6 +10238,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Information exposed in breach": [
+        "Informação exposta na violação"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -10564,6 +10570,9 @@
       "Load image": [
         "Carregar a imagem"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nem todas as informações aqui listadas foram expostas para todos os utilizadores."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a utilizar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
       ],
@@ -10584,6 +10593,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de subscrição começa em ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que sejam decifradas, as palavras-passe encriptadas permanecem seguras mesmo que sejam expostas."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
