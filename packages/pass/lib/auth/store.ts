@@ -17,6 +17,7 @@ const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
 const PASS_COOKIE_AUTH_KEY = 'pass:auth_cookies';
 const PASS_CLIENT_KEY = 'pass:client_key';
 const PASS_EXTRA_PWD_KEY = 'pass:extra_password';
+const PASS_TWO_PWD_MODE = 'pass:two_password_mode';
 const PASS_LOCAL_ID_KEY = 'pass:local_id';
 const PASS_LOCK_EXTEND_TIME_KEY = 'pass:lock_extend_time';
 const PASS_LOCK_MODE_KEY = 'pass:lock_mode';
@@ -86,6 +87,7 @@ export const createAuthStore = (store: Store) => {
             RefreshTime: authStore.getRefreshTime(),
             RefreshToken: authStore.getRefreshToken() ?? '',
             sessionLockToken: authStore.getLockToken(),
+            twoPasswordMode: authStore.getTwoPasswordMode(),
             UID: authStore.getUID() ?? '',
             unlockRetryCount: authStore.getUnlockRetryCount(),
             userData: authStore.getUserData(),
@@ -134,6 +136,7 @@ export const createAuthStore = (store: Store) => {
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
+            if (session.twoPasswordMode) authStore.setTwoPasswordMode(session.twoPasswordMode);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
             if (session.UserID) authStore.setUserID(session.UserID);
@@ -200,6 +203,9 @@ export const createAuthStore = (store: Store) => {
 
         setExtraPassword: (enabled: boolean): void => store.set(PASS_EXTRA_PWD_KEY, enabled),
         getExtraPassword: (): boolean => store.get(PASS_EXTRA_PWD_KEY) ?? false,
+
+        setTwoPasswordMode: (enabled: boolean): void => store.set(PASS_TWO_PWD_MODE, enabled),
+        getTwoPasswordMode: (): boolean => store.get(PASS_TWO_PWD_MODE) ?? false,
 
         getSessionVersion: (): AuthSessionVersion => store.get(PASS_SESSION_VERSION_KEY) ?? SESSION_VERSION,
         setSessionVersion: (version: AuthSessionVersion) => store.set(PASS_SESSION_VERSION_KEY, version),

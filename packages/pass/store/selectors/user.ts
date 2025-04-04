@@ -13,7 +13,7 @@ import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import { type Address, UserType } from '@proton/shared/lib/interfaces';
+import { type Address, SETTINGS_PASSWORD_MODE, UserType } from '@proton/shared/lib/interfaces';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 
 import { selectDefaultVault } from './shares';
@@ -100,3 +100,6 @@ export const selectIsPassEssentials = createSelector(
     selectUserPlan,
     (plan): boolean => plan?.Type === 'business' && plan.DisplayName === 'Pass Essentials'
 );
+
+export const selectHasTwoPasswordMode = ({ user }: State) =>
+    user.userSettings?.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
