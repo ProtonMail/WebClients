@@ -4948,11 +4948,11 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Μάθετε τι να κάνετε ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
@@ -6349,6 +6349,9 @@
       "How to pay with Bitcoin?": [
         "Πώς να πληρώσετε με Bitcoin;"
       ],
+      "if your data is leaked": [
+        "εάν τα δεδομένα σας υποστούν διαρρεύσει"
+      ],
       "Inbox": [
         "Εισερχόμενα"
       ],
@@ -6387,9 +6390,6 @@
       ],
       "Starred": [
         "Με αστέρι"
-      ],
-      "stay safer online": [
-        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -6779,6 +6779,26 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -6800,26 +6820,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10112,9 +10112,6 @@
       "Desktop": [
         "Υπολογιστής"
       ],
-      "Details": [
-        "Λεπτομέρειες"
-      ],
       "Does not repeat": [
         "Δεν επαναλαμβάνεται"
       ],
@@ -10241,6 +10238,9 @@
       ],
       "Import groups": [
         "Εισαγωγή ομάδων"
+      ],
+      "Information exposed in breach": [
+        "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
@@ -10570,6 +10570,9 @@
       "Load image": [
         "Φόρτωση εικόνας"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
       ],
@@ -10590,6 +10593,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"

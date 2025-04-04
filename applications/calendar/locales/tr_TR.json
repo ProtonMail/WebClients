@@ -4948,9 +4948,6 @@
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Nasıl ${ staySaferOnlineLink } öğrenin"
-      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -6382,9 +6379,6 @@
       "Starred": [
         "Yıldızlı"
       ],
-      "stay safer online": [
-        "çevrim içi ortamda daha güvende kalın"
-      ],
       "Trash": [
         "Çöp kutusu"
       ],
@@ -6773,6 +6767,26 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -6794,26 +6808,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -10105,9 +10099,6 @@
       ],
       "Desktop": [
         "Bilgisayar"
-      ],
-      "Details": [
-        "Ayrıntılar"
       ],
       "Does not repeat": [
         "Yinelenmiyor"

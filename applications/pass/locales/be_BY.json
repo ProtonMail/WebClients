@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
       ],
-      "Move to Trash": [
-        "Перамясціць у Сметніцу"
-      ],
       "Move to trash": [
         "Перамясціць у сметніцу"
+      ],
+      "Move to Trash": [
+        "Перамясціць у Сметніцу"
       ],
       "Multiple select": [
         "Выбар некалькіх элементаў"
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Выйсці з уліковага запісу"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Нехта абагуліў элемент з вамі ў ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Сартаваць элементы сховішча"
@@ -1134,9 +1131,6 @@
       ],
       "Trashing item failed": [
         "Збой перамяшчэння элемента ў сметніцу"
-      ],
-      "Try reaching out to the link owner.": [
-        "Паспрабуйце звярнуцца да ўладальніка спасылкі."
       ],
       "Unable to generate an OTP code for this item": [
         "Немагчыма згенерыраваць код OTP для гэтага элемента"
@@ -1793,9 +1787,6 @@
       "Latest breach on ${ formattedDate }": [
         "Апошняе парушэнне ў ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Даведайцеся, як ${ staySaferOnlineLink }"
-      ],
       "Leaving item...": [
         "Выхад з элемента..."
       ],
@@ -1843,12 +1834,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -3172,9 +3157,6 @@
       "Theme": [
         "Тэма"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Доступ да гэтага элемента можна атрымаць да ${ date } або да дасягнення абмежавання па праглядзе."
-      ],
       "Title": [
         "Назва"
       ],
@@ -3293,9 +3275,6 @@
       ],
       "Learn more": [
         "Даведацца больш"
-      ],
-      "stay safer online": [
-        "застацца абароненым у інтэрнэце"
       ]
     },
     "Log preference": {
@@ -3844,9 +3823,6 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Выдаліць сховішча \"${ vaultName }\"?"
-      ],
-      "Details": [
-        "Падрабязнасці"
       ],
       "Did you know?": [
         "Ці ведалі вы што?"

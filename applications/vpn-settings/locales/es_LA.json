@@ -520,11 +520,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "refresque la página"
-      ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "refresh the page": [
+        "refresque la página"
       ],
       "Remove": [
         "Eliminar"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Seleccione el país ${ country }"
       ],
-      "Select file": [
-        "Seleccionar archivo"
-      ],
       "select file": [
         "seleccionar archivo"
+      ],
+      "Select file": [
+        "Seleccionar archivo"
       ],
       "Send code": [
         "Enviar código"
@@ -4265,6 +4265,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
+      "Data recoverable on this device": [
+        "Datos recuperables en este dispositivo"
+      ],
       "Dedicated servers": [
         "Servidores dedicados"
       ],
@@ -5352,6 +5355,9 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
+      "trusted device": [
+        "dispositivo de confianza"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Pruebe ${ productName } totalmente sin riesgos. Si por cualquier motivo cambia de opinión, recibirá un reembolso completo. Sin preguntas."
       ],
@@ -5421,11 +5427,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -5510,6 +5516,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomendamos usar la frase de recuperación en su lugar."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Almacenamos un archivo de copia de seguridad en este navegador porque has permitido la recuperación de datos en este ${ deviceLink }. Si el archivo de copia de seguridad es válido, podrá recuperar inmediatamente el acceso completo o parcial de sus datos cifrados."
       ],
       "We use 3-D Secure to protect your payments": [
         "Se usa 3-D Secure para proteger sus pagos."
@@ -5967,10 +5976,10 @@
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6930,29 +6939,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Eliminar cuenta"
-      ],
-      "Downgrade account": [
-        "Pasar a un plan inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtener ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Obtener ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Seguir en ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar cuenta"
-      ],
-      "Switch plan": [
-        "Cambiar plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Bajar a ${ downgradedPlanName }"
@@ -6977,6 +6963,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Mejorar a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Eliminar cuenta"
+      ],
+      "Downgrade account": [
+        "Pasar a un plan inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtener ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Seguir en ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar cuenta"
+      ],
+      "Switch plan": [
+        "Cambiar plan"
       ]
     },
     "new_plans: feature": {
@@ -8173,17 +8182,6 @@
         "Le damos la bienvenida a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
-      "No one": [
-        "Nadie"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Ajustes de país"
@@ -8241,6 +8239,17 @@
       ],
       "The whole organization": [
         "Toda la organización"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "No one": [
+        "Nadie"
       ]
     },
     "Organization capacity error": {
@@ -10919,10 +10928,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [

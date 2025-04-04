@@ -4852,9 +4852,6 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lær, hvordan du ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -6192,9 +6189,6 @@
       "Starred": [
         "Stjernemarkeret"
       ],
-      "stay safer online": [
-        "bliv mere sikker online"
-      ],
       "Trash": [
         "Papirkurv"
       ],
@@ -6577,6 +6571,23 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6598,23 +6609,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9771,9 +9765,6 @@
       ],
       "Deleting contacts": [
         "Sletter kontakter"
-      ],
-      "Details": [
-        "Detaljer"
       ],
       "Does not repeat": [
         "Gentages ikke"

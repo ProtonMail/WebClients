@@ -4991,9 +4991,6 @@
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Узнайте, как ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Узнать больше"
       ],
@@ -6360,9 +6357,6 @@
       "Starred": [
         "Отмеченные *"
       ],
-      "stay safer online": [
-        "будьте в большей безопасности в Интернете"
-      ],
       "Trash": [
         "Корзина"
       ],
@@ -6764,6 +6758,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6785,26 +6799,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10227,9 +10221,6 @@
       ],
       "Deleting contacts": [
         "Удаление контактов"
-      ],
-      "Details": [
-        "Информация"
       ],
       "Does not repeat": [
         "Не повторяется"

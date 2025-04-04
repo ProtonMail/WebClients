@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "Select file": [
-        "Velg fil"
-      ],
       "select file": [
         "velg fil"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Select files": [
         "Velg filer"
@@ -7000,6 +7000,14 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Hvis den aktiveres på nytt, vil nøkkelen bli brukt til dekryptering"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Hvis den aktiveres på nytt, vil nøkkelen bli brukt til dekryptering og verifisering"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } bruker har for øyeblikket tilgang til delte tjenere.",
@@ -8411,9 +8419,6 @@
       "Large imports can take several days.": [
         "Store importer kan ta flere dager."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lær hvordan du ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær hvordan å logge inn på ${ VPN_APP_NAME } med tredjeparts VPN-applikasjoner."
       ],
@@ -8428,6 +8433,9 @@
       ],
       "Learn more about single sign-on": [
         "Lær mer om enkel pålogging"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Finn ut hva du kan gjøre ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Venstre til høyre"
@@ -9608,11 +9616,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -10317,6 +10325,17 @@
         "Abonnement"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Dekryptering"
+      ],
+      "Decryption, verification": [
+        "Dekryptering, verifisering"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Kryptering, dekryptering, signering, bekreftelse"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Generer nøkkel"
@@ -10344,8 +10363,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktiv"
+      "Compatibility": [
+        "Kompatibilitet"
       ],
       "Compromised": [
         "Kompromittert"
@@ -10760,10 +10779,10 @@
       "Allow sharing outside the organization": [
         "Tillat deling utenfor organisasjonen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10775,11 +10794,11 @@
       "Amount due": [
         "Skyldig beløp"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -11207,11 +11226,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -11414,14 +11433,14 @@
       "Optional": [
         "Valgfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -12033,6 +12052,9 @@
       "How to unlock data": [
         "Hvordan låse opp data"
       ],
+      "if your data is leaked": [
+        "hvis dataene dine er lekket"
+      ],
       "Import/export": [
         "Import/eksport"
       ],
@@ -12054,11 +12076,11 @@
       "perform a password reset from your active session": [
         "utføre en tilbakestilling av passord fra den aktive økten"
       ],
-      "Privacy policy": [
-        "Personvernerklæring"
-      ],
       "privacy policy": [
         "personvernerklæring"
+      ],
+      "Privacy policy": [
+        "Personvernerklæring"
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
@@ -12074,9 +12096,6 @@
       ],
       "Sign in": [
         "Logg på"
-      ],
-      "stay safer online": [
-        "vær sikrere på nettet"
       ],
       "switch account": [
         "bytt konto"
@@ -13429,14 +13448,6 @@
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -13455,6 +13466,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -14092,17 +14111,6 @@
         "Skrivebord"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. i måneden"
@@ -14352,6 +14360,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -18407,10 +18426,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -18636,9 +18655,6 @@
       ],
       "Description": [
         "Beskrivelse"
-      ],
-      "Details": [
-        "Detaljer"
       ],
       "Device": [
         "Enhet"
@@ -18965,6 +18981,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Øk personvernet ditt med flere adresser"
+      ],
+      "Information exposed in breach": [
+        "Informasjon avslørt i brudd"
       ],
       "Integrations": [
         "Integreringer"
@@ -19633,14 +19652,20 @@
       "Actions": [
         "Handlinger"
       ],
+      "Creation date": [
+        "Opprettelsesdato"
+      ],
       "Fingerprint": [
         "Fingeravtrykk"
       ],
-      "Key type": [
-        "Nøkkeltype"
+      "Function": [
+        "Funksjon"
       ],
       "Status": [
         "Status"
+      ],
+      "Type": [
+        "Type"
       ]
     },
     "Title header for members table": {
@@ -19687,9 +19712,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME }-brukere vil bruke denne nøkkelen som standard til sending"
-      ],
       "Account is disconnected": [
         "Konto er frakoblet"
       ],
@@ -19780,6 +19802,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Fjern metadata fra bilder for å beskytte personvernet ditt."
       ],
@@ -19852,6 +19877,12 @@
       "This feature is only available on Beta": [
         "Denne funksjonen er kun tilgjengelig på Beta"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Dette er standardnøkkelen som brukes av andre ${ MAIL_APP_NAME }-brukere på eldre mobilapper til å kryptere data de sender til deg"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Dette er standardnøkkelen som brukes av andre ${ MAIL_APP_NAME }-brukere for å kryptere data de sender til deg"
+      ],
       "This key cannot be used for encryption": [
         "Denne nøkkelen kan ikke bli brukt til kryptering"
       ],
@@ -19863,6 +19894,9 @@
       ],
       "This key is used for email forwarding": [
         "Denne nøkkelen blir brukt til e-postvideresending"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Med mindre de blir dechiffrert, forblir krypterte passord sikre selv om de blir eksponert."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Bruk nettleserens standard rullefelt. Disse er vanligvis større og enklere å bruke"
@@ -19893,9 +19927,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Når du flytter en e-post til søppelpostmappen, blir du automatisk avmeldt fra avsenderens e-postlister."
-      ],
-      "You have locally decrypted this key": [
-        "Du har dekryptert denne nøkkelen lokalt"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "${ MAIL_APP_NAME }-innboksen din er nesten full"

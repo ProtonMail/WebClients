@@ -907,11 +907,11 @@
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select all": [
-        "Fren akk"
-      ],
       "Select All": [
         "Fren kullec"
+      ],
+      "Select all": [
+        "Fren akk"
       ],
       "Select all messages": [
         "Fren akk iznan"
@@ -1056,10 +1056,6 @@
       ],
       "Trust": [
         "Amen"
-      ],
-      "Trust key": [
-        "Tasarut yettwamanen",
-        "Tisura yettwamanen"
       ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
@@ -4920,9 +4916,6 @@
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
       ],
-      "Insert image": [
-        "Ger tugna"
-      ],
       "Insert link": [
         "Ger aseɣwen"
       ],
@@ -5927,11 +5920,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "And": [
-        "Akked"
-      ],
       "AND": [
         "AKKED"
+      ],
+      "And": [
+        "Akked"
       ],
       "and": [
         "akked"
@@ -6131,11 +6124,11 @@
       "I understand the risk": [
         "Gziɣ imihi"
       ],
-      "If": [
-        "Ma"
-      ],
       "IF": [
         "MA"
+      ],
+      "If": [
+        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6239,14 +6232,14 @@
       "Optional": [
         "Afrayan"
       ],
+      "OR": [
+        "NEƔ"
+      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
-      ],
-      "OR": [
-        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6915,6 +6908,17 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6933,17 +6937,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8722,9 +8715,6 @@
       ],
       "Deleting contacts": [
         "Tukksa n yinermisen"
-      ],
-      "Details": [
-        "Ifatusen"
       ],
       "Don't give spam a chance": [
         "Ur ttmuddu ara tagnit i yispamen"

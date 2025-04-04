@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Joku jakoi sinulle kohteen ${ PASS_APP_NAME }ista."
       ],
       "Sort vault items": [
         "Järjestä holvin kohteet"
@@ -1100,9 +1097,6 @@
       ],
       "Trashing item failed": [
         "Kohteen siirto roskakoriin epäonnistui"
-      ],
-      "Try reaching out to the link owner.": [
-        "Yritä tavoittaa linkin omistaja."
       ],
       "Unable to generate an OTP code for this item": [
         "OTP-koodia ei voida luoda tälle kohteelle"
@@ -1717,9 +1711,6 @@
       "Latest breach on ${ formattedDate }": [
         "Edellinen murto tapahtui ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Opi ${ staySaferOnlineLink }"
-      ],
       "Leaving item...": [
         "Poistutaan kohteesta..."
       ],
@@ -1765,10 +1756,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -3033,9 +3020,6 @@
       "Theme": [
         "Teema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Tämä kohde on käytettävissä ${ date } asti, tai kunnes katselurajoitus on saavutettu."
-      ],
       "Title": [
         "Nimi"
       ],
@@ -3154,9 +3138,6 @@
       ],
       "Learn more": [
         "Lue lisää"
-      ],
-      "stay safer online": [
-        "suojautumaan verkossa paremmin"
       ]
     },
     "Log preference": {
@@ -3594,9 +3575,6 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Poistetaanko holvi \"${ vaultName }\"?"
-      ],
-      "Details": [
-        "Lisätiedot"
       ],
       "Did you know?": [
         "Tiesitkö?"

@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -2765,6 +2765,14 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "Vybráno: ${ selectedCitiesCount }",
+        "Vybráno: ${ selectedCitiesCount }",
+        "Vybráno: ${ selectedCitiesCount }",
+        "Vybráno: ${ selectedCitiesCount }"
       ]
     },
     "Country name": {
@@ -7082,7 +7090,21 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Pokud je klíč znovu aktivován, použije se k dešifrování"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Pokud je klíč znovu aktivován, použije se k dešifrování a ověřování"
+      ]
+    },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů mají aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -8565,9 +8587,6 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zjistěte, jak ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Naučte se, jak se přihlásit ke službě ${ VPN_APP_NAME } pomocí VPN aplikací třetích stran."
       ],
@@ -8582,6 +8601,9 @@
       ],
       "Learn more about single sign-on": [
         "Více informací o jednotném přihlášení (SSO)"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zjistěte, co dělat, ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Zleva doprava"
@@ -9786,11 +9808,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -10523,6 +10545,17 @@
         "Předplatné"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Dešifrování"
+      ],
+      "Decryption, verification": [
+        "Dešifrování, ověřování"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Šifrování, dešifrování, podepisování, ověřování"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Vygenerovat klíč"
@@ -10550,8 +10583,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktivní"
+      "Compatibility": [
+        "Kompatibilita"
       ],
       "Compromised": [
         "Kompromitovaný"
@@ -10974,10 +11007,10 @@
       "Allow sharing outside the organization": [
         "Povolit sdílení mimo organizaci"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10989,10 +11022,10 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -11201,6 +11234,9 @@
       ],
       "Could you please specify?": [
         "Můžete to prosím upřesnit?"
+      ],
+      "Countries": [
+        "Země"
       ],
       "Country": [
         "Země"
@@ -11418,11 +11454,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Pokud"
-      ],
       "IF": [
         "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -11625,14 +11661,14 @@
       "Optional": [
         "Volitelné"
       ],
+      "OR": [
+        "NEBO"
+      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
-      ],
-      "OR": [
-        "NEBO"
       ],
       "Organization name": [
         "Název organizace"
@@ -12246,6 +12282,9 @@
       "How to unlock data": [
         "Jak odemknout údaje"
       ],
+      "if your data is leaked": [
+        "když dojde k úniku vašich dat"
+      ],
       "Import/export": [
         "Import/export"
       ],
@@ -12267,11 +12306,11 @@
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
       ],
-      "Privacy policy": [
-        "Zásady ochrany osobních údajů"
-      ],
       "privacy policy": [
         "zásadami ochrany osobních údajů"
+      ],
+      "Privacy policy": [
+        "Zásady ochrany osobních údajů"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -12287,9 +12326,6 @@
       ],
       "Sign in": [
         "Přihlásit se"
-      ],
-      "stay safer online": [
-        "zůstaňte v bezpečí online"
       ],
       "switch account": [
         "přepnout účet"
@@ -13712,14 +13748,6 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -13738,6 +13766,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14389,17 +14425,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. den v měsíci"
@@ -14649,6 +14674,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Option delay send seconds": {
@@ -18843,10 +18879,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -19076,9 +19112,6 @@
       ],
       "Description": [
         "Popis"
-      ],
-      "Details": [
-        "Podrobnosti"
       ],
       "Device": [
         "Zařízení"
@@ -19409,6 +19442,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Zvyšte své soukromí pomocí dalších adres"
+      ],
+      "Information exposed in breach": [
+        "Informace odhalené při úniku informací"
       ],
       "Integrations": [
         "Integrace"
@@ -20079,14 +20115,20 @@
       "Actions": [
         "Akce"
       ],
+      "Creation date": [
+        "Datum vytvoření"
+      ],
       "Fingerprint": [
         "Otisk"
       ],
-      "Key type": [
-        "Typ klíče"
+      "Function": [
+        "Funkce"
       ],
       "Status": [
         "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     },
     "Title header for members table": {
@@ -20133,9 +20175,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Uživatelé ${ MAIL_APP_NAME } budou používat tento klíč ve výchozím nastavení pro odesílání"
-      ],
       "Account is disconnected": [
         "Účet je odpojen"
       ],
@@ -20226,6 +20265,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Zprávy ve složce Odeslané nebo Koncepty se budou nadále zobrazovat v těchto složkách, i když požádáte o jejich přesun."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Odebrání metadat z vašich obrázků pro ochranu vašeho soukromí."
       ],
@@ -20298,6 +20340,12 @@
       "This feature is only available on Beta": [
         "Tato funkce je k dispozici pouze ve verzi Beta"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } ve starších mobilních aplikacích k šifrování dat, která vám posílají."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } k šifrování dat, která vám posílají."
+      ],
       "This key cannot be used for encryption": [
         "Tento klíč nelze použít pro šifrování"
       ],
@@ -20309,6 +20357,9 @@
       ],
       "This key is used for email forwarding": [
         "Tento klíč se používá k přeposílání e-mailů"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Použijte výchozí posuvníky prohlížeče. Ty jsou obvykle větší a snadněji se používají"
@@ -20339,9 +20390,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Jakmile přesunete e-mail do složky spam, budete automaticky odhlášeni z e-mailových seznamů odesílatele."
-      ],
-      "You have locally decrypted this key": [
-        "Tento klíč jste dešifrovali lokálně"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Vaše schránka ${ MAIL_APP_NAME } je téměř plná"

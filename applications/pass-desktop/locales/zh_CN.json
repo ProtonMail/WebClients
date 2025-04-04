@@ -1778,8 +1778,8 @@
       "Latest breach on ${ formattedDate }": [
         "最近一次泄露的时间 ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "学习如何 ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "请通过 ${ dataLeakedLink } 了解应对措施"
       ],
       "Leaving item...": [
         "正在离开项目..."
@@ -3291,11 +3291,11 @@
       "auto create rules ››": [
         "自动创建规则 ››"
       ],
+      "if your data is leaked": [
+        "如果您的数据遭到泄露"
+      ],
       "Learn more": [
         "了解详情"
-      ],
-      "stay safer online": [
-        "安全上网"
       ]
     },
     "Log preference": {
@@ -3841,9 +3841,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "是否删除保险库 “${ vaultName }”？"
       ],
-      "Details": [
-        "详细信息"
-      ],
       "Did you know?": [
         "您知道吗？"
       ],
@@ -3912,6 +3909,9 @@
       ],
       "Inactive 2FA": [
         "未启用 2FA"
+      ],
+      "Information exposed in breach": [
+        "数据外泄事件中泄露的信息"
       ],
       "Install extension": [
         "安装扩展"
@@ -4167,6 +4167,14 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "并非所有用户都能查看此处列出的全部信息。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
       ]
     },
     "Validation": {

@@ -4931,11 +4931,11 @@
       "Last week": [
         "La semana pasada"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda cómo ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Más información"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprenda qué hacer ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
@@ -6741,6 +6741,9 @@
       "How to pay with Bitcoin?": [
         "¿Cómo pagar con Bitcoin?"
       ],
+      "if your data is leaked": [
+        "si sus datos son filtrados"
+      ],
       "Inbox": [
         "Buzón"
       ],
@@ -6782,9 +6785,6 @@
       ],
       "Starred": [
         "Destacados"
-      ],
-      "stay safer online": [
-        "mantener su seguridad en línea"
       ],
       "Trash": [
         "Papelera"
@@ -7219,29 +7219,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Eliminar cuenta"
-      ],
-      "Downgrade account": [
-        "Pasar a un plan inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtener ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Obtener ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Seguir en ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar cuenta"
-      ],
-      "Switch plan": [
-        "Cambiar plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Bajar a ${ downgradedPlanName }"
@@ -7263,6 +7240,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Mejorar a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Eliminar cuenta"
+      ],
+      "Downgrade account": [
+        "Pasar a un plan inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtener ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Seguir en ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar cuenta"
+      ],
+      "Switch plan": [
+        "Cambiar plan"
       ]
     },
     "new_plans: feature": {
@@ -10641,9 +10641,6 @@
       "Desktop": [
         "Escritorio"
       ],
-      "Details": [
-        "Detalles"
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -10783,6 +10780,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Information exposed in breach": [
+        "Información expuesta en la vulneración"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
@@ -11191,6 +11191,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No toda la información aquí mencionada fue expuesta para todos los usuarios."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
@@ -11214,6 +11217,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"

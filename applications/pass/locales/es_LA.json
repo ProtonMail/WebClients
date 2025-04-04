@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Mover a otra bóveda"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Cerrar sesión"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Alguien compartió un elemento con usted en ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar elementos de la bóveda"
@@ -1124,9 +1121,6 @@
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
-      ],
-      "Try reaching out to the link owner.": [
-        "Intente comunicarse con el propietario del enlace."
       ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento"
@@ -1747,8 +1741,8 @@
       "Latest breach on ${ formattedDate }": [
         "Última vulneración en ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda cómo ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprenda qué hacer ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Abandonando el elemento..."
@@ -1795,10 +1789,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -3082,9 +3072,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Este elemento es accesible hasta el ${ date } o hasta que se alcance el límite de vistas."
-      ],
       "Title": [
         "Título"
       ],
@@ -3201,11 +3188,11 @@
       "auto create rules ››": [
         "crear reglas automáticamente ››"
       ],
+      "if your data is leaked": [
+        "si sus datos son filtrados"
+      ],
       "Learn more": [
         "Más información"
-      ],
-      "stay safer online": [
-        "mantener su seguridad en línea"
       ]
     },
     "Log preference": {
@@ -3743,9 +3730,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "¿Eliminar la bóveda «${ vaultName }»?"
       ],
-      "Details": [
-        "Detalles"
-      ],
       "Did you know?": [
         "¿Lo sabía?"
       ],
@@ -3814,6 +3798,9 @@
       ],
       "Inactive 2FA": [
         "2FA inactiva"
+      ],
+      "Information exposed in breach": [
+        "Información expuesta en la vulneración"
       ],
       "Install extension": [
         "Instalar la extensión"
@@ -4074,6 +4061,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "No toda la información aquí mencionada fue expuesta para todos los usuarios."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ]
     },
     "Validation": {

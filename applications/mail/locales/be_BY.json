@@ -1125,10 +1125,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1325,12 +1325,6 @@
       ],
       "Trust": [
         "Давяраць"
-      ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -6971,7 +6965,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7023,9 +7020,6 @@
       ],
       "Large imports can take several days.": [
         "Вялікае імпартаванне можа заняць некалькі дзён."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Даведайцеся, як ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -8675,10 +8669,10 @@
       "Always move sender's emails": [
         "Заўсёды перамяшчаць лісты адпраўніка"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
       "and": [
@@ -8909,11 +8903,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Калі"
-      ],
       "IF": [
         "КАЛІ"
+      ],
+      "If": [
+        "Калі"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -9026,14 +9020,14 @@
       "Optional": [
         "Неабавязкова"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Original link": [
         "Арыгінальная спасылка"
@@ -9433,9 +9427,6 @@
       ],
       "Starred": [
         "З зорачкай"
-      ],
-      "stay safer online": [
-        "застацца абароненым у інтэрнэце"
       ],
       "Terms": [
         "Умовы"
@@ -9861,29 +9852,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
@@ -9905,6 +9873,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Downgrade account": [
+        "Панізіць уліковы запіс"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Пакінуць ${ plan }"
+      ],
+      "Keep account": [
+        "Пакінуць уліковы запіс"
+      ],
+      "Switch plan": [
+        "Змяніць тарыфны план"
       ]
     },
     "new_plans: feature": {
@@ -13897,9 +13888,6 @@
       ],
       "Desktop": [
         "Для камп'ютара"
-      ],
-      "Details": [
-        "Падрабязнасці"
       ],
       "Discover your subscription benefits": [
         "Пазнаёмцеся з перавагамі вашай падпіскі"

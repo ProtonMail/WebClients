@@ -2251,6 +2251,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2329,11 +2334,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4415,11 +4415,11 @@
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda cómo ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Más información"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprenda qué hacer ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Disponibilidad limitada"
@@ -4799,6 +4799,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "La URL que ha ingresado parece que ha sido copiada de Slack incorrectamente. Para copiar enlaces largos de Slack, haga clic derecho en el enlace, luego seleccione \"copiar enlace\" en lugar de copiar directamente el texto incompleto de la URL."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."
@@ -5853,6 +5856,9 @@
       "How to pay with Bitcoin?": [
         "¿Cómo pagar con Bitcoin?"
       ],
+      "if your data is leaked": [
+        "si sus datos son filtrados"
+      ],
       "Learn more": [
         "Más información"
       ],
@@ -5867,9 +5873,6 @@
       ],
       "settings": [
         "ajustes"
-      ],
-      "stay safer online": [
-        "mantener su seguridad en línea"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -9206,9 +9209,6 @@
       "Desktop": [
         "Escritorio"
       ],
-      "Details": [
-        "Detalles"
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -9332,6 +9332,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Information exposed in breach": [
+        "Información expuesta en la vulneración"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
@@ -9631,6 +9634,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No toda la información aquí mencionada fue expuesta para todos los usuarios."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
@@ -9651,6 +9657,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"

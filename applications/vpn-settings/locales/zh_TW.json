@@ -487,10 +487,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -598,10 +598,10 @@
       "Select country": [
         "選擇國家"
       ],
-      "Select file": [
+      "select file": [
         "選取檔案"
       ],
-      "select file": [
+      "Select file": [
         "選取檔案"
       ],
       "Send code": [
@@ -4858,10 +4858,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
       "Users": [
@@ -5353,11 +5353,11 @@
       "Allow recovery by phone": [
         "允許透過電話復原"
       ],
-      "Allowed Domain": [
-        "網域白名單"
-      ],
       "Allowed domain": [
         "已允許網域"
+      ],
+      "Allowed Domain": [
+        "網域白名單"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -6238,29 +6238,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
@@ -6285,6 +6262,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
       ]
     },
     "new_plans: feature": {
@@ -7329,11 +7329,6 @@
         "歡迎來到 ${ appName }"
       ]
     },
-    "option": {
-      "Group members": [
-        "群組成員"
-      ]
-    },
     "Option": {
       "Country configs": [
         "國家組態設定"
@@ -7388,6 +7383,11 @@
       ],
       "The whole organization": [
         "整個組織"
+      ]
+    },
+    "option": {
+      "Group members": [
+        "群組成員"
       ]
     },
     "Organization capacity error": {
@@ -9665,10 +9665,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [

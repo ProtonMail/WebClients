@@ -4808,9 +4808,6 @@
       "Last week": [
         "पिछले हफ्ते"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "जानें कैसे ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "और जानें"
       ],
@@ -6555,9 +6552,6 @@
       "Starred": [
         "तारांकित"
       ],
-      "stay safer online": [
-        "ऑनलाइन सुरक्षित रहें"
-      ],
       "Trash": [
         "कचरा"
       ],
@@ -6931,29 +6925,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -6975,6 +6946,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -10265,9 +10259,6 @@
       ],
       "Deleting contacts": [
         "संपर्क हट रहे है"
-      ],
-      "Details": [
-        "विवरण"
       ],
       "Discard": [
         "रद्द करें"

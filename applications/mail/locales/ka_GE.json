@@ -1117,10 +1117,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -1317,10 +1317,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -6715,6 +6711,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -6767,9 +6764,6 @@
       ],
       "Large imports can take several days.": [
         "დიდი მოცულობით ინფორმაციის შემოტანას შეიძლება რამდენიმე დღე დასჭირდეს."
-      ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "მეტის ნახვა"
@@ -8329,10 +8323,10 @@
       "Always move sender's emails": [
         "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -8515,6 +8509,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable desktop notifications": [
+        "Სამუშაო მაგიდის გაფრთხილებების ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -8560,10 +8557,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -8662,6 +8659,9 @@
       "Notification": [
         "შეტყობინება"
       ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "გაფრთხილებები გამორთულია. მათ ჩასართავად შეცვალეთ ბრაუზერის პარამეტრები."
+      ],
       "Open in a new tab": [
         "ახალ ჩანართში გახსნა"
       ],
@@ -8674,13 +8674,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Original link": [
@@ -9081,9 +9081,6 @@
       ],
       "Starred": [
         "ვარსკვლავიანები"
-      ],
-      "stay safer online": [
-        "იყავით უსაფრთხოდ ინტერნეტში"
       ],
       "Terms": [
         "წესები"
@@ -9493,29 +9490,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -9537,6 +9511,29 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -13287,9 +13284,6 @@
       ],
       "Desktop": [
         "სამუშაო მაგიდა"
-      ],
-      "Details": [
-        "დეტალები"
       ],
       "Discover your subscription benefits": [
         "აღმოაჩინეთ თქვენი სატარიფო გეგმის უპირატესობები"

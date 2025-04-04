@@ -505,11 +505,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "refresh the page": [
-        "पृष्ठ रिफ्रेश करें"
-      ],
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
+      ],
+      "refresh the page": [
+        "पृष्ठ रिफ्रेश करें"
       ],
       "Remove": [
         "हटाएं"
@@ -622,11 +622,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "Select file": [
-        "फाइल चुनें"
-      ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Send code": [
         "कोड भेजें"
@@ -5289,10 +5289,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -5818,10 +5818,10 @@
       "Allow recovery by phone": [
         "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6775,29 +6775,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -6822,6 +6799,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -8000,17 +8000,6 @@
         "${ appName } में आपका स्वागत है"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "Country configs": [
         "देश विन्यास"
@@ -8068,6 +8057,17 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Organization capacity error": {
@@ -10690,10 +10690,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [

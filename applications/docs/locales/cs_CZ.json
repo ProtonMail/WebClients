@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "Accept invitation": [
+        "Přijmout pozvánku"
+      ],
+      "Accept invitation to document": [
+        "Přijmout pozvánku k dokumentu"
+      ],
       "Activate recovery": [
         "Aktivovat obnovení"
       ],
@@ -83,6 +89,9 @@
       ],
       "Apply": [
         "Použít"
+      ],
+      "Ask me next time": [
+        "Zeptat se příště"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
@@ -221,6 +230,12 @@
       ],
       "Customize import": [
         "Přizpůsobit import"
+      ],
+      "Decline invitation": [
+        "Odmítnout pozvánku"
+      ],
+      "Decline invitation to document": [
+        "Odmítnout pozvánku k dokumentu"
       ],
       "Decline invite": [
         "Odmítnout pozvánku"
@@ -585,11 +600,17 @@
       "Save changes": [
         "Uložit změny"
       ],
+      "Save preferences": [
+        "Uložit předvolby"
+      ],
       "Search": [
         "Vyhledat"
       ],
       "Search countries": [
         "Vyhledat země"
+      ],
+      "Search recent documents": [
+        "Hledat nedávné dokumenty"
       ],
       "See how": [
         "Podívejte se, jak"
@@ -2251,6 +2272,11 @@
         "Faktura po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2329,11 +2355,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4032,6 +4053,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je zabezpečený tunel mezi vaším zařízením a internetem. Skrývá vaši polohu a aktivitu před poskytovatelem internetových služeb (ISP) a navštívenými webovými stránkami."
       ],
+      "Accept/decline": [
+        "Přijmout/odmítnout"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
@@ -4158,6 +4182,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Převádění dokumentu..."
+      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -4188,6 +4215,9 @@
         "Vytvořte bezpečný cloud pro ${ value } členů",
         "Vytvořte bezpečný cloud pro ${ value } členů"
       ],
+      "Create an encrypted document.": [
+        "Vytvořte šifrovaný dokument."
+      ],
       "Create in": [
         "Vytvořit v"
       ],
@@ -4202,6 +4232,9 @@
       ],
       "Creating link to folder": [
         "Vytváření odkazu na složku"
+      ],
+      "Creating new document...": [
+        "Vytváření nového dokumentu..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -4320,6 +4353,12 @@
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Chyba při převodu dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Chyba při načítání dokumentu ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4379,6 +4418,12 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
+      ],
+      "Get Notified About Comments": [
+        "Buďte upozorněni na komentáře"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Jít do ${ DRIVE_APP_NAME }"
@@ -4485,11 +4530,11 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zjistěte, jak ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zjistěte, co dělat, ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Limitovaná dostupnost"
@@ -4520,6 +4565,9 @@
       ],
       "Low Priority": [
         "Nízká priorita"
+      ],
+      "Making a copy...": [
+        "Vytváření kopie..."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -4563,6 +4611,9 @@
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "V adrese URL nebyl zadán žádný dokument. Vraťte se do ${ DRIVE_APP_NAME } a vyberte dokument."
+      ],
       "No email address": [
         "Žádná e-mailová adresa"
       ],
@@ -4574,6 +4625,9 @@
       ],
       "No recent documents": [
         "Žádné nedávné dokumenty"
+      ],
+      "No recent documents match your search.": [
+        "Vašemu hledání neodpovídají žádné nedávné dokumenty."
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -4631,6 +4685,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
+      ],
+      "Pending invitations": [
+        "Čekající pozvánky"
       ],
       "People with access": [
         "Lidé s oprávněním přístupu"
@@ -4869,6 +4926,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
+      "There are no documents in the trash.": [
+        "V koši nejsou žádné dokumenty."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Tato akce smaže odkaz a zruší přistup všem uživatelům."
       ],
@@ -4877,6 +4937,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Tento dokument vykazuje velkou aktivitu. Některé funkce mohou být dočasně nedostupné."
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Tento dokument možná neexistuje, nebo se nám nedaří jej načíst. Znovu načtěte stránku a zkuste to znovu."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Tento dokument nemusí existovat nebo k jeho zobrazení nemáte oprávnění. Můžete zkusit znovu načíst stránku a zjistit, zda problém přetrvává nebo se obrátit na vlastníka a požádat ho o přístup."
@@ -4977,6 +5040,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "Přenos vynechán pro složku \"${ folderName }\""
       ],
+      "Trashed": [
+        "V koši"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
@@ -4985,6 +5051,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Zdá se, že soubor nebo některá jeho data nelze dešifrovat."
+      ],
+      "Update recent documents": [
+        "Aktualizovat nedávné dokumenty"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
@@ -5145,6 +5214,9 @@
       "You cannot undo this action.": [
         "Tuto akci nemůžete vzít zpět."
       ],
+      "You don't have access": [
+        "Nemáte přístup"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
@@ -5156,6 +5228,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Můžete být přesměrováni na webové stránky své banky."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Je možné, že vámi vybraný účet nemá dostatečná oprávnění k zobrazení dokumentu. Zkuste použít jiný účet nebo se obraťte na majitele a požádejte ho o přístup."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Než budete moci přejít na nižší verzi, musíte deaktivovat nebo odebrat všechny další uživatele, adresy a vlastní domény účtu ${ MAIL_APP_NAME }."
@@ -5560,6 +5635,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Enable email notifications": [
+        "Povolit e-mailová upozornění"
+      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -5613,6 +5691,9 @@
       ],
       "Import to:": [
         "Importovat do:"
+      ],
+      "Include document name in notification": [
+        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -5906,6 +5987,9 @@
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
       ],
+      "if your data is leaked": [
+        "když dojde k úniku vašich dat"
+      ],
       "Learn more": [
         "Zjistit více"
       ],
@@ -5920,9 +6004,6 @@
       ],
       "settings": [
         "nastavení"
-      ],
-      "stay safer online": [
-        "zůstaňte v bezpečí online"
       ],
       "What’s this?": [
         "Co je to?"
@@ -7512,6 +7593,9 @@
       "Public link update access failed ": [
         "Přístup k aktualizaci veřejného odkazu selhal "
       ],
+      "Recent documents updated.": [
+        "Nedávno aktualizované dokumenty."
+      ],
       "Root folder failed to be loaded": [
         "Kořenovou složku se nepodařilo načíst"
       ],
@@ -7689,6 +7773,20 @@
       ],
       "Merge with calendar": [
         "Sloučit s kalendářem"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "Oblíbené"
+      ],
+      "Recents": [
+        "Nedávné"
+      ],
+      "Searching": [
+        "Hledání"
+      ],
+      "Trashed": [
+        "V koši"
       ]
     },
     "Participant name": {
@@ -8094,6 +8192,9 @@
       "Created by": [
         "Vytvořil/a"
       ],
+      "Deleted": [
+        "Smazáno"
+      ],
       "Earlier": [
         "Dříve"
       ],
@@ -8111,6 +8212,9 @@
       ],
       "Previous 7 days": [
         "Předchozích 7 dní"
+      ],
+      "Search results": [
+        "Výsledky hledání"
       ],
       "Today": [
         "Dnes"
@@ -9367,9 +9471,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Podrobnosti"
-      ],
       "Discard": [
         "Zahodit"
       ],
@@ -9495,6 +9596,9 @@
       ],
       "Import groups": [
         "Importovat skupiny"
+      ],
+      "Information exposed in breach": [
+        "Informace odhalené při úniku informací"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -9794,6 +9898,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Zpráva a název souboru jsou uloženy s šifrováním s nulovým přístupem, pokud jsou součástí e-mailu"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
@@ -9814,6 +9921,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus předplatného začíná ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"

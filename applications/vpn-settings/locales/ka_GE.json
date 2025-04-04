@@ -520,10 +520,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Remove": [
@@ -637,10 +637,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
       "Send code": [
@@ -5377,10 +5377,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -5909,10 +5909,10 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6869,29 +6869,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -6916,6 +6893,29 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -8112,17 +8112,6 @@
         "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
-      ]
-    },
     "Option": {
       "Country configs": [
         "ქვეყნების მორგება"
@@ -8180,6 +8169,17 @@
       ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
       ]
     },
     "Organization capacity error": {
@@ -10835,10 +10835,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [

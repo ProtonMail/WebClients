@@ -2248,6 +2248,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2326,11 +2331,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4412,11 +4412,11 @@
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Leer ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Leer wat te doen ${ dataLeakedLink }"
       ],
       "Limited availability": [
         "Beperkte beschikbaarheid"
@@ -4796,6 +4796,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "De URL die u hebt ingevoegd, lijkt verkeerd te zijn gekopieerd uit Slack. Wanneer u lange koppelingen van Slack kopieert, klik met de rechtermuisknop op de link en kies dan \"Link kopiëren\" in plaats van de ingekorte URL-tekst direct te kopiëren."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
@@ -5847,6 +5850,9 @@
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
       ],
+      "if your data is leaked": [
+        "als uw gegevens zijn gelekt"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -5861,9 +5867,6 @@
       ],
       "settings": [
         "instellingen"
-      ],
-      "stay safer online": [
-        "blijf veilig online"
       ],
       "What’s this?": [
         "Wat is dit?"
@@ -9143,9 +9146,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Details"
-      ],
       "Discard": [
         "Weggooien"
       ],
@@ -9269,6 +9269,9 @@
       ],
       "Import groups": [
         "Importeer groepen"
+      ],
+      "Information exposed in breach": [
+        "Informatie die is blootgesteld bij datalek"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -9568,6 +9571,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Bericht- en bestandsnaam worden opgeslagen met zero access versleuteling wanneer opgenomen in de e-mail"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
@@ -9588,6 +9594,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"

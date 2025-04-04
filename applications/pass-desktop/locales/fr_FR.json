@@ -1801,8 +1801,8 @@
       "Latest breach on ${ formattedDate }": [
         "Dernière fuite de données le ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Découvrez comment ${ staySaferOnlineLink }."
+      "Learn what to do ${ dataLeakedLink }": [
+        "Apprenez ce qu'il faut faire ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Vous quittez l'élément..."
@@ -3338,11 +3338,11 @@
       "auto create rules ››": [
         "créer automatiquement des règles ››"
       ],
+      "if your data is leaked": [
+        "si vos données sont divulguées"
+      ],
       "Learn more": [
         "En savoir plus"
-      ],
-      "stay safer online": [
-        "améliorer votre sécurité en ligne"
       ]
     },
     "Log preference": {
@@ -3894,9 +3894,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Voulez-vous supprimer le coffre-fort « ${ vaultName } » ?"
       ],
-      "Details": [
-        "Informations"
-      ],
       "Did you know?": [
         "Le saviez-vous ?"
       ],
@@ -3965,6 +3962,9 @@
       ],
       "Inactive 2FA": [
         "A2F inactive"
+      ],
+      "Information exposed in breach": [
+        "Informations divulguées lors de la fuite de données"
       ],
       "Install extension": [
         "Installer l'extension"
@@ -4225,6 +4225,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
       ]
     },
     "Validation": {

@@ -1125,10 +1125,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -1325,12 +1325,6 @@
       ],
       "Trust": [
         "Důvěřovat"
-      ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -6971,7 +6965,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7024,14 +7021,14 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zjistěte, jak ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Zjistěte více"
       ],
       "Learn more about the writing assistant": [
         "Zjistit více o asistentovi psaní"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zjistěte, co dělat, ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Zleva doprava"
@@ -8675,10 +8672,10 @@
       "Always move sender's emails": [
         "Vždy přesunout e-maily odesílatele"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -8861,6 +8858,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Enable desktop notifications": [
+        "Povolit upozornění na plochu"
+      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -8906,11 +8906,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Pokud"
-      ],
       "IF": [
         "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -9008,6 +9008,9 @@
       "Notification": [
         "Oznámení"
       ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Upozornění jsou deaktivována, chcete-li je povolit, změňte nastavení prohlížeče."
+      ],
       "Open in a new tab": [
         "Otevřít na nové kartě"
       ],
@@ -9020,14 +9023,14 @@
       "Optional": [
         "Volitelné"
       ],
+      "OR": [
+        "NEBO"
+      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
-      ],
-      "OR": [
-        "NEBO"
       ],
       "Original link": [
         "Původní odkaz"
@@ -9353,6 +9356,9 @@
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
       ],
+      "if your data is leaked": [
+        "když dojde k úniku vašich dat"
+      ],
       "Inbox": [
         "Doručená pošta"
       ],
@@ -9427,9 +9433,6 @@
       ],
       "Starred": [
         "S hvězdičkou"
-      ],
-      "stay safer online": [
-        "zůstaňte v bezpečí online"
       ],
       "Terms": [
         "Podmínky"
@@ -9855,29 +9858,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -9899,6 +9879,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
       ]
     },
     "new_plans: feature": {
@@ -13892,9 +13895,6 @@
       "Desktop": [
         "Desktop"
       ],
-      "Details": [
-        "Podrobnosti"
-      ],
       "Discover your subscription benefits": [
         "Objevte výhody předplatného"
       ],
@@ -14041,6 +14041,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Zvyšte své soukromí pomocí dalších adres"
+      ],
+      "Information exposed in breach": [
+        "Informace odhalené při úniku informací"
       ],
       "Insert contacts": [
         "Vložte kontakty"
@@ -14553,6 +14556,9 @@
       "Load image": [
         "Načíst obrázek"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
@@ -14585,6 +14591,9 @@
       ],
       "This feature is only available for paid users": [
         "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
