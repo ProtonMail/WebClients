@@ -9,6 +9,7 @@ import { SEPARATOR_GOOGLE_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import { getGoogleMeetDataFromDescription, getGoogleMeetDataFromLocation } from './googleMeet/googleMeetHelpers';
 import { getVideoConferencingData } from './modelHelpers';
 import { getSkypeDataFromString } from './skype/skypeHelpers';
+import { getSlackDataFromString } from './slack/slackHelpers';
 import { VideoConferenceSource, useVideoConfTelemetry } from './useVideoConfTelemetry';
 import { getZoomDataFromLocation, getZoomFromDescription } from './zoom/zoomHelpers';
 
@@ -90,6 +91,12 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
             sendTelemetryReport(VideoConferenceSource.skype_desc);
             return <VideoConferencingWidget location={widgetLocation} data={skypeData} />;
         }
+
+        if (data.description.includes('app.slack.com/huddle')) {
+            const slackData = getSlackDataFromString(data.description);
+            sendTelemetryReport(VideoConferenceSource.slack_desc);
+            return <VideoConferencingWidget location={widgetLocation} data={slackData} />;
+        }
     }
 
     // Event containing a location field with a supported video conferencing link
@@ -110,6 +117,12 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
             const skypeData = getSkypeDataFromString(data.location);
             sendTelemetryReport(VideoConferenceSource.skype_loc);
             return <VideoConferencingWidget location={widgetLocation} data={skypeData} />;
+        }
+
+        if (data.location.includes('app.slack.com/huddle')) {
+            const slackData = getSlackDataFromString(data.location);
+            sendTelemetryReport(VideoConferenceSource.slack_loc);
+            return <VideoConferencingWidget location={widgetLocation} data={slackData} />;
         }
     }
 
