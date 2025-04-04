@@ -4900,9 +4900,6 @@
       "Last week": [
         "გასულ კვირას"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "მეტის ნახვა"
       ],
@@ -6694,9 +6691,6 @@
       "Starred": [
         "ვარსკვლავიანები"
       ],
-      "stay safer online": [
-        "იყავით უსაფრთხოდ ინტერნეტში"
-      ],
       "Trash": [
         "ნაგვის ყუთი"
       ],
@@ -7073,29 +7067,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -7117,6 +7088,29 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -10477,9 +10471,6 @@
       ],
       "Desktop": [
         "სამუშაო მაგიდა"
-      ],
-      "Details": [
-        "დეტალები"
       ],
       "Discard": [
         "მოცილება"

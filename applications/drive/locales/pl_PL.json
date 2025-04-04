@@ -5091,11 +5091,11 @@
       "Last week": [
         "Ostatni tydzień"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Dowiedz się, jak ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Dowiedz się co możesz zrobić ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
@@ -6605,7 +6605,7 @@
         "Zmodyfikowano"
       ],
       "Move to Archive": [
-        "Przenieś do Archiwum"
+        "Przenieś do archiwum"
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
@@ -6931,6 +6931,9 @@
       "How to pay with Bitcoin?": [
         "Jak zapłacić Bitcoinami?"
       ],
+      "if your data is leaked": [
+        "w przypadku wycieku danych"
+      ],
       "Inbox": [
         "Odebrane"
       ],
@@ -6972,9 +6975,6 @@
       ],
       "Starred": [
         "Wyróżnione"
-      ],
-      "stay safer online": [
-        "zachować bezpieczeństwo online"
       ],
       "Trash": [
         "Kosz"
@@ -7419,29 +7419,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Usuń konto"
-      ],
-      "Downgrade account": [
-        "Obniż plan"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Uzyskaj ${ BRAND_NAME } za darmo"
-      ],
-      "Get ${ planName }": [
-        "Wybierz plan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Zachowaj plan ${ plan }"
-      ],
-      "Keep account": [
-        "Zachowaj konto"
-      ],
-      "Switch plan": [
-        "Zmień plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
@@ -7463,6 +7440,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Ulepsz do planu ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Usuń konto"
+      ],
+      "Downgrade account": [
+        "Obniż plan"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Uzyskaj ${ BRAND_NAME } za darmo"
+      ],
+      "Get ${ planName }": [
+        "Wybierz plan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Zachowaj plan ${ plan }"
+      ],
+      "Keep account": [
+        "Zachowaj konto"
+      ],
+      "Switch plan": [
+        "Zmień plan"
       ]
     },
     "new_plans: feature": {
@@ -11049,9 +11049,6 @@
       "Desktop": [
         "Komputer"
       ],
-      "Details": [
-        "Szczegóły"
-      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -11195,6 +11192,9 @@
       ],
       "Import groups": [
         "Importuj grupy"
+      ],
+      "Information exposed in breach": [
+        "Ujawnione informacje w wycieku"
       ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
@@ -11605,6 +11605,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Wiadomość i nazwa pliku w zaproszeniu są szyfrowane"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nie wszystkie wymienione tutaj informacje zostały ujawnione wszystkim użytkownikom."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
       ],
@@ -11628,6 +11631,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nowa subskrypcja rozpocznie się ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Zaszyfrowane hasła (nawet ujawnione) pozostaną bezpieczne, dopóki nie zostaną odszyfrowane."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
