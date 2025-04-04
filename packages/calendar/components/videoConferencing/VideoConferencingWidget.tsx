@@ -72,13 +72,13 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
     const { createNotification } = useNotifications();
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const { meetingUrl, meetingId, joiningInstructions, password, service, meetingHost } = data;
-    if (!meetingUrl) {
+    if (!data.meetingUrl) {
         return null;
     }
 
-    const hasOnlyLink = meetingUrl && !joiningInstructions && !meetingId && !password;
-    const joinText = service === 'zoom' ? c('Zoom Meeting').t`Join Zoom meeting` : c('Google Meet').t`Join Google Meet`;
+    const hasOnlyLink = data.meetingUrl && !data.joiningInstructions && !data.meetingId && !data.password;
+    const joinText =
+        data.service === 'zoom' ? c('Zoom Meeting').t`Join Zoom meeting` : c('Google Meet').t`Join Google Meet`;
 
     return (
         <IconRow
@@ -94,13 +94,13 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                 onClick={() => setIsExpanded((prev) => !prev)}
             >
                 <div className={clsx('flex flex-col items-center justify-space-between', !hasOnlyLink && 'mb-2')}>
-                    <ButtonLike as={Href} href={meetingUrl} shape="solid" color="norm">
+                    <ButtonLike as={Href} href={data.meetingUrl} shape="solid" color="norm">
                         {joinText}
                     </ButtonLike>
 
                     <div className="flex gap-2">
                         <Copy
-                            value={meetingUrl}
+                            value={data.meetingUrl}
                             shape="ghost"
                             size="small"
                             className="group-hover:opacity-100 color-weak"
@@ -117,17 +117,17 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                         )}
                     </div>
                 </div>
-                {meetingId && (
+                {data.meetingId && (
                     <EventDetailsRow
                         prefix={c('Zoom Meeting').t`Meeting ID:`}
-                        suffix={meetingId}
+                        suffix={data.meetingId}
                         copySuccessText={c('Notification').t`Meeting ID copied to clipboard`}
                     />
                 )}
-                {password && (
+                {data.password && (
                     <EventDetailsRow
                         prefix={c('Zoom Meeting').t`Passcode:`}
-                        suffix={password}
+                        suffix={data.password}
                         copySuccessText={c('Notification').t`Passcode copied to clipboard`}
                     />
                 )}
@@ -149,24 +149,25 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                         </CollapsibleHeader>
                         <CollapsibleContent onClick={(e) => e.stopPropagation()}>
                             <section className="mt-2">
-                                {meetingHost && validateEmailAddress(meetingHost) && (
+                                {data.meetingHost && validateEmailAddress(data.meetingHost) && (
                                     <EventDetailsRow
                                         linkMode
                                         prefix={c('Google Meet').t`Meeting host:`}
-                                        suffix={meetingHost}
+                                        suffix={data.meetingHost}
                                         copySuccessText={c('Notification').t`Meeting host copied to clipboard`}
                                     />
                                 )}
 
                                 <div>
                                     <p className="m-0">{c('Google Meet').t`Meeting link:`}</p>
-                                    <Href className="block mb-2 text-ellipsis max-w-full" href={meetingUrl}>
-                                        {meetingUrl}
+                                    <Href className="block mb-2 text-ellipsis max-w-full" href={data.meetingUrl}>
+                                        {data.meetingUrl}
                                     </Href>
                                 </div>
 
-                                {joiningInstructions && (
-                                    <Href href={joiningInstructions}>{c('Google Meet').t`Joining instructions`}</Href>
+                                {data.joiningInstructions && (
+                                    <Href href={data.joiningInstructions}>{c('Google Meet')
+                                        .t`Joining instructions`}</Href>
                                 )}
                             </section>
                         </CollapsibleContent>

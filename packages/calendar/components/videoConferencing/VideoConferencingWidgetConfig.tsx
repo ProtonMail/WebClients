@@ -37,69 +37,66 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
         return null;
     }
 
-    const { description, location, meetingId, meetingUrl, password, meetingHost } = getVideoConferencingData(model);
+    const data = getVideoConferencingData(model);
 
     // Native Zoom integration
-    if (meetingId && meetingUrl) {
+    if (data.meetingId && data.meetingUrl) {
         sendTelemetryReport(VideoConferenceSource.int_zoom);
         return (
             <VideoConferencingWidget
                 location={widgetLocation}
                 data={{
+                    ...data,
                     service: VIDEO_CONF_SERVICES.ZOOM, // The only supported provider is Zoom for the moment
-                    meetingId,
-                    meetingUrl,
-                    password,
-                    meetingHost,
                 }}
             />
         );
     }
 
     // Events containing a Google separator in the description field
-    const googleMeetingDescriptionSeparator = separatorRegex.test(description ?? '');
-    if (googleMeetingDescriptionSeparator && description) {
-        if (description.includes('zoom.us')) {
-            const data = getZoomFromDescription(description);
+    const googleMeetingDescriptionSeparator = separatorRegex.test(data.description ?? '');
+    if (googleMeetingDescriptionSeparator && data.description) {
+        if (data.description.includes('zoom.us')) {
+            const zoomData = getZoomFromDescription(data.description);
             sendTelemetryReport(VideoConferenceSource.google_zoom_desc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+            return <VideoConferencingWidget location={widgetLocation} data={zoomData} />;
         }
 
-        if (description.includes('meet.google.com')) {
-            const data = getGoogleMeetDataFromDescription(description);
+        if (data.description.includes('meet.google.com')) {
+            const googleData = getGoogleMeetDataFromDescription(data.description);
             sendTelemetryReport(VideoConferenceSource.google_google_meet_desc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+            return <VideoConferencingWidget location={widgetLocation} data={googleData} />;
         }
     }
 
     // Event containing a description field with a supported video conferencing link
     // We first parse the description as it contains more information than the location field
-    if (description) {
-        if (description.includes('zoom.us')) {
-            const data = getZoomFromDescription(description);
+    if (data.description) {
+        if (data.description.includes('zoom.us')) {
+            const zoomData = getZoomFromDescription(data.description);
             sendTelemetryReport(VideoConferenceSource.zoom_desc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+            return <VideoConferencingWidget location={widgetLocation} data={zoomData} />;
         }
 
-        if (description.includes('meet.google.com')) {
-            const data = getGoogleMeetDataFromDescription(description);
+        if (data.description.includes('meet.google.com')) {
+            const googleData = getGoogleMeetDataFromDescription(data.description);
             sendTelemetryReport(VideoConferenceSource.google_meet_desc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+            return <VideoConferencingWidget location={widgetLocation} data={googleData} />;
         }
     }
 
     // Event containing a location field with a supported video conferencing link
-    if (location) {
-        if (location.includes('zoom.us')) {
-            const data = getZoomDataFromLocation(location);
+    if (data.location) {
+        if (data.location.includes('zoom.us')) {
+            const zoomData = getZoomDataFromLocation(data.location);
             sendTelemetryReport(VideoConferenceSource.zoom_loc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+            return <VideoConferencingWidget location={widgetLocation} data={zoomData} />;
         }
 
-        if (location.includes('meet.google.com')) {
-            const data = getGoogleMeetDataFromLocation(location);
+        if (data.location.includes('meet.google.com')) {
+            const googleData = getGoogleMeetDataFromLocation(data.location);
             sendTelemetryReport(VideoConferenceSource.google_meet_loc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+            return <VideoConferencingWidget location={widgetLocation} data={googleData} />;
         }
     }
 
