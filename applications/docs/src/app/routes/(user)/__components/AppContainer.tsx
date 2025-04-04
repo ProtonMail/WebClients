@@ -13,6 +13,7 @@ import { ApplicationProvider } from '~/utils/application-context'
 import { useFlag, useUnleashClient } from '@proton/unleash'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import { DOCUMENT_NEW_PATH, DOCUMENT_CREATION_PATHS, DOCUMENT_EDITOR_PATH } from '~/utils/docs-url-bar'
 
 // container
 // ---------
@@ -94,9 +95,6 @@ function useHomepageFeatureFlag() {
 const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
 
-export const DOCUMENT_EDITOR_PATH = '/doc'
-export const DOCUMENT_NEW_PATH = '/new'
-export const DOCUMENT_PATHS = [DOCUMENT_EDITOR_PATH, DOCUMENT_NEW_PATH]
 export const HOMEPAGE_RECENTS_PATH = '/recents'
 export const HOMEPAGE_FAVORITES_PATH = '/favorites'
 export const HOMEPAGE_TRASHED_PATH = '/trashed'
@@ -124,7 +122,7 @@ function AppRoutes({ driveCompat }: AppRoutesProps) {
   return (
     <Routes>
       {/* document */}
-      {DOCUMENT_PATHS.map((path) => (
+      {DOCUMENT_CREATION_PATHS.map((path) => (
         <Route key={path} path={path} element={documentPage} />
       ))}
       {/* homepage */}
