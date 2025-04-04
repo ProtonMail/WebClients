@@ -5,7 +5,7 @@ import { type SignatureIssues } from '../store';
 
 export const hasValidAnonymousSignature = (
     signatureIssues: SignatureIssues | undefined,
-    { mimeType, isFile }: { mimeType?: string; isFile: boolean }
+    { mimeType, isFile, haveParentAccess }: { mimeType?: string; isFile: boolean; haveParentAccess: boolean }
 ) => {
     // Proton Documents and folder will not have any issue if uploaded anonymously
     // In anonymous upload on blocks and thumbnails are not signed.
@@ -16,6 +16,11 @@ export const hasValidAnonymousSignature = (
             console.warn('Anonymous uploaded files should have thumbnail and blocks unsigned');
             return false;
         }
+    }
+
+    // See RFC0042, anonymous uploaded links without parentLinkId verification is skipped
+    if (!haveParentAccess) {
+        return true;
     }
     return Object.entries(signatureIssues).every(([key, verificationStatus]) => {
         if (key === 'thumbnail' || key === 'blocks') {

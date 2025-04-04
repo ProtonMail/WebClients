@@ -59,6 +59,7 @@ const PortalPreview = (
                 signatureIssues={link.signatureIssues}
                 isAnonymous={link.isAnonymous}
                 className="ml-2 color-danger"
+                haveParentAccess={!!link.parentLinkId}
             />
         );
     }, [link]);

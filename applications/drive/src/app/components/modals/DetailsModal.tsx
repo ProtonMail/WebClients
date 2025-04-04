@@ -196,6 +196,7 @@ const DetailsModalContent = ({
                     mimeType={mimeType}
                     isFile={isFile}
                     name={name}
+                    haveParentAccess={!!parentLinkId}
                     className="mb-4"
                 />
             )}
