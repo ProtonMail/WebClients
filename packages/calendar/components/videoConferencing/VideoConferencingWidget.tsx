@@ -11,6 +11,7 @@ import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
 import type { BaseMeetingUrls } from './constants';
+import { getVideoConfCopy, isVideoConfOnlyLink } from './videoConfHelpers';
 
 import './VideoConferencing.scss';
 
@@ -76,9 +77,18 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
         return null;
     }
 
-    const hasOnlyLink = data.meetingUrl && !data.joiningInstructions && !data.meetingId && !data.password;
-    const joinText =
-        data.service === 'zoom' ? c('Zoom Meeting').t`Join Zoom meeting` : c('Google Meet').t`Join Google Meet`;
+    const hasOnlyLink = isVideoConfOnlyLink(data);
+    const joinText = getVideoConfCopy(data.service);
+
+    const handleOnCopy = () => {
+        createNotification({
+            text: c('Notification').t`Link copied to clipboard`,
+        });
+    };
+
+    const toggleExpanded = () => {
+        setIsExpanded((prev) => !prev);
+    };
 
     return (
         <IconRow
@@ -91,7 +101,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                 aria-label={c('Action').t`Expand video conferencing widget`}
                 aria-expanded={isExpanded}
                 className="group-hover-opacity-container"
-                onClick={() => setIsExpanded((prev) => !prev)}
+                onClick={toggleExpanded}
             >
                 <div className={clsx('flex flex-col items-center justify-space-between', !hasOnlyLink && 'mb-2')}>
                     <ButtonLike as={Href} href={data.meetingUrl} shape="solid" color="norm">
@@ -104,11 +114,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                             shape="ghost"
                             size="small"
                             className="group-hover:opacity-100 color-weak"
-                            onCopy={() => {
-                                createNotification({
-                                    text: c('Notification').t`Link copied to clipboard`,
-                                });
-                            }}
+                            onCopy={handleOnCopy}
                         />
                         {location === 'event-form' && (
                             <Button icon shape="ghost" size="small" onClick={handleDelete}>
@@ -135,13 +141,13 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                     <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader
                             disableFullWidth
-                            onClick={() => setIsExpanded((prev) => !prev)}
+                            onClick={toggleExpanded}
                             className="collapsible-header-hover-color"
                         >
                             <button
                                 type="button"
                                 className="m-0 flex gap-1 text-sm color-weak"
-                                onClick={() => setIsExpanded((prev) => !prev)}
+                                onClick={toggleExpanded}
                             >
                                 {isExpanded ? c('Google Meet').t`Less details` : c('Google Meet').t`More details`}
                                 <Icon name="chevron-down" className={isExpanded ? 'rotateX-180' : ''} />
