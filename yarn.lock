@@ -20442,7 +20442,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-newline@npm:^4.0.0":
+"detect-newline@npm:^4.0.1":
   version: 4.0.1
   resolution: "detect-newline@npm:4.0.1"
   checksum: 10c0/1cc1082e88ad477f30703ae9f23bd3e33816ea2db6a35333057e087d72d466f5a777809b71f560118ecff935d2c712f5b59e1008a8b56a900909d8fd4621c603
@@ -39282,7 +39282,7 @@ __metadata:
     lint-staged: "npm:^15.5.0"
     nyc: "npm:^17.1.0"
     prettier: "npm:^3.5.3"
-    sort-package-json: "npm:^2.15.1"
+    sort-package-json: "npm:^3.0.0"
     stylelint-config-standard-scss: "npm:^10.0.0"
     stylelint-use-logical-spec: "npm:^5.0.1"
     turbo: "npm:^2.5.0"
@@ -40474,21 +40474,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sort-package-json@npm:^2.15.1":
-  version: 2.15.1
-  resolution: "sort-package-json@npm:2.15.1"
+"sort-package-json@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "sort-package-json@npm:3.0.0"
   dependencies:
     detect-indent: "npm:^7.0.1"
-    detect-newline: "npm:^4.0.0"
+    detect-newline: "npm:^4.0.1"
     get-stdin: "npm:^9.0.0"
     git-hooks-list: "npm:^3.0.0"
     is-plain-obj: "npm:^4.1.0"
-    semver: "npm:^7.6.0"
+    semver: "npm:^7.7.1"
     sort-object-keys: "npm:^1.1.3"
-    tinyglobby: "npm:^0.2.9"
+    tinyglobby: "npm:^0.2.12"
   bin:
     sort-package-json: cli.js
-  checksum: 10c0/a5dcbafde6f4629c34be9e750687b7c5566c5225dad0e887c558e6a794f7fe1d360003eec0bb4875fa74633e648260819623871e79ff64c1749acead3f2bb3c1
+  checksum: 10c0/ff5c6ef4e83b01bb0fc01e6fc2eb495cd75c2f088e6f757f32d78d92cb945f37aceff799146aaa38e3bab661edf2260437e0fadd1b54814f0b50337c8bc33016
   languageName: node
   linkType: hard
 
@@ -42386,7 +42386,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinyglobby@npm:^0.2.12, tinyglobby@npm:^0.2.9":
+"tinyglobby@npm:^0.2.12":
   version: 0.2.12
   resolution: "tinyglobby@npm:0.2.12"
   dependencies:
