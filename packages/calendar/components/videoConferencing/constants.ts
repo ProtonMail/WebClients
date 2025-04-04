@@ -3,6 +3,7 @@ export enum VIDEO_CONF_SERVICES {
     GOOGLE_MEET = 'google-meet',
     SKYPE = 'skype',
     SLACK = 'slack',
+    TEAMS = 'teams',
 }
 
 export const SEPARATOR_GOOGLE_EVENTS =
