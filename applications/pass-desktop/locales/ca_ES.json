@@ -1801,8 +1801,8 @@
       "Latest breach on ${ formattedDate }": [
         "Última infracció el ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Més informació sobre com ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "S'està deixant l'element..."
@@ -3338,11 +3338,11 @@
       "auto create rules ››": [
         "crear regles automàticament ››"
       ],
+      "if your data is leaked": [
+        "si es filtren les vostres dades"
+      ],
       "Learn more": [
         "Més informació"
-      ],
-      "stay safer online": [
-        "millorar la vostra seguretat en línia"
       ]
     },
     "Log preference": {
@@ -3894,9 +3894,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Voleu eliminar la caixa forta «${ vaultName }»?"
       ],
-      "Details": [
-        "Detalls"
-      ],
       "Did you know?": [
         "Ho sabíeu?"
       ],
@@ -3965,6 +3962,9 @@
       ],
       "Inactive 2FA": [
         "2FA inactiva"
+      ],
+      "Information exposed in breach": [
+        "Informació exposada en la infracció"
       ],
       "Install extension": [
         "Instal·la l'extensió"
@@ -4225,6 +4225,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ]
     },
     "Validation": {

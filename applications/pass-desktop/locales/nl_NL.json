@@ -1801,8 +1801,8 @@
       "Latest breach on ${ formattedDate }": [
         "Laatste inbreuk op ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Leer ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Leer wat te doen ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Item verlaten..."
@@ -3338,11 +3338,11 @@
       "auto create rules ››": [
         "automatisch regels creëren"
       ],
+      "if your data is leaked": [
+        "als uw gegevens zijn gelekt"
+      ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "stay safer online": [
-        "blijf veilig online"
       ]
     },
     "Log preference": {
@@ -3894,9 +3894,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Kluis \"${ vaultName }\" verwijderen?"
       ],
-      "Details": [
-        "Details"
-      ],
       "Did you know?": [
         "Wist u dat?"
       ],
@@ -3965,6 +3962,9 @@
       ],
       "Inactive 2FA": [
         "Inactieve 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informatie die is blootgesteld bij datalek"
       ],
       "Install extension": [
         "Extensie installeren"
@@ -4225,6 +4225,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ]
     },
     "Validation": {

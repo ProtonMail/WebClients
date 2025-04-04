@@ -1824,8 +1824,8 @@
       "Latest breach on ${ formattedDate }": [
         "Ultima divulgare: ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aflați cum să ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aflați ce aveți de făcut ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Se părăsește articolul…"
@@ -3382,11 +3382,11 @@
       "auto create rules ››": [
         "creare automată reguli ››"
       ],
+      "if your data is leaked": [
+        "dacă datele v-au fost divulgate"
+      ],
       "Learn more": [
         "Detalii"
-      ],
-      "stay safer online": [
-        "rămâneți în siguranță online"
       ]
     },
     "Log preference": {
@@ -3944,9 +3944,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Ștergeți seiful „${ vaultName }”?"
       ],
-      "Details": [
-        "Detalii"
-      ],
       "Did you know?": [
         "Știați că?"
       ],
@@ -4015,6 +4012,9 @@
       ],
       "Inactive 2FA": [
         "A2F inactive"
+      ],
+      "Information exposed in breach": [
+        "Informații expuse în divulgare"
       ],
       "Install extension": [
         "Instalați extensia"
@@ -4280,6 +4280,14 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Dacă nu sunt decriptate, parolele criptate rămân în siguranță chiar dacă au fost expuse."
       ]
     },
     "Validation": {

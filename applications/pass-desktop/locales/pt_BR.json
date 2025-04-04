@@ -1801,8 +1801,8 @@
       "Latest breach on ${ formattedDate }": [
         "Última violação em ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda como ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprenda o que fazer ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Deixando o item..."
@@ -3338,11 +3338,11 @@
       "auto create rules ››": [
         "criação automática de regras ››"
       ],
+      "if your data is leaked": [
+        "se seus dados vazarem"
+      ],
       "Learn more": [
         "Saiba mais"
-      ],
-      "stay safer online": [
-        "fique seguro on-line"
       ]
     },
     "Log preference": {
@@ -3894,9 +3894,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Excluir cofre \"${ vaultName }\"?"
       ],
-      "Details": [
-        "Detalhes"
-      ],
       "Did you know?": [
         "Você sabia?"
       ],
@@ -3965,6 +3962,9 @@
       ],
       "Inactive 2FA": [
         "A2F inativa"
+      ],
+      "Information exposed in breach": [
+        "Informação exposta na violação"
       ],
       "Install extension": [
         "Instalar extensão"
@@ -4225,6 +4225,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nem todas as informações listadas aqui foram expostas para todos os usuários."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
       ]
     },
     "Validation": {

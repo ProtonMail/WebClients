@@ -1801,8 +1801,8 @@
       "Latest breach on ${ formattedDate }": [
         "Siste brudd den ${ formattedDate }."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Lær hvordan du ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Finn ut hva du kan gjøre ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Forlater element..."
@@ -3338,11 +3338,11 @@
       "auto create rules ››": [
         "opprett automatisk regler ››"
       ],
+      "if your data is leaked": [
+        "hvis dataene dine er lekket"
+      ],
       "Learn more": [
         "Lær mer"
-      ],
-      "stay safer online": [
-        "vær sikrere på nettet"
       ]
     },
     "Log preference": {
@@ -3894,9 +3894,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Slette hvelv \"${ vaultName }\"?"
       ],
-      "Details": [
-        "Detaljer"
-      ],
       "Did you know?": [
         "Visste du at?"
       ],
@@ -3965,6 +3962,9 @@
       ],
       "Inactive 2FA": [
         "Inaktiv 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informasjon avslørt i brudd"
       ],
       "Install extension": [
         "Installer utvidelse"
@@ -4225,6 +4225,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Med mindre de blir dechiffrert, forblir krypterte passord sikre selv om de blir eksponert."
       ]
     },
     "Validation": {
