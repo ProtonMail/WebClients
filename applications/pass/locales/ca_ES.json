@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Mou a una altra caixa forta"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mou a la paperera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mou a la paperera"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Tanca la sessió"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordena els elements de la caixa forta"
@@ -1124,9 +1121,6 @@
       ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
-      ],
-      "Try reaching out to the link owner.": [
-        "Intenteu contactar el propietari de l'enllaç."
       ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
@@ -1747,8 +1741,8 @@
       "Latest breach on ${ formattedDate }": [
         "Última infracció el ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Més informació sobre com ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "S'està deixant l'element..."
@@ -1795,10 +1789,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3082,9 +3072,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
-      ],
       "Title": [
         "Títol"
       ],
@@ -3201,11 +3188,11 @@
       "auto create rules ››": [
         "crear regles automàticament ››"
       ],
+      "if your data is leaked": [
+        "si es filtren les vostres dades"
+      ],
       "Learn more": [
         "Més informació"
-      ],
-      "stay safer online": [
-        "millorar la vostra seguretat en línia"
       ]
     },
     "Log preference": {
@@ -3743,9 +3730,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Voleu eliminar la caixa forta «${ vaultName }»?"
       ],
-      "Details": [
-        "Detalls"
-      ],
       "Did you know?": [
         "Ho sabíeu?"
       ],
@@ -3814,6 +3798,9 @@
       ],
       "Inactive 2FA": [
         "2FA inactiva"
+      ],
+      "Information exposed in breach": [
+        "Informació exposada en la infracció"
       ],
       "Install extension": [
         "Instal·la l'extensió"
@@ -4074,6 +4061,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ]
     },
     "Validation": {

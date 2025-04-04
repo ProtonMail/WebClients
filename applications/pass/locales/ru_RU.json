@@ -385,11 +385,11 @@
       "Move to another vault": [
         "Переместить в другое хранилище"
       ],
-      "Move to Trash": [
-        "Переместить в корзину"
-      ],
       "Move to trash": [
         "Переместить в Корзину"
+      ],
+      "Move to Trash": [
+        "Переместить в корзину"
       ],
       "Multiple select": [
         "Множественный выбор"
@@ -552,9 +552,6 @@
       ],
       "Sign out": [
         "Выйти"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Кто-то поделился с вами элементом в ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Сортировать элементы хранилища"
@@ -1092,9 +1089,6 @@
       ],
       "Trashing item failed": [
         "Ошибка при перемещении элемента в корзину"
-      ],
-      "Try reaching out to the link owner.": [
-        "Попробуйте связаться с владельцем ссылки."
       ],
       "Unable to generate an OTP code for this item": [
         "Невозможно сгенерировать OTP-код для этого элемента"
@@ -1706,9 +1700,6 @@
       "Latest breach on ${ formattedDate }": [
         "Последняя утечка ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Узнайте, как ${ staySaferOnlineLink }"
-      ],
       "Leaving item...": [
         "Покидание элемента..."
       ],
@@ -1756,12 +1747,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -3007,9 +2992,6 @@
       "Theme": [
         "Тема"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Этот элемент доступен до ${ date } или пока не будет достигнут лимит просмотров."
-      ],
       "Title": [
         "Заголовок"
       ],
@@ -3125,9 +3107,6 @@
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "stay safer online": [
-        "будьте в большей безопасности в Интернете"
       ]
     },
     "Log preference": {
@@ -3557,9 +3536,6 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Удалить хранилище \"${ vaultName }\"?"
-      ],
-      "Details": [
-        "Информация"
       ],
       "Did you know?": [
         "Вы знали?"

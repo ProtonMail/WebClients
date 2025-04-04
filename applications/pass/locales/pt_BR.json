@@ -397,11 +397,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to Trash": [
-        "Mover para a Lixeira"
-      ],
       "Move to trash": [
         "Mover para a lixeira"
+      ],
+      "Move to Trash": [
+        "Mover para a Lixeira"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Encerrar sessão"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Alguém compartilhou um item com você no ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar itens do cofre"
@@ -1124,9 +1121,6 @@
       ],
       "Trashing item failed": [
         "Erro ao mover item para a lixeira"
-      ],
-      "Try reaching out to the link owner.": [
-        "Tente entrar em contato com o proprietário do link."
       ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
@@ -1747,8 +1741,8 @@
       "Latest breach on ${ formattedDate }": [
         "Última violação em ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda como ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprenda o que fazer ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Deixando o item..."
@@ -1795,10 +1789,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -3082,9 +3072,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
-      ],
       "Title": [
         "Título"
       ],
@@ -3201,11 +3188,11 @@
       "auto create rules ››": [
         "criação automática de regras ››"
       ],
+      "if your data is leaked": [
+        "se seus dados vazarem"
+      ],
       "Learn more": [
         "Saiba mais"
-      ],
-      "stay safer online": [
-        "fique seguro on-line"
       ]
     },
     "Log preference": {
@@ -3743,9 +3730,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Excluir cofre \"${ vaultName }\"?"
       ],
-      "Details": [
-        "Detalhes"
-      ],
       "Did you know?": [
         "Você sabia?"
       ],
@@ -3814,6 +3798,9 @@
       ],
       "Inactive 2FA": [
         "A2F inativa"
+      ],
+      "Information exposed in breach": [
+        "Informação exposta na violação"
       ],
       "Install extension": [
         "Instalar extensão"
@@ -4074,6 +4061,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nem todas as informações listadas aqui foram expostas para todos os usuários."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
       ]
     },
     "Validation": {

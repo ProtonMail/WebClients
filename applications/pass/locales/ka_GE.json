@@ -397,10 +397,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "გასვლა"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "ვიღაცამ გაგიზიარათ ელემენტი ${ PASS_APP_NAME }-ზე."
       ],
       "Sort vault items": [
         "საცავის ელემენტების დალაგება"
@@ -1106,9 +1103,6 @@
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
-      ],
-      "Try reaching out to the link owner.": [
-        "სცადეთ, ბმულის ავტორს დაუკავშირდეთ."
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -1723,9 +1717,6 @@
       "Latest breach on ${ formattedDate }": [
         "უახლესი გაჟონვის თარიღი ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
-      ],
       "Leaving item...": [
         "ელემენტიდან გასვლა..."
       ],
@@ -1771,10 +1762,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -3049,9 +3036,6 @@
       "Theme": [
         "თემა"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "ეს ელემენტი ხელმისაწვდომია ${ date }-მდე, ან, სანამ, ნახვების ლიმიტი არ მიიღწევა."
-      ],
       "Title": [
         "სათაური"
       ],
@@ -3170,9 +3154,6 @@
       ],
       "Learn more": [
         "გაიგეთ მეტი"
-      ],
-      "stay safer online": [
-        "იყავით უსაფრთხოდ ინტერნეტში"
       ]
     },
     "Log preference": {
@@ -3703,9 +3684,6 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "წავშალო საცავი \"${ vaultName }\"?"
-      ],
-      "Details": [
-        "დეტალები"
       ],
       "Did you know?": [
         "იცოდით?"

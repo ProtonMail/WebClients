@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Mutare în alt seif"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mutare în «Gunoi»"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mutare în «Gunoi»"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Deconectare"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Sortare articole seif"
@@ -1129,9 +1126,6 @@
       ],
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
-      ],
-      "Try reaching out to the link owner.": [
-        "Încercați să contactați proprietarul legăturii web."
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -1770,8 +1764,8 @@
       "Latest breach on ${ formattedDate }": [
         "Ultima divulgare: ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aflați cum să ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aflați ce aveți de făcut ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Se părăsește articolul…"
@@ -1819,11 +1813,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3127,9 +3116,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
-      ],
       "Title": [
         "Titlu"
       ],
@@ -3246,11 +3232,11 @@
       "auto create rules ››": [
         "creare automată reguli ››"
       ],
+      "if your data is leaked": [
+        "dacă datele v-au fost divulgate"
+      ],
       "Learn more": [
         "Detalii"
-      ],
-      "stay safer online": [
-        "rămâneți în siguranță online"
       ]
     },
     "Log preference": {
@@ -3794,9 +3780,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Ștergeți seiful „${ vaultName }”?"
       ],
-      "Details": [
-        "Detalii"
-      ],
       "Did you know?": [
         "Știați că?"
       ],
@@ -3865,6 +3848,9 @@
       ],
       "Inactive 2FA": [
         "A2F inactive"
+      ],
+      "Information exposed in breach": [
+        "Informații expuse în divulgare"
       ],
       "Install extension": [
         "Instalați extensia"
@@ -4130,6 +4116,14 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Dacă nu sunt decriptate, parolele criptate rămân în siguranță chiar dacă au fost expuse."
       ]
     },
     "Validation": {

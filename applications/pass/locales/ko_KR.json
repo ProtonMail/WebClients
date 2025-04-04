@@ -397,10 +397,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "로그아웃"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
       ],
       "Sort vault items": [
         "금고 항목 정렬"
@@ -1119,9 +1116,6 @@
       ],
       "Trashing item failed": [
         "항목을 휴지통으로 이동하는데 실패"
-      ],
-      "Try reaching out to the link owner.": [
-        "이 링크 소유자에게 연락을 시도하세요.."
       ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
@@ -1724,9 +1718,6 @@
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate }에 마지막으로 유출됨"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "${ staySaferOnlineLink }하는 법 알아보기"
-      ],
       "Leaving item...": [
         "항목에서 떠나는 중..."
       ],
@@ -1771,9 +1762,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -3034,9 +3022,6 @@
       "Theme": [
         "테마"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
-      ],
       "Title": [
         "제목"
       ],
@@ -3155,9 +3140,6 @@
       ],
       "Learn more": [
         "더 알아보기"
-      ],
-      "stay safer online": [
-        "온라인 상에서 안전하게"
       ]
     },
     "Log preference": {
@@ -3685,9 +3667,6 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "금고 \"${ vaultName }\"을(를) 삭제할까요?"
-      ],
-      "Details": [
-        "세부 사항"
       ],
       "Did you know?": [
         "알고 계셨나요?"

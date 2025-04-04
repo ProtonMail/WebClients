@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
       "Multiple select": [
@@ -564,9 +564,6 @@
       ],
       "Sign out": [
         "Oturumu kapat"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
       ],
       "Sort vault items": [
         "Kasa ögelerini sırala"
@@ -1115,9 +1112,6 @@
       ],
       "Trashing item failed": [
         "Öge çöpe atılamadı"
-      ],
-      "Try reaching out to the link owner.": [
-        "Bağlantının sahibiyle görüşmeyi deneyin."
       ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
@@ -1735,9 +1729,6 @@
       "Latest breach on ${ formattedDate }": [
         "Son veri sızıntısı: ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Nasıl ${ staySaferOnlineLink } öğrenin"
-      ],
       "Leaving item...": [
         "Öge bırakılıyor…"
       ],
@@ -1783,10 +1774,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3057,9 +3044,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
-      ],
       "Title": [
         "Başlık"
       ],
@@ -3175,9 +3159,6 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
-      ],
-      "stay safer online": [
-        "çevrim içi ortamda daha güvende kalın"
       ]
     },
     "Log preference": {
@@ -3615,9 +3596,6 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "\"${ vaultName }\" kasası silinsin mi?"
-      ],
-      "Details": [
-        "Ayrıntılar"
       ],
       "Did you know?": [
         "Biliyor muydunuz?"

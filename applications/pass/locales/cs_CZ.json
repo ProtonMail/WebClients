@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Přesunout do jiného trezoru"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Přesunout do koše"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Přesunout do koše"
       ],
       "Multiple select": [
@@ -487,6 +487,9 @@
       "Reset": [
         "Resetovat"
       ],
+      "Reset history": [
+        "Resetovat historii"
+      ],
       "Restore": [
         "Obnovit"
       ],
@@ -564,9 +567,6 @@
       ],
       "Sign out": [
         "Odhlásit se"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Někdo s vámi sdílel položku ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Seřadit položky trezoru"
@@ -805,6 +805,9 @@
       "Alias options could not be resolved": [
         "Možnosti aliasu nelze vyřešit"
       ],
+      "An error occured during the import process": [
+        "Během procesu importu došlo k chybě"
+      ],
       "An error occurred while resuming your session": [
         "Při obnovování relace došlo k chybě"
       ],
@@ -870,6 +873,9 @@
       ],
       "Deleting item failed": [
         "Smazání položky se nezdařilo"
+      ],
+      "Deleting item history failed": [
+        "Smazání historie položky selhalo"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Smazání trezoru \"${ payload.content.name }\" selhalo"
@@ -1125,9 +1131,6 @@
       ],
       "Trashing item failed": [
         "Přesun do koše selhal"
-      ],
-      "Try reaching out to the link owner.": [
-        "Zkuste kontaktovat vlastníka odkazu."
       ],
       "Unable to generate an OTP code for this item": [
         "Nelze vygenerovat OTP kód pro tuto položku"
@@ -1748,6 +1751,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Položka \"${ payload.item.data.metadata.name }\" byla aktualizována"
       ],
+      "Item history permanently deleted": [
+        "Historie položky byla trvale smazána"
+      ],
       "Item moved to trash": [
         "Položka přesunuta do koše"
       ],
@@ -1781,8 +1787,8 @@
       "Latest breach on ${ formattedDate }": [
         "Poslední únik informací v(e) ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zjistěte, jak ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zjistěte, co dělat, ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Opouštění položky..."
@@ -1831,12 +1837,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2015,6 +2015,9 @@
       "Please follow the steps below to set up your domain.": [
         "Při nastavování domény postupujte podle níže uvedených kroků."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Během importu dat ponechte toto okno otevřené. Tento proces může trvat několik minut."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Upozorňujeme, že jednou smazaný alias nelze obnovit. Nechcete alias raději deaktivovat?"
       ],
@@ -2059,6 +2062,9 @@
       ],
       "Removing secure link...": [
         "Odebírání bezpečného odkazu..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Resetování historie trvale smaže všechny předchozí verze položky a nelze to vrátit zpět."
       ],
       "Restoring items from trash": [
         "Obnovují se položky z koše"
@@ -2164,6 +2170,12 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Pro použití ${ PASS_APP_NAME } bude vyžadováno dodatečné heslo. Slouží jako doplněk k vašemu heslu ${ BRAND_NAME }."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Následující ${ totalIgnored } položku nebylo možné importovat:",
+        "Následující ${ totalIgnored } položky nebylo možné importovat:",
+        "Následujících ${ totalIgnored } položek nebylo možné importovat:",
+        "Následujících ${ totalIgnored } položek nebylo možné importovat:"
       ],
       "The secure link has been removed": [
         "Bezpečný odkaz byl odebrán"
@@ -3001,6 +3013,9 @@
       "Personal website": [
         "Osobní web"
       ],
+      "PGP-encrypted (recommended)": [
+        "PGP-šifrováno (doporučeno)"
+      ],
       "Phone number": [
         "Telefonní číslo"
       ],
@@ -3145,9 +3160,6 @@
       "Theme": [
         "Motiv"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Tato položka je přístupná do ${ date } nebo do dosažení limitu počtu zobrazení."
-      ],
       "Title": [
         "Název"
       ],
@@ -3253,6 +3265,9 @@
       "Your domain": [
         "Vaše doména"
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "PSČ"
       ]
@@ -3261,11 +3276,11 @@
       "auto create rules ››": [
         "automatické vytváření pravidel ››"
       ],
+      "if your data is leaked": [
+        "když dojde k úniku vašich dat"
+      ],
       "Learn more": [
         "Zjistit více"
-      ],
-      "stay safer online": [
-        "zůstaňte v bezpečí online"
       ]
     },
     "Log preference": {
@@ -3333,6 +3348,107 @@
       ],
       "Underscores": [
         "Podtržítka"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Soubor \"${ file.name }\" nemohl být nahrán."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Soubor \"${ filename }\" nemohl být importován."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Soubor \"${ filename }\" je příliš velký k nahrání. Maximální povolená velikost je (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } soubor",
+        "${ filesCount } soubory",
+        "${ filesCount } souborů",
+        "${ filesCount } souborů"
+      ],
+      "Attachments": [
+        "Přílohy"
+      ],
+      "Choose a file or drag it here": [
+        "Vyberte soubor nebo jej sem přetáhněte"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Smazat ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Smazat všechny soubory"
+      ],
+      "Do you want to remove all the files?": [
+        "Chcete odebrat všechny soubory?"
+      ],
+      "Download": [
+        "Stáhnout"
+      ],
+      "Download file": [
+        "Stáhnout soubor"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Vzhledem k omezení prohlížeče Firefox je třeba před odesláním souborů znovu otevřít ${ PASS_APP_NAME } v novém okně."
+      ],
+      "Exporting files": [
+        "Exportování souborů"
+      ],
+      "File": [
+        "Soubor"
+      ],
+      "File attachments": [
+        "Přílohy souborů"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Pokud je tato možnost povolena, budou při exportu staženy všechny soubory. To může trvat určitou dobu v závislosti na vašem internetovém připojení."
+      ],
+      "Include file attachments": [
+        "Zahrnout přílohy souborů"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Pro vybrané soubory není k dispozici dostatek úložného prostoru."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Po smazání lze tento soubor ještě obnovit z historie položky."
+      ],
+      "Open new window to upload files": [
+        "Otevřete nové okno pro nahrání souborů"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Během stahování souborů buďte prosím trpěliví."
+      ],
+      "Remove all files": [
+        "Odebrat všechny soubory"
+      ],
+      "Rename": [
+        "Přejmenovat"
+      ],
+      "Restore": [
+        "Obnovit"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Některé soubory jsou příliš velké k nahrání. Maximální povolená velikost je (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Exportované přílohy souborů nebudou šifrovány."
+      ],
+      "The file you are trying to import is empty": [
+        "Soubor, který se snažíte importovat, je prázdný"
+      ],
+      "Total files: ": [
+        "Celkový počet souborů: "
+      ],
+      "Total imported files: ": [
+        "Celkový počet importovaných souborů: "
+      ],
+      "Upload files from your device.": [
+        "Nahrajte soubory z vašeho zařízení."
+      ],
+      "You can attach files to items for a better organization": [
+        "Pro lepší organizaci můžete k položkám připojit soubory"
+      ],
+      "Your current plan does not support importing files": [
+        "Váš aktuální tarif nepodporuje import souborů"
       ]
     },
     "Placeholder": {
@@ -3714,9 +3830,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Smazat trezor \"${ vaultName }\"?"
       ],
-      "Details": [
-        "Podrobnosti"
-      ],
       "Did you know?": [
         "Věděli jste?"
       ],
@@ -3734,6 +3847,9 @@
       ],
       "Domain ownership verification": [
         "Ověření vlastnictví domény"
+      ],
+      "Encrypted import": [
+        "Šifrovaný import"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
@@ -3777,8 +3893,14 @@
       "Import your data": [
         "Importovat vaše data"
       ],
+      "Importing your data": [
+        "Importování vašich dat"
+      ],
       "Inactive 2FA": [
         "Neaktivní 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informace odhalené při úniku informací"
       ],
       "Install extension": [
         "Nainstalovat rozšíření"
@@ -3908,6 +4030,9 @@
       ],
       "Remove secure link?": [
         "Odebrat bezpečný odkaz?"
+      ],
+      "Reset history for this item?": [
+        "Resetovat historii této položky?"
       ],
       "Resolved breaches": [
         "Vyřešené úniky informací"
@@ -4048,6 +4173,14 @@
         "Chystáte se trvale smazat ${ aliasCount } aliasů."
       ]
     },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "URL domény je neplatná"
@@ -4098,6 +4231,9 @@
       ],
       "An error occurred while exporting your data": [
         "Při exportu vašich dat došlo k chybě"
+      ],
+      "An error occurred while importing your data.": [
+        "Při importu vašich dat došlo k chybě."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Opravdu chcete přesunout ${ trashedItemsCount } položku do koše?",

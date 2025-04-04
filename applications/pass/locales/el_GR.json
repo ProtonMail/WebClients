@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
       "Multiple select": [
@@ -567,9 +567,6 @@
       ],
       "Sign out": [
         "Αποσύνδεση"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Κάποιος μοιράστηκε ένα στοιχείο μαζί σας στο ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ταξινόμηση στοιχείων κρύπτης"
@@ -1124,9 +1121,6 @@
       ],
       "Trashing item failed": [
         "Αποτυχία μετακίνησης στοιχείου στα Διαγραμμένα"
-      ],
-      "Try reaching out to the link owner.": [
-        "Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του συνδέσμου."
       ],
       "Unable to generate an OTP code for this item": [
         "Δεν είναι δυνατή η δημιουργία κωδικού OTP για αυτό το στοιχείο"
@@ -1747,8 +1741,8 @@
       "Latest breach on ${ formattedDate }": [
         "Τελευταία παραβίαση στις ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Μάθετε τι να κάνετε ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Αποχώρηση από το στοιχείο..."
@@ -1795,10 +1789,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -3082,9 +3072,6 @@
       "Theme": [
         "Θέμα"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Αυτό το στοιχείο είναι προσβάσιμο μέχρι τις ${ date } ή μέχρι να συμπληρωθεί το όριο προβολής."
-      ],
       "Title": [
         "Τίτλος"
       ],
@@ -3201,11 +3188,11 @@
       "auto create rules ››": [
         "αυτόματη δημιουργία κανόνων ››"
       ],
+      "if your data is leaked": [
+        "εάν τα δεδομένα σας υποστούν διαρρεύσει"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
-      ],
-      "stay safer online": [
-        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ]
     },
     "Log preference": {
@@ -3743,9 +3730,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Διαγραφή κρύπτης \"${ vaultName }\";"
       ],
-      "Details": [
-        "Λεπτομέρειες"
-      ],
       "Did you know?": [
         "Γνωρίζατε;"
       ],
@@ -3814,6 +3798,9 @@
       ],
       "Inactive 2FA": [
         "Απενεργοποιημένο 2FA"
+      ],
+      "Information exposed in breach": [
+        "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
       "Install extension": [
         "Εγκατάσταση προέκτασης"
@@ -4074,6 +4061,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
       ]
     },
     "Validation": {
