@@ -280,71 +280,76 @@ const MoreDropdown = ({
                             {inMore.additionalDropdowns ? (
                                 <>
                                     <DropdownMenuButton
-                                        className={clsx('text-left', inMore.move && 'border-top')}
+                                        className={clsx(
+                                            'text-left inline-flex flex-nowrap',
+                                            inMore.move && 'border-top'
+                                        )}
                                         onClick={() => onOpenAdditional(0)}
                                         data-testid="toolbar:more-dropdown--moveto"
                                     >
-                                        <Icon name="folder-arrow-in" className="mr-2" />
-                                        {c('Title').t`Move to`}
+                                        <Icon name="folder-arrow-in" className="mr-2 shrink-0 mt-0.5" />
+                                        <span className="flex-1">{c('Title').t`Move to`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
-                                        className="text-left"
+                                        className="text-left inline-flex flex-nowrap"
                                         onClick={() => onOpenAdditional(1)}
                                         data-testid="toolbar:more-dropdown--labelas"
                                     >
-                                        <Icon name="tag" className="mr-2" />
-                                        {c('Title').t`Label as`}
+                                        <Icon name="tag" className="mr-2 shrink-0 mt-0.5" />
+                                        <span className="flex-1">{c('Title').t`Label as`}</span>
                                     </DropdownMenuButton>
                                     {(canSnooze || canUnsnooze) && (
                                         <DropdownMenuButton
-                                            className="text-left"
+                                            className="text-left inline-flex flex-nowrap"
                                             onClick={() => onOpenAdditional(2)}
                                             data-testid="toolbar:more-dropdown--snooze"
                                         >
-                                            <Icon name="bell" className="mr-2" />
-                                            {c('Title').t`Snooze message`}
+                                            <Icon name="bell" className="mr-2 shrink-0 mt-0.5" />
+                                            <span className="flex-1">{c('Title').t`Snooze message`}</span>
                                         </DropdownMenuButton>
                                     )}
                                 </>
                             ) : null}
                             {inMore.moveAllToTrash ? (
                                 <DropdownMenuButton
-                                    className="text-left"
+                                    className="text-left inline-flex flex-nowrap"
                                     onClick={handleMoveAllToTrash}
                                     data-testid="toolbar:moveAllToTrash"
                                 >
-                                    <Icon name="trash" className="mr-2" />
-                                    {
-                                        // translator: This action will move all messages from the location to trash
-                                        // Beware when translating this one because we might also have a button below,
-                                        // which is deleting all messages. This is different
-                                        c('Action').t`Move all to trash`
-                                    }
+                                    <Icon name="trash" className="mr-2 shrink-0 mt-0.5" />
+                                    <span className="flex-1">
+                                        {
+                                            // translator: This action will move all messages from the location to trash
+                                            // Beware when translating this one because we might also have a button below,
+                                            // which is deleting all messages. This is different
+                                            c('Action').t`Move all to trash`
+                                        }
+                                    </span>
                                 </DropdownMenuButton>
                             ) : null}
                             {inMore.moveAllToArchive ? (
                                 <DropdownMenuButton
-                                    className="text-left"
+                                    className="text-left inline-flex flex-nowrap"
                                     onClick={handleMoveAllToArchive}
                                     data-testid="toolbar:moveAllToArchive"
                                 >
-                                    <Icon name="archive-box" className="mr-2" />
-                                    {c('Action').t`Move all to archive`}
+                                    <Icon name="archive-box" className="mr-2 shrink-0 mt-0.5" />
+                                    <span className="flex-1">{c('Action').t`Move all to archive`}</span>
                                 </DropdownMenuButton>
                             ) : null}
                             {inMore.delete ? (
                                 <DropdownMenuButton
-                                    className="text-left color-danger"
+                                    className="text-left inline-flex flex-nowrap color-danger"
                                     onClick={handleEmptyLabel}
                                     data-testid="toolbar:more-empty"
                                 >
-                                    <Icon name="cross-circle" className="mr-2" />
-                                    {
+                                    <Icon name="cross-circle" className="mr-2 shrink-0 mt-0.5" />
+                                    <span className="flex-1">{
                                         // translator: This action will delete permanently all messages from the location
                                         // Beware when translating this one because we might also have a button on top,
                                         // which is moving messages to trash. This is different
                                         c('Action').t`Delete all`
-                                    }
+                                    }</span>
                                 </DropdownMenuButton>
                             ) : null}
                         </DropdownMenu>
