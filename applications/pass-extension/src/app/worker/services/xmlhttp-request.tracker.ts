@@ -78,7 +78,7 @@ export const createXMLHTTPRequestTracker = ({ acceptRequest, onIdle, onFailed }:
 
     const onBeforeRequest = async (request: WebRequest.OnBeforeRequestDetailsType) => {
         const { tabId, requestId } = request;
-        if (tabId >= 0 && acceptRequest(request)) {
+        if (tabId > 0 && acceptRequest(request)) {
             try {
                 const tab = await browser.tabs.get(tabId);
                 if (tab.url !== undefined) {

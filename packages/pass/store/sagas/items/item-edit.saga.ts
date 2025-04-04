@@ -7,6 +7,7 @@ import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { aliasDetailsSync, filesResolve, itemEdit } from '@proton/pass/store/actions';
 import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
+import { itemLinkPendingFiles } from '@proton/pass/store/sagas/items/item-files.sagas';
 import {
     selectAliasDetails,
     selectAliasOptions,
@@ -65,18 +66,20 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     }
 }
 
-function* itemEditWorker(
-    { onItemsUpdated, getTelemetry }: RootSagaOptions,
-    { payload: editIntent, meta }: ReturnType<typeof itemEdit.intent>
-) {
-    const { itemId, shareId, lastRevision } = editIntent;
+function* itemEditWorker(options: RootSagaOptions, { payload: editIntent, meta }: ReturnType<typeof itemEdit.intent>) {
+    const { itemId, shareId, lastRevision, files } = editIntent;
+    const { onItemsUpdated, getTelemetry } = options;
     const telemetry = getTelemetry();
 
     try {
         if (editIntent.type === 'alias' && editIntent.extraData?.aliasOwner) yield call(aliasEditWorker, editIntent);
 
-        const item: ItemRevision = yield editItem(editIntent, lastRevision);
+        let item: ItemRevision = yield editItem(editIntent, lastRevision);
+        const shouldLink = files.toAdd.length || files.toRemove.length || files.toRestore?.length;
+        if (shouldLink) item = yield itemLinkPendingFiles(item, files, options);
+
         yield put(itemEdit.success(meta.request.id, { item, itemId, shareId }));
+
         if (or(hasAttachments, hasHadAttachments)(item)) yield put(withRevalidate(filesResolve.intent(item)));
 
         void telemetry?.push(

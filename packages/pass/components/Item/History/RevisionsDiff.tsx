@@ -143,7 +143,9 @@ export const RevisionDiff: FC = () => {
                             file={file}
                             loading={restoring.has(file.fileID)}
                             disabled={selected === latest || !file.revisionRemoved || latestFileUUIDs.has(file.fileUID)}
-                            onRestore={() => restoreFile({ shareId, itemId, fileId: file.fileID })}
+                            onRestore={
+                                canRestore ? () => restoreFile({ shareId, itemId, fileId: file.fileID }) : undefined
+                            }
                         />
                     ))}
                 </FileAttachmentsView>
