@@ -18,6 +18,10 @@ export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const { openSettings } = usePassCore();
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
 
+    /* Can happen if spotlight was displayed with aliasCount > 0
+     * then user deletes an alias in SimpleLogin */
+    if (aliasCount === 0) return null;
+
     return (
         <>
             <div className="flex-1">
