@@ -68,6 +68,7 @@ export const LobbyContent: FC<Props> = ({
 
     const localID = authStore?.getLocalID();
     const hasExtraPassword = Boolean(authStore?.getExtraPassword());
+    const hasTwoPasswordMode = Boolean(authStore?.getTwoPasswordMode());
     const isSSO = Boolean(authStore?.getSSO());
 
     const stale = clientStale(status);
@@ -143,10 +144,12 @@ export const LobbyContent: FC<Props> = ({
                             case AppStatus.PASSWORD_LOCKED:
                                 return passwordTypeSwitch(
                                     hasExtraPassword,
-                                    isSSO
+                                    isSSO,
+                                    hasTwoPasswordMode
                                 )({
                                     sso: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your backup password`,
                                     extra: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your extra password`,
+                                    twoPwd: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your second password`,
                                     default: c('Info')
                                         .t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`,
                                 });

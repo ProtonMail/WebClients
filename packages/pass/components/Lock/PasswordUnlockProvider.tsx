@@ -9,7 +9,7 @@ import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hoo
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
-import { selectExtraPasswordEnabled, selectIsSSO } from '@proton/pass/store/selectors';
+import { selectExtraPasswordEnabled, selectHasTwoPasswordMode, selectIsSSO } from '@proton/pass/store/selectors';
 
 import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
@@ -22,7 +22,10 @@ export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
 export const usePasswordTypeSwitch = () => {
     const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
     const isSSO = useSelector(selectIsSSO);
-    return useCallback(passwordTypeSwitch(hasExtraPassword, isSSO), [hasExtraPassword, isSSO]);
+    /** Only web & desktop use second password, not extension */
+    const hasTwoPasswordMode = useSelector(selectHasTwoPasswordMode) && !EXTENSION_BUILD;
+
+    return useCallback(passwordTypeSwitch(hasExtraPassword, isSSO, hasTwoPasswordMode), [hasExtraPassword, isSSO]);
 };
 
 export type OnReauthFn = (payload: ReauthActionPayload, forkOptions: Partial<RequestForkOptions>) => void;
@@ -48,6 +51,11 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
                 label: c('Label').t`Backup password`,
                 message: c('Info').t`Please confirm your backup password`,
                 title: c('Title').t`Enter your backup password`,
+            },
+            twoPwd: {
+                label: c('Label').t`Second password`,
+                message: c('Info').t`Please confirm your second password`,
+                title: c('Title').t`Enter your second password`,
             },
             default: {
                 label: c('Label').t`Password`,
