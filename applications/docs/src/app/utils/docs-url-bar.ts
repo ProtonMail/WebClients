@@ -11,9 +11,9 @@ import { useLocation } from 'react-router-dom-v5-compat'
 export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
   const { getLocalID } = useAuthentication()
 
-  const { search } = useLocation()
+  const { pathname, search } = useLocation()
   const searchParams = useMemo(() => new URLSearchParams(search), [search])
-  const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams))
+  const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams, pathname))
 
   /**
    * Changes the URL of the page only visually, without causing any navigation or changing
@@ -127,7 +127,11 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
   }
 }
 
-export function parseOpenAction(searchParams: URLSearchParams): DocumentAction | null {
+export const DOCUMENT_EDITOR_PATH = '/doc'
+export const DOCUMENT_NEW_PATH = '/new'
+export const DOCUMENT_CREATION_PATHS = [DOCUMENT_EDITOR_PATH, DOCUMENT_NEW_PATH]
+
+export function parseOpenAction(searchParams: URLSearchParams, pathname: string): DocumentAction | null {
   const mode = (searchParams.get('mode') ?? 'open') as DocumentAction['mode']
   const action = searchParams.get('action') as RedirectAction | undefined
   const parentLinkId = searchParams.get('parentLinkId')
@@ -147,6 +151,12 @@ export function parseOpenAction(searchParams: URLSearchParams): DocumentAction |
   const hasValidRoute = hasValidPublicLink || hasRequiredParametersToLoadOrCreateADocument
 
   if (!hasValidRoute) {
+    if (DOCUMENT_CREATION_PATHS.some((path) => pathname.endsWith(path)) && searchParams.size === 0) {
+      return {
+        mode: 'new',
+      }
+    }
+
     return null
   }
 
