@@ -1835,8 +1835,8 @@
       "Latest breach on ${ formattedDate }": [
         "Posledný únik údajov dňa ${ formattedDate }"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zistite, ako ${ staySaferOnlineLink }"
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zistite, čo robiť ${ dataLeakedLink }"
       ],
       "Leaving item...": [
         "Opúšťanie položky..."
@@ -3396,11 +3396,11 @@
       "auto create rules ››": [
         "automatické vytvorenie pravidiel ››"
       ],
+      "if your data is leaked": [
+        "ak dôjde k úniku vašich údajov"
+      ],
       "Learn more": [
         "Zistiť viac"
-      ],
-      "stay safer online": [
-        "zostať bezpečnejší online"
       ]
     },
     "Log preference": {
@@ -3863,9 +3863,6 @@
       "Delete vault \"${ vaultName }\"?": [
         "Vymazať trezor \"${ vaultName }\"?"
       ],
-      "Details": [
-        "Podrobnosti"
-      ],
       "Did you know?": [
         "Vedeli ste?"
       ],
@@ -3928,6 +3925,9 @@
       ],
       "Inactive 2FA": [
         "Neaktívne 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informácie odhalené pri úniku"
       ],
       "Install extension": [
         "Inštalovať rozšírenie"
@@ -4195,6 +4195,14 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nie všetky informácie, ktoré sú tu uvedené, boli sprístupnené všetkým používateľom."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
       ]
     },
     "Validation": {
