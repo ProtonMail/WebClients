@@ -1,7 +1,6 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import AutomaticallySaveContacts from '@proton/components/containers/otherMailPreferences/AutomaticallySaveContacts';
-import { FeatureCode, useFeature } from '@proton/features';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 
@@ -11,7 +10,6 @@ import { TipsAndInsights } from './TipsAndInsights';
 import { UnreadFaviconCounter } from './UnreadFaviconCounter';
 
 export const OtherMailPreferencesSection = () => {
-    const isUnreadFaviconEnabled = !!useFeature(FeatureCode.UnreadFavicon).feature?.Value;
     const [organization] = useOrganization();
     const [user] = useUser();
 
@@ -22,7 +20,7 @@ export const OtherMailPreferencesSection = () => {
         <>
             <KeyboardShortcut />
             <SenderImages />
-            {isUnreadFaviconEnabled && !isElectronMail && <UnreadFaviconCounter />}
+            {!isElectronMail && <UnreadFaviconCounter />}
             {canToggleTips && <TipsAndInsights />}
             <AutomaticallySaveContacts />
         </>
