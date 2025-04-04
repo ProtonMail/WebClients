@@ -15,6 +15,8 @@ export enum VideoConferenceSource {
     zoom_desc = 'zoom_desc',
     google_meet_desc = 'google_meet_desc',
     google_meet_loc = 'google_meet_loc',
+    skype_desc = 'skype_desc',
+    skype_loc = 'skype_loc',
     int_zoom = 'int_zoom',
 }
 

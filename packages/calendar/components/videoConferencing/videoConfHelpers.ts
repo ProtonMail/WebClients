@@ -13,4 +13,8 @@ export const getVideoConfCopy = (service: VIDEO_CONF_SERVICES) => {
     if (service === VIDEO_CONF_SERVICES.ZOOM) {
         return c('Zoom').t`Join Zoom meeting`;
     }
+
+    if (service === VIDEO_CONF_SERVICES.SKYPE) {
+        return c('Skype').t`Join Skype meeting`;
+    }
 };
