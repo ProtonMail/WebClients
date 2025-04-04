@@ -3,7 +3,7 @@ import { type FC, useCallback, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
 import locales from 'proton-pass-extension/app/locales';
-import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
+import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
