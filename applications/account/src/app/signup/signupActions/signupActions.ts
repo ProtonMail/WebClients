@@ -19,13 +19,13 @@ import { setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/share
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
-    getUser,
     queryCheckEmailAvailability,
     queryCheckUsernameAvailability,
     unlockPasswordChanges,
 } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -149,7 +149,7 @@ export const handleDisplayName = async ({
 
     await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
     // Re-fetch the user to get the updated display name
-    const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
+    const user = await getUser(api);
 
     return {
         ...cache,
@@ -213,7 +213,7 @@ export const handleSetPassword = async ({
         source: SessionSource.Proton,
     });
 
-    const updatedUser = await api<{ User: User }>(getUser()).then(({ User }) => User);
+    const updatedUser = await getUser(api);
 
     return {
         cache: {
@@ -471,7 +471,7 @@ const setupKeys = async ({
         };
     }
 
-    const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
+    const user = await getUser(api);
     await preAuthKTCommit(user.ID, api);
     return { keySetupData, user, addresses };
 };
