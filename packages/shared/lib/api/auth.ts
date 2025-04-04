@@ -120,6 +120,12 @@ export const pushForkSession = (data: {
     data,
 });
 
+
+export const getForks = () => ({
+    method: 'get',
+    url: `auth/v4/sessions/forks`,
+});
+
 export const pullForkSession = (selector: string) => ({
     method: 'get',
     url: `auth/v4/sessions/forks/${selector}`,

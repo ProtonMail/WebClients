@@ -1,10 +1,11 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import merge from 'lodash/merge';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { DeepPartial, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
@@ -39,11 +40,11 @@ const slice = createSlice({
         set: (state, action: PayloadAction<{ UserSettings: UserSettings }>) => {
             state.value = action.payload.UserSettings;
         },
-        update: (state, action: PayloadAction<{ UserSettings: Partial<UserSettings> }>) => {
+        update: (state, action: PayloadAction<{ UserSettings: DeepPartial<UserSettings> }>) => {
             if (!state.value) {
                 return;
             }
-            state.value = { ...state.value, ...action.payload.UserSettings };
+            state.value = merge(state.value, action.payload.UserSettings);
         },
     },
     extraReducers: (builder) => {

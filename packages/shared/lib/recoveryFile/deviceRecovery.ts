@@ -70,8 +70,9 @@ export const attemptDeviceRecovery = async ({
         return;
     }
 
+    const hasRecoveryMessage = getHasRecoveryMessage(user.ID);
     const hasKeysToReactivate = getLikelyHasKeysToReactivate(user, addresses);
-    if (!hasKeysToReactivate) {
+    if (!hasKeysToReactivate || !hasRecoveryMessage) {
         return;
     }
 
