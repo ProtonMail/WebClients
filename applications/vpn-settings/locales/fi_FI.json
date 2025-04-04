@@ -514,10 +514,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Remove": [
@@ -631,11 +631,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "Select file": [
-        "Valitse tiedosto"
-      ],
       "select file": [
         "valitse tiedosto"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Send code": [
         "Lähetä koodi"
@@ -5299,11 +5299,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -5828,10 +5828,10 @@
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6782,29 +6782,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Poista tili"
-      ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Hanki ${ BRAND_NAME } ilmaiseksi"
-      ],
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Säilytä ${ plan }"
-      ],
-      "Keep account": [
-        "Säilytä tili"
-      ],
-      "Switch plan": [
-        "Vaihda tilausta"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
@@ -6829,6 +6806,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Poista tili"
+      ],
+      "Downgrade account": [
+        "Alenna tili"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Hanki ${ BRAND_NAME } ilmaiseksi"
+      ],
+      "Get ${ planName }": [
+        "Hanki ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Säilytä ${ plan }"
+      ],
+      "Keep account": [
+        "Säilytä tili"
+      ],
+      "Switch plan": [
+        "Vaihda tilausta"
       ]
     },
     "new_plans: feature": {
@@ -8008,17 +8008,6 @@
         "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Maakohtaiset määritykset"
@@ -8076,6 +8065,17 @@
       ],
       "The whole organization": [
         "Koko organisaatio"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Organization capacity error": {
@@ -10697,10 +10697,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
