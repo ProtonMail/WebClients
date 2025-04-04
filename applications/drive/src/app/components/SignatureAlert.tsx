@@ -21,6 +21,7 @@ type Props = {
     corruptedLink?: boolean;
     mimeType?: string;
     className?: string;
+    haveParentAccess: boolean;
 };
 
 export default function SignatureAlert({
@@ -33,6 +34,7 @@ export default function SignatureAlert({
     mimeType,
     isFile,
     className,
+    haveParentAccess,
     ...props
 }: Props) {
     if (loading) {
@@ -60,7 +62,8 @@ export default function SignatureAlert({
         );
     }
 
-    const validAnonymousSignature = isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile });
+    const validAnonymousSignature =
+        isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile, haveParentAccess });
 
     return (
         <Banner

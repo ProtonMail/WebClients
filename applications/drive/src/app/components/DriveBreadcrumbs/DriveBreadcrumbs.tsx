@@ -65,6 +65,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                                     mimeType={link.mimeType}
                                     signatureIssues={link.signatureIssues}
                                     isAnonymous={link.isAnonymous}
+                                    haveParentAccess={!!link.parentLinkId}
                                     className="mr-1"
                                 />
                                 <span className="text-pre text-ellipsis">{name}</span>
