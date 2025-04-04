@@ -5,13 +5,21 @@ describe('parseOpenAction', () => {
     return new URLSearchParams(params)
   }
 
+  const docPathname = '/doc'
+
   describe('invalid routes', () => {
-    it('returns null for empty params', () => {
-      expect(parseOpenAction(createSearchParams({}))).toBeNull()
+    it('returns "new" mode for empty params', () => {
+      expect(parseOpenAction(createSearchParams({}), docPathname)).toEqual({
+        mode: 'new',
+      })
+    })
+
+    it('returns null for empty params with invalid path', () => {
+      expect(parseOpenAction(createSearchParams({}), '')).toBeNull()
     })
 
     it('returns null for incomplete params', () => {
-      expect(parseOpenAction(createSearchParams({ mode: 'open' }))).toBeNull()
+      expect(parseOpenAction(createSearchParams({ mode: 'open' }), docPathname)).toBeNull()
     })
   })
 
@@ -27,7 +35,7 @@ describe('parseOpenAction', () => {
         value: { hash: '#password123' },
       })
 
-      expect(parseOpenAction(params)).toEqual({
+      expect(parseOpenAction(params, docPathname)).toEqual({
         mode: 'open-url',
         token: 'test-token',
         linkId: 'test-link',
@@ -48,7 +56,7 @@ describe('parseOpenAction', () => {
         value: { hash: '#password123' },
       })
 
-      expect(parseOpenAction(params)).toEqual({
+      expect(parseOpenAction(params, docPathname)).toEqual({
         mode: 'open-url-download',
         token: 'test-token',
         linkId: 'test-link',
@@ -65,7 +73,7 @@ describe('parseOpenAction', () => {
         action: 'view',
       })
 
-      expect(parseOpenAction(params)).toEqual({
+      expect(parseOpenAction(params, docPathname)).toEqual({
         mode: 'open-url-reauth',
         token: 'test-token',
         linkId: 'test-link',
@@ -78,7 +86,7 @@ describe('parseOpenAction', () => {
         mode: 'copy-public',
       })
 
-      expect(parseOpenAction(params)).toEqual({
+      expect(parseOpenAction(params, docPathname)).toEqual({
         mode: 'copy-public',
       })
     })
@@ -92,7 +100,7 @@ describe('parseOpenAction', () => {
         parentLinkId: 'parent-link',
       })
 
-      expect(parseOpenAction(params)).toEqual({
+      expect(parseOpenAction(params, docPathname)).toEqual({
         mode: 'create',
         volumeId: 'test-volume',
         parentLinkId: 'parent-link',
@@ -105,7 +113,7 @@ describe('parseOpenAction', () => {
         volumeId: 'test-volume',
       })
 
-      expect(parseOpenAction(params)).toBeNull()
+      expect(parseOpenAction(params, docPathname)).toBeNull()
     })
 
     const modesRequiringLinkId = ['open', 'convert', 'history', 'download']
@@ -117,7 +125,7 @@ describe('parseOpenAction', () => {
           linkId: 'test-link',
         })
 
-        expect(parseOpenAction(params)).toEqual({
+        expect(parseOpenAction(params, docPathname)).toEqual({
           mode,
           volumeId: 'test-volume',
           linkId: 'test-link',
@@ -130,7 +138,7 @@ describe('parseOpenAction', () => {
           volumeId: 'test-volume',
         })
 
-        expect(parseOpenAction(params)).toBeNull()
+        expect(parseOpenAction(params, docPathname)).toBeNull()
       })
     })
   })
@@ -142,7 +150,7 @@ describe('parseOpenAction', () => {
         linkId: 'test-link',
       })
 
-      expect(parseOpenAction(params)).toEqual({
+      expect(parseOpenAction(params, docPathname)).toEqual({
         mode: 'open',
         volumeId: 'test-volume',
         linkId: 'test-link',
@@ -156,7 +164,7 @@ describe('parseOpenAction', () => {
         linkId: 'test-link',
       })
 
-      expect(parseOpenAction(params)).toBeNull()
+      expect(parseOpenAction(params, docPathname)).toBeNull()
     })
   })
 })
