@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar um ficheiro"
-      ],
       "select file": [
         "selecionar ficheiro"
+      ],
+      "Select file": [
+        "Selecionar um ficheiro"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -8411,9 +8411,6 @@
       "Large imports can take several days.": [
         "As importações grandes podem demorar vários dias."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda como ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicações de VPN de terceiros."
       ],
@@ -8428,6 +8425,9 @@
       ],
       "Learn more about single sign-on": [
         "Saiba mais sobre a autenticação única"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Saiba o que fazer ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Da esquerda para a direita"
@@ -9608,11 +9608,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "username": [
-        "nome de utilizador"
-      ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -10344,9 +10344,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Ativa"
-      ],
       "Compromised": [
         "Comprometida"
       ],
@@ -10760,10 +10757,10 @@
       "Allow sharing outside the organization": [
         "Permitir a partilha fora da organização"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10775,10 +10772,10 @@
       "Amount due": [
         "Quantia devida"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -11207,11 +11204,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -11414,14 +11411,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nome da organização"
@@ -12030,6 +12027,9 @@
       "How to unlock data": [
         "Como desbloquear dados"
       ],
+      "if your data is leaked": [
+        "se os seus dados vazarem"
+      ],
       "Import/export": [
         "Importar/exportar"
       ],
@@ -12051,11 +12051,11 @@
       "perform a password reset from your active session": [
         "redefinir a palavra-passe da sua sessão ativa"
       ],
-      "Privacy policy": [
-        "Política de privacidade"
-      ],
       "privacy policy": [
         "política de privacidade"
+      ],
+      "Privacy policy": [
+        "Política de privacidade"
       ],
       "Reactivate now": [
         "Reativar"
@@ -12071,9 +12071,6 @@
       ],
       "Sign in": [
         "Iniciar sessão"
-      ],
-      "stay safer online": [
-        "fique mais seguro online"
       ],
       "switch account": [
         "trocar de conta"
@@ -13426,14 +13423,6 @@
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -13452,6 +13441,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -14089,17 +14086,6 @@
         "Área de trabalho"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10º do mês"
@@ -14337,6 +14323,17 @@
       ],
       "UDP": [
         "UDP"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -18392,11 +18389,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -18621,9 +18618,6 @@
       ],
       "Description": [
         "Descrição"
-      ],
-      "Details": [
-        "Detalhes"
       ],
       "Device": [
         "Dispositivo"
@@ -18950,6 +18944,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Aumente a sua privacidade com mais endereços"
+      ],
+      "Information exposed in breach": [
+        "Informação exposta na violação"
       ],
       "Integrations": [
         "Integrações"
@@ -19621,9 +19618,6 @@
       "Fingerprint": [
         "Impressão digital"
       ],
-      "Key type": [
-        "Tipo de chave"
-      ],
       "Status": [
         "Estado"
       ]
@@ -19672,9 +19666,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Os utilizadores do ${ MAIL_APP_NAME } utilizarão esta chave por predefinição para o envio."
-      ],
       "Account is disconnected": [
         "A conta está desligada"
       ],
@@ -19765,6 +19756,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "As mensagens da pasta Enviado ou Rascunhos continuarão a aparecer nesta pasta, mesmo que as mova para outra pasta."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nem todas as informações aqui listadas foram expostas para todos os utilizadores."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Remova os metadados das imagens para proteger a sua privacidade."
       ],
@@ -19849,6 +19843,9 @@
       "This key is used for email forwarding": [
         "Esta chave é usada para o encaminhamento de e-mail."
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que sejam decifradas, as palavras-passe encriptadas permanecem seguras mesmo que sejam expostas."
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utilize as barras de deslocação padrão do seu navegador. Estas são normalmente maiores e mais fáceis de utilizar."
       ],
@@ -19878,9 +19875,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Ao mover um e-mail para a pasta Spam, será automaticamente cancelada a sua inscrição nas listas de correio do remetente."
-      ],
-      "You have locally decrypted this key": [
-        "Desencriptou esta chave localmente"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "A sua caixa de entrada do ${ MAIL_APP_NAME } está quase cheia."

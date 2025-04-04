@@ -673,11 +673,11 @@
       "Select country": [
         "Odaberi državu"
       ],
-      "Select file": [
-        "Odaberi datoteku"
-      ],
       "select file": [
         "odaberi datoteku"
+      ],
+      "Select file": [
+        "Odaberi datoteku"
       ],
       "Select files": [
         "Odabir datoteka"
@@ -4263,9 +4263,6 @@
       "Labels:": [
         "Oznake:"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Saznajte kako ${ staySaferOnlineLink }"
-      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -4811,9 +4808,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktivno"
-      ],
       "Compromised": [
         "Ugroženo"
       ],
@@ -5177,10 +5171,10 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -5453,11 +5447,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "If": [
-        "Ako"
-      ],
       "IF": [
         "AKO"
+      ],
+      "If": [
+        "Ako"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5582,14 +5576,14 @@
       "Optional": [
         "Neobavezno"
       ],
+      "OR": [
+        "ILI"
+      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
-      ],
-      "OR": [
-        "ILI"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -6473,11 +6467,6 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6487,6 +6476,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8081,10 +8075,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [
@@ -8194,9 +8188,6 @@
       ],
       "Description": [
         "Opis"
-      ],
-      "Details": [
-        "Pojedinosti"
       ],
       "Device connected!": [
         "Uređaj je povezan!"
@@ -8712,9 +8703,6 @@
       "Fingerprint": [
         "Otisak prsta"
       ],
-      "Key type": [
-        "Vrsta ključa"
-      ],
       "Status": [
         "Status"
       ]
@@ -8828,9 +8816,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Kada kliknete na poveznicu, ova značajka za zaštitu od krađe identiteta će tražiti da potvrdite točnost URL-a web stranice."
-      ],
-      "You have locally decrypted this key": [
-        "Lokalno ste dešifrirali ovaj ključ"
       ],
       "Your DKIM signing is working.": [
         "Vaše DKIM potpisivanje radi."

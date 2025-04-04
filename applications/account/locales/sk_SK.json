@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "Select file": [
-        "Vyberte súbor"
-      ],
       "select file": [
         "vybrať súbor"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Select files": [
         "Vybrať súbory"
@@ -2765,6 +2765,14 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "${ selectedCitiesCount } vybrané",
+        "${ selectedCitiesCount } vybrané",
+        "${ selectedCitiesCount } vybraných",
+        "${ selectedCitiesCount } vybraných"
       ]
     },
     "Country name": {
@@ -7083,6 +7091,12 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
+        "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
+        "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
+        "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -7887,6 +7901,9 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
+      "Data recoverable on this device": [
+        "Údaje obnoviteľné v tomto zariadení"
+      ],
       "Dedicated servers": [
         "Dedikované servery"
       ],
@@ -8565,9 +8582,6 @@
       "Large imports can take several days.": [
         "Import veľkého množstva údajov môže trvať niekoľko dní."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Zistite, ako ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Zistite, ako sa prihlásiť do ${ VPN_APP_NAME } pomocou aplikácií VPN tretích strán."
       ],
@@ -8582,6 +8596,9 @@
       ],
       "Learn more about single sign-on": [
         "Viac informácií o jednotnom prihlasovaní"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zistite, čo robiť ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Zľava Doprava"
@@ -9669,6 +9686,9 @@
       "Total VPN connections": [
         "Celkom VPN pripojení"
       ],
+      "trusted device": [
+        "dôveryhodné zariadenie"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyskúšajte ${ productName } úplne bez rizika - ak si to z akéhokoľvek dôvodu rozmyslíte, dostanete plnú náhradu. Bez otázok."
       ],
@@ -9783,11 +9803,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -10547,9 +10567,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktívny"
-      ],
       "Compromised": [
         "Kompromitovaný"
       ],
@@ -10971,10 +10988,10 @@
       "Allow sharing outside the organization": [
         "Umožniť zdieľanie mimo organizácie"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10986,10 +11003,10 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -11198,6 +11215,9 @@
       ],
       "Could you please specify?": [
         "Môžete to upresniť?"
+      ],
+      "Countries": [
+        "Krajiny"
       ],
       "Country": [
         "Krajina"
@@ -11415,11 +11435,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ak"
-      ],
       "IF": [
         "AK"
+      ],
+      "If": [
+        "Ak"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11622,14 +11642,14 @@
       "Optional": [
         "Voliteľné"
       ],
+      "OR": [
+        "ALEBO"
+      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
-      ],
-      "OR": [
-        "ALEBO"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -12240,6 +12260,9 @@
       "How to unlock data": [
         "Ako odomknúť údaje"
       ],
+      "if your data is leaked": [
+        "ak dôjde k úniku vašich údajov"
+      ],
       "Import/export": [
         "Import/Export"
       ],
@@ -12261,11 +12284,11 @@
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
       ],
-      "Privacy policy": [
-        "Ochrana osobných údajov"
-      ],
       "privacy policy": [
         "zásadami ochrany osobných údajov"
+      ],
+      "Privacy policy": [
+        "Ochrana osobných údajov"
       ],
       "Reactivate now": [
         "Znovu aktivovať teraz"
@@ -12281,9 +12304,6 @@
       ],
       "Sign in": [
         "Prihlásiť sa"
-      ],
-      "stay safer online": [
-        "zostať bezpečnejší online"
       ],
       "switch account": [
         "prepnúť účet"
@@ -13706,14 +13726,6 @@
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -13732,6 +13744,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14383,17 +14403,6 @@
         "Počítač"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. deň v mesiaci"
@@ -14622,6 +14631,17 @@
       ],
       "Trash": [
         "Kôš"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
       ]
     },
     "Option delay send seconds": {
@@ -18816,10 +18836,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -19049,9 +19069,6 @@
       ],
       "Description": [
         "Popis"
-      ],
-      "Details": [
-        "Podrobnosti"
       ],
       "Device": [
         "Zariadenie"
@@ -19382,6 +19399,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Zvýšte svoje súkromie pomocou viacerých adries"
+      ],
+      "Information exposed in breach": [
+        "Informácie odhalené pri úniku"
       ],
       "Integrations": [
         "Integrácie"
@@ -20055,9 +20075,6 @@
       "Fingerprint": [
         "Digitálny odtlačok"
       ],
-      "Key type": [
-        "Typ kľúča"
-      ],
       "Status": [
         "Stav"
       ]
@@ -20106,9 +20123,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Používatelia ${ MAIL_APP_NAME } budú štandardne používať tento kľúč na odosielanie"
-      ],
       "Account is disconnected": [
         "Účet je odpojený"
       ],
@@ -20199,6 +20213,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Správy v priečinku Odoslané alebo Koncepty sa budú naďalej zobrazovať v tomto priečinku, aj keď ich presuniete do iného priečinka."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nie všetky informácie, ktoré sú tu uvedené, boli sprístupnené všetkým používateľom."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Odstránenie metadát z vašich obrázkov na ochranu vášho súkromia."
       ],
@@ -20283,6 +20300,9 @@
       "This key is used for email forwarding": [
         "Tento kľúč sa používa na preposielanie emailov"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Použije predvolené posuvníky prehliadača. Tieto sú zvyčajne väčšie a ľahšie sa používajú"
       ],
@@ -20312,9 +20332,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Keď presuniete email do spamu, automaticky sa odhlásite z mailingových zoznamov odosielateľa."
-      ],
-      "You have locally decrypted this key": [
-        "Tento kľúč ste dešifrovali lokálne"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Vaša schránka ${ MAIL_APP_NAME } je takmer plná"

@@ -1084,11 +1084,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "Select file": [
-        "Valitse tiedosto"
-      ],
       "select file": [
         "valitse tiedosto"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -8280,9 +8280,6 @@
       "Large imports can take several days.": [
         "Suuret tuonnit saattavat kestää useita päiviä."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Opi ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lue miten kirjaudut ${ VPN_APP_NAME }:ään kolmannen osapuolen VPN-sovelluksilla."
       ],
@@ -9447,11 +9444,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -10166,9 +10163,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktiiviset"
-      ],
       "Compromised": [
         "Vaarantunut"
       ],
@@ -10582,10 +10576,10 @@
       "Allow sharing outside the organization": [
         "Salli organisaation ulkopuolinen jakaminen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10597,11 +10591,11 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
-      "And": [
-        "Ja"
-      ],
       "AND": [
         "JA"
+      ],
+      "And": [
+        "Ja"
       ],
       "and": [
         "ja"
@@ -11023,11 +11017,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jos"
-      ],
       "IF": [
         "JOS"
+      ],
+      "If": [
+        "Jos"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -11227,14 +11221,14 @@
       "Optional": [
         "Valinnainen"
       ],
+      "OR": [
+        "TAI"
+      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
-      ],
-      "OR": [
-        "TAI"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11864,11 +11858,11 @@
       "perform a password reset from your active session": [
         "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
       ],
-      "Privacy policy": [
-        "Tietosuojakäytäntö"
-      ],
       "privacy policy": [
         "tietosuojakäytäntömme"
+      ],
+      "Privacy policy": [
+        "Tietosuojakäytäntö"
       ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
@@ -11884,9 +11878,6 @@
       ],
       "Sign in": [
         "Kirjaudu sisään"
-      ],
-      "stay safer online": [
-        "suojautumaan verkossa paremmin"
       ],
       "switch account": [
         "vaihda tiliä"
@@ -13225,14 +13216,6 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -13251,6 +13234,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -13882,17 +13873,6 @@
         "Työpöytä"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Kuukauden 10. päivä"
@@ -14121,6 +14101,17 @@
       ],
       "Trash": [
         "Poista"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Option delay send seconds": {
@@ -18102,10 +18093,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -18328,9 +18319,6 @@
       ],
       "Description": [
         "Kuvaus"
-      ],
-      "Details": [
-        "Lisätiedot"
       ],
       "Device": [
         "Laite"
@@ -19325,9 +19313,6 @@
       "Fingerprint": [
         "Sormenjälki"
       ],
-      "Key type": [
-        "Avaimen tyyppi"
-      ],
       "Status": [
         "Tila"
       ]
@@ -19376,9 +19361,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } -käyttäjät käyttävät lähetykseen oletuksena tätä avainta"
-      ],
       "Account is disconnected": [
         "Yhteys tiliin on katkaistu"
       ],
@@ -19573,9 +19555,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Kun siirrät viestin roskapostiin, lopetetaan kyseinen sähköpostitilaus automaattisesti."
-      ],
-      "You have locally decrypted this key": [
-        "Olet purkanut tämän avaimen salauksen paikallisesti"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "${ MAIL_APP_NAME } -postilaatikkosi on melkein täynnä"

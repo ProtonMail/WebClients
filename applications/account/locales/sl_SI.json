@@ -1003,11 +1003,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "Select file": [
-        "Izberite datoteko"
-      ],
       "select file": [
         "izberite datoteko"
+      ],
+      "Select file": [
+        "Izberite datoteko"
       ],
       "Select files": [
         "Izberi datoteke"
@@ -7566,9 +7566,6 @@
       "Large imports can take several days.": [
         "Uvažanje večjega števila sporočil lahko traja tudi več dni."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Naučite se ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Naučite se prijaviti v ${ VPN_APP_NAME } s pomočjo VPN aplikacij drugih ponudnikov."
       ],
@@ -8517,11 +8514,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -9131,9 +9128,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Aktivno"
-      ],
       "Compromised": [
         "Ogroženo"
       ],
@@ -9501,10 +9495,10 @@
       "Allow recovery using a trusted device": [
         "Dovoli obnovitev z uporabo zaupanja vredne naprave."
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
       "Amount": [
@@ -9513,11 +9507,11 @@
       "Amount due": [
         "Zapadli znesek"
       ],
-      "And": [
-        "In"
-      ],
       "AND": [
         "IN"
+      ],
+      "And": [
+        "In"
       ],
       "and": [
         "in"
@@ -9918,11 +9912,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Če"
-      ],
       "IF": [
         "ČE"
+      ],
+      "If": [
+        "Če"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -10098,14 +10092,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "OR": [
+        "ALI"
+      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
-      ],
-      "OR": [
-        "ALI"
       ],
       "Organization name": [
         "Ime organizacije"
@@ -10692,9 +10686,6 @@
       ],
       "Sign in": [
         "Prijava"
-      ],
-      "stay safer online": [
-        "izboljšajte svojo spletno varnost"
       ],
       "switch account": [
         "preklopi račun"
@@ -11962,14 +11953,6 @@
         "Izbrali ste: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -11988,6 +11971,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -16096,10 +16087,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -16305,9 +16296,6 @@
       ],
       "Description": [
         "Opis"
-      ],
-      "Details": [
-        "Podrobnosti"
       ],
       "Device": [
         "Naprava"
@@ -17182,9 +17170,6 @@
       "Fingerprint": [
         "Prstni odtis"
       ],
-      "Key type": [
-        "Vrsta ključa"
-      ],
       "Status": [
         "Stanje"
       ]
@@ -17233,9 +17218,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Uporabniki programa ${ MAIL_APP_NAME } bodo privzeto uporabljali ta ključ za pošiljanje."
-      ],
       "Account is disconnected": [
         "Povezava z računom je prekinjena"
       ],
@@ -17400,9 +17382,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Ko premaknete sporočilo v neželeno pošto, se hkrati samodejno odjavite s pošiljateljevega poštnega seznama."
-      ],
-      "You have locally decrypted this key": [
-        "Ta ključ ste dešifrirali lokalno"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Vaš predal pošte ${ MAIL_APP_NAME } je skoraj poln."
