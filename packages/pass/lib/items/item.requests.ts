@@ -3,7 +3,6 @@ import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
-import { linkPendingFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
 import type {
     AliasAndItemCreateRequest,
     BatchItemRevisionIDs,
@@ -56,8 +55,7 @@ export const createItem = async (createIntent: ItemCreateIntent<Exclude<ItemType
         data,
     });
 
-    if (files.toAdd.length === 0) return parseItemRevision(shareId, Item);
-    return linkPendingFiles({ shareId, itemId: Item.ItemID, files, revision: Item.Revision });
+    return parseItemRevision(shareId, Item);
 };
 
 /* Specific alias item API request */
@@ -80,17 +78,7 @@ export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Prom
         data,
     });
 
-    const item = await parseItemRevision<'alias'>(shareId, Item);
-
-    if (files.toAdd.length === 0) return item;
-
-    try {
-        const { itemId, revision } = item;
-        return await linkPendingFiles<'alias'>({ shareId, itemId, files, revision });
-    } catch (error) {
-        logger.warn('[Item::Create] Could not link files', error);
-        return item;
-    }
+    return parseItemRevision<'alias'>(shareId, Item);
 };
 
 export type ItemRevisionWithAlias = [ItemRevision<'login'>, ItemRevision<'alias'>];
@@ -127,16 +115,7 @@ export const createItemWithAlias = async (
     const login = await parseItemRevision<'login'>(shareId, Bundle.Item);
     const alias = await parseItemRevision<'alias'>(shareId, Bundle.Alias);
 
-    if (files.toAdd.length === 0) return [login, alias];
-
-    try {
-        const { itemId, revision } = login;
-        const linkedLogin = await linkPendingFiles<'login'>({ shareId, itemId, files, revision });
-        return [linkedLogin, alias];
-    } catch (error) {
-        logger.warn('[Item::Create] Could not link files', error);
-        return [login, alias];
-    }
+    return [login, alias];
 };
 
 /** FIXME: we should start caching the item keys */
@@ -155,18 +134,7 @@ export const editItem = async (editIntent: ItemEditIntent, lastRevision: number)
     const data = await PassCrypto.updateItem({ content, lastRevision, itemKey });
 
     const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data });
-    const item = await parseItemRevision(shareId, Item);
-
-    const shouldLink = files.toAdd.length || files.toRemove.length || files.toRestore?.length;
-    if (!shouldLink) return item;
-
-    try {
-        const { itemId, revision } = item;
-        return await linkPendingFiles({ shareId, itemId, files, revision });
-    } catch (error) {
-        logger.warn('[Item::Create] Could not link files', error);
-        return item;
-    }
+    return parseItemRevision(shareId, Item);
 };
 
 /** Limit batch size to `MIN_MAX_BATCH_PER_REQUEST` to reduce and

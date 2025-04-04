@@ -31,7 +31,9 @@ export interface PopupController {
 }
 
 export type CurrentTab = {
+    /** Parsed URL of the underlying active tab */
     url: MaybeNull<ParsedUrl>;
+    /** tabID of the current context window */
     tabId?: TabId;
 };
 

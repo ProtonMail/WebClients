@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -17,6 +17,10 @@ export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const online = useConnectivity();
     const { openSettings } = usePassCore();
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
+
+    useEffect(() => {
+        if (aliasCount === 0) onClose();
+    }, [aliasCount]);
 
     return (
         <>

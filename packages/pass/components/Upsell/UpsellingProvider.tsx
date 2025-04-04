@@ -8,9 +8,9 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { type MaybeNull } from '@proton/pass/types';
 
 type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
-type UpsellingContextValue = (value: MaybeNull<UpsellingState>) => void;
+type UpsellFn = (value: MaybeNull<UpsellingState>) => void;
 
-const UpsellingContext = createContext<MaybeNull<UpsellingContextValue>>(null);
+export const UpsellingContext = createContext<MaybeNull<UpsellFn>>(null);
 
 export const UpsellingProvider: FC<PropsWithChildren> = ({ children }) => {
     const [upselling, setUpselling] = useState<MaybeNull<UpsellingState>>(null);

@@ -7,6 +7,7 @@ import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/i
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { filesResolve, itemCreate } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
+import { itemLinkPendingFiles } from '@proton/pass/store/sagas/items/item-files.sagas';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -21,14 +22,19 @@ const singleItemCreation = (action: Action): action is ItemCreationAction =>
 const withAliasItemCreation = (action: Action): action is ItemWithAliasCreationAction =>
     itemCreate.intent.match(action) && action.payload.type === 'login' && action.payload.extraData.withAlias;
 
-function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOptions, action: ItemCreationAction) {
-    const { payload: createIntent, meta } = action;
-    const { shareId, optimisticId } = createIntent;
-    const isAlias = createIntent.type === 'alias';
+function* singleItemCreationWorker(options: RootSagaOptions, action: ItemCreationAction) {
+    const { onItemsUpdated, getTelemetry } = options;
     const telemetry = getTelemetry();
 
+    const { payload: createIntent, meta } = action;
+    const { shareId, optimisticId, files } = createIntent;
+    const isAlias = createIntent.type === 'alias';
+    const shouldLink = files.toAdd.length > 0;
+
     try {
-        const item: ItemRevision = yield isAlias ? createAlias(createIntent) : createItem(createIntent);
+        let item: ItemRevision = yield isAlias ? createAlias(createIntent) : createItem(createIntent);
+        if (shouldLink) item = yield itemLinkPendingFiles(item, files, options);
+
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item }));
         if (hasAttachments(item)) yield put(withRevalidate(filesResolve.intent(item)));
 
@@ -47,13 +53,19 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
 }
 
 function* withAliasCreationWorker(
-    { onItemsUpdated, getTelemetry }: RootSagaOptions,
+    options: RootSagaOptions,
     { payload: createIntent, meta }: ItemWithAliasCreationAction
 ) {
-    const { shareId, optimisticId } = createIntent;
+    const { onItemsUpdated, getTelemetry } = options;
     const telemetry = getTelemetry();
+
+    const { shareId, optimisticId, files } = createIntent;
+    const shouldLink = files.toAdd.length > 0;
+
     try {
-        const [loginItem, aliasItem]: ItemRevisionWithAlias = yield createItemWithAlias(createIntent);
+        let [loginItem, aliasItem]: ItemRevisionWithAlias = yield createItemWithAlias(createIntent);
+        if (shouldLink) loginItem = yield itemLinkPendingFiles(loginItem, files, options);
+
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item: loginItem, alias: aliasItem }));
         if (hasAttachments(loginItem)) yield put(withRevalidate(filesResolve.intent(loginItem)));
 
