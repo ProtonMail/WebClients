@@ -195,6 +195,7 @@ export const AlbumsCard: FC<Props> = ({
                                     <SignatureIcon
                                         isFile
                                         signatureIssues={album.signatureIssues}
+                                        haveParentAccess={!!album.parentLinkId}
                                         className="color-danger"
                                     />
                                 )}

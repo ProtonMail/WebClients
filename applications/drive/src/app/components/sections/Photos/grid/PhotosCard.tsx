@@ -155,6 +155,7 @@ export const PhotosCard: FC<Props> = ({
                                     mimeType={photo.mimeType}
                                     signatureIssues={photo.signatureIssues}
                                     className="color-danger"
+                                    haveParentAccess={!!photo.parentLinkId}
                                 />
                             )}
                             {photo.isShared && (

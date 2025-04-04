@@ -57,6 +57,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
                     signatureIssues={item.signatureIssues}
                     isAnonymous={item.isAnonymous}
                     className="file-browser-grid-view--signature-icon"
+                    haveParentAccess={!!item.parentLinkId}
                 />
             }
             item={item}

@@ -20,6 +20,7 @@ export interface LinkDownload {
     signatureIssues?: SignatureIssues;
     buffer?: Uint8Array[];
     isAnonymous?: boolean;
+    parentLinkId?: string;
 }
 
 export type DownloadControls = {
