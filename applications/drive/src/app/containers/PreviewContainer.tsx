@@ -144,6 +144,7 @@ export default function PreviewContainer() {
                 mimeType={link.mimeType}
                 signatureIssues={link.signatureIssues}
                 isAnonymous={link.isAnonymous}
+                haveParentAccess={!!link.parentLinkId}
                 className="ml-2 color-danger"
             />
         );
