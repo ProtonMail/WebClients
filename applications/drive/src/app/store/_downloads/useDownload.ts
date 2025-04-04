@@ -13,7 +13,7 @@ import { type SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing
 import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
-import { useThumbnailCacheStore } from '../../zustand/download/thumbnail.store';
+import { getCacheKey, useThumbnailCacheStore } from '../../zustand/download/thumbnail.store';
 import { usePublicShareStore } from '../../zustand/public/public-share.store';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -282,7 +282,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         token: string,
         activeRevisionId?: string
     ) => {
-        const cacheKey = (activeRevisionId || shareId) + linkId;
+        const cacheKey = getCacheKey(linkId, shareId, activeRevisionId);
         return downloadThumbnailPure(
             url,
             token,
