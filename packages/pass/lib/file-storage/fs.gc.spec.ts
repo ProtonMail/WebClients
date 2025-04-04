@@ -54,12 +54,12 @@ describe('FileStorageGarbageCollector', () => {
     });
 
     test('should reset timer when pushing existing file', async () => {
-        gc.push('file1.txt', 10_000);
+        gc.push('file1.txt', { timeout: 10_000 });
 
         await jest.advanceTimersByTimeAsync(5_000);
         expect(fs.deleteFile).not.toHaveBeenCalled();
 
-        gc.push('file1.txt', 10_000);
+        gc.push('file1.txt', { timeout: 10_000 });
         await jest.advanceTimersByTimeAsync(5_000);
         expect(fs.deleteFile).not.toHaveBeenCalled();
 
@@ -126,7 +126,7 @@ describe('FileStorageGarbageCollector', () => {
             .pipeTo(writer);
 
         expect(push).toHaveBeenCalledTimes(chunks.length);
-        expect(push).toHaveBeenCalledWith(filename);
+        expect(push).toHaveBeenCalledWith(filename, { enqueueForDeletion: false });
     });
 
     test('should handle corrupt data in local queue', async () => {
