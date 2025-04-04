@@ -64,13 +64,13 @@ export class FileStorageGarbageCollector {
         const gc = this;
         return new TransformStream({
             transform(chunk, controller) {
-                gc.push(filename);
+                gc.push(filename, { enqueueForDeletion: false });
                 controller.enqueue(chunk);
             },
         });
     }
 
-    push(filename: string, timeout: number = 4e4 /* 40 seconds */) {
+    push(filename: string, options?: { enqueueForDeletion?: boolean; timeout?: number }) {
         const pending = this.pendingDeletions.get(filename);
         if (pending) clearTimeout(pending);
 
@@ -78,10 +78,10 @@ export class FileStorageGarbageCollector {
             filename,
             setTimeout(() => {
                 this.fs.deleteFile(filename).catch(noop);
-            }, timeout)
+            }, options?.timeout ?? 4e4 /* 40 seconds */)
         );
 
-        if (!pending) {
+        if (options?.enqueueForDeletion ?? true) {
             void this.pushToLocalQueue(filename);
             logger.debug(`[fs::${this.fs.type}] ${logId(filename)} queued for deletion`);
         }
