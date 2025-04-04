@@ -29,6 +29,7 @@
     "yjs": "^13.6.15"
   },
   "devDependencies": {
+    "@babel/plugin-transform-class-properties": "^7.25.9",
     "@proton/eslint-config-proton": "workspace:^",
     "@proton/jest-env": "workspace:^",
     "@testing-library/jest-dom": "^6.6.3",
