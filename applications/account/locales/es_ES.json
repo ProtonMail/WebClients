@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecciona el país ${ country }"
       ],
-      "Select file": [
-        "Seleccionar un archivo"
-      ],
       "select file": [
         "seleccionar un archivo"
+      ],
+      "Select file": [
+        "Seleccionar un archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -1903,7 +1903,7 @@
         "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte de dominios de correo electrónico personalizados, asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, alias ilimitados hide-my-email y más."
+        "Protege tus correos electrónicos y agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protege tus archivos con almacenamiento en la nube cifrado. Incluye editor de documentos en línea, copia de seguridad de fotos, historial de versiones, uso de intercambio de archivos cifrados y más."
@@ -7003,6 +7003,14 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Si se reactiva, la clave se utilizará para el descifrado"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Si se reactiva, la clave se utilizará para descifrar y verificar"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuario actualmente tiene acceso a servidores compartidos.",
@@ -7744,6 +7752,9 @@
       "Data locked": [
         "Datos bloqueados"
       ],
+      "Data recoverable on this device": [
+        "Datos recuperables en este dispositivo"
+      ],
       "Dedicated servers": [
         "Servidores dedicados"
       ],
@@ -8414,9 +8425,6 @@
       "Large imports can take several days.": [
         "Las grandes importaciones pueden tardar varios días."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprende cómo ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aprende a iniciar sesión en ${ VPN_APP_NAME } con aplicaciones VPN de terceros."
       ],
@@ -8431,6 +8439,9 @@
       ],
       "Learn more about single sign-on": [
         "Más información acerca del inicio de sesión único"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprende qué hacer ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Izquierda a Derecha"
@@ -9494,6 +9505,9 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
+      "trusted device": [
+        "dispositivo de confianza"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prueba ${ productName } totalmente sin riesgos. Si por cualquier motivo cambias de opinión, recibirás un reembolso completo. Sin preguntas."
       ],
@@ -9608,11 +9622,11 @@
       "User activated": [
         "Se ha activado el usuario."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -9727,6 +9741,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Almacenamos de manera segura la información de recuperación en tu dispositivo de confianza para evitar que pierdas tus datos."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Almacenamos un archivo de copia de seguridad en este navegador porque ha permitido recuperar datos en este ${ deviceLink }. Si la copia de seguridad es válida, recuperará inmediatamente el acceso total o parcial a sus datos cifrados."
       ],
       "We use 3-D Secure to protect your payments": [
         "Se utiliza 3-D Secure para proteger tus pagos."
@@ -10317,6 +10334,17 @@
         "Suscripción"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Descifrado"
+      ],
+      "Decryption, verification": [
+        "Descifrado, verificación"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Cifrado, descifrado, firma, verificación"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Generar una clave"
@@ -10344,8 +10372,8 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Activa"
+      "Compatibility": [
+        "Compatibilidad"
       ],
       "Compromised": [
         "Comprometida"
@@ -10760,10 +10788,10 @@
       "Allow sharing outside the organization": [
         "Permitir compartir fuera de la organización"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10775,10 +10803,10 @@
       "Amount due": [
         "Importe a pagar"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
       "and": [
@@ -11207,11 +11235,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -11414,13 +11442,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Organization name": [
@@ -12030,6 +12058,9 @@
       "How to unlock data": [
         "Cómo desbloquear datos"
       ],
+      "if your data is leaked": [
+        "si tus datos son filtrados"
+      ],
       "Import/export": [
         "Importar/exportar"
       ],
@@ -12051,11 +12082,11 @@
       "perform a password reset from your active session": [
         "restablecer la contraseña desde una sesión activa"
       ],
-      "Privacy policy": [
-        "Política de privacidad"
-      ],
       "privacy policy": [
         "política de privacidad"
+      ],
+      "Privacy policy": [
+        "Política de privacidad"
       ],
       "Reactivate now": [
         "Reactivar"
@@ -12071,9 +12102,6 @@
       ],
       "Sign in": [
         "Iniciar sesión"
-      ],
-      "stay safer online": [
-        "mantén tu seguridad online"
       ],
       "switch account": [
         "cambiar de cuenta"
@@ -13426,14 +13454,6 @@
         "Desbloquea todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancela en cualquier momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -13452,6 +13472,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquea funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -14089,17 +14117,6 @@
         "Escritorio"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
-      "No one": [
-        "Nadie"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10º del mes"
@@ -14328,6 +14345,17 @@
       ],
       "Trash": [
         "Enviar a la papelera"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "No one": [
+        "Nadie"
       ]
     },
     "Option delay send seconds": {
@@ -18389,10 +18417,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -18618,9 +18646,6 @@
       ],
       "Description": [
         "Descripción"
-      ],
-      "Details": [
-        "Detalles"
       ],
       "Device": [
         "Dispositivo"
@@ -18947,6 +18972,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Protege aún más tu privacidad con más direcciones"
+      ],
+      "Information exposed in breach": [
+        "Información expuesta en la vulneración"
       ],
       "Integrations": [
         "Integraciones"
@@ -19615,14 +19643,20 @@
       "Actions": [
         "Acciones"
       ],
+      "Creation date": [
+        "Fecha de creación"
+      ],
       "Fingerprint": [
         "Huella dactilar"
       ],
-      "Key type": [
-        "Tipo de clave"
+      "Function": [
+        "Función"
       ],
       "Status": [
         "Estado"
+      ],
+      "Type": [
+        "Tipo"
       ]
     },
     "Title header for members table": {
@@ -19669,9 +19703,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Los usuarios de ${ MAIL_APP_NAME } utilizarán esta clave por defecto para enviar"
-      ],
       "Account is disconnected": [
         "La cuenta está desconectada"
       ],
@@ -19762,6 +19793,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Los mensajes en la carpeta Enviados o Borradores continuarán apareciendo en esa carpeta, incluso si los mueves a otra carpeta."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "No toda la información aquí mencionada fue expuesta para todos los usuarios."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Elimina los metadatos de las imágenes para proteger tu privacidad."
       ],
@@ -19834,6 +19868,12 @@
       "This feature is only available on Beta": [
         "Esta función solo está disponible en la versión beta."
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Esta es la clave por defecto que utilizan otros usuarios de ${ MAIL_APP_NAME } en aplicaciones móviles antiguas para cifrar los datos que le envían"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Esta es la clave por defecto que utilizan otros usuarios de ${ MAIL_APP_NAME } para cifrar los datos que le envían"
+      ],
       "This key cannot be used for encryption": [
         "Esta clave no puede utilizarse para cifrar."
       ],
@@ -19845,6 +19885,9 @@
       ],
       "This key is used for email forwarding": [
         "Esta clave se utiliza para el reenvío de correo electrónico."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utiliza las barras de desplazamiento del navegador por defecto. Son más grandes y fáciles de utilizar en general."
@@ -19875,9 +19918,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Cuando mueves un correo a spam, se cancelará automáticamente tu suscripción a esa lista de correo."
-      ],
-      "You have locally decrypted this key": [
-        "Has descifrado esta clave localmente."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Tu bandeja de entrada de ${ MAIL_APP_NAME } está casi llena"

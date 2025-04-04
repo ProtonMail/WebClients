@@ -1072,11 +1072,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "Select file": [
-        "फाइल चुनें"
-      ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Select files": [
         "फ़ाइल चुनें"
@@ -8280,9 +8280,6 @@
       "Large imports can take several days.": [
         "बड़े आयात में कई दिन लग सकते हैं।"
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "जानें कैसे ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "दूसरे वीपीएन ऐप से ${ VPN_APP_NAME } पे साइनइन करना सीखें।"
       ],
@@ -9437,10 +9434,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -10153,9 +10150,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "सक्रिय"
-      ],
       "Compromised": [
         "छेड़छाड़ किया गया"
       ],
@@ -10569,10 +10563,10 @@
       "Allow sharing outside the organization": [
         "संगठन के बाहर शेयर करने की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10584,10 +10578,10 @@
       "Amount due": [
         "देय राशि"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
       "and": [
@@ -11013,10 +11007,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
       "Import all messages": [
@@ -11220,13 +11214,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
+      "OR": [
+        "या"
+      ],
       "or": [
         "या"
       ],
       "Or": [
-        "या"
-      ],
-      "OR": [
         "या"
       ],
       "Organization name": [
@@ -11857,11 +11851,11 @@
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
       ],
-      "Privacy policy": [
-        "गोपनीयता नीति"
-      ],
       "privacy policy": [
         "निजता नीति"
+      ],
+      "Privacy policy": [
+        "गोपनीयता नीति"
       ],
       "Reactivate now": [
         "अब पुनः सक्रिय करें"
@@ -11877,9 +11871,6 @@
       ],
       "Sign in": [
         "साइनइन करें"
-      ],
-      "stay safer online": [
-        "ऑनलाइन सुरक्षित रहें"
       ],
       "switch account": [
         "खाता बदलें"
@@ -13217,14 +13208,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -13243,6 +13226,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -13874,17 +13865,6 @@
         "डेस्कटॉप"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "महीने की 10 तारीख"
@@ -14113,6 +14093,17 @@
       ],
       "Trash": [
         "कचरा"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Option delay send seconds": {
@@ -18089,10 +18080,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -18317,9 +18308,6 @@
         "क्या उपयोगकर्ता को पहुँच अस्वीकृत करें?"
       ],
       "Description": [
-        "विवरण"
-      ],
-      "Details": [
         "विवरण"
       ],
       "Device": [
@@ -19315,9 +19303,6 @@
       "Fingerprint": [
         "फिंगरप्रिंट"
       ],
-      "Key type": [
-        "कुंजी प्रकार"
-      ],
       "Status": [
         "स्थिति"
       ]
@@ -19366,9 +19351,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } यूज़र भेजने को ये चाबी डिफॉल्ट इस्तेमाल करेंगे"
-      ],
       "Account is disconnected": [
         "खाता डिस्कनेक्ट किया गया है"
       ],
@@ -19572,9 +19554,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "जब आप किसी ईमेल को स्पैम में भेजते हैं, तब आप उन भेजने वालो के मेल लिस्ट की सदस्यता अपनेआप खो देंगे।"
-      ],
-      "You have locally decrypted this key": [
-        "आपने इस कुंजी को स्थानीय रूप से डिक्रिप्ट किया है"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "आपका ${ MAIL_APP_NAME } इनबॉक्स भरने वाला है"

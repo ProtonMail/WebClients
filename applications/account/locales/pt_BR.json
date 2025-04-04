@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar arquivo"
-      ],
       "select file": [
         "selecionar arquivo"
+      ],
+      "Select file": [
+        "Selecionar arquivo"
       ],
       "Select files": [
         "Selecionar arquivos"
@@ -8414,9 +8414,6 @@
       "Large imports can take several days.": [
         "Grandes importações podem levar vários dias."
       ],
-      "Learn how to ${ staySaferOnlineLink }": [
-        "Aprenda como ${ staySaferOnlineLink }"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
@@ -8431,6 +8428,9 @@
       ],
       "Learn more about single sign-on": [
         "Saiba mais sobre autenticação única"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aprenda o que fazer ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Esquerda para direita"
@@ -9611,10 +9611,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -10347,9 +10347,6 @@
       ]
     },
     "Key state badge": {
-      "Active": [
-        "Ativa"
-      ],
       "Compromised": [
         "Comprometida"
       ],
@@ -10763,10 +10760,10 @@
       "Allow sharing outside the organization": [
         "Ativar compartilhamento fora da organização"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10778,10 +10775,10 @@
       "Amount due": [
         "Valor a pagar"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -11210,11 +11207,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -11417,14 +11414,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nome da organização"
@@ -12036,6 +12033,9 @@
       "How to unlock data": [
         "Como desbloquear dados"
       ],
+      "if your data is leaked": [
+        "se seus dados vazarem"
+      ],
       "Import/export": [
         "Importar/exportar"
       ],
@@ -12057,11 +12057,11 @@
       "perform a password reset from your active session": [
         "execute uma redefinição de senha da sua sessão ativa"
       ],
-      "Privacy policy": [
-        "Política de privacidade"
-      ],
       "privacy policy": [
         "política de privacidade"
+      ],
+      "Privacy policy": [
+        "Política de privacidade"
       ],
       "Reactivate now": [
         "Reativar agora"
@@ -12077,9 +12077,6 @@
       ],
       "Sign in": [
         "Iniciar sessão"
-      ],
-      "stay safer online": [
-        "fique seguro on-line"
       ],
       "switch account": [
         "alternar de conta"
@@ -13435,17 +13432,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -13464,6 +13450,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -14101,17 +14098,6 @@
         "Área de trabalho"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10º dia do mês"
@@ -14361,6 +14347,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -18428,11 +18425,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -18657,9 +18654,6 @@
       ],
       "Description": [
         "Descrição"
-      ],
-      "Details": [
-        "Detalhes"
       ],
       "Device": [
         "Dispositivo"
@@ -18989,6 +18983,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Aumente sua privacidade com mais endereços"
+      ],
+      "Information exposed in breach": [
+        "Informação exposta na violação"
       ],
       "Integrations": [
         "Integrações"
@@ -19663,14 +19660,17 @@
       "Actions": [
         "Ações"
       ],
+      "Creation date": [
+        "Data de criação"
+      ],
       "Fingerprint": [
         "Impressão digital"
       ],
-      "Key type": [
-        "Categoria de chave"
-      ],
       "Status": [
         "Status"
+      ],
+      "Type": [
+        "Tipo"
       ]
     },
     "Title header for members table": {
@@ -19717,9 +19717,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Os usuários do ${ MAIL_APP_NAME } usarão esta chave por padrão para enviar"
-      ],
       "Account is disconnected": [
         "A conta está desconectada"
       ],
@@ -19810,6 +19807,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "As mensagens da pasta Enviados ou Rascunhos continuarão a aparecer naquela pasta, mesmo se você movê-las para outra pasta."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Nem todas as informações listadas aqui foram expostas para todos os usuários."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Remova metadados das imagens para proteger sua privacidade."
       ],
@@ -19894,6 +19894,9 @@
       "This key is used for email forwarding": [
         "Esta chave é usada para encaminhamento de e-mail"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Use as barras de rolagem padrão do seu navegador. Normalmente são maiores e mais fáceis de usar"
       ],
@@ -19923,9 +19926,6 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Ao mover um e-mail para spam, você será automaticamente descadastrado das listas de e-mail do remetente."
-      ],
-      "You have locally decrypted this key": [
-        "Você tem essa chave descriptografada localmente"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Sua caixa de entrada do ${ MAIL_APP_NAME } está quase cheia"
