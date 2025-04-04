@@ -65,6 +65,7 @@ enum AccountFlag {
     PassB2BReports = 'PassB2BReports',
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
+    QRCodeSignIn = 'QRCodeSignIn',
 }
 
 enum PaymentsFlag {

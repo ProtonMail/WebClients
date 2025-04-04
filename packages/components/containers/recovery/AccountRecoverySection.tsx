@@ -15,8 +15,10 @@ import useMyCountry from '@proton/components/hooks/useMyCountry';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import SignInWithAnotherDeviceSettings from './SignInWithAnotherDeviceSettings';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
 
@@ -28,6 +30,7 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
     const { call } = useEventManager();
     const defaultCountry = useMyCountry();
     const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
+    const qrCodeSignInEnabled = useFlag('QRCodeSignIn');
 
     if (loadingUserSettings || !userSettings) {
         return <Loader />;
@@ -66,6 +69,13 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                 );
             })}
             <SettingsSection>
+                {qrCodeSignInEnabled && (
+                    <>
+                        <SignInWithAnotherDeviceSettings />
+                        <hr className="my-8" />
+                    </>
+                )}
+
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="recovery-email-input">

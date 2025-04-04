@@ -1,12 +1,9 @@
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import type { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import type { ForkState } from '@proton/shared/lib/authentication/fork/forkState';
-import { getCurrentUrl, getForkStateData, setForkStateData } from '@proton/shared/lib/authentication/fork/forkState';
+import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
 import { pullForkSession, revoke, setCookies } from '../../api/auth';
-import { getUser } from '../../api/user';
 import { getAppHref } from '../../apps/helper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from '../../authentication/error';
 import type { ExtraSessionForkData, PullForkResponse } from '../../authentication/interface';
@@ -18,9 +15,12 @@ import { APPS, SSO_PATHS } from '../../constants';
 import { withAuthHeaders } from '../../fetch/headers';
 import { replaceUrl } from '../../helpers/browser';
 import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
-import type { Api, User as tsUser } from '../../interfaces';
+import type { Api, User } from '../../interfaces';
+import type { SessionSource } from '../SessionInterface';
+import { getUser } from '../getUser';
 import { getForkDecryptedBlob } from './blob';
 import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkVersion } from './constants';
+import { type ForkState, getCurrentUrl, getForkStateData, setForkStateData } from './forkState';
 import type { ConsumeForkParameters } from './getConsumeForkParameters';
 
 export const removeHashParameters = () => {
@@ -99,9 +99,14 @@ export const requestFork = ({
     return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));
 };
 
-export const consumeForkSelector = async ({ api, selector }: { api: Api; selector: string }) => {
-    const response = await api<PullForkResponse>(pullForkSession(selector));
-    const { UID, AccessToken, LocalID } = response;
+export const maybeResumeForkedSession = async ({
+    api,
+    pullForkResponse,
+}: {
+    api: Api;
+    pullForkResponse: PullForkResponse;
+}): Promise<ResumedSessionResult | undefined> => {
+    const { UID, AccessToken, LocalID } = pullForkResponse;
 
     try {
         // Resume and use old session if it exists
@@ -110,29 +115,23 @@ export const consumeForkSelector = async ({ api, selector }: { api: Api; selecto
         // Revoke the discarded forked session
         await api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
 
-        return {
-            type: 'existing-session',
-            session: validatedSession,
-        } as const;
+        return validatedSession;
     } catch (e: any) {
         // If existing session is invalid. Fall through to continue using the new fork.
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;
         }
     }
-
-    return {
-        type: 'new-session',
-        response,
-    } as const;
 };
 
-export const finalizeConsumeFork = async ({
+export const persistForkedSession = async ({
     api,
-    pullForkResponse,
+    user,
+    pullForkResponse: { UID, RefreshToken, LocalID },
     payload: { keyPassword, forkedOfflineKey, persistent, trusted, mode, source },
 }: {
     api: Api;
+    user: User;
     pullForkResponse: PullForkResponse;
     payload: {
         persistent: boolean;
@@ -143,14 +142,9 @@ export const finalizeConsumeFork = async ({
         source: SessionSource;
     };
 }): Promise<ResumedSessionResult> => {
-    const { UID, AccessToken, RefreshToken, LocalID } = pullForkResponse;
-
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
-    const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-
     const sessionResult = await persistSession({
-        api: authApi,
-        User,
+        api,
+        User: user,
         UID,
         LocalID,
         keyPassword,
@@ -161,12 +155,11 @@ export const finalizeConsumeFork = async ({
         mode,
         source,
     });
-    await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
-
+    await api(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
     return sessionResult;
 };
 
-const resolveForkPasswords = async ({
+export const resolveForkPasswords = async ({
     key,
     payloadVersion,
     pullForkResponse,
@@ -211,11 +204,12 @@ export const consumeFork = async ({
 }> => {
     const forkState = getForkStateData(stateKey, parameters);
 
-    const selectorResult = await consumeForkSelector({ api, selector });
+    const pullForkResponse = await api<PullForkResponse>(pullForkSession(selector));
+    const resumedSession = await maybeResumeForkedSession({ api, pullForkResponse });
 
-    if (selectorResult.type === 'existing-session') {
+    if (resumedSession) {
         return {
-            session: selectorResult.session,
+            session: resumedSession,
             forkState,
         };
     }
@@ -223,12 +217,16 @@ export const consumeFork = async ({
     const { keyPassword, forkedOfflineKey } = await resolveForkPasswords({
         key,
         payloadVersion,
-        pullForkResponse: selectorResult.response,
+        pullForkResponse,
     });
 
-    const result = await finalizeConsumeFork({
-        api,
-        pullForkResponse: selectorResult.response,
+    const authApi = getAuthAPI(pullForkResponse.UID, pullForkResponse.AccessToken, api);
+    const user = await getUser(authApi);
+
+    const result = await persistForkedSession({
+        api: authApi,
+        user,
+        pullForkResponse,
         payload: { persistent, trusted, keyPassword, forkedOfflineKey, mode, source },
     });
 
