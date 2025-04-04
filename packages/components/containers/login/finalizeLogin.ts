@@ -1,23 +1,16 @@
 import { revoke } from '@proton/shared/lib/api/auth';
-import { getSettings, upgradePassword } from '@proton/shared/lib/api/settings';
+import { upgradePassword } from '@proton/shared/lib/api/settings';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
-import {
-    attemptDeviceRecovery,
-    getIsDeviceRecoveryAvailable,
-    storeDeviceRecovery,
-} from '@proton/shared/lib/recoveryFile/deviceRecovery';
-import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
+import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
 
 import type { AuthActionResponse, AuthCacheResult } from './interface';
 import { AuthStep } from './interface';
-import { syncAddresses, syncUser } from './syncCache';
+import { syncUser } from './syncCache';
 
 /**
  * Finalize login can be called without a key password in these cases:
@@ -107,61 +100,25 @@ export const finalizeLogin = async ({
         };
     }
 
-    let trusted = false;
-    if (keyPassword) {
-        let addresses = await (cache.data.addresses || syncAddresses(cache));
-        const numberOfReactivatedKeys = await attemptDeviceRecovery({
-            api,
-            user,
-            addresses,
-            keyPassword,
-            preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
-        }).catch(noop);
-
-        if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
-            cache.data.user = undefined;
-            cache.data.addresses = undefined;
-            [user, addresses] = await Promise.all([syncUser(cache), syncAddresses(cache)]);
-        }
-
-        // Store device recovery information
-        if (persistent) {
-            const [userKeys] = await Promise.all([getDecryptedUserKeysHelper(user, keyPassword)]);
-            const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
-                user,
-                addresses,
-                userKeys,
-                appName,
-            });
-
-            if (isDeviceRecoveryAvailable) {
-                const userSettings = await api<{ UserSettings: UserSettings }>(getSettings()).then(
-                    ({ UserSettings }) => UserSettings
-                );
-
-                if (userSettings.DeviceRecovery) {
-                    const deviceRecoveryUpdated = await storeDeviceRecovery({ api, user, userKeys }).catch(noop);
-                    if (deviceRecoveryUpdated) {
-                        // Storing device recovery (when setting a new recovery secret) modifies the user object
-                        cache.data.user = undefined;
-                        user = await syncUser(cache);
-                    }
-                    trusted = true;
-                }
-            }
-        } else {
-            removeDeviceRecovery(user.ID);
-        }
-    }
+    const deviceRecoveryResult = await deviceRecovery({
+        keyPassword,
+        user,
+        addresses: cache.data.addresses,
+        api,
+        persistent,
+        appName,
+        preAuthKTVerifier,
+    });
+    user = deviceRecoveryResult.user;
 
     const sessionResult = await persistSession({
         ...authResponse,
         clearKeyPassword,
         keyPassword,
-        User: user,
         api,
         persistent,
-        trusted,
+        User: user,
+        trusted: deviceRecoveryResult.trusted,
         source,
     });
 

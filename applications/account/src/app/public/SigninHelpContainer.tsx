@@ -1,11 +1,10 @@
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/index';
 import { Icon } from '@proton/components/index';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { type Paths } from '../content/helper';
@@ -21,6 +20,7 @@ interface Props {
 
 const SigninHelpContainer = ({ toApp, paths }: Props) => {
     const history = useHistory();
+    const location = useLocation();
 
     const handleBack = () => {
         history.push(paths.login);
@@ -33,22 +33,22 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
                 <Content className="text-center">
                     <Link
                         className="flex items-center gap-3 text-no-decoration color-norm hover:color-norm py-4 border-bottom border-weak"
-                        to={SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}
+                        to={paths.signinAnotherDevice}
                     >
                         <Icon name="qr-code" size={6} />
                         <div className="text-left flex-1">
-                            <div className="text-lg">{c('Title').t`Sign in with another device`}</div>
-                            <div className="color-weak">{c('Description').t`Scan a QR code with your phone`}</div>
+                            <div className="text-lg">{c('edm').t`Sign in with another device`}</div>
+                            <div className="color-weak">{c('edm').t`Scan a QR code with your phone`}</div>
                         </div>
                     </Link>
 
                     <Link
                         className="flex items-center gap-3 text-no-decoration color-norm hover:color-norm py-4 border-bottom border-weak"
-                        to={paths.reset}
+                        to={`${paths.reset}${location.search}`}
                     >
                         <Icon name="key" size={6} />
                         <div className="text-left flex-1">
-                            <div className="text-lg">{c('Title').t`Reset password`}</div>
+                            <div className="text-lg">{c('Action').t`Reset password`}</div>
                             <div className="color-weak">{c('Description')
                                 .t`Send a code to your recovery email or phone`}</div>
                         </div>

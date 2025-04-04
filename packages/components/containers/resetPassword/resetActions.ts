@@ -5,31 +5,25 @@ import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
 import { requestLoginResetToken } from '@proton/shared/lib/api/reset';
-import { getSettings } from '@proton/shared/lib/api/settings';
 import type { GetMnemonicResetData } from '@proton/shared/lib/api/settingsMnemonic';
 import { getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
-import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
+import { getRecoveryMethods } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api, KeyTransparencyActivation, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces';
+import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
-    getDecryptedUserKeysHelper,
     getRequiresPasswordSetup,
     getResetAddressesKeysV2,
     handleSetupAddressKeys,
 } from '@proton/shared/lib/keys';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
-import {
-    attemptDeviceRecovery,
-    getIsDeviceRecoveryAvailable,
-    storeDeviceRecovery,
-} from '@proton/shared/lib/recoveryFile/deviceRecovery';
-import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
+import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
@@ -59,13 +53,13 @@ export const handleNewPassword = async ({
     }
     const { Addresses: addresses, SupportPgpV6Keys } = resetResponse;
 
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
+    const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation);
 
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
     const { addressKeysPayload, userKeyPayload, onSKLPublishSuccess } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
-        preAuthKTVerify,
+        preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
         supportV6Keys: SupportPgpV6Keys === 1,
     });
 
@@ -90,7 +84,7 @@ export const handleNewPassword = async ({
         credentials: { username, password },
         config: auth({ Username: username }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
-    let user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    let user = await getUser(api);
     let keyPassword = passphrase;
 
     if (user.Keys.length === 0) {
@@ -106,58 +100,25 @@ export const handleNewPassword = async ({
                 password,
                 addresses,
                 domains,
-                preAuthKTVerify,
+                preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
                 productParam: cache.productParam,
             });
             // Refetch the user to update the keys that got generated
-            user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+            user = await getUser(api);
         }
     }
 
-    let trusted = false;
-    if (keyPassword) {
-        const addresses = await getAllAddresses(api);
-        const numberOfReactivatedKeys = await attemptDeviceRecovery({
-            api,
-            user,
-            addresses,
-            keyPassword,
-            preAuthKTVerify,
-        }).catch(noop);
-
-        if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
-            // Refetch user with new reactivated keys
-            user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
-        }
-
-        // Store device recovery information
-        if (persistent) {
-            const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
-            const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
-                user,
-                addresses,
-                userKeys,
-                appName,
-            });
-
-            if (isDeviceRecoveryAvailable) {
-                const userSettings = await api<{ UserSettings: UserSettings }>(getSettings()).then(
-                    ({ UserSettings }) => UserSettings
-                );
-
-                if (userSettings.DeviceRecovery) {
-                    const deviceRecoveryUpdated = await storeDeviceRecovery({ api, user, userKeys }).catch(noop);
-                    if (deviceRecoveryUpdated) {
-                        // Storing device recovery (when setting a new recovery secret) modifies the user object
-                        user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
-                    }
-                    trusted = true;
-                }
-            }
-        } else {
-            removeDeviceRecovery(user.ID);
-        }
-    }
+    const deviceRecoveryResult = await deviceRecovery({
+        api,
+        keyPassword,
+        persistent,
+        appName,
+        addresses: undefined,
+        user,
+        preAuthKTVerifier,
+    });
+    const trusted = deviceRecoveryResult.trusted;
+    user = deviceRecoveryResult.user;
 
     const sessionResult = await persistSession({
         ...authResponse,
@@ -170,7 +131,7 @@ export const handleNewPassword = async ({
         source: SessionSource.Proton,
     });
 
-    await preAuthKTCommit(user.ID, api);
+    await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
     await resetSelfAudit({ api, ktActivation, user, keyPassword, addressesBeforeReset: addresses });
 
     return {
@@ -219,7 +180,7 @@ export const handleNewPasswordMnemonic = async ({
     });
 
     const trusted = false;
-    const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    const user = await getUser(api);
     const sessionResult = await persistSession({
         ...authResponse,
         clearKeyPassword: password,
