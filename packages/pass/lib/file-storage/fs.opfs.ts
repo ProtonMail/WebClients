@@ -39,10 +39,10 @@ export class FileStorageOPFS implements FileStorage {
                 await stream.pipeTo(writable, { signal });
             } else {
                 await writable.write(data);
-                this.gc?.push(filename);
                 await writable.close();
             }
 
+            this.gc?.push(filename, { enqueueForDeletion: true });
             logger.debug(`[fs::OPFS] Saved ${logId(filename)}`);
         } catch (err) {
             logger.debug('[fs::OPFS] Could not write file.', err);

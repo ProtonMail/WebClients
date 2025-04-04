@@ -123,7 +123,6 @@ export const IDBWritableStream = (db: IDBPDatabase<PassFileDB>, filename: string
 
         close: () => {
             db.close();
-            gc?.push(filename);
         },
     });
 };
@@ -167,8 +166,9 @@ export class FileStorageIDB implements FileStorage {
             } else {
                 const tx = db.transaction(['files', 'metadata'], 'readwrite');
                 await writeIDBFileChunk(tx)(filename, 0, file);
-                this.gc?.push(filename);
             }
+
+            this.gc?.push(filename, { enqueueForDeletion: true });
         } catch (err) {
             logger.debug('[fs::IDB] Could not write file.', err);
             await this.deleteFile(filename).catch(noop);
