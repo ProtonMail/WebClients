@@ -1,0 +1,236 @@
+import { useEffect, useRef, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import SignInWithAnotherDeviceQRCode from '@proton/account/signInWithAnotherDevice/SignInWithAnotherDeviceQRCode';
+import {
+    GiveUpError,
+    type SignInWithAnotherDeviceResult,
+    signInWithAnotherDevicePull,
+} from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
+import { Button, ButtonLike } from '@proton/atoms/index';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import type { OnLoginCallback } from '@proton/components/containers/app/interface';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useLocalState } from '@proton/components/index';
+import metrics from '@proton/metrics/index';
+import observeApiError from '@proton/metrics/lib/observeApiError';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { getToAppName } from '@proton/shared/lib/authentication/apps';
+import { type APP_NAMES, BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import type { Api } from '@proton/shared/lib/interfaces';
+import { useFlagsStatus } from '@proton/unleash/index';
+import useFlag from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
+
+import type { Paths } from '../../content/helper';
+import userExclamation from '../../public/user-exclamation.svg';
+import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';
+import Content from '../Content';
+import Header from '../Header';
+import Layout from '../Layout';
+import Main from '../Main';
+import { defaultPersistentKey, getContinueToString } from '../helper';
+
+interface Props {
+    onLogin: OnLoginCallback;
+    productParam: ProductParam;
+    toAppName?: string;
+    toApp?: APP_NAMES;
+    onStartAuth: () => Promise<void>;
+    api: Api;
+    paths: Paths;
+}
+
+type State =
+    | { type: 'init'; qrCode: string }
+    | { type: 'error'; errorMessage: string; error: any }
+    | { type: 'done' }
+    | null;
+
+const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartAuth }: Props) => {
+    const [result, setResult] = useState<State>(null);
+    const qrCodeSignInEnabled = useFlag('QRCodeSignIn');
+    const { flagsReady } = useFlagsStatus();
+    const { APP_NAME } = useConfig();
+    const [persistent] = useLocalState(false, defaultPersistentKey);
+    const getKtActivation = useGetAccountKTActivation();
+    const errorHandler = useErrorHandler();
+
+    const restartRef = useRef<null | (() => Promise<void>)>(null);
+
+    useEffect(() => {
+        const abortController = new AbortController();
+
+        const handleSession = async ({
+            session,
+            forkDurationTime,
+        }: Extract<SignInWithAnotherDeviceResult, { type: 'session' }>['payload']) => {
+            metrics.core_edm_pull_total.increment({ status: 'success' });
+            metrics.core_edm_pull_histogram.observe({ Value: Math.round(forkDurationTime / SECOND), Labels: {} });
+            await metrics.processAllRequests().catch(noop);
+            await onLogin({ data: session });
+        };
+
+        const initProcess = async () => {
+            await onStartAuth().catch(noop);
+
+            metrics.core_edm_pull_total.increment({ status: 'init' });
+
+            const start = signInWithAnotherDevicePull({
+                abortController,
+                config: {
+                    appName: APP_NAME,
+                    persistent,
+                    ktActivation: await getKtActivation(),
+                },
+                api: getSilentApi(api),
+                onResult: (data) => {
+                    if (data.type === 'init') {
+                        setResult({ type: 'init', qrCode: data.payload.qrCode });
+                    }
+                    if (data.type === 'error') {
+                        const error = data.payload.error;
+                        observeApiError(error, (status) => metrics.core_edm_pull_total.increment({ status }));
+                        errorHandler(error, { notify: false });
+                        setResult({
+                            type: 'error',
+                            errorMessage: getNonEmptyErrorMessage(error),
+                            error,
+                        });
+                    }
+                    if (data.type === 'session') {
+                        setResult({ type: 'done' });
+                        handleSession(data.payload).catch((error) => {
+                            errorHandler(error, { notify: false });
+                            setResult({
+                                type: 'error',
+                                errorMessage: getNonEmptyErrorMessage(error),
+                                error,
+                            });
+                        });
+                    }
+                },
+            });
+
+            restartRef.current = async () => {
+                await onStartAuth().catch(noop);
+                return start();
+            };
+
+            return start();
+        };
+
+        initProcess().catch(noop);
+
+        return () => {
+            restartRef.current = null;
+            abortController.abort();
+        };
+    }, []);
+
+    const toAppName = getToAppName(toApp);
+
+    if (flagsReady && !qrCodeSignInEnabled) {
+        return <Redirect to={paths.login} />;
+    }
+
+    if (result?.type === 'error') {
+        return (
+            <Layout hasDecoration={true} toApp={toApp}>
+                <Main>
+                    <Content>
+                        <div className="text-center">
+                            <div className="mb-6">
+                                <img src={userExclamation} alt="" />
+                            </div>
+                            <div className="h2 text-bold mb-2">
+                                {(() => {
+                                    if (result.error instanceof GiveUpError) {
+                                        return c('edm').t`QR code expired`;
+                                    }
+                                    return c('Error').t`Something went wrong`;
+                                })()}
+                            </div>
+                            <div className="mb-4 color-weak">
+                                <div>{c('edm').t`We couldn't sign you in`}</div>
+                                <div className="mb-2">{c('edm').t`Please scan a new QR code to try again`}</div>
+                                {(() => {
+                                    if (result.error instanceof GiveUpError) {
+                                        return null;
+                                    }
+                                    if (result.errorMessage) {
+                                        return <div>Error: {result.errorMessage}</div>;
+                                    }
+                                })()}
+                            </div>
+                            <div className="flex flex-column gap-2">
+                                <Button
+                                    size="large"
+                                    onClick={() => {
+                                        setResult(null);
+                                        restartRef.current?.().catch(noop);
+                                    }}
+                                    color="norm"
+                                    fullWidth
+                                >
+                                    {c('edm').t`New QR code`}
+                                </Button>
+                                <ButtonLike size="large" as={Link} to={paths.login} fullWidth>
+                                    {c('Action').t`Sign in with ${BRAND_NAME}`}
+                                </ButtonLike>
+                            </div>
+                        </div>
+                    </Content>
+                </Main>
+            </Layout>
+        );
+    }
+
+    return (
+        <Layout hasDecoration={true} toApp={toApp}>
+            <Main>
+                <Header
+                    title={c('edm').t`Sign in with another device`}
+                    subTitle={toAppName ? getContinueToString(toAppName) : ''}
+                />
+                <Content>
+                    <div className="ui-standard flex justify-center items-center mb-6">
+                        <div className="p-4 bg-norm border border-weak rounded-lg lh100">
+                            {result?.type === 'init' ? (
+                                <SignInWithAnotherDeviceQRCode data={result.qrCode} />
+                            ) : (
+                                <SkeletonLoader width="9rem" height="9rem" className="bg-primary" />
+                            )}
+                        </div>
+                    </div>
+                    <div className="flex flex-column gap-4">
+                        <p className="m-0">
+                            {c('edm').t`Scan this QR code in the ${BRAND_NAME} app on your phone to sign in instantly.`}
+                        </p>
+                        <ol className="m-0 pl-4">
+                            <li className="mb-2">{c('edm').t`Open the ${BRAND_NAME} app on your phone`}</li>
+                            <li className="mb-2">
+                                {getBoldFormattedText(
+                                    c('edm').t`Tap into **Settings**, then tap **Sign in to another device**`
+                                )}
+                            </li>
+                            <li className="mb-2">{getBoldFormattedText(c('edm').t`Tap **Scan QR code**`)}</li>
+                        </ol>
+
+                        <ButtonLike size="large" as={Link} to={paths.login} color="weak" fullWidth>
+                            {c('Action').t`Cancel`}
+                        </ButtonLike>
+                    </div>
+                </Content>
+            </Main>
+        </Layout>
+    );
+};
+
+export default SignInWithAnotherDeviceContainer;
