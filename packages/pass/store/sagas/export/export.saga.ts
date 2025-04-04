@@ -113,6 +113,8 @@ export const exportUserData = createRequestSaga({
             }
 
             switch (format) {
+                case ExportFormat.JSON:
+                    throw new Error('Unsupported');
                 case ExportFormat.CSV: {
                     state.filename = getArchiveName('csv');
                     state.mimeType = 'text/csv;charset=utf-8;';
@@ -133,7 +135,7 @@ export const exportUserData = createRequestSaga({
                         })
                     );
 
-                    state.stream = (yield createArchive(iterators)) as ReadableStream;
+                    state.stream = (yield createArchive(iterators, ctrl.signal)) as ReadableStream;
                     const { filename, stream } = state;
                     yield fileStorage.writeFile(filename, stream, ctrl.signal);
                     break;
