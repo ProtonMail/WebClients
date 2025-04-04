@@ -115,6 +115,7 @@ export interface Paths {
     reset: string;
     forgotUsername: string;
     signinHelp: string;
+    signinAnotherDevice: string;
 }
 
 export const getPaths = ({
@@ -138,6 +139,7 @@ export const getPaths = ({
         forgotUsername: `${prefix}${SSO_PATHS.FORGOT_USERNAME}`,
         reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
         signinHelp: `${prefix}${SSO_PATHS.SIGNIN_HELP}`,
+        signinAnotherDevice: `${prefix}${SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}`,
     };
 };
 

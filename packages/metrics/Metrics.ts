@@ -69,6 +69,9 @@ import type { EventRSVPResponseTime } from './types/web_calendar_event_rsvp_resp
 import type { NewEventSetupTime } from './types/web_calendar_new_event_setup_time_histogram_v1.schema';
 import type { CalendarPageTransitionTime } from './types/web_calendar_page_transition_time_histogram_v1.schema';
 import type { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
+import type { WebCoreEdmPullSeconds } from './types/web_core_edm_pull_histogram_v1.schema';
+import type { WebCoreEdmPullTotal } from './types/web_core_edm_pull_total_v1.schema';
+import type { WebCoreEdmPushTotal } from './types/web_core_edm_push_total_v1.schema';
 import type { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
 import type { WebCoreLightLabellingLogoRemovalTotal } from './types/web_core_lightLabelling_logoRemoval_total_v1.schema';
 import type { WebCoreLightLabellingLogoUploadTotal } from './types/web_core_lightLabelling_logoUpload_total_v1.schema';
@@ -269,6 +272,12 @@ class Metrics extends MetricsBase {
     public calendar_page_transition_time_histogram: Histogram<CalendarPageTransitionTime>;
 
     public core_delete_account_total: Counter<WebCoreDeleteAccountTotal>;
+
+    public core_edm_pull_histogram: Histogram<WebCoreEdmPullSeconds>;
+
+    public core_edm_pull_total: Counter<WebCoreEdmPullTotal>;
+
+    public core_edm_push_total: Counter<WebCoreEdmPushTotal>;
 
     public core_lightLabelling_imageProcessing_total: Counter<WebCoreLightLabellingImageProcessingTotal>;
 
@@ -747,6 +756,21 @@ class Metrics extends MetricsBase {
 
         this.core_delete_account_total = new Counter<WebCoreDeleteAccountTotal>(
             { name: 'web_core_delete_account_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_edm_pull_histogram = new Histogram<WebCoreEdmPullSeconds>(
+            { name: 'web_core_edm_pull_histogram', version: 1 },
+            this.requestService
+        );
+
+        this.core_edm_pull_total = new Counter<WebCoreEdmPullTotal>(
+            { name: 'web_core_edm_pull_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_edm_push_total = new Counter<WebCoreEdmPushTotal>(
+            { name: 'web_core_edm_push_total', version: 1 },
             this.requestService
         );
 

@@ -580,21 +580,13 @@ const BasePublicApp = () => {
                                                 <Route path={SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}>
                                                     <UnAuthenticated>
                                                         <SignInWithAnotherDeviceContainer
+                                                            paths={paths}
                                                             api={extraThunkArguments.api}
-                                                            unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
-                                                            onPreload={handlePreload}
-                                                            onPreSubmit={handlePreSubmit}
+                                                            onStartAuth={handleStartAuth}
                                                             onLogin={handleLogin}
                                                             productParam={productParam}
                                                             toAppName={toAppName}
                                                             toApp={maybePreAppIntent}
-                                                            onUsed={() => {
-                                                                history.replace(
-                                                                    (activeSessions || []).length >= 1
-                                                                        ? SSO_PATHS.SWITCH
-                                                                        : paths.login
-                                                                );
-                                                            }}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
