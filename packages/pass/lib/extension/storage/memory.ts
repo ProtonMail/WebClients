@@ -102,7 +102,7 @@ export const createMemoryStorage = (): StorageInterface => {
     isBackground()
         .then((inBackgroundPage) => {
             if (inBackgroundPage) {
-                browser.runtime.onMessage.addListener((message) => {
+                browser.runtime.onMessage.addListener((message: unknown) => {
                     if (isStorageMessage(message)) {
                         switch (message.action) {
                             case 'get':
