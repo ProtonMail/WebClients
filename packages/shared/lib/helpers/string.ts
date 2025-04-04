@@ -71,12 +71,21 @@ export const truncatePossiblyQuotedString = (string: string, charsToDisplay: num
     return `"${truncateMore({ string: quotedString, charsToDisplay: charsToDisplay - 2 })}"`;
 };
 
+/**
+ * Replace LTR and RTL override unicode chars which can lead to security issues on filenames
+ * 202D and 202E should be the only unicode chars concerned
+ * https://jira.protontech.ch/browse/SEC-644
+ */
+export const rtlSanitize = (str: string) => {
+    return str.replace(/[\u202D\u202E]/g, '_');
+};
+
 export const getInitials = (fullName = '') => {
     if (!fullName) {
         return '?';
     }
 
-    const words = fullName
+    const words = rtlSanitize(fullName)
         .replace(/\s{2,}/g, ' ') // Remove multiple spaces
         .replace(/[\u{1F300}-\u{1F9FF}]/gu, '') // Remove emoji characters
         .replace(/[.,/#!$@%^&*;:{}=\-_`~()]/g, '') // Remove special chars
@@ -132,15 +141,6 @@ export const removeDiacritics = (str: string) => {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 };
 
-/**
- * Replace LTR and RTL override unicode chars which can lead to security issues on filenames
- * 202D and 202E should be the only unicode chars concerned
- * https://jira.protontech.ch/browse/SEC-644
- */
-export const rtlSanitize = (str: string) => {
-    return str.replace(/[\u202D\u202E]/g, '_');
-};
-
 export const removeHTMLComments = (str: string) => {
     return str.replace(/<!--[\s\S]*?-->/g, '');
 };
@@ -153,7 +153,9 @@ export const removeHTMLComments = (str: string) => {
  */
 export const getHashCode = (str: string) => {
     let hash = 0;
-    if (str.length === 0) {return hash;}
+    if (str.length === 0) {
+        return hash;
+    }
     for (let i = 0; i < str.length; i++) {
         const chr = str.charCodeAt(i);
         hash = (hash << 5) - hash + chr;
