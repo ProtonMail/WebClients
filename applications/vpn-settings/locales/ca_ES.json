@@ -520,11 +520,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Remove": [
         "Esborra"
@@ -637,11 +637,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "Select file": [
-        "Selecciona un fitxer"
-      ],
       "select file": [
         "selecciona un fitxer"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Send code": [
         "Enviar codi"
@@ -5421,11 +5421,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -5967,10 +5967,10 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6930,29 +6930,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina el compte"
-      ],
-      "Downgrade account": [
-        "Passa a un pla inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtén ${ BRAND_NAME } gratuïtament"
-      ],
-      "Get ${ planName }": [
-        "Obteniu ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Segueix amb ${ plan }"
-      ],
-      "Keep account": [
-        "Conserva el compte"
-      ],
-      "Switch plan": [
-        "Canvia de pla"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
@@ -6977,6 +6954,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina el compte"
+      ],
+      "Downgrade account": [
+        "Passa a un pla inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtén ${ BRAND_NAME } gratuïtament"
+      ],
+      "Get ${ planName }": [
+        "Obteniu ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Segueix amb ${ plan }"
+      ],
+      "Keep account": [
+        "Conserva el compte"
+      ],
+      "Switch plan": [
+        "Canvia de pla"
       ]
     },
     "new_plans: feature": {
@@ -8173,17 +8173,6 @@
         "Us donem la benvinguda a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Configuracions de país"
@@ -8241,6 +8230,17 @@
       ],
       "The whole organization": [
         "Tota l'organització"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Organization capacity error": {
@@ -10919,10 +10919,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

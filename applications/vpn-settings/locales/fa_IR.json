@@ -296,10 +296,10 @@
       "Refresh status": [
         "وضعیت بازخوانی"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "بازخوانی صفحه"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "بازخوانی صفحه"
       ],
       "Remove": [
@@ -374,10 +374,10 @@
       "Select country": [
         "انتخاب کشور"
       ],
-      "Select file": [
+      "select file": [
         "انتخاب فایل"
       ],
-      "select file": [
+      "Select file": [
         "انتخاب فایل"
       ],
       "Send code": [
@@ -3567,6 +3567,23 @@
         "سرعت متوسط VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ],
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "حذف حساب کاربری"
@@ -3588,23 +3605,6 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "Upgrade": [
-        "ارتقاء"
-      ],
-      "Upgrade now": [
-        "اکنون ارتقا دهید"
       ]
     },
     "new_plans: feature": {
@@ -4939,11 +4939,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-All address": [
-        "نشانی همه‌گیر"
-      ],
       "Catch-all address": [
         "نشانی دریافت-همه"
+      ],
+      "Catch-All address": [
+        "نشانی همه‌گیر"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
