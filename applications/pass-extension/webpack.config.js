@@ -317,7 +317,7 @@ module.exports = {
         ...(production
             ? [
                   new ProtonIconsTreeShakePlugin({
-                      entries: ['dropdown', 'notification', 'onboarding', 'popup', 'settings'],
+                      entries: ['dropdown', 'notification', 'onboarding', 'popup', 'settings', 'internal'],
                       excludeMimeIcons: true,
                   }),
               ]
