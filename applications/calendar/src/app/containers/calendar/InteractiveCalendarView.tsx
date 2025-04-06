@@ -2241,6 +2241,15 @@ const InteractiveCalendarView = ({
                             displayNameEmailMap={displayNameEmailMap}
                             formatTime={formatTime}
                             onDelete={(inviteActions) => {
+                                const decryptedResult = targetEvent?.data?.eventReadResult?.result;
+                                if (Array.isArray(decryptedResult) && decryptedResult[0]?.veventComponent) {
+                                    const vevent = decryptedResult[0].veventComponent;
+                                    const attendee = vevent.attendee?.find((a) => a.parameters?.['x-pm-comment']);
+                                    const commentValue = attendee?.parameters?.['x-pm-comment'] ?? '';
+
+                                    (inviteActions.oldPartstatData ??= {} as any).Comment = commentValue;
+                                }
+
                                 return (
                                     handleDeleteEvent(targetEvent, inviteActions)
                                         // Also close the more popover to avoid this event showing there
@@ -2434,6 +2443,15 @@ const InteractiveCalendarView = ({
                         }
 
                         try {
+                            const decryptedResult = temporaryEvent?.tmpOriginalTarget?.data?.eventReadResult?.result;
+                            if (Array.isArray(decryptedResult) && decryptedResult[0]?.veventComponent) {
+                                const vevent = decryptedResult[0].veventComponent;
+                                const attendee = vevent.attendee?.find((a) => a.parameters?.['x-pm-comment']);
+                                const commentValue = attendee?.parameters?.['x-pm-comment'] ?? '';
+
+                                (inviteActions.oldPartstatData ??= {} as any).Comment = commentValue;
+                            }
+
                             await handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions, true);
                         } catch (error) {
                             return noop();
