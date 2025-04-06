@@ -493,13 +493,19 @@ export const getSendIcsAction =
                 });
                 const displayName = selfAddress.DisplayName || selfAddress.Email;
 
-                // Create old vevent with the old comment if oldPartstatData exists
+                // Create old vevent with the old comment if available
                 let oldVeventWithComment;
                 const { oldPartstatData } = inviteActions;
-                if (oldPartstatData?.Comment && vevent) {
+
+                const oldComment =
+                    (oldPartstatData?.Comment && oldPartstatData.Comment.trim() !== ''
+                        ? oldPartstatData.Comment
+                        : '') || '';
+
+                if (vevent && oldComment) {
                     oldVeventWithComment = {
                         ...vevent,
-                        comment: oldPartstatData.Comment ? [{ value: oldPartstatData.Comment }] : undefined,
+                        comment: [{ value: oldComment }],
                     };
                 }
 
