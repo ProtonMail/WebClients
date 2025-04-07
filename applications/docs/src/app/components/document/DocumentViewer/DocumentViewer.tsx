@@ -33,7 +33,13 @@ import {
 import { EditorFrame } from '../EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
-import { isPrivateNodeMeta, type DocumentAction, type NodeMeta, type PublicNodeMeta } from '@proton/drive-store'
+import {
+  isPrivateNodeMeta,
+  isPublicNodeMeta,
+  type DocumentAction,
+  type NodeMeta,
+  type PublicNodeMeta,
+} from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
@@ -42,6 +48,7 @@ import { WordCountOverlay } from '../WordCount'
 import { useWelcomeSplashModal } from '../public/WelcomeSplashModal'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
@@ -50,6 +57,7 @@ import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import useFlag from '@proton/unleash/useFlag'
+import type { ProviderType } from '../../../provider-type'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -60,9 +68,10 @@ export type DocumentViewerProps = {
   nodeMeta: NodeMeta | PublicNodeMeta
   editorInitializationConfig?: EditorInitializationConfig
   action: DocumentAction['mode'] | undefined
+  providerType: ProviderType
 }
 
-export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: DocumentViewerProps) {
+export function DocumentViewer({ nodeMeta, editorInitializationConfig, action, providerType }: DocumentViewerProps) {
   const application = useApplication()
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
@@ -358,15 +367,26 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const [didAttemptToAutoAcceptInvite, setDidAttemptToAutoAcceptInvite] = useState(false)
   const [wasAutoAcceptSuccessful, setWasAutoAcceptSuccessful] = useState(false)
 
-  const onInviteAutoAcceptResult = useCallback((result: boolean) => {
-    setWasAutoAcceptSuccessful(result)
+  const onInviteAutoAcceptResult = useCallback(
+    (result: InviteAutoAcceptResult) => {
+      setWasAutoAcceptSuccessful(result.success)
+      setDidAttemptToAutoAcceptInvite(true)
 
-    if (result) {
-      window.location.reload()
-    }
+      if (result.success) {
+        application.logger.info('Invite auto-accept successful, reloading page')
 
-    setDidAttemptToAutoAcceptInvite(true)
-  }, [])
+        if (isPublicNodeMeta(nodeMeta)) {
+          application.compatWrapper.getPublicCompat().redirectToAuthedDocument({
+            volumeId: result.acceptedNodeMeta.volumeId,
+            linkId: result.acceptedNodeMeta.linkId,
+          })
+        } else {
+          window.location.reload()
+        }
+      }
+    },
+    [application.compatWrapper, application.logger, nodeMeta],
+  )
 
   const Loader = (
     <div className="relative h-full w-full">
@@ -377,12 +397,25 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     </div>
   )
 
+  /**
+   * If we are in the public app, and the user is signed in, and the user does not have edit access, we'll check
+   * to see if there is a pending invite for the document. If there is, we'll autoaccept it.
+   */
+  const isSignedInUserInPublicReadonlyMode =
+    getLocalID() !== undefined && isPublicViewer && providerType === 'public-authenticated'
+  /**
+   * If we are in private mode, and the user does not have access to the document at all, we'll check
+   * to see if there is a pending invite for the document. If there is, we'll autoaccept it.
+   */
+  const isPrivateModeUserWithInsufficientPermissions =
+    isPrivateNodeMeta(nodeMeta) && error && error.code === DocsApiErrorCode.InsufficientPermissions
+
   if (
-    error &&
-    error.code === DocsApiErrorCode.InsufficientPermissions &&
-    isPrivateNodeMeta(nodeMeta) &&
-    !didAttemptToAutoAcceptInvite
+    !didAttemptToAutoAcceptInvite &&
+    (isSignedInUserInPublicReadonlyMode || isPrivateModeUserWithInsufficientPermissions)
   ) {
+    application.logger.info('Attempting to auto-accept invite (if found)')
+
     return (
       <>
         <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
