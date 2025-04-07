@@ -1,4 +1,4 @@
-import crypto from "crypto";
+import crypto from "node:crypto";
 import { Request } from "electron";
 import { CERT_PROTON_ME } from "../constants";
 import { isProdEnv } from "./isProdEnv";
