@@ -19,14 +19,8 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
-import type {
-    PrimaryAddressKeyForEncryption} from '@proton/shared/lib/keys';
-import {
-    decryptMemberToken,
-    getAddressKeyToken,
-    getEmailFromKey,
-    splitKeys,
-} from '@proton/shared/lib/keys';
+import type { PrimaryAddressKeyForEncryption } from '@proton/shared/lib/keys';
+import { decryptMemberToken, getAddressKeyToken, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
@@ -271,9 +265,7 @@ export const acceptIncomingForwarding = async ({
         internalKeysOnly: true,
     });
 
-    const forwarderPublicKeys = await Promise.all(
-        forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
-    );
+    const forwarderPublicKeys = forwarderAddressKeys.map(({ publicKey }) => publicKey);
 
     let activeKeys = await getActiveAddressKeys(address.SignedKeyList, forwardeeAddressKeys);
 
@@ -341,8 +333,7 @@ export const enableForwarding = async ({
     forwardeePublicKeys,
 }: EnableForwardingParameters) => {
     const email = forward.ForwardeeEmail;
-    const [forwardeePublicKeyArmored] = forwardeePublicKeys.publicKeys || [];
-    const forwardeePublicKey = await CryptoProxy.importPublicKey({ armoredKey: forwardeePublicKeyArmored.armoredKey });
+    const forwardeePublicKey = forwardeePublicKeys.publicKeys[0].publicKey;
     const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
         forwarderPrimaryAddressKeyForEncryption,
         [{ email, name: email }],
