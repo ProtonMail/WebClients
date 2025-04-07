@@ -35,8 +35,14 @@ const onClaim = async () => {
 };
 
 const onConnect = async () => {
-    await cleanCache();
-    await cacheOfflineAssets(false);
+    try {
+        await cleanCache();
+        await cacheOfflineAssets(false);
+
+        /** Clear file storage when one client is connected to this service worker. */
+        const clients = await self.clients.matchAll({ includeUncontrolled: true });
+        if (clients.length <= 1) void fileStorage.clearAll();
+    } catch {}
 };
 
 const onFileStorageGC = (filenames: string[]) => {
