@@ -1,3 +1,4 @@
+import { FileStorageMemory } from '@proton/pass/lib/file-storage/fs.memory';
 import { FileStorageStub } from '@proton/pass/lib/file-storage/fs.stub';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -13,5 +14,5 @@ const isOPFSSupported = () =>
 export const fileStorage: FileStorage = (() => {
     if (isOPFSSupported()) return new FileStorageOPFS();
     if ('indexedDB' in globalThis) return new FileStorageIDB();
-    return new FileStorageStub();
+    return !EXTENSION_BUILD ? new FileStorageMemory() : new FileStorageStub();
 })();
