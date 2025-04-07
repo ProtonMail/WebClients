@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -58,44 +56,38 @@ export const useMoveBackAction = () => {
     const conversationMode = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const navigation = useRouterNavigation({ labelID: sourceLabelID });
 
-    const handleOnBackMoveAction = useCallback(
-        (props: ActionProps) => {
-            if (!elementID) {
-                return;
-            }
+    const handleOnBackMoveAction = (props: ActionProps) => {
+        if (!elementID) {
+            return;
+        }
 
-            // If the element that is currently opened is part of the selection to update, we need to move out. Else we don't need to
-            const openedElementMoved = getOpenedElementUpdated(props.elements, conversationMode, elementID);
+        // If the element that is currently opened is part of the selection to update, we need to move out. Else we don't need to
+        const openedElementMoved = getOpenedElementUpdated(props.elements, conversationMode, elementID);
 
-            if (!openedElementMoved) {
-                return;
-            }
+        if (!openedElementMoved) {
+            return;
+        }
 
-            // Selection contains messages only
-            if (isMessage(props.elements[0])) {
-                // in message mode
-                if (!conversationMode) {
-                    executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });
-                } else {
-                    // Else, if we are in conversation mode, it means we need to check that no item will remain in the current location after moving the current one. If there are items remaining, do not move out
-                    const conversationID = (openedElementMoved as Message).ConversationID;
-                    const conversationFromState = getConversation(conversationID);
-                    const hasRemainingItem = hasRemainingItemAfterAction(sourceLabelID, conversationFromState);
-
-                    if (hasRemainingItem) {
-                        return;
-                    }
-
-                    executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });
-                }
+        // Selection contains messages only
+        if (isMessage(props.elements[0])) {
+            // in message mode
+            if (!conversationMode) {
+                executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });
             } else {
+                // Else, if we are in conversation mode, it means we need to check that no item will remain in the current location after moving the current one. If there are items remaining, do not move out
+                const conversationID = (openedElementMoved as Message).ConversationID;
+                const conversationFromState = getConversation(conversationID);
+                const hasRemainingItem = hasRemainingItemAfterAction(sourceLabelID, conversationFromState);
+
+                if (hasRemainingItem) {
+                    return;
+                }
+
                 executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });
             }
-        },
-        [elementID, conversationMode, sourceLabelID, labels, folders]
-    );
-
-    return {
-        handleOnBackMoveAction,
+        } else {
+            executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });
+        }
     };
+    return handleOnBackMoveAction;
 };
