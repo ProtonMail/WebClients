@@ -2,20 +2,18 @@ import type { FC } from 'react';
 import React, { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
-import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { AlbumTag, useThumbnailsDownload } from '../../store';
 import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useCreateAlbum, useRenameAlbum } from '../PhotosActions/Albums';
-import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
-import { useDeleteAlbumModal } from '../PhotosModals/DeleteAlbumModal';
+import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { useRenameAlbum } from '../PhotosActions/Albums';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
@@ -23,7 +21,6 @@ import { AlbumsGrid } from './AlbumsGrid';
 import { AlbumsInvitations } from './AlbumsInvitations';
 import { EmptyAlbums } from './EmptyAlbums';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
-import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
 import './BannerInvite.scss';
 
@@ -50,24 +47,24 @@ export const AlbumsView: FC = () => {
         isPhotosLoading,
         isAlbumsLoading,
         loadPhotoLink,
-        requestDownload,
         deleteAlbum,
         refreshSharedWithMeAlbums,
     } = usePhotosWithAlbumsView();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
-    const createAlbumModal = useModalStateObject();
+    const { modals } = usePhotoLayoutStore(
+        useShallow((state) => ({
+            modals: state.modals,
+        }))
+    );
     const renameAlbumModal = useModalStateObject();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const [deleteAlbumModal, showDeleteAlbumModal] = useDeleteAlbumModal();
-    const createAlbum = useCreateAlbum();
     const renameAlbum = useRenameAlbum();
     const [renameAlbumLinkId, setRenameAlbumLinkId] = useState<string>('');
     const { moveLinks } = useLinksActions();
     const { createNotification } = useNotifications();
 
     const thumbnails = useThumbnailsDownload();
-    const { navigateToPhotos, navigateToAlbum, navigateToAlbums } = useNavigate();
+    const { navigateToAlbum, navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
     const [selectedTags, setSelectedTags] = useState<AlbumsTagsProps['selectedTags']>([AlbumTag.All]);
 
@@ -84,7 +81,7 @@ export const AlbumsView: FC = () => {
                 loadPhotoLink(shareId, itemLinkId, domRef);
             }
         },
-        [incrementItemRenderedCounter, loadPhotoLink]
+        [incrementItemRenderedCounter, loadPhotoLink, albums, shareId]
     );
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -97,23 +94,6 @@ export const AlbumsView: FC = () => {
             }
         }
     };
-
-    const onCreateAlbum = useCallback(
-        async (name: string) => {
-            if (!shareId || !linkId || !volumeId) {
-                return;
-            }
-            try {
-                const abortSignal = new AbortController().signal;
-                const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
-                navigateToAlbum(shareId, albumLinkId);
-            } catch (e) {
-                sendErrorReport(e);
-                console.error('album creation failed', e);
-            }
-        },
-        [shareId, linkId, createAlbum, navigateToAlbum]
-    );
 
     const onRenameAlbum = useCallback(
         async (name: string) => {
@@ -171,7 +151,7 @@ export const AlbumsView: FC = () => {
     const onDeleteAlbum = useCallback(
         async (album: DecryptedAlbum) => {
             const abortSignal = new AbortController().signal;
-            void showDeleteAlbumModal({
+            void modals.deleteAlbum?.({
                 missingPhotosCount: album.photoCount,
                 name: album.name,
                 deleteAlbum: (force, childLinkIds) =>
@@ -182,48 +162,18 @@ export const AlbumsView: FC = () => {
                 },
             });
         },
-        [handleDeleteAlbum, showDeleteAlbumModal, navigateToAlbums]
+        [handleDeleteAlbum, navigateToAlbums, modals]
     );
 
     const isAlbumsEmpty = albums.length === 0;
     const filteredAlbums = filterAlbums(albums, selectedTags[0]);
 
-    if (!shareId || !linkId || isPhotosLoading || isAlbumsLoading) {
+    if (!shareId || !linkId || (isAlbumsLoading && !albums) || (isAlbumsLoading && albums.length === 0)) {
         return <Loader />;
     }
 
     return (
         <>
-            {linkSharingModal}
-
-            <ToolbarRow
-                withBorder={false}
-                withPadding={false}
-                className="m-2 toolbar-row--no-responsive"
-                titleArea={
-                    <>
-                        <ToolbarLeftActionsGallery
-                            onGalleryClick={navigateToPhotos}
-                            onAlbumsClick={navigateToAlbums}
-                            isLoading={isPhotosLoading}
-                            selection={'albums'}
-                        />
-                    </>
-                }
-                toolbar={
-                    <PhotosWithAlbumsToolbar
-                        shareId={shareId}
-                        linkId={linkId}
-                        data={albums}
-                        selectedItems={[]}
-                        requestDownload={requestDownload}
-                        uploadDisabled={true}
-                        tabSelection={'albums'}
-                        createAlbumModal={createAlbumModal}
-                    />
-                }
-            />
-
             {!isAlbumsEmpty && (
                 <AlbumsTags
                     selectedTags={selectedTags}
@@ -236,19 +186,19 @@ export const AlbumsView: FC = () => {
 
             {isAlbumsEmpty ? (
                 <>
-                    <EmptyAlbums createAlbumModal={createAlbumModal} />
+                    <EmptyAlbums createAlbumModal={modals.createAlbum} />
                 </>
             ) : (
                 <AlbumsGrid
                     data={filteredAlbums}
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                    isLoading={false} // TODO: Get Albums loading status
+                    isLoading={isAlbumsLoading}
                     onItemClick={(shareId, linkId) => {
                         navigateToAlbum(shareId, linkId);
                     }}
                     onItemShare={(linkId) => {
-                        showLinkSharingModal({ shareId, linkId });
+                        modals.linkSharing?.({ shareId, linkId });
                     }}
                     onItemRename={(linkId) => {
                         setRenameAlbumLinkId(linkId);
@@ -257,8 +207,6 @@ export const AlbumsView: FC = () => {
                     onItemDelete={onDeleteAlbum}
                 />
             )}
-
-            <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} />
             {renameAlbumLinkId && (
                 <RenameAlbumModal
                     name={filteredAlbums.find((album) => album.linkId === renameAlbumLinkId)?.name}
@@ -266,7 +214,6 @@ export const AlbumsView: FC = () => {
                     renameAlbum={onRenameAlbum}
                 />
             )}
-            {deleteAlbumModal}
         </>
     );
 };
