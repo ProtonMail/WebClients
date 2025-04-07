@@ -19,8 +19,15 @@ import { DocsProvider } from '~/components/document/context'
 import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { Route, Routes } from 'react-router-dom-v5-compat'
+import type { ProviderType } from '../../../provider-type'
 
-export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
+export function PublicApplicationContent({
+  publicDriveCompat,
+  providerType,
+}: {
+  publicDriveCompat: PublicDriveCompat
+  providerType: ProviderType
+}) {
   const api = useApi()
   const unleashClient = useUnleashClient()
 
@@ -84,7 +91,7 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
               path="*"
               element={
                 <DocumentLayout>
-                  <Content openAction={openAction} actionMode={action} />
+                  <Content providerType={providerType} openAction={openAction} actionMode={action} />
                 </DocumentLayout>
               }
             />
@@ -98,9 +105,11 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
 function Content({
   openAction,
   actionMode,
+  providerType,
 }: {
   openAction: DocumentAction | null
   actionMode: DocumentAction['mode'] | undefined
+  providerType: ProviderType
 }) {
   const { linkId } = usePublicDriveCompat()
 
@@ -117,5 +126,5 @@ function Content({
     linkId: linkId,
   }
 
-  return <DocumentViewer nodeMeta={nodeMeta} action={actionMode} />
+  return <DocumentViewer nodeMeta={nodeMeta} action={actionMode} providerType={providerType} />
 }

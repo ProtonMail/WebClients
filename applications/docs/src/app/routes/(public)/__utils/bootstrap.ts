@@ -69,7 +69,12 @@ export async function bootstrapPublicApp({ config }: { config: ProtonConfig }) {
         user,
       })
       const store = setupStore({ preloadedState: persistedState?.state, persist: true })
-      return { store, session: sessionResult.session }
+      /**
+       * In some cases sessionResult.session is undefined, but authentication.ready is true, which means
+       * there is a session available but not being bootstrapped. Ultimately I don't understand this,
+       * but the following is a way to communicate to the caller that we are ultimately working with a valid session.
+       */
+      return { store, session: sessionResult.session, hasReadySession: authentication.ready }
       // Session loaded fine
     } catch (error) {
       // This session is invalid, we should go back to account to fork it
