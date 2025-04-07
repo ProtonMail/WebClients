@@ -223,7 +223,7 @@ html,
 	& > a {
 		display: flex;
 		align-self: baseline;
-		flex: 1 1 0;
+		flex: 1 1 auto;
 
 		&::after {
 			border-radius: var(--border-radius-md);
