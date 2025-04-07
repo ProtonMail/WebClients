@@ -5,7 +5,7 @@ import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import type { WasmNetwork } from '@proton/andromeda';
+import { type WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
 import {
     getContactsAutocompleteItems,
     getRecipientFromAutocompleteItem,
@@ -148,8 +148,22 @@ export const useEmailOrBitcoinAddressInput = ({
     };
 
     const handleAddRecipientFromScan = (qrcode: QRCode) => {
-        const value = qrcode.data.trimStart();
-        handleAddRecipientFromInput(value);
+        const trimmedInput = qrcode.data.trim();
+        if (!trimmedInput.length) {
+            setInput('');
+            return;
+        }
+
+        try {
+            const paymentLink = WasmPaymentLink.tryParse(trimmedInput, network);
+            const onChainPaymentLink = paymentLink.assumeOnchain();
+            const address = onChainPaymentLink.address;
+            if (address) {
+                handleAddRecipientFromInput(address);
+            }
+        } catch (error: any) {
+            setEmailError(c('BIP 21 error').t`Invalid QR code, we only support BIP 21 URI.`);
+        }
 
         qrCodeModal.onClose();
     };
