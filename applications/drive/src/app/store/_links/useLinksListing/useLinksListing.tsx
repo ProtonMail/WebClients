@@ -197,8 +197,10 @@ export function useLinksListingProvider() {
             fetchMeta = {};
             state.current[shareId].links[query] = fetchMeta;
         }
-        await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
-        fetchMeta.isInProgress = true;
+
+        if (fetchMeta.isInProgress) {
+            await fetchMeta.isInProgress;
+        }
 
         const linksAcc: DecryptedLink[] = [];
         const parentsAcc: DecryptedLink[] = [];
@@ -247,9 +249,11 @@ export function useLinksListingProvider() {
             }
         };
 
-        await load().finally(() => {
-            fetchMeta.isInProgress = false;
+        fetchMeta.isInProgress = load().finally(() => {
+            fetchMeta.isInProgress = undefined;
         });
+
+        await fetchMeta.isInProgress;
 
         return {
             links: linksAcc,
@@ -292,8 +296,9 @@ export function useLinksListingProvider() {
         // Shared links use own state for fetch meta.
         let fetchMeta = options.fetchMeta;
 
-        await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
-        fetchMeta.isInProgress = true;
+        if (fetchMeta.isInProgress) {
+            await fetchMeta.isInProgress;
+        }
 
         const resultAcc: { [shareId: string]: { links: EncryptedLink[]; parents: EncryptedLink[] } } = {};
 
@@ -342,9 +347,11 @@ export function useLinksListingProvider() {
             }
         };
 
-        await load().finally(() => {
-            fetchMeta.isInProgress = false;
+        fetchMeta.isInProgress = load().finally(() => {
+            fetchMeta.isInProgress = undefined;
         });
+
+        await fetchMeta.isInProgress;
 
         return resultAcc;
     };
