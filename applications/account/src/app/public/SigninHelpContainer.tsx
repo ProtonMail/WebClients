@@ -62,7 +62,7 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
                         <Icon name="question-circle" size={6} />
                         <div className="text-left flex-1">
                             <div className="text-lg">{c('Title').t`Other sign-in issues`}</div>
-                            <div className="color-weak">{c('Description').t`Lear more about common problems`}</div>
+                            <div className="color-weak">{c('Description').t`Learn more about common problems`}</div>
                         </div>
                         <Icon name="arrow-within-square" size={3.5} className="color-weak m-3" />
                     </Href>
