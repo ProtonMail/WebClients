@@ -108,8 +108,8 @@ describe('useSubscriptionPriceComparison', () => {
         expect(result.current).toEqual({
             priceDifference: 800,
             priceDifferenceCheapestCycle: 0,
-            priceFallbackPerMonth: 999,
-            cheapestMonthlyPrice: 999,
+            priceFallbackPerMonth: 799,
+            cheapestMonthlyPrice: 799,
             totalSavings: 0,
             showPriceDifference: true,
             showPriceDifferenceCheapest: false,
@@ -140,10 +140,10 @@ describe('useSubscriptionPriceComparison', () => {
         // We expect to show savings because yearly/biyearly cycle is typically cheaper per month
         expect(result.current).toEqual({
             priceDifference: 0,
-            priceDifferenceCheapestCycle: 700,
-            priceFallbackPerMonth: 399,
-            cheapestMonthlyPrice: 399,
-            totalSavings: 8400,
+            priceDifferenceCheapestCycle: 750,
+            priceFallbackPerMonth: 349,
+            cheapestMonthlyPrice: 349,
+            totalSavings: 18000,
             showPriceDifference: false,
             showPriceDifferenceCheapest: true,
             showSavings: true,
@@ -213,10 +213,10 @@ describe('useSubscriptionPriceComparison', () => {
         // In this case, the hook should use the current plan name (MAIL) as the compare plan
         expect(result.current).toEqual({
             priceDifference: 0,
-            priceDifferenceCheapestCycle: 100,
-            priceFallbackPerMonth: 399,
-            cheapestMonthlyPrice: 399,
-            totalSavings: 1200,
+            priceDifferenceCheapestCycle: 150,
+            priceFallbackPerMonth: 349,
+            cheapestMonthlyPrice: 349,
+            totalSavings: 3600,
             showPriceDifference: false,
             showPriceDifferenceCheapest: true,
             showSavings: true,
@@ -270,10 +270,10 @@ describe('useSubscriptionPriceComparison', () => {
 
         expect(result.current).toEqual({
             priceDifference: 0,
-            priceDifferenceCheapestCycle: 100,
-            priceFallbackPerMonth: 399,
-            cheapestMonthlyPrice: 399,
-            totalSavings: 1200,
+            priceDifferenceCheapestCycle: 150,
+            priceFallbackPerMonth: 349,
+            cheapestMonthlyPrice: 349,
+            totalSavings: 3600,
             showPriceDifference: false,
             showPriceDifferenceCheapest: true,
             showSavings: true,
@@ -298,13 +298,13 @@ describe('useSubscriptionPriceComparison', () => {
 
         expect(result.current).toEqual({
             priceDifference: 0,
-            priceDifferenceCheapestCycle: 0,
-            priceFallbackPerMonth: 399,
-            cheapestMonthlyPrice: 399,
-            totalSavings: 0,
+            priceDifferenceCheapestCycle: 50,
+            priceFallbackPerMonth: 349,
+            cheapestMonthlyPrice: 349,
+            totalSavings: 1200,
             showPriceDifference: false,
-            showPriceDifferenceCheapest: false,
-            showSavings: false,
+            showPriceDifferenceCheapest: true,
+            showSavings: true,
         });
     });
 
@@ -358,8 +358,8 @@ describe('useSubscriptionPriceComparison', () => {
         expect(result.current).toEqual({
             priceDifference: 500,
             priceDifferenceCheapestCycle: 0,
-            priceFallbackPerMonth: 666.25,
-            cheapestMonthlyPrice: 666.25,
+            priceFallbackPerMonth: 499,
+            cheapestMonthlyPrice: 499,
             totalSavings: 0,
             showPriceDifference: true,
             showPriceDifferenceCheapest: false,

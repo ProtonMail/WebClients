@@ -8,21 +8,12 @@ import {
     type PlansMap,
     type Subscription,
     hasCycle,
-    isFreeSubscription,
+    isMainCurrency,
+    isRegionalCurrency,
 } from '@proton/payments';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import {
-    hasBundle,
-    hasDeprecatedVPN,
-    hasDuo,
-    hasFamily,
-    hasVPN2024,
-    hasVisionary,
-    isRegularCycle,
-    isTrial,
-} from '@proton/shared/lib/helpers/subscription';
+import { isRegularCycle, isTrial } from '@proton/shared/lib/helpers/subscription';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
@@ -39,28 +30,19 @@ export type PlanCapRule = {
     currencyPredicate?: Currency | ((currency: Currency) => boolean);
 };
 
-const b2cBundlePlanCycleCapper: CycleCapper = (subscription, app) => {
-    const userHasLongSubscription =
-        !!subscription &&
-        !isFreeSubscription(subscription) &&
-        (subscription.Cycle > CYCLE.YEARLY || (subscription.UpcomingSubscription?.Cycle ?? 0) > CYCLE.YEARLY);
-
-    const isVpnApp = app === APPS.PROTONVPN_SETTINGS;
-
-    const hasB2CBundlePlan =
-        hasBundle(subscription) || hasFamily(subscription) || hasDuo(subscription) || hasVisionary(subscription);
-
-    const hasVpnPlus = hasDeprecatedVPN(subscription) || hasVPN2024(subscription);
-
-    if (userHasLongSubscription || hasVpnPlus || isVpnApp || hasB2CBundlePlan) {
-        return CYCLE.TWO_YEARS;
-    }
-
-    return CYCLE.YEARLY;
-};
-
 const defaultRules: PlanCapRule[] = [
-    { plan: PLANS.MAIL, cycle: CYCLE.YEARLY },
+    // We want to show Mail Plus 2 years when possible. Regional currencies don't have 2-year plans, so
+    // so we add a restrictions for them
+    {
+        plan: PLANS.MAIL,
+        cycle: CYCLE.TWO_YEARS,
+        currencyPredicate: isMainCurrency,
+    },
+    {
+        plan: PLANS.MAIL,
+        cycle: CYCLE.YEARLY,
+        currencyPredicate: isRegionalCurrency,
+    },
     { plan: PLANS.VPN, cycle: CYCLE.YEARLY },
     { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
@@ -69,14 +51,23 @@ const defaultRules: PlanCapRule[] = [
     { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },
 
-    { plan: PLANS.BUNDLE, cycle: b2cBundlePlanCycleCapper },
-    { plan: PLANS.DUO, cycle: b2cBundlePlanCycleCapper },
-    { plan: PLANS.FAMILY, cycle: b2cBundlePlanCycleCapper },
-    { plan: PLANS.VISIONARY, cycle: b2cBundlePlanCycleCapper },
+    // for B2C bundle plans we want to show 2-year plans when possible.
+    // BUNDLE has full support of 2-year plans, including regional currencies.
+    // The only exception is BRL which technically supports 2-year bundle2022 but has a placeholder
+    // price: 2 * 12m price.
+    { plan: PLANS.BUNDLE, cycle: CYCLE.TWO_YEARS },
+    // Duo and Family 24m don't support regional currencies, so we disable them.
+    { plan: PLANS.DUO, cycle: CYCLE.TWO_YEARS, currencyPredicate: isMainCurrency },
+    { plan: PLANS.DUO, cycle: CYCLE.YEARLY, currencyPredicate: isRegionalCurrency },
+    { plan: PLANS.FAMILY, cycle: CYCLE.TWO_YEARS, currencyPredicate: isMainCurrency },
+    { plan: PLANS.FAMILY, cycle: CYCLE.YEARLY, currencyPredicate: isRegionalCurrency },
+    // And Visionary doesn't have regional currencies at all, for none of the cycles, so we don't need any additional
+    // predicates here. It will filtered out by different components.
+    { plan: PLANS.VISIONARY, cycle: CYCLE.TWO_YEARS },
 
     { plan: PLANS.PASS_PRO, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_BUSINESS, cycle: CYCLE.YEARLY },
-    // { plan: PLANS.MAIL_PRO, cycle: CYCLE.YEARLY },
+    // { plan: PLANS.MAIL_PRO, cycle: CYCLE.YEARLY }, // for now we want 2-year cap for Mail Essentials (mailpro2022)
     { plan: PLANS.MAIL_BUSINESS, cycle: CYCLE.YEARLY },
     { plan: PLANS.BUNDLE_PRO, cycle: CYCLE.YEARLY },
     { plan: PLANS.BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
@@ -142,13 +133,16 @@ function capMaximumCycle({
         return rule.cycle;
     };
 
-    // filter a capped plan from the list of capped plans if it is present in planIDs
-    const planCapRule = rules.find((cappedPlan) => planIDs[cappedPlan.plan]);
-
     let result: CYCLE = maximumCycle;
-    if (planCapRule && currencyMatches(planCapRule)) {
-        result = Math.min(maximumCycle, getCycle(planCapRule));
-    }
+    rules
+        // filter a capped plan from the list of capped plans if it is present in planIDs
+        .filter((rule) => planIDs[rule.plan])
+        .forEach((rule) => {
+            // there can be multiple rules for the same plan. We need to take the one that matches the currency.
+            if (currencyMatches(rule)) {
+                result = Math.min(maximumCycle, getCycle(rule));
+            }
+        });
 
     // if user already has a subscription or upcoming subscription with higher cycle, then we let user see it
     const isSamePlan = isSamePlanCheckout(subscription, planIDs);
