@@ -80,3 +80,26 @@ export const getEncryptedRSVPComment = async ({
         Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED_AND_SIGNED,
     };
 };
+
+export const getEncryptedRSVPCommentWithSignature = async ({
+    comment,
+    commentSignature,
+    sessionKey,
+}: {
+    comment: string;
+    commentSignature: Uint8Array<ArrayBufferLike>;
+    sessionKey: SessionKey | undefined;
+}) => {
+    const encryptResult = await CryptoProxy.encryptMessage({
+        format: 'binary',
+        textData: comment,
+        sessionKey,
+        binarySignature: commentSignature,
+    });
+    const base64EncryptedComment = uint8ArrayToBase64String(encryptResult.message);
+
+    return {
+        Message: base64EncryptedComment,
+        Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED_AND_SIGNED,
+    };
+};
