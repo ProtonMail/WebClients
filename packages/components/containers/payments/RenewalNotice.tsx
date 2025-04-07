@@ -46,7 +46,7 @@ const isBundleB2CPlan = (planOrPlanIDs: PLANS | PlanIDs | undefined): boolean =>
     return [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(plan);
 };
 
-const getRenewalPricingSubjectToChangeText = (
+export const getRenewalPricingSubjectToChangeText = (
     planOrPlanIDs: PLANS | PlanIDs | undefined,
     cycle: CYCLE,
     app: APP_NAMES
@@ -65,18 +65,34 @@ const getRenewalPricingSubjectToChangeText = (
     return c('Payments').jt`Renewal pricing subject to change according to ${termsAndConditionsLink}.`;
 };
 
+// Disabling this for now as the result of P2-401. We don't need this annotation for now as we are replacing
+// it with clearer renewal notices. We might still need the T&C clause in the future, so I'd like to keep it for
+// now.
+// const appendTermsAndConditionsLink = (
+//     text: (string | string[])[],
+//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//     planOrPlanIDs: PLANS | PlanIDs | undefined,
+//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//     cycle: CYCLE,
+//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//     app: APP_NAMES
+// ): (string | string[])[] => {
+//     return text;
+
+//     // const link = getRenewalPricingSubjectToChangeText(planOrPlanIDs, cycle, app);
+//     // if (!link) {
+//     //     return text;
+//     // }
+
+//     // return [...text, ' ', link];
+// };
+
 const appendTermsAndConditionsLink = (
     text: (string | string[])[],
-    planOrPlanIDs: PLANS | PlanIDs | undefined,
-    cycle: CYCLE,
-    app: APP_NAMES
-): (string | string[])[] => {
-    const link = getRenewalPricingSubjectToChangeText(planOrPlanIDs, cycle, app);
-    if (!link) {
-        return text;
-    }
-
-    return [...text, ' ', link];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ...args: any[]
+) => {
+    return text;
 };
 
 const getRegularRenewalNoticeText = ({
