@@ -1,6 +1,8 @@
 import type React from 'react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
+
+import { useShallow } from 'zustand/react/shallow';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
@@ -15,6 +17,7 @@ import type { PhotoGridItem, PhotoLink } from '../../store/_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from '../../store/_views/utils';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { usePhotosWithAlbums } from './PhotosWithAlbumsProvider';
 import { getTagFilteredPhotos } from './getTagFilteredPhotos';
 
@@ -52,7 +55,7 @@ export function updateByEvents(
     updateAlbumsCache(albumsToBeUpdated);
 }
 
-export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) => {
+export const usePhotosWithAlbumsView = () => {
     let { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
     const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta, getCachedLinksWithoutMeta } = useLinksListing();
@@ -82,13 +85,21 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
     } = usePhotosWithAlbums();
 
     const [selectedTags, setSelectedTags] = useState([PhotoTag.All]);
-
+    const processedEventIds = useRef<Set<string>>(new Set());
+    const { currentPageType } = usePhotoLayoutStore(
+        useShallow((state) => ({
+            currentPageType: state.currentPageType,
+        }))
+    );
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
     const [isAlbumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
 
     const abortSignal = useAbortSignal([shareId, linkId]);
-    const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
+    const cache = useMemo(() => {
+        return shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
+    }, [shareId, linkId, abortSignal, getCachedChildren]);
+
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
     const cachedAlbums =
         shareId && linkId
@@ -291,7 +302,7 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
         }
         const abortController = new AbortController();
 
-        if (albumShareId && albumLinkId && !isAddAlbumPhotosView) {
+        if (albumShareId && albumLinkId && currentPageType !== AlbumsPageTypes.ALBUMSADDPHOTOS) {
             setIsAlbumsLoading(true);
             void Promise.all([
                 loadSharedWithMeAlbums(abortController.signal),
@@ -301,6 +312,7 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
                 void loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId);
             });
         } else {
+            setIsAlbumsLoading(false);
             // If loading /photos first, defer loading of albums after photos
             void loadPhotos(abortController.signal).then(() => {
                 setIsAlbumsLoading(true);
@@ -314,7 +326,8 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
         }
 
         const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
-            if (eventVolumeId === volumeId) {
+            if (eventVolumeId === volumeId && !processedEventIds.current.has(events.eventId)) {
+                processedEventIds.current.add(events.eventId);
                 updateByEvents(events, shareId, removePhotosFromCache, updateAlbumsFromCache, processedEventCounter);
             }
         });

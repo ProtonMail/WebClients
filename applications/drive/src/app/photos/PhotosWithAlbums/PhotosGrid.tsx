@@ -14,7 +14,7 @@ type Props = {
     data: PhotoGridItem[];
     onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    hasSelection: boolean;
+    selectedItems: PhotoGridItem[];
     isLoading: boolean;
     onItemClick: (linkId: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
@@ -33,13 +33,14 @@ export const PhotosGrid: FC<Props> = ({
     isLoading,
     onItemClick,
     onSelectChange,
-    hasSelection,
+    selectedItems,
     isGroupSelected,
     isItemSelected,
     isAddAlbumPhotosView,
     userAddressEmail,
     onFavorite,
 }) => {
+    const hasSelection = selectedItems.length > 0;
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
 
@@ -212,14 +213,10 @@ export const PhotosGrid: FC<Props> = ({
         };
 
         return [items, innerStyle];
-    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading]);
+    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading, selectedItems]);
 
     return (
-        <div
-            className={clsx('p-4 overflow-auto outline-none--at-all', !isAddAlbumPhotosView && 'mt-10')}
-            ref={containerRef}
-            onScroll={handleScroll}
-        >
+        <div className={clsx('p-4 overflow-auto outline-none--at-all')} ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
