@@ -19379,13 +19379,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "crypto@npm:1.0.1"
-  checksum: 10c0/fcf7dbd68ac5415b7fde7d7208fe203038e92e83e8a8fcf6e86ab4771ce3dd026d6967a990ba56b9d1c771378210814d5c90d907d3739fbd1723d552ad6c8ab8
-  languageName: node
-  linkType: hard
-
 "css-animation@npm:^1.3.2":
   version: 1.6.1
   resolution: "css-animation@npm:1.6.1"
@@ -36034,7 +36027,6 @@ __metadata:
     "@typescript-eslint/parser": "npm:^7.18.0"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
-    crypto: "npm:^1.0.1"
     css-loader: "npm:^7.1.2"
     dotenv: "npm:^16.4.7"
     electron: "npm:29.4.6"
