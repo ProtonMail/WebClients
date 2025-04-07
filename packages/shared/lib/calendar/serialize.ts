@@ -1,7 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
 import type { SimpleMap } from '../interfaces';
-import type { VcalVeventComponent } from '../interfaces/calendar';
+import type { AttendeeComment, VcalVeventComponent } from '../interfaces/calendar';
 import { CALENDAR_CARD_TYPE } from './constants';
 import {
     createSessionKey,
@@ -38,6 +38,7 @@ interface CreateCalendarEventArguments {
     isAttendee?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
+    eventCommentsMap?: { [token: string]: AttendeeComment };
 }
 export const createCalendarEvent = async ({
     eventComponent,
@@ -52,6 +53,7 @@ export const createCalendarEvent = async ({
     isAttendee,
     removedAttendeesEmails = [],
     addedAttendeesPublicKeysMap,
+    eventCommentsMap,
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, notificationsPart, attendeesPart } = getParts(eventComponent);
     const cancelledOccurrenceSharedPart = cancelledOccurrenceVevent
@@ -115,5 +117,6 @@ export const createCalendarEvent = async ({
         attendeesClearPart: isAttendeeSwitchingCalendar ? undefined : attendeesPart[CLEAR_TEXT],
         removedAttendeesEmails,
         attendeesEncryptedSessionKeysMap,
+        eventCommentsMap,
     });
 };
