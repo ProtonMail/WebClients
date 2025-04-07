@@ -14,18 +14,20 @@ import {
 import useLoading from '@proton/hooks/useLoading';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+export type DeleteAlbumModalProps = {
+    missingPhotosCount: number;
+    name: string;
+    deleteAlbum: (force: boolean, childLinkIds?: string[]) => Promise<void>;
+    onDeleted?: () => void;
+};
+
 export const DeleteAlbumModal = ({
     missingPhotosCount,
     deleteAlbum,
     name,
     onDeleted,
     ...modalProps
-}: {
-    missingPhotosCount: number;
-    name: string;
-    deleteAlbum: (force: boolean, childLinkIds?: string[]) => Promise<void>;
-    onDeleted?: () => void;
-} & ModalStateProps) => {
+}: DeleteAlbumModalProps & ModalStateProps) => {
     const [isDeleteWithSaveLoading, withDeleteWithSaveLoading] = useLoading(false);
     const [isDeleteLoading, withDeleteLoading] = useLoading(false);
     const [childLinkIds, setChildLinkIds] = useState<string[] | undefined>(undefined);

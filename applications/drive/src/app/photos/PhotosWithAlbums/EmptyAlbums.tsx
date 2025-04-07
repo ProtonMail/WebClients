@@ -9,7 +9,7 @@ import emptyPhotosSvg from '@proton/styles/assets/img/illustrations/empty-photos
 import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
 
 interface EmptyAlbumsProps {
-    createAlbumModal: ModalStateReturnObj;
+    createAlbumModal?: ModalStateReturnObj;
 }
 
 export const EmptyAlbums: FC<EmptyAlbumsProps> = ({ createAlbumModal }) => {
@@ -35,7 +35,7 @@ export const EmptyAlbums: FC<EmptyAlbumsProps> = ({ createAlbumModal }) => {
                     className="w-full"
                     color="norm"
                     onClick={() => {
-                        createAlbumModal.openModal(true);
+                        createAlbumModal?.openModal(true);
                     }}
                     data-testid="empty-create-album"
                     title={c('Action').t`Create album`}

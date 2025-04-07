@@ -1,0 +1,129 @@
+import { useMemo } from 'react';
+import { useParams } from 'react-router-dom-v5-compat';
+
+import { c, msgid } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
+
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
+
+import useNavigate from '../../../hooks/drive/useNavigate';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
+import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
+import { PhotosClearSelectionButton } from '../components/PhotosClearSelectionButton';
+import { usePhotosSelection } from '../hooks/usePhotosSelection';
+import { ToolbarLeftActionsAlbumsGallery, ToolbarLeftActionsGallery } from './PhotosWithAlbumsToolbar';
+
+export const TitleArea = () => {
+    const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
+    const { currentPageType } = usePhotoLayoutStore(
+        useShallow((state) => ({
+            currentPageType: state.currentPageType,
+        }))
+    );
+    const { navigateToAlbums, navigateToAlbum, navigateToPhotos } = useNavigate();
+    const { isAlbumsLoading, isPhotosLoading, albums } = usePhotosWithAlbumsView();
+
+    const { selectedItems, clearSelection } = usePhotosSelection();
+
+    const album = useMemo(() => {
+        if (!albumLinkId) {
+            return undefined;
+        }
+        return albums.find((album) => album.linkId === albumLinkId);
+    }, [albums, albumLinkId]);
+
+    const selectedCount = selectedItems.length;
+
+    if (currentPageType === AlbumsPageTypes.ALBUMS) {
+        return (
+            <ToolbarLeftActionsGallery
+                onGalleryClick={navigateToPhotos}
+                onAlbumsClick={navigateToAlbums}
+                isLoading={isPhotosLoading}
+                selection={'albums'}
+            />
+        );
+    }
+    if (currentPageType === AlbumsPageTypes.ALBUMSGALLERY) {
+        const albumName = album?.name;
+        return (
+            <>
+                {selectedCount > 0 && (
+                    <span className="flex items-center pl-1">
+                        <div className="flex gap-2" data-testid="photos-selected-count">
+                            <PhotosClearSelectionButton onClick={clearSelection}>
+                                {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
+                                <span aria-live="polite" aria-atomic="true">
+                                    {c('Info').ngettext(
+                                        msgid`${selectedCount} selected`,
+                                        `${selectedCount} selected`,
+                                        selectedCount
+                                    )}
+                                </span>
+                            </PhotosClearSelectionButton>
+                        </div>
+                    </span>
+                )}
+
+                {selectedCount === 0 && albumName && (
+                    <ToolbarLeftActionsAlbumsGallery
+                        onAlbumsClick={() => {
+                            navigateToAlbums();
+                        }}
+                        name={albumName}
+                        isLoading={isAlbumsLoading}
+                    />
+                )}
+            </>
+        );
+    }
+
+    return (
+        <>
+            {selectedCount > 0 && (
+                <span className="flex items-center pl-1">
+                    <div className="flex gap-2" data-testid="photos-selected-count">
+                        <PhotosClearSelectionButton onClick={clearSelection}>
+                            {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
+                            <span aria-live="polite" aria-atomic="true">
+                                {c('Info').ngettext(
+                                    msgid`${selectedCount} selected`,
+                                    `${selectedCount} selected`,
+                                    selectedCount
+                                )}
+                            </span>
+                        </PhotosClearSelectionButton>
+                    </div>
+                </span>
+            )}
+
+            {selectedCount === 0 &&
+                (currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? (
+                    <Button
+                        shape="ghost"
+                        className="inline-flex flex-nowrap flex-row text-semibold items-center"
+                        onClick={() => {
+                            if (!albumShareId || !albumLinkId) {
+                                return;
+                            }
+                            navigateToAlbum(albumShareId, albumLinkId);
+                        }}
+                    >
+                        <Icon name="arrow-left" className="mr-2 shrink-0" /> {c('Action').t`Go back`}
+                    </Button>
+                ) : (
+                    <ToolbarLeftActionsGallery
+                        onGalleryClick={() => {
+                            navigateToPhotos();
+                        }}
+                        onAlbumsClick={() => {
+                            navigateToAlbums();
+                        }}
+                        isLoading={isPhotosLoading}
+                        selection={'gallery'}
+                    />
+                ))}
+        </>
+    );
+};
