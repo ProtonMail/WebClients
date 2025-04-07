@@ -76,6 +76,7 @@ import LiveChatZendesk, {
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash';
@@ -247,12 +248,20 @@ const MainContainer: FunctionComponent = () => {
         return vpnRoutes.downloads.to;
     };
 
-    const redirect =
-        loadingSubscription || loadingOrganization || loadingGroups ? (
-            <PrivateMainAreaLoading />
-        ) : (
-            <Redirect to={getRedirectPath()} />
-        );
+    const redirect = (() => {
+        if (loadingSubscription || loadingOrganization || loadingGroups) {
+            return <PrivateMainAreaLoading />;
+        }
+
+        if (
+            getIsSectionAvailable(vpnRoutes.subscription) &&
+            getPathFromLocation(location) === `${vpnRoutes.dashboard.to}#invoices`
+        ) {
+            return <Redirect to={`${vpnRoutes.subscription.to}#invoices`} />;
+        }
+
+        return <Redirect to={getRedirectPath()} />;
+    })();
 
     const anyOrganizationAppRoute = getRoutePaths('', Object.values(organizationAppRoutes.routes));
 
