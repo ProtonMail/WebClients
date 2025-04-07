@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
@@ -47,54 +45,118 @@ export const useApplyLabelsToSelection = () => {
     const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
+
     const isES = useIsEncryptedSearch();
+    const handleOnBackMoveAction = useMoveBackAction();
 
-    const { handleOnBackMoveAction } = useMoveBackAction();
+    const applyLabels = async ({
+        elements,
+        changes,
+        createFilters,
+        silent = false,
+        selectedLabelIDs = [],
+        isMessage,
+    }: ApplyLabelsToSelectionParams) => {
+        if (!elements.length) {
+            return;
+        }
+        const labels = (await getLabels()) || [];
 
-    const applyLabels = useCallback(
-        async ({
-            elements,
-            changes,
-            createFilters,
-            silent = false,
-            selectedLabelIDs = [],
-            isMessage,
-        }: ApplyLabelsToSelectionParams) => {
-            if (!elements.length) {
-                return;
+        let undoing = false;
+
+        const labelAction = isMessage ? labelMessages : labelConversations;
+        const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
+        const changesKeys = Object.keys(changes);
+        const elementIDs = elements.map((element) => element.ID);
+        const rollbacks = {} as { [labelID: string]: () => void };
+
+        const { doCreateFilters, undoCreateFilters } = getFilterActions();
+
+        handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.APPLY_LABEL, changes, elements });
+
+        const handleUndo = async (promiseTokens: Promise<PromiseSettledResult<string | undefined>[]>) => {
+            try {
+                let tokens: PromiseSettledResult<string | undefined>[] = [];
+                undoing = true;
+                // Stop the event manager to prevent race conditions
+                stop();
+                Object.values(rollbacks).forEach((rollback) => rollback());
+
+                if (promiseTokens) {
+                    tokens = await promiseTokens;
+                    const filteredTokens = getFilteredUndoTokens(tokens);
+
+                    await Promise.all([
+                        ...filteredTokens.map((token) => api({ ...undoActions(token), silence: true })),
+                        createFilters ? undoCreateFilters() : undefined,
+                    ]);
+                }
+            } finally {
+                start();
+                // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                if (isES) {
+                    await call();
+                }
             }
-            const labels = (await getLabels()) || [];
+        };
 
-            let undoing = false;
+        const handleDo = async () => {
+            let tokens = [];
+            try {
+                // Stop the event manager to prevent race conditions
+                stop();
+                dispatch(backendActionStarted());
 
-            const labelAction = isMessage ? labelMessages : labelConversations;
-            const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
-            const changesKeys = Object.keys(changes);
-            const elementIDs = elements.map((element) => element.ID);
-            const rollbacks = {} as { [labelID: string]: () => void };
+                const errors: any[] = [];
+                const [apiResults] = await Promise.all([
+                    Promise.all(
+                        changesKeys.map(async (LabelID) => {
+                            rollbacks[LabelID] = optimisticApplyLabels({
+                                elements,
+                                inputChanges: { [LabelID]: changes[LabelID] },
+                            });
+                            try {
+                                const action = changes[LabelID] ? labelAction : unlabelAction;
+                                return await runParallelChunkedActions({
+                                    api,
+                                    items: elementIDs,
+                                    chunkSize: mailActionsChunkSize,
+                                    action: (chunk) => action({ LabelID, IDs: chunk }),
+                                });
+                            } catch (error: any) {
+                                errors.push(error);
+                            }
+                        })
+                    ),
+                    createFilters ? doCreateFilters(elements, selectedLabelIDs, false) : undefined,
+                ]);
 
-            const { doCreateFilters, undoCreateFilters } = getFilterActions();
+                // In apply labels, we send a request per label applied/removed
+                // It means that one of the request failed during the process, throwing an error too early would prevent us to Undo all actions
+                // (e.g. apply labelA and labelB. labelA fails, so we have an error, but we also need to Undo labelB.)
+                // That's why we need to wait for all api results, and throw an error when we have them all.
+                if (errors.length > 0) {
+                    throw new ApplyLabelsError(errors);
+                }
 
-            handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.APPLY_LABEL, changes, elements });
+                tokens = apiResults.filter(isTruthy).flat();
+            } catch (error: any) {
+                createNotification({
+                    text: c('Error').t`Something went wrong. Please try again.`,
+                    type: 'error',
+                });
 
-            const handleUndo = async (promiseTokens: Promise<PromiseSettledResult<string | undefined>[]>) => {
-                try {
-                    let tokens: PromiseSettledResult<string | undefined>[] = [];
-                    undoing = true;
-                    // Stop the event manager to prevent race conditions
-                    stop();
-                    Object.values(rollbacks).forEach((rollback) => rollback());
+                if (error instanceof ApplyLabelsError) {
+                    error.errors.map(async (error: any) => {
+                        await handleUndo(error.data);
+                    });
+                }
 
-                    if (promiseTokens) {
-                        tokens = await promiseTokens;
-                        const filteredTokens = getFilteredUndoTokens(tokens);
-
-                        await Promise.all([
-                            ...filteredTokens.map((token) => api({ ...undoActions(token), silence: true })),
-                            createFilters ? undoCreateFilters() : undefined,
-                        ]);
-                    }
-                } finally {
+                throw error;
+            } finally {
+                dispatch(backendActionFinished());
+                if (!undoing) {
                     start();
                     // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
                     // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
@@ -102,107 +164,40 @@ export const useApplyLabelsToSelection = () => {
                         await call();
                     }
                 }
-            };
-
-            const handleDo = async () => {
-                let tokens = [];
-                try {
-                    // Stop the event manager to prevent race conditions
-                    stop();
-                    dispatch(backendActionStarted());
-
-                    const errors: any[] = [];
-                    const [apiResults] = await Promise.all([
-                        Promise.all(
-                            changesKeys.map(async (LabelID) => {
-                                rollbacks[LabelID] = optimisticApplyLabels({
-                                    elements,
-                                    inputChanges: { [LabelID]: changes[LabelID] },
-                                });
-                                try {
-                                    const action = changes[LabelID] ? labelAction : unlabelAction;
-                                    return await runParallelChunkedActions({
-                                        api,
-                                        items: elementIDs,
-                                        chunkSize: mailActionsChunkSize,
-                                        action: (chunk) => action({ LabelID, IDs: chunk }),
-                                    });
-                                } catch (error: any) {
-                                    errors.push(error);
-                                }
-                            })
-                        ),
-                        createFilters ? doCreateFilters(elements, selectedLabelIDs, false) : undefined,
-                    ]);
-
-                    // In apply labels, we send a request per label applied/removed
-                    // It means that one of the request failed during the process, throwing an error too early would prevent us to Undo all actions
-                    // (e.g. apply labelA and labelB. labelA fails, so we have an error, but we also need to Undo labelB.)
-                    // That's why we need to wait for all api results, and throw an error when we have them all.
-                    if (errors.length > 0) {
-                        throw new ApplyLabelsError(errors);
-                    }
-
-                    tokens = apiResults.filter(isTruthy).flat();
-                } catch (error: any) {
-                    createNotification({
-                        text: c('Error').t`Something went wrong. Please try again.`,
-                        type: 'error',
-                    });
-
-                    if (error instanceof ApplyLabelsError) {
-                        error.errors.map(async (error: any) => {
-                            await handleUndo(error.data);
-                        });
-                    }
-
-                    throw error;
-                } finally {
-                    dispatch(backendActionFinished());
-                    if (!undoing) {
-                        start();
-                        // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
-                        // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
-                        if (isES) {
-                            await call();
-                        }
-                    }
-                }
-                return tokens;
-            };
-
-            // No await ==> optimistic
-            const promise = handleDo();
-
-            let notificationText = c('Success').t`Labels applied.`;
-
-            const elementsCount = elementIDs.length;
-
-            if (changesKeys.length === 1) {
-                const labelName = labels.filter((l) => l.ID === changesKeys[0])[0]?.Name;
-
-                if (changesKeys[0] === MAILBOX_LABEL_IDS.STARRED) {
-                    notificationText = getNotificationTextStarred(isMessage, elementsCount);
-                } else if (!Object.values(changes)[0]) {
-                    notificationText = getNotificationTextRemoved(isMessage, elementsCount, labelName);
-                } else {
-                    notificationText = getNotificationTextAdded(isMessage, elementsCount, labelName);
-                }
             }
+            return tokens;
+        };
 
-            if (!silent) {
-                createNotification({
-                    text: (
-                        <UndoActionNotification onUndo={() => handleUndo(promise)}>
-                            {notificationText}
-                        </UndoActionNotification>
-                    ),
-                    expiration: SUCCESS_NOTIFICATION_EXPIRATION,
-                });
+        // No await ==> optimistic
+        const promise = handleDo();
+
+        let notificationText = c('Success').t`Labels applied.`;
+
+        const elementsCount = elementIDs.length;
+
+        if (changesKeys.length === 1) {
+            const labelName = labels.filter((l) => l.ID === changesKeys[0])[0]?.Name;
+
+            if (changesKeys[0] === MAILBOX_LABEL_IDS.STARRED) {
+                notificationText = getNotificationTextStarred(isMessage, elementsCount);
+            } else if (!Object.values(changes)[0]) {
+                notificationText = getNotificationTextRemoved(isMessage, elementsCount, labelName);
+            } else {
+                notificationText = getNotificationTextAdded(isMessage, elementsCount, labelName);
             }
-        },
-        [isES]
-    );
+        }
+
+        if (!silent) {
+            createNotification({
+                text: (
+                    <UndoActionNotification onUndo={() => handleUndo(promise)}>
+                        {notificationText}
+                    </UndoActionNotification>
+                ),
+                expiration: SUCCESS_NOTIFICATION_EXPIRATION,
+            });
+        }
+    };
 
     return applyLabels;
 };
