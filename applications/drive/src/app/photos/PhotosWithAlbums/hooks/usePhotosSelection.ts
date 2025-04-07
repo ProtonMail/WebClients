@@ -1,140 +1,59 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 
-import { isPhotoGroup } from '../../../store/_photos';
-import type { PhotoGroup } from '../../../store/_photos/interface';
+import { useShallow } from 'zustand/react/shallow';
 
-type SelectionItem = { linkId: string };
-type SelectionGroup = PhotoGroup;
-
-export const getGroupLinkIds = <T extends SelectionItem>(data: (T | SelectionGroup)[], groupIndex: number) => {
-    if (!isPhotoGroup(data[groupIndex])) {
-        return [];
-    }
-
-    const items: string[] = [];
-
-    for (let i = groupIndex + 1; i < data.length; i++) {
-        const current = data[i];
-
-        if (isPhotoGroup(current)) {
-            break;
-        }
-
-        items.push(current.linkId);
-    }
-
-    return items;
-};
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
+import { usePhotoSelectionStore } from '../../../zustand/photos/selection.store';
+import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 
 type HandleSelectionArgs = {
     isSelected: boolean;
-    isMultiSelect?: boolean;
+    isMultiSelect: boolean;
 };
 
-export const usePhotosSelection = <T extends SelectionItem>(
-    data: (T | SelectionGroup)[],
-    photoLinkIdToIndexMap: Record<string, number>
-) => {
-    const [selection, setSelection] = useState<Record<string, boolean>>({});
-    const [lastIndex, setLastIndex] = useState<number | undefined>();
+export const usePhotosSelection = () => {
+    const { photos, photoLinkIdToIndexMap, albumPhotos, albumPhotosLinkIdToIndexMap } = usePhotosWithAlbumsView();
 
-    const setSelected = useCallback(
-        (isSelected: boolean, ...linkIds: string[]) => {
-            setSelection((state) => {
-                let newState = { ...state };
-
-                linkIds.forEach((linkId) => {
-                    if (isSelected) {
-                        newState[linkId] = true;
-                    } else {
-                        delete newState[linkId];
-                    }
-                });
-
-                return newState;
-            });
-        },
-        [setSelection]
+    const { currentPageType } = usePhotoLayoutStore(
+        useShallow((state) => ({
+            currentPageType: state.currentPageType,
+        }))
     );
 
-    const clearSelection = useCallback(() => {
-        setSelection({});
-        setLastIndex(undefined);
-    }, [setSelection]);
+    const map = useMemo(
+        () => (currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosLinkIdToIndexMap : photoLinkIdToIndexMap),
+        [currentPageType, albumPhotosLinkIdToIndexMap, photoLinkIdToIndexMap]
+    );
+
+    const data = useMemo(
+        () => (currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotos : photos),
+        [currentPageType, albumPhotos, photos]
+    );
+
+    const { setSelected, clearSelection, isGroupSelected, isItemSelected, getSelectedItems } = usePhotoSelectionStore();
+
+    const selectedItems = getSelectedItems(data, map);
 
     const handleSelection = useCallback(
-        (index: number, { isSelected, isMultiSelect }: HandleSelectionArgs) => {
-            const item = data[index];
-
-            if (isPhotoGroup(item)) {
-                const groupLinkIds = getGroupLinkIds(data, index);
-                setSelected(isSelected, ...groupLinkIds);
-                const lastIndexLinkId = groupLinkIds.shift();
-                setLastIndex(lastIndexLinkId ? photoLinkIdToIndexMap[lastIndexLinkId] : undefined);
-            } else {
-                if (isMultiSelect && lastIndex !== undefined) {
-                    const startIndex = lastIndex < index ? lastIndex : index;
-                    const endIndex = lastIndex < index ? index : lastIndex;
-
-                    const items = (
-                        data.slice(startIndex, endIndex + 1).filter((item) => !isPhotoGroup(item)) as T[]
-                    ).map((item) => item.linkId);
-
-                    setSelection({});
-                    setSelected(true, ...items);
-                    return;
-                }
-
-                setLastIndex(index);
-                setSelected(isSelected, item.linkId);
-            }
+        (index: number, args: HandleSelectionArgs) => {
+            usePhotoSelectionStore.getState().handleSelection(data, map, index, args);
         },
-        [data, setSelected, photoLinkIdToIndexMap, lastIndex]
+        [data, map]
     );
 
-    const selectedItems = useMemo(
-        () =>
-            Object.keys(selection).reduce<T[]>((acc, linkId) => {
-                const item = data[photoLinkIdToIndexMap[linkId]];
-                if (item && !isPhotoGroup(item)) {
-                    acc.push(item);
-                }
-
-                return acc;
-            }, []),
-        [selection, data, photoLinkIdToIndexMap]
-    );
-
-    const isGroupSelected = useCallback(
+    const wrappedIsGroupSelected = useCallback(
         (groupIndex: number) => {
-            let linkIds = getGroupLinkIds(data, groupIndex);
-            let selectedCount = 0;
-
-            for (let linkId of linkIds) {
-                if (selection[linkId]) {
-                    selectedCount++;
-                } else if (selectedCount > 0) {
-                    break;
-                }
-            }
-
-            if (selectedCount === 0) {
-                return false;
-            }
-
-            return selectedCount === linkIds.length || 'some';
+            return isGroupSelected(data, groupIndex);
         },
-        [data, selection]
+        [data, isGroupSelected]
     );
-
-    const isItemSelected = useCallback((linkId: string) => !!selection[linkId], [selection]);
 
     return {
         selectedItems,
         setSelected,
         clearSelection,
         handleSelection,
-        isGroupSelected,
+        isGroupSelected: wrappedIsGroupSelected,
         isItemSelected,
     };
 };
