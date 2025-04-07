@@ -42,13 +42,14 @@ const GroupActions = ({ membership }: { membership: GroupMembership }) => {
                 await withLoading(acceptInvitation(membership));
             },
         }, // decline group
-        membership.Status === GROUP_MEMBERSHIP_STATUS.UNANSWERED && {
-            text: c('Action').t`Decline`,
-            'data-testid': 'declineGroup',
-            onClick: async () => {
-                await withLoading(declineInvitation(membership));
+        membership.Status === GROUP_MEMBERSHIP_STATUS.UNANSWERED &&
+            canLeave && {
+                text: c('Action').t`Decline`,
+                'data-testid': 'declineGroup',
+                onClick: async () => {
+                    await withLoading(declineInvitation(membership));
+                },
             },
-        },
     ].filter(isTruthy);
 
     return <DropdownActions list={list} size="small" loading={loading} />;
