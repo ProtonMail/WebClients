@@ -1,5 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import template from 'lodash.template';
+import template from 'lodash/template';
 import { readFileSync } from 'node:fs';
 import * as path from 'node:path';
 import type { HrefLang } from 'proton-account/pages/interface';
@@ -70,8 +70,7 @@ const result = async (env: any): Promise<Configuration> => {
                     evaluate: /\{\{([\s\S]+?)\}\}/g,
                     interpolate: /\{\{=([\s\S]+?)\}\}/g,
                     escape: /\{\{-([\s\S]+?)\}\}/g,
-                },
-                undefined
+                }
             );
 
             const index = {
