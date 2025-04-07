@@ -28,6 +28,7 @@ import {
     useContactEmailsCache,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
+    useGetVerificationPreferences,
     useNotifications,
     usePreventCloseTab,
     useRelocalizeText,
@@ -36,7 +37,7 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { serverTime } from '@proton/crypto';
+import { type SessionKey, serverTime } from '@proton/crypto';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
@@ -47,6 +48,7 @@ import {
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { fetchPaginatedAttendeesInfo } from '@proton/shared/lib/calendar/attendeeInfos';
 import { NO_CANONICAL_EMAIL_ERROR, toApiPartstat } from '@proton/shared/lib/calendar/attendees';
+import { getAuthorPublicKeysMap } from '@proton/shared/lib/calendar/author';
 import {
     getIsCalendarDisabled,
     getIsCalendarProbablyActive,
@@ -54,6 +56,7 @@ import {
     getIsOwnedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
+    ATTENDEE_COMMENT_ENCRYPTION_TYPE,
     ATTENDEE_MORE_ATTENDEES,
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
@@ -65,7 +68,12 @@ import {
     TMP_UNIQUE_ID,
     VIEWS,
 } from '@proton/shared/lib/calendar/constants';
-import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
+import {
+    getDecryptedRSVPComment,
+    getEncryptedRSVPCommentWithSignature,
+} from '@proton/shared/lib/calendar/crypto/helpers';
+import { getCalendarEventDecryptionKeys, getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
+import { readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
 import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
@@ -86,6 +94,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { type Address } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type {
+    AttendeeComment,
     AttendeeDeleteSingleEditResponse,
     AttendeeModel,
     CalendarBootstrap,
@@ -185,7 +194,7 @@ import {
 } from './eventStore/cache/upsertResponsesArray';
 import type { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import getAttendeeDeleteSingleEditPayload from './getAttendeeDeleteSingleEditPayload';
-import type { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
+import type { SyncEventActionOperations, UpdateEventActionOperation } from './getSyncMultipleEventsPayload';
 import getSyncMultipleEventsPayload from './getSyncMultipleEventsPayload';
 import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
 import type {
@@ -341,6 +350,7 @@ const InteractiveCalendarView = ({
     usePreventCloseTab(hasPendingEvents);
     usePauseCalendarEventLoop(activeCalendars, hasPendingEvents);
     const dispatch = useCalendarDispatch();
+    const getVerificationPreferences = useGetVerificationPreferences();
     const { call: calendarCall } = useCalendarModelEventManager();
     const { createNotification, removeNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
@@ -1315,6 +1325,14 @@ const InteractiveCalendarView = ({
         }
     };
 
+    // const getAttendeeInfosFromTemporaryEvent = () => {
+    //     const eventData = temporaryEvent?.data?.eventData;
+    //     if (!eventData || !getIsCalendarEvent(eventData)) {
+    //         return;
+    //     }
+    //     return eventData.AttendeesInfo;
+    // };
+
     const handleSyncActions = async (multiActions: SyncEventActionOperations[]) => {
         if (!multiActions.length) {
             return [];
@@ -1325,6 +1343,129 @@ const InteractiveCalendarView = ({
                 getAddressKeys,
                 getCalendarKeys,
                 sync: actions,
+                /**
+                 * Util to get re-encrypt comments with newly generated keypackets
+                 * to allow organiser to keep comment in some single edit cases
+                 */
+                getAttendeeEncryptedComment: async (
+                    nextSessionKey: SessionKey | undefined,
+                    operation: UpdateEventActionOperation
+                ): Promise<{ [token: string]: AttendeeComment }> => {
+                    const originalCalendarEvent = temporaryEvent?.tmpOriginalTarget?.data.eventData;
+
+                    // 1. Return early if:
+                    // - Original evetn is a calendar event
+                    // - Event is not a recurring one: We target only recurring events.
+                    // - It's a breaking change: In this case comment should be reset too.
+                    // - Action is trigerred by an attendee: It should concern only organisers.
+                    if (
+                        !getIsCalendarEvent(originalCalendarEvent) ||
+                        !originalCalendarEvent.RRule ||
+                        operation.data.isBreakingChange ||
+                        operation.data.isAttendee
+                    ) {
+                        return {};
+                    }
+
+                    // 2. Decrypt comments and get their signatures
+                    // Attendees from API are redecrypted to get user signature
+                    const attendeesFromApi = originalCalendarEvent.AttendeesInfo.Attendees;
+                    // Attendees from vevent will have to
+                    const attendeesFromVevent = operation.data.veventComponent.attendee;
+
+                    if (!attendeesFromVevent?.length || attendeesFromApi.length === 0) {
+                        return {};
+                    }
+
+                    const clearComments = await Promise.all(
+                        attendeesFromVevent.map<Promise<{ attendeeToken: string; comment: AttendeeComment } | null>>(
+                            async (attendee) => {
+                                const attendeeEmail = attendee.parameters?.cn;
+                                const attendeeFromApi = attendeesFromApi.find(
+                                    (attendeeFromApi) => attendeeFromApi.Token === attendee.parameters?.['x-pm-token']
+                                );
+
+                                // If no comment early return with no values
+                                // SessionKey should be there but it moves as possibly `undefined` through
+                                // the codebase, so typescript safety there
+                                if (!attendeeEmail || !attendeeFromApi?.Comment || !nextSessionKey) {
+                                    return null;
+                                }
+
+                                // If comment in clearText early return with comment as is
+                                if (attendeeFromApi.Comment.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT) {
+                                    return {
+                                        attendeeToken: attendeeFromApi.Token,
+                                        comment: {
+                                            Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT,
+                                            Message: attendeeFromApi.Comment.Message,
+                                        },
+                                    };
+                                }
+
+                                // Here comment is encrypted and signed
+                                const attendeeVerificationPreferences = await getVerificationPreferences({
+                                    email: attendeeEmail,
+                                    contactEmailsMap,
+                                });
+
+                                const [privateKeys] = await Promise.all([
+                                    getCalendarEventDecryptionKeys({
+                                        calendarEvent: originalCalendarEvent,
+                                        getAddressKeys,
+                                        getCalendarKeys,
+                                    }),
+                                    getAuthorPublicKeysMap({
+                                        event: originalCalendarEvent,
+                                        getVerificationPreferences,
+                                        contactEmailsMap,
+                                    }),
+                                    getCalendarBootstrap(originalCalendarEvent.CalendarID),
+                                ]);
+                                const [sharedSessionKey] = await readSessionKeys({
+                                    calendarEvent: originalCalendarEvent,
+                                    privateKeys,
+                                });
+
+                                if (!sharedSessionKey) {
+                                    return null;
+                                }
+
+                                const decryptedComment = await getDecryptedRSVPComment({
+                                    attendeeVerificationPreferences,
+                                    encryptedMessage: attendeeFromApi.Comment.Message,
+                                    eventUID: originalCalendarEvent.UID,
+                                    sharedSessionKey,
+                                });
+
+                                const encryptedComment = await getEncryptedRSVPCommentWithSignature({
+                                    comment: decryptedComment.data,
+                                    sessionKey: nextSessionKey,
+                                    commentSignature: decryptedComment.signatures[0],
+                                });
+
+                                return {
+                                    attendeeToken: attendeeFromApi.Token,
+                                    comment: encryptedComment,
+                                };
+                            }
+                        )
+                    ).catch((e) => {
+                        // TODO add Sentry here
+                        console.error('error', e);
+                        return [];
+                    });
+
+                    return clearComments.reduce<{ [token: string]: AttendeeComment }>((acc, comment) => {
+                        if (!comment) {
+                            return acc;
+                        }
+
+                        acc[comment.attendeeToken] = comment.comment;
+
+                        return acc;
+                    }, {});
+                },
             });
 
             const result = await api<SyncMultipleApiResponse>({ ...payload, silence: true });
