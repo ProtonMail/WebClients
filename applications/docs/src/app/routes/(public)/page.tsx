@@ -7,6 +7,7 @@ import {
   ApiProvider,
   AuthenticationProvider,
   ErrorBoundary,
+  EventManagerProvider,
   LoaderPage,
   ModalsChildren,
   NotificationsChildren,
@@ -31,9 +32,11 @@ const defaultState: {
   error?: { message: string } | undefined
   showDrawerSidebar?: boolean
   session?: ResumedSessionResult
+  hasReadySession?: boolean
 } = {
   error: undefined,
   showDrawerSidebar: false,
+  hasReadySession: false,
 }
 
 export default function PublicApp() {
@@ -42,8 +45,8 @@ export default function PublicApp() {
   useEffectOnce(() => {
     ;(async () => {
       try {
-        const { store, session } = await bootstrapPublicApp({ config })
-        setState({ store, session })
+        const { store, session, hasReadySession } = await bootstrapPublicApp({ config })
+        setState({ store, session, hasReadySession })
       } catch (error: any) {
         setState({
           error: getNonEmptyErrorMessage(error),
@@ -68,15 +71,18 @@ export default function PublicApp() {
               <CompatRouter>
                 <AuthenticationProvider store={extraThunkArguments.authentication}>
                   <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
-                    <ApiProvider api={extraThunkArguments.api}>
-                      <ErrorBoundary big component={<StandardErrorPage big />}>
-                        <div className="h-full">
+                    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                      <ApiProvider api={extraThunkArguments.api}>
+                        <ErrorBoundary big component={<StandardErrorPage big />}>
                           <NotificationsChildren />
                           <ModalsChildren />
-                          <PublicAppRootContainer session={state.session} />
-                        </div>
-                      </ErrorBoundary>
-                    </ApiProvider>
+                          <PublicAppRootContainer
+                            session={state.session}
+                            hasReadySession={state.hasReadySession ?? false}
+                          />
+                        </ErrorBoundary>
+                      </ApiProvider>
+                    </EventManagerProvider>
                   </FlagProvider>
                 </AuthenticationProvider>
               </CompatRouter>
