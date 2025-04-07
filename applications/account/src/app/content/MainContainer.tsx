@@ -327,6 +327,13 @@ const MainContainer = () => {
             return <Redirect to={`/${appSlug}${getPathFromLocation(location)}`} />;
         }
 
+        if (
+            getIsSectionAvailable(routes.account.routes.subscription) &&
+            getPathFromLocation(location) === `/${appSlug}${routes.account.routes.dashboard.to}#invoices`
+        ) {
+            return <Redirect to={`/${appSlug}${routes.account.routes.subscription.to}#invoices`} />;
+        }
+
         const path = (() => {
             if (app === APPS.PROTONPASS) {
                 return getDefaultPassRedirect(user, routes.account, routes.pass);
