@@ -1,6 +1,10 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
+export const __wbg_wasmmessagesigner_free: (a: number, b: number) => void;
+export const wasmmessagesigner_new: () => number;
+export const wasmmessagesigner_signMessage: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => any;
+export const wasmmessagesigner_verifyMessage: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => any;
 export const __wbg_wasmapiwalletbitcoinaddressdata_free: (a: number, b: number) => void;
 export const __wbg_get_wasmapiwalletbitcoinaddressdata_Data: (a: number) => any;
 export const __wbg_set_wasmapiwalletbitcoinaddressdata_Data: (a: number, b: any) => void;
@@ -132,6 +136,7 @@ export const wasmwalletclient_deleteWalletTransaction: (a: number, b: number, c:
 export const __wbg_wasmbalancewrapper_free: (a: number, b: number) => void;
 export const __wbg_get_wasmbalancewrapper_data: (a: number) => any;
 export const __wbg_set_wasmbalancewrapper_data: (a: number, b: any) => void;
+export const setPanicHook: () => void;
 export const __wbg_wasmapiwalletbitcoinaddresslookupdata_free: (a: number, b: number) => void;
 export const __wbg_get_wasmapiwalletbitcoinaddresslookupdata_Data: (a: number) => any;
 export const __wbg_set_wasmapiwalletbitcoinaddresslookupdata_Data: (a: number, b: any) => void;
@@ -446,17 +451,12 @@ export const wasmblockchainclient_new: (a: number) => [number, number, number];
 export const wasmblockchainclient_getFeesEstimation: (a: number) => any;
 export const wasmblockchainclient_getMininumFees: (a: number) => any;
 export const wasmblockchainclient_getRecommendedFees: (a: number) => any;
-export const wasmblockchainclient_broadcastPsbt: (a: number, b: number, c: number, d: number, e: number, f: number, g: any, h: number) => any;
+export const wasmblockchainclient_broadcastPsbt: (a: number, b: number, c: number, d: number, e: number, f: number, g: any, h: number, i: number) => any;
 export const __wbg_wasmpaperaccount_free: (a: number, b: number) => void;
 export const wasmpaperaccount_generate: (a: number, b: number) => [number, number, number];
 export const wasmpaperaccount_newFrom: (a: number, b: number, c: number, d: number) => [number, number, number];
 export const wasmpaperaccount_geWif: (a: number) => any;
 export const wasmpaperaccount_getWifAddress: (a: number) => any;
-export const __wbg_wasmmessagesigner_free: (a: number, b: number) => void;
-export const wasmmessagesigner_new: () => number;
-export const wasmmessagesigner_signMessage: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => any;
-export const wasmmessagesigner_verifyMessage: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => any;
-export const setPanicHook: () => void;
 export const rustsecp256k1_v0_10_0_context_create: (a: number) => number;
 export const rustsecp256k1_v0_10_0_context_destroy: (a: number) => void;
 export const rustsecp256k1_v0_10_0_default_illegal_callback_fn: (a: number, b: number) => void;

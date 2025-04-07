@@ -211,6 +211,12 @@ function debugString(val) {
     return className;
 }
 
+function _assertClass(instance, klass) {
+    if (!(instance instanceof klass)) {
+        throw new Error(`expected instance of ${klass.name}`);
+    }
+}
+
 function getArrayJsValueFromWasm0(ptr, len) {
     ptr = ptr >>> 0;
     const mem = getDataViewMemory0();
@@ -232,10 +238,8 @@ function passArrayJsValueToWasm0(array, malloc) {
     return ptr;
 }
 
-function _assertClass(instance, klass) {
-    if (!(instance instanceof klass)) {
-        throw new Error(`expected instance of ${klass.name}`);
-    }
+export function setPanicHook() {
+    wasm.setPanicHook();
 }
 
 function passArray8ToWasm0(arg, malloc) {
@@ -281,10 +285,6 @@ export function getWordsAutocomplete(word_start) {
 export function getDefaultStopGap() {
     const ret = wasm.getDefaultStopGap();
     return ret >>> 0;
-}
-
-export function setPanicHook() {
-    wasm.setPanicHook();
 }
 
 function __wbg_adapter_40(arg0, arg1, arg2) {
@@ -2184,15 +2184,16 @@ export class WasmBlockchainClient {
      * @param {string} wallet_account_id
      * @param {WasmTransactionData} transaction_data
      * @param {WasmEmailIntegrationData | null} [email_integration]
+     * @param {number | null} [is_paper_wallet]
      * @returns {Promise<string>}
      */
-    broadcastPsbt(psbt, wallet_id, wallet_account_id, transaction_data, email_integration) {
+    broadcastPsbt(psbt, wallet_id, wallet_account_id, transaction_data, email_integration, is_paper_wallet) {
         _assertClass(psbt, WasmPsbt);
         const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
         const ptr1 = passStringToWasm0(wallet_account_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len1 = WASM_VECTOR_LEN;
-        const ret = wasm.wasmblockchainclient_broadcastPsbt(this.__wbg_ptr, psbt.__wbg_ptr, ptr0, len0, ptr1, len1, transaction_data, isLikeNone(email_integration) ? 0 : addToExternrefTable0(email_integration));
+        const ret = wasm.wasmblockchainclient_broadcastPsbt(this.__wbg_ptr, psbt.__wbg_ptr, ptr0, len0, ptr1, len1, transaction_data, isLikeNone(email_integration) ? 0 : addToExternrefTable0(email_integration), isLikeNone(is_paper_wallet) ? 0xFFFFFF : is_paper_wallet);
         return ret;
     }
 }
@@ -6813,12 +6814,12 @@ export function __wbindgen_cb_drop(arg0) {
     return ret;
 };
 
-export function __wbindgen_closure_wrapper11639(arg0, arg1, arg2) {
+export function __wbindgen_closure_wrapper11640(arg0, arg1, arg2) {
     const ret = makeMutClosure(arg0, arg1, 2028, __wbg_adapter_40);
     return ret;
 };
 
-export function __wbindgen_closure_wrapper12281(arg0, arg1, arg2) {
+export function __wbindgen_closure_wrapper12282(arg0, arg1, arg2) {
     const ret = makeMutClosure(arg0, arg1, 2102, __wbg_adapter_43);
     return ret;
 };
