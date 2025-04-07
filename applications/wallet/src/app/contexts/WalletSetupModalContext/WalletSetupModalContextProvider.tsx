@@ -13,7 +13,7 @@ import { useUserWalletSettings } from '@proton/wallet/store';
 
 import type { ModalData } from '.';
 import { WalletSetupModalContext, WalletSetupModalKind } from '.';
-import { WalletCreationModal } from '../../components';
+import { WalletCreationModal, WalletImportModal } from '../../components';
 import { WalletAccountCreationModal } from '../../components/WalletAccountCreationModal';
 import { WalletBackupModal } from '../../components/WalletBackupModal';
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
@@ -57,7 +57,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
         // Only one modal is expected to be opened at a time
         onCloseRef.current = options?.onClose;
 
-        if (data.kind === WalletSetupModalKind.WalletCreation) {
+        if (data.kind === WalletSetupModalKind.WalletCreation || data.kind === WalletSetupModalKind.WalletImport) {
             // TODO: determine user plan
             const hasReachedWalletLimit =
                 (apiWalletsData?.length ?? 0) >= (organization?.MaxWallets ?? DEFAULT_MAX_WALLETS);
@@ -155,6 +155,12 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                         return (
                             renderSetupModal && (
                                 <WalletCreationModal theme={walletSetupModal.data.theme} {...walletSetupModal} />
+                            )
+                        );
+                    case WalletSetupModalKind.WalletImport:
+                        return (
+                            renderSetupModal && (
+                                <WalletImportModal theme={walletSetupModal.data.theme} {...walletSetupModal} />
                             )
                         );
                     case WalletSetupModalKind.WalletBackup:

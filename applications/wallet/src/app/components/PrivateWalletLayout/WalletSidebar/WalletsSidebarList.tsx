@@ -5,6 +5,10 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
     Icon,
     SidebarListItem,
     SidebarListItemButton,
@@ -12,8 +16,8 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
     SubSidebarListItem,
-    Tooltip,
     useModalState,
+    usePopperAnchor,
     useToggle,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -151,6 +155,7 @@ interface WalletsSidebarListProps {
     loadingApiWalletsData: boolean;
     apiWalletsData?: IWasmApiWalletData[];
     onAddWallet: () => void;
+    onImportWallet: () => void;
     onAddWalletAccount: (apiWalletData: IWasmApiWalletData) => void;
 }
 
@@ -158,8 +163,11 @@ export const WalletsSidebarList = ({
     loadingApiWalletsData,
     apiWalletsData,
     onAddWallet,
+    onImportWallet,
     onAddWalletAccount,
 }: WalletsSidebarListProps) => {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
     return (
         <SidebarListItem>
             <div
@@ -169,19 +177,41 @@ export const WalletsSidebarList = ({
                 <h3 className="text-ellipsis text-lg text-semibold" title={'Wallet'}>
                     {c('Wallet Sidebar').t`Wallets`}
                 </h3>
-
-                <Tooltip title={c('Wallet Sidebar').t`Create a new wallet`}>
-                    <CoreButton
-                        shape="ghost"
-                        pill
-                        icon
-                        size="small"
-                        onClick={onAddWallet}
-                        disabled={loadingApiWalletsData}
-                    >
-                        <Icon name="plus-circle" />
-                    </CoreButton>
-                </Tooltip>
+                <DropdownButton
+                    ref={anchorRef}
+                    isOpen={isOpen}
+                    onClick={toggle}
+                    icon
+                    className="rounded-full p-3 border-none"
+                    size="small"
+                    disabled={loadingApiWalletsData}
+                >
+                    <Icon size={2.5} name="three-dots-vertical" alt={c('Action').t`More options`} />
+                </DropdownButton>
+                <Dropdown
+                    isOpen={isOpen}
+                    anchorRef={anchorRef}
+                    onClose={close}
+                    originalPlacement="bottom-start"
+                    className="bg-weak"
+                >
+                    <DropdownMenu>
+                        <DropdownMenuButton
+                            className="text-left flex flex-row items-center"
+                            disabled={loadingApiWalletsData}
+                            onClick={onAddWallet}
+                        >
+                            {c('Wallet Sidebar').t`Create a new wallet`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton
+                            className="text-left flex flex-row items-center"
+                            disabled={loadingApiWalletsData}
+                            onClick={onImportWallet}
+                        >
+                            {c('Wallet Sidebar').t`Import wallet`}
+                        </DropdownMenuButton>
+                    </DropdownMenu>
+                </Dropdown>
             </div>
 
             {!apiWalletsData ? (

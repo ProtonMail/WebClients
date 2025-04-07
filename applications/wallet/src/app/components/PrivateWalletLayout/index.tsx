@@ -46,6 +46,12 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                             kind: WalletSetupModalKind.WalletCreation,
                         });
                     }}
+                    onImportWallet={() => {
+                        open({
+                            theme: getThemeForWallet(apiWalletsData, walletId),
+                            kind: WalletSetupModalKind.WalletImport,
+                        });
+                    }}
                     onAddWalletAccount={(apiWalletData: IWasmApiWalletData) => {
                         open({
                             theme: getThemeForWallet(apiWalletsData, walletId),
