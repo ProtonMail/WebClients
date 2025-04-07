@@ -23,6 +23,10 @@ interface CreatedSKL {
     creationTimestamp: number;
 }
 
+export interface KTVerifier {
+    keyTransparencyVerify: KeyTransparencyVerify;
+    keyTransparencyCommit: KeyTransparencyCommit;
+}
 /**
  * Return a KT verifier for when the state exists, i.e. we are inside the apps
  * and therefore self audit could run and the normal flow of verification can be performed
@@ -35,7 +39,7 @@ export const createKTVerifier = ({
     ktActivation: KeyTransparencyActivation;
     config: ProtonConfig;
     api: Api;
-}) => {
+}): KTVerifier => {
     const createdSKLs: CreatedSKL[] = [];
 
     const keyTransparencyVerify: KeyTransparencyVerify = async (address: Address, signedKeyList: SignedKeyList) => {

@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
@@ -48,7 +48,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
     const api = useApi();
     const addressFlags = useAddressFlags(address);
     const getPublicKeysForInbox = useGetPublicKeysForInbox();
-    const getAddressKeys = useGetAddressKeys();
+    const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
@@ -81,13 +81,19 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
                     ? c('email_forwarding_2023: Action').t`Re-enable`
                     : c('email_forwarding_2023: Action').t`Request confirmation`,
                 onClick: async () => {
-                    const [forwarderAddressKeys, forwardeePublicKeys] = await Promise.all([
-                        getAddressKeys(forward.ForwarderAddressID),
+                    const [forwarderAddressKeysByUsage, forwardeePublicKeys] = await Promise.all([
+                        getAddressKeysByUsage({
+                            AddressID: forward.ForwarderAddressID,
+                            // we want the v6 key to be returned is present, so that the next step
+                            // the forwarding key generation will fail already client-side,
+                            // instead of on the BE
+                            withV6Support: true,
+                        }),
                         getPublicKeysForInbox({ email: forward.ForwardeeEmail, lifetime: 0 }),
                     ]);
                     await enableForwarding({
                         api,
-                        forwarderAddressKeys,
+                        forwarderPrimaryAddressKeyForEncryption: forwarderAddressKeysByUsage.encryptionKey,
                         forwardeePublicKeys,
                         forward,
                     });

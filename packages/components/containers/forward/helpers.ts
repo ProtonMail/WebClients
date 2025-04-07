@@ -3,11 +3,9 @@ import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { updateForwarding } from '@proton/shared/lib/api/forwardings';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
-import { createAddressKeyRouteV2 } from '@proton/shared/lib/api/keys';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type {
-    ActiveAddressKeysByVersion,
     Address,
     Api,
     ApiKeysConfig,
@@ -21,19 +19,15 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
+import type {
+    PrimaryAddressKeyForEncryption} from '@proton/shared/lib/keys';
 import {
     decryptMemberToken,
     getAddressKeyToken,
-    getDefaultKeyFlags,
     getEmailFromKey,
-    getSignedKeyListWithDeferredPublish,
     splitKeys,
 } from '@proton/shared/lib/keys';
-import {
-    getActiveAddressKeys,
-    getActiveKeyObject,
-    getNormalizedActiveAddressKeys,
-} from '@proton/shared/lib/keys/getActiveKeys';
+import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
 import generateUID from '@proton/utils/generateUID';
@@ -41,6 +35,7 @@ import generateUID from '@proton/utils/generateUID';
 import { COMPARATORS, OPERATORS, TYPES } from '../filters/constants';
 import type { Condition, FilterCondition, FilterOperator } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';
+import { generateForwardingAddressKey } from './keyHelpers';
 
 const toSieveOperator = (statement: FilterStatement): FilterOperator => {
     const operatorsMap = toMap(OPERATORS, 'value');
@@ -107,66 +102,6 @@ export const getSieveParameters = (tree: SieveBranch[]): { conditions: Condition
             })) || [],
         statement: simple.Operator?.value || FilterStatement.ALL,
     };
-};
-
-export interface ForwardingAddressKeyParameters {
-    api: Api;
-    privateKey: PrivateKeyReferenceV4; // v6 keys do not support forwarding (yet)
-    address: Address;
-    activeKeys: ActiveAddressKeysByVersion;
-    privateKeyArmored: string;
-    signature: string;
-    encryptedToken: string;
-    addressForwardingID?: string; // for personal forwardings only, mutually exclusive with `groupMemberID`
-    groupMemberID?: string; // for groups only, mutually exclusive with `addressForwardingID`
-    keyTransparencyVerify: KeyTransparencyVerify;
-}
-
-export const generateForwardingAddressKey = async ({
-    api,
-    privateKey,
-    address,
-    activeKeys,
-    privateKeyArmored,
-    signature,
-    encryptedToken,
-    addressForwardingID,
-    groupMemberID,
-    keyTransparencyVerify,
-}: ForwardingAddressKeyParameters) => {
-    const newActiveKey = await getActiveKeyObject(privateKey, {
-        ID: 'tmp',
-        primary: 0,
-        flags: getDefaultKeyFlags(address),
-    });
-    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
-        v4: [...activeKeys.v4, newActiveKey],
-        v6: [...activeKeys.v6],
-    });
-
-    // The SKL isn't actually different from the existing one, since forwarding keys are not included.
-    // We still re-generate it here since it's needed by `createAddressKeyRouteV2`.
-    const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-        updatedActiveKeys, // could also pass `activeKeys` since forwarding keys are ignored
-        address,
-        keyTransparencyVerify
-    );
-    const { Key } = await api(
-        createAddressKeyRouteV2({
-            AddressID: address.ID,
-            Primary: newActiveKey.primary,
-            PrivateKey: privateKeyArmored,
-            SignedKeyList,
-            Signature: signature,
-            Token: encryptedToken,
-            AddressForwardingID: addressForwardingID,
-            GroupMemberID: groupMemberID,
-        })
-    );
-    await onSKLPublishSuccess();
-    newActiveKey.ID = Key.ID;
-
-    return [newActiveKey, updatedActiveKeys] as const;
 };
 
 interface UserID {
@@ -395,23 +330,21 @@ export const acceptIncomingForwarding = async ({
 interface EnableForwardingParameters {
     api: Api;
     forward: OutgoingAddressForwarding;
-    forwarderAddressKeys: DecryptedKey[];
+    forwarderPrimaryAddressKeyForEncryption: PrimaryAddressKeyForEncryption;
     forwardeePublicKeys: ApiKeysConfig;
 }
 
 export const enableForwarding = async ({
     api,
     forward,
-    forwarderAddressKeys,
+    forwarderPrimaryAddressKeyForEncryption,
     forwardeePublicKeys,
 }: EnableForwardingParameters) => {
     const email = forward.ForwardeeEmail;
-    const splitForwarderAddressKeys = splitKeys(forwarderAddressKeys);
-    const [forwarderKey] = splitForwarderAddressKeys.privateKeys;
     const [forwardeePublicKeyArmored] = forwardeePublicKeys.publicKeys || [];
     const forwardeePublicKey = await CryptoProxy.importPublicKey({ armoredKey: forwardeePublicKeyArmored.armoredKey });
     const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
-        forwarderKey,
+        forwarderPrimaryAddressKeyForEncryption,
         [{ email, name: email }],
         forwardeePublicKey
     );
