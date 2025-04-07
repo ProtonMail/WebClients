@@ -11,6 +11,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import type { ChromiumItem } from './chromium.types';
 
+/** 'note' header is not required because not present on older chromium versions */
 const CHROME_EXPECTED_HEADERS: (keyof ChromiumItem)[] = ['name', 'url', 'username', 'password'];
 
 export const readChromiumData = async (file: File): Promise<ImportReaderResult> => {
