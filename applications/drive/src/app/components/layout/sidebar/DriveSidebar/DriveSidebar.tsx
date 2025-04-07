@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
@@ -9,6 +8,7 @@ import {
     Icon,
     Sidebar,
     SidebarDrawerItems,
+    SidebarLogo,
     SidebarNav,
     Tooltip,
     useActiveBreakpoint,
@@ -45,10 +45,9 @@ interface DriveSidebarProps {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
     isNewUploadDisabled: boolean;
-    logo: ReactNode;
 }
 
-const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeaderExpanded }: DriveSidebarProps) => {
+const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHeaderExpanded }: DriveSidebarProps) => {
     const { activeShareId } = useActiveShare();
     const { getDefaultShare } = useDefaultShare();
     const debug = useDebug();
@@ -73,6 +72,8 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
     const { isScrollPresent } = useLeftSidebarButton({
         navigationRef,
     });
+
+    const logo = <SidebarLogo collapsed={collapsed} to="/drive" app={APPS.PROTONDRIVE} />;
 
     useEffectOnce(() => {
         logPerformanceMarker('drive_performance_clicktonavrendered_histogram');
