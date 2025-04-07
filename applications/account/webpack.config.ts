@@ -1,6 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-// eslint-disable-next-line lodash/import-scope
-import template from 'lodash.template';
+import template from 'lodash/template';
 import path from 'path';
 import type webpack from 'webpack';
 import 'webpack-dev-server';
@@ -165,8 +164,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
                     evaluate: /\{\{([\s\S]+?)\}\}/g,
                     interpolate: /\{\{=([\s\S]+?)\}\}/g,
                     escape: /\{\{-([\s\S]+?)\}\}/g,
-                },
-                undefined
+                }
             );
 
             const index = {
