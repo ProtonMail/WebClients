@@ -154,37 +154,40 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         };
     }, [volumeId, driveEventManager.volumes]);
 
-    const loadPhotos = async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        const photoCall = async (lastLinkId?: string) => {
-            const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
-                queryPhotos(volumeId, {
-                    PreviousPageLastLinkID: lastLinkId,
-                    Tags: tags,
-                }),
-                abortSignal
-            );
-            if (Code === 1000 && !!Photos.length) {
-                const photosData = Photos.map(photoPayloadToPhotos);
-
-                setPhotos((prevPhotos) => {
-                    const newPhotos = photosData.filter(
-                        (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
-                    );
-                    return [...prevPhotos, ...newPhotos];
-                });
-
-                void photoCall(photosData[photosData.length - 1].linkId);
-            } else {
-                setIsPhotosLoading(false);
+    const loadPhotos = useCallback(
+        async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
+            if (!volumeId || !shareId) {
+                return;
             }
-        };
+            const photoCall = async (lastLinkId?: string) => {
+                const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
+                    queryPhotos(volumeId, {
+                        PreviousPageLastLinkID: lastLinkId,
+                        Tags: tags,
+                    }),
+                    abortSignal
+                );
+                if (Code === 1000 && !!Photos.length) {
+                    const photosData = Photos.map(photoPayloadToPhotos);
 
-        setIsPhotosLoading(true);
-        void photoCall();
-    };
+                    setPhotos((prevPhotos) => {
+                        const newPhotos = photosData.filter(
+                            (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
+                        );
+                        return [...prevPhotos, ...newPhotos];
+                    });
+
+                    void photoCall(photosData[photosData.length - 1].linkId);
+                } else {
+                    setIsPhotosLoading(false);
+                }
+            };
+
+            setIsPhotosLoading(true);
+            void photoCall();
+        },
+        [request, shareId, volumeId]
+    );
 
     const loadAlbumPhotos = useCallback(
         async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string) => {
@@ -253,15 +256,17 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     );
 
     const cleanupObsoleteAlbums = (newAlbumsLinkIds: Set<string>) => {
-        setAlbums((prevAlbums) => {
-            const newAlbums = new Map(prevAlbums);
-            prevAlbums.forEach((album) => {
-                if (!newAlbumsLinkIds.has(album.linkId)) {
-                    newAlbums.delete(album.linkId);
-                }
+        if (newAlbumsLinkIds.size) {
+            setAlbums((prevAlbums) => {
+                const newAlbums = new Map(prevAlbums);
+                prevAlbums.forEach((album) => {
+                    if (!newAlbumsLinkIds.has(album.linkId)) {
+                        newAlbums.delete(album.linkId);
+                    }
+                });
+                return newAlbums;
             });
-            return newAlbums;
-        });
+        }
     };
 
     const loadAlbums = useCallback(
@@ -389,7 +394,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                             }
                         })
                     );
-
                     setAlbums((prevAlbums) => {
                         const newAlbums = new Map(prevAlbums);
                         newDecryptedAlbums.forEach((album) => {

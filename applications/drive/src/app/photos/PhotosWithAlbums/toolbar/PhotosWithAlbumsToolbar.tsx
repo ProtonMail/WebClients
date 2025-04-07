@@ -25,6 +25,7 @@ import {
     type PhotoLink,
 } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
+import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import { PhotosAddToAlbumButton } from './PhotosAddToAlbumButton';
@@ -383,7 +384,7 @@ interface PhotosWithAlbumToolbarProps {
     onPreview?: () => void;
     requestDownload: (linkIds: string[]) => Promise<void>;
     uploadDisabled: boolean;
-    tabSelection: 'albums' | 'gallery' | 'albums-gallery';
+    tabSelection: AlbumsPageTypes;
     createAlbumModal: ModalStateReturnObj;
     openAddPhotosToAlbumModal?: () => void;
     openSharePhotosIntoAnAlbumModal?: () => void;
@@ -439,16 +440,19 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
         (!hasMultipleSelected && !album) || (!hasMultipleSelected && album && album.permissions.isAdmin)
     );
     const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
+    const canAddPhotosFromGallery = Boolean(openAddPhotosToAlbumModal && tabSelection === AlbumsPageTypes.GALLERY);
 
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
             <div className="gap-2 flex items-center">
-                {tabSelection === 'gallery' && !hasSelection && (
+                {tabSelection === AlbumsPageTypes.GALLERY && !hasSelection && (
                     <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
                 )}
-                {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
+                {tabSelection === AlbumsPageTypes.ALBUMS && (
+                    <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />
+                )}
 
-                {tabSelection === 'albums-gallery' &&
+                {tabSelection === AlbumsPageTypes.ALBUMSGALLERY &&
                     !hasSelection &&
                     album &&
                     onDeleteAlbum &&
@@ -492,8 +496,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             />
                         )}
                         <PhotosDetailsButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
-                        {openAddPhotosToAlbumModal && (
-                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
+                        {canAddPhotosFromGallery && (
+                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal!} />
                         )}
                         {(canRemoveAlbum || !album) && <Vr className="h-full" />}
                         {canRemoveAlbum && (
@@ -510,8 +514,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             requestDownload={requestDownload}
                             selectedLinks={selectedItems}
                         />
-                        {openAddPhotosToAlbumModal && (
-                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
+                        {canAddPhotosFromGallery && (
+                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal!} />
                         )}
                         <SelectionDropdownButton>
                             {canSelectCover && (
