@@ -195,7 +195,7 @@ export const useDriveCompat = (): DriveCompat => {
 
         const wrappedFn = withResolveShareId(fnToWrap);
 
-        wrappedFn(props);
+        void wrappedFn(props);
     };
 
     const openMoveToFolderModal = async (props: { linkId: string; volumeId: string }) => {

@@ -1,10 +1,19 @@
 import { useEffect, useRef } from 'react'
-import { type NodeMeta } from '@proton/drive-store'
+import { type NodeMeta, type PublicNodeMeta } from '@proton/drive-store'
 import { useDocInvites } from '@proton/drive-store'
 
+export type InviteAutoAcceptResult =
+  | {
+      success: true
+      acceptedNodeMeta: NodeMeta
+    }
+  | {
+      success: false
+    }
+
 export type InviteAutoAccepterProps = {
-  nodeMeta: NodeMeta
-  onResult: (result: boolean) => void
+  nodeMeta: NodeMeta | PublicNodeMeta
+  onResult: (result: InviteAutoAcceptResult) => void
 }
 
 export function InviteAutoAccepter({ nodeMeta, onResult }: InviteAutoAccepterProps) {
@@ -14,7 +23,7 @@ export function InviteAutoAccepter({ nodeMeta, onResult }: InviteAutoAccepterPro
 
   useEffect(() => {
     if (!isLoading && !invite) {
-      onResult(false)
+      onResult({ success: false })
     }
   }, [isLoading, invite, onResult])
 
@@ -25,13 +34,16 @@ export function InviteAutoAccepter({ nodeMeta, onResult }: InviteAutoAccepterPro
       try {
         void acceptInvite(invite).then((result) => {
           if (result) {
-            onResult(true)
+            onResult({
+              success: true,
+              acceptedNodeMeta: { linkId: invite.link.linkId, volumeId: invite.share.volumeId },
+            })
           } else {
-            onResult(false)
+            onResult({ success: false })
           }
         })
       } catch (error) {
-        onResult(false)
+        onResult({ success: false })
       }
     }
   }, [acceptInvite, invite, onResult])
