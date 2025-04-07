@@ -27,9 +27,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 interface Props extends ModalProps<'form'> {}
 
-/**
- * This modal is only intended for internal purposes. Not visible to a wider audience.
- */
 const SignInWithAnotherDeviceModal = (props: Props) => {
     const [qrCodeData, setQrCodeData] = useState('');
     const [loading, withLoading] = useLoading();
