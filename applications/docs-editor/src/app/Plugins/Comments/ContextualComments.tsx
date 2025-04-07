@@ -15,13 +15,13 @@ import type { RangeSelection } from 'lexical'
 import { $getNodeByKey, type LexicalNode } from 'lexical'
 import { getRangeSelectionRect } from '../../Utils/getSelectionRect'
 
-const RecalculateThreadPositionsEvent = 'RecalculateThreadPositions'
+const RECALCULATE_THREAD_POSITIONS_EVENT = 'RecalculateThreadPositions'
 const dispatchRecalculateEvent = () => {
-  document.dispatchEvent(new CustomEvent(RecalculateThreadPositionsEvent))
+  document.dispatchEvent(new CustomEvent(RECALCULATE_THREAD_POSITIONS_EVENT))
 }
-const SixtyFPSToMS = 1000 / 60
+const SIXTY_FPS_TO_MS = 1000 / 60
 
-const CommentInputID = 'comment-input'
+const COMMENT_INPUT_ID = 'comment-input'
 
 function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
@@ -78,7 +78,7 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
   )
 }
 
-const ViewportWidthThreshold = 1080
+const VIEWPORT_WIDTH_THRESHOLD = 1436
 
 function ThreadComponent({ thread, isViewportLarge }: { thread: CommentThreadInterface; isViewportLarge: boolean }) {
   if (isViewportLarge) {
@@ -107,7 +107,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     return activeThreads.find((thread) => thread.markID === activeMarkID)
   }, [activeMarkID, activeThreads])
 
-  const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= ViewportWidthThreshold)
+  const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= VIEWPORT_WIDTH_THRESHOLD)
 
   const shouldShowCommentInputBox = commentInputSelection !== undefined
 
@@ -194,7 +194,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
             const position = rect.top
             return {
-              id: CommentInputID,
+              id: COMMENT_INPUT_ID,
               item: <CommentInputBox editor={editor} cancelAddComment={cancelAddComment} />,
               itemProps: {
                 style: {
@@ -229,9 +229,9 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
   useEffect(() => {
     const listener = debounce(() => {
-      setIsViewportLarge(window.innerWidth >= ViewportWidthThreshold)
+      setIsViewportLarge(window.innerWidth >= VIEWPORT_WIDTH_THRESHOLD)
       debouncedGetThreadPositions()
-    }, SixtyFPSToMS)
+    }, SIXTY_FPS_TO_MS)
 
     window.addEventListener('resize', listener)
 
@@ -246,7 +246,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     })
   }, [debouncedGetThreadPositions, editor])
 
-  const debouncedDispatchRecalculateEvent = useMemo(() => debounce(dispatchRecalculateEvent, SixtyFPSToMS), [])
+  const debouncedDispatchRecalculateEvent = useMemo(() => debounce(dispatchRecalculateEvent, SIXTY_FPS_TO_MS), [])
   useEffect(() => {
     const containerParent = container?.parentElement
 
@@ -265,7 +265,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     <>
       <Positioner
         ref={setContainer}
-        activeItemID={shouldShowCommentInputBox ? CommentInputID : activeThread?.localID}
+        activeItemID={shouldShowCommentInputBox ? COMMENT_INPUT_ID : activeThread?.localID}
         items={items}
         className="pointer-events-none relative *:pointer-events-auto print:hidden"
         style={{
