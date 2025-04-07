@@ -199,7 +199,7 @@ const Sidebar = ({
 
                         <div
                             className={clsx('hidden md:block w-custom h-custom grow-0 shrink-0', collapsed && 'my-2')}
-                            style={{ '--w-custom': '2.25rem', '--h-custom': '2.25rem' }}
+                            style={{ '--w-custom': '2.25rem', '--h-custom': collapsed ? '2.4rem' : '2.25rem' }}
                         >
                             {appsDropdown}
                         </div>
