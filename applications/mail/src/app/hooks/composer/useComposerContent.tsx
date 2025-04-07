@@ -122,7 +122,7 @@ export const useComposerContent = (args: EditorArgs) => {
     const store = useMailStore();
     const skipNextInputRef = useRef(false);
 
-    const { handleOnBackMoveAction } = useMoveBackAction();
+    const handleOnBackMoveAction = useMoveBackAction();
 
     const { onClose, composerFrameRef, type: editorType, isFocused, editorReady } = args;
 

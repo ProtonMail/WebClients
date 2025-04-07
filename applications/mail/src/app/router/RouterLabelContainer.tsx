@@ -160,11 +160,8 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                 selectAll,
                 sourceAction: sourceAction,
             });
-            if (selectedIDs.includes(elementID || '')) {
-                handleBack();
-            }
         },
-        [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
+        [selectedIDs, elementID, labelID, folders, selectAll]
     );
 
     const handleFocus = useCallback(
