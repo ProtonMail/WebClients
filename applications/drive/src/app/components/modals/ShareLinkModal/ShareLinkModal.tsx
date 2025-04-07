@@ -27,14 +27,14 @@ import ErrorState from './ErrorState';
 import { PublicSharing } from './PublicSharing';
 import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
 
-interface Props {
+export type SharingModalProps = {
     modalTitleID?: string;
     shareId: string;
     linkId: string;
     onPublicLinkToggle?: (enabled: boolean) => void;
-}
+};
 
-export function SharingModal(props: Props & ModalStateProps) {
+export function SharingModal(props: SharingModalProps & ModalStateProps) {
     const shareMemberList = useShareMemberView(props.shareId, props.linkId);
     return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
 }
@@ -46,7 +46,7 @@ function SharingModalInner({
     shareMemberList,
     onPublicLinkToggle,
     ...modalProps
-}: Props & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
+}: SharingModalProps & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
     const {
         customPassword,
         initialExpiration,
