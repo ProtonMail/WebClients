@@ -99,7 +99,7 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
         const accountWithChainData = account && walletsChainData[account.WalletID]?.accounts[account.ID];
         const wasmAccount = accountWithChainData?.account;
 
-        if (wasmAccount && !isUndefined(network) && bitcoinAddressIndex) {
+        if (wasmAccount && !isUndefined(network) && !isUndefined(bitcoinAddressIndex)) {
             try {
                 const feeRate = getFeesByBlockTarget(PriorityTargetBlock.MedianPriorityTargetBlock) ?? MIN_FEE_RATE;
                 const draftPsbt = await new WasmAccountSweeper(blockchainClient, wasmAccount).getSweepWifPsbt(
@@ -136,7 +136,7 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
     const onPaperWalletSubmit = async () => {
         const accountWithChainData = account && walletsChainData[account.WalletID]?.accounts[account.ID];
         const wasmAccount = accountWithChainData?.account;
-        if (wasmAccount && !isUndefined(network) && bitcoinAddressIndex) {
+        if (wasmAccount && !isUndefined(network) && !isUndefined(bitcoinAddressIndex)) {
             try {
                 // Typeguard
                 if (!psbt || !account || !userKeys) {
