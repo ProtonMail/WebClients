@@ -5,19 +5,18 @@ import {
     serializeQrCodePayload,
 } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/lib';
-import { getForks, pullForkSession } from '@proton/shared/lib/api/auth';
+import { getForks, pullForkSession, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import {
-    maybeResumeForkedSession,
-    persistForkedSession,
-    resolveForkPasswords,
-} from '@proton/shared/lib/authentication/fork';
+import { persistForkedSession, resolveForkPasswords } from '@proton/shared/lib/authentication/fork';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
-import { type ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    type ResumedSessionResult,
+    maybeResumeSessionByUser,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type APP_NAMES, HTTP_STATUS_CODE, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -186,8 +185,18 @@ const consumeForkSession = async ({
     signal: AbortSignal;
     pullForkResponse: PullForkResponse;
 }): Promise<ResumedSessionResult> => {
-    const resumedSession = await maybeResumeForkedSession({ api: unAuthApi, pullForkResponse });
+    const authApi = getAuthAPI(pullForkResponse.UID, pullForkResponse.AccessToken, unAuthApi);
+    let user = await getUser(authApi);
+
+    const resumedSession = await maybeResumeSessionByUser({
+        api: unAuthApi,
+        User: user,
+        // During proton login, ignore resuming an oauth session
+        options: { source: [SessionSource.Saml, SessionSource.Proton] },
+    });
+
     if (resumedSession) {
+        await authApi(revoke({ Child: 1 })).catch(noop);
         return resumedSession;
     }
 
@@ -201,8 +210,6 @@ const consumeForkSession = async ({
         throw new Error('Incorrect payload');
     }
 
-    const authApi = getAuthAPI(pullForkResponse.UID, pullForkResponse.AccessToken, unAuthApi);
-    let user = await getUser(authApi);
     const persistent = config.persistent;
     const preAuthKTVerifier = createPreAuthKTVerifier(config.ktActivation);
 
