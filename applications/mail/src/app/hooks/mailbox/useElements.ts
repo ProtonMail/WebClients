@@ -193,12 +193,6 @@ export const useElements: UseElements = ({
             // Reset the cache when sort changes to ensure correct ordering
             !isDeepEqual(sort, stateParams.sort);
 
-        // If we can update the total directly on params update, do it.
-        // In some cases we cannot predict the total, for example when applying the has file filter
-        const locationTotal =
-            !filterToString(filter) && !isSearching
-                ? countValues.find((label) => label.LabelID === labelID)?.Total
-                : undefined;
         if (shouldResetElementsState) {
             dispatch(
                 reset({
@@ -217,6 +211,12 @@ export const useElements: UseElements = ({
                 })
             );
         } else {
+            // If we can update the total directly on params update, do it.
+            // In some cases we cannot predict the total, for example when applying the has file filter
+            const locationTotal =
+                !filterToString(filter) && !isSearching
+                    ? countValues.find((label) => label.LabelID === labelID)?.Total
+                    : undefined;
             dispatch(
                 setParams({
                     labelID,

@@ -154,7 +154,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
     const isES = useIsEncryptedSearch();
 
-    const { handleOnBackMoveAction } = useMoveBackAction();
+    const handleOnBackMoveAction = useMoveBackAction();
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();
