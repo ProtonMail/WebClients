@@ -28,13 +28,15 @@ import { getTermAndConditionsSentence } from '../../utils/legal';
 import type { WalletInformationalModalOwnProps } from '../WalletInformationalModal';
 import { WalletInformationalModal } from '../WalletInformationalModal';
 
-interface Props extends ModalOwnProps {
+export interface WalletImportModalOwnProps {
     theme?: SubTheme;
     walletName?: string;
     currency?: WasmFiatCurrencySymbol;
     isFirstCreation?: boolean;
-    onFinish: () => void;
+    onFinish?: () => void;
 }
+
+type Props = ModalOwnProps & WalletImportModalOwnProps;
 
 export const WalletImportModal = ({
     theme,
@@ -65,7 +67,7 @@ export const WalletImportModal = ({
     } = useWalletCreation({
         onSetupFinish: () => {
             modalProps.onClose?.();
-            onFinish();
+            onFinish?.();
         },
     });
 
