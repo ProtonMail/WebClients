@@ -13,7 +13,7 @@ type Props = {
     data: PhotoGridItem[];
     onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    hasSelection: boolean;
+    selectedItems: PhotoGridItem[];
     isLoading: boolean;
     onItemClick: (linkId: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
@@ -30,11 +30,12 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
     isLoading,
     onItemClick,
     onSelectChange,
-    hasSelection,
+    selectedItems,
     isGroupSelected,
     isItemSelected,
     userAddressEmail,
 }) => {
+    const hasSelection = selectedItems.length > 0;
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
 
@@ -200,7 +201,7 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
         };
 
         return [items, innerStyle];
-    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading]);
+    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading, selectedItems]);
 
     return (
         <div className="p-4 min-h-full" ref={containerRef} onScroll={handleScroll}>
