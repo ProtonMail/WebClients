@@ -31,6 +31,7 @@ interface Props {
     apiWalletsData?: IWasmApiWalletData[];
     onToggleExpand?: () => void;
     onAddWallet: () => void;
+    onImportWallet: () => void;
     onAddWalletAccount: (apiWalletData: IWasmApiWalletData) => void;
 }
 
@@ -41,6 +42,7 @@ const WalletSidebar = ({
     loadingApiWalletsData = false,
     apiWalletsData,
     onAddWallet,
+    onImportWallet,
     onAddWalletAccount,
     onToggleExpand,
 }: Props) => {
@@ -101,6 +103,7 @@ const WalletSidebar = ({
                             apiWalletsData={apiWalletsData}
                             onAddWalletAccount={onAddWalletAccount}
                             onAddWallet={onAddWallet}
+                            onImportWallet={onImportWallet}
                         />
 
                         <li className="flex-1 grow" aria-hidden="true" />
