@@ -1,9 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
+export function setPanicHook(): void;
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 export function getWordsAutocomplete(word_start: string): string[];
 export function getDefaultStopGap(): number;
-export function setPanicHook(): void;
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
@@ -85,6 +85,13 @@ export enum WasmWordCount {
   Words21 = 3,
   Words24 = 4,
 }
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
     BitcoinAddressSignature: string | null;
@@ -363,6 +370,7 @@ export interface WasmExchangeRateOrTransactionTime {
 export interface WasmTransactionData {
     label: string | null;
     exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+    is_paper_wallet: number | null;
 }
 
 export interface WasmBroadcastMessage {
@@ -377,13 +385,6 @@ export interface WasmEmailIntegrationData {
     recipients: Record<string, string> | null;
     is_anonymous: number | null;
 }
-
-export interface WasmPagination {
-    skip: number;
-    take: number;
-}
-
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 export class WasmAccount {
   free(): void;
@@ -579,7 +580,7 @@ export class WasmBlockchainClient {
   getFeesEstimation(): Promise<Map<string, number>>;
   getMininumFees(): Promise<WasmMinimumFees>;
   getRecommendedFees(): Promise<WasmRecommendedFees>;
-  broadcastPsbt(psbt: WasmPsbt, wallet_id: string, wallet_account_id: string, transaction_data: WasmTransactionData, email_integration?: WasmEmailIntegrationData | null): Promise<string>;
+  broadcastPsbt(psbt: WasmPsbt, wallet_id: string, wallet_account_id: string, transaction_data: WasmTransactionData, email_integration?: WasmEmailIntegrationData | null, is_paper_wallet?: number | null): Promise<string>;
 }
 export class WasmCountriesAndProviderTupple {
   private constructor();
@@ -897,7 +898,7 @@ export class WasmTxBuilder {
   /**
    *
    *     * UTXOs
-   *     
+   *
    */
   addUtxoToSpend(outpoint: WasmOutPoint): WasmTxBuilder;
   removeUtxoToSpend(outpoint: WasmOutPoint): WasmTxBuilder;
@@ -906,14 +907,14 @@ export class WasmTxBuilder {
   /**
    *
    *     * Coin selection enforcement
-   *     
+   *
    */
   setCoinSelection(coin_selection: WasmCoinSelection): WasmTxBuilder;
   getCoinSelection(): WasmCoinSelection;
   /**
    *
    *     * RBF
-   *     
+   *
    */
   enableRbf(): WasmTxBuilder;
   disableRbf(): WasmTxBuilder;
@@ -921,21 +922,21 @@ export class WasmTxBuilder {
   /**
    *
    *     * Change policy
-   *     
+   *
    */
   setChangePolicy(change_policy: WasmChangeSpendPolicy): WasmTxBuilder;
   getChangePolicy(): WasmChangeSpendPolicy;
   /**
    *
    *     * Fees
-   *     
+   *
    */
   setFeeRate(sat_per_vb: bigint): WasmTxBuilder;
   getFeeRate(): bigint | undefined;
   /**
    *
    *     * Locktime
-   *     
+   *
    */
   addLocktime(locktime: WasmLockTime): WasmTxBuilder;
   removeLocktime(): WasmTxBuilder;
@@ -943,7 +944,7 @@ export class WasmTxBuilder {
   /**
    *
    *     * Final
-   *     
+   *
    */
   createPsbt(network: WasmNetwork): Promise<WasmPsbt>;
   createDraftPsbt(network: WasmNetwork, allow_dust?: boolean | null): Promise<WasmPsbt>;
