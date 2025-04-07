@@ -6,7 +6,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { useInvitationsActions } from '../../store/_actions/useInvitationsActions';
 import type { ExtendedInvitationDetails } from '../../store/_invitations/interface';
 import { useInvitationsView } from '../../store/_views/useInvitationsView';
-import type { NodeMeta } from '../NodeMeta';
+import type { NodeMeta, PublicNodeMeta } from '../NodeMeta';
 import { useDriveCompat } from '../useDriveCompat';
 
 export const useDocInvites = () => {
@@ -23,7 +23,7 @@ export const useDocInvites = () => {
     const { acceptInvitation, rejectInvitation } = useInvitationsActions();
 
     const inviteForNodeMeta = useCallback(
-        (nodeMeta: NodeMeta) => {
+        (nodeMeta: NodeMeta | PublicNodeMeta) => {
             return docsInvites.find((invite) => invite.link.linkId === nodeMeta.linkId);
         },
         [docsInvites]

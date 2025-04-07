@@ -1,5 +1,8 @@
 import { LocationErrorBoundary } from '@proton/components'
-import { PublicDriveStoreProvider } from '@proton/drive-store/lib/DriveStoreProvider'
+import {
+  PublicDriveStoreProvider,
+  PublicDriveStoreProviderWithAuthenticatedUser,
+} from '@proton/drive-store/lib/DriveStoreProvider'
 import { PublicApplicationContent } from './PublicApplicationContent'
 import { usePublicDriveCompat } from '@proton/drive-store/lib'
 import { Button, CircleLoader } from '@proton/atoms/index'
@@ -11,22 +14,44 @@ import { PasswordPage } from './PasswordPage'
 import { UnAuthenticated } from '@proton/components'
 import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
+import type { ProviderType } from '../../../provider-type'
 
-export function PublicAppRootContainer({ session }: { session?: ResumedSessionResult }) {
+export function PublicAppRootContainer({
+  session,
+  hasReadySession,
+}: {
+  session?: ResumedSessionResult
+  hasReadySession: boolean
+}) {
+  const useAuthenticatedProvider = hasReadySession || session != undefined
+
+  // eslint-disable-next-line no-console
+  console.log(
+    useAuthenticatedProvider
+      ? 'Rendering public provider with authenticated user'
+      : 'Rendering public provider without authenticated user',
+  )
+
+  const ApplicableDriveStoreProvider = useAuthenticatedProvider
+    ? PublicDriveStoreProviderWithAuthenticatedUser
+    : PublicDriveStoreProvider
+
   return (
     <LocationErrorBoundary>
-      <PublicDriveStoreProvider>
+      <ApplicableDriveStoreProvider>
         <UnAuthenticated>
           <PublicCompatProvider session={session}>
-            <RenderApplicationWhenReady />
+            <RenderApplicationWhenReady
+              providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
+            />
           </PublicCompatProvider>
         </UnAuthenticated>
-      </PublicDriveStoreProvider>
+      </ApplicableDriveStoreProvider>
     </LocationErrorBoundary>
   )
 }
 
-function RenderApplicationWhenReady() {
+function RenderApplicationWhenReady({ providerType }: { providerType: ProviderType }) {
   const publicDriveCompat = usePublicDriveCompat()
 
   const {
@@ -96,5 +121,5 @@ function RenderApplicationWhenReady() {
     )
   }
 
-  return <PublicApplicationContent publicDriveCompat={publicDriveCompat} />
+  return <PublicApplicationContent publicDriveCompat={publicDriveCompat} providerType={providerType} />
 }

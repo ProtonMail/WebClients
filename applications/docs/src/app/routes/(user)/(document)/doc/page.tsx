@@ -275,6 +275,7 @@ function Content({
           editorInitializationConfig={editorInitializationConfig}
           nodeMeta={nodeMeta}
           action={actionMode}
+          providerType="private"
         />
       </>
     )
