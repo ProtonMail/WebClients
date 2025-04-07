@@ -1,5 +1,6 @@
 import { API_URL } from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { API_PROXY_IMAGE_ENDPOINT, API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
 
 import { api } from '@proton/pass/lib/api/api';
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
@@ -16,10 +17,6 @@ export type APIProxyOptions = {
     api: Api;
     fetch: (info: RequestInfo, init?: RequestInit) => Promise<Response>;
 };
-
-export const API_PROXY_PATH = '/api-proxy';
-export const API_PROXY_URL = browser?.runtime.getURL(API_PROXY_PATH);
-export const API_PROXY_IMAGE_ENDPOINT = '/core/v4/images/logo';
 
 export const createApiProxyService = () => {
     if (BUILD_TARGET === 'chrome') {
