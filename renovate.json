@@ -13,7 +13,8 @@
         "@openpgp/web-stream-tools",
         "@protontech/pass-rust-core",
         "@mlc-ai/web-llm",
-        "sass"
+        "sass",
+        "node"
     ],
     "ignorePaths": [
         "**/node_modules/**",
