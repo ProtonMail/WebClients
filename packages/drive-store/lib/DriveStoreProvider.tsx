@@ -28,6 +28,28 @@ export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) 
     );
 };
 
+/**
+ * A provider for the public app that utilizes authenticated drive store providers.
+ * Used when you are in a public context but we find a user session.
+ */
+export const PublicDriveStoreProviderWithAuthenticatedUser = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <VolumesProvider>
+            <SharesProvider>
+                <LinksProvider>
+                    <DevicesProvider>
+                        <PublicSessionProvider>
+                            <PublicLinksProvider>
+                                <InvitationsStateProvider>{children}</InvitationsStateProvider>
+                            </PublicLinksProvider>
+                        </PublicSessionProvider>
+                    </DevicesProvider>
+                </LinksProvider>
+            </SharesProvider>
+        </VolumesProvider>
+    );
+};
+
 export const PublicDriveStoreProvider = ({ children }: { children: React.ReactNode }) => {
     return (
         <VolumesProvider>
