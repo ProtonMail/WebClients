@@ -624,7 +624,9 @@ const isVisible = (fnodeOrElement, options) => {
             if (cachedVisibility !== undefined) return cachedVisibility;
             const { opacity, display, position, overflow, visibility } = win.getComputedStyle(ancestor);
             seen.push(ancestor);
-            if (opacity === '0' && options.opacity) {
+            /** Anything below <0.1 opacity is considered hidden */
+            const opacityValue = Math.floor(parseFloat(opacity) * 10);
+            if (opacityValue === 0 && options.opacity) {
                 transparent = true;
                 return false;
             }
