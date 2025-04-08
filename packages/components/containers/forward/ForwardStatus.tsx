@@ -5,11 +5,11 @@ import type { IncomingAddressForwarding, OutgoingAddressForwarding } from '@prot
 import { ForwardingState } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    forward: IncomingAddressForwarding | OutgoingAddressForwarding;
+    forwardingConfig: IncomingAddressForwarding | OutgoingAddressForwarding;
 }
 
-const ForwardStatus = ({ forward }: Props) => {
-    if (forward.State === ForwardingState.Pending) {
+const ForwardStatus = ({ forwardingConfig }: Props) => {
+    if (forwardingConfig.State === ForwardingState.Pending) {
         return (
             <Badge
                 type="origin"
@@ -18,28 +18,28 @@ const ForwardStatus = ({ forward }: Props) => {
             >{c('email_forwarding_2023: Status').t`Pending`}</Badge>
         );
     }
-    if (forward.State === ForwardingState.Active) {
+    if (forwardingConfig.State === ForwardingState.Active) {
         return (
             <Badge type="success" tooltip={c('email_forwarding_2023: Info').t`Forwarding is active`}>{c(
                 'email_forwarding_2023: Status'
             ).t`Active`}</Badge>
         );
     }
-    if (forward.State === ForwardingState.Outdated) {
+    if (forwardingConfig.State === ForwardingState.Outdated) {
         return (
             <Badge type="warning" tooltip={c('email_forwarding_2023: Info').t`Please update your forwarding keys`}>{c(
                 'email_forwarding_2023: Status'
             ).t`Outdated`}</Badge>
         );
     }
-    if (forward.State === ForwardingState.Paused) {
+    if (forwardingConfig.State === ForwardingState.Paused) {
         return (
             <Badge type="origin" tooltip={c('email_forwarding_2023: Info').t`The forwarding is temporarily paused`}>{c(
                 'email_forwarding_2023: Status'
             ).t`Paused`}</Badge>
         );
     }
-    if (forward.State === ForwardingState.Rejected) {
+    if (forwardingConfig.State === ForwardingState.Rejected) {
         return (
             <Badge
                 type="origin"
