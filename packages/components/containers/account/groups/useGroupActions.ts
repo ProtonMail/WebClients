@@ -28,7 +28,7 @@ import {
 } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
-import { generateForwardingAddressKey as generateGroupMemberAddressKey } from '../../forward/helpers';
+import { generateForwardingAddressKey as generateGroupMemberAddressKey } from '../../forward/keyHelpers';
 
 const useGroupActions = () => {
     const api = useApi();

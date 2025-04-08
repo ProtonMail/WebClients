@@ -32,12 +32,12 @@ import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import type { SetupForwardingParameters } from '@proton/shared/lib/api/forwardings';
-import { setupForwarding, updateForwardingFilter } from '@proton/shared/lib/api/forwardings';
+import { setupForwarding, updateForwarding, updateForwardingFilter } from '@proton/shared/lib/api/forwardings';
 import { ADDRESS_RECEIVE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, DecryptedAddressKey, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { ForwardingType } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import {
     getActiveAddressKeys,
@@ -55,7 +55,7 @@ import { getInternalParametersPrivate, getSieveParameters, getSieveTree } from '
 import { generateNewE2EEForwardingCompatibleAddressKey, handleUnsetV6PrimaryKey } from './keyHelpers';
 
 interface Props extends ModalProps {
-    forward?: OutgoingAddressForwarding;
+    existingForwardingConfig?: OutgoingAddressForwarding;
 }
 
 enum Step {
@@ -116,17 +116,22 @@ const getKeyFixupDetails = (
     }
 };
 
-const getDefaultModel = ({ forward, addresses }: { addresses: Address[]; forward?: OutgoingAddressForwarding }) => {
-    const isEditing = !!forward;
-    const { statement, conditions } = isEditing
-        ? getSieveParameters(forward.Filter?.Tree || [])
+const getDefaultModel = ({
+    existingForwardingConfig,
+    addresses,
+}: {
+    addresses: Address[];
+    existingForwardingConfig?: OutgoingAddressForwarding;
+}) => {
+    const { statement, conditions } = existingForwardingConfig
+        ? getSieveParameters(existingForwardingConfig.Filter?.Tree || [])
         : { statement: FilterStatement.ALL, conditions: [] };
 
     const [firstAddress] = addresses;
     return {
         step: Step.Setup,
-        addressID: isEditing ? forward.ForwarderAddressID : firstAddress?.ID || '',
-        forwardeeEmail: isEditing ? forward.ForwardeeEmail : '',
+        addressID: existingForwardingConfig ? existingForwardingConfig.ForwarderAddressID : firstAddress?.ID || '',
+        forwardeeEmail: existingForwardingConfig ? existingForwardingConfig.ForwardeeEmail : '',
         statement,
         conditions,
     };
@@ -136,8 +141,11 @@ const compareContactEmailByEmail = (a: ContactEmail, b: ContactEmail) => {
     return a.Email.localeCompare(b.Email);
 };
 
-const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
-    const isEditing = !!forward;
+const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => {
+    const isEditingFilters =
+        existingForwardingConfig?.State === ForwardingState.Active ||
+        existingForwardingConfig?.State === ForwardingState.Pending;
+    const isReEnablingForwarding = existingForwardingConfig?.State === ForwardingState.Outdated;
     const [addresses = []] = useAddresses();
     const [contactEmails = []] = useContactEmails();
     const contactEmailsSorted = useMemo(() => {
@@ -157,8 +165,10 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
     const filteredAddresses = addresses.filter(({ Receive }) => Receive === ADDRESS_RECEIVE.RECEIVE_YES);
-    const [model, setModel] = useState<Model>(getDefaultModel({ forward, addresses: filteredAddresses }));
-    const inputsDisabled = model.loading || isEditing;
+    const [model, setModel] = useState<Model>(
+        getDefaultModel({ existingForwardingConfig, addresses: filteredAddresses })
+    );
+    const inputsDisabled = model.loading || isEditingFilters || isReEnablingForwarding;
     const forwarderAddress = addresses.find(({ ID }) => ID === model.addressID);
     const forwarderEmail = forwarderAddress?.Email || '';
     const addressFlags = useAddressFlags(forwarderAddress);
@@ -170,16 +180,16 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     );
 
     const handleEdit = async () => {
-        if (isEditing) {
+        if (isEditingFilters) {
             await api(
                 updateForwardingFilter(
-                    forward.ID,
+                    existingForwardingConfig.ID,
                     getSieveTree({
                         conditions: model.conditions,
                         statement: model.statement,
                         email: model.forwardeeEmail,
                     }),
-                    forward.Filter?.Version || 2
+                    existingForwardingConfig.Filter?.Version || 2
                 )
             );
             await call();
@@ -239,10 +249,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                 createNotification({ text: 'This address cannot be used as forwarding recipient', type: 'error' });
                 return;
             }
-            const [primaryForwardeeKey] = forwardeeKeysConfig.publicKeys;
-            forwardeePublicKey = await CryptoProxy.importPublicKey({
-                armoredKey: primaryForwardeeKey.armoredKey,
-            });
+            forwardeePublicKey = forwardeeKeysConfig.publicKeys[0].publicKey;
             forwardeeEmailFromPublicKey = getEmailFromKey(forwardeePublicKey);
         }
 
@@ -250,6 +257,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
             ...model,
             keyErrors: forwardeeKeysConfig.Errors,
             forwarderPrimaryKeys,
+            forwarderAddressKeys,
             forwardeePublicKey,
             forwardeeEmail: forwardeeEmailFromPublicKey || model.forwardeeEmail,
             isExternal,
@@ -264,16 +272,11 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
             await addressFlags?.handleSetAddressFlags(true, addressFlags?.expectSignatureDisabled);
         }
         let requireNewKey = false;
-        const params: SetupForwardingParameters = {
+        const setupForwardingParams: Omit<SetupForwardingParameters, 'Tree' /* added later */> = {
             ForwarderAddressID: model.addressID,
             ForwardeeEmail: model.forwardeeEmail,
             Type: model.isInternal ? ForwardingType.InternalEncrypted : ForwardingType.ExternalUnencrypted,
-            Tree: getSieveTree({
-                conditions: model.conditions,
-                statement: model.statement,
-                email: model.forwardeeEmail,
-            }),
-            Version: forward?.Filter?.Version || 2,
+            Version: existingForwardingConfig?.Filter?.Version || 2,
         };
         if (model.isInternal && forwarderAddress?.Keys && model.forwardeePublicKey && model.forwarderPrimaryKeys) {
             let addressKeys = model.forwarderAddressKeys;
@@ -296,6 +299,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                 });
                 await dispatch(addressesThunk({ cache: CacheType.None })); // force re-fetch
                 addressKeys = await getAddressKeys(model.addressID);
+                // TODOOOOOOOOOOO model.forwarderPrimaryKeys.v4.key is also cleared! FIX
             }
             if (model.forwarderPrimaryKeys.v4.supportsE2EEForwarding === false) {
                 if (!addressKeys) {
@@ -324,12 +328,42 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                 [{ email: model.forwardeeEmail, name: model.forwardeeEmail }],
                 model.forwardeePublicKey
             );
-            params.ForwardeePrivateKey = forwardeeKey;
-            params.ActivationToken = activationToken;
-            params.ProxyInstances = proxyInstances;
+
+            const e2eeForwardingParams = {
+                ForwardeePrivateKey: forwardeeKey,
+                ActivationToken: activationToken,
+                ProxyInstances: proxyInstances,
+            };
+
+            await api(
+                isReEnablingForwarding
+                    ? updateForwarding({
+                          ID: existingForwardingConfig.ID,
+                          ...e2eeForwardingParams,
+                      })
+                    : setupForwarding({
+                          ...setupForwardingParams,
+                          Tree: getSieveTree({
+                              conditions: model.conditions,
+                              statement: model.statement,
+                              email: model.forwardeeEmail,
+                          }),
+                          ...e2eeForwardingParams,
+                      })
+            );
+        } else {
+            await api(
+                setupForwarding({
+                    ...setupForwardingParams,
+                    Tree: getSieveTree({
+                        conditions: model.conditions,
+                        statement: model.statement,
+                        email: model.forwardeeEmail,
+                    }),
+                })
+            );
         }
 
-        await api(setupForwarding(params));
         await call();
         onClose?.();
         createNotification({ text: c('email_forwarding_2023: Success').t`Email sent to ${model.forwardeeEmail}.` });
@@ -347,7 +381,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
             return;
         }
 
-        if (isEditing) {
+        if (isEditingFilters) {
             return handleEdit();
         }
 
@@ -390,7 +424,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             disabledOnlyField={inputsDisabled}
                             autoFocus
                         >
-                            {(isEditing ? addresses : filteredAddresses).map(({ ID, Email, Receive }) => (
+                            {(isEditingFilters ? addresses : filteredAddresses).map(({ ID, Email, Receive }) => (
                                 <Option
                                     title={Email}
                                     key={ID}
@@ -407,7 +441,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             placeholder={c('email_forwarding_2023: Placeholder').t`Enter email address`}
                             disabled={inputsDisabled}
                             disabledOnlyField={inputsDisabled}
-                            readOnly={isEditing}
+                            readOnly={isEditingFilters || isReEnablingForwarding}
                             list="contact-emails"
                             type="email"
                             error={validator([
@@ -475,7 +509,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                     <>
                         <Button disabled={loading} type="reset">{c('email_forwarding_2023: Action').t`Cancel`}</Button>
                         <Button loading={loading} color="norm" type="submit">
-                            {isEditing
+                            {isEditingFilters
                                 ? c('email_forwarding_2023: Action').t`Save`
                                 : c('email_forwarding_2023: Action').t`Next`}
                         </Button>
