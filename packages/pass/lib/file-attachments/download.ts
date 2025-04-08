@@ -1,5 +1,5 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { Callback, FileID, Maybe } from '@proton/pass/types';
+import type { Callback, FileID, Maybe, ShareId } from '@proton/pass/types';
 
 export const consumeStream = async <T>(stream: ReadableStream<T>, signal: AbortSignal): Promise<Uint8Array> => {
     const chunks: Uint8Array[] = [];
@@ -26,6 +26,7 @@ export const consumeStream = async <T>(stream: ReadableStream<T>, signal: AbortS
 };
 
 export const createDownloadStream = (
+    shareId: ShareId,
     fileID: FileID,
     chunkIDs: string[],
     /** Chunk request's response body as a stream */
@@ -52,7 +53,7 @@ export const createDownloadStream = (
             try {
                 const stream = await getChunkStream(chunkIDs[current]);
                 const encryptedChunk = await consumeStream(stream, signal);
-                const chunk = await PassCrypto.openFileChunk({ chunk: encryptedChunk, fileID });
+                const chunk = await PassCrypto.openFileChunk({ chunk: encryptedChunk, fileID, shareId });
                 controller.enqueue(chunk);
                 current++;
             } catch (error) {
