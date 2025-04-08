@@ -1113,11 +1113,11 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
-      "Select All": [
-        "Pilih Semua"
-      ],
       "Select all": [
         "Pilih semua"
+      ],
+      "Select All": [
+        "Pilih Semua"
       ],
       "Select all messages": [
         "Pilih semua pesan"
@@ -6694,6 +6694,9 @@
       "Learn more about the writing assistant": [
         "Pelajari lebih lanjut mengenai asisten penulisan"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Pelajari apa yang harus dilakukan ${ dataLeakedLink }"
+      ],
       "Left to Right": [
         "Kiri ke Kanan"
       ],
@@ -7248,6 +7251,9 @@
       ],
       "Text to display": [
         "Teks yang akan ditampilkan"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Terima kasih telah berlangganan. Penjelajahan yang aman dimulai dari sekarang."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Data yang Anda masukkan ke draf dapat tidak tersimpan apabila Anda meninggalkan halaman ini."
@@ -8924,6 +8930,9 @@
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
       ],
+      "if your data is leaked": [
+        "apabila data Anda sampai dibocorkan"
+      ],
       "Inbox": [
         "Kotak masuk"
       ],
@@ -10510,13 +10519,13 @@
         "Akses kapan dan di mana saja"
       ],
       "Auto-delete spam and trash": [
-        "Kosongkan spam dan sampah secara otomatis"
+        "Hapus otomatis spam dan sampah"
       ],
       "browser": [
         "browser"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Singkirkan email yang telah dihapus dan email spam setelah 30 hari."
+        "Bersihkan email yang dihapus dan email spam setelah 30 hari."
       ],
       "Continue": [
         "Lanjut"
@@ -10540,7 +10549,7 @@
         "Untuk akses email kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink } kami."
       ],
       "Get notified if your password is compromised.": [
-        "Dapatkan notifikasi pada saat kata sandi Anda dibocorkan."
+        "Dapatkan notifikasi jika kata sandi Anda bocor."
       ],
       "Industry-leading spam protection": [
         "Perlindungan spam yang terdepan di industri"
@@ -10570,7 +10579,7 @@
         "Mulai gunakan ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Mulai gunakan versi singkat dari alamat email Anda yang lebih ringkas dan menarik."
+        "Mulai gunakan versi singkat dan menarik dari alamat email Anda."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Untuk memulai, tentukan nama tampilan Anda. Nama ini merupakan nama yang akan dilihat oleh orang lain pada saat Anda mengirim email, mengirim undangan, atau membagikan berkas kepada mereka."
@@ -12086,6 +12095,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -12338,47 +12388,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {

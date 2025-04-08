@@ -544,7 +544,7 @@
         "Jetzt aktivieren"
       ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
-        "Hol ihn dir ab ${ addonPriceWithCurrency } / Monat"
+        "Hol es dir ab ${ addonPriceWithCurrency } / Monat"
       ],
       "Get started": [
         "Erste Schritte"
@@ -813,6 +813,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Mehr Optionen für Konten"
       ],
       "More refine actions": [
         "Weitere Verbesserungsaktionen"
@@ -1117,17 +1120,17 @@
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
       ],
-      "Select All": [
+      "Select all": [
         "Alle auswählen"
       ],
-      "Select all": [
+      "Select All": [
         "Alle auswählen"
       ],
       "Select all messages": [
         "Alle Nachrichten auswählen"
       ],
       "Select billing cycle ${ billingText }": [
-        "Abrechnungszyklus auswählen: ${ billingText }"
+        "Abrechnungszeitraum auswählen: ${ billingText }"
       ],
       "Select country": [
         "Land wählen"
@@ -6745,8 +6748,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7055,7 +7057,7 @@
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "Please open the document to view it.": [
@@ -7366,6 +7368,9 @@
       ],
       "Text to display": [
         "Anzuzeigender Text"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Danke, dass du dich angemeldet hast. Sicheres Surfen beginnt jetzt."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn du die Seite verlässt."
@@ -10685,7 +10690,7 @@
         "${ protectionFromTrackersTitle } bedeutet, dass du nicht mehr über das Internet verfolgt wirst."
       ],
       "Activate premium features": [
-        "Aktiviere Premiumfunktionen"
+        "Premiumfunktionen"
       ],
       "Activate selected": [
         "Ausgewählte aktivieren"
@@ -10697,7 +10702,7 @@
         "Jederzeit und überall Zugang"
       ],
       "Auto-delete spam and trash": [
-        "Spam und Papierkorb automatisch löschen"
+        "Spam und Papierkorb löschen"
       ],
       "browser": [
         "Browser"
@@ -10757,7 +10762,7 @@
         "Beginne mit ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Verwende die kürzere, eingängigere Version deiner E-Mail Adresse."
+        "Verwende die kürzere, eingängigere Version deiner E-Mail-Adresse."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Wähle zunächst einen Anzeigenamen aus. Diesen werden deine Empfänger sehen, wenn du ihnen eine E-Mail sendest, sie zu einem Termin einlädst oder eine Datei mit ihnen teilst."
@@ -12312,6 +12317,47 @@
         "Für ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -12570,47 +12616,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {

@@ -822,6 +822,9 @@
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Další možnosti účtů"
+      ],
       "More refine actions": [
         "Další zpřesňující akce"
       ],
@@ -1125,10 +1128,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -6965,10 +6968,7 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7596,6 +7596,9 @@
       ],
       "Text to display": [
         "Text k zobrazení"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Děkujeme vám za přihlášení k odběru. Bezpečné prohlížení začíná nyní."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Pokud stánku opustíte, může dojít ke ztrátě dat rozepsané zprávy."
@@ -11047,7 +11050,7 @@
         "Přístup kdykoli a odkudkoli"
       ],
       "Auto-delete spam and trash": [
-        "Automatické smazání obsahu složek Spam a Koš"
+        "Automatické mazání spamu a koše"
       ],
       "browser": [
         "prohlížeč"
@@ -12740,6 +12743,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -13010,47 +13054,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -14043,7 +14046,7 @@
         "Zvyšte své soukromí pomocí dalších adres"
       ],
       "Information exposed in breach": [
-        "Informace odhalené při úniku informací"
+        "Informace odhalené při úniku"
       ],
       "Insert contacts": [
         "Vložte kontakty"
@@ -14557,7 +14560,7 @@
         "Načíst obrázek"
       ],
       "Not all information listed here was exposed for all users.": [
-        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+        "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
@@ -14593,7 +14596,7 @@
         "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"

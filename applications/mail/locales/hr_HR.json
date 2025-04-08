@@ -821,10 +821,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -4138,6 +4138,9 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
+      "Insert image": [
+        "Umetni sliku"
+      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -5905,8 +5908,23 @@
       ]
     },
     "Onboarding modal": {
+      "Activate premium features": [
+        "Premium značajke"
+      ],
+      "Auto-delete spam and trash": [
+        "Briši neželjenu poštu i otpad"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Očistite izbrisane e-poruke i neželjenu poštu nakon 30 dana."
+      ],
+      "Get notified if your password is compromised.": [
+        "Primajte obavijesti ako vam je lozinka kompromitirana."
+      ],
       "Next": [
         "Sljedeće"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Počnite upotrebljavati kraću i pamtljiviju verziju svoje e-pošte."
       ]
     },
     "Onboarding Proton": {
@@ -6684,6 +6702,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -6696,17 +6725,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {

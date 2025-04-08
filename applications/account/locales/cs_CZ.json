@@ -823,6 +823,9 @@
       "More options": [
         "Více možností"
       ],
+      "More options for accounts": [
+        "Další možnosti účtů"
+      ],
       "move emails to": [
         "přesunout e-maily do"
       ],
@@ -916,11 +919,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reject": [
         "Odmítnout"
@@ -1090,11 +1093,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -3860,11 +3863,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Oddělte různé části svého života a uspořádejte si doručenou poštu s dalšími adresami."
       ],
+      "Learn more about common problems": [
+        "Více informací o běžných problémech"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Vytvořte si vlastní zápatí e-mailu — prezentujte svou jedinečnou značku, ne naši."
       ],
       "No one in your organization can connect to shared servers.": [
         "Nikdo ve vaší organizaci se nemůže připojit ke sdíleným serverům."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Odeslání kódu na váš e-mail nebo telefon pro obnovení"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
@@ -4229,6 +4238,83 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, změní pouze vybranou fakturu, nikoli budoucí fakturační údaje."
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } vás nikdy nepožádá o zadání kódu, který nepochází z domény ${ domain } nebo z oficiální aplikace ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Jak to funguje:** Zadejte kód zobrazený na zařízení, ke kterému se chcete přihlásit do tohoto zařízení. Budete přihlášeni jako **${ email }**. Obě zařízení zůstanou aktivní. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Povolte skenování QR kódu pro přihlášení"
+      ],
+      "Code copied to clipboard": [
+        "Kód zkopírován do schránky"
+      ],
+      "Code from the other device": [
+        "Kód z jiného zařízení"
+      ],
+      "Enter code manually": [
+        "Zadejte kód ručně"
+      ],
+      "New QR code": [
+        "Nový QR kód"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Otevřete aplikaci ${ BRAND_NAME } v telefonu"
+      ],
+      "Please scan a new QR code to try again": [
+        "Prosím, naskenujte nový QR kód a zkuste to znovu"
+      ],
+      "QR code expired": [
+        "Platnost QR kódu vypršela"
+      ],
+      "QR code sign-in disabled": [
+        "Přihlášení pomocí QR kódu je deaktivováno"
+      ],
+      "QR code sign-in enabled": [
+        "Přihlášení pomocí QR kódu je povoleno"
+      ],
+      "Safety tips:": [
+        "Bezpečnostní tipy:"
+      ],
+      "Scan a QR code with your phone": [
+        "Naskenujte QR kód pomocí telefonu"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Naskenujte QR kód na svém mobilním zařízení a přihlaste se"
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Naskenujte tento QR kód v aplikaci ${ BRAND_NAME } ve svém telefonu a okamžitě se přihlaste."
+      ],
+      "Sign in to another device": [
+        "Přihlaste se k jinému zařízení"
+      ],
+      "Sign in with another device": [
+        "Přihlášení pomocí jiného zařízení"
+      ],
+      "Sign in with QR code": [
+        "Přihlaste se pomocí QR kódu"
+      ],
+      "Tap **Scan QR code**": [
+        "Klepněte na **Skenovat QR kód**"
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "Klepněte na **Nastavení** a poté na **Přihlásit se k jinému zařízení**"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Chcete-li získat přístup ke kódu zařízení, ke kterému se chcete přihlásit, klepněte na tlačítko **Přihlásit se pomocí QR kódu** v nabídce nápovědy na přihlašovací obrazovce a poté klepněte na **Zadat klíč ručně**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Dávejte si pozor na zprávy, které obsahují kód. Nikdy nezadávejte kód z webové stránky nebo od osoby, které nedůvěřujete."
+      ],
+      "We couldn't sign you in": [
+        "Nemohli jsme vás přihlásit"
+      ],
+      "You have successfully signed in to another device": [
+        "Úspěšně jste se přihlásili k jinému zařízení"
       ]
     },
     "Email": {
@@ -5094,6 +5180,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
@@ -7444,11 +7533,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
-      "active": [
-        "aktivní"
-      ],
       "Active": [
         "Aktivní"
+      ],
+      "active": [
+        "aktivní"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -7909,11 +7998,14 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
+      "Data recoverable on this device": [
+        "Data obnovitelná v tomto zařízení"
       ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -9397,6 +9489,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Děkujeme, že jste si vybrali ${ BRAND_NAME }."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Děkujeme vám za přihlášení k odběru. Bezpečné prohlížení začíná nyní."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Děkujeme za podporu našeho poslání budovat lepší internet, kde jsou soukromí a svoboda na prvním místě."
       ],
@@ -9694,6 +9789,9 @@
       "Total VPN connections": [
         "Celkem VPN připojení"
       ],
+      "trusted device": [
+        "důvěryhodné zařízení"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyzkoušejte ${ productName } zcela bez rizika - pokud si to z jakéhokoli důvodu rozmyslíte, dostanete zpět plnou částku. Bez otázek."
       ],
@@ -9808,11 +9906,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -9927,6 +10025,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Abyste o svá data nepřišli, bezpečně ukládáme informace pro obnovení do vašeho důvěryhodného zařízení"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Záložní soubor jsme uložili do tohoto prohlížeče, protože jste povolili obnovení dat na tomto ${ deviceLink }. Pokud je záložní soubor platný, okamžitě získáte úplný nebo částečný přístup k šifrovaným datům."
       ],
       "We use 3-D Secure to protect your payments": [
         "K zabezpečení vašich plateb používáme 3-D Secure"
@@ -11007,10 +11108,10 @@
       "Allow sharing outside the organization": [
         "Povolit sdílení mimo organizaci"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12306,11 +12407,11 @@
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
       ],
-      "privacy policy": [
-        "zásadami ochrany osobních údajů"
-      ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
+      ],
+      "privacy policy": [
+        "zásadami ochrany osobních údajů"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -12929,6 +13030,32 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -12956,32 +13083,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13748,6 +13849,14 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -13766,14 +13875,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -17791,6 +17892,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -18091,47 +18233,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -18879,10 +18980,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -19389,6 +19490,9 @@
       "Home": [
         "Domovská stránka"
       ],
+      "How can we help?": [
+        "Jak můžeme pomoci?"
+      ],
       "How does it work?": [
         "Jak to funguje?"
       ],
@@ -19444,7 +19548,7 @@
         "Zvyšte své soukromí pomocí dalších adres"
       ],
       "Information exposed in breach": [
-        "Informace odhalené při úniku informací"
+        "Informace odhalené při úniku"
       ],
       "Integrations": [
         "Integrace"
@@ -19574,6 +19678,9 @@
       ],
       "Other preferences": [
         "Další předvolby"
+      ],
+      "Other sign-in issues": [
+        "Další problémy s přihlášením"
       ],
       "Password": [
         "Heslo"
@@ -20266,7 +20373,7 @@
         "Zprávy ve složce Odeslané nebo Koncepty se budou nadále zobrazovat v těchto složkách, i když požádáte o jejich přesun."
       ],
       "Not all information listed here was exposed for all users.": [
-        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+        "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."
       ],
       "Remove metadata from images to protect your privacy.": [
         "Odebrání metadat z vašich obrázků pro ochranu vašeho soukromí."
@@ -20341,10 +20448,10 @@
         "Tato funkce je k dispozici pouze ve verzi Beta"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } ve starších mobilních aplikacích k šifrování dat, která vám posílají."
+        "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } ve starších mobilních aplikacích k šifrování dat, která vám posílají"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
-        "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } k šifrování dat, která vám posílají."
+        "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } k šifrování dat, která vám posílají"
       ],
       "This key cannot be used for encryption": [
         "Tento klíč nelze použít pro šifrování"
@@ -20359,7 +20466,7 @@
         "Tento klíč se používá k přeposílání e-mailů"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Použijte výchozí posuvníky prohlížeče. Ty jsou obvykle větší a snadněji se používají"

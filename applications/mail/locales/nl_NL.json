@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Meer opties voor accounts"
+      ],
       "More refine actions": [
         "Meer verfijnacties"
       ],
@@ -1117,10 +1120,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -6748,8 +6751,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -7369,6 +7371,9 @@
       ],
       "Text to display": [
         "Tekst om weer te geven"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Bedankt voor uw abonnement. Veilig browsen begint nu."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Het opgestelde concept gaat verloren als u de pagina verlaat."
@@ -10688,7 +10693,7 @@
         "${ protectionFromTrackersTitle } betekent niet meer gevolgd worden op het internet."
       ],
       "Activate premium features": [
-        "Premium functies activeren"
+        "Premium functies"
       ],
       "Activate selected": [
         "Activeer geselecteerde"
@@ -10700,13 +10705,13 @@
         "Altijd en overal toegankelijk"
       ],
       "Auto-delete spam and trash": [
-        "Spam en Prullenbak automatisch verwijderen"
+        "Spam en prullenbak verwijderen"
       ],
       "browser": [
         "browser"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Wis verwijderde en spammails na 30 dagen."
+        "Wis verwijderde e-mails en spam na 30 dagen."
       ],
       "Continue": [
         "Ga verder"
@@ -10730,7 +10735,7 @@
         "Voor altijd toegang tot e-mail en geoptimaliseerde mobiele ervaring, download onze ${ mobileAppAppStoreLink } of ${ mobileAppGooglePlayLink }-app."
       ],
       "Get notified if your password is compromised.": [
-        "Ontvang een melding als uw wachtwoord is gecompromitteerd."
+        "Ontvang een melding als uw wachtwoord in gevaar is gebracht."
       ],
       "Industry-leading spam protection": [
         "Toonaangevende spambescherming"
@@ -10760,7 +10765,7 @@
         "Begin ${ BRAND_NAME } te gebruiken"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Begin met het gebruiken van uw kortere, meer catchy versie van uw e-mailadres."
+        "Gebruik de kortere, meer catchy versie van uw e-mailadres."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Kies een weergavenaam om te beginnende. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
@@ -12315,6 +12320,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -12573,47 +12619,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
