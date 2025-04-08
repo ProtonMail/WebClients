@@ -29,6 +29,7 @@ const intoFileDescriptor =
                 revisionAdded: file.RevisionAdded,
                 revisionRemoved: file.RevisionRemoved ?? null,
                 fileUID: file.PersistentFileUID,
+                encryptionVersion: file.EncryptionVersion,
             };
         } catch (err) {
             logger.warn('File metadata could not be opened', err);

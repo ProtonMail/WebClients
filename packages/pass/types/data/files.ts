@@ -9,7 +9,11 @@ import type {
 } from '@proton/pass/types';
 
 export type FileID = string;
-export type BaseFileDescriptor = FileMetadata & { size: number; fileID: FileID };
+export type BaseFileDescriptor = FileMetadata & {
+    size: number;
+    fileID: FileID;
+    encryptionVersion: number;
+};
 
 export type FileDescriptor = BaseFileDescriptor & {
     chunks: ItemFileChunkOutput[];
