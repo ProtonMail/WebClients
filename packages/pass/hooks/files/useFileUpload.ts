@@ -15,29 +15,38 @@ import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } fro
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
 
+import { useFileEncryptionVersion } from './useFileEncryptionVersion';
+
 export type OnFileUploadProgress = (uploaded: number, total: number) => void;
 
 /** In web/desktop, the uploading happens on the same JS context, we can
  * pass blob references around. In the extension, store each chunk to the
  * file storage and pass filename references to the worker.  */
 const getChunkDTO = async (
-    shareId: ShareId,
-    fileID: FileID,
-    index: number,
-    blob: Blob,
+    options: {
+        blob: Blob;
+        chunkIndex: number;
+        encryptionVersion: number;
+        fileID: FileID;
+        shareId: ShareId;
+        totalChunks: number;
+    },
     tabId: Maybe<TabId>,
     signal: AbortSignal
 ): Promise<WithTabId<FileChunkUploadDTO>> => {
+    const { blob, chunkIndex, encryptionVersion, fileID, shareId, totalChunks } = options;
+
     if (EXTENSION_BUILD) {
         const ref = `${fileID}.chunk`;
         await fileStorage.writeFile(ref, blob, signal);
-        return { shareId, fileID, index, type: 'fs', ref, tabId };
+        return { chunkIndex, encryptionVersion, fileID, ref, shareId, tabId, totalChunks, type: 'fs' };
     }
 
-    return { shareId, fileID, index, type: 'blob', blob, tabId };
+    return { blob, chunkIndex, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'blob' };
 };
 
 export const useFileUpload = () => {
+    const fileEncryptionVersion = useFileEncryptionVersion();
     const tabId = useCurrentTabID();
 
     const { onTelemetry } = usePassCore();
@@ -70,6 +79,7 @@ export const useFileUpload = () => {
                 onProgress?: OnFileUploadProgress
             ): Promise<FileID> => {
                 let fileID: Maybe<string>;
+                const encryptionVersion = fileEncryptionVersion.current;
 
                 try {
                     const ctrl = ctrls.current.get(uploadID);
@@ -105,7 +115,14 @@ export const useFileUpload = () => {
                         }
                     })();
 
-                    const initDTO = { name, mimeType, totalChunks, uploadID, shareId };
+                    const initDTO = {
+                        name,
+                        mimeType,
+                        totalChunks,
+                        uploadID,
+                        shareId,
+                        encryptionVersion,
+                    };
 
                     const init = await abortable(ctrl.signal)(
                         () => asyncDispatch(fileUploadInitiate, initDTO),
@@ -119,11 +136,16 @@ export const useFileUpload = () => {
 
                     fileID = init.data;
 
-                    for (let index = 0; index < totalChunks; index++) {
-                        const start = index * FILE_CHUNK_SIZE;
+                    for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
+                        const start = chunkIndex * FILE_CHUNK_SIZE;
                         const end = Math.min(start + FILE_CHUNK_SIZE, size);
                         const blob = file.slice(start, end);
-                        const dto = await getChunkDTO(shareId, fileID, index, blob, tabId, ctrl.signal);
+
+                        const dto = await getChunkDTO(
+                            { shareId, fileID, chunkIndex, totalChunks, encryptionVersion, blob },
+                            tabId,
+                            ctrl.signal
+                        );
 
                         const result = await abortable(ctrl.signal)(
                             () => asyncDispatch(fileUploadChunk, dto),
@@ -135,7 +157,7 @@ export const useFileUpload = () => {
                             throw new Error(result.data.error);
                         }
 
-                        onProgress?.(index + 1, totalChunks);
+                        onProgress?.(chunkIndex + 1, totalChunks);
                     }
 
                     onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
