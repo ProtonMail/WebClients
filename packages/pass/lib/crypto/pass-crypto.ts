@@ -468,13 +468,13 @@ export const createPassCrypto = (): PassCryptoWorker => {
             return metadata;
         },
 
-        async createFileChunk({ fileID, chunk, shareId }) {
+        async createFileChunk({ chunk, chunkIndex, encryptionVersion, totalChunks, fileID, shareId }) {
             assertHydrated(context);
 
             if (chunk.size === 0) throw new PassCryptoFileError('File cannot be empty');
 
             const fileKey = worker.getFileKey({ shareId, fileID });
-            return processes.createFileChunk(chunk, fileKey);
+            return processes.createFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
         async openFileChunk({ fileID, chunk, shareId }) {
