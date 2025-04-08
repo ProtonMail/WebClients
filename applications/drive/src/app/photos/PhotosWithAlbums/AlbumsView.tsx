@@ -20,6 +20,7 @@ import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
 import { AlbumsInvitations } from './AlbumsInvitations';
 import { EmptyAlbums } from './EmptyAlbums';
+import { EmptyTagView } from './EmptyTagView';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 
 import './BannerInvite.scss';
@@ -172,6 +173,8 @@ export const AlbumsView: FC = () => {
         return <Loader />;
     }
 
+    const isSelectedTagEmtpy = !isAlbumsEmpty && filteredAlbums.length === 0;
+
     return (
         <>
             {!isAlbumsEmpty && (
@@ -183,12 +186,9 @@ export const AlbumsView: FC = () => {
             )}
 
             <AlbumsInvitations refreshSharedWithMeAlbums={refreshSharedWithMeAlbums} />
-
-            {isAlbumsEmpty ? (
-                <>
-                    <EmptyAlbums createAlbumModal={modals.createAlbum} />
-                </>
-            ) : (
+            {isSelectedTagEmtpy && <EmptyTagView tag={selectedTags[0]} />}
+            {isAlbumsEmpty && <EmptyAlbums createAlbumModal={modals.createAlbum} />}
+            {!isAlbumsEmpty && !isSelectedTagEmtpy && (
                 <AlbumsGrid
                     data={filteredAlbums}
                     onItemRender={handleItemRender}
