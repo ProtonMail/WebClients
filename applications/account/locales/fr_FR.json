@@ -506,7 +506,7 @@
         "Modifier l'adresse e-mail"
       ],
       "Edit Gateway": [
-        "Modifier la Passerelle"
+        "Modifier la passerelle"
       ],
       "Edit group": [
         "Modifier le groupe"
@@ -823,6 +823,9 @@
       "More options": [
         "Plus d'options"
       ],
+      "More options for accounts": [
+        "Plus d'options pour les comptes"
+      ],
       "move emails to": [
         "déplacer les messages vers"
       ],
@@ -916,11 +919,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Reject": [
         "Refuser"
@@ -1090,11 +1093,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "select file": [
-        "sélectionnez un fichier."
-      ],
       "Select file": [
         "Sélectionner un fichier"
+      ],
+      "select file": [
+        "sélectionnez un fichier."
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -3828,11 +3831,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Séparez les différentes facettes de votre vie et organisez votre boîte de réception avec des adresses supplémentaires."
       ],
+      "Learn more about common problems": [
+        "En savoir plus sur les problèmes courants"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Faites du pied de page de votre e-mail un reflet distinctif de votre marque, pas de la nôtre."
       ],
       "No one in your organization can connect to shared servers.": [
         "Personne dans votre organisation ne peut se connecter aux serveurs partagés."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Envoyer un code à votre adresse e-mail de récupération ou à votre téléphone"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
@@ -4197,6 +4206,83 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Les champs de texte sont facultatifs. Les informations que vous fournissez dans ce formulaire ne modifieront que la facture que vous avez sélectionnée et non les détails de votre future facture."
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } ne vous demandera jamais de saisir un code qui ne provient pas du domaine ${ domain } ou d'une application officielle ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Fonctionnement :** Saisissez le code affiché sur l’appareil auquel vous voulez vous connecter sur cet appareil. Vous serez connecté avec **${ email }**. Les deux appareils resteront actifs. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Autoriser la lecture d’un QR code pour se connecter"
+      ],
+      "Code copied to clipboard": [
+        "Code copié dans le presse-papiers"
+      ],
+      "Code from the other device": [
+        "Code de l’autre appareil"
+      ],
+      "Enter code manually": [
+        "Saisir le code manuellement"
+      ],
+      "New QR code": [
+        "Nouveau QR code"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Ouvrez l’application ${ BRAND_NAME } sur votre téléphone."
+      ],
+      "Please scan a new QR code to try again": [
+        "Veuillez scanner un nouveau QR code pour réessayer."
+      ],
+      "QR code expired": [
+        "Le QR code a expiré."
+      ],
+      "QR code sign-in disabled": [
+        "Connexion par QR code désactivée"
+      ],
+      "QR code sign-in enabled": [
+        "Connexion par QR code activée"
+      ],
+      "Safety tips:": [
+        "Conseils de sécurité :"
+      ],
+      "Scan a QR code with your phone": [
+        "Scannez un QR code avec votre téléphone"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Scannez le QR code sur votre appareil mobile pour vous connecter."
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Scannez ce QR code dans l'application ${ BRAND_NAME } sur votre téléphone pour vous connecter instantanément."
+      ],
+      "Sign in to another device": [
+        "Se connecter à un autre appareil"
+      ],
+      "Sign in with another device": [
+        "Se connecter avec un autre appareil"
+      ],
+      "Sign in with QR code": [
+        "Se connecter avec un QR code"
+      ],
+      "Tap **Scan QR code**": [
+        "Appuyez sur **Scanner le code QR**."
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "Appuyez sur **Paramètres**, puis sur **Se connecter à un autre appareil**."
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Pour accéder au code de l’appareil auquel vous souhaitez vous connecter, appuyez sur le bouton **Se connecter avec le QR code** dans le menu d’aide de l’écran de connexion, puis appuyez sur **Saisir la clé manuellement**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Méfiez-vous des messages qui contiennent un code. Ne saisissez jamais un code provenant d’un site internet ou d’une personne à laquelle vous ne faites pas confiance."
+      ],
+      "We couldn't sign you in": [
+        "Nous n’avons pas pu vous connecter."
+      ],
+      "You have successfully signed in to another device": [
+        "Vous vous êtes connecté à un autre appareil."
       ]
     },
     "Email": {
@@ -5052,6 +5138,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
@@ -7003,6 +7092,14 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Si elle est réactivée, la clé sera utilisée pour le déchiffrement."
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Si elle est réactivée, la clé sera utilisée pour le déchiffrement et la vérification"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utilisateur a actuellement accès aux serveurs partagés.",
@@ -7299,11 +7396,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activez au moins une méthode de récupération des données pour vous assurer que vous pourrez continuer à accéder au contenu de votre compte ${ BRAND_NAME } si vous perdez votre mot de passe."
       ],
-      "active": [
-        "active"
-      ],
       "Active": [
         "Actif"
+      ],
+      "active": [
+        "active"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Ajoutez une adresse e-mail @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
@@ -7747,11 +7844,11 @@
       "Data recoverable on this device": [
         "Données récupérables sur cet appareil"
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -9206,6 +9303,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Merci d'avoir choisi ${ BRAND_NAME }."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Merci de vous être abonné. La navigation sécurisée commence maintenant."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Merci de soutenir notre mission de créer un meilleur internet qui donne la priorité à la protection de la vie privée et à la liberté."
       ],
@@ -9497,6 +9597,9 @@
       "Total VPN connections": [
         "Nombre total de connexions VPN"
       ],
+      "trusted device": [
+        "appareil approuvée"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Essayez ${ productName } en toute tranquillité. Si pour une raison quelconque vous changez d'avis, vous recevrez un remboursement complet. Aucune question ne vous sera posée."
       ],
@@ -9611,11 +9714,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "Username": [
-        "Nom d'utilisateur"
-      ],
       "username": [
         "nom d'utilisateur"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -9730,6 +9833,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Nous stockons en toute sécurité les informations de récupération sur votre appareil de confiance pour vous éviter de perdre vos données."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Nous avons stocké un fichier de sauvegarde dans ce navigateur parce que vous avez autorisé la récupération des données sur cet ${ deviceLink }. Si le fichier de sauvegarde est valide, vous retrouverez immédiatement un accès total ou partiel à vos données chiffrées."
       ],
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
@@ -10323,6 +10429,12 @@
     "Key function description": {
       "Decryption": [
         "Déchiffrement"
+      ],
+      "Decryption, verification": [
+        "Déchiffrement, vérification"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Chiffrement, déchiffrement, signature, vérification"
       ]
     },
     "Key generation": {
@@ -10768,10 +10880,10 @@
       "Allow sharing outside the organization": [
         "Autoriser le partage en dehors de l'organisation"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11186,7 +11298,7 @@
         "De : ${ fromEmail }"
       ],
       "Gateway name": [
-        "Nom de la Passerelle"
+        "Nom de la passerelle"
       ],
       "Gift code": [
         "Code-cadeau"
@@ -12062,11 +12174,11 @@
       "perform a password reset from your active session": [
         "réinitialiser le mot de passe depuis votre session active"
       ],
-      "privacy policy": [
-        "politique de confidentialité"
-      ],
       "Privacy policy": [
         "Politique de confidentialité"
+      ],
+      "privacy policy": [
+        "politique de confidentialité"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -12665,6 +12777,32 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Commencez pour ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "À partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuer avec Free"
@@ -12692,32 +12830,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Commencez pour ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "À partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13434,6 +13546,14 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -13452,14 +13572,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -17335,6 +17447,47 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -17623,47 +17776,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -18397,10 +18509,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -18901,6 +19013,9 @@
       "Home": [
         "Accueil"
       ],
+      "How can we help?": [
+        "Comment pouvons-nous vous aider ?"
+      ],
       "How does it work?": [
         "Comment ça marche ?"
       ],
@@ -19084,6 +19199,9 @@
       ],
       "Other preferences": [
         "Autres préférences"
+      ],
+      "Other sign-in issues": [
+        "Autres problèmes de connexion"
       ],
       "Password": [
         "Mot de passe"
@@ -19847,6 +19965,12 @@
       ],
       "This feature is only available on Beta": [
         "Cette fonctionnalité n'est disponible que sur la version bêta."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Il s'agit de la clé par défaut utilisée par les autres utilisateurs de ${ MAIL_APP_NAME } sur les anciennes applications mobiles pour chiffrer les données qu'ils vous envoient."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Il s’agit de la clé par défaut utilisée par les autres utilisateurs de ${ MAIL_APP_NAME } pour chiffrer les données qu’ils vous envoient."
       ],
       "This key cannot be used for encryption": [
         "Cette clé ne peut pas être utilisée pour le chiffrement."
