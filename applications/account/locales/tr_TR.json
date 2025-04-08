@@ -823,6 +823,9 @@
       "More options": [
         "Diğer seçenekler"
       ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
+      ],
       "move emails to": [
         "e-postalar şuraya taşınsın"
       ],
@@ -916,11 +919,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -1090,11 +1093,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "select file": [
-        "dosya seçin"
-      ],
       "Select file": [
         "Dosya seçin"
+      ],
+      "select file": [
+        "dosya seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -2745,6 +2748,12 @@
         "Yomi"
       ]
     },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "${ selectedCitiesCount } seçilmiş",
+        "${ selectedCitiesCount } seçilmiş"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abhazya"
@@ -3822,11 +3831,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
       ],
+      "Learn more about common problems": [
+        "Sık karşılaşılan sorunlar hakkında ayrıntılı bilgi alın"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "E-posta alt bilginizi kendinize göre ayarlayın. Bizimki yerine kendi markanızı gösterin."
       ],
       "No one in your organization can connect to shared servers.": [
         "Kuruluşunuzdaki hiç kimse paylaşılan sunuculara bağlanamaz."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Kurtarma e-posta adresinize veya telefonunuza bir kod gönderin"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
@@ -4191,6 +4206,83 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME }, hiçbir zaman ${ domain } etki alanından veya resmi bir ${ BRAND_NAME } uygulamasından gelmeyen bir kodu yazmanızı istemez."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Nasıl çalışır:** Oturum açmak istediğiniz aygıtta görüntülenen kodu bu aygıta yazın. **${ email }** olarak oturumunuz açılır. Her iki aygıt da etkin kalır. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Oturum açmak için bir kare kod taranabilsin"
+      ],
+      "Code copied to clipboard": [
+        "Kod panoya kopyalandı"
+      ],
+      "Code from the other device": [
+        "Diğer aygıttaki kod"
+      ],
+      "Enter code manually": [
+        "Anahtarı el ile yazın"
+      ],
+      "New QR code": [
+        "Yeni kare kod"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Telefonunuzdaki ${ BRAND_NAME } uygulamasını açın"
+      ],
+      "Please scan a new QR code to try again": [
+        "Lütfen yeniden denemek için yeni bir kare kod tarayın"
+      ],
+      "QR code expired": [
+        "Kare kodun süresi geçmiş"
+      ],
+      "QR code sign-in disabled": [
+        "Kare kod ile oturum açma özelliği kapalı"
+      ],
+      "QR code sign-in enabled": [
+        "Kare kod ile oturum açma özelliği açık"
+      ],
+      "Safety tips:": [
+        "Güvenlik ipuçları:"
+      ],
+      "Scan a QR code with your phone": [
+        "Telefonunuzla bir kare kod tarayın"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Oturum açmak için mobil aygıtınızdaki kare kodu tarayın"
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Hemen oturum açmak için telefonunuzdaki ${ BRAND_NAME } uygulamasıyla bu kare kodu tarayın."
+      ],
+      "Sign in to another device": [
+        "Başka bir aygıtta oturum açın"
+      ],
+      "Sign in with another device": [
+        "Başka bir aygıtta oturum açın"
+      ],
+      "Sign in with QR code": [
+        "Kare kod ile oturum aç"
+      ],
+      "Tap **Scan QR code**": [
+        "**Kare kodu tara** üzerine dokunun"
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "**Ayarlar** üzerine ve ardından **Başka bir aygıtta oturum aç** üzerine dokunun"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Oturum açmak istediğiniz aygıtın koduna erişmek için, oturum açma ekranının yardım menüsündeki **Kare kod ile oturum aç** düğmesine ve ardından **Anahtarı el ile yazın** üzerine dokunun. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "İçinde bir kod bulunan iletilere karşı dikkatli olun. Güvenmediğiniz bir siteden veya kişiden gelen bir kodu asla yazmayın."
+      ],
+      "We couldn't sign you in": [
+        "Oturumunuz açılamadı"
+      ],
+      "You have successfully signed in to another device": [
+        "Başka bir aygıtta oturum açtınız"
       ]
     },
     "Email": {
@@ -5046,6 +5138,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -6994,7 +7089,19 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Yeniden etkinleştirilirse, anahtar şifre çözme için kullanılır"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Yeniden etkinleştirilirse, anahtar şifre çözme ve doğrulama için kullanılır"
+      ]
+    },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor.",
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -7286,11 +7393,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "active": [
-        "etkin"
-      ],
       "Active": [
         "Etkin"
+      ],
+      "active": [
+        "etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -7731,11 +7838,14 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
+      "Data recoverable on this device": [
+        "Bu aygıttaki veriler kurtarılabilir"
       ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -8415,6 +8525,9 @@
       ],
       "Learn more about single sign-on": [
         "Tek oturum açma ile ilgili ayrıntılı bilgi alın"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } ne yapacağınızı öğrenin"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -9187,6 +9300,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "${ BRAND_NAME } uygulamasını seçtiğiniz için teşekkürler."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Abone olduğunuz için teşekkürler. Artık güvenli gezinebilirsiniz."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gizlilik ve özgürlüğe öncelik veren daha iyi bir internet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
       ],
@@ -9478,6 +9594,9 @@
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
       ],
+      "trusted device": [
+        "güvenilir aygıt"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
       ],
@@ -9592,11 +9711,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "Username": [
-        "Kullanıcı adı"
-      ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -9711,6 +9830,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Verilerinizi kaybetmenizi önlemek için kurtarma bilgilerini güvenilir aygıtnızda güvenli bir şekilde saklarız"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Bu ${ deviceLink } aygıtı üzerindeki verilerin kurtarılmasına izin verdiğiniz için bu tarayıcıda bir yedek dosyası kaydedildi. Yedek dosya geçerliyse, şifrelenmiş verilerinizin hemen tümüne veya bir bölümüne erişebileceksiniz."
       ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
@@ -10301,6 +10423,17 @@
         "Abonelik"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Şifre çözme"
+      ],
+      "Decryption, verification": [
+        "Şifre çözme, doğrulama"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Şifreleme, şifre çözme, imzalama, doğrulama"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Anahtar oluştur"
@@ -10328,6 +10461,9 @@
       ]
     },
     "Key state badge": {
+      "Compatibility": [
+        "Uyumluluk"
+      ],
       "Compromised": [
         "Ele geçirilmiş"
       ],
@@ -10741,10 +10877,10 @@
       "Allow sharing outside the organization": [
         "Kuruluş dışına paylaşım yapılabilsin"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10968,6 +11104,9 @@
       ],
       "Could you please specify?": [
         "Daha açık yazabilir misiniz?"
+      ],
+      "Countries": [
+        "Ülkeler"
       ],
       "Country": [
         "Ülke"
@@ -12008,6 +12147,9 @@
       "How to unlock data": [
         "Verilerin kilidi nasıl açılır"
       ],
+      "if your data is leaked": [
+        "Verileriniz sızarsa"
+      ],
       "Import/export": [
         "İçe/dışa aktarma"
       ],
@@ -12029,11 +12171,11 @@
       "perform a password reset from your active session": [
         "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
       ],
-      "privacy policy": [
-        "gizlilik ilkesi"
-      ],
       "Privacy policy": [
         "Gizlilik ilkesi"
+      ],
+      "privacy policy": [
+        "gizlilik ilkesi"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
@@ -12632,6 +12774,32 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -12659,32 +12827,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -13401,6 +13543,14 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -13419,14 +13569,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -17299,6 +17441,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -17587,47 +17770,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -18361,10 +18503,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -18865,6 +19007,9 @@
       "Home": [
         "Giriş"
       ],
+      "How can we help?": [
+        "Nasıl yardımcı olabiliriz?"
+      ],
       "How does it work?": [
         "Nasıl çalışır?"
       ],
@@ -18916,6 +19061,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Daha fazla adres kullanarak gizliliğinizi artırın"
+      ],
+      "Information exposed in breach": [
+        "Ele geçirilmede açığa çıkan bilgiler"
       ],
       "Integrations": [
         "Bütünleştirmeler"
@@ -19045,6 +19193,9 @@
       ],
       "Other preferences": [
         "Diğer ayarlar"
+      ],
+      "Other sign-in issues": [
+        "Diğer oturum açma sorunları"
       ],
       "Password": [
         "Parola"
@@ -19584,11 +19735,20 @@
       "Actions": [
         "İşlemler"
       ],
+      "Creation date": [
+        "Oluşturulma tarihi"
+      ],
       "Fingerprint": [
         "Parmak izi"
       ],
+      "Function": [
+        "İşlev"
+      ],
       "Status": [
         "Durum"
+      ],
+      "Type": [
+        "Tür"
       ]
     },
     "Title header for members table": {
@@ -19725,6 +19885,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Gizliliğinizi korumak için görsellerdeki üst verileri kaldırın."
       ],
@@ -19797,6 +19960,12 @@
       "This feature is only available on Beta": [
         "Bu özelliği yalnızca Beta sürümü kullanıcıları kullanabilir"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Bu, diğer ${ MAIL_APP_NAME } kullanıcılarının size gönderdikleri verileri şifrelemek için daha eski mobil uygulamalarda kullandığı varsayılan anahtardır"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Bu, diğer ${ MAIL_APP_NAME } kullanıcılarının size gönderdiği verileri şifrelemek için kullandığı varsayılan anahtardır"
+      ],
       "This key cannot be used for encryption": [
         "Bu anahtar şifreleme için kullanılamaz"
       ],
@@ -19808,6 +19977,9 @@
       ],
       "This key is used for email forwarding": [
         "Bu anahtar, e-posta iletimi için kullanılır"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Tarayıcınızın varsayılan kaydırma çubukları kullanılır. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
