@@ -1077,11 +1077,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select All": [
-        "Izberi vse"
-      ],
       "Select all": [
         "Označi vse"
+      ],
+      "Select All": [
+        "Izberi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -6533,6 +6533,9 @@
       "Initializing…": [
         "Zagon …"
       ],
+      "Insert image": [
+        "Vstavi sliko"
+      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -10122,11 +10125,17 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } v Play Store"
       ],
+      "Activate premium features": [
+        "Premium funkcije"
+      ],
       "Auto-delete spam and trash": [
-        "Samodejno brisanje neželene pošte in smeti"
+        "Samodejno briši spam/smeti"
       ],
       "browser": [
         "brskalnik"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Počistite izbrisane in neželene e-pošte po 30 dneh."
       ],
       "Continue": [
         "Nadaljuj"
@@ -10136,6 +10145,9 @@
       ],
       "Download the desktop app": [
         "Prenesi namizno aplikacijo"
+      ],
+      "Get notified if your password is compromised.": [
+        "Prejmite obvestilo, če je vaše geslo ogroženo."
       ],
       "Let's get started": [
         "Pa začnimo"
@@ -10151,6 +10163,9 @@
       ],
       "Start using ${ BRAND_NAME }": [
         "Začnite uporabljati ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Začni uporabljati krajšo, privlačnejšo različico svojega e-pošte."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Za začetek izberite prikazno ime. To je ime, ki ga bodo uporabniki videli, ko jim pošljete sporočilo, jih povabite na dogodek ali z njimi delite datoteko."
@@ -11607,6 +11622,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
@@ -11769,47 +11825,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {

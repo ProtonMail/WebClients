@@ -28,10 +28,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate organization key": [
@@ -454,6 +454,9 @@
       "More options": [
         "더 많은 옵션"
       ],
+      "More options for accounts": [
+        "계정 추가 옵션"
+      ],
       "Need help?": [
         "도움이 필요하신가요?"
       ],
@@ -637,10 +640,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
       "Send code": [
@@ -2677,6 +2680,53 @@
         "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
       ]
     },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME }은 도메인 ${ domain } 또는 공식 ${ BRAND_NAME } 앱에서 발송된 것이 아닌 코드를 입력하도록 요청하지 않습니다."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**작동 방식:** 로그인하려는 기기에 표시된 코드를 입력하세요. **${ email }**(으)로 로그인됩니다. 두 기기 모두 활성 상태로 유지됩니다. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "QR 코드를 스캔하여 로그인할 수 있도록 허용"
+      ],
+      "Code from the other device": [
+        "다른 기기의 코드"
+      ],
+      "Enter code manually": [
+        "수동으로 코드 입력하기"
+      ],
+      "QR code sign-in disabled": [
+        "QR 코드 로그인이 비활성화됨"
+      ],
+      "QR code sign-in enabled": [
+        "QR 코드 로그인이 활성화됨"
+      ],
+      "Safety tips:": [
+        "보안을 위한 팁:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "로그인하려면 모바일 디바이스에서 QR 코드를 스캔하세요"
+      ],
+      "Sign in to another device": [
+        "다른 기기에서 로그인"
+      ],
+      "Sign in with another device": [
+        "다른 기기로 로그인"
+      ],
+      "Sign in with QR code": [
+        "QR 코드로 로그인"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "로그인하려는 기기의 코드에 접근하려면 로그인 화면의 도움말 메뉴에서 **QR 코드로 로그인** 버튼을 탭한 다음 **키 수동으로 입력하기**을 탭하세요. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "코드가 포함된 메시지에 유의하세요. 웹사이트나 신뢰할 수 없는 사람의 코드를 절대 입력하지 마세요."
+      ],
+      "You have successfully signed in to another device": [
+        "다른 기기에서 로그인하는데 성공했습니다."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } 추가됨"
@@ -4216,10 +4266,13 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "Dedicated servers": [
-        "전용 서버"
+      "Data recoverable on this device": [
+        "이 장치에서 데이터 복구 가능"
       ],
       "dedicated servers": [
+        "전용 서버"
+      ],
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -5122,6 +5175,9 @@
       "Thank you": [
         "진심으로 감사드립니다."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "구독해 주셔서 감사합니다. 지금부터 보안 브라우징이 시작됩니다."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "개인 정보 보호와 자유가 최우선인 더 나은 인터넷을 구축하려는 우리의 사명을 지원해 주셔서 감사합니다."
       ],
@@ -5293,6 +5349,9 @@
       "Total VPN connections": [
         "총 VPN 연결"
       ],
+      "trusted device": [
+        "신뢰할 수 있는 장치"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName }을(를) 걱정 없이 사용해 보세요 - 만약 어떠한 이유로든 회원님의 마음이 바뀌었다면, 전액 환불 받으실 수 있어요. 환불 사유를 묻지 않습니다."
       ],
@@ -5362,10 +5421,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -5451,6 +5510,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "복구 방법을 사용하는 것을 권장합니다."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "사용자가 이 기기 ${ deviceLink }(에)서 데이터 복구를 허용하여 이 브라우저에 백업 파일이 저장되었습니다. 백업 파일이 유효한 경우 암호화된 데이터에 대한 전체 또는 부분적인 접근 권한을 즉시 다시 회수할 수 있게 됩니다."
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
@@ -5895,10 +5957,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -9954,6 +10016,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -10236,47 +10339,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -10773,11 +10835,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"

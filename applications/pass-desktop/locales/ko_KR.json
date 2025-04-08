@@ -1778,6 +1778,9 @@
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate }에 마지막으로 유출됨"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "대처법에 대해 알아보세요 ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "항목에서 떠나는 중..."
       ],
@@ -3288,6 +3291,9 @@
       "auto create rules ››": [
         "자동 생성 규칙 ››"
       ],
+      "if your data is leaked": [
+        "사용자의 데이터가 유출된 경우"
+      ],
       "Learn more": [
         "더 알아보기"
       ]
@@ -3406,6 +3412,9 @@
       ],
       "Exporting files": [
         "파일 내보내는 중"
+      ],
+      "Failed linking files to item": [
+        "항목과 파일 연결 실패"
       ],
       "File": [
         "파일"
@@ -3901,6 +3910,9 @@
       "Inactive 2FA": [
         "2단계 인증 꺼짐"
       ],
+      "Information exposed in breach": [
+        "유출 시 노출된 정보"
+      ],
       "Install extension": [
         "확장 프로그램 설치"
       ],
@@ -4155,6 +4167,14 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
       ]
     },
     "Validation": {

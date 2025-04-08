@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
@@ -454,6 +454,9 @@
       "More options": [
         "Fler alternativ"
       ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
+      ],
       "Need help?": [
         "Behöver du hjälp?"
       ],
@@ -637,11 +640,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "select file": [
-        "välj fil"
-      ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -2685,6 +2688,50 @@
         "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
       ]
     },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } kommer aldrig att be dig att ange en kod som inte kommer från domänen ${ domain } eller från en officiell ${ BRAND_NAME }-applikation."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Så här fungerar det:** Ange koden som visas på enheten som du vill logga in på i den här enheten. Du kommer att loggas in som **${ email }**. Båda enheterna förblir aktiva. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Tillåt att skanna en QR-kod för att logga in"
+      ],
+      "Code from the other device": [
+        "Kod från den andra enheten"
+      ],
+      "Enter code manually": [
+        "Ange kod manuellt"
+      ],
+      "QR code sign-in disabled": [
+        "QR-kod för inloggning inaktiverad"
+      ],
+      "QR code sign-in enabled": [
+        "Inloggning med QR-kod aktiverad"
+      ],
+      "Safety tips:": [
+        "Säkerhetstips:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Skanna QR-kod på din mobila enhet för att logga in"
+      ],
+      "Sign in to another device": [
+        "Logga in på annan enhet"
+      ],
+      "Sign in with another device": [
+        "Logga in med annan enhet"
+      ],
+      "Sign in with QR code": [
+        "Logga in med QR-kod"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Om du vill komma åt koden för den enhet du vill logga in på trycker du på knappen **Logga in med QR-kod** i hjälpmenyn på inloggningsskärmen och sedan på **Ange nyckel manuellt**. "
+      ],
+      "You have successfully signed in to another device": [
+        "Du har lyckats logga in på en annan enhet"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } har lagts till"
@@ -4256,11 +4303,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationerna."
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -5161,6 +5208,9 @@
       "Thank you": [
         "Tack"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Tack för att du prenumererar. Säker surfning börjar nu."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
       ],
@@ -5335,6 +5385,9 @@
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
       ],
+      "trusted device": [
+        "betrodd enhet"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
       ],
@@ -5404,11 +5457,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "Username": [
-        "Användarnamn"
-      ],
       "username": [
         "användarnamn"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "Users": [
         "Användare"
@@ -5939,10 +5992,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10067,6 +10120,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10355,47 +10449,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10896,10 +10949,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [

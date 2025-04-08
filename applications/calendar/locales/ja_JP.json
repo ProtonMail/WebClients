@@ -470,6 +470,9 @@
       "More options": [
         "詳細設定を表示"
       ],
+      "More options for accounts": [
+        "アカウントのその他のオプション"
+      ],
       "New event": [
         "新しい予定"
       ],
@@ -4874,6 +4877,9 @@
       "Learn more": [
         "詳細"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } で何をすべきか学びましょう"
+      ],
       "Link copied to clipboard": [
         "リンクがクリップボードにコピーされました"
       ],
@@ -5149,6 +5155,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "ご登録ありがとうございます。安全なブラウジングが今すぐ開始されます。"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
@@ -5886,6 +5895,9 @@
       "Emails (last month)": [
         "メール (過去 1 か月)"
       ],
+      "Enable desktop notifications": [
+        "デスクトップ通知を有効にする"
+      ],
       "Encrypt emails": [
         "メールを暗号化"
       ],
@@ -6005,6 +6017,9 @@
       ],
       "Notifications": [
         "通知"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "通知が無効になっています。有効にするには、ブラウザの設定を変更してください。"
       ],
       "On": [
         "に"
@@ -6248,6 +6263,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Bitcoinで支払うには？"
+      ],
+      "if your data is leaked": [
+        "もしデータが漏洩した場合"
       ],
       "Inbox": [
         "受信トレイ"
@@ -9089,6 +9107,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -9341,47 +9400,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -10024,6 +10042,9 @@
       "Import groups": [
         "グループをインポート"
       ],
+      "Information exposed in breach": [
+        "侵害で漏洩した情報"
+      ],
       "Invalid verification code": [
         "無効な検証コードです"
       ],
@@ -10352,6 +10373,9 @@
       "Load image": [
         "画像を読み込む"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "ここに記載されているすべての情報がすべてのユーザーに公開されたわけではありません。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
       ],
@@ -10372,6 +10396,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "暗号化されたパスワードは、それらが解読されない限り、漏洩した場合でも安全です。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"

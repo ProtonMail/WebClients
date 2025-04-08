@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Flere alternativer for kontoer"
+      ],
       "More refine actions": [
         "Flere finjusteringshandlinger"
       ],
@@ -1117,10 +1120,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -6745,8 +6748,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7366,6 +7368,9 @@
       ],
       "Text to display": [
         "Tekst som skal vises"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Takk for at du abonnerer. Sikker surfing starter nå."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Dataene du har lagt inn i utkastet, kan ikke lagres hvis du forlater siden."
@@ -10697,13 +10702,13 @@
         "Tilgang når som helst, hvor som helst"
       ],
       "Auto-delete spam and trash": [
-        "Auto-slett søppelpost og meldinger i papirkurven"
+        "Autoslett søppelpost/papirkurv"
       ],
       "browser": [
         "nettleser"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Fjern slettede e-poster og søppelpost-e-poster etter 30 dager."
+        "Tøm slettede e-poster og søppelpost etter 30 dager."
       ],
       "Continue": [
         "Fortsett"
@@ -10757,7 +10762,7 @@
         "Begynn å bruke ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Begynn å bruke den kortere, mer fengende versjonen av e-postadressen din."
+        "Bruk en kortere og mer fengende versjon av e-postadressen din."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Velg et visningsnavn for å komme i gang. Dette er hva folk vil se når du sender en e-post, inviterer dem til et arrangement eller deler en fil."
@@ -12312,6 +12317,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -12570,47 +12616,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {

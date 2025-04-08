@@ -1102,10 +1102,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -6634,8 +6634,7 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें",
-        "तस्वीरें डालें"
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -10442,7 +10441,7 @@
         "${ protectionFromTrackersTitle } का मतलब है कि अब इंटरनेट पर आपका पीछा नहीं किया जाएगा।"
       ],
       "Activate premium features": [
-        "प्रीमियम खासियतों को सक्रिय करें"
+        "प्रीमियम खासियत"
       ],
       "Activate selected": [
         "चयनित को सक्रिय करें"
@@ -10454,13 +10453,13 @@
         "कभी भी, कहीं भी पहुँच"
       ],
       "Auto-delete spam and trash": [
-        "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
+        "स्पैम और कचरा को ऑटो-डिलीट करें"
       ],
       "browser": [
         "ब्राउज़र"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "30 दिनों के बाद डिलीट किए गए और स्पैम ईमेल्स को साफ करें।"
+        "30 दिनों के बाद मिटाए गए और स्पैम ईमेल को हटाएं।"
       ],
       "Continue": [
         "जारी रखें"
@@ -10484,7 +10483,7 @@
         "ईमेल तक कभी भी पहुँच और अनुकूलित मोबाइल अनुभव के लिए, हमारा ${ mobileAppAppStoreLink } या ${ mobileAppGooglePlayLink } ऐप डाउनलोड करें।"
       ],
       "Get notified if your password is compromised.": [
-        "अगर आपका पासवर्ड छेड़छाड़ होता है तो सूचना प्राप्त करें।"
+        "अगर आपका पासवर्ड छेड़छाड़ करें किया गया है तो सूचना प्राप्त करें।"
       ],
       "Industry-leading spam protection": [
         "उद्योग-अग्रणी स्पैम सुरक्षा"
@@ -10514,7 +10513,7 @@
         "${ BRAND_NAME } का उपयोग शुरू करें"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "अपने ईमेल पते का छोटा, आकर्षक संस्करण उपयोग करना शुरू करें।"
+        "अपने ईमेल पता का छोटा, अधिक आकर्षक वर्शन इस्तेमाल करना शुरू करें।"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "शुरू करने के लिए, एक डिस्प्ले नाम चुने। दूसरे लोग ये नाम देखेंगे जब आप उन्हें ईमेल भेजेंगे, न्योता भेजेंगे, या फाइल शेयर करेंगे।"
@@ -12025,6 +12024,47 @@
         "के लिए ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -12283,47 +12323,6 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
