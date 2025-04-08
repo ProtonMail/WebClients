@@ -389,10 +389,10 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
       "Multiple select": [
@@ -478,6 +478,9 @@
       ],
       "Reset": [
         "Sıfırla"
+      ],
+      "Reset history": [
+        "Geçmişi sil"
       ],
       "Restore": [
         "Geri yükle"
@@ -764,6 +767,9 @@
       "Alias options could not be resolved": [
         "Takma ad seçenekleri çözümlenemedi"
       ],
+      "An error occured during the import process": [
+        "İçe aktarma sırasında bir sorun çıktı"
+      ],
       "Authentication error": [
         "Kimlik doğrulayıcı sorunu"
       ],
@@ -827,6 +833,9 @@
       ],
       "Deleting item failed": [
         "Öge silinemedi"
+      ],
+      "Deleting item history failed": [
+        "Öge geçmişi silinemedi"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
@@ -1691,6 +1700,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "\"${ payload.item.data.metadata.name }\" ögesi güncellendi"
       ],
+      "Item history permanently deleted": [
+        "Öge geçmişi kalıcı olarak silindi"
+      ],
       "Item moved to trash": [
         "Öge çöpe atıldı"
       ],
@@ -1923,6 +1935,9 @@
       "Please follow the steps below to set up your domain.": [
         "Etki alanınızı kurmak için lütfen aşağıdaki adımları izleyin."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Verileriniz içe aktarılırken lütfen bu pencereyi açık tutun. Bu işlem birkaç dakika sürebilir."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Takma adın silindikten sonra geri alınamayacağını unutmayın. Silmek yerine takma adı kullanımdan kaldırmak ister misiniz?"
       ],
@@ -1970,6 +1985,9 @@
       ],
       "Removing secure link...": [
         "Güvenli bağlantı kaldırılıyor..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Geçmişi silmek, ögenin tüm geçmiş sürümlerini kalıcı olarak siler ve bu işlem geri alınamaz."
       ],
       "Restoring items from trash": [
         "Ögeler çöpten çıkarılıyor"
@@ -2078,6 +2096,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Şu ${ totalIgnored } öge içe aktarılamadı:",
+        "Şu ${ totalIgnored } öge içe aktarılamadı:"
       ],
       "The secure link has been removed": [
         "Güvenli bağlantı kaldırıldı"
@@ -2896,6 +2918,9 @@
       "Personal website": [
         "Kişisel site"
       ],
+      "PGP-encrypted (recommended)": [
+        "PGP ile şifrelenmiş (önerilir)"
+      ],
       "Phone number": [
         "Telefon numarası"
       ],
@@ -3157,6 +3182,9 @@
       "Your domain": [
         "Etki alanınız"
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "Posta kodu"
       ]
@@ -3211,6 +3239,114 @@
       ],
       "Underscores": [
         "Alt çizgi"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\" yüklenemedi."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" içe aktarılamadı."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" yüklemek için çok büyük. İzin verilen en büyük boyut (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } dosya",
+        "${ filesCount } dosya"
+      ],
+      "Attachments": [
+        "Ek dosyalar"
+      ],
+      "Choose a file or drag it here": [
+        "Bir dosya seçin veya sürükleyip buraya bırakın"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "${ deleteFile.state.name } dosyasını sil"
+      ],
+      "Delete all files": [
+        "Tüm dosyaları sil"
+      ],
+      "Do you want to remove all the files?": [
+        "Tüm dosyaları kaldırmak istiyor musunuz?"
+      ],
+      "Download": [
+        "İndir"
+      ],
+      "Download \"${ filename }\"": [
+        "\"${ filename }\" indir"
+      ],
+      "Download file": [
+        "Dosyayı indir"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Bir Firefox sınırlaması nedeniyle, dosya yüklenmeden önce ${ PASS_APP_NAME } uygulamasının yeni bir pencerede yeniden açılması gerekiyor."
+      ],
+      "Exporting files": [
+        "Dosyalar dışa aktarılıyor"
+      ],
+      "Failed linking files to item": [
+        "Dosyaların öge ile bağlantısı kurulamadı"
+      ],
+      "File": [
+        "Dosya"
+      ],
+      "File attachments": [
+        "Ek dosyalar"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Açıldığında, dışa aktarma sırasında tüm dosyalarınız indirilir. Bu işlem, internet bağlantınızın hızına bağlı olarak biraz zaman alabilir."
+      ],
+      "Include file attachments": [
+        "Ek dosyalar katılsın"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Seçilmiş dosyalar için yeterli depolama alanı yok."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Silindikten sonra, bu dosya ögenin geçmişinden kurtarılabilir kalır."
+      ],
+      "Open new window to upload files": [
+        "Dosyaları yüklemek için yeni pencere aç"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Dosyalarınız i̇ndirilirken lütfen sabırla bekleyin."
+      ],
+      "Remove all files": [
+        "Tüm dosyaları kaldır"
+      ],
+      "Rename": [
+        "Yeniden adlandır"
+      ],
+      "Restore": [
+        "Geri yükle"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Bazı dosyalar yüklemek için çok büyük. İzin verilen en büyük boyut (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Dışa aktarılan ek dosyalar şifrelenmeyecek."
+      ],
+      "The file you are trying to import is empty": [
+        "İçe aktarmaya çalıştığınız dosya boş"
+      ],
+      "Total files: ": [
+        "Toplam dosya: "
+      ],
+      "Total imported files: ": [
+        "Toplam içe aktarılan dosya sayısı: "
+      ],
+      "Upload files from your device.": [
+        "Aygıtınızdan dosyalar yükleyin."
+      ],
+      "You can attach files to items for a better organization": [
+        "Daha iyi bir düzen için ögelere dosyalar ekleyebilirsiniz"
+      ],
+      "You may close this window after saving the file.": [
+        "Dosyayı kaydettikten sonra bu pencereyi kapatabilirsiniz."
+      ],
+      "Your current plan does not support importing files": [
+        "Geçerli tarifeniz dosyaları içe aktarmayı desteklemiyor"
       ]
     },
     "Placeholder": {
@@ -3454,6 +3590,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME } günlükleri"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } ayarları"
       ],
@@ -3572,6 +3711,9 @@
       "Email": [
         "E-posta"
       ],
+      "Encrypted import": [
+        "Şifrelenmiş içe aktarma"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
       ],
@@ -3619,6 +3761,9 @@
       ],
       "Import to vault(s)": [
         "Kasaların içine aktar"
+      ],
+      "Importing your data": [
+        "Verileriniz içe aktarılıyor"
       ],
       "Item": [
         "Öge"
@@ -3718,6 +3863,9 @@
       ],
       "Remove secure link?": [
         "Güvenli bağlantı kaldırılsın mı?"
+      ],
+      "Reset history for this item?": [
+        "Bu ögenin geçmişini silmek istiyor musunuz?"
       ],
       "Restore this version?": [
         "Bu sürüm geri yüklensin mi?"
@@ -3879,6 +4027,9 @@
       ],
       "An error occurred while exporting your data": [
         "Verileriniz dışa aktarılırken bir sorun çıktı"
+      ],
+      "An error occurred while importing your data.": [
+        "Verileriniz içe aktarılırken bir sorun çıktı."
       ],
       "An error occurred while resuming your session": [
         "Oturumunuz sürdürülürken bir sorun çıktı"
