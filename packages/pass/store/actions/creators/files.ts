@@ -25,7 +25,7 @@ export const fileUploadInitiate = requestActionsFactory<FileInitiateUploadDTO, F
 });
 
 export const fileUploadChunk = requestActionsFactory<WithTabId<FileChunkUploadDTO>, boolean>('file::upload::chunk')({
-    key: ({ fileID, index, tabId }) => `${tabId ?? 0}::${fileID}::${index}`,
+    key: ({ fileID, chunkIndex, tabId }) => `${tabId ?? 0}::${fileID}::${chunkIndex}`,
     failure: { prepare: withAbortPayload },
 });
 
