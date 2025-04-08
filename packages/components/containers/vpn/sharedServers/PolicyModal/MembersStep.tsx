@@ -207,11 +207,11 @@ const MembersStep = ({
                                     checked={checked}
                                     entity={group}
                                     avatar={<Icon name="users-filled"></Icon>}
-                                    description={
-                                        <>
-                                            {group.UserCount} {c('Label').t`Users`}
-                                        </>
-                                    }
+                                    description={c('Label').ngettext(
+                                        msgid`${group.UserCount} user`,
+                                        `${group.UserCount} users`,
+                                        group.UserCount
+                                    )}
                                 />
                             );
                         })}
