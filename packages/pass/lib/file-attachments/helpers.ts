@@ -47,9 +47,10 @@ export const intoFileDescriptors = async (shareId: string, files: ItemFileOutput
 export const intoPublicFileDescriptors = async (files: ItemFileOutput[], itemKey: string, linkKey: string) =>
     openFileDescriptors((file) =>
         PassCrypto.openSecureLinkFileDescriptor({
-            encryptedItemKey: itemKey,
             encryptedFileKey: file.FileKey,
+            encryptedItemKey: itemKey,
             encryptedMetadata: file.Metadata,
+            encryptionVersion: file.EncryptionVersion,
             fileID: file.FileID,
             linkKey,
         })
