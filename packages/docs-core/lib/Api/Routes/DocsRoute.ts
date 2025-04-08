@@ -6,4 +6,5 @@ export type DocsRoute = {
   output?: 'protobuf' | 'raw'
   silence?: boolean
   headers?: { [key: string]: string }
+  timeout?: number
 }

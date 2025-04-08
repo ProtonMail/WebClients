@@ -1,0 +1,1 @@
+export const COMMIT_FETCH_TIMEOUT = 45_000;
