@@ -19,7 +19,7 @@ interface YourPlanSectionV2Props {
     editBillingCycle?: boolean;
 }
 
-const YourPlanSectionV2 = ({ app, editBillingCycle }: YourPlanSectionV2Props) => {
+const YourPlanSectionV2 = ({ app, editBillingCycle = false }: YourPlanSectionV2Props) => {
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
