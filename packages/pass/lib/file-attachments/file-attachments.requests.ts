@@ -6,6 +6,7 @@ import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { intoPublicFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import type {
+    CreatePendingFileRequest,
     FileDownloadChunk,
     FileDownloadPublicChunk,
     FileID,
@@ -24,11 +25,19 @@ import type {
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import chunk from '@proton/utils/chunk';
 
-export const createPendingFile = async (metadata: string, totalChunks: number): Promise<string> =>
+export const createPendingFile = async (
+    metadata: string,
+    totalChunks: number,
+    encryptionVersion: number
+): Promise<string> =>
     (
         await api({
             url: `pass/v1/file`,
-            data: { Metadata: metadata, ChunkCount: totalChunks },
+            data: {
+                Metadata: metadata,
+                ChunkCount: totalChunks,
+                EncryptionVersion: encryptionVersion,
+            } satisfies CreatePendingFileRequest,
             method: 'post',
         })
     ).File!.FileID;
