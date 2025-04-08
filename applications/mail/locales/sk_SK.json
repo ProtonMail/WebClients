@@ -822,6 +822,9 @@
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Ďalšie možnosti pre účty"
+      ],
       "More refine actions": [
         "Ďalšie spresnenie akcií"
       ],
@@ -1125,10 +1128,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -6965,10 +6968,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7596,6 +7596,9 @@
       ],
       "Text to display": [
         "Zobrazovaný text"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Ďakujeme za prihlásenie k odberu. Bezpečné surfovanie sa začína teraz."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Údaje, ktoré ste zadali do konceptu, sa nemusia uložiť, ak stránku opustíte."
@@ -11035,7 +11038,7 @@
         "${ protectionFromTrackersTitle } znamená, že už vás nebudú sledovať na internete."
       ],
       "Activate premium features": [
-        "Aktivujte prémiové funkcie"
+        "Aktivujte premium funkcie"
       ],
       "Activate selected": [
         "Aktivovať vybrané"
@@ -11047,7 +11050,7 @@
         "Prístup kedykoľvek a odkiaľkoľvek"
       ],
       "Auto-delete spam and trash": [
-        "Automatické mazanie spamu a koša"
+        "Automaticky vymazať spam a Kôš"
       ],
       "browser": [
         "prehliadač"
@@ -11077,7 +11080,7 @@
         "Ak chcete mať k emailom prístup kedykoľvek a mať optimalizované mobilné prostredie, stiahnite si našu aplikáciu ${ mobileAppAppStoreLink } alebo ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
-        "Dostávajte upozornenia, ak dôjde k úniku vášho hesla."
+        "Dostávajte upozornenia, ak dôjde ku kompromitácii vášho hesla."
       ],
       "Industry-leading spam protection": [
         "Špičková ochrana proti spamu"
@@ -11107,7 +11110,7 @@
         "Začnite používať ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Začnite používať kratšiu a výstižnejšiu verziu svojej emailovej adresy."
+        "Používajte kratšiu verziu svojej emailovej adresy."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Ak chcete začať, vyberte si zobrazované meno. Toto sa zobrazí ľuďom, keď im pošlete email, pozvete ich na udalosť alebo zdieľate súbor."
@@ -12740,6 +12743,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -13010,47 +13054,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {

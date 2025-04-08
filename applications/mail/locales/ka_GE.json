@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "მეტი პარამეტრი ანგარიშებისთვის"
+      ],
       "More refine actions": [
         "მეტი დახვეწის ქმედებები"
       ],
@@ -1117,10 +1120,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -6711,7 +6714,6 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -6770,6 +6772,9 @@
       ],
       "Learn more about the writing assistant": [
         "გაიგეთ მეტი წერის დამხმარის შესახებ"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "გაიგეთ, რა უნდა გააკეთოთ ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
@@ -7311,6 +7316,9 @@
       ],
       "Text to display": [
         "საჩვენებელი ტექსტი"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "მადლობა გამოწერისთვის. ინტერნეტში დაცულად მუშაობა ახლა იწყება."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "მონაცემები, რომელიც მონახაზში შეიყვანეთ, სხვა გვერდზე გადასვლის შემთხვევაში შეიძლება, დაიკარგოს."
@@ -9007,6 +9015,9 @@
       "How to pay with Bitcoin?": [
         "როგორ გადავიხადო ბიტკოინით?"
       ],
+      "if your data is leaked": [
+        "თუ თქვენი მონაცემები გაიჟონება"
+      ],
       "Inbox": [
         "შემომავალი"
       ],
@@ -10624,7 +10635,7 @@
         "წვდომა ნებისმიერ დროს და ადგილიდან"
       ],
       "Auto-delete spam and trash": [
-        "სპამისა და ნაგვის ყუთის ავტოწაშლა"
+        "ავტო წაშლა სპამი და ნაგვი"
       ],
       "browser": [
         "ბრაუზერი"
@@ -12225,6 +12236,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -12480,47 +12532,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -13429,6 +13440,9 @@
       ],
       "Increase your privacy with more addresses": [
         "გაზარდეთ თქვენი კონფიდენციალობა მეტი მისამართით"
+      ],
+      "Information exposed in breach": [
+        "გაჟონილი ინფორმაცია"
       ],
       "Insert contacts": [
         "კონტაქტების ჩასმა"
