@@ -5,6 +5,7 @@ export enum ForwardingType {
     InternalUnencrypted = 0,
     InternalEncrypted = 1,
     ExternalUnencrypted = 2,
+    /** currently unused */
     ExternalEncrypted = 3,
 }
 
