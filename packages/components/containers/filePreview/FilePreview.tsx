@@ -8,10 +8,11 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { useCombinedRefs, useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
-import { isMinimumSafariVersion, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMinimumSafariVersion, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import {
     isAudio,
     isCompatibleCBZ,
+    isIWAD,
     isPDF,
     isProtonDocument,
     isSupportedImage,
@@ -39,6 +40,7 @@ import VideoPreview from './VideoPreview';
 
 // Lazy Loaded since it includes jszip and it's a rare file type (not common)
 const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
+const IWADPreview = lazy(() => import(/* webpackChunkName: "iwad-preview" */ './IWADPreview'));
 
 interface FilePreviewProps {
     isMetaLoading?: boolean;
@@ -142,6 +144,17 @@ export const FilePreviewContent = ({
                         onOpenInDocs={onOpenInDocs}
                     />
                 </div>
+            );
+        }
+
+        // IWAD (.wad) formats
+        // if IWAD is disabled by feature flag, `contents` will be undefined and no preview will be shown
+        // Disabled on Mobile and only available on Drive
+        if (!isMobile() && window.location.hostname.includes('drive') && contents && mimeType && isIWAD(mimeType)) {
+            return (
+                <Suspense fallback={<PreviewLoader />}>
+                    <IWADPreview contents={contents} filename={fileName} />
+                </Suspense>
             );
         }
 
