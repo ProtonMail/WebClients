@@ -8,6 +8,7 @@ import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type ProtonPassReaderPayload = {
@@ -67,6 +68,7 @@ export const readProtonPassJSON = (
                             acc.push({
                                 ...obfuscateItem({
                                     ...item.data,
+                                    metadata: { ...item.data.metadata, itemUuid: uniqueId() },
                                     ...(item.data.type === 'alias'
                                         ? { extraData: { aliasEmail: item.aliasEmail! } }
                                         : {}),
