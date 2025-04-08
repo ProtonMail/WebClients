@@ -13,6 +13,7 @@ import { download } from '@proton/pass/utils/dom/download';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { abortable } from '@proton/pass/utils/fp/promises';
 import { updateSet } from '@proton/pass/utils/fp/state';
+import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 export const useFileDownload = () => {
@@ -54,6 +55,7 @@ export const useFileDownload = () => {
     const start = useCallback(
         async (file: FileDescriptor, options: { filesToken: string } | SelectedItem): Promise<void> => {
             const { fileID, encryptionVersion } = file;
+            logger.debug(`[File::download::v${encryptionVersion}] downloading ${logId(fileID)}`);
 
             try {
                 const ctrl = new AbortController();
