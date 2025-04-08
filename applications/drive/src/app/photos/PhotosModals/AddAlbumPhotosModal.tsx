@@ -161,7 +161,7 @@ export const AddAlbumPhotosModal = ({
                             >
                                 <Icon name="plus-circle" />
                             </span>
-                            {c('Action').t`New album`}
+                            {share ? c('Action').t`New shared album` : c('Action').t`New album`}
                         </Button>
                         {!!sortedAlbums.length && (
                             <>
@@ -230,6 +230,7 @@ export const AddAlbumPhotosModal = ({
             )}
             {createAlbumModal.render && (
                 <CreateAlbumModal
+                    share={share}
                     createAlbumModal={createAlbumModal}
                     createAlbum={(name) => {
                         return onCreateAlbumWithPhotos(

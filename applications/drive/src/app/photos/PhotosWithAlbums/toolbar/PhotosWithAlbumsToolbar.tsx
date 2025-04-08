@@ -495,7 +495,6 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 onClick={openSharePhotosIntoAnAlbumModal!}
                             />
                         )}
-                        <PhotosDetailsButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
                         {canAddPhotosFromGallery && (
                             <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal!} />
                         )}
