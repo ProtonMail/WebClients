@@ -239,7 +239,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
                                 <div className="text-ellipsis color-weak text-sm">
                                     <span className="text-bold color-weak">{c('Note').t`Note:`} </span>
-                                    <span>{formattedUserComment}</span>
+                                    <span dangerouslySetInnerHTML={{ __html: formattedUserComment }} />
                                 </div>
                                 {!isSearchView && (
                                     <div className="flex flex-none">
