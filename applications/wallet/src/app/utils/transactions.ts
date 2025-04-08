@@ -200,6 +200,7 @@ export interface BroadcastData
     recipients?: SimpleMap<string>;
     isAnonymousSend?: boolean;
     onBroadcastedTx: (txid: string) => void;
+    isPaperWallet?: boolean;
 }
 
 export const signAndBroadcastPsbt = async ({
@@ -217,6 +218,7 @@ export const signAndBroadcastPsbt = async ({
     recipients,
     isAnonymousSend,
     onBroadcastedTx,
+    isPaperWallet,
 }: BroadcastData) => {
     const wasmAccount = getAccountWithChainDataFromManyWallets(
         walletsChainData,
@@ -267,6 +269,7 @@ export const signAndBroadcastPsbt = async ({
                   value: exchangeRateId,
               }
             : { key: 'TransactionTime' as const, value: getNowTimestamp() },
+        is_paper_wallet: isPaperWallet ? 1 : 0,
     };
 
     const bveData = senderAddress
