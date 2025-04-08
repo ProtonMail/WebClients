@@ -1,14 +1,12 @@
 import type { MaybeArray, PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { updateForwarding } from '@proton/shared/lib/api/forwardings';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type {
     Address,
     Api,
-    ApiKeysConfig,
     DecryptedAddressKey,
     DecryptedKey,
     IncomingAddressForwarding,
@@ -19,7 +17,6 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
-import type { PrimaryAddressKeyForEncryption } from '@proton/shared/lib/keys';
 import { decryptMemberToken, getAddressKeyToken, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
@@ -319,36 +316,6 @@ export const acceptIncomingForwarding = async ({
     }
 };
 
-interface EnableForwardingParameters {
-    api: Api;
-    forward: OutgoingAddressForwarding;
-    forwarderPrimaryAddressKeyForEncryption: PrimaryAddressKeyForEncryption;
-    forwardeePublicKeys: ApiKeysConfig;
-}
-
-export const enableForwarding = async ({
-    api,
-    forward,
-    forwarderPrimaryAddressKeyForEncryption,
-    forwardeePublicKeys,
-}: EnableForwardingParameters) => {
-    const email = forward.ForwardeeEmail;
-    const forwardeePublicKey = forwardeePublicKeys.publicKeys[0].publicKey;
-    const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
-        forwarderPrimaryAddressKeyForEncryption,
-        [{ email, name: email }],
-        forwardeePublicKey
-    );
-    await api(
-        updateForwarding({
-            ID: forward.ID,
-            ForwardeePrivateKey: forwardeeKey,
-            ActivationToken: activationToken,
-            ProxyInstances: proxyInstances,
-        })
-    );
-};
-
 export const getChainedForwardingEmails = (
     incoming: IncomingAddressForwarding[],
     outgoing: OutgoingAddressForwarding[],
@@ -369,15 +336,17 @@ export const isChainedForwarding = (chainedEmails: string[], email: string) => {
     return chainedEmails.includes(canonicalizeEmailByGuess(email));
 };
 
-export const isLastOutgoingNonE2EEForwarding = (
-    forward: OutgoingAddressForwarding,
-    forwarding: OutgoingAddressForwarding[]
+export const getIsLastOutgoingNonE2EEForwarding = (
+    outgoingForwardingConfig: OutgoingAddressForwarding,
+    allOutgoingForwardingConfigs: OutgoingAddressForwarding[]
 ): boolean => {
-    if (forward.Type !== ForwardingType.ExternalUnencrypted) {
+    if (outgoingForwardingConfig.Type !== ForwardingType.ExternalUnencrypted) {
         return false;
     }
-    const last = forwarding.filter(
-        (f) => f.Type === ForwardingType.ExternalUnencrypted && f.ForwarderAddressID === forward.ForwarderAddressID
+    const nonE2EEForwardings = allOutgoingForwardingConfigs.filter(
+        (f) =>
+            f.Type === ForwardingType.ExternalUnencrypted &&
+            f.ForwarderAddressID === outgoingForwardingConfig.ForwarderAddressID
     );
-    return last.length <= 1;
+    return nonE2EEForwardings.length <= 1;
 };
