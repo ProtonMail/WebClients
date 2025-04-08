@@ -1,6 +1,7 @@
 import type { CommentThreadType, CommonPublicCommentData, CreatePublicCommentData } from '../Types/Comments'
 import type { DocsRoute } from './DocsRoute'
 import { DocsApiRouteBuilder } from './DocsApiRouteBuilder'
+import { COMMIT_FETCH_TIMEOUT } from '@proton/shared/lib/docs/constants'
 
 /** For public token-based routes */
 export class DocsApiPublicRouteBuilder extends DocsApiRouteBuilder {
@@ -27,6 +28,7 @@ export class DocsApiPublicRouteBuilder extends DocsApiRouteBuilder {
       output: 'raw',
       silence: true,
       headers: this.headers,
+      timeout: COMMIT_FETCH_TIMEOUT,
     }
   }
 
