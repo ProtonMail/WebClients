@@ -37,6 +37,9 @@ import { getCountryOptions } from '@proton/payments';
 import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import PolicyPreviewModal from './PolicyModal/PolicyPreviewModal';
+import { POLICY_STEP } from './PolicyModal/modalPolicyStepEnum';
+
 import './SharedServersSection.scss';
 
 interface VpnLocationFilterPolicyLocal extends VpnLocationFilterPolicy {
@@ -71,6 +74,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const [didPublishChanges, setDidPublishChanges] = useState(false);
     const [createModal, showCreateModal] = useModalTwoStatic(Modal);
     const [deleteModal, showDeleteModal] = useModalTwoStatic(DeleteModal);
+    const [policyPreviewModal, showPolicyPreviewModal] = useModalTwoStatic(PolicyPreviewModal);
 
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
@@ -95,10 +99,11 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     }, [showCreateModal]);
 
     const handleEditPolicy = useCallback(
-        (policyToEdit: VpnLocationFilterPolicyLocal) => {
+        (policyToEdit: VpnLocationFilterPolicyLocal, initialStep: number, onSuccess?: () => void) => {
             showCreateModal({
                 policy: policyToEdit,
                 isEditing: true,
+                initialStep: initialStep,
                 onSuccess: (updatedPolicy: VpnLocationFilterPolicy) => {
                     setLocalPolicies((currentPolicies) =>
                         currentPolicies.map((p) =>
@@ -110,6 +115,8 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                 : p
                         )
                     );
+
+                    onSuccess?.();
                 },
             });
         },
@@ -117,7 +124,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     );
 
     const handleDeletePolicy = useCallback(
-        (policyToDelete: VpnLocationFilterPolicyLocal) => {
+        (policyToDelete: VpnLocationFilterPolicyLocal, onSuccess?: () => void) => {
             showDeleteModal({
                 policy: policyToDelete,
                 onSuccess: (deletedPolicy: VpnLocationFilterPolicy) => {
@@ -128,10 +135,24 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                 : p
                         )
                     );
+
+                    onSuccess?.();
                 },
             });
         },
         [showDeleteModal]
+    );
+
+    const handleShowPolicyPreviewModal = useCallback(
+        (policy: VpnLocationFilterPolicyLocal) => {
+            showPolicyPreviewModal({
+                policy: policy,
+                handleDeletePolicy: handleDeletePolicy,
+                handleEditPolicy: handleEditPolicy,
+                onSuccess: () => {},
+            });
+        },
+        [showPolicyPreviewModal]
     );
 
     const handlePublishChanges = useCallback(async () => {
@@ -366,7 +387,10 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                           );
 
                                 return (
-                                    <TableRow key={customPolicy.LocationFilterPolicyID}>
+                                    <TableRow
+                                        key={customPolicy.LocationFilterPolicyID}
+                                        onClick={() => handleShowPolicyPreviewModal(customPolicy)}
+                                    >
                                         <TableCell>{customPolicy.Name}</TableCell>
                                         <TableCell>{customPolicy.Groups.map((g) => g.Name).join(', ')}</TableCell>
                                         <TableCell>{locationText}</TableCell>
@@ -387,7 +411,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                                     <Button
                                                         size="small"
                                                         color="norm"
-                                                        onClick={() => handleEditPolicy(customPolicy)}
+                                                        onClick={() => handleEditPolicy(customPolicy, POLICY_STEP.NAME)}
                                                         className="mr-2"
                                                     >
                                                         {c('Action').t`Edit`}
@@ -413,6 +437,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                 </>
             )}
 
+            {policyPreviewModal}
             {createModal}
             {deleteModal}
         </SettingsSectionWide>
