@@ -823,6 +823,9 @@
       "More options": [
         "Więcej opcji"
       ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
+      ],
       "move emails to": [
         "przenieś wiadomości do"
       ],
@@ -916,10 +919,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1090,11 +1093,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "select file": [
-        "wybierz plik"
-      ],
       "Select file": [
         "Wybierz plik"
+      ],
+      "select file": [
+        "wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -3860,11 +3863,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Rozdziel różne części swojego życia i uporządkuj skrzynkę odbiorczą za pomocą dodatkowych adresów."
       ],
+      "Learn more about common problems": [
+        "Dowiedz się więcej o typowych problemach"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Utwórz stopkę wiadomości — zaprezentuj swoją unikalną markę, nie naszą."
       ],
       "No one in your organization can connect to shared servers.": [
         "Nikt z Twojej organizacji nie może łączyć się z udostępnionymi serwerami."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Wyślij kod na adres lub numer pomocniczy"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
@@ -4229,6 +4238,83 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Pola tekstowe są opcjonalne. Podane informacje zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } nigdy nie poprosi Cię o wpisanie kodu, który nie pochodzi z domeny ${ domain } lub aplikacji ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Jak to działa:** Wpisz kod wyświetlony na urządzeniu, na którym chcesz się zalogować. Zostaniesz zalogowany jako **${ email }**. Oba urządzenia pozostaną aktywne."
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Zezwalaj na skanowanie kodu QR"
+      ],
+      "Code copied to clipboard": [
+        "Kod został skopiowany do schowka"
+      ],
+      "Code from the other device": [
+        "Kod z innego urządzenia"
+      ],
+      "Enter code manually": [
+        "Wpisz kod ręcznie"
+      ],
+      "New QR code": [
+        "Nowy kod QR"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Otwórz aplikację mobilną ${ BRAND_NAME }"
+      ],
+      "Please scan a new QR code to try again": [
+        "Zeskanuj nowy kod QR"
+      ],
+      "QR code expired": [
+        "Kod QR wygasł"
+      ],
+      "QR code sign-in disabled": [
+        "Logowanie za pomocą kodu QR jest wyłączone"
+      ],
+      "QR code sign-in enabled": [
+        "Logowanie za pomocą kodu QR jest włączone"
+      ],
+      "Safety tips:": [
+        "Wskazówki bezpieczeństwa:"
+      ],
+      "Scan a QR code with your phone": [
+        "Zeskanuj kod QR za pomocą telefonu"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Zeskanuj kod QR na urządzeniu mobilnym"
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Zeskanuj kod QR w aplikacji mobilnej ${ BRAND_NAME }."
+      ],
+      "Sign in to another device": [
+        "Zaloguj się na innym urządzeniu"
+      ],
+      "Sign in with another device": [
+        "Zaloguj się za pomocą innego urządzenia"
+      ],
+      "Sign in with QR code": [
+        "Zaloguj się za pomocą kodu QR"
+      ],
+      "Tap **Scan QR code**": [
+        "Kliknij **Zeskanuj kod QR**"
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "Kliknij **Ustawienia**, a następnie **Zaloguj się na innym urządzeniu**"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Aby uzyskać dostęp do kodu, kliknij **Zaloguj się za pomocą kodu QR** na ekranie logowania, a następnie **Zamiast tego wpisz klucz ręcznie**."
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Uważaj na wiadomości zawierające kod. Nigdy nie wpisuj kodu ze strony internetowej lub od osoby, której nie ufasz."
+      ],
+      "We couldn't sign you in": [
+        "Logowanie nie powiodło się"
+      ],
+      "You have successfully signed in to another device": [
+        "Zalogowano na innym urządzeniu"
       ]
     },
     "Email": {
@@ -5094,6 +5180,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
@@ -7444,11 +7533,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktywuj co najmniej jedną metodę odzyskiwania danych, aby uniknąć utraty dostępu do konta ${ BRAND_NAME }."
       ],
-      "active": [
-        "aktywna"
-      ],
       "Active": [
         "Aktywne"
+      ],
+      "active": [
+        "aktywna"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
@@ -7912,11 +8001,11 @@
       "Data recoverable on this device": [
         "Dane możliwe do odzyskania na tym urządzeniu"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -9397,6 +9486,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Dziękujemy za wybranie usług ${ BRAND_NAME }."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Dziękujemy za subskrypcję. Bezpieczne przeglądanie zaczyna się teraz."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Dziękujemy za wsparcie naszej misji budowania lepszego Internetu, w którym prywatność i wolność są na pierwszym miejscu."
       ],
@@ -9811,11 +9903,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "Username": [
-        "Nazwa użytkownika"
-      ],
       "username": [
         "nazwa użytkownika"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -11013,10 +11105,10 @@
       "Allow sharing outside the organization": [
         "Zezwalaj na udostępnianie poza organizacją"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12309,11 +12401,11 @@
       "perform a password reset from your active session": [
         "zresetować hasło z aktywnej sesji"
       ],
-      "privacy policy": [
-        "politykę prywatności"
-      ],
       "Privacy policy": [
         "Polityka prywatności"
+      ],
+      "privacy policy": [
+        "politykę prywatności"
       ],
       "Reactivate now": [
         "Reaktywuj"
@@ -12932,6 +13024,32 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -12959,32 +13077,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13751,6 +13843,14 @@
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -13769,14 +13869,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -17773,6 +17865,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -18073,47 +18206,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -18861,10 +18953,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -19371,6 +19463,9 @@
       "Home": [
         "Strona główna"
       ],
+      "How can we help?": [
+        "Jak możemy pomóc?"
+      ],
       "How does it work?": [
         "Jak to działa?"
       ],
@@ -19556,6 +19651,9 @@
       ],
       "Other preferences": [
         "Inne ustawienia"
+      ],
+      "Other sign-in issues": [
+        "Inne problemy z logowaniem"
       ],
       "Password": [
         "Hasło"

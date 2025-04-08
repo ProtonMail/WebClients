@@ -823,6 +823,9 @@
       "More options": [
         "Mais opções"
       ],
+      "More options for accounts": [
+        "Mais opções para as contas"
+      ],
       "move emails to": [
         "mover os e-mails para"
       ],
@@ -916,11 +919,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1090,11 +1093,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "select file": [
-        "selecionar ficheiro"
-      ],
       "Select file": [
         "Selecionar um ficheiro"
+      ],
+      "select file": [
+        "selecionar ficheiro"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -3828,11 +3831,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Separe as diferentes facetas da sua vida e organize a sua caixa de entrada com endereços adicionais."
       ],
+      "Learn more about common problems": [
+        "Saiba mais sobre problemas comuns"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Personalize o rodapé do seu e-mail — destaque a sua identidade, não a nossa."
       ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode conectar-se a servidores partilhados."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Enviar um código para o seu e-mail ou telefone de recuperação"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspetos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
@@ -4197,6 +4206,83 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Os campos de texto são opcionais. As informações fornecidas neste formulário só irão alterar a fatura que selecionou e não os detalhes da futura fatura."
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } nunca lhe pedirá para introduzir um código que não provenha do domínio ${ domain } ou de uma aplicação oficial da ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Como funciona:** Introduza o código apresentado no dispositivo em que pretende iniciar sessão neste dispositivo. Irá iniciar sessão como **${ email }**. Ambos os dispositivos permanecerão ativos. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Permitir ler um código QR para iniciar sessão"
+      ],
+      "Code copied to clipboard": [
+        "O código foi copiado para a área de transferência."
+      ],
+      "Code from the other device": [
+        "Código do outro dispositivo"
+      ],
+      "Enter code manually": [
+        "Introduzir o código manualmente"
+      ],
+      "New QR code": [
+        "Novo código QR"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Abra a aplicação ${ BRAND_NAME } no seu telefone."
+      ],
+      "Please scan a new QR code to try again": [
+        "Leia um novo código QR para tentar novamente."
+      ],
+      "QR code expired": [
+        "O código QR expirou."
+      ],
+      "QR code sign-in disabled": [
+        "Início de sessão com código QR desativado"
+      ],
+      "QR code sign-in enabled": [
+        "Início de sessão com código QR ativado"
+      ],
+      "Safety tips:": [
+        "Dicas de segurança:"
+      ],
+      "Scan a QR code with your phone": [
+        "Leia um código QR com o seu telemóvel"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Leia o código QR no seu dispositivo móvel para iniciar sessão."
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Leia este código QR na aplicação ${ BRAND_NAME } no seu telemóvel para iniciar sessão instantaneamente."
+      ],
+      "Sign in to another device": [
+        "Iniciar sessão noutro dispositivo"
+      ],
+      "Sign in with another device": [
+        "Iniciar sessão com outro dispositivo"
+      ],
+      "Sign in with QR code": [
+        "Iniciar sessão com o código QR"
+      ],
+      "Tap **Scan QR code**": [
+        "Toque em **Ler o código QR**."
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "Toque em **Definições** e, em seguida, toque em **Iniciar sessão noutro dispositivo**."
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Para aceder ao código do dispositivo onde pretende iniciar sessão, toque no botão **Iniciar sessão com um código QR** no menu de ajuda do ecrã de início de sessão e, em seguida, toque em **Introduza a chave manualmente.**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Tenha cuidado com mensagens que contenham um código. Nunca introduza um código de um sítio web ou de uma pessoa em que não confie."
+      ],
+      "We couldn't sign you in": [
+        "Não foi possível iniciar sessão."
+      ],
+      "You have successfully signed in to another device": [
+        "Iniciou sessão noutro dispositivo."
       ]
     },
     "Email": {
@@ -5052,6 +5138,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong": [
+        "Algo correu mal"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
@@ -7000,6 +7089,14 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Se for reativada, a chave será utilizada para a desencriptação."
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Se for reativada, a chave será utilizada para a desencriptação e a verificação."
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utilizador atualmente tem acesso a servidores partilhados.",
@@ -7296,11 +7393,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
-      "active": [
-        "ativa"
-      ],
       "Active": [
         "Ativo"
+      ],
+      "active": [
+        "ativa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -7741,11 +7838,14 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
+      "Data recoverable on this device": [
+        "Dados recuperáveis neste dispositivo"
       ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
@@ -9203,6 +9303,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Obrigado por escolher ${ BRAND_NAME }."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Obrigado pela subscrição. A navegação segura começa agora."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Obrigado por apoiar a nossa missão em construir uma ‘internet’ melhor onde a privacidade e a liberdade vêm em primeiro lugar."
       ],
@@ -9494,6 +9597,9 @@
       "Total VPN connections": [
         "Total de ligações VPN"
       ],
+      "trusted device": [
+        "dispositivo de confiança"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Experimente ${ productName } sem riscos. Se por algum motivo mudar de ideia, receberá um reembolso total. Sem perguntas."
       ],
@@ -9608,11 +9714,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "Username": [
-        "Nome de utilizador"
-      ],
       "username": [
         "nome de utilizador"
+      ],
+      "Username": [
+        "Nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -9727,6 +9833,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Armazenamos de forma segura as informações de recuperação no seu dispositivo de confiança para evitar que perca os seus dados"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Armazenámos uma cópia de segurança neste navegador por permitir a recuperação de dados neste ${ deviceLink }. Se a cópia de segurança for válida, irá readquirir imediatamente acesso total ou parcial aos seus dados encriptados."
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilizamos 3-D Secure para proteger os seus pagamentos."
@@ -10317,6 +10426,17 @@
         "Subscrição"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Desencriptação"
+      ],
+      "Decryption, verification": [
+        "Desencriptação, verificação"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Encriptação, desencriptação, assinatura, verificação"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Gerar a chave"
@@ -10344,6 +10464,9 @@
       ]
     },
     "Key state badge": {
+      "Compatibility": [
+        "Compatibilidade"
+      ],
       "Compromised": [
         "Comprometida"
       ],
@@ -10757,10 +10880,10 @@
       "Allow sharing outside the organization": [
         "Permitir a partilha fora da organização"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12051,11 +12174,11 @@
       "perform a password reset from your active session": [
         "redefinir a palavra-passe da sua sessão ativa"
       ],
-      "privacy policy": [
-        "política de privacidade"
-      ],
       "Privacy policy": [
         "Política de privacidade"
+      ],
+      "privacy policy": [
+        "política de privacidade"
       ],
       "Reactivate now": [
         "Reativar"
@@ -12654,6 +12777,32 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -12681,32 +12830,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13423,6 +13546,14 @@
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -13441,14 +13572,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -17330,6 +17453,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -17618,47 +17782,6 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -18389,11 +18512,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -18893,6 +19016,9 @@
       "Home": [
         "Início"
       ],
+      "How can we help?": [
+        "Como podemos ajudar?"
+      ],
       "How does it work?": [
         "Como funciona?"
       ],
@@ -19076,6 +19202,9 @@
       ],
       "Other preferences": [
         "Outras preferências"
+      ],
+      "Other sign-in issues": [
+        "Outros problemas de acesso"
       ],
       "Password": [
         "Palavra-passe"
@@ -19615,11 +19744,20 @@
       "Actions": [
         "Ações"
       ],
+      "Creation date": [
+        "Data de criação"
+      ],
       "Fingerprint": [
         "Impressão digital"
       ],
+      "Function": [
+        "Função"
+      ],
       "Status": [
         "Estado"
+      ],
+      "Type": [
+        "Tipo"
       ]
     },
     "Title header for members table": {
@@ -19830,6 +19968,12 @@
       ],
       "This feature is only available on Beta": [
         "Este recurso está disponível apenas na versão Beta"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Esta é a chave predefinida utilizada por outros utilizadores do ${ MAIL_APP_NAME } em aplicações móveis mais antigas para encriptar os dados que lhe são enviados."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Esta é a chave predefinida utilizada por outros utilizadores do ${ MAIL_APP_NAME } para encriptar os dados que lhe enviam."
       ],
       "This key cannot be used for encryption": [
         "Esta chave não pode ser utilizada para a encriptação."
