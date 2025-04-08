@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
@@ -454,6 +454,9 @@
       "More options": [
         "Flere valg"
       ],
+      "More options for accounts": [
+        "Flere alternativer for kontoer"
+      ],
       "Need help?": [
         "Trenger du hjelp?"
       ],
@@ -637,11 +640,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "select file": [
-        "velg fil"
-      ],
       "Select file": [
         "Velg fil"
+      ],
+      "select file": [
+        "velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -2688,6 +2691,53 @@
         "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet, vil bare endre fakturaen du har valgt, og ikke dine fremtidige fakturadetaljer."
       ]
     },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } vil aldri be deg om å taste inn en kode som ikke kommer fra domenet ${ domain }, eller fra en offisiell ${ BRAND_NAME }-applikasjon."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Slik fungerer det:** Skriv inn koden som vises på enheten du vil logge på, på denne enheten. Du blir logget på som **${ email }**. Begge enhetene vil forbli aktive. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Tillat skanning av en QR-kode for å logge på"
+      ],
+      "Code from the other device": [
+        "Kode fra den andre enheten"
+      ],
+      "Enter code manually": [
+        "Skriv inn kode manuelt"
+      ],
+      "QR code sign-in disabled": [
+        "QR-kode pålogging deaktivert"
+      ],
+      "QR code sign-in enabled": [
+        "QR-kode pålogging aktivert"
+      ],
+      "Safety tips:": [
+        "Sikkerhetstips:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Skann QR-koden på mobilenheten for å logge på"
+      ],
+      "Sign in to another device": [
+        "Logg på en annen enhet"
+      ],
+      "Sign in with another device": [
+        "Logg på med en annen enhet"
+      ],
+      "Sign in with QR code": [
+        "Logg på med QR-kode"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "For å få tilgang til koden til enheten du vil logge på med, trykker du på knappen **Logg på med QR-kode** i hjelpemenyen på påloggingsskjermen, og trykker deretter på **Skriv inn nøkkel manuelt**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Vær oppmerksom på meldinger som inneholder en kode. Du må aldri taste inn en kode fra et nettsted eller en person du ikke stoler på."
+      ],
+      "You have successfully signed in to another device": [
+        "Du har logget på en annen enhet"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } lagt til"
@@ -4265,11 +4315,14 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpass utseendet og følelsen av ${ BRAND_NAME }-applikasjonene."
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
+      "Data recoverable on this device": [
+        "Data kan gjenopprettes på denne enheten"
       ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -5181,6 +5234,9 @@
       "Thank you": [
         "Tusen takk"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Takk for at du abonnerer. Sikker surfing starter nå."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Takk for at du støtter vår misjon om å bygge et bedre internett der personvern og frihet kommer først."
       ],
@@ -5355,6 +5411,9 @@
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
       ],
+      "trusted device": [
+        "klarert enhet"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
       ],
@@ -5424,11 +5483,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "Username": [
-        "Brukernavn"
-      ],
       "username": [
         "brukernavn"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -5513,6 +5572,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Vi anbefaler å bruke din gjenopprettingsfrase istedenfor."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Vi har lagret en sikkerhetskopifil i denne nettleseren fordi du har tillatt datagjenoppretting på ${ deviceLink }. Hvis sikkerhetskopifilen er gyldig, kan du umiddelbart motta fullstendig eller delvis tilgang igjen til krypterte data."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
@@ -5970,10 +6032,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10117,6 +10179,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -10405,47 +10508,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10943,10 +11005,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [

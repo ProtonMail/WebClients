@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate organization key": [
         "Activar clave de la organización"
@@ -454,6 +454,9 @@
       "More options": [
         "Más opciones"
       ],
+      "More options for accounts": [
+        "Más opciones para las cuentas"
+      ],
       "Need help?": [
         "¿Necesitas ayuda?"
       ],
@@ -637,11 +640,11 @@
       "Select country ${ country }": [
         "Selecciona el país ${ country }"
       ],
-      "select file": [
-        "seleccionar un archivo"
-      ],
       "Select file": [
         "Seleccionar un archivo"
+      ],
+      "select file": [
+        "seleccionar un archivo"
       ],
       "Send code": [
         "Enviar código"
@@ -2688,6 +2691,53 @@
         "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
       ]
     },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } nunca te pedirá que ingreses un código que no provenga del dominio ${ domain } o de una aplicación oficial de ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Cómo funciona:** Ingresa el código en este dispositivo que se muestra en el dispositivo en el que quieres iniciar sesión. Se iniciará sesión como **${ email }**. Ambos dispositivos permanecerán activos. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Permitir escanear un código QR para iniciar sesión"
+      ],
+      "Code from the other device": [
+        "Código del otro dispositivo"
+      ],
+      "Enter code manually": [
+        "Introduce el código manualmente"
+      ],
+      "QR code sign-in disabled": [
+        "Inicio de sesión con código QR desactivado"
+      ],
+      "QR code sign-in enabled": [
+        "Inicio de sesión con código QR activado"
+      ],
+      "Safety tips:": [
+        "Consejos de seguridad:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Escanea el código QR en tu dispositivo móvil para iniciar sesión"
+      ],
+      "Sign in to another device": [
+        "Iniciar sesión en otro dispositivo"
+      ],
+      "Sign in with another device": [
+        "Iniciar sesión con otro dispositivo"
+      ],
+      "Sign in with QR code": [
+        "Iniciar sesión con código QR"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Para acceder al código del dispositivo en el que quieres iniciar sesión, pulsa el botón **Iniciar sesión con un código QR** en el menú de ayuda de la pantalla de inicio de sesión y, a continuación, pulsa **Introduce la clave manualmente**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Ten cuidado con los mensajes que contengan un código. Nunca ingreses un código desde un sitio web o de una persona en la que no confíes."
+      ],
+      "You have successfully signed in to another device": [
+        "Has iniciado sesión correctamente en otro dispositivo."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } añadido"
@@ -4268,11 +4318,11 @@
       "Data recoverable on this device": [
         "Datos recuperables en este dispositivo"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -5181,6 +5231,9 @@
       "Thank you": [
         "Gracias"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Gracias por suscribirte. La navegación segura comienza ahora."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gracias por apoyar nuestra misión de construir un mejor internet donde la privacidad y la libertad son primero."
       ],
@@ -5427,11 +5480,11 @@
       "User activated": [
         "Se ha activado el usuario."
       ],
-      "Username": [
-        "Nombre de usuario"
-      ],
       "username": [
         "nombre de usuario"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -5976,10 +6029,10 @@
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10099,6 +10152,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -10387,47 +10481,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -10928,10 +10981,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
