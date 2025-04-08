@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Més opcions per a comptes"
+      ],
       "More refine actions": [
         "Accions més optimitzades"
       ],
@@ -1117,10 +1120,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -6745,8 +6748,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7366,6 +7368,9 @@
       ],
       "Text to display": [
         "Text per mostrar"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Gràcies per la subscripció. La navegació segura comença ara."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "És possible que les dades que heu introduït a l'esborrany no es desin si sortiu de la pàgina."
@@ -10688,7 +10693,7 @@
         "${ protectionFromTrackersTitle } significa acabar amb el seguiment per internet."
       ],
       "Activate premium features": [
-        "Activeu les característiques prèmium"
+        "Premium features"
       ],
       "Activate selected": [
         "Activa la selecció"
@@ -10703,13 +10708,13 @@
         "Accés en qualsevol moment i des de qualsevol lloc"
       ],
       "Auto-delete spam and trash": [
-        "Neteja automàticament el correu brossa i la paperera"
+        "Autoelim correu brossa/paperera"
       ],
       "browser": [
         "navegador"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Esborreu els correus electrònics suprimits i de correu brossa després de 30 dies."
+        "Esborreu els correus suprimits i correu brossa en 30 dies."
       ],
       "Continue": [
         "Continua"
@@ -10766,7 +10771,7 @@
         "Comenceu a utilitzar ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
+        "Usa la versió curta de la vostra adreça de correu electrònic."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
@@ -12321,6 +12326,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -12579,47 +12625,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {

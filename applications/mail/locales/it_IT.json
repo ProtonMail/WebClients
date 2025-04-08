@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Altre opzioni per gli account"
+      ],
       "More refine actions": [
         "Ulteriori azioni di perfezionamento"
       ],
@@ -1117,11 +1120,11 @@
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
       ],
-      "Select All": [
-        "Seleziona tutto"
-      ],
       "Select all": [
         "Seleziona tutti"
+      ],
+      "Select All": [
+        "Seleziona tutto"
       ],
       "Select all messages": [
         "Seleziona tutti i messaggi"
@@ -6745,8 +6748,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -7366,6 +7368,9 @@
       ],
       "Text to display": [
         "Testo da visualizzare"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Grazie per esserti abbonato. La navigazione sicura inizia ora."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "I dati inseriti nella bozza non possono essere salvati se si lascia la pagina."
@@ -10203,6 +10208,11 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -10215,11 +10225,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10693,7 +10698,7 @@
         "${ protectionFromTrackersTitle } significa che non sarai più seguito su Internet."
       ],
       "Activate premium features": [
-        "Attiva le funzionalità premium"
+        "Funzionalità premium"
       ],
       "Activate selected": [
         "Attiva selezionato"
@@ -10705,13 +10710,13 @@
         "Accesso sempre e ovunque"
       ],
       "Auto-delete spam and trash": [
-        "Eliminazione automatica del contenuto dallo spam e dal cestino"
+        "Cancella spam e cestino"
       ],
       "browser": [
         "browser"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Elimina le email cancellate e di spam dopo 30 giorni."
+        "Pulisci le email eliminate e di spam dopo 30 giorni."
       ],
       "Continue": [
         "Continua"
@@ -10765,7 +10770,7 @@
         "Inizia a utilizzare ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Inizia a utilizzare la versione più breve e accattivante del tuo indirizzo email."
+        "Inizia a usare la versione più breve del tuo indirizzo email."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Per iniziare, scegli un nome utente. Questo è quello che vedranno le persone quando invierai email, inviti a un evento, o condividerai un file."
@@ -12320,6 +12325,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -12578,47 +12624,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {

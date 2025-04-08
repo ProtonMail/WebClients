@@ -818,6 +818,9 @@
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Mai multe opțiuni pentru conturi"
+      ],
       "More refine actions": [
         "Mai multe acțiuni de cizelare"
       ],
@@ -1121,10 +1124,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -6855,9 +6858,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7481,6 +7482,9 @@
       ],
       "Text to display": [
         "Text de afișat"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Vă mulțumim pentru abonare. Navigarea sigură începe acum."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Datele pe care le-ați introdus în ciornă nu pot fi salvate dacă părăsiți pagina."
@@ -10860,7 +10864,7 @@
         "${ protectionFromTrackersTitle } înseamnă că nu vi se mai poate urmări activitatea de pe internet."
       ],
       "Activate premium features": [
-        "Activați funcțiile premium"
+        "Activați funcții premium"
       ],
       "Activate selected": [
         "Activare selectat"
@@ -10872,13 +10876,13 @@
         "Acces oricând, oriunde"
       ],
       "Auto-delete spam and trash": [
-        "Ștergere automată mesaje nedorite și din gunoi"
+        "Autoștergeți Gunoi și Nedorite"
       ],
       "browser": [
         "navigator"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Golește mesajele nedorite și din gunoi după 30 de zile."
+        "Golește mesajele șterse și cele nedorite după 30 de zile."
       ],
       "Continue": [
         "Continuare"
@@ -10932,7 +10936,7 @@
         "Începeți să utilizați ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Începeți să utilizați versiunea mai scurtă și mai atractivă a adresei de e-mail."
+        "Utilizați versiunea mai scurtă și mai atractivă a adresei de e-mail."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Pentru a începe, alegeți un nume de afișare. Acesta va fi văzut de cei cărora le trimiteți un e-mail, îi invitați la un eveniment sau le partajați un fișier."
@@ -12526,6 +12530,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -12790,47 +12835,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -13366,7 +13370,7 @@
         "Deschidere "
       ],
       "Show me how": [
-        "Arată-mi cum"
+        "Arătați-mi cum"
       ]
     },
     "Title": {

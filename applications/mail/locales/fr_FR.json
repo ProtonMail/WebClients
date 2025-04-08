@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Plus d'options pour les comptes"
+      ],
       "More refine actions": [
         "Actions plus optimisées"
       ],
@@ -1117,10 +1120,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -6745,8 +6748,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7366,6 +7368,9 @@
       ],
       "Text to display": [
         "Texte à afficher"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Merci de vous être abonné. La navigation sécurisée commence maintenant."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Les données que vous avez saisies dans le brouillon ne peuvent pas être sauvegardées si vous quittez la page."
@@ -10688,7 +10693,7 @@
         "${ protectionFromTrackersTitle } : vous ne serez plus suivi sur internet."
       ],
       "Activate premium features": [
-        "Activez les fonctions premium"
+        "Fonctionnalités premium"
       ],
       "Activate selected": [
         "Activez la sélection"
@@ -10703,13 +10708,13 @@
         "Accès à tout moment et depuis n'importe où"
       ],
       "Auto-delete spam and trash": [
-        "Suppression automatique des messages indésirables/spam et dans la corbeille"
+        "Suppression auto spam/corbeille"
       ],
       "browser": [
         "navigateur"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Supprimez les e-mails dans la corbeille et les spams après 30 jours."
+        "Supprimez les e-mails dans la corbeille et les spams après 30 jours."
       ],
       "Continue": [
         "Continuer"
@@ -10766,7 +10771,7 @@
         "Commencez à utiliser ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Commencez à utiliser la version plus courte et plus facile à mémoriser de votre adresse e-mail."
+        "Utilisez une version courte et percutante de votre adresse e-mail."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Pour commencer, choisissez un nom d'affichage. C'est le nom que les gens verront quand vous leur enverrez un message, quand vous les inviterez à un événement ou quand vous partagerez un fichier avec eux."
@@ -12321,6 +12326,47 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -12579,47 +12625,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
