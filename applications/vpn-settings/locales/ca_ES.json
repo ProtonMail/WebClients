@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate organization key": [
         "Activar la clau d'organització"
@@ -454,6 +454,9 @@
       "More options": [
         "Més opcions"
       ],
+      "More options for accounts": [
+        "Més opcions per a comptes"
+      ],
       "Need help?": [
         "Necessiteu ajuda?"
       ],
@@ -637,11 +640,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "select file": [
-        "selecciona un fitxer"
-      ],
       "Select file": [
         "Selecciona un fitxer"
+      ],
+      "select file": [
+        "selecciona un fitxer"
       ],
       "Send code": [
         "Enviar codi"
@@ -2688,6 +2691,53 @@
         "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només canviarà la factura que heu seleccionat i no els detalls de les factures futures."
       ]
     },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } mai us sol·licitarà que introduïu un codi que no provingui del domini ${ domain } o d'una aplicació oficial de ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Com funciona:** Introduïu el codi que es mostra al dispositiu on voleu iniciar la sessió en aquest dispositiu. Se us identificarà com a **${ email }**. Tots dos dispositius romandran actius. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Permet escanejar un codi QR per iniciar la sessió"
+      ],
+      "Code from the other device": [
+        "Codi de l'altre dispositiu"
+      ],
+      "Enter code manually": [
+        "Introduïu el codi manualment"
+      ],
+      "QR code sign-in disabled": [
+        "S'ha desactivat l'inici de sessió amb codi QR."
+      ],
+      "QR code sign-in enabled": [
+        "S'ha activat l'inici de sessió amb codi QR."
+      ],
+      "Safety tips:": [
+        "Consells de seguretat:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Escanegeu el codi QR al vostre dispositiu mòbil per iniciar la sessió"
+      ],
+      "Sign in to another device": [
+        "Inicia la sessió en un altre dispositiu"
+      ],
+      "Sign in with another device": [
+        "Inicia la sessió amb un altre dispositiu"
+      ],
+      "Sign in with QR code": [
+        "Inicia la sessió amb un codi QR"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Per accedir al codi del dispositiu amb què voleu iniciar la sessió, toqueu el botó **Inicia la sessió amb codi QR** al menú d'ajuda de la pantalla d'inici de sessió i, a continuació, toqueu **Introduïu la clau manualment**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Aneu amb compte amb els missatges que contenen un codi. No introduïu mai un codi d’un lloc web ni d’una persona de qui no us fieu."
+      ],
+      "You have successfully signed in to another device": [
+        "Heu iniciat la sessió correctament en un altre dispositiu."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "S'ha afegit ${ name }"
@@ -4265,11 +4315,14 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
+      "Data recoverable on this device": [
+        "Dades recuperables en aquest dispositiu"
       ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat."
@@ -4427,7 +4480,7 @@
         "Milloreu la seguretat de la vostra xarxa"
       ],
       "Enter key manually instead": [
-        "Introduir clau manualment"
+        "Introduïu la clau manualment"
       ],
       "Enter new password for user ${ userName }.": [
         "Introduïu una nova contrasenya per a l'usuari ${ userName }."
@@ -5178,6 +5231,9 @@
       "Thank you": [
         "Gràcies"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Gràcies per la subscripció. La navegació segura comença ara."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
       ],
@@ -5352,6 +5408,9 @@
       "Total VPN connections": [
         "Connexions VPN totals"
       ],
+      "trusted device": [
+        "dispositiu de confiança"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Proveu ${ productName } totalment sense riscos. Si per qualsevol motiu canvieu d'opinió, rebreu un reemborsament complet. Sense preguntes."
       ],
@@ -5421,11 +5480,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "Username": [
-        "Nom d'usuari"
-      ],
       "username": [
         "nom d'usuari"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -5510,6 +5569,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomanem utilitzar la frase de recuperació."
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Hem emmagatzemat un fitxer de còpia de seguretat en aquest navegador perquè heu permès la recuperació de dades en aquest ${ deviceLink }. Si el fitxer de còpia de seguretat és vàlid, recuperareu immediatament l'accés complet o parcial a les vostres dades xifrades."
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
@@ -5967,10 +6029,10 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10090,6 +10152,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -10378,47 +10481,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -10919,10 +10981,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

@@ -8,11 +8,11 @@
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "فعالسازی"
-      ],
       "activate": [
         "فعال‌سازی"
+      ],
+      "Activate": [
+        "فعالسازی"
       ],
       "Activate organization key": [
         "کلید سازمان را فعال کنید"
@@ -374,10 +374,10 @@
       "Select country": [
         "انتخاب کشور"
       ],
-      "select file": [
+      "Select file": [
         "انتخاب فایل"
       ],
-      "Select file": [
+      "select file": [
         "انتخاب فایل"
       ],
       "Send code": [
@@ -4613,6 +4613,14 @@
         "متوجه شدم"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
@@ -4631,14 +4639,6 @@
       ],
       "Priority support": [
         "اولویت پشتیبانی"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "۱۵ گیگابایت فضای ذخیره‌سازی"
-      ],
-      "Upgrade": [
-        "ارتقاء"
       ]
     },
     "Subscription renewal state": {
@@ -4939,11 +4939,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-all address": [
-        "نشانی دریافت-همه"
-      ],
       "Catch-All address": [
         "نشانی همه‌گیر"
+      ],
+      "Catch-all address": [
+        "نشانی دریافت-همه"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"

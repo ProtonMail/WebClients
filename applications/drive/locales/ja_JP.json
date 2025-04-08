@@ -588,6 +588,9 @@
       "More options": [
         "詳細設定を表示"
       ],
+      "More options for accounts": [
+        "アカウントのその他のオプション"
+      ],
       "Move": [
         "移動"
       ],
@@ -2788,8 +2791,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "「${ name }」はすでに存在します"
+      "\"${ sanitizedName }\" already exists": [
+        "「${ sanitizedName }」はすでに存在しています"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } から外部アカウントに接続できません"
@@ -4851,6 +4854,9 @@
       "Learn more": [
         "詳細"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } で何をすべきか学びましょう"
+      ],
       "Link copied to clipboard": [
         "リンクがクリップボードにコピーされました"
       ],
@@ -5289,6 +5295,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "アクセスできなくなったファイルがあります。復元を開始を押すと、復元します。${ StartRecoveryButton }"
       ],
+      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "このアルバムの一部の写真は、タイムラインに保存されていない可能性があります。このアルバムを削除すると、それらの写真は完全に削除されます。"
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "一部のウェブサイトやストリーミングサービスは、地域ごとにコンテンツをブロックします。VPNを使用すると、これらの制限を回避し、インターネットに自由にアクセスできます。"
       ],
@@ -5318,6 +5327,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "ご登録ありがとうございます。安全なブラウジングが今すぐ開始されます。"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "${ items } は改ざんされたか、アカウントに新しい鍵が設定された可能性があります。信頼できる場合のみ開いてください。"
@@ -6627,6 +6639,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Bitcoinで支払うには？"
+      ],
+      "if your data is leaked": [
+        "もしデータが漏洩した場合"
       ],
       "Inbox": [
         "受信トレイ"
@@ -8000,8 +8015,14 @@
       "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
         "${ nbFailures } 枚の写真が 「${ albumName }」 に追加できませんでした"
       ],
+      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
+        "${ nbFailures } 枚の写真を ${ albumLink.name } から削除できませんでした"
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "${ nbSuccesses } の写真が 「${ albumName }\"」に追加されました"
+      ],
+      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
+        "${ nbSuccesses } 枚の写真を ${ albumLink.name } から削除しました"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }個のアイテムが削除されました"
@@ -9574,6 +9595,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -9826,47 +9888,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -10491,6 +10512,9 @@
       "Import groups": [
         "グループをインポート"
       ],
+      "Information exposed in breach": [
+        "侵害で漏洩した情報"
+      ],
       "Invalid verification code": [
         "無効な検証コードです"
       ],
@@ -10897,6 +10921,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "メッセージとファイル名は、メールに含まれる際にゼロアクセス暗号化で保存されます"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "ここに記載されているすべての情報がすべてのユーザーに公開されたわけではありません。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
       ],
@@ -10920,6 +10947,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "暗号化されたパスワードは、それらが解読されない限り、漏洩した場合でも安全です。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"

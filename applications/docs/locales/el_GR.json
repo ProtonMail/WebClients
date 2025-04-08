@@ -444,6 +444,9 @@
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
+      ],
       "Move": [
         "Μετακίνηση"
       ],
@@ -2248,11 +2251,6 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2331,6 +2329,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4772,6 +4775,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Σας ευχαριστούμε για την εγγραφή σας. Η ασφαλής περιήγηση ξεκινά τώρα."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
@@ -8681,25 +8687,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
-        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } διεύθυνση email",
-        "${ planNumberOfEmails } διευθύνσεις email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -8739,6 +8726,25 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {

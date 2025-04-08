@@ -91,7 +91,7 @@
         "Ужыць"
       ],
       "Ask me next time": [
-        "Наступны раз спытаць мяне"
+        "Спытаць мяне наступны раз"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
@@ -452,6 +452,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Больш параметраў для ўліковых запісаў"
       ],
       "Move": [
         "Перамясціць"
@@ -2275,11 +2278,6 @@
         "Пратэрмінаваны рахунак"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2358,6 +2356,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4536,6 +4539,9 @@
       "Learn more": [
         "Даведацца больш"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Даведайцеся, што рабіць ${ dataLeakedLink }"
+      ],
       "Limited availability": [
         "Абмежаваная даступнасць"
       ],
@@ -4612,7 +4618,7 @@
         "Кантакты пакуль не дададзены"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL-адрас не ўтрымлівае дакумента. Вярніцеся ў ${ DRIVE_APP_NAME } і выберыце дакумент."
+        "У URL-адрасе адсутнічае дакумент. Вярніцеся ў ${ DRIVE_APP_NAME } і выберыце дакумент."
       ],
       "No email address": [
         "Няма адраса электроннай пошты"
@@ -4627,7 +4633,7 @@
         "Нядаўнія дакументы адсутнічаюць"
       ],
       "No recent documents match your search.": [
-        "Нядаўнія дакументы не адпавядаюць вашаму пошуку."
+        "Няма нядаўніх дакументаў, якія адпавядаюць вашаму пошуку."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -4899,6 +4905,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Дзякуй, што падпісаліся. Зараз пачнецца бяспечны прагляд."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
@@ -4923,11 +4932,14 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Здаецца, што ўведзены вамі URL-адрас быў няправільна скапіяваны з платформы Slack. Пры капіяванні доўгіх спасылак з дадзенай платформы, націсніце на спасылку правай кнопкай мышы і выберыце \"Капіяваць спасылку\", а не капіюйце скарочаны тэкст URL-адраса наўпрост."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "There are no documents in the trash.": [
-        "Дакументаў у сметніцы няма."
+        "Дакументы ў сметніцы адсутнічаюць."
       ],
       "This action will delete the link and revoke access for all users.": [
         "Гэта дзеянне выдаліць спасылку і адклікае доступ для ўсіх карыстальнікаў."
@@ -4939,7 +4951,7 @@
         "У гэтага дакумента занадта высокая актыўнасць. Некаторыя функцыі могуць быць часова недаступныя."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
-        "Магчыма, гэты дакумент не існуе, або ў нас узніклі праблемы з яго загрузкай. Перазагрузіце старонку і паўтарыце спробу."
+        "Магчыма, што гэты дакумент не існуе або сістэма не змагла загрузіць яго. Перазагрузіце старонку і паўтарыце спробу."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Магчыма, што ў вас недастаткова правоў для прагляду гэтага дакумента або ён проста не існуе. Паспрабуйце перазагрузіць старонку, каб паглядзець ці засталася праблема або звярніцеся да ўладальніка, каб атрымаць доступ да файла."
@@ -5215,7 +5227,7 @@
         "Гэта дзеянне немагчыма адрабіць."
       ],
       "You don't have access": [
-        "У вас няма доступ"
+        "У вас адсутнічае доступ"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -5230,7 +5242,7 @@
         "Вы будзеце перанакіраваны на вэб-сайт вашага банка."
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Магчыма, у вас няма неабходных правоў для прагляду з дапамогай выбранага ўліковага запісу. Паспрабуйце іншы ўліковы запіс або звярніцеся да ўладальніка для доступу."
+        "Магчыма, што ў вас адсутнічаюць неабходныя правы, каб прагледзець яго з дапамогай выбранага ўліковага запісу. Паспрабуйце іншы ўліковы запіс або звярніцеся да ўладальніка для атрымання доступу."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Перад тым, як панізіць свой тарыфны план, вам неабходна адключыць або выдаліць для ${ MAIL_APP_NAME } дадатковых карыстальнікаў, паштовыя адрасы і карыстальніцкія дамены."
@@ -5986,6 +5998,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
+      ],
+      "if your data is leaked": [
+        "пры ўцечцы вашых даных"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -9024,29 +9039,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Аб'ём сховішча на карыстальніка: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } карыстальніцкі дамен электроннай пошты",
-        "${ planNumberOfDomains } карыстальніцкія дамены электроннай пошты",
-        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты",
-        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрас электроннай пошты",
-        "${ planNumberOfEmails } адрасы электроннай пошты",
-        "${ planNumberOfEmails } адрасоў электроннай пошты",
-        "${ planNumberOfEmails } адрасоў электроннай пошты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папкі, меткі і карыстальніцкія фільтры"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховішча"
@@ -9086,6 +9078,29 @@
       ],
       "Your privacy is our mission": [
         "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Аб'ём сховішча на карыстальніка: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } карыстальніцкі дамен электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкія дамены электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрас электроннай пошты",
+        "${ planNumberOfEmails } адрасы электроннай пошты",
+        "${ planNumberOfEmails } адрасоў электроннай пошты",
+        "${ planNumberOfEmails } адрасоў электроннай пошты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папкі, меткі і карыстальніцкія фільтры"
       ]
     },
     "Subscription renewal state": {
@@ -9645,6 +9660,9 @@
       "Import groups": [
         "Імпартаванне груп"
       ],
+      "Information exposed in breach": [
+        "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
+      ],
       "Invalid verification code": [
         "Памылковы праверачны код"
       ],
@@ -9943,6 +9961,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Паведамленне і назва файла захоўваюцца з дапамогай шыфравання нулявога доступу, калі ўключаны ў ліст"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"
       ],
@@ -9963,6 +9984,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"

@@ -447,6 +447,9 @@
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Més opcions per a comptes"
+      ],
       "Move": [
         "Mou"
       ],
@@ -2251,11 +2254,6 @@
         "Factura vençuda"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2334,6 +2332,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4776,6 +4779,9 @@
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Gràcies per la subscripció. La navegació segura comença ara."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "És possible que el compte tingui una clau nova o que el següent hagi estat manipulat: ${ items }. Obriu-ho només si hi confieu."
       ],
@@ -4799,6 +4805,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Sembla que l'adreça URL que heu introduït s'ha copiat de Slack de manera incorrecta. Quan copieu enllaços llargs des de Slack, feu clic amb el botó dret a l'enllaç i, a continuació, trieu «Copia l'enllaç» en comptes de copiar directament el text de l'adreça URL truncada."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
@@ -8741,25 +8750,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'emmagatzematge per usuari"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
-        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adreça de correu electrònic",
-        "${ planNumberOfEmails } adreces de correu electrònic"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetes, etiquetes i filtres personalitzats"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -8799,6 +8789,25 @@
       ],
       "Your privacy is our mission": [
         "La vostra privacitat és la nostra missió"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "Subscription renewal state": {

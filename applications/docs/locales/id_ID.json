@@ -2218,11 +2218,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2301,6 +2296,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3876,6 +3876,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN merupakan terowongan yang aman antara perangkat Anda dan jaringan internet. VPN menyembunyikan lokasi dan aktivitas Anda dari penyedia layanan internet (ISP) dan situs web yang Anda kunjungi."
       ],
+      "Accept/decline": [
+        "Terima/tolak"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
       ],
@@ -3993,6 +3996,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Mengonversi dokumen..."
+      ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
       ],
@@ -4034,6 +4040,9 @@
       ],
       "Creating link to folder": [
         "Menghasilkan tautan folder"
+      ],
+      "Creating new document...": [
+        "Membuat dokumen baru..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -4152,6 +4161,12 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Terdapat kesalahan dalam mengonversi dokumen: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Terdapat kesalahan dalam memuat dokumen${ errorDetail }"
+      ],
       "Error Syncing": [
         "Terjadi Kesalahan Menyinkronkan"
       ],
@@ -4211,6 +4226,12 @@
       ],
       "Geoblocking": [
         "Pemblokiran wilayah"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dapatkan pembaruan melalui email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
+      ],
+      "Get Notified About Comments": [
+        "Dapatkan Notifikasi Seputar Komentar"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Tuju ${ DRIVE_APP_NAME }"
@@ -4317,6 +4338,9 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Pelajari apa yang harus dilakukan ${ dataLeakedLink }"
+      ],
       "Limited availability": [
         "Ketersediaan terbatas"
       ],
@@ -4346,6 +4370,9 @@
       ],
       "Low Priority": [
         "Prioritas Rendah"
+      ],
+      "Making a copy...": [
+        "Membuat salinan..."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -4385,6 +4412,9 @@
       ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Tidak ada dokumen yang diterakan pada URL. Kembali ke ${ DRIVE_APP_NAME } dan pilih dokumen."
       ],
       "No email address": [
         "Tidak ada alamat email"
@@ -4662,6 +4692,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Terima kasih telah berlangganan. Penjelajahan yang aman dimulai dari sekarang."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
       ],
@@ -4686,6 +4719,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "URL yang Anda masukkan sepertinya tidak disalin dari Slack dengan benar. Pada saat menyalin tautan yang panjang dari Slack, klik kanan tautan ini dan pilih \"Salin tautan\" alih-alih menyalin teks tautan yang terpotong secara langsung."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
@@ -4700,6 +4736,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dokumen ini sedang memiliki banyak aktivitas. Sebagian fitur mungkin tidak akan tersedia untuk sementara waktu."
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Dokumen ini mungkin tidak ada, atau kami mungkin mengalami masalah pada saat memuat dokumen. Silakan muat ulang halaman ini dan coba lagi."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Dokumen ini mungkin tidak ada, atau Anda mungkin tidak memiliki izin untuk menampilkan dokumen ini. Anda dapat mencoba memuat ulang halaman untuk melihat apakah masalah ini terus berlanjut atau menghubungi pemilik dokumen untuk meminta akses."
@@ -4811,6 +4850,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sayangnya, berkas ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
+      ],
+      "Update recent documents": [
+        "Perbarui dokumen terkini"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
@@ -5710,6 +5752,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
+      ],
+      "if your data is leaked": [
+        "apabila data Anda sampai dibocorkan"
       ],
       "Learn more": [
         "Lebih lanjut"
@@ -7806,6 +7851,9 @@
       "Previous 7 days": [
         "7 hari terakhir"
       ],
+      "Search results": [
+        "Hasil pencarian"
+      ],
       "Today": [
         "Hari ini"
       ],
@@ -8494,23 +8542,6 @@
         "Untuk ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } alamat email khusus"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } alamat email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Folder, label, dan filter khusus"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
@@ -8550,6 +8581,23 @@
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {

@@ -916,11 +916,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "select file": [
-        "pilih berkas"
-      ],
       "Select file": [
         "Pilih berkas"
+      ],
+      "select file": [
+        "pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -4183,6 +4183,41 @@
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
       ]
     },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } tidak akan pernah meminta Anda untuk memasukkan kode yang tidak bersumber dari domain ${ domain } atau aplikasi ${ BRAND_NAME } resmi."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Bagaimana metode ini bekerja:** Masukkan kode yang muncul pada perangkat yang ingin Anda masuki di perangkat ini. Anda akan masuk sebagai **${ email }**. Kedua perangkat ini akan tetap aktif. "
+      ],
+      "Code copied to clipboard": [
+        "Kode disalin ke papan klip"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Buka aplikasi ${ BRAND_NAME } di ponsel Anda"
+      ],
+      "Safety tips:": [
+        "Tips keamanan:"
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Pindai kode QR ini pada aplikasi ${ BRAND_NAME } di ponsel Anda untuk masuk secara instan."
+      ],
+      "Sign in to another device": [
+        "Masuk ke perangkat lain"
+      ],
+      "Tap **Scan QR code**": [
+        "Ketuk **Pindai kode QR**"
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "Ketuk **Pengaturan**, lalu ketuk **Masuk ke perangkat lain**"
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Berhati-hatilah terhadap pesan yang mengandung kode tertentu. Jangan pernah masukkan kode apa pun dari situs web atau orang lain yang tidak Anda percayai."
+      ],
+      "You have successfully signed in to another device": [
+        "Anda telah berhasil masuk ke perangkat lain"
+      ]
+    },
     "Email": {
       "Email verified": [
         "Email terverifikasi"
@@ -5031,6 +5066,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
@@ -7226,11 +7264,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
-      "active": [
-        "aktif"
-      ],
       "Active": [
         "Aktif"
+      ],
+      "active": [
+        "aktif"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
@@ -7661,11 +7699,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -8341,6 +8379,9 @@
       ],
       "Learn more about single sign-on": [
         "Pelajari lebih lanjut mengenai single sign-on"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Pelajari apa yang harus dilakukan ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Kiri ke Kanan"
@@ -9104,6 +9145,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Terima kasih telah memilih ${ BRAND_NAME }."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Terima kasih telah berlangganan. Penjelajahan yang aman dimulai dari sekarang."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Terima kasih karena telah mendukung misi kami untuk mewujudkan internet yang mengutamakan privasi dan kebebasan."
       ],
@@ -9506,11 +9550,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "Username": [
-        "Nama pengguna"
-      ],
       "username": [
         "nama pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -10201,6 +10245,11 @@
         "Langganan"
       ]
     },
+    "Key function description": {
+      "Encryption, decryption, signing, verification": [
+        "Enkripsi, dekripsi, penandatanganan, verifikasi"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Hasilkan kunci"
@@ -10228,6 +10277,9 @@
       ]
     },
     "Key state badge": {
+      "Compatibility": [
+        "Kompatibilitas"
+      ],
       "Compromised": [
         "Bocor"
       ],
@@ -10637,11 +10689,11 @@
       "Allow sharing outside the organization": [
         "Izinkan pembagian di luar organisasi"
       ],
-      "Allowed domain": [
-        "Domain yang diizinkan"
-      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -11900,6 +11952,9 @@
       "How to unlock data": [
         "Bagaimana cara membuka kunci data"
       ],
+      "if your data is leaked": [
+        "apabila data Anda sampai dibocorkan"
+      ],
       "Import/export": [
         "Impor/ekspor"
       ],
@@ -11921,11 +11976,11 @@
       "perform a password reset from your active session": [
         "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
       ],
-      "privacy policy": [
-        "kebijakan privasi"
-      ],
       "Privacy policy": [
         "Kebijakan privasi"
+      ],
+      "privacy policy": [
+        "kebijakan privasi"
       ],
       "Reactivate now": [
         "Aktifkan kembali"
@@ -12514,6 +12569,32 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Mulai dengan harga ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Mulai dari ${ pricing }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -12541,32 +12622,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Mulai dengan harga ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Mulai dari ${ pricing }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13258,6 +13313,14 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -13276,14 +13339,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -17094,6 +17149,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -17376,47 +17472,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -18143,11 +18198,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -19573,6 +19628,12 @@
       ],
       "This feature is only available on Beta": [
         "Fitur ini hanya tersedia pada versi Beta"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Kunci ini merupakan kunci bawaan yang digunakan oleh pengguna ${ MAIL_APP_NAME } lainnya di aplikasi mobile versi lawas untuk mengenkripsi data yang mereka kirim kepada Anda"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Kunci ini merupakan kunci bawaan yang digunakan oleh pengguna ${ MAIL_APP_NAME } lainnya untuk mengenkripsi data yang mereka kirim kepada Anda"
       ],
       "This key cannot be used for encryption": [
         "Kunci ini tidak dapat digunakan untuk mengenkripsi"

@@ -555,6 +555,15 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } arka plan rengi ve beyaz metin rengi"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } metin rengi ve vurgusu"
+      ],
+      "${ name } text color with no background": [
+        "Arka plan olmadan ${ name } metin rengi"
+      ],
       "Add link": [
         "Bağlantı ekle"
       ],
@@ -641,6 +650,9 @@
       ],
       "Replace link": [
         "Bağlantıyı değiştir"
+      ],
+      "Text and highlight color": [
+        "Metin ve vurgu rengi"
       ],
       "with \"${ replaceWith }\"": [
         "\"${ replaceWith }\" ile"

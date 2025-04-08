@@ -823,6 +823,9 @@
       "More options": [
         "Дадатковыя параметры"
       ],
+      "More options for accounts": [
+        "Больш параметраў для ўліковых запісаў"
+      ],
       "move emails to": [
         "перамясціць лісты ў"
       ],
@@ -916,11 +919,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Reject": [
         "Адхіліць"
@@ -1090,11 +1093,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "select file": [
-        "выбраць файл"
-      ],
       "Select file": [
         "Выбраць файл"
+      ],
+      "select file": [
+        "выбраць файл"
       ],
       "Select files": [
         "Выбраць файлы"
@@ -3860,11 +3863,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Адасобце розныя часткі свайго жыцця і ўпарадкуйце сваю паштовую скрыню з дадатковымі адрасамі."
       ],
+      "Learn more about common problems": [
+        "Даведайцеся больш аб распаўсюджаных праблемах"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Персаналізуйце ніжні калонтытул ліста. Дэманструйце іншым свой унікальны брэнд, а не наш."
       ],
       "No one in your organization can connect to shared servers.": [
         "Ніводны ўдзельнік вашай арганізацыі не можа падключацца да абагуленых сервераў."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Адправіць код на вашу электронную пошту для аднаўлення доступу або на нумар тэлефона"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
@@ -4229,6 +4238,83 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } ніколі не будзе прасіць вас увесці код, які паступае не з дамена ${ domain } або з афіцыйнай праграмы ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Як гэта працуе:** увядзіце код, які паказаны на прыладзе, з якой вы хочаце ўвайсці. Вы ўвойдзеце ў сістэму як **${ email }**. Абедзве прылады застануцца актыўнымі. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Дазволіць сканіраванне QR-кода для ўваходу"
+      ],
+      "Code copied to clipboard": [
+        "Код скапіяваны ў буфер абмену"
+      ],
+      "Code from the other device": [
+        "Код з іншай прылады"
+      ],
+      "Enter code manually": [
+        "Увесці код уручную"
+      ],
+      "New QR code": [
+        "Новы QR-код"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Адкрыйце праграму ${ BRAND_NAME } на сваім тэлефоне"
+      ],
+      "Please scan a new QR code to try again": [
+        "Адсканіруйце новы QR-код, каб паспрабаваць яшчэ раз"
+      ],
+      "QR code expired": [
+        "QR-код пратэрмінаваны"
+      ],
+      "QR code sign-in disabled": [
+        "Уваход з дапамогай QR-кода адключаны"
+      ],
+      "QR code sign-in enabled": [
+        "Уваход з дапамогай QR-кода ўключаны"
+      ],
+      "Safety tips:": [
+        "Парады па бяспецы:"
+      ],
+      "Scan a QR code with your phone": [
+        "Адсканіруйце QR-код пры дапамозе свайго тэлефона"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Адсканіруйце QR-код на сваёй мабільнай прыладзе для ўваходу"
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Адсканіруйце гэты QR-код у праграме ${ BRAND_NAME } на сваім тэлефоне для імгненнага ўваходу."
+      ],
+      "Sign in to another device": [
+        "Увайсці на іншай прыладзе"
+      ],
+      "Sign in with another device": [
+        "Увайсці з дапамогай іншай прылады"
+      ],
+      "Sign in with QR code": [
+        "Увайсці з дапамогай QR-кода"
+      ],
+      "Tap **Scan QR code**": [
+        "Націсніце **Сканіраваць QR-код**"
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "Націсніце на **Налады**, а потым націсніце **Увайсці ў іншую прыладу**"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Націсніце на кнопку **Увайсці з QR-кодам** у меню дапамогі экрана ўваходу, каб атрымаць код доступу прылады ў якую вы хочаце ўвайсці, а потым націсніце **Увесці ключ уручную**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Асцерагайцеся паведамленняў, якія змяшчаюць код. Ніколі не ўводзьце код з вэб-сайта або ад асобы, якой вы не давяраеце."
+      ],
+      "We couldn't sign you in": [
+        "Не ўдалося ўвайсці ў сістэму"
+      ],
+      "You have successfully signed in to another device": [
+        "Вы паспяхова ўвайшлі ў іншую прыладу"
       ]
     },
     "Email": {
@@ -5094,6 +5180,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
@@ -7090,6 +7179,14 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Ключ будзе выкарыстоўвацца для расшыфроўкі пры паўторнай актывацыі"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Ключ будзе выкарыстоўвацца для расшыфроўкі пры паўторнай актывацыі і праверцы"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час мае доступ да абагуленых сервераў.",
@@ -7436,11 +7533,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
-      "active": [
-        "актыўна"
-      ],
       "Active": [
         "Актыўна"
+      ],
+      "active": [
+        "актыўна"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
@@ -7901,11 +7998,14 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
+      "Data recoverable on this device": [
+        "Даныя, якія можна аднавіць на гэтай прыладзе"
       ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8593,6 +8693,9 @@
       ],
       "Learn more about single sign-on": [
         "Даведацца больш аб адзіным уваходзе"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Даведайцеся, што рабіць ${ dataLeakedLink }"
       ],
       "Left to Right": [
         "Злева направа"
@@ -9383,6 +9486,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Дзякуй, што выбралі ${ BRAND_NAME }."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Дзякуй, што падпісаліся. Зараз пачнецца бяспечны прагляд."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Дзякуй за падтрымку нашай місіі па стварэнні лепшага інтэрнэту, дзе прыватнасць і свабода стаяць на першым месцы."
       ],
@@ -9680,6 +9786,9 @@
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
       ],
+      "trusted device": [
+        "даверанай прыладзе"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
       ],
@@ -9794,11 +9903,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -9913,6 +10022,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Мы надзейна захоўваем інфармацыю для аднаўлення на вашай даверанай прыладзе, каб прадухіліць страту вашых даных"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Мы захавалі рэзервовы файл у гэтым браўзеры, бо вы дазволілі аднаўленне даных на гэтай ${ deviceLink }. Калі рэзервовы файл з'яўляецца сапраўдным, то вы неадкладна атрымаеце поўны або частковы доступ да сваіх зашыфраваных даных."
       ],
       "We use 3-D Secure to protect your payments": [
         "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
@@ -10531,6 +10643,17 @@
         "Падпіска"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Расшыфроўка"
+      ],
+      "Decryption, verification": [
+        "Расшыфроўка, праверка"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Шыфраванне, расшыфроўка, падпісанне, праверка"
+      ]
+    },
     "Key generation": {
       "Generate key": [
         "Згенерыраваць ключ"
@@ -10558,6 +10681,9 @@
       ]
     },
     "Key state badge": {
+      "Compatibility": [
+        "Сумяшчальнасць"
+      ],
       "Compromised": [
         "Скампраметаваны"
       ],
@@ -10979,10 +11105,10 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12251,6 +12377,9 @@
       "How to unlock data": [
         "Як разблакіраваць даныя"
       ],
+      "if your data is leaked": [
+        "пры ўцечцы вашых даных"
+      ],
       "Import/export": [
         "Імпартаванне/экспартаванне"
       ],
@@ -12272,11 +12401,11 @@
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
       ],
-      "privacy policy": [
-        "палітыкай прыватнасці"
-      ],
       "Privacy policy": [
         "Палітыка прыватнасці"
+      ],
+      "privacy policy": [
+        "палітыкай прыватнасці"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -12895,6 +13024,32 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -12922,32 +13077,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13714,6 +13843,14 @@
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -13732,14 +13869,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -17736,6 +17865,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -18036,47 +18206,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -18824,10 +18953,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -19334,6 +19463,9 @@
       "Home": [
         "Галоўная"
       ],
+      "How can we help?": [
+        "Як мы можам дапамагчы?"
+      ],
       "How does it work?": [
         "Як гэта працуе?"
       ],
@@ -19387,6 +19519,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Павялічце сваю прыватнасць з большай колькасцю адрасоў"
+      ],
+      "Information exposed in breach": [
+        "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
       ],
       "Integrations": [
         "Інтэграцыі"
@@ -19516,6 +19651,9 @@
       ],
       "Other preferences": [
         "Іншыя параметры"
+      ],
+      "Other sign-in issues": [
+        "Іншыя праблемы ўваходу"
       ],
       "Password": [
         "Пароль"
@@ -20057,11 +20195,20 @@
       "Actions": [
         "Дзеянні"
       ],
+      "Creation date": [
+        "Дата стварэння"
+      ],
       "Fingerprint": [
         "Адбітак пальца"
       ],
+      "Function": [
+        "Функцыя"
+      ],
       "Status": [
         "Статус"
+      ],
+      "Type": [
+        "Тып"
       ]
     },
     "Title header for members table": {
@@ -20198,6 +20345,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Паведамленні ў папках Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Выдаліць метаданыя з відарысаў, каб абараніць вашу прыватнасць."
       ],
@@ -20270,6 +20420,12 @@
       "This feature is only available on Beta": [
         "Гэта функцыя даступна толькі ў рэжыме бэта"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+        "Гэта прадвызначаны ключ, які выкарыстоўваецца іншымі карыстальнікамі ${ MAIL_APP_NAME } у старых мабільных праграмах для шыфравання даных, якія яны вам адпраўляюць"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Гэта прадвызначаны ключ, які выкарыстоўваецца іншымі карыстальнікамі ${ MAIL_APP_NAME } для шыфравання даных, якія яны вам адпраўляюць"
+      ],
       "This key cannot be used for encryption": [
         "Гэты ключ немагчыма выкарыстаць для шыфравання"
       ],
@@ -20281,6 +20437,9 @@
       ],
       "This key is used for email forwarding": [
         "Гэты ключ выкарыстоўваецца для перасылкі лістоў"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Выкарыстоўвайце стандартную паласу прагорткі свайго браўзера. Звычайна яна больш і ёй прасцей карыстацца."

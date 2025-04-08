@@ -1847,6 +1847,9 @@
       "Latest breach on ${ formattedDate }": [
         "Апошняе парушэнне ў ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Даведайцеся, што рабіць ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Выхад з элемента..."
       ],
@@ -2073,7 +2076,7 @@
         "Прытрымлівайцеся крокаў ніжэй, каб наладзіць свой дамен."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
-        "Пакіньце гэта акно адкрытым падчас імпартавання сваіх даных. Гэты працэс можа заняць некалькі хвілін."
+        "Пакіньце гэта акно адкрытым падчас імпартавання даных. Гэты працэс можа заняць некалькі хвілін."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Магчыма, што вы захочаце адключыць яго замест таго, каб выдаляць незваротна?"
@@ -3423,6 +3426,9 @@
       "auto create rules ››": [
         "аўтаматычнае стварэнне правіл ››"
       ],
+      "if your data is leaked": [
+        "пры ўцечцы вашых даных"
+      ],
       "Learn more": [
         "Даведацца больш"
       ]
@@ -3537,7 +3543,7 @@
         "Выдаліць усе файлы"
       ],
       "Do you want to remove all the files?": [
-        "Вы хочаце выдаліць усе файлы?"
+        "Вы сапраўды хочаце выдаліць усе файлы?"
       ],
       "Download": [
         "Спампаваць"
@@ -3551,14 +3557,17 @@
       "Exporting files": [
         "Экспартаваныя файлы"
       ],
+      "Failed linking files to item": [
+        "Збой звязкі файлаў з элементам"
+      ],
       "File": [
         "Файл"
       ],
       "File attachments": [
-        "Далучэнні файлаў"
+        "Файлы з далучэннямі"
       ],
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
-        "Калі гэта ўключана, усе вашы файлы будуць спампаваны пры экспарце. Гэта можа заняць некаторы час у залежнасці ад вашага інтэрнэт-падключэння."
+        "Усе вашы файлы будуць спампаваны пры экспартаванні, калі гэта функцыя будзе ўключана. Гэта можа заняць некаторы час у залежнасці ад вашага падключэння да інтэрнэту."
       ],
       "Include file attachments": [
         "Уключыць далучаныя файлы"
@@ -3573,7 +3582,7 @@
         "Адкрыйце новае акно, каб запампаваць файлы"
       ],
       "Please be patient while your files are being downloaded.": [
-        "Будзьце цярплівыя, пакуль вашы файлы спампоўваюцца."
+        "Набярыцеся цярпення, пакуль адбываецца спампоўванне вашых файлаў."
       ],
       "Remove all files": [
         "Выдаліць усе файлы"
@@ -4057,6 +4066,9 @@
       "Inactive 2FA": [
         "Неактыўныя 2ФА"
       ],
+      "Information exposed in breach": [
+        "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
+      ],
       "Install extension": [
         "Усталяваць пашырэнне"
       ],
@@ -4326,6 +4338,14 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
       ]
     },
     "Validation": {
