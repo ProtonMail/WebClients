@@ -568,6 +568,9 @@
       "Sign out": [
         "로그아웃"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
+      ],
       "Sort vault items": [
         "금고 항목 정렬"
       ],
@@ -1116,6 +1119,9 @@
       ],
       "Trashing item failed": [
         "항목을 휴지통으로 이동하는데 실패"
+      ],
+      "Try reaching out to the link owner.": [
+        "이 링크 소유자에게 연락을 시도하세요.."
       ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
@@ -1718,6 +1724,9 @@
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate }에 마지막으로 유출됨"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "대처법에 대해 알아보세요 ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "항목에서 떠나는 중..."
       ],
@@ -1762,6 +1771,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -3022,6 +3034,9 @@
       "Theme": [
         "테마"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
+      ],
       "Title": [
         "제목"
       ],
@@ -3138,6 +3153,9 @@
       "auto create rules ››": [
         "자동 생성 규칙 ››"
       ],
+      "if your data is leaked": [
+        "사용자의 데이터가 유출된 경우"
+      ],
       "Learn more": [
         "더 알아보기"
       ]
@@ -3242,6 +3260,9 @@
       ],
       "Exporting files": [
         "파일 내보내는 중"
+      ],
+      "Failed linking files to item": [
+        "항목과 파일 연결 실패"
       ],
       "File": [
         "파일"
@@ -3737,6 +3758,9 @@
       "Inactive 2FA": [
         "2단계 인증 꺼짐"
       ],
+      "Information exposed in breach": [
+        "유출 시 노출된 정보"
+      ],
       "Install extension": [
         "확장 프로그램 설치"
       ],
@@ -3991,6 +4015,14 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
       ]
     },
     "Validation": {
