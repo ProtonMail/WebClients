@@ -43,7 +43,7 @@ export const AlbumCoverHeader = ({
 
     return (
         <div
-            className="flex shrink-0 flex-row gap-4 md:flex-nowrap items-center p-4"
+            className="flex shrink-0 flex-row gap-4 md:flex-nowrap items-center"
             data-testid="album-gallery-cover-section"
         >
             {album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl ? (
