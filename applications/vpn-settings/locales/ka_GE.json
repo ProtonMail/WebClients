@@ -28,10 +28,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate organization key": [
@@ -454,6 +454,9 @@
       "More options": [
         "მეტი პარამეტრი"
       ],
+      "More options for accounts": [
+        "მეტი პარამეტრი ანგარიშებისთვის"
+      ],
       "Need help?": [
         "დახმარება გჭირდებათ?"
       ],
@@ -637,10 +640,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
       "Send code": [
@@ -2667,6 +2670,41 @@
         "პრიორიტეტული მხარდაჭერა"
       ]
     },
+    "edm": {
+      "Allow scanning a QR code to sign in": [
+        "შესასვლელად QR კოდის სკანირების დაშვება"
+      ],
+      "Code from the other device": [
+        "კოდი სხვა მოწყობილობიდან"
+      ],
+      "Enter code manually": [
+        "კოდის ხელით შეყვანა"
+      ],
+      "QR code sign-in disabled": [
+        "QR კოდით შესვლა გამორთულია"
+      ],
+      "QR code sign-in enabled": [
+        "QR კოდით შესვლა ჩართულია"
+      ],
+      "Safety tips:": [
+        "უსაფრთხოებასთან დაკავშირებული რჩევები:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "შესასვლელად დაასკანერეთ QR კოდი თქვენს მობილურ მოწყობილობაზე"
+      ],
+      "Sign in to another device": [
+        "შესვლა სხვა მოწყობილობით"
+      ],
+      "Sign in with another device": [
+        "შესვლა სხვა მოწყობილობით"
+      ],
+      "Sign in with QR code": [
+        "შესვლა QR კოდით"
+      ],
+      "You have successfully signed in to another device": [
+        "თქვენ წარმატებით შესვედით სხვა მოწყობილობაზე"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } დაემატა"
@@ -4230,11 +4268,14 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
+      "Data recoverable on this device": [
+        "ამ მოწყობილობაზე აღმოჩენადი მონაცემები"
       ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -5140,6 +5181,9 @@
       "Thank you": [
         "მადლობა"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "მადლობა გამოწერისთვის. ინტერნეტში დაცულად მუშაობა ახლა იწყება."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "მადლობა, რომ მხარი დაგვიჭირეთ ჩვენს მისიაში, ავაგოთ უკეთესი ინტერნეტ, სადაც კონფიდენციალობა და თავისუფლება რიგში პირველია."
       ],
@@ -5311,6 +5355,9 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
+      "trusted device": [
+        "სანდო მოწყობილობა"
+      ],
       "Two-factor authentication disabled": [
         "2FA გამორთულია"
       ],
@@ -5377,10 +5424,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -5909,10 +5956,10 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10009,6 +10056,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -10294,47 +10382,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -10835,10 +10882,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [

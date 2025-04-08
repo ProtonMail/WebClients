@@ -823,6 +823,9 @@
       "More options": [
         "Fler alternativ"
       ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
+      ],
       "move emails to": [
         "flytta e-post till"
       ],
@@ -916,11 +919,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reject": [
         "Avvisa"
@@ -1090,11 +1093,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "select file": [
-        "välj fil"
-      ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Select files": [
         "Välj filer"
@@ -3831,6 +3834,9 @@
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan ansluta till delade servrar."
       ],
+      "Send a code to your recovery email or phone": [
+        "Skicka en kod till din e-post eller telefon för återställning"
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
@@ -4194,6 +4200,77 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } kommer aldrig att be dig att ange en kod som inte kommer från domänen ${ domain } eller från en officiell ${ BRAND_NAME }-applikation."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Så här fungerar det:** Ange koden som visas på enheten som du vill logga in på i den här enheten. Du kommer att loggas in som **${ email }**. Båda enheterna förblir aktiva. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Tillåt att skanna en QR-kod för att logga in"
+      ],
+      "Code copied to clipboard": [
+        "Kod kopierad till urklipp"
+      ],
+      "Code from the other device": [
+        "Kod från den andra enheten"
+      ],
+      "Enter code manually": [
+        "Ange kod manuellt"
+      ],
+      "New QR code": [
+        "Ny QR-kod"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "Öppna appen ${ BRAND_NAME } på din telefon"
+      ],
+      "Please scan a new QR code to try again": [
+        "Skanna en ny QR-kod och försök igen"
+      ],
+      "QR code expired": [
+        "QR-kod löpt ut"
+      ],
+      "QR code sign-in disabled": [
+        "QR-kod för inloggning inaktiverad"
+      ],
+      "QR code sign-in enabled": [
+        "Inloggning med QR-kod aktiverad"
+      ],
+      "Safety tips:": [
+        "Säkerhetstips:"
+      ],
+      "Scan a QR code with your phone": [
+        "Skanna en QR-kod med din telefon"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Skanna QR-kod på din mobila enhet för att logga in"
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "Skanna den här QR-koden i ${ BRAND_NAME }-appen på din telefon för att logga in direkt."
+      ],
+      "Sign in to another device": [
+        "Logga in på annan enhet"
+      ],
+      "Sign in with another device": [
+        "Logga in med annan enhet"
+      ],
+      "Sign in with QR code": [
+        "Logga in med QR-kod"
+      ],
+      "Tap **Scan QR code**": [
+        "Tryck **Skanna QR-kod**"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Om du vill komma åt koden för den enhet du vill logga in på trycker du på knappen **Logga in med QR-kod** i hjälpmenyn på inloggningsskärmen och sedan på **Ange nyckel manuellt**. "
+      ],
+      "We couldn't sign you in": [
+        "Vi kunde inte logga in dig"
+      ],
+      "You have successfully signed in to another device": [
+        "Du har lyckats logga in på en annan enhet"
       ]
     },
     "Email": {
@@ -5049,6 +5126,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
@@ -7293,11 +7373,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7735,11 +7815,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -9168,6 +9248,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Tack för att du väljer ${ BRAND_NAME }."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Tack för att du prenumererar. Säker surfning börjar nu."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
       ],
@@ -9459,6 +9542,9 @@
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
       ],
+      "trusted device": [
+        "betrodd enhet"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
       ],
@@ -9573,11 +9659,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "Username": [
-        "Användarnamn"
-      ],
       "username": [
         "användarnamn"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "Users": [
         "Användare"
@@ -10272,6 +10358,12 @@
       ]
     },
     "Key function description": {
+      "Decryption": [
+        "Dekryptering"
+      ],
+      "Decryption, verification": [
+        "Dekryptering, verifiering"
+      ],
       "Encryption, decryption, signing, verification": [
         "Kryptering, dekryptering, signering, verifiering"
       ]
@@ -10719,10 +10811,10 @@
       "Allow sharing outside the organization": [
         "Tillåt delning utanför organisationen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -12016,11 +12108,11 @@
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
       ],
-      "privacy policy": [
-        "integritetspolicy"
-      ],
       "Privacy policy": [
         "Integritetspolicy"
+      ],
+      "privacy policy": [
+        "integritetspolicy"
       ],
       "Reactivate now": [
         "Återaktivera nu"
@@ -12622,6 +12714,32 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -12649,32 +12767,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13388,6 +13480,17 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -13406,17 +13509,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -17288,6 +17380,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -17576,47 +17709,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -18353,10 +18445,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -18857,6 +18949,9 @@
       "Home": [
         "Hem"
       ],
+      "How can we help?": [
+        "Hur kan vi hjälpa till?"
+      ],
       "How does it work?": [
         "Hur fungerar det?"
       ],
@@ -19046,6 +19141,9 @@
       ],
       "Other preferences": [
         "Andra preferenser"
+      ],
+      "Other sign-in issues": [
+        "Andra inloggningsproblem"
       ],
       "Password": [
         "Lösenord"
@@ -19588,11 +19686,20 @@
       "Actions": [
         "Åtgärder"
       ],
+      "Creation date": [
+        "Datum för skapande"
+      ],
       "Fingerprint": [
         "Fingeravtryck"
       ],
+      "Function": [
+        "Funktion"
+      ],
       "Status": [
         "Status"
+      ],
+      "Type": [
+        "Typ"
       ]
     },
     "Title header for members table": {

@@ -823,6 +823,9 @@
       "More options": [
         "更多选项"
       ],
+      "More options for accounts": [
+        "更多帐户选项"
+      ],
       "move emails to": [
         "将邮件移至"
       ],
@@ -916,10 +919,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -1090,10 +1093,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
       "Select files": [
@@ -1793,7 +1796,7 @@
         "${ storageSize } 存储空间"
       ],
       "1 TB total": [
-        "1 TB 总计"
+        "共 1 TB"
       ],
       "1 user": [
         "1 位用户"
@@ -2072,7 +2075,7 @@
         "注册问题"
       ],
       "Slow speed problem": [
-        "速度缓慢"
+        "速度慢的问题"
       ],
       "Speed problem": [
         "速度问题"
@@ -2340,7 +2343,7 @@
     },
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
-        "${ maxSpaceTB } 储存空间"
+        "${ maxSpaceTB } 存储空间"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } 电子邮件存储空间"
@@ -3812,11 +3815,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "将您生活中不同的部分分开，并使用其他地址整理您的收件箱。"
       ],
+      "Learn more about common problems": [
+        "了解关于常见问题的更多信息"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "让您的电子邮件页脚属于您自己——展示您独特品牌，而不是我们的品牌。"
       ],
       "No one in your organization can connect to shared servers.": [
         "组织内任何人都不能连接共享服务器。"
+      ],
+      "Send a code to your recovery email or phone": [
+        "将验证码发送至您的恢复邮箱或手机号码"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "升级账户即可使用多个邮箱地址隔离工作与生活中的各项事务，还可解锁更多高级功能。"
@@ -4181,6 +4190,83 @@
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
+      ]
+    },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } 绝不会要求您输入来自非 ${ domain } 域名或官方 ${ BRAND_NAME } 应用程序的验证码。"
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**操作方式：** 在本设备上输入您要登录设备上显示的验证码。您将以 **${ email }** 的身份登录。当前设备和登录设备都将保持激活状态。 "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "允许扫描二维码登录"
+      ],
+      "Code copied to clipboard": [
+        "验证码已复制到剪贴板"
+      ],
+      "Code from the other device": [
+        "来自其他设备的验证码"
+      ],
+      "Enter code manually": [
+        "手动输入验证码"
+      ],
+      "New QR code": [
+        "新的二维码"
+      ],
+      "Open the ${ BRAND_NAME } app on your phone": [
+        "在您的手机上打开 ${ BRAND_NAME } 应用"
+      ],
+      "Please scan a new QR code to try again": [
+        "请扫描新的二维码以重试"
+      ],
+      "QR code expired": [
+        "二维码已失效"
+      ],
+      "QR code sign-in disabled": [
+        "二维码登录已禁用"
+      ],
+      "QR code sign-in enabled": [
+        "二维码登录已启用"
+      ],
+      "Safety tips:": [
+        "安全提示："
+      ],
+      "Scan a QR code with your phone": [
+        "使用手机扫描二维码"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "扫描移动设备上的二维码以登录"
+      ],
+      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
+        "在手机上的 ${ BRAND_NAME } 应用中扫描此二维码，即可立即登录。"
+      ],
+      "Sign in to another device": [
+        "登录到其他设备"
+      ],
+      "Sign in with another device": [
+        "使用其他设备登录"
+      ],
+      "Sign in with QR code": [
+        "使用二维码登录"
+      ],
+      "Tap **Scan QR code**": [
+        "点击 **扫描二维码**"
+      ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "进入**设置**，然后点击**登录其他设备**"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "要获取您想要登录设备的代码，请在登录屏幕的帮助菜单中点击**使用二维码登录**按钮，然后点击**手动输入密钥**。 "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "请警惕包含验证码的信息。切勿在任何非可信来源的网站或陌生人处输入验证码。"
+      ],
+      "We couldn't sign you in": [
+        "我们无法为您登录。"
+      ],
+      "You have successfully signed in to another device": [
+        "您已成功登录到其他设备"
       ]
     },
     "Email": {
@@ -5031,6 +5117,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -6193,7 +6282,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }，隐私至上。"
+        "${ BRAND_NAME } - Privacy by default"
       ]
     },
     "Free trial dekstop": {
@@ -6810,6 +6899,9 @@
       "Open your ${ yahooMailLink } contacts.": [
         "打开您的 ${ yahooMailLink } 通讯录。"
       ],
+      "Select ${ boldExportCSV }.": [
+        "选择 ${ boldExportCSV }。"
+      ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "将 Yahoo 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
@@ -7231,11 +7323,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "active": [
-        "启用"
-      ],
       "Active": [
         "已启用"
+      ],
+      "active": [
+        "启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7669,10 +7761,10 @@
       "Data recoverable on this device": [
         "此设备上的数据可能被恢复"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -9115,6 +9207,9 @@
       "Thank you for choosing ${ BRAND_NAME }.": [
         "感谢您选择 ${ BRAND_NAME }。"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "感谢您成为订阅用户，安全浏览即刻开启。"
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "感谢支持我们建立一个更好的互联网的使命，让隐私和自由成为第一位。"
       ],
@@ -9520,10 +9615,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
       "Users": [
@@ -10066,7 +10161,7 @@
         "密钥 ${ fingerprint } 已上传"
       ],
       "Selected color:": [
-        "所选颜色"
+        "所选颜色："
       ]
     },
     "Info - folder colouring feature": {
@@ -10668,10 +10763,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11961,10 +12056,10 @@
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隐私政策"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隐私政策"
       ],
       "Reactivate now": [
@@ -12554,6 +12649,32 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -12581,32 +12702,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12689,7 +12784,7 @@
         "每位用户 ${ size } 存储空间"
       ],
       "1 TB secure storage": [
-        "1 TB安全储存空间"
+        "1 TB 安全存储空间"
       ],
       "1 user": [
         "1 位用户"
@@ -13298,6 +13393,14 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -13316,14 +13419,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -16503,7 +16598,7 @@
         "/ 月"
       ],
       "/month": [
-        "/个月"
+        "/月"
       ],
       "1 year": [
         "一年"
@@ -17134,6 +17229,47 @@
         "总计${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -17416,47 +17552,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -18180,10 +18275,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -18681,6 +18776,9 @@
       "Home": [
         "首页"
       ],
+      "How can we help?": [
+        "我们能为您提供什么帮助呢？"
+      ],
       "How does it work?": [
         "如何操作？"
       ],
@@ -18863,6 +18961,9 @@
       ],
       "Other preferences": [
         "其他设置"
+      ],
+      "Other sign-in issues": [
+        "其他登录问题"
       ],
       "Password": [
         "密码"
@@ -20505,6 +20606,9 @@
       "Weekly on ${ multipleDaysString }": [
         "每周的 ${ multipleDaysString }"
       ],
+      "Weekly on all days": [
+        "每周的每一天"
+      ],
       "Weekly on Friday": [
         "每周星期五"
       ],
@@ -20548,6 +20652,9 @@
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "每周${ multipleDaysString }，${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "每周的每一天， ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
         "每周星期五，${ timesString }"
@@ -20598,6 +20705,12 @@
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "每 ${ interval } 周星期三，${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "每周 ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "每周的每一天，${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
         "每周星期五，直到${ untilString }"
@@ -20655,11 +20768,17 @@
     "Yearly recurring event, frequency (times)": {
       "Every ${ interval } year, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "每一年，${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
       "Every ${ interval } year, ${ untilString }": [
         "每 ${ interval } 年，直到 ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "每一年，${ untilString }"
       ]
     }
   }

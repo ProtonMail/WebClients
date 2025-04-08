@@ -822,6 +822,9 @@
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
+      ],
       "More refine actions": [
         "Więcej akcji"
       ],
@@ -1125,10 +1128,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -6968,10 +6971,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7599,6 +7599,9 @@
       ],
       "Text to display": [
         "Tekst do wyświetlenia"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Dziękujemy za subskrypcję. Bezpieczne przeglądanie zaczyna się teraz."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Jeśli opuścisz stronę, dane wpisane w szkicu mogą nie zostać zapisane."
@@ -11050,13 +11053,13 @@
         "Dostęp zawsze i wszędzie"
       ],
       "Auto-delete spam and trash": [
-        "Automatyczne usuwanie spamu i kosza"
+        "Auto usuwanie spamu i kosza"
       ],
       "browser": [
         "przeglądarka"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Automatycznie usuwaj wiadomości, które znajdują się w koszu lub spamie dłużej niż 30 dni."
+        "Usuwaj wiadomości z kosza i spamu po 30 dniach."
       ],
       "Continue": [
         "Kontynuuj"
@@ -12743,6 +12746,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -13013,47 +13057,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -14590,7 +14593,7 @@
         "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
-        "Dzięki temu nikt nie może zobaczyć lokalizacji, urządzenia i innych informacji, które mogłyby zostać wykorzystane do identyfikacji lub śledzenia użytkownika."
+        "Nikt nie zobaczy lokalizacji, szczegółów urządzenia i innych informacji, które mogą zostać wykorzystane do zidentyfikowania Ciebie."
       ],
       "This feature is only available for paid users": [
         "Ta funkcja jest dostępna tylko dla użytkowników płatnego planu"

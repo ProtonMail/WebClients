@@ -389,10 +389,10 @@
       "Move to another vault": [
         "別の保管庫に移動"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ごみ箱に移動"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ごみ箱に移動"
       ],
       "Multiple select": [
@@ -478,6 +478,9 @@
       ],
       "Reset": [
         "リセット"
+      ],
+      "Reset history": [
+        "履歴をリセット"
       ],
       "Restore": [
         "復元"
@@ -761,6 +764,9 @@
       "Alias options could not be resolved": [
         "エイリアス オプションを解決できませんでした"
       ],
+      "An error occured during the import process": [
+        "インポート処理中にエラーが発生しました"
+      ],
       "Authentication error": [
         "認証エラー"
       ],
@@ -823,6 +829,9 @@
       ],
       "Deleting item failed": [
         "アイテムの削除に失敗しました"
+      ],
+      "Deleting item history failed": [
+        "アイテム履歴の削除に失敗しました"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の削除に失敗しました"
@@ -1669,6 +1678,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "アイテム「${ payload.item.data.metadata.name }」が更新されました"
       ],
+      "Item history permanently deleted": [
+        "アイテムの履歴が完全に削除されました"
+      ],
       "Item moved to trash": [
         "アイテムをゴミ箱に移動しました"
       ],
@@ -1897,6 +1909,9 @@
       "Please follow the steps below to set up your domain.": [
         "以下の手順に従って、ドメインを設定してください。"
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "データのインポート中は、このウィンドウを開いたままにしてください。この処理には数分かかる場合があります。"
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "一度削除したエイリアスは復元できません。代わりにエイリアスを無効にしますか？"
       ],
@@ -1944,6 +1959,9 @@
       ],
       "Removing secure link...": [
         "セキュアリンクを削除中..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "履歴をリセットすると、過去のすべてのアイテムのバージョンが完全に削除され、取り消しはできません。"
       ],
       "Restoring items from trash": [
         "ゴミ箱からアイテムを復元する"
@@ -2052,6 +2070,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } を使用するには追加パスワードが必要になります。追加パスワードは ${ BRAND_NAME } のパスワードに加えて、さらに追加して必要になるパスワードとして機能します。"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "次の${ totalIgnored }個のアイテムをインポートできませんでした:"
       ],
       "The secure link has been removed": [
         "セキュアリンクは削除されました"
@@ -2853,6 +2874,9 @@
       "Personal website": [
         "個人ウェブサイト"
       ],
+      "PGP-encrypted (recommended)": [
+        "PGP 暗号化 (推奨)"
+      ],
       "Phone number": [
         "電話番号"
       ],
@@ -3114,6 +3138,9 @@
       "Your domain": [
         "あなたのドメイン"
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "郵便番号"
       ]
@@ -3166,6 +3193,113 @@
       ],
       "Underscores": [
         "アンダースコア"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "「${ file.name }」をアップロードできませんでした。"
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "「${ filename }」をインポートできませんでした。"
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "「${ filename }」はアップロードするにはサイズが大きすぎます。許可される最大サイズは (${ maxFileSizeInMB })です。"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } 個のファイル"
+      ],
+      "Attachments": [
+        "添付ファイル"
+      ],
+      "Choose a file or drag it here": [
+        "ファイルを選択するかここにドラッグしてください"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "${ deleteFile.state.name } を削除"
+      ],
+      "Delete all files": [
+        "すべてのファイルを削除"
+      ],
+      "Do you want to remove all the files?": [
+        "すべてのファイルを削除しますか？"
+      ],
+      "Download": [
+        "ダウンロード"
+      ],
+      "Download \"${ filename }\"": [
+        "「${ filename }」をダウンロード"
+      ],
+      "Download file": [
+        "ファイルをダウンロード"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Firefox の制限により、ファイルをアップロードするには、新しいウィンドウで ${ PASS_APP_NAME } を再度開く必要があります。"
+      ],
+      "Exporting files": [
+        "ファイルのエクスポート"
+      ],
+      "Failed linking files to item": [
+        "アイテムへのファイルのリンクに失敗しました"
+      ],
+      "File": [
+        "ファイル"
+      ],
+      "File attachments": [
+        "添付ファイル"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "有効にすると、エクスポート時にすべてのファイルがダウンロードされます。インターネット接続によっては、時間がかかる場合があります。"
+      ],
+      "Include file attachments": [
+        "添付ファイルを含める"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "選択されたファイルに対して、利用可能なストレージ容量が不足しています。"
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "一度削除されたこのファイルは、アイテムの履歴から回復することができます。"
+      ],
+      "Open new window to upload files": [
+        "ファイルをアップロードするために新しいウィンドウを開く"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "ファイルがダウンロードされるまで、しばらくお待ちください。"
+      ],
+      "Remove all files": [
+        "すべてのファイルを削除"
+      ],
+      "Rename": [
+        "名前を変更"
+      ],
+      "Restore": [
+        "復元"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "一部のファイルは、アップロードするにはサイズが大きすぎます。許可される最大サイズは（${ maxFileSizeInMB }）です"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "エクスポートされた添付ファイルは暗号化されません。"
+      ],
+      "The file you are trying to import is empty": [
+        "インポートしようとしているファイルは空です"
+      ],
+      "Total files: ": [
+        "合計ファイル数: "
+      ],
+      "Total imported files: ": [
+        "合計インポートされたファイル数: "
+      ],
+      "Upload files from your device.": [
+        "デバイスからファイルをアップロード。"
+      ],
+      "You can attach files to items for a better organization": [
+        "アイテムにファイルを添付して整理できます"
+      ],
+      "You may close this window after saving the file.": [
+        "ファイルを保存した後、このウィンドウを閉じることができます。"
+      ],
+      "Your current plan does not support importing files": [
+        "現在のプランではファイルのインポートはサポートされていません"
       ]
     },
     "Placeholder": {
@@ -3407,6 +3541,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME } のログ"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } の設定"
       ],
@@ -3524,6 +3661,9 @@
       "Email": [
         "メール"
       ],
+      "Encrypted import": [
+        "暗号化されたインポート"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
       ],
@@ -3571,6 +3711,9 @@
       ],
       "Import to vault(s)": [
         "一つ(複数)のフォルダーへのインポート"
+      ],
+      "Importing your data": [
+        "データのインポート"
       ],
       "Item": [
         "アイテム"
@@ -3667,6 +3810,9 @@
       ],
       "Remove secure link?": [
         "セキュアリンクを削除しますか？"
+      ],
+      "Reset history for this item?": [
+        "このアイテムの履歴をリセットしますか？"
       ],
       "Restore this version?": [
         "このバージョンを復元しますか？"
@@ -3827,6 +3973,9 @@
       ],
       "An error occurred while exporting your data": [
         "データのエクスポート中にエラーが発生しました"
+      ],
+      "An error occurred while importing your data.": [
+        "データのインポート中にエラーが発生しました。"
       ],
       "An error occurred while resuming your session": [
         "セッションの再開中にエラーが発生しました"
