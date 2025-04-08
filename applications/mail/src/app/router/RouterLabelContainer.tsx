@@ -89,7 +89,7 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
         !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
 
     const elementParams = useGetElementParams({ params, navigation });
-    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, elementParams.search]);
+    useScrollToTop(listRef as RefObject<HTMLElement>, [page, sort.desc, sort.sort, elementParams.search]);
 
     const { commanderList } = useMailCommander();
 
