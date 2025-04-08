@@ -777,6 +777,7 @@ export { default as UpgradeVpnSection } from './containers/payments/subscription
 export { default as YourPlanSection } from './containers/payments/subscription/YourPlanSection';
 export { default as YourPlanSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
 export { default as YourPlanUpsellsSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
+export { default as VPNDashboardTelemetry } from './containers/payments/subscription/VPNDashboardTelemetry';
 export { default as YourStorageSection } from './containers/payments/subscription/YourStorageSection';
 export { default as SubscriptionsSection } from './containers/payments/SubscriptionsSection';
 export { default as CrashReportsToggle } from './containers/privacy/CrashReportsToggle';
