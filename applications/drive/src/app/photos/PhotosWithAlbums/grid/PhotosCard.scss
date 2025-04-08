@@ -80,10 +80,14 @@
 	&--selected {
 		border: 0;
 
-		.photos-card-thumbnail {
+		.photos-card-thumbnail-holder {
 			transform: scaleX(0.85) scaleY(0.89); // small trick to get same space around
 		}
 	}
+}
+
+.photos-card-thumbnail-holder {
+	transition: transform 0.15s linear;
 }
 
 .photos-card-thumbnail {
