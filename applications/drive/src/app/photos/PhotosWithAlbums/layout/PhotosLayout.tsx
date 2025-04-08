@@ -600,7 +600,7 @@ export const PhotosLayout = () => {
             {/** Modals that are necessary only on albumS view */}
             {currentPageType === AlbumsPageTypes.ALBUMS && (
                 <>
-                    <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} />
+                    <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} share={false} />
                 </>
             )}
 
