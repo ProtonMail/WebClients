@@ -3557,6 +3557,9 @@
       "Exporting files": [
         "Exportování souborů"
       ],
+      "Failed linking files to item": [
+        "Propojení souborů s položkou selhalo"
+      ],
       "File": [
         "Soubor"
       ],
@@ -4064,7 +4067,7 @@
         "Neaktivní 2FA"
       ],
       "Information exposed in breach": [
-        "Informace odhalené při úniku informací"
+        "Informace odhalené při úniku"
       ],
       "Install extension": [
         "Nainstalovat rozšíření"
@@ -4339,10 +4342,10 @@
     },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
-        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+        "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
       ]
     },
     "Validation": {
