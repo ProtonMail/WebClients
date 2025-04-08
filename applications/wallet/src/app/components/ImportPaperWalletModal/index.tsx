@@ -176,6 +176,8 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                         onClose?.();
                         onCloseDrawer?.();
                     },
+
+                    isPaperWallet: true,
                 });
 
                 createNotification({
