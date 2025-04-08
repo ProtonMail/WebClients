@@ -14,6 +14,7 @@ import { requestCancel } from '@proton/pass/store/request/actions';
 import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
+import { logId, logger } from '@proton/pass/utils/logger';
 
 import { useFileEncryptionVersion } from './useFileEncryptionVersion';
 
@@ -80,6 +81,7 @@ export const useFileUpload = () => {
             ): Promise<FileID> => {
                 let fileID: Maybe<string>;
                 const encryptionVersion = fileEncryptionVersion.current;
+                logger.debug(`[File::upload::v${encryptionVersion}] uploading ${logId(uploadID)}`);
 
                 try {
                     const ctrl = ctrls.current.get(uploadID);
