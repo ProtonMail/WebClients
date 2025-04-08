@@ -1,7 +1,15 @@
+import { getFileChunkEncryptionTag } from '@proton/pass/lib/crypto/processes/file/create-file-chunk';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassEncryptionTag } from '@proton/pass/types';
 
-export const openFileChunk = async (chunk: Uint8Array, fileKey: Uint8Array): Promise<Uint8Array> => {
+export const openFileChunk = async (
+    chunk: Uint8Array,
+    chunkIndex: number,
+    totalChunks: number,
+    fileKey: Uint8Array,
+    encryptionVersion: number
+): Promise<Uint8Array> => {
     const key = await importSymmetricKey(fileKey);
-    return decryptData(key, chunk, PassEncryptionTag.FileData);
+    const tag = getFileChunkEncryptionTag(chunkIndex, totalChunks, encryptionVersion);
+
+    return decryptData(key, chunk, tag);
 };
