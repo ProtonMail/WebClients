@@ -79,7 +79,7 @@ export interface SyncMultipleEventsArguments {
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     getAttendeeEncryptedComment: (
         nextSessionKey: SessionKey | undefined,
-        operation: UpdateEventActionOperation
+        operation: CreateEventActionOperation | UpdateEventActionOperation
     ) => Promise<{ [attendeeToken: string]: AttendeeComment }>;
 }
 
