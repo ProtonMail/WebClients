@@ -482,12 +482,12 @@ export const createPassCrypto = (): PassCryptoWorker => {
             return processes.createFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
-        async openFileChunk({ fileID, chunk, shareId }) {
+        async openFileChunk({ chunk, chunkIndex, fileID, shareId, totalChunks, encryptionVersion }) {
             /** Do not assert context here, so it can be used in Secure Links */
             if (chunk.byteLength === 0) throw new PassCryptoFileError('Encrypted chunk cannot be empty');
 
             const fileKey = worker.getFileKey({ shareId, fileID });
-            return processes.openFileChunk(chunk, fileKey);
+            return processes.openFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
         async createSecureLink({ itemKey, shareId }) {
