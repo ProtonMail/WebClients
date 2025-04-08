@@ -90,6 +90,9 @@
       "Apply": [
         "적용"
       ],
+      "Ask me next time": [
+        "다음에 내게 묻기"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
@@ -438,6 +441,9 @@
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "계정 추가 옵션"
+      ],
       "Move": [
         "이동"
       ],
@@ -587,6 +593,9 @@
       ],
       "Save changes": [
         "변경 사항 저장"
+      ],
+      "Save preferences": [
+        "환경 설정 저장"
       ],
       "Search": [
         "검색"
@@ -767,6 +776,9 @@
       ]
     },
     "Actions": {
+      "Last viewed first": [
+        "최근 본 항목 우선"
+      ],
       "Name": [
         "이름"
       ]
@@ -2227,11 +2239,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2310,6 +2317,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4005,6 +4017,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
       ],
+      "Converting document...": [
+        "문서 변환 중..."
+      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -4046,6 +4061,9 @@
       ],
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
+      ],
+      "Creating new document...": [
+        "새로운 문서를 생성하는 중..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -4164,6 +4182,12 @@
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "문서 변환 오류: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "문서 불러오기 오류: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "동기화 오류"
       ],
@@ -4223,6 +4247,12 @@
       ],
       "Geoblocking": [
         "차단된 콘텐츠"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "문서에 추가된 댓글 및 제안 사항에 대한 이메일 업데이트를 받아보세요."
+      ],
+      "Get Notified About Comments": [
+        "댓글 알림 받기"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }로 이동"
@@ -4329,6 +4359,9 @@
       "Learn more": [
         "더 알아보기"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "대처법에 대해 알아보세요 ${ dataLeakedLink }"
+      ],
       "Limited availability": [
         "제한된 기능"
       ],
@@ -4358,6 +4391,9 @@
       ],
       "Low Priority": [
         "중요도 낮음"
+      ],
+      "Making a copy...": [
+        "복사본 만드는 중..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
@@ -4397,6 +4433,9 @@
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL에 제공된 문서가 없습니다. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
       ],
       "No email address": [
         "이메일 주소 없음"
@@ -4674,6 +4713,9 @@
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "구독해 주셔서 감사합니다. 지금부터 보안 브라우징이 시작됩니다."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "이 계정이 새 키를 가지고 있거나, 다음이 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
       ],
@@ -4698,6 +4740,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "입력된 URL이 Slack에서 잘못 복사된 것으로 추정됩니다. Slack에서 긴 링크를 복사할 때 링크를 마우스 오른쪽 버튼으로 클릭한 다음 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
@@ -4712,6 +4757,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "이 문서의 활동량이 너무 많습니다. 일부 기능이 일시적으로 사용 불가합니다."
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "이 문서는 존재하지 않거나 로드하는 데 문제가 발생했을 수 있습니다. 페이지를 새로 고침하고 다시 시도해 주십시오."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "문서가 존재하지 않거나 볼 권한이 없을수도 있습니다. 페이지를 새로고침하여 문제가 지속되는지 확인하거나 소유자에게 연락해 접근 권한 부탁하세요."
@@ -4823,6 +4871,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "안타깝지만 파일이나 일부 데이터를 복호화할 수 없는 것으로 보입니다."
+      ],
+      "Update recent documents": [
+        "최근 문서 업데이트"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
@@ -4977,6 +5028,9 @@
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
       ],
+      "You don't have access": [
+        "접근 권한 없음"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ],
@@ -4988,6 +5042,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "은행 웹사이트로 리다이렉트 됩니다."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "현재 선택된 계정으로 이 항목을 확인하기 위해 필요한 권한이 없습니다. 다른 계정을 사용해 보거나 소유자에게 접근 권한에 대해 문의하세요."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "다운그레이드하기 전에 모든 ${ MAIL_APP_NAME } 사용자와 주소, 그리고 사용자 지정 도메인을 비활성화해야 합니다."
@@ -5377,6 +5434,9 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
+      "Enable email notifications": [
+        "이메일 알림 활성화"
+      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -5430,6 +5490,9 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Include document name in notification": [
+        "알림에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -5722,6 +5785,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
+      ],
+      "if your data is leaked": [
+        "사용자의 데이터가 유출된 경우"
       ],
       "Learn more": [
         "더 알아보기"
@@ -7185,6 +7251,9 @@
       "Public link update access failed ": [
         "공개 링크 업데이트 접근 실패 "
       ],
+      "Recent documents updated.": [
+        "최근 문서 업데이트됨."
+      ],
       "Root folder failed to be loaded": [
         "루트 폴더 불러오는 중 문제 발생"
       ],
@@ -7359,6 +7428,20 @@
       ],
       "Merge with calendar": [
         "캘린더와 병합"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "즐겨찾기"
+      ],
+      "Recents": [
+        "최근"
+      ],
+      "Searching": [
+        "검색 중"
+      ],
+      "Trashed": [
+        "휴지통"
       ]
     },
     "Participant name": {
@@ -7757,6 +7840,9 @@
       ],
       "Previous 7 days": [
         "지난 7일"
+      ],
+      "Search results": [
+        "검색 결과"
       ],
       "Today": [
         "오늘"
@@ -8446,23 +8532,6 @@
         "${ totalPrice }용"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "사용자 당 ${ planMaxSpace } 스토리지"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }개 이메일 주소"
-      ],
-      "Folders, labels, and custom filters": [
-        "폴더, 라벨, 커스텀 필터"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -8502,6 +8571,23 @@
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "사용자 당 ${ planMaxSpace } 스토리지"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {
@@ -9019,6 +9105,9 @@
       "Import groups": [
         "그룹 가져오기"
       ],
+      "Information exposed in breach": [
+        "유출 시 노출된 정보"
+      ],
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
@@ -9317,6 +9406,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "메시지와 파일 이름은 이메일에 포함될 때 제로 액세스 암호화로 저장됩니다."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "사용자에게 서명하거나 암호화 할 때 사용할 PGP 체계를 선택해주세요. PGP/Inline은 일반 텍스트 메시지를 강제합니다"
       ],
@@ -9337,6 +9429,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "새로운 구독 결제 주기가 ${ formattedTime } 부터 시작합니다"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
