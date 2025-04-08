@@ -524,12 +524,20 @@ export const createPassCrypto = (): PassCryptoWorker => {
             });
         },
 
-        async openSecureLinkFileDescriptor({ encryptedItemKey, encryptedFileKey, encryptedMetadata, fileID, linkKey }) {
+        async openSecureLinkFileDescriptor({
+            encryptedItemKey,
+            encryptedFileKey,
+            encryptedMetadata,
+            encryptionVersion,
+            fileID,
+            linkKey,
+        }) {
             const { fileKey, metadata } = await processes.openSecureLinkFileDescriptor({
-                encryptedItemKey,
                 encryptedFileKey,
-                linkKey,
+                encryptedItemKey,
                 encryptedMetadata,
+                encryptionVersion,
+                linkKey,
             });
 
             worker.registerFileKey({ fileKey, fileID, shareId: FILE_PUBLIC_SHARE });
