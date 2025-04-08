@@ -1,18 +1,13 @@
 export const SelectionManager = (() => {
-    let hasSelection = false;
-
-    const onSelectionChange = () => {
+    const hasChildOf = (el: Element) => {
         const selection = window.getSelection();
-        hasSelection = selection !== null && selection.toString().length > 0;
+        if (selection === null || selection.toString().length === 0) return false;
+
+        const { anchorNode, focusNode } = selection;
+        return selection.containsNode(el) || el.contains(anchorNode) || el.contains(focusNode);
     };
 
-    document.addEventListener('selectionchange', onSelectionChange);
-
     return {
-        get selection() {
-            return hasSelection;
-        },
-
-        disconnect: () => document.removeEventListener('selectionchange', onSelectionChange),
+        hasChildOf,
     };
 })();
