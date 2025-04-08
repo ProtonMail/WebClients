@@ -1,5 +1,6 @@
 import { cancelled, put, select } from 'redux-saga/effects';
 
+import { FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
@@ -37,11 +38,16 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 const initiateUpload = createRequestSaga({
     actions: fileUploadInitiate,
-    call: async ({ totalChunks, ...metadata }) => {
+    call: async ({ totalChunks, shareId, ...metadata }) => {
         const encodedMetadata = encodeFileMetadata(metadata);
-        const fileDescriptor = await PassCrypto.createFileDescriptor({ metadata: encodedMetadata });
+        const fileDescriptor = await PassCrypto.createFileDescriptor({
+            metadata: encodedMetadata,
+            fileID: undefined,
+            shareId,
+        });
+
         const fileID = await createPendingFile(uint8ArrayToBase64String(fileDescriptor.metadata), totalChunks);
-        PassCrypto.registerFileKey({ fileID, fileKey: fileDescriptor.fileKey });
+        PassCrypto.registerFileKey({ shareId, fileID, fileKey: fileDescriptor.fileKey });
 
         return fileID;
     },
@@ -52,6 +58,7 @@ const uploadChunk = createRequestSaga({
     call: function* (payload) {
         const ctrl = new AbortController();
         const { signal } = ctrl;
+        const { shareId, fileID } = payload;
 
         try {
             const chunk: Blob = yield (async () => {
@@ -65,8 +72,8 @@ const uploadChunk = createRequestSaga({
 
             if (!chunk) throw new Error('Missing file blob');
 
-            const encryptedChunk: Blob = yield PassCrypto.createFileChunk({ chunk, fileID: payload.fileID });
-            yield uploadFileChunk(payload.fileID, payload.index, encryptedChunk, signal);
+            const encryptedChunk: Blob = yield PassCrypto.createFileChunk({ chunk, fileID, shareId });
+            yield uploadFileChunk(fileID, payload.index, encryptedChunk, signal);
 
             return true;
         } finally {
@@ -77,14 +84,14 @@ const uploadChunk = createRequestSaga({
 
 const downloadFile = createRequestSaga({
     actions: fileDownload,
-    call: function* (file) {
+    call: function* (payload) {
         const ctrl = new AbortController();
         const { signal } = ctrl;
 
         try {
-            const { chunkIDs, fileID } = file;
-            const getChunkStream = (chunkID: string) => downloadFileChunk({ ...file, chunkID }, signal);
-            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, signal);
+            const { chunkIDs, fileID, shareId } = payload;
+            const getChunkStream = (chunkID: string) => downloadFileChunk({ ...payload, chunkID }, signal);
+            const downloadStream = createDownloadStream(shareId, fileID, chunkIDs, getChunkStream, signal);
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
@@ -97,14 +104,14 @@ const downloadFile = createRequestSaga({
 
 const downloadPublicChunk = createRequestSaga({
     actions: fileDownloadPublic,
-    call: function* (file) {
+    call: function* (payload) {
         const ctrl = new AbortController();
         const { signal } = ctrl;
 
         try {
-            const { chunkIDs, fileID } = file;
-            const getChunkStream = (chunkID: string) => downloadPublicFileChunk({ ...file, chunkID }, signal);
-            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, signal);
+            const { chunkIDs, fileID } = payload;
+            const getChunkStream = (chunkID: string) => downloadPublicFileChunk({ ...payload, chunkID }, signal);
+            const downloadStream = createDownloadStream(FILE_PUBLIC_SHARE, fileID, chunkIDs, getChunkStream, signal);
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
@@ -120,7 +127,7 @@ const updateMetadata = createRequestSaga({
     call: async (descriptor) => {
         const { fileID, shareId, itemId } = descriptor;
         const encodedMetadata = encodeFileMetadata(descriptor);
-        const fileDescriptor = await PassCrypto.createFileDescriptor({ metadata: encodedMetadata, fileID });
+        const fileDescriptor = await PassCrypto.createFileDescriptor({ metadata: encodedMetadata, fileID, shareId });
         const metadata = uint8ArrayToBase64String(fileDescriptor.metadata);
 
         await (shareId && itemId
@@ -148,9 +155,10 @@ const linkPending = createRequestSaga({
 const resolveFiles = createRequestSaga({
     actions: filesResolve,
     call: async (item) => {
-        const itemKey = await resolveItemKey(item.shareId, item.itemId);
+        const { shareId, itemId } = item;
+        const itemKey = await resolveItemKey(shareId, itemId);
         const result = item.history ? await resolveItemFilesRevision(item) : await resolveItemFiles(item);
-        const files = await intoFileDescriptors(result, itemKey);
+        const files = await intoFileDescriptors(shareId, result, itemKey);
 
         return { ...item, files };
     },
@@ -159,9 +167,10 @@ const resolveFiles = createRequestSaga({
 const restore = createRequestSaga({
     actions: fileRestore,
     call: function* (dto) {
+        const { shareId } = dto;
         const itemKey: ItemKey = yield resolveItemKey(dto.shareId, dto.itemId);
         const result: ItemFileOutput = yield restoreSingleFile(dto, itemKey);
-        const files: FileDescriptor[] = yield intoFileDescriptors([result], itemKey);
+        const files: FileDescriptor[] = yield intoFileDescriptors(shareId, [result], itemKey);
         return { ...dto, files };
     },
 });
