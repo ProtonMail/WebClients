@@ -1,4 +1,5 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ATTENDEE_STATUS_API } from '@proton/shared/lib/calendar/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
@@ -9,12 +10,22 @@ export const generateEventUniqueId = (calendarID: string, eventID: string) => `$
 export const getCalendarIDFromUniqueId = (itemID: string) => itemID.split('.')[0];
 export const getEventIDFromUniqueId = (itemID: string) => itemID.split('.')[1];
 
-export const getEventStatusTraits = (model: EventModelReadView) => {
+export const getEventStatusTraits = (model: EventModelReadView, backendAttendee?: { Status?: number }) => {
     const { status: eventStatus, selfAttendeeIndex } = model;
 
     const noOneIsAttending =
         model.attendees.length > 0 &&
         model.attendees.every((attendee) => attendee.partstat === ICAL_ATTENDEE_STATUS.DECLINED);
+
+    // If backend attendee info is available, use it
+    if (backendAttendee && typeof backendAttendee.Status === 'number') {
+        const status = backendAttendee.Status;
+        return {
+            isUnanswered: status === ATTENDEE_STATUS_API.NEEDS_ACTION, // NEEDS_ACTION
+            isTentative: status === ATTENDEE_STATUS_API.TENTATIVE, // TENTATIVE
+            isCancelled: status === ATTENDEE_STATUS_API.DECLINED || noOneIsAttending, // DECLINED
+        };
+    }
 
     if (model.isAttendee && eventStatus === ICAL_EVENT_STATUS.CONFIRMED) {
         const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
