@@ -452,11 +452,11 @@ export const createPassCrypto = (): PassCryptoWorker => {
             return encryptData(itemKey.key, fileKey, PassEncryptionTag.FileKey);
         },
 
-        async createFileDescriptor({ metadata, fileID, shareId }) {
+        async createFileDescriptor({ metadata, fileID, shareId, encryptionVersion }) {
             assertHydrated(context);
 
             const fileKey = fileID ? worker.getFileKey({ shareId, fileID }) : undefined;
-            return processes.createFileDescriptor(metadata, fileKey);
+            return processes.createFileDescriptor(metadata, encryptionVersion, fileKey);
         },
 
         async openFileDescriptor({ file, itemKey, shareId }) {
