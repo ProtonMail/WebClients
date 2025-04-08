@@ -47,9 +47,13 @@ const initiateUpload = createRequestSaga({
             shareId,
         });
 
-        const fileID = await createPendingFile(uint8ArrayToBase64String(fileDescriptor.metadata), totalChunks);
-        PassCrypto.registerFileKey({ shareId, fileID, fileKey: fileDescriptor.fileKey });
+        const fileID = await createPendingFile(
+            uint8ArrayToBase64String(fileDescriptor.metadata),
+            totalChunks,
+            encryptionVersion
+        );
 
+        PassCrypto.registerFileKey({ shareId, fileID, fileKey: fileDescriptor.fileKey });
         return fileID;
     },
 });
@@ -59,7 +63,7 @@ const uploadChunk = createRequestSaga({
     call: function* (payload) {
         const ctrl = new AbortController();
         const { signal } = ctrl;
-        const { shareId, fileID } = payload;
+        const { shareId, fileID, chunkIndex, totalChunks, encryptionVersion } = payload;
 
         try {
             const chunk: Blob = yield (async () => {
@@ -73,8 +77,16 @@ const uploadChunk = createRequestSaga({
 
             if (!chunk) throw new Error('Missing file blob');
 
-            const encryptedChunk: Blob = yield PassCrypto.createFileChunk({ chunk, fileID, shareId });
-            yield uploadFileChunk(fileID, payload.index, encryptedChunk, signal);
+            const encryptedChunk: Blob = yield PassCrypto.createFileChunk({
+                chunk,
+                chunkIndex,
+                encryptionVersion,
+                fileID,
+                shareId,
+                totalChunks,
+            });
+
+            yield uploadFileChunk(fileID, chunkIndex, encryptedChunk, signal);
 
             return true;
         } finally {
@@ -90,9 +102,14 @@ const downloadFile = createRequestSaga({
         const { signal } = ctrl;
 
         try {
-            const { chunkIDs, fileID, shareId } = payload;
-            const getChunkStream = (chunkID: string) => downloadFileChunk({ ...payload, chunkID }, signal);
-            const downloadStream = createDownloadStream(shareId, fileID, chunkIDs, getChunkStream, signal);
+            const { chunkIDs, fileID, shareId, encryptionVersion } = payload;
+
+            const downloadStream = createDownloadStream(
+                { shareId, fileID, chunkIDs, encryptionVersion },
+                (chunkID: string) => downloadFileChunk({ ...payload, chunkID }, signal),
+                signal
+            );
+
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
@@ -110,9 +127,18 @@ const downloadPublicChunk = createRequestSaga({
         const { signal } = ctrl;
 
         try {
-            const { chunkIDs, fileID } = payload;
-            const getChunkStream = (chunkID: string) => downloadPublicFileChunk({ ...payload, chunkID }, signal);
-            const downloadStream = createDownloadStream(FILE_PUBLIC_SHARE, fileID, chunkIDs, getChunkStream, signal);
+            const { chunkIDs, fileID, encryptionVersion } = payload;
+            const downloadStream = createDownloadStream(
+                {
+                    shareId: FILE_PUBLIC_SHARE,
+                    fileID,
+                    chunkIDs,
+                    encryptionVersion,
+                },
+                (chunkID: string) => downloadPublicFileChunk({ ...payload, chunkID }, signal),
+                signal
+            );
+
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 

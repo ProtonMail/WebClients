@@ -26,14 +26,18 @@ export const consumeStream = async <T>(stream: ReadableStream<T>, signal: AbortS
 };
 
 export const createDownloadStream = (
-    shareId: ShareId,
-    fileID: FileID,
-    chunkIDs: string[],
+    options: {
+        shareId: ShareId;
+        fileID: FileID;
+        chunkIDs: string[];
+        encryptionVersion: number;
+    },
     /** Chunk request's response body as a stream */
     getChunkStream: (chunkID: string) => Promise<ReadableStream>,
     signal: AbortSignal
 ): ReadableStream<Uint8Array> => {
-    let current = 0;
+    const { shareId, fileID, chunkIDs, encryptionVersion } = options;
+    let chunkIndex = 0;
     let onAbort: Maybe<Callback>;
 
     return new ReadableStream<Uint8Array>({
@@ -45,17 +49,25 @@ export const createDownloadStream = (
         },
 
         async pull(controller) {
-            if (current >= chunkIDs.length) {
+            if (chunkIndex >= chunkIDs.length) {
                 controller.close();
                 return;
             }
 
             try {
-                const stream = await getChunkStream(chunkIDs[current]);
+                const stream = await getChunkStream(chunkIDs[chunkIndex]);
                 const encryptedChunk = await consumeStream(stream, signal);
-                const chunk = await PassCrypto.openFileChunk({ chunk: encryptedChunk, fileID, shareId });
+                const chunk = await PassCrypto.openFileChunk({
+                    chunk: encryptedChunk,
+                    chunkIndex,
+                    encryptionVersion,
+                    fileID,
+                    shareId,
+                    totalChunks: chunkIDs.length,
+                });
+
                 controller.enqueue(chunk);
-                current++;
+                chunkIndex++;
             } catch (error) {
                 controller.error(error);
             }

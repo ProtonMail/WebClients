@@ -44,8 +44,12 @@ export async function* createExportAttachmentsStream(
         for (const file of files) {
             const { fileID, chunks } = file;
             const chunkIDs = chunks.map(prop('ChunkID'));
-            const getChunkStream = (chunkID: string) => downloadFileChunk({ shareId, itemId, fileID, chunkID }, signal);
-            const downloadStream = createDownloadStream(shareId, fileID, chunkIDs, getChunkStream, signal);
+
+            const downloadStream = createDownloadStream(
+                { shareId, fileID, chunkIDs, encryptionVersion: file.encryptionVersion },
+                (chunkID: string) => downloadFileChunk({ shareId, itemId, fileID, chunkID }, signal),
+                signal
+            );
 
             yield {
                 name: archivePath(getExportFileName(file), 'files'),
