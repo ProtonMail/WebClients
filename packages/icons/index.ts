@@ -174,6 +174,7 @@ export type IconName =
     | 'file-image'
     | 'file-lines'
     | 'file-pdf'
+    | 'file-slash'
     | 'file-shapes'
     | 'filing-cabinet'
     | 'filter'
@@ -567,6 +568,7 @@ export { IcFileArrowOut } from './icons/IcFileArrowOut';
 export { IcFileImage } from './icons/IcFileImage';
 export { IcFileLines } from './icons/IcFileLines';
 export { IcFilePdf } from './icons/IcFilePdf';
+export { IcFileSlash } from './icons/IcFileSlash';
 export { IcFileShapes } from './icons/IcFileShapes';
 export { IcFilingCabinet } from './icons/IcFilingCabinet';
 export { IcFilter } from './icons/IcFilter';
