@@ -38,9 +38,10 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 const initiateUpload = createRequestSaga({
     actions: fileUploadInitiate,
-    call: async ({ totalChunks, shareId, ...metadata }) => {
+    call: async ({ totalChunks, shareId, encryptionVersion, ...metadata }) => {
         const encodedMetadata = encodeFileMetadata(metadata);
         const fileDescriptor = await PassCrypto.createFileDescriptor({
+            encryptionVersion,
             metadata: encodedMetadata,
             fileID: undefined,
             shareId,
@@ -125,9 +126,16 @@ const downloadPublicChunk = createRequestSaga({
 const updateMetadata = createRequestSaga({
     actions: fileUpdateMetadata,
     call: async (descriptor) => {
-        const { fileID, shareId, itemId } = descriptor;
+        const { fileID, shareId, itemId, encryptionVersion } = descriptor;
         const encodedMetadata = encodeFileMetadata(descriptor);
-        const fileDescriptor = await PassCrypto.createFileDescriptor({ metadata: encodedMetadata, fileID, shareId });
+
+        const fileDescriptor = await PassCrypto.createFileDescriptor({
+            encryptionVersion,
+            fileID,
+            metadata: encodedMetadata,
+            shareId,
+        });
+
         const metadata = uint8ArrayToBase64String(fileDescriptor.metadata);
 
         await (shareId && itemId
