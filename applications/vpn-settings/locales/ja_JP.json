@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -454,6 +454,9 @@
       "More options": [
         "詳細設定を表示"
       ],
+      "More options for accounts": [
+        "アカウントのその他のオプション"
+      ],
       "Need help?": [
         "お困りですか?"
       ],
@@ -637,10 +640,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
       "Send code": [
@@ -1493,6 +1496,11 @@
     "Confirmation title": {
       "Delete payment method": [
         "支払い方法の削除"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "${ selectedCitiesCount }個が選択済み"
       ]
     },
     "Country name": {
@@ -2669,6 +2677,53 @@
         "テキスト フィールドはオプションです。このフォームで入力した情報は、選択した請求書のみを変更し、将来の請求書の詳細は変更しません。"
       ]
     },
+    "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME }が、${ domain }ドメイン、または公式の${ BRAND_NAME }アプリ以外から送信されたコードの入力を求めることは決してありません。"
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**動作方法:** サインインしたいデバイスに表示されたコードをこのデバイスに入力します。**${ email }** としてサインインされます。両方のデバイスがアクティブのままになります。 "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "QRコードをスキャンしてサインインできるようにする"
+      ],
+      "Code from the other device": [
+        "別のデバイスからのコード"
+      ],
+      "Enter code manually": [
+        "手動でコードを入力"
+      ],
+      "QR code sign-in disabled": [
+        "QRコードサインインは無効"
+      ],
+      "QR code sign-in enabled": [
+        "QRコードサインインが有効になりました"
+      ],
+      "Safety tips:": [
+        "安全のためのヒント:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "モバイルデバイスの QR コードをスキャンして、サインインしてください"
+      ],
+      "Sign in to another device": [
+        "別のデバイスにサインイン"
+      ],
+      "Sign in with another device": [
+        "別のデバイスでサインイン"
+      ],
+      "Sign in with QR code": [
+        "QRコードでサインイン"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "サインインしたいデバイスのコードにアクセスするには、サインイン画面のヘルプメニューで**QRコードでサインイン**ボタンをタップし、その後に**キーを手動で入力**をタップします。 "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "コードが含まれているメッセージに注意してください。信頼できないウェブサイトまたは個人からのコードを絶対に入力しないでください。"
+      ],
+      "You have successfully signed in to another device": [
+        "別のデバイスでのサインインに成功しました"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } が追加されました"
@@ -3800,6 +3855,9 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "現在、${ amountUsers }/${ totalUsers }人のユーザーが共有サーバーにアクセスできます。"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -4205,10 +4263,13 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }アプリの外観をカスタマイズ"
       ],
-      "Dedicated servers": [
-        "専用サーバー"
+      "Data recoverable on this device": [
+        "このデバイスでデータを復元できます"
       ],
       "dedicated servers": [
+        "専用サーバー"
+      ],
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -5108,6 +5169,9 @@
       "Thank you": [
         "ありがとうございます"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "ご登録ありがとうございます。安全なブラウジングが今すぐ開始されます。"
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "プライバシーと自由が最優先される、より良いインターネットを構築するという私たちの使命をサポートしていただきありがとうございます。"
       ],
@@ -5279,6 +5343,9 @@
       "Total VPN connections": [
         "総VPN接続数"
       ],
+      "trusted device": [
+        "信頼済みデバイス"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } を完全にリスクなしでお試しください もし何らかの理由で気が変わった場合には、質問なしで全額返金を受け取ることができます。"
       ],
@@ -5348,11 +5415,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -5437,6 +5504,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "代わりに回復用フレーズを使うことをおすすめします。"
+      ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "この ${ deviceLink }にデータ復旧を許可したため、このブラウザにバックアップファイルを保存しました。 バックアップファイルが有効な場合、暗号化されたデータへの完全または部分的なアクセスをすぐに取り戻します。"
       ],
       "We use 3-D Secure to protect your payments": [
         "支払いを保護するために3Dセキュアを使用しています"
@@ -5881,10 +5951,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6012,6 +6082,9 @@
       ],
       "Could you please specify?": [
         "具体的に教えていただけますか？"
+      ],
+      "Countries": [
+        "国"
       ],
       "Country": [
         "国"
@@ -9919,6 +9992,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -10201,47 +10315,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -10741,10 +10814,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
