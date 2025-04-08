@@ -21,6 +21,7 @@ type Props = {
     isItemSelected: (linkId: string) => boolean;
     categoryLoading?: string;
     userAddressEmail?: string;
+    children: ReactNode;
 };
 
 export const PhotosInsideAlbumsGrid: FC<Props> = ({
@@ -34,6 +35,7 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
     isGroupSelected,
     isItemSelected,
     userAddressEmail,
+    children,
 }) => {
     const hasSelection = selectedItems.length > 0;
     const containerRef = useRef<HTMLDivElement>(null);
@@ -204,7 +206,12 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
     }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading, selectedItems]);
 
     return (
-        <div className="p-4 min-h-full" ref={containerRef} onScroll={handleScroll}>
+        <div
+            ref={containerRef}
+            className="flex flex-column flex-nowrap gap-4 mx-2 p-4 overflow-auto outline-none--at-all"
+            onScroll={handleScroll}
+        >
+            {children}
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
