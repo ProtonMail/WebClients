@@ -88,7 +88,7 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                             rows={Number.MAX_SAFE_INTEGER}
                         />
                         <FieldsetCluster className="mt-4">
-                            <Field name="files" component={FileAttachmentsField} />
+                            <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                         </FieldsetCluster>
                     </Form>
                 </FormikProvider>

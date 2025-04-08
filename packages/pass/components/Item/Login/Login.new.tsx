@@ -259,7 +259,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                             </FieldsetCluster>
 
                             <FieldsetCluster>
-                                <Field name="files" component={FileAttachmentsField} />
+                                <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                             </FieldsetCluster>
 
                             <ExtraFieldGroup form={form} />
