@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
@@ -77,7 +77,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection();
     const isShiftPressed = useShiftKey();
 
-    const containerRef = useRef<HTMLDivElement>(null);
     const [isInitialized, setIsInitialized] = useState<boolean>(false);
     const thumbnails = useThumbnailsDownload();
     const { navigateToAlbum } = useNavigate();
@@ -212,9 +211,19 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         />
                     </div>
                 ) : (
-                    <div
-                        ref={containerRef}
-                        className="flex flex-column flex-nowrap mx-2 h-full overflow-auto outline-none--at-all mb-2"
+                    <PhotosInsideAlbumsGrid
+                        data={albumPhotos}
+                        onItemRender={handleItemRender}
+                        onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                        isLoading={isAlbumsLoading}
+                        onItemClick={setPreviewLinkId}
+                        userAddressEmail={userAddressEmail}
+                        selectedItems={selectedItems}
+                        onSelectChange={(i, isSelected) =>
+                            handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
+                        }
+                        isGroupSelected={isGroupSelected}
+                        isItemSelected={isItemSelected}
                     >
                         <AlbumCoverHeader
                             shareId={albumShareId}
@@ -231,21 +240,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                                 navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
                             }}
                         />
-                        <PhotosInsideAlbumsGrid
-                            data={albumPhotos}
-                            onItemRender={handleItemRender}
-                            onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                            isLoading={isAlbumsLoading}
-                            onItemClick={setPreviewLinkId}
-                            userAddressEmail={userAddressEmail}
-                            selectedItems={selectedItems}
-                            onSelectChange={(i, isSelected) =>
-                                handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
-                            }
-                            isGroupSelected={isGroupSelected}
-                            isItemSelected={isItemSelected}
-                        />
-                    </div>
+                    </PhotosInsideAlbumsGrid>
                 )}
             </UploadDragDrop>
         </>
