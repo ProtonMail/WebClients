@@ -246,23 +246,17 @@ blockquote.protonmail_quote
 	background-color: #00000011;
 	box-sizing: border-box;
 	display: inline-flex;
-	border: 1px solid var(--border-norm);
-	border-radius: var(--border-radius-md);
+	border-radius: var(--border-radius-sm);
 	justify-content: center;
 	align-items: center;
-	color: black;
+	color: #5c5958; // was var(--text-weak) but we went to a static color because no difference across themes, we don't support dark mode in message view
 	margin-block-end: 7px;
 	margin-inline-end: 7px;
 }
 
-.proton-image-placeholder--error {
-	color: #d42f34;
-	border-color: #d42f34;
-}
-
-.proton-image-placeholder .icon-size-5 {
-	inline-size: 1.25rem;
-	block-size: 1.25rem;
+.proton-image-placeholder .icon-size-4 {
+	inline-size: 1rem;
+	block-size: 1rem;
 	display: inline-block;
 	vertical-align: middle;
 	fill: currentcolor;

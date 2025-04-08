@@ -264,7 +264,7 @@ describe('Message images', () => {
         const placeholder = iframeRerendered.querySelector('.proton-image-placeholder') as HTMLImageElement;
 
         expect(placeholder).not.toBe(null);
-        assertIcon(placeholder.querySelector('svg'), 'cross-circle');
+        assertIcon(placeholder.querySelector('svg'), 'file-slash');
 
         loadButton = getByTestId('remote-content:load');
         fireEvent.click(loadButton);

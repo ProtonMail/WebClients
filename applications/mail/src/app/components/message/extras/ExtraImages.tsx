@@ -72,7 +72,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
                     data-testid="embedded-content:load"
                     className="inline-flex items-center w-full md:w-auto justify-center md:justify-start mr-0 md:mr-0 mb-3 px-2"
                 >
-                    <Icon name="image" className="shrink-0 ml-1" />
+                    <Icon name="file-image" className="shrink-0 ml-1" />
                     <span className="ml-2">{actionText}</span>
                 </Button>
             </Tooltip>
