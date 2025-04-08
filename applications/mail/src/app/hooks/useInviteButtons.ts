@@ -257,6 +257,10 @@ const useInviteButtons = ({
                         calendarKeys,
                         api: silentApi,
                     });
+
+                    if (maybeReencryptedEvent.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
+                        await fetchPaginatedAttendeesInfo(api, maybeReencryptedEvent);
+                    }
                 } catch (error: any) {
                     onReencryptEventError(error);
                     return;
