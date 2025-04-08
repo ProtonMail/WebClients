@@ -907,11 +907,11 @@
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select All": [
-        "Fren kullec"
-      ],
       "Select all": [
         "Fren akk"
+      ],
+      "Select All": [
+        "Fren kullec"
       ],
       "Select all messages": [
         "Fren akk iznan"
@@ -4916,6 +4916,9 @@
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
       ],
+      "Insert image": [
+        "Ger tugna"
+      ],
       "Insert link": [
         "Ger aseɣwen"
       ],
@@ -7251,11 +7254,26 @@
       ]
     },
     "Onboarding modal": {
+      "Activate premium features": [
+        "Snerni timahilin premium"
+      ],
+      "Auto-delete spam and trash": [
+        "Sefkeḍ awtomatik spam d iḍumman"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Sfeḍ imaylen yettwaksen d spam seld 30 wussan."
+      ],
+      "Get notified if your password is compromised.": [
+        "Ssiweḍ-d ismaẓalen ma yella password-ik yettwaker."
+      ],
       "Next": [
         "Ɣer sdat"
       ],
       "Protection from trackers": [
         "Ammesten mgal ineḍfaren"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Beddّل aseqdec n uswir yettwaṭṭfen d uṣebḥan n tansa n yimayl-ik."
       ]
     },
     "Onboarding Proton": {
@@ -8067,6 +8085,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -8086,14 +8112,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
