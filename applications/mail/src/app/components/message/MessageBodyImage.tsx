@@ -149,16 +149,16 @@ const MessageBodyImage = ({
         ? errorMessage
         : c('Message image').t`Image has not been loaded in order to protect your privacy.`;
 
-    const icon = error ? 'cross-circle' : 'file-shapes';
+    const icon = error ? 'file-slash' : 'file-image';
 
     const style = extractStyle(original, iframeRef.current?.contentWindow?.innerWidth);
 
     const placeholder = (
         <span
             style={style}
-            className={clsx(['proton-image-placeholder', !!error && 'proton-image-placeholder--error border-danger'])}
+            className={clsx(['proton-image-placeholder', !!error && 'proton-image-placeholder--error'])}
         >
-            {!showLoader ? <Icon name={icon} size={5} /> : null}
+            {!showLoader ? <Icon name={icon} size={4} /> : null}
 
             {showLoader ? (
                 <>
