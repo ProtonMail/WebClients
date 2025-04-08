@@ -15,6 +15,7 @@ import { useThumbnailsDownload, useUserSettings } from '../../store';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { EmptyPhotos } from './EmptyPhotos';
+import { EmptyTagView } from './EmptyTagView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosTags } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
@@ -104,6 +105,7 @@ export const PhotosWithAlbumsView = () => {
     if (!shareId || !linkId || (isPhotosLoading && photos.length === 0)) {
         return <Loader />;
     }
+    const isSelectedTagEmtpy = !isPhotosEmpty && photos.length === 0;
 
     return (
         <>
@@ -122,9 +124,9 @@ export const PhotosWithAlbumsView = () => {
                 parentLinkId={linkId}
                 className="flex flex-column flex-nowrap flex-1"
             >
-                {isPhotosEmpty ? (
-                    <EmptyPhotos shareId={shareId} linkId={linkId} />
-                ) : (
+                {isPhotosEmpty && <EmptyPhotos shareId={shareId} linkId={linkId} />}
+                {isSelectedTagEmtpy && <EmptyTagView tag={selectedTags[0]} />}
+                {!isPhotosEmpty && !isSelectedTagEmtpy && (
                     <PhotosGrid
                         data={photos}
                         onItemRender={handleItemRender}
