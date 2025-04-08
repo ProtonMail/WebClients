@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Mais opções para as contas"
+      ],
       "More refine actions": [
         "Mais ações de refinamento"
       ],
@@ -1117,11 +1120,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select All": [
-        "Selecionar tudo"
-      ],
       "Select all": [
         "Seleccionar tudo"
+      ],
+      "Select All": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -6745,8 +6748,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -7366,6 +7368,9 @@
       ],
       "Text to display": [
         "Texto a mostrar"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Obrigado pela subscrição. A navegação segura começa agora."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Os dados inseridos no rascunho podem não ficar guardados se sair da página."
@@ -10685,7 +10690,7 @@
         "${ protectionFromTrackersTitle }: deixará de ser seguido na internet."
       ],
       "Activate premium features": [
-        "Ativar as funcionalidades premium"
+        "Ativar funções premium"
       ],
       "Activate selected": [
         "Ativar a seleção"
@@ -10697,7 +10702,7 @@
         "Acesso a qualquer hora, em qualquer lugar"
       ],
       "Auto-delete spam and trash": [
-        "Eliminação automática das pastas Spam e Lixo"
+        "Eliminar spam e lixo auto"
       ],
       "browser": [
         "navegador"
@@ -12312,6 +12317,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -12570,47 +12616,6 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {

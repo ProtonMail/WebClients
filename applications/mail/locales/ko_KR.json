@@ -810,6 +810,9 @@
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "계정 추가 옵션"
+      ],
       "More refine actions": [
         "더 다듬기"
       ],
@@ -1113,11 +1116,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select All": [
-        "모두 선택"
-      ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select All": [
+        "모두 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -6694,6 +6697,9 @@
       "Learn more about the writing assistant": [
         "글쓰기 도우미에 대해 더 알아보기"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "대처법에 대해 알아보세요 ${ dataLeakedLink }"
+      ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
       ],
@@ -7248,6 +7254,9 @@
       ],
       "Text to display": [
         "표시할 이름"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "구독해 주셔서 감사합니다. 지금부터 보안 브라우징이 시작됩니다."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "이 페이지를 떠난다면 받은 편지함에 있는 데이터가 저장되지 않을 수 있습니다."
@@ -8432,6 +8441,9 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
+      "Enable desktop notifications": [
+        "테스크톱 알림 활성화"
+      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -8578,6 +8590,9 @@
       ],
       "Notification": [
         "알림"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "알림이 비활성화되었습니다. 활성화하려면 브라우저 설정을 변경하십시오."
       ],
       "Open in a new tab": [
         "새 탭에서 열기"
@@ -8923,6 +8938,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
+      ],
+      "if your data is leaked": [
+        "사용자의 데이터가 유출된 경우"
       ],
       "Inbox": [
         "받은 편지함"
@@ -10495,7 +10513,7 @@
         "${ protectionFromTrackersTitle }는 인터넷을 통해 더 이상 추적되지 않음을 뜻합니다."
       ],
       "Activate premium features": [
-        "프리미엄 기능 활성화"
+        "premium 기능 활성화"
       ],
       "Activate selected": [
         "선택 활성화"
@@ -10513,7 +10531,7 @@
         "브라우저"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "30일 뒤 삭제되거나 스팸인 이메일을 제거합니다."
+        "30일 후 삭제되거나 스팸 email을 clear합니다."
       ],
       "Continue": [
         "계속"
@@ -12083,6 +12101,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -12335,47 +12394,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -13244,6 +13262,9 @@
       "Increase your privacy with more addresses": [
         "더 많은 주소로 프라이버시를 한 층 향상시키세요"
       ],
+      "Information exposed in breach": [
+        "유출 시 노출된 정보"
+      ],
       "Insert contacts": [
         "연락처 입력"
       ],
@@ -13749,6 +13770,9 @@
       "Load image": [
         "이미지 불러오기"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "사용자에게 서명하거나 암호화 할 때 사용할 PGP 체계를 선택해주세요. PGP/Inline은 일반 텍스트 메시지를 강제합니다"
       ],
@@ -13781,6 +13805,9 @@
       ],
       "This feature is only available for paid users": [
         "이 기능은 유료 사용자만 사용할 수 있습니다"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"

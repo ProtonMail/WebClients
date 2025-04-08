@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
+      ],
       "More refine actions": [
         "Diğer düzeltme işlemleri"
       ],
@@ -1117,10 +1120,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -6748,8 +6751,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -6807,6 +6809,9 @@
       ],
       "Learn more about the writing assistant": [
         "Yazma yardımcısı ile ilgili ayrıntılı bilgi alın"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } ne yapacağınızı öğrenin"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -7366,6 +7371,9 @@
       ],
       "Text to display": [
         "Görüntülenecek metin"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Abone olduğunuz için teşekkürler. Artık güvenli gezinebilirsiniz."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Sayfadan ayrılırsanız taslağa yazdığınız veriler kaydedilmeyebilir."
@@ -8576,6 +8584,9 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
+      "Enable desktop notifications": [
+        "Masaüstü bildirimlerini aç"
+      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -8722,6 +8733,9 @@
       ],
       "Notification": [
         "Bildirim"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Bildirimler kapatılmış. Bunları açmak için tarayıcı ayarlarını değiştirin."
       ],
       "Open in a new tab": [
         "Yeni sekmede aç"
@@ -9067,6 +9081,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Bitcoin ile nasıl ödeme yapabilirsiniz?"
+      ],
+      "if your data is leaked": [
+        "Verileriniz sızarsa"
       ],
       "Inbox": [
         "Gelen kutusu"
@@ -10676,7 +10693,7 @@
         "${ protectionFromTrackersTitle } artık internet üzerinden izlenmeyeceğiniz anlamına gelir."
       ],
       "Activate premium features": [
-        "Ücretli özellikleri etkinleştir"
+        "Ücretli özelliklere eriş"
       ],
       "Activate selected": [
         "Seçilmişleri etkinleştir"
@@ -10688,13 +10705,13 @@
         "Her zaman her yerden erişim"
       ],
       "Auto-delete spam and trash": [
-        "İstenmeyenleri ve çöpü otomatik olarak boşaltın"
+        "İstenmeyen ve çöpü otomatik sil"
       ],
       "browser": [
         "tarayıcı"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Silinmiş ve istenmeyen e-postaları 30 gün sonra temizleyin."
+        "Silinen ve istenmeyen e-postaları 30 gün sonra temizle."
       ],
       "Continue": [
         "İlerle"
@@ -10718,7 +10735,7 @@
         "E-postanıza istediğiniz zaman erişebilmek ve en iyi mobil deneyimi elde etmek için ${ mobileAppAppStoreLink } veya ${ mobileAppGooglePlayLink } uygulamamızı indirin."
       ],
       "Get notified if your password is compromised.": [
-        "Parolanız ele geçirildiğinde bildirim alın."
+        "Parolan ele geçirildiğinde bildirim al."
       ],
       "Industry-leading spam protection": [
         "Endüstri lideri istenmeyen e-posta koruması"
@@ -10748,7 +10765,7 @@
         "${ BRAND_NAME } ile başla"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "E-posta adresinizin daha kısa ve akılda kalıcı sürümünü kullanmaya başlayın."
+        "E-posta adresinin daha kısa ve kolay sürümünü kullan."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Başlamak için görüntülenecek bir ad yazın. Bu ad, e-posta ve etkinlik davetleri ile dosya paylaşımı gönderdiğiniz kişilere görüntülenir."
@@ -12303,6 +12320,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -12561,47 +12619,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -13511,6 +13528,9 @@
       "Increase your privacy with more addresses": [
         "Daha fazla adres kullanarak gizliliğinizi artırın"
       ],
+      "Information exposed in breach": [
+        "Ele geçirilmede açığa çıkan bilgiler"
+      ],
       "Insert contacts": [
         "Kişi ekle"
       ],
@@ -14018,6 +14038,9 @@
       "Load image": [
         "Görsel yükle"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
@@ -14050,6 +14073,9 @@
       ],
       "This feature is only available for paid users": [
         "Bu özelliği yalnızca ücretli tarife kullanıcıları kullanabilir"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"

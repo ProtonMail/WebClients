@@ -814,6 +814,9 @@
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Más opciones para las cuentas"
+      ],
       "More refine actions": [
         "Acciones más optimizadas"
       ],
@@ -1117,10 +1120,10 @@
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -6748,8 +6751,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7369,6 +7371,9 @@
       ],
       "Text to display": [
         "Texto a mostrar"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Gracias por suscribirse. La navegación segura comienza ahora."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Los datos que ha ingresado en el borrador pueden no guardarse si sale de la página."
@@ -10691,7 +10696,7 @@
         "${ protectionFromTrackersTitle } significa no más seguimiento a través de internet."
       ],
       "Activate premium features": [
-        "Activar las funciones premium"
+        "Active funciones premium"
       ],
       "Activate selected": [
         "Activar la selección"
@@ -10706,13 +10711,13 @@
         "Acceso en cualquier momento y en cualquier lugar"
       ],
       "Auto-delete spam and trash": [
-        "Eliminación automática del spam y de la papelera"
+        "Borrar spam y Papelera"
       ],
       "browser": [
         "navegador"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Borre los correos electrónicos eliminados y spam después de 30 días."
+        "Borre correos eliminados y spam tras 30 días."
       ],
       "Continue": [
         "Continuar"
@@ -10736,7 +10741,7 @@
         "Para acceder a su correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descargue nuestra aplicación desde ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
-        "Obtenga notificaciones si su contraseña es comprometida."
+        "Reciba una notificación si su contraseña se ve comprometida."
       ],
       "Industry-leading spam protection": [
         "Protección contra spam líder en la industria"
@@ -10769,7 +10774,7 @@
         "Comience a usar ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Empiece a usar la versión más corta y atractiva de su dirección de correo."
+        "Use la versión más corta y atractiva de su dirección de correo."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Para comenzar, elija un nombre para mostrar. Esto es lo que la gente verá cuando envíe un correo electrónico, los invite a un evento o comparta un archivo."
@@ -12324,6 +12329,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -12582,47 +12628,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
