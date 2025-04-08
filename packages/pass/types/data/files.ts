@@ -39,7 +39,11 @@ export type FileChunkUploadDTO = {
 } & ({ type: 'blob'; blob: Blob } | { type: 'fs'; ref: string });
 
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };
-export type FileMetadataDTO = BaseFileDescriptor & { itemId?: ItemId; shareId: ShareId };
+export type FileMetadataDTO = BaseFileDescriptor & {
+    /** Optional in-case item has not been created yet  */
+    itemId?: ItemId;
+    shareId: ShareId;
+};
 
 type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
 type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[]; encryptionVersion: number };

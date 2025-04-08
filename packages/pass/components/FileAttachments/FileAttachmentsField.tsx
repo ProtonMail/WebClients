@@ -13,9 +13,9 @@ import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
+import { useFileEncryptionVersion } from '@proton/pass/hooks/files/useFileEncryptionVersion';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import {
@@ -50,7 +50,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
     WithPaidUser(({ children, form, filesCount = 0, shareId, onDeleteAllFiles }) => {
         const { popup } = usePassCore();
         const dispatch = useAsyncRequestDispatch();
-        const encryptionVersion = useFeatureFlag(PassFeature.PassFileAttachmentEncryptionV2) ? 2 : 1;
+        const fileEncryptionVersion = useFileEncryptionVersion();
 
         const fileUpload = useFileUpload();
         const usedStorage = useSelector(selectUserStorageUsed);
@@ -67,6 +67,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
         const uploadFiles = useCallback(
             async (toUpload: File[]) => {
+                const encryptionVersion = fileEncryptionVersion.current;
                 const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
 
                 setFiles(
@@ -107,7 +108,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                     )
                 );
             },
-            [shareId, encryptionVersion]
+            [shareId]
         );
 
         const onAddFiles = useCallback(
