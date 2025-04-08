@@ -108,6 +108,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         fileID?: FileID;
         metadata: Uint8Array;
         shareId: ShareId;
+        encryptionVersion: number;
     }) => Promise<FileDescriptorProcessResult>;
     openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array>;
     createFileChunk: (data: { chunk: Blob; fileID: FileID; shareId: ShareId }) => Promise<Blob>;
