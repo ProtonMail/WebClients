@@ -462,7 +462,12 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async openFileDescriptor({ file, itemKey, shareId }) {
             assertHydrated(context);
 
-            const { fileKey, metadata } = await processes.openFileDescriptor(file.Metadata, file.FileKey, itemKey);
+            const { fileKey, metadata } = await processes.openFileDescriptor(
+                file.Metadata,
+                file.FileKey,
+                itemKey,
+                file.EncryptionVersion
+            );
 
             worker.registerFileKey({ fileKey, fileID: file.FileID, shareId });
             return metadata;
