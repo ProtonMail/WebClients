@@ -159,7 +159,7 @@ export const PhotosCard: FC<Props> = ({
             )}
 
             {isLoaded ? (
-                <div className="w-full h-full relative">
+                <div className="w-full h-full relative photos-card-thumbnail-holder">
                     {thumbUrl ? (
                         <img
                             data-testid="photo-card-thumbnail"
