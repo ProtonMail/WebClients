@@ -251,7 +251,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                             />
 
                             <FieldsetCluster>
-                                <Field name="files" component={FileAttachmentsField} />
+                                <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                             </FieldsetCluster>
 
                             <FieldsetCluster>

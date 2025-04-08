@@ -1,4 +1,12 @@
-import type { FileMetadata, ItemFileChunkOutput, MaybeNull, SelectedItem, SelectedRevision } from '@proton/pass/types';
+import type {
+    FileMetadata,
+    ItemFileChunkOutput,
+    ItemId,
+    MaybeNull,
+    SelectedItem,
+    SelectedRevision,
+    ShareId,
+} from '@proton/pass/types';
 
 export type FileID = string;
 export type BaseFileDescriptor = FileMetadata & { size: number; fileID: FileID };
@@ -10,13 +18,13 @@ export type FileDescriptor = BaseFileDescriptor & {
     fileUID: string;
 };
 
-export type FileInitiateUploadDTO = FileMetadata & { totalChunks: number; uploadID: string };
-export type FileChunkUploadDTO = { fileID: FileID; index: number } & (
+export type FileInitiateUploadDTO = FileMetadata & { totalChunks: number; uploadID: string; shareId: ShareId };
+export type FileChunkUploadDTO = { fileID: FileID; index: number; shareId: ShareId } & (
     | { type: 'blob'; blob: Blob }
     | { type: 'fs'; ref: string }
 );
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };
-export type FileMetadataDTO = BaseFileDescriptor & Partial<SelectedItem>;
+export type FileMetadataDTO = BaseFileDescriptor & { itemId?: ItemId; shareId: ShareId };
 
 type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
 type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[] };

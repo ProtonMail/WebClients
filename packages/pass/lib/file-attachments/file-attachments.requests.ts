@@ -84,7 +84,9 @@ export const restoreSingleFile = async (
             url: `pass/v1/share/${shareId}/item/${itemId}/file/${fileId}/restore`,
             method: 'post',
             data: {
-                FileKey: uint8ArrayToBase64String(await PassCrypto.getFileKey({ fileID: fileId, itemKey })),
+                FileKey: uint8ArrayToBase64String(
+                    await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId })
+                ),
                 ItemKeyRotation: itemKey.rotation,
             },
         })
@@ -101,7 +103,7 @@ export const restoreRevisionFiles = async (
                 FilesToRestore: await Promise.all(
                     dto.toRestore.map(async (fileID) => ({
                         FileID: fileID,
-                        FileKey: uint8ArrayToBase64String(await PassCrypto.getFileKey({ ...dto, fileID })),
+                        FileKey: uint8ArrayToBase64String(await PassCrypto.encryptFileKey({ ...dto, fileID })),
                     }))
                 ),
                 ItemKeyRotation: dto.itemKey.rotation,
@@ -119,9 +121,10 @@ export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLink
                 files.toAdd.map(async (FileID) => ({
                     FileID,
                     FileKey: uint8ArrayToBase64String(
-                        await PassCrypto.getFileKey({
+                        await PassCrypto.encryptFileKey({
                             fileID: FileID,
                             itemKey,
+                            shareId,
                         })
                     ),
                 }))

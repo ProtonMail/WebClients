@@ -40,8 +40,8 @@ const openFileDescriptors =
     async (files: ItemFileOutput[]): Promise<FileDescriptor[]> =>
         (await Promise.all(files.map(intoFileDescriptor(decryptMetadata)))).filter(truthy);
 
-export const intoFileDescriptors = async (files: ItemFileOutput[], itemKey: ItemKey) =>
-    openFileDescriptors((file) => PassCrypto.openFileDescriptor({ file, itemKey }))(files);
+export const intoFileDescriptors = async (shareId: string, files: ItemFileOutput[], itemKey: ItemKey) =>
+    openFileDescriptors((file) => PassCrypto.openFileDescriptor({ file, itemKey, shareId }))(files);
 
 export const intoPublicFileDescriptors = async (files: ItemFileOutput[], itemKey: string, linkKey: string) =>
     openFileDescriptors((file) =>

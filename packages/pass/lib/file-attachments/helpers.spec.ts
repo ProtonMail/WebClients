@@ -52,7 +52,7 @@ describe('intoFileDescriptors', () => {
 
         openFileDescriptor.mockImplementation(async ({ file }) => new Uint8Array([parseInt(file.FileID, 10)]));
 
-        const result = await intoFileDescriptors(files, {} as ItemKey);
+        const result = await intoFileDescriptors('shareId', files, {} as ItemKey);
 
         expect(openFileDescriptor).toHaveBeenCalledTimes(2);
 
