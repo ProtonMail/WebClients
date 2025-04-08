@@ -14,7 +14,7 @@ interface Props {
 const LoadRemoteImageBanner = ({ onClick, couldLoadDirect, text, tooltip, actionText }: Props) => {
     return (
         <Banner
-            icon={<Icon name={couldLoadDirect ? 'info-circle' : 'image'} />}
+            icon={<Icon name={couldLoadDirect ? 'info-circle' : 'file-image'} />}
             variant="norm-outline"
             action={
                 <Tooltip title={tooltip}>
