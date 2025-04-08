@@ -554,6 +554,15 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } 배경색 및 흰색 텍스트 색상"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } 텍스트 색상 및 강조표시"
+      ],
+      "${ name } text color with no background": [
+        "배경이 없는 ${ name } 텍스트 색상"
+      ],
       "Add link": [
         "링크 추가하기"
       ],
@@ -640,6 +649,9 @@
       ],
       "Replace link": [
         "링크 교체하기"
+      ],
+      "Text and highlight color": [
+        "텍스트 및 강조 표시 색상"
       ],
       "with \"${ replaceWith }\"": [
         "\"${ replaceWith }\"로"
