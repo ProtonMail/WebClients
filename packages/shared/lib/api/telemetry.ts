@@ -5,6 +5,7 @@ export enum TelemetryMeasurementGroups {
     accountSignup = 'account.any.signup',
     accountOrgLogoUpload = 'account.web.org_logo_upload',
     accountSecurityCheckup = 'account.web.security_checkup',
+    accountDashboard = 'account.web.dashboard',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
@@ -153,6 +154,10 @@ export enum TelemetryAccountSecurityCheckupEvents {
     completeRecoveryMultiple = 'cohort_change.complete_recovery_multiple',
     completeRecoverySingle = 'cohort_change.complete_recovery_single',
     accountRecoveryEnabled = 'cohort_change.account_recovery_enabled',
+}
+
+export enum TelemetryAccountDashboardEvents {
+    pageLoad = 'page_load',
 }
 
 export enum TelemetryKeyTransparencyErrorEvents {
@@ -318,6 +323,7 @@ export type TelemetryEvents =
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
     | TelemetryAccountCancellationEvents
+    | TelemetryAccountDashboardEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailListEvents
