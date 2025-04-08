@@ -30,15 +30,19 @@ export type FileInitiateUploadDTO = FileMetadata & {
     uploadID: string;
 };
 
-export type FileChunkUploadDTO = { fileID: FileID; index: number; shareId: ShareId } & (
-    | { type: 'blob'; blob: Blob }
-    | { type: 'fs'; ref: string }
-);
+export type FileChunkUploadDTO = {
+    chunkIndex: number;
+    encryptionVersion: number;
+    fileID: FileID;
+    shareId: ShareId;
+    totalChunks: number;
+} & ({ type: 'blob'; blob: Blob } | { type: 'fs'; ref: string });
+
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };
 export type FileMetadataDTO = BaseFileDescriptor & { itemId?: ItemId; shareId: ShareId };
 
 type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
-type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[] };
+type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[]; encryptionVersion: number };
 
 export type FileDownloadDTO = FileDownloadDTOBase & SelectedItem;
 export type FileDownloadChunk = FileDownloadChunkBase & SelectedItem;
