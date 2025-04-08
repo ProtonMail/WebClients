@@ -45,6 +45,7 @@ import {
     ThirdPartySection,
     TwoFactorSection,
     UsernameSection,
+    VPNDashboardTelemetry,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
     VpnDownloadAndInfoSection,
@@ -91,6 +92,7 @@ const AccountSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(dashboardV2) && (
                 <Route path={getSectionPath(path, dashboardV2)}>
+                    <VPNDashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea
                         config={dashboardV2}
@@ -131,6 +133,7 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(dashboard) && (
                 <Route path={getSectionPath(path, dashboard)}>
+                    <VPNDashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea config={dashboard}>
                         <YourStorageSection app={app} />
