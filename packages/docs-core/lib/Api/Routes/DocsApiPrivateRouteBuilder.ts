@@ -1,6 +1,7 @@
 import type { CommentThreadType, CommonPrivateCommentData, CreatePrivateCommentData } from '../Types/Comments'
 import { DocsApiRouteBuilder } from './DocsApiRouteBuilder'
 import type { DocsRoute } from './DocsRoute'
+import { COMMIT_FETCH_TIMEOUT } from '@proton/shared/lib/docs/constants'
 
 /**
  * For private authenticated routes.
@@ -24,6 +25,7 @@ export class DocsApiPrivateRouteBuilder extends DocsApiRouteBuilder {
       url: `${this.basePath}/commits/${params.commitId}`,
       output: 'raw',
       silence: true,
+      timeout: COMMIT_FETCH_TIMEOUT,
     }
   }
 
