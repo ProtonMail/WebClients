@@ -145,6 +145,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         encryptedFileKey: string;
         encryptedItemKey: string;
         encryptedMetadata: string;
+        encryptionVersion: number;
         fileID: FileID;
         linkKey: string;
     }) => Promise<Uint8Array>;
