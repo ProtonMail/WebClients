@@ -17,7 +17,7 @@ module.exports = {
         ],
         'import/no-cycle': ['error', { maxDepth: 1 }],
     },
-    ignorePatterns: ['.eslintrc.js'],
+    ignorePatterns: ['.eslintrc.js', 'iwad'],
     overrides: [
         {
             files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],

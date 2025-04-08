@@ -66,6 +66,10 @@ const result = (env: any): webpack.Configuration => {
                     to: '/urls.html', // Serves `urls.html`
                 },
                 {
+                    from: /assets\/static\/iwad\/game.html/,
+                    to: '/assets/static/iwad/game.html', // Serves `game.html` for the IWAD Preview Iframe
+                },
+                {
                     from: /./, // Matches any other route
                     to: '/index.html', // Serves `index.html`
                 },
@@ -123,6 +127,35 @@ const result = (env: any): webpack.Configuration => {
                     {
                         from: path.resolve(__dirname, '../../packages/raw-images/dist/cr3.js'),
                         to: 'assets/static/cr3.js',
+                    },
+                    {
+                        from: path.resolve(__dirname, '../../packages/components/containers/filePreview/iwad/index.js'),
+                        to: 'assets/static/iwad/index.js',
+                    },
+                    {
+                        from: path.resolve(__dirname, '../../packages/components/containers/filePreview/iwad/game.js'),
+                        to: 'assets/static/iwad/game.js',
+                    },
+                    {
+                        from: path.resolve(
+                            __dirname,
+                            '../../packages/components/containers/filePreview/iwad/index.data'
+                        ),
+                        to: 'assets/static/iwad/index.data',
+                    },
+                    {
+                        from: path.resolve(
+                            __dirname,
+                            '../../packages/components/containers/filePreview/iwad/index.wasm'
+                        ),
+                        to: 'assets/static/iwad/index.wasm',
+                    },
+                    {
+                        from: path.resolve(
+                            __dirname,
+                            '../../packages/components/containers/filePreview/iwad/game.html'
+                        ),
+                        to: 'assets/static/iwad/game.html',
                     },
                 ],
             }),
