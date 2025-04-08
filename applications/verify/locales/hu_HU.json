@@ -1091,6 +1091,9 @@
       "Country code": [
         "Országkód"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Több ingyenes fiók létrehozása nem megengedett a ${ termsLink } oldalunkon."
+      ],
       "Each code can only be used once": [
         "Minden kódot csak egyszer lehet felhasználni"
       ],
@@ -1108,6 +1111,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "További információkért és a korlátozások eltávolításához jelentkezzen be a ${ mailLink } címen."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -1138,6 +1144,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "A korlátozások eltávolításához váltson egy előfizetéses csomagra."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Vannak olyan csomagjaink, amelyeket kifejezetten az olyan felhasználók számára terveztünk, mint Ön, akiknek egynél több e-mail címre van szükségük."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
@@ -1271,17 +1283,44 @@
       "${ size } attachment size": [
         "${ size } melléklet méret"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } biztonságos tárhely felhasználónként"
+      ],
       "${ size } storage": [
         "${ size } tárhely"
       ],
+      "${ size } storage per user": [
+        "${ size } tárhely felhasználónként"
+      ],
+      "1 TB secure storage": [
+        "1 TB biztonságos tárhely"
+      ],
       "10 email addresses/aliases": [
         "10 email cím / e-mail álnév"
+      ],
+      "10 more premium features": [
+        "További 10 prémium funkció"
+      ],
+      "10-year file version history": [
+        "10 éves fájlverzió-történet"
       ],
       "15 GB storage": [
         "15 GB tárhely"
       ],
       "200 GB of storage": [
         "200 GB tároló"
+      ],
+      "Advanced account protection": [
+        "Fejlett fiókvédelem"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Az összes ${ BRAND_NAME } termék és funkció"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Minden alapvető ${ BRAND_NAME } szolgáltatás (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Minden prémium ${ BRAND_NAME } szolgáltatás. Egy egyszerű előfizetés"
       ],
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
@@ -1294,6 +1333,9 @@
       ],
       "Automatic email forwarding": [
         "Automatikus e-mail továbbítás"
+      ],
+      "Breach alerts": [
+        "Adatvédelmi incidensre figyelmeztetések"
       ],
       "Calendar sharing": [
         "Naptár megosztás"
@@ -1310,8 +1352,14 @@
       "Contact groups management": [
         "Névjegy csoportok kezelése"
       ],
+      "Custom and secure business email": [
+        "Egyéni és biztonságos üzleti e-mail"
+      ],
       "Custom email domains": [
         "Saját domain nevek"
+      ],
+      "Custom snooze time": [
+        "Egyéni halasztási idő"
       ],
       "Desktop app": [
         "Asztali alkalmazás"
@@ -1337,14 +1385,23 @@
       "Online document editor": [
         "Online dokumentum szerkesztő"
       ],
+      "Password health": [
+        "Jelszó-egészség"
+      ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
+      ],
+      "Private photo backup": [
+        "Privát fotó biztonsági mentés"
       ],
       "Proofread and refine your emails": [
         "Lektorálja és finomítsa e-mailjeit"
       ],
       "Recover previous file versions": [
         "Régebbi fájl verziók visszaállítása"
+      ],
+      "Save time emailing": [
+        "E-mailezés közben időt takaríthat meg"
       ],
       "Schedule and snooze emails for any time": [
         "E-mailek időzítése vagy halasztása"
@@ -1355,14 +1412,26 @@
       "Search message content": [
         "Keresés az üzenetek tartalmában"
       ],
+      "Secure file storage and sharing": [
+        "Biztonságos file-tárhely és -megosztás"
+      ],
       "See team's availability": [
         "Lásd a csoport elérhetőségét"
       ],
       "Send & receive invitations": [
         "Meghívók küldése és fogadása"
       ],
+      "Share files with no size limit": [
+        "Fájlok megosztása méretkorlátozás nélkül"
+      ],
       "SMTP submission": [
         "SMTP beküldés"
+      ],
+      "Support for up to 2 users": [
+        "Legfeljebb 2 felhasználó támogatása"
+      ],
+      "Sync and backup all your files across devices": [
+        "Szinkronizálja az összes fájlt és készítsen biztonsági mentést az eszközök között"
       ],
       "Unlimited filters": [
         "Korlátlan számú szűrő"
@@ -1390,11 +1459,17 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Üzenetek némítása és emlékeztető beállítása a kívánt időpontra"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Tartsa biztonságban fájljait titkosított felhőalapú tárolással. Tartalmazza az automatikus szinkronizálást, a titkosított fájlmegosztást és egyebeket."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Tartsa biztonságban e-mailjeit végpontok közti titkosítással. Saját domain név használatát is lehetővé teszi. 15 e-mail cím, korlátlan számú hide-my-email e-mail álnév és további lehetőségek."
       ],
@@ -1407,8 +1482,14 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Lehetőséget biztosít a bejövő levelekre való automatikus válaszok küldésére"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "A 30 napnál régebbi üzenetek automatikus ürítése a Lomtárból és a levélszemétből"
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Tömeges vagy programozott levélküldés jelenleg nem támogatott. Javasoljuk, hogy ilyen célra erre specializálódott szolgáltatókat vegyen igénybe."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Válasszon egyéni időpontot, amikor egy e-mailre vagy üzenet megérkezésére emlékeztető üzenetet szeretne kapni."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
@@ -1417,11 +1498,20 @@
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
       ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Könnyedén megoszthatja a naptárait családjával, barátaival vagy kollégáival"
+      ],
+      "Email everyone in a group with a single email address": [
+        "E-mail küldése a csoport minden tagjának egyetlen e-mail címmel"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Biztosítja, hogy minden a saját domain nevére érkező levelet megkapjon, akkor is, ha a cím nem létezik, már törölték vagy elírás van benne"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Az IMAP támogatás asztali alkalmazásokra korlátozódik (pl. Outlook, Apple Mail, Thunderbird) a ${ MAIL_APP_NAME } Bridge-en keresztül. Felhő alapú IMAP megoldások jelenleg nem támogatottak."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Tartsa terveit bizalmasan az Ön és családja számára a titkosított naptárral"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "A címkék egyszerű jelölők amelyet az e-mailhez rendelhet, hogy könnyebben megtalálhassa vagy leszűrhesse"
@@ -1462,6 +1552,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt. A szervezet egyes felhasználói közt az adminisztrátorok osztják szét a tárhelyet"
       ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "A tárhelyet a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } és ${ PASS_APP_NAME } felhasználók osztják meg egymás között."
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Használja a saját egyedi email domain neveit, pl. on@azonneve.com"
       ],
@@ -1490,6 +1583,11 @@
     "Placeholder": {
       "Password": [
         "Jelszó"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "A bejelentkezés nem sikerült."
       ]
     },
     "sso": {
@@ -1522,6 +1620,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Fiók korlátozva"
+      ],
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
       ],
