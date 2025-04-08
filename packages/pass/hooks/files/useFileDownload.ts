@@ -53,7 +53,7 @@ export const useFileDownload = () => {
 
     const start = useCallback(
         async (file: FileDescriptor, options: { filesToken: string } | SelectedItem): Promise<void> => {
-            const { fileID } = file;
+            const { fileID, encryptionVersion } = file;
 
             try {
                 const ctrl = new AbortController();
@@ -66,14 +66,14 @@ export const useFileDownload = () => {
 
                 const res = await (() => {
                     if ('filesToken' in options) {
-                        const dto = { fileID, chunkIDs, ...options };
+                        const dto = { fileID, chunkIDs, encryptionVersion, ...options };
                         return abortable(signal)(
                             () => asyncDispatch(fileDownloadPublic, dto),
                             () => dispatch(requestCancel(fileDownloadPublic.requestID(dto)))
                         );
                     }
 
-                    const dto = { fileID, chunkIDs, tabId, ...options };
+                    const dto = { fileID, chunkIDs, tabId, encryptionVersion, ...options };
                     return abortable(signal)(
                         () => asyncDispatch(fileDownload, dto),
                         () => dispatch(requestCancel(fileDownload.requestID(dto)))
