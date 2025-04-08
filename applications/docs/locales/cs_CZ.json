@@ -450,6 +450,9 @@
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Další možnosti účtů"
+      ],
       "Move": [
         "Přesun"
       ],
@@ -2272,11 +2275,6 @@
         "Faktura po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2355,6 +2353,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4899,6 +4902,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Děkujeme vám za přihlášení k odběru. Bezpečné prohlížení začíná nyní."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
@@ -4922,6 +4928,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Zadaná adresa URL byla zřejmě nesprávně zkopírována ze Slacku. Při kopírování dlouhých odkazů ze Slacku klikněte na odkaz pravým tlačítkem myši a vyberte \"Kopírovat odkaz\", nikoli přímo zkopírovat zkrácený text adresy URL."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
@@ -8976,29 +8985,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložiště na uživatele"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastní e-mailová doména",
-        "${ planNumberOfDomains } vlastní e-mailové domény",
-        "${ planNumberOfDomains } vlastních e-mailových domén",
-        "${ planNumberOfDomains } vlastních e-mailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailová adresa",
-        "${ planNumberOfEmails } e-mailové adresy",
-        "${ planNumberOfEmails } e-mailových adres",
-        "${ planNumberOfEmails } e-mailových adres"
-      ],
-      "Folders, labels, and custom filters": [
-        "Složky, štítky a vlastní filtry"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložiště"
@@ -9038,6 +9024,29 @@
       ],
       "Your privacy is our mission": [
         "Vaše soukromí je naším posláním"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložiště na uživatele"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastní e-mailová doména",
+        "${ planNumberOfDomains } vlastní e-mailové domény",
+        "${ planNumberOfDomains } vlastních e-mailových domén",
+        "${ planNumberOfDomains } vlastních e-mailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailová adresa",
+        "${ planNumberOfEmails } e-mailové adresy",
+        "${ planNumberOfEmails } e-mailových adres",
+        "${ planNumberOfEmails } e-mailových adres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Složky, štítky a vlastní filtry"
       ]
     },
     "Subscription renewal state": {
@@ -9598,7 +9607,7 @@
         "Importovat skupiny"
       ],
       "Information exposed in breach": [
-        "Informace odhalené při úniku informací"
+        "Informace odhalené při úniku"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -9899,7 +9908,7 @@
         "Zpráva a název souboru jsou uloženy s šifrováním s nulovým přístupem, pokud jsou součástí e-mailu"
       ],
       "Not all information listed here was exposed for all users.": [
-        "Ne všechny zde uvedené informace byly odhaleny pro všechny uživatele."
+        "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
@@ -9923,7 +9932,7 @@
         "Nový cyklus předplatného začíná ${ formattedTime }"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když jsou odhalena."
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"

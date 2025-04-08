@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "Accept invitation": [
+        "Daveti kabul et"
+      ],
+      "Accept invitation to document": [
+        "Belge davetini kabul et"
+      ],
       "Activate recovery": [
         "Kurtarma özelliğini aç"
       ],
@@ -83,6 +89,9 @@
       ],
       "Apply": [
         "Uygula"
+      ],
+      "Ask me next time": [
+        "Gelecek sefer yeniden sor"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
@@ -219,6 +228,12 @@
       ],
       "Customize import": [
         "İçe aktarmayı özelleştir"
+      ],
+      "Decline invitation": [
+        "Daveti reddet"
+      ],
+      "Decline invitation to document": [
+        "Belge davetini reddet"
       ],
       "Decline invite": [
         "Daveti reddet"
@@ -429,6 +444,9 @@
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
+      ],
       "Move": [
         "Taşı"
       ],
@@ -579,11 +597,17 @@
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
+      "Save preferences": [
+        "Ayarları kaydet"
+      ],
       "Search": [
         "Arama"
       ],
       "Search countries": [
         "Ülke ara"
+      ],
+      "Search recent documents": [
+        "Son kullanılan belgelerde ara"
       ],
       "See how": [
         "Nasıl yapıldığını görün"
@@ -2227,11 +2251,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2310,6 +2329,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3926,6 +3950,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Bir VPN, aygıtınız ile internet arasında güvenli bir tüneldir. Konumunuzu ve etkinliklerinizi internet hizmeti sağlayıcınızdan ve ziyaret ettiğiniz sitelerden gizler."
       ],
+      "Accept/decline": [
+        "Kabul et/reddet"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
@@ -4046,6 +4073,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubundan çıkarıldı"
       ],
+      "Converting document...": [
+        "Belge dönüştürülüyor..."
+      ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
@@ -4072,6 +4102,9 @@
         "${ value } üye için bir güvenli bulut oluştur",
         "${ value } üye için bir güvenli bulut oluştur"
       ],
+      "Create an encrypted document.": [
+        "Şifrelenmiş bir belge oluşturun."
+      ],
       "Create in": [
         "Şuraya ekle"
       ],
@@ -4086,6 +4119,9 @@
       ],
       "Creating link to folder": [
         "Klasör bağlantısı oluşturuluyor"
+      ],
+      "Creating new document...": [
+        "Yeni belge oluşturuluyor..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -4204,6 +4240,12 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Belge yüklenirken sorun çıktı${ errorDetail }"
+      ],
       "Error Syncing": [
         "Eşitleme sorunu"
       ],
@@ -4263,6 +4305,12 @@
       ],
       "Geoblocking": [
         "Coğrafi engelleme"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Belgelerinize eklenen yorumlar ve öneriler için e-posta bildirimleri alın."
+      ],
+      "Get Notified About Comments": [
+        "Yorumlar bildirilsin"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasına git"
@@ -4370,6 +4418,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } ne yapacağınızı öğrenin"
+      ],
       "Limited availability": [
         "Sınırlı kullanılabilirlik"
       ],
@@ -4399,6 +4450,9 @@
       ],
       "Low Priority": [
         "Düşük Öncelik"
+      ],
+      "Making a copy...": [
+        "Bir kopya oluşturuluyor..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -4440,6 +4494,9 @@
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Adreste bir belge belirtilmemiş. ${ DRIVE_APP_NAME } uygulamasına dönün ve bir belge seçin."
+      ],
       "No email address": [
         "E-posta adresi yok"
       ],
@@ -4451,6 +4508,9 @@
       ],
       "No recent documents": [
         "Son kullanılan herhangi bir belge yok"
+      ],
+      "No recent documents match your search.": [
+        "Aramanıza uygun bir son kullanılan belge yok."
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -4508,6 +4568,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+      ],
+      "Pending invitations": [
+        "Bekleyen davetler"
       ],
       "People with access": [
         "Erişimi olan kişiler"
@@ -4713,6 +4776,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Abone olduğunuz için teşekkürler. Artık güvenli gezinebilirsiniz."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
@@ -4737,8 +4803,14 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından kesilmiş adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
+      ],
+      "There are no documents in the trash.": [
+        "Çöpte herhangi bir belge yok."
       ],
       "This action will delete the link and revoke access for all users.": [
         "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
@@ -4748,6 +4820,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Bu belgede çok sayıda işlem yapılmış. Bazı özellikler geçici olarak kullanılamayabilir."
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Bu belge var olmayabilir veya yüklerken sorun çıktı. Lütfen sayfayı yeniden yükleyip yeniden deneyin."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Bu belge var olmayabilir veya onu görüntüleme izniniz olmayabilir. Sorun sürüyor mu anlamak için sayfayı yeniden yüklemeyi ya da erişim izni vermesi için sahibi ile görüşmeyi deneyebilirsiniz."
@@ -4848,6 +4923,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "\"${ folderName }\" klasörünün aktarımı atlandı"
       ],
+      "Trashed": [
+        "Çöpe atılmış"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
@@ -4856,6 +4934,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Ne yazık ki, bu dosyanın ya da dosyanın bazı verilerinin şifresi çözülemedi."
+      ],
+      "Update recent documents": [
+        "Son kullanılan belgeleri güncelle"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
@@ -5012,6 +5093,9 @@
       "You cannot undo this action.": [
         "Bu işlemi geri alamazsınız."
       ],
+      "You don't have access": [
+        "Erişim izniniz yok"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
       ],
@@ -5023,6 +5107,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Bankanızın sitesine yönlendirilebilirsiniz."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Seçtiğiniz hesap ile görüntüleme izinleriniz olmayabilir. Farklı bir hesap deneyin veya erişim izni vermesi için sahibiyle görüşün."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını kullanımdan kaldırmalı ya da silmelisiniz."
@@ -5417,6 +5504,9 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
+      "Enable email notifications": [
+        "E-posta bildirimlerini aç"
+      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -5470,6 +5560,9 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
+      ],
+      "Include document name in notification": [
+        "Bildirime belge adı eklensin"
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
@@ -5762,6 +5855,9 @@
       ],
       "How to pay with Bitcoin?": [
         "Bitcoin ile nasıl ödeme yapabilirsiniz?"
+      ],
+      "if your data is leaked": [
+        "Verileriniz sızarsa"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -7274,6 +7370,9 @@
       "Public link update access failed ": [
         "Herkese açık bağlantı erişimi güncellenemedi "
       ],
+      "Recent documents updated.": [
+        "Son güncellenen belgeler."
+      ],
       "Root folder failed to be loaded": [
         "Kök klasör yüklenemedi"
       ],
@@ -7449,6 +7548,20 @@
       ],
       "Merge with calendar": [
         "Takvim ile birleştir"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "Sık kullanılanlar"
+      ],
+      "Recents": [
+        "Son kullanılanlar"
+      ],
+      "Searching": [
+        "Aranıyor"
+      ],
+      "Trashed": [
+        "Çöpe atılmış"
       ]
     },
     "Participant name": {
@@ -7838,6 +7951,9 @@
       "Created by": [
         "Oluşturan"
       ],
+      "Deleted": [
+        "Silindi"
+      ],
       "Earlier": [
         "Daha önce"
       ],
@@ -7855,6 +7971,9 @@
       ],
       "Previous 7 days": [
         "Önceki 7 gün"
+      ],
+      "Search results": [
+        "Arama sonuçları"
       ],
       "Today": [
         "Bugün"
@@ -8568,25 +8687,6 @@
         "${ totalPrice } için"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8626,6 +8726,25 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
@@ -9157,6 +9276,9 @@
       "Import groups": [
         "Grupları içe aktar"
       ],
+      "Information exposed in breach": [
+        "Ele geçirilmede açığa çıkan bilgiler"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
@@ -9455,6 +9577,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişim şifrelemesi ile kaydedilir"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
@@ -9475,6 +9600,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"

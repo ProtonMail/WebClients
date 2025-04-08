@@ -444,6 +444,9 @@
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
+      ],
       "Move": [
         "Przenieś"
       ],
@@ -2260,11 +2263,6 @@
         "Zaległa faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2343,6 +2341,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4880,6 +4883,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Dziękujemy za subskrypcję. Bezpieczne przeglądanie zaczyna się teraz."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
@@ -9015,29 +9021,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } niestandardowa domena",
-        "${ planNumberOfDomains } niestandardowe domeny",
-        "${ planNumberOfDomains } niestandardowych domen",
-        "${ planNumberOfDomains } niestandardowych domen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adres e-mail",
-        "${ planNumberOfEmails } adresy e-mail",
-        "${ planNumberOfEmails } adresów e-mail",
-        "${ planNumberOfEmails } adresów e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Foldery, etykiety i filtry niestandardowe"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
@@ -9077,6 +9060,29 @@
       ],
       "Your privacy is our mission": [
         "Prywatność to nasza misja"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } niestandardowa domena",
+        "${ planNumberOfDomains } niestandardowe domeny",
+        "${ planNumberOfDomains } niestandardowych domen",
+        "${ planNumberOfDomains } niestandardowych domen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adres e-mail",
+        "${ planNumberOfEmails } adresy e-mail",
+        "${ planNumberOfEmails } adresów e-mail",
+        "${ planNumberOfEmails } adresów e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldery, etykiety i filtry niestandardowe"
       ]
     },
     "Subscription renewal state": {
