@@ -18,9 +18,11 @@ import { validateLinkNameField } from '../../store';
 export const CreateAlbumModal = ({
     createAlbumModal,
     createAlbum,
+    share,
 }: {
     createAlbumModal: ModalStateReturnObj;
     createAlbum: (name: string) => Promise<void>;
+    share: boolean;
 }) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [albumName, setAlbumName] = useState<string>('');
@@ -45,7 +47,9 @@ export const CreateAlbumModal = ({
         <>
             {render && (
                 <ModalTwo {...modalProps} as="form" onSubmit={onSubmit}>
-                    <ModalTwoHeader title={c('Header').t`Create new album`} />
+                    <ModalTwoHeader
+                        title={share ? c('Header').t`Create new shared album` : c('Header').t`Create new album`}
+                    />
                     <ModalTwoContent>
                         <InputFieldTwo
                             autoFocus
