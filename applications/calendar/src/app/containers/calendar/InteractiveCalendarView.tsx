@@ -194,8 +194,15 @@ import {
 } from './eventStore/cache/upsertResponsesArray';
 import type { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import getAttendeeDeleteSingleEditPayload from './getAttendeeDeleteSingleEditPayload';
-import type { SyncEventActionOperations, UpdateEventActionOperation } from './getSyncMultipleEventsPayload';
-import getSyncMultipleEventsPayload from './getSyncMultipleEventsPayload';
+import type {
+    CreateEventActionOperation,
+    SyncEventActionOperations,
+    UpdateEventActionOperation,
+} from './getSyncMultipleEventsPayload';
+import getSyncMultipleEventsPayload, {
+    getIsCreateSyncOperation,
+    getIsUpdateSyncOperation,
+} from './getSyncMultipleEventsPayload';
 import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
 import type {
     AugmentedSendPreferences,
@@ -1349,7 +1356,7 @@ const InteractiveCalendarView = ({
                  */
                 getAttendeeEncryptedComment: async (
                     nextSessionKey: SessionKey | undefined,
-                    operation: UpdateEventActionOperation
+                    operation: CreateEventActionOperation | UpdateEventActionOperation
                 ): Promise<{ [token: string]: AttendeeComment }> => {
                     const originalCalendarEvent = temporaryEvent?.tmpOriginalTarget?.data.eventData;
 
@@ -1361,8 +1368,9 @@ const InteractiveCalendarView = ({
                     if (
                         !getIsCalendarEvent(originalCalendarEvent) ||
                         !originalCalendarEvent.RRule ||
-                        operation.data.isBreakingChange ||
-                        operation.data.isAttendee
+                        (getIsUpdateSyncOperation(operation) &&
+                            (operation.data.isBreakingChange || operation.data.isAttendee)) ||
+                        (getIsCreateSyncOperation(operation) && !operation.data.isPersonalSingleEdit)
                     ) {
                         return {};
                     }

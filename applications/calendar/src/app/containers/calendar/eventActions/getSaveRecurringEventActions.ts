@@ -324,6 +324,7 @@ const getSaveRecurringEventActions = async ({
                   sendIcs,
                   onSendPrefsErrors,
                   handleSyncActions,
+                  isBreakingChange,
               })
             : undefined;
 
