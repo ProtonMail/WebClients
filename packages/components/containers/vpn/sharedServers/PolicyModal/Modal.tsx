@@ -22,29 +22,33 @@ import type {
     VpnLocationFilterPolicy,
 } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { getCountryOptions } from '@proton/payments';
 import { MINUTE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-enum STEP {
-    NAME,
-    MEMBERS,
-    COUNTRIES,
-}
+import { getGroupedLocations } from './getGroupedLocations';
+import { POLICY_STEP } from './modalPolicyStepEnum';
 
 interface SharedServersModalProps extends ModalProps {
     onSuccess: (policy: VpnLocationFilterPolicy) => void;
     policy?: VpnLocationFilterPolicy;
+    initialStep?: POLICY_STEP;
     isEditing?: boolean;
 }
 
-const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: SharedServersModalProps) => {
+const SharedServersModal = ({
+    policy,
+    isEditing = false,
+    initialStep = POLICY_STEP.NAME,
+    onSuccess,
+    ...rest
+}: SharedServersModalProps) => {
     const { createNotification } = useNotifications();
     const { locations, users, groups } = useSharedServers(10 * MINUTE);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
 
-    const [step, setStep] = useState<STEP>(STEP.NAME);
+    const [step, setStep] = useState<POLICY_STEP>(initialStep);
     const [policyName, setPolicyName] = useState('');
     const [selectedUsers, setSelectedUsers] = useState<SharedServerUser[]>([]);
     const [selectedGroups, setSelectedGroups] = useState<SharedServerGroup[]>([]);
@@ -67,52 +71,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
         setSelectedCities(map);
     }, [isEditing, policy]);
 
-    const { groupedLocations } = useMemo(() => {
-        const uniqueCountries = new Set();
-        const filteredLocations = locations.filter((location) => {
-            if (uniqueCountries.has(location.Country)) {
-                return false;
-            }
-            uniqueCountries.add(location.Country);
-
-            return true;
-        });
-
-        const locationsWithLocalized = filteredLocations.map((location) => {
-            const localized = getLocalizedCountryByAbbr(location.Country, countryOptions) || location.Country;
-            return {
-                ...location,
-                localizedCountryName: localized,
-            };
-        });
-
-        const sortedLocations = [...locationsWithLocalized].sort((a, b) => {
-            return a.localizedCountryName.localeCompare(b.localizedCountryName);
-        });
-
-        // Group them
-        const groups: Record<string, { country: string; cities: string[] }> = {};
-        sortedLocations.forEach((loc) => {
-            if (!groups[loc.Country]) {
-                groups[loc.Country] = {
-                    country: loc.localizedCountryName,
-                    cities: [],
-                };
-            }
-            groups[loc.Country].cities.push(loc.City);
-        });
-
-        // Convert to array and sort cities
-        const groupedLocations = Object.entries(groups)
-            .map(([country, { country: cName, cities }]) => ({
-                country,
-                localizedCountryName: cName,
-                cities: cities.sort((a, b) => a.localeCompare(b)),
-            }))
-            .sort((a, b) => a.localizedCountryName.localeCompare(b.localizedCountryName));
-
-        return { groupedLocations };
-    }, [locations, countryOptions]);
+    const groupedLocations = useMemo(() => getGroupedLocations(locations, countryOptions), [locations, countryOptions]);
 
     const allCitiesSelected = useMemo(() => {
         const allCitiesCount = groupedLocations.reduce((prev, cur) => prev + cur.cities.length, 0);
@@ -125,7 +84,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
     }, [groupedLocations, selectedCities]);
 
     const handleBack = useCallback(() => {
-        if (step === STEP.NAME) {
+        if (step === POLICY_STEP.NAME) {
             return;
         }
         setStep((currentStep) => currentStep - 1);
@@ -152,7 +111,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
     }, [policy, policyName, selectedUsers, selectedCities, applyPolicyTo, isEditing, onSuccess, rest]);
 
     const handleNext = useCallback(() => {
-        if (step === STEP.NAME) {
+        if (step === POLICY_STEP.NAME) {
             if (policyName.length < 3 || policyName.length > 40) {
                 createNotification({
                     text: c('Error').t`The policy name must be between 3 and 40 characters.`,
@@ -163,7 +122,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
             }
         }
 
-        if (step === STEP.MEMBERS) {
+        if (step === POLICY_STEP.MEMBERS) {
             const noUserSelected = applyPolicyTo === 'users' && selectedUsers.length === 0;
             const noGroupSelected = applyPolicyTo === 'groups' && selectedGroups.length === 0;
 
@@ -177,7 +136,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
             }
         }
 
-        if (step === STEP.COUNTRIES) {
+        if (step === POLICY_STEP.COUNTRIES) {
             const totalSelectedCities = Object.values(selectedCities).flat().length;
 
             if (totalSelectedCities === 0) {
@@ -199,23 +158,23 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
 
     const modalTitle = () => {
         if (!isEditing) {
-            if (step === STEP.NAME) {
+            if (step === POLICY_STEP.NAME) {
                 return c('Title').t`Create new policy`;
             }
-            if (step === STEP.MEMBERS) {
+            if (step === POLICY_STEP.MEMBERS) {
                 return c('Title').t`Add users to "${policyName}"`;
             }
-            if (step === STEP.COUNTRIES) {
+            if (step === POLICY_STEP.COUNTRIES) {
                 return c('Title').t`Add countries to "${policyName}"`;
             }
         } else {
-            if (step === STEP.NAME) {
+            if (step === POLICY_STEP.NAME) {
                 return c('Title').t`Edit name`;
             }
-            if (step === STEP.MEMBERS) {
+            if (step === POLICY_STEP.MEMBERS) {
                 return c('Title').t`Edit users`;
             }
-            if (step === STEP.COUNTRIES) {
+            if (step === POLICY_STEP.COUNTRIES) {
                 return c('Title').t`Edit countries`;
             }
         }
@@ -226,9 +185,9 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
         <ModalTwo size="large" as={Form} {...rest}>
             <ModalTwoHeader title={modalTitle()} />
             <ModalTwoContent>
-                {step === STEP.NAME && <NameStep policyName={policyName} onChangePolicyName={setPolicyName} />}
+                {step === POLICY_STEP.NAME && <NameStep policyName={policyName} onChangePolicyName={setPolicyName} />}
 
-                {step === STEP.MEMBERS && (
+                {step === POLICY_STEP.MEMBERS && (
                     <MembersStep
                         isEditing={isEditing as boolean}
                         policyName={policyName}
@@ -267,7 +226,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                     />
                 )}
 
-                {step === STEP.COUNTRIES && (
+                {step === POLICY_STEP.COUNTRIES && (
                     <CountriesStep
                         isEditing={isEditing as boolean}
                         policyName={policyName}
@@ -312,10 +271,10 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                 )}
             </ModalTwoContent>
 
-            <ModalTwoFooter className={`flex ${step !== STEP.NAME ? 'justify-between' : 'justify-end'}`}>
-                {step !== STEP.NAME && <Button type="button" onClick={handleBack}>{c('Action').t`Back`}</Button>}
+            <ModalTwoFooter className={`flex ${step !== POLICY_STEP.NAME ? 'justify-between' : 'justify-end'}`}>
+                {step !== POLICY_STEP.NAME && <Button type="button" onClick={handleBack}>{c('Action').t`Back`}</Button>}
                 <Button color="norm" type="button" onClick={handleNext}>
-                    {step === STEP.COUNTRIES ? c('Action').t`Save` : c('Action').t`Continue`}
+                    {step === POLICY_STEP.COUNTRIES ? c('Action').t`Save` : c('Action').t`Continue`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
