@@ -143,6 +143,8 @@ export type CreatePendingFileRequest = {
     Metadata: string;
     /* Number of chunks this file will have */
     ChunkCount: number;
+    /* File version */
+    EncryptionVersion: number;
 };
 export type UpdatePendingFileRequest = {
     /* File metadata encrypted with an attachmentKey and encoded in Base64 */
@@ -721,6 +723,8 @@ export type ItemFileOutput = {
     ItemKeyRotation: number;
     /* Chunks that contain the contents of the file */
     Chunks: ItemFileChunkOutput[];
+    /* Encryption version of the file */
+    EncryptionVersion: number;
     /* Item revision when the file was added */
     RevisionAdded: number;
     /* Item revision when the file was removed. If null, the file is still present */
@@ -777,10 +781,7 @@ export type MemberMonitorReportList = {
     /* Last ID for getting the next batch */
     TotalMemberCount: number;
 };
-export type EventIDGetResponse = {
-    /* Last event ID for this share */
-    EventID: string;
-};
+export type EventIDGetResponse = { EventID: Id };
 export type PassEventListResponse = {
     UpdatedShare: ShareGetResponse;
     /* New or updated items */
@@ -976,6 +977,18 @@ export type SRPGetOutput = {
     SrpSalt: BinaryString;
     /* SRP version */
     Version: number;
+};
+export type SyncEventListOutput = {
+    LastEventID: Id;
+    ItemsUpdated?: SyncEventShareItemOutput[];
+    ItemsDeleted?: SyncEventShareItemOutput[];
+    SharesUpdated?: SyncEventShareOutput[];
+    SharesDeleted?: SyncEventShareOutput[];
+    SharesToGetInvites?: SyncEventShareOutput[];
+    SharesWithInvitesToCreate?: SyncEventShareOutput[];
+    PlanChanged?: boolean;
+    EventsPending?: boolean;
+    FullRefresh?: boolean;
 };
 export type ItemMoveIndividualToShareRequest = {
     /* Encrypted ID of the source item to move */
@@ -1367,6 +1380,8 @@ export type UserDataResponse = {
     /* How many alias are waiting to be synced */
     PendingAliasToSync: number;
 };
+export type SyncEventShareItemOutput = { ShareID: Id; ItemID: Id; EventToken: Id };
+export type SyncEventShareOutput = { ShareID: Id; EventToken: Id };
 export enum BreachAlertState {
     UNREAD = 1,
     READ = 2,
@@ -1775,9 +1790,9 @@ export type ApiResponse<Path extends string, Method extends string> =
             { Code: ResponseCodeSuccess }
         :   never
     : Path extends `pass/v1/share/${string}/item/${string}` ?
-        Method extends `put` ?
-            { Code: ResponseCodeSuccess; Item: ItemRevisionContentsResponse }
-        :   never
+        Method extends `get` ? { Code: ResponseCodeSuccess; Item: ItemRevisionContentsResponse }
+        : Method extends `put` ? { Code: ResponseCodeSuccess; Item: ItemRevisionContentsResponse }
+        : never
     : Path extends `pass/v1/share/${string}/user/${string}` ?
         Method extends `get` ? { Code: ResponseCodeSuccess; Share: ActiveShareGetResponse }
         : Method extends `put` ? { Code: ResponseCodeSuccess }
@@ -1850,6 +1865,10 @@ export type ApiResponse<Path extends string, Method extends string> =
     : Path extends `pass/v1/user/default_share/${string}` ?
         Method extends `put` ?
             { Code: ResponseCodeSuccess }
+        :   never
+    : Path extends `pass/v1/user/sync_event/${string}` ?
+        Method extends `get` ?
+            { Code: ResponseCodeSuccess; Events: SyncEventListOutput }
         :   never
     : Path extends `pass/v1/vault/share/${string}` ?
         Method extends `get` ?
@@ -1936,6 +1955,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `post` ? { Code: ResponseCodeSuccess }
         : Method extends `delete` ? { Code: ResponseCodeSuccess }
         : never
+    : Path extends `pass/v1/user/sync_event` ?
+        Method extends `get` ?
+            EventIDGetResponse & { Code: ResponseCodeSuccess }
+        :   never
     : Path extends `pass/v1/invite/${string}` ?
         Method extends `post` ? { Code: ResponseCodeSuccess; Share: ShareGetResponse }
         : Method extends `delete` ? { Code: ResponseCodeSuccess }
