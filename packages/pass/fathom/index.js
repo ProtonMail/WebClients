@@ -588,12 +588,13 @@ const containedInAncestor = (rect, ancestorRect) =>
 const isNegligibleRect = (rect) => rect.width <= 1 || rect.height <= 1;
 
 const isVisible = (fnodeOrElement, options) => {
+    const useCache = !options.skipCache;
     const element = utils.toDomElement(fnodeOrElement);
     const seen = [];
     let transparent = false;
     const cache = getVisibilityCache(options.opacity ? 'visibility:op' : 'visibility');
     const cachedVisibility = getCachedVisbility(element, options);
-    if (cachedVisibility !== undefined) return cachedVisibility;
+    if (useCache && cachedVisibility !== undefined) return cachedVisibility;
     const win = utils.windowForElement(element);
     const doc = win.document;
     const viewportWidth = win.innerWidth || doc.documentElement.clientWidth;
@@ -621,7 +622,7 @@ const isVisible = (fnodeOrElement, options) => {
                     ? isOnScreen(prevRef.rect)
                     : true;
             const cachedVisibility = getCachedVisbility(ancestor, options);
-            if (cachedVisibility !== undefined) return cachedVisibility;
+            if (useCache && cachedVisibility !== undefined) return cachedVisibility;
             const { opacity, display, position, overflow, visibility } = win.getComputedStyle(ancestor);
             seen.push(ancestor);
             /** Anything below <0.1 opacity is considered hidden */
@@ -666,11 +667,15 @@ const isVisible = (fnodeOrElement, options) => {
         return true;
     };
     const visible = check();
-    if (options.opacity) {
-        if (visible || !transparent) setCachedVisibility(getVisibilityCache('visibility'))(seen, visible);
-        else setCachedVisibility(getVisibilityCache('visibility'))(seen.slice(0, -1), visible);
+
+    if (useCache) {
+        if (options.opacity) {
+            if (visible || !transparent) setCachedVisibility(getVisibilityCache('visibility'))(seen, visible);
+            else setCachedVisibility(getVisibilityCache('visibility'))(seen.slice(0, -1), visible);
+        }
+        setCachedVisibility(cache)(seen, visible);
     }
-    setCachedVisibility(cache)(seen, visible);
+
     return visible;
 };
 
