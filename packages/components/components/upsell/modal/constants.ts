@@ -33,7 +33,6 @@ export type UpsellFeatureName =
     | 'all-proton-products'
     | 'address-by-plan'
     | 'storage-by-plan'
-    | 'breach-alerts'
     | 'password-health'
     | 'account-protection'
     | 'more-premium-features'
@@ -171,10 +170,6 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFea
             getText: () => getTextFromFeature(feature),
             getTooltip: () => feature.tooltip ?? '',
         };
-    },
-    'breach-alerts': {
-        icon: 'shield-2-bolt',
-        getText: () => c('new_plans: feature').t`Breach alerts`,
     },
     'password-health': {
         icon: 'lock',
