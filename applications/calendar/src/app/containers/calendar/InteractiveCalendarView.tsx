@@ -1364,6 +1364,7 @@ const InteractiveCalendarView = ({
                     // - Action is trigerred by an attendee: It should concern only organisers.
                     if (
                         !getIsCalendarEvent(originalCalendarEvent) ||
+                        !originalCalendarEvent.IsOrganizer ||
                         !originalCalendarEvent.RRule ||
                         (getIsUpdateSyncOperation(operation) &&
                             (operation.data.resetNotes || operation.data.isAttendee))
