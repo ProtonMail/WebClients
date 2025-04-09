@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 
 import {
   AppsDropdown,
@@ -41,22 +41,13 @@ import { useHistory, useRouteMatch } from 'react-router'
 import { HOMEPAGE_RECENTS_PATH } from '../../../__components/AppContainer'
 import { useEvent } from '~/utils/misc'
 import clsx from '@proton/utils/clsx'
+import { IS_REFRESH_ENABLED, IS_FAVORITES_ENABLED } from '../__utils/features'
 
 const USER_DROPDOWN_OVERRIDES =
   '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2]'
 
 // layout
 // ------
-
-function InternalPageNotice() {
-  return (
-    <div aria-hidden className="bg-[red]/80 p-2 text-center text-[white]">
-      <p className="m-0">
-        This page is <b>internal</b>. It's a work in progress - expect missing, incomplete and broken features.
-      </p>
-    </div>
-  )
-}
 
 export type HomepageLayoutProps = {
   children: ReactNode
@@ -69,12 +60,7 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
   return (
     <PrivateAppContainer
       containerRef={(el) => el?.classList.add('is-homepage')}
-      top={
-        <>
-          <InternalPageNotice />
-          <TopBanners app={APPS.PROTONDOCS} />
-        </>
-      }
+      top={<TopBanners app={APPS.PROTONDOCS} />}
       header={<Header toggleHeaderExpanded={toggleExpanded} isHeaderExpanded={expanded} />}
       sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} />}
       drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
@@ -109,7 +95,12 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
         expanded={isHeaderExpanded}
         onToggleExpand={toggleHeaderExpanded}
         isSmallViewport={viewportWidth['<=small']}
-        actionArea={<Search value={searchValue} onChange={(value) => setSearch(value, true)} />}
+        actionArea={
+          <>
+            <MobileSearch className="small:!hidden" value={searchValue} onChange={(value) => setSearch(value, true)} />
+            <Search className="!hidden small:!block" value={searchValue} onChange={(value) => setSearch(value, true)} />
+          </>
+        }
       />
     </div>
   )
@@ -118,9 +109,9 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
 // search
 // ------
 
-type SearchProps = { value: string | undefined; onChange: (value: string | undefined) => void }
+type SearchProps = { value: string | undefined; onChange: (value: string | undefined) => void; className?: string }
 
-function Search({ value, onChange }: SearchProps) {
+function Search({ value, onChange, className }: SearchProps) {
   const isRecentsRoute = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
   const handleChange = useEvent((value: string | undefined) => {
@@ -131,25 +122,85 @@ function Search({ value, onChange }: SearchProps) {
     onChange(value)
   })
   return (
-    <Input
-      className="max-w-[30.625rem]"
-      inputClassName="h-[32px] small:h-auto"
-      prefix={
-        <span>
-          <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
-        </span>
-      }
-      value={value ?? ''}
-      onChange={(e) => handleChange(e.target.value)}
-      placeholder={c('Action').t`Search recent documents`}
-    />
+    <div className={className}>
+      <Input
+        className="max-w-[30.625rem]"
+        inputClassName="h-[32px] small:h-auto"
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            onChange(undefined)
+          }
+        }}
+        prefix={
+          <span>
+            <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
+          </span>
+        }
+        value={value ?? ''}
+        onChange={(e) => handleChange(e.target.value)}
+        placeholder={c('Action').t`Search recent documents`}
+      />
+    </div>
+  )
+}
+
+function MobileSearch({ value, onChange, className }: SearchProps) {
+  const isRecentsRoute = useRouteMatch(HOMEPAGE_RECENTS_PATH)
+  const history = useHistory()
+  const handleChange = useEvent((value: string | undefined) => {
+    // Ensure that the user is redirected to the recents page when searching.
+    if (value && value.length > 0 && !isRecentsRoute) {
+      history.push('/recents')
+    }
+    onChange(value)
+  })
+  const [isActive, setActive] = useState(false)
+  const isInput = (value && value.length > 0) || isActive
+  return (
+    <div className={clsx('flex items-center gap-2', className)}>
+      {isInput ? (
+        <Input
+          ref={(element) => {
+            if (isActive) {
+              element?.focus()
+            }
+          }}
+          onFocus={() => setActive(true)}
+          onBlur={() => setActive(false)}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') {
+              onChange(undefined)
+            }
+          }}
+          className="w-full"
+          inputClassName="h-[32px] small:h-auto"
+          prefix={
+            <span>
+              <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
+            </span>
+          }
+          value={value ?? ''}
+          onChange={(e) => handleChange(e.target.value)}
+          placeholder={c('Action').t`Search recent documents`}
+        />
+      ) : (
+        <>
+          <div className="grow font-[.875rem] font-semibold">
+            {isRecentsRoute ? c('Info').t`Recents` : c('Info').t`Trash`}
+          </div>
+          <Tooltip title={c('Action').t`Search recent documents`}>
+            <Button size="medium" icon shape="outline" color="weak" onClick={() => setActive(true)}>
+              <Icon name="magnifier" size={4} />
+            </Button>
+          </Tooltip>
+        </>
+      )}
+    </div>
   )
 }
 
 // sidebar
 // -------
-
-const FAVORITES_ENABLED = false
 
 type SidebarProps = { expanded: boolean; onToggle: () => void; setExpanded: (value: boolean) => void }
 
@@ -205,38 +256,40 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
                 <Icon name="house" />
                 <span>{c('Info').t`Recents`}</span>
               </span>
-              <Tooltip title={c('Info').t`Update recent documents`}>
-                <Button
-                  aria-label={c('Info').t`Update recent documents`}
-                  icon
-                  size="small"
-                  shape="ghost"
-                  className="-mr-1"
-                  disabled={isRecentsUpdating}
-                  onClick={async (e) => {
-                    e.stopPropagation()
-                    e.preventDefault()
-                    if (!isRecents) {
-                      history.push('/recents')
-                    }
-                    await updateRecentDocuments()
-                    createNotification({
-                      text: c('Notification').t`Recent documents updated.`,
-                      expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
-                    })
-                    setExpanded(false)
-                  }}
-                >
-                  <Icon
-                    data-updating={isRecentsUpdating ? '' : undefined}
-                    className="data-[updating]:animate-spin"
-                    name="arrow-rotate-right"
-                  />
-                </Button>
-              </Tooltip>
+              {IS_REFRESH_ENABLED ? (
+                <Tooltip title={c('Info').t`Update recent documents`}>
+                  <Button
+                    aria-label={c('Info').t`Update recent documents`}
+                    icon
+                    size="small"
+                    shape="ghost"
+                    className="-mr-1"
+                    disabled={isRecentsUpdating}
+                    onClick={async (e) => {
+                      e.stopPropagation()
+                      e.preventDefault()
+                      if (!isRecents) {
+                        history.push('/recents')
+                      }
+                      await updateRecentDocuments()
+                      createNotification({
+                        text: c('Notification').t`Recent documents updated.`,
+                        expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
+                      })
+                      setExpanded(false)
+                    }}
+                  >
+                    <Icon
+                      data-updating={isRecentsUpdating ? '' : undefined}
+                      className="data-[updating]:animate-spin"
+                      name="arrow-rotate-right"
+                    />
+                  </Button>
+                </Tooltip>
+              ) : null}
             </SidebarListItemLink>
           </SidebarListItem>
-          {FAVORITES_ENABLED && (
+          {IS_FAVORITES_ENABLED && (
             <SidebarListItem onClick={() => setExpanded(false)}>
               <SidebarListItemLink to="/favorites" exact={true} activeClassName="!font-semibold">
                 <span className="flex items-center gap-2">
