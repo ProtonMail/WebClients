@@ -217,10 +217,10 @@ export default function useActions() {
 
         const result = await links.trashLinks(
             abortSignal,
-            linksToTrash.map(({ linkId, rootShareId, parentLinkId }) => ({
+            linksToTrash.map(({ linkId, rootShareId, volumeId }) => ({
                 linkId,
                 shareId: rootShareId,
-                parentLinkId,
+                volumeId,
             }))
         );
 
@@ -228,21 +228,19 @@ export default function useActions() {
         // very well to the rest of our state.
         // removePhotosFromCache(result.successes);
 
-        if (!notify) {
-            return;
+        if (notify) {
+            const undoAction = async () => {
+                const linksToUndo = result.successes
+                    .map((linkId) => linksToTrash.find((link) => link.linkId === linkId))
+                    .filter(isTruthy)
+                    .map((link) => ({ linkId: link.linkId, shareId: link.rootShareId, volumeId: link.volumeId }));
+
+                const undoResult = await links.restoreLinks(abortSignal, linksToUndo);
+                createRestoredItemsNotifications(linksToTrash, undoResult.successes, undoResult.failures);
+            };
+
+            createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
         }
-
-        const undoAction = async () => {
-            const linksToUndo = result.successes
-                .map((linkId) => linksToTrash.find((link) => link.linkId === linkId))
-                .filter(isTruthy)
-                .map((link) => ({ linkId: link.linkId, shareId: link.rootShareId }));
-
-            const undoResult = await links.restoreLinks(abortSignal, linksToUndo);
-            createRestoredItemsNotifications(linksToTrash, undoResult.successes, undoResult.failures);
-        };
-
-        createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
     };
 
     /**
@@ -256,22 +254,20 @@ export default function useActions() {
 
         const result = await links.restoreLinks(
             abortSignal,
-            linksToRestore.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
+            linksToRestore.map(({ linkId, rootShareId, volumeId }) => ({ linkId, shareId: rootShareId, volumeId }))
         );
 
-        if (!notify) {
-            return;
+        if (notify) {
+            const undoAction = async () => {
+                const linksToTrash = result.successes
+                    .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))
+                    .filter(isTruthy);
+
+                await trashLinks(abortSignal, linksToTrash);
+            };
+
+            createRestoredItemsNotifications(linksToRestore, result.successes, result.failures, undoAction);
         }
-
-        const undoAction = async () => {
-            const linksToTrash = result.successes
-                .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))
-                .filter(isTruthy);
-
-            await trashLinks(abortSignal, linksToTrash);
-        };
-
-        createRestoredItemsNotifications(linksToRestore, result.successes, result.failures, undoAction);
     };
 
     const deletePermanently = async (abortSignal: AbortSignal, linksToDelete: LinkInfo[]) => {
@@ -294,7 +290,7 @@ export default function useActions() {
             onSubmit: async () => {
                 const result = await links.deleteTrashedLinks(
                     abortSignal,
-                    linksToDelete.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
+                    linksToDelete.map(({ linkId, volumeId }) => ({ linkId, volumeId }))
                 );
                 createDeletedItemsNotifications(linksToDelete, result.successes, result.failures);
             },

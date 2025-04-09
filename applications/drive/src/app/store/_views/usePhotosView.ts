@@ -51,7 +51,7 @@ export const usePhotosView = () => {
 
     // This will be flattened to contain categories and links
     const { photosViewData, photoLinkIdToIndexMap, photoLinkIds } = useMemo(() => {
-        if (!shareId || !linkId) {
+        if (!shareId || !linkId || !volumeId) {
             return {
                 photosViewData: [],
                 photoLinkIdToIndexMap: {},
@@ -67,6 +67,7 @@ export const usePhotosView = () => {
                 linkId: photo.linkId,
                 rootShareId: shareId,
                 parentLinkId: linkId,
+                volumeId: volumeId,
                 isFile: true,
                 activeRevision: {
                     photo,

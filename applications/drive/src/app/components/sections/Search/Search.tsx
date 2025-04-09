@@ -38,6 +38,7 @@ interface SearchItem extends FileBrowserBaseItem {
     rootShareId: string;
     isShared?: boolean;
     isAdmin: boolean;
+    volumeId: string;
 }
 
 interface Props {
