@@ -38,7 +38,9 @@ interface CreateCalendarEventArguments {
     isAttendee?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
-    eventCommentsMap?: { [token: string]: AttendeeComment };
+    getAttendeesCommentsMap?: (sharedSessionKey: SessionKey) => Promise<{
+        [attendeeToken: string]: AttendeeComment;
+    }>;
 }
 export const createCalendarEvent = async ({
     eventComponent,
@@ -53,7 +55,7 @@ export const createCalendarEvent = async ({
     isAttendee,
     removedAttendeesEmails = [],
     addedAttendeesPublicKeysMap,
-    eventCommentsMap,
+    getAttendeesCommentsMap,
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, notificationsPart, attendeesPart } = getParts(eventComponent);
     const cancelledOccurrenceSharedPart = cancelledOccurrenceVevent
@@ -69,6 +71,8 @@ export const createCalendarEvent = async ({
         shouldHaveCalendarKey ? oldCalendarSessionKey || createSessionKey(publicKey) : undefined,
         oldSharedSessionKey || createSessionKey(publicKey),
     ]);
+
+    const eventCommentsMap = getAttendeesCommentsMap ? await getAttendeesCommentsMap(sharedSessionKey) : undefined;
 
     const [
         encryptedCalendarSessionKey,

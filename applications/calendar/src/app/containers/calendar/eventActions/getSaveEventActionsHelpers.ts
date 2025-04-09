@@ -212,6 +212,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         isAttendee: false,
         addedAttendeesPublicKeysMap,
         isBreakingChange,
+        resetNotes: isBreakingChange,
     });
 };
 

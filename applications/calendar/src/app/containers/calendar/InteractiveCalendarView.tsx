@@ -199,10 +199,7 @@ import type {
     SyncEventActionOperations,
     UpdateEventActionOperation,
 } from './getSyncMultipleEventsPayload';
-import getSyncMultipleEventsPayload, {
-    getIsCreateSyncOperation,
-    getIsUpdateSyncOperation,
-} from './getSyncMultipleEventsPayload';
+import getSyncMultipleEventsPayload, { getIsUpdateSyncOperation } from './getSyncMultipleEventsPayload';
 import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
 import type {
     AugmentedSendPreferences,
@@ -1369,8 +1366,7 @@ const InteractiveCalendarView = ({
                         !getIsCalendarEvent(originalCalendarEvent) ||
                         !originalCalendarEvent.RRule ||
                         (getIsUpdateSyncOperation(operation) &&
-                            (operation.data.isBreakingChange || operation.data.isAttendee)) ||
-                        (getIsCreateSyncOperation(operation) && !operation.data.isPersonalSingleEdit)
+                            (operation.data.resetNotes || operation.data.isAttendee))
                     ) {
                         return {};
                     }
@@ -1381,7 +1377,8 @@ const InteractiveCalendarView = ({
                     // Attendees from vevent will have to
                     const attendeesFromVevent = operation.data.veventComponent.attendee;
 
-                    if (!attendeesFromVevent?.length || attendeesFromApi.length === 0) {
+                    // If no attendees or no keys, return early
+                    if (!attendeesFromVevent?.length || attendeesFromApi.length === 0 || !nextSessionKey) {
                         return {};
                     }
 
@@ -1393,10 +1390,8 @@ const InteractiveCalendarView = ({
                                     (attendeeFromApi) => attendeeFromApi.Token === attendee.parameters?.['x-pm-token']
                                 );
 
-                                // If no comment early return with no values
-                                // SessionKey should be there but it moves as possibly `undefined` through
-                                // the codebase, so typescript safety there
-                                if (!attendeeEmail || !attendeeFromApi?.Comment || !nextSessionKey) {
+                                // If no comment early return
+                                if (!attendeeEmail || !attendeeFromApi?.Comment) {
                                     return null;
                                 }
 
