@@ -80,7 +80,12 @@ export const useFileImporter = () => {
                                             }
                                             const file = new File([blob], filename);
 
-                                            const fileID = await fileUpload.start(file, uniqueId(), onFileProgress);
+                                            const fileID = await fileUpload.start(
+                                                file,
+                                                shareId,
+                                                uniqueId(),
+                                                onFileProgress
+                                            );
 
                                             toAdd.push(fileID);
                                             report.ignoredFiles = report.ignoredFiles?.filter(not(eq(path)));

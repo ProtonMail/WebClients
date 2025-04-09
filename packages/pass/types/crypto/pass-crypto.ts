@@ -21,8 +21,10 @@ import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import type { Address, DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
+import type { FileID } from '@proton/pass/types/data';
 import type {
     InviteTargetKey,
+    ItemId,
     ItemKey,
     ItemShareKey,
     OpenedItem,
@@ -56,39 +58,39 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         clear?: boolean;
     }) => Promise<void>;
     clear: () => void;
-    getShareManager: (shareId: string) => ShareManager;
+    getShareManager: (shareId: ShareId) => ShareManager;
     createVault: (content: Uint8Array) => Promise<VaultCreateRequest>;
-    updateVault: (data: { shareId: string; content: Uint8Array }) => Promise<VaultUpdateRequest>;
-    canOpenShare: (shareId: string) => boolean;
+    updateVault: (data: { shareId: ShareId; content: Uint8Array }) => Promise<VaultUpdateRequest>;
+    canOpenShare: (shareId: ShareId) => boolean;
     openShare: <T extends ShareType = ShareType>(data: {
         encryptedShare: ShareGetResponse;
         shareKeys: ShareKeyResponse[];
     }) => Promise<MaybeNull<TypedOpenedShare<T>>>;
-    updateShareKeys: (data: { shareId: string; shareKeys: ShareKeyResponse[] }) => Promise<void>;
-    removeShare: (shareId: string) => void;
-    openItem: (data: { shareId: string; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
-    createItem: (data: { shareId: string; content: Uint8Array }) => Promise<ItemCreateRequest>;
+    updateShareKeys: (data: { shareId: ShareId; shareKeys: ShareKeyResponse[] }) => Promise<void>;
+    removeShare: (shareId: ShareId) => void;
+    openItem: (data: { shareId: ShareId; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
+    createItem: (data: { shareId: ShareId; content: Uint8Array }) => Promise<ItemCreateRequest>;
     updateItem: (data: { content: Uint8Array; lastRevision: number; itemKey: ItemKey }) => Promise<ItemUpdateRequest>;
     moveItem: (data: {
         encryptedItemKeys: EncodedItemKeyRotation[];
-        itemId: string;
-        shareId: string;
+        itemId: ItemId;
+        shareId: ShareId;
         targetShareId: string;
     }) => Promise<ItemMoveIndividualToShareRequest>;
     createInvite: (data: {
         email: string;
         invitedPublicKey: string;
         role: ShareRole;
-        shareId: string;
+        shareId: ShareId;
         targetKeys: InviteTargetKey[];
-        itemId?: string;
+        itemId?: ItemId;
     }) => Promise<InviteCreateRequest>;
-    promoteInvite: (data: { shareId: string; invitedPublicKey: string }) => Promise<NewUserInvitePromoteRequest>;
+    promoteInvite: (data: { shareId: ShareId; invitedPublicKey: string }) => Promise<NewUserInvitePromoteRequest>;
     createNewUserInvite: (data: {
         email: string;
         role: ShareRole;
-        shareId: string;
-        itemId?: string;
+        shareId: ShareId;
+        itemId?: ItemId;
     }) => Promise<NewUserInviteCreateRequest>;
     acceptVaultInvite: (data: {
         invitedAddressId: string;
@@ -102,28 +104,49 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         inviterPublicKeys: string[];
     }) => Promise<Uint8Array>;
 
-    createFileDescriptor: (data: { metadata: Uint8Array; fileID?: string }) => Promise<FileDescriptorProcessResult>;
-    openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey }) => Promise<Uint8Array>;
-    createFileChunk: (data: { chunk: Blob; fileID: string }) => Promise<Blob>;
-    openFileChunk: (data: { chunk: Uint8Array; fileID: string }) => Promise<Uint8Array>;
-    registerFileKey: (data: { fileKey: Uint8Array; fileID: string }) => void;
-    getFileKey: (data: { fileID: string; itemKey: ItemKey }) => Promise<Uint8Array>;
+    createFileDescriptor: (data: {
+        fileID?: FileID;
+        metadata: Uint8Array;
+        shareId: ShareId;
+        encryptionVersion: number;
+    }) => Promise<FileDescriptorProcessResult>;
+    openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array>;
+    createFileChunk: (data: {
+        chunk: Blob;
+        chunkIndex: number;
+        encryptionVersion: number;
+        fileID: FileID;
+        shareId: ShareId;
+        totalChunks: number;
+    }) => Promise<Blob>;
+    openFileChunk: (data: {
+        chunk: Uint8Array;
+        chunkIndex: number;
+        encryptionVersion: number;
+        fileID: FileID;
+        shareId: ShareId;
+        totalChunks: number;
+    }) => Promise<Uint8Array>;
+    registerFileKey: (data: { fileKey: Uint8Array; fileID: FileID; shareId: ShareId }) => void;
+    getFileKey: (data: { shareId: ShareId; fileID: FileID }) => Uint8Array;
+    encryptFileKey: (data: { fileID: FileID; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array>;
 
     createSecureLink: (data: { itemKey: ItemKey; shareId?: string }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;
     openLinkKey: (data: {
         encryptedLinkKey: string;
         linkKeyShareKeyRotation: number;
-        shareId: string;
-        itemId: string;
+        shareId: ShareId;
+        itemId: ItemId;
         linkKeyEncryptedWithItemKey: boolean;
     }) => Promise<Uint8Array>;
-    openItemKey: (data: { encryptedItemKey: EncodedItemKeyRotation; shareId: string }) => Promise<ItemKey>;
+    openItemKey: (data: { encryptedItemKey: EncodedItemKeyRotation; shareId: ShareId }) => Promise<ItemKey>;
     openSecureLinkFileDescriptor: (data: {
-        encryptedItemKey: string;
         encryptedFileKey: string;
+        encryptedItemKey: string;
         encryptedMetadata: string;
-        fileID: string;
+        encryptionVersion: number;
+        fileID: FileID;
         linkKey: string;
     }) => Promise<Uint8Array>;
 }

@@ -129,3 +129,4 @@ export const FILE_MIME_TYPE_DETECTION_CHUNK_SIZE = 1.5 * 1024 * 1024; // 1.5MB
 /** 1.5 minute - matching drive */
 export const FILE_UPLOAD_TIMEOUT = 90_000;
 export const FILE_DOWNLOAD_TIMEOUT = 90_000;
+export const FILE_PUBLIC_SHARE = 'secure-link';

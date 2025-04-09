@@ -13,6 +13,7 @@ import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
+import { useFileEncryptionVersion } from '@proton/pass/hooks/files/useFileEncryptionVersion';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
@@ -23,7 +24,7 @@ import {
     selectUserStorageQuota,
     selectUserStorageUsed,
 } from '@proton/pass/store/selectors';
-import type { BaseFileDescriptor, FileAttachmentValues, FileID } from '@proton/pass/types';
+import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { updateMap } from '@proton/pass/utils/fp/state';
@@ -38,6 +39,7 @@ import { FileAttachmentsSummary } from './FileAttachmentsSummary';
 
 type Props = FieldProps<{}, FileAttachmentValues> &
     PropsWithChildren<{
+        shareId: ShareId;
         filesCount?: number /* Optional: When item is new, there are no previous files */;
         onDeleteAllFiles?: () => void;
     }>;
@@ -45,9 +47,10 @@ type Props = FieldProps<{}, FileAttachmentValues> &
 type FileUploadDescriptor = Omit<BaseFileDescriptor, 'fileID'> & { uploadID: string; fileID?: FileID };
 
 export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
-    WithPaidUser(({ children, form, filesCount = 0, onDeleteAllFiles }) => {
+    WithPaidUser(({ children, form, filesCount = 0, shareId, onDeleteAllFiles }) => {
         const { popup } = usePassCore();
         const dispatch = useAsyncRequestDispatch();
+        const fileEncryptionVersion = useFileEncryptionVersion();
 
         const fileUpload = useFileUpload();
         const usedStorage = useSelector(selectUserStorageUsed);
@@ -62,46 +65,51 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
         const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
 
-        const uploadFiles = useCallback(async (toUpload: File[]) => {
-            const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
+        const uploadFiles = useCallback(
+            async (toUpload: File[]) => {
+                const encryptionVersion = fileEncryptionVersion.current;
+                const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
 
-            setFiles(
-                updateMap((next) => {
-                    uploads.forEach(({ file, uploadID }) => {
-                        next.set(uploadID, {
-                            name: file.name,
-                            size: file.size,
-                            mimeType: file.type,
-                            uploadID,
-                        });
-                    });
-                })
-            );
-
-            await Promise.all(
-                uploads.map(async ({ file, uploadID }) =>
-                    fileUpload
-                        .start(file, uploadID)
-                        .then((fileID) => {
-                            setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
-                            return form.setValues((values) => {
-                                const toAdd = values.files.toAdd.concat([fileID]);
-                                return partialMerge(values, { files: { toAdd } });
+                setFiles(
+                    updateMap((next) => {
+                        uploads.forEach(({ file, uploadID }) => {
+                            next.set(uploadID, {
+                                name: file.name,
+                                size: file.size,
+                                mimeType: file.type,
+                                uploadID,
+                                encryptionVersion,
                             });
-                        })
-                        .catch((error) => {
-                            setFiles(updateMap((next) => next.delete(uploadID)));
-                            if (!isAbortError(error)) {
-                                const detail = error instanceof Error ? `(${error.message})` : '';
-                                createNotification({
-                                    type: 'error',
-                                    text: `${c('Pass_file_attachments').t`"${file.name}" could not be uploaded.`} ${detail}`,
+                        });
+                    })
+                );
+
+                await Promise.all(
+                    uploads.map(async ({ file, uploadID }) =>
+                        fileUpload
+                            .start(file, shareId, uploadID)
+                            .then((fileID) => {
+                                setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
+                                return form.setValues((values) => {
+                                    const toAdd = values.files.toAdd.concat([fileID]);
+                                    return partialMerge(values, { files: { toAdd } });
                                 });
-                            }
-                        })
-                )
-            );
-        }, []);
+                            })
+                            .catch((error) => {
+                                setFiles(updateMap((next) => next.delete(uploadID)));
+                                if (!isAbortError(error)) {
+                                    const detail = error instanceof Error ? `(${error.message})` : '';
+                                    createNotification({
+                                        type: 'error',
+                                        text: `${c('Pass_file_attachments').t`"${file.name}" could not be uploaded.`} ${detail}`,
+                                    });
+                                }
+                            })
+                    )
+                );
+            },
+            [shareId]
+        );
 
         const onAddFiles = useCallback(
             async (newFiles: File[]) => {
@@ -154,6 +162,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
             const res = await dispatch(fileUpdateMetadata, {
                 ...file,
                 fileID: file.fileID,
+                shareId,
                 name: fileName,
             });
 

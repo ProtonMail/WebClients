@@ -1,7 +1,20 @@
-import type { FileMetadata, ItemFileChunkOutput, MaybeNull, SelectedItem, SelectedRevision } from '@proton/pass/types';
+import type {
+    FileMetadata,
+    ItemFileChunkOutput,
+    ItemId,
+    MaybeNull,
+    SelectedItem,
+    SelectedRevision,
+    ShareId,
+} from '@proton/pass/types';
 
 export type FileID = string;
-export type BaseFileDescriptor = FileMetadata & { size: number; fileID: FileID };
+
+export type BaseFileDescriptor = FileMetadata & {
+    encryptionVersion: number;
+    fileID: FileID;
+    size: number;
+};
 
 export type FileDescriptor = BaseFileDescriptor & {
     chunks: ItemFileChunkOutput[];
@@ -10,16 +23,30 @@ export type FileDescriptor = BaseFileDescriptor & {
     fileUID: string;
 };
 
-export type FileInitiateUploadDTO = FileMetadata & { totalChunks: number; uploadID: string };
-export type FileChunkUploadDTO = { fileID: FileID; index: number } & (
-    | { type: 'blob'; blob: Blob }
-    | { type: 'fs'; ref: string }
-);
+export type FileInitiateUploadDTO = FileMetadata & {
+    encryptionVersion: number;
+    shareId: ShareId;
+    totalChunks: number;
+    uploadID: string;
+};
+
+export type FileChunkUploadDTO = {
+    chunkIndex: number;
+    encryptionVersion: number;
+    fileID: FileID;
+    shareId: ShareId;
+    totalChunks: number;
+} & ({ type: 'blob'; blob: Blob } | { type: 'fs'; ref: string });
+
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };
-export type FileMetadataDTO = BaseFileDescriptor & Partial<SelectedItem>;
+export type FileMetadataDTO = BaseFileDescriptor & {
+    /** Optional in-case item has not been created yet  */
+    itemId?: ItemId;
+    shareId: ShareId;
+};
 
 type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
-type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[] };
+type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[]; encryptionVersion: number };
 
 export type FileDownloadDTO = FileDownloadDTOBase & SelectedItem;
 export type FileDownloadChunk = FileDownloadChunkBase & SelectedItem;

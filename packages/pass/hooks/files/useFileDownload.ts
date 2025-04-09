@@ -13,6 +13,7 @@ import { download } from '@proton/pass/utils/dom/download';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { abortable } from '@proton/pass/utils/fp/promises';
 import { updateSet } from '@proton/pass/utils/fp/state';
+import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 export const useFileDownload = () => {
@@ -53,7 +54,8 @@ export const useFileDownload = () => {
 
     const start = useCallback(
         async (file: FileDescriptor, options: { filesToken: string } | SelectedItem): Promise<void> => {
-            const { fileID } = file;
+            const { fileID, encryptionVersion } = file;
+            logger.debug(`[File::download::v${encryptionVersion}] downloading ${logId(fileID)}`);
 
             try {
                 const ctrl = new AbortController();
@@ -66,14 +68,14 @@ export const useFileDownload = () => {
 
                 const res = await (() => {
                     if ('filesToken' in options) {
-                        const dto = { fileID, chunkIDs, ...options };
+                        const dto = { fileID, chunkIDs, encryptionVersion, ...options };
                         return abortable(signal)(
                             () => asyncDispatch(fileDownloadPublic, dto),
                             () => dispatch(requestCancel(fileDownloadPublic.requestID(dto)))
                         );
                     }
 
-                    const dto = { fileID, chunkIDs, tabId, ...options };
+                    const dto = { fileID, chunkIDs, tabId, encryptionVersion, ...options };
                     return abortable(signal)(
                         () => asyncDispatch(fileDownload, dto),
                         () => dispatch(requestCancel(fileDownload.requestID(dto)))

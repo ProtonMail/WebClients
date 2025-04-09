@@ -62,10 +62,12 @@ export const createSecureLink = async (
 export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promise<SecureLinkItem> => {
     try {
         const { PublicLinkContent } = await api({ url: `pass/v1/public_link/content/${token}`, method: 'get' });
+        const { ItemKey, FilesToken = null } = PublicLinkContent;
+
         const decryptedContents = await PassCrypto.openSecureLink({ linkKey, publicLinkContent: PublicLinkContent });
         const item = obfuscateItem(protobufToItem(decodeItemContent(decryptedContents)));
-        const filesToken = PublicLinkContent.FilesToken ?? null;
-        const files = filesToken ? await resolvePublicItemFiles(filesToken, PublicLinkContent.ItemKey, linkKey) : null;
+
+        const files = FilesToken ? await resolvePublicItemFiles(FilesToken, ItemKey, linkKey) : null;
         const expirationDate = PublicLinkContent?.ExpirationTime!;
 
         return { item, expirationDate, files };
