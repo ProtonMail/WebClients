@@ -155,6 +155,7 @@ declare const shouldRunClassifier: () => boolean;
 type VisibilityCache = WeakMap<HTMLElement, boolean>;
 type IsVisibleOptions = {
     opacity: boolean;
+    skipCache?: boolean;
 };
 declare const cacheContext: Record<string, VisibilityCache>;
 declare const getVisibilityCache: (key: string) => VisibilityCache;
