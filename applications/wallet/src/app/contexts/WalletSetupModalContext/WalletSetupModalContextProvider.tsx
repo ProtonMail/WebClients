@@ -19,7 +19,7 @@ import { WalletBackupModal } from '../../components/WalletBackupModal';
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
 import { WalletWelcomePrompt } from '../../components/WalletWelcomePrompt';
-import { SubTheme } from '../../utils';
+import { SubTheme, WalletUpgradeBanner } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
 interface Props {
@@ -70,6 +70,8 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                               .t`You have reached the maximum number of wallets supported by your current plan.`
                         : c('Wallet upgrade')
                               .t`You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
+                    banner: WalletUpgradeBanner.LOCK,
+                    title: c('Wallet upgrade').t`Wallet limit reached`,
                 });
                 return;
             }
@@ -87,6 +89,8 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                               .t`You have reached the maximum number of accounts supported by your current plan.`
                         : c('Wallet upgrade')
                               .t`You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
+                    banner: WalletUpgradeBanner.LOCK,
+                    title: c('Wallet upgrade').t`Account limit reached`,
                 });
                 return;
             }
@@ -144,6 +148,8 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                             <WalletUpgradeModal
                                 theme={walletUpgradeModal.data.theme}
                                 content={walletUpgradeModal.data.content}
+                                banner={walletUpgradeModal.data.banner}
+                                title={walletUpgradeModal.data.title}
                                 {...walletUpgradeModal}
                             />
                         )
