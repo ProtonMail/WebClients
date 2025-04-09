@@ -223,6 +223,14 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       })
 
       this.#lastResolvedIds?.add(record.uniqueId())
+
+      const previousItem = this.snapshot.get(record.uniqueId())
+      const hasRenamedFlag = previousItem && Boolean((previousItem as any).__renamedHack)
+      if (hasRenamedFlag) {
+        ;(record as any).__renamedHack = true
+        record.name = previousItem.name
+      }
+
       this.setSnapshotItem(record)
     } catch (error) {
       this.#logger.error('Failed to resolve recent document', { error, item: apiItem })

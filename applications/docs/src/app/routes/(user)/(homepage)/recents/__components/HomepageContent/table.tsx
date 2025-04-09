@@ -2,10 +2,10 @@ import clsx from '@proton/utils/clsx'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 const POSITIONAL_CELL_CLASSES = [
-  '[&:nth-child(1)]:w-full small:[&:nth-child(1)]:w-[40%] small:[&:nth-child(1)]:min-w-[12.5rem] [&:nth-child(1)]:px-6',
-  '[&:nth-child(2)]:w-[20%] [&:nth-child(2)]:min-w-[6.25rem] [&:nth-child(2)]:px-2',
-  '[&:nth-child(3)]:w-[20%] [&:nth-child(3)]:min-w-[6.25rem] [&:nth-child(3)]:px-2',
-  '[&:nth-child(4)]:pe-5 [&:nth-child(4)]:ps-2',
+  '[&:nth-child(1)]:w-full [&:nth-child(1)]:px-6',
+  '[&:nth-child(2)]:w-[8rem] [&:nth-child(2)]:px-2',
+  '[&:nth-child(3)]:w-[10rem] [&:nth-child(3)]:px-2',
+  '[&:nth-child(4)]:w-[10rem] [&:nth-child(4)]:pe-5 [&:nth-child(4)]:ps-2',
 ]
 
 export type HeaderProps = ComponentPropsWithoutRef<'th'> & { hideOnSmallDevices?: boolean }
@@ -17,7 +17,7 @@ export function Header({ hideOnSmallDevices, ...props }: HeaderProps) {
       className={clsx(
         'whitespace-nowrap font-semibold [&:nth-child(1)]:text-[1rem]',
         ...POSITIONAL_CELL_CLASSES,
-        hideOnSmallDevices && 'hidden small:!table-cell',
+        hideOnSmallDevices && 'hidden medium:!table-cell',
         props.className,
       )}
     />
@@ -40,7 +40,7 @@ export function DataCell({ hideOnSmallDevices, ...props }: DataCellProps) {
   return (
     <td
       {...props}
-      className={clsx(...POSITIONAL_CELL_CLASSES, hideOnSmallDevices && 'hidden small:!table-cell', props.className)}
+      className={clsx(...POSITIONAL_CELL_CLASSES, hideOnSmallDevices && 'hidden medium:!table-cell', props.className)}
     />
   )
 }

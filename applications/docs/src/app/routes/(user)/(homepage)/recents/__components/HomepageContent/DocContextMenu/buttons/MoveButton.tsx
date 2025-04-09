@@ -5,18 +5,18 @@ import { useDocumentActions } from '../../../../__utils/document-actions'
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import { c } from 'ttag'
 
-export type OpenFolderProps = {
+export type MoveButtonProps = {
   currentDocument: RecentDocumentsItem
   close: () => void
 }
 
-export function OpenFolder({ currentDocument, close }: OpenFolderProps) {
+export function MoveButton({ currentDocument, close }: MoveButtonProps) {
   const documentActions = useDocumentActions()
   return (
     <ContextMenuButton
-      name={c('Action').t`Open folder`}
-      icon={<Icon name="folder-open" className="mr-2" />}
-      action={() => documentActions.openParent(currentDocument)}
+      name={c('Action').t`Move`}
+      icon={<Icon name="arrows-cross" className="mr-2" />}
+      action={() => documentActions.move(currentDocument)}
       close={close}
     />
   )
