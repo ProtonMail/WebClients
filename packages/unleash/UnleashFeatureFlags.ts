@@ -108,6 +108,7 @@ enum DriveFeatureFlag {
     // Experiment
     DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
     DriveWebSafariSearch = 'DriveWebSafariSearch',
+    DriveWebIWADSupport = 'DriveWebIWADSupport',
     // Albums
     DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
