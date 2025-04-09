@@ -99,17 +99,21 @@ export const AlbumCoverHeader = ({
                         </Button>
                     )}
 
-                    {album.permissions.isAdmin && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}
-                    {!album.permissions.isAdmin && album.permissions.isEditor && (
-                        <PhotosUploadButton
-                            type="norm"
-                            shareId={shareId}
-                            linkId={uploadLinkId}
-                            onFileUpload={onFileUpload}
-                            onFileSkipped={onFileSkipped}
-                            data-testid="upload-photos"
-                            isAlbumUpload
-                        />
+                    {photoCount === 0 && (
+                        <>
+                            {album.permissions.isAdmin && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}
+                            {!album.permissions.isAdmin && album.permissions.isEditor && (
+                                <PhotosUploadButton
+                                    type="norm"
+                                    shareId={shareId}
+                                    linkId={uploadLinkId}
+                                    onFileUpload={onFileUpload}
+                                    onFileSkipped={onFileSkipped}
+                                    data-testid="upload-photos"
+                                    isAlbumUpload
+                                />
+                            )}
+                        </>
                     )}
                 </div>
             </div>
