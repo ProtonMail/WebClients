@@ -7,7 +7,7 @@ export enum ShareType {
 }
 
 export enum ShareRole {
-    ADMIN = '1',
+    MANAGER = '1',
     WRITE = '2',
     READ = '3',
 }

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Info, Tooltip } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
@@ -32,7 +33,7 @@ type Props = AccessDTO & {
     userShareId: string;
 };
 
-const getDefinition = (owner: boolean, target: AccessTarget, role: ShareRole) =>
+const getDefinition = (owner: boolean, target: AccessTarget, role: ShareRole, labels: InviteLabels) =>
     owner
         ? {
               title: c('Info').t`Owner`,
@@ -41,7 +42,7 @@ const getDefinition = (owner: boolean, target: AccessTarget, role: ShareRole) =>
                       ? c('Info').t`Can grant and revoke access to this vault, and delete it.`
                       : c('Info').t`Can grant and revoke access to this item, and delete it.`,
           }
-        : getShareRoleDefinition(target)[role];
+        : getShareRoleDefinition(target, labels)[role];
 
 export const ShareMember: FC<Props> = ({
     canManage,
@@ -57,7 +58,9 @@ export const ShareMember: FC<Props> = ({
     userShareId,
 }) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
-    const { title, description } = getDefinition(owner, target, role);
+    // TODO: Remove this in IDTEAM-4660
+    const labels = useInviteLabels();
+    const { title, description } = getDefinition(owner, target, role, labels);
 
     const removeAccess = useActionRequest(shareRemoveMemberAccessIntent);
     const editRole = useActionRequest(shareEditMemberAccessIntent);
@@ -119,14 +122,14 @@ export const ShareMember: FC<Props> = ({
                         className={role !== ShareRole.WRITE ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
-                        label={c('Action').t`Make admin`}
-                        icon={role === ShareRole.ADMIN ? 'checkmark' : undefined}
-                        onClick={() => edit(ShareRole.ADMIN)}
+                        label={labels.singleAction}
+                        icon={role === ShareRole.MANAGER ? 'checkmark' : undefined}
+                        onClick={() => edit(ShareRole.MANAGER)}
                         disabled={editRole.loading}
-                        className={role !== ShareRole.ADMIN ? 'pl-10' : ''}
+                        className={role !== ShareRole.MANAGER ? 'pl-10' : ''}
                     />
 
-                    {canTransfer && role === ShareRole.ADMIN && (
+                    {canTransfer && role === ShareRole.MANAGER && (
                         <DropdownMenuButton
                             label={c('Action').t`Transfer ownership`}
                             icon="shield-half-filled"

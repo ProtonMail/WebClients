@@ -3,18 +3,21 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { ShareRole } from '@proton/pass/types';
 
 type Props = { onRoleChange: (role: ShareRole) => void };
 
-const getActions = () => [
+const getActions = (labels: InviteLabels) => [
     { role: ShareRole.READ, label: c('Label').t`Make all viewers` },
     { role: ShareRole.WRITE, label: c('Label').t`Make all editors` },
-    { role: ShareRole.ADMIN, label: c('Label').t`Make all admins` },
+    { role: ShareRole.MANAGER, label: labels.multipleAction },
 ];
 
 export const AccessRoleToggle: FC<Props> = ({ onRoleChange }) => {
+    // TODO: Remove this in IDTEAM-4660
+    const labels = useInviteLabels();
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -36,7 +39,7 @@ export const AccessRoleToggle: FC<Props> = ({ onRoleChange }) => {
 
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>
                 <DropdownMenu>
-                    {getActions().map(({ role, label }) => (
+                    {getActions(labels).map(({ role, label }) => (
                         <DropdownMenuButton key={role} onClick={() => onRoleChange(role)} label={label} />
                     ))}
                 </DropdownMenu>

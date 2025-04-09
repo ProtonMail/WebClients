@@ -49,7 +49,7 @@ describe('openShare crypto process', () => {
             Primary: false,
             Shared: false,
             ShareID: shareId,
-            ShareRoleID: ShareRole.ADMIN,
+            ShareRoleID: ShareRole.MANAGER,
             TargetID: vaultId,
             TargetMaxMembers: 2,
             TargetMembers: 0,
