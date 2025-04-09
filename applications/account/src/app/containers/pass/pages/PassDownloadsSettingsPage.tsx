@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
@@ -6,8 +8,10 @@ import { ButtonLike, Card } from '@proton/atoms';
 import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import { PLANS } from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { clients } from '@proton/shared/lib/pass/constants';
+import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import clsx from '@proton/utils/clsx';
+
+type Section = { header: string; platforms: Clients[] };
 
 const UpgradeBanner = ({ className }: { className?: string }) => {
     const [user] = useUser();
@@ -39,22 +43,37 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
 };
 
 const PassDownloadsSettingsPage = () => {
+    const sections: Section[] = [
+        {
+            header: c('Title').t`Browser extensions`,
+            platforms: [Clients.Chrome, Clients.Firefox, Clients.Brave, Clients.Edge, Clients.Safari],
+        },
+        { header: c('Title').t`Mobile`, platforms: [Clients.Android, Clients.iOS] },
+        { header: c('Title').t`Desktop`, platforms: [Clients.Windows, Clients.macOS, Clients.Linux] },
+    ];
+
     return (
-        <SettingsSectionWide>
+        <SettingsSectionWide customWidth="90em">
             <UpgradeBanner className="mb-6" />
             <SettingsParagraph>
                 {c('Info')
                     .t`Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${PASS_APP_NAME} apps and extensions.`}
             </SettingsParagraph>
-            <div className="flex gap-4 flex-column md:flex-row">
-                {Object.values(clients).map(({ title, icon, link }) => {
-                    if (!link) {
-                        return null;
-                    }
+            {sections.map(({ header, platforms }) => (
+                <Fragment key={header}>
+                    <h4 className="text-bold mb-4">{header}</h4>
+                    <div className="flex gap-4 flex-column md:flex-row mb-4">
+                        {platforms.map((platform) => {
+                            const { title, icon, link } = clients[platform];
+                            if (!link) {
+                                return null;
+                            }
 
-                    return <DownloadClientCard key={title} title={title} icon={icon} link={link} />;
-                })}
-            </div>
+                            return <DownloadClientCard key={title} title={title} icon={icon} link={link} />;
+                        })}
+                    </div>
+                </Fragment>
+            ))}
         </SettingsSectionWide>
     );
 };
