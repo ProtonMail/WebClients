@@ -178,7 +178,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                         </FieldsetCluster>
 
                         <FieldsetCluster>
-                            <Field name="files" component={FileAttachmentsField} />
+                            <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                         </FieldsetCluster>
                     </Form>
                 </FormikProvider>

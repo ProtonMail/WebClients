@@ -36,7 +36,7 @@ export async function* createExportAttachmentsStream(
 
         const result = await resolveItemFiles(item);
         const itemKey = await resolveItemKey(item.shareId, item.itemId);
-        const itemFiles = await intoFileDescriptors(result, itemKey);
+        const itemFiles = await intoFileDescriptors(shareId, result, itemKey);
 
         /** Only export files that match the latest item revision */
         const files = itemFiles.filter(isFileForRevision(revision));
@@ -44,8 +44,12 @@ export async function* createExportAttachmentsStream(
         for (const file of files) {
             const { fileID, chunks } = file;
             const chunkIDs = chunks.map(prop('ChunkID'));
-            const getChunkStream = (chunkID: string) => downloadFileChunk({ shareId, itemId, fileID, chunkID }, signal);
-            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, signal);
+
+            const downloadStream = createDownloadStream(
+                { shareId, fileID, chunkIDs, encryptionVersion: file.encryptionVersion },
+                (chunkID: string) => downloadFileChunk({ shareId, itemId, fileID, chunkID }, signal),
+                signal
+            );
 
             yield {
                 name: archivePath(getExportFileName(file), 'files'),

@@ -34,6 +34,7 @@ describe('intoFileDescriptors', () => {
                 CreateTime: 1741348049,
                 ModifyTime: 1741348049,
                 ItemKeyRotation: 1,
+                EncryptionVersion: 1,
             },
             {
                 FileID: '2',
@@ -47,12 +48,13 @@ describe('intoFileDescriptors', () => {
                 CreateTime: 1741348049,
                 ModifyTime: 1741348049,
                 ItemKeyRotation: 1,
+                EncryptionVersion: 2,
             },
         ];
 
         openFileDescriptor.mockImplementation(async ({ file }) => new Uint8Array([parseInt(file.FileID, 10)]));
 
-        const result = await intoFileDescriptors(files, {} as ItemKey);
+        const result = await intoFileDescriptors('shareId', files, {} as ItemKey);
 
         expect(openFileDescriptor).toHaveBeenCalledTimes(2);
 
@@ -66,6 +68,7 @@ describe('intoFileDescriptors', () => {
                 revisionAdded: 1741348049,
                 revisionRemoved: null,
                 fileUID: 'uid1',
+                encryptionVersion: 1,
             },
             {
                 name: 'File 2',
@@ -76,6 +79,7 @@ describe('intoFileDescriptors', () => {
                 revisionAdded: 1741348049,
                 revisionRemoved: null,
                 fileUID: 'uid2',
+                encryptionVersion: 2,
             },
         ]);
     });

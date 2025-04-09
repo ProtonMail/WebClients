@@ -11,9 +11,12 @@ import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
-import type { FileChunkUploadDTO, FileID, Maybe, TabId, WithTabId } from '@proton/pass/types';
+import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
+import { logId, logger } from '@proton/pass/utils/logger';
+
+import { useFileEncryptionVersion } from './useFileEncryptionVersion';
 
 export type OnFileUploadProgress = (uploaded: number, total: number) => void;
 
@@ -21,22 +24,30 @@ export type OnFileUploadProgress = (uploaded: number, total: number) => void;
  * pass blob references around. In the extension, store each chunk to the
  * file storage and pass filename references to the worker.  */
 const getChunkDTO = async (
-    fileID: string,
-    index: number,
-    blob: Blob,
+    options: {
+        blob: Blob;
+        chunkIndex: number;
+        encryptionVersion: number;
+        fileID: FileID;
+        shareId: ShareId;
+        totalChunks: number;
+    },
     tabId: Maybe<TabId>,
     signal: AbortSignal
 ): Promise<WithTabId<FileChunkUploadDTO>> => {
+    const { blob, chunkIndex, encryptionVersion, fileID, shareId, totalChunks } = options;
+
     if (EXTENSION_BUILD) {
         const ref = `${fileID}.chunk`;
         await fileStorage.writeFile(ref, blob, signal);
-        return { fileID, index, type: 'fs', ref, tabId };
+        return { chunkIndex, encryptionVersion, fileID, ref, shareId, tabId, totalChunks, type: 'fs' };
     }
 
-    return { fileID, index, type: 'blob', blob, tabId };
+    return { blob, chunkIndex, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'blob' };
 };
 
 export const useFileUpload = () => {
+    const fileEncryptionVersion = useFileEncryptionVersion();
     const tabId = useCurrentTabID();
 
     const { onTelemetry } = usePassCore();
@@ -61,89 +72,112 @@ export const useFileUpload = () => {
     }, []);
 
     const queue = useCallback(
-        asyncQueue(async (file: File, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
-            let fileID: Maybe<string>;
+        asyncQueue(
+            async (
+                file: File,
+                shareId: ShareId,
+                uploadID: string,
+                onProgress?: OnFileUploadProgress
+            ): Promise<FileID> => {
+                let fileID: Maybe<string>;
+                const encryptionVersion = fileEncryptionVersion.current;
+                logger.debug(`[File::upload::v${encryptionVersion}] uploading ${logId(uploadID)}`);
 
-            try {
-                const ctrl = ctrls.current.get(uploadID);
-                if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
+                try {
+                    const ctrl = ctrls.current.get(uploadID);
+                    if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
 
-                const { name, size } = file;
-                const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
+                    const { name, size } = file;
+                    const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
 
-                onProgress?.(0, totalChunks);
+                    onProgress?.(0, totalChunks);
 
-                const mimeType = await (async (): Promise<string> => {
-                    try {
-                        const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
-                        const mimeTypeBufferU8 = new Uint8Array(mimeTypeBuffer);
+                    const mimeType = await (async (): Promise<string> => {
+                        try {
+                            const mimeTypeBuffer = await file
+                                .slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE)
+                                .arrayBuffer();
+                            const mimeTypeBufferU8 = new Uint8Array(mimeTypeBuffer);
 
-                        if (BUILD_TARGET === 'safari') {
-                            /** Safari's asm.js compilation of `mime_type_from_content` is unstable
-                             * and frequently throws `wasm2js_trap` errors. To prevent this, we
-                             * offload MIME detection to a dedicated WASM worker process instead. */
-                            return await PassUIWorkerService.transfer([mimeTypeBufferU8.buffer])(
-                                'mime_type_from_content',
-                                mimeTypeBufferU8
-                            );
+                            if (BUILD_TARGET === 'safari') {
+                                /** Safari's asm.js compilation of `mime_type_from_content` is unstable
+                                 * and frequently throws `wasm2js_trap` errors. To prevent this, we
+                                 * offload MIME detection to a dedicated WASM worker process instead. */
+                                return await PassUIWorkerService.transfer([mimeTypeBufferU8.buffer])(
+                                    'mime_type_from_content',
+                                    mimeTypeBufferU8
+                                );
+                            }
+
+                            return PassUI.mime_type_from_content(mimeTypeBufferU8);
+                        } catch {
+                            /** If the Rust-based MIME detection fails,
+                             * use the browser's MIME type detection. */
+                            return file.type;
                         }
+                    })();
 
-                        return PassUI.mime_type_from_content(mimeTypeBufferU8);
-                    } catch {
-                        /** If the Rust-based MIME detection fails,
-                         * use the browser's MIME type detection. */
-                        return file.type;
-                    }
-                })();
+                    const initDTO = {
+                        name,
+                        mimeType,
+                        totalChunks,
+                        uploadID,
+                        shareId,
+                        encryptionVersion,
+                    };
 
-                const initDTO = { name, mimeType, totalChunks, uploadID };
-
-                const init = await abortable(ctrl.signal)(
-                    () => asyncDispatch(fileUploadInitiate, initDTO),
-                    () => dispatch(requestCancel(fileUploadInitiate.requestID(initDTO)))
-                );
-
-                if (init.type !== 'success') {
-                    if (init.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
-                    throw new Error(init.data.error);
-                }
-
-                fileID = init.data;
-
-                for (let index = 0; index < totalChunks; index++) {
-                    const start = index * FILE_CHUNK_SIZE;
-                    const end = Math.min(start + FILE_CHUNK_SIZE, size);
-                    const blob = file.slice(start, end);
-                    const dto = await getChunkDTO(fileID, index, blob, tabId, ctrl.signal);
-
-                    const result = await abortable(ctrl.signal)(
-                        () => asyncDispatch(fileUploadChunk, dto),
-                        () => dispatch(requestCancel(fileUploadChunk.requestID(dto)))
+                    const init = await abortable(ctrl.signal)(
+                        () => asyncDispatch(fileUploadInitiate, initDTO),
+                        () => dispatch(requestCancel(fileUploadInitiate.requestID(initDTO)))
                     );
 
-                    if (result.type !== 'success') {
-                        if (result.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
-                        throw new Error(result.data.error);
+                    if (init.type !== 'success') {
+                        if (init.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
+                        throw new Error(init.data.error);
                     }
 
-                    onProgress?.(index + 1, totalChunks);
-                }
+                    fileID = init.data;
 
-                onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
-                return fileID;
-            } catch (e) {
-                throw e;
-            } finally {
-                if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
-                ctrls.current.delete(uploadID);
-                syncLoadingState();
+                    for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
+                        const start = chunkIndex * FILE_CHUNK_SIZE;
+                        const end = Math.min(start + FILE_CHUNK_SIZE, size);
+                        const blob = file.slice(start, end);
+
+                        const dto = await getChunkDTO(
+                            { shareId, fileID, chunkIndex, totalChunks, encryptionVersion, blob },
+                            tabId,
+                            ctrl.signal
+                        );
+
+                        const result = await abortable(ctrl.signal)(
+                            () => asyncDispatch(fileUploadChunk, dto),
+                            () => dispatch(requestCancel(fileUploadChunk.requestID(dto)))
+                        );
+
+                        if (result.type !== 'success') {
+                            if (result.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
+                            throw new Error(result.data.error);
+                        }
+
+                        onProgress?.(chunkIndex + 1, totalChunks);
+                    }
+
+                    onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
+                    return fileID;
+                } catch (e) {
+                    throw e;
+                } finally {
+                    if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
+                    ctrls.current.delete(uploadID);
+                    syncLoadingState();
+                }
             }
-        }),
+        ),
         []
     );
 
     const start = useCallback(
-        async (file: File, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
+        async (file: File, shareId: ShareId, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
             if (file.size === 0) {
                 /** On windows electron: when drag'n'dropping a file from an archive
                  * before extraction, the reported file will have a filesize of 0 bytes */
@@ -153,7 +187,7 @@ export const useFileUpload = () => {
             ctrls.current.set(uploadID, new AbortController());
             syncLoadingState();
 
-            return queue(file, uploadID, onProgress);
+            return queue(file, shareId, uploadID, onProgress);
         },
         []
     );

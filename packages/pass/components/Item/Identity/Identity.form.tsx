@@ -85,7 +85,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ form, revision, onCancel })
                                     revision={revision.revision}
                                 />
                             ) : (
-                                <Field name="files" component={FileAttachmentsField} />
+                                <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                             )}
                         </FieldsetCluster>
                     </Form>

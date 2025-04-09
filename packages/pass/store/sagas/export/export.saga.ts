@@ -12,21 +12,24 @@ import {
 import { createPassExportCSV } from '@proton/pass/lib/export/csv';
 import { ExportFormat } from '@proton/pass/lib/export/types';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { hasAttachments, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { belongsToShares, hasAttachments, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { exportData } from '@proton/pass/store/actions/creators/export';
 import { requestProgress } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { ExportThunk } from '@proton/pass/store/selectors';
-import { selectAllItems, selectExportData } from '@proton/pass/store/selectors';
+import { selectAllItems, selectExportData, selectOwnedVaults } from '@proton/pass/store/selectors';
 import type {
     FileDescriptor,
     IndexedByShareIdAndItemId,
     ItemRevision,
     MaybeNull,
     SelectedItem,
+    Share,
     TabId,
 } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { and } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 type ExportFileProgress = { totalItems: number; itemFilesCount: number } & SelectedItem;
@@ -92,10 +95,12 @@ export const exportUserData = createRequestSaga({
              * include file attachments in the export metadata. This ordering ensures
              * all file data is available when the JSON is generated. */
             const exportThunk: ExportThunk = yield select(selectExportData(config));
+            const ownedVaults: Share[] = yield select(selectOwnedVaults);
+            const ownedVaultShareIds = ownedVaults.map(prop('shareId'));
 
             if (fileAttachments && format !== ExportFormat.CSV) {
                 const items: ItemRevision[] = yield select(selectAllItems);
-                const itemsWithAttachments = items.filter(hasAttachments);
+                const itemsWithAttachments = items.filter(and(hasAttachments, belongsToShares(ownedVaultShareIds)));
                 const totalItems = itemsWithAttachments.length;
 
                 iterators.push(

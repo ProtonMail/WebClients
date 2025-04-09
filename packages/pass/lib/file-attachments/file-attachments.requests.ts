@@ -6,6 +6,7 @@ import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { intoPublicFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import type {
+    CreatePendingFileRequest,
     FileDownloadChunk,
     FileDownloadPublicChunk,
     FileID,
@@ -24,11 +25,19 @@ import type {
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import chunk from '@proton/utils/chunk';
 
-export const createPendingFile = async (metadata: string, totalChunks: number): Promise<string> =>
+export const createPendingFile = async (
+    metadata: string,
+    totalChunks: number,
+    encryptionVersion: number
+): Promise<string> =>
     (
         await api({
             url: `pass/v1/file`,
-            data: { Metadata: metadata, ChunkCount: totalChunks },
+            data: {
+                Metadata: metadata,
+                ChunkCount: totalChunks,
+                EncryptionVersion: encryptionVersion,
+            } satisfies CreatePendingFileRequest,
             method: 'post',
         })
     ).File!.FileID;
@@ -84,7 +93,9 @@ export const restoreSingleFile = async (
             url: `pass/v1/share/${shareId}/item/${itemId}/file/${fileId}/restore`,
             method: 'post',
             data: {
-                FileKey: uint8ArrayToBase64String(await PassCrypto.getFileKey({ fileID: fileId, itemKey })),
+                FileKey: uint8ArrayToBase64String(
+                    await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId })
+                ),
                 ItemKeyRotation: itemKey.rotation,
             },
         })
@@ -101,7 +112,7 @@ export const restoreRevisionFiles = async (
                 FilesToRestore: await Promise.all(
                     dto.toRestore.map(async (fileID) => ({
                         FileID: fileID,
-                        FileKey: uint8ArrayToBase64String(await PassCrypto.getFileKey({ ...dto, fileID })),
+                        FileKey: uint8ArrayToBase64String(await PassCrypto.encryptFileKey({ ...dto, fileID })),
                     }))
                 ),
                 ItemKeyRotation: dto.itemKey.rotation,
@@ -119,9 +130,10 @@ export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLink
                 files.toAdd.map(async (FileID) => ({
                     FileID,
                     FileKey: uint8ArrayToBase64String(
-                        await PassCrypto.getFileKey({
+                        await PassCrypto.encryptFileKey({
                             fileID: FileID,
                             itemKey,
+                            shareId,
                         })
                     ),
                 }))
