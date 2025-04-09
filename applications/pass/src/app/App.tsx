@@ -20,9 +20,10 @@ import {
     ModalsProvider,
     NotificationsChildren,
     NotificationsProvider,
-    StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import { StandardErrorPageDisplay } from '@proton/components/containers/app/StandardErrorPage';
+import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import Icons from '@proton/icons/Icons';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
@@ -166,7 +167,9 @@ export const App = () => (
                     <CompatibilityCheck compatibilities={PASS_WEB_COMPAT}>
                         <Icons />
 
-                        <ErrorBoundary component={<StandardErrorPage big enableTelemetry={false} />}>
+                        <ErrorBoundary
+                            component={<StandardErrorPageDisplay big errorComponent={GenericErrorDisplay} />}
+                        >
                             <NotificationsProvider>
                                 <ModalsProvider>
                                     <PassExtensionLink>
