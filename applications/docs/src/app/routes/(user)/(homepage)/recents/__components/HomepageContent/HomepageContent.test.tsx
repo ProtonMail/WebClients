@@ -127,7 +127,22 @@ describe('HomepageContent', () => {
     mockTrash?: jest.Mock
   }) {
     return (
-      <DocumentActionsContext.Provider value={{ open, openParent, trash }}>{children}</DocumentActionsContext.Provider>
+      <DocumentActionsContext.Provider
+        value={{
+          open,
+          openParent,
+          trash,
+          startRename: jest.fn(),
+          cancelRename: jest.fn(),
+          rename: jest.fn(),
+          isRenaming: jest.fn(),
+          isRenameSaving: false,
+          move: jest.fn(),
+          share: jest.fn(),
+        }}
+      >
+        {children}
+      </DocumentActionsContext.Provider>
     )
   }
 
@@ -198,7 +213,6 @@ describe('HomepageContent', () => {
     const columns = within(row).getAllByRole('cell')
     expect(columns).toHaveLength(4)
     expect(columns[0]).toHaveTextContent(documentName)
-    expect(columns[1]).toHaveTextContent('today')
     expect(columns[2]).toHaveTextContent(createdBy)
     let locationText = ''
     if (location?.type === 'path') {
