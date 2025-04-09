@@ -65,7 +65,7 @@ export const clients: { [key in Clients]: Client } = {
     },
     [Clients.Edge]: {
         title: 'Edge',
-        link: 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde',
+        link: 'https://microsoftedge.microsoft.com/addons/detail/proton-pass-free-passwor/gcllgfdnfnllodcaambdaknbipemelie',
         icon: 'brand-edge',
     },
     [Clients.Firefox]: {
