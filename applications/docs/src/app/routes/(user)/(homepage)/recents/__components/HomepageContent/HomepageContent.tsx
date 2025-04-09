@@ -105,22 +105,19 @@ function getEmptyStateText(variant: EmptyStateVariant): string {
   }
 }
 
-// TODO: implement all variants
 function EmptyState({ variant }: EmptyStateProps) {
   const { getLocalID } = useAuthentication()
 
   return (
     <ContentSheet isBottom className="flex grow items-center justify-center">
-      <div className="flex flex-col items-center gap-8 py-8">
+      <div className="flex flex-col items-center gap-6 p-8">
         <img
           className="w-custom"
           style={{ '--w-custom': '130px' }}
           src={emptyStateImage}
           alt={c('Info').t`No recent documents`}
         />
-        <div className="w-custom text-center" style={{ '--w-custom': '400px' }}>
-          <span className="text-bold text-2xl">{getEmptyStateText(variant)}</span>
-        </div>
+        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant)}</p>
         <div className="flex justify-center">
           {variant === 'recents' ? (
             <ButtonLike

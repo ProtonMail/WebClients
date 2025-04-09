@@ -1,6 +1,6 @@
 import { useDocumentActions } from '../../__utils/document-actions'
 import type { ReactNode } from 'react'
-import { Fragment, useRef } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { DocContextMenu } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import * as Table from './table'
@@ -16,7 +16,7 @@ import {
   usePopperAnchor,
 } from '@proton/components'
 import { c } from 'ttag'
-import { Avatar, Button } from '@proton/atoms'
+import { Avatar, Button, Input } from '@proton/atoms'
 import { getInitials } from '@proton/shared/lib/helpers/string'
 import clsx from '@proton/utils/clsx'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
@@ -88,7 +88,7 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
             <span>{getSectionLabel(sectionId)}</span>
             {firstHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
           </span>
-          <span className="-me-3 small:hidden">{isRecents ? <SortSelect /> : null}</span>
+          <span className="-me-3 medium:hidden">{isRecents ? <SortSelect /> : null}</span>
         </div>
       </Table.Header>
       {!isSecondary ? (
@@ -195,6 +195,9 @@ function Body({ items, variant }: BodyProps) {
 // row
 // ---
 
+// Refresh dates every minute.
+const REFRESH_DATE_INTERVAL = 1000 * 60 // ms
+
 type RowProps = { document: RecentDocumentsItem; variant: TableVariant }
 
 function Row({ document, variant }: RowProps) {
@@ -202,6 +205,15 @@ function Row({ document, variant }: RowProps) {
   const documentActions = useDocumentActions()
   const { location } = document
   const displayName = useOwnerName(document)
+  const { updateRecentDocuments } = useHomepageView()
+
+  // Force re-render every REFRESH_DATE_INTERVAL milliseconds
+  const [, setState] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval>>()
+  useEffect(() => {
+    intervalRef.current = setInterval(() => setState((prev) => !prev), REFRESH_DATE_INTERVAL)
+    return () => clearInterval(intervalRef.current)
+  }, [])
 
   if (!location) {
     throw new Error('Unexpected missing location')
@@ -257,6 +269,8 @@ function Row({ document, variant }: RowProps) {
   const isRecents = variant.startsWith('recents')
   const isSearch = variant === 'search'
 
+  const isRenaming = documentActions.isRenaming(document)
+
   return (
     <Table.Row
       className="cursor-pointer hover:bg-[--interaction-default-hover]"
@@ -276,7 +290,39 @@ function Row({ document, variant }: RowProps) {
       <Table.DataCell>
         <span className="flex flex-nowrap items-center gap-3">
           <Icon name="brand-proton-docs" size={5} className="shrink-0 text-[#34B8EE]" />
-          <span className="text-pre text-ellipsis font-medium">{document.name}</span>
+          {isRenaming ? (
+            <Input
+              ref={(element) => {
+                element?.select()
+              }}
+              defaultValue={document.name}
+              onClick={(event) => event.stopPropagation()}
+              disabled={documentActions.isRenameSaving}
+              onKeyDown={async (event) => {
+                if (event.key === 'Enter') {
+                  const { value } = event.currentTarget
+                  await documentActions.rename(document, value)
+                  ;(document as any).__renamedHack = true // big hack just don't look at it
+                  document.name = value
+                  await updateRecentDocuments()
+                }
+                if (event.key === 'Escape') {
+                  if (documentActions.isRenameSaving) {
+                    return
+                  }
+                  documentActions.cancelRename()
+                }
+              }}
+              onBlur={() => {
+                if (documentActions.isRenameSaving) {
+                  return
+                }
+                documentActions.cancelRename()
+              }}
+            />
+          ) : (
+            <span className="text-pre text-ellipsis font-medium">{document.name}</span>
+          )}
           {/* {
             recentDocument.whatever || recentDocument.isFavorite ? (
                 <div className="flex gap-[.625rem] text-[--text-weak]"> */}
@@ -291,14 +337,14 @@ function Row({ document, variant }: RowProps) {
       </Table.DataCell>
 
       <Table.DataCell hideOnSmallDevices>
-        <span className="capitalize">{getRelativeDate(document)}</span>
+        <span>{getRelativeDate(document)}</span>
       </Table.DataCell>
 
       <Table.DataCell hideOnSmallDevices>
         <span className="flex flex-nowrap items-center gap-2">
           <Avatar
             color="weak"
-            className="min-w-custom max-w-custom max-h-custom bg-[#F6F4F2]"
+            className="min-w-custom max-w-custom max-h-custom bg-[#38BDF8]/10"
             style={{
               '--min-w-custom': '28px',
               '--max-w-custom': '28px',
@@ -363,5 +409,6 @@ export function useOwnerName(recentDocument: RecentDocumentsItem) {
 const dateFormatter = new DateFormatter()
 
 function getRelativeDate({ lastViewed }: RecentDocumentsItem): string {
-  return dateFormatter.formatDate(lastViewed.date)
+  const text = dateFormatter.formatDateOrTimeIfToday(lastViewed.date, c('Info').t`Just now`)
+  return text.charAt(0).toUpperCase() + text.slice(1)
 }
