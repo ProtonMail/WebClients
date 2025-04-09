@@ -58,6 +58,7 @@ export interface UpdateEventActionOperation {
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
         color?: string;
+        resetNotes: boolean;
     };
 }
 
@@ -116,6 +117,7 @@ export const getUpdateSyncOperation = (data: {
     isBreakingChange?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
+    resetNotes: boolean;
 }): UpdateEventActionOperation => ({
     type: SyncOperationTypes.UPDATE,
     data: {
@@ -213,12 +215,17 @@ const getSyncMultipleEventsPayload = async ({
                 const { hasDefaultNotifications, addedAttendeesPublicKeysMap, isPersonalSingleEdit } = operation.data;
 
                 const creationKeys = await getCreationKeys({ newAddressKeys, newCalendarKeys });
+
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
                     isCreateEvent: true,
                     isSwitchCalendar: false,
                     hasDefaultNotifications,
                     addedAttendeesPublicKeysMap,
+                    getAttendeesCommentsMap: async (sharedSessionKey: SessionKey) => {
+                        const eventCommentsMap = await getAttendeeEncryptedComment(sharedSessionKey, operation);
+                        return eventCommentsMap;
+                    },
                     ...creationKeys,
                 });
 
@@ -272,8 +279,6 @@ const getSyncMultipleEventsPayload = async ({
                     oldCalendarKeys,
                 });
 
-                const eventCommentsMap = await getAttendeeEncryptedComment(creationKeys.sharedSessionKey, operation);
-
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
                     cancelledOccurrenceVevent,
@@ -283,7 +288,10 @@ const getSyncMultipleEventsPayload = async ({
                     isSwitchCalendar,
                     hasDefaultNotifications,
                     isAttendee,
-                    eventCommentsMap,
+                    getAttendeesCommentsMap: async (sharedSessionKey: SessionKey) => {
+                        const eventCommentsMap = await getAttendeeEncryptedComment(sharedSessionKey, operation);
+                        return eventCommentsMap;
+                    },
                     ...creationKeys,
                 });
                 const isOrganizerData = { IsOrganizer: booleanToNumber(!isAttendee) };
