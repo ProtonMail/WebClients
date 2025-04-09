@@ -11,6 +11,7 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 
+import { isVisible } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
@@ -129,20 +130,28 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive detection : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = (request: DropdownRequest): Promise<void> =>
-        iframe
+    const open = async (request: DropdownRequest): Promise<void> => {
+        const { field } = request;
+        const anchor = request.field.element;
+
+        /** At the cost of bypassing the visibility cache, perform a fresh visibility
+         * check before opening the dropdown to prevent certain click-jacking attacks */
+        if (!isVisible(anchor, { opacity: true, skipCache: true })) return;
+
+        return iframe
             .ensureReady()
             .then(async () => {
-                fieldRef.current = request.field;
+                fieldRef.current = field;
                 const payload = await processDropdownRequest(request);
 
                 if (payload) {
                     iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_ACTION, payload });
-                    iframe.open(request.action, getScrollParent(request.field.element));
+                    iframe.open(request.action, getScrollParent(anchor));
                     updatePosition();
                 }
             })
             .catch(noop);
+    };
 
     /* On a login autofill request - resolve the credentials via
      * worker communication and autofill the parent form of the
