@@ -17,6 +17,7 @@ import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
+import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -152,6 +153,22 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             })
             .catch(noop);
     };
+
+    /** Only used when dropdown UI has input elements that may lose focus
+     * due to page code. This can happen if blur/focus management is too
+     * strict (eg: ticketmaster.com) where the dropdown can never get a
+     * full focus. In this case, blur the anchor field and force the active
+     * element to blur to ensure we're in an "unfocused state". */
+    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_BLUR_FIELD, () => {
+        requestAnimationFrame(() => {
+            fieldRef.current?.element.blur();
+
+            setTimeout(() => {
+                const { activeElement } = document;
+                if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
+            }, 50);
+        });
+    });
 
     /* On a login autofill request - resolve the credentials via
      * worker communication and autofill the parent form of the
