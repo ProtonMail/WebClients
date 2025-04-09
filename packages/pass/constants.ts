@@ -114,6 +114,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassItemSharingV1]: false,
     [PassFeature.PassWebPrfUnlock]: false,
     [PassFeature.PassFileAttachments]: false,
+    [PassFeature.PassRenameAdminToManager]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
