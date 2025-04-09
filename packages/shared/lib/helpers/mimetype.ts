@@ -189,3 +189,6 @@ export const isRAWThumbnailExtractionSupported = (mimeType: string, extension: s
 
     return keys.includes(lowerExt) || values.some((rawType) => rawType === mimeType);
 };
+
+export const isIWAD = (mimeType: string): boolean =>
+    ['application/x-doom', 'application/x-doom-wad'].includes(mimeType);
