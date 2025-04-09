@@ -19,6 +19,7 @@ export interface Photo extends PhotoBase {
 export interface AlbumPhoto extends Photo {
     parentLinkId: string; // the album link id
     rootShareId: string; // the album share id
+    volumeId: string; // the album volume id
 }
 
 // These are not coming from the BE but can't be equal to the PhotoTag
@@ -39,6 +40,7 @@ export type PhotoLink =
           rootShareId: string;
           parentLinkId: string;
           isFile: boolean;
+          volumeId: string;
           activeRevision: {
               photo: DriveFileRevisionPhoto;
               signatureEmail?: string;

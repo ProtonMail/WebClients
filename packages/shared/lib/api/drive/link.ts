@@ -20,15 +20,15 @@ export const queryGetLink = (ShareID: string, LinkID: string) => ({
     url: `drive/shares/${ShareID}/links/${LinkID}`,
 });
 
-export const queryTrashLinks = (ShareID: string, ParentLinkID: string, LinkIDs: string[]) => ({
+export const queryTrashLinks = (VolumeID: string, LinkIDs: string[]) => ({
     method: 'post',
-    url: `drive/shares/${ShareID}/folders/${ParentLinkID}/trash_multiple`,
+    url: `drive/v2/volumes/${VolumeID}/trash_multiple`,
     data: { LinkIDs },
 });
 
-export const queryDeleteTrashedLinks = (ShareID: string, LinkIDs: string[]) => ({
+export const queryDeleteTrashedLinks = (VolumeID: string, LinkIDs: string[]) => ({
     method: 'post',
-    url: `drive/shares/${ShareID}/trash/delete_multiple`,
+    url: `drive/v2/volumes/${VolumeID}/trash/delete_multiple`,
     data: { LinkIDs },
 });
 
@@ -38,15 +38,10 @@ export const queryDeleteChildrenLinks = (ShareID: string, ParentLinkID: string, 
     data: { LinkIDs },
 });
 
-export const queryRestoreLinks = (ShareID: string, LinkIDs: string[]) => ({
+export const queryRestoreLinks = (VolumeID: string, LinkIDs: string[]) => ({
     method: 'put',
-    url: `drive/shares/${ShareID}/trash/restore_multiple`,
+    url: `drive/v2/volumes/${VolumeID}/trash/restore_multiple`,
     data: { LinkIDs },
-});
-
-export const queryEmptyTrashOfShare = (ShareID: string) => ({
-    method: 'delete',
-    url: `drive/shares/${ShareID}/trash`,
 });
 
 export const queryLinkMetaBatch = (shareId: string, linksIds: string[], loadThumbnails: boolean = false) => ({
