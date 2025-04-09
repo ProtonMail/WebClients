@@ -29,6 +29,7 @@ const intoFileDescriptor =
                 revisionAdded: file.RevisionAdded,
                 revisionRemoved: file.RevisionRemoved ?? null,
                 fileUID: file.PersistentFileUID,
+                encryptionVersion: file.EncryptionVersion,
             };
         } catch (err) {
             logger.warn('File metadata could not be opened', err);
@@ -40,15 +41,16 @@ const openFileDescriptors =
     async (files: ItemFileOutput[]): Promise<FileDescriptor[]> =>
         (await Promise.all(files.map(intoFileDescriptor(decryptMetadata)))).filter(truthy);
 
-export const intoFileDescriptors = async (files: ItemFileOutput[], itemKey: ItemKey) =>
-    openFileDescriptors((file) => PassCrypto.openFileDescriptor({ file, itemKey }))(files);
+export const intoFileDescriptors = async (shareId: string, files: ItemFileOutput[], itemKey: ItemKey) =>
+    openFileDescriptors((file) => PassCrypto.openFileDescriptor({ file, itemKey, shareId }))(files);
 
 export const intoPublicFileDescriptors = async (files: ItemFileOutput[], itemKey: string, linkKey: string) =>
     openFileDescriptors((file) =>
         PassCrypto.openSecureLinkFileDescriptor({
-            encryptedItemKey: itemKey,
             encryptedFileKey: file.FileKey,
+            encryptedItemKey: itemKey,
             encryptedMetadata: file.Metadata,
+            encryptionVersion: file.EncryptionVersion,
             fileID: file.FileID,
             linkKey,
         })
