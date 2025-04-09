@@ -46,7 +46,6 @@ const queryMock = jest.fn((batchLinkIds) => {
 
 describe('useBatchHelper', () => {
     const abortSignal = new AbortController().signal;
-    const shareId = 'shareId';
     const linkIds = ['link1', 'link2', 'link3', 'link4'];
 
     beforeEach(() => {
@@ -87,7 +86,6 @@ describe('useBatchHelper', () => {
             });
 
         const response = await batchHelper(abortSignal, {
-            shareId,
             linkIds,
             query: queryMock,
             request: debouncedRequestMock,
@@ -97,8 +95,8 @@ describe('useBatchHelper', () => {
         expect(mockedRunInQueue).toHaveBeenCalled();
         expect(preventLeaveMock).toHaveBeenCalled();
         expect(queryMock).toHaveBeenCalledTimes(2);
-        expect(queryMock).toHaveBeenCalledWith(['link1', 'link2'], shareId);
-        expect(queryMock).toHaveBeenCalledWith(['link3', 'link4'], shareId);
+        expect(queryMock).toHaveBeenCalledWith(['link1', 'link2']);
+        expect(queryMock).toHaveBeenCalledWith(['link3', 'link4']);
         expect(debouncedRequestMock).toHaveBeenCalledTimes(2);
 
         expect(response.successes).toEqual(['link1', 'link2', 'link3', 'link4']);
@@ -123,7 +121,6 @@ describe('useBatchHelper', () => {
             });
 
         const response = await batchHelper(abortSignal, {
-            shareId,
             linkIds,
             query: queryMock,
             request: debouncedRequestMock,
@@ -172,7 +169,6 @@ describe('useBatchHelper', () => {
             });
 
         await batchHelper(abortSignal, {
-            shareId,
             linkIds,
             query: queryMock,
             batchRequestSize: customBatchSize,
@@ -210,7 +206,6 @@ describe('useBatchHelper', () => {
         });
 
         await batchHelper(abortSignal, {
-            shareId,
             linkIds,
             query: queryMock,
             request: customRequestMock,
@@ -246,7 +241,6 @@ describe('useBatchHelper', () => {
             });
 
         const response = await batchHelper(abortSignal, {
-            shareId,
             linkIds,
             query: queryMock,
             request: debouncedRequestMock,

@@ -141,7 +141,7 @@ export const usePhotosWithAlbumsView = () => {
         photoLinkIds: string[];
         isPhotosEmpty: boolean;
     } = useMemo(() => {
-        if (!shareId || !linkId) {
+        if (!shareId || !linkId || !volumeId) {
             return {
                 photosViewData: [],
                 photoLinkIdToIndexMap: {},
@@ -158,6 +158,7 @@ export const usePhotosWithAlbumsView = () => {
                 linkId: photo.linkId,
                 rootShareId: shareId,
                 parentLinkId: linkId,
+                volumeId,
                 isFile: true,
                 activeRevision: {
                     photo: {
@@ -216,7 +217,7 @@ export const usePhotosWithAlbumsView = () => {
             photoLinkIds,
             isPhotosEmpty,
         };
-    }, [photos, cachedLinks, linkId, shareId, selectedTags]);
+    }, [photos, cachedLinks, linkId, shareId, volumeId, selectedTags]);
 
     const { albumPhotosViewData, albumPhotosLinkIdToIndexMap, albumPhotosLinkIds } = useMemo(() => {
         if (!shareId || !linkId) {
@@ -235,6 +236,7 @@ export const usePhotosWithAlbumsView = () => {
                 linkId: photo.linkId,
                 rootShareId: photo.rootShareId,
                 parentLinkId: photo.parentLinkId,
+                volumeId: photo.volumeId,
                 isFile: true,
                 activeRevision: {
                     photo,

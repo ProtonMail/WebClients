@@ -247,6 +247,7 @@ describe('usePublicActions', () => {
                 {
                     linkId: 'link1',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-file.txt',
                     isFile: true,
                 },
@@ -273,6 +274,7 @@ describe('usePublicActions', () => {
                 {
                     linkId: 'link1',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-folder',
                     isFile: false,
                 },
@@ -299,12 +301,14 @@ describe('usePublicActions', () => {
                 {
                     linkId: 'link1',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-file.txt',
                     isFile: true,
                 },
                 {
                     linkId: 'link2',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-folder',
                     isFile: false,
                 },
@@ -331,6 +335,7 @@ describe('usePublicActions', () => {
                 {
                     linkId: 'link1',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-file.txt',
                     isFile: true,
                 },
@@ -368,12 +373,14 @@ describe('usePublicActions', () => {
                 {
                     linkId: 'link1',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-file1.txt',
                     isFile: true,
                 },
                 {
                     linkId: 'link2',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-file2.txt',
                     isFile: true,
                 },
@@ -406,12 +413,14 @@ describe('usePublicActions', () => {
                 {
                     linkId: 'link1',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-folder1',
                     isFile: false,
                 },
                 {
                     linkId: 'link2',
                     parentLinkId: 'parent1',
+                    volumeId: 'volumeId1',
                     name: 'test-folder2',
                     isFile: false,
                 },

@@ -1,5 +1,5 @@
 diff --git a/packages/drive-store/store/_actions/useActions.tsx b/packages/drive-store/store/_actions/useActions.tsx
-index 04361d9c1f..4392fbc363 100644
+index 2f83ae9c8b..a587edb953 100644
 --- a/packages/drive-store/store/_actions/useActions.tsx
 +++ b/packages/drive-store/store/_actions/useActions.tsx
 @@ -8,7 +8,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
@@ -29,53 +29,12 @@ index 04361d9c1f..4392fbc363 100644
  
          const undoAction = async () => {
              const linkIdsPerParentId = Object.entries(result.originalParentIds).reduce(
-@@ -206,7 +206,11 @@ export default function useActions() {
-         createMovedItemsNotifications(linksToMove, result.successes, result.failures, undoAction);
-     };
- 
--    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[]) => {
-+    /**
-+     * @param [notify] - whether notification popover should be displayed upon
-+     * successful trash. Disabled on Docs
-+     */
-+    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[], notify = true) => {
-         if (!linksToTrash.length) {
-             return;
-         }
-@@ -222,7 +226,11 @@ export default function useActions() {
+@@ -226,7 +226,7 @@ export default function useActions() {
  
          // This is a bit ugly, but the photo linkId cache is not connected
          // very well to the rest of our state.
 -        removePhotosFromCache(result.successes);
 +        // removePhotosFromCache(result.successes);
-+
-+        if (!notify) {
-+            return;
-+        }
  
-         const undoAction = async () => {
-             const linksToUndo = result.successes
-@@ -237,7 +245,11 @@ export default function useActions() {
-         createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
-     };
- 
--    const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[]) => {
-+    /**
-+     * @param [notify] - whether notification popover should be displayed upon
-+     * successful trash. Disabled on Docs
-+     */
-+    const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[], notify = true) => {
-         if (!linksToRestore.length) {
-             return;
-         }
-@@ -247,6 +259,10 @@ export default function useActions() {
-             linksToRestore.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
-         );
- 
-+        if (!notify) {
-+            return;
-+        }
-+
-         const undoAction = async () => {
-             const linksToTrash = result.successes
-                 .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))
+         if (notify) {
+             const undoAction = async () => {

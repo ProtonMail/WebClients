@@ -222,6 +222,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                     ...photo,
                                     parentLinkId: albumLinkId,
                                     rootShareId: albumShareId,
+                                    volumeId: albumVolumeId,
                                 };
                             })
                         );
@@ -236,6 +237,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                         ...photo,
                                         parentLinkId: albumLinkId,
                                         rootShareId: albumShareId,
+                                        volumeId: albumVolumeId,
                                     };
                                 });
                             return [...prevPhotos, ...newPhotos];
@@ -443,7 +445,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             const { name: albumName } = await getLink(abortSignal, albumShareId, albumLinkId);
 
             const result = await batchHelper(abortSignal, {
-                shareId: albumShareId,
                 linkIds: LinkIDs,
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
