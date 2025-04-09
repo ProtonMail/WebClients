@@ -4,7 +4,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
-
+const { sideEffectsRule } = require('@proton/pass/utils/webpack/side-effects');
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 const getOptimizations = require('@proton/pack/webpack/optimization');
@@ -146,6 +146,7 @@ module.exports = {
     module: {
         strictExportPresence: true,
         rules: [
+            sideEffectsRule,
             {
                 oneOf: [
                     {
