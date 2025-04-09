@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { addressesThunk } from '@proton/account/addresses';
-import { useAddresses } from '@proton/account/addresses/hooks';
+import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Href } from '@proton/atoms';
@@ -25,7 +25,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
+import type { PrivateKeyReferenceV4, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
@@ -66,16 +66,16 @@ enum Step {
 interface Model {
     step: Step;
     loading?: boolean;
-    edit?: boolean;
     addressID: string;
     isExternal?: boolean;
     isInternal?: boolean;
     forwardeeEmail: string;
     forwardeePublicKey?: PublicKeyReference;
-    forwarderPrimaryKeys?: {
-        v4: { ID: string; key: PrivateKeyReference; supportsE2EEForwarding: boolean };
-        v6?: { ID: string; key: PrivateKeyReference; supportsE2EEForwarding: false };
+    forwarderPrimaryKeysInfo?: {
+        v4: { ID: string; supportsE2EEForwarding: boolean };
+        v6?: { ID: string; supportsE2EEForwarding: false };
     };
+    addresses: Address[];
     forwarderAddressKeys?: DecryptedAddressKey[];
     keyErrors?: string[];
     statement: FilterStatement;
@@ -97,19 +97,19 @@ const getTitle = (model: Model) => {
 };
 
 const getKeyFixupDetails = (
-    forwarderPrimaryKeys: Model['forwarderPrimaryKeys'],
+    forwarderPrimaryKeysInfo: Model['forwarderPrimaryKeysInfo'],
     boldForwarderEmail: React.JSX.Element
 ) => {
-    if (!forwarderPrimaryKeys) {
+    if (!forwarderPrimaryKeysInfo) {
         return null;
     }
 
-    if (forwarderPrimaryKeys.v4.supportsE2EEForwarding) {
-        return forwarderPrimaryKeys?.v6
+    if (forwarderPrimaryKeysInfo.v4.supportsE2EEForwarding) {
+        return forwarderPrimaryKeysInfo?.v6
             ? c('email_forwarding_2023: Info').jt`Post-quantum encryption will be disabled for ${boldForwarderEmail}.`
             : null;
     } else {
-        return forwarderPrimaryKeys?.v6
+        return forwarderPrimaryKeysInfo?.v6
             ? c('email_forwarding_2023: Info').jt`A new encryption key will be generated for ${boldForwarderEmail}.`
             : c('email_forwarding_2023: Info')
                   .jt`Post-quantum encryption will be disabled, and a new encryption key will be generated for ${boldForwarderEmail}.`;
@@ -122,18 +122,22 @@ const getDefaultModel = ({
 }: {
     addresses: Address[];
     existingForwardingConfig?: OutgoingAddressForwarding;
-}) => {
+}): Model => {
     const { statement, conditions } = existingForwardingConfig
         ? getSieveParameters(existingForwardingConfig.Filter?.Tree || [])
         : { statement: FilterStatement.ALL, conditions: [] };
 
-    const [firstAddress] = addresses;
+    const [primaryAddress] = addresses;
+    if (!primaryAddress) {
+        throw new Error('Missing primary address');
+    }
     return {
         step: Step.Setup,
-        addressID: existingForwardingConfig ? existingForwardingConfig.ForwarderAddressID : firstAddress?.ID || '',
+        addressID: existingForwardingConfig ? existingForwardingConfig.ForwarderAddressID : primaryAddress.ID,
         forwardeeEmail: existingForwardingConfig ? existingForwardingConfig.ForwardeeEmail : '',
         statement,
         conditions,
+        addresses
     };
 };
 
@@ -146,7 +150,8 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         existingForwardingConfig?.State === ForwardingState.Active ||
         existingForwardingConfig?.State === ForwardingState.Pending;
     const isReEnablingForwarding = existingForwardingConfig?.State === ForwardingState.Outdated;
-    const [addresses = []] = useAddresses();
+    const [initialAddresses = []] = useAddresses(); // these will have out-of-date info (e.g. SKLs) after primary key changes
+    const getAddresses = useGetAddresses();
     const [contactEmails = []] = useContactEmails();
     const contactEmailsSorted = useMemo(() => {
         const uniqueEmails = uniqueBy(contactEmails, ({ Email }) => Email.toLowerCase());
@@ -164,14 +169,21 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
     const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
-    const filteredAddresses = addresses.filter(({ Receive }) => Receive === ADDRESS_RECEIVE.RECEIVE_YES);
+    const filterAddresses = (addresses: Address[]) => addresses.filter(({ Receive }) => Receive === ADDRESS_RECEIVE.RECEIVE_YES);
     const [model, setModel] = useState<Model>(
-        getDefaultModel({ existingForwardingConfig, addresses: filteredAddresses })
+        getDefaultModel({ existingForwardingConfig, addresses: filterAddresses(initialAddresses) })
     );
+    const getForwarderAddress = (addresses: Address[]) => {
+        const address = addresses.find(({ ID }) => ID === model.addressID); 
+        if (!address) {
+            throw new Error('Missing forwarder address');
+        }
+        return address;
+    }
     const inputsDisabled = model.loading || isEditingFilters || isReEnablingForwarding;
-    const forwarderAddress = addresses.find(({ ID }) => ID === model.addressID);
-    const forwarderEmail = forwarderAddress?.Email || '';
-    const addressFlags = useAddressFlags(forwarderAddress);
+    const initialForwarderAddress = getForwarderAddress(initialAddresses);
+    const forwarderEmail = initialForwarderAddress?.Email || '';
+    const addressFlags = useAddressFlags(initialForwarderAddress);
     const dispatch = useDispatch();
     const boldForwardeeEmail = <strong key="forwardee-email">{model.forwardeeEmail}</strong>;
     const boldForwarderEmail = <strong key="forwarder-email">{forwarderEmail}</strong>;
@@ -213,14 +225,15 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             return;
         }
 
-        const activeKeysByVersion = await getActiveAddressKeys(forwarderAddress?.SignedKeyList, forwarderAddressKeys);
+        const addresses = await getAddresses();
+        const forwarderAddress = getForwarderAddress(addresses);
+        const activeKeysByVersion = await getActiveAddressKeys(forwarderAddress.SignedKeyList, forwarderAddressKeys);
         const maybeV6ForwarderEncryptionKey = getPrimaryActiveAddressKeyForEncryption(activeKeysByVersion, true);
         const v4ForwarderEncryptionKey = getPrimaryActiveAddressKeyForEncryption(activeKeysByVersion, false);
 
-        const forwarderPrimaryKeys = {
+        const forwarderPrimaryKeysInfo = {
             v4: {
                 ID: v4ForwarderEncryptionKey.ID,
-                key: v4ForwarderEncryptionKey.privateKey,
                 supportsE2EEForwarding: await CryptoProxy.doesKeySupportE2EEForwarding({
                     forwarderKey: v4ForwarderEncryptionKey.privateKey,
                 }),
@@ -229,7 +242,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                 maybeV6ForwarderEncryptionKey.privateKey.getVersion() === 6
                     ? {
                           ID: maybeV6ForwarderEncryptionKey.ID,
-                          key: maybeV6ForwarderEncryptionKey.privateKey,
                           supportsE2EEForwarding: false as const,
                       }
                     : undefined,
@@ -256,7 +268,8 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         setModel({
             ...model,
             keyErrors: forwardeeKeysConfig.Errors,
-            forwarderPrimaryKeys,
+            forwarderPrimaryKeysInfo,
+            addresses,
             forwarderAddressKeys,
             forwardeePublicKey,
             forwardeeEmail: forwardeeEmailFromPublicKey || model.forwardeeEmail,
@@ -278,30 +291,45 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             Type: model.isInternal ? ForwardingType.InternalEncrypted : ForwardingType.ExternalUnencrypted,
             Version: existingForwardingConfig?.Filter?.Version || 2,
         };
-        if (model.isInternal && forwarderAddress?.Keys && model.forwardeePublicKey && model.forwarderPrimaryKeys) {
+        if (model.isInternal && model.forwardeePublicKey && model.forwarderPrimaryKeysInfo) {
+            let addresses = model.addresses;
             let addressKeys = model.forwarderAddressKeys;
-            let forwarderKey = model.forwarderPrimaryKeys.v4.key;
+            let forwarderKey: PrivateKeyReferenceV4;
 
-            if (!!model.forwarderPrimaryKeys.v6 && model.forwarderPrimaryKeys.v6.supportsE2EEForwarding === false) {
+            if (!!model.forwarderPrimaryKeysInfo.v6 && model.forwarderPrimaryKeysInfo.v6.supportsE2EEForwarding === false) {
                 if (!addressKeys) {
                     throw new Error('Missing address keys');
                 }
 
                 await handleUnsetV6PrimaryKey({
                     api,
-                    ID: model.forwarderPrimaryKeys.v6.ID,
-                    forwarderAddress,
+                    ID: model.forwarderPrimaryKeysInfo.v6.ID,
+                    forwarderAddress: getForwarderAddress(addresses),
                     addressKeys,
                     User: await getUser(),
                     userKeys: await getUserKeys(),
                     dispatch,
                     createKTVerifier,
                 });
-                await dispatch(addressesThunk({ cache: CacheType.None })); // force re-fetch
+                // force re-fetch of addresses and address keys:
+                // NB: this currently invalidates all address key references,
+                // which is why we wait to get the v4 encryption key below.
+                // NB2: the top-level addresses & co. are also useless as a result
+                await dispatch(addressesThunk({ cache: CacheType.None }));
                 addressKeys = await getAddressKeys(model.addressID);
-                // TODOOOOOOOOOOO model.forwarderPrimaryKeys.v4.key is also cleared! FIX
+                addresses = await getAddresses();
             }
-            if (model.forwarderPrimaryKeys.v4.supportsE2EEForwarding === false) {
+            if (model.forwarderPrimaryKeysInfo.v4.supportsE2EEForwarding) {
+                // useGetAddressKeysByUsage would be preferable, but since we need the ActiveKey helpers
+                // for the setup phase, we reuse them here.
+                const forwarderAddress = getForwarderAddress(addresses);
+                const activeKeysByVersion = await getActiveAddressKeys(forwarderAddress.SignedKeyList, addressKeys!);
+                forwarderKey = getPrimaryActiveAddressKeyForEncryption(
+                    activeKeysByVersion,
+                    // set for sanity checks: v6 is never actually returned, since it's dealt with above
+                    true
+                ).privateKey as PrivateKeyReferenceV4;
+            } else {
                 if (!addressKeys) {
                     throw new Error('Missing address keys');
                 }
@@ -310,7 +338,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                 // So we generate automatically a new ECC 25519 key for the address
                 const newKey = await generateNewE2EEForwardingCompatibleAddressKey({
                     api,
-                    forwarderAddress,
+                    forwarderAddress: getForwarderAddress(addresses),
                     addresses,
                     addressKeys,
                     User: await getUser(),
@@ -318,9 +346,11 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                     createKTVerifier,
                     authentication,
                 });
-                await dispatch(addressesThunk({ cache: CacheType.None })); // force re-fetch
-                addressKeys = await getAddressKeys(model.addressID);
                 forwarderKey = newKey.privateKey;
+                await dispatch(addressesThunk({ cache: CacheType.None })); // force re-fetch
+                // the following isn't needed atm since addresses and address keys aren't used further
+                // addressKeys = await getAddressKeys(model.addressID);
+                // addresses = await getAddresses();
             }
 
             const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
@@ -398,7 +428,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         setModel({ ...model, step: Step.Setup });
     };
 
-    const primaryKeyFixupDetails = getKeyFixupDetails(model.forwarderPrimaryKeys, boldForwarderEmail);
+    const primaryKeyFixupDetails = getKeyFixupDetails(model.forwarderPrimaryKeysInfo, boldForwarderEmail);
 
     return (
         <ModalTwo
@@ -424,7 +454,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                             disabledOnlyField={inputsDisabled}
                             autoFocus
                         >
-                            {(isEditingFilters ? addresses : filteredAddresses).map(({ ID, Email, Receive }) => (
+                            {(isEditingFilters ? model.addresses : filterAddresses(model.addresses)).map(({ ID, Email, Receive }) => (
                                 <Option
                                     title={Email}
                                     key={ID}
