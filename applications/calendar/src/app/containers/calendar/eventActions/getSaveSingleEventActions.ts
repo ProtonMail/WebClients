@@ -136,6 +136,7 @@ const getSaveSingleEventActions = async ({
             hasDefaultNotifications,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             isAttendee,
+            resetNotes: oldVeventComponent.sequence !== updatedVeventComponent.sequence,
         });
         const deleteOperation = getDeleteSyncOperation(oldEvent, isSwitchCalendar);
         const multiSyncActions = [
@@ -233,6 +234,7 @@ const getSaveSingleEventActions = async ({
             isAttendee,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,
+            resetNotes: oldVeventComponent.sequence !== updatedVeventComponent.sequence,
         });
 
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
@@ -311,6 +313,7 @@ const getSaveSingleEventActions = async ({
               hasDefaultNotifications,
               isAttendee,
               addedAttendeesPublicKeysMap,
+              resetNotes: oldVeventComponent?.sequence !== updatedVeventComponent.sequence,
           })
         : getCreateSyncOperation({
               veventComponent: updatedVeventComponent,
