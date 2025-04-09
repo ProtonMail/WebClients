@@ -10,6 +10,8 @@ export enum PassEncryptionTag {
     BiometricOfflineKD = 'biometricofflinekd',
     FileData = 'filedata',
     FileKey = 'filekey',
+    FileDataV2 = 'v2;{chunkIndex};{totalChunks};filedata.item.pass.proton',
+    FileMetadataV2 = 'v2;filemetadata.item.pass.proton',
 }
 
 export enum PassSignatureContext {
