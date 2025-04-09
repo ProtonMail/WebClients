@@ -689,7 +689,10 @@ const createUpdateMessage = ({
     if (hasUpdatedText || hasUpdatedComment) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
 
-        return `${messageIntro} ${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${formattedComment}`;
+        // Handle the case where updateEventDetailsText is empty to avoid extra newlines
+        return updateEventDetailsText
+            ? `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${formattedComment}`
+            : `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}${formattedComment}`;
     }
 
     // Add comment status if present without extra newlines
@@ -734,7 +737,11 @@ const createResponseMessage = ({
     // Only show "Here's what changed" if there was an actual change (updated text or updated comment)
     if (hasUpdatedText || hasUpdatedComment) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
-        return `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText || ''}${formattedComment}`;
+
+        // Handle the case where updateEventDetailsText is empty to avoid extra newlines
+        return updateEventDetailsText
+            ? `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${formattedComment}`
+            : `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}${formattedComment}`;
     }
 
     // If there's no change but there is a comment, just add the comment with proper spacing
@@ -772,13 +779,7 @@ const createCancellationMessage = ({
     if (hasUpdatedText || hasUpdatedComment || commentStatus) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
 
-        return (
-            messageIntro +
-            '\n\n\n' +
-            c('Email body for invitation').t`Here's what changed:` +
-            (updateEventDetailsText ? `\n\n${updateEventDetailsText}` : '') +
-            formattedComment
-        );
+        return `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`;
     }
 
     // Regular cancellation without comment
@@ -893,14 +894,14 @@ export const generateEmailBody = ({
             throw new Error('Unanswered partstat');
         }
 
+        // Remove debug logs and suppression logic
         return createResponseMessage({
             emailAddress,
             responseType,
             eventTitle,
             commentStatus,
             updateEventDetailsText: updateEventDetailsText || '',
-            // Only pass hasUpdatedComment=true if the comment was actually updated, not for new comments
-            hasUpdatedComment: hasUpdatedComment && !!oldVevent?.comment?.[0]?.value,
+            hasUpdatedComment, // pass raw value directly
         });
     }
 
