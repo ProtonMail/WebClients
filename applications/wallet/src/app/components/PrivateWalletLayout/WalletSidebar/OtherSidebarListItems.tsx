@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { signoutAction } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { IconProps } from '@proton/components';
 import {
@@ -23,6 +24,8 @@ import {
 } from '@proton/components';
 import { PLANS } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
+import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import clsx from '@proton/utils/clsx';
 
 import { APP_NAME } from '../../../config';
 
@@ -56,6 +59,7 @@ export const OtherSidebarListItems = () => {
 
     const [organization, isLoadingOrganization] = useOrganization();
     const [user] = useUser();
+    const [subscription] = useSubscription();
 
     const { state: showSettings, toggle: toggleShowSettings } = useToggle(false);
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
@@ -76,32 +80,34 @@ export const OtherSidebarListItems = () => {
     const supportLabel = c('Wallet Sidebar').t`Contact Support`;
     const signoutLabel = c('Wallet Sidebar').t`Sign out`;
 
+    const upgradeToVisionaryOnly =
+        hasBundle(subscription) ||
+        hasFamily(subscription) ||
+        hasDuo(subscription) ||
+        hasBundlePro(subscription) ||
+        hasBundlePro2024(subscription);
+
+    const subscriptionProps = upgradeToVisionaryOnly
+        ? {
+              step: SUBSCRIPTION_STEPS.CHECKOUT,
+              disablePlanSelection: true,
+              plan: PLANS.VISIONARY,
+          }
+        : {
+              step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+          };
+
+    const canUpgrade = organization?.PlanName !== PLANS.VISIONARY && !isLoadingOrganization && user.canPay;
+
     return (
         <>
-            <SidebarListItem>
-                <SidebarListItemLink to={'/discover'}>
-                    <SidebarListItemContent
-                        data-testid="wallet-sidebar:discover"
-                        left={<SidebarListItemContentIcon size={5} className="color-weak" name="squares-in-square" />}
-                        className="sidebar-item-content flex gap-2 max-w-full"
-                    >
-                        <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
-                            <span className="text-ellipsis" title={discoverLabel}>
-                                {discoverLabel}
-                            </span>
-                        </div>
-                    </SidebarListItemContent>
-                </SidebarListItemLink>
-            </SidebarListItem>
-            {organization?.PlanName !== PLANS.VISIONARY && !isLoadingOrganization && user.canPay && (
-                <SidebarListItem className="my-2">
+            {canUpgrade && (
+                <SidebarListItem>
                     <SidebarListItemButton
                         data-testid="wallet-sidebar:upgrade"
                         onClick={() => {
                             openSubscriptionModal({
-                                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                                disablePlanSelection: true,
-                                plan: PLANS.VISIONARY,
+                                ...subscriptionProps,
                                 metrics: {
                                     source: 'upsells',
                                 },
@@ -119,6 +125,21 @@ export const OtherSidebarListItems = () => {
                     </SidebarListItemButton>
                 </SidebarListItem>
             )}
+            <SidebarListItem className={clsx(canUpgrade && 'my-2')}>
+                <SidebarListItemLink to={'/discover'}>
+                    <SidebarListItemContent
+                        data-testid="wallet-sidebar:discover"
+                        left={<SidebarListItemContentIcon size={5} className="color-weak" name="squares-in-square" />}
+                        className="sidebar-item-content flex gap-2 max-w-full"
+                    >
+                        <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
+                            <span className="text-ellipsis" title={discoverLabel}>
+                                {discoverLabel}
+                            </span>
+                        </div>
+                    </SidebarListItemContent>
+                </SidebarListItemLink>
+            </SidebarListItem>
             <SidebarListItem className="my-2">
                 <SidebarListItemSettingsLink path={'/'} target="_blank">
                     <SidebarListItemContent
