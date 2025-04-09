@@ -159,11 +159,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (!volumeId || !shareId) {
                 return;
             }
-            const photoCall = async (lastLinkId?: string) => {
+            const photoCall = async (lastLinkId?: string, tag?: PhotoTag) => {
                 const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
                     queryPhotos(volumeId, {
                         PreviousPageLastLinkID: lastLinkId,
-                        Tags: tags,
+                        Tag: tag,
                     }),
                     abortSignal
                 );
@@ -184,7 +184,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             };
 
             setIsPhotosLoading(true);
-            void photoCall();
+            if (tags) {
+                tags.forEach((tag) => {
+                    void photoCall(undefined, tag);
+                });
+            } else {
+                void photoCall();
+            }
         },
         [request, shareId, volumeId]
     );
