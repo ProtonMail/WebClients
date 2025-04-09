@@ -197,6 +197,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                     ...photo,
                                     parentLinkId: albumLinkId,
                                     rootShareId: albumShareId,
+                                    volumeId: albumVolumeId,
                                 };
                             })
                         );
@@ -211,6 +212,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                         ...photo,
                                         parentLinkId: albumLinkId,
                                         rootShareId: albumShareId,
+                                        volumeId: albumVolumeId,
                                     };
                                 });
                             return [...prevPhotos, ...newPhotos];
