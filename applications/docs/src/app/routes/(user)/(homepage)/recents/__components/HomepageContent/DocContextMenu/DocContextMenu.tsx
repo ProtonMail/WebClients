@@ -1,10 +1,15 @@
 import { useEffect } from 'react'
 
-import { ContextMenu, DropdownSizeUnit } from '@proton/components'
+import { ContextMenu, ContextSeparator, DropdownSizeUnit } from '@proton/components'
 import { OpenButton } from './buttons/OpenButton'
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
-import { OpenFolder } from './buttons/OpenFolder'
+import { OpenFolderButton } from './buttons/OpenFolderButton'
+import { ShareButton } from './buttons/ShareButton'
+import { MoveToTrashButton } from './buttons/MoveToTrashButton'
+import { MoveButton } from './buttons/MoveButton'
+import { RenameButton } from './buttons/RenameButton'
+import { IS_MOVE_ENABLED, IS_RENAME_ENABLED } from '../../../__utils/features'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined
@@ -32,6 +37,8 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
     return null
   }
 
+  const separator = <ContextSeparator className="my-1" />
+
   return (
     <>
       <ContextMenu
@@ -42,7 +49,21 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
         anchorRef={anchorRef}
       >
         <OpenButton currentDocument={currentDocument} close={close} />
-        <OpenFolder currentDocument={currentDocument} close={close} />
+        {!currentDocument.isSharedWithMe ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
+        {separator}
+        {IS_MOVE_ENABLED && !currentDocument.isSharedWithMe ? (
+          <MoveButton currentDocument={currentDocument} close={close} />
+        ) : null}
+        <OpenFolderButton currentDocument={currentDocument} close={close} />
+        {IS_RENAME_ENABLED && !currentDocument.isSharedWithMe ? (
+          <RenameButton currentDocument={currentDocument} close={close} />
+        ) : null}
+        {!currentDocument.isSharedWithMe ? (
+          <>
+            {separator}
+            <MoveToTrashButton currentDocument={currentDocument} close={close} />
+          </>
+        ) : null}
       </ContextMenu>
     </>
   )
