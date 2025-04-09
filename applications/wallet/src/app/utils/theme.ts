@@ -11,6 +11,11 @@ export enum SubTheme {
     PURPLE = 'ui-purple',
 }
 
+export enum WalletUpgradeBanner {
+    LOCK = 'lock',
+    AT_SIGN = 'at-sign',
+}
+
 const subthemes = new Set([SubTheme.ORANGE, SubTheme.BLUE, SubTheme.PURPLE, SubTheme.GREEN, SubTheme.PINK]);
 
 export const getThemeByIndex = (index: number) => {
