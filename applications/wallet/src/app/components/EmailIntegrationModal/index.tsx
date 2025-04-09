@@ -12,6 +12,7 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Button, ButtonLike, Modal } from '../../atoms';
+import { WalletUpgradeBanner } from '../../utils';
 import { EmailAddressCreationModal } from '../EmailAddressCreationModal';
 import { WalletUpgradeModal } from '../WalletUpgradeModal';
 
@@ -131,9 +132,10 @@ export const EmailIntegrationModal = ({ loading, addresses, onAddressSelect, lin
                     />
 
                     <WalletUpgradeModal
-                        title={c('Wallet upgrade').t`Unlock more email addresses`}
+                        title={c('Wallet upgrade').t`Expand your address limit`}
                         content={c('Wallet upgrade')
-                            .t`An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.`}
+                            .t`You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`}
+                        banner={WalletUpgradeBanner.AT_SIGN}
                         {...walletUpgradeModal}
                     />
                 </>
