@@ -69,7 +69,7 @@ const publicKey = {
 describe('useShareInvitees', () => {
     beforeEach(() => {
         when(mockedGetPrimaryPublicKey)
-            .calledWith(inviteeInternal.email, new AbortController().signal)
+            .calledWith(inviteeInternal.email, new AbortController().signal, true)
             .mockResolvedValue(primaryPublicKey);
 
         when(mockedImportPublicKey).calledWith({ armoredKey: primaryPublicKey }).mockResolvedValue(publicKey);
@@ -82,7 +82,7 @@ describe('useShareInvitees', () => {
         it('should be able to add proton/non-proton invitee', async () => {
             const { result } = renderHook(() => useShareInvitees([]));
             when(mockedGetPrimaryPublicKey)
-                .calledWith(inviteeInternal2.email, new AbortController().signal)
+                .calledWith(inviteeInternal2.email, new AbortController().signal, true)
                 .mockResolvedValueOnce(undefined);
 
             await act(async () => {
@@ -201,7 +201,7 @@ describe('useShareInvitees', () => {
     describe('remove', () => {
         it('should be able to remove an invitee added previously', async () => {
             when(mockedGetPrimaryPublicKey)
-                .calledWith(inviteeInternal2.email, new AbortController().signal)
+                .calledWith(inviteeInternal2.email, new AbortController().signal, true)
                 .mockResolvedValue(primaryPublicKey);
             const { result } = renderHook(() => useShareInvitees([]));
 
@@ -229,7 +229,7 @@ describe('useShareInvitees', () => {
             const abortSpy = jest.spyOn(AbortController.prototype, 'abort');
             const abortController = new AbortController();
             when(mockedGetPrimaryPublicKey)
-                .calledWith(inviteeInternal2.email, abortController.signal)
+                .calledWith(inviteeInternal2.email, abortController.signal, true)
                 .mockResolvedValue(primaryPublicKey);
             const { result } = renderHook(() => useShareInvitees([]));
 
