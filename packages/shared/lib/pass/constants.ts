@@ -9,11 +9,15 @@ interface Client {
         | 'brand-firefox'
         | 'brand-edge'
         | 'brand-windows'
+        | 'brand-mac'
+        | 'brand-linux'
         | 'brand-safari';
 }
 
 export enum Clients {
     Windows,
+    macOS,
+    Linux,
     Android,
     iOS,
     Chrome,
@@ -28,6 +32,16 @@ export const clients: { [key in Clients]: Client } = {
         title: 'Windows',
         link: 'https://proton.me/download/PassDesktop/win32/x64/ProtonPass_Setup.exe',
         icon: 'brand-windows',
+    },
+    [Clients.macOS]: {
+        title: 'macOS',
+        link: 'https://proton.me/download/pass/macos/ProtonPass.dmg',
+        icon: 'brand-mac',
+    },
+    [Clients.Linux]: {
+        title: 'Linux',
+        link: 'https://proton.me/support/set-up-proton-pass-linux',
+        icon: 'brand-linux',
     },
     [Clients.Android]: {
         title: 'Android',
