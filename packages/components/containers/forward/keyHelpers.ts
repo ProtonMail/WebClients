@@ -6,6 +6,7 @@ import { createAddressKeyRouteV2 } from '@proton/shared/lib/api/keys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
 import type {
     ActiveAddressKeysByVersion,
+    ActiveKey,
     Address,
     Api,
     DecryptedAddressKey,
@@ -166,5 +167,5 @@ export const generateNewE2EEForwardingCompatibleAddressKey = async ({
 
     await keyTransparencyCommit(User, userKeys);
 
-    return newKey;
+    return newKey as ActiveKey<PrivateKeyReferenceV4>;
 };
