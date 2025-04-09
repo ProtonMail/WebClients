@@ -49,6 +49,7 @@ export interface DriveItem extends FileBrowserBaseItem {
     isShared?: boolean;
     isAdmin: boolean;
     showLinkSharingModal?: ReturnType<typeof useLinkSharingModal>[1];
+    volumeId: string;
 }
 
 interface Props {

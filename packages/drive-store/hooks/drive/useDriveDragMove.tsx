@@ -51,6 +51,7 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
 
         const toMoveInfo: LinkInfo[] = toMove.map((item) => ({
             parentLinkId: item.parentLinkId,
+            volumeId: item.volumeId,
             name: item.name,
             isFile: item.isFile,
             linkId: item.linkId,

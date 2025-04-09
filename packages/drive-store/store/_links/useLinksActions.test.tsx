@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { API_CODES } from '@proton/shared/lib/constants';
+import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
@@ -66,12 +67,15 @@ jest.mock('./useLink', () => {
 
 const mockRequest = jest.fn();
 const mockGetLinks = jest.fn();
+const mockBatchHelper = jest.fn();
 
 const mockQueryTrashLinks = jest.fn();
 const mockQueryRestoreLinks = jest.fn();
 const mockQueryDeleteTrashedLinks = jest.fn();
 const mockGetShare = jest.fn();
 const mockGetDefaultShare = jest.fn();
+const mockGetDefaultPhotosShare = jest.fn();
+const mockGetShareCreatorKeys = jest.fn();
 
 jest.mock('./useLinks', () => {
     const useLink = () => {
@@ -94,6 +98,7 @@ jest.mock('../_shares/useShare', () => {
     const useShare = () => {
         return {
             getShare: mockGetShare,
+            getShareCreatorKeys: mockGetShareCreatorKeys,
         };
     };
     return useShare;
@@ -103,17 +108,24 @@ jest.mock('../_shares/useDefaultShare', () => {
     const useDefaultShare = () => {
         return {
             getDefaultShare: mockGetDefaultShare,
+            getDefaultPhotosShare: mockGetDefaultPhotosShare,
         };
     };
     return useDefaultShare;
 });
 
+jest.mock('../_utils/useBatchHelper', () => {
+    const useBatchHelper = () => mockBatchHelper;
+    return { useBatchHelper };
+});
+
 const SHARE_ID_0 = 'shareId00';
 const SHARE_ID_1 = 'shareId01';
-const VOLUME_ID = 'volumeId00';
+const VOLUME_ID_0 = 'volumeId00';
+const VOLUME_ID_1 = 'volumeId01';
 
 // TODO: Test suite incomplete
-// covers operations allowing using links from multiple shares
+// covers operations allowing using links from multiple volumes
 describe('useLinksActions', () => {
     let hook: {
         current: ReturnType<typeof useLinksActions>;
@@ -133,16 +145,51 @@ describe('useLinksActions', () => {
             return Promise.resolve({
                 Responses: linkIds.map(() => ({
                     Response: {
-                        Code: RESPONSE_CODE.SUCCESS,
+                        Code: API_CODES.SINGLE_SUCCESS,
                     },
                 })),
             });
         });
-        mockQueryTrashLinks.mockImplementation((shareId, parentLinkId, linkIds) => linkIds);
-        mockQueryRestoreLinks.mockImplementation((shareId, linkIds) => linkIds);
-        mockQueryDeleteTrashedLinks.mockImplementation((shareId, linkIds) => linkIds);
-        mockGetShare.mockImplementation((ac, shareId) => ({ shareId }));
-        mockGetDefaultShare.mockImplementation(() => ({ volumeId: VOLUME_ID }));
+
+        mockBatchHelper.mockImplementation(
+            async (
+                _signal: AbortSignal,
+                {
+                    linkIds,
+                    query,
+                }: {
+                    linkIds: string[];
+                    query: (batchLinkIds: string[]) => Promise<object> | object;
+                    maxParallelRequests?: number;
+                }
+            ) => {
+                await query(linkIds);
+
+                const response = {
+                    Responses: linkIds.map((linkId) => ({
+                        LinkID: linkId,
+                        Response: {
+                            Code: API_CODES.SINGLE_SUCCESS,
+                            Error: null,
+                        },
+                    })),
+                };
+
+                return {
+                    responses: [{ batchLinkIds: linkIds, response }],
+                    successes: linkIds,
+                    failures: {},
+                };
+            }
+        );
+
+        mockQueryTrashLinks.mockImplementation((volumeId, linkIds) => linkIds);
+        mockQueryRestoreLinks.mockImplementation((volumeId, linkIds) => linkIds);
+        mockQueryDeleteTrashedLinks.mockImplementation((volumeId, linkIds) => linkIds);
+        mockGetShare.mockImplementation((_ac, shareId) => ({ shareId, type: 0 }));
+        mockGetDefaultShare.mockImplementation(() => ({ volumeId: VOLUME_ID_0 }));
+        mockGetDefaultPhotosShare.mockImplementation(() => null);
+        mockGetShareCreatorKeys.mockImplementation(() => ({ privateKey: {}, address: { Email: 'test@test.com' } }));
 
         const wrapper = ({ children }: { children: React.ReactNode }) => (
             <VolumesStateProvider>{children}</VolumesStateProvider>
@@ -155,7 +202,6 @@ describe('useLinksActions', () => {
                         queryTrashLinks: mockQueryTrashLinks,
                         queryRestoreLinks: mockQueryRestoreLinks,
                         queryDeleteTrashedLinks: mockQueryDeleteTrashedLinks,
-                        queryEmptyTrashOfShare: jest.fn(),
                         queryDeleteChildrenLinks: jest.fn(),
                     },
                 }),
@@ -164,115 +210,134 @@ describe('useLinksActions', () => {
         hook = result;
     });
 
-    it('trashes links from different shares', async () => {
+    it('trashes links from different volumes', async () => {
         /*
-            shareId00
-            └── link00
-                ├── link01
-                │   ├── link03 x
-                │   └── link04 x
-                └── link02
-                    └── link05 x
-            shareId01
-            └── link10
-                ├── link01
-                |   └── link12 x <-- non-unique parent link id
-                └── link11
-                    ├── link13
-                    └── link14 x
+            volumeId00
+            └── links: linkId03, linkId04, linkId05
+            volumeId01
+            └── links: linkId12, linkId14
         */
 
         const ac = new AbortController();
         const result = await hook.current.trashLinks(ac.signal, [
-            { shareId: SHARE_ID_0, linkId: 'linkId03', parentLinkId: 'linkId01' },
-            { shareId: SHARE_ID_0, linkId: 'linkId04', parentLinkId: 'linkId01' },
-            { shareId: SHARE_ID_0, linkId: 'linkId05', parentLinkId: 'linkId02' },
-            { shareId: SHARE_ID_1, linkId: 'linkId14', parentLinkId: 'linkId11' },
-            { shareId: SHARE_ID_1, linkId: 'linkId12', parentLinkId: 'linkId01' },
+            { volumeId: VOLUME_ID_0, linkId: 'linkId03' },
+            { volumeId: VOLUME_ID_0, linkId: 'linkId04' },
+            { volumeId: VOLUME_ID_0, linkId: 'linkId05' },
+            { volumeId: VOLUME_ID_1, linkId: 'linkId14' },
+            { volumeId: VOLUME_ID_1, linkId: 'linkId12' },
         ]);
 
+        expect(mockBatchHelper).toHaveBeenCalledWith(ac.signal, {
+            linkIds: ['linkId03', 'linkId04', 'linkId05'],
+            query: expect.any(Function),
+            maxParallelRequests: MAX_THREADS_PER_REQUEST,
+        });
+
+        expect(mockBatchHelper).toHaveBeenCalledWith(ac.signal, {
+            linkIds: ['linkId14', 'linkId12'],
+            query: expect.any(Function),
+            maxParallelRequests: MAX_THREADS_PER_REQUEST,
+        });
+
         // ensure api requests are invoked by correct groups
-        expect(mockQueryTrashLinks).toBeCalledWith(SHARE_ID_0, 'linkId01', ['linkId03', 'linkId04']);
-        expect(mockQueryTrashLinks).toBeCalledWith(SHARE_ID_0, 'linkId02', ['linkId05']);
-        expect(mockQueryTrashLinks).toBeCalledWith(SHARE_ID_1, 'linkId01', ['linkId12']);
-        expect(mockQueryTrashLinks).toBeCalledWith(SHARE_ID_1, 'linkId11', ['linkId14']);
+        expect(mockQueryTrashLinks).toHaveBeenCalledWith(VOLUME_ID_0, ['linkId03', 'linkId04', 'linkId05']);
+        expect(mockQueryTrashLinks).toHaveBeenCalledWith(VOLUME_ID_1, ['linkId14', 'linkId12']);
 
         // verify all requested links were processed
         expect(result.successes.sort()).toEqual(['linkId03', 'linkId04', 'linkId05', 'linkId12', 'linkId14'].sort());
     });
 
-    it('restores links from different shares', async () => {
+    it('restores links from different volumes', async () => {
         /*
-            shareId00
-            └── link00
-                ├── linkId01 <
-                │   ├── linkId03
-                │   └── linkId04 <
-            shareId01
-            └── linkId10
-                └── linkId11 <
+            volumeId00
+            └── links: linkId01, linkId04
+            volumeId01
+            └── links: linkId11
         */
 
         // emulate partial state
         const state: Record<string, any> = {
             linkId01: {
-                rootShareId: SHARE_ID_0,
                 linkId: 'linkId01',
+                volumeId: VOLUME_ID_0,
+                shareId: SHARE_ID_0,
                 trashed: 3,
             },
             linkId04: {
-                rootShareId: SHARE_ID_0,
                 linkId: 'linkId04',
+                volumeId: VOLUME_ID_0,
+                shareId: SHARE_ID_0,
                 trashed: 1,
             },
             linkId11: {
-                rootShareId: SHARE_ID_1,
                 linkId: 'linkId11',
+                volumeId: VOLUME_ID_1,
+                shareId: SHARE_ID_1,
                 trashed: 3,
             },
         };
 
-        mockGetLinks.mockImplementation(async (signal, ids: { linkId: string }[]) => {
+        mockGetLinks.mockImplementation(async (_signal, ids: { linkId: string }[]) => {
             return ids.map((idGroup) => state[idGroup.linkId]).filter(isTruthy);
         });
 
         const ac = new AbortController();
         const result = await hook.current.restoreLinks(ac.signal, [
-            { shareId: SHARE_ID_0, linkId: 'linkId01' },
-            { shareId: SHARE_ID_0, linkId: 'linkId04' },
-            { shareId: SHARE_ID_1, linkId: 'linkId11' },
+            { volumeId: VOLUME_ID_0, shareId: SHARE_ID_0, linkId: 'linkId01' },
+            { volumeId: VOLUME_ID_0, shareId: SHARE_ID_0, linkId: 'linkId04' },
+            { volumeId: VOLUME_ID_1, shareId: SHARE_ID_1, linkId: 'linkId11' },
         ]);
 
-        expect(mockQueryRestoreLinks).toBeCalledWith(SHARE_ID_0, [
+        expect(mockBatchHelper).toHaveBeenCalledWith(ac.signal, {
+            linkIds: ['linkId01', 'linkId04'],
+            query: expect.any(Function),
+            maxParallelRequests: 1,
+        });
+
+        expect(mockBatchHelper).toHaveBeenCalledWith(ac.signal, {
+            linkIds: ['linkId11'],
+            query: expect.any(Function),
+            maxParallelRequests: 1,
+        });
+
+        expect(mockQueryRestoreLinks).toHaveBeenCalledWith(VOLUME_ID_0, [
             'linkId01',
             'linkId04', // this link has been deleted before link linkId, thus restored last
         ]);
-        expect(mockQueryRestoreLinks).toBeCalledWith(SHARE_ID_1, ['linkId11']);
+        expect(mockQueryRestoreLinks).toHaveBeenCalledWith(VOLUME_ID_1, ['linkId11']);
 
         expect(result.successes.sort()).toEqual(['linkId01', 'linkId04', 'linkId11'].sort());
     });
 
-    it('deletes trashed links from different shares', async () => {
+    it('deletes trashed links from different volumes', async () => {
         /*
-            shareId00
-            └── link00
-                ├── linkId01 x
-                │   ├── linkId03
-                │   └── linkId04 x
-            shareId01
-            └── linkId10
-                └── linkId11 x
+            volumeId00
+            └── links: linkId01, linkId04
+            volumeId01
+            └── links: linkId11
         */
 
         const ac = new AbortController();
         const result = await hook.current.deleteTrashedLinks(ac.signal, [
-            { shareId: SHARE_ID_0, linkId: 'linkId01' },
-            { shareId: SHARE_ID_0, linkId: 'linkId04' },
-            { shareId: SHARE_ID_1, linkId: 'linkId11' },
+            { volumeId: VOLUME_ID_0, linkId: 'linkId01' },
+            { volumeId: VOLUME_ID_0, linkId: 'linkId04' },
+            { volumeId: VOLUME_ID_1, linkId: 'linkId11' },
         ]);
 
-        expect(mockQueryDeleteTrashedLinks).toBeCalledWith(SHARE_ID_0, ['linkId01', 'linkId04']);
-        expect(mockQueryDeleteTrashedLinks).toBeCalledWith(SHARE_ID_1, ['linkId11']);
+        expect(mockBatchHelper).toHaveBeenCalledWith(ac.signal, {
+            linkIds: ['linkId01', 'linkId04'],
+            query: expect.any(Function),
+            maxParallelRequests: MAX_THREADS_PER_REQUEST,
+        });
+
+        expect(mockBatchHelper).toHaveBeenCalledWith(ac.signal, {
+            linkIds: ['linkId11'],
+            query: expect.any(Function),
+            maxParallelRequests: MAX_THREADS_PER_REQUEST,
+        });
+
+        expect(mockQueryDeleteTrashedLinks).toHaveBeenCalledWith(VOLUME_ID_0, ['linkId01', 'linkId04']);
+        expect(mockQueryDeleteTrashedLinks).toHaveBeenCalledWith(VOLUME_ID_1, ['linkId11']);
 
         expect(result.successes.sort()).toEqual(['linkId01', 'linkId04', 'linkId11'].sort());
     });
