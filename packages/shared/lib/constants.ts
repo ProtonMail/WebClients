@@ -617,7 +617,6 @@ export enum MAIL_UPSELL_PATHS {
     TRIAL_WELCOME = 'trial-welcome',
     TRIAL_BANNER = 'trial-banner',
     TRIAL_END = 'trial-end',
-    BREACH_ALERTS = 'breach-alerts',
     ASSISTANT_TOGGLE = 'assistant-toggle',
     ASSISTANT_TOGGLE_DOWNGRADE = 'assistant-toggle-downgrade',
     ASSISTANT_COMPOSER = 'assistant-composer',
