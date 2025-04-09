@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import FormModal from '@proton/components/components/modal/FormModal';
 
-import GenericError from '../error/GenericError';
+import { GenericErrorDisplay } from '../error/GenericError';
 import ErrorBoundary from './ErrorBoundary';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 const ModalErrorBoundary = ({ children, ...rest }: Props) => {
     const errorComponent = (
         <FormModal close={null} onSubmit={rest?.onClose} submit={c('Action').t`Close`} {...rest}>
-            <GenericError />
+            <GenericErrorDisplay />
         </FormModal>
     );
     return <ErrorBoundary component={errorComponent}>{children}</ErrorBoundary>;
