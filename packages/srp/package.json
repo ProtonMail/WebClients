@@ -3,6 +3,7 @@
     "description": "Proton SRP and auth library",
     "license": "MIT",
     "author": "Proton",
+    "sideEffects": false,
     "main": "lib/index.ts",
     "module": "lib/index.ts",
     "scripts": {
