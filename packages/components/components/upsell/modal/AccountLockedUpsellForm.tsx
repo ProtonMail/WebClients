@@ -34,7 +34,7 @@ const AccountLockedUpsellForm = ({
     const contactLink = <Href key="contact" href={getAbuseURL()}>{c('Link').t`contact us`}</Href>;
     const enableUpgrade = [upsellConfig, handleUpgrade, renderPlanSelect].every(isTruthy);
     const features: UpsellFeatureName[] = enableUpgrade
-        ? ['breach-alerts', 'password-health', 'account-protection', 'storage-by-plan', 'address-by-plan']
+        ? ['password-health', 'account-protection', 'storage-by-plan', 'address-by-plan']
         : [];
     const planTitle = selectedPlan?.Title ?? 'Plan';
     const mailLink = (
