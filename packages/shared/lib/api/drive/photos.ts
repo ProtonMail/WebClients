@@ -5,13 +5,13 @@ import type { PhotoTag } from '../../interfaces/drive/file';
 export const queryPhotos = (
     volumeId: string,
     {
-        Tags,
+        Tag,
         ...params
     }: {
         Desc?: 0 | 1;
         PreviousPageLastLinkID?: string;
         MinimumCaptureTime?: number;
-        Tags?: PhotoTag[];
+        Tag?: PhotoTag;
     } = {}
 ) => ({
     method: 'get',
@@ -20,7 +20,7 @@ export const queryPhotos = (
         PageSize: PHOTOS_PAGE_SIZE,
         ...params,
         // TODO: For now BE only accept one Tag, but it should support multiple.
-        Tag: Tags?.[0],
+        Tag: Tag,
     },
 });
 
