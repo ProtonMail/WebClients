@@ -132,37 +132,46 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         };
     }, [volumeId, driveEventManager.volumes]);
 
-    const loadPhotos = async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        const photoCall = async (lastLinkId?: string) => {
-            const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
-                queryPhotos(volumeId, {
-                    PreviousPageLastLinkID: lastLinkId,
-                    Tags: tags,
-                }),
-                abortSignal
-            );
-            if (Code === 1000 && !!Photos.length) {
-                const photosData = Photos.map(photoPayloadToPhotos);
-
-                setPhotos((prevPhotos) => {
-                    const newPhotos = photosData.filter(
-                        (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
-                    );
-                    return [...prevPhotos, ...newPhotos];
-                });
-
-                void photoCall(photosData[photosData.length - 1].linkId);
-            } else {
-                setIsPhotosLoading(false);
+    const loadPhotos = useCallback(
+        async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
+            if (!volumeId || !shareId) {
+                return;
             }
-        };
+            const photoCall = async (lastLinkId?: string, tag?: PhotoTag) => {
+                const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
+                    queryPhotos(volumeId, {
+                        PreviousPageLastLinkID: lastLinkId,
+                        Tag: tag,
+                    }),
+                    abortSignal
+                );
+                if (Code === 1000 && !!Photos.length) {
+                    const photosData = Photos.map(photoPayloadToPhotos);
 
-        setIsPhotosLoading(true);
-        void photoCall();
-    };
+                    setPhotos((prevPhotos) => {
+                        const newPhotos = photosData.filter(
+                            (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
+                        );
+                        return [...prevPhotos, ...newPhotos];
+                    });
+
+                    void photoCall(photosData[photosData.length - 1].linkId);
+                } else {
+                    setIsPhotosLoading(false);
+                }
+            };
+
+            setIsPhotosLoading(true);
+            if (tags) {
+                tags.forEach((tag) => {
+                    void photoCall(undefined, tag);
+                });
+            } else {
+                void photoCall();
+            }
+        },
+        [request, shareId, volumeId]
+    );
 
     const loadAlbumPhotos = useCallback(
         async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string) => {
