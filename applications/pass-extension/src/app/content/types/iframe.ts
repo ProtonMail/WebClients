@@ -78,6 +78,7 @@ export enum IFramePortMessageType {
     DROPDOWN_AUTOFILL_GENERATED_PW = 'DROPDOWN_AUTOFILL_GENERATED_PASSWORD',
     DROPDOWN_AUTOFILL_IDENTITY = 'DROPDOWN_AUTOFILL_IDENTITY',
     DROPDOWN_AUTOFILL_LOGIN = 'DROPDOWN_AUTOFILL_LOGIN',
+    DROPDOWN_BLUR_FIELD = 'DROPDOWN_BLUR_FIELD',
     IFRAME_CLOSE = 'IFRAME_CLOSE',
     IFRAME_CONNECTED = 'IFRAME_CONNECTED',
     IFRAME_DIMENSIONS = 'IFRAME_DIMENSIONS',
@@ -108,6 +109,7 @@ export type IFrameMessageType = IFramePortMessageType | IFrameWorkerMessages['ty
 export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Extract<
     | IFrameWorkerMessages
     | { type: IFramePortMessageType.AUTOFILL_FILTER; payload: { startsWith: string } }
+    | { type: IFramePortMessageType.DROPDOWN_BLUR_FIELD }
     | { type: IFramePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
     | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL; payload: { email: string } }
     | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW; payload: { password: string } }

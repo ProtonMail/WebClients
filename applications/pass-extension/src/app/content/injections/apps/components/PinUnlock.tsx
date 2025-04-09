@@ -1,7 +1,11 @@
 import type { FC, ReactNode } from 'react';
 import { useEffect } from 'react';
 
-import { useIFrameAppState } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
@@ -20,6 +24,8 @@ export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
     const [value, setValue] = useMountedState<string>('');
     const [loading, setLoading] = useMountedState<boolean>(false);
     const [error, setError] = useMountedState<MaybeNull<string>>(null);
+
+    const ctrl = useIFrameAppController();
 
     /* Re-render the PIN input with correct input focus */
     const [key, rerender] = useRerender('pin-input');
@@ -45,7 +51,11 @@ export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
     useSessionLockPinSubmitEffect(value, { onSubmit });
 
     useEffect(() => {
-        if (!visible) setError(null);
+        /** Force blur the parent field if dropdown becomes visible
+         * This helps when the dropdown has trouble gaining focus due
+         * to strict focus management in certain websites */
+        if (visible) ctrl.forwardMessage({ type: IFramePortMessageType.DROPDOWN_BLUR_FIELD });
+        else setError(null);
     }, [visible]);
 
     return (
