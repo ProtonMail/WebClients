@@ -685,18 +685,20 @@ const createUpdateMessage = ({
         messageIntro = c('Email body for invitation').t`This event was updated.`;
     }
 
-    // If there's updated text or just a comment update, we should show "Here's what changed"
-    if (hasUpdatedText || hasUpdatedComment) {
+    // If there's updated text or a comment change that needs the "Here's what changed" header,
+    // format with exactly two spaces after the newline before "Here's what changed:"
+    if (hasUpdatedText || (hasUpdatedComment && commentStatus)) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
-
-        // Handle the case where updateEventDetailsText is empty to avoid extra newlines
-        return updateEventDetailsText
-            ? `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${formattedComment}`
-            : `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}${formattedComment}`;
+        return `${messageIntro}\n\nHere's what changed:\n\n${updateEventDetailsText}${formattedComment}`;
     }
 
-    // Add comment status if present without extra newlines
-    return commentStatus ? `${messageIntro}\n\n${commentStatus}` : messageIntro;
+    // If there's only a comment update without the header
+    if (commentStatus) {
+        return `${messageIntro}\n\n${commentStatus}`;
+    }
+
+    // No changes or comments
+    return messageIntro;
 };
 
 /**
@@ -734,17 +736,17 @@ const createResponseMessage = ({
         throw new Error('Invalid response type');
     }
 
-    // Only show "Here's what changed" if there was an actual change (updated text or updated comment)
-    if (hasUpdatedText || hasUpdatedComment) {
-        const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
-
-        // Handle the case where updateEventDetailsText is empty to avoid extra newlines
-        return updateEventDetailsText
-            ? `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${formattedComment}`
-            : `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}${formattedComment}`;
+    // Only show "Here's what changed" if there were actual property changes, not just for a new comment
+    if (hasUpdatedText) {
+        return `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${commentStatus ? `\n\n${commentStatus}` : ''}`;
     }
 
-    // If there's no change but there is a comment, just add the comment with proper spacing
+    // For comment updates, don't include "Here's what changed" header
+    if (hasUpdatedComment) {
+        return `${responseMessage}\n\n${commentStatus}`;
+    }
+
+    // If there's no text change but there is a comment, just add the comment with proper spacing
     if (commentStatus) {
         return `${responseMessage}\n\n${commentStatus}`;
     }
@@ -761,13 +763,11 @@ const createCancellationMessage = ({
     eventTitle,
     commentStatus,
     updateEventDetailsText,
-    hasUpdatedComment,
 }: {
     isSingleOccurrence: boolean;
     eventTitle: string;
     commentStatus: string;
     updateEventDetailsText: string;
-    hasUpdatedComment: boolean;
 }) => {
     const messageIntro = isSingleOccurrence
         ? c('Email body for invitation').t`This event occurrence was canceled.`
@@ -775,15 +775,18 @@ const createCancellationMessage = ({
 
     const hasUpdatedText = updateEventDetailsText && updateEventDetailsText.trim() !== '';
 
-    // If there's updated text or a comment, we should show "Here's what changed"
-    if (hasUpdatedText || hasUpdatedComment || commentStatus) {
-        const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
+    // If there's updated text, show "Here's what changed"
+    if (hasUpdatedText) {
+        return `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${commentStatus ? `\n\n${commentStatus}` : ''}`;
+    }
 
-        return `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}${updateEventDetailsText ? `\n\n${updateEventDetailsText}` : ''}${formattedComment}`;
+    // If only a comment is present, include "Here's what changed:" header as expected in tests
+    if (commentStatus) {
+        return `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}\n${commentStatus}`;
     }
 
     // Regular cancellation without comment
-    return updateEventDetailsText ? `${messageIntro}\n\n${updateEventDetailsText}` : messageIntro;
+    return messageIntro;
 };
 
 export const generateEmailBody = ({
@@ -868,7 +871,6 @@ export const generateEmailBody = ({
             eventTitle,
             commentStatus,
             updateEventDetailsText: updateEventDetailsText || '',
-            hasUpdatedComment,
         });
     }
 

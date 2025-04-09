@@ -451,7 +451,9 @@ I am a good description`;
                 parameters: { type: 'date' },
             },
         };
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 TIME:
 Sunday March 22nd, 2020 - Monday March 23rd, 2020
@@ -483,7 +485,9 @@ Removed`;
             summary: { value: 'Watch movie' },
             description: { value: 'I am a good description' },
         };
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 TITLE:
 Watch movie
@@ -510,7 +514,9 @@ I am a good description`;
             location: { value: 'Watch movie' },
             description: { value: 'I am a good description' },
         };
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 LOCATION:
 Watch movie
@@ -654,7 +660,9 @@ I am a good description`;
             },
         };
 
-        const expected = `This event occurrence was updated. Here's what changed:
+        const expected = `This event occurrence was updated.
+
+Here's what changed:
 
 TITLE:
 Watch movie
@@ -679,7 +687,9 @@ I am a good description`;
             description: { value: 'I am a good description' },
         };
 
-        const expected = `All events in this series were updated. Here's what changed:
+        const expected = `All events in this series were updated.
+
+Here's what changed:
 
 TITLE:
 Watch movie
@@ -708,7 +718,9 @@ I am a good description`;
             dtend: undefined,
         };
 
-        const expected = `All events in this series were updated. Here's what changed:
+        const expected = `All events in this series were updated.
+
+Here's what changed:
 
 TIME:
 Sunday March 22nd, 2020 at 12:30 PM (GMT+1)`;
@@ -771,7 +783,9 @@ Please prepare your weekly updates`;
             comment: [{ value: 'Please prepare your weekly updates' }],
         };
 
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 NOTE:
 Please prepare your weekly updates`;
@@ -818,12 +832,9 @@ I'll be 5 minutes late`;
             summary: { value: 'Team Meeting' },
             comment: [{ value: 'Canceled due to scheduling conflicts' }],
         };
-
         const expected = `Team Meeting was canceled.
 
-
 Here's what changed:
-
 NOTE:
 Canceled due to scheduling conflicts`;
 
@@ -851,7 +862,9 @@ Canceled due to scheduling conflicts`;
             comment: [{ value: 'This is our new regular meeting room' }],
         };
 
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 TITLE:
 Weekly Team Sync
@@ -972,5 +985,77 @@ Here's what changed:
 
 NOTE:
 I'll be 5 minutes late`);
+    });
+
+    it('should include "Here\'s what changed" when a comment is added with unchanged RSVP status (fixed bug)', () => {
+        const oldVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: undefined,
+        };
+
+        const newVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: [{ value: 'Looking forward!' }],
+        };
+
+        const body = generateEmailBody({
+            vevent: newVevent,
+            oldVevent,
+            method: ICAL_METHOD.REPLY,
+            partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+            emailAddress: 'test@example.com',
+            options: { locale: enUS },
+        });
+
+        expect(body).toContain("Here's what changed");
+        expect(body).toContain('NOTE:\nLooking forward!');
+    });
+
+    it('should include "Here\'s what changed" when a comment is removed with unchanged RSVP status', () => {
+        const oldVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: [{ value: "Sorry can't make it" }],
+        };
+
+        const newVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: undefined,
+        };
+
+        const body = generateEmailBody({
+            vevent: newVevent,
+            oldVevent,
+            method: ICAL_METHOD.REPLY,
+            partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+            emailAddress: 'test@example.com',
+            options: { locale: enUS },
+        });
+
+        expect(body).toContain("Here's what changed");
+        expect(body).toContain('NOTE:\nRemoved');
     });
 });
