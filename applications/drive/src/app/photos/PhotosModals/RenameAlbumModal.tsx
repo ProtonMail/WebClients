@@ -47,7 +47,7 @@ export const RenameAlbumModal = ({
         <>
             {render && (
                 <ModalTwo {...modalProps} as="form" onSubmit={onSubmit}>
-                    <ModalTwoHeader title={c('Header').t`Rename`} />
+                    <ModalTwoHeader title={c('Header').t`Rename album`} />
                     <ModalTwoContent>
                         <InputFieldTwo
                             autoFocus
