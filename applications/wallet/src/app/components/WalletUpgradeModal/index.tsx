@@ -13,23 +13,28 @@ import {
     hasFamily,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
+import walletAtSignDark from '@proton/styles/assets/img/wallet/wallet-at-sign-dark.png';
+import walletAtSign from '@proton/styles/assets/img/wallet/wallet-at-sign.png';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
+import walletLockDark from '@proton/styles/assets/img/wallet/wallet-lock-dark.jpg';
+import walletLock from '@proton/styles/assets/img/wallet/wallet-lock.jpg';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../atoms';
-import { type SubTheme } from '../../utils';
+import { type SubTheme, WalletUpgradeBanner } from '../../utils';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 export interface WalletUpgradeModalOwnProps {
     title?: string;
     theme?: SubTheme;
     content: string;
+    banner?: WalletUpgradeBanner;
 }
 
 type Props = WalletUpgradeModalOwnProps & ModalOwnProps;
 
-export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Props) => {
+export const WalletUpgradeModal = ({ title, content, theme, banner, ...modalProps }: Props) => {
     const walletTheme = useWalletTheme();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [user] = useUser();
@@ -50,6 +55,16 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
         : {
               step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
           };
+
+    const getBanner = () => {
+        const isDarkMode = walletTheme === WalletThemeOption.WalletDark;
+        if (banner === WalletUpgradeBanner.AT_SIGN) {
+            return isDarkMode ? walletAtSignDark : walletAtSign;
+        } else if (banner === WalletUpgradeBanner.LOCK) {
+            return isDarkMode ? walletLockDark : walletLock;
+        }
+        return isDarkMode ? walletBitcoinDark : walletBitcoin;
+    };
 
     return (
         <Prompt
@@ -85,15 +100,16 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
         >
             <div className="flex flex-column items-center text-center">
                 <img
-                    src={walletTheme === WalletThemeOption.WalletDark ? walletBitcoinDark : walletBitcoin}
+                    src={getBanner()}
                     alt=""
                     className="w-custom h-custom"
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                 />
                 <h1 className="my-4 text-semibold text-3xl">
-                    {(title ?? hidden)
-                        ? c('Wallet Upgrade').t`You have reached your limit`
-                        : c('Wallet Upgrade').t`Upgrade to support financial freedom`}
+                    {title ??
+                        (hidden
+                            ? c('Wallet Upgrade').t`You have reached your limit`
+                            : c('Wallet Upgrade').t`Upgrade to support financial freedom`)}
                 </h1>
                 <p className="mt-0 text-center">{content}</p>
             </div>
