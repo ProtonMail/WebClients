@@ -118,6 +118,7 @@ export function usePublicActions() {
                 authorizationToken?: string;
                 name: string;
                 isFile: boolean;
+                volumeId: string;
             }[];
             showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
         }

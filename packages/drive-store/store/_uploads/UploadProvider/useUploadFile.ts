@@ -257,7 +257,7 @@ export default function useUploadFile() {
                 }
                 const hash = await generateLookupHash(file.name, parentHashKey);
 
-                await trashLinks(abortSignal, [{ shareId, parentLinkId: parentId, linkId: link.linkId }]);
+                await trashLinks(abortSignal, [{ linkId: link.linkId, volumeId: link.volumeId }]);
                 return createFile(abortSignal, file.name, mimeType, hash, keys);
             }
             return createRevision(abortSignal, link);

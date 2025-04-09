@@ -152,14 +152,20 @@ export const useDocuments = () => {
         await renameLink(abortSignal, shareId, linkId, newName);
     };
 
-    const trashDocument = async ({ shareId, linkId }: LegacyNodeMeta, parentLinkId: string): Promise<void> => {
-        await trashLinks(abortSignal, [{ linkId, rootShareId: shareId, parentLinkId, isFile: true }], false);
+    const trashDocument = async (
+        { shareId, linkId, volumeId }: LegacyNodeMeta,
+        parentLinkId: string
+    ): Promise<void> => {
+        await trashLinks(abortSignal, [{ linkId, rootShareId: shareId, parentLinkId, isFile: true, volumeId }]);
         removeLinkForDriveCompat(shareId, linkId);
         await getLink(abortSignal, shareId, linkId);
     };
 
-    const restoreDocument = async ({ shareId, linkId }: LegacyNodeMeta, parentLinkId: string): Promise<void> => {
-        await restoreLinks(abortSignal, [{ linkId, parentLinkId, rootShareId: shareId, isFile: true }], false);
+    const restoreDocument = async (
+        { shareId, linkId, volumeId }: LegacyNodeMeta,
+        parentLinkId: string
+    ): Promise<void> => {
+        await restoreLinks(abortSignal, [{ linkId, parentLinkId, rootShareId: shareId, isFile: true, volumeId }]);
         removeLinkForDriveCompat(shareId, linkId);
         await getLink(abortSignal, shareId, linkId);
     };

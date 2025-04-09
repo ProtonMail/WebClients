@@ -193,7 +193,8 @@ export function createDocumentExtendedAttributes() {
     };
 }
 
-async function encryptExtendedAttributes(
+/** NOTE: Keep export as required by Docs */
+export async function encryptExtendedAttributes(
     xattr: ExtendedAttributes,
     nodePrivateKey: PrivateKeyReference,
     addressPrivateKey: PrivateKeyReference

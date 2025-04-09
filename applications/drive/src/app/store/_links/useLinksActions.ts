@@ -3,18 +3,16 @@ import { CryptoProxy } from '@proton/crypto';
 import {
     queryDeleteChildrenLinks,
     queryDeleteTrashedLinks,
-    queryEmptyTrashOfShare,
     queryRestoreLinks,
     queryTrashLinks,
 } from '@proton/shared/lib/api/drive/link';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
 import { queryVolumeEmptyTrash } from '@proton/shared/lib/api/drive/volume';
 import { API_CODES } from '@proton/shared/lib/constants';
-import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
+import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
-import chunk from '@proton/utils/chunk';
 import groupWith from '@proton/utils/groupWith';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -22,6 +20,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
 import { ShareType, useDefaultShare, useShare } from '../_shares';
+import { useBatchHelper } from '../_utils/useBatchHelper';
 import { useVolumesState } from '../_volumes';
 import useLink from './useLink';
 import useLinks from './useLinks';
@@ -33,15 +32,6 @@ const INVALID_REQUEST_ERROR_CODES = [
     API_CODES.NOT_ALLOWED_ERROR,
 ];
 
-interface APIResponses {
-    Responses: {
-        Response: {
-            Code: API_CODES;
-            Error?: string;
-        };
-    }[];
-}
-
 /**
  * useLinksActions provides actions for manipulating with links in batches.
  */
@@ -51,7 +41,6 @@ export function useLinksActions({
     queries: {
         queryDeleteChildrenLinks: typeof queryDeleteChildrenLinks;
         queryDeleteTrashedLinks: typeof queryDeleteTrashedLinks;
-        queryEmptyTrashOfShare: typeof queryEmptyTrashOfShare;
         queryRestoreLinks: typeof queryRestoreLinks;
         queryTrashLinks: typeof queryTrashLinks;
     };
@@ -67,21 +56,51 @@ export function useLinksActions({
     const { getShareCreatorKeys, getShare } = useShare();
     const volumeState = useVolumesState();
 
+    const batchHelper = useBatchHelper();
+
     /**
      * withLinkLock is helper to lock provided `linkIds` before the action done
      * using `callback`, and ensure links are unlocked after its done no matter
      * the result of the action.
      */
-    const withLinkLock = async <T>(shareId: string, linkIds: string[], callback: () => Promise<T>): Promise<T> => {
-        lockLinks(shareId, linkIds);
+    const withLinkLock = async <T>({
+        shareId,
+        volumeId,
+        linkIds,
+        callback,
+    }:
+        | {
+              shareId: string;
+              volumeId?: string;
+              linkIds: string[];
+              callback: () => Promise<T>;
+          }
+        | {
+              shareId?: string;
+              volumeId: string;
+              linkIds: string[];
+              callback: () => Promise<T>;
+          }): Promise<T> => {
+        if (shareId) {
+            lockLinks(shareId, linkIds);
+        }
+
         try {
             return await callback();
         } finally {
-            const volumeId = volumeState.findVolumeId(shareId);
-            if (volumeId) {
-                await events.pollEvents.volumes(volumeId);
+            let resolvedVolumeId = volumeId;
+
+            if (shareId && !volumeId) {
+                resolvedVolumeId = volumeState.findVolumeId(shareId);
             }
-            unlockLinks(shareId, linkIds);
+
+            if (resolvedVolumeId) {
+                await events.pollEvents.volumes(resolvedVolumeId);
+            }
+
+            if (shareId) {
+                unlockLinks(shareId, linkIds);
+            }
         }
     };
 
@@ -276,85 +295,53 @@ export function useLinksActions({
             silence?: boolean;
         }
     ) => {
-        return withLinkLock(shareId, linkIds, async () => {
-            const originalParentIds: { [linkId: string]: string } = {};
-            const successes: string[] = [];
-            const failures: { [linkId: string]: any } = {};
+        return withLinkLock({
+            shareId,
+            linkIds,
+            callback: async () => {
+                const originalParentIds: { [linkId: string]: string } = {};
+                const successes: string[] = [];
+                const failures: { [linkId: string]: any } = {};
 
-            const moveQueue = linkIds.map((linkId) => async () => {
-                return moveLink(abortSignal, { shareId, newParentLinkId, linkId, newShareId, silence })
-                    .then((originalParentId) => {
-                        successes.push(linkId);
-                        originalParentIds[linkId] = originalParentId;
-                        onMoved?.(linkId);
-                    })
-                    .catch((error) => {
-                        failures[linkId] = error;
-                        onError?.(linkId);
-                    });
-            });
-
-            await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
-            return { successes, failures, originalParentIds };
-        });
-    };
-
-    /**
-     * batchHelper makes easier to do any action with many links in several
-     * batches to make sure API can handle it (to not send thousands of links
-     * in one request), all run in parallel (up to a reasonable limit).
-     */
-    const batchHelper = async <T>(
-        abortSignal: AbortSignal,
-        shareId: string,
-        linkIds: string[],
-        query: (batchLinkIds: string[], shareId: string) => any,
-        maxParallelRequests = MAX_THREADS_PER_REQUEST
-    ) => {
-        return withLinkLock(shareId, linkIds, async () => {
-            const responses: { batchLinkIds: string[]; response: T }[] = [];
-            const successes: string[] = [];
-            const failures: { [linkId: string]: any } = {};
-
-            const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
-
-            const queue = batches.map(
-                (batchLinkIds) => () =>
-                    debouncedRequest<T>(query(batchLinkIds, shareId), abortSignal)
-                        .then((response) => {
-                            responses.push({ batchLinkIds, response });
-                            batchLinkIds.forEach((linkId) => successes.push(linkId));
+                const moveQueue = linkIds.map((linkId) => async () => {
+                    return moveLink(abortSignal, { shareId, newParentLinkId, linkId, newShareId, silence })
+                        .then((originalParentId) => {
+                            successes.push(linkId);
+                            originalParentIds[linkId] = originalParentId;
+                            onMoved?.(linkId);
                         })
                         .catch((error) => {
-                            batchLinkIds.forEach((linkId) => (failures[linkId] = error));
-                        })
-            );
-            await preventLeave(runInQueue(queue, maxParallelRequests));
-            return {
-                responses,
-                successes,
-                failures,
-            };
+                            failures[linkId] = error;
+                            onError?.(linkId);
+                        });
+                });
+
+                await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
+                return { successes, failures, originalParentIds };
+            },
         });
     };
 
-    const batchHelperMultipleShares = async (
+    const batchHelperMultipleVolumes = async (
         abortSignal: AbortSignal,
-        ids: { shareId: string; linkId: string }[],
-        query: (batchLinkIds: string[], shareId: string) => any,
+        ids: { volumeId: string; linkId: string }[],
+        query: (batchLinkIds: string[], volumeId: string) => object,
         maxParallelRequests = MAX_THREADS_PER_REQUEST
     ) => {
-        const groupedByShareId = groupWith((a, b) => a.shareId === b.shareId, ids);
-
+        const groupedByVolumeId = groupWith((a, b) => a.volumeId === b.volumeId, ids);
         const results = await Promise.all(
-            groupedByShareId.map((group) => {
-                return batchHelper<APIResponses>(
-                    abortSignal,
-                    group[0].shareId,
-                    group.map(({ linkId }) => linkId),
-                    query,
-                    maxParallelRequests
-                );
+            groupedByVolumeId.map((group) => {
+                const linkIds = group.map(({ linkId }) => linkId);
+                return withLinkLock({
+                    volumeId: group[0].volumeId,
+                    linkIds,
+                    callback: () =>
+                        batchHelper(abortSignal, {
+                            linkIds,
+                            query: (batchLinkIds) => query(batchLinkIds, group[0].volumeId),
+                            maxParallelRequests,
+                        }),
+                });
             })
         );
 
@@ -375,18 +362,14 @@ export function useLinksActions({
         return { responses, successes, failures };
     };
 
-    const trashLinks = async (
-        abortSignal: AbortSignal,
-        ids: { shareId: string; linkId: string; parentLinkId: string }[]
-    ) => {
-        const linksByParentIds = groupWith((a, b) => a.parentLinkId === b.parentLinkId, ids);
-
+    const trashLinks = async (abortSignal: AbortSignal, ids: { linkId: string; volumeId: string }[]) => {
+        const linksByVolumeIds = groupWith((a, b) => a.volumeId === b.volumeId, ids);
         const results = await Promise.all(
-            linksByParentIds.map((linksGroup) => {
-                const groupParentLinkId = linksGroup[0].parentLinkId;
+            linksByVolumeIds.map((linksGroup) => {
+                const groupVolumeId = linksGroup[0].volumeId;
 
-                return batchHelperMultipleShares(abortSignal, linksGroup, (batchLinkIds, shareId) => {
-                    return queries.queryTrashLinks(shareId, groupParentLinkId, batchLinkIds);
+                return batchHelperMultipleVolumes(abortSignal, linksGroup, (batchLinkIds) => {
+                    return queries.queryTrashLinks(groupVolumeId, batchLinkIds);
                 });
             })
         );
@@ -394,7 +377,10 @@ export function useLinksActions({
         return accumulateResults(results);
     };
 
-    const restoreLinks = async (abortSignal: AbortSignal, ids: { shareId: string; linkId: string }[]) => {
+    const restoreLinks = async (
+        abortSignal: AbortSignal,
+        ids: { volumeId: string; shareId: string; linkId: string }[]
+    ) => {
         /*
             Make sure to restore the most freshly trashed links first to ensure
             the potential parents are restored first because it is not possible
@@ -404,17 +390,20 @@ export function useLinksActions({
         */
         const links = await getLinks(abortSignal, ids);
         const sortedLinks = links.sort((a, b) => (b.trashed || 0) - (a.trashed || 0));
-        const sortedLinkIds = sortedLinks.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }));
+        const sortedLinkIds = sortedLinks.map(({ linkId, volumeId }) => ({
+            linkId,
+            volumeId,
+        }));
 
         // Limit restore to one thread at a time only to make sure links are
         // restored in proper order (parents need to be restored before childs).
         const maxParallelRequests = 1;
 
-        const results = await batchHelperMultipleShares(
+        const results = await batchHelperMultipleVolumes(
             abortSignal,
             sortedLinkIds,
-            (batchLinkIds, shareId) => {
-                return queries.queryRestoreLinks(shareId, batchLinkIds);
+            (batchLinkIds, volumeId) => {
+                return queries.queryRestoreLinks(volumeId, batchLinkIds);
             },
             maxParallelRequests
         );
@@ -428,14 +417,20 @@ export function useLinksActions({
         parentLinkId: string,
         linkIds: string[]
     ) => {
-        return batchHelper(abortSignal, shareId, linkIds, (batchLinkIds) =>
-            queryDeleteChildrenLinks(shareId, parentLinkId, batchLinkIds)
-        );
+        return withLinkLock({
+            shareId,
+            linkIds,
+            callback: () =>
+                batchHelper(abortSignal, {
+                    linkIds,
+                    query: (batchLinkIds) => queryDeleteChildrenLinks(shareId, parentLinkId, batchLinkIds),
+                }),
+        });
     };
 
-    const deleteTrashedLinks = async (abortSignal: AbortSignal, ids: { linkId: string; shareId: string }[]) => {
-        return batchHelperMultipleShares(abortSignal, ids, (batchLinkIds, shareId) => {
-            return queries.queryDeleteTrashedLinks(shareId, batchLinkIds);
+    const deleteTrashedLinks = async (abortSignal: AbortSignal, ids: { linkId: string; volumeId: string }[]) => {
+        return batchHelperMultipleVolumes(abortSignal, ids, (batchLinkIds, volumeId) => {
+            return queries.queryDeleteTrashedLinks(volumeId, batchLinkIds);
         });
     };
 
@@ -467,7 +462,6 @@ export default function useLinksActionsWithQuieries() {
             queryTrashLinks,
             queryDeleteChildrenLinks,
             queryDeleteTrashedLinks,
-            queryEmptyTrashOfShare,
             queryRestoreLinks,
         },
     });
