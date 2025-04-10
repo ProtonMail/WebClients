@@ -3012,9 +3012,6 @@
       "Email address is required": [
         "Zahtevan je e-poštni naslov"
       ],
-      "Email is not valid": [
-        "E-pošta ni veljavna"
-      ],
       "Ends on date cannot be empty": [
         "Končni datum ne more biti prazen"
       ],
@@ -3062,9 +3059,6 @@
       ],
       "IMAP server is required": [
         "Zahtevan je strežnik IMAP"
-      ],
-      "Incorrect username": [
-        "Nepravilno uporabniško ime"
       ],
       "Intended recipient does not support calendar sharing": [
         "Predvideni prejemnik ne podpira skupne rabe koledarja"
@@ -3159,9 +3153,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Ni ${ BRAND_NAME } račun"
       ],
-      "Not a valid number": [
-        "Ni veljavna številka"
-      ],
       "Number of occurrences cannot be empty": [
         "Število ponovitev ne more biti prazno"
       ],
@@ -3182,9 +3173,6 @@
       ],
       "Password is required": [
         "Zahtevano je geslo"
-      ],
-      "Passwords do not match": [
-        "Gesli se ne ujemata"
       ],
       "Payment process canceled": [
         "Postopek plačila je preklican"
@@ -3285,9 +3273,6 @@
       "The address might be misspelled": [
         "V naslovu je morda tipkarska napaka"
       ],
-      "The email addresses do not match": [
-        "E-poštna naslova se ne ujemata"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "To ime mape ni veljavno. Izberite drugačno ime."
       ],
@@ -3315,14 +3300,8 @@
       "There was an error when exporting the contacts vCards": [
         "Pri izvozu stikov vCard je prišlo do napake"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "To polje presega število dovoljenih znakov - ${ maximumLength }."
-      ],
       "This field is required": [
         "To polje je obvezno"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
       "This folder name is not available. Please choose a different name.": [
         "To ime mape ni na voljo. Izberite drugačno ime."
@@ -3336,9 +3315,6 @@
       "Trusted keys are not valid for sending": [
         "Zaupanja vredni ključi niso veljavni za pošiljanje"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Poskusite uporabiti samo črke, števke in _.-"
-      ],
       "Unexpected error, we can't import the contacts": [
         "Nepričakovana napaka, ne moremo uvoziti stikov"
       ],
@@ -3347,12 +3323,6 @@
       ],
       "Unknown payment token status": [
         "Neznano stanje žetona plačila"
-      ],
-      "Username must begin with a letter or digit": [
-        "Uporabniško ime se mora začeti s črko ali številko"
-      ],
-      "Username must end with a letter or digit": [
-        "Uporabniško ime se mora končati s črko ali številko"
       ],
       "Validation error": [
         "Napaka potrjevanja"
@@ -6469,23 +6439,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6507,6 +6460,23 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -6680,9 +6650,6 @@
       ],
       "Available on all platforms": [
         "Na voljo na vseh platformah."
-      ],
-      "Breach alerts": [
-        "Opozorila o uhajanju podatkov"
       ],
       "Calendar sharing": [
         "Deljenje koledarja"
@@ -8826,47 +8793,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
@@ -9029,6 +8955,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -9996,20 +9963,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "V skupni rabi celovito šifrirano s preverjenim stikom"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
       ]
     },
     "Video control": {

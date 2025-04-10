@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Mover a otra caja fuerte"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
@@ -838,7 +838,7 @@
         "Se ha producido un error durante el proceso de importación."
       ],
       "An error occurred while resuming your session": [
-        "Ha ocurrido un error al reanudar tu sesión."
+        "Se ha producido un error al reanudar tu sesión."
       ],
       "Authentication error": [
         "Error de autenticación"
@@ -1086,7 +1086,7 @@
         "No se pudo rechazar la invitación"
       ],
       "Item content cannot exceed 40KB": [
-        "El contenido del elemento no puede exceder de 40 KB"
+        "El contenido del elemento no puede superar los 40 KB."
       ],
       "Item creation failed": [
         "Error al crear el elemento"
@@ -1768,7 +1768,7 @@
         "Elemento \"${ payload.item.data.metadata.name }\" actualizado"
       ],
       "Item history permanently deleted": [
-        "Historial de artículos eliminado permanentemente"
+        "Se ha eliminado el historial del elemento permanentemente."
       ],
       "Item moved to trash": [
         "Elemento movido a la papelera"
@@ -1975,7 +1975,7 @@
         "Confirma la contraseña adicional para bloquear automáticamente con datos biométricos."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
-        "Por favor, confirma tu contraseña extra para poder bloquear automáticamente con tu contraseña extra."
+        "Confirma tu contraseña adicional para permitir el bloqueo automático con tu contraseña adicional"
       ],
       "Please confirm your extra password in order to disable offline mode": [
         "Confirma la contraseña adicional para desactivar el modo sin conexión."
@@ -1984,7 +1984,7 @@
         "Confirma la contraseña adicional para activar el modo sin conexión."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
-        "Por favor, confirma tu contraseña extra para poder exportar los datos de ${ PASS_APP_NAME }"
+        "Confirma tu contraseña adicional para poder exportar los datos de ${ PASS_APP_NAME }."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Confirma la contraseña adicional para cancelar el registro del bloqueo actual."
@@ -2188,7 +2188,7 @@
         "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de tu contraseña de ${ BRAND_NAME }."
       ],
       "The following ${ totalIgnored } item could not be imported:": [
-        "El siguiente elemento ${ totalIgnored } no pudo ser importado:",
+        "No se ha podido importar ${ totalIgnored } elemento:",
         "No se han podido importar los ${ totalIgnored } siguientes elementos:"
       ],
       "The secure link has been removed": [
@@ -3019,7 +3019,7 @@
         "Clave de acceso"
       ],
       "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
-        "Las Passkeys son una alternativa fácil y segura a las contraseñas tradicionales que previenen los ataques de phishing y hacen tu experiencia online más sencilla. ${ PASS_APP_NAME } soporta passkeys en todas las plataformas."
+        "Las claves de acceso son una alternativa fácil y segura a las contraseñas tradicionales, evitan los ataques de suplantación y hacen que su experiencia en línea sea fluida. ${ PASS_APP_NAME } admite claves de acceso en todas las plataformas."
       ],
       "Passphrase": [
         "Frase de contraseña"
@@ -3046,7 +3046,7 @@
         "Personalizar"
       ],
       "PGP-encrypted (recommended)": [
-        "Cifrado PGP (recomendado)"
+        "Cifrado con PGP (recomendado)"
       ],
       "Phone number": [
         "Número de teléfono"
@@ -3076,7 +3076,7 @@
         "Evalúanos"
       ],
       "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
-        "Recibe alertas inmediatas si tu información personal es filtrada en una brecha de seguridad de un tercero. Puedes monitorear múltiples direcciones de correo electrónico o tu propio nombre de dominio."
+        "Recibe alertas inmediatas si tu información personal se filtra en una vulneración de datos de un tercero. Puedes monitorear varias direcciones de correo electrónico o tu propio nombre de dominio."
       ],
       "Recent": [
         "Reciente"
@@ -3644,7 +3644,7 @@
         "Aprobar o negar ahora"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "Ingrese el código de confirmación que te enviamos a tu otro dispositivo."
+        "Ingresa el código de confirmación que te enviamos a tu otro dispositivo."
       ],
       "If you didn't make this request, cancel it now.": [
         "Si no has hecho esta solicitud, cancélala ahora."
@@ -3928,7 +3928,7 @@
         "Ingresa el código del cupón"
       ],
       "Enter your backup password": [
-        "Ingresa la contraseña de respaldo."
+        "Introduce la contraseña de respaldo."
       ],
       "Enter your extra password": [
         "Ingresa tu contraseña adicional."
@@ -3964,7 +3964,7 @@
         "Importa los datos"
       ],
       "Importing your data": [
-        "Importando sus datos"
+        "Importando tus datos"
       ],
       "Inactive 2FA": [
         "2FA inactiva"
@@ -4533,7 +4533,7 @@
         "Ya no tendrás acceso a esta caja fuerte. Para unirte de nuevo necesitarás una invitación."
       ],
       "Your administrator needs to create a vault for you before you can create items": [
-        "Tu administrador necesita crear una bóveda antes de que puedas crear elementos"
+        "Tu administrador necesita crear una caja fuerte antes de que puedas crear elementos."
       ],
       "Your organization does not allow creating a vault": [
         "Tu organización no permite crear una caja fuerte."

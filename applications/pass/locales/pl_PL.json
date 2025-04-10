@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Przenieś do kosza"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Przenieś do kosza"
       ],
       "Multiple select": [
@@ -1284,10 +1284,10 @@
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
       ],
       "${ blockedEmailsCount } blocked": [
-        "zablokowano ${ blockedEmailsCount }",
-        "zablokowano ${ blockedEmailsCount }",
-        "zablokowano ${ blockedEmailsCount }",
-        "zablokowano ${ blockedEmailsCount }"
+        "${ blockedEmailsCount } zablokowana",
+        "${ blockedEmailsCount } zablokowane",
+        "${ blockedEmailsCount } zablokowanych",
+        "${ blockedEmailsCount } zablokowanych"
       ],
       "${ count } time": [
         "${ count } raz",
@@ -1305,10 +1305,10 @@
         "Otwarto ${ count } / ${ maxReads } razy"
       ],
       "${ forwardedEmailsCount } forwarded": [
-        "przekierowano ${ forwardedEmailsCount }",
-        "przekierowano ${ forwardedEmailsCount }",
-        "przekierowano ${ forwardedEmailsCount }",
-        "przekierowano ${ forwardedEmailsCount }"
+        "${ forwardedEmailsCount } przekierowana",
+        "${ forwardedEmailsCount } przekierowane",
+        "${ forwardedEmailsCount } przekierowanych",
+        "${ forwardedEmailsCount } przekierowanych"
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "Użytkownik ${ inviterEmail } udostępnia Ci element."
@@ -1356,10 +1356,10 @@
         "Ochrona ${ PROTON_SENTINEL_NAME } została włączona"
       ],
       "${ repliedEmailsCount } sent": [
-        "wysłano ${ repliedEmailsCount }",
-        "wysłano ${ repliedEmailsCount }",
-        "wysłano ${ repliedEmailsCount }",
-        "wysłano ${ repliedEmailsCount }"
+        "${ repliedEmailsCount } wysłana",
+        "${ repliedEmailsCount } wysłane",
+        "${ repliedEmailsCount } wysłanych",
+        "${ repliedEmailsCount } wysłanych"
       ],
       "${ row.breachCount } breach detected": [
         "Wykryto ${ row.breachCount } wyciek",
@@ -1497,16 +1497,16 @@
         "Może edytować i usuwać element."
       ],
       "Can grant and revoke access to this item, and delete it.": [
-        "Może usuwać i zarządzać elementem."
+        "Może zarządzać dostępem do elementu."
       ],
       "Can grant and revoke access to this item.": [
-        "Zarządza dostępem do elementu."
+        "Może zarządzać dostępem do elementu."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Zarządza dostępem do sejfu."
+        "Może zarządzać dostępem do sejfu."
       ],
       "Can grant and revoke access to this vault.": [
-        "Zarządza dostępem do sejfu."
+        "Może zarządzać dostępem do sejfu."
       ],
       "Can view items in this vault.": [
         "Widzi elementy w sejfie."
@@ -1599,7 +1599,7 @@
         "Ilustracja nagłówków wiadomości"
       ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
-        "Wiadomość wysłana na ten adres będzie wyglądała na wysłaną z adresu, np. ${ exampleEmail }."
+        "Wiadomość będzie wyglądała na wysłaną z adresu, np. ${ exampleEmail }."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
         "Wiadomości wysyłane do aliasów są przekierowywane do skrzynek pocztowych. Alias może mieć więcej niż jedną skrzynkę pocztową."
@@ -2435,10 +2435,10 @@
         "${ aliasCount } aliasów"
       ],
       "${ blockedCount } block": [
-        "Zablokowano ${ blockedCount }",
-        "Zablokowano ${ blockedCount }",
-        "Zablokowano ${ blockedCount }",
-        "Zablokowano ${ blockedCount }"
+        "${ blockedCount } zablokowana",
+        "${ blockedCount } zablokowane",
+        "${ blockedCount } zablokowanych",
+        "${ blockedCount } zablokowanych"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } znak",
@@ -2465,10 +2465,10 @@
         "${ days } dnia"
       ],
       "${ forwardCount } forward": [
-        "Przekierowano ${ forwardCount }",
-        "Przekierowano ${ forwardCount }",
-        "Przekierowano ${ forwardCount }",
-        "Przekierowano ${ forwardCount }"
+        "${ forwardCount } przekierowana",
+        "${ forwardCount } przekierowane",
+        "${ forwardCount } przekierowanych",
+        "${ forwardCount } przekierowanych"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "W ciągu ostatnich 14 dni ${ forwardedEmails }, ${ repliedEmails } i ${ blockedEmails }."
@@ -2495,10 +2495,10 @@
         "Wersja ${ PASS_SHORT_APP_NAME }"
       ],
       "${ repliedCount } reply": [
-        "Wysłano ${ repliedCount }",
-        "Wysłano ${ repliedCount }",
-        "Wysłano ${ repliedCount }",
-        "Wysłano ${ repliedCount }"
+        "${ repliedCount } wysłana",
+        "${ repliedCount } wysłane",
+        "${ repliedCount } wysłanych",
+        "${ repliedCount } wysłanych"
       ],
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } link",
@@ -4146,7 +4146,7 @@
         "Sejf"
       ],
       "Vault shared with you": [
-        "Udostępniony sejf"
+        "Udostępniony Ci sejf"
       ],
       "Want to learn more?": [
         "Chcesz dowiedzieć się więcej?"

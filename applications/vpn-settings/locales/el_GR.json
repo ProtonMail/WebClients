@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
@@ -283,6 +283,9 @@
       "Edit billing cycle": [
         "Επεξεργασία κύκλου χρέωσης"
       ],
+      "Edit countries": [
+        "Επεξεργασία χωρών"
+      ],
       "Edit display name": [
         "Επεξεργασία εμφανιζόμενου ονόματος"
       ],
@@ -523,11 +526,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -4318,11 +4321,11 @@
       "Data recoverable on this device": [
         "Δεδομένα ανακτήσιμα σε αυτήν τη συσκευή"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -4342,6 +4345,9 @@
       ],
       "Did you know?": [
         "Το γνωρίζατε;"
+      ],
+      "Disabled countries": [
+        "Απενεργοποιημένες χώρες"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Απενεργοποιήθηκε στις ${ formattedDateAndTime }"
@@ -4455,6 +4461,9 @@
       "Enable single sign-on to keep your organization safe": [
         "Ενεργοποιήστε την καθολική σύνδεση για να διατηρήσετε τον οργανισμό σας ασφαλή"
       ],
+      "Enabled countries": [
+        "Ενεργοποιημένες χώρες"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "Ενεργοποιήθηκε στις ${ formattedDateAndTime }"
       ],
@@ -4563,8 +4572,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
       ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
       "Group deleted": [
         "Η ομάδα διαγράφηκε"
+      ],
+      "Groups": [
+        "Ομάδες"
       ],
       "here": [
         "εδώ"
@@ -5978,6 +5993,10 @@
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } χρήστης",
+        "${ group.UserCount } χρήστες"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } από ${ humanMaxSpace }"
       ],
@@ -6992,6 +7011,29 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Διαγραφή λογαριασμού"
+      ],
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Απόκτηση ${ BRAND_NAME } δωρεάν"
+      ],
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Διατήρηση ${ plan }"
+      ],
+      "Keep account": [
+        "Διατήρηση λογαριασμού"
+      ],
+      "Switch plan": [
+        "Αλλαγή προγράμματος"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
@@ -7016,29 +7058,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Διαγραφή λογαριασμού"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Απόκτηση ${ BRAND_NAME } δωρεάν"
-      ],
-      "Get ${ planName }": [
-        "Απόκτηση ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Διατήρηση ${ plan }"
-      ],
-      "Keep account": [
-        "Διατήρηση λογαριασμού"
-      ],
-      "Switch plan": [
-        "Αλλαγή προγράμματος"
       ]
     },
     "new_plans: feature": {
@@ -7214,9 +7233,6 @@
       ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
-      ],
-      "Breach alerts": [
-        "Ειδοποιήσεις Παραβίασης"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -8235,6 +8251,17 @@
         "Καλώς ήρθατε στο ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Διαμορφώσεις χώρας"
@@ -8292,17 +8319,6 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
       ]
     },
     "Organization capacity error": {
@@ -10152,47 +10168,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -10481,6 +10456,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {

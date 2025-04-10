@@ -4400,6 +4400,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
       ],
+      "Just now": [
+        "Ara mateix"
+      ],
       "Keep your files secure with end-to-end encryption.": [
         "Manteniu els vostres fitxers segurs amb el xifratge d'extrem a extrem."
       ],
@@ -4925,6 +4928,9 @@
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "S'ha saltat la transferència de la carpeta \"${ folderName }\""
+      ],
+      "Trash": [
+        "Paperera"
       ],
       "Trashed": [
         "Mogut a la paperera"
@@ -6520,9 +6526,6 @@
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
-      ],
-      "Breach alerts": [
-        "Alertes d'infraccions"
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -8750,6 +8753,25 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -8789,25 +8811,6 @@
       ],
       "Your privacy is our mission": [
         "La vostra privacitat és la nostra missió"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'emmagatzematge per usuari"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
-        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adreça de correu electrònic",
-        "${ planNumberOfEmails } adreces de correu electrònic"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "Subscription renewal state": {

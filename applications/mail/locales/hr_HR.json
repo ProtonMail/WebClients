@@ -935,6 +935,11 @@
       "Trust": [
         "Vjeruj"
       ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
+      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -4877,10 +4882,10 @@
       "Also archive": [
         "Također i arhivu"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -5039,11 +5044,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5135,14 +5140,14 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Participants": [
         "Sudionici"
@@ -5706,14 +5711,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5723,6 +5720,14 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -5768,6 +5773,11 @@
         "${ n } oznaka",
         "${ n } oznake",
         "${ n } oznaka"
+      ],
+      "${ n } message per day": [
+        "${ n } poruka po danu",
+        "${ n } poruke po danu",
+        "${ n } poruka po danu"
       ],
       "${ n } vault": [
         "${ n } trezor",
@@ -6686,6 +6696,11 @@
         "${ n } VPN veze visoke brzine",
         "${ n } VPN veza visoke brzine"
       ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } VPN veza visoke brzine po korisniku",
+        "${ n } VPN veze visoke brzine po korisniku",
+        "${ n } VPN veza visoke brzine po korisniku"
+      ],
       "${ n } VPN connection": [
         "${ n } VPN veza",
         "${ n } VPN veze",
@@ -6702,17 +6717,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -6725,6 +6729,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {

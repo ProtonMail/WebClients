@@ -3024,9 +3024,6 @@
       "Email address is required": [
         "電郵位址為必填"
       ],
-      "Email is not valid": [
-        "電郵無效"
-      ],
       "Ends on date cannot be empty": [
         "結束日期不能為空"
       ],
@@ -3074,9 +3071,6 @@
       ],
       "IMAP server is required": [
         "IMAP 伺服器為必填"
-      ],
-      "Incorrect username": [
-        "錯誤的使用者名稱"
       ],
       "Intended recipient does not support calendar sharing": [
         "擬收件人不支援行事曆共享"
@@ -3168,9 +3162,6 @@
       "Not a ${ BRAND_NAME } account": [
         "不是 ${ BRAND_NAME } 帳號"
       ],
-      "Not a valid number": [
-        "號碼無效"
-      ],
       "Number of occurrences cannot be empty": [
         "重複次數不能為空"
       ],
@@ -3185,9 +3176,6 @@
       ],
       "Password is required": [
         "密碼為必填"
-      ],
-      "Passwords do not match": [
-        "密碼不一致"
       ],
       "Payment process canceled": [
         "付款過程已取消"
@@ -3288,9 +3276,6 @@
       "The amount due has changed. Please try again.": [
         "應付金額已變更。請再試一次。"
       ],
-      "The email addresses do not match": [
-        "電子郵件位址不相符"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
       ],
@@ -3318,14 +3303,8 @@
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "此欄位還剩下 ${ maximumLength } 個字元。"
-      ],
       "This field is required": [
         "此欄位必填"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "此資料夾名稱不適用。請選擇其它名稱。"
@@ -3339,9 +3318,6 @@
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "嘗試僅使用字母、數字與 _.-"
-      ],
       "Unexpected error, we can't import the contacts": [
         "未知錯誤，無法匯入聯絡人"
       ],
@@ -3350,12 +3326,6 @@
       ],
       "Unknown payment token status": [
         "未知的付款權仗狀態"
-      ],
-      "Username must begin with a letter or digit": [
-        "使用者名稱的開頭必須為字母或數字"
-      ],
-      "Username must end with a letter or digit": [
-        "使用者名稱的結尾必須為字母或數字"
       ],
       "Validation error": [
         "驗證錯誤"
@@ -6476,26 +6446,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6517,6 +6467,26 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6663,9 +6633,6 @@
       ],
       "Available on all platforms": [
         "所有平台皆可使用"
-      ],
-      "Breach alerts": [
-        "外洩警告"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -8811,47 +8778,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -9083,6 +9009,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -10056,14 +10023,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "與已驗證的聯絡人分享端到端加密"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
     "Video control": {

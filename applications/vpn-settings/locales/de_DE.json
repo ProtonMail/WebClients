@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
@@ -283,6 +283,9 @@
       "Edit billing cycle": [
         "Abrechnungszeitraum bearbeiten"
       ],
+      "Edit countries": [
+        "Länder bearbeiten"
+      ],
       "Edit display name": [
         "Anzeigename bearbeiten"
       ],
@@ -523,11 +526,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Remove": [
         "Entfernen"
@@ -4318,11 +4321,11 @@
       "Data recoverable on this device": [
         "Daten, die auf diesem Gerät wiederhergestellt werden können"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -4342,6 +4345,9 @@
       ],
       "Did you know?": [
         "Schon gewusst?"
+      ],
+      "Disabled countries": [
+        "Deaktivierte Länder"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktiviert am ${ formattedDateAndTime }"
@@ -4455,6 +4461,9 @@
       "Enable single sign-on to keep your organization safe": [
         "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
       ],
+      "Enabled countries": [
+        "Aktivierte Länder"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiviert am ${ formattedDateAndTime }"
       ],
@@ -4563,8 +4572,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
       ],
+      "Got it": [
+        "Verstanden"
+      ],
       "Group deleted": [
         "Gruppe gelöscht"
+      ],
+      "Groups": [
+        "Gruppen"
       ],
       "here": [
         "hier"
@@ -5978,6 +5993,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } Benutzer",
+        "${ group.UserCount } Benutzer"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
       ],
@@ -6992,6 +7011,29 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Konto löschen"
+      ],
+      "Downgrade account": [
+        "Konto downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } kostenlos holen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } holen"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behalten"
+      ],
+      "Keep account": [
+        "Konto behalten"
+      ],
+      "Switch plan": [
+        "Abonnement wechseln"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
@@ -7016,29 +7058,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Konto löschen"
-      ],
-      "Downgrade account": [
-        "Konto downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } kostenlos holen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } holen"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behalten"
-      ],
-      "Keep account": [
-        "Konto behalten"
-      ],
-      "Switch plan": [
-        "Abonnement wechseln"
       ]
     },
     "new_plans: feature": {
@@ -7214,9 +7233,6 @@
       ],
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
-      ],
-      "Breach alerts": [
-        "Warnung bei Datendiebstahl"
       ],
       "Calendar sharing": [
         "Kalenderfreigabe"
@@ -8235,6 +8251,17 @@
         "Willkommen bei ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Länderkonfigurationen"
@@ -8292,17 +8319,6 @@
       ],
       "The whole organization": [
         "Die gesamte Organisation"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
       ]
     },
     "Organization capacity error": {
@@ -10152,47 +10168,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -10481,6 +10456,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -10834,7 +10850,7 @@
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
       "${ feature } is now active": [
-        "${ feature } ist jetzt aktiv."
+        "${ feature } ist jetzt aktiv"
       ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } Geräte"
@@ -10964,7 +10980,7 @@
         "Sicherheit der Authentifizierung"
       ],
       "Auto-deletion is active": [
-        "Automatisches Löschen ist aktiv."
+        "Automatisches Löschen ist aktiv"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -11042,7 +11058,7 @@
         "Konten konnten nicht erstellt werden"
       ],
       "Coupon": [
-        "Rabattcode"
+        "Gutschein"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } Benutzer erstellt",
@@ -11279,7 +11295,7 @@
         "Hilfe und Feedback"
       ],
       "Help center": [
-        "Hilfecenter"
+        "Hilfezentrum"
       ],
       "Home": [
         "Startseite"
@@ -11568,7 +11584,7 @@
         "WireGuard-Konfiguration"
       ],
       "You can now create unlimited folders and labels": [
-        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
@@ -11583,7 +11599,7 @@
         "Dein Abonnement"
       ],
       "Your shorter address is now ready": [
-        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig"
       ],
       "Your subscriptions": [
         "Deine Abonnements"
