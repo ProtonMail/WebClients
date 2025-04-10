@@ -172,7 +172,7 @@ const InitContainer = () => {
         <>
             <Route path="devices/*" element={<DevicesContainer />} />
             <Route path="trash/*" element={<TrashContainer />} />
-            <Route path="no-access" element={<NoAccessContainer />} />
+            <Route path="no-access/*" element={<NoAccessContainer />} />
             <Route path="shared-urls/*" element={<SharedURLsContainer />} />
             {!isDirectSharingDisabled && <Route path="shared-with-me/*" element={<SharedWithMeContainer />} />}
             {photosEnabled && !photosWithAlbumsEnabled && <Route path="photos/*" element={<PhotosContainer />} />}
