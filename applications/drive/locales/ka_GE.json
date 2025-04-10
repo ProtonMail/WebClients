@@ -356,10 +356,6 @@
       "Download logs": [
         "ჟურნალის გადმოწერა"
       ],
-      "Download photo": [
-        "სურათის გადმოწერა",
-        "სურათების გადმოწერა"
-      ],
       "Download without scanning": [
         "გამოწერა სკანირების გარეშე"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "ახალი შეტყობინება"
+      ],
+      "New shared album": [
+        "ახალი გაზიარებული ალბომი"
       ],
       "Next": [
         "შემდეგი"
@@ -2582,9 +2581,6 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } ${ planName }-ზე, რომ შეინარჩუნოთ გაზიარებული ფაილები ჩასწორების წვდომით"
-      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
       ],
@@ -3764,8 +3760,8 @@
       "Create new album": [
         "ახალი ალბომის შექმნა"
       ],
-      "Rename": [
-        "სახელის გადარქმევა"
+      "Create new shared album": [
+        "ახალი გაზიარებული ალბომის შექმნა"
       ],
       "Security Center": [
         "უსაფრთხოების ცენტრი"
@@ -7079,29 +7075,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -7123,6 +7096,29 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7289,9 +7285,6 @@
       ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
-      ],
-      "Breach alerts": [
-        "გაჟონვის განგაშები"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -9684,47 +9677,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -9982,6 +9934,47 @@
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -10011,6 +10004,41 @@
     "Subscription saving": {
       "Save": [
         "დაზოგვა"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "თქვენთან გაზიარებული სურათბი აქ გამოჩნდება"
+      ],
+      "Albums you've shared will appear here": [
+        "ალბომები, რომლებიც გააზიარეთ, აქ გამოჩნდება"
+      ],
+      "Your favorited photos will appear here": [
+        "თქვენი რჩეული სურათები აქ გამოჩნდება"
+      ],
+      "Your Live Photos will appear here": [
+        "თქვენი ცოცხალი ფოტოები აქ გამოჩნდება"
+      ],
+      "Your panorama photos will appear here": [
+        "თქვენი პანორამის სურათები აქ გამოჩნდება"
+      ],
+      "Your portraits photos will appear here": [
+        "თქვენი პორტრეტები აქ გამოჩნდება"
+      ],
+      "Your RAW photos will appear here": [
+        "თქვენი დაუმუშავებელი სურათები აქ გამოჩნდება"
+      ],
+      "Your screenshots will appear here": [
+        "თქვენი ეკრანის ანაბეჭდები აქ გამოჩნდება"
+      ],
+      "Your selfies photos will appear here": [
+        "თქვენი სელფის სურათები აქ გამოჩნდება"
+      ],
+      "Your tagged photos will appear here": [
+        "თქვენი ჭდის მქონე სურათები აქ გამოჩნდება"
+      ],
+      "Your videos will appear here": [
+        "თქვენი ვიდეოები აქ გამოჩნდება"
       ]
     },
     "Success": {
@@ -10684,11 +10712,44 @@
       "Night theme": [
         "ღამის თემა"
       ],
+      "No albums shared with me": [
+        "ჩემთან გაზიარებული ალბომების გარეშე"
+      ],
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
       ],
+      "No favorites": [
+        "რჩეულების გარეშე"
+      ],
+      "No Live Photos": [
+        "ცოცხალი სურათების გარეშე"
+      ],
+      "No panorama": [
+        "პანორამების გარეშე"
+      ],
+      "No photos": [
+        "სურათების გარეშე"
+      ],
+      "No portraits": [
+        "პორტრეტების გარეშე"
+      ],
+      "No RAW": [
+        "RAW-ის გარეშე"
+      ],
       "No results found": [
         "შედეგების გარეშე"
+      ],
+      "No screenshots": [
+        "ეკრანის ანაბეჭდების გარეშე"
+      ],
+      "No selfies": [
+        "სელფების გარეშე"
+      ],
+      "No shared albums": [
+        "გაზიარებული ალბომების გარეშე"
+      ],
+      "No videos": [
+        "ვიდეოების გარეშე"
       ],
       "Notes": [
         "შენიშვნები"
@@ -11033,6 +11094,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "შეტყოვინების და ფაილის სახელი ნულოვანი წვდომის დაშიფვრით ინახება, როცა მას ამ ელფოსტაში ჩასვამთ"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "აირჩიეთ PGP-ის სქემა, რომელიც გამოყენებული იქნება ხელმოწერისა და შიფრაციისთვის. გაითვალისწინეთ, რომ PGP/Inline-ით ფორმატირებულ ელფოსტებს ვერ გააგზავნით"

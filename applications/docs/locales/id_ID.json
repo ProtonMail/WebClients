@@ -4317,6 +4317,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
+      "Just now": [
+        "Baru saja"
+      ],
       "Keep your files secure with end-to-end encryption.": [
         "Jaga berkas Anda tetap aman dengen enkripsi end-to-end."
       ],
@@ -4838,6 +4841,9 @@
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Transfer untuk folder \"${ folderName }\" dilewati"
+      ],
+      "Trash": [
+        "Sampah"
       ],
       "Trashed": [
         "Dibuang"
@@ -6389,9 +6395,6 @@
       ],
       "Available on all platforms": [
         "Tersedia pada seluruh platform"
-      ],
-      "Breach alerts": [
-        "Peringatan pembobolan"
       ],
       "Calendar sharing": [
         "Berbagi kalender"
@@ -8542,6 +8545,23 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
@@ -8581,23 +8601,6 @@
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } alamat email khusus"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } alamat email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {

@@ -1202,7 +1202,7 @@
         "Prueba ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Prueba ${ upsellPlanName } y mantén acceso a todas las características prémium de email y calendario."
+        "Prueba ${ upsellPlanName } y mantén acceso a todas las características de correo electrónico y calendario prémium."
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida y privada"
@@ -2722,7 +2722,7 @@
         "Código de verificación no válido"
       ],
       "Item content cannot exceed 40KB": [
-        "El contenido del elemento no puede exceder de 40 KB"
+        "El contenido del elemento no puede superar los 40 KB."
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
@@ -3844,7 +3844,7 @@
         "Los archivos de ${ DOCS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puedes descargar los demás archivos haciendo clic en Continuar la descarga."
       ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
-        "${ DOCS_APP_NAME } te permite colaborar en tiempo real con cifrado de extremo a extremo para una completa privacidad. Crea una copia para empezar a editar o pide acceso de editor al dueño."
+        "${ DOCS_APP_NAME } te permite colaborar en tiempo real con cifrado de extremo a extremo para una completa privacidad. Crea una copia para empezar a editar o pide al propietario que te dé acceso para editar."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } en"
@@ -4169,7 +4169,7 @@
         "Se ha movido el documento a la papelera."
       ],
       "Document owner has the password": [
-        "El propietario del documento tiene la contraseña"
+        "El propietario del documento tiene la contraseña."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvides desactivar los bloqueadores de ventanas emergentes."
@@ -4399,6 +4399,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
+      ],
+      "Just now": [
+        "Justo ahora"
       ],
       "Keep your files secure with end-to-end encryption.": [
         "Mantén tus archivos seguros con cifrado de extremo a extremo."
@@ -4653,7 +4656,7 @@
         "La navegación privada (o modo «incógnito») solo es útil para mantener oculta tu actividad en tu dispositivo. Evita que tu navegador guarde el historial y las cookies, pero no te hace invisible. Tu ISP, administrador de red y los sitios web que visitas aún pueden ver lo que haces en línea."
       ],
       "Public documents are not yet enabled for your organization.": [
-        "Los documentos públicos aún no están habilitados para su organización."
+        "Los documentos públicos aún no están activados para tu organización."
       ],
       "Recents": [
         "Recientes"
@@ -4807,7 +4810,7 @@
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "La URL que introducida parece haber sido copiada de Slack incorrectamente. Al copiar enlaces largos de Slack, haga clic derecho en el enlace, luego seleccione \"Copiar enlace\" en lugar de copiar directamente el texto de URL truncado."
+        "La URL introducida parece haber sido copiada de Slack incorrectamente. Al copiar enlaces largos de Slack, haz clic derecho en el enlace, luego selecciona «Copiar el enlace» en lugar de copiar directamente el texto de URL truncado."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
@@ -4925,6 +4928,9 @@
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Se ha omitido la transferencia de la carpeta \"${ folderName }\"."
+      ],
+      "Trash": [
+        "Papelera"
       ],
       "Trashed": [
         "En la papelera"
@@ -5240,7 +5246,7 @@
         "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Tu suscripción se renovará automáticamente el ${ renewalTime }"
+        "Tu suscripción se renovará automáticamente el ${ renewalTime }."
       ]
     },
     "info": {
@@ -6474,7 +6480,7 @@
         "200 GB de almacenamiento"
       ],
       "24/7 account management support": [
-        "Soporte de administración de cuenta 24/7"
+        "Soporte de gestión de cuenta 24/7"
       ],
       "99.95% SLA": [
         "SLA del 99,95 %"
@@ -6520,9 +6526,6 @@
       ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
-      ],
-      "Breach alerts": [
-        "Alertas de vulneraciones"
       ],
       "Calendar sharing": [
         "Compartir calendario"
@@ -7666,7 +7669,7 @@
         "Todos los servicios premium., 6 usuarios y una sola suscripción."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Se factura anualmente a ${ yearlyPrice }. Ahorre ${ yearlySavedPrice } con ${ passFamilyPlanName } (en comparación con 6 suscripciones individuales a ${ passPlusPlanName })."
+        "Se factura anualmente a ${ yearlyPrice }. Ahorra ${ yearlySavedPrice } con ${ passFamilyPlanName } (en comparación con 6 suscripciones individuales a ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
@@ -7728,7 +7731,7 @@
         "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+        "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
       "Got it": [
         "Entendido"
@@ -7737,7 +7740,7 @@
         "MM/AA"
       ],
       "More plans are available in other currencies": [
-        "Hay más planes disponibles en otras divisas"
+        "Hay más planes disponibles en otras divisas."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
@@ -7789,7 +7792,7 @@
         "Se ha agotado el tiempo de espera."
       ],
       "Your payment is still being processed": [
-        "Su pago aún está siendo procesado"
+        "Tu pago aún está siendo procesado."
       ]
     },
     "Payments.Error": {
@@ -8120,7 +8123,7 @@
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Nuestra solución de seguridad de vanguardia impulsada por inteligencia artificial, diseñada para usuarios que buscan una protección más intensificada para sus cuentas. ${ learnMoreLink }"
+        "Nuestra solución de seguridad de vanguardia impulsada por inteligencia artificial y diseñada para usuarios que buscan una protección más intensificada para sus cuentas. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **activo** y protegiendo tu cuenta."
@@ -8605,7 +8608,7 @@
         "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que quieres continuar?"
       ],
       "contact your administrator": [
-        "contacta con tu administrador"
+        "contacta con el administrador"
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
@@ -8750,6 +8753,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
+        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo electrónico",
+        "${ planNumberOfEmails } direcciones de correo electrónico"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -8789,25 +8811,6 @@
       ],
       "Your privacy is our mission": [
         "Tu privacidad es nuestra misión."
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
-        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo electrónico",
-        "${ planNumberOfEmails } direcciones de correo electrónico"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {

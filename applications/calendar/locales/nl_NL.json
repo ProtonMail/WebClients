@@ -3116,9 +3116,6 @@
       "Email address is required": [
         "E-mailadres is vereist"
       ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
       "Ends on date cannot be empty": [
         "Einddatum mag niet leeg blijven"
       ],
@@ -3166,9 +3163,6 @@
       ],
       "IMAP server is required": [
         "IMAP-server is vereist"
-      ],
-      "Incorrect username": [
-        "Onjuiste gebruikersnaam"
       ],
       "Intended recipient does not support calendar sharing": [
         "De bedoelde ontvangen heeft geen ondersteuning voor het delen van een agenda."
@@ -3261,9 +3255,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Geen ${ BRAND_NAME }-account"
       ],
-      "Not a valid number": [
-        "Geen geldig getal"
-      ],
       "Number of occurrences cannot be empty": [
         "Aantal herhalingen mag niet leeg blijven"
       ],
@@ -3280,9 +3271,6 @@
       ],
       "Password is required": [
         "Wachtwoord is vereist"
-      ],
-      "Passwords do not match": [
-        "Wachtwoorden komen niet overeen"
       ],
       "Payment process canceled": [
         "Betalingsverzoek geannuleerd"
@@ -3385,9 +3373,6 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
-      "The email addresses do not match": [
-        "De e-mailadressen komen niet overeen"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -3415,14 +3400,8 @@
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
-      ],
       "This field is required": [
         "Dit veld is vereist"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Deze mapnaam is niet beschikbaar. Kies een andere naam."
@@ -3436,9 +3415,6 @@
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Probeer enkel letters, nummers en _.- te gebruiken"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan VPN dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
       ],
@@ -3450,12 +3426,6 @@
       ],
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
-      ],
-      "Username must begin with a letter or digit": [
-        "Gebruikersnaam moet met een letter of cijfer beginnen"
-      ],
-      "Username must end with a letter or digit": [
-        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Validation error": [
         "Validatiefout"
@@ -4502,7 +4472,7 @@
         "(${ serverPrice }/maand)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat inschakelt."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
@@ -4536,13 +4506,13 @@
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om uw surfen te volgen of te monitoren."
+        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om browsen te volgen of te volgen."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
         "Een VPN verbergt uw IP-adres en versleutelt uw browseractiviteit, waardoor het moeilijker wordt voor websites, adverteerders en internetproviders om u over een bepaalde periode te volgen."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt je locatie en activiteit van je internetprovider (ISP) en de websites die je bezoekt."
+        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt uw locatie en activiteit van uw internetserviceprovider (ISP) en de websites die u bezoekt."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
@@ -4551,7 +4521,7 @@
         "Account succesvol bijgewerkt"
       ],
       "Ad targeting": [
-        "Advertentie targeting"
+        "Advertentie doelwit"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Toegevoegde en verwijderde deelnemers zullen op de hoogte worden gebracht van alle afspraken in deze serie."
@@ -4852,7 +4822,7 @@
         "Geoblocking"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw browsen privé."
+        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
       ],
       "here": [
         "hier"
@@ -5210,7 +5180,7 @@
         "Sommige antwoorden op voorvallen die eerder zijn bijgewerkt door de organisator zullen verloren gaan."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en vrij toegang te hebben tot het internet."
+        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
@@ -6785,26 +6755,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -6826,6 +6776,26 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6992,9 +6962,6 @@
       ],
       "Available on all platforms": [
         "Beschikbaar op alle platformen"
-      ],
-      "Breach alerts": [
-        "Breach waarschuwingen"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -9290,47 +9257,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -9589,6 +9515,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -10618,16 +10585,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "End-to-end versleuteld gedeeld met geverifieerd contact"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
-        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "Video control": {

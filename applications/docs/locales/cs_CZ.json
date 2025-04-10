@@ -4515,6 +4515,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
+      "Just now": [
+        "Právě teď"
+      ],
       "Keep your files secure with end-to-end encryption.": [
         "Uchovávejte své soubory v bezpečí díky koncovému šifrování."
       ],
@@ -5048,6 +5051,9 @@
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Přenos vynechán pro složku \"${ folderName }\""
+      ],
+      "Trash": [
+        "Koš"
       ],
       "Trashed": [
         "V koši"
@@ -6641,9 +6647,6 @@
       ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
-      ],
-      "Breach alerts": [
-        "Upozornění na úniky informací"
       ],
       "Calendar sharing": [
         "Sdílení kalendáře"
@@ -8985,6 +8988,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložiště na uživatele"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastní e-mailová doména",
+        "${ planNumberOfDomains } vlastní e-mailové domény",
+        "${ planNumberOfDomains } vlastních e-mailových domén",
+        "${ planNumberOfDomains } vlastních e-mailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailová adresa",
+        "${ planNumberOfEmails } e-mailové adresy",
+        "${ planNumberOfEmails } e-mailových adres",
+        "${ planNumberOfEmails } e-mailových adres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Složky, štítky a vlastní filtry"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložiště"
@@ -9024,29 +9050,6 @@
       ],
       "Your privacy is our mission": [
         "Vaše soukromí je naším posláním"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložiště na uživatele"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastní e-mailová doména",
-        "${ planNumberOfDomains } vlastní e-mailové domény",
-        "${ planNumberOfDomains } vlastních e-mailových domén",
-        "${ planNumberOfDomains } vlastních e-mailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailová adresa",
-        "${ planNumberOfEmails } e-mailové adresy",
-        "${ planNumberOfEmails } e-mailových adres",
-        "${ planNumberOfEmails } e-mailových adres"
-      ],
-      "Folders, labels, and custom filters": [
-        "Složky, štítky a vlastní filtry"
       ]
     },
     "Subscription renewal state": {

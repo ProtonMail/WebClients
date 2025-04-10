@@ -28,10 +28,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate organization key": [
@@ -283,6 +283,9 @@
       "Edit billing cycle": [
         "გადახდის ციკლის ჩასწორება"
       ],
+      "Edit countries": [
+        "ქვეყნების ჩასწორება"
+      ],
       "Edit display name": [
         "საჩვენებელი სახელის ჩასწორება"
       ],
@@ -523,10 +526,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Remove": [
@@ -4271,11 +4274,11 @@
       "Data recoverable on this device": [
         "ამ მოწყობილობაზე აღმოჩენადი მონაცემები"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -4295,6 +4298,9 @@
       ],
       "Did you know?": [
         "იცოდით?"
+      ],
+      "Disabled countries": [
+        "გამორთული ქვეყნები"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "გათიშვის თარიღი ${ formattedDateAndTime }"
@@ -4408,6 +4414,9 @@
       "Enable single sign-on to keep your organization safe": [
         "ჩართეთ SSO, რომ თქვენი ორგანიზაცია უსაფრთხოდ გყავდეთ"
       ],
+      "Enabled countries": [
+        "ჩართული ქვეყნები"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "ჩართვის თარიღი ${ formattedDateAndTime }"
       ],
@@ -4516,8 +4525,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
       ],
+      "Got it": [
+        "გავიგე"
+      ],
       "Group deleted": [
         "ჯგუფი წაიშალა"
+      ],
+      "Groups": [
+        "ჯგუფები"
       ],
       "here": [
         "აქ"
@@ -5905,6 +5920,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } მომხმარებელი",
+        "${ group.UserCount } მომხმარებელი"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } ${ humanMaxSpace }-დან"
       ],
@@ -6916,6 +6935,29 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -6940,29 +6982,6 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -7138,9 +7157,6 @@
       ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
-      ],
-      "Breach alerts": [
-        "გაჟონვის განგაშები"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -8159,6 +8175,17 @@
         "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
+      ]
+    },
     "Option": {
       "Country configs": [
         "ქვეყნების მორგება"
@@ -8216,17 +8243,6 @@
       ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
       ]
     },
     "Organization capacity error": {
@@ -10056,47 +10072,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -10382,6 +10357,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
