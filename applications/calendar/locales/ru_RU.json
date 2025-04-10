@@ -3105,9 +3105,6 @@
       "Email address is required": [
         "Нужно указать адрес электронной почты"
       ],
-      "Email is not valid": [
-        "Эл. почта недействительна"
-      ],
       "Ends on date cannot be empty": [
         "Дата окончания не может быть пустой"
       ],
@@ -3155,9 +3152,6 @@
       ],
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
-      ],
-      "Incorrect username": [
-        "Некорректное имя пользователя"
       ],
       "Intended recipient does not support calendar sharing": [
         "Предполагаемый получатель не поддерживает совместное использование календаря"
@@ -3252,9 +3246,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Не аккаунт ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Номер недействителен"
-      ],
       "Number of occurrences cannot be empty": [
         "Количество повторов не может быть пустым"
       ],
@@ -3275,9 +3266,6 @@
       ],
       "Password is required": [
         "Нужно ввести пароль"
-      ],
-      "Passwords do not match": [
-        "Пароли не совпадают"
       ],
       "Payment process canceled": [
         "Процесс оплаты отменён"
@@ -3384,9 +3372,6 @@
       "The amount due has changed. Please try again.": [
         "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
-      "The email addresses do not match": [
-        "Адреса электронной почты не совпадают"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
       ],
@@ -3414,14 +3399,8 @@
       "There was an error when exporting the contacts vCards": [
         "Произошла ошибка при экспорте визитных карточек контактов"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимальные ${ maximumLength } символов."
-      ],
       "This field is required": [
         "Это обязательное поле"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля ${ minimumLength } символов."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Это имя папки недоступно. Пожалуйста, выберите другое имя."
@@ -3435,9 +3414,6 @@
       "Trusted keys are not valid for sending": [
         "Доверенные ключи недействительны для отправки"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Попробуйте, используя только буквы, цифры и _.-"
-      ],
       "Unexpected error, we can't import the contacts": [
         "Неожиданная ошибка, мы не можем импортировать контакты"
       ],
@@ -3446,12 +3422,6 @@
       ],
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
-      ],
-      "Username must begin with a letter or digit": [
-        "Имя пользователя должно начинаться с буквы или цифры"
-      ],
-      "Username must end with a letter or digit": [
-        "Имя пользователя должно заканчиваться буквой или цифрой"
       ],
       "Validation error": [
         "Ошибка проверки"
@@ -6758,26 +6728,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6799,6 +6749,26 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6996,9 +6966,6 @@
       ],
       "Available on all platforms": [
         "Доступно на всех платформах"
-      ],
-      "Breach alerts": [
-        "Оповещения об утечках"
       ],
       "Calendar sharing": [
         "Совместное использование календаря"
@@ -9359,47 +9326,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -9670,6 +9596,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -10684,20 +10651,6 @@
         "Общий доступ со сквозным шифрованием с подтверждённым контактом"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Нажмите, чтобы воспроизвести видео"
@@ -10744,6 +10697,12 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Автоматически выбирается из ${ numberOfCountries } страны",
+        "Автоматически выбирается из ${ numberOfCountries } стран",
+        "Автоматически выбирается из ${ numberOfCountries } стран",
+        "Автоматически выбирается из ${ numberOfCountries } стран"
       ]
     },
     "vpn_2024: renew": {

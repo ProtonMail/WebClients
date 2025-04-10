@@ -3087,9 +3087,6 @@
       "Email address is required": [
         "Alamat email diperlukan"
       ],
-      "Email is not valid": [
-        "Email tidak valid"
-      ],
       "Ends on date cannot be empty": [
         "Tanggal akhir tidak boleh kosong"
       ],
@@ -3137,9 +3134,6 @@
       ],
       "IMAP server is required": [
         "Server IMAP diperlukan"
-      ],
-      "Incorrect username": [
-        "Nama pengguna salah"
       ],
       "Intended recipient does not support calendar sharing": [
         "Penerima yang dituju tidak mendukung berbagi kalender"
@@ -3231,9 +3225,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Bukan akun ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Nomor telepon tidak valid"
-      ],
       "Number of occurrences cannot be empty": [
         "Jumlah keberlangsungan tidak boleh kosong"
       ],
@@ -3248,9 +3239,6 @@
       ],
       "Password is required": [
         "Kata sandi diperlukan"
-      ],
-      "Passwords do not match": [
-        "Kata sandi tidak sesuai"
       ],
       "Payment process canceled": [
         "Proses pembayaran dibatalkan"
@@ -3351,9 +3339,6 @@
       "The amount due has changed. Please try again.": [
         "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
-      "The email addresses do not match": [
-        "Alamat email tidak sesuai"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
       ],
@@ -3381,14 +3366,8 @@
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
-      ],
       "This field is required": [
         "Kolom ini wajib diisi"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain."
@@ -3402,9 +3381,6 @@
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Dasbor VPN tidak dapat dimuat. Silakan periksa koneksi Anda dan coba lagi."
       ],
@@ -3416,12 +3392,6 @@
       ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
-      ],
-      "Username must begin with a letter or digit": [
-        "Nama pengguna harus dimulai dengan huruf atau angka"
-      ],
-      "Username must end with a letter or digit": [
-        "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "Validation error": [
         "Kesalahan validasi"
@@ -6680,26 +6650,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Mulai dengan harga ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Mulai dari ${ pricing }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -6721,6 +6671,26 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Mulai dengan harga ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Mulai dari ${ pricing }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6870,9 +6840,6 @@
       ],
       "Available on all platforms": [
         "Tersedia pada seluruh platform"
-      ],
-      "Breach alerts": [
-        "Peringatan pembobolan"
       ],
       "Calendar sharing": [
         "Berbagi kalender"
@@ -9101,47 +9068,6 @@
         "Untuk ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -9394,6 +9320,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -10400,14 +10367,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Dibagikan secara end-to-end dengan kontak yang terverifikasi"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "Video control": {

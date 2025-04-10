@@ -3110,9 +3110,6 @@
       "Email address is required": [
         "Sähköpostiosoite vaaditaan"
       ],
-      "Email is not valid": [
-        "Virheellinen sähköpostiosoite"
-      ],
       "Ends on date cannot be empty": [
         "Päättymispäivä ei voi olla tyhjä"
       ],
@@ -3160,9 +3157,6 @@
       ],
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
-      ],
-      "Incorrect username": [
-        "Virheellinen käyttäjätunnus"
       ],
       "Intended recipient does not support calendar sharing": [
         "Tarkoitettu vastaanottaja ei tue kalenterin jakamista"
@@ -3255,9 +3249,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Tämä ei ole ${ BRAND_NAME }-tili"
       ],
-      "Not a valid number": [
-        "Virheellinen numero"
-      ],
       "Number of occurrences cannot be empty": [
         "Toistomäärä ei voi olla tyhjä"
       ],
@@ -3274,9 +3265,6 @@
       ],
       "Password is required": [
         "Salasana vaaditaan"
-      ],
-      "Passwords do not match": [
-        "Salasanat eivät täsmää"
       ],
       "Payment process canceled": [
         "Maksutapahtuma peruttiin"
@@ -3379,9 +3367,6 @@
       "The amount due has changed. Please try again.": [
         "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
-      "The email addresses do not match": [
-        "Sähköpostiosoitteet eivät täsmää"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Kansion nimi on virheellinen. Valitse eri nimi."
       ],
@@ -3409,14 +3394,8 @@
       "There was an error when exporting the contacts vCards": [
         "Yhteystietojen vCardeja vietäessä tapahtui virhe"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
-      ],
       "This field is required": [
         "Tämä kenttä vaaditaan"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
@@ -3430,9 +3409,6 @@
       "Trusted keys are not valid for sending": [
         "Luotetut avaimet eivät kelpaa lähetykseen"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
-      ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
       ],
@@ -3441,12 +3417,6 @@
       ],
       "Unknown payment token status": [
         "Tuntematon maksutunnisteen tila"
-      ],
-      "Username must begin with a letter or digit": [
-        "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
-      ],
-      "Username must end with a letter or digit": [
-        "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
       "Validation error": [
         "Vahvistusvirhe"
@@ -6731,26 +6701,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -6772,6 +6722,26 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6938,9 +6908,6 @@
       ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
-      ],
-      "Breach alerts": [
-        "Tietomurtohälytykset"
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
@@ -9192,47 +9159,6 @@
         "Hintaan ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
@@ -9491,6 +9417,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -10502,16 +10469,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Jaettu päästä päähän -salattuna vahvistetulla yhteystiedolla"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
-        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
       ]
     },
     "Video control": {

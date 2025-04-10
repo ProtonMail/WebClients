@@ -3109,9 +3109,6 @@
       "Email address is required": [
         "ელფოსტის მისამართი აუცილებელია"
       ],
-      "Email is not valid": [
-        "ელფოსტა არასწორია"
-      ],
       "Ends on date cannot be empty": [
         "დამთავრების თარიღი ცარიელი არ შეიძლება იყოს"
       ],
@@ -3159,9 +3156,6 @@
       ],
       "IMAP server is required": [
         "IMAP სერვერის მითითება აუცილებელია"
-      ],
-      "Incorrect username": [
-        "მომხმარებლის სახელი არასწორია"
       ],
       "Intended recipient does not support calendar sharing": [
         "სამიზნე მიმღებს კალენდრის გაზიარების მხარდაჭერა არ გააჩნია"
@@ -3254,9 +3248,6 @@
       "Not a ${ BRAND_NAME } account": [
         "არა-${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Not a valid number": [
-        "არასწორი ნომერი"
-      ],
       "Number of occurrences cannot be empty": [
         "მოხდენების რიცხვი ცარიელი ვერ იქნება"
       ],
@@ -3273,9 +3264,6 @@
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
-      ],
-      "Passwords do not match": [
-        "პაროლები არ ემთხვევა"
       ],
       "Payment process canceled": [
         "გადახდის პროცესი გაუქმდა"
@@ -3378,9 +3366,6 @@
       "The amount due has changed. Please try again.": [
         "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
       ],
-      "The email addresses do not match": [
-        "ელფოსტის მისამართები არ ემთხვევა"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "საქაღალდის სახელი არასწორია. აირჩიეთ სხვა სახელი."
       ],
@@ -3408,14 +3393,8 @@
       "There was an error when exporting the contacts vCards": [
         "კონტაქტების vCard-ების გატანის შეცდომა"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
-      ],
       "This field is required": [
         "ეს ველი აუცილებელია"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
       ],
       "This folder name is not available. Please choose a different name.": [
         "საქაღალდის სახელი მიუწვდომელია. აირჩიეთ სხვა სახელი."
@@ -3429,9 +3408,6 @@
       "Trusted keys are not valid for sending": [
         "სანდო გასაღებების გაგზავნა არ შეიძლება"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN-ის სამუშაო მაგიდის ჩატვირთვა შეუძლებელია. გადაამოწმეთ თქვენი კავშირი და თავიდან სცადეთ."
       ],
@@ -3443,12 +3419,6 @@
       ],
       "Unknown payment token status": [
         "გადახდის სტატუსის არასწორი კოდი"
-      ],
-      "Username must begin with a letter or digit": [
-        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
-      ],
-      "Username must end with a letter or digit": [
-        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
       "Validation error": [
         "გადამოწმების შეცდომა"
@@ -6733,26 +6703,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6774,6 +6724,26 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6940,9 +6910,6 @@
       ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
-      ],
-      "Breach alerts": [
-        "გაჟონვის განგაშები"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -9224,47 +9191,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -9520,6 +9446,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -10507,6 +10474,9 @@
       "Load image": [
         "გამოსახულების ჩატვირთვა"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "აირჩიეთ PGP-ის სქემა, რომელიც გამოყენებული იქნება ხელმოწერისა და შიფრაციისთვის. გაითვალისწინეთ, რომ PGP/Inline-ით ფორმატირებულ ელფოსტებს ვერ გააგზავნით"
       ],
@@ -10543,16 +10513,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "გაზიარებულია გამჭოლი შიფრაციით სანდო კონტაქტთან"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
-        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
-        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
       ]
     },
     "Video control": {
