@@ -35,8 +35,8 @@ const getContextEditFlags = (props: ContextMenuParams) => {
 
         template.push(
             { type: "separator" },
-            { role: "undo", enabled: props.editFlags.canUndo },
-            { role: "redo", enabled: props.editFlags.canRedo },
+            { role: "undo", label: c("Context Menu").t`Undo`, enabled: props.editFlags.canUndo },
+            { role: "redo", label: c("Context Menu").t`Redo`, enabled: props.editFlags.canRedo },
             { type: "separator" },
         );
     }
@@ -44,17 +44,18 @@ const getContextEditFlags = (props: ContextMenuParams) => {
     if (isMac && props.editFlags.canCopy) {
         const text = smartTruncateText(props.selectionText, 50);
         template.push({
-            label: `Look Up “${text}”`,
+            // translator: this looks up the definition of a word
+            label: c("Context Menu").t`Look Up “${text}”`,
             click: () => getCurrentView()?.webContents.showDefinitionForSelection(),
         });
     }
 
     if (props.editFlags.canCut) {
-        template.push({ role: "cut" });
+        template.push({ role: "cut", label: c("Context Menu").t`Cut` });
     }
 
     if (props.editFlags.canCopy) {
-        template.push({ role: "copy" });
+        template.push({ role: "copy", label: c("Context Menu").t`Copy` });
     }
 
     if (props.linkURL) {
@@ -72,10 +73,10 @@ const getContextEditFlags = (props: ContextMenuParams) => {
     }
 
     if (props.editFlags.canPaste) {
-        template.push({ role: "paste" });
+        template.push({ role: "paste", label: c("Context Menu").t`Paste` });
     }
     if (props.editFlags.canPaste) {
-        template.push({ role: "pasteAndMatchStyle" });
+        template.push({ role: "pasteAndMatchStyle", label: c("Context Menu").t`Paste and Match Style` });
     }
 
     return template;
@@ -88,20 +89,23 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
     }
 
     if (props.editFlags.canSelectAll && props.selectionText.length > 0) {
-        template.push({ role: "selectAll" });
+        template.push({ role: "selectAll", label: c("Context Menu").t`Select All` });
     }
 
     if (isMac && props.selectionText.length > 0) {
         template.push({
-            label: c("Conext menu").t`Speech`,
-            submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
+            label: c("Context menu").t`Speech`,
+            submenu: [
+                { role: "startSpeaking", label: c("Context menu").t`Start Speaking` },
+                { role: "stopSpeaking", label: c("Context menu").t`Stop Speaking` },
+            ],
         });
     }
 
     if (props.mediaType === "image") {
         template.push({ type: "separator" });
         template.push({
-            label: c("Conext menu").t`Save image as…`,
+            label: c("Context menu").t`Save image as…`,
             click: () => getMainWindow()?.webContents.downloadURL(props.srcURL),
         });
         template.push({ type: "separator" });
