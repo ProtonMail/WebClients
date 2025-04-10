@@ -1,6 +1,15 @@
 // Will include more rules in the future
 import { hasPDFSupport } from './browser';
-import { isAudio, isComicBook, isPDF, isSupportedImage, isSupportedText, isVideo, isWordDocument } from './mimetype';
+import {
+    isAudio,
+    isComicBook,
+    isPDF,
+    isSTLFile,
+    isSupportedImage,
+    isSupportedText,
+    isVideo,
+    isWordDocument,
+} from './mimetype';
 
 // The reason to limit preview is because the file needs to be loaded
 // in memory. At this moment we don't even have any progress bar so
@@ -32,6 +41,7 @@ export const isPreviewAvailable = (mimeType: string, fileSize?: number) => {
                 isSupportedText(mimeType) ||
                 (hasPDFSupport() && isPDF(mimeType)) ||
                 isWordDocument(mimeType))) ||
-        isComicBook(mimeType)
+        isComicBook(mimeType) ||
+        isSTLFile(mimeType)
     );
 };
