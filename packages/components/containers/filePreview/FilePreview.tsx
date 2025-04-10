@@ -8,11 +8,12 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { useCombinedRefs, useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
-import { isMinimumSafariVersion, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMinimumSafariVersion, isMobile, isSafari, isWebglSupported } from '@proton/shared/lib/helpers/browser';
 import {
     isAudio,
     isCompatibleCBZ,
     isIWAD,
+    isCompatibleSTL,
     isPDF,
     isProtonDocument,
     isSupportedImage,
@@ -41,6 +42,9 @@ import VideoPreview from './VideoPreview';
 // Lazy Loaded since it includes jszip and it's a rare file type (not common)
 const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
 const IWADPreview = lazy(() => import(/* webpackChunkName: "iwad-preview" */ './IWADPreview'));
+
+// Lazy Loaded since it includes three.js and it's a rare file type (not common)
+const STLPreview = lazy(() => import(/* webpackChunkName: "stl-preview" */ './3DPreview/STLPreview'));
 
 interface FilePreviewProps {
     isMetaLoading?: boolean;
@@ -154,6 +158,13 @@ export const FilePreviewContent = ({
             return (
                 <Suspense fallback={<PreviewLoader />}>
                     <IWADPreview contents={contents} filename={fileName} />
+                </Suspense>
+            );
+        }
+        if (contents && mimeType && fileName && isCompatibleSTL(mimeType, fileName) && isWebglSupported()) {
+            return (
+                <Suspense fallback={<PreviewLoader />}>
+                    <STLPreview stlFile={contents} />
                 </Suspense>
             );
         }
