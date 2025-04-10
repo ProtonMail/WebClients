@@ -466,7 +466,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
                 file.Metadata,
                 file.FileKey,
                 itemKey,
-                file.EncryptionVersion
+                file.EncryptionVersion ?? 1
             );
 
             worker.registerFileKey({ fileKey, fileID: file.FileID, shareId });
