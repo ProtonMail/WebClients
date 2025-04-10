@@ -4397,6 +4397,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
+      "Just now": [
+        "Μόλις τώρα"
+      ],
       "Keep your files secure with end-to-end encryption.": [
         "Διατηρήστε τα αρχεία σας ασφαλή με διατερματική κρυπτογράφηση."
       ],
@@ -4922,6 +4925,9 @@
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Η μεταφορά του φακέλου \"${ folderName }\" παραλείφθηκε"
+      ],
+      "Trash": [
+        "Διαγραμμένα"
       ],
       "Trashed": [
         "Διαγράφηκε"
@@ -6457,9 +6463,6 @@
       ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
-      ],
-      "Breach alerts": [
-        "Ειδοποιήσεις Παραβίασης"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -8687,6 +8690,25 @@
         "Για ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -8726,25 +8748,6 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
-        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } διεύθυνση email",
-        "${ planNumberOfEmails } διευθύνσεις email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {

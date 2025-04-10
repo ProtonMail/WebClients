@@ -499,6 +499,9 @@
       "Edit billing cycle": [
         "Abrechnungszeitraum bearbeiten"
       ],
+      "Edit countries": [
+        "Länder bearbeiten"
+      ],
       "Edit display name": [
         "Anzeigename bearbeiten"
       ],
@@ -919,11 +922,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reject": [
         "Ablehnen"
@@ -7393,11 +7396,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7841,11 +7844,11 @@
       "Data recoverable on this device": [
         "Daten, die auf diesem Gerät wiederhergestellt werden können"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -7877,6 +7880,9 @@
       ],
       "Disable recovery by phone number": [
         "Wiederherstellung mittels Rufnummer deaktivieren"
+      ],
+      "Disabled countries": [
+        "Deaktivierte Länder"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktiviert am ${ formattedDateAndTime }"
@@ -8028,6 +8034,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktiviere TLS oder SSL für den externen Dienst, falls dies unterstützt wird."
+      ],
+      "Enabled countries": [
+        "Aktivierte Länder"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiviert am ${ formattedDateAndTime }"
@@ -8218,8 +8227,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
       ],
+      "Got it": [
+        "Verstanden"
+      ],
       "Group deleted": [
         "Gruppe gelöscht"
+      ],
+      "Groups": [
+        "Gruppen"
       ],
       "here": [
         "hier"
@@ -10753,6 +10768,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } Benutzer",
+        "${ group.UserCount } Benutzer"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
       ],
@@ -10892,11 +10911,11 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
-      "AND": [
-        "UND"
-      ],
       "And": [
         "Und"
+      ],
+      "AND": [
+        "UND"
       ],
       "and": [
         "und"
@@ -11324,11 +11343,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "WENN"
-      ],
       "If": [
         "Wenn"
+      ],
+      "IF": [
+        "WENN"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -11531,14 +11550,14 @@
       "Optional": [
         "Optional"
       ],
-      "OR": [
-        "ODER"
-      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
+      ],
+      "OR": [
+        "ODER"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -12774,32 +12793,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -12827,6 +12820,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: feature": {
@@ -13005,9 +13024,6 @@
       ],
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
-      ],
-      "Breach alerts": [
-        "Warnung bei Datendiebstahl"
       ],
       "Calendar sharing": [
         "Kalenderfreigabe"
@@ -14206,6 +14222,17 @@
         "Desktop"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. des Monats"
@@ -14434,17 +14461,6 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
       ]
     },
     "Option delay send seconds": {
@@ -17441,47 +17457,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -17770,6 +17745,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -18281,7 +18297,7 @@
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
       "${ feature } is now active": [
-        "${ feature } ist jetzt aktiv."
+        "${ feature } ist jetzt aktiv"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
@@ -18471,7 +18487,7 @@
         "Sicherheit der Authentifizierung"
       ],
       "Auto-deletion is active": [
-        "Automatisches Löschen ist aktiv."
+        "Automatisches Löschen ist aktiv"
       ],
       "Auto-reply": [
         "Automatische Antworten"
@@ -18588,7 +18604,7 @@
         "Konten konnten nicht erstellt werden"
       ],
       "Coupon": [
-        "Rabattcode"
+        "Gutschein"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } Benutzer erstellt",
@@ -18999,7 +19015,7 @@
         "Hilfe und Feedback"
       ],
       "Help center": [
-        "Hilfecenter"
+        "Hilfezentrum"
       ],
       "History": [
         "Verlauf"
@@ -19063,7 +19079,7 @@
         "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
       ],
       "Information exposed in breach": [
-        "Informationen, die bei einem Datenleck offengelegt wurden"
+        "Informationen, die beim Datenleck offengelegt wurden"
       ],
       "Integrations": [
         "Integrationen"
@@ -19405,7 +19421,7 @@
         "Name der Organisation festlegen"
       ],
       "Set up ${ protonDuoPlanName }": [
-        "Richte ${ protonDuoPlanName } ein"
+        "${ protonDuoPlanName } einrichten"
       ],
       "Set up a recovery method": [
         "Wiederherstellungsmethode einrichten"
@@ -19637,7 +19653,7 @@
         "WireGuard-Konfiguration"
       ],
       "You can now create unlimited folders and labels": [
-        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
       "You have no open alerts": [
         "Du hast keine offenen Warnungen"
@@ -19664,7 +19680,7 @@
         "Dein Wiederherstellungsstatus"
       ],
       "Your shorter address is now ready": [
-        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig"
       ],
       "Your SMTP token": [
         "Dein SMTP-Token"

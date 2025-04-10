@@ -1022,7 +1022,7 @@
         "No se pudo rechazar la invitación"
       ],
       "Item content cannot exceed 40KB": [
-        "El contenido del elemento no puede exceder de 40 KB"
+        "El contenido del elemento no puede superar los 40 KB."
       ],
       "Item creation failed": [
         "Error al crear el elemento"
@@ -1052,7 +1052,7 @@
         "Concede a ${ PASS_APP_NAME } los permisos de extensión necesarios para continuar."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Fija la extensión o selecciona Continuar sin fijar."
+        "Fija la extensión o selecciona «Continuar sin fijar»."
       ],
       "Registration failure: ${ message }": [
         "Error del registro: ${ message }"
@@ -1088,7 +1088,7 @@
         "Se ha producido un error."
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Se ha producido un error. Recarga la extensión ${ PASS_APP_NAME }. El fallo ha sido registrado."
+        "Se ha producido un error. Recarga la extensión ${ PASS_APP_NAME }. El error ha sido registrado."
       ],
       "The URL is in the list": [
         "La URL está en la lista."
@@ -1276,7 +1276,7 @@
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas, tarjetas de crédito e identidades."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } te avisará tan pronto como las contraseñas generadas se completen automáticamente."
+        "${ PASS_APP_NAME } te avisará tan pronto como las contraseñas generadas se rellenen automáticamente."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } te avisará de guardar o actualizar las credenciales."
@@ -1701,7 +1701,7 @@
         "Elemento \"${ payload.item.data.metadata.name }\" actualizado"
       ],
       "Item history permanently deleted": [
-        "Historial de artículos eliminado permanentemente"
+        "Se ha eliminado el historial del elemento permanentemente."
       ],
       "Item moved to trash": [
         "Elemento movido a la papelera"
@@ -1885,10 +1885,10 @@
         "Confirma la contraseña adicional para bloquear automáticamente con datos biométricos."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
-        "Por favor, confirma tu contraseña extra para poder bloquear automáticamente con tu contraseña extra."
+        "Confirma tu contraseña adicional para permitir el bloqueo automático con tu contraseña adicional"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
-        "Por favor, confirma tu contraseña extra para poder exportar los datos de ${ PASS_APP_NAME }"
+        "Confirma tu contraseña adicional para poder exportar los datos de ${ PASS_APP_NAME }."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Confirma la contraseña adicional para cancelar el registro del bloqueo actual."
@@ -2098,7 +2098,7 @@
         "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de tu contraseña de ${ BRAND_NAME }."
       ],
       "The following ${ totalIgnored } item could not be imported:": [
-        "El siguiente elemento ${ totalIgnored } no pudo ser importado:",
+        "No se ha podido importar ${ totalIgnored } elemento:",
         "No se han podido importar los ${ totalIgnored } siguientes elementos:"
       ],
       "The secure link has been removed": [
@@ -2189,7 +2189,7 @@
         "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña adicional."
       ],
       "Unlock it with your PIN to access the settings": [
-        "Desbloquéala con tu PIN para acceder a los ajustes"
+        "Desbloquéala con tu código PIN para acceder a los ajustes."
       ],
       "Unlock with biometrics": [
         "Desbloquear usando datos biométricos"
@@ -2919,7 +2919,7 @@
         "Sitio web personal"
       ],
       "PGP-encrypted (recommended)": [
-        "Cifrado PGP (recomendado)"
+        "Cifrado con PGP (recomendado)"
       ],
       "Phone number": [
         "Número de teléfono"
@@ -3452,7 +3452,7 @@
         "Aprobar o negar ahora"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "Ingrese el código de confirmación que te enviamos a tu otro dispositivo."
+        "Ingresa el código de confirmación que te enviamos a tu otro dispositivo."
       ],
       "If you didn't make this request, cancel it now.": [
         "Si no has hecho esta solicitud, cancélala ahora."
@@ -3721,7 +3721,7 @@
         "Ingresa el código del cupón"
       ],
       "Enter your backup password": [
-        "Ingresa la contraseña de respaldo."
+        "Introduce la contraseña de respaldo."
       ],
       "Enter your extra password": [
         "Ingresa tu contraseña adicional."
@@ -3763,7 +3763,7 @@
         "Importar a las cajas fuertes"
       ],
       "Importing your data": [
-        "Importando sus datos"
+        "Importando tus datos"
       ],
       "Item": [
         "Elemento"
@@ -4032,7 +4032,7 @@
         "Se ha producido un error al importar sus datos."
       ],
       "An error occurred while resuming your session": [
-        "Ha ocurrido un error al reanudar la sesión."
+        "Se ha producido un error al reanudar tu sesión."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "¿Estás seguro de que quieres mover ${ trashedItemsCount } elemento a la papelera?",
@@ -4251,7 +4251,7 @@
         "Ya no tendrás acceso a esta caja fuerte. Para unirte de nuevo necesitarás una invitación."
       ],
       "Your administrator needs to create a vault for you before you can create items": [
-        "Tu administrador necesita crear una bóveda antes de que puedas crear elementos"
+        "Tu administrador necesita crear una caja fuerte antes de que puedas crear elementos."
       ],
       "Your organization does not allow creating a vault": [
         "Tu organización no permite crear una caja fuerte."
@@ -4263,7 +4263,7 @@
         "Tu plan no te permite crear más alias."
       ],
       "Your plan only allows you to autofill from your first two vaults": [
-        "Tu plan solo le permite rellenar automáticamente desde tus primeras dos cajas fuertes."
+        "Tu plan solo te permite usar el completado automático de tus dos primeras cajas fuertes."
       ],
       "Your session could not be authorized.": [
         "No se ha podido autorizar tu sesión."

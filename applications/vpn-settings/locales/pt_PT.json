@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate organization key": [
         "Ativar a chave da organização"
@@ -283,6 +283,9 @@
       "Edit billing cycle": [
         "Editar o ciclo de faturação"
       ],
+      "Edit countries": [
+        "Editar os países"
+      ],
       "Edit display name": [
         "Editar o nome a mostrar"
       ],
@@ -523,11 +526,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -4318,11 +4321,11 @@
       "Data recoverable on this device": [
         "Dados recuperáveis neste dispositivo"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
@@ -4342,6 +4345,9 @@
       ],
       "Did you know?": [
         "Sabia?"
+      ],
+      "Disabled countries": [
+        "Países desativados"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Desativado em ${ formattedDateAndTime }"
@@ -4455,6 +4461,9 @@
       "Enable single sign-on to keep your organization safe": [
         "Ative a autenticação única para proteger a sua organização"
       ],
+      "Enabled countries": [
+        "Países ativados"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "Ativado em ${ formattedDateAndTime }"
       ],
@@ -4563,8 +4572,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aceda ao seu fornecedor de identidade, obtenha os metadados SAML para o ${ appName } e importe-os aqui."
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "Group deleted": [
         "O grupo foi eliminado."
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "here": [
         "aqui"
@@ -5981,6 +5996,10 @@
       "${ BRAND_NAME } username": [
         "Nome de utilizador do ${ BRAND_NAME }"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } utilizador",
+        "${ group.UserCount } utilizadores"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
@@ -6995,6 +7014,29 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Apagar conta"
+      ],
+      "Downgrade account": [
+        "Mudar para uma conta com menos funcionalidades"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter o ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Conservar ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar a conta"
+      ],
+      "Switch plan": [
+        "Alterar o plano"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Mudar para ${ downgradedPlanName }"
@@ -7019,29 +7061,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Apagar conta"
-      ],
-      "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter o ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conservar ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar a conta"
-      ],
-      "Switch plan": [
-        "Alterar o plano"
       ]
     },
     "new_plans: feature": {
@@ -7217,9 +7236,6 @@
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
-      ],
-      "Breach alerts": [
-        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -8238,6 +8254,17 @@
         "Boas-vindas ao ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Definições do país"
@@ -8304,17 +8331,6 @@
       ],
       "UDP": [
         "UDP"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
       ]
     },
     "Organization capacity error": {
@@ -10164,47 +10180,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -10493,6 +10468,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {

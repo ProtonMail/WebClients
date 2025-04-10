@@ -4397,6 +4397,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
       ],
+      "Just now": [
+        "Jetzt gerade"
+      ],
       "Keep your files secure with end-to-end encryption.": [
         "Sichere deine Dateien mit Ende-zu-Ende-Verschlüsselung."
       ],
@@ -4922,6 +4925,9 @@
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Übertragung des Ordners „${ folderName }“ wurde übersprungen"
+      ],
+      "Trash": [
+        "Papierkorb"
       ],
       "Trashed": [
         "Gelöscht"
@@ -6514,9 +6520,6 @@
       ],
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
-      ],
-      "Breach alerts": [
-        "Warnung bei Datendiebstahl"
       ],
       "Calendar sharing": [
         "Kalenderfreigabe"
@@ -8744,6 +8747,25 @@
         "Für ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
@@ -8783,25 +8805,6 @@
       ],
       "Your privacy is our mission": [
         "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } Speicherplatz pro Benutzer"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigene E-Mail-Domain",
-        "${ planNumberOfDomains } eigene E-Mail-Domains"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } E-Mail-Adresse",
-        "${ planNumberOfEmails } E-Mail-Adressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "Subscription renewal state": {
@@ -9054,7 +9057,7 @@
         "${ emailsCount } E-Mail-Adressen"
       ],
       "${ feature } is now active": [
-        "${ feature } ist jetzt aktiv."
+        "${ feature } ist jetzt aktiv"
       ],
       "Account recovery": [
         "Kontowiederherstellung"
@@ -9091,7 +9094,7 @@
         "Bist du sicher?"
       ],
       "Auto-deletion is active": [
-        "Automatisches Löschen ist aktiv."
+        "Automatisches Löschen ist aktiv"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -9142,7 +9145,7 @@
         "Mit Teilimport fortfahren?"
       ],
       "Coupon": [
-        "Rabattcode"
+        "Gutschein"
       ],
       "Create a new folder": [
         "Neuen Ordner erstellen"
@@ -9306,10 +9309,10 @@
         "Hilfe und Feedback"
       ],
       "Help center": [
-        "Hilfecenter"
+        "Hilfezentrum"
       ],
       "High security for your account": [
-        "Hochsicherheit für dein Konto"
+        "Hohe Sicherheit für dein Konto"
       ],
       "How does it all work?": [
         "Wie funktioniert das Ganze?"
@@ -9334,7 +9337,7 @@
         "Gruppen importieren"
       ],
       "Information exposed in breach": [
-        "Informationen, die bei einem Datenleck offengelegt wurden"
+        "Informationen, die beim Datenleck offengelegt wurden"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
@@ -9556,7 +9559,7 @@
         "Wann ist es am wichtigsten, ein VPN zu verwenden?"
       ],
       "You can now create unlimited folders and labels": [
-        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
       "You have no folders yet": [
         "Du hast noch keine Ordner"
@@ -9577,7 +9580,7 @@
         "Deine exponierten Informationen"
       ],
       "Your shorter address is now ready": [
-        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig"
       ]
     },
     "Today icon tooltip in mini calendar": {
