@@ -948,6 +948,9 @@
       "Monthly": [
         "S wayyur"
       ],
+      "New!": [
+        "Amaynut"
+      ],
       "Two-year": [
         "Snat n tikkal i useggas"
       ]
@@ -2417,9 +2420,6 @@
       "Email address is required": [
         "Tansa imayl mačči yettwasra"
       ],
-      "Email is not valid": [
-        "Imayl mačči d ameɣtu"
-      ],
       "Ends on date cannot be empty": [
         "Azemz n tagara ur yezmir ara ad yili d ilem"
       ],
@@ -2519,9 +2519,6 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } mačči d amiḍan"
       ],
-      "Not a valid number": [
-        "Mačči d uṭṭun ameɣtu"
-      ],
       "Number of occurrences cannot be empty": [
         "Amḍan n tikkal ur yezmir ara ad yili d ilem"
       ],
@@ -2538,9 +2535,6 @@
       ],
       "Password is required": [
         "Awal uffir yettwasra"
-      ],
-      "Passwords do not match": [
-        "Awalen uffiren ur menṭaḍen ara"
       ],
       "Payment process canceled": [
         "Akala n uxelleṣ yettwasefsex"
@@ -2651,9 +2645,6 @@
       "This field is required": [
         "Urti-agi ilaq"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Urti-a isra ma drus ${ minimumLength } n yizamulen."
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Isem n ukaram-a ulac-it. Ttxil-k·m fren isem-nniḍen."
       ],
@@ -2671,12 +2662,6 @@
       ],
       "Unknown payment token status": [
         "Addad n ujiṭun n uxelleṣ d arussin"
-      ],
-      "Username must begin with a letter or digit": [
-        "Isem n useqdac ilaq ad yebdu s usekkil neɣ s umḍan"
-      ],
-      "Username must end with a letter or digit": [
-        "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
       ],
       "Validation error": [
         "Tuccḍa n usentem"
@@ -4342,6 +4327,9 @@
       "I understand the risk": [
         "Gziɣ imihi"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Import all messages": [
         "Kter akk iznan"
       ],
@@ -4960,17 +4948,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -4989,6 +4966,17 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -5174,6 +5162,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ableɣ/Tehri n tesfift war talast"
+      ],
+      "Up to ${ n } user": [
+        "Alamma d ${ n } yiseqdac",
+        "Alamma d ${ n } yiseqdacen"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Alamma d ${ totalStorageSize } n uḥraz"
@@ -5539,6 +5531,9 @@
       "Card number": [
         "Uṭṭun n tkarḍa"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "Got it": [
         "Gziɣ-t"
       ],
@@ -5555,6 +5550,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Takaṛḍa-inek/m ur tettwaqbel ara. Ɛreḍ takarḍa nniḍen neɣ nermes lbanka-ik akken ad yeddu lexlaṣ."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Baṭel"
       ]
     },
     "PGP key encryption warning": {
@@ -6042,14 +6042,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -6069,6 +6061,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -6881,12 +6881,6 @@
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Beṭṭu iwgelhen si ṭṭerf ɣer ṭṭerf"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
       ]
     },
     "Video control": {

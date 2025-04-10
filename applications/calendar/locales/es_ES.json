@@ -1499,7 +1499,7 @@
         "Prueba ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Prueba ${ upsellPlanName } y mantén acceso a todas las características prémium de email y calendario."
+        "Prueba ${ upsellPlanName } y mantén acceso a todas las características de correo electrónico y calendario prémium."
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida y privada"
@@ -3116,9 +3116,6 @@
       "Email address is required": [
         "Dirección de correo electrónico requerida"
       ],
-      "Email is not valid": [
-        "El correo no es válido."
-      ],
       "Ends on date cannot be empty": [
         "La fecha final no puede estar vacía."
       ],
@@ -3166,9 +3163,6 @@
       ],
       "IMAP server is required": [
         "Servidor IMAP requerido"
-      ],
-      "Incorrect username": [
-        "El nombre de usuario no es correcto."
       ],
       "Intended recipient does not support calendar sharing": [
         "El destinatario previsto no admite compartir calendarios."
@@ -3219,7 +3213,7 @@
         "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }."
       ],
       "Item content cannot exceed 40KB": [
-        "El contenido del elemento no puede exceder de 40 KB"
+        "El contenido del elemento no puede superar los 40 KB."
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
@@ -3261,9 +3255,6 @@
       "Not a ${ BRAND_NAME } account": [
         "No es una cuenta de ${ BRAND_NAME }."
       ],
-      "Not a valid number": [
-        "No es un número válido."
-      ],
       "Number of occurrences cannot be empty": [
         "El número de ocurrencias no puede estar vacío."
       ],
@@ -3280,9 +3271,6 @@
       ],
       "Password is required": [
         "Contraseña requerida"
-      ],
-      "Passwords do not match": [
-        "Las contraseñas no coinciden."
       ],
       "Payment process canceled": [
         "Se ha cancelado el proceso de pago"
@@ -3385,9 +3373,6 @@
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
-      "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elige un nombre diferente."
       ],
@@ -3415,14 +3400,8 @@
       "There was an error when exporting the contacts vCards": [
         "Se ha producido un error al exportar los archivos vCards de los contactos."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede el máximo de ${ maximumLength } caracteres."
-      ],
       "This field is required": [
         "Este campo es obligatorio."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Este nombre de carpeta no está disponible. Elige un nombre diferente."
@@ -3436,9 +3415,6 @@
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Utiliza solo letras, números y _.-"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "No se puede cargar el panel de control de la VPN. Revisa tu conexión e intenta de nuevo."
       ],
@@ -3450,12 +3426,6 @@
       ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
-      ],
-      "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un número."
-      ],
-      "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un número."
       ],
       "Validation error": [
         "Error de validación"
@@ -5647,7 +5617,7 @@
         "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Tu suscripción se renovará automáticamente el ${ renewalTime }"
+        "Tu suscripción se renovará automáticamente el ${ renewalTime }."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "La zona horaria del sistema parece haber cambiado a ${ timezone }. ¿Quieres actualizar tu preferencia de zona horaria?"
@@ -6788,26 +6758,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -6829,6 +6779,26 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6949,7 +6919,7 @@
         "200 GB de almacenamiento"
       ],
       "24/7 account management support": [
-        "Soporte de administración de cuenta 24/7"
+        "Soporte de gestión de cuenta 24/7"
       ],
       "99.95% SLA": [
         "SLA del 99,95 %"
@@ -6995,9 +6965,6 @@
       ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
-      ],
-      "Breach alerts": [
-        "Alertas de vulneraciones"
       ],
       "Calendar sharing": [
         "Compartir calendario"
@@ -8156,7 +8123,7 @@
         "Todos los servicios premium., 6 usuarios y una sola suscripción."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Se factura anualmente a ${ yearlyPrice }. Ahorre ${ yearlySavedPrice } con ${ passFamilyPlanName } (en comparación con 6 suscripciones individuales a ${ passPlusPlanName })."
+        "Se factura anualmente a ${ yearlyPrice }. Ahorra ${ yearlySavedPrice } con ${ passFamilyPlanName } (en comparación con 6 suscripciones individuales a ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
@@ -8218,7 +8185,7 @@
         "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+        "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
       "Got it": [
         "Entendido"
@@ -8227,7 +8194,7 @@
         "MM/AA"
       ],
       "More plans are available in other currencies": [
-        "Hay más planes disponibles en otras divisas"
+        "Hay más planes disponibles en otras divisas."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
@@ -8279,7 +8246,7 @@
         "Se ha agotado el tiempo de espera."
       ],
       "Your payment is still being processed": [
-        "Su pago aún está siendo procesado"
+        "Tu pago aún está siendo procesado."
       ]
     },
     "Payments.Error": {
@@ -8597,7 +8564,7 @@
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Nuestra solución de seguridad de vanguardia impulsada por inteligencia artificial, diseñada para usuarios que buscan una protección más intensificada para sus cuentas. ${ learnMoreLink }"
+        "Nuestra solución de seguridad de vanguardia impulsada por inteligencia artificial y diseñada para usuarios que buscan una protección más intensificada para sus cuentas. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **activo** y protegiendo tu cuenta."
@@ -8851,7 +8818,7 @@
         "Error al verificar la firma"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación a este calendario. Esto puede deberse a cambios en las claves de cifrado de este contacto. Revisa la configuración PGP avanzada o solicita a ${ boldSenderEmail } una nueva invitación."
+        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Verifica los ajustes de PGP avanzados o pide a ${ boldSenderEmail } una nueva invitación."
       ]
     },
     "Signing preference for emails": {
@@ -9135,7 +9102,7 @@
         "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que quieres continuar?"
       ],
       "contact your administrator": [
-        "contacta con tu administrador"
+        "contacta con el administrador"
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
@@ -9293,50 +9260,9 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
-        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con características prémium"
       ],
       "${ dayDiff } day left": [
         "${ dayDiff } día restante",
@@ -9483,7 +9409,7 @@
         "Si superas los límites del plan gratuito, no podrás:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Si tu consumo excede los límites del plan gratuito, puedes experimentar un acceso restringido a las características del producto y a tu información."
+        "Si tu uso excede los límites del plan gratuito, es posible que tengas acceso restringido a las funciones del producto y a tus datos."
       ],
       "Invited members will be removed from your organization": [
         "Los miembros invitados se eliminarán de la organización."
@@ -9592,6 +9518,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -10621,16 +10588,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Compartido con cifrado de extremo a extremo con contacto verificado"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
-        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
     "Video control": {

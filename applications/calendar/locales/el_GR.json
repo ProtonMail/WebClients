@@ -3116,9 +3116,6 @@
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
       ],
-      "Email is not valid": [
-        "Η διεύθυνση email δεν είναι έγκυρη"
-      ],
       "Ends on date cannot be empty": [
         "Η ημερομηνία λήξης δεν μπορεί να είναι κενή"
       ],
@@ -3166,9 +3163,6 @@
       ],
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
-      ],
-      "Incorrect username": [
-        "Εσφαλμένο όνομα χρήστη"
       ],
       "Intended recipient does not support calendar sharing": [
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
@@ -3261,9 +3255,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Δεν είναι λογαριασμός ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Μη έγκυρος αριθμός"
-      ],
       "Number of occurrences cannot be empty": [
         "Ο αριθμός επαναλήψεων δεν μπορεί να είναι κενός"
       ],
@@ -3280,9 +3271,6 @@
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
-      ],
-      "Passwords do not match": [
-        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
       "Payment process canceled": [
         "Η διαδικασία πληρωμής ακυρώθηκε"
@@ -3385,9 +3373,6 @@
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
       ],
-      "The email addresses do not match": [
-        "Οι διευθύνσεις email δεν ταιριάζουν."
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
@@ -3415,14 +3400,8 @@
       "There was an error when exporting the contacts vCards": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών σε vCards"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
-      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -3436,9 +3415,6 @@
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Δεν είναι δυνατή η φόρτωση του πίνακα ελέγχου VPN. Παρακαλούμε ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά."
       ],
@@ -3450,12 +3426,6 @@
       ],
       "Unknown payment token status": [
         "Άγνωστη κατάσταση πληρωμής"
-      ],
-      "Username must begin with a letter or digit": [
-        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
-      ],
-      "Username must end with a letter or digit": [
-        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
       "Validation error": [
         "Σφάλμα επικύρωσης"
@@ -6785,26 +6755,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -6826,6 +6776,26 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6992,9 +6962,6 @@
       ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
-      ],
-      "Breach alerts": [
-        "Ειδοποιήσεις Παραβίασης"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -9290,47 +9257,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -9589,6 +9515,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -10618,16 +10585,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Κοινοποιημένο, διατερματικά κρυπτογραφημένο, με επαληθευμένη επαφή"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     },
     "Video control": {

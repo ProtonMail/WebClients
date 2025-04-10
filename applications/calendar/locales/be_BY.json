@@ -3168,9 +3168,6 @@
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
       ],
-      "Email is not valid": [
-        "Несапраўдная электронная пошта"
-      ],
       "Ends on date cannot be empty": [
         "Дата завяршэння не можа быць пустой"
       ],
@@ -3218,9 +3215,6 @@
       ],
       "IMAP server is required": [
         "Патрабуецца ўвесці сервер IMAP"
-      ],
-      "Incorrect username": [
-        "Няправільнае імя карыстальніка"
       ],
       "Intended recipient does not support calendar sharing": [
         "У прызначанага атрымальніка недаступна функцыя абагулення календара"
@@ -3315,9 +3309,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Не з'яўляецца ўліковым запісам ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Несапраўдны нумар"
-      ],
       "Number of occurrences cannot be empty": [
         "Колькасць паўтарэнняў не можа быць пустой"
       ],
@@ -3338,9 +3329,6 @@
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
-      ],
-      "Passwords do not match": [
-        "Паролі не супадаюць"
       ],
       "Payment process canceled": [
         "Апрацоўка плацяжу скасавана"
@@ -3447,9 +3435,6 @@
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
-      "The email addresses do not match": [
-        "Адрасы электроннай пошты не супадаюць"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Памылковая назва папкі. Выберыце іншую назву."
       ],
@@ -3477,14 +3462,8 @@
       "There was an error when exporting the contacts vCards": [
         "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
-      ],
       "This field is required": [
         "Абавязковае поле"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Гэта назва для папкі недаступна. Выберыце іншую назву."
@@ -3498,9 +3477,6 @@
       "Trusted keys are not valid for sending": [
         "Давераныя ключы несапраўдныя для адпраўкі"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
       ],
@@ -3512,12 +3488,6 @@
       ],
       "Unknown payment token status": [
         "Невядомы статус плацежнага токена"
-      ],
-      "Username must begin with a letter or digit": [
-        "Імя карыстальніка павінна пачынацца з літары або лічбы"
-      ],
-      "Username must end with a letter or digit": [
-        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
       "Validation error": [
         "Памылка праверкі"
@@ -6977,26 +6947,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7018,6 +6968,26 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7218,9 +7188,6 @@
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
-      ],
-      "Breach alerts": [
-        "Папярэджанні ўцечкі"
       ],
       "Calendar sharing": [
         "Абагулены каляндар"
@@ -9650,47 +9617,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -9961,6 +9887,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11018,20 +10985,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Абагулена з дапамогай скразнога шыфравання з правераным кантактам"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     },
     "Video control": {
