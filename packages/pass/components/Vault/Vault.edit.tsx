@@ -12,7 +12,7 @@ import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import { vaultEditIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
+import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1.static';
 import noop from '@proton/utils/noop';
 
 import { VaultForm, type VaultFormValues } from './Vault.form';

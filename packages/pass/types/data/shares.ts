@@ -1,5 +1,5 @@
 import type { Maybe } from '@proton/pass/types/utils';
-import type { VaultColor, VaultIcon } from '../protobuf/vault-v1';
+import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
 
 export enum ShareType {
     Vault = 1,

@@ -10,7 +10,7 @@ import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatch
 import { VaultIcon, type VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { Maybe, ShareType } from '@proton/pass/types';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
+import { VaultColor } from '@proton/pass/types/protobuf/vault-v1.static';
 
 type Props = { toggle: () => void; isOpen: boolean };
 
