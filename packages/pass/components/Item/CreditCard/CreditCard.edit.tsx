@@ -23,7 +23,7 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1';
+import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-creditCard';
