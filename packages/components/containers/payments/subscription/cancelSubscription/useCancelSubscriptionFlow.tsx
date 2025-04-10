@@ -423,44 +423,54 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         return handleFinalizeUnsubscribe(feedback);
     };
 
+    const cancelSubscription = async ({
+        subscriptionReminderFlow,
+        upsellPlanId,
+        skipUpsell,
+    }: {
+        subscriptionReminderFlow?: boolean;
+        upsellPlanId?: PLANS;
+        skipUpsell?: boolean;
+    }) => {
+        const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
+        if (user.isFree || isFreeSubscription(subscription)) {
+            createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
+            return SUBSCRIPTION_KEPT;
+        }
+
+        if (isManagedExternally(subscription)) {
+            await showInAppPurchaseModal();
+            return SUBSCRIPTION_KEPT;
+        }
+
+        if (hasCancellablePlan(subscription, user)) {
+            if (subscription.Renew === Renew.Disabled) {
+                return SUBSCRIPTION_KEPT;
+            }
+
+            const paymentsVersionOverride: PaymentsVersion | undefined = isSplittedUser(
+                user.ChargebeeUser,
+                user.ChargebeeUserExists,
+                subscription?.BillingPlatform
+            )
+                ? 'v4'
+                : undefined;
+
+            return cancelRenew({
+                paymentsVersionOverride,
+                skipUpsell,
+                subscription,
+                subscriptionReminderFlow,
+                upsellPlanId,
+            });
+        }
+
+        return handleUnsubscribe(subscriptionReminderFlow);
+    };
+
     return {
         loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans || plansMapLoading,
         cancelSubscriptionModals: modals,
-        cancelSubscription: async (subscriptionReminderFlow?: boolean, upsellPlanId?: PLANS, skipUpsell?: boolean) => {
-            const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
-            if (user.isFree || isFreeSubscription(subscription)) {
-                createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
-                return SUBSCRIPTION_KEPT;
-            }
-
-            if (isManagedExternally(subscription)) {
-                await showInAppPurchaseModal();
-                return SUBSCRIPTION_KEPT;
-            }
-
-            if (hasCancellablePlan(subscription, user)) {
-                if (subscription.Renew === Renew.Disabled) {
-                    return SUBSCRIPTION_KEPT;
-                }
-
-                const paymentsVersionOverride: PaymentsVersion | undefined = isSplittedUser(
-                    user.ChargebeeUser,
-                    user.ChargebeeUserExists,
-                    subscription?.BillingPlatform
-                )
-                    ? 'v4'
-                    : undefined;
-
-                return cancelRenew({
-                    paymentsVersionOverride,
-                    skipUpsell,
-                    subscription,
-                    subscriptionReminderFlow,
-                    upsellPlanId,
-                });
-            }
-
-            return handleUnsubscribe(subscriptionReminderFlow);
-        },
+        cancelSubscription,
     };
 };
