@@ -1890,6 +1890,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bcoe/v8-coverage@npm:^1.0.1":
+  version: 1.0.2
+  resolution: "@bcoe/v8-coverage@npm:1.0.2"
+  checksum: 10c0/1eb1dc93cc17fb7abdcef21a6e7b867d6aa99a7ec88ec8207402b23d9083ab22a8011213f04b2cf26d535f1d22dc26139b7929e6c2134c254bd1e14ba5e678c3
+  languageName: node
+  linkType: hard
+
 "@bugsnag/browser@npm:^7.25.0":
   version: 7.25.0
   resolution: "@bugsnag/browser@npm:7.25.0"
@@ -4251,7 +4258,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@isaacs/ts-node-temp-fork-for-pr-2009@npm:^10.9.5":
+"@isaacs/ts-node-temp-fork-for-pr-2009@npm:^10.9.7":
   version: 10.9.7
   resolution: "@isaacs/ts-node-temp-fork-for-pr-2009@npm:10.9.7"
   dependencies:
@@ -5903,7 +5910,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@npmcli/package-json@npm:^5.0.0":
+"@npmcli/package-json@npm:^5.0.0, @npmcli/package-json@npm:^5.1.0":
   version: 5.2.1
   resolution: "@npmcli/package-json@npm:5.2.1"
   dependencies:
@@ -5927,23 +5934,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@npmcli/redact@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@npmcli/redact@npm:1.1.0"
-  checksum: 10c0/886995220e60ca00405c93c5588aff524d1dbfee0ca8688b9607fefcda42aa464d4a3f7c75fc03a16a582befe4b6c3ac4493d67c4eb07da2fe0794fbe0dfc89b
+"@npmcli/redact@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "@npmcli/redact@npm:2.0.1"
+  checksum: 10c0/5f346f7ef224b44c90009939f93c446a865a3d9e5a7ebe0246cdb0ebd03219de3962ee6c6e9197298d8c6127ea33535e8c44814276e4941394dc1cdf1f30f6bc
   languageName: node
   linkType: hard
 
-"@npmcli/run-script@npm:^7.0.0":
-  version: 7.0.4
-  resolution: "@npmcli/run-script@npm:7.0.4"
+"@npmcli/run-script@npm:^8.0.0":
+  version: 8.1.0
+  resolution: "@npmcli/run-script@npm:8.1.0"
   dependencies:
     "@npmcli/node-gyp": "npm:^3.0.0"
     "@npmcli/package-json": "npm:^5.0.0"
     "@npmcli/promise-spawn": "npm:^7.0.0"
     node-gyp: "npm:^10.0.0"
+    proc-log: "npm:^4.0.0"
     which: "npm:^4.0.0"
-  checksum: 10c0/45159ef7d6b8d9e449e87ed401da69da60514f6e7752e268f29a96f17a543c4a8d4eea6fe2f74b07fd41095e48e0f9859ebec558065d2b01849b382b06fefe35
+  checksum: 10c0/f9f40ecff0406a9ce1b77c9f714fc7c71b561289361efc6e2e0e48ca2d630aa98d277cbbf269750f9467a40eaaac79e78766d67c458046aa9507c8c354650fee
   languageName: node
   linkType: hard
 
@@ -10834,172 +10842,181 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tapjs/after-each@npm:1.1.22":
-  version: 1.1.22
-  resolution: "@tapjs/after-each@npm:1.1.22"
+"@tapjs/after-each@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/after-each@npm:4.0.1"
   dependencies:
     function-loop: "npm:^4.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/9542602630f9bd5bfa647ee0c14f062cda827db4dc8db81d2a50d3c3d72d1f773103bdf0cd1836b1290f9715586f7e0ec2515ef326f53d845671d65bc76a6665
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/8665683df1fb8cdddb444285f411d641e74d169c6b9b65ae476df2c0bf9ca74f46d20dba8870bb441e82dd187b9777770e33ec14ad4190eceb6e240b0f6b44e1
   languageName: node
   linkType: hard
 
-"@tapjs/after@npm:1.1.22":
-  version: 1.1.22
-  resolution: "@tapjs/after@npm:1.1.22"
+"@tapjs/after@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@tapjs/after@npm:3.0.1"
   dependencies:
     is-actual-promise: "npm:^1.0.1"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/9ec4e98994b60014deae44f7507137e27f76805df4477f3b5ad06a1a09a616755f81ec0bad5bf216bb7ffadc1cb3aab17ae567d5e6e2f39c69896809d3efad85
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/26ee4348ab1bd7f966e2a7a1cbf17ae6c9f082a5c8a2c323ea72f9ad6c2c7fc279160aaa961b7237223fa5a176c48bf99dfbabeaa895fad0cc60f012f4f8b717
   languageName: node
   linkType: hard
 
-"@tapjs/asserts@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@tapjs/asserts@npm:1.2.0"
+"@tapjs/asserts@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/asserts@npm:4.0.1"
   dependencies:
-    "@tapjs/stack": "npm:1.2.8"
+    "@tapjs/stack": "npm:4.0.0"
     is-actual-promise: "npm:^1.0.1"
-    tcompare: "npm:6.4.6"
+    tcompare: "npm:9.0.0"
     trivial-deferred: "npm:^2.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/aaf6c8f41d303eb1d80d1d4a6590d1f5265664ff890ef701f7fb9b9a14c14fa6ec13559ef9e71a745bee90765ba4b23515d8f81469fbed806b2236407a6d52e4
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/806d911fb37a077a6e1396d97d139949a47d3de7cf8ef5b49481c2d8814a415be977c5c919df949c722de846ea20ea4be5b713886c7aaa5966cae4b00df81915
   languageName: node
   linkType: hard
 
-"@tapjs/before-each@npm:1.1.22":
-  version: 1.1.22
-  resolution: "@tapjs/before-each@npm:1.1.22"
+"@tapjs/before-each@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/before-each@npm:4.0.1"
   dependencies:
     function-loop: "npm:^4.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/8e69940b8d2156546f204ede417c072e64ac125f062bf8cda46d681ec92cb7389047928fd462dacb19cfce8343a9ff091bd18824fb19e8e9354ab2f388cf5f3b
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/12429bedfd98ae93ada57f367276d293d04446ea9f8d990b2cb9f1fde7efc74571d6f8a6334a185494815d394532bc77fc9329a7be9f3b50ef21acb3ad63860d
   languageName: node
   linkType: hard
 
-"@tapjs/before@npm:1.1.22":
-  version: 1.1.22
-  resolution: "@tapjs/before@npm:1.1.22"
+"@tapjs/before@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/before@npm:4.0.1"
   dependencies:
     is-actual-promise: "npm:^1.0.1"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/fbc155408df07e3423ebb373886f652d3e647ec563a6f3b7d1db8128d35d6f7456a148827a9e480e0dc9dd3fd34761afcd638f45f2d0e949f7e919997d24a062
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/758062d0a59a447697672a148348a7bb6f24b8372874796e35d2edef36e47c6d4ed6a916f64da1f626dc3a8e2a4556d3840e233198c6949e177488605b14b5f4
   languageName: node
   linkType: hard
 
-"@tapjs/config@npm:2.4.19":
-  version: 2.4.19
-  resolution: "@tapjs/config@npm:2.4.19"
-  dependencies:
-    "@tapjs/core": "npm:1.5.4"
-    "@tapjs/test": "npm:1.4.4"
-    chalk: "npm:^5.2.0"
-    jackspeak: "npm:^2.3.6"
-    polite-json: "npm:^4.0.1"
-    tap-yaml: "npm:2.2.2"
-    walk-up-path: "npm:^3.0.1"
+"@tapjs/chdir@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@tapjs/chdir@npm:3.0.1"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-    "@tapjs/test": 1.4.4
-  checksum: 10c0/64e78f634b3be053494d3747a1a030172c2dd561a23d9b9df2cb9411b0bed6fddd0a088182bd9da379cdf976e82a9da6d70999a089e728d1abcfda7206bb1ac5
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/e5e32ef762f28aaa6da4cb0f875006f5cbaf3845529f279dfb58b726d09d6a7b5f3fec1dcc3962a23e6849e748f69b6f71cbcc3a84116e05ae323c2652ba2b64
   languageName: node
   linkType: hard
 
-"@tapjs/core@npm:1.5.4":
-  version: 1.5.4
-  resolution: "@tapjs/core@npm:1.5.4"
+"@tapjs/config@npm:5.0.1":
+  version: 5.0.1
+  resolution: "@tapjs/config@npm:5.0.1"
   dependencies:
-    "@tapjs/processinfo": "npm:^3.1.7"
-    "@tapjs/stack": "npm:1.2.8"
-    "@tapjs/test": "npm:1.4.4"
+    "@tapjs/core": "npm:4.0.1"
+    "@tapjs/test": "npm:4.0.1"
+    chalk: "npm:^5.2.0"
+    jackspeak: "npm:^4.0.1"
+    polite-json: "npm:^5.0.0"
+    tap-yaml: "npm:4.0.0"
+    walk-up-path: "npm:^4.0.0"
+  peerDependencies:
+    "@tapjs/core": 4.0.1
+    "@tapjs/test": 4.0.1
+  checksum: 10c0/52cee932dfd17fd87ca9a592230f50013344aebc501e37535c6bb8e744eb6b18c03ac4e0a873d43039092994263b4a072d59f3e790bf5308d5bd6aa12ae57032
+  languageName: node
+  linkType: hard
+
+"@tapjs/core@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/core@npm:4.0.1"
+  dependencies:
+    "@tapjs/processinfo": "npm:^3.1.8"
+    "@tapjs/stack": "npm:4.0.0"
+    "@tapjs/test": "npm:4.0.1"
     async-hook-domain: "npm:^4.0.1"
     diff: "npm:^5.2.0"
     is-actual-promise: "npm:^1.0.1"
     minipass: "npm:^7.0.4"
     signal-exit: "npm:4.1"
-    tap-parser: "npm:15.3.2"
-    tap-yaml: "npm:2.2.2"
-    tcompare: "npm:6.4.6"
+    tap-parser: "npm:18.0.0"
+    tap-yaml: "npm:4.0.0"
+    tcompare: "npm:9.0.0"
     trivial-deferred: "npm:^2.0.0"
-  checksum: 10c0/10add509dbfea76f5d38a18bb8eb802ec00d51dbcef83f1d175d1e3bb140f50ffaabd710504942553d5e54cff663af9fc9cc94565adec2176551a090b8781d91
+  checksum: 10c0/0719bf0ce461d20cd7bbf8fa41df6208eefb56d5f29ee8e3631ce774f6ea54a4c8bc37a81dda5d6a94ca674deac345b4815a73ccc43f8cbf6abd9166824618e0
   languageName: node
   linkType: hard
 
-"@tapjs/error-serdes@npm:1.2.2":
-  version: 1.2.2
-  resolution: "@tapjs/error-serdes@npm:1.2.2"
+"@tapjs/error-serdes@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@tapjs/error-serdes@npm:4.0.0"
   dependencies:
     minipass: "npm:^7.0.4"
-  checksum: 10c0/73a578673de4e88e9178a6cfe5bc288529f124b75d6776c4f7cc76682ae734b5bf4d631ccfd6cd7a1bf84e403978787b3fcca5cbc9757e4009606becacc20458
+  checksum: 10c0/3dd9b25562d8ec88a6996b3ace01f330e74792ea6a4ba628d77648e0eb5f4a661069f34d77e335967ff1d951c9e13dd0b78c9b1f6610884f594b18ffaff5924f
   languageName: node
   linkType: hard
 
-"@tapjs/filter@npm:1.2.22":
-  version: 1.2.22
-  resolution: "@tapjs/filter@npm:1.2.22"
+"@tapjs/filter@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/filter@npm:4.0.1"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/78f88f39c396f983af3c9f61069fcbcac64233bc633f4b62cff6e5a2da2f37988241fa36eee7e69a50d6e52570fe44280a731c6c45243b9d7fc07c044249b7b4
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/aa50645cd25cc1e2e17655df7a4b238cc2d477618688809f6d5e57472ba846007847ee57de97dc8bf2f3647a4e2ba4af75d4e9de240269e9bc78c0edb7f4e71c
   languageName: node
   linkType: hard
 
-"@tapjs/fixture@npm:1.2.22":
-  version: 1.2.22
-  resolution: "@tapjs/fixture@npm:1.2.22"
+"@tapjs/fixture@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/fixture@npm:4.0.1"
   dependencies:
     mkdirp: "npm:^3.0.0"
-    rimraf: "npm:^5.0.5"
+    rimraf: "npm:^6.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/7b2c89ed4f7ba52ff8da6e76835ecc4b215e758b2001fbc1f270b2c02269474ae81892db959012cc713c0948482d46f9e6d3bac088c2b1aae664a982cb739963
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/0f48c1e1136ca9da0592c43315f871df4975366d3f40ec77fdf56004058ba2ea74380d279b14b01057de71dc882bdd66a67f7d405cd44e6bbefd8b0ea8278e9b
   languageName: node
   linkType: hard
 
-"@tapjs/intercept@npm:1.2.22":
-  version: 1.2.22
-  resolution: "@tapjs/intercept@npm:1.2.22"
+"@tapjs/intercept@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/intercept@npm:4.0.1"
   dependencies:
-    "@tapjs/after": "npm:1.1.22"
-    "@tapjs/stack": "npm:1.2.8"
+    "@tapjs/after": "npm:3.0.1"
+    "@tapjs/stack": "npm:4.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/5b85f51fac5a5949a108901d2254a9df0fc348bd7cf6bdb203588723c29badce25e00e141d7f2ccddd43f74cb7ecbcff676ecbbceeaeca684bb55c0fb7bd8c2d
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/7a0c6b46f99027af51babfe466eed2ae46f47ce08ac5e49ab8a6674272c5f33c375f2ce9299b6a4395694a05d7bee2e035d0789bbefd2ab83c5986d9d261d43b
   languageName: node
   linkType: hard
 
-"@tapjs/mock@npm:1.3.4":
-  version: 1.3.4
-  resolution: "@tapjs/mock@npm:1.3.4"
+"@tapjs/mock@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/mock@npm:4.0.1"
   dependencies:
-    "@tapjs/after": "npm:1.1.22"
-    "@tapjs/stack": "npm:1.2.8"
-    resolve-import: "npm:^1.4.5"
-    walk-up-path: "npm:^3.0.1"
+    "@tapjs/after": "npm:3.0.1"
+    "@tapjs/stack": "npm:4.0.0"
+    resolve-import: "npm:^2.0.0"
+    walk-up-path: "npm:^4.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/06cd24e967b4faeee2b0d56ffce926b7d67efcf5c5dead9fb1a5283953d5c1be79b529b65e49abf7aff3c57aad791cc16140ef071af262bef403f983664e509d
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/ddd6df007dbb4db40aa4f8c9d8ca511c00126ac5015fbcc4f46e62cbba80f0e8aede2de4e44f6d9988a07ca67128ff6536d4c6ebc7692b3a3f9c1b64340ccd52
   languageName: node
   linkType: hard
 
-"@tapjs/node-serialize@npm:1.3.4":
-  version: 1.3.4
-  resolution: "@tapjs/node-serialize@npm:1.3.4"
+"@tapjs/node-serialize@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/node-serialize@npm:4.0.1"
   dependencies:
-    "@tapjs/error-serdes": "npm:1.2.2"
-    "@tapjs/stack": "npm:1.2.8"
-    tap-parser: "npm:15.3.2"
+    "@tapjs/error-serdes": "npm:4.0.0"
+    "@tapjs/stack": "npm:4.0.0"
+    tap-parser: "npm:18.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/a5bfa1515218940ba7d1eb02156393292b0744b1e74face519b6c13c2bf602416caeeafaad187ef2e15e4f5857364ee09faf90966c6b1bc240fe0f4ee9d8161f
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/3398ecefac75ced7e3f1ae1333d84c4bfb499ad217a65821986a8633bc73f5a7e91f36fd6e43d5a1c8f923e44479eee0987971693a6888c9631a6e6f66fae12b
   languageName: node
   linkType: hard
 
-"@tapjs/processinfo@npm:^3.1.7":
+"@tapjs/processinfo@npm:^3.1.8":
   version: 3.1.8
   resolution: "@tapjs/processinfo@npm:3.1.8"
   dependencies:
@@ -11011,159 +11028,163 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tapjs/reporter@npm:1.3.20":
-  version: 1.3.20
-  resolution: "@tapjs/reporter@npm:1.3.20"
+"@tapjs/reporter@npm:4.0.2":
+  version: 4.0.2
+  resolution: "@tapjs/reporter@npm:4.0.2"
   dependencies:
-    "@tapjs/config": "npm:2.4.19"
-    "@tapjs/stack": "npm:1.2.8"
+    "@tapjs/config": "npm:5.0.1"
+    "@tapjs/stack": "npm:4.0.0"
     chalk: "npm:^5.2.0"
-    ink: "npm:^4.4.1"
+    ink: "npm:^5.0.1"
     minipass: "npm:^7.0.4"
     ms: "npm:^2.1.3"
     patch-console: "npm:^2.0.0"
     prismjs-terminal: "npm:^1.2.3"
     react: "npm:^18.2.0"
     string-length: "npm:^6.0.0"
-    tap-parser: "npm:15.3.2"
-    tap-yaml: "npm:2.2.2"
-    tcompare: "npm:6.4.6"
+    tap-parser: "npm:18.0.0"
+    tap-yaml: "npm:4.0.0"
+    tcompare: "npm:9.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/da80968cc43b51ed7115413427e62bee40f21bfe6ccc74f447e14c3d39edb4cd523770126c4d3c91f1c01803107d1793633fdd40c13fc51b54c3b1cf59f52df8
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/a9f96855b2afeed613970d5d977c39a9bcdf6c9f45e6ea919ae4b1b2799f7d0f40593a3ea3a2417cee38f16dff9c1735179556faa328122a4b80f3ad8345fa93
   languageName: node
   linkType: hard
 
-"@tapjs/run@npm:1.5.4":
-  version: 1.5.4
-  resolution: "@tapjs/run@npm:1.5.4"
+"@tapjs/run@npm:4.0.2":
+  version: 4.0.2
+  resolution: "@tapjs/run@npm:4.0.2"
   dependencies:
-    "@tapjs/after": "npm:1.1.22"
-    "@tapjs/before": "npm:1.1.22"
-    "@tapjs/config": "npm:2.4.19"
-    "@tapjs/processinfo": "npm:^3.1.7"
-    "@tapjs/reporter": "npm:1.3.20"
-    "@tapjs/spawn": "npm:1.1.22"
-    "@tapjs/stdin": "npm:1.1.22"
-    "@tapjs/test": "npm:1.4.4"
-    c8: "npm:^8.0.1"
+    "@tapjs/after": "npm:3.0.1"
+    "@tapjs/before": "npm:4.0.1"
+    "@tapjs/config": "npm:5.0.1"
+    "@tapjs/processinfo": "npm:^3.1.8"
+    "@tapjs/reporter": "npm:4.0.2"
+    "@tapjs/spawn": "npm:4.0.1"
+    "@tapjs/stdin": "npm:4.0.1"
+    "@tapjs/test": "npm:4.0.1"
+    c8: "npm:^10.1.2"
     chalk: "npm:^5.3.0"
     chokidar: "npm:^3.6.0"
     foreground-child: "npm:^3.1.1"
-    glob: "npm:^10.3.10"
+    glob: "npm:^11.0.0"
     minipass: "npm:^7.0.4"
     mkdirp: "npm:^3.0.1"
     opener: "npm:^1.5.2"
-    pacote: "npm:^17.0.6"
-    resolve-import: "npm:^1.4.5"
-    rimraf: "npm:^5.0.5"
+    pacote: "npm:^18.0.6"
+    path-scurry: "npm:^2.0.0"
+    resolve-import: "npm:^2.0.0"
+    rimraf: "npm:^6.0.0"
     semver: "npm:^7.6.0"
     signal-exit: "npm:^4.1.0"
-    tap-parser: "npm:15.3.2"
-    tap-yaml: "npm:2.2.2"
-    tcompare: "npm:6.4.6"
+    tap-parser: "npm:18.0.0"
+    tap-yaml: "npm:4.0.0"
+    tcompare: "npm:9.0.0"
     trivial-deferred: "npm:^2.0.0"
     which: "npm:^4.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
+    "@tapjs/core": 4.0.1
   bin:
     tap-run: dist/esm/index.js
-  checksum: 10c0/b9c93861ff5ae41f896cb97999e1c19b96e09f5ba41a0ed989c69b626f086d8af2e57b0e5d57aefdd6db114722dd94aa4217f38e8d648f8256a323821d270faf
+  checksum: 10c0/5f77b2f0ab5feee3f270b2e9b763ced8919119d9bc5cb70005d2f03ec197118166f777e37ba9e2a53516568b89f79b3e8d6806073b95c59cc767b0b5ee21304f
   languageName: node
   linkType: hard
 
-"@tapjs/snapshot@npm:1.2.22":
-  version: 1.2.22
-  resolution: "@tapjs/snapshot@npm:1.2.22"
+"@tapjs/snapshot@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/snapshot@npm:4.0.1"
   dependencies:
     is-actual-promise: "npm:^1.0.1"
-    tcompare: "npm:6.4.6"
+    tcompare: "npm:9.0.0"
     trivial-deferred: "npm:^2.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/b7965bd955356ab94716e68ee3ab2ca34113d4664403260c38cfafd317e594129ccd446de821f18812fd62d3fc7083f1b57995bd8c82f480626d1347563d9631
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/c6bd38517a54f51c7d26d084e5624886a700c09529c594baaf930d5995ff4c8c3bc7cb6666e2f7d30cfc9bc7c64329432446b8f9ac6164d4b8b309f8d674f371
   languageName: node
   linkType: hard
 
-"@tapjs/spawn@npm:1.1.22":
-  version: 1.1.22
-  resolution: "@tapjs/spawn@npm:1.1.22"
+"@tapjs/spawn@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/spawn@npm:4.0.1"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/53ec3b5c26b6bec13104cee782755857d19e79bdce2d5f37b8825f631855b816d1add49861adfb9d8c3e61f6bc6c2aebf1763ecd0bdb34836f9b3cd813aadfa3
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/dc5e2ba569891ba287eb750b1c7e0031b1124c3dd8328aa2161afec4bc059271501cea20510fd9e2936f700fe34dc8050b135f780b3be6678cc853c3d7b67975
   languageName: node
   linkType: hard
 
-"@tapjs/stack@npm:1.2.8":
-  version: 1.2.8
-  resolution: "@tapjs/stack@npm:1.2.8"
-  checksum: 10c0/d9949d1bd46d6b280d74d87e00369c72bde84ac6efba1d82807c7a54c96d3409fa137704e6d4b564711264806b91eea8cf5a8dd27818b70d436d99e4f1877d07
+"@tapjs/stack@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@tapjs/stack@npm:4.0.0"
+  checksum: 10c0/a168c652c0f9881bc236ea2f786bfe1ae99c487ebcc88220ce8f28bf39d55042382751d3fc3ab2428d0edab36e819af41c452fc5355338201f0d9dca64e305f2
   languageName: node
   linkType: hard
 
-"@tapjs/stdin@npm:1.1.22":
-  version: 1.1.22
-  resolution: "@tapjs/stdin@npm:1.1.22"
+"@tapjs/stdin@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/stdin@npm:4.0.1"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/612b382772cb5df95558b145942e8d6f0cb9a9ad38dffe9429e33e2723da284bc1bf51160f8833f5671130ffa45d6a84c941a5730b3ea768128174060f33d451
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/982f07cf2993420bce826e89fef6be3812f3582e94ffbf076568a1c37467843fd81203030361d76a9a0a1284e1c836ec816676f07bb4252744e041b30dce51d6
   languageName: node
   linkType: hard
 
-"@tapjs/test@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@tapjs/test@npm:1.4.4"
+"@tapjs/test@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/test@npm:4.0.1"
   dependencies:
-    "@isaacs/ts-node-temp-fork-for-pr-2009": "npm:^10.9.5"
-    "@tapjs/after": "npm:1.1.22"
-    "@tapjs/after-each": "npm:1.1.22"
-    "@tapjs/asserts": "npm:1.2.0"
-    "@tapjs/before": "npm:1.1.22"
-    "@tapjs/before-each": "npm:1.1.22"
-    "@tapjs/filter": "npm:1.2.22"
-    "@tapjs/fixture": "npm:1.2.22"
-    "@tapjs/intercept": "npm:1.2.22"
-    "@tapjs/mock": "npm:1.3.4"
-    "@tapjs/node-serialize": "npm:1.3.4"
-    "@tapjs/snapshot": "npm:1.2.22"
-    "@tapjs/spawn": "npm:1.1.22"
-    "@tapjs/stdin": "npm:1.1.22"
-    "@tapjs/typescript": "npm:1.4.4"
-    "@tapjs/worker": "npm:1.1.22"
-    glob: "npm:^10.3.10"
-    jackspeak: "npm:^2.3.6"
+    "@isaacs/ts-node-temp-fork-for-pr-2009": "npm:^10.9.7"
+    "@tapjs/after": "npm:3.0.1"
+    "@tapjs/after-each": "npm:4.0.1"
+    "@tapjs/asserts": "npm:4.0.1"
+    "@tapjs/before": "npm:4.0.1"
+    "@tapjs/before-each": "npm:4.0.1"
+    "@tapjs/chdir": "npm:3.0.1"
+    "@tapjs/filter": "npm:4.0.1"
+    "@tapjs/fixture": "npm:4.0.1"
+    "@tapjs/intercept": "npm:4.0.1"
+    "@tapjs/mock": "npm:4.0.1"
+    "@tapjs/node-serialize": "npm:4.0.1"
+    "@tapjs/snapshot": "npm:4.0.1"
+    "@tapjs/spawn": "npm:4.0.1"
+    "@tapjs/stdin": "npm:4.0.1"
+    "@tapjs/typescript": "npm:3.1.0"
+    "@tapjs/worker": "npm:4.0.1"
+    glob: "npm:11"
+    jackspeak: "npm:^4.0.1"
     mkdirp: "npm:^3.0.0"
-    resolve-import: "npm:^1.4.5"
-    rimraf: "npm:^5.0.5"
-    sync-content: "npm:^1.0.1"
-    tap-parser: "npm:15.3.2"
-    tshy: "npm:^1.12.0"
-    typescript: "npm:5.2"
+    package-json-from-dist: "npm:^1.0.0"
+    resolve-import: "npm:^2.0.0"
+    rimraf: "npm:^6.0.0"
+    sync-content: "npm:^2.0.1"
+    tap-parser: "npm:18.0.0"
+    tshy: "npm:^3.0.2"
+    typescript: "npm:5.5"
+    walk-up-path: "npm:^4.0.0"
   peerDependencies:
-    "@tapjs/core": 1.5.4
+    "@tapjs/core": 4.0.1
   bin:
-    generate-tap-test-class: scripts/build.mjs
-  checksum: 10c0/41cb1107d9196c26bb302140111061f09ef34b5b049025c564a883d1daca6990bf0f9631a02fc62c20ca35737d8af18189a8483ed30371fa4ce63d0d0fe20cb0
+    generate-tap-test-class: dist/esm/build.mjs
+  checksum: 10c0/a518e96a9bf5e2fde4db01784b026bef8cb92f96391000a32104497753b832ba7d6a69085817980bebe980684cd158ba3da96eccbc46261ac32c95f360cd72f4
   languageName: node
   linkType: hard
 
-"@tapjs/typescript@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@tapjs/typescript@npm:1.4.4"
+"@tapjs/typescript@npm:3.1.0":
+  version: 3.1.0
+  resolution: "@tapjs/typescript@npm:3.1.0"
   dependencies:
-    "@isaacs/ts-node-temp-fork-for-pr-2009": "npm:^10.9.5"
+    "@isaacs/ts-node-temp-fork-for-pr-2009": "npm:^10.9.7"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/7967dbb71302ee90f41417aa4cbd075c1bfe88ec285f09fa542055226191c1b0c1313836364b13df08f40bc2013b2126fb03ab285156070bd89a212510fa2dc4
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/6ff3d37becb298e8e094c497ba18cf9e988c33afc27c4249832a54339ab0881ee100ca6b41dcddafd6aaafa70c00105ad08664e32865d68cd1a1d63948fde2e8
   languageName: node
   linkType: hard
 
-"@tapjs/worker@npm:1.1.22":
-  version: 1.1.22
-  resolution: "@tapjs/worker@npm:1.1.22"
+"@tapjs/worker@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@tapjs/worker@npm:4.0.1"
   peerDependencies:
-    "@tapjs/core": 1.5.4
-  checksum: 10c0/4d43aa82de0b4477de563097b4f29d9f75f4b2333aa6871ffb63a3ee0049ad7e031a227ee8b25971976680fcdc75249f30e28531601f375e6d330c844b4b77fb
+    "@tapjs/core": 4.0.1
+  checksum: 10c0/69c6ae3e5874bc94b7e6245aec3a1899437aa3c3564af765cdbbfe2475486a2283e9e1408c9ff8e92b062fd43f1d6d14af0d3dada45b3b9b9e00f13010a2825f
   languageName: node
   linkType: hard
 
@@ -17181,6 +17202,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"c8@npm:^10.1.2":
+  version: 10.1.3
+  resolution: "c8@npm:10.1.3"
+  dependencies:
+    "@bcoe/v8-coverage": "npm:^1.0.1"
+    "@istanbuljs/schema": "npm:^0.1.3"
+    find-up: "npm:^5.0.0"
+    foreground-child: "npm:^3.1.1"
+    istanbul-lib-coverage: "npm:^3.2.0"
+    istanbul-lib-report: "npm:^3.0.1"
+    istanbul-reports: "npm:^3.1.6"
+    test-exclude: "npm:^7.0.1"
+    v8-to-istanbul: "npm:^9.0.0"
+    yargs: "npm:^17.7.2"
+    yargs-parser: "npm:^21.1.1"
+  peerDependencies:
+    monocart-coverage-reports: ^2
+  peerDependenciesMeta:
+    monocart-coverage-reports:
+      optional: true
+  bin:
+    c8: bin/c8.js
+  checksum: 10c0/1265ddbcb0e624fe200978e9263faf948cb9694ce8e6b858adbb14f1186de2e6c451aa4aabb821e9eb7f1972859e14691eaf2ff12ad96be7a3fc0e39946fc569
+  languageName: node
+  linkType: hard
+
 "c8@npm:^7.6.0":
   version: 7.14.0
   resolution: "c8@npm:7.14.0"
@@ -17200,28 +17247,6 @@ __metadata:
   bin:
     c8: bin/c8.js
   checksum: 10c0/8946f55f2dcc85bf146f429a3deeede78502da245e515a2d181342475d8d8698b4055ec1d9b887ab8e1615f49c1a2af4d63557e68b2005844572fb785991e148
-  languageName: node
-  linkType: hard
-
-"c8@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "c8@npm:8.0.1"
-  dependencies:
-    "@bcoe/v8-coverage": "npm:^0.2.3"
-    "@istanbuljs/schema": "npm:^0.1.3"
-    find-up: "npm:^5.0.0"
-    foreground-child: "npm:^2.0.0"
-    istanbul-lib-coverage: "npm:^3.2.0"
-    istanbul-lib-report: "npm:^3.0.1"
-    istanbul-reports: "npm:^3.1.6"
-    rimraf: "npm:^3.0.2"
-    test-exclude: "npm:^6.0.0"
-    v8-to-istanbul: "npm:^9.0.0"
-    yargs: "npm:^17.7.2"
-    yargs-parser: "npm:^21.1.1"
-  bin:
-    c8: bin/c8.js
-  checksum: 10c0/20338de2cff36beaf22d9114c9e8fca94d674dc643d81851300b46bc0cf9ed95c40bee755c8126f5b6b1a35672ffb69ae49285666bfb128ff418666395609904
   languageName: node
   linkType: hard
 
@@ -21692,6 +21717,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"es-toolkit@npm:^1.22.0":
+  version: 1.34.1
+  resolution: "es-toolkit@npm:1.34.1"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+  checksum: 10c0/aab6d07be3bd5b93f16771913ff3b713741c0d413aaa3f7828f4c308d415dd1e0c6ae1f341cad2f9969acf9779ed0495d075211007d5294b8b4cceca12bc853c
+  languageName: node
+  linkType: hard
+
 "es5-ext@npm:^0.10.35, es5-ext@npm:^0.10.46, es5-ext@npm:^0.10.62, es5-ext@npm:^0.10.64, es5-ext@npm:~0.10.14, es5-ext@npm:~0.10.2":
   version: 0.10.64
   resolution: "es5-ext@npm:0.10.64"
@@ -25080,7 +25117,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.0.0, glob@npm:^10.2.2, glob@npm:^10.2.6, glob@npm:^10.3.10, glob@npm:^10.3.3, glob@npm:^10.3.4, glob@npm:^10.3.7, glob@npm:^10.4.5":
+"glob@npm:11, glob@npm:^11.0.0":
+  version: 11.0.1
+  resolution: "glob@npm:11.0.1"
+  dependencies:
+    foreground-child: "npm:^3.1.0"
+    jackspeak: "npm:^4.0.1"
+    minimatch: "npm:^10.0.0"
+    minipass: "npm:^7.1.2"
+    package-json-from-dist: "npm:^1.0.0"
+    path-scurry: "npm:^2.0.0"
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 10c0/2b32588be52e9e90f914c7d8dec32f3144b81b84054b0f70e9adfebf37cd7014570489f2a79d21f7801b9a4bd4cca94f426966bfd00fb64a5b705cfe10da3a03
+  languageName: node
+  linkType: hard
+
+"glob@npm:^10.0.0, glob@npm:^10.2.2, glob@npm:^10.3.10, glob@npm:^10.3.4, glob@npm:^10.3.7, glob@npm:^10.4.1, glob@npm:^10.4.5":
   version: 10.4.5
   resolution: "glob@npm:10.4.5"
   dependencies:
@@ -25093,22 +25146,6 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 10c0/19a9759ea77b8e3ca0a43c2f07ecddc2ad46216b786bb8f993c445aee80d345925a21e5280c7b7c6c59e860a0154b84e4b2b60321fea92cd3c56b4a7489f160e
-  languageName: node
-  linkType: hard
-
-"glob@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "glob@npm:11.0.0"
-  dependencies:
-    foreground-child: "npm:^3.1.0"
-    jackspeak: "npm:^4.0.1"
-    minimatch: "npm:^10.0.0"
-    minipass: "npm:^7.1.2"
-    package-json-from-dist: "npm:^1.0.0"
-    path-scurry: "npm:^2.0.0"
-  bin:
-    glob: dist/esm/bin.mjs
-  checksum: 10c0/419866015d8795258a8ac51de5b9d1a99c72634fc3ead93338e4da388e89773ab21681e494eac0fbc4250b003451ca3110bb4f1c9393d15d14466270094fdb4e
   languageName: node
   linkType: hard
 
@@ -26768,35 +26805,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ink@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "ink@npm:4.4.1"
+"ink@npm:^5.0.1":
+  version: 5.2.0
+  resolution: "ink@npm:5.2.0"
   dependencies:
     "@alcalzone/ansi-tokenize": "npm:^0.1.3"
-    ansi-escapes: "npm:^6.0.0"
+    ansi-escapes: "npm:^7.0.0"
+    ansi-styles: "npm:^6.2.1"
     auto-bind: "npm:^5.0.1"
-    chalk: "npm:^5.2.0"
+    chalk: "npm:^5.3.0"
     cli-boxes: "npm:^3.0.0"
     cli-cursor: "npm:^4.0.0"
-    cli-truncate: "npm:^3.1.0"
+    cli-truncate: "npm:^4.0.0"
     code-excerpt: "npm:^4.0.0"
+    es-toolkit: "npm:^1.22.0"
     indent-string: "npm:^5.0.0"
-    is-ci: "npm:^3.0.1"
-    is-lower-case: "npm:^2.0.2"
-    is-upper-case: "npm:^2.0.2"
-    lodash: "npm:^4.17.21"
+    is-in-ci: "npm:^1.0.0"
     patch-console: "npm:^2.0.0"
     react-reconciler: "npm:^0.29.0"
     scheduler: "npm:^0.23.0"
     signal-exit: "npm:^3.0.7"
-    slice-ansi: "npm:^6.0.0"
+    slice-ansi: "npm:^7.1.0"
     stack-utils: "npm:^2.0.6"
-    string-width: "npm:^5.1.2"
-    type-fest: "npm:^0.12.0"
-    widest-line: "npm:^4.0.1"
-    wrap-ansi: "npm:^8.1.0"
-    ws: "npm:^8.12.0"
-    yoga-wasm-web: "npm:~0.3.3"
+    string-width: "npm:^7.2.0"
+    type-fest: "npm:^4.27.0"
+    widest-line: "npm:^5.0.0"
+    wrap-ansi: "npm:^9.0.0"
+    ws: "npm:^8.18.0"
+    yoga-layout: "npm:~3.2.1"
   peerDependencies:
     "@types/react": ">=18.0.0"
     react: ">=18.0.0"
@@ -26806,7 +26842,7 @@ __metadata:
       optional: true
     react-devtools-core:
       optional: true
-  checksum: 10c0/f89e7d1b53df9a4dbf5271d123d47de1ef974b5ef41c6fbb7bf0a8f1af7d6806788cb6d181eb3132b372255127bdc4074e7760d5526f28a5308e6b0d06e56dae
+  checksum: 10c0/5fdf8097d71f20ca3e45b7b41e3644e0d4e07426ef91884802a00a1aa183b0df893a46c9cf59587477e670e4a8d40243934b8e220a2d595f79eaa74860e53028
   languageName: node
   linkType: hard
 
@@ -27429,15 +27465,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-lower-case@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "is-lower-case@npm:2.0.2"
-  dependencies:
-    tslib: "npm:^2.0.3"
-  checksum: 10c0/c045e6a52dcc7c3857e2f8c850ded604cdc5269ff94625b03881cefc73bfc02f5099a1bc9bafa67793656711a40d4ab3e26e285a848e728506df20ead0ce8e2f
-  languageName: node
-  linkType: hard
-
 "is-map@npm:^2.0.2, is-map@npm:^2.0.3":
   version: 2.0.3
   resolution: "is-map@npm:2.0.3"
@@ -27751,15 +27778,6 @@ __metadata:
   version: 2.1.0
   resolution: "is-unicode-supported@npm:2.1.0"
   checksum: 10c0/a0f53e9a7c1fdbcf2d2ef6e40d4736fdffff1c9f8944c75e15425118ff3610172c87bf7bc6c34d3903b04be59790bb2212ddbe21ee65b5a97030fc50370545a5
-  languageName: node
-  linkType: hard
-
-"is-upper-case@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "is-upper-case@npm:2.0.2"
-  dependencies:
-    tslib: "npm:^2.0.3"
-  checksum: 10c0/2236f416484a2643d55a07cc95443cecf96cbc5fb0de7f24c506a8bc5cc4c4de885ab56c5ec946eadd95b3b7960bff7ed51cc88511fa8e8a9d92f2f8969622d9
   languageName: node
   linkType: hard
 
@@ -28104,19 +28122,6 @@ __metadata:
     has-symbols: "npm:^1.1.0"
     set-function-name: "npm:^2.0.2"
   checksum: 10c0/f7a262808e1b41049ab55f1e9c29af7ec1025a000d243b83edf34ce2416eedd56079b117fa59376bb4a724110690f13aa8427f2ee29a09eec63a7e72367626d0
-  languageName: node
-  linkType: hard
-
-"jackspeak@npm:^2.3.6":
-  version: 2.3.6
-  resolution: "jackspeak@npm:2.3.6"
-  dependencies:
-    "@isaacs/cliui": "npm:^8.0.2"
-    "@pkgjs/parseargs": "npm:^0.11.0"
-  dependenciesMeta:
-    "@pkgjs/parseargs":
-      optional: true
-  checksum: 10c0/f01d8f972d894cd7638bc338e9ef5ddb86f7b208ce177a36d718eac96ec86638a6efa17d0221b10073e64b45edc2ce15340db9380b1f5d5c5d000cbc517dc111
   languageName: node
   linkType: hard
 
@@ -31456,16 +31461,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass-json-stream@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "minipass-json-stream@npm:1.0.2"
-  dependencies:
-    jsonparse: "npm:^1.3.1"
-    minipass: "npm:^3.0.0"
-  checksum: 10c0/c2fc0d9719dd445d08de82bb449b51c59c3609a08064dd270da8bc76e4e542f4f354b5b1ef3b6e2f2f5b621b25e21ffbd0f0fa26ba6a80121fc19c3ad0d4db2c
-  languageName: node
-  linkType: hard
-
 "minipass-pipeline@npm:^1.2.2, minipass-pipeline@npm:^1.2.4":
   version: 1.2.4
   resolution: "minipass-pipeline@npm:1.2.4"
@@ -32594,19 +32589,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-registry-fetch@npm:^16.0.0":
-  version: 16.2.1
-  resolution: "npm-registry-fetch@npm:16.2.1"
+"npm-registry-fetch@npm:^17.0.0":
+  version: 17.1.0
+  resolution: "npm-registry-fetch@npm:17.1.0"
   dependencies:
-    "@npmcli/redact": "npm:^1.1.0"
+    "@npmcli/redact": "npm:^2.0.0"
+    jsonparse: "npm:^1.3.1"
     make-fetch-happen: "npm:^13.0.0"
     minipass: "npm:^7.0.2"
     minipass-fetch: "npm:^3.0.0"
-    minipass-json-stream: "npm:^1.0.1"
     minizlib: "npm:^2.1.2"
     npm-package-arg: "npm:^11.0.0"
     proc-log: "npm:^4.0.0"
-  checksum: 10c0/bccffc291771d55056a6ebedb7aaf431cecc663286e060dc2936e8e0deee454a4a71654f772afcaa44f0d74a2c02403d8b45486a0aa2dd6d2bd8c09c9134eeb9
+  checksum: 10c0/3f66214e106609fd2e92704e62ac929cba1424d4013fec50f783afbb81168b0dc14457d35c1716a77e30fc482c3576bdc4e4bc5c84a714cac59cf98f96a17f47
   languageName: node
   linkType: hard
 
@@ -33569,31 +33564,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pacote@npm:^17.0.6":
-  version: 17.0.7
-  resolution: "pacote@npm:17.0.7"
+"pacote@npm:^18.0.6":
+  version: 18.0.6
+  resolution: "pacote@npm:18.0.6"
   dependencies:
     "@npmcli/git": "npm:^5.0.0"
     "@npmcli/installed-package-contents": "npm:^2.0.1"
+    "@npmcli/package-json": "npm:^5.1.0"
     "@npmcli/promise-spawn": "npm:^7.0.0"
-    "@npmcli/run-script": "npm:^7.0.0"
+    "@npmcli/run-script": "npm:^8.0.0"
     cacache: "npm:^18.0.0"
     fs-minipass: "npm:^3.0.0"
     minipass: "npm:^7.0.2"
     npm-package-arg: "npm:^11.0.0"
     npm-packlist: "npm:^8.0.0"
     npm-pick-manifest: "npm:^9.0.0"
-    npm-registry-fetch: "npm:^16.0.0"
+    npm-registry-fetch: "npm:^17.0.0"
     proc-log: "npm:^4.0.0"
     promise-retry: "npm:^2.0.1"
-    read-package-json: "npm:^7.0.0"
-    read-package-json-fast: "npm:^3.0.0"
     sigstore: "npm:^2.2.0"
     ssri: "npm:^10.0.0"
     tar: "npm:^6.1.11"
   bin:
-    pacote: lib/bin.js
-  checksum: 10c0/05730d3233918e4d89a4b9f8b436cddbe5081a4922c26c8af7d8f7db3adc79b211edd0e1ef2fd1c5b280811fd93a4486d76188fe75f3172a09d864f099d61066
+    pacote: bin/index.js
+  checksum: 10c0/d80907375dd52a521255e0debca1ba9089ad8fd7acdf16c5a5db2ea2a5bb23045e2bcf08d1648b1ebc40fcc889657db86ff6187ff5f8d2fc312cd6ad1ec4c6ac
   languageName: node
   linkType: hard
 
@@ -33944,7 +33938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-scurry@npm:^1.11.1, path-scurry@npm:^1.9.2":
+"path-scurry@npm:^1.11.1":
   version: 1.11.1
   resolution: "path-scurry@npm:1.11.1"
   dependencies:
@@ -34469,10 +34463,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"polite-json@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "polite-json@npm:4.0.1"
-  checksum: 10c0/2f59516da8fda4a76f3d069128565463dda1a2b65d969294ce1df3b0d81e8efe968244d72869744345509b7fa4913a828c6d32bc252fb844a2d40ee6a6fdd3e1
+"polite-json@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "polite-json@npm:5.0.0"
+  checksum: 10c0/ec01b42b1a1ae157d53247c554f66b3632cf45bbcc72763dd405f03117068722c4e08d0bd26a90301fce0ac841d4553ee1d6e221e5a32d28876767ab6559b0ef
   languageName: node
   linkType: hard
 
@@ -37943,16 +37937,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"read-package-json-fast@npm:^3.0.0":
-  version: 3.0.2
-  resolution: "read-package-json-fast@npm:3.0.2"
-  dependencies:
-    json-parse-even-better-errors: "npm:^3.0.0"
-    npm-normalize-package-bin: "npm:^3.0.0"
-  checksum: 10c0/37787e075f0260a92be0428687d9020eecad7ece3bda37461c2219e50d1ec183ab6ba1d9ada193691435dfe119a42c8a5b5b5463f08c8ddbc3d330800b265318
-  languageName: node
-  linkType: hard
-
 "read-package-json@npm:^2.0.0":
   version: 2.1.2
   resolution: "read-package-json@npm:2.1.2"
@@ -37962,18 +37946,6 @@ __metadata:
     normalize-package-data: "npm:^2.0.0"
     npm-normalize-package-bin: "npm:^1.0.0"
   checksum: 10c0/2ff44e00a2e71bd87209021e3dd2b21d94f72dad2f5230c9ec3afb66acaf6d8c3ee4b6d09aa5c1ec660207d5c8d0b92b4b932459038ab448e74f35dbd8f2aa6a
-  languageName: node
-  linkType: hard
-
-"read-package-json@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "read-package-json@npm:7.0.1"
-  dependencies:
-    glob: "npm:^10.2.2"
-    json-parse-even-better-errors: "npm:^3.0.0"
-    normalize-package-data: "npm:^6.0.0"
-    npm-normalize-package-bin: "npm:^3.0.0"
-  checksum: 10c0/4bb2ad7dc6f460d0db04c5ef6ad7e9644d9566f07fa3563a938aedf0ee4b5ea0f0e2c5a321f79a73b34488ade0bd5937a7671ee3b453c42cd9d5e7e9b07c57f3
   languageName: node
   linkType: hard
 
@@ -38798,13 +38770,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve-import@npm:^1.4.4, resolve-import@npm:^1.4.5":
-  version: 1.4.6
-  resolution: "resolve-import@npm:1.4.6"
+"resolve-import@npm:2, resolve-import@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "resolve-import@npm:2.0.0"
   dependencies:
-    glob: "npm:^10.3.3"
-    walk-up-path: "npm:^3.0.1"
-  checksum: 10c0/dd5a91010111d5cf58a8589ff5291f3211a420df30cc112e06f8e48225ae606b8f89b5fc076715c46557f658ec2ad940cfe4210b2756a564f6a576e9fba01a47
+    glob: "npm:^11.0.0"
+    walk-up-path: "npm:^4.0.0"
+  checksum: 10c0/83eafd2fdc4378d9185fe0b07e0546341f3f99c541444b6f478809f99ad69d6da19ccac82b628f28ca80608a261edb478bc68c72ef07a9cf60fc16d059eda5cb
   languageName: node
   linkType: hard
 
@@ -39066,7 +39038,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^5.0.1, rimraf@npm:^5.0.10, rimraf@npm:^5.0.5":
+"rimraf@npm:^5.0.10, rimraf@npm:^5.0.5":
   version: 5.0.10
   resolution: "rimraf@npm:5.0.10"
   dependencies:
@@ -39077,7 +39049,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^6.0.1":
+"rimraf@npm:^6.0.0, rimraf@npm:^6.0.1":
   version: 6.0.1
   resolution: "rimraf@npm:6.0.1"
   dependencies:
@@ -40275,16 +40247,6 @@ __metadata:
     ansi-styles: "npm:^6.0.0"
     is-fullwidth-code-point: "npm:^4.0.0"
   checksum: 10c0/2d4d40b2a9d5cf4e8caae3f698fe24ae31a4d778701724f578e984dcb485ec8c49f0c04dab59c401821e80fcdfe89cace9c66693b0244e40ec485d72e543914f
-  languageName: node
-  linkType: hard
-
-"slice-ansi@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "slice-ansi@npm:6.0.0"
-  dependencies:
-    ansi-styles: "npm:^6.2.1"
-    is-fullwidth-code-point: "npm:^4.0.0"
-  checksum: 10c0/d105f1296c2c5744a1fb5bedd69ad55596fabe95b0b3533c046969dd34d928b4794ff46ef18054d8f5786d6fbc7d8b94937391c10f8db89d8c236e47403223b8
   languageName: node
   linkType: hard
 
@@ -41784,17 +41746,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sync-content@npm:^1.0.1, sync-content@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "sync-content@npm:1.0.2"
+"sync-content@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "sync-content@npm:2.0.1"
   dependencies:
-    glob: "npm:^10.2.6"
+    glob: "npm:^11.0.0"
     mkdirp: "npm:^3.0.1"
-    path-scurry: "npm:^1.9.2"
-    rimraf: "npm:^5.0.1"
+    path-scurry: "npm:^2.0.0"
+    rimraf: "npm:^6.0.0"
+    tshy: "npm:^3.0.0"
   bin:
-    sync-content: dist/mjs/bin.mjs
-  checksum: 10c0/cfe3497d26d8021d71786034124bd065708acbbda110649e1410591a457e8bc53757a9d3b83f702bfe21512f8f9689e3b3383cb251a480557c4e1d9f0c547278
+    sync-content: dist/esm/bin.mjs
+  checksum: 10c0/75379d0a22ec673dbce9623d516f165e633762ca9750573cbb1889f2d50210b1d7c2216e673dabbce397031c0960d83562ccda33bdc9633d391e04a8287405a5
   languageName: node
   linkType: hard
 
@@ -41889,54 +41852,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tap-parser@npm:15.3.2":
-  version: 15.3.2
-  resolution: "tap-parser@npm:15.3.2"
+"tap-parser@npm:18.0.0":
+  version: 18.0.0
+  resolution: "tap-parser@npm:18.0.0"
   dependencies:
     events-to-array: "npm:^2.0.3"
-    tap-yaml: "npm:2.2.2"
+    tap-yaml: "npm:4.0.0"
   bin:
     tap-parser: bin/cmd.cjs
-  checksum: 10c0/18d18bd90ad100934f45cdfa86034f3571df744578b32ce8edbb72e7b904800bb8ef831eb86703efc0bd6c920182857310cd7d199e66715935b0a13e9bd7a257
+  checksum: 10c0/4f4889aa2c4b032fb8dfecf40c8f0a5588ab42a57c87bf369e4212638f55b6b20de1d6894db89b16d600b012ee3d4938685986b02f17e069977c3b15d0321dd5
   languageName: node
   linkType: hard
 
-"tap-yaml@npm:2.2.2":
-  version: 2.2.2
-  resolution: "tap-yaml@npm:2.2.2"
+"tap-yaml@npm:4.0.0":
+  version: 4.0.0
+  resolution: "tap-yaml@npm:4.0.0"
   dependencies:
     yaml: "npm:^2.4.1"
-    yaml-types: "npm:^0.3.0"
-  checksum: 10c0/831be3597ecf4555c55633ee901c72f78887565712cac21b1b862430596a6483c039fc745f68a6be2f0a2d0ee46c42a9eee2fcf7e61e4a305ca31392641a0edc
+    yaml-types: "npm:^0.4.0"
+  checksum: 10c0/c4f455effb62f5a02bff71ccb61192b9665166d7fad0fd2d3e6e18e581b4604147b3e64451832168d7388abbbffd11e98381d2dfcdd1beabd715caecd6f9eb41
   languageName: node
   linkType: hard
 
-"tap@npm:^18.8.0":
-  version: 18.8.0
-  resolution: "tap@npm:18.8.0"
+"tap@npm:^21.1.0":
+  version: 21.1.0
+  resolution: "tap@npm:21.1.0"
   dependencies:
-    "@tapjs/after": "npm:1.1.22"
-    "@tapjs/after-each": "npm:1.1.22"
-    "@tapjs/asserts": "npm:1.2.0"
-    "@tapjs/before": "npm:1.1.22"
-    "@tapjs/before-each": "npm:1.1.22"
-    "@tapjs/core": "npm:1.5.4"
-    "@tapjs/filter": "npm:1.2.22"
-    "@tapjs/fixture": "npm:1.2.22"
-    "@tapjs/intercept": "npm:1.2.22"
-    "@tapjs/mock": "npm:1.3.4"
-    "@tapjs/node-serialize": "npm:1.3.4"
-    "@tapjs/run": "npm:1.5.4"
-    "@tapjs/snapshot": "npm:1.2.22"
-    "@tapjs/spawn": "npm:1.1.22"
-    "@tapjs/stdin": "npm:1.1.22"
-    "@tapjs/test": "npm:1.4.4"
-    "@tapjs/typescript": "npm:1.4.4"
-    "@tapjs/worker": "npm:1.1.22"
-    resolve-import: "npm:^1.4.5"
+    "@tapjs/after": "npm:3.0.1"
+    "@tapjs/after-each": "npm:4.0.1"
+    "@tapjs/asserts": "npm:4.0.1"
+    "@tapjs/before": "npm:4.0.1"
+    "@tapjs/before-each": "npm:4.0.1"
+    "@tapjs/chdir": "npm:3.0.1"
+    "@tapjs/core": "npm:4.0.1"
+    "@tapjs/filter": "npm:4.0.1"
+    "@tapjs/fixture": "npm:4.0.1"
+    "@tapjs/intercept": "npm:4.0.1"
+    "@tapjs/mock": "npm:4.0.1"
+    "@tapjs/node-serialize": "npm:4.0.1"
+    "@tapjs/run": "npm:4.0.2"
+    "@tapjs/snapshot": "npm:4.0.1"
+    "@tapjs/spawn": "npm:4.0.1"
+    "@tapjs/stdin": "npm:4.0.1"
+    "@tapjs/test": "npm:4.0.1"
+    "@tapjs/typescript": "npm:3.1.0"
+    "@tapjs/worker": "npm:4.0.1"
+    resolve-import: "npm:2"
   bin:
     tap: dist/esm/run.mjs
-  checksum: 10c0/b4fa4c05dba6f9493425b21a803d1591da2d8186d2f564d924493b6d34e4e3745933f1570ed7ece2e73f734fe272e9b205ecf0590328737d7ab0c007ad54f5c6
+  checksum: 10c0/3ad81b7da0186f03ee8ff3088e503c3ff3b331ac9a166933b5ea0268ed1a184379f72dbc80e9dc78193f69f0b936f632f16f0a431729bfdeea8565bd5e331438
   languageName: node
   linkType: hard
 
@@ -42035,13 +41999,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tcompare@npm:6.4.6":
-  version: 6.4.6
-  resolution: "tcompare@npm:6.4.6"
+"tcompare@npm:9.0.0":
+  version: 9.0.0
+  resolution: "tcompare@npm:9.0.0"
   dependencies:
     diff: "npm:^5.2.0"
     react-element-to-jsx-string: "npm:^15.0.0"
-  checksum: 10c0/a595c50a22264bc23ca8f565463873a62102b924fd886c2418c7b7f18d7e78589067b6f4c9b580fca5a92e349e29b1244a4d6376df0113b228735d49d5db77aa
+  checksum: 10c0/7b43b008837334c51f5d06a49f14fdc4e62204cd0fc08d947de3b4f2814e382d067654c3d2358f10ce70b65b0b9ac5ebbed283f04e13dae5cc0e55a649a858de
   languageName: node
   linkType: hard
 
@@ -42210,6 +42174,17 @@ __metadata:
     glob: "npm:^7.1.4"
     minimatch: "npm:^3.0.4"
   checksum: 10c0/019d33d81adff3f9f1bfcff18125fb2d3c65564f437d9be539270ee74b994986abb8260c7c2ce90e8f30162178b09dbbce33c6389273afac4f36069c48521f57
+  languageName: node
+  linkType: hard
+
+"test-exclude@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "test-exclude@npm:7.0.1"
+  dependencies:
+    "@istanbuljs/schema": "npm:^0.1.2"
+    glob: "npm:^10.4.1"
+    minimatch: "npm:^9.0.4"
+  checksum: 10c0/6d67b9af4336a2e12b26a68c83308c7863534c65f27ed4ff7068a56f5a58f7ac703e8fc80f698a19bb154fd8f705cdf7ec347d9512b2c522c737269507e7b263
   languageName: node
   linkType: hard
 
@@ -42879,23 +42854,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tshy@npm:^1.12.0":
-  version: 1.13.1
-  resolution: "tshy@npm:1.13.1"
+"tshy@npm:^3.0.0, tshy@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "tshy@npm:3.0.2"
   dependencies:
     chalk: "npm:^5.3.0"
-    chokidar: "npm:^3.5.3"
+    chokidar: "npm:^3.6.0"
     foreground-child: "npm:^3.1.1"
+    minimatch: "npm:^10.0.0"
     mkdirp: "npm:^3.0.1"
-    polite-json: "npm:^4.0.1"
-    resolve-import: "npm:^1.4.4"
-    rimraf: "npm:^5.0.1"
-    sync-content: "npm:^1.0.2"
-    typescript: "npm:5.2 || 5.3"
-    walk-up-path: "npm:^3.0.1"
+    polite-json: "npm:^5.0.0"
+    resolve-import: "npm:^2.0.0"
+    rimraf: "npm:^6.0.0"
+    sync-content: "npm:^2.0.1"
+    typescript: "npm:^5.5.3"
+    walk-up-path: "npm:^4.0.0"
   bin:
     tshy: dist/esm/index.js
-  checksum: 10c0/33b1c50264b0ea26caebf9864b6d5feb81d86f900526db493002091df5a2526192076955d9203c197171ec8f99ad6b93fa2b20ed543456d812a6b6e1f7915527
+  checksum: 10c0/6e15d55b132fb05e32cff4aca4deb239f6f66285f3ca991364d8b5b53c9c5ace4781756f54fae93674514f02b4cf206736dfd8d1fdac613fac0edec88eb38b64
   languageName: node
   linkType: hard
 
@@ -43134,13 +43110,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "type-fest@npm:0.12.0"
-  checksum: 10c0/7f88f99fe4aaf2c2e2b0a601c63164e3b218b9378c9bc5d8b514c5170eabd4732abd3f74bb97323c387ae340021d1d814369ef52ab8057481cb785e5306f23ac
-  languageName: node
-  linkType: hard
-
 "type-fest@npm:^0.13.1":
   version: 0.13.1
   resolution: "type-fest@npm:0.13.1"
@@ -43204,7 +43173,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.18.2, type-fest@npm:^4.21.0, type-fest@npm:^4.26.1, type-fest@npm:^4.38.0, type-fest@npm:^4.6.0, type-fest@npm:^4.7.1":
+"type-fest@npm:^4.18.2, type-fest@npm:^4.21.0, type-fest@npm:^4.26.1, type-fest@npm:^4.27.0, type-fest@npm:^4.38.0, type-fest@npm:^4.6.0, type-fest@npm:^4.7.1":
   version: 4.39.1
   resolution: "type-fest@npm:4.39.1"
   checksum: 10c0/f5bf302eb2e2f70658be1757aa578f4a09da3f65699b0b12b7ae5502ccea76e5124521a6e6b69540f442c3dc924c394202a2ab58718d0582725c7ac23c072594
@@ -43329,23 +43298,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.2":
-  version: 5.2.2
-  resolution: "typescript@npm:5.2.2"
+"typescript@npm:5.5":
+  version: 5.5.4
+  resolution: "typescript@npm:5.5.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/91ae3e6193d0ddb8656d4c418a033f0f75dec5e077ebbc2bd6d76439b93f35683936ee1bdc0e9cf94ec76863aa49f27159b5788219b50e1cd0cd6d110aa34b07
-  languageName: node
-  linkType: hard
-
-"typescript@npm:5.2 || 5.3":
-  version: 5.3.3
-  resolution: "typescript@npm:5.3.3"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/e33cef99d82573624fc0f854a2980322714986bc35b9cb4d1ce736ed182aeab78e2cb32b385efa493b2a976ef52c53e20d6c6918312353a91850e2b76f1ea44f
+  checksum: 10c0/422be60f89e661eab29ac488c974b6cc0a660fb2228003b297c3d10c32c90f3bcffc1009b43876a082515a3c376b1eefcce823d6e78982e6878408b9a923199c
   languageName: node
   linkType: hard
 
@@ -43359,7 +43318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.0, typescript@npm:^5.4.4, typescript@npm:^5.8.3":
+"typescript@npm:^5.0.0, typescript@npm:^5.4.4, typescript@npm:^5.5.3, typescript@npm:^5.8.3":
   version: 5.8.3
   resolution: "typescript@npm:5.8.3"
   bin:
@@ -43379,23 +43338,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.2 || 5.3#optional!builtin<compat/typescript>":
-  version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+"typescript@patch:typescript@npm%3A5.5#optional!builtin<compat/typescript>":
+  version: 5.5.4
+  resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/1d0a5f4ce496c42caa9a30e659c467c5686eae15d54b027ee7866744952547f1be1262f2d40de911618c242b510029d51d43ff605dba8fb740ec85ca2d3f9500
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A5.2#optional!builtin<compat/typescript>":
-  version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/062c1cee1990e6b9419ce8a55162b8dc917eb87f807e4de0327dbc1c2fa4e5f61bc0dd4e034d38ff541d1ed0479b53bcee8e4de3a4075c51a1724eb6216cb6f5
+  checksum: 10c0/73409d7b9196a5a1217b3aaad929bf76294d3ce7d6e9766dd880ece296ee91cf7d7db6b16c6c6c630ee5096eccde726c0ef17c7dfa52b01a243e57ae1f09ef07
   languageName: node
   linkType: hard
 
@@ -43409,7 +43358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.8.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.5.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.8.3#optional!builtin<compat/typescript>":
   version: 5.8.3
   resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
   bin:
@@ -44460,7 +44409,7 @@ __metadata:
     commander: "npm:^12.1.0"
     execa: "npm:^5.1.1"
     prompts: "npm:^2.4.2"
-    tap: "npm:^18.8.0"
+    tap: "npm:^21.1.0"
   languageName: unknown
   linkType: soft
 
@@ -44732,10 +44681,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"walk-up-path@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "walk-up-path@npm:3.0.1"
-  checksum: 10c0/3184738e0cf33698dd58b0ee4418285b9c811e58698f52c1f025435a85c25cbc5a63fee599f1a79cb29ca7ef09a44ec9417b16bfd906b1a37c305f7aa20ee5bc
+"walk-up-path@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "walk-up-path@npm:4.0.0"
+  checksum: 10c0/fabe344f91387d1d41df230af962ef18bf703dd4178006d55cd6412caacd187b54440002d4d53a982d4f7f0455567dcffb6d3884533c8b2268928eca3ebd8a19
   languageName: node
   linkType: hard
 
@@ -45932,7 +45881,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.18.0, ws@npm:^8.11.0, ws@npm:^8.12.0, ws@npm:^8.13.0, ws@npm:^8.18.0, ws@npm:^8.2.3":
+"ws@npm:8.18.0, ws@npm:^8.11.0, ws@npm:^8.13.0, ws@npm:^8.18.0, ws@npm:^8.2.3":
   version: 8.18.0
   resolution: "ws@npm:8.18.0"
   peerDependencies:
@@ -46181,12 +46130,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml-types@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "yaml-types@npm:0.3.0"
+"yaml-types@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "yaml-types@npm:0.4.0"
   peerDependencies:
     yaml: ^2.3.0
-  checksum: 10c0/5613474a7f40903b248e50a0a160b2bede0d5cc21e781bd3b0c74ff81e23a67d2c86bcbd1638f678b3c87bccebfb1f113969a97b7b5dcc9560382cbae0ff70d6
+  checksum: 10c0/63d7f485aa4ab6697474db0a55d3f3f64e48118d18b56ab91b35d3607c37ff7da35a9468812c05339578f5a2100e159ab3961a2674665077aa9160530e94e45f
   languageName: node
   linkType: hard
 
@@ -46358,10 +46307,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yoga-wasm-web@npm:~0.3.3":
-  version: 0.3.3
-  resolution: "yoga-wasm-web@npm:0.3.3"
-  checksum: 10c0/d46ae3a436409e89eb0ea3b8c7624dafaf2c846d9038fdf8aa0cc839f73a2577b679bdc22997596177de74c580a6cdc3206c98fd2acd91b66f85462d9d9d260a
+"yoga-layout@npm:~3.2.1":
+  version: 3.2.1
+  resolution: "yoga-layout@npm:3.2.1"
+  checksum: 10c0/9001e51be993c85e03757e5a04a2b61b8b30c9e5a7865d0156ca87a6431a3b717d51eb4990bfe588189fcfeac688dd9c3de707bbd50d1c344a84e63974cc54a8
   languageName: node
   linkType: hard
 
