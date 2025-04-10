@@ -151,6 +151,9 @@ export const isProtonDocsConvertible = (mimeType: string) =>
 export const PROTON_DOC_MIMETYPE = 'application/vnd.proton.doc';
 export const isProtonDocument = (mimeType: string) => mimeType === PROTON_DOC_MIMETYPE;
 
+export const isSTLFile = (mimeType: string) => mimeType === 'model/stl';
+export const isCompatibleSTL = (mimeType: string, filename: string) => isSTLFile(mimeType) && filename.endsWith('stl'); // browser mime type detection is not great for STL so we need to also check end of file name
+
 export const isRAWPhoto = (mimeType: string): boolean => {
     return Object.values(RAWMimeTypes).some((rawType) => rawType === mimeType);
 };
