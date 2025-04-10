@@ -77,7 +77,10 @@ export const CancellationReminderSection = ({ app }: Props) => {
 
         const hasCancelledOnSameDayHeSubscribed =
             subscription?.CreateTime && isBefore(new Date(), addDays(fromUnixTime(subscription.CreateTime), 1));
-        const { status } = await cancelSubscription(isSubscriptionReminderFlow, config.upsellPlan);
+        const { status } = await cancelSubscription({
+            subscriptionReminderFlow: isSubscriptionReminderFlow,
+            upsellPlanId: config.upsellPlan,
+        });
 
         if (hasCancelledOnSameDayHeSubscribed) {
             void reportCancellationOnSameDay();
