@@ -12,6 +12,17 @@ export const hasModulesSupport = () => {
 
 export const isFileSaverSupported = () => !!new Blob();
 
+export const isWebglSupported = () => {
+    try {
+        const canvas = document.createElement('canvas');
+        return Boolean(
+            window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+        );
+    } catch (e) {
+        return false;
+    }
+};
+
 export const textToClipboard = (text = '', target = document.body) => {
     const oldActiveElement = document.activeElement as HTMLElement;
     if (navigator.clipboard) {
