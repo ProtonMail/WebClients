@@ -18,6 +18,7 @@ describe('replaceLocalURL', () => {
     const realLocation = window.location;
 
     afterEach(() => {
+        // @ts-ignore
         window.location = realLocation;
     });
 
