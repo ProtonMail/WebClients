@@ -568,11 +568,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reject": [
         "Odbiti"
@@ -1305,6 +1305,13 @@
     "Calendar settings section title": {
       "Share calendar": [
         "Podijeli kalendar"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Pokaži još ${ remainingItems }",
+        "Pokaži još ${ remainingItems }",
+        "Pokaži još ${ remainingItems }"
       ]
     },
     "Calendar status": {
@@ -4260,6 +4267,11 @@
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
       ],
+      "Invite successfully sent": [
+        "Pozivnica je uspješno poslana",
+        "Pozivnice su uspješno poslane",
+        "Pozivnice su uspješno poslane"
+      ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
       ],
@@ -4690,6 +4702,11 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke će biti šifrirane i spremljene"
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Vaš uvoz s ${ accounts } privremeno kasni.",
+        "Vaši uvozi s ${ accounts } privremeno kasne.",
+        "Vaši uvozi s ${ accounts } privremeno kasne."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
@@ -5174,10 +5191,10 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -5450,11 +5467,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5579,14 +5596,14 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -6263,14 +6280,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6283,6 +6292,14 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6328,6 +6345,11 @@
         "${ n } oznaka",
         "${ n } oznake",
         "${ n } oznaka"
+      ],
+      "${ n } message per day": [
+        "${ n } poruka po danu",
+        "${ n } poruke po danu",
+        "${ n } poruka po danu"
       ],
       "${ n } vault": [
         "${ n } trezor",
@@ -7601,6 +7623,11 @@
         "${ n } VPN veze visoke brzine",
         "${ n } VPN veza visoke brzine"
       ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } VPN veza visoke brzine po korisniku",
+        "${ n } VPN veze visoke brzine po korisniku",
+        "${ n } VPN veza visoke brzine po korisniku"
+      ],
       "${ n } VPN connection": [
         "${ n } VPN veza",
         "${ n } VPN veze",
@@ -7646,17 +7673,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -7681,6 +7697,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
