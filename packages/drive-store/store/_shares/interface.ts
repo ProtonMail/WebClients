@@ -34,7 +34,6 @@ export interface Share {
     creator: string;
     isLocked: boolean;
     isDefault: boolean;
-    isVolumeSoftDeleted: boolean;
     possibleKeyPackets: string[];
     type: ShareType;
     state: ShareState;

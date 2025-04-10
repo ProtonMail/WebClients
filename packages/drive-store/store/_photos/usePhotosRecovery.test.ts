@@ -127,7 +127,6 @@ describe('usePhotosRecovery', () => {
                     creator: 'creator',
                     isLocked: false,
                     isDefault: false,
-                    isVolumeSoftDeleted: false,
                     possibleKeyPackets: ['dsad'],
                     type: ShareType.photos,
                     state: ShareState.restored,
