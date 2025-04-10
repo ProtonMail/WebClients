@@ -264,9 +264,9 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                 <div
                     className={clsx(
                         'bg-norm',
-                        !isDrawerOrResponsiveView &&
-                            'py-4 absolute border-top event-popover-rsvp-section event-popover-rsvp-section-spacing'
+                        !isDrawerOrResponsiveView && 'py-4 absolute border-top event-popover-rsvp-section mx-custom'
                     )}
+                    style={{ '--mx-custom': '-1.5rem', marginBottom: '-1.5rem' }}
                 >
                     <RsvpButtons
                         handleResponse={handleResponse}
