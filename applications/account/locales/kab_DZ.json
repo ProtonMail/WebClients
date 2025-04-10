@@ -695,11 +695,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "Refresh the page": [
-        "Smiren asebter"
-      ],
       "refresh the page": [
         "smiren asebter"
+      ],
+      "Refresh the page": [
+        "Smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -1437,6 +1437,9 @@
       "Monthly": [
         "S wayyur"
       ],
+      "New!": [
+        "Amaynut"
+      ],
       "Two-year": [
         "Snat n tikkal i useggas"
       ]
@@ -1537,6 +1540,9 @@
       ],
       "Invite": [
         "Snubget"
+      ],
+      "Next": [
+        "Ɣer sdat"
       ],
       "Send": [
         "Azen"
@@ -5084,11 +5090,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "dedicated servers": [
-        "iqeddacen yettwagen"
-      ],
       "Dedicated servers": [
         "Iqeddacen yettwagen"
+      ],
+      "dedicated servers": [
+        "iqeddacen yettwagen"
       ],
       "Default email application": [
         "Asnas amezwer n imayl"
@@ -6514,11 +6520,11 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6850,11 +6856,14 @@
       "I understand the risk": [
         "Gziɣ imihi"
       ],
-      "IF": [
-        "MA"
+      "IBAN": [
+        "IBAN"
       ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6997,14 +7006,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Organization name": [
         "Isem n tuddsa"
@@ -7256,6 +7265,11 @@
       ],
       "Recovery phrase": [
         "Tafyirt n tririt"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Seg"
       ]
     },
     "Label (end date/advanced search)": {
@@ -7844,23 +7858,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7885,6 +7882,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Leqqem ɣer ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8083,6 +8097,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ableɣ/Tehri n tesfift war talast"
+      ],
+      "Up to ${ n } user": [
+        "Alamma d ${ n } yiseqdac",
+        "Alamma d ${ n } yiseqdacen"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Alamma d ${ totalStorageSize } n uḥraz"
@@ -8763,6 +8781,9 @@
       "Card number": [
         "Uṭṭun n tkarḍa"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "Got it": [
         "Gziɣ-t"
       ],
@@ -8779,6 +8800,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Takaṛḍa-inek/m ur tettwaqbel ara. Ɛreḍ takarḍa nniḍen neɣ nermes lbanka-ik akken ad yeddu lexlaṣ."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Baṭel"
       ]
     },
     "PGP key warning": {
@@ -9422,6 +9448,11 @@
         "Nced-d imeddukkal ɣer ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "Deny": [
+        "Agi"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Tigawin"
@@ -9535,14 +9566,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9574,6 +9597,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -11147,6 +11178,9 @@
       ],
       "Private": [
         "Amaẓlay"
+      ],
+      "SSO": [
+        "SSO"
       ]
     },
     "Validation": {
