@@ -52,4 +52,10 @@
 		box-shadow: 0 calc(var(--1px) * -1) calc(var(--1px) * 4) 0
 			rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-norm-opacity));
 	}
+
+	&-rsvp-section-spacing {
+		--mx-custom: -1.5rem;
+
+		margin-block-end: -1.5rem;
+	}
 }
