@@ -499,6 +499,9 @@
       "Edit billing cycle": [
         "Fatura dönemini düzenle"
       ],
+      "Edit countries": [
+        "Ülkeleri düzenle"
+      ],
       "Edit display name": [
         "Görüntülenecek adı düzenle"
       ],
@@ -919,11 +922,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -7393,11 +7396,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "Active": [
-        "Etkin"
-      ],
       "active": [
         "etkin"
+      ],
+      "Active": [
+        "Etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -7841,11 +7844,11 @@
       "Data recoverable on this device": [
         "Bu aygıttaki veriler kurtarılabilir"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -7877,6 +7880,9 @@
       ],
       "Disable recovery by phone number": [
         "Telefon numarası ile kurtarmayı kapat"
+      ],
+      "Disabled countries": [
+        "Devre dışı bırakılan ülkeler"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime } zamanında kapatıldı"
@@ -8028,6 +8034,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Destekleniyorsa, dış hizmette TLS ya da SSL kullanın."
+      ],
+      "Enabled countries": [
+        "Etkinleştirilen ülkeler"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime } zamanında açıldı"
@@ -8218,8 +8227,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verileri alın ve buradan içe aktarın."
       ],
+      "Got it": [
+        "Tamam"
+      ],
       "Group deleted": [
         "Grup silindi"
+      ],
+      "Groups": [
+        "Gruplar"
       ],
       "here": [
         "buraya"
@@ -10753,6 +10768,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } kullanıcı",
+        "${ group.UserCount } kullanıcı"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
       ],
@@ -10892,11 +10911,11 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -11324,11 +11343,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -11531,14 +11550,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -12774,32 +12793,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -12827,6 +12820,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -13005,9 +13024,6 @@
       ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
-      ],
-      "Breach alerts": [
-        "Veri sızıntısı uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -14206,6 +14222,17 @@
         "Bilgisayar"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "Ayın 10. günü"
@@ -14434,17 +14461,6 @@
       ],
       "Trash": [
         "Çöpe at"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
       ]
     },
     "Option delay send seconds": {
@@ -17441,47 +17457,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -17770,6 +17745,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {

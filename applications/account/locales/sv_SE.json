@@ -499,6 +499,9 @@
       "Edit billing cycle": [
         "Byt faktureringsperiod"
       ],
+      "Edit countries": [
+        "Redigera länder"
+      ],
       "Edit display name": [
         "Redigera visningsnamn"
       ],
@@ -919,11 +922,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reject": [
         "Avvisa"
@@ -3827,6 +3830,9 @@
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Håll olika delar av ditt liv åtskilda och din inkorg organiserad med ytterligare adresser."
+      ],
+      "Learn more about common problems": [
+        "Lär dig mer om vanliga problem"
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Gör sidfoten i din e-post till din egen – visa upp ditt unika varumärke, inte vårt."
@@ -7373,11 +7379,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7815,11 +7821,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7851,6 +7857,9 @@
       ],
       "Disable recovery by phone number": [
         "Inaktivera telefonnummer för återställning"
+      ],
+      "Disabled countries": [
+        "Inaktiverade länder"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Inaktiverad den ${ formattedDateAndTime }"
@@ -8002,6 +8011,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktivera TLS eller SSL på den externa tjänsten om det stöds."
+      ],
+      "Enabled countries": [
+        "Aktiverade länder"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiverad den ${ formattedDateAndTime }"
@@ -8177,8 +8189,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadatan för ${ appName } och importera den här."
       ],
+      "Got it": [
+        "Jag förstår"
+      ],
       "Group deleted": [
         "Grupp borttagen"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "here": [
         "här"
@@ -10176,6 +10194,10 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Din återställningsfras är en serie av 12 slumpmässigt genererade ord i en specifik ordning."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
+        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ],
@@ -10826,11 +10848,11 @@
       "Amount due": [
         "Att betala"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -11258,11 +11280,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -11465,14 +11487,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -12714,32 +12736,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -12767,6 +12763,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12945,9 +12967,6 @@
       ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
-      ],
-      "Breach alerts": [
-        "Intrångsvarningar"
       ],
       "Calendar sharing": [
         "Kalenderdelning"
@@ -14146,6 +14165,17 @@
         "Stationär dator"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10:e dagen i månaden"
@@ -14395,17 +14425,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -17380,47 +17399,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -17709,6 +17687,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {

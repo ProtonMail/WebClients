@@ -499,6 +499,9 @@
       "Edit billing cycle": [
         "Editar o ciclo de faturação"
       ],
+      "Edit countries": [
+        "Editar os países"
+      ],
       "Edit display name": [
         "Editar o nome a mostrar"
       ],
@@ -919,11 +922,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -7393,11 +7396,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
-      "Active": [
-        "Ativo"
-      ],
       "active": [
         "ativa"
+      ],
+      "Active": [
+        "Ativo"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -7841,11 +7844,11 @@
       "Data recoverable on this device": [
         "Dados recuperáveis neste dispositivo"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
@@ -7877,6 +7880,9 @@
       ],
       "Disable recovery by phone number": [
         "Desativar a recuperação por número de telefone"
+      ],
+      "Disabled countries": [
+        "Países desativados"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Desativado em ${ formattedDateAndTime }"
@@ -8028,6 +8034,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Ative o TLS ou SSL no serviço externo, se for suportado."
+      ],
+      "Enabled countries": [
+        "Países ativados"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Ativado em ${ formattedDateAndTime }"
@@ -8218,8 +8227,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aceda ao seu fornecedor de identidade, obtenha os metadados SAML para o ${ appName } e importe-os aqui."
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "Group deleted": [
         "O grupo foi eliminado."
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "here": [
         "aqui"
@@ -10756,6 +10771,10 @@
       "${ BRAND_NAME } username": [
         "Nome de utilizador do ${ BRAND_NAME }"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } utilizador",
+        "${ group.UserCount } utilizadores"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
@@ -10895,10 +10914,10 @@
       "Amount due": [
         "Quantia devida"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
       "and": [
@@ -11327,11 +11346,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SE"
-      ],
       "If": [
         "Se"
+      ],
+      "IF": [
+        "SE"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -11534,14 +11553,14 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "OU"
-      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
+      ],
+      "OR": [
+        "OU"
       ],
       "Organization name": [
         "Nome da organização"
@@ -12777,32 +12796,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -12830,6 +12823,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13008,9 +13027,6 @@
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
-      ],
-      "Breach alerts": [
-        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -14209,6 +14225,17 @@
         "Área de trabalho"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10º do mês"
@@ -14446,17 +14473,6 @@
       ],
       "UDP": [
         "UDP"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -17453,47 +17469,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -17782,6 +17757,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
