@@ -356,10 +356,6 @@
       "Download logs": [
         "Logboeken downloaden"
       ],
-      "Download photo": [
-        "Foto downloaden",
-        "Foto's downloaden"
-      ],
       "Download without scanning": [
         "Downloaden zonder scannen"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Nieuw bericht"
+      ],
+      "New shared album": [
+        "Nieuw gedeeld album"
       ],
       "Next": [
         "Volgende"
@@ -2586,8 +2585,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Upgrade naar ${ BRAND_NAME } ${ planName } om bestanden te blijven delen met bewerkingstoegang"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Upgrade naar ${ planName } om bestanden te blijven delen met bewerkingsrechten"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
@@ -3771,8 +3770,11 @@
       "Create new album": [
         "Nieuw album maken"
       ],
-      "Rename": [
-        "Hernoemen"
+      "Create new shared album": [
+        "Nieuw gedeeld album maken"
+      ],
+      "Rename album": [
+        "Albumnaam wijzigen"
       ],
       "Security Center": [
         "Beveiligingscentrum"
@@ -4317,7 +4319,7 @@
         "(${ serverPrice }/maand)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat inschakelt."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
@@ -4348,13 +4350,13 @@
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om uw surfen te volgen of te monitoren."
+        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om browsen te volgen of te volgen."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
         "Een VPN verbergt uw IP-adres en versleutelt uw browseractiviteit, waardoor het moeilijker wordt voor websites, adverteerders en internetproviders om u over een bepaalde periode te volgen."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt je locatie en activiteit van je internetprovider (ISP) en de websites die je bezoekt."
+        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt uw locatie en activiteit van uw internetserviceprovider (ISP) en de websites die u bezoekt."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
@@ -4363,7 +4365,7 @@
         "Account succesvol bijgewerkt"
       ],
       "Ad targeting": [
-        "Advertentie targeting"
+        "Advertentie doelwit"
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
@@ -4808,7 +4810,7 @@
         "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw browsen privé."
+        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
       ],
       "here": [
         "hier"
@@ -5385,7 +5387,7 @@
         "Sommige foto's in dit album zijn niet opgeslagen in uw tijdlijn. Als u dit album verwijdert, worden deze foto's permanent verwijderd."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en vrij toegang te hebben tot het internet."
+        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
       ],
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -7162,29 +7164,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plannen vanaf ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7206,6 +7185,29 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plannen vanaf ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7372,9 +7374,6 @@
       ],
       "Available on all platforms": [
         "Beschikbaar op alle platformen"
-      ],
-      "Breach alerts": [
-        "Breach waarschuwingen"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -9781,47 +9780,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -10082,6 +10040,47 @@
         "Uw eigen korte @pm.me e-mailalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Weet u het zeker?"
@@ -10111,6 +10110,44 @@
     "Subscription saving": {
       "Save": [
         "Bespaar"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Albums met u gedeeld zullen hier weergegeven worden"
+      ],
+      "Albums you've shared will appear here": [
+        "Uw gedeelde albums zullen hier weergegeven worden"
+      ],
+      "Your favorited photos will appear here": [
+        "Uw favoriete foto's zullen hier weergegeven worden"
+      ],
+      "Your Live Photos will appear here": [
+        "Uw Live Foto's zullen hier weergegeven worden"
+      ],
+      "Your panorama photos will appear here": [
+        "Uw panorama foto's zullen hier weergegeven worden"
+      ],
+      "Your photo bursts will appear here": [
+        "Uw foto reeksen zullen hier weergegeven worden"
+      ],
+      "Your portraits photos will appear here": [
+        "Uw portretten zullen hier weergegeven worden"
+      ],
+      "Your RAW photos will appear here": [
+        "Uw RAW foto's zullen hier weergegeven worden"
+      ],
+      "Your screenshots will appear here": [
+        "Uw schermafbeeldingen zullen hier weergegeven worden"
+      ],
+      "Your selfies photos will appear here": [
+        "Uw selfies zullen hier weergegeven worden"
+      ],
+      "Your tagged photos will appear here": [
+        "Uw gelabelde foto's zullen hier weergegeven worden"
+      ],
+      "Your videos will appear here": [
+        "Uw video's zullen hier weergegeven worden"
       ]
     },
     "Success": {
@@ -10784,11 +10821,47 @@
       "Night theme": [
         "Nacht thema"
       ],
+      "No albums shared with me": [
+        "Geen albums met mij gedeeld"
+      ],
       "No breaches detected": [
         "Geen inbreuken gevonden"
       ],
+      "No bursts": [
+        "Geen uitbarstingen"
+      ],
+      "No favorites": [
+        "Geen favorieten"
+      ],
+      "No Live Photos": [
+        "Geen Live Foto's"
+      ],
+      "No panorama": [
+        "Geen panorama"
+      ],
+      "No photos": [
+        "Geen foto's"
+      ],
+      "No portraits": [
+        "Geen portretten"
+      ],
+      "No RAW": [
+        "Geen RAW"
+      ],
       "No results found": [
         "Geen resultaten"
+      ],
+      "No screenshots": [
+        "Geen schermafbeelding"
+      ],
+      "No selfies": [
+        "Geen selfies"
+      ],
+      "No shared albums": [
+        "Geen gedeelde albums"
+      ],
+      "No videos": [
+        "Geen video's"
       ],
       "Notes": [
         "Notities"

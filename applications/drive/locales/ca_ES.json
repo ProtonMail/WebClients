@@ -356,10 +356,6 @@
       "Download logs": [
         "Descarrega els registres"
       ],
-      "Download photo": [
-        "Baixa la foto",
-        "Baixa les fotos"
-      ],
       "Download without scanning": [
         "Descarrega sense escanejar"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Nou missatge"
+      ],
+      "New shared album": [
+        "Nou àlbum compartit"
       ],
       "Next": [
         "Següent"
@@ -2586,8 +2585,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Milloreu el pla a ${ BRAND_NAME } ${ planName } per a continuar compartint arxius amb accés per a editar."
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Milloreu el pla a ${ planName } per a continuar compartint arxius amb accés per a editar."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
@@ -3771,8 +3770,11 @@
       "Create new album": [
         "Crea un àlbum"
       ],
-      "Rename": [
-        "Canvia el nom"
+      "Create new shared album": [
+        "Crea un àlbum compartit nou"
+      ],
+      "Rename album": [
+        "Canvia el nom de l'àlbum"
       ],
       "Security Center": [
         "Centre de seguretat"
@@ -7225,29 +7227,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plans a partir de ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -7269,6 +7248,29 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plans a partir de ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7435,9 +7437,6 @@
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
-      ],
-      "Breach alerts": [
-        "Alertes d'infraccions"
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -9844,47 +9843,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -10145,6 +10103,47 @@
         "El vostre propi àlies de correu electrònic curt @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "N'esteu segur?"
@@ -10174,6 +10173,44 @@
     "Subscription saving": {
       "Save": [
         "Desa"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Els àlbums compartits amb vosaltres apareixeran aquí."
+      ],
+      "Albums you've shared will appear here": [
+        "Els àlbums que heu compartit apareixeran aquí."
+      ],
+      "Your favorited photos will appear here": [
+        "Les vostres fotos preferides apareixeran aquí"
+      ],
+      "Your Live Photos will appear here": [
+        "Les vostres fotos en directe apareixeran aquí."
+      ],
+      "Your panorama photos will appear here": [
+        "Les vostres fotos panoràmiques apareixeran aquí."
+      ],
+      "Your photo bursts will appear here": [
+        "Les vostres ràfegues de fotos apareixeran aquí."
+      ],
+      "Your portraits photos will appear here": [
+        "Les vostres fotos de retrats apareixeran aquí."
+      ],
+      "Your RAW photos will appear here": [
+        "Les vostres fotos RAW apareixeran aquí."
+      ],
+      "Your screenshots will appear here": [
+        "Les vostres captures de pantalla apareixeran aquí."
+      ],
+      "Your selfies photos will appear here": [
+        "Les vostres fotos de selfies apareixeran aquí."
+      ],
+      "Your tagged photos will appear here": [
+        "Les vostres fotos etiquetades apareixeran aquí."
+      ],
+      "Your videos will appear here": [
+        "Els vostres vídeos apareixeran aquí."
       ]
     },
     "Success": {
@@ -10847,11 +10884,47 @@
       "Night theme": [
         "Tema de nit"
       ],
+      "No albums shared with me": [
+        "Sense àlbums compartits amb mi"
+      ],
       "No breaches detected": [
         "No s'han detectat infraccions"
       ],
+      "No bursts": [
+        "Sense ràfegues"
+      ],
+      "No favorites": [
+        "Sense favorits"
+      ],
+      "No Live Photos": [
+        "Sense fotos en directe"
+      ],
+      "No panorama": [
+        "Sense panoramas"
+      ],
+      "No photos": [
+        "Sense fotos"
+      ],
+      "No portraits": [
+        "Sense retrats"
+      ],
+      "No RAW": [
+        "Sense RAW"
+      ],
       "No results found": [
         "No s'ha trobat cap resultat."
+      ],
+      "No screenshots": [
+        "Sense captures de pantalla"
+      ],
+      "No selfies": [
+        "Sense selfies"
+      ],
+      "No shared albums": [
+        "Sense àlbums compartits"
+      ],
+      "No videos": [
+        "Sense vídeos"
       ],
       "Notes": [
         "Notes"

@@ -356,10 +356,6 @@
       "Download logs": [
         "Télécharger les journaux"
       ],
-      "Download photo": [
-        "Télécharger la photo",
-        "Télécharger les photos"
-      ],
       "Download without scanning": [
         "Télécharger sans analyser"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Nouveau message"
+      ],
+      "New shared album": [
+        "Nouvel album partagé"
       ],
       "Next": [
         "Suivant"
@@ -2586,8 +2585,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Passez à l'abonnement ${ BRAND_NAME } ${ planName } pour continuer à partager des fichiers avec droits d'écriture."
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Passez à l'abonnement ${ planName } pour continuer à partager des fichiers avec droits d'écriture."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe reposant sur l'IA et une assistance d'experts dédiée 24h/24 et 7j/7."
@@ -3771,8 +3770,11 @@
       "Create new album": [
         "Créer un album"
       ],
-      "Rename": [
-        "Modifier le nom"
+      "Create new shared album": [
+        "Créer un nouvel album partagé"
+      ],
+      "Rename album": [
+        "Modifier le nom de l'album"
       ],
       "Security Center": [
         "Centre de sécurité"
@@ -7225,29 +7227,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Commencez pour ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements à partir de ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "À partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -7269,6 +7248,29 @@
       ],
       "Switch plan": [
         "Changer d'abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Commencez pour ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements à partir de ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "À partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7435,9 +7437,6 @@
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
-      ],
-      "Breach alerts": [
-        "Alertes de fuites de données"
       ],
       "Calendar sharing": [
         "Partage de calendrier"
@@ -9844,47 +9843,6 @@
         "Pour ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -10145,6 +10103,47 @@
         "Votre propre alias d'adresse e-mail court @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmez-vous ?"
@@ -10174,6 +10173,44 @@
     "Subscription saving": {
       "Save": [
         "Économisez"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Les albums partagés avec vous apparaîtront ici."
+      ],
+      "Albums you've shared will appear here": [
+        "Les albums que vous avez partagés apparaîtront ici."
+      ],
+      "Your favorited photos will appear here": [
+        "Vos photos favorites apparaîtront ici."
+      ],
+      "Your Live Photos will appear here": [
+        "Vos photos en direct apparaîtront ici."
+      ],
+      "Your panorama photos will appear here": [
+        "Vos photos panoramiques apparaîtront ici."
+      ],
+      "Your photo bursts will appear here": [
+        "Vos rafales de photos apparaîtront ici."
+      ],
+      "Your portraits photos will appear here": [
+        "Vos photos de portraits apparaîtront ici."
+      ],
+      "Your RAW photos will appear here": [
+        "Vos photos RAW apparaîtront ici."
+      ],
+      "Your screenshots will appear here": [
+        "Vos captures d’écran apparaîtront ici."
+      ],
+      "Your selfies photos will appear here": [
+        "Vos selfies apparaîtront ici."
+      ],
+      "Your tagged photos will appear here": [
+        "Vos photos identifiées apparaîtront ici."
+      ],
+      "Your videos will appear here": [
+        "Vos vidéos apparaîtront ici."
       ]
     },
     "Success": {
@@ -10847,11 +10884,47 @@
       "Night theme": [
         "Thème nuit"
       ],
+      "No albums shared with me": [
+        "Aucun album n’a été partagé avec moi."
+      ],
       "No breaches detected": [
         "Aucune fuite de données n'a été détectée."
       ],
+      "No bursts": [
+        "Aucunes rafales"
+      ],
+      "No favorites": [
+        "Aucuns favoris"
+      ],
+      "No Live Photos": [
+        "Aucune photo en direct"
+      ],
+      "No panorama": [
+        "Aucun panorama"
+      ],
+      "No photos": [
+        "Aucunes photos"
+      ],
+      "No portraits": [
+        "Aucuns portraits"
+      ],
+      "No RAW": [
+        "Aucun RAW"
+      ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
+      ],
+      "No screenshots": [
+        "Aucune capture d'écrans"
+      ],
+      "No selfies": [
+        "Aucuns selfies"
+      ],
+      "No shared albums": [
+        "Aucun album partagé"
+      ],
+      "No videos": [
+        "Aucunes vidéos"
       ],
       "Notes": [
         "Notes"

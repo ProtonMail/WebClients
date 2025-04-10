@@ -1009,6 +1009,9 @@
       "Monthly": [
         "S wayyur"
       ],
+      "New!": [
+        "Amaynut"
+      ],
       "Two-year": [
         "Snat n tikkal i useggas"
       ]
@@ -4301,6 +4304,9 @@
       "I understand the risk": [
         "Gziɣ imihi"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Import all messages": [
         "Kter akk iznan"
       ],
@@ -4775,17 +4781,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -4804,6 +4799,17 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -4989,6 +4995,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ableɣ/Tehri n tesfift war talast"
+      ],
+      "Up to ${ n } user": [
+        "Alamma d ${ n } yiseqdac",
+        "Alamma d ${ n } yiseqdacen"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Alamma d ${ totalStorageSize } n uḥraz"
@@ -5313,6 +5323,9 @@
       "Card number": [
         "Uṭṭun n tkarḍa"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "Got it": [
         "Gziɣ-t"
       ],
@@ -5329,6 +5342,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Takaṛḍa-inek/m ur tettwaqbel ara. Ɛreḍ takarḍa nniḍen neɣ nermes lbanka-ik akken ad yeddu lexlaṣ."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Baṭel"
       ]
     },
     "PGP key encryption warning": {
@@ -5775,14 +5793,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -5802,6 +5812,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
