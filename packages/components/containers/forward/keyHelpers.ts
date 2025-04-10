@@ -95,7 +95,7 @@ export const handleUnsetV6PrimaryKey = async ({
     addressKeys,
     User,
     userKeys,
-    createKTVerifier,
+    ktVerifier,
     dispatch,
 }: {
     ID: string;
@@ -104,7 +104,7 @@ export const handleUnsetV6PrimaryKey = async ({
     addressKeys: DecryptedAddressKey[];
     User: UserModel;
     userKeys: DecryptedKey[];
-    createKTVerifier: () => Promise<KTVerifier>;
+    ktVerifier: KTVerifier;
     dispatch: (thunkAction: ReturnType<typeof getKTActivation>) => KeyTransparencyActivation;
 }) => {
     const addressKey = getKeyByID(addressKeys, ID);
@@ -112,7 +112,7 @@ export const handleUnsetV6PrimaryKey = async ({
         throw new Error('Key not found');
     }
 
-    const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
+    const { keyTransparencyVerify, keyTransparencyCommit } = ktVerifier;
     const [newActiveKeys, formerActiveKeys] = await unsetV6PrimaryAddressKey(
         api,
         forwarderAddress,
@@ -141,7 +141,7 @@ export const generateNewE2EEForwardingCompatibleAddressKey = async ({
     addressKeys,
     User,
     userKeys,
-    createKTVerifier,
+    ktVerifier,
     authentication,
 }: {
     api: Api;
@@ -150,10 +150,10 @@ export const generateNewE2EEForwardingCompatibleAddressKey = async ({
     addressKeys: DecryptedAddressKey[];
     User: UserModel;
     userKeys: DecryptedKey[];
-    createKTVerifier: () => Promise<KTVerifier>;
+    ktVerifier: KTVerifier;
     authentication: PrivateAuthenticationStore;
 }) => {
-    const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
+    const { keyTransparencyVerify, keyTransparencyCommit } = ktVerifier;
     const [newKey] = await addAddressKeysProcess({
         api,
         userKeys,
