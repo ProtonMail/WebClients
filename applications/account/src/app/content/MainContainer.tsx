@@ -45,7 +45,7 @@ import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscriptio
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { FeatureCode, useFeatures } from '@proton/features';
-import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
+import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -54,14 +54,11 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import {
-    getIsPublicUserWithoutProtonAddress,
-    getIsSSOVPNOnlyAccount,
-    getRequiresAddressSetup,
-} from '@proton/shared/lib/keys';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
+import NoAppsAvailable from '../containers/NoAppsAvailable';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountSidebar from './AccountSidebar';
@@ -161,6 +158,7 @@ const MainContainer = () => {
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const canDisplayPassReports = useFlag('PassB2BReports');
     const isAccessControlEnabled = useFlag('AccessControl');
+    const isLumoAvailable = useFlag('LumoInProductSwitcher');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -323,13 +321,15 @@ const MainContainer = () => {
             return <PrivateMainAreaLoading />;
         }
 
+        const pathFromLocation = getPathFromLocation(location);
+
         if (!appFromPathname) {
-            return <Redirect to={`/${appSlug}${getPathFromLocation(location)}`} />;
+            return <Redirect to={`/${appSlug}${pathFromLocation}`} />;
         }
 
         if (
             getIsSectionAvailable(routes.account.routes.subscription) &&
-            getPathFromLocation(location) === `/${appSlug}${routes.account.routes.dashboard.to}#invoices`
+            pathFromLocation === `/${appSlug}${routes.account.routes.dashboard.to}#invoices`
         ) {
             return <Redirect to={`/${appSlug}${routes.account.routes.subscription.to}#invoices`} />;
         }
@@ -357,14 +357,24 @@ const MainContainer = () => {
         return <TVContainer />;
     }
 
-    if (getIsSSOVPNOnlyAccount(user)) {
-        if (!getSSOVPNOnlyAccountApps().includes(appFromPathname!)) {
-            return <Redirect to={`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`} />;
+    const availableApps = getAvailableApps({
+        user,
+        context: 'app',
+        organization,
+        isLumoAvailable,
+        isAccessControlEnabled,
+    });
+
+    if (!availableApps.includes(app)) {
+        if (!availableApps.length) {
+            return <NoAppsAvailable />;
         }
-    } else if (getIsPublicUserWithoutProtonAddress(user)) {
-        if (!getPublicUserProtonAddressApps('app').includes(appFromPathname!)) {
-            return <Redirect to={`/${getSlugFromApp(APPS.PROTONPASS)}`} />;
-        }
+        const [firstAvailableApp] = availableApps;
+        const locationWithNewApp = getPathFromLocation(location).replace(
+            pathPrefix,
+            `/${getSlugFromApp(firstAvailableApp)}`
+        );
+        return <Redirect to={locationWithNewApp} />;
     }
 
     return (
