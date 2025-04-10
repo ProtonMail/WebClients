@@ -63,10 +63,10 @@ const setup = ({
     preloadedState: NonNullable<Parameters<typeof renderWithProviders>[1]>['preloadedState'];
 }) => {
     const hookRef: HookRef = {};
-    const result = renderWithProviders(<Component hookRef={hookRef} />, {
+    const view = renderWithProviders(<Component hookRef={hookRef} />, {
         preloadedState: preloadedState,
     });
-    return { hookRef, result };
+    return { hookRef, result: view };
 };
 
 describe('cancel subscription', () => {
@@ -79,16 +79,13 @@ describe('cancel subscription', () => {
             },
         });
 
-        await expect(hookRef.hook?.cancelSubscription()).resolves.toEqual({
+        await expect(hookRef.hook?.cancelSubscription({})).resolves.toEqual({
             status: 'kept',
         });
     });
 
     it('should return subscription kept if user closes the modal', async () => {
-        const {
-            hookRef,
-            result: { getByTestId },
-        } = setup({
+        const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
                 user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
@@ -96,10 +93,10 @@ describe('cancel subscription', () => {
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
 
         await screen.findByTestId('keepSubscription');
-        await userEvent.click(getByTestId('keepSubscription'));
+        await userEvent.click(screen.getByTestId('keepSubscription'));
 
         await expect(cancelSubscriptionPromise).resolves.toEqual({
             status: 'kept',
@@ -107,10 +104,7 @@ describe('cancel subscription', () => {
     });
 
     it('should return subscription kept if user closes the feedback modal', async () => {
-        const {
-            hookRef,
-            result: { getByTestId },
-        } = setup({
+        const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
                 user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
@@ -118,13 +112,13 @@ describe('cancel subscription', () => {
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
 
         await screen.findByTestId('cancelSubscription');
-        await userEvent.click(getByTestId('cancelSubscription'));
+        await userEvent.click(screen.getByTestId('cancelSubscription'));
         await wait(0);
         // Simulate user clicking the element to close the feedback modal
-        await userEvent.click(getByTestId('cancelFeedback'));
+        await userEvent.click(screen.getByTestId('cancelFeedback'));
 
         await expect(cancelSubscriptionPromise).resolves.toEqual({
             status: 'kept',
@@ -146,7 +140,7 @@ describe('cancel subscription', () => {
 
             const {
                 hookRef,
-                result: { getByTestId, container, getByText },
+                result: { container },
             } = setup({
                 preloadedState: {
                     subscription: getSubscriptionState(subscription),
@@ -155,15 +149,15 @@ describe('cancel subscription', () => {
                 },
             });
 
-            const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+            const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
 
             await screen.findByTestId('cancelSubscription');
-            await userEvent.click(getByTestId('cancelSubscription'));
+            await userEvent.click(screen.getByTestId('cancelSubscription'));
             await wait(0);
 
             await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
-            await userEvent.click(getByText('I use a different Proton account'));
-            await userEvent.click(getByTestId('submitFeedback'));
+            await userEvent.click(screen.getByText('I use a different Proton account'));
+            await userEvent.click(screen.getByTestId('submitFeedback'));
 
             await wait(0);
 
@@ -193,7 +187,7 @@ describe('downgrade subscription', () => {
     it('should downgrade a mail subscription', async () => {
         const {
             hookRef,
-            result: { getByTestId, container, getByText },
+            result: { container },
         } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(mailSubscription),
@@ -206,22 +200,22 @@ describe('downgrade subscription', () => {
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
 
         await screen.findByTestId('highlight-downgrade-to-free');
-        await userEvent.click(getByTestId('highlight-downgrade-to-free'));
+        await userEvent.click(screen.getByTestId('highlight-downgrade-to-free'));
 
         await wait(0);
         await userEvent.type(container.querySelector('#confirm-text')!, organization.Name);
-        await userEvent.click(getByTestId('confirm-member-delete'));
+        await userEvent.click(screen.getByTestId('confirm-member-delete'));
         await wait(0);
-        await userEvent.click(getByTestId('confirm-downgrade-btn'));
+        await userEvent.click(screen.getByTestId('confirm-downgrade-btn'));
         await wait(0);
-        await userEvent.click(getByTestId('highlight-downgrade-to-free'));
+        await userEvent.click(screen.getByTestId('highlight-downgrade-to-free'));
         await wait(0);
         await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
-        await userEvent.click(getByText('I use a different Proton account'));
-        await userEvent.click(getByTestId('submitFeedback'));
+        await userEvent.click(screen.getByText('I use a different Proton account'));
+        await userEvent.click(screen.getByTestId('submitFeedback'));
 
         expect(apiMock).toHaveBeenCalledWith(
             deleteSubscription(
