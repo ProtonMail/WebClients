@@ -366,12 +366,6 @@
       "Download logs": [
         "Stáhnout logy"
       ],
-      "Download photo": [
-        "Stáhnout fotku",
-        "Stáhnout fotky",
-        "Stáhnout fotky",
-        "Stáhnout fotky"
-      ],
       "Download without scanning": [
         "Stáhnout bez skenování"
       ],
@@ -635,6 +629,9 @@
       ],
       "New message": [
         "Nová zpráva"
+      ],
+      "New shared album": [
+        "Nové sdílené album"
       ],
       "Next": [
         "Další"
@@ -2616,8 +2613,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Navyšte na ${ BRAND_NAME } ${ planName } pro zachování sdílení souborů s přístupem k úpravám"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Navyšte na ${ planName } pro zachování sdílení souborů s přístupem k úpravám"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Navyšte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
@@ -3833,8 +3830,11 @@
       "Create new album": [
         "Vytvořit nové album"
       ],
-      "Rename": [
-        "Přejmenovat"
+      "Create new shared album": [
+        "Vytvořte nové sdílené album"
+      ],
+      "Rename album": [
+        "Přejmenovat album"
       ],
       "Security Center": [
         "Bezpečnostní centrum"
@@ -7368,29 +7368,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tarify začínají od ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7412,6 +7389,29 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tarify začínají od ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7612,9 +7612,6 @@
       ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
-      ],
-      "Breach alerts": [
-        "Upozornění na úniky informací"
       ],
       "Calendar sharing": [
         "Sdílení kalendáře"
@@ -10147,47 +10144,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -10460,6 +10416,47 @@
         "Váš vlastní krátký e-mailový alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Jste si jistý?"
@@ -10489,6 +10486,44 @@
     "Subscription saving": {
       "Save": [
         "Ušetříte"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Zde se zobrazí sdílená alba s vámi"
+      ],
+      "Albums you've shared will appear here": [
+        "Zde se zobrazí vámi sdílená alba"
+      ],
+      "Your favorited photos will appear here": [
+        "Zde se zobrazí vaše oblíbené fotky"
+      ],
+      "Your Live Photos will appear here": [
+        "Zde se zobrazí vaše živé fotky"
+      ],
+      "Your panorama photos will appear here": [
+        "Zde se zobrazí vaše panoramata"
+      ],
+      "Your photo bursts will appear here": [
+        "Zde se zobrazí vaše sekvence"
+      ],
+      "Your portraits photos will appear here": [
+        "Zde se zobrazí vaše portréty"
+      ],
+      "Your RAW photos will appear here": [
+        "Zde se zobrazí vaše fotky RAW"
+      ],
+      "Your screenshots will appear here": [
+        "Zde se zobrazí vaše snímky obrazovky"
+      ],
+      "Your selfies photos will appear here": [
+        "Zde se zobrazí vaše selfie"
+      ],
+      "Your tagged photos will appear here": [
+        "Zde se zobrazí vaše označené fotky"
+      ],
+      "Your videos will appear here": [
+        "Zde se zobrazí vaše videa"
       ]
     },
     "Success": {
@@ -11202,11 +11237,47 @@
       "Night theme": [
         "Noční motiv"
       ],
+      "No albums shared with me": [
+        "Žádná alba sdílena se mnou"
+      ],
       "No breaches detected": [
         "Žádné úniky informací nebyly zjištěny"
       ],
+      "No bursts": [
+        "Žádné sekvence"
+      ],
+      "No favorites": [
+        "Žádné oblíbené"
+      ],
+      "No Live Photos": [
+        "Žádné živé fotky"
+      ],
+      "No panorama": [
+        "Žádná panoramata"
+      ],
+      "No photos": [
+        "Žádné fotky"
+      ],
+      "No portraits": [
+        "Žádné portréty"
+      ],
+      "No RAW": [
+        "Žádné fotky RAW"
+      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ],
+      "No screenshots": [
+        "Žádné snímky obrazovky"
+      ],
+      "No selfies": [
+        "Žádné selfie"
+      ],
+      "No shared albums": [
+        "Žádná sdílená alba"
+      ],
+      "No videos": [
+        "Žádná videa"
       ],
       "Notes": [
         "Poznámky"

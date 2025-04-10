@@ -1250,7 +1250,7 @@
         "Überprüfung überspringen"
       ],
       "Snooze": [
-        "Aufschieben"
+        "Später lesen"
       ],
       "Star": [
         "Markieren"
@@ -1320,6 +1320,10 @@
       ],
       "Trust": [
         "Vertrauen"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -8395,11 +8399,11 @@
       "Always move sender's emails": [
         "Nachrichten dieses Absenders immer verschieben"
       ],
-      "AND": [
-        "UND"
-      ],
       "And": [
         "Und"
+      ],
+      "AND": [
+        "UND"
       ],
       "and": [
         "und"
@@ -8629,11 +8633,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "WENN"
-      ],
       "If": [
         "Wenn"
+      ],
+      "IF": [
+        "WENN"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -8746,14 +8750,14 @@
       "Optional": [
         "Optional"
       ],
-      "OR": [
-        "ODER"
-      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
+      ],
+      "OR": [
+        "ODER"
       ],
       "Original link": [
         "Original-Link"
@@ -9565,29 +9569,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } holen"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -9609,6 +9590,29 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } holen"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: feature": {
@@ -9775,9 +9779,6 @@
       ],
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
-      ],
-      "Breach alerts": [
-        "Warnung bei Datendiebstahl"
       ],
       "Calendar sharing": [
         "Kalenderfreigabe"
@@ -12317,47 +12318,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -12616,6 +12576,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -13131,7 +13132,7 @@
         "${ emailsCount } E-Mail-Adressen"
       ],
       "${ feature } is now active": [
-        "${ feature } ist jetzt aktiv."
+        "${ feature } ist jetzt aktiv"
       ],
       "${ unreads } unread message": [
         "${ unreads } ungelesene Nachricht",
@@ -13214,7 +13215,7 @@
         "Anhänge"
       ],
       "Auto-deletion is active": [
-        "Automatisches Löschen ist aktiv."
+        "Automatisches Löschen ist aktiv"
       ],
       "Bad time for this email?": [
         "Schlechte Zeit für diese E-Mail?"
@@ -13289,7 +13290,7 @@
         "Unterhaltungsliste"
       ],
       "Coupon": [
-        "Rabattcode"
+        "Gutschein"
       ],
       "Craft better emails": [
         "Bessere E-Mails erstellen"
@@ -13483,19 +13484,19 @@
         "Hilfe und Feedback"
       ],
       "Help center": [
-        "Hilfecenter"
+        "Hilfezentrum"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Verstecke deine E-Mail-Adresse mit ${ PASS_APP_NAME }"
       ],
       "High security for your account": [
-        "Hochsicherheit für dein Konto"
+        "Hohe Sicherheit für dein Konto"
       ],
       "How does it all work?": [
         "Wie funktioniert das Ganze?"
       ],
       "How to update your email address": [
-        "So aktualisierst du deine E-Mail Adresse"
+        "So aktualisierst du deine E-Mail-Adresse"
       ],
       "Human verification": [
         "Captcha"
@@ -13526,7 +13527,7 @@
         "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
       ],
       "Information exposed in breach": [
-        "Informationen, die bei einem Datenleck offengelegt wurden"
+        "Informationen, die beim Datenleck offengelegt wurden"
       ],
       "Insert contacts": [
         "Kontakte einfügen"
@@ -13640,7 +13641,7 @@
         "Eine zum Versenden geplante Nachricht wird verschoben"
       ],
       "Moving a snoozed message": [
-        "Bewege eine aufgeschobene Nachricht"
+        "Verschieben einer aufgeschobenen Nachricht"
       ],
       "Need more aliases?": [
         "Brauchst du mehr Aliasse?"
@@ -13676,7 +13677,7 @@
         "Keine E-Mail-Tracker gefunden"
       ],
       "No-reply address detected": [
-        "No-reply-Adresse erkannt"
+        "No-Reply-Adresse erkannt"
       ],
       "Notes": [
         "Notizen"
@@ -13835,7 +13836,7 @@
         "Wiederherstellungsphrase festlegen"
       ],
       "Set up ${ protonDuoPlanName }": [
-        "Richte ${ protonDuoPlanName } ein"
+        "${ protonDuoPlanName } einrichten"
       ],
       "Set up your family account": [
         "Richte dein Family-Konto ein"
@@ -13853,7 +13854,7 @@
         "Abmelden"
       ],
       "Snooze": [
-        "Aufschieben"
+        "Später lesen"
       ],
       "Snooze message": [
         "Nachricht aufschieben"
@@ -13932,7 +13933,7 @@
         "VPN erklärt"
       ],
       "Want to snooze any time?": [
-        "Möchtest du irgendwann aufschieben?"
+        "Möchtest du jederzeit aufschieben?"
       ],
       "Warning": [
         "Warnhinweis"
@@ -13963,7 +13964,7 @@
         "Wann ist es am wichtigsten, ein VPN zu verwenden?"
       ],
       "You can now create unlimited folders and labels": [
-        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
@@ -13978,10 +13979,10 @@
         "Deine exponierten Informationen"
       ],
       "Your free trial has ended": [
-        "Deine kostenlose Testversion ist abgelaufen."
+        "Deine kostenlose Testversion ist abgelaufen"
       ],
       "Your shorter address is now ready": [
-        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig"
       ]
     },
     "Today icon tooltip in mini calendar": {

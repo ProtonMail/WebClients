@@ -3116,9 +3116,6 @@
       "Email address is required": [
         "E-postadresse kreves"
       ],
-      "Email is not valid": [
-        "E-post er ikke gyldig"
-      ],
       "Ends on date cannot be empty": [
         "Sluttdato kan ikke være tom"
       ],
@@ -3166,9 +3163,6 @@
       ],
       "IMAP server is required": [
         "IMAP-tjener kreves"
-      ],
-      "Incorrect username": [
-        "Uriktig brukernavn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Tiltenkt mottaker støtter ikke kalenderdeling"
@@ -3261,9 +3255,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
       ],
-      "Not a valid number": [
-        "Ikke et gyldig tall"
-      ],
       "Number of occurrences cannot be empty": [
         "Antall forekomster kan ikke være tomt"
       ],
@@ -3280,9 +3271,6 @@
       ],
       "Password is required": [
         "Passord kreves"
-      ],
-      "Passwords do not match": [
-        "Passordene samsvarer ikke"
       ],
       "Payment process canceled": [
         "Betalingsprosessen ble avbrutt"
@@ -3385,9 +3373,6 @@
       "The amount due has changed. Please try again.": [
         "Det forfalte beløpet er endret. Prøv igjen."
       ],
-      "The email addresses do not match": [
-        "E-postadressene samsvarer ikke"
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldig. Velg et annet navn."
       ],
@@ -3415,14 +3400,8 @@
       "There was an error when exporting the contacts vCards": [
         "Det oppsto en feil under eksport av kontaktenes vCards."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
-      ],
       "This field is required": [
         "Dette feltet er obligatorisk"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
@@ -3436,9 +3415,6 @@
       "Trusted keys are not valid for sending": [
         "Klarerte nøkler er ikke gyldige for sending."
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Prøv å bruke bare bokstaver, tall og _.-"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
       ],
@@ -3450,12 +3426,6 @@
       ],
       "Unknown payment token status": [
         "Ukjent status for betalingstoken"
-      ],
-      "Username must begin with a letter or digit": [
-        "Brukernavn må begynne med en bokstav eller ett tall"
-      ],
-      "Username must end with a letter or digit": [
-        "Brukernavn må ende med en bokstav eller ett tall"
       ],
       "Validation error": [
         "Valideringsfeil"
@@ -6785,26 +6755,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -6826,6 +6776,26 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6992,9 +6962,6 @@
       ],
       "Available on all platforms": [
         "Tilgjengelig på alle plattformer"
-      ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -9290,47 +9257,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -9589,6 +9515,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10618,16 +10585,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Delt ende-til-ende-kryptert med bekreftet kontakt"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prøv et kortere brukernavn (maks ${ n } tegn)",
-        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     },
     "Video control": {

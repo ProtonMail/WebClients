@@ -4400,6 +4400,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Solo tiene que confirmar la selección y nosotros haremos el resto."
       ],
+      "Just now": [
+        "Justo ahora"
+      ],
       "Keep your files secure with end-to-end encryption.": [
         "Mantenga sus archivos seguros con cifrado de extremo a extremo."
       ],
@@ -4926,6 +4929,9 @@
       "Transfer skipped for folder \"${ folderName }\"": [
         "Transferencia omitida para la carpeta \"${ folderName }\""
       ],
+      "Trash": [
+        "Papelera"
+      ],
       "Trashed": [
         "En la papelera"
       ],
@@ -5023,7 +5029,7 @@
         "Cuando se abra la ventana de diálogo, seleccione «PDF» en la esquina inferior izquierda y luego pulse Guardar."
       ],
       "When working remotely": [
-        "Al trabajar remotamente"
+        "Al trabajar de forma remota"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Cuando se conecta a una VPN, usa tecnología de cifrado para ocultar su dirección IP (un código único asignado a su dispositivo)."
@@ -6520,9 +6526,6 @@
       ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
-      ],
-      "Breach alerts": [
-        "Alertas de vulneraciones"
       ],
       "Calendar sharing": [
         "Calendarios compartidos"
@@ -8750,6 +8753,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo personalizado",
+        "${ planNumberOfDomains } dominios de correo personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo",
+        "${ planNumberOfEmails } direcciones de correo"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -8789,25 +8811,6 @@
       ],
       "Your privacy is our mission": [
         "Su privacidad es nuestra misión"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo personalizado",
-        "${ planNumberOfDomains } dominios de correo personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo",
-        "${ planNumberOfEmails } direcciones de correo"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {

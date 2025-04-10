@@ -356,10 +356,6 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
-      "Download photo": [
-        "Ladda ner foto",
-        "Ladda ner foton"
-      ],
       "Download without scanning": [
         "Ladda ner utan skanning"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Nytt meddelande"
+      ],
+      "New shared album": [
+        "Nytt delat album"
       ],
       "Next": [
         "Nästa"
@@ -2583,9 +2582,6 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Uppgradera till ${ BRAND_NAME } ${ planName } för att fortsätta dela filer med redigeringsåtkomst"
-      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Uppgradera ditt konto för att aktivera ${ PROTON_SENTINEL_NAME }, vår banbrytande AI-drivna säkerhetslösning med dedikerad expertsupport dygnet runt."
       ],
@@ -3768,8 +3764,8 @@
       "Create new album": [
         "Skapa nytt album"
       ],
-      "Rename": [
-        "Byt namn"
+      "Create new shared album": [
+        "Skapa nytt delat album"
       ],
       "Security Center": [
         "Säkerhetscenter"
@@ -5960,6 +5956,10 @@
       "Your previous recovery phrase": [
         "Din föregående återställningsfras"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
+        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ],
@@ -7207,29 +7207,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket startar från ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7251,6 +7228,29 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket startar från ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7417,9 +7417,6 @@
       ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
-      ],
-      "Breach alerts": [
-        "Intrångsvarningar"
       ],
       "Calendar sharing": [
         "Kalenderdelning"
@@ -9819,47 +9816,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10120,6 +10076,47 @@
         "Ditt egna korta @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Är du säker?"
@@ -10149,6 +10146,23 @@
     "Subscription saving": {
       "Save": [
         "Spara"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Album delat med dig kommer visas här"
+      ],
+      "Albums you've shared will appear here": [
+        "Album du delat kommer visas här"
+      ],
+      "Your favorited photos will appear here": [
+        "Dina favoritfoton kommer visas här"
+      ],
+      "Your screenshots will appear here": [
+        "Dina skärmdumpar kommer visas här"
+      ],
+      "Your videos will appear here": [
+        "Dina videoklipp kommer visas här"
       ]
     },
     "Success": {
@@ -10822,11 +10836,35 @@
       "Night theme": [
         "Nattema"
       ],
+      "No albums shared with me": [
+        "Inga album delade med mig"
+      ],
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
+      "No favorites": [
+        "Inga favoriter"
+      ],
+      "No photos": [
+        "Inga foton"
+      ],
+      "No portraits": [
+        "Inga porträtt"
+      ],
       "No results found": [
         "Inga resultat hittades"
+      ],
+      "No screenshots": [
+        "Inga skärmdumpar"
+      ],
+      "No selfies": [
+        "Inga selfies"
+      ],
+      "No shared albums": [
+        "Inga delade album"
+      ],
+      "No videos": [
+        "Inga videoklipp"
       ],
       "Notes": [
         "Anteckningar"

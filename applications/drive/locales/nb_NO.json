@@ -356,10 +356,6 @@
       "Download logs": [
         "Last ned logger"
       ],
-      "Download photo": [
-        "Last ned bilde",
-        "Last ned bilder"
-      ],
       "Download without scanning": [
         "Last ned uten å skanne"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Ny melding"
+      ],
+      "New shared album": [
+        "Nytt delt album"
       ],
       "Next": [
         "Neste"
@@ -2586,9 +2585,6 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Oppgrader til ${ BRAND_NAME } ${ planName } for å fortsette å dele filer med redigeringstilgang"
-      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Oppgrader kontoen din for å aktivere ${ PROTON_SENTINEL_NAME }, vår banebrytende AI-drevne sikkerhetsløsning med dedikert 24/7 ekspertstøtte."
       ],
@@ -3771,8 +3767,8 @@
       "Create new album": [
         "Opprett nytt album"
       ],
-      "Rename": [
-        "Gi nytt navn"
+      "Create new shared album": [
+        "Opprett nytt delt album"
       ],
       "Security Center": [
         "Sikkerhetssenter"
@@ -7219,29 +7215,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planer starter fra ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7263,6 +7236,29 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planer starter fra ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7429,9 +7425,6 @@
       ],
       "Available on all platforms": [
         "Tilgjengelig på alle plattformer"
-      ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -9838,47 +9831,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -10139,6 +10091,47 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -10168,6 +10161,44 @@
     "Subscription saving": {
       "Save": [
         "Spar"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Album som er delt med deg, vises her"
+      ],
+      "Albums you've shared will appear here": [
+        "Albumene du har delt, vises her"
+      ],
+      "Your favorited photos will appear here": [
+        "Dine favorittbilder vil vises her"
+      ],
+      "Your Live Photos will appear here": [
+        "Dine Live-bilder vil vises her"
+      ],
+      "Your panorama photos will appear here": [
+        "Panoramabildene dine vil vises her"
+      ],
+      "Your photo bursts will appear here": [
+        "Fotoseriene dine vises her"
+      ],
+      "Your portraits photos will appear here": [
+        "Portrettbildene dine vises her"
+      ],
+      "Your RAW photos will appear here": [
+        "RAW-bildene dine vises her"
+      ],
+      "Your screenshots will appear here": [
+        "Skjermbildene dine vil vises her"
+      ],
+      "Your selfies photos will appear here": [
+        "Dine selfier vil vises her"
+      ],
+      "Your tagged photos will appear here": [
+        "Dine taggede bilder vises her"
+      ],
+      "Your videos will appear here": [
+        "Videoene dine vil vises her"
       ]
     },
     "Success": {
@@ -10841,11 +10872,47 @@
       "Night theme": [
         "Natt-tema"
       ],
+      "No albums shared with me": [
+        "Ingen album delt med meg"
+      ],
       "No breaches detected": [
         "Ingen sikkerhetsbrudd oppdaget"
       ],
+      "No bursts": [
+        "Ingen fotoserier"
+      ],
+      "No favorites": [
+        "Ingen favoritter"
+      ],
+      "No Live Photos": [
+        "Ingen Live-bilder"
+      ],
+      "No panorama": [
+        "Ingen panorama"
+      ],
+      "No photos": [
+        "Ingen bilder"
+      ],
+      "No portraits": [
+        "Ingen portretter"
+      ],
+      "No RAW": [
+        "Ingen RAW"
+      ],
       "No results found": [
         "Ingen resultater funnet"
+      ],
+      "No screenshots": [
+        "Ingen skjermbilder"
+      ],
+      "No selfies": [
+        "Ingen selfier"
+      ],
+      "No shared albums": [
+        "Ingen delte album"
+      ],
+      "No videos": [
+        "Ingen videoer"
       ],
       "Notes": [
         "Notater"
