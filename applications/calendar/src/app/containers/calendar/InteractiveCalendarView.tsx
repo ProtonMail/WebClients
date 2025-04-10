@@ -89,7 +89,7 @@ import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/sha
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { SentryCalendarInitiatives, traceError, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { type Address } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -1455,8 +1455,7 @@ const InteractiveCalendarView = ({
                             }
                         )
                     ).catch((e) => {
-                        // TODO add Sentry here
-                        console.error('error', e);
+                        traceInitiativeError(SentryCalendarInitiatives.RSVP_NOTE, e);
                         return [];
                     });
 
@@ -1680,7 +1679,6 @@ const InteractiveCalendarView = ({
             isSavingEvent.current = true;
             if (isChangePartstat && selfEmail && inviteActions.partstat) {
                 oldPartstat = getCurrentPartstat(uniqueId, selfEmail);
-                // TODO: Update RSVP `comment` in the events cache ?
                 dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: inviteActions.partstat }));
             }
 
@@ -2477,7 +2475,6 @@ const InteractiveCalendarView = ({
                                     return;
                                 }
 
-                                // TODO: Should we update model with comment ?
                                 const newTemporaryModel = getUpdateModel({
                                     viewEventData: targetEvent.data,
                                     partstat,

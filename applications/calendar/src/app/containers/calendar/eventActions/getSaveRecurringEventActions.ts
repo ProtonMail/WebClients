@@ -656,7 +656,6 @@ const getSaveRecurringEventActions = async ({
                             removedAttendeesEmails: updatedSingleEditInviteActions.removedAttendees?.map(
                                 unary(getAttendeeEmail)
                             ),
-                            // TODO Check there if or not because isBreakingChange is harcoded to false few lines above
                             resetNotes: isBreakingChange,
                         });
                         updateSingleEditOperations.push(updateSingleEditOperation);
