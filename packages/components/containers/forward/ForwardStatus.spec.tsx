@@ -7,7 +7,7 @@ import ForwardStatus from './ForwardStatus';
 
 describe('ForwardStatus', () => {
     const setup = (state: ForwardingState) => {
-        const utils = render(<ForwardStatus forward={{ State: state } as OutgoingAddressForwarding} />);
+        const utils = render(<ForwardStatus forwardingConfig={{ State: state } as OutgoingAddressForwarding} />);
         return { ...utils };
     };
     describe('when forward is pending', () => {

@@ -62,7 +62,7 @@ const IncomingForwardTable = ({ addresses, loading, forwardings, chainedEmails }
                                 </div>
                             </TableCell>
                             <TableCell label={c('email_forwarding_2023: Header').t`Status`}>
-                                <ForwardStatus forward={forward} />
+                                <ForwardStatus forwardingConfig={forward} />
                             </TableCell>
                             <TableCell>
                                 <IncomingForwardActions forward={forward} addresses={addresses} />
