@@ -23,7 +23,7 @@ export const queryDeviceRename = (
             SyncState: 1,
         },
         Share: {
-            Name: data.Name,
+            Name: data.Name, // TODO: deprecated and should be removed
         },
     },
 });

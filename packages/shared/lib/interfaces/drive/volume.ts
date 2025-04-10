@@ -3,8 +3,6 @@ import type { ShareURL } from './sharing';
 export interface CreateDriveVolume {
     AddressID: string;
     AddressKeyID: string;
-    VolumeName: string;
-    ShareName: string;
     FolderName: string;
     SharePassphrase: string;
     ShareKey: string;
