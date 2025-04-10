@@ -150,17 +150,4 @@ describe('useDefaultShare', () => {
             expect(isAvailable).toBeFalsy();
         });
     });
-
-    it('says share is not available if soft deleted', async () => {
-        mockGetShare.mockImplementation(async () => {
-            return {
-                isVolumeSoftDeleted: true,
-            };
-        });
-
-        await act(async () => {
-            const isAvailable = await hook.current.isShareAvailable(ac.signal, 'shareId');
-            expect(isAvailable).toBeFalsy();
-        });
-    });
 });

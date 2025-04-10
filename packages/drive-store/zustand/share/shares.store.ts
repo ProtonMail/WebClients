@@ -33,7 +33,7 @@ export const useSharesStore = create<SharesState>()(
         getLockedShares: () => {
             const { shares } = get();
             return Object.values(shares)
-                .filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted && !share.forASV)
+                .filter((share) => share.isLocked && share.isDefault && !share.forASV)
                 .map((defaultShare) => ({
                     defaultShare,
                     devices: Object.values(shares).filter(
@@ -81,12 +81,12 @@ export const useSharesStore = create<SharesState>()(
 );
 
 function findDefaultShare(shares: (Share | ShareWithKey)[]) {
-    const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
+    const share = shares.find((share) => share.isDefault && !share.isLocked);
     return share;
 }
 
 export function findDefaultShareId(shares: (Share | ShareWithKey)[]) {
-    const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
+    const share = shares.find((share) => share.isDefault && !share.isLocked);
     return share ? share.shareId : undefined;
 }
 

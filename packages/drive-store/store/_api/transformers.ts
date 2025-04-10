@@ -1,7 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
-import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
@@ -23,7 +22,7 @@ import type { DriveEvents } from '../_events';
 import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
-import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
+import { hasCustomPassword, hasGeneratedPasswordIncluded, ShareType } from '../_shares';
 import type {
     Share,
     ShareExternalInvitation,
@@ -206,8 +205,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         volumeId: share.VolumeID,
         creator: share.Creator,
         isLocked: share.Locked,
-        isDefault: isMainShare(share),
-        isVolumeSoftDeleted: share.VolumeSoftDeleted,
+        isDefault: share.Type === ShareType.default,
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
         type: share.Type,
         state: share.State,
