@@ -356,10 +356,6 @@
       "Download logs": [
         "Günlüğü indir"
       ],
-      "Download photo": [
-        "Fotoğrafı indir",
-        "Fotoğrafları indir"
-      ],
       "Download without scanning": [
         "Taramadan indir"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Yeni ileti"
+      ],
+      "New shared album": [
+        "Yeni paylaşılan albüm"
       ],
       "Next": [
         "İleri"
@@ -2586,8 +2585,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Dosya paylaşmayı sürdürebilmek ve düzenleme erişimi sağlamak için ${ BRAND_NAME } ${ planName } tarifesine yükseltin"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Dosya paylaşmayı sürdürebilmek ve düzenleme erişimi sağlamak için ${ planName } tarifesine yükseltin"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "${ PROTON_SENTINEL_NAME }, 7/24 size özel uzman desteği olan, yapay zeka temelli son teknoloji güvenlik çözümümüzü kullanmak için tarifenizi yükseltin."
@@ -3771,8 +3770,11 @@
       "Create new album": [
         "Yeni albüm oluştur"
       ],
-      "Rename": [
-        "Yeniden adlandır"
+      "Create new shared album": [
+        "Yeni paylaşılan albüm oluştur"
+      ],
+      "Rename album": [
+        "Albümü yeniden adlandır"
       ],
       "Security Center": [
         "Güvenlik merkezi"
@@ -7162,29 +7164,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus } tutarından başlayan tarifeler"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7206,6 +7185,29 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus } tutarından başlayan tarifeler"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -7372,9 +7374,6 @@
       ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
-      ],
-      "Breach alerts": [
-        "Veri sızıntısı uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -9781,47 +9780,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -10082,6 +10040,47 @@
         "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -10111,6 +10110,44 @@
     "Subscription saving": {
       "Save": [
         "Kazancınız"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Sizinle paylaşılan albümler burada görünecek"
+      ],
+      "Albums you've shared will appear here": [
+        "Paylaştığınız albümler burada görünecek"
+      ],
+      "Your favorited photos will appear here": [
+        "Favori fotoğraflarınız burada görünecek"
+      ],
+      "Your Live Photos will appear here": [
+        "Live Photo çekimleriniz burada görünecek"
+      ],
+      "Your panorama photos will appear here": [
+        "Panorama fotoğraflarınız burada görünecek"
+      ],
+      "Your photo bursts will appear here": [
+        "Seri fotoğraf çekimleriniz burada görünecek"
+      ],
+      "Your portraits photos will appear here": [
+        "Portre fotoğraflarınız burada görünecek"
+      ],
+      "Your RAW photos will appear here": [
+        "RAW fotoğraflarınız burada görünecek"
+      ],
+      "Your screenshots will appear here": [
+        "Ekran görüntüleriniz burada görünecek"
+      ],
+      "Your selfies photos will appear here": [
+        "Özçekim fotoğraflarınız burada görünecek"
+      ],
+      "Your tagged photos will appear here": [
+        "Etiketlenen fotoğraflarınız burada görünecek"
+      ],
+      "Your videos will appear here": [
+        "Videolarınız burada görünecek"
       ]
     },
     "Success": {
@@ -10784,11 +10821,47 @@
       "Night theme": [
         "Gece teması"
       ],
+      "No albums shared with me": [
+        "Benimle paylaşılan albüm yok"
+      ],
       "No breaches detected": [
         "Herhangi bir veri sızıntısı yok"
       ],
+      "No bursts": [
+        "Seri çekim yok"
+      ],
+      "No favorites": [
+        "Beğenilen öğe yok"
+      ],
+      "No Live Photos": [
+        "Live Photo Yok"
+      ],
+      "No panorama": [
+        "Panorama yok"
+      ],
+      "No photos": [
+        "Herhangi bir fotoğraf yok"
+      ],
+      "No portraits": [
+        "Portre yok"
+      ],
+      "No RAW": [
+        "RAW yok"
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "No screenshots": [
+        "Ekran görüntüsü yok"
+      ],
+      "No selfies": [
+        "Özçekim yok"
+      ],
+      "No shared albums": [
+        "Paylaşılan albüm yok"
+      ],
+      "No videos": [
+        "Video yok"
       ],
       "Notes": [
         "Notlar"
