@@ -7,6 +7,7 @@ import unary from '@proton/utils/unary';
 import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 import { buildMailTo, canonicalizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { omit } from '../helpers/object';
+import { SentryCalendarInitiatives, traceInitiativeError } from '../helpers/sentry';
 import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
 import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
 import type {
@@ -103,9 +104,6 @@ export const toInternalAttendee = (
 
         let comment = extra.Comment?.Message;
 
-        // TODO
-        // - Report decryption errors to sentry
-        // - Handle decryption errors gracefully
         if (
             sharedSessionKey &&
             extra.Comment?.Message &&
@@ -117,46 +115,37 @@ export const toInternalAttendee = (
                 return attendee;
             }
 
-            const attendeeVerificationPreferences = await getAttendeeVerificationPreferences(attendeeEmail);
-
-            const decryptedMessageResult = await getDecryptedRSVPComment({
-                attendeeVerificationPreferences,
-                encryptedMessage: extra.Comment.Message,
-                eventUID,
-                sharedSessionKey,
-            });
-
-            // TODO: Manage decription signature cases
-            // - No verifying keys
-            // - Signed and valid
-            // - Signed and invalid
-            // - Not signed
-            //
-            // TODO: Also sanitize from here ?
-            // TODO: REmnove logs
-            //
-            // use `getEventVerificationStatus` for mapping the following cases:
-            // VERIFICATION_STATUS.NOT_SIGNED ->  EVENT_VERIFICATION_STATUS.FAILED
-            // VERIFICATION_STATUS.SIGNED_AND_VALID -> EVENT_VERIFICATION_STATUS.SUCCESSFUL
-            // VERIFICATION_STATUS.SIGNED_AND_INVALID -> EVENT_VERIFICATION_STATUS.FAILED
-            // no verification keys -> discard VERIFICATION_STATUS -> return EVENT_VERIFICATION_STATUS.NOT_VERIFIED
-            comment = decryptedMessageResult.data;
-
-            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
-                console.log(attendeeEmail, 'This note is not SIGNED', decryptedMessageResult.data, {
-                    hasFetchedAttendeeVeficationKey: !!attendeeVerificationPreferences?.verifyingKeys?.length,
+            try {
+                const attendeeVerificationPreferences = await getAttendeeVerificationPreferences(attendeeEmail);
+                const decryptedMessageResult = await getDecryptedRSVPComment({
+                    attendeeVerificationPreferences,
+                    encryptedMessage: extra.Comment.Message,
+                    eventUID,
+                    sharedSessionKey,
                 });
-            }
 
-            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
-                console.log(attendeeEmail, 'note SIGNED and INVALID', decryptedMessageResult.data, {
-                    hasFetchedAttendeeVeficationKey: !!attendeeVerificationPreferences?.verifyingKeys?.length,
-                    error: decryptedMessageResult.verificationErrors,
-                });
-            }
+                comment = decryptedMessageResult.data;
 
-            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                console.log(attendeeEmail, 'This note is SIGNED and VALID', decryptedMessageResult.data);
+                // TODO Remove logs
+                if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
+                    console.log(attendeeEmail, 'This note is not SIGNED', decryptedMessageResult.data, {
+                        hasFetchedAttendeeVeficationKey: !!attendeeVerificationPreferences?.verifyingKeys?.length,
+                    });
+                }
+
+                if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+                    console.log(attendeeEmail, 'note SIGNED and INVALID', decryptedMessageResult.data, {
+                        hasFetchedAttendeeVeficationKey: !!attendeeVerificationPreferences?.verifyingKeys?.length,
+                        error: decryptedMessageResult.verificationErrors,
+                    });
+                }
+
+                if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    console.log(attendeeEmail, 'This note is SIGNED and VALID', decryptedMessageResult.data);
+                }
+            } catch (e) {
+                traceInitiativeError(SentryCalendarInitiatives.RSVP_NOTE, e);
+                comment = undefined;
             }
         }
 
