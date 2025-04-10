@@ -77,14 +77,12 @@ const CalendarInviteButtons = ({
         });
         startERRTMetric('accept');
         const promise = withLoadingAccept(accept()).then(() => {
-            // Update UI only after successful confirmation
             setSelectedAnswer(targetPartstat);
             stopERRTMetric();
         });
         return promise;
     };
     const onTentative = () => {
-        // Store the intended state but don't update UI yet
         const targetPartstat = ATTENDEE_RESPONE_TYPE.TENTATIVE;
 
         void sendCalendarInviteReport(api, {
@@ -93,14 +91,12 @@ const CalendarInviteButtons = ({
         });
         startERRTMetric('tentative');
         const promise = withLoadingTentative(acceptTentatively()).then(() => {
-            // Update UI only after successful confirmation
             setSelectedAnswer(targetPartstat);
             stopERRTMetric();
         });
         return promise;
     };
     const onDecline = () => {
-        // Store the intended state but don't update UI yet
         const targetPartstat = ATTENDEE_RESPONE_TYPE.DECLINED;
 
         void sendCalendarInviteReport(api, {
@@ -109,7 +105,6 @@ const CalendarInviteButtons = ({
         });
         startERRTMetric('decline');
         const promise = withLoadingDecline(decline()).then(() => {
-            // Update UI only after successful confirmation
             setSelectedAnswer(targetPartstat);
             stopERRTMetric();
         });
