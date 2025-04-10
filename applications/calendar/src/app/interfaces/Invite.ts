@@ -13,8 +13,7 @@ import type { AugmentedSendPreferences } from '../containers/calendar/interface'
 
 export enum INVITE_ACTION_TYPES {
     NONE,
-    CHANGE_PARTSTAT,
-    // CHANGE_COMMENT,
+    CHANGE_PARTSTAT, // attendee changed RSVP response and/or RSVP comment
     DECLINE_INVITATION,
     DECLINE_DISABLED,
     SEND_INVITATION, // organizer creates new invitation, or just adds/removes attendees
