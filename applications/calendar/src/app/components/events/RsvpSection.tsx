@@ -115,29 +115,13 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     };
 
     const handleSend = () => {
-        const commentChanged = model.Comment !== userComment;
-        const partStatChanged = model.Status !== userPartstat;
-
         // Create oldPartstatData to track changes
         const oldPartstatData = {
             Status: userPartstat,
             Comment: userComment ?? undefined,
         };
 
-        // TODO factorize in case we don't need specific actions later
-        if (commentChanged && partStatChanged) {
-            return withLoadingSend(
-                handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData)
-            );
-        } else if (commentChanged && !partStatChanged) {
-            return withLoadingSend(
-                handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData)
-            );
-        } else {
-            return withLoadingSend(
-                handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData)
-            );
-        }
+        return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData));
     };
 
     const handleCancel = () => {
@@ -169,6 +153,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     };
 
     useEffect(() => {
+        // If userPartstat prop is different than state status, rely on property
         if (userPartstat !== model.Status) {
             setModel((currentModel) => ({
                 ...currentModel,
