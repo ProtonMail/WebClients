@@ -27,7 +27,7 @@ const DowngradeSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
             redirectToCancellationFlow();
             sendStartCancellationSectionReport();
         } else {
-            void withSubmitting(cancelSubscription().catch(noop));
+            void withSubmitting(cancelSubscription({}).catch(noop));
         }
     };
 
