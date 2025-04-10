@@ -356,10 +356,6 @@
       "Download logs": [
         "Descargar los registros"
       ],
-      "Download photo": [
-        "Descargar la foto",
-        "Descargar las fotos"
-      ],
       "Download without scanning": [
         "Descargar sin escanear"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Mensaje nuevo"
+      ],
+      "New shared album": [
+        "Álbum compartido nuevo"
       ],
       "Next": [
         "Siguiente"
@@ -2586,8 +2585,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Mejore a ${ BRAND_NAME } ${ planName } para seguir compartiendo archivos con acceso para editar."
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Mejore a ${ planName } para seguir compartiendo archivos con acceso de edición"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Mejore la cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de vanguardia basada en IA con soporte experto dedicado las 24 horas, los 7 días de la semana."
@@ -3771,8 +3770,11 @@
       "Create new album": [
         "Crear un álbum"
       ],
-      "Rename": [
-        "Renombrar"
+      "Create new shared album": [
+        "Crear un álbum compartido"
+      ],
+      "Rename album": [
+        "Cambiar el nombre del álbum"
       ],
       "Security Center": [
         "Centro de Seguridad"
@@ -5735,7 +5737,7 @@
         "¿Qué quiere hacer?"
       ],
       "When working remotely": [
-        "Al trabajar remotamente"
+        "Al trabajar de forma remota"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Cuando se conecta a una VPN, usa tecnología de cifrado para ocultar su dirección IP (un código único asignado a su dispositivo)."
@@ -7225,29 +7227,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planes desde ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -7269,6 +7248,29 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planes desde ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7435,9 +7437,6 @@
       ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
-      ],
-      "Breach alerts": [
-        "Alertas de vulneraciones"
       ],
       "Calendar sharing": [
         "Calendarios compartidos"
@@ -9844,47 +9843,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -10145,6 +10103,47 @@
         "Su alias de correo electrónico @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "¿Está seguro?"
@@ -10174,6 +10173,44 @@
     "Subscription saving": {
       "Save": [
         "Ahorra"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Los álbumes compartidos con usted aparecerán aquí"
+      ],
+      "Albums you've shared will appear here": [
+        "Los álbumes que ha compartido aparecerán aquí"
+      ],
+      "Your favorited photos will appear here": [
+        "Sus fotos favoritas aparecerán aquí"
+      ],
+      "Your Live Photos will appear here": [
+        "Sus fotos en vivo aparecerán aquí"
+      ],
+      "Your panorama photos will appear here": [
+        "Sus fotos panorámicas aparecerán aquí"
+      ],
+      "Your photo bursts will appear here": [
+        "Sus ráfagas de fotos aparecerán aquí"
+      ],
+      "Your portraits photos will appear here": [
+        "Sus fotos de retratos aparecerán aquí"
+      ],
+      "Your RAW photos will appear here": [
+        "Sus fotos RAW aparecerán aquí"
+      ],
+      "Your screenshots will appear here": [
+        "Sus capturas de pantalla aparecerán aquí"
+      ],
+      "Your selfies photos will appear here": [
+        "Sus selfies aparecerán aquí"
+      ],
+      "Your tagged photos will appear here": [
+        "Aquí aparecerán sus fotos etiquetadas"
+      ],
+      "Your videos will appear here": [
+        "Sus videos aparecerán aquí"
       ]
     },
     "Success": {
@@ -10847,11 +10884,47 @@
       "Night theme": [
         "Tema de noche"
       ],
+      "No albums shared with me": [
+        "Sin álbumes compartidos conmigo"
+      ],
       "No breaches detected": [
         "No se detectaron vulneraciones"
       ],
+      "No bursts": [
+        "Sin ráfagas"
+      ],
+      "No favorites": [
+        "Sin favoritos"
+      ],
+      "No Live Photos": [
+        "Sin fotos en vivo"
+      ],
+      "No panorama": [
+        "Sin panorámicas"
+      ],
+      "No photos": [
+        "Sin fotos"
+      ],
+      "No portraits": [
+        "Sin retratos"
+      ],
+      "No RAW": [
+        "Sin RAW"
+      ],
       "No results found": [
         "No se encontraron resultados"
+      ],
+      "No screenshots": [
+        "Sin capturas de pantalla"
+      ],
+      "No selfies": [
+        "Sin selfies"
+      ],
+      "No shared albums": [
+        "Sin álbumes compartidos"
+      ],
+      "No videos": [
+        "Sin videos"
       ],
       "Notes": [
         "Notas"

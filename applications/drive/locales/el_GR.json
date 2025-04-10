@@ -356,10 +356,6 @@
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
-      "Download photo": [
-        "Λήψη άλμπουμ",
-        "Λήψη φωτογραφιών"
-      ],
       "Download without scanning": [
         "Λήψη χωρίς σάρωση"
       ],
@@ -623,6 +619,9 @@
       ],
       "New message": [
         "Νέο μήνυμα"
+      ],
+      "New shared album": [
+        "Νέο κοινόχρηστο άλμπουμ"
       ],
       "Next": [
         "Επόμενο"
@@ -2586,8 +2585,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Για να εισαγάγετε τις επαφές σας από την Google ή το Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Αναβάθμιση στο ${ BRAND_NAME } ${ planName } για να συνεχίσετε να μοιράζεστε αρχεία με πρόσβαση επεξεργασίας"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Αναβαθμίστε στο ${ planName } για να συνεχίσετε να κοινοποιείτε αρχεία με πρόσβαση επεξεργασίας"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Αναβαθμίστε τον λογαριασμό σας για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }, την πρωτοποριακή λύση ασφάλειας που βασίζεται στην τεχνητή νοημοσύνη με αποκλειστική 24/7 εξειδικευμένη υποστήριξη."
@@ -3771,8 +3770,11 @@
       "Create new album": [
         "Δημιουργία νέου άλμπουμ"
       ],
-      "Rename": [
-        "Μετονομασία"
+      "Create new shared album": [
+        "Δημιουργία νέου κοινόχρηστου άλμπουμ"
+      ],
+      "Rename album": [
+        "Μετονομασία άλμπουμ"
       ],
       "Security Center": [
         "Κέντρο Ασφαλείας"
@@ -7162,29 +7164,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7206,6 +7185,29 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7372,9 +7374,6 @@
       ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
-      ],
-      "Breach alerts": [
-        "Ειδοποιήσεις Παραβίασης"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -9781,47 +9780,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -10082,6 +10040,47 @@
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Είστε σίγουρος/η;"
@@ -10111,6 +10110,44 @@
     "Subscription saving": {
       "Save": [
         "Αποθήκευση"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Τα άλμπουμ που έχουν κοινοποιηθεί σε εσάς θα εμφανίζονται εδώ"
+      ],
+      "Albums you've shared will appear here": [
+        "Τα άλμπουμ που έχετε μοιραστεί θα εμφανίζονται εδώ"
+      ],
+      "Your favorited photos will appear here": [
+        "Οι αγαπημένες σας φωτογραφίες θα εμφανίζονται εδώ"
+      ],
+      "Your Live Photos will appear here": [
+        "Οι Ζωντανές Φωτογραφίες σας θα εμφανίζονται εδώ"
+      ],
+      "Your panorama photos will appear here": [
+        "Οι πανοραμικές φωτογραφίες σας θα εμφανίζονται εδώ"
+      ],
+      "Your photo bursts will appear here": [
+        "Οι ριπές φωτογραφιών σας θα εμφανίζονται εδώ"
+      ],
+      "Your portraits photos will appear here": [
+        "Τα πορτρέτα σας θα εμφανίζονται εδώ"
+      ],
+      "Your RAW photos will appear here": [
+        "Οι φωτογραφίες σας σε μορφή RAW θα εμφανίζονται εδώ"
+      ],
+      "Your screenshots will appear here": [
+        "Τα στιγμιότυπα οθόνης σας θα εμφανιστούν εδώ"
+      ],
+      "Your selfies photos will appear here": [
+        "Τα selfies σας θα εμφανίζονται εδώ"
+      ],
+      "Your tagged photos will appear here": [
+        "Οι φωτογραφίες σας με ετικέτα θα εμφανίζονται εδώ"
+      ],
+      "Your videos will appear here": [
+        "Τα βίντεό σας θα εμφανιστούν εδώ"
       ]
     },
     "Success": {
@@ -10784,11 +10821,47 @@
       "Night theme": [
         "Σκούρο θέμα"
       ],
+      "No albums shared with me": [
+        "Δεν υπάρχουν άλμπουμ κοινοποιημένα σε εμένα"
+      ],
       "No breaches detected": [
         "Δεν εντοπίστηκαν παραβιάσεις"
       ],
+      "No bursts": [
+        "Δεν υπάρχουν ριπές"
+      ],
+      "No favorites": [
+        "Δεν υπάρχουν αγαπημένα"
+      ],
+      "No Live Photos": [
+        "Δεν υπάρχουν Ζωντανές Φωτογραφίες"
+      ],
+      "No panorama": [
+        "Δεν υπάρχουν πανοραμικές"
+      ],
+      "No photos": [
+        "Δεν υπάρχουν φωτογραφίες"
+      ],
+      "No portraits": [
+        "Δεν υπάρχουν πορτραίτα"
+      ],
+      "No RAW": [
+        "Δεν υπάρχουν RAW"
+      ],
       "No results found": [
         "Κανένα αποτέλεσμα"
+      ],
+      "No screenshots": [
+        "Δεν υπάρχουν στιγμιότυπα οθόνης"
+      ],
+      "No selfies": [
+        "Δεν υπάρχουν selfies"
+      ],
+      "No shared albums": [
+        "Δεν υπάρχουν κοινόχρηστα άλμπουμ"
+      ],
+      "No videos": [
+        "Δεν υπάρχουν βίντεο"
       ],
       "Notes": [
         "Σημειώσεις"
