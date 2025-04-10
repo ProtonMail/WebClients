@@ -156,7 +156,7 @@ export const getInfo = (
     }
 
     if (isChrome() || isEdgeChromium() || isBrave()) {
-        const client = clients[Clients.Chrome];
+        const client = isEdgeChromium() ? clients[Clients.Edge] : clients[Clients.Chrome];
         const browserName = (() => {
             if (isEdgeChromium()) {
                 return 'Edge';
