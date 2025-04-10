@@ -4,8 +4,8 @@ import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
 import { getIconSizePx } from '@proton/pass/components/Layout/Icon/IconBox';
 import { VAULT_COLOR_MAP, VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
-import type { VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
-import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
+import type { VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1.static';
+import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1.static';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 

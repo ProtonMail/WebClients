@@ -9,7 +9,7 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import type { ShareItem } from '@proton/pass/store/reducers';
 import { selectWritableVaults } from '@proton/pass/store/selectors';
 import type { Maybe, ShareType } from '@proton/pass/types';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
+import { VaultColor } from '@proton/pass/types/protobuf/vault-v1.static';
 import clsx from '@proton/utils/clsx';
 
 import { VAULT_COLOR_MAP } from '../../Vault/constants';

@@ -1,5 +1,5 @@
 import type { ItemRevision } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1';
+import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { searchItems } from './match-items';
