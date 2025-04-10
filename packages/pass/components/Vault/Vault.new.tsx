@@ -17,7 +17,7 @@ import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import { type vaultCreationFailure, vaultCreationIntent, type vaultCreationSuccess } from '@proton/pass/store/actions';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
+import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1.static';
 import noop from '@proton/utils/noop';
 
 import { VaultForm, type VaultFormValues } from './Vault.form';

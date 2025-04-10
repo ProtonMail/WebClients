@@ -1,5 +1,5 @@
 /* eslint-disable-next-line lodash/import-scope */
-import { type DebounceSettings } from 'lodash';
+import type { DebounceSettings } from 'lodash';
 
 import debounce from '@proton/utils/debounce';
 
