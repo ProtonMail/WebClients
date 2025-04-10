@@ -69,37 +69,48 @@ const CalendarInviteButtons = ({
     }, [partstat]);
 
     const onAccept = () => {
-        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.ACCEPTED);
+        const targetPartstat = ATTENDEE_RESPONE_TYPE.ACCEPTED;
+
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'yes', plan },
         });
         startERRTMetric('accept');
         const promise = withLoadingAccept(accept()).then(() => {
+            // Update UI only after successful confirmation
+            setSelectedAnswer(targetPartstat);
             stopERRTMetric();
         });
         return promise;
     };
     const onTentative = () => {
-        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.TENTATIVE);
+        // Store the intended state but don't update UI yet
+        const targetPartstat = ATTENDEE_RESPONE_TYPE.TENTATIVE;
+
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'maybe', plan },
         });
         startERRTMetric('tentative');
         const promise = withLoadingTentative(acceptTentatively()).then(() => {
+            // Update UI only after successful confirmation
+            setSelectedAnswer(targetPartstat);
             stopERRTMetric();
         });
         return promise;
     };
     const onDecline = () => {
-        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.DECLINED);
+        // Store the intended state but don't update UI yet
+        const targetPartstat = ATTENDEE_RESPONE_TYPE.DECLINED;
+
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'no', plan },
         });
         startERRTMetric('decline');
         const promise = withLoadingDecline(decline()).then(() => {
+            // Update UI only after successful confirmation
+            setSelectedAnswer(targetPartstat);
             stopERRTMetric();
         });
         return promise;
