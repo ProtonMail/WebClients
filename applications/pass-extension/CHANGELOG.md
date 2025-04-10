@@ -1,3 +1,18 @@
+### Version 1.31.1
+
+- File attachments improvements
+- Fix focus loss edge-cases when unlocking from autofill dropdown
+- Fine-tune click-to-copy mechanism
+- Improve click-jacking prevention
+- Improve build size
+
+### Version 1.31.0
+
+- Add file attachments support
+- Improve data synchronisation
+- Improve exporters & importers
+- Fix state hydration edge-case on first login
+
 ### Version 1.30.1
 
 - Improve extension content script performance and stability
