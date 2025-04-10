@@ -29,7 +29,7 @@ const intoFileDescriptor =
                 revisionAdded: file.RevisionAdded,
                 revisionRemoved: file.RevisionRemoved ?? null,
                 fileUID: file.PersistentFileUID,
-                encryptionVersion: file.EncryptionVersion,
+                encryptionVersion: file.EncryptionVersion ?? 1,
             };
         } catch (err) {
             logger.warn('File metadata could not be opened', err);
@@ -50,7 +50,7 @@ export const intoPublicFileDescriptors = async (files: ItemFileOutput[], itemKey
             encryptedFileKey: file.FileKey,
             encryptedItemKey: itemKey,
             encryptedMetadata: file.Metadata,
-            encryptionVersion: file.EncryptionVersion,
+            encryptionVersion: file.EncryptionVersion ?? 1,
             fileID: file.FileID,
             linkKey,
         })
