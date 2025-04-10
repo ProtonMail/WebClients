@@ -3142,9 +3142,6 @@
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
       ],
-      "Email is not valid": [
-        "E-mailul nu este valid"
-      ],
       "Ends on date cannot be empty": [
         "Data finală nu poate fi goală."
       ],
@@ -3192,9 +3189,6 @@
       ],
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"
-      ],
-      "Incorrect username": [
-        "Nume de utilizator incorect."
       ],
       "Intended recipient does not support calendar sharing": [
         "Destinatarul vizat nu are suport pentru partajare de calendare."
@@ -3288,9 +3282,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Nu este un cont ${ BRAND_NAME }."
       ],
-      "Not a valid number": [
-        "Nu este un număr valid"
-      ],
       "Number of occurrences cannot be empty": [
         "Numărul aparițiilor nu poate fi gol."
       ],
@@ -3309,9 +3300,6 @@
       ],
       "Password is required": [
         "Parola este obligatorie"
-      ],
-      "Passwords do not match": [
-        "Parolele nu coincid"
       ],
       "Payment process canceled": [
         "Procesarea plății a fost anulată."
@@ -3416,9 +3404,6 @@
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
       ],
-      "The email addresses do not match": [
-        "Adresele de e-mail nu se potrivesc."
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Numele folderului nu este valid. Alegeți alt nume."
       ],
@@ -3446,14 +3431,8 @@
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
-      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Acest nume de folder nu este disponibil. Alegeți un nume diferit."
@@ -3467,9 +3446,6 @@
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Folosiți doar litere, cifre și _ . -"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nu se poate încărca panoul general VPN. Verificați conexiunea și reîncercați."
       ],
@@ -3481,12 +3457,6 @@
       ],
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
-      ],
-      "Username must begin with a letter or digit": [
-        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
-      ],
-      "Username must end with a letter or digit": [
-        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
       "Validation error": [
         "Eroare validare."
@@ -6881,26 +6851,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -6922,6 +6872,26 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7105,9 +7075,6 @@
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
-      ],
-      "Breach alerts": [
-        "Alerte divulgări"
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -9470,47 +9437,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -9775,6 +9701,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -10818,18 +10785,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Criptat bilateral cu contacte verificate"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     },
     "Video control": {
