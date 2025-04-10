@@ -15,17 +15,26 @@ import clsx from '@proton/utils/clsx';
 
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
-interface Props {
-    className?: string;
-    children?: ReactNode;
+type GenericErrorBaseProps = {
     big?: boolean;
-    isNetworkError?: boolean;
+    children?: ReactNode;
+    className?: string;
     /** Custom image to display, should be local import in SVG format */
     customImage?: string;
+    isNetworkError?: boolean;
     title?: string;
-}
+};
 
-export const GenericErrorDisplay = ({ children, className, big, isNetworkError, title, customImage }: Props) => {
+export type GenericErrorProps = Omit<GenericErrorBaseProps, 'customImage' | 'title'>;
+
+export const GenericErrorDisplay = ({
+    big,
+    children,
+    className,
+    customImage,
+    isNetworkError,
+    title,
+}: GenericErrorBaseProps) => {
     const display: 'default' | 'with-refresh' | 'custom' = (() => {
         if (children) {
             return 'custom';
@@ -62,7 +71,7 @@ export const GenericErrorDisplay = ({ children, className, big, isNetworkError, 
     );
 };
 
-const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Omit<Props, 'customImage' | 'title'>) => {
+const GenericErrorWithReload = ({ children, className, big, isNetworkError }: GenericErrorProps) => {
     const autoReloadEnabled = useFlag('AutoReloadPage');
 
     const reloadPageOnError = () => {
@@ -105,7 +114,7 @@ const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Om
     );
 };
 
-const GenericError = ({ children, className, big, isNetworkError }: Omit<Props, 'customImage' | 'title'>) => {
+const GenericError = ({ children, className, big, isNetworkError }: GenericErrorProps) => {
     const isFlagAvailable = useContext(FlagContext);
 
     // Display the generic error if Unleash is not initalized yet

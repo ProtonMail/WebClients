@@ -1,5 +1,5 @@
 import type { IconName } from '@proton/components';
-import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
+import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1.static';
 
 const numericEntries = <T extends Record<number, any>>(
     obj: T

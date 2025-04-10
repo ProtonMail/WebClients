@@ -4,6 +4,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import getConfig from '@proton/pack/webpack.config';
 import { NamedDeterministicChunkIdsPlugin } from '@proton/pass/utils/webpack/chunks/plugin';
+import { sideEffectsRule } from '@proton/pass/utils/webpack/side-effects';
 
 const CRITICAL_OFFLINE_ASSETS = [
     /** main assets */
@@ -68,6 +69,8 @@ const result = (env: any): webpack.Configuration => {
 
         config.output.webassemblyModuleFilename = 'assets/[hash].wasm';
     }
+
+    if (config.module?.rules) config.module.rules.unshift(sideEffectsRule);
 
     if (config.plugins) {
         config.plugins.push(new NamedDeterministicChunkIdsPlugin());

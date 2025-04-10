@@ -3,7 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1';
+import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { read1Password1PuxData } from './1pux.reader';

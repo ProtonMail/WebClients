@@ -1,6 +1,7 @@
 {
     "name": "@proton/unleash",
     "description": "Unleash feature flags",
+    "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint . --ext .js,.ts,.tsx --quiet --cache",
