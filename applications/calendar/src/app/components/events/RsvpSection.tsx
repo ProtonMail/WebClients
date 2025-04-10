@@ -12,6 +12,7 @@ import {
 } from '@proton/components/containers/calendar/RsvpSection/RsvpSectionButtons';
 import useLoading from '@proton/hooks/useLoading';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
@@ -239,7 +240,10 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
                                 <div className="text-ellipsis color-weak text-sm">
                                     <span className="text-bold color-weak">{c('Note').t`Note:`} </span>
-                                    <span dangerouslySetInnerHTML={{ __html: formattedUserComment }} />
+                                    <span
+                                        dangerouslySetInnerHTML={{ __html: formattedUserComment }}
+                                        title={stripAllTags(formattedUserComment)}
+                                    />
                                 </div>
                                 {!isSearchView && (
                                     <div className="flex flex-none">
