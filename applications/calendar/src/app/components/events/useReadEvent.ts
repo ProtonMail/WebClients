@@ -76,7 +76,13 @@ const useReadEvent = (
         tzid,
     ]);
 
-    const [attendees, setAttendees] = useState(baseModel.attendees);
+    // Initialize with attendees from the base model, ensuring it's a valid array
+    // and filter any potentially invalid attendees
+    const initialAttendees = (baseModel.attendees || []).filter(
+        (attendee) => attendee && attendee.email && attendee.email !== 'undefined'
+    );
+
+    const [attendees, setAttendees] = useState(initialAttendees);
 
     useEffect(() => {
         const mergeAndDecrypt = async () => {
@@ -85,7 +91,9 @@ const useReadEvent = (
                 const eventUID = (targetEventData?.eventData as any)?.UID;
                 const originalCalendarEvent = targetEventData?.eventData as CalendarEvent;
 
-                if (!Array.isArray(backendAttendees) || !eventUID || !originalCalendarEvent) {return;}
+                if (!Array.isArray(backendAttendees) || !eventUID || !originalCalendarEvent) {
+                    return;
+                }
 
                 // Get decryption keys and session keys - this matches InteractiveCalendarView.tsx
                 const privateKeys = await getCalendarEventDecryptionKeys({
@@ -99,7 +107,9 @@ const useReadEvent = (
                     privateKeys,
                 });
 
-                if (!sharedSessionKey) {return;}
+                if (!sharedSessionKey) {
+                    return;
+                }
 
                 // Convert backend attendees to VcalAttendeeProperty format for processing with toInternalAttendee
                 const vcalAttendees = (baseModel.attendees || []).map((attendee: any) => ({
@@ -159,24 +169,32 @@ const useReadEvent = (
                             )
                         );
                     } else {
-                        console.error('[useReadEvent] No attendees to process');
+                        // This is normal during initial loading, so log as warning instead of error
+                        console.warn('[useReadEvent] No attendees to process');
                         return; // No attendees to process
                     }
 
                     // Convert from VcalAttendeeProperty back to our AttendeeModel format
-                    const updatedAttendees = processedAttendees.map((attendee) => {
-                        const email = attendee.value.replace('mailto:', '');
-                        return {
-                            email,
-                            cn: attendee.parameters?.cn || email,
-                            role: (attendee.parameters?.role || ICAL_ATTENDEE_ROLE.OPTIONAL) as ICAL_ATTENDEE_ROLE,
-                            rsvp: (attendee.parameters?.rsvp || ICAL_ATTENDEE_RSVP.FALSE) as ICAL_ATTENDEE_RSVP,
-                            partstat: (attendee.parameters?.partstat ||
-                                ICAL_ATTENDEE_STATUS.NEEDS_ACTION) as ICAL_ATTENDEE_STATUS,
-                            token: attendee.parameters?.['x-pm-token'] || '',
-                            comment: attendee.parameters?.['x-pm-comment'] || '',
-                        };
-                    });
+                    const updatedAttendees = processedAttendees
+                        .map((attendee) => {
+                            const email = attendee.value.replace('mailto:', '');
+                            // Validate email isn't empty or invalid
+                            if (!email || email === 'undefined' || email.trim() === '') {
+                                console.warn('[useReadEvent] Skipping attendee with invalid email');
+                                return null;
+                            }
+                            return {
+                                email,
+                                cn: attendee.parameters?.cn || email,
+                                role: (attendee.parameters?.role || ICAL_ATTENDEE_ROLE.OPTIONAL) as ICAL_ATTENDEE_ROLE,
+                                rsvp: (attendee.parameters?.rsvp || ICAL_ATTENDEE_RSVP.FALSE) as ICAL_ATTENDEE_RSVP,
+                                partstat: (attendee.parameters?.partstat ||
+                                    ICAL_ATTENDEE_STATUS.NEEDS_ACTION) as ICAL_ATTENDEE_STATUS,
+                                token: attendee.parameters?.['x-pm-token'] || '',
+                                comment: attendee.parameters?.['x-pm-comment'] || '',
+                            };
+                        })
+                        .filter((attendee) => attendee !== null);
 
                     setAttendees(updatedAttendees as AttendeeModel[]);
                 };

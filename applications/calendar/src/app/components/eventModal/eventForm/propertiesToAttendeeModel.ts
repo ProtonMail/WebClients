@@ -13,7 +13,7 @@ export const propertiesToAttendeeModel = (attendee?: VcalAttendeeProperty[]): At
     return attendee
         .map<AttendeeModel | null>((attendee) => {
             const email = extractEmailAddress(attendee);
-            if (email === undefined) {
+            if (email === undefined || email === '' || email === 'undefined') {
                 captureMessage('Malformed attendee', { extra: { attendee } });
                 return null;
             }
