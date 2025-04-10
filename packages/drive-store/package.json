@@ -18,7 +18,6 @@
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@noble/hashes": "^1.7.1",
-        "@openpgp/web-stream-tools": "^0.0.13",
         "@proton/account": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/colors": "workspace:^",
@@ -43,7 +42,7 @@
         "@xmldom/xmldom": "^0.9.8",
         "client-zip": "^2.5.0",
         "comlink": "^4.4.2",
-        "exifreader": "^4.27.0",
+        "exifreader": "^4.28.0",
         "heic-to": "^1.1.11",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
@@ -80,7 +79,10 @@
         "path-browserify": "^1.0.1",
         "prettier": "^3.5.3",
         "pretty-format": "^29.7.0",
-        "typescript": "^5.7.3",
-        "webpack": "^5.98.0"
+        "typescript": "^5.8.3",
+        "webpack": "^5.99.5"
+    },
+    "peerDependencies": {
+        "@openpgp/web-stream-tools": "^0.1.0"
     }
 }

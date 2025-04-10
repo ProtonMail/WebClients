@@ -98,10 +98,13 @@ describe('Privacy', () => {
          * browser.privacy API after granting permission */
         const privacyAPI = browser.privacy;
         const reload = jest.fn();
-        jest.spyOn(window, 'location', 'get').mockImplementation(() => ({ reload }) as unknown as Location);
+
+        beforeEach(() => {
+            jest.spyOn(window, 'location', 'get').mockImplementation(() => ({ reload }) as unknown as Location);
+        });
 
         afterEach(() => {
-            window.location = location;
+            jest.clearAllMocks();
         });
 
         test('should set all settings and return the input value', async () => {

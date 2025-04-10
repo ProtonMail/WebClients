@@ -1,4 +1,5 @@
 import * as config from 'proton-pass-extension/app/config';
+import type { Runtime } from 'webextension-polyfill';
 
 import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
@@ -12,10 +13,7 @@ import xhr from '@proton/shared/lib/fetch/fetch';
 
 const api = configureApi({ ...config, clientID: getClientID(config.APP_NAME), xhr } as any) as ApiCallFn;
 
-/** In Safari, there's a known problem with cross-domain cookies in service workers.
- * As a work-around, we execute the `pullFork` request in the content script instead
- * of the service worker to ensure that cookies are properly attached. */
-browser.runtime.onMessage.addListener((message: unknown, _, sendResponse: (res: any) => void) => {
+const handler: Runtime.OnMessageListenerCallback = (message: unknown, _, sendResponse: (res: any) => void) => {
     if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.AUTH_PULL_FORK })) {
         const pullForkParams = pullForkSession(message.payload.selector);
         pullForkParams.url = `${config.SSO_URL}/api/${pullForkParams.url}`;
@@ -26,4 +24,13 @@ browser.runtime.onMessage.addListener((message: unknown, _, sendResponse: (res: 
 
         return true;
     }
-});
+
+    /** Note: The type assertion is necessary because the OnMessageListener type
+     * has constraints that don't properly handle conditional use of `sendResponse`.  */
+    return undefined as any;
+};
+
+/** In Safari, there's a known problem with cross-domain cookies in service workers.
+ * As a work-around, we execute the `pullFork` request in the content script instead
+ * of the service worker to ensure that cookies are properly attached. */
+browser.runtime.onMessage.addListener(handler);
