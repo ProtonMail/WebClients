@@ -98,12 +98,12 @@ var Module = {
 function initGame(fileName, fileData) {
     const writeToDoomFS = () => {
         try {
-            console.info('Writing to MemFS: ' + fileName + ' (' + fileData.length + ' bytes)');
-            const destFile = FS.open('/' + fileName, 'w');
+            console.info('Writing to MemFS: freedoom1.wad (' + fileData.length + ' bytes)');
+            const destFile = FS.open('/freedoom1.wad', 'w');
             FS.write(destFile, fileData, 0, fileData.length, 0);
             FS.close(destFile);
 
-            Module.arguments = ['-iwad', fileName];
+            Module.arguments = ['-iwad', 'freedoom1.wad'];
 
             statusElement.innerHTML = `
 <div class="spinner"></div>
@@ -140,6 +140,10 @@ canvasElement.addEventListener('click', () => {
     if (document.pointerLockElement !== canvasElement) {
         canvasElement.requestPointerLock();
     }
+});
+
+canvasElement.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
 });
 
 window.addEventListener('resize', handleResize);
