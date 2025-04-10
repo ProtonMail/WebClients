@@ -161,12 +161,14 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * element to blur to ensure we're in an "unfocused state". */
     iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_BLUR_FIELD, () => {
         requestAnimationFrame(() => {
-            fieldRef.current?.element.blur();
+            if (document.activeElement !== popover.root) {
+                fieldRef.current?.element.blur();
 
-            setTimeout(() => {
-                const { activeElement } = document;
-                if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
-            }, 50);
+                setTimeout(() => {
+                    const { activeElement } = document;
+                    if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
+                }, 50);
+            }
         });
     });
 
