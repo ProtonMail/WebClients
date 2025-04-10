@@ -361,11 +361,6 @@
       "Download logs": [
         "Jurnal descărcare"
       ],
-      "Download photo": [
-        "Descărcare fotografie",
-        "Descărcare fotografii",
-        "Descărcare fotografii"
-      ],
       "Download without scanning": [
         "Descărcare fără scanare"
       ],
@@ -629,6 +624,9 @@
       ],
       "New message": [
         "Mesaj nou"
+      ],
+      "New shared album": [
+        "Album nou partajat"
       ],
       "Next": [
         "Înainte"
@@ -2601,8 +2599,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Treceți la ${ BRAND_NAME } ${ planName } pentru a putea continua să partajați fișiere cu drept de editare."
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Treceți la ${ planName } pentru a putea continua să partajați fișiere cu drept de editare."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Treceți la alt tip de cont cu plată pentru a activa ${ PROTON_SENTINEL_NAME }, soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, cu asistență specializată dedicată 24/7."
@@ -3802,8 +3800,11 @@
       "Create new album": [
         "Creare album"
       ],
-      "Rename": [
-        "Redenumire"
+      "Create new shared album": [
+        "Creare album partajat"
+      ],
+      "Rename album": [
+        "Redenumire album"
       ],
       "Security Center": [
         "Centru de securitate"
@@ -7265,29 +7266,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planuri începând de la ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -7309,6 +7287,29 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planuri începând de la ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7492,9 +7493,6 @@
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
-      ],
-      "Breach alerts": [
-        "Alerte divulgări"
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -9964,47 +9962,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -10271,6 +10228,47 @@
         "Propriul alias de e-mail scurt @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmați?"
@@ -10300,6 +10298,44 @@
     "Subscription saving": {
       "Save": [
         "Salvare"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Albumele care vi s-au partajat vor apărea aici"
+      ],
+      "Albums you've shared will appear here": [
+        "Albumele pe care le-ați partajat vor apărea aici"
+      ],
+      "Your favorited photos will appear here": [
+        "Fotografiile favorite vor apărea aici"
+      ],
+      "Your Live Photos will appear here": [
+        "Fotografiile Live vor apărea aici"
+      ],
+      "Your panorama photos will appear here": [
+        "Fotografiile panoramice vor apărea aici"
+      ],
+      "Your photo bursts will appear here": [
+        "Fotografiile în rafală vor apărea aici"
+      ],
+      "Your portraits photos will appear here": [
+        "Fotografiile portret vor apărea aici"
+      ],
+      "Your RAW photos will appear here": [
+        "Fotografiile RAW vor apărea aici"
+      ],
+      "Your screenshots will appear here": [
+        "Capturile de ecran vor apărea aici"
+      ],
+      "Your selfies photos will appear here": [
+        "Autoportretele vor apărea aici"
+      ],
+      "Your tagged photos will appear here": [
+        "Fotografiile etichetate vor apărea aici"
+      ],
+      "Your videos will appear here": [
+        "Videoclipurile vor apărea aici"
       ]
     },
     "Success": {
@@ -10993,11 +11029,47 @@
       "Night theme": [
         "Temă noapte"
       ],
+      "No albums shared with me": [
+        "Nu există albume partajate cu mine"
+      ],
       "No breaches detected": [
         "Nu există divulgări"
       ],
+      "No bursts": [
+        "Nu există poze în rafală"
+      ],
+      "No favorites": [
+        "Nu există favorite"
+      ],
+      "No Live Photos": [
+        "Nu există fotografii live"
+      ],
+      "No panorama": [
+        "Nu există panorame"
+      ],
+      "No photos": [
+        "Nu există fotografii"
+      ],
+      "No portraits": [
+        "Nu există portrete"
+      ],
+      "No RAW": [
+        "Nu există fișiere RAW"
+      ],
       "No results found": [
         "Nu s-au găsit rezultate."
+      ],
+      "No screenshots": [
+        "Nu există capturi de ecran"
+      ],
+      "No selfies": [
+        "Nu există autoportrete"
+      ],
+      "No shared albums": [
+        "Nu există albume partajate"
+      ],
+      "No videos": [
+        "Nu există videoclipuri"
       ],
       "Notes": [
         "Notițe"
