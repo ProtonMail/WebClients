@@ -1,6 +1,7 @@
 {
     "name": "@proton/metrics",
     "description": "Metrics library",
+    "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",

@@ -4,7 +4,7 @@ import { type IconName } from '@proton/icons';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';
-import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
+import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1.static';
 
 export type VaultMenuOption = {
     id: MaybeNull<string>;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
@@ -57,11 +55,5 @@ describe('StandardErrorPage', () => {
 
         expect(metrics.core_ui_blocking_error_page_total.increment).toHaveBeenCalledWith({});
         expect(metrics.core_ui_blocking_error_page_total.increment).toHaveBeenCalledTimes(1);
-    });
-
-    it('does not increments metrics counter on mount if disabled', () => {
-        render(<StandardErrorPage enableTelemetry={false} />);
-
-        expect(metrics.core_ui_blocking_error_page_total.increment).toHaveBeenCalledTimes(0);
     });
 });

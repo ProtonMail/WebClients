@@ -10,7 +10,7 @@ import { VAULT_COLORS, VAULT_ICONS } from '@proton/pass/components/Vault/constan
 import {
     type VaultColor as VaultColorEnum,
     type VaultIcon as VaultIconEnum,
-} from '@proton/pass/types/protobuf/vault-v1';
+} from '@proton/pass/types/protobuf/vault-v1.static';
 
 import './VaultForm.scss';
 
