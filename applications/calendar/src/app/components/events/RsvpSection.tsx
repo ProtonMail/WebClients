@@ -178,7 +178,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
     useEffect(() => {
         // Update user comment in background only if not actively editing
-        if (userPartstat !== model.Status && !displayNoteOverlay) {
+        if (!displayNoteOverlay) {
             setModel((currentModel) => ({
                 ...currentModel,
                 Comment: userComment,
