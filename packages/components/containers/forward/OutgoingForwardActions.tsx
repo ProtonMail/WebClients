@@ -65,7 +65,10 @@ const OutgoingForwardActions = ({
 
         // Re-enable E2EE for this address if deleting last outgoing forwarding
         if (reActivateE2EE && addressFlags && addressFlags.encryptionDisabled) {
-            await addressFlags.handleSetAddressFlags(false, addressFlags.expectSignatureDisabled);
+            await addressFlags.handleSetAddressFlags({
+                encryptionDisabled: false,
+                expectSignatureDisabled: addressFlags.expectSignatureDisabled,
+            });
         }
 
         await call();

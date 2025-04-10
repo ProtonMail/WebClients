@@ -52,7 +52,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Disable E2EE mail`,
-            onClick: () => handleSetAddressFlags(true, expectSignatureDisabled),
+            onClick: () => handleSetAddressFlags({ encryptionDisabled: true, expectSignatureDisabled }),
         });
     }
 
@@ -60,7 +60,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Enable E2EE mail`,
-            onClick: () => handleSetAddressFlags(false, expectSignatureDisabled),
+            onClick: () => handleSetAddressFlags({ encryptionDisabled: false, expectSignatureDisabled }),
         });
     }
 
@@ -68,7 +68,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Disallow unsigned mail`,
-            onClick: () => handleSetAddressFlags(encryptionDisabled, false),
+            onClick: () => handleSetAddressFlags({ encryptionDisabled, expectSignatureDisabled: false }),
         });
     }
 
