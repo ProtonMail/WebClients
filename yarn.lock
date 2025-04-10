@@ -6193,18 +6193,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openpgp/web-stream-tools@npm:^0.0.13":
-  version: 0.0.13
-  resolution: "@openpgp/web-stream-tools@npm:0.0.13"
-  peerDependencies:
-    typescript: ">=4.2"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 10c0/2abbbc29ac0fb2d0a14a2bfe063183cb252e7256d170ffbbad7b1290013ffb9051062b8036d7ad3e5046234140fea65e3d529ad5dba249171bdb821c9decc7d1
-  languageName: node
-  linkType: hard
-
 "@openpgp/web-stream-tools@npm:~0.1.3":
   version: 0.1.3
   resolution: "@openpgp/web-stream-tools@npm:0.1.3"
@@ -7138,7 +7126,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7177,7 +7165,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     whatwg-fetch: "npm:^3.6.20"
   peerDependencies:
     "@types/react-router-dom": ^5.3.3
@@ -7195,7 +7183,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     vite: "npm:^5.4.17"
     vite-plugin-mkcert: "npm:^1.17.8"
     vite-plugin-singlefile: "npm:^2.2.0"
@@ -7255,8 +7243,8 @@ __metadata:
     ts-loader: "npm:^9.5.2"
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
   languageName: unknown
   linkType: soft
 
@@ -7277,7 +7265,7 @@ __metadata:
     react-redux: "npm:^9.2.0"
     ts-jest: "npm:^29.3.1"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7291,7 +7279,7 @@ __metadata:
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     postcss: "npm:^8.5.3"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     vite: "npm:^5.4.17"
     vite-plugin-html: "npm:^3.2.2"
     vite-plugin-mkcert: "npm:^1.17.8"
@@ -7343,8 +7331,8 @@ __metadata:
     ts-jest: "npm:^29.3.1"
     ts-loader: "npm:^9.5.2"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
     webpack-cli: "npm:^6.0.1"
   languageName: unknown
   linkType: soft
@@ -7429,7 +7417,7 @@ __metadata:
     three: "npm:^0.174.0"
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   peerDependencies:
     "@proton/cross-storage": "*"
     "@proton/crypto": "*"
@@ -7457,7 +7445,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
     eslint: "npm:^8.57.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7484,8 +7472,8 @@ __metadata:
     pmcrypto: "npm:@protontech/pmcrypto@^8.3.0"
     prettier: "npm:^3.5.3"
     ts-loader: "npm:^9.5.2"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
     webpack-cli: "npm:^6.0.1"
   languageName: unknown
   linkType: soft
@@ -7526,7 +7514,7 @@ __metadata:
     react-test-renderer: "npm:^18.3.1"
     react-window: "npm:^1.8.11"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     y-protocols: "npm:^1.0.6"
     yjs: "npm:^13.6.15"
   languageName: unknown
@@ -7546,7 +7534,7 @@ __metadata:
     google-protobuf: "npm:^3.21.4"
     protoc-gen-ts: "npm:^0.8.7"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7567,7 +7555,7 @@ __metadata:
     jest-junit: "npm:^16.0.0"
     jest-when: "npm:3.7.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     uuid: "npm:^9.0.1"
     y-protocols: "npm:^1.0.6"
     yjs: "npm:^13.6.15"
@@ -7580,7 +7568,6 @@ __metadata:
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@noble/hashes": "npm:^1.7.1"
-    "@openpgp/web-stream-tools": "npm:^0.0.13"
     "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
@@ -7622,7 +7609,7 @@ __metadata:
     cross-var: "npm:^1.1.0"
     ejs-webpack-loader: "npm:^2.2.2"
     eslint: "npm:^8.57.1"
-    exifreader: "npm:^4.27.0"
+    exifreader: "npm:^4.28.0"
     heic-to: "npm:^1.1.11"
     jest: "npm:^29.7.0"
     jest-junit: "npm:^16.0.0"
@@ -7638,10 +7625,12 @@ __metadata:
     react-router-dom-v5-compat: "npm:^6.30.0"
     react-window: "npm:^1.8.11"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     web-streams-polyfill: "npm:^4.1.0"
-    webpack: "npm:^5.98.0"
+    webpack: "npm:^5.99.5"
     zustand: "npm:^4.5.6"
+  peerDependencies:
+    "@openpgp/web-stream-tools": ^0.1.0
   languageName: unknown
   linkType: soft
 
@@ -7670,8 +7659,8 @@ __metadata:
     react: "npm:^18.3.1"
     ts-loader: "npm:^9.5.2"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
   languageName: unknown
   linkType: soft
 
@@ -7698,7 +7687,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.2"
   peerDependencies:
     prettier: 3.5.3
-    typescript: ^5.7.3
+    typescript: ^5.8.3
   languageName: unknown
   linkType: soft
 
@@ -7713,7 +7702,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7730,7 +7719,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-test-renderer: "npm:^18.3.1"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7763,7 +7752,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tsx: "npm:^4.19.3"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7797,8 +7786,8 @@ __metadata:
     pkijs: "npm:^3.2.5"
     playwright: "npm:^1.51.1"
     ts-loader: "npm:^9.5.2"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
   languageName: unknown
   linkType: soft
 
@@ -7823,7 +7812,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7845,7 +7834,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7863,7 +7852,7 @@ __metadata:
     rimraf: "npm:^5.0.10"
     ts-jest: "npm:^29.3.1"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -7880,7 +7869,7 @@ __metadata:
     "@babel/runtime": "npm:^7.27.0"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.16"
     "@sentry/webpack-plugin": "npm:^1.21.0"
-    "@swc/core": "npm:^1.11.16"
+    "@swc/core": "npm:^1.11.18"
     "@types/webpack": "npm:^5.28.5"
     autoprefixer: "npm:^10.4.21"
     babel-loader: "npm:^10.0.0"
@@ -7915,7 +7904,7 @@ __metadata:
     svgo-loader: "npm:^4.0.0"
     swc-loader: "npm:^0.2.6"
     terser-webpack-plugin: "npm:^5.3.14"
-    webpack: "npm:^5.98.0"
+    webpack: "npm:^5.99.5"
     webpack-bundle-analyzer: "npm:^4.10.2"
     webpack-cli: "npm:^6.0.1"
     webpack-dev-server: "npm:^5.2.1"
@@ -7954,7 +7943,7 @@ __metadata:
     "@types/react": "npm:^18.3.20"
     "@types/react-dom": "npm:^18.3.6"
     "@types/react-router-dom": "npm:^5.3.3"
-    "@types/webextension-polyfill": "npm:^0.12.1"
+    "@types/webextension-polyfill": "npm:^0.12.3"
     "@zip.js/zip.js": "npm:^2.7.60"
     circular-dependency-plugin: "npm:^5.2.2"
     client-zip: "npm:^2.5.0"
@@ -7978,7 +7967,7 @@ __metadata:
     redux-saga: "npm:^1.3.0"
     tldts: "npm:^6.1.85"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     webextension-polyfill: "npm:^0.12.0"
     whatwg-fetch: "npm:^3.6.20"
     x2js: "npm:^3.4.4"
@@ -8005,7 +7994,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8033,7 +8022,7 @@ __metadata:
   resolution: "@proton/react-polymorphic-types@workspace:packages/react-polymorphic-types"
   dependencies:
     "@types/react": "npm:^18.3.20"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   peerDependencies:
     "@types/react": ">=18.3.20"
   languageName: unknown
@@ -8059,7 +8048,7 @@ __metadata:
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8107,7 +8096,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8158,12 +8147,12 @@ __metadata:
     prettier: "npm:^3.5.3"
     ts-loader: "npm:^9.5.2"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     ua-parser-js: "npm:^1.0.40"
     url-loader: "npm:^4.1.1"
     web-streams-polyfill: "npm:^3.3.3"
     web-vitals: "npm:^4.2.4"
-    webpack: "npm:^5.98.0"
+    webpack: "npm:^5.99.5"
     zod: "npm:^3.24.2"
   languageName: unknown
   linkType: soft
@@ -8175,7 +8164,7 @@ __metadata:
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     prettier: "npm:^3.5.3"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8193,7 +8182,7 @@ __metadata:
     jest: "npm:^29.7.0"
     prettier: "npm:^3.5.3"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8245,7 +8234,7 @@ __metadata:
     cross-fetch: "npm:^4.1.0"
     eslint: "npm:^8.57.1"
     msw: "npm:^2.7.3"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8257,7 +8246,7 @@ __metadata:
     chalk: "npm:^5.4.1"
     googleapis: "npm:^131.0.0"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8269,7 +8258,7 @@ __metadata:
     eslint: "npm:^8.57.1"
     prettier: "npm:^3.5.3"
     proxy-agent: "npm:^6.5.0"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8281,7 +8270,7 @@ __metadata:
     "@proton/testpackage-loki-client": "workspace:^"
     eslint: "npm:^8.57.1"
     prettier: "npm:^3.5.3"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8298,7 +8287,7 @@ __metadata:
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     prettier: "npm:^3.5.3"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     unleash-proxy-client: "npm:^3.7.2"
   peerDependencies:
     date-fns: ^3.6.0
@@ -8318,7 +8307,7 @@ __metadata:
     jest: "npm:^29.7.0"
     lodash: "npm:^4.17.21"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -8342,7 +8331,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
     ts-jest: "npm:^29.3.1"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     vitest: "npm:^1.6.1"
   languageName: unknown
   linkType: soft
@@ -10636,90 +10625,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-darwin-arm64@npm:1.11.16"
+"@swc/core-darwin-arm64@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-darwin-arm64@npm:1.11.18"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-darwin-x64@npm:1.11.16"
+"@swc/core-darwin-x64@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-darwin-x64@npm:1.11.18"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.11.16"
+"@swc/core-linux-arm-gnueabihf@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.11.18"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.11.16"
+"@swc/core-linux-arm64-gnu@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.11.18"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-linux-arm64-musl@npm:1.11.16"
+"@swc/core-linux-arm64-musl@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-linux-arm64-musl@npm:1.11.18"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-linux-x64-gnu@npm:1.11.16"
+"@swc/core-linux-x64-gnu@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-linux-x64-gnu@npm:1.11.18"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-linux-x64-musl@npm:1.11.16"
+"@swc/core-linux-x64-musl@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-linux-x64-musl@npm:1.11.18"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.11.16"
+"@swc/core-win32-arm64-msvc@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.11.18"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.11.16"
+"@swc/core-win32-ia32-msvc@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.11.18"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core-win32-x64-msvc@npm:1.11.16"
+"@swc/core-win32-x64-msvc@npm:1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core-win32-x64-msvc@npm:1.11.18"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.11.11, @swc/core@npm:^1.11.16":
-  version: 1.11.16
-  resolution: "@swc/core@npm:1.11.16"
+"@swc/core@npm:^1.11.11, @swc/core@npm:^1.11.18":
+  version: 1.11.18
+  resolution: "@swc/core@npm:1.11.18"
   dependencies:
-    "@swc/core-darwin-arm64": "npm:1.11.16"
-    "@swc/core-darwin-x64": "npm:1.11.16"
-    "@swc/core-linux-arm-gnueabihf": "npm:1.11.16"
-    "@swc/core-linux-arm64-gnu": "npm:1.11.16"
-    "@swc/core-linux-arm64-musl": "npm:1.11.16"
-    "@swc/core-linux-x64-gnu": "npm:1.11.16"
-    "@swc/core-linux-x64-musl": "npm:1.11.16"
-    "@swc/core-win32-arm64-msvc": "npm:1.11.16"
-    "@swc/core-win32-ia32-msvc": "npm:1.11.16"
-    "@swc/core-win32-x64-msvc": "npm:1.11.16"
+    "@swc/core-darwin-arm64": "npm:1.11.18"
+    "@swc/core-darwin-x64": "npm:1.11.18"
+    "@swc/core-linux-arm-gnueabihf": "npm:1.11.18"
+    "@swc/core-linux-arm64-gnu": "npm:1.11.18"
+    "@swc/core-linux-arm64-musl": "npm:1.11.18"
+    "@swc/core-linux-x64-gnu": "npm:1.11.18"
+    "@swc/core-linux-x64-musl": "npm:1.11.18"
+    "@swc/core-win32-arm64-msvc": "npm:1.11.18"
+    "@swc/core-win32-ia32-msvc": "npm:1.11.18"
+    "@swc/core-win32-x64-msvc": "npm:1.11.18"
     "@swc/counter": "npm:^0.1.3"
     "@swc/types": "npm:^0.1.21"
   peerDependencies:
@@ -10748,7 +10737,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: 10c0/7570645bdbb7c7ea23aa22b37fc0164034afd124c569bf1f026c13deb6c1ee88c7cab34a781d2ab4bfbb28d6cef8683a21af9f0a68e678179453923e811bb838
+  checksum: 10c0/d92826b03e41587695b2423f0fc070dd1d0a1805bd5a936aa042ff9cafd4cd58481b7961008ebaa0e863f8f9d482e611edf61096f487ade9aa4e852546845910
   languageName: node
   linkType: hard
 
@@ -12569,10 +12558,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webextension-polyfill@npm:^0.12.1":
-  version: 0.12.1
-  resolution: "@types/webextension-polyfill@npm:0.12.1"
-  checksum: 10c0/d6e6253bbd020dcfa40391112212e3486320760d12c58854d0410140bda7ad0476749b9476e18d6888a1b04092662715b488f470c3aa29b44768990ffaf6d194
+"@types/webextension-polyfill@npm:^0.12.3":
+  version: 0.12.3
+  resolution: "@types/webextension-polyfill@npm:0.12.3"
+  checksum: 10c0/0f0cea5ab70a3958f7eca61168b8b431288c35ee7e8f052f5b3bf6a6aa101183aa760addd4dcf408027d558731aa8a8f107e47a373bb7c347cb7cba807fe46e6
   languageName: node
   linkType: hard
 
@@ -22951,15 +22940,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"exifreader@npm:^4.27.0":
-  version: 4.27.0
-  resolution: "exifreader@npm:4.27.0"
+"exifreader@npm:^4.28.0":
+  version: 4.28.0
+  resolution: "exifreader@npm:4.28.0"
   dependencies:
     "@xmldom/xmldom": "npm:^0.9.4"
   dependenciesMeta:
     "@xmldom/xmldom":
       optional: true
-  checksum: 10c0/fde845015c90f02f858b946c7b0cfa6756e147ca5f5cc5ed5eb0b735454a17cd2ad6d1863b1f1adeee712eec02f127785d799ff050e53be5b629ad3cc26c9d15
+  checksum: 10c0/66732b0131e6ad1b215f92d547503abf024db19c9ab68cdc97344e61d5f2bcaa79b922d951ba18b47b38edabcd65e9e18475bfe076847a5fea5b222150a45071
   languageName: node
   linkType: hard
 
@@ -34085,7 +34074,7 @@ __metadata:
     "@types/toastify-js": "npm:^1.12.3"
     eslint: "npm:^8.57.1"
     toastify-js: "npm:^1.12.0"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     vite: "npm:^5.4.17"
   languageName: unknown
   linkType: soft
@@ -35669,7 +35658,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -35714,7 +35703,7 @@ __metadata:
     react-json-view: "npm:^1.21.3"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -35771,7 +35760,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -35783,7 +35772,7 @@ __metadata:
     jscodeshift: "npm:^17.3.0"
     rimraf: "npm:^5.0.10"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -35848,7 +35837,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     sass: "npm:1.79.5"
     tailwindcss: "npm:^3.4.17"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -35917,8 +35906,8 @@ __metadata:
     sass: "npm:1.79.5"
     tailwindcss: "npm:^3.4.17"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
     yjs: "npm:^13.6.15"
   languageName: unknown
   linkType: soft
@@ -35929,7 +35918,6 @@ __metadata:
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@noble/hashes": "npm:^1.7.1"
-    "@openpgp/web-stream-tools": "npm:^0.0.13"
     "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
@@ -35970,7 +35958,7 @@ __metadata:
     cross-var: "npm:^1.1.0"
     ejs-webpack-loader: "npm:^2.2.2"
     eslint: "npm:^8.57.1"
-    exifreader: "npm:^4.27.0"
+    exifreader: "npm:^4.28.0"
     heic-to: "npm:^1.1.11"
     idb-keyval: "npm:^6.2.1"
     jest: "npm:^29.7.0"
@@ -35987,10 +35975,12 @@ __metadata:
     react-router-dom-v5-compat: "npm:^6.30.0"
     react-window: "npm:^1.8.11"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     web-streams-polyfill: "npm:^4.1.0"
-    webpack: "npm:^5.98.0"
+    webpack: "npm:^5.99.5"
     zustand: "npm:^4.5.6"
+  peerDependencies:
+    "@openpgp/web-stream-tools": ^0.1.0
   languageName: unknown
   linkType: soft
 
@@ -36036,7 +36026,7 @@ __metadata:
     rimraf: "npm:^6.0.1"
     tinycolor2: "npm:^1.6.0"
     totp-generator: "npm:^1.0.0"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     vcf: "npm:^2.1.2"
     zod: "npm:^3.24.2"
   peerDependencies:
@@ -36093,7 +36083,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.7"
     ttag-cli: "npm:^1.10.18"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     update-electron-app: "npm:^3.1.1"
     zod: "npm:^3.24.2"
   languageName: unknown
@@ -36171,7 +36161,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.7"
     turndown: "npm:^7.2.0"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     workbox-cacheable-response: "npm:^7.3.0"
     workbox-expiration: "npm:^7.3.0"
     workbox-routing: "npm:^7.3.0"
@@ -36211,8 +36201,8 @@ __metadata:
     prettier: "npm:^3.5.3"
     proton-pass-web: "workspace:applications/pass"
     ts-loader: "npm:^9.5.2"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
   languageName: unknown
   linkType: soft
 
@@ -36227,16 +36217,16 @@ __metadata:
     "@proton/pass": "workspace:^"
     "@redux-devtools/remote": "npm:^0.9.5"
     "@types/react-helmet": "npm:^6.1.11"
-    "@types/webextension-polyfill": "npm:^0.12.1"
+    "@types/webextension-polyfill": "npm:^0.12.3"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     prettier: "npm:^3.5.3"
     react-helmet: "npm:^6.1.0"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     webextension-polyfill: "npm:^0.12.0"
-    webpack: "npm:^5.98.0"
+    webpack: "npm:^5.99.5"
     webpack-dev-server: "npm:^5.2.1"
   peerDependencies:
     react: ^18.3.1
@@ -36265,8 +36255,8 @@ __metadata:
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     prettier: "npm:^3.5.3"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
     webpack-manifest-plugin: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -36282,7 +36272,7 @@ __metadata:
     esbuild: "npm:^0.25.2"
     eslint: "npm:^8.57.1"
     prettier: "npm:^3.5.3"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -36320,8 +36310,8 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     ts-loader: "npm:^9.5.2"
-    typescript: "npm:^5.7.3"
-    webpack: "npm:^5.98.0"
+    typescript: "npm:^5.8.3"
+    webpack: "npm:^5.99.5"
   languageName: unknown
   linkType: soft
 
@@ -36352,7 +36342,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     resize-observer: "npm:^1.0.4"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -36388,7 +36378,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -36430,10 +36420,10 @@ __metadata:
     react-redux: "npm:^9.2.0"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.7"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
     vite-plugin-wasm: "npm:^3.4.1"
     vitest: "npm:^1.6.1"
-    webpack: "npm:^5.98.0"
+    webpack: "npm:^5.99.5"
   languageName: unknown
   linkType: soft
 
@@ -39296,7 +39286,7 @@ __metadata:
     stylelint-config-standard-scss: "npm:^10.0.0"
     stylelint-use-logical-spec: "npm:^5.0.1"
     turbo: "npm:^2.5.0"
-    typescript: "npm:^5.7.3"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -43352,13 +43342,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.0, typescript@npm:^5.4.4, typescript@npm:^5.7.3":
-  version: 5.7.3
-  resolution: "typescript@npm:5.7.3"
+"typescript@npm:^5.0.0, typescript@npm:^5.4.4, typescript@npm:^5.8.3":
+  version: 5.8.3
+  resolution: "typescript@npm:5.8.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/b7580d716cf1824736cc6e628ab4cd8b51877408ba2be0869d2866da35ef8366dd6ae9eb9d0851470a39be17cbd61df1126f9e211d8799d764ea7431d5435afa
+  checksum: 10c0/5f8bb01196e542e64d44db3d16ee0e4063ce4f3e3966df6005f2588e86d91c03e1fb131c2581baf0fb65ee79669eea6e161cd448178986587e9f6844446dbb48
   languageName: node
   linkType: hard
 
@@ -43402,13 +43392,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.7.3#optional!builtin<compat/typescript>":
-  version: 5.7.3
-  resolution: "typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"
+"typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.8.3#optional!builtin<compat/typescript>":
+  version: 5.8.3
+  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/6fd7e0ed3bf23a81246878c613423730c40e8bdbfec4c6e4d7bf1b847cbb39076e56ad5f50aa9d7ebd89877999abaee216002d3f2818885e41c907caaa192cc4
+  checksum: 10c0/39117e346ff8ebd87ae1510b3a77d5d92dae5a89bde588c747d25da5c146603a99c8ee588c7ef80faaf123d89ed46f6dbd918d534d641083177d5fac38b8a1cb
   languageName: node
   linkType: hard
 
@@ -45235,9 +45225,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5, webpack@npm:^5.69.1, webpack@npm:^5.9.0, webpack@npm:^5.98.0":
-  version: 5.98.0
-  resolution: "webpack@npm:5.98.0"
+"webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5, webpack@npm:^5.69.1, webpack@npm:^5.9.0, webpack@npm:^5.99.5":
+  version: 5.99.5
+  resolution: "webpack@npm:5.99.5"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/estree": "npm:^1.0.6"
@@ -45267,7 +45257,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10c0/bee4fa77f444802f0beafb2ff30eb5454a606163ad7d3cc9a5dcc9d24033c62407bed04601b25dea49ea3969b352c1b530a86c753246f42560a4a084eefb094e
+  checksum: 10c0/8f5ebea5e2ae7449774d535862348ee564c100350643e4bdd0683fa07eabc058e88a07b7af7176ee4038d03e5172001daf65c16acebf90bc7ba48c08e25e6792
   languageName: node
   linkType: hard
 

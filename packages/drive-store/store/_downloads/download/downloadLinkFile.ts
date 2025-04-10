@@ -1,4 +1,3 @@
-// @ts-ignore missing `toStream` TS definitions
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
@@ -60,18 +59,19 @@ export default function initDownloadLinkFile(
         const hash = (await generateContentHash(binaryMessage)).BlockHash;
 
         try {
-            const { data, verificationStatus } = await markErrorAsCrypto<{ data: Uint8Array; verificationStatus: VERIFICATION_STATUS }>(
-                async () => {
-                    const { data, verificationStatus } = await CryptoProxy.decryptMessage({
-                        binaryMessage,
-                        binarySignature: decryptedSignature,
-                        sessionKeys: keys.sessionKeys,
-                        verificationKeys: keys.addressPublicKeys,
-                        format: 'binary',
-                    });
-                    return { data, verificationStatus };
-                }
-            );
+            const { data, verificationStatus } = await markErrorAsCrypto<{
+                data: Uint8Array;
+                verificationStatus: VERIFICATION_STATUS;
+            }>(async () => {
+                const { data, verificationStatus } = await CryptoProxy.decryptMessage({
+                    binaryMessage,
+                    binarySignature: decryptedSignature,
+                    sessionKeys: keys.sessionKeys,
+                    verificationKeys: keys.addressPublicKeys,
+                    format: 'binary',
+                });
+                return { data, verificationStatus };
+            });
 
             if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verificationStatus });
