@@ -8,11 +8,13 @@ import useCancellationFlow from '@proton/components/containers/payments/subscrip
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const { redirectToCancellationFlow, b2bAccess, b2cAccess } = useCancellationFlow();
+    const { sendStartCancellationSectionReport } = useCancellationTelemetry();
     const { loadingCancelSubscription, cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
@@ -24,8 +26,9 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const handleContinueClick = () => {
         if (b2cAccess || b2bAccess) {
             redirectToCancellationFlow();
+            sendStartCancellationSectionReport();
         } else {
-            void cancelSubscription(undefined, undefined, true);
+            void cancelSubscription({ subscriptionReminderFlow: undefined, upsellPlanId: undefined, skipUpsell: true });
         }
     };
 

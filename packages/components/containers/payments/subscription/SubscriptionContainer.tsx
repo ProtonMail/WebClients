@@ -425,7 +425,7 @@ const SubscriptionContainer = ({
         { operationsSubscriptionData, paymentProcessorType }: SubscriptionContext
     ) => {
         if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
-            const result = await cancelSubscription();
+            const result = await cancelSubscription({});
             if (result?.status === 'kept') {
                 return;
             }
