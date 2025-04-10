@@ -4400,6 +4400,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
       ],
+      "Just now": [
+        "À l'instant"
+      ],
       "Keep your files secure with end-to-end encryption.": [
         "Gardez vos fichiers en sécurité avec le chiffrement de bout en bout."
       ],
@@ -4925,6 +4928,9 @@
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Le transfert a été ignoré pour le dossier « ${ folderName } »."
+      ],
+      "Trash": [
+        "Corbeille"
       ],
       "Trashed": [
         "Dans la corbeille"
@@ -6520,9 +6526,6 @@
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
-      ],
-      "Breach alerts": [
-        "Alertes de fuites de données"
       ],
       "Calendar sharing": [
         "Partage de calendrier"
@@ -8750,6 +8753,25 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'espace de stockage par utilisateur"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domaine de messagerie personnalisé",
+        "${ planNumberOfDomains } domaines de messagerie personnalisés"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresse e-mail",
+        "${ planNumberOfEmails } adresses e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Dossiers, labels et filtres personnalisés"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Go d'espace de stockage"
@@ -8789,25 +8811,6 @@
       ],
       "Your privacy is our mission": [
         "La protection de votre vie privée est notre priorité."
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'espace de stockage par utilisateur"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domaine de messagerie personnalisé",
-        "${ planNumberOfDomains } domaines de messagerie personnalisés"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresse e-mail",
-        "${ planNumberOfEmails } adresses e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Dossiers, labels et filtres personnalisés"
       ]
     },
     "Subscription renewal state": {
