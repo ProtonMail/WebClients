@@ -11,7 +11,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import type { PLANS } from '@proton/payments';
-import { useFlag } from '@proton/unleash';
 
 import type { ConfirmationModal } from './interface';
 import useCancellationTelemetry from './useCancellationTelemetry';
@@ -32,13 +31,14 @@ const CancelConfirmationModal = ({
     ...modalProps
 }: Props) => {
     const { sendCancelModalKeepPlanReport, sendCancelModalConfirmCancelReport } = useCancellationTelemetry();
-    const isUpsellEnabled = useFlag('NewCancellationFlowUpsell');
 
     const handleClick = () => {
-        if (!isUpsellEnabled) {
-            sendCancelModalConfirmCancelReport();
-        }
+        sendCancelModalConfirmCancelReport();
         cancelSubscription();
+    };
+
+    const handleKeepPlan = () => {
+        sendCancelModalKeepPlanReport();
     };
 
     return (
@@ -63,9 +63,7 @@ const CancelConfirmationModal = ({
             <ModalTwoFooter className="flex justify-space-between">
                 <ButtonLike
                     as={SettingsLink}
-                    onClick={() => {
-                        sendCancelModalKeepPlanReport();
-                    }}
+                    onClick={handleKeepPlan}
                     path="/dashboard"
                     shape="outline"
                     color="weak"
