@@ -1,3 +1,15 @@
+### Version 1.31.1
+
+- File attachments improvements
+- Fine-tune click-to-copy mechanism
+- Improve build size
+
+### Version 1.31.0
+
+- Add file attachments support
+- Improve data synchronisation
+- Improve exporters & importers
+
 ### Version 1.30.1
 
 - Support biometric unlock on Safari
