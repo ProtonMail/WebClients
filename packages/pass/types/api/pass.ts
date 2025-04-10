@@ -143,8 +143,8 @@ export type CreatePendingFileRequest = {
     Metadata: string;
     /* Number of chunks this file will have */
     ChunkCount: number;
-    /* File version */
-    EncryptionVersion: number;
+    /* File version (OPTIONAL UNTIL BE MIGRATES) */
+    EncryptionVersion?: number;
 };
 export type UpdatePendingFileRequest = {
     /* File metadata encrypted with an attachmentKey and encoded in Base64 */
@@ -723,8 +723,8 @@ export type ItemFileOutput = {
     ItemKeyRotation: number;
     /* Chunks that contain the contents of the file */
     Chunks: ItemFileChunkOutput[];
-    /* Encryption version of the file */
-    EncryptionVersion: number;
+    /* Encryption version of the file (OPTIONAL UNTIL BE MIGRATES) */
+    EncryptionVersion?: number;
     /* Item revision when the file was added */
     RevisionAdded: number;
     /* Item revision when the file was removed. If null, the file is still present */

@@ -6,11 +6,15 @@ import { c } from 'ttag';
 import { Href, InlineLinkButton } from '@proton/atoms';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
+import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { UpsellRef } from '@proton/pass/constants';
 import type { ImportFormContext } from '@proton/pass/hooks/import/useImportForm';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
@@ -31,8 +35,12 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
         ImportProvider.PROTONPASS,
     ].includes(provider);
 
+const providerHasFileAttachments = (provider: ImportProvider) =>
+    [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS].includes(provider);
+
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
     const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const fileAttachmentsEnabled = useFeatureFlag(PassFeature.PassFileAttachments);
 
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
@@ -165,9 +173,20 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                         </Card>
                     )}
 
-                    {free && (
-                        <Card className="mb-4 text-sm" type="warning">
-                            {c('Pass_file_attachments').t`Your current plan does not support importing files`}
+                    {fileAttachmentsEnabled && providerHasFileAttachments(form.values.provider) && free && (
+                        <Card className="mb-4 text-sm" type="primary">
+                            {c('Pass_file_attachments')
+                                .t`If your data contains file attachments, they will not be imported.`}
+                            {BUILD_TARGET !== 'safari' && (
+                                <>
+                                    {' '}
+                                    <UpgradeButton
+                                        inline
+                                        label={c('Pass_file_attachments').t`Upgrade to support file attachments`}
+                                        upsellRef={UpsellRef.FILE_ATTACHMENTS}
+                                    />
+                                </>
+                            )}
                         </Card>
                     )}
                 </>
