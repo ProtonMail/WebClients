@@ -69,45 +69,57 @@ const CalendarInviteButtons = ({
     }, [partstat]);
 
     const onAccept = () => {
-        const targetPartstat = ATTENDEE_RESPONE_TYPE.ACCEPTED;
+        const originalAnswer = selectedAnswer;
+        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.ACCEPTED);
 
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'yes', plan },
         });
         startERRTMetric('accept');
-        const promise = withLoadingAccept(accept()).then(() => {
-            setSelectedAnswer(targetPartstat);
-            stopERRTMetric();
-        });
+        const promise = withLoadingAccept(accept())
+            .then(() => {
+                stopERRTMetric();
+            })
+            .catch(() => {
+                setSelectedAnswer(originalAnswer);
+            });
         return promise;
     };
     const onTentative = () => {
-        const targetPartstat = ATTENDEE_RESPONE_TYPE.TENTATIVE;
+        const originalAnswer = selectedAnswer;
+        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.TENTATIVE);
 
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'maybe', plan },
         });
         startERRTMetric('tentative');
-        const promise = withLoadingTentative(acceptTentatively()).then(() => {
-            setSelectedAnswer(targetPartstat);
-            stopERRTMetric();
-        });
+        const promise = withLoadingTentative(acceptTentatively())
+            .then(() => {
+                stopERRTMetric();
+            })
+            .catch(() => {
+                setSelectedAnswer(originalAnswer);
+            });
         return promise;
     };
     const onDecline = () => {
-        const targetPartstat = ATTENDEE_RESPONE_TYPE.DECLINED;
+        const originalAnswer = selectedAnswer;
+        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.DECLINED);
 
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'no', plan },
         });
         startERRTMetric('decline');
-        const promise = withLoadingDecline(decline()).then(() => {
-            setSelectedAnswer(targetPartstat);
-            stopERRTMetric();
-        });
+        const promise = withLoadingDecline(decline())
+            .then(() => {
+                stopERRTMetric();
+            })
+            .catch(() => {
+                setSelectedAnswer(originalAnswer);
+            });
         return promise;
     };
 
