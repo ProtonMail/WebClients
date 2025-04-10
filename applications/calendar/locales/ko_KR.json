@@ -3090,9 +3090,6 @@
       "Email address is required": [
         "이메일 주소가 필요함"
       ],
-      "Email is not valid": [
-        "유효하지 않은 이메일"
-      ],
       "Ends on date cannot be empty": [
         "종료 날짜는 비워둘 수 없습니다"
       ],
@@ -3140,9 +3137,6 @@
       ],
       "IMAP server is required": [
         "IMAP 서버가 필요함"
-      ],
-      "Incorrect username": [
-        "잘못된 사용자 이름"
       ],
       "Intended recipient does not support calendar sharing": [
         "지정한 수신자가 캘린더 공유를 지원하지 않습니다."
@@ -3234,9 +3228,6 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정이 아님"
       ],
-      "Not a valid number": [
-        "유효하지 않은 번호"
-      ],
       "Number of occurrences cannot be empty": [
         "발생 횟수는 비워 둘 수 없습니다."
       ],
@@ -3251,9 +3242,6 @@
       ],
       "Password is required": [
         "비밀번호가 필요함"
-      ],
-      "Passwords do not match": [
-        "비밀번호가 일치하지 않습니다"
       ],
       "Payment process canceled": [
         "결제 과정 취소됨"
@@ -3354,9 +3342,6 @@
       "The amount due has changed. Please try again.": [
         "결제 예정 가격이 변경되었습니다. 다시 시도해 주세요."
       ],
-      "The email addresses do not match": [
-        "이메일 주소가 일치하지 않습니다."
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "폴더 이름이 유효하지 않습니다. 다른 이름을 사용해 주세요."
       ],
@@ -3384,14 +3369,8 @@
       "There was an error when exporting the contacts vCards": [
         "연락처 vCard를 내보낼 때 오류가 발생했어요."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
-      ],
       "This field is required": [
         "필수 기재 항목입니다"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
       "This folder name is not available. Please choose a different name.": [
         "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
@@ -3405,9 +3384,6 @@
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "문자, 숫자 및 _.- 만 사용하십시오"
-      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN 대시보드를 불러오지 못했습니다. 연결 상태 확인 후 다시 시도해 주세요."
       ],
@@ -3419,12 +3395,6 @@
       ],
       "Unknown payment token status": [
         "알 수 없는 결제 토큰 상태"
-      ],
-      "Username must begin with a letter or digit": [
-        "사용자명은 문자로 시작해야 합니다"
-      ],
-      "Username must end with a letter or digit": [
-        "사용자 이름은 문자로 시작하여야 합니다."
       ],
       "Validation error": [
         "검증 오류"
@@ -6686,26 +6656,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6727,6 +6677,26 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -6876,9 +6846,6 @@
       ],
       "Available on all platforms": [
         "모든 플랫폼에서 지원"
-      ],
-      "Breach alerts": [
-        "정보 유출 경고"
       ],
       "Calendar sharing": [
         "일정 공유"
@@ -9107,47 +9074,6 @@
         "${ totalPrice }용"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -9400,6 +9326,47 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -10415,14 +10382,6 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "인증된 연락처의 종단 간 암호화로 공유됨"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]
     },
     "Video control": {
