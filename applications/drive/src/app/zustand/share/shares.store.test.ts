@@ -10,7 +10,6 @@ const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     state: ShareState.active,
     isLocked: false,
     isDefault: false,
-    isVolumeSoftDeleted: false,
     creator: 'mock',
     possibleKeyPackets: [],
     createTime: Date.now(),

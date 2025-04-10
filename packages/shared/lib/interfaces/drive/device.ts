@@ -9,7 +9,7 @@ export interface DevicePayload {
     };
     Share: {
         ShareID: string;
-        Name: string;
+        Name: string; // TODO: deprecated and should be removed
         LinkID: string;
     };
 }
@@ -20,12 +20,10 @@ export type DevicesResult = {
 
 export interface CreateDeviceVolume {
     Device: {
-        VolumeID: string;
         SyncState: number;
         Type: number;
     };
     Share: {
-        Name: string;
         AddressID: string;
         AddressKeyID: string;
         Key: string;

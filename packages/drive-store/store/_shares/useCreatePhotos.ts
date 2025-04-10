@@ -22,7 +22,6 @@ export function useCreatePhotos() {
         const { Volume } = await debouncedRequest<CreatedDriveVolumeResult>(
             queryCreatePhotosShare(defaultShare.volumeId, {
                 Share: {
-                    Name: 'Photos',
                     AddressID: address.ID,
                     AddressKeyID: addressKeyID,
                     Key: bootstrap.ShareKey,

@@ -22,12 +22,10 @@ export function useCreateDevice() {
         const { Volume } = await debouncedRequest<CreatedDriveVolumeResult>(
             queryCreateDriveDevice({
                 Device: {
-                    VolumeID: defaultShare.volumeId,
                     SyncState: 1,
                     Type: 1,
                 },
                 Share: {
-                    Name: 'My device',
                     AddressID: address.ID,
                     AddressKeyID: addressKeyID,
                     Key: bootstrap.ShareKey,
