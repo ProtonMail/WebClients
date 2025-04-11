@@ -5,10 +5,11 @@ import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassC
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { intoFileParam, mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { base64ToFile } from '@proton/pass/lib/file-storage/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import { fileDownload, fileDownloadPublic } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
-import type { FileDescriptor, FileID, SelectedItem } from '@proton/pass/types';
+import type { FileDescriptor, FileForDownload, FileID, Maybe, SelectedItem } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { abortable } from '@proton/pass/utils/fp/promises';
@@ -25,20 +26,33 @@ export const useFileDownload = () => {
     const ctrls = useRef<Map<FileID, AbortController>>(new Map());
     const [pending, setPending] = useState(new Set<string>());
 
-    const downloadFile = useCallback(async (ref: string, descriptor: FileDescriptor): Promise<void> => {
+    const downloadFile = useCallback(async (res: FileForDownload, descriptor: FileDescriptor): Promise<void> => {
         const mimeType = mimetypeForDownload(descriptor.mimeType);
 
-        /** Trying to download from the extension popup in safari will
-         * cause the filename to be `Unknown`. To alleviate this, leverage
-         * the internal file saver page to by-pass this limitation */
-        if (BUILD_TARGET === 'safari' && popup && !popup.expanded) {
-            const file = intoFileParam({ filename: descriptor.name, mimeType, ref });
-            const url = browser.runtime.getURL(`internal.html#file/${file}`);
-            browser.windows.create({ url, type: 'popup', height: 320, width: 250 }).catch(noop);
-            return;
-        }
+        const file = await (async (): Promise<Maybe<File>> => {
+            switch (res.type) {
+                case 'storage': {
+                    const ref = res.fileRef;
 
-        const file = await fileStorage.readFile(ref, mimeType);
+                    /** Trying to download from the extension popup in safari will
+                     * cause the filename to be `Unknown`. To alleviate this, leverage
+                     * the internal file saver page to by-pass this limitation */
+                    if (BUILD_TARGET === 'safari' && popup && !popup.expanded) {
+                        const file = intoFileParam({ filename: descriptor.name, mimeType, ref });
+                        const url = browser.runtime.getURL(`internal.html#file/${file}`);
+                        browser.windows.create({ url, type: 'popup', height: 320, width: 250 }).catch(noop);
+                        return;
+                    }
+
+                    return fileStorage.readFile(ref, mimeType);
+                }
+
+                case 'b64': {
+                    return base64ToFile(res.data, descriptor.name, mimeType);
+                }
+            }
+        })();
+
         if (file) download(file, descriptor.name);
     }, []);
 

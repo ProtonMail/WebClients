@@ -10,8 +10,10 @@ import {
     getArchiveName,
 } from '@proton/pass/lib/export/archive';
 import { createPassExportCSV } from '@proton/pass/lib/export/csv';
+import type { ExportResult } from '@proton/pass/lib/export/types';
 import { ExportFormat } from '@proton/pass/lib/export/types';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { blobToBase64 } from '@proton/pass/lib/file-storage/utils';
 import { belongsToShares, hasAttachments, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { exportData } from '@proton/pass/store/actions/creators/export';
@@ -23,6 +25,7 @@ import type {
     FileDescriptor,
     IndexedByShareIdAndItemId,
     ItemRevision,
+    Maybe,
     MaybeNull,
     SelectedItem,
     Share,
@@ -150,10 +153,25 @@ export const exportUserData = createRequestSaga({
             progressChannel.close();
             progressTask.cancel();
 
+            if (EXTENSION_BUILD && fileStorage.type === 'Memory') {
+                const blob: Maybe<File> = yield fileStorage.readFile(state.filename);
+                if (!blob) throw new Error('File not found');
+                const data: string = yield blobToBase64(blob);
+
+                return {
+                    type: 'b64',
+                    data,
+                    filename: state.filename,
+                    mimeType: state.mimeType,
+                } satisfies ExportResult;
+            }
+
             return {
+                type: 'storage',
                 filename: state.filename,
+                fileRef: state.filename,
                 mimeType: state.mimeType,
-            };
+            } satisfies ExportResult;
         } catch (err) {
             logger.debug('[Export] export failure', err);
             throw err;

@@ -5,6 +5,7 @@ import type {
     FileChunkUploadDTO,
     FileDownloadDTO,
     FileDownloadPublicDTO,
+    FileForDownload,
     FileID,
     FileInitiateUploadDTO,
     FileMetadataDTO,
@@ -29,11 +30,13 @@ export const fileUploadChunk = requestActionsFactory<WithTabId<FileChunkUploadDT
     failure: { prepare: withAbortPayload },
 });
 
-export const fileDownload = requestActionsFactory<WithTabId<FileDownloadDTO>, string>('file::download')({
+export const fileDownload = requestActionsFactory<WithTabId<FileDownloadDTO>, FileForDownload>('file::download')({
     key: ({ shareId, itemId, fileID, tabId }) => `${tabId ?? 0}::${shareId}::${itemId}::${fileID}`,
 });
 
-export const fileDownloadPublic = requestActionsFactory<FileDownloadPublicDTO, string>('file::download::public')({
+export const fileDownloadPublic = requestActionsFactory<FileDownloadPublicDTO, FileForDownload>(
+    'file::download::public'
+)({
     key: ({ filesToken, fileID }) => `${filesToken}::${fileID}`,
 });
 

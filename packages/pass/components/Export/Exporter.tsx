@@ -16,11 +16,12 @@ import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { base64ToFile } from '@proton/pass/lib/file-storage/utils';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import { exportData } from '@proton/pass/store/actions/creators/export';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import { selectRequest } from '@proton/pass/store/selectors';
-import type { MaybePromise } from '@proton/pass/types';
+import type { Maybe, MaybePromise } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -95,11 +96,20 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         throw new Error(result.data.error);
                     }
 
-                    let { filename, mimeType } = result.data;
+                    let { mimeType, filename } = result.data;
                     mimeType = mimetypeForDownload(mimeType);
-                    const file = await fileStorage.readFile(filename, mimeType);
 
-                    if (!file) throw new Error();
+                    const file = await (async (): Promise<Maybe<File>> => {
+                        switch (result.data.type) {
+                            case 'storage':
+                                const { fileRef } = result.data;
+                                return fileStorage.readFile(fileRef, mimeType);
+                            case 'b64':
+                                return base64ToFile(result.data.data, filename, mimeType);
+                        }
+                    })();
+
+                    if (!file) throw new Error('File not found');
 
                     download(file, filename);
                     createNotification({

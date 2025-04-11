@@ -11,9 +11,11 @@ import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { base64ToFile } from '@proton/pass/lib/file-storage/utils';
 import { exportData } from '@proton/pass/store/actions/creators/export';
 import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
 import type { State } from '@proton/pass/store/types';
+import type { Maybe } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -57,7 +59,17 @@ export const useReauthActionHandler = (store: Store<State>) => {
                     if (ok) {
                         let { filename, mimeType } = result.data;
                         mimeType = mimetypeForDownload(mimeType);
-                        const file = await fileStorage.readFile(filename, mimeType);
+
+                        const file = await (async (): Promise<Maybe<File>> => {
+                            switch (result.data.type) {
+                                case 'storage':
+                                    const { fileRef } = result.data;
+                                    return fileStorage.readFile(fileRef, mimeType);
+                                case 'b64':
+                                    return base64ToFile(result.data.data, filename, mimeType);
+                            }
+                        })();
+
                         if (file) download(file, filename);
                     }
                 }, 1_500);

@@ -19,6 +19,7 @@ import {
 import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import { intoFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { base64ToBlob, blobToBase64 } from '@proton/pass/lib/file-storage/utils';
 import {
     fileDownload,
     fileDownloadPublic,
@@ -32,7 +33,7 @@ import {
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
-import type { FileDescriptor, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
+import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -70,7 +71,9 @@ const uploadChunk = createRequestSaga({
                 switch (payload.type) {
                     case 'blob':
                         return payload.blob;
-                    case 'fs':
+                    case 'b64':
+                        return base64ToBlob(payload.data);
+                    case 'storage':
                         return fileStorage.readFile(payload.ref);
                 }
             })();
@@ -113,7 +116,14 @@ const downloadFile = createRequestSaga({
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
-            return fileRef;
+            if (EXTENSION_BUILD && fileStorage.type === 'Memory') {
+                const blob: Maybe<File> = yield fileStorage.readFile(fileRef);
+                if (!blob) throw new Error('File not found');
+                const data: string = yield blobToBase64(blob);
+                return { type: 'b64', data } satisfies FileForDownload;
+            }
+
+            return { type: 'storage', fileRef } satisfies FileForDownload;
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
@@ -142,7 +152,7 @@ const downloadPublicChunk = createRequestSaga({
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
-            return fileRef;
+            return { type: 'storage', fileRef } satisfies FileForDownload;
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
