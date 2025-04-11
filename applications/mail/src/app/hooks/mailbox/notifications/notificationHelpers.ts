@@ -32,11 +32,13 @@ export const displayNotification = ({
 
     // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
     const cleanHistoryLocation = { ...history.location, hash: '' };
-    const elementID = isConversationMode(labelID, mailSettings, cleanHistoryLocation) ? ConversationID : ID;
-    const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID });
+    const conversationMode = isConversationMode(labelID, mailSettings, cleanHistoryLocation);
+    const elementID = conversationMode ? ConversationID : ID;
+    const messageID = conversationMode ? ID : undefined;
+    const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID, messageID });
 
     if (isElectronMail) {
-        return createElectronNotification({ title, body, app: 'mail', labelID, elementID });
+        return createElectronNotification({ title, body, app: 'mail', labelID, elementID, messageID });
     }
 
     return create(title, {
