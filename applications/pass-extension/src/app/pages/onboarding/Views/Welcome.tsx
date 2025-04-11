@@ -3,7 +3,7 @@ import { type FC, useCallback, useState } from 'react';
 import { OnboardingCard } from 'proton-pass-extension/app/pages/onboarding/Card/OnboardingCard';
 import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
-import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
+import { useExtensionClientInit } from 'proton-pass-extension/lib/hooks/useExtensionClientInit';
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
@@ -23,7 +23,7 @@ import './Welcome.scss';
 export const Welcome: FC = () => {
     const [pendingAccess, setPendingAccess] = useState(false);
 
-    useExtensionState(
+    useExtensionClientInit(
         useCallback(({ status }) => {
             if (clientReady(status)) {
                 void sendMessage.onSuccess(

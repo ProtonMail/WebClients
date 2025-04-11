@@ -3,7 +3,7 @@ import { createContext, useCallback, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
-import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
+import { useExtensionClientInit } from 'proton-pass-extension/lib/hooks/useExtensionClientInit';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
@@ -39,7 +39,7 @@ type Props = {
 };
 
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
-    const { endpoint, setCurrentTab, onTelemetry } = usePassCore();
+    const { endpoint, setExtensionClientState, onTelemetry } = usePassCore();
     const config = usePassConfig();
 
     const dispatch = useDispatch();
@@ -47,7 +47,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
 
     const activityProbe = useExtensionActivityProbe();
 
-    const ready = useExtensionState(
+    const ready = useExtensionClientInit(
         useCallback((state) => {
             if (state.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
 
@@ -78,7 +78,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
             denyUrls: [],
         });
 
-        setCurrentTab?.({ url, tabId: senderTabId });
+        setExtensionClientState?.({ url, tabId: senderTabId, port: port.name });
 
         if (onWorkerMessage) {
             const listener = (message: unknown) => isExtensionMessage(message) && onWorkerMessage(message);

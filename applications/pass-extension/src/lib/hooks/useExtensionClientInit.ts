@@ -7,15 +7,17 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
+import { MemoryStorage } from '@proton/pass/lib/file-storage/fs';
 import type { AppState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 import { useEndpointMessage } from './useEndpointMessage';
 
-export const useExtensionState = (onStateChange: (state: AppState) => void) => {
+export const useExtensionClientInit = (onStateChange: (state: AppState) => void) => {
     const { endpoint } = usePassCore();
     const { port, tabId } = useExtensionContext();
     const authStore = useAuthStore();
@@ -35,6 +37,21 @@ export const useExtensionState = (onStateChange: (state: AppState) => void) => {
         const onMessage = (message: unknown) => {
             if (matchExtensionMessage(message, { type: WorkerMessageType.WORKER_STATE_CHANGE })) {
                 ready.current.then(() => onChange(message.payload.state)).catch(noop);
+                return;
+            }
+
+            if (matchExtensionMessage(message, { type: WorkerMessageType.FS_WRITE })) {
+                const { fileRef, b64 } = message.payload;
+                const chunks = MemoryStorage.files.get(fileRef) ?? [];
+                chunks.push(base64StringToUint8Array(b64));
+                MemoryStorage.files.set(fileRef, chunks);
+                return;
+            }
+
+            if (matchExtensionMessage(message, { type: WorkerMessageType.FS_ERROR })) {
+                const { fileRef } = message.payload;
+                void MemoryStorage.deleteFile(fileRef);
+                return;
             }
         };
 
