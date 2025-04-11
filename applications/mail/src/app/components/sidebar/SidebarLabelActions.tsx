@@ -43,7 +43,12 @@ const SidebarLabelActions = ({ type, level, folders, element, onToggleDropdown }
                     hasCaret={false}
                     shape="ghost"
                     size="small"
-                    content={<Icon name="three-dots-horizontal" />}
+                    content={
+                        <Icon
+                            name="three-dots-horizontal"
+                            alt={type === 'folder' ? c('Title').t`Folder options` : c('Title').t`Label options`}
+                        />
+                    }
                     onToggle={onToggleDropdown}
                 >
                     {showCreateFolder && (
