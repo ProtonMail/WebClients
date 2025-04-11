@@ -13,6 +13,7 @@ impl ClipboardTrait for Clipboard {
     fn write(text: &str, _: bool) -> Result<(), anyhow::Error> {
         let mut clipboard = arboard::Clipboard::new()?;
         let set = clipboard.set().wait();
-        set.text(text).map_err(|e| e.into())
+        set.text(text)?;
+        Ok(())
     }
 }
