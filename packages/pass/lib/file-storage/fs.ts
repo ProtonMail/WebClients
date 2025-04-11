@@ -1,11 +1,10 @@
 import { FileStorageMemory } from '@proton/pass/lib/file-storage/fs.memory';
-import { FileStorageStub } from '@proton/pass/lib/file-storage/fs.stub';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
-import { FileStorageIDB } from './fs.idb';
+import { FileStorageIDB, openPassFileDB } from './fs.idb';
 import { FileStorageOPFS } from './fs.opfs';
 import type { FileStorage } from './types';
 
@@ -16,25 +15,42 @@ export const fileStorageReady = awaiter<boolean>();
 const isOPFSSupported = () =>
     BUILD_TARGET !== 'safari' && !isSafari() && Boolean(navigator.storage && navigator.storage.getDirectory);
 
-export const getSupportedFileStorage = (options: { tryOPFS: boolean }) => {
-    if (options.tryOPFS && isOPFSSupported()) return new FileStorageOPFS();
-    if ('indexedDB' in globalThis) return new FileStorageIDB();
-    return !EXTENSION_BUILD ? new FileStorageMemory() : new FileStorageStub();
+type StorageOptions = { OPFS: boolean; IDB: boolean };
+
+export const getSupportedFileStorage = (options: StorageOptions) => {
+    if (options.OPFS && isOPFSSupported()) return new FileStorageOPFS();
+    if (options.IDB && 'indexedDB' in globalThis) return new FileStorageIDB();
+    return new FileStorageMemory();
 };
 
-export let fileStorage: FileStorage = getSupportedFileStorage({ tryOPFS: true });
+export let fileStorage: FileStorage = getSupportedFileStorage({ OPFS: true, IDB: true });
 
-(async () => {
-    if (fileStorage.type === 'OPFS') {
-        try {
-            /** Checking if OPFS is indeed supported can only happen
-             * asynchronously to check for browser permissions. */
-            await navigator.storage.getDirectory();
-        } catch {
-            fileStorage = getSupportedFileStorage({ tryOPFS: false });
-            logger.info(`[fs::OPFS] OPFS not supported - switching to ${fileStorage.type}`);
-        } finally {
-            fileStorageReady.resolve(true);
+const onStorageFallback = async () => {
+    let options: StorageOptions = { OPFS: true, IDB: true };
+
+    try {
+        switch (fileStorage.type) {
+            case 'OPFS':
+                /** Verify OPFS availability by attempting to access storage directory.
+                 * This confirms both API support and necessary permissions. */
+                options.OPFS = false;
+                await navigator.storage.getDirectory();
+            case 'IDB':
+                /** Verify IndexedDB functionality by opening the database.
+                 * This catches restrictions in private browsing modes. */
+                options.OPFS = false;
+                options.IDB = false;
+                await openPassFileDB();
         }
+    } catch {
+        const unsupported = fileStorage.type;
+        fileStorage = getSupportedFileStorage(options);
+        logger.info(`[fs::${unsupported}] storage not supported - switching to ${fileStorage.type}`);
+
+        await onStorageFallback().catch(noop);
+    } finally {
+        fileStorageReady.resolve(true);
     }
-})().catch(noop);
+};
+
+onStorageFallback().catch(noop);
