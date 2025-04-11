@@ -4,7 +4,7 @@ import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto
 import type { FileAttachmentValues, FileDescriptor, ItemFileOutput, ItemKey, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getHashCode } from '@proton/shared/lib/helpers/string';
 
 export const isFileForRevision = (revision: number) => (file: FileDescriptor) =>
     revision >= file.revisionAdded && (!file.revisionRemoved || revision < file.revisionRemoved);
@@ -70,10 +70,16 @@ export const getFileParts = (filename: string): FileParts => {
     return { base: match[1], ext: match[2] };
 };
 
-export const getExportFileName = (file: FileDescriptor): string => {
-    const parts = getFileParts(file.name);
-    return `${parts.base}.${uniqueId(16)}${parts.ext}`;
-};
+export const getExportFileName =
+    (shareId: string) =>
+    (file: FileDescriptor): string => {
+        const parts = getFileParts(file.name);
+        const shareHash = Math.abs(getHashCode(shareId)).toString(16);
+        const fileIdHash = Math.abs(getHashCode(file.fileID)).toString(16);
+        const exportId = `${shareHash}${fileIdHash}`;
+
+        return `${parts.base}.${exportId}${parts.ext}`;
+    };
 
 /** Safari extensions require `application/octet-stream`
  * to trigger a download from an extension page. */

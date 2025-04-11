@@ -21,10 +21,6 @@ jest.mock('./file-proto.transformer', () => ({
     })),
 }));
 
-jest.mock('@proton/pass/utils/string/unique-id', () => ({
-    uniqueId: jest.fn().mockReturnValue('123456789'),
-}));
-
 describe('intoFileDescriptors', () => {
     let openFileDescriptor: jest.Mock;
 
@@ -229,12 +225,12 @@ describe('getFileParts', () => {
 
 describe('getExportFileName', () => {
     test.each<[string, string, string]>([
-        ['document.pdf', 'document.123456789.pdf', 'should add uniqueId before extension'],
-        ['document', 'document.123456789', 'should append uniqueId for files without extension'],
-        ['archive.tar.gz', 'archive.tar.123456789.gz', 'should interpolate uniqueId for 2 part extensions'],
-        ['.dot', '.123456789.dot', 'should prepend uniqueId for dotfiles'],
+        ['document.pdf', 'document.1c40ad017a1e32ce.pdf', 'should add uniqueId before extension'],
+        ['document', 'document.1c40ad017a1e32ce', 'should append uniqueId for files without extension'],
+        ['ar.tar.gz', 'ar.tar.1c40ad017a1e32ce.gz', 'should interpolate uniqueId for 2 part extensions'],
+        ['.dot', '.1c40ad017a1e32ce.dot', 'should prepend uniqueId for dotfiles'],
     ])('%s → %s (%s)', (name, expected) => {
-        const result = getExportFileName({ name } as FileDescriptor);
+        const result = getExportFileName('test-shareID')({ name, fileID: 'test-fileID' } as FileDescriptor);
         expect(result).toEqual(expected);
     });
 });
