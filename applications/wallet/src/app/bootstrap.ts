@@ -16,7 +16,10 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import {
+    getPersistedSession,
+    registerSessionRemovalListener,
+} from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
@@ -70,11 +73,14 @@ export const bootstrapApp = async ({
                   })
                 : undefined) || (await bootstrap.loadSession({ authentication, api, pathname, searchParams }));
 
+        const persistedSession = sessionResult.session?.persistedSession || getPersistedSession(authentication.localID);
+
         const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
 
         const walletApi = new WasmProtonWalletApiClient(
             appVersion,
             navigator.userAgent,
+            persistedSession?.UserID,
             authentication.UID,
             window.location.origin,
             config.API_URL
