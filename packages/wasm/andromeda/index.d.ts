@@ -1,9 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
-export function setPanicHook(): void;
+export function getDefaultStopGap(): number;
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 export function getWordsAutocomplete(word_start: string): string[];
-export function getDefaultStopGap(): number;
+export function setPanicHook(): void;
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
@@ -85,12 +85,128 @@ export enum WasmWordCount {
   Words21 = 3,
   Words24 = 4,
 }
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+    is_paper_wallet: number | null;
+}
+
+export interface WasmBroadcastMessage {
+    data_packet: string;
+    key_packets: Record<string, string>;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    body: string | null;
+    message: WasmBroadcastMessage | null;
+    recipients: Record<string, string> | null;
+    is_anonymous: number | null;
+}
+
+export interface WasmAddressDetails {
+    index: number;
+    address: string;
+    transactions: WasmTransactionDetails[];
+    balance: WasmBalance;
+    keychain: WasmKeychainKind;
+}
+
 export interface WasmPagination {
     skip: number;
     take: number;
 }
 
 export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
+export interface WasmApiWalletBitcoinAddressLookup {
+    BitcoinAddress: string | null;
+    BitcoinAddressSignature: string | null;
+}
+
+export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
+
+export interface WasmTxOut {
+    value: number;
+    script_pubkey: WasmScript;
+    is_mine: boolean;
+    address: string | null;
+}
+
+export interface WasmTransactionDetails {
+    txid: string;
+    received: number;
+    sent: number;
+    fee: number | null;
+    size: number;
+    time: WasmTransactionTime;
+    inputs: WasmDetailledTxIn[];
+    outputs: WasmTxOut[];
+    account_derivation_path: string;
+}
+
+export interface WasmTransactionTime {
+    confirmed: boolean;
+    confirmation_time: number | null;
+    last_seen: number | null;
+}
+
+export type WasmGatewayProvider = "Banxa" | "Ramp" | "MoonPay" | "Azteco" | "Unsupported";
+
+export interface WasmApiCountry {
+    Code: string;
+    FiatCurrency: string;
+    Name: string;
+}
+
+export interface WasmCountries {
+    data: WasmApiCountry[];
+}
+
+export interface WasmApiSimpleFiatCurrency {
+    Symbol: string;
+    Name: string;
+    MinimumAmount: string | null;
+}
+
+export interface WasmFiatCurrencies {
+    data: WasmApiSimpleFiatCurrency[];
+}
+
+export type WasmPaymentMethod = "ApplePay" | "BankTransfer" | "Card" | "GooglePay" | "InstantPayment" | "Paypal" | "Unsupported";
+
+export interface WasmPaymentMethods {
+    data: WasmPaymentMethod[];
+}
+
+export interface WasmQuote {
+    BitcoinAmount: string;
+    FiatAmount: string;
+    FiatCurrencySymbol: string;
+    NetworkFee: string;
+    PaymentGatewayFee: string;
+    PaymentMethod: WasmPaymentMethod;
+    PurchaseAmount: string | null;
+    PaymentProcessingFee: string | null;
+    OrderID: string | null;
+}
+
+export interface WasmQuotes {
+    data: WasmQuote[];
+}
+
+export interface WasmAddressInfo {
+    index: number;
+    address: string;
+    keychain: WasmKeychainKind;
+}
 
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
@@ -268,122 +384,6 @@ export interface WasmBalance {
     untrusted_pending: number;
     confirmed: number;
     trusted_spendable: number;
-}
-
-export interface WasmApiWalletBitcoinAddressLookup {
-    BitcoinAddress: string | null;
-    BitcoinAddressSignature: string | null;
-}
-
-export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
-
-export interface WasmTxOut {
-    value: number;
-    script_pubkey: WasmScript;
-    is_mine: boolean;
-    address: string | null;
-}
-
-export interface WasmTransactionDetails {
-    txid: string;
-    received: number;
-    sent: number;
-    fee: number | null;
-    size: number;
-    time: WasmTransactionTime;
-    inputs: WasmDetailledTxIn[];
-    outputs: WasmTxOut[];
-    account_derivation_path: string;
-}
-
-export interface WasmTransactionTime {
-    confirmed: boolean;
-    confirmation_time: number | null;
-    last_seen: number | null;
-}
-
-export interface WasmAddressDetails {
-    index: number;
-    address: string;
-    transactions: WasmTransactionDetails[];
-    balance: WasmBalance;
-    keychain: WasmKeychainKind;
-}
-
-export type WasmGatewayProvider = "Banxa" | "Ramp" | "MoonPay" | "Azteco" | "Unsupported";
-
-export interface WasmApiCountry {
-    Code: string;
-    FiatCurrency: string;
-    Name: string;
-}
-
-export interface WasmCountries {
-    data: WasmApiCountry[];
-}
-
-export interface WasmApiSimpleFiatCurrency {
-    Symbol: string;
-    Name: string;
-    MinimumAmount: string | null;
-}
-
-export interface WasmFiatCurrencies {
-    data: WasmApiSimpleFiatCurrency[];
-}
-
-export type WasmPaymentMethod = "ApplePay" | "BankTransfer" | "Card" | "GooglePay" | "InstantPayment" | "Paypal" | "Unsupported";
-
-export interface WasmPaymentMethods {
-    data: WasmPaymentMethod[];
-}
-
-export interface WasmQuote {
-    BitcoinAmount: string;
-    FiatAmount: string;
-    FiatCurrencySymbol: string;
-    NetworkFee: string;
-    PaymentGatewayFee: string;
-    PaymentMethod: WasmPaymentMethod;
-    PurchaseAmount: string | null;
-    PaymentProcessingFee: string | null;
-    OrderID: string | null;
-}
-
-export interface WasmQuotes {
-    data: WasmQuote[];
-}
-
-export interface WasmAddressInfo {
-    index: number;
-    address: string;
-    keychain: WasmKeychainKind;
-}
-
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-    is_paper_wallet: number | null;
-}
-
-export interface WasmBroadcastMessage {
-    data_packet: string;
-    key_packets: Record<string, string>;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    body: string | null;
-    message: WasmBroadcastMessage | null;
-    recipients: Record<string, string> | null;
-    is_anonymous: number | null;
 }
 
 export class WasmAccount {
@@ -580,7 +580,7 @@ export class WasmBlockchainClient {
   getFeesEstimation(): Promise<Map<string, number>>;
   getMininumFees(): Promise<WasmMinimumFees>;
   getRecommendedFees(): Promise<WasmRecommendedFees>;
-  broadcastPsbt(psbt: WasmPsbt, wallet_id: string, wallet_account_id: string, transaction_data: WasmTransactionData, email_integration?: WasmEmailIntegrationData | null, is_paper_wallet?: number | null): Promise<string>;
+  broadcastPsbt(psbt: WasmPsbt, wallet_id: string, wallet_account_id: string, transaction_data: WasmTransactionData, email_integration?: WasmEmailIntegrationData | null): Promise<string>;
 }
 export class WasmCountriesAndProviderTupple {
   private constructor();
@@ -765,6 +765,7 @@ export class WasmPaymentLink {
   free(): void;
   toString(): string;
   toUri(): string;
+  toAmountInSats(): bigint;
   static tryParse(str: string, network: WasmNetwork): WasmPaymentLink;
   getKind(): WasmPaymentLinkKind;
   assumeOnchain(): WasmOnchainPaymentLink;
@@ -787,7 +788,7 @@ export class WasmPriceGraphClient {
 }
 export class WasmProtonWalletApiClient {
   free(): void;
-  constructor(app_version: string, user_agent: string, uid_str?: string | null, origin?: string | null, url_prefix?: string | null);
+  constructor(app_version: string, user_agent: string, user_id_str?: string | null, uid_str?: string | null, origin?: string | null, url_prefix?: string | null);
   clients(): WasmApiClients;
 }
 export class WasmPsbt {
@@ -898,7 +899,7 @@ export class WasmTxBuilder {
   /**
    *
    *     * UTXOs
-   *
+   *     
    */
   addUtxoToSpend(outpoint: WasmOutPoint): WasmTxBuilder;
   removeUtxoToSpend(outpoint: WasmOutPoint): WasmTxBuilder;
@@ -907,14 +908,14 @@ export class WasmTxBuilder {
   /**
    *
    *     * Coin selection enforcement
-   *
+   *     
    */
   setCoinSelection(coin_selection: WasmCoinSelection): WasmTxBuilder;
   getCoinSelection(): WasmCoinSelection;
   /**
    *
    *     * RBF
-   *
+   *     
    */
   enableRbf(): WasmTxBuilder;
   disableRbf(): WasmTxBuilder;
@@ -922,21 +923,21 @@ export class WasmTxBuilder {
   /**
    *
    *     * Change policy
-   *
+   *     
    */
   setChangePolicy(change_policy: WasmChangeSpendPolicy): WasmTxBuilder;
   getChangePolicy(): WasmChangeSpendPolicy;
   /**
    *
    *     * Fees
-   *
+   *     
    */
   setFeeRate(sat_per_vb: bigint): WasmTxBuilder;
   getFeeRate(): bigint | undefined;
   /**
    *
    *     * Locktime
-   *
+   *     
    */
   addLocktime(locktime: WasmLockTime): WasmTxBuilder;
   removeLocktime(): WasmTxBuilder;
@@ -944,7 +945,7 @@ export class WasmTxBuilder {
   /**
    *
    *     * Final
-   *
+   *     
    */
   createPsbt(network: WasmNetwork): Promise<WasmPsbt>;
   createDraftPsbt(network: WasmNetwork, allow_dust?: boolean | null): Promise<WasmPsbt>;
