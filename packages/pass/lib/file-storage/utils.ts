@@ -1,3 +1,6 @@
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { FileStorageMemory } from '@proton/pass/lib/file-storage/fs.memory';
+import type { FileStorage } from '@proton/pass/lib/file-storage/types';
 import {
     base64StringToUint8Array,
     blobToUint8Array,
@@ -19,3 +22,13 @@ export const base64ToFile = (b64: string, filename: string, mimeType: string): F
     const blob = base64ToBlob(b64);
     return new File([blob], filename, { type: mimeType });
 };
+
+export const getSafeStorage: (storageType: string) => FileStorage = EXTENSION_BUILD
+    ? (storageType) => {
+          /** If the extension component has a different storage instance then
+           * the service-worker's instance (eg: Firefox private browsing), always
+           * fallback to base64 encoding blobs via message passing */
+          if (storageType && storageType !== fileStorage.type) return new FileStorageMemory();
+          else return fileStorage;
+      }
+    : () => fileStorage;

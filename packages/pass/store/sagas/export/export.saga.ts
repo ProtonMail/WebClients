@@ -12,8 +12,8 @@ import {
 import { createPassExportCSV } from '@proton/pass/lib/export/csv';
 import type { ExportResult } from '@proton/pass/lib/export/types';
 import { ExportFormat } from '@proton/pass/lib/export/types';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { blobToBase64 } from '@proton/pass/lib/file-storage/utils';
+import type { FileStorage } from '@proton/pass/lib/file-storage/types';
+import { blobToBase64, getSafeStorage } from '@proton/pass/lib/file-storage/utils';
 import { belongsToShares, hasAttachments, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { exportData } from '@proton/pass/store/actions/creators/export';
@@ -78,9 +78,10 @@ type ExportState = {
 
 export const exportUserData = createRequestSaga({
     actions: exportData,
-    call: function* ({ fileAttachments, format, passphrase, tabId }, { getConfig }) {
+    call: function* ({ fileAttachments, format, passphrase, tabId, storageType }, { getConfig }) {
         const state: ExportState = {};
         const ctrl = new AbortController();
+        const fs: FileStorage = getSafeStorage(storageType);
 
         try {
             yield put(stopEventPolling());
@@ -127,7 +128,7 @@ export const exportUserData = createRequestSaga({
                     state.filename = getArchiveName('csv');
                     state.mimeType = 'text/csv;charset=utf-8;';
                     const blob: Blob = yield createPassExportCSV(exportThunk({}));
-                    yield fileStorage.writeFile(state.filename, blob, ctrl.signal);
+                    yield fs.writeFile(state.filename, blob, ctrl.signal);
                     break;
                 }
                 case ExportFormat.ZIP:
@@ -145,7 +146,7 @@ export const exportUserData = createRequestSaga({
 
                     state.stream = (yield createArchive(iterators, ctrl.signal)) as ReadableStream;
                     const { filename, stream } = state;
-                    yield fileStorage.writeFile(filename, stream, ctrl.signal);
+                    yield fs.writeFile(filename, stream, ctrl.signal);
                     break;
                 }
             }
@@ -153,8 +154,8 @@ export const exportUserData = createRequestSaga({
             progressChannel.close();
             progressTask.cancel();
 
-            if (EXTENSION_BUILD && fileStorage.type === 'Memory') {
-                const blob: Maybe<File> = yield fileStorage.readFile(state.filename);
+            if (EXTENSION_BUILD && fs.type === 'Memory') {
+                const blob: Maybe<File> = yield fs.readFile(state.filename);
                 if (!blob) throw new Error('File not found');
                 const data: string = yield blobToBase64(blob);
 
@@ -178,7 +179,7 @@ export const exportUserData = createRequestSaga({
         } finally {
             if (yield cancelled()) {
                 ctrl.abort('Export cancelled');
-                if (state.filename) void fileStorage.deleteFile(state.filename);
+                if (state.filename) void fs.deleteFile(state.filename);
             }
 
             yield put(startEventPolling());

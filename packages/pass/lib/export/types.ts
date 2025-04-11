@@ -42,6 +42,7 @@ export type ExportRequestOptions = {
     format: ExportFormat;
     passphrase: string;
     fileAttachments: boolean;
+    storageType: string;
 };
 
 export type ExportResult = FileForDownload & { mimeType: string; filename: string };

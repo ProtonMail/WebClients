@@ -9,7 +9,15 @@ import { base64ToFile } from '@proton/pass/lib/file-storage/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import { fileDownload, fileDownloadPublic } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
-import type { FileDescriptor, FileForDownload, FileID, Maybe, SelectedItem } from '@proton/pass/types';
+import type {
+    FileDescriptor,
+    FileDownloadDTO,
+    FileForDownload,
+    FileID,
+    Maybe,
+    SelectedItem,
+    WithTabId,
+} from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { abortable } from '@proton/pass/utils/fp/promises';
@@ -82,14 +90,29 @@ export const useFileDownload = () => {
 
                 const res = await (() => {
                     if ('filesToken' in options) {
-                        const dto = { fileID, chunkIDs, encryptionVersion, ...options };
+                        const dto = {
+                            fileID,
+                            chunkIDs,
+                            encryptionVersion,
+                            storageType: fileStorage.type,
+                            ...options,
+                        };
+
                         return abortable(signal)(
                             () => asyncDispatch(fileDownloadPublic, dto),
                             () => dispatch(requestCancel(fileDownloadPublic.requestID(dto)))
                         );
                     }
 
-                    const dto = { fileID, chunkIDs, tabId, encryptionVersion, ...options };
+                    const dto: WithTabId<FileDownloadDTO> = {
+                        fileID,
+                        chunkIDs,
+                        tabId,
+                        encryptionVersion,
+                        storageType: fileStorage.type,
+                        ...options,
+                    };
+
                     return abortable(signal)(
                         () => asyncDispatch(fileDownload, dto),
                         () => dispatch(requestCancel(fileDownload.requestID(dto)))

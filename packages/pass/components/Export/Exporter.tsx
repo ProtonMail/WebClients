@@ -45,6 +45,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
         format: ExportFormat.PGP,
         passphrase: '',
         fileAttachments: false,
+        storageType: fileStorage.type,
     };
 
     const [loading, setLoading] = useState(false);

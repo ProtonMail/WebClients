@@ -46,7 +46,12 @@ export type FileMetadataDTO = BaseFileDescriptor & {
 };
 
 type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
-type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[]; encryptionVersion: number };
+type FileDownloadDTOBase = {
+    fileID: FileID;
+    chunkIDs: string[];
+    encryptionVersion: number;
+    storageType: string;
+};
 
 export type FileForDownload = { type: 'storage'; fileRef: string } | { type: 'b64'; data: string };
 

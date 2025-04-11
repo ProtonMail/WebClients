@@ -19,7 +19,8 @@ import {
 import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import { intoFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { base64ToBlob, blobToBase64 } from '@proton/pass/lib/file-storage/utils';
+import type { FileStorage } from '@proton/pass/lib/file-storage/types';
+import { base64ToBlob, blobToBase64, getSafeStorage } from '@proton/pass/lib/file-storage/utils';
 import {
     fileDownload,
     fileDownloadPublic,
@@ -104,9 +105,10 @@ const downloadFile = createRequestSaga({
         const ctrl = new AbortController();
         const { signal } = ctrl;
 
-        try {
-            const { chunkIDs, fileID, shareId, encryptionVersion } = payload;
+        const { chunkIDs, fileID, shareId, encryptionVersion, storageType } = payload;
+        const fs: FileStorage = getSafeStorage(storageType);
 
+        try {
             const downloadStream = createDownloadStream(
                 { shareId, fileID, chunkIDs, encryptionVersion },
                 (chunkID: string) => downloadFileChunk({ ...payload, chunkID }, signal),
@@ -114,10 +116,10 @@ const downloadFile = createRequestSaga({
             );
 
             const fileRef = uniqueId(32);
-            yield fileStorage.writeFile(fileRef, downloadStream, signal);
+            yield fs.writeFile(fileRef, downloadStream, signal);
 
-            if (EXTENSION_BUILD && fileStorage.type === 'Memory') {
-                const blob: Maybe<File> = yield fileStorage.readFile(fileRef);
+            if (EXTENSION_BUILD && fs.type === 'Memory') {
+                const blob: Maybe<File> = yield fs.readFile(fileRef);
                 if (!blob) throw new Error('File not found');
                 const data: string = yield blobToBase64(blob);
                 return { type: 'b64', data } satisfies FileForDownload;
