@@ -10,18 +10,22 @@ export const getImportFilename = (path: string, provider: ImportProvider) => {
 
     switch (provider) {
         case ImportProvider.PROTONPASS: {
-            /** `{filename}.{uuid}.{ext}` */
+            /** `{base}.{uuid}.{ext}` */
             const parts = getFileParts(filename);
-            if (!parts) return filename;
-            if (parts.ext.length <= 4) {
-                const subParts = parts.name.split('.');
-                if (subParts.length === 1) return filename;
-                return `${subParts.slice(0, -1).join('.')}${parts.ext}`;
-            } else return filename;
+
+            /** If extension is greater than 16 : we're likely
+             * dealing with an extension-less file for which we
+             * appended a uniqueId during export */
+            if (parts.ext.length >= 16) return parts.base;
+
+            const subParts = parts.base.split('.');
+            if (subParts.length === 1) return filename;
+            return `${subParts.slice(0, -1).join('.')}${parts.ext}`;
         }
         case ImportProvider.ONEPASSWORD: {
-            /** `{documentId}__{filename}.{ext}` */
+            /** `{documentId}__{base}.{ext}` */
             const parts = filename.split('__');
+
             if (parts.length === 1) return filename;
             return parts.slice(1).join('__');
         }
