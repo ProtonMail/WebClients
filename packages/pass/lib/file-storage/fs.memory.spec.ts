@@ -1,34 +1,5 @@
-import { wait } from '@proton/shared/lib/helpers/promise';
-
 import { FileStorageMemory, MemoryWritableStream } from './fs.memory';
-
-const createMockBlob = (sizeInBytes: number) => {
-    const data = new Uint8Array(sizeInBytes);
-    crypto.getRandomValues(data);
-    return new Blob([data]);
-};
-
-const createMockReadableStream = (chunks: Blob[], timeout: number = 0) => {
-    let current = 0;
-
-    const processNextChunk = (controller: ReadableStreamDefaultController<Blob>) => {
-        if (current >= chunks.length) return controller.close();
-        controller.enqueue(chunks[current]);
-        current++;
-    };
-
-    return new ReadableStream<Blob>({
-        start(controller) {
-            if (chunks.length > 0 && !timeout) processNextChunk(controller);
-            else if (!timeout) controller.close();
-        },
-
-        async pull(controller) {
-            if (timeout) await wait(timeout);
-            processNextChunk(controller);
-        },
-    });
-};
+import { createMockBlob, createMockReadableStream } from './testing';
 
 describe('FileStorageMemory', () => {
     const fs = new FileStorageMemory();
