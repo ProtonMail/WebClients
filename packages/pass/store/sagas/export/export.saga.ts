@@ -10,8 +10,10 @@ import {
     getArchiveName,
 } from '@proton/pass/lib/export/archive';
 import { createPassExportCSV } from '@proton/pass/lib/export/csv';
+import type { ExportResult } from '@proton/pass/lib/export/types';
 import { ExportFormat } from '@proton/pass/lib/export/types';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import type { FileStorage } from '@proton/pass/lib/file-storage/types';
+import { getSafeStorage, getSafeWriter } from '@proton/pass/lib/file-storage/utils';
 import { belongsToShares, hasAttachments, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { exportData } from '@proton/pass/store/actions/creators/export';
@@ -75,16 +77,18 @@ type ExportState = {
 
 export const exportUserData = createRequestSaga({
     actions: exportData,
-    call: function* ({ fileAttachments, format, passphrase, tabId }, { getConfig }) {
+    call: function* ({ fileAttachments, format, passphrase, tabId, storageType, port }, options) {
         const state: ExportState = {};
         const ctrl = new AbortController();
+        const fs: FileStorage = getSafeStorage(storageType);
+        const write = getSafeWriter(fs, options);
 
         try {
             yield put(stopEventPolling());
 
             const files: IndexedByShareIdAndItemId<FileDescriptor[]> = {};
             const iterators: ExportGenerator[] = [];
-            const config = getConfig();
+            const config = options.getConfig();
 
             const progressChannel = channel<ExportFileProgress>();
             const progressTask: Task = yield fork(progressWorker, progressChannel, tabId);
@@ -124,7 +128,7 @@ export const exportUserData = createRequestSaga({
                     state.filename = getArchiveName('csv');
                     state.mimeType = 'text/csv;charset=utf-8;';
                     const blob: Blob = yield createPassExportCSV(exportThunk({}));
-                    yield fileStorage.writeFile(state.filename, blob, ctrl.signal);
+                    yield write(state.filename, blob.stream(), ctrl.signal, port);
                     break;
                 }
                 case ExportFormat.ZIP:
@@ -142,7 +146,7 @@ export const exportUserData = createRequestSaga({
 
                     state.stream = (yield createArchive(iterators, ctrl.signal)) as ReadableStream;
                     const { filename, stream } = state;
-                    yield fileStorage.writeFile(filename, stream, ctrl.signal);
+                    yield write(filename, stream, ctrl.signal, port);
                     break;
                 }
             }
@@ -151,16 +155,17 @@ export const exportUserData = createRequestSaga({
             progressTask.cancel();
 
             return {
-                filename: state.filename,
+                type: fs.type,
+                fileRef: state.filename,
                 mimeType: state.mimeType,
-            };
+            } satisfies ExportResult;
         } catch (err) {
             logger.debug('[Export] export failure', err);
             throw err;
         } finally {
             if (yield cancelled()) {
                 ctrl.abort('Export cancelled');
-                if (state.filename) void fileStorage.deleteFile(state.filename);
+                if (state.filename) void fs.deleteFile(state.filename);
             }
 
             yield put(startEventPolling());

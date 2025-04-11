@@ -9,6 +9,7 @@ import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequ
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { blobToBase64 } from '@proton/pass/lib/file-storage/utils';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '@proton/pass/types';
@@ -38,9 +39,27 @@ const getChunkDTO = async (
     const { blob, chunkIndex, encryptionVersion, fileID, shareId, totalChunks } = options;
 
     if (EXTENSION_BUILD) {
-        const ref = `${fileID}.chunk`;
-        await fileStorage.writeFile(ref, blob, signal);
-        return { chunkIndex, encryptionVersion, fileID, ref, shareId, tabId, totalChunks, type: 'fs' };
+        switch (fileStorage.type) {
+            case 'Memory': {
+                const data = await blobToBase64(blob);
+                return { chunkIndex, data, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'b64' };
+            }
+            default: {
+                const ref = `${fileID}.chunk`;
+                await fileStorage.writeFile(ref, blob, signal);
+                return {
+                    chunkIndex,
+                    encryptionVersion,
+                    fileID,
+                    ref,
+                    shareId,
+                    tabId,
+                    totalChunks,
+                    type: 'storage',
+                    storageType: fileStorage.type,
+                };
+            }
+        }
     }
 
     return { blob, chunkIndex, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'blob' };
