@@ -1,4 +1,4 @@
-import type { DeobfuscatedItemRevision, ItemType, VaultShareContent } from '@proton/pass/types';
+import type { DeobfuscatedItemRevision, FileForDownload, ItemType, VaultShareContent } from '@proton/pass/types';
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
     DeobfuscatedItemRevision<T>,
@@ -42,7 +42,9 @@ export type ExportRequestOptions = {
     format: ExportFormat;
     passphrase: string;
     fileAttachments: boolean;
+    storageType: string;
+    port?: string;
 };
 
-export type ExportResult = { filename: string; mimeType: string };
+export type ExportResult = FileForDownload & { mimeType: string };
 export type ExportFailure = { error: string };
