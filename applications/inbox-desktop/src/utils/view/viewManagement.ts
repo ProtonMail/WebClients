@@ -354,7 +354,11 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
     const url = hasValidLabelAndElement
         ? addHashToCurrentURL(
               currentUrl,
-              `#labelID=${encodeURIComponent(labelID)}&elementID=${encodeURIComponent(elementID)}${messageID ? `&messageID=${encodeURIComponent(messageID)}` : ""}`,
+              `#${new URLSearchParams({
+                  labelID,
+                  elementID,
+                  ...(messageID ? { messageID } : {}),
+              }).toString()}`,
           )
         : getAppURL().mail + "/u/0/all-mail"; // localID will be fixed by showView
 

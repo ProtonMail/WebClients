@@ -149,10 +149,21 @@ const windowsToastNotification = (
     const { title, body, app, labelID, elementID, messageID } = payload;
 
     const action = app === "calendar" ? DeepLinkActions.OpenCalendar : DeepLinkActions.OpenMail;
-    const params =
-        app === "mail" && labelID !== undefined && labelID !== "" && elementID !== undefined && elementID !== ""
-            ? `?labelID=${encodeURIComponent(labelID)}&amp;elementID=${encodeURIComponent(elementID)}${messageID ? `&amp;messageID=${encodeURIComponent(messageID)}` : ""}&amp;${NOTIFICATION_ID_KEY}=${uuid}&amp;localID=${localID ?? "null"}`
-            : `?${NOTIFICATION_ID_KEY}=${uuid}`;
+    const hasValidMailParams = app === "mail" && labelID && labelID !== "" && elementID && elementID !== "";
+
+    let params = `?${NOTIFICATION_ID_KEY}=${uuid}`;
+
+    if (hasValidMailParams) {
+        const urlParams = new URLSearchParams();
+        urlParams.set("labelID", labelID);
+        urlParams.set("elementID", elementID);
+        if (messageID) urlParams.set("messageID", messageID);
+        urlParams.set(NOTIFICATION_ID_KEY, uuid);
+        urlParams.set("localID", localID ?? "null");
+
+        // Replace & with &amp; for XML compatibility
+        params = `?${urlParams.toString().replace(/&/g, "&amp;")}`;
+    }
 
     return {
         toastXml: `<toast launch="${DEEPLINK_PROTOCOL}:${action}${params}" activationType="protocol">

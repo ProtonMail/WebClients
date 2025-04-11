@@ -98,7 +98,11 @@ export const handleStartupDeepLink = () => {
         const { labelID, elementID, messageID } = parseOpenMailParams(urlMail);
         if (labelID && labelID !== "" && elementID && elementID !== "") {
             openMailArgs.setOnce(
-                `labelID=${encodeURIComponent(labelID)}&elementID=${encodeURIComponent(elementID)}${messageID ? `&messageID=${encodeURIComponent(messageID)}` : ""}`,
+                new URLSearchParams({
+                    labelID,
+                    elementID,
+                    ...(messageID ? { messageID } : {}),
+                }).toString(),
             );
         }
     }
