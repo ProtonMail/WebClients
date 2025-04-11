@@ -16,6 +16,7 @@ import { useOrganization } from '@proton/pass/components/Organization/Organizati
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { selectNonOwnedVaults, selectUserStorageAllowed, selectUserStorageUsed } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -97,7 +98,8 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     </Card>
                 )}
 
-                {usedStorage > 0 && form.values.format !== ExportFormat.CSV && (
+                {/* Disable memory file attachments export for perf reasons */}
+                {usedStorage > 0 && form.values.format !== ExportFormat.CSV && fileStorage.type !== 'Memory' && (
                     <FeatureFlag feature={PassFeature.PassFileAttachments}>
                         <Field
                             name="fileAttachments"
