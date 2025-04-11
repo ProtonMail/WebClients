@@ -213,7 +213,6 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
         const propertiesToKeep: (keyof VcalVeventComponent)[] = [
             'uid',
             'dtstart',
-            // TODO: Should we keep or remove it ?
             'comment',
             'dtend',
             'sequence',
