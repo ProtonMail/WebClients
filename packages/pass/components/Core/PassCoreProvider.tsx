@@ -30,11 +30,13 @@ export interface PopupController {
     expanded: boolean;
 }
 
-export type CurrentTab = {
+export type ExtensionClientState = {
     /** Parsed URL of the underlying active tab */
     url: MaybeNull<ParsedUrl>;
     /** tabID of the current context window */
     tabId?: TabId;
+    /** Port name of the current client */
+    port: string;
 };
 
 export type PassCoreContextValue = {
@@ -59,7 +61,7 @@ export type PassCoreContextValue = {
     /** Resolves the api status */
     getApiState?: () => MaybePromise<ApiState>;
     /** Resolves the current tab's parsed url - only relevant for extension */
-    getCurrentTab?: () => MaybeNull<CurrentTab>;
+    getExtensionClientState?: () => MaybeNull<ExtensionClientState>;
     /** Resolves a domain image as a data URL. Uses an abort signal to
      * cancel the image request if the image component is unmounted,
      * applying back-pressure when users scroll rapidly through items */
@@ -88,7 +90,7 @@ export type PassCoreContextValue = {
     /** Prompts for client specific permissions */
     promptForPermissions?: () => void;
     /** Sets the current tab's url - only relevant for extension */
-    setCurrentTab?: (current: CurrentTab) => void;
+    setExtensionClientState?: (current: ExtensionClientState) => void;
     /** Writes text to the clipboard */
     writeToClipboard: (text: string) => Promise<void>;
     /** Checks whether biometrics functionalities can be used */
@@ -138,6 +140,11 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
 export const usePassCore = (): PassCoreContextValue => useContext(PassCoreContext)!;
 
 export const useCurrentTabID = (): Maybe<TabId> => {
-    const { getCurrentTab } = usePassCore();
-    return getCurrentTab?.()?.tabId;
+    const { getExtensionClientState } = usePassCore();
+    return getExtensionClientState?.()?.tabId;
+};
+
+export const useCurrentPort = (): Maybe<string> => {
+    const { getExtensionClientState } = usePassCore();
+    return getExtensionClientState?.()?.port;
 };
