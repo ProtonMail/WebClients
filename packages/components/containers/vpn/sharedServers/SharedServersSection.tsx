@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Prompt } from 'react-router';
+import { useHistory } from 'react-router';
 
 import { c, msgid } from 'ttag';
 
@@ -37,16 +37,18 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import PolicyPreviewModal from './PolicyModal/PolicyPreviewModal';
+import UnpublishedChangesModal from './PolicyModal/UnpublishedChangesModal';
 import PolicyEditButton from './PolicyTable/PolicyEditButton';
 import PolicyUsersGroupsList from './PolicyTable/PolicyUsersGroupsList';
 import SelectedCountriesButton from './PolicyTable/SelectedCountriesButton';
 import type { LocalStatus, VpnLocationFilterPolicyLocal } from './constants';
+import { useCustomPrompt } from './useCustomPrompt';
 
 import './SharedServersSection.scss';
 
 const OrangeDot = () => (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_10876_154544)">
+        <g clipPath="url(#clip0_10876_154544)">
             <circle cx="8" cy="8" r="4" fill="#FF9900" />
             <circle opacity="0.4" cx="8" cy="8" r="8" fill="#FF9900" />
         </g>
@@ -62,6 +64,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { loading, locations, policies, refresh, users, countUsersNotInAnyPolicy } = useSharedServers(maxAge);
+    const history = useHistory();
 
     const [originalPolicies, setOriginalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
     const [localPolicies, setLocalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
@@ -73,6 +76,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const [createModal, showCreateModal] = useModalTwoStatic(Modal);
     const [deleteModal, showDeleteModal] = useModalTwoStatic(DeleteModal);
     const [policyPreviewModal, showPolicyPreviewModal] = useModalTwoStatic(PolicyPreviewModal);
+    const [unpublishedChangesModal, showUnpublishedChangesModal] = useModalTwoStatic(UnpublishedChangesModal);
 
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
@@ -81,6 +85,16 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const customPolicies = useMemo(() => {
         return localPolicies.filter((policy) => policy.Type === PolicyType.Custom);
     }, [localPolicies]);
+
+    useCustomPrompt(hasUnsavedChanges, (path: string) => {
+        showUnpublishedChangesModal({
+            onDiscard: () => {
+                const unblock = history.block(() => {});
+                unblock();
+                history.push(path);
+            },
+        });
+    });
 
     const addPolicy = useCallback(() => {
         showCreateModal({
@@ -264,7 +278,6 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
 
     return (
         <SettingsSectionWide>
-            <Prompt when={hasUnsavedChanges} message={() => 'The unpublished changes you made will be lost.'} />
             <div className="flex items-center gap-1 color-weak">
                 {getBoldFormattedText(
                     c('Info')
@@ -434,6 +447,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
             {policyPreviewModal}
             {createModal}
             {deleteModal}
+            {unpublishedChangesModal}
         </SettingsSectionWide>
     );
 };
