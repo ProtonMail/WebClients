@@ -3,6 +3,7 @@
 .content-container,
 .content,
 .sidebar,
+.homepage-header,
 .header,
 .main-area,
 .main-area--with-toolbar {
@@ -14,6 +15,7 @@
   --upgrade-background-color: #f8fafc !important;
 }
 
-.button-promotion:hover {
-  --upgrade-background-color: #e7e7e7 !important;
+.button-promotion:hover,
+.button-promotion:focus-visible {
+  --upgrade-background-color: #f1f1f1 !important;
 }
