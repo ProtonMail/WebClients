@@ -29,7 +29,7 @@ import generateUID from '@proton/utils/generateUID';
 import { useTheme } from '../themes/ThemeProvider';
 import { UserDropdownContext, type UserDropdownValue } from './UserDropdownContext';
 
-import './UserDropdownV2.scss';
+import './UserDropdown.scss';
 
 const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgrade: UserDropdownValue['upgrade'] }) => {
     const { createNotification } = useNotifications();
@@ -50,7 +50,7 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
             <div className="p-4 flex justify-space-between">
                 {info.planName ? (
                     <span
-                        className="inline-block py-px px-1 text-sm rounded-sm userDropdownV2-planname"
+                        className="inline-block py-px px-1 text-sm rounded-sm userDropdown-planname"
                         data-testid="userdropdown:label:plan-name"
                     >
                         {info.planName}
@@ -79,7 +79,7 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
     }
 
     return (
-        <div className={clsx('p-4', dark && 'userDropdownV2-theme-dark')}>
+        <div className={clsx('p-4', dark && 'userDropdown-theme-dark')}>
             <div className="flex justify-center items-center flex-column">
                 <span
                     className="my-auto mb-2 text-sm rounded-xl border inline-block relative flex shrink-0 user-initials user-initials-active w-custom ratio-square text-2xl"
@@ -131,7 +131,7 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
                 <div className="flex justify-center gap-2 empty:hidden">
                     {info.planName ? (
                         <span
-                            className="inline-block py-px px-1 text-sm rounded-sm userDropdownV2-planname"
+                            className="inline-block py-px px-1 text-sm rounded-sm userDropdown-planname"
                             data-testid="userdropdown:label:plan-name"
                         >
                             {info.planName}
@@ -213,7 +213,7 @@ const SwitchAccountButton = () => {
     );
 };
 
-export const UserDropdownV2 = () => {
+export const UserDropdownContent = () => {
     const { APP_NAME } = useConfig();
     const [uid] = useState(generateUID('dropdown'));
     const { viewportWidth } = useActiveBreakpoint();
@@ -242,7 +242,7 @@ export const UserDropdownV2 = () => {
     return (
         <Dropdown
             id={uid}
-            className="userDropdownV2 rounded-lg overflow-hidden"
+            className="userDropdown rounded-lg overflow-hidden"
             isOpen={isOpen}
             anchorRef={anchorRef}
             autoClose={false}
@@ -391,4 +391,4 @@ export const UserDropdownV2 = () => {
     );
 };
 
-export default UserDropdownV2;
+export default UserDropdownContent;
