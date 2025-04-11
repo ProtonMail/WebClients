@@ -39,7 +39,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
 
   return (
     <>
-      <ContentSheet isBottom className="grow overflow-auto pb-4">
+      <ContentSheet isBottom className="shrink-0 grow pb-4">
         <table className="mb-0 w-full table-fixed text-[14px]">
           {itemsSections.map(({ id, items }, sectionIndex) => (
             <Fragment key={id}>
@@ -88,19 +88,19 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
             <span>{getSectionLabel(sectionId)}</span>
             {firstHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
           </span>
-          <span className="-me-3 medium:hidden">{isRecents ? <SortSelect /> : null}</span>
+          <span className="-me-3 medium:hidden">{isRecents && !isSecondary ? <SortSelect /> : null}</span>
         </div>
       </Table.Header>
       {!isSecondary ? (
         <>
-          <Table.Header hideOnSmallDevices>
+          <Table.Header target="large">
             <span className="flex flex-nowrap items-center gap-[.375rem]">
               <span>{secondHeaderLabel}</span>
               {secondHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
             </span>
           </Table.Header>
-          <Table.Header hideOnSmallDevices>{c('Recent documents table header').t`Created by`}</Table.Header>
-          <Table.Header hideOnSmallDevices>
+          <Table.Header target="medium">{c('Recent documents table header').t`Created by`}</Table.Header>
+          <Table.Header target="medium">
             <div className="flex flex-nowrap items-center justify-between">
               <span>{c('Recent documents table header').t`Location`}</span>
               {isRecents ? <SortSelect /> : null}
@@ -126,16 +126,18 @@ function SortSelect() {
 
   return (
     <>
-      <Button
-        icon
-        onClick={toggle}
-        aria-label="Change sort order"
-        ref={anchorRef}
-        shape="ghost"
-        className={clsx('ml-auto shrink-0 px-2', isOpen && '!bg-[--button-active-background-color]')}
-      >
-        <Icon name="arrow-down-arrow-up" className="shrink-0" />
-      </Button>
+      <Tooltip title={c('Action').t`Sort by`}>
+        <Button
+          icon
+          onClick={toggle}
+          aria-label={c('Action').t`Change sort order`}
+          ref={anchorRef}
+          shape="ghost"
+          className={clsx('ml-auto shrink-0 px-2', isOpen && '!bg-[--button-active-background-color]')}
+        >
+          <Icon name="arrow-down-arrow-up" className="shrink-0" />
+        </Button>
+      </Tooltip>
       <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
         <DropdownMenu>
           <p className="px-4 py-2 text-[.875rem] font-bold">Sort by</p>
@@ -184,7 +186,7 @@ type BodyProps = { items: RecentDocumentsItem[]; variant: TableVariant }
 
 function Body({ items, variant }: BodyProps) {
   return (
-    <tbody className="divide-y divide-[--border-weak] overflow-scroll">
+    <tbody className="overflow-scroll">
       {items.map((recentDocument) => (
         <Row variant={variant} key={recentDocument.uniqueId()} document={recentDocument} />
       ))}
@@ -234,6 +236,7 @@ function Row({ document, variant }: RowProps) {
     locationIcon = 'folder'
     locationLabel = location?.path.at(-1)!
   }
+  const isLocationPath = location?.type === 'path'
   let locationContent = (
     <Button
       onClick={(event) => {
@@ -245,13 +248,14 @@ function Row({ document, variant }: RowProps) {
         }
       }}
       shape="ghost"
-      className="text-pre flex flex-nowrap items-center text-ellipsis px-2"
+      className="text-pre flex flex-nowrap items-center px-2"
+      title={!isLocationPath ? locationLabel : undefined}
     >
       <Icon className="mr-2 shrink-0" name={locationIcon} />
-      {locationLabel}
+      <span className="overflow-hidden text-ellipsis">{locationLabel}</span>
     </Button>
   )
-  if (location?.type === 'path') {
+  if (isLocationPath) {
     locationContent = <Tooltip title={location?.path?.join(' / ')}>{locationContent}</Tooltip>
   }
 
@@ -288,7 +292,7 @@ function Row({ document, variant }: RowProps) {
       }}
     >
       <Table.DataCell>
-        <span className="flex flex-nowrap items-center gap-3">
+        <span title={document.name} className="flex flex-nowrap items-center gap-3">
           <Icon name="brand-proton-docs" size={5} className="shrink-0 text-[#34B8EE]" />
           {isRenaming ? (
             <Input
@@ -336,12 +340,12 @@ function Row({ document, variant }: RowProps) {
         </span>
       </Table.DataCell>
 
-      <Table.DataCell hideOnSmallDevices>
-        <span>{getRelativeDate(document)}</span>
+      <Table.DataCell target="large">
+        <span title={getRelativeDate(document)}>{getRelativeDate(document)}</span>
       </Table.DataCell>
 
-      <Table.DataCell hideOnSmallDevices>
-        <span className="flex flex-nowrap items-center gap-2">
+      <Table.DataCell target="medium">
+        <span className="flex flex-nowrap items-center gap-2" title={displayName}>
           <Avatar
             color="weak"
             className="min-w-custom max-w-custom max-h-custom bg-[#38BDF8]/10"
@@ -357,22 +361,24 @@ function Row({ document, variant }: RowProps) {
         </span>
       </Table.DataCell>
 
-      <Table.DataCell hideOnSmallDevices>
-        <div className="-ms-2 flex flex-nowrap">
+      <Table.DataCell target="medium">
+        <div className="-ms-2 flex flex-nowrap gap-2">
           {locationContent}
           {isRecents || isSearch ? (
-            <Button
-              onClick={(event) => {
-                event.stopPropagation()
-                contextMenu.setCurrentDocument(document)
-                contextMenu.handleContextMenu(event)
-              }}
-              shape="ghost"
-              className="ml-auto shrink-0 px-2"
-              aria-label={c('Action').t`Context menu`}
-            >
-              <Icon name="three-dots-vertical" />
-            </Button>
+            <Tooltip title={c('Action').t`Actions`}>
+              <Button
+                onClick={(event) => {
+                  event.stopPropagation()
+                  contextMenu.setCurrentDocument(document)
+                  contextMenu.handleContextMenu(event)
+                }}
+                shape="ghost"
+                className="ml-auto shrink-0 px-2"
+                aria-label={c('Action').t`Actions`}
+              >
+                <Icon name="three-dots-vertical" />
+              </Button>
+            </Tooltip>
           ) : null}
         </div>
       </Table.DataCell>

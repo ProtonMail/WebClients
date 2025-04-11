@@ -3,21 +3,28 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 const POSITIONAL_CELL_CLASSES = [
   '[&:nth-child(1)]:w-full [&:nth-child(1)]:px-6',
-  '[&:nth-child(2)]:w-[8rem] [&:nth-child(2)]:px-2',
-  '[&:nth-child(3)]:w-[10rem] [&:nth-child(3)]:px-2',
-  '[&:nth-child(4)]:w-[10rem] [&:nth-child(4)]:pe-5 [&:nth-child(4)]:ps-2',
+  '[&:nth-child(2)]:w-[9rem] xlarge:[&:nth-child(2)]:w-[12rem] xxlarge:[&:nth-child(2)]:w-[18rem] [&:nth-child(2)]:px-2',
+  '[&:nth-child(3)]:w-[14rem] large:[&:nth-child(3)]:w-[16rem] xlarge:[&:nth-child(3)]:w-[20rem] xxlarge:[&:nth-child(3)]:w-[26rem] [&:nth-child(3)]:px-2',
+  '[&:nth-child(4)]:w-[13rem] large:[&:nth-child(4)]:w-[14rem] xlarge:[&:nth-child(4)]:w-[16rem] xxlarge:[&:nth-child(4)]:w-[22rem] [&:nth-child(4)]:pe-5 [&:nth-child(4)]:ps-2',
 ]
 
-export type HeaderProps = ComponentPropsWithoutRef<'th'> & { hideOnSmallDevices?: boolean }
+type Target = 'all' | 'medium' | 'large'
+const TARGET_CLASSES: Record<Target, string | undefined> = {
+  all: undefined,
+  medium: 'hidden medium:!table-cell',
+  large: 'hidden large:!table-cell',
+}
 
-export function Header({ hideOnSmallDevices, ...props }: HeaderProps) {
+export type HeaderProps = ComponentPropsWithoutRef<'th'> & { target?: Target }
+
+export function Header({ target = 'all', ...props }: HeaderProps) {
   return (
     <th
       {...props}
       className={clsx(
-        'whitespace-nowrap font-semibold [&:nth-child(1)]:text-[1rem]',
+        'whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] [&:nth-child(1)]:text-[1rem]',
         ...POSITIONAL_CELL_CLASSES,
-        hideOnSmallDevices && 'hidden medium:!table-cell',
+        TARGET_CLASSES[target],
         props.className,
       )}
     />
@@ -28,28 +35,23 @@ export type HeadProps = ComponentPropsWithoutRef<'thead'> & { children: ReactNod
 
 export function Head({ children, ...props }: HeadProps) {
   return (
-    <thead {...props} className={clsx('sticky left-0 top-0 h-[3.75rem] bg-[#fff]', props.className)}>
+    <thead {...props} className={clsx('sticky left-0 top-0 h-[3.75rem]', props.className)}>
       <tr className="text-left">{children}</tr>
     </thead>
   )
 }
 
-export type DataCellProps = ComponentPropsWithoutRef<'td'> & { hideOnSmallDevices?: boolean }
+export type DataCellProps = ComponentPropsWithoutRef<'td'> & { target?: Target }
 
-export function DataCell({ hideOnSmallDevices, ...props }: DataCellProps) {
-  return (
-    <td
-      {...props}
-      className={clsx(...POSITIONAL_CELL_CLASSES, hideOnSmallDevices && 'hidden medium:!table-cell', props.className)}
-    />
-  )
+export function DataCell({ target = 'all', ...props }: DataCellProps) {
+  return <td {...props} className={clsx(...POSITIONAL_CELL_CLASSES, TARGET_CLASSES[target], props.className)} />
 }
 
 export type RowProps = ComponentPropsWithoutRef<'tr'> & { children: ReactNode }
 
 export function Row({ children, ...props }: RowProps) {
   return (
-    <tr {...props} className={clsx('h-[4.25rem]', props.className)}>
+    <tr {...props} className={clsx('h-[3.375rem]', props.className)}>
       {children}
     </tr>
   )

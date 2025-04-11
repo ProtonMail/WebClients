@@ -10,7 +10,7 @@ export function ContentSheet({ isBottom, ...props }: ContentSheetProps) {
     <div
       {...props}
       className={clsx(
-        'bg-norm border-weak rounded-xl border',
+        'bg-norm border-weak rounded-lg border',
         isBottom && '!rounded-b-none !border-b-0',
         props.className,
       )}
