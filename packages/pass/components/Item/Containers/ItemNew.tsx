@@ -33,7 +33,7 @@ const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
 };
 
 export const ItemNew: FC = () => {
-    const { getCurrentTab } = usePassCore();
+    const { getExtensionClientState } = usePassCore();
     const { selectItem, navigate } = useNavigationActions();
     const { filters, setFilters } = useNavigationFilters();
     const scope = useItemScope();
@@ -88,7 +88,7 @@ export const ItemNew: FC = () => {
                 onCancel={handleCancel}
                 onSubmit={handleSubmit}
                 shareId={shareId}
-                url={getCurrentTab?.()?.url ?? null}
+                url={getExtensionClientState?.()?.url ?? null}
             />
         )
     );

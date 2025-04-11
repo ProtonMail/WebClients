@@ -21,7 +21,8 @@ import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { not } from '@proton/pass/utils/fp/predicates';
+import { first } from '@proton/pass/utils/array/first';
+import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -65,6 +66,8 @@ export const options: RootSagaOptions = {
         if (isChromeExtensionRollback() && cache.version === EXTENSION_BUILD_VERSION) return {};
         return cacheGuard(cache, EXTENSION_MANIFEST_VERSION);
     }),
+
+    getPort: (name) => first(WorkerMessageBroker.ports.query(eq(name))),
 
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
