@@ -11,18 +11,16 @@ import notificationIcon from '../../../assets/notification.png';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { setParamsInLocation } from '../../../helpers/mailboxUrl';
 
-export const displayNotification = ({
+export const prepareNotificationData = ({
     message,
     history,
     mailSettings,
     notifier,
-    onOpenElement,
 }: {
     message: Message;
     history: History<unknown>;
     mailSettings: any;
     notifier: any;
-    onOpenElement: () => void;
 }) => {
     const { Subject, Sender, ID, ConversationID, LabelIDs } = message;
     const sender = Sender.Name || Sender.Address;
@@ -37,8 +35,33 @@ export const displayNotification = ({
     const messageID = conversationMode ? ID : undefined;
     const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID, messageID });
 
+    return { title, body, location, ID, labelID, elementID, messageID };
+};
+
+export const displayNotification = ({
+    message,
+    history,
+    mailSettings,
+    notifier,
+    onOpenElement,
+}: {
+    message: Message;
+    history: History<unknown>;
+    mailSettings: any;
+    notifier: any;
+    onOpenElement: () => void;
+}) => {
+    const notificationData = prepareNotificationData({
+        message,
+        history,
+        mailSettings,
+        notifier,
+    });
+
+    const { title, body, location, ID } = notificationData;
+
     if (isElectronMail) {
-        return createElectronNotification({ title, body, app: 'mail', labelID, elementID, messageID });
+        return createElectronNotification({ app: 'mail', ...notificationData });
     }
 
     return create(title, {
