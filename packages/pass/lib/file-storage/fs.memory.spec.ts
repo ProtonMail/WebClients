@@ -1,7 +1,6 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { FileStorageMemory, MemoryWritableStream } from './fs.memory';
-import type { FileStorage } from './types';
 
 const createMockBlob = (sizeInBytes: number) => {
     const data = new Uint8Array(sizeInBytes);
@@ -32,7 +31,7 @@ const createMockReadableStream = (chunks: Blob[], timeout: number = 0) => {
 };
 
 describe('FileStorageMemory', () => {
-    const fs: FileStorage = new FileStorageMemory();
+    const fs = new FileStorageMemory();
 
     jest.useFakeTimers();
 
@@ -88,6 +87,20 @@ describe('FileStorageMemory', () => {
 
             expect(result).toBeDefined();
             expect(result?.size).toBe(42);
+        });
+
+        test('should auto-delete after read', async () => {
+            const deleteFile = jest.spyOn(fs, 'deleteFile');
+
+            const { signal } = new AbortController();
+            const blob = createMockBlob(42);
+            await fs.writeFile('test.file', blob, signal);
+            await fs.readFile('test.file');
+
+            expect(fs.files.get('test.file')).toBeUndefined();
+            expect(deleteFile).toHaveBeenCalledWith('test.file');
+
+            deleteFile.mockRestore();
         });
     });
 
