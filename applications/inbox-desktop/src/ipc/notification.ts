@@ -146,12 +146,12 @@ const windowsToastNotification = (
     uuid: string,
     localID: string | null,
 ): { toastXml: string } => {
-    const { title, body, app, labelID, elementID } = payload;
+    const { title, body, app, labelID, elementID, messageID } = payload;
 
     const action = app === "calendar" ? DeepLinkActions.OpenCalendar : DeepLinkActions.OpenMail;
     const params =
         app === "mail" && labelID !== undefined && labelID !== "" && elementID !== undefined && elementID !== ""
-            ? `?labelID=${encodeURIComponent(labelID)}&amp;elementID=${encodeURIComponent(elementID)}&amp;${NOTIFICATION_ID_KEY}=${uuid}&amp;localID=${localID ?? "null"}`
+            ? `?labelID=${encodeURIComponent(labelID)}&amp;elementID=${encodeURIComponent(elementID)}${messageID ? `&amp;messageID=${encodeURIComponent(messageID)}` : ""}&amp;${NOTIFICATION_ID_KEY}=${uuid}&amp;localID=${localID ?? "null"}`
             : `?${NOTIFICATION_ID_KEY}=${uuid}`;
 
     return {
@@ -174,7 +174,7 @@ export const showNotification = (payload: ElectronNotification) => {
     const localID = getCurrentLocalID();
     notificationLogger.debug(`Notification request received ${uuid}, ${localID}:`, filterSenisitve(payload));
 
-    const { title, body, app, labelID, elementID } = payload;
+    const { title, body, app, labelID, elementID, messageID } = payload;
 
     const notification = new Notification(
         isWindows ? windowsToastNotification(payload, uuid, localID) : { title, body },
@@ -191,7 +191,7 @@ export const showNotification = (payload: ElectronNotification) => {
                     notificationLogger.warn(`Wrong localID: ${app}, ${uuid}`);
                     // INDA-440: switch account
                 } else {
-                    openMail(labelID, elementID);
+                    openMail(labelID, elementID, messageID);
                 }
                 break;
             case "calendar":
