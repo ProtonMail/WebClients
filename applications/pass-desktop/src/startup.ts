@@ -4,7 +4,7 @@ import { setupIpcHandlers as info } from './lib/install-info';
 import { setupIpcHandlers as navigation } from './lib/navigation';
 import { setupIpcHandlers as theming } from './lib/theming';
 import type { PassElectronContext } from './types';
-import { installDaemon } from './uninstallers/macos/daemon';
+import { installDaemon } from './uninstallers/macos/daemon/launcher';
 import { handleSquirrelEvents } from './utils/squirrel';
 
 export const startup = async (ctx: PassElectronContext) => {
