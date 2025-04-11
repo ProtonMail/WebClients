@@ -151,7 +151,6 @@ const getSaveRecurringEventActions = async ({
                       calendarEvent: originalEvent,
                       hasDefaultNotifications,
                       isAttendee,
-                      isBreakingChange,
                       resetNotes: isBreakingChange,
                   }),
               ]
@@ -265,7 +264,6 @@ const getSaveRecurringEventActions = async ({
                 // we only need to specify isPersonalSingleEdit when we need to change its value
                 // here that is in case the existing single edit was a personal one, but we're now propagating the change to attendees
                 isPersonalSingleEdit: hasUpdatedInviteData && oldEvent.IsPersonalSingleEdit ? false : undefined,
-                isBreakingChange,
                 resetNotes: isBreakingChange,
             });
 
@@ -389,7 +387,6 @@ const getSaveRecurringEventActions = async ({
             calendarEvent: originalEvent,
             hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
             isAttendee,
-            isBreakingChange,
             resetNotes: isBreakingChange,
         });
         const createOperation = getCreateSyncOperation({
