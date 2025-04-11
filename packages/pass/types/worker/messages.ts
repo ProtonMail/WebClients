@@ -23,7 +23,15 @@ import type { PullForkResponse } from '@proton/shared/lib/authentication/interfa
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { ForkPayload } from '../api/fork';
-import type { AliasCreationDTO, AliasOptions, ItemContent, SelectedItem, UniqueItem } from '../data';
+import type {
+    AliasCreationDTO,
+    AliasOptions,
+    FileTransferErrorDTO,
+    FileTransferWriteDTO,
+    ItemContent,
+    SelectedItem,
+    UniqueItem,
+} from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from './autofill';
@@ -88,6 +96,8 @@ export enum WorkerMessageType {
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
     FORM_ENTRY_STASH = 'FORM_ENTRY_STASH',
     FORM_STATUS = 'FORM_STATUS',
+    FS_WRITE = 'FS_WRITE',
+    FS_ERROR = 'FS_ERROR',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
@@ -157,6 +167,8 @@ export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUE
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
 export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
+export type FileTransferWriteMessage = WithPayload<WorkerMessageType.FS_WRITE, FileTransferWriteDTO>;
+export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, FileTransferErrorDTO>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
@@ -224,6 +236,8 @@ export type WorkerMessage =
     | FormEntryStageMessage
     | FormEntryStashMessage
     | FormStatusMessage
+    | FileTransferWriteMessage
+    | FileTransferErrorMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage

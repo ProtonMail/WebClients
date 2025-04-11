@@ -17,10 +17,12 @@ const isOPFSSupported = () =>
 
 type StorageOptions = { OPFS: boolean; IDB: boolean };
 
+export const MemoryStorage = new FileStorageMemory();
+
 export const getSupportedFileStorage = (options: StorageOptions) => {
     if (options.OPFS && isOPFSSupported()) return new FileStorageOPFS();
     if (options.IDB && 'indexedDB' in globalThis) return new FileStorageIDB();
-    return new FileStorageMemory();
+    return MemoryStorage;
 };
 
 export let fileStorage: FileStorage = getSupportedFileStorage({ OPFS: true, IDB: true });

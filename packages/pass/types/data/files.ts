@@ -59,3 +59,6 @@ export type FileRestoreDTO = { fileId: FileID } & SelectedItem;
 export type FileAttachmentValues = { files: FileAttachmentsDTO };
 export type FilesRequestSuccess = { files: FileDescriptor[]; history?: boolean } & SelectedItem;
 export type FilesMetadataEditSuccess = BaseFileDescriptor & Partial<SelectedItem>;
+
+export type FileTransferWriteDTO = { fileRef: string; b64: string };
+export type FileTransferErrorDTO = { fileRef: string };
