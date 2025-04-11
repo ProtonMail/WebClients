@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
+import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
 import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -16,6 +16,7 @@ import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { getSafeStorage } from '@proton/pass/lib/file-storage/utils';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import { exportData } from '@proton/pass/store/actions/creators/export';
 import { requestCancel } from '@proton/pass/store/request/actions';
@@ -33,6 +34,8 @@ type Props = {
 
 export const Exporter: FC<Props> = ({ onConfirm }) => {
     const tabId = useCurrentTabID();
+    const port = useCurrentPort();
+
     const requestID = exportData.requestID({ tabId });
 
     const { createNotification } = useNotifications();
@@ -44,6 +47,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
         format: ExportFormat.PGP,
         passphrase: '',
         fileAttachments: false,
+        storageType: fileStorage.type,
     };
 
     const [loading, setLoading] = useState(false);
@@ -88,20 +92,22 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
                     });
 
-                    const result = await asyncDispatch(exportData, { ...values, tabId });
+                    const result = await asyncDispatch(exportData, { ...values, tabId, port });
 
                     if (result.type !== 'success') {
                         if (result.data.aborted) throw new DOMException('User cancelled export', 'AbortError');
                         throw new Error(result.data.error);
                     }
 
-                    let { filename, mimeType } = result.data;
+                    let { mimeType, fileRef, type } = result.data;
                     mimeType = mimetypeForDownload(mimeType);
-                    const file = await fileStorage.readFile(filename, mimeType);
 
-                    if (!file) throw new Error();
+                    const fs = getSafeStorage(type);
+                    const file = await fs.readFile(fileRef, mimeType);
+                    if (!file) throw new Error('File not found');
 
-                    download(file, filename);
+                    download(file, fileRef);
+
                     createNotification({
                         type: 'success',
                         text: c('Info').t`Successfully exported all your items`,
