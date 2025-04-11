@@ -70,18 +70,6 @@ export const getFileParts = (filename: string): FileParts => {
     return { base: match[1], ext: match[2] };
 };
 
-export const reconcileFilename = (next: string, original: string): string => {
-    const sanitized = next.trim();
-
-    /* If new file has extension, do nothing */
-    const hasExtension = FILE_RE.test(sanitized);
-    if (hasExtension) return sanitized;
-
-    /* If new file has no extension, try to use the previous one */
-    const parts = getFileParts(original);
-    return sanitized + parts.ext;
-};
-
 export const getExportFileName = (file: FileDescriptor): string => {
     const parts = getFileParts(file.name);
     return `${parts.base}.${uniqueId(16)}${parts.ext}`;

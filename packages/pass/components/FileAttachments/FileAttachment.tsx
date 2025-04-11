@@ -11,7 +11,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { getFileParts, reconcileFilename } from '@proton/pass/lib/file-attachments/helpers';
+import { getFileParts } from '@proton/pass/lib/file-attachments/helpers';
 import type { fileUpdateMetadata } from '@proton/pass/store/actions';
 import type { RequestFlowAsyncResult } from '@proton/pass/store/request/types';
 import type { Maybe } from '@proton/pass/types';
@@ -68,9 +68,8 @@ export const FileAttachment: FC<Props> = ({
         fileRename.handler({
             onSubmit: async (changedFileName) => {
                 if (!onRename) return;
-                const conciliatedFileName = reconcileFilename(changedFileName, file.name);
-                setFilename(conciliatedFileName);
-                const res = await onRename(conciliatedFileName);
+                setFilename(changedFileName);
+                const res = await onRename(changedFileName);
                 if (res?.type !== 'success') setFilename(file.name);
             },
             onAbort: () => setFilename(file.name),
@@ -126,8 +125,8 @@ export const FileAttachment: FC<Props> = ({
                         readOnly={!fileRename.state.open}
                     />
                 </ClickableDiv>
-                <div className="text-sm color-weak flex max-w-full flex-nowrap">
-                    <span className="text-ellipsis">{ext ? `${ext.toUpperCase()} - ` : ''}</span>
+                <div className="text-sm color-weak flex max-w-full flex-nowrap gap-1">
+                    {ext && <span className="text-ellipsis">{`${ext.toUpperCase()} - `}</span>}
                     <span className="shrink-0">{humanSize({ bytes: file.size })}</span>
                 </div>
             </div>

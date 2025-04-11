@@ -11,7 +11,6 @@ import {
     intoPublicFileDescriptors,
     isFileForRevision,
     mimetypeForDownload,
-    reconcileFilename,
 } from './helpers';
 
 jest.mock('./file-proto.transformer', () => ({
@@ -133,21 +132,6 @@ describe('filesFormInitializer', () => {
             toRemove: [],
             toRestore: [],
         });
-    });
-});
-
-describe('reconcileFilename NEW', () => {
-    test.each([
-        ['newfile.txt', 'oldfile.pdf', 'newfile.txt', 'should keep the filename if it already has an extension'],
-        ['newfile', 'oldfile.pdf', 'newfile.pdf', 'should add the extension from the old filename if new one has none'],
-        ['newfile', 'oldfile', 'newfile', 'should leave the new filename as is if old file has no extension'],
-        ['document.v2', 'document.v1.docx', 'document.v2', 'should handle complex filenames with dots in the middle'],
-        ['archive', 'data.tar.gz', 'archive.gz', 'should handle filenames with multiple extensions'],
-        ['.htaccess', 'oldfile.txt', '.htaccess', 'should handle dotfiles'],
-        ['  spacedname  ', 'oldfile.txt', 'spacedname.txt', 'should trim whitespace'],
-    ])('%s + %s → %s (%s)', (newFileName, oldFileName, expected) => {
-        const result = reconcileFilename(newFileName, oldFileName);
-        expect(result).toBe(expected);
     });
 });
 
