@@ -31,7 +31,6 @@ enum CommonFeatureFlag {
     VPNDrawer = 'VPNDrawer',
     InboxDesktopDefaultEmailSetupHelper = 'InboxDesktopDefaultEmailSetupHelper',
     InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
-    UserDropdownRedesign = 'UserDropdownRedesign',
     // Monthly subscriber nudge feature flags
     SubscriberNudgeBundleMonthly = 'SubscriberNudgeBundleMonthly',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
