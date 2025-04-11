@@ -133,7 +133,12 @@ const CalendarSidebarListItem = ({
                                 className="calendar-sidebar-list-item-action group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm shrink-0 hidden md:inline-flex"
                                 style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
                                 loading={isSubscribedCalendar && loadingSubscriptionParameters}
-                                content={<Icon name="three-dots-horizontal" />}
+                                content={
+                                    <Icon
+                                        name="three-dots-horizontal"
+                                        alt={c('Sidebar calendar edit tooltip').t`Manage calendar`}
+                                    />
+                                }
                             >
                                 <DropdownMenu>
                                     <DropdownMenuButton
