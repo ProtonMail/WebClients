@@ -35,9 +35,8 @@ import { useFlag } from '@proton/unleash/index';
 import HelpModal from '../support/HelpModal';
 import SelfHelpModal from '../support/SelfHelpModal';
 import UserDropdownButton, { type Props as UserDropdownButtonProps } from './UserDropdownButton';
+import UserDropdownContent from './UserDropdownContent';
 import { UserDropdownContext, type UserDropdownValue } from './UserDropdownContext';
-import UserDropdownV1 from './UserDropdownV1';
-import UserDropdownV2 from './UserDropdownV2';
 
 interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
@@ -184,8 +183,6 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
         showSwitchAccountButton,
     };
 
-    const showNewAccountDropdown = useFlag('UserDropdownRedesign');
-
     return (
         <UserDropdownContext.Provider value={value}>
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} app={app} />}
@@ -235,7 +232,7 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
                     }}
                 />
             </ReferralSpotlight>
-            {showNewAccountDropdown ? <UserDropdownV2 /> : <UserDropdownV1 />}
+            <UserDropdownContent />
         </UserDropdownContext.Provider>
     );
 };
