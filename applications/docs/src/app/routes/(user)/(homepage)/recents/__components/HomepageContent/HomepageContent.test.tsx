@@ -96,21 +96,21 @@ describe('HomepageContent', () => {
 
   test('Show context menu when button is clicked', async () => {
     renderWithProviders(<HomepageContent />)
-    await userEvent.click(screen.getAllByRole('button', { name: /Context menu/ })[0])
+    await userEvent.click(screen.getAllByRole('button', { name: /Actions/ })[0])
     await screen.findByText('Open')
     await screen.findByText('Open folder')
   })
 
   test('Navigate to the parent drive folder when "Open Folder" is clicked', async () => {
     const { mockOpenParent } = renderWithProviders(<HomepageContent />)
-    await userEvent.click(screen.getAllByRole('button', { name: /Context menu/ })[0])
+    await userEvent.click(screen.getAllByRole('button', { name: /Actions/ })[0])
     await userEvent.click(await screen.findByText('Open folder'))
     expect(mockOpenParent).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
   })
 
   test('Navigate to the document editor when "Open" is clicked', async () => {
     const { mockOpen } = renderWithProviders(<HomepageContent />)
-    await userEvent.click(screen.getAllByRole('button', { name: /Context menu/ })[0])
+    await userEvent.click(screen.getAllByRole('button', { name: /Actions/ })[0])
     await userEvent.click(await screen.findByText('Open'))
     expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
   })
