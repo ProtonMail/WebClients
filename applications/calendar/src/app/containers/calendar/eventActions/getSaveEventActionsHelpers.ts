@@ -211,7 +211,6 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         hasDefaultNotifications,
         isAttendee: false,
         addedAttendeesPublicKeysMap,
-        isBreakingChange,
         resetNotes: isBreakingChange,
     });
 };
