@@ -65,7 +65,7 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
       sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} />}
       drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
     >
-      <PrivateMainArea className="!border-t-0 [&>div]:[block-size:100%]" hasToolbar>
+      <PrivateMainArea className="!border-t-0 ps-1 [&>div]:[block-size:100%]" hasToolbar>
         {children}
       </PrivateMainArea>
     </PrivateAppContainer>
@@ -98,7 +98,11 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
         actionArea={
           <>
             <MobileSearch className="small:!hidden" value={searchValue} onChange={(value) => setSearch(value, true)} />
-            <Search className="!hidden small:!block" value={searchValue} onChange={(value) => setSearch(value, true)} />
+            <Search
+              className="!hidden ps-1 small:!block"
+              value={searchValue}
+              onChange={(value) => setSearch(value, true)}
+            />
           </>
         }
       />
@@ -124,7 +128,7 @@ function Search({ value, onChange, className }: SearchProps) {
   return (
     <div className={className}>
       <Input
-        className="max-w-[30.625rem]"
+        className="border-weak max-w-[30.625rem] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
         inputClassName="h-[32px] small:h-auto"
         onKeyDown={(event) => {
           if (event.key === 'Escape') {
@@ -172,7 +176,7 @@ function MobileSearch({ value, onChange, className }: SearchProps) {
               onChange(undefined)
             }
           }}
-          className="w-full"
+          className="border-weak w-full focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
           inputClassName="h-[32px] small:h-auto"
           prefix={
             <span>
@@ -235,7 +239,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
       expanded={expanded}
       onToggleExpand={onToggle}
       className={clsx(
-        'ui-standard !pt-3 small:!pt-0 small:[&_.app-infos]:!px-[1.125rem] [&_.logo-container]:!hidden [&_.logo-container]:!h-[4.25rem] [&_.logo-container]:!p-[1.125rem] small:[&_.logo-container]:!flex',
+        'ui-standard -me-1 !pt-3 small:!pt-0 small:[&_.app-infos]:!px-[1.125rem] [&_.logo-container]:!hidden [&_.logo-container]:!h-[4.25rem] [&_.logo-container]:!p-[1.125rem] small:[&_.logo-container]:!flex',
         USER_DROPDOWN_OVERRIDES,
       )}
       primary={newDocumentButton}
