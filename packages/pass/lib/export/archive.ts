@@ -52,7 +52,7 @@ export async function* createExportAttachmentsStream(
             );
 
             yield {
-                name: archivePath(getExportFileName(file), 'files'),
+                name: archivePath(getExportFileName(shareId)(file), 'files'),
                 input: downloadStream,
                 size: file.size,
             } satisfies ExportFileStream;
