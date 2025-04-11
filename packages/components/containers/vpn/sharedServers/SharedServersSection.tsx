@@ -12,7 +12,6 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import DeleteModal from '@proton/components/containers/vpn/sharedServers/PolicyModal/DeleteModal';
@@ -403,10 +402,11 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                 >
                                     <div className="flex flex-column md:flex-row md:items-center flex-1 gap-2">
                                         <div
-                                            className="text-lg text-semibold w-custom overflow-hidden"
+                                            className="flex gap-1 items-center text-lg text-semibold w-custom overflow-hidden"
                                             style={{ '--w-custom': '200px' }}
                                         >
                                             {customPolicy.Name}
+                                            {customPolicy.localStatus !== 'unchanged' && <OrangeDot />}
                                         </div>
                                         <div className="md:flex-1" style={{ flexBasis: 'min-content' }}>
                                             <PolicyUsersGroupsList policy={customPolicy} />
@@ -427,15 +427,6 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                                 handleDeletePolicy={handleDeletePolicy}
                                             />
                                         )}
-
-                                        <Toggle
-                                            id={`custom-policy-status-${customPolicy.LocationFilterPolicyID}`}
-                                            checked={!isDeleted}
-                                            onChange={() => handleDeletePolicy(customPolicy)}
-                                            disabled={isDeleted}
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="not-clickable-with-parent"
-                                        />
                                     </div>
                                 </div>
                             );
