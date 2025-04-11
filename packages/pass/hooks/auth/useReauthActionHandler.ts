@@ -5,12 +5,12 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
+import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { getSafeStorage } from '@proton/pass/lib/file-storage/utils';
 import { exportData } from '@proton/pass/store/actions/creators/export';
 import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
 import type { State } from '@proton/pass/store/types';
@@ -22,6 +22,7 @@ const REAUTH_KEY = 'notification:reauth';
 export const useReauthActionHandler = (store: Store<State>) => {
     const authStore = useAuthStore();
     const tabId = useCurrentTabID();
+    const port = useCurrentPort();
 
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
@@ -41,7 +42,7 @@ export const useReauthActionHandler = (store: Store<State>) => {
                     })
                 );
 
-                const result = await dispatch(exportData, { ...reauth.data, tabId });
+                const result = await dispatch(exportData, { ...reauth.data, tabId, port });
 
                 const ok = result.type === 'success';
 
@@ -55,10 +56,11 @@ export const useReauthActionHandler = (store: Store<State>) => {
                     });
 
                     if (ok) {
-                        let { filename, mimeType } = result.data;
+                        let { mimeType, fileRef, type } = result.data;
                         mimeType = mimetypeForDownload(mimeType);
-                        const file = await fileStorage.readFile(filename, mimeType);
-                        if (file) download(file, filename);
+                        const fs = getSafeStorage(type);
+                        const file = await fs.readFile(fileRef, mimeType);
+                        if (file) download(file, fileRef);
                     }
                 }, 1_500);
 

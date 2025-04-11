@@ -19,6 +19,8 @@ import {
 import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import { intoFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import type { FileStorage } from '@proton/pass/lib/file-storage/types';
+import { base64ToBlob, getSafeStorage, getSafeWriter } from '@proton/pass/lib/file-storage/utils';
 import {
     fileDownload,
     fileDownloadPublic,
@@ -32,7 +34,7 @@ import {
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
-import type { FileDescriptor, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
+import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -70,7 +72,10 @@ const uploadChunk = createRequestSaga({
                 switch (payload.type) {
                     case 'blob':
                         return payload.blob;
-                    case 'fs':
+                    case 'b64':
+                        return base64ToBlob(payload.data);
+                    case 'storage':
+                        if (fileStorage.type !== payload.storageType) throw new Error('Invalid storage instance');
                         return fileStorage.readFile(payload.ref);
                 }
             })();
@@ -97,13 +102,14 @@ const uploadChunk = createRequestSaga({
 
 const downloadFile = createRequestSaga({
     actions: fileDownload,
-    call: function* (payload) {
+    call: function* (payload, options) {
         const ctrl = new AbortController();
         const { signal } = ctrl;
 
-        try {
-            const { chunkIDs, fileID, shareId, encryptionVersion } = payload;
+        const { chunkIDs, fileID, shareId, encryptionVersion, storageType } = payload;
+        const fs: FileStorage = getSafeStorage(storageType);
 
+        try {
             const downloadStream = createDownloadStream(
                 { shareId, fileID, chunkIDs, encryptionVersion },
                 (chunkID: string) => downloadFileChunk({ ...payload, chunkID }, signal),
@@ -111,9 +117,10 @@ const downloadFile = createRequestSaga({
             );
 
             const fileRef = uniqueId(32);
-            yield fileStorage.writeFile(fileRef, downloadStream, signal);
+            const write = getSafeWriter(fs, options);
+            yield write(fileRef, downloadStream, signal, payload.port);
 
-            return fileRef;
+            return { type: fs.type, fileRef };
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
@@ -142,7 +149,7 @@ const downloadPublicChunk = createRequestSaga({
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
-            return fileRef;
+            return { type: 'storage', fileRef } satisfies FileForDownload;
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
