@@ -39,7 +39,7 @@ export const getPaginatedEventsByUID = async ({
         if (page.Events) {
             await Promise.all(
                 page.Events.map(async (Event) => {
-                    if (Event.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
+                    if (Event.AttendeesInfo?.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
                         await fetchPaginatedAttendeesInfo(api, Event);
                     }
                 })
