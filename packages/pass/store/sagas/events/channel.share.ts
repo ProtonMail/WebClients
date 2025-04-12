@@ -7,6 +7,7 @@ import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getShareLatestEventId, requestShare } from '@proton/pass/lib/shares/share.requests';
 import {
@@ -19,6 +20,7 @@ import {
     vaultDeleteSuccess,
 } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
+import { FileLinkPending } from '@proton/pass/store/sagas/items/item-files.sagas';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse } from '@proton/pass/types';
@@ -87,9 +89,17 @@ const onShareEvent = (shareId: string) =>
         }
 
         if (UpdatedItems.length > 0) {
+            /** Edge-case: We might receive the update event from the BE before a file linking
+             * operation has completed processing. This could result in duplicate items appearing
+             * in the UI - both the optimistic version and the newly created/updated version */
+            const updated = UpdatedItems.filter(({ ItemID: itemId }) => {
+                const itemKey = getItemKey({ shareId, itemId });
+                return !FileLinkPending.has(itemKey);
+            });
+
             const updatedItems = (
                 (yield Promise.all(
-                    UpdatedItems.map((encryptedItem) => parseItemRevision(shareId, encryptedItem).catch(noop))
+                    updated.map((encryptedItem) => parseItemRevision(shareId, encryptedItem).catch(noop))
                 )) as Maybe<ItemRevision>[]
             ).filter(truthy);
 
