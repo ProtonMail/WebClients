@@ -23,7 +23,7 @@ export type EventManagerConfig<T extends {}> = {
 
 export type EventManager<T extends {}> = {
     state: EventManagerState;
-    setEventID: (eventID: string) => void;
+    setEventID: (eventID: Maybe<string>) => void;
     getEventID: () => Maybe<string>;
     start: () => void;
     stop: () => void;
@@ -54,7 +54,7 @@ export const eventManager = <T extends {}>({
     const state: EventManagerState = { interval, retryIndex: 0, lastEventID: initialEventID };
 
     const setInterval = (nextInterval: number) => (state.interval = nextInterval);
-    const setEventID = (eventID: string) => (state.lastEventID = eventID);
+    const setEventID = (eventID: Maybe<string>) => (state.lastEventID = eventID);
     const getEventID = () => (state.lastEventID ? state.lastEventID : undefined);
     const setRetryIndex = (index: number) => (state.retryIndex = index);
     const getRetryIndex = () => state.retryIndex;
@@ -119,11 +119,11 @@ export const eventManager = <T extends {}>({
                 const result = await api<T>({ ...query(eventID), signal: abortController.signal, silence: true });
                 if (!result) return;
 
-                await Promise.all(listeners.notify(result));
                 const { More, EventID: nextEventID } = getCursor(result);
-
                 setEventID(nextEventID);
                 setRetryIndex(0);
+
+                listeners.notify(result);
 
                 if (!More) break;
             }
