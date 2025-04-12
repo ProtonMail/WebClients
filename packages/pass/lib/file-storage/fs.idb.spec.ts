@@ -1,7 +1,5 @@
 import 'fake-indexeddb/auto';
 
-import { wait } from '@proton/shared/lib/helpers/promise';
-
 import {
     FileStorageIDB,
     IDBReadableStream,
@@ -11,35 +9,8 @@ import {
     removeIDBFileChunks,
     writeIDBFileChunk,
 } from './fs.idb';
+import { createMockBlob, createMockReadableStream } from './testing';
 import type { FileStorage } from './types';
-
-const createMockBlob = (sizeInBytes: number) => {
-    const data = new Uint8Array(sizeInBytes);
-    crypto.getRandomValues(data);
-    return new Blob([data]);
-};
-
-const createMockReadableStream = (chunks: Blob[], timeout: number = 0) => {
-    let current = 0;
-
-    const processNextChunk = (controller: ReadableStreamDefaultController<Blob>) => {
-        if (current >= chunks.length) return controller.close();
-        controller.enqueue(chunks[current]);
-        current++;
-    };
-
-    return new ReadableStream<Blob>({
-        start(controller) {
-            if (chunks.length > 0 && !timeout) processNextChunk(controller);
-            else if (!timeout) controller.close();
-        },
-
-        async pull(controller) {
-            if (timeout) await wait(timeout);
-            processNextChunk(controller);
-        },
-    });
-};
 
 const writeChunks = async (filename: string, totalChunks: number) => {
     const db = await openPassFileDB();
