@@ -47,6 +47,7 @@ const initiateUpload = createRequestSaga({
             metadata: encodedMetadata,
             fileID: undefined,
             shareId,
+            pending: true,
         });
 
         const fileID = await createPendingFile(
@@ -55,7 +56,13 @@ const initiateUpload = createRequestSaga({
             encryptionVersion
         );
 
-        PassCrypto.registerFileKey({ shareId, fileID, fileKey: fileDescriptor.fileKey });
+        PassCrypto.registerFileKey({
+            shareId,
+            fileID,
+            fileKey: fileDescriptor.fileKey,
+            pending: true,
+        });
+
         return fileID;
     },
 });
@@ -94,10 +101,16 @@ const uploadChunk = createRequestSaga({
             yield uploadFileChunk(fileID, chunkIndex, encryptedChunk, signal);
 
             return true;
+        } catch (err) {
+            PassCrypto.unregisterFileKey({ fileID, shareId, pending: true });
+            throw err;
         } finally {
             /** Delete chunk whenever we exit from this generator */
             if (payload.type === 'storage') fileStorage.deleteFile(payload.ref).catch(noop);
-            if (yield cancelled()) ctrl.abort('Operation cancelled');
+            if (yield cancelled()) {
+                ctrl.abort('Operation cancelled');
+                PassCrypto.unregisterFileKey({ fileID, shareId, pending: true });
+            }
         }
     },
 });
@@ -164,18 +177,21 @@ const updateMetadata = createRequestSaga({
         const { fileID, shareId, itemId, encryptionVersion } = descriptor;
         const encodedMetadata = encodeFileMetadata(descriptor);
 
+        const pending = !(shareId && itemId);
+
         const fileDescriptor = await PassCrypto.createFileDescriptor({
             encryptionVersion,
             fileID,
             metadata: encodedMetadata,
             shareId,
+            pending,
         });
 
         const metadata = uint8ArrayToBase64String(fileDescriptor.metadata);
 
-        await (shareId && itemId
-            ? updateLinkedFileMetadata({ metadata, fileID, shareId, itemId })
-            : updatePendingFileMetadata(metadata, fileID));
+        await (pending
+            ? updatePendingFileMetadata(metadata, fileID)
+            : updateLinkedFileMetadata({ metadata, fileID, shareId, itemId }));
 
         return { ...descriptor, shareId, itemId };
     },
