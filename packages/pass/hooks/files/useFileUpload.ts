@@ -197,7 +197,7 @@ export const useFileUpload = () => {
     );
 
     const start = useCallback(
-        async (
+        (
             file: Blob,
             name: string,
             shareId: ShareId,

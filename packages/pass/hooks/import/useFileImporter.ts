@@ -27,9 +27,11 @@ export const useFileImporter = () => {
     const { createNotification } = useNotifications();
     const maxFileSize = useSelector(selectUserStorageMaxFileSize);
 
+    const reset = useCallback(() => setProgress(0), []);
+
     const cancel = useCallback(() => {
         fileUpload.cancel('*');
-        setProgress(0);
+        reset();
     }, []);
 
     const addProgress = useCallback((increment: number) => setProgress((val) => val + increment), []);
@@ -128,5 +130,5 @@ export const useFileImporter = () => {
 
     useEffect(() => cancel, []);
 
-    return { start, cancel, progress };
+    return { start, cancel, reset, progress };
 };
