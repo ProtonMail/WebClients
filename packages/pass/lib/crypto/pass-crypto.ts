@@ -47,7 +47,8 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
     }
 }
 
-export const intoFileUniqueID = (shareId: string, fileID: FileID) => `${shareId}::${fileID}`;
+export const intoFileUniqueID = (shareId: string, fileID: FileID, pending?: boolean) =>
+    `${shareId}::${fileID}` + (pending ? '::pending' : '');
 
 export const createPassCrypto = (): PassCryptoWorker => {
     const context: PassCryptoManagerContext = {
@@ -436,26 +437,32 @@ export const createPassCrypto = (): PassCryptoWorker => {
             });
         },
 
-        registerFileKey: ({ fileKey, fileID, shareId }) => {
+        registerFileKey: ({ fileKey, fileID, shareId, pending }) => {
             /** Do not assert context here, so it can be used in Secure Links */
-            context.fileKeys.set(intoFileUniqueID(shareId, fileID), fileKey);
+            logger.debug(`[PassCrypto] Registering file key ${logId(fileID)} [pending=${pending}]`);
+            context.fileKeys.set(intoFileUniqueID(shareId, fileID, pending), fileKey);
         },
 
-        getFileKey: ({ shareId, fileID }) => {
-            const fileKey = context.fileKeys.get(intoFileUniqueID(shareId, fileID));
+        unregisterFileKey: ({ fileID, shareId, pending }) => {
+            logger.debug(`[PassCrypto] Unregistering file key ${logId(fileID)} [pending=${pending}]`);
+            context.fileKeys.delete(intoFileUniqueID(shareId, fileID, pending));
+        },
+
+        getFileKey: ({ shareId, fileID, pending }) => {
+            const fileKey = context.fileKeys.get(intoFileUniqueID(shareId, fileID, pending));
             if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
             return fileKey;
         },
 
-        async encryptFileKey({ itemKey, fileID, shareId }) {
-            const fileKey = worker.getFileKey({ shareId, fileID });
+        async encryptFileKey({ itemKey, fileID, shareId, pending }) {
+            const fileKey = worker.getFileKey({ shareId, fileID, pending });
             return encryptData(itemKey.key, fileKey, PassEncryptionTag.FileKey);
         },
 
-        async createFileDescriptor({ metadata, fileID, shareId, encryptionVersion }) {
+        async createFileDescriptor({ metadata, fileID, shareId, encryptionVersion, pending }) {
             assertHydrated(context);
 
-            const fileKey = fileID ? worker.getFileKey({ shareId, fileID }) : undefined;
+            const fileKey = fileID ? worker.getFileKey({ shareId, fileID, pending }) : undefined;
             return processes.createFileDescriptor(metadata, encryptionVersion, fileKey);
         },
 
@@ -469,7 +476,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
                 file.EncryptionVersion ?? 1
             );
 
-            worker.registerFileKey({ fileKey, fileID: file.FileID, shareId });
+            worker.registerFileKey({ fileKey, fileID: file.FileID, shareId, pending: false });
             return metadata;
         },
 
@@ -478,7 +485,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
 
             if (chunk.size === 0) throw new PassCryptoFileError('File cannot be empty');
 
-            const fileKey = worker.getFileKey({ shareId, fileID });
+            const fileKey = worker.getFileKey({ shareId, fileID, pending: true });
             return processes.createFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
@@ -486,7 +493,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
             /** Do not assert context here, so it can be used in Secure Links */
             if (chunk.byteLength === 0) throw new PassCryptoFileError('Encrypted chunk cannot be empty');
 
-            const fileKey = worker.getFileKey({ shareId, fileID });
+            const fileKey = worker.getFileKey({ shareId, fileID, pending: false });
             return processes.openFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
@@ -540,7 +547,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
                 linkKey,
             });
 
-            worker.registerFileKey({ fileKey, fileID, shareId: FILE_PUBLIC_SHARE });
+            worker.registerFileKey({ fileKey, fileID, shareId: FILE_PUBLIC_SHARE, pending: false });
 
             return metadata;
         },
