@@ -94,7 +94,8 @@ export const useFileUpload = () => {
     const queue = useCallback(
         asyncQueue(
             async (
-                file: File,
+                file: Blob,
+                name: string,
                 shareId: ShareId,
                 uploadID: string,
                 onProgress?: OnFileUploadProgress
@@ -107,7 +108,7 @@ export const useFileUpload = () => {
                     const ctrl = ctrls.current.get(uploadID);
                     if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
 
-                    const { name, size } = file;
+                    const { size } = file;
                     const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
 
                     onProgress?.(0, totalChunks);
@@ -196,7 +197,13 @@ export const useFileUpload = () => {
     );
 
     const start = useCallback(
-        async (file: File, shareId: ShareId, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
+        async (
+            file: Blob,
+            name: string,
+            shareId: ShareId,
+            uploadID: string,
+            onProgress?: OnFileUploadProgress
+        ): Promise<FileID> => {
             if (file.size === 0) {
                 /** On windows electron: when drag'n'dropping a file from an archive
                  * before extraction, the reported file will have a filesize of 0 bytes */
@@ -206,7 +213,7 @@ export const useFileUpload = () => {
             ctrls.current.set(uploadID, new AbortController());
             syncLoadingState();
 
-            return queue(file, shareId, uploadID, onProgress);
+            return queue(file, name, shareId, uploadID, onProgress);
         },
         []
     );
