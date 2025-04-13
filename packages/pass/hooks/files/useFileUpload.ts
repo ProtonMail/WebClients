@@ -16,6 +16,7 @@ import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } fro
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { useFileEncryptionVersion } from './useFileEncryptionVersion';
 
@@ -45,7 +46,7 @@ const getChunkDTO = async (
                 return { chunkIndex, data, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'b64' };
             }
             default: {
-                const ref = `${fileID}.chunk`;
+                const ref = `chunk.${uniqueId()}`;
                 await fileStorage.writeFile(ref, blob, signal);
                 return {
                     chunkIndex,
@@ -186,7 +187,6 @@ export const useFileUpload = () => {
                 } catch (e) {
                     throw e;
                 } finally {
-                    if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
                     ctrls.current.delete(uploadID);
                     syncLoadingState();
                 }
