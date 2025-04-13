@@ -1,4 +1,4 @@
-import { cancelled, put, select } from 'redux-saga/effects';
+import { cancelled, select } from 'redux-saga/effects';
 
 import { FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -31,7 +31,6 @@ import {
     fileUploadInitiate,
     filesResolve,
 } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
 import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
@@ -190,7 +189,6 @@ const linkPending = createRequestSaga({
 
         const revisionDTO = { ...dto, revision: item.revision };
         const linked: ItemRevision = yield linkPendingFiles(revisionDTO);
-        yield put(withRevalidate(filesResolve.intent(revisionDTO)));
 
         return { item: linked };
     },
