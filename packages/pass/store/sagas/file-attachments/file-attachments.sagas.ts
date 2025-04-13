@@ -37,6 +37,7 @@ import { selectItem } from '@proton/pass/store/selectors';
 import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import noop from '@proton/utils/noop';
 
 const initiateUpload = createRequestSaga({
     actions: fileUploadInitiate,
@@ -68,7 +69,7 @@ const uploadChunk = createRequestSaga({
         const { shareId, fileID, chunkIndex, totalChunks, encryptionVersion } = payload;
 
         try {
-            const chunk: Blob = yield (async () => {
+            const chunk: Maybe<Blob> = yield (async () => {
                 switch (payload.type) {
                     case 'blob':
                         return payload.blob;
@@ -95,6 +96,8 @@ const uploadChunk = createRequestSaga({
 
             return true;
         } finally {
+            /** Delete chunk whenever we exit from this generator */
+            if (payload.type === 'storage') fileStorage.deleteFile(payload.ref).catch(noop);
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
     },
