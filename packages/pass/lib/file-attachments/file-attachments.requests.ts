@@ -94,7 +94,7 @@ export const restoreSingleFile = async (
             method: 'post',
             data: {
                 FileKey: uint8ArrayToBase64String(
-                    await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId })
+                    await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId, pending: false })
                 ),
                 ItemKeyRotation: itemKey.rotation,
             },
@@ -112,7 +112,9 @@ export const restoreRevisionFiles = async (
                 FilesToRestore: await Promise.all(
                     dto.toRestore.map(async (fileID) => ({
                         FileID: fileID,
-                        FileKey: uint8ArrayToBase64String(await PassCrypto.encryptFileKey({ ...dto, fileID })),
+                        FileKey: uint8ArrayToBase64String(
+                            await PassCrypto.encryptFileKey({ ...dto, fileID, pending: false })
+                        ),
                     }))
                 ),
                 ItemKeyRotation: dto.itemKey.rotation,
@@ -124,64 +126,70 @@ export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLink
     const { revision, shareId, itemId, files } = dto;
     const itemKey = await resolveItemKey(shareId, itemId);
 
-    const encryptedItem = await (async (): Promise<ItemRevisionContentsResponse> => {
-        if (files.toAdd.length || files.toRemove.length) {
-            const FilesToAdd = await Promise.all(
-                files.toAdd.map(async (FileID) => ({
-                    FileID,
-                    FileKey: uint8ArrayToBase64String(
-                        await PassCrypto.encryptFileKey({
-                            fileID: FileID,
-                            itemKey,
-                            shareId,
-                        })
-                    ),
-                }))
-            );
+    try {
+        const encryptedItem = await (async (): Promise<ItemRevisionContentsResponse> => {
+            if (files.toAdd.length || files.toRemove.length) {
+                const FilesToAdd = await Promise.all(
+                    files.toAdd.map(async (FileID) => ({
+                        FileID,
+                        FileKey: uint8ArrayToBase64String(
+                            await PassCrypto.encryptFileKey({
+                                fileID: FileID,
+                                itemKey,
+                                shareId,
+                                pending: true,
+                            })
+                        ),
+                    }))
+                );
 
-            /** Max simultaneous files to add/remove per action are 10/100 */
-            const addChunks = chunk(FilesToAdd, 10);
-            const removeChunks = chunk(files.toRemove, 100);
+                /** Max simultaneous files to add/remove per action are 10/100 */
+                const addChunks = chunk(FilesToAdd, 10);
+                const removeChunks = chunk(files.toRemove, 100);
 
-            let maxCalls = Math.max(addChunks.length, removeChunks.length);
-            let result = null;
+                const maxCalls = Math.max(addChunks.length, removeChunks.length);
+                let result = null;
 
-            for (let i = 0; i < maxCalls; i++) {
-                const currentFilesToAdd = addChunks[i] ?? [];
-                const currentFilesToRemove = removeChunks[i] ?? [];
+                for (let i = 0; i < maxCalls; i++) {
+                    const currentFilesToAdd = addChunks[i] ?? [];
+                    const currentFilesToRemove = removeChunks[i] ?? [];
 
-                result = await api({
-                    url: `pass/v1/share/${shareId}/item/${itemId}/link_files`,
-                    data: {
-                        ItemRevision: revision,
-                        FilesToAdd: currentFilesToAdd,
-                        FilesToRemove: currentFilesToRemove,
-                    } satisfies LinkFileToItemInput,
-                    method: 'post',
-                });
+                    result = await api({
+                        url: `pass/v1/share/${shareId}/item/${itemId}/link_files`,
+                        data: {
+                            ItemRevision: revision,
+                            FilesToAdd: currentFilesToAdd,
+                            FilesToRemove: currentFilesToRemove,
+                        } satisfies LinkFileToItemInput,
+                        method: 'post',
+                    });
+                }
+
+                /** If no files to restore we can early return */
+                if (!files.toRestore?.length && result) return result.Item;
             }
 
-            /** If no files to restore we can early return */
-            if (!files.toRestore?.length && result) return result.Item;
-        }
+            if (files.toRestore?.length) {
+                /** Max simultaneous files to restore per action are 50 */
+                const restoreChunks = chunk(files.toRestore, 50);
+                let result = null;
 
-        if (files.toRestore?.length) {
-            /** Max simultaneous files to restore per action are 50 */
-            const restoreChunks = chunk(files.toRestore, 50);
-            let result = null;
+                for (let i = 0; i < restoreChunks.length; i++) {
+                    const toRestore = restoreChunks[i] ?? [];
+                    result = await restoreRevisionFiles({ shareId, itemId, toRestore, itemKey });
+                }
 
-            for (let i = 0; i < restoreChunks.length; i++) {
-                const toRestore = restoreChunks[i] ?? [];
-                result = await restoreRevisionFiles({ shareId, itemId, toRestore, itemKey });
+                return result!;
             }
 
-            return result!;
-        }
+            throw new Error('Invalid file link operation');
+        })();
 
-        throw new Error('Invalid file link operation');
-    })();
-
-    return parseItemRevision<T>(dto.shareId, encryptedItem);
+        return await parseItemRevision<T>(dto.shareId, encryptedItem);
+    } finally {
+        /** Unregister pending file keys when linking completes */
+        files.toAdd.forEach((fileID) => PassCrypto.unregisterFileKey({ fileID, shareId, pending: true }));
+    }
 };
 
 export const resolveItemFiles = async ({ shareId, itemId }: UniqueItem): Promise<ItemFileOutput[]> =>
