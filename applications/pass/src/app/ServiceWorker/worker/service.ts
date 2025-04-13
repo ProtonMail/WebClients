@@ -20,7 +20,6 @@ import {
     matchSetLocalKeyRoute,
 } from './session';
 
-export default null;
 declare let self: ServiceWorkerGlobalScope;
 
 /** Claims all clients to ensure they are controlled by the latest service worker.
