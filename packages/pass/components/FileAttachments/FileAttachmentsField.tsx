@@ -87,7 +87,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 await Promise.all(
                     uploads.map(async ({ file, uploadID }) =>
                         fileUpload
-                            .start(file, shareId, uploadID)
+                            .start(file, file.name, shareId, uploadID)
                             .then((fileID) => {
                                 setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
                                 return form.setValues((values) => {
