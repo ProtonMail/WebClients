@@ -37,7 +37,7 @@ export const useFileDownload = () => {
 
     const downloadFile = useCallback(async (res: FileForDownload, descriptor: FileDescriptor): Promise<void> => {
         const mimeType = mimetypeForDownload(descriptor.mimeType);
-        const { fileRef, type } = res;
+        const { fileRef, storageType } = res;
 
         /** Trying to download from the extension popup in safari will
          * cause the filename to be `Unknown`. To alleviate this, leverage
@@ -49,7 +49,7 @@ export const useFileDownload = () => {
             return;
         }
 
-        const fs = getSafeStorage(type);
+        const fs = getSafeStorage(storageType);
         const file = await fs.readFile(fileRef, mimeType);
         if (file) download(file, descriptor.name);
     }, []);

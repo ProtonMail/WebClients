@@ -49,6 +49,8 @@ export type FileMetadataDTO = BaseFileDescriptor & {
     shareId: ShareId;
 };
 
+export type FileUploadInitiateDTO = { fileID: FileID; storageType: string };
+
 type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
 type FileDownloadDTOBase = {
     fileID: FileID;
@@ -58,7 +60,7 @@ type FileDownloadDTOBase = {
     port?: string;
 };
 
-export type FileForDownload = { type: string; fileRef: string };
+export type FileForDownload = { storageType: string; fileRef: string };
 
 export type FileDownloadDTO = FileDownloadDTOBase & SelectedItem;
 export type FileDownloadChunk = FileDownloadChunkBase & SelectedItem;

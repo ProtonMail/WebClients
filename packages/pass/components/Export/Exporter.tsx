@@ -99,10 +99,10 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         throw new Error(result.data.error);
                     }
 
-                    let { mimeType, fileRef, type } = result.data;
+                    let { mimeType, fileRef, storageType } = result.data;
                     mimeType = mimetypeForDownload(mimeType);
 
-                    const fs = getSafeStorage(type);
+                    const fs = getSafeStorage(storageType);
                     const file = await fs.readFile(fileRef, mimeType);
                     if (!file) throw new Error('File not found');
 

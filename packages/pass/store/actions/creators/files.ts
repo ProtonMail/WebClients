@@ -6,11 +6,11 @@ import type {
     FileDownloadDTO,
     FileDownloadPublicDTO,
     FileForDownload,
-    FileID,
     FileInitiateUploadDTO,
     FileMetadataDTO,
     FileResolveDTO,
     FileRestoreDTO,
+    FileUploadInitiateDTO,
     FilesMetadataEditSuccess,
     FilesRequestSuccess,
     ItemLinkFilesIntent,
@@ -20,7 +20,9 @@ import type {
 import { prop } from '@proton/pass/utils/fp/lens';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
-export const fileUploadInitiate = requestActionsFactory<FileInitiateUploadDTO, FileID>('file::upload::initiate')({
+export const fileUploadInitiate = requestActionsFactory<FileInitiateUploadDTO, FileUploadInitiateDTO>(
+    'file::upload::initiate'
+)({
     key: prop('uploadID'),
     failure: { prepare: withAbortPayload },
 });
