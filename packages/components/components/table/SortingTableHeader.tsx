@@ -45,10 +45,10 @@ interface CellUnsortableProps extends Omit<ThHTMLAttributes<HTMLTableCellElement
 interface CellSortableProps<T> extends Omit<ThHTMLAttributes<HTMLTableCellElement>, 'content'> {
     content: ReactNode;
     key: keyof T;
-    sorting: true;
+    sorting: boolean;
 }
 
-type CellProps<T = any> = CellUnsortableProps | CellSortableProps<T>;
+export type CellProps<T = any> = CellUnsortableProps | CellSortableProps<T>;
 
 interface SortingTableHeaderProps<T> extends HTMLAttributes<HTMLTableSectionElement> {
     cells: CellProps<T>[];
