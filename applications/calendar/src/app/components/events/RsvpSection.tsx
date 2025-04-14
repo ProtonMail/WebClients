@@ -279,7 +279,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         showCharacterCount={true}
                         counterPosition="bottom-left"
                     />
-                    <div className="gap-4 flex flex-auto justify-end">
+                    <div className={clsx('gap-4 flex flex-auto justify-end', isDrawerOrResponsiveView && 'mb-4')}>
                         <Button shape="outline" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                         <Button
                             color="norm"
