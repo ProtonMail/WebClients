@@ -76,7 +76,7 @@ export function $handleBeforeInputEvent(
 
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
-    logger.info('Current selection is not a range selection')
+    logger.info('Current selection is not a range selection', selection)
     return true
   }
 
