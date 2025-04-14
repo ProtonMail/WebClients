@@ -1,3 +1,5 @@
+import type { Runtime } from 'webextension-polyfill';
+
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import type { AuthService } from '@proton/pass/lib/auth/service';
@@ -9,6 +11,7 @@ import type {
     ClientEndpoint,
     ContextBridgeApi,
     LocalStoreData,
+    Maybe,
     MaybeNull,
     MaybePromise,
 } from '@proton/pass/types';
@@ -38,6 +41,9 @@ export interface RootSagaOptions {
     getTelemetry: () => MaybeNull<Telemetry>;
 
     setAppStatus: (status: AppStatus) => void;
+
+    /** Retrieves the port by name in the extension */
+    getPort?: (name: string) => Maybe<Runtime.Port>;
 
     /** Fine-tune the event channel polling interval - this will
      * be called after each polling run to set the next value */

@@ -52,7 +52,7 @@ export const selectExportData =
                                     modifyTime: item.modifyTime,
                                     pinned: item.pinned,
                                     shareCount: item.shareCount,
-                                    files: files?.[shareId]?.[item.itemId]?.map(getExportFileName) ?? [],
+                                    files: files?.[shareId]?.[item.itemId]?.map(getExportFileName(shareId)) ?? [],
                                 })),
                             },
                         ]);

@@ -24,6 +24,7 @@ export const File: FC<RouteComponentProps<FileParam>> =
               useEffect(() => {
                   const doDownload = async () => {
                       if (!ref) throw new Error('Invalid file');
+                      if (fileStorage.type === 'Memory') throw new Error('Invalid storage');
 
                       const mimeType = mimetypeForDownload(ref.mimeType);
                       const file = await fileStorage.readFile(ref.ref, mimeType);

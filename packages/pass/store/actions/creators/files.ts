@@ -5,11 +5,12 @@ import type {
     FileChunkUploadDTO,
     FileDownloadDTO,
     FileDownloadPublicDTO,
-    FileID,
+    FileForDownload,
     FileInitiateUploadDTO,
     FileMetadataDTO,
     FileResolveDTO,
     FileRestoreDTO,
+    FileUploadInitiateDTO,
     FilesMetadataEditSuccess,
     FilesRequestSuccess,
     ItemLinkFilesIntent,
@@ -19,7 +20,9 @@ import type {
 import { prop } from '@proton/pass/utils/fp/lens';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
-export const fileUploadInitiate = requestActionsFactory<FileInitiateUploadDTO, FileID>('file::upload::initiate')({
+export const fileUploadInitiate = requestActionsFactory<FileInitiateUploadDTO, FileUploadInitiateDTO>(
+    'file::upload::initiate'
+)({
     key: prop('uploadID'),
     failure: { prepare: withAbortPayload },
 });
@@ -29,11 +32,13 @@ export const fileUploadChunk = requestActionsFactory<WithTabId<FileChunkUploadDT
     failure: { prepare: withAbortPayload },
 });
 
-export const fileDownload = requestActionsFactory<WithTabId<FileDownloadDTO>, string>('file::download')({
+export const fileDownload = requestActionsFactory<WithTabId<FileDownloadDTO>, FileForDownload>('file::download')({
     key: ({ shareId, itemId, fileID, tabId }) => `${tabId ?? 0}::${shareId}::${itemId}::${fileID}`,
 });
 
-export const fileDownloadPublic = requestActionsFactory<FileDownloadPublicDTO, string>('file::download::public')({
+export const fileDownloadPublic = requestActionsFactory<FileDownloadPublicDTO, FileForDownload>(
+    'file::download::public'
+)({
     key: ({ filesToken, fileID }) => `${filesToken}::${fileID}`,
 });
 

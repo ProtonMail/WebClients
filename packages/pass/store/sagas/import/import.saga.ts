@@ -33,10 +33,10 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
 
 type ImportWorkerState = {
@@ -165,20 +165,20 @@ function* importWorker(
                         counts.items += items.length;
                         yield put(importItemsProgress(requestID, counts.items, { shareId, items }));
                     } catch (e) {
-                        const description = e instanceof Error ? (getApiErrorMessage(e) ?? e?.message) : '';
-
+                        const errorMessage = getErrorMessage(e);
+                        logger.warn(`[Saga::Import] Import batch error (${errorMessage})`);
                         yield put(
                             notification({
                                 endpoint,
                                 key: requestID,
                                 type: 'error',
-                                text: c('Error').t`Import failed for vault "${vaultData.name}" : ${description}`,
+                                text: c('Error').t`Import failed for vault "${vaultData.name}" : ${errorMessage}`,
                             })
                         );
                     }
                 }
             } catch (e) {
-                logger.warn('[Saga::Import]', e);
+                logger.warn(`[Saga::Import] Import error when creating vault (${getErrorMessage(e)})`);
                 yield put(
                     notification({
                         key: requestID,

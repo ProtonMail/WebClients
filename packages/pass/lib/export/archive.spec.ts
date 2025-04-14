@@ -1,12 +1,13 @@
 import { decryptPassExport } from '@proton/pass/lib/crypto/utils/export';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { archivePath, createArchive, createExportDataStream } from '@proton/pass/lib/export/archive';
+import { archivePath, createArchive, createExportDataStream, getArchiveName } from '@proton/pass/lib/export/archive';
 import type { ExportData } from '@proton/pass/lib/export/types';
 import { consumeStream } from '@proton/pass/lib/file-attachments/download';
 import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
 import { ContentFormatVersion, ItemState } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 const getMockExport = (): ExportData => ({
@@ -48,6 +49,26 @@ const getMockExport = (): ExportData => ({
 describe('Archive generation', () => {
     beforeAll(async () => setupCryptoProxyForTesting());
     afterAll(async () => releaseCryptoProxy());
+
+    describe('archivePath', () => {
+        test.each([
+            ['file.txt', undefined, `${PASS_APP_NAME}/file.txt`],
+            ['file.txt', 'subfolder', `${PASS_APP_NAME}/subfolder/file.txt`],
+            ['file/with/slashes.txt', 'subfolder', `${PASS_APP_NAME}/subfolder/file_with_slashes.txt`],
+            ['file\\with\\backslashes.txt', 'subfolder', `${PASS_APP_NAME}/subfolder/file_with_backslashes.txt`],
+        ])('should format path correctly for %s with subpath %s', (filename, subpath, expected) => {
+            expect(archivePath(filename, subpath)).toBe(expected);
+        });
+    });
+
+    describe('getArchiveName', () => {
+        test('should generate correct archive name format', () => {
+            const mockDate = new Date('2023-01-15T12:34:56Z');
+            const date = jest.spyOn(global, 'Date').mockImplementation(() => mockDate as unknown as Date);
+            expect(getArchiveName('zip')).toBe(`${PASS_APP_NAME}_export_2023-01-15_1673786096.zip`);
+            date.mockRestore();
+        });
+    });
 
     describe('`makeArchive`', () => {
         test('should correctly write unencrypted archive', async () => {
