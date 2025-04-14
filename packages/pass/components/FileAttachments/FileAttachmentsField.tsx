@@ -17,6 +17,7 @@ import { useFileEncryptionVersion } from '@proton/pass/hooks/files/useFileEncryp
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
+import { validateFileName } from '@proton/pass/lib/file-attachments/helpers';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import {
     selectUserStorageAllowed,
@@ -157,7 +158,8 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
         const handleRename = async (uploadID: string, fileName: string) => {
             const file = filesMap.get(uploadID);
-            if (!fileName.trim()) return;
+
+            if (!validateFileName(fileName)) return;
             if (!file || file.name === fileName || !file.fileID) return;
 
             const res = await dispatch(fileUpdateMetadata, {
