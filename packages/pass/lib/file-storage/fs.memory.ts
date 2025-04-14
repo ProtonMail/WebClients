@@ -54,7 +54,7 @@ export class FileStorageMemory implements FileStorage {
                 await stream.pipeTo(writable, { signal });
             } else this.files.set(filename, [data]);
 
-            this.gc?.push(filename, { enqueueForDeletion: true });
+            this.gc?.push(filename, { enqueueForDeletion: false });
             logger.debug(`[fs::Memory] Saved ${logId(filename)}`);
         } catch (err) {
             logger.debug('[fs::Memory] Could not write file.', err);
