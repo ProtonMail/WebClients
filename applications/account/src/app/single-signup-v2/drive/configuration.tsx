@@ -44,9 +44,9 @@ import {
     getJoinString,
     getSwissPrivacyLawsBenefit,
 } from '../configuration/helper';
+import CustomStep from '../defaultCustomStep/CustomStep';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
-import CustomStep from '../mail/CustomStep';
 import setupAccount from '../mail/account-setup.svg';
 
 const getDriveBenefitsTitle = (plan: PLANS | undefined, audience: Audience | undefined) => {
