@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
@@ -91,7 +91,6 @@ const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [tagsArray, setTagsArray] = useState<string[]>([]);
     const [userSettings] = useUserSettings();
     const history = useHistory();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -129,6 +128,9 @@ const MainContainer: FunctionComponent = () => {
     });
 
     const canEnableChat = useCanEnableChat(user);
+    const chatTags = useMemo(() => {
+        return organization?.PlanName ? [organization?.PlanName] : [];
+    }, [organization?.PlanName]);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
     const [freeUserLiveChatModal, setFreeUserLiveChatModal, renderFreeUserLiveChatModal] = useModalState();
@@ -143,14 +145,6 @@ const MainContainer: FunctionComponent = () => {
         setAuthenticatedBugReportMode(mode);
         setAuthenticatedBugReportModal(true);
     };
-
-    useEffect(() => {
-        if (loadingSubscription || !canEnableChat) {
-            return;
-        }
-        const subscriptionUserPaid: string[] = subscription?.Plans?.map((plan) => plan.Name) || [];
-        setTagsArray(subscriptionUserPaid);
-    }, [subscription]);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -383,7 +377,7 @@ const MainContainer: FunctionComponent = () => {
                         </Switch>
                         {showChat.render && canEnableChat ? (
                             <LiveChatZendesk
-                                tags={tagsArray}
+                                tags={chatTags}
                                 zendeskRef={zendeskRef}
                                 zendeskKey={vpnZendeskKey}
                                 name={name || ''}
