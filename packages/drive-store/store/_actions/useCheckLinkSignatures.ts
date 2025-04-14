@@ -1,5 +1,5 @@
+import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import type useDownload from '../_downloads/useDownload';
