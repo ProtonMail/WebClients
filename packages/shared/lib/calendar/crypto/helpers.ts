@@ -1,4 +1,5 @@
 import { CryptoProxy, type PrivateKeyReference, type SessionKey } from '@proton/crypto/lib';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../../helpers/encoding';
 import type { VerificationPreferences } from '../../interfaces/VerificationPreferences';
@@ -83,18 +84,18 @@ export const getEncryptedRSVPComment = async ({
 
 export const getEncryptedRSVPCommentWithSignature = async ({
     comment,
-    commentSignature,
+    signatures,
     sessionKey,
 }: {
     comment: string;
-    commentSignature: Uint8Array<ArrayBufferLike>;
+    signatures: Uint8Array<ArrayBufferLike>[];
     sessionKey: SessionKey | undefined;
 }) => {
     const encryptResult = await CryptoProxy.encryptMessage({
         format: 'binary',
         textData: comment,
         sessionKey,
-        binarySignature: commentSignature,
+        binarySignature: mergeUint8Arrays(signatures),
     });
     const base64EncryptedComment = uint8ArrayToBase64String(encryptResult.message);
 
