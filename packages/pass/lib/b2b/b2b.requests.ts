@@ -5,6 +5,7 @@ import { type ItemMarkAsReadRequest } from '@proton/pass/types';
 import { type B2BEvent, B2BEventName } from '@proton/pass/types/data/b2b';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import type { EventBundle } from '@proton/pass/utils/event/dispatcher';
+import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
 
 import { isB2BEvent } from './b2b.utils';
@@ -27,14 +28,17 @@ const sendItemReadEvents = async (events: B2BEvent<B2BEventName.ItemRead>[]) =>
                         url: `pass/v1/share/${shareId}/item/read`,
                         method: 'put',
                         data: { ItemTimes },
+                    }).catch((err) => {
+                        if (getIsOfflineError(err)) throw err;
+                        return;
                     });
                 })
             );
         })
     );
 
-const sendReportMonitor = async (events: B2BEvent<B2BEventName.ReportMonitor>) => {
-    return api({
+const sendReportMonitor = async (events: B2BEvent<B2BEventName.ReportMonitor>) =>
+    api({
         url: `pass/v1/organization/report/client_data`,
         method: 'POST',
         data: {
@@ -44,7 +48,6 @@ const sendReportMonitor = async (events: B2BEvent<B2BEventName.ReportMonitor>) =
             WeakPasswords: events.WeakPasswords,
         },
     });
-};
 
 export const sendB2BEventsBundle = async ({ events }: EventBundle<B2BEvent>): Promise<void> => {
     await sendItemReadEvents(events.filter(isB2BEvent(B2BEventName.ItemRead)));
