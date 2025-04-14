@@ -21,8 +21,8 @@
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
-    "@lexical/utils": "0.25.0",
-    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.25.0#~/.yarn/patches/@lexical-yjs-npm-0.25.0-051bd8dfbc.patch",
+    "@lexical/utils": "0.30.0",
+    "@lexical/yjs": "0.30.0",
     "@proton/account": "workspace:^",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
