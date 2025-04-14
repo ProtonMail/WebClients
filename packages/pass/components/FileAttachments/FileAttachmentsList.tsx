@@ -36,7 +36,7 @@ export const FileAttachmentsList: FC<Props> = (props) => {
     const canRename = Boolean(props.canRename && isPaidUser && share && isShareWritable(share));
 
     const handleRename = useCallback(async (descriptor: BaseFileDescriptor, fileName: string) => {
-        if (descriptor.name === fileName) return;
+        if (!fileName.trim() || descriptor.name === fileName) return;
         return dispatch(fileUpdateMetadata, { ...descriptor, name: fileName, shareId, itemId });
     }, []);
 
