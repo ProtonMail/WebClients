@@ -63,6 +63,14 @@ export const filesFormInitializer = ({
 const FILE_RE = /(.*)(\.[^.]+$)/;
 export type FileParts = { base: string; ext: string };
 
+export const sanitizeFileName = (filename: string) => filename.replace(/[\/\\]/g, '_').trim();
+
+export const validateFileName = (filename: string) => {
+    if (!filename) return false;
+    if (/^\.+$/.test(filename)) return false;
+    return true;
+};
+
 export const getFileParts = (filename: string): FileParts => {
     const match = filename.match(FILE_RE);
     if (!match) return { base: filename, ext: '' };

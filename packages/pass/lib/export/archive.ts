@@ -4,7 +4,12 @@ import { encryptPassExport } from '@proton/pass/lib/crypto/utils/export';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
 import { downloadFileChunk, resolveItemFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
-import { getExportFileName, intoFileDescriptors, isFileForRevision } from '@proton/pass/lib/file-attachments/helpers';
+import {
+    getExportFileName,
+    intoFileDescriptors,
+    isFileForRevision,
+    sanitizeFileName,
+} from '@proton/pass/lib/file-attachments/helpers';
 import type { ExportThunk } from '@proton/pass/store/selectors';
 import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -16,7 +21,7 @@ export type ExportGenerator = AsyncGenerator<ExportFileStream>;
 
 export const archivePath = (filename: string, subpath?: string) => {
     if (!subpath) return `${PASS_APP_NAME}/${filename}`;
-    return `${PASS_APP_NAME}/${subpath}/${filename.replace(/[\/\\]/g, '_')}`;
+    return `${PASS_APP_NAME}/${subpath}/${sanitizeFileName(filename)}`;
 };
 
 export const getArchiveName = (format: string) => {
