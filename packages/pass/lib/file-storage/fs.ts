@@ -21,7 +21,7 @@ export const MemoryStorage = new FileStorageMemory();
 
 export const getSupportedFileStorage = (options: StorageOptions) => {
     if (options.OPFS && isOPFSSupported()) return new FileStorageOPFS();
-    if (options.IDB && 'indexedDB' in globalThis) return new FileStorageIDB();
+    if (EXTENSION_BUILD && options.IDB && 'indexedDB' in globalThis) return new FileStorageIDB();
     return MemoryStorage;
 };
 
