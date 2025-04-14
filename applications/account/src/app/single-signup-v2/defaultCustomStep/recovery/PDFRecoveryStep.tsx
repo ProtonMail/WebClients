@@ -11,10 +11,10 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import noop from '@proton/utils/noop';
 
-import Content from '../../public/Content';
-import Header from '../../public/Header';
-import Main from '../../public/Main';
-import type { MnemonicData } from '../../signup/interfaces';
+import Content from '../../../public/Content';
+import Header from '../../../public/Header';
+import Main from '../../../public/Main';
+import type { MnemonicData } from '../../../signup/interfaces';
 import RecoveryStepUnderstoodCheckbox from './RecoveryStepUnderstoodCheckbox';
 import recoveryKit from './recovery-kit.svg';
 

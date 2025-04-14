@@ -9,10 +9,10 @@ import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import Content from '../../public/Content';
-import Header from '../../public/Header';
-import Main from '../../public/Main';
-import type { MnemonicData } from '../../signup/interfaces';
+import Content from '../../../public/Content';
+import Header from '../../../public/Header';
+import Main from '../../../public/Main';
+import type { MnemonicData } from '../../../signup/interfaces';
 import RecoveryStepUnderstoodCheckbox from './RecoveryStepUnderstoodCheckbox';
 
 interface Props {

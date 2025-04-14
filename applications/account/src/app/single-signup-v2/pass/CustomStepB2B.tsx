@@ -20,9 +20,9 @@ import { handleDisplayName, handleSetupOrg } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
+import OrgSetupStep from '../defaultCustomStep/OrgSetupStep';
+import MnemonicRecoveryStep from '../defaultCustomStep/recovery/MnemonicRecoveryStep';
 import type { SignupCustomStepProps } from '../interface';
-import MnemonicRecoveryStep from './MnemonicRecoveryStep';
-import OrgSetupStep from './OrgSetupStep';
 
 enum Step {
     Recovery,
