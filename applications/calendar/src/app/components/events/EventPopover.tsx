@@ -403,61 +403,59 @@ const EventPopover = ({
                         </div>
                     </div>
                 </PopoverHeader>
-                <div ref={popoverContentRef}>
-                    <div className="overflow-auto mb-4">
-                        <PopoverEventContent
-                            key={targetEvent.uniqueId}
-                            calendar={calendarData}
-                            model={model}
-                            isDrawerApp={isDrawerApp}
-                            formatTime={formatTime}
-                            displayNameEmailMap={displayNameEmailMap}
-                        />
-                    </div>
-                    {canReplyToEvent && !rsvpCommentEnabled && (
-                        <PopoverFooter
-                            className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
-                            key={targetEvent.uniqueId}
-                        >
-                            <div>
-                                <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
-                            </div>
-                            <div className="ml-0 md:ml-auto">
-                                <CalendarInviteButtons
-                                    actions={{
-                                        accept: () =>
-                                            handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                                Status: ICAL_ATTENDEE_STATUS.ACCEPTED,
-                                            }),
-                                        acceptTentatively: () =>
-                                            handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                                Status: ICAL_ATTENDEE_STATUS.TENTATIVE,
-                                            }),
-                                        decline: () =>
-                                            handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                                Status: ICAL_ATTENDEE_STATUS.DECLINED,
-                                            }),
-                                        retryCreateEvent: () => wait(0),
-                                        retryUpdateEvent: () => wait(0),
-                                    }}
-                                    partstat={userPartstat}
-                                    disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
-                                />
-                            </div>
-                        </PopoverFooter>
-                    )}
-                    {canReplyToEvent && rsvpCommentEnabled && (
-                        <div className="shrink-0 relative" key={targetEvent.uniqueId}>
-                            <RsvpSection
-                                handleChangePartstat={handleChangePartStat}
-                                userPartstat={userPartstat}
-                                userComment={userComment}
+                <div className="overflow-auto mb-4" ref={popoverContentRef}>
+                    <PopoverEventContent
+                        key={targetEvent.uniqueId}
+                        calendar={calendarData}
+                        model={model}
+                        isDrawerApp={isDrawerApp}
+                        formatTime={formatTime}
+                        displayNameEmailMap={displayNameEmailMap}
+                    />
+                </div>
+                {canReplyToEvent && !rsvpCommentEnabled && (
+                    <PopoverFooter
+                        className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
+                        key={targetEvent.uniqueId}
+                    >
+                        <div>
+                            <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
+                        </div>
+                        <div className="ml-0 md:ml-auto">
+                            <CalendarInviteButtons
+                                actions={{
+                                    accept: () =>
+                                        handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                            Status: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                                        }),
+                                    acceptTentatively: () =>
+                                        handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                            Status: ICAL_ATTENDEE_STATUS.TENTATIVE,
+                                        }),
+                                    decline: () =>
+                                        handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                            Status: ICAL_ATTENDEE_STATUS.DECLINED,
+                                        }),
+                                    retryCreateEvent: () => wait(0),
+                                    retryUpdateEvent: () => wait(0),
+                                }}
+                                partstat={userPartstat}
                                 disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
-                                view={view}
                             />
                         </div>
-                    )}
-                </div>
+                    </PopoverFooter>
+                )}
+                {canReplyToEvent && rsvpCommentEnabled && (
+                    <div className="shrink-0 relative" key={targetEvent.uniqueId}>
+                        <RsvpSection
+                            handleChangePartstat={handleChangePartStat}
+                            userPartstat={userPartstat}
+                            userComment={userComment}
+                            disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
+                            view={view}
+                        />
+                    </div>
+                )}
             </PopoverContainer>
             {linkModal}
         </>
