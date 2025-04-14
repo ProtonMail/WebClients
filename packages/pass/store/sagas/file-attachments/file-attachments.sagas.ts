@@ -63,7 +63,7 @@ const initiateUpload = createRequestSaga({
             pending: true,
         });
 
-        return fileID;
+        return { fileID, storageType: fileStorage.type };
     },
 });
 
@@ -135,7 +135,7 @@ const downloadFile = createRequestSaga({
             const write = getSafeWriter(fs, options);
             yield write(fileRef, downloadStream, signal, payload.port);
 
-            return { type: fs.type, fileRef };
+            return { storageType: fs.type, fileRef };
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
@@ -164,7 +164,7 @@ const downloadPublicChunk = createRequestSaga({
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
-            return { type: 'storage', fileRef } satisfies FileForDownload;
+            return { storageType: fileStorage.type, fileRef } satisfies FileForDownload;
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
