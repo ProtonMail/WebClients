@@ -59,6 +59,7 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasPassB2BPlan,
     hasDuo,
+    hasPassBusiness,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -140,7 +141,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const hasMaxAddresses = Boolean(organization?.MaxAddresses ?? 0);
     const useEmail = hasExternalMemberCapableB2BPlan;
-    const allowStorageConfiguration = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
+    const allowStorageConfiguration =
+        !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan || hasPassBusiness(subscription);
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
     // Allow to display a toggle in the UI
