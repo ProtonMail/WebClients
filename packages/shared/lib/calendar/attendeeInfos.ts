@@ -23,9 +23,6 @@ export const fetchPaginatedAttendeesInfo = async (api: Api, Event: CalendarEvent
     Event.AttendeesInfo.Attendees = Event.AttendeesInfo.Attendees.concat(Attendees);
     Event.AttendeesInfo.MoreAttendees = MoreAttendees;
 
-    // TODO
-    // - Should we limit the number of pages we fetch ?
-    // - Not sure batching is doable here or a even a good idea
     if (MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
         await fetchPaginatedAttendeesInfo(api, Event, page + 1);
     }

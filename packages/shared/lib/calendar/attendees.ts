@@ -28,6 +28,7 @@ import {
     ICAL_ATTENDEE_STATUS,
 } from './constants';
 import { getDecryptedRSVPComment } from './crypto/helpers';
+import { escapeInvalidHtmlTags } from './sanitize';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
 
 export const NO_CANONICAL_EMAIL_ERROR = 'No canonical email provided';
@@ -247,9 +248,8 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
         supportedAttendee.parameters['x-pm-token'] = token;
     }
 
-    // TODO: ensure comment is sanitized before reaching this part
     if (comment) {
-        supportedAttendee.parameters['x-pm-comment'] = comment;
+        supportedAttendee.parameters['x-pm-comment'] = escapeInvalidHtmlTags(comment);
     }
 
     return supportedAttendee;
