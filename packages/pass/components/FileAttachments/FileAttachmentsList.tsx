@@ -8,6 +8,7 @@ import { useFileDownload } from '@proton/pass/hooks/files/useFileDownload';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
+import { validateFileName } from '@proton/pass/lib/file-attachments/helpers';
 import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
@@ -36,7 +37,7 @@ export const FileAttachmentsList: FC<Props> = (props) => {
     const canRename = Boolean(props.canRename && isPaidUser && share && isShareWritable(share));
 
     const handleRename = useCallback(async (descriptor: BaseFileDescriptor, fileName: string) => {
-        if (!fileName.trim() || descriptor.name === fileName) return;
+        if (!validateFileName(fileName) || descriptor.name === fileName) return;
         return dispatch(fileUpdateMetadata, { ...descriptor, name: fileName, shareId, itemId });
     }, []);
 

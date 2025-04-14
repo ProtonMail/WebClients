@@ -11,6 +11,8 @@ import {
     intoPublicFileDescriptors,
     isFileForRevision,
     mimetypeForDownload,
+    sanitizeFileName,
+    validateFileName,
 } from './helpers';
 
 jest.mock('./file-proto.transformer', () => ({
@@ -260,5 +262,29 @@ describe('intoFileParam and intoFileRef', () => {
         const param = intoFileParam(fileRef);
         const result = intoFileRef(param);
         expect(result).toEqual(fileRef);
+    });
+});
+
+describe('sanitizeFileName', () => {
+    test.each<[string, string, string]>([
+        ['file/name.txt', 'file_name.txt', 'should replace forward slashes with underscores'],
+        ['file\\name.txt', 'file_name.txt', 'should replace backslashes with underscores'],
+        ['file/with\\both/slashes.txt', 'file_with_both_slashes.txt', 'should replace both slash types'],
+        ['normal-filename.txt', 'normal-filename.txt', 'should not modify filenames without slashes'],
+    ])('%s → %s (%s)', (input, expected) => {
+        expect(sanitizeFileName(input)).toBe(expected);
+    });
+});
+
+describe('validateFileName', () => {
+    test.each<[string, boolean, string]>([
+        ['', false, 'should reject empty filenames'],
+        ['.', false, 'should reject single dot'],
+        ['..', false, 'should reject double dots'],
+        ['...', false, 'should reject triple dots'],
+        ['valid.txt', true, 'should validate valid filenames'],
+        ['.gitignore', true, 'should validate dot files'],
+    ])('%s → %s (%s)', (input, expected) => {
+        expect(validateFileName(input)).toBe(expected);
     });
 });
