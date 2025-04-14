@@ -8,6 +8,7 @@ import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pa
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
+import { sanitizeFileName } from '@proton/pass/lib/file-attachments/helpers';
 import { blobToBase64, getSafeStorage } from '@proton/pass/lib/file-storage/utils';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
@@ -141,7 +142,7 @@ export const useFileUpload = () => {
                     })();
 
                     const initDTO = {
-                        name,
+                        name: sanitizeFileName(name),
                         mimeType,
                         totalChunks,
                         uploadID,
