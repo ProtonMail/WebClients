@@ -69,7 +69,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     const isDrawerOrResponsiveView = getIsCalendarAppInDrawer(view) || activeBreakpoint.viewportWidth['<=small'];
     const isSearchView = view === VIEWS.SEARCH;
 
-    const [model, setModel] = useState<PartstatData>({
+    const [rsvpState, setRsvpState] = useState<PartstatData>({
         Status: userPartstat,
         Comment: userComment ?? undefined,
     });
@@ -81,12 +81,12 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
     const formattedUserComment = useUrlifyString({ text: userComment });
 
-    const isUnchanged = model.Status === userPartstat && model.Comment === userComment;
+    const isUnchanged = rsvpState.Status === userPartstat && rsvpState.Comment === userComment;
 
     const handleResponse = (status: ICAL_ATTENDEE_STATUS) => {
         if (displayNoteOverlay) {
-            setModel({
-                ...model,
+            setRsvpState({
+                ...rsvpState,
                 Status: status,
             });
         }
@@ -108,8 +108,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     };
 
     const handleNote = (note: string) => {
-        setModel({
-            ...model,
+        setRsvpState({
+            ...rsvpState,
             Comment: note,
         });
     };
@@ -121,11 +121,13 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             Comment: userComment ?? undefined,
         };
 
-        return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData));
+        return withLoadingSend(
+            handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, rsvpState, true, oldPartstatData)
+        );
     };
 
     const handleCancel = () => {
-        setModel({
+        setRsvpState({
             Status: userPartstat,
             Comment: userComment ?? undefined,
         });
@@ -143,7 +145,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             handleChangePartstat(
                 INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
                 {
-                    ...model,
+                    ...rsvpState,
                     Comment: undefined,
                 },
                 true,
@@ -154,8 +156,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
     useEffect(() => {
         // If userPartstat prop is different than state status, rely on property
-        if (userPartstat !== model.Status) {
-            setModel((currentModel) => ({
+        if (userPartstat !== rsvpState.Status) {
+            setRsvpState((currentModel) => ({
                 ...currentModel,
                 Status: userPartstat,
             }));
@@ -165,7 +167,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     useEffect(() => {
         // Update user comment in background only if not actively editing
         if (!displayNoteOverlay) {
-            setModel((currentModel) => ({
+            setRsvpState((currentModel) => ({
                 ...currentModel,
                 Comment: userComment,
             }));
@@ -261,7 +263,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         handleResponse={handleResponse}
                         userPartstat={userPartstat}
                         disabled={disabled}
-                        attendeeStatus={model.Status}
+                        attendeeStatus={rsvpState.Status}
                     />
                     <InputFieldTwo
                         autoFocus
@@ -271,7 +273,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         as={TextAreaWithCounter}
                         rows={3}
                         placeholder={c('Placeholder').t`Leave a note for all participants`}
-                        value={model.Comment}
+                        value={rsvpState.Comment}
                         onValue={handleNote}
                         maxCharacterCount={128}
                         showCharacterCount={true}
@@ -286,8 +288,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             disabled={
                                 displayNoteOverlay &&
                                 (isUnchanged ||
-                                    !model.Comment?.trim() ||
-                                    model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
+                                    !rsvpState.Comment?.trim() ||
+                                    rsvpState.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
                             }
                         >{c('Action').t`Send`}</Button>
                     </div>
