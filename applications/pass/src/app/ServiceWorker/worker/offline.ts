@@ -27,7 +27,7 @@ export const matchAssetRoute = (pathname: string): boolean => {
 /** Conditions for offline private-app handler :
  * - Offline support must be enabled
  * - Must be a navigation request to a document
- * - URL pathname must not match any online-only routes */
+ * - URL pathname must not match any online-only or API routes */
 export const matchPrivateAppNavigate = (
     pathname: string,
     mode: RequestMode,
@@ -35,6 +35,7 @@ export const matchPrivateAppNavigate = (
 ): boolean => {
     if (!OFFLINE_SUPPORTED) return false;
     if (mode !== 'navigate' || destination !== 'document') return false;
+    if (pathname.startsWith('/api/pass/v1')) return false;
     return !ONLINE_ONLY_ROUTES.some((route) => pathname.startsWith(route));
 };
 
