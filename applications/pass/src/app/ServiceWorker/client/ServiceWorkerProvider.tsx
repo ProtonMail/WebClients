@@ -35,7 +35,7 @@ export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
             /** Prevent update notifications during hard refresh */
             unloading.current = true;
 
-            if (fileStorage.gc) {
+            if (fileStorage.gc && fileStorage.type !== 'Memory') {
                 const filenames = fileStorage.gc.queued() ?? [];
 
                 /** Request file deletion via service worker as browsers
