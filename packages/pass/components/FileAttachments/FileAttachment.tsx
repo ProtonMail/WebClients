@@ -11,12 +11,11 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { reconcileFilename } from '@proton/pass/lib/file-attachments/helpers';
+import { getFileParts } from '@proton/pass/lib/file-attachments/helpers';
 import type { fileUpdateMetadata } from '@proton/pass/store/actions';
 import type { RequestFlowAsyncResult } from '@proton/pass/store/request/types';
 import type { Maybe } from '@proton/pass/types';
 import { not } from '@proton/pass/utils/fp/predicates';
-import { splitExtension } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -53,7 +52,7 @@ export const FileAttachment: FC<Props> = ({
 }) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [filename, setFilename] = useState(file.name);
-    const [base, extension] = useMemo(() => splitExtension(filename), [filename]);
+    const { base, ext } = useMemo(() => getFileParts(filename), [filename]);
 
     const fileAttachmentsDisabled = useMatchUser({ paid: false, planDisplayName: ['Pass Essentials'] });
     const online = useConnectivity();
@@ -69,9 +68,8 @@ export const FileAttachment: FC<Props> = ({
         fileRename.handler({
             onSubmit: async (changedFileName) => {
                 if (!onRename) return;
-                const conciliatedFileName = reconcileFilename(changedFileName, file.name);
-                setFilename(conciliatedFileName);
-                const res = await onRename(conciliatedFileName);
+                setFilename(changedFileName);
+                const res = await onRename(changedFileName);
                 if (res?.type !== 'success') setFilename(file.name);
             },
             onAbort: () => setFilename(file.name),
@@ -109,7 +107,7 @@ export const FileAttachment: FC<Props> = ({
                             'p-0 rounded-none',
                             !fileRename.state.open && 'text-ellipsis pointer-events-none'
                         )}
-                        value={fileRename.state.open ? filename : base}
+                        value={fileRename.state.open ? filename : base || file.name}
                         onChange={({ target: { value } }) => setFilename(value)}
                         onBlur={() => fileRename.resolver(filename)}
                         onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
@@ -127,9 +125,9 @@ export const FileAttachment: FC<Props> = ({
                         readOnly={!fileRename.state.open}
                     />
                 </ClickableDiv>
-                <div className="text-sm color-weak">
-                    {extension ? `${extension.toUpperCase()} - ` : ''}
-                    {humanSize({ bytes: file.size })}
+                <div className="text-sm color-weak flex max-w-full flex-nowrap gap-1">
+                    {ext && <span className="text-ellipsis">{`${ext.toUpperCase()} - `}</span>}
+                    <span className="shrink-0">{humanSize({ bytes: file.size })}</span>
                 </div>
             </div>
 

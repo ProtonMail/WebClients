@@ -8,13 +8,14 @@ import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pa
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { blobToBase64, getSafeStorage } from '@proton/pass/lib/file-storage/utils';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { useFileEncryptionVersion } from './useFileEncryptionVersion';
 
@@ -32,15 +33,36 @@ const getChunkDTO = async (
         shareId: ShareId;
         totalChunks: number;
     },
+    storageType: string,
     tabId: Maybe<TabId>,
     signal: AbortSignal
 ): Promise<WithTabId<FileChunkUploadDTO>> => {
     const { blob, chunkIndex, encryptionVersion, fileID, shareId, totalChunks } = options;
 
     if (EXTENSION_BUILD) {
-        const ref = `${fileID}.chunk`;
-        await fileStorage.writeFile(ref, blob, signal);
-        return { chunkIndex, encryptionVersion, fileID, ref, shareId, tabId, totalChunks, type: 'fs' };
+        const fs = getSafeStorage(storageType);
+
+        switch (fs.type) {
+            case 'Memory': {
+                const data = await blobToBase64(blob);
+                return { chunkIndex, data, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'b64' };
+            }
+            default: {
+                const ref = `chunk.${uniqueId()}`;
+                await fs.writeFile(ref, blob, signal);
+                return {
+                    chunkIndex,
+                    encryptionVersion,
+                    fileID,
+                    ref,
+                    shareId,
+                    tabId,
+                    totalChunks,
+                    type: 'storage',
+                    storageType: fs.type,
+                };
+            }
+        }
     }
 
     return { blob, chunkIndex, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'blob' };
@@ -74,7 +96,8 @@ export const useFileUpload = () => {
     const queue = useCallback(
         asyncQueue(
             async (
-                file: File,
+                file: Blob,
+                name: string,
                 shareId: ShareId,
                 uploadID: string,
                 onProgress?: OnFileUploadProgress
@@ -87,7 +110,7 @@ export const useFileUpload = () => {
                     const ctrl = ctrls.current.get(uploadID);
                     if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
 
-                    const { name, size } = file;
+                    const { size } = file;
                     const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
 
                     onProgress?.(0, totalChunks);
@@ -136,7 +159,7 @@ export const useFileUpload = () => {
                         throw new Error(init.data.error);
                     }
 
-                    fileID = init.data;
+                    fileID = init.data.fileID;
 
                     for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
                         const start = chunkIndex * FILE_CHUNK_SIZE;
@@ -145,6 +168,7 @@ export const useFileUpload = () => {
 
                         const dto = await getChunkDTO(
                             { shareId, fileID, chunkIndex, totalChunks, encryptionVersion, blob },
+                            init.data.storageType,
                             tabId,
                             ctrl.signal
                         );
@@ -167,7 +191,6 @@ export const useFileUpload = () => {
                 } catch (e) {
                     throw e;
                 } finally {
-                    if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
                     ctrls.current.delete(uploadID);
                     syncLoadingState();
                 }
@@ -177,7 +200,13 @@ export const useFileUpload = () => {
     );
 
     const start = useCallback(
-        async (file: File, shareId: ShareId, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
+        (
+            file: Blob,
+            name: string,
+            shareId: ShareId,
+            uploadID: string,
+            onProgress?: OnFileUploadProgress
+        ): Promise<FileID> => {
             if (file.size === 0) {
                 /** On windows electron: when drag'n'dropping a file from an archive
                  * before extraction, the reported file will have a filesize of 0 bytes */
@@ -187,7 +216,7 @@ export const useFileUpload = () => {
             ctrls.current.set(uploadID, new AbortController());
             syncLoadingState();
 
-            return queue(file, shareId, uploadID, onProgress);
+            return queue(file, name, shareId, uploadID, onProgress);
         },
         []
     );

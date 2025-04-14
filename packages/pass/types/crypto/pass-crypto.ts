@@ -105,10 +105,11 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     }) => Promise<Uint8Array>;
 
     createFileDescriptor: (data: {
+        encryptionVersion: number;
         fileID?: FileID;
         metadata: Uint8Array;
+        pending: boolean;
         shareId: ShareId;
-        encryptionVersion: number;
     }) => Promise<FileDescriptorProcessResult>;
     openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array>;
     createFileChunk: (data: {
@@ -127,9 +128,15 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         shareId: ShareId;
         totalChunks: number;
     }) => Promise<Uint8Array>;
-    registerFileKey: (data: { fileKey: Uint8Array; fileID: FileID; shareId: ShareId }) => void;
-    getFileKey: (data: { shareId: ShareId; fileID: FileID }) => Uint8Array;
-    encryptFileKey: (data: { fileID: FileID; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array>;
+    registerFileKey: (data: { fileKey: Uint8Array; fileID: FileID; shareId: ShareId; pending: boolean }) => void;
+    unregisterFileKey: (data: { fileID: FileID; shareId: ShareId; pending: boolean }) => void;
+    getFileKey: (data: { shareId: ShareId; fileID: FileID; pending: boolean }) => Uint8Array;
+    encryptFileKey: (data: {
+        fileID: FileID;
+        itemKey: ItemKey;
+        shareId: ShareId;
+        pending: boolean;
+    }) => Promise<Uint8Array>;
 
     createSecureLink: (data: { itemKey: ItemKey; shareId?: string }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;

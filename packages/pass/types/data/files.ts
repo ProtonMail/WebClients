@@ -36,7 +36,11 @@ export type FileChunkUploadDTO = {
     fileID: FileID;
     shareId: ShareId;
     totalChunks: number;
-} & ({ type: 'blob'; blob: Blob } | { type: 'fs'; ref: string });
+} & (
+    | { type: 'blob'; blob: Blob }
+    | { type: 'storage'; storageType: string; ref: string }
+    | { type: 'b64'; data: string }
+);
 
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };
 export type FileMetadataDTO = BaseFileDescriptor & {
@@ -45,8 +49,18 @@ export type FileMetadataDTO = BaseFileDescriptor & {
     shareId: ShareId;
 };
 
+export type FileUploadInitiateDTO = { fileID: FileID; storageType: string };
+
 type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
-type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[]; encryptionVersion: number };
+type FileDownloadDTOBase = {
+    fileID: FileID;
+    chunkIDs: string[];
+    encryptionVersion: number;
+    storageType: string;
+    port?: string;
+};
+
+export type FileForDownload = { storageType: string; fileRef: string };
 
 export type FileDownloadDTO = FileDownloadDTOBase & SelectedItem;
 export type FileDownloadChunk = FileDownloadChunkBase & SelectedItem;
@@ -59,3 +73,6 @@ export type FileRestoreDTO = { fileId: FileID } & SelectedItem;
 export type FileAttachmentValues = { files: FileAttachmentsDTO };
 export type FilesRequestSuccess = { files: FileDescriptor[]; history?: boolean } & SelectedItem;
 export type FilesMetadataEditSuccess = BaseFileDescriptor & Partial<SelectedItem>;
+
+export type FileTransferWriteDTO = { fileRef: string; b64: string };
+export type FileTransferErrorDTO = { fileRef: string };

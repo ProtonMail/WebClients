@@ -12,7 +12,7 @@ import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
-import type { CurrentTab, PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
+import type { ExtensionClientState, PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
@@ -182,7 +182,7 @@ const getPassCoreProviderProps = (
 };
 
 export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ children, endpoint, theme, wasm }) => {
-    const currentTab = useRef<MaybeNull<CurrentTab>>(null);
+    const extensionClientState = useRef<MaybeNull<ExtensionClientState>>(null);
     const coreProps = useInstance(() => getPassCoreProviderProps(endpoint, config, theme));
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
     const message = resolveMessageFactory(endpoint);
@@ -199,8 +199,8 @@ export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ child
     return (
         <PassCoreProvider
             {...coreProps}
-            getCurrentTab={() => currentTab.current}
-            setCurrentTab={(parsedUrl) => (currentTab.current = parsedUrl)}
+            getExtensionClientState={() => extensionClientState.current}
+            setExtensionClientState={(value) => (extensionClientState.current = value)}
             wasm={wasm}
         >
             <AuthStoreProvider store={authStore}>
