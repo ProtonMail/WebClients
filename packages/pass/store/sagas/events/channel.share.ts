@@ -5,8 +5,10 @@ import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getShareLatestEventId, requestShare } from '@proton/pass/lib/shares/share.requests';
 import {
@@ -42,7 +44,7 @@ export type ShareEventResponse = { Events: PassEventListResponse };
 const onShareEvent = (shareId: string) =>
     function* (
         event: EventManagerEvent<ShareEventResponse>,
-        _: EventChannel<ShareEventResponse>,
+        channel: EventChannel<ShareEventResponse>,
         { onItemsUpdated }: RootSagaOptions
     ) {
         if ('error' in event) throw event.error;
@@ -57,6 +59,23 @@ const onShareEvent = (shareId: string) =>
             FullRefresh,
         } = Events;
         const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
+
+        if (UpdatedItems.length > 0) {
+            const updateIsPendingFileLink = UpdatedItems.some(({ ItemID: itemId }) => {
+                const itemKey = getItemKey({ shareId, itemId });
+                return PendingFileLinkTracker.isPending(itemKey);
+            });
+
+            if (updateIsPendingFileLink) {
+                /** Edge-case: We might receive the update event from the BE before a file
+                 * linking operation has completed processing. To avoid inconsistencies between
+                 * optimistic updates and server events, we skip processing the entire event
+                 * batch if any item has a pending file link operation. */
+                logger.info(`[ServerEvents::Share::${logId(shareId)}] Skipped because of pending file link`);
+                channel.manager.setEventID(currentEventId);
+                return;
+            }
+        }
 
         /* dispatch only if there was a change */
         if (currentEventId !== eventId) {

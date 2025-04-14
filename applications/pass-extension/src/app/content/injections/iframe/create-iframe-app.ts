@@ -117,15 +117,14 @@ export const createIFrameApp = <A>({
      * out any message: the iframe.contentWindow::origin may be
      * incorrect otherwise */
     const sendSecurePostMessage = (message: IFrameMessage) =>
-        sendMessage
-            .onSuccess(contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }), async ({ key }) =>
-                ensureLoaded().then(() => {
+        sendMessage.onSuccess(contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }), ({ key }) =>
+            ensureLoaded()
+                .then(() => {
                     const secureMessage: IFrameMessageWithSender = { ...message, key, sender: 'contentscript' };
                     iframe.contentWindow?.postMessage(secureMessage, src);
                 })
-            )
-            .catch((e) => onError?.(e));
-
+                .catch((e) => onError?.(e))
+        );
     /* In order to communicate with the iframe, we're leveraging
      * the worker's MessageBroker port-forwarding capabilities.
      * This allows by-passing a FF limitation not letting us access

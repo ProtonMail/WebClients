@@ -1,16 +1,10 @@
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
-import type {
-    FileAttachmentValues,
-    FileDescriptor,
-    ItemFileOutput,
-    ItemKey,
-    Maybe,
-    MaybeNull,
-} from '@proton/pass/types';
+import type { FileAttachmentValues, FileDescriptor, ItemFileOutput, ItemKey, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
+import { getHashCode } from '@proton/shared/lib/helpers/string';
 
 export const isFileForRevision = (revision: number) => (file: FileDescriptor) =>
     revision >= file.revisionAdded && (!file.revisionRemoved || revision < file.revisionRemoved);
@@ -67,33 +61,25 @@ export const filesFormInitializer = ({
 });
 
 const FILE_RE = /(.*)(\.[^.]+$)/;
+export type FileParts = { base: string; ext: string };
 
-export const getFileParts = (filename: string): MaybeNull<{ name: string; ext: string }> => {
+export const getFileParts = (filename: string): FileParts => {
     const match = filename.match(FILE_RE);
-    if (!match) return null;
+    if (!match) return { base: filename, ext: '' };
 
-    return { name: match[1], ext: match[2] };
+    return { base: match[1], ext: match[2] };
 };
 
-export const reconcileFilename = (next: string, original: string): string => {
-    const sanitized = next.startsWith('.') ? `file${next.trim()}` : next.trim();
+export const getExportFileName =
+    (shareId: string) =>
+    (file: FileDescriptor): string => {
+        const parts = getFileParts(file.name);
+        const shareHash = Math.abs(getHashCode(shareId)).toString(16);
+        const fileIdHash = Math.abs(getHashCode(file.fileID)).toString(16);
+        const exportId = `${shareHash}${fileIdHash}`;
 
-    /* If new file has extension, do nothing */
-    const hasExtension = FILE_RE.test(sanitized);
-    if (hasExtension) return sanitized;
-
-    /* If new file has no extension, try to use the previous one */
-    const parts = getFileParts(original);
-    if (parts) return sanitized + parts.ext;
-
-    return sanitized; /* Fallback, set file name with no extension */
-};
-
-export const getExportFileName = (file: FileDescriptor): string => {
-    const parts = getFileParts(file.name);
-    if (parts) return `${parts.name}.${file.fileUID}${parts.ext}`;
-    return `${file.name}.${file.fileUID}`;
-};
+        return `${parts.base}.${exportId}${parts.ext}`;
+    };
 
 /** Safari extensions require `application/octet-stream`
  * to trigger a download from an extension page. */
