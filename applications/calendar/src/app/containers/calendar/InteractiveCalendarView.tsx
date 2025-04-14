@@ -1445,7 +1445,7 @@ const InteractiveCalendarView = ({
                                 const encryptedComment = await getEncryptedRSVPCommentWithSignature({
                                     comment: decryptedComment.data,
                                     sessionKey: nextSessionKey,
-                                    commentSignature: decryptedComment.signatures[0],
+                                    signatures: decryptedComment.signatures,
                                 });
 
                                 return {
