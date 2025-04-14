@@ -11,7 +11,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.25.0#~/.yarn/patches/@lexical-yjs-npm-0.25.0-051bd8dfbc.patch",
+    "@lexical/yjs": "0.30.0",
     "@proton/docs-proto": "workspace:^",
     "google-protobuf": "^3.21.4",
     "uuid": "^9.0.1",
