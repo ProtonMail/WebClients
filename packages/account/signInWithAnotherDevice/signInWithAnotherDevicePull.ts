@@ -22,7 +22,7 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shar
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
-//import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
+import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import noop from '@proton/utils/noop';
 
 const forkExpirationTime = 9 * MINUTE; // The time it takes until a new fork and QR code is regenerated
@@ -213,8 +213,6 @@ const consumeForkSession = async ({
     const persistent = config.persistent;
     const preAuthKTVerifier = createPreAuthKTVerifier(config.ktActivation);
 
-    /*
-    // Doesn't work due to missing locked scope, discuss with API and reactivate if possible
     const deviceRecoveryResult = await deviceRecovery({
         user,
         addresses: undefined,
@@ -226,8 +224,6 @@ const consumeForkSession = async ({
     });
     user = deviceRecoveryResult.user;
     const trusted = deviceRecoveryResult.trusted;
-     */
-    const trusted = false;
 
     const session = await persistForkedSession({
         api: authApi,
