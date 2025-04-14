@@ -1,6 +1,6 @@
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
+import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import type { LexicalEditor } from 'lexical'
 import { $createTextNode, $getRoot, INSERT_PARAGRAPH_COMMAND, IS_BOLD } from 'lexical'
