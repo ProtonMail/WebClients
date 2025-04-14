@@ -56,9 +56,9 @@ export const useReauthActionHandler = (store: Store<State>) => {
                     });
 
                     if (ok) {
-                        let { mimeType, fileRef, type } = result.data;
+                        let { mimeType, fileRef, storageType } = result.data;
                         mimeType = mimetypeForDownload(mimeType);
-                        const fs = getSafeStorage(type);
+                        const fs = getSafeStorage(storageType);
                         const file = await fs.readFile(fileRef, mimeType);
                         if (file) download(file, fileRef);
                     }

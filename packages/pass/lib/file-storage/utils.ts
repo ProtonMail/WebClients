@@ -73,7 +73,7 @@ export const getSafeStorage: (storageType: string) => FileStorage = EXTENSION_BU
           /** If the extension component has a different storage instance then
            * the service-worker's instance (eg: Firefox private browsing), always
            * fallback to base64 encoding blobs via message passing */
-          if (storageType && storageType !== fileStorage.type) return MemoryStorage;
+          if (storageType !== fileStorage.type) return MemoryStorage;
           else return fileStorage;
       }
     : () => fileStorage;

@@ -8,8 +8,7 @@ import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pa
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { blobToBase64 } from '@proton/pass/lib/file-storage/utils';
+import { blobToBase64, getSafeStorage } from '@proton/pass/lib/file-storage/utils';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '@proton/pass/types';
@@ -34,20 +33,23 @@ const getChunkDTO = async (
         shareId: ShareId;
         totalChunks: number;
     },
+    storageType: string,
     tabId: Maybe<TabId>,
     signal: AbortSignal
 ): Promise<WithTabId<FileChunkUploadDTO>> => {
     const { blob, chunkIndex, encryptionVersion, fileID, shareId, totalChunks } = options;
 
     if (EXTENSION_BUILD) {
-        switch (fileStorage.type) {
+        const fs = getSafeStorage(storageType);
+
+        switch (fs.type) {
             case 'Memory': {
                 const data = await blobToBase64(blob);
                 return { chunkIndex, data, encryptionVersion, fileID, shareId, tabId, totalChunks, type: 'b64' };
             }
             default: {
                 const ref = `chunk.${uniqueId()}`;
-                await fileStorage.writeFile(ref, blob, signal);
+                await fs.writeFile(ref, blob, signal);
                 return {
                     chunkIndex,
                     encryptionVersion,
@@ -57,7 +59,7 @@ const getChunkDTO = async (
                     tabId,
                     totalChunks,
                     type: 'storage',
-                    storageType: fileStorage.type,
+                    storageType: fs.type,
                 };
             }
         }
@@ -157,7 +159,7 @@ export const useFileUpload = () => {
                         throw new Error(init.data.error);
                     }
 
-                    fileID = init.data;
+                    fileID = init.data.fileID;
 
                     for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
                         const start = chunkIndex * FILE_CHUNK_SIZE;
@@ -166,6 +168,7 @@ export const useFileUpload = () => {
 
                         const dto = await getChunkDTO(
                             { shareId, fileID, chunkIndex, totalChunks, encryptionVersion, blob },
+                            init.data.storageType,
                             tabId,
                             ctrl.signal
                         );

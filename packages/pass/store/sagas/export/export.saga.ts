@@ -159,7 +159,7 @@ export const exportUserData = createRequestSaga({
             progressTask.cancel();
 
             return {
-                type: fs.type,
+                storageType: fs.type,
                 fileRef: state.filename,
                 mimeType: state.mimeType,
             } satisfies ExportResult;
