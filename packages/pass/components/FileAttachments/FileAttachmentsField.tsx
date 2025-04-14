@@ -157,6 +157,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
         const handleRename = async (uploadID: string, fileName: string) => {
             const file = filesMap.get(uploadID);
+            if (!fileName.trim()) return;
             if (!file || file.name === fileName || !file.fileID) return;
 
             const res = await dispatch(fileUpdateMetadata, {
