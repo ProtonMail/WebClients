@@ -754,6 +754,7 @@ describe('$handleBeforeInputEvent', () => {
             types: [],
           } as unknown as DataTransfer
           await update(() => {
+            $getRoot().select()
             $handleBeforeInputEvent(
               editor!,
               {
@@ -765,6 +766,10 @@ describe('$handleBeforeInputEvent', () => {
               logger,
             )
           })
+        })
+
+        afterEach(() => {
+          commandDisposer()
         })
 
         test('root should have 2 paragraphs', () => {
@@ -801,10 +806,6 @@ describe('$handleBeforeInputEvent', () => {
             expect($isTextNode(child?.getChildAtIndex(0))).toBe(true)
           })
         })
-
-        afterEach(() => {
-          commandDisposer()
-        })
       })
 
       describe('URL text', () => {
@@ -836,6 +837,7 @@ describe('$handleBeforeInputEvent', () => {
             types: [],
           } as unknown as DataTransfer
           await update(() => {
+            $getRoot().select()
             $handleBeforeInputEvent(
               editor!,
               {
