@@ -1,5 +1,5 @@
+import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
-import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import { type SignatureIssues } from '../store';
 

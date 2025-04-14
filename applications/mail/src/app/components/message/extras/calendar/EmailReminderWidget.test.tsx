@@ -12,6 +12,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { AuthenticationProvider, CacheProvider, DrawerProvider, useGetCalendarEventRaw } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
@@ -19,7 +20,6 @@ import createCache from '@proton/shared/lib/helpers/cache';
 import type { Nullable, UserSettings } from '@proton/shared/lib/interfaces';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 import {
     addressBuilder,
     calendarBuilder,
