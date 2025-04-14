@@ -11,7 +11,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { getFileParts } from '@proton/pass/lib/file-attachments/helpers';
+import { getFileParts, sanitizeFileName } from '@proton/pass/lib/file-attachments/helpers';
 import type { fileUpdateMetadata } from '@proton/pass/store/actions';
 import type { RequestFlowAsyncResult } from '@proton/pass/store/request/types';
 import type { Maybe } from '@proton/pass/types';
@@ -68,8 +68,11 @@ export const FileAttachment: FC<Props> = ({
         fileRename.handler({
             onSubmit: async (changedFileName) => {
                 if (!onRename) return;
-                setFilename(changedFileName);
-                const res = await onRename(changedFileName);
+
+                const sanitized = sanitizeFileName(changedFileName);
+                setFilename(sanitized);
+
+                const res = await onRename(sanitized);
                 if (res?.type !== 'success') setFilename(file.name);
             },
             onAbort: () => setFilename(file.name),
