@@ -105,7 +105,7 @@ export const exportUserData = createRequestSaga({
             if (fileAttachments && format !== ExportFormat.CSV) {
                 /** NOTE: Block file export for memory-storage. This
                  * could end up blocking the main thread completely */
-                if (fs.type === 'Memory') throw new Error('Cannot export files at the moment');
+                if (fs.type !== 'OPFS') throw new Error('Cannot export file-attachments at the moment');
 
                 const items: ItemRevision[] = yield select(selectAllItems);
                 const itemsWithAttachments = items.filter(and(hasAttachments, belongsToShares(ownedVaultShareIds)));
