@@ -23,8 +23,8 @@ import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
 import type { SignupCustomStepProps } from '../interface';
-import MnemonicRecoveryStep from '../pass/MnemonicRecoveryStep';
-import OrgSetupStep from '../pass/OrgSetupStep';
+import OrgSetupStep from './OrgSetupStep';
+import MnemonicRecoveryStep from './recovery/MnemonicRecoveryStep';
 
 enum Step {
     MnemonicRecovery,
