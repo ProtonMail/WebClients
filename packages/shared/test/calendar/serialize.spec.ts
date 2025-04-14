@@ -119,7 +119,6 @@ const transformToExternal = (
         return (x || []).map((y, i) => ({ ...y, ID: `${ID}-${i}`, UpdateTime }));
     };
 
-    // TODO: Implement correct testing
     const getAttendeeVerificationPreferences = async () => {
         return null as unknown as VerificationPreferences;
     };
@@ -295,7 +294,6 @@ describe('calendar encryption', () => {
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
-            // TODO Test this part
             Attendees: [
                 { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION, Comment: null },
                 { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE, Comment: null },
