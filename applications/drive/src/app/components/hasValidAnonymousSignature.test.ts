@@ -1,6 +1,6 @@
+import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { PROTON_DOC_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
-import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import type { SignatureIssues } from '../store';
 import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';

@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import { encodeBase64 as bcryptEncodeBase64, hash as bcryptHash } from 'bcryptjs';
 
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 
@@ -12,7 +12,7 @@ export const computeKeyPassword = async (password: string, salt: string) => {
         throw new Error('Password and salt required.');
     }
     const saltBinary = binaryStringToArray(decodeBase64(salt));
-    const hash: string = await bcrypt.hash(password, BCRYPT_PREFIX + bcrypt.encodeBase64(saltBinary, 16));
+    const hash = await bcryptHash(password, BCRYPT_PREFIX + bcryptEncodeBase64(saltBinary, 16));
     // Remove bcrypt prefix and salt (first 29 characters)
     return hash.slice(29);
 };
