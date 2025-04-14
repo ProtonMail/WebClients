@@ -99,7 +99,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                 )}
 
                 {/* Disable memory file attachments export for perf reasons */}
-                {usedStorage > 0 && form.values.format !== ExportFormat.CSV && fileStorage.type !== 'Memory' && (
+                {usedStorage > 0 && form.values.format !== ExportFormat.CSV && fileStorage.type === 'OPFS' && (
                     <FeatureFlag feature={PassFeature.PassFileAttachments}>
                         <Field
                             name="fileAttachments"
