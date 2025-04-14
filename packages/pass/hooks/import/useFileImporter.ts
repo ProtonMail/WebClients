@@ -27,9 +27,11 @@ export const useFileImporter = () => {
     const { createNotification } = useNotifications();
     const maxFileSize = useSelector(selectUserStorageMaxFileSize);
 
+    const reset = useCallback(() => setProgress(0), []);
+
     const cancel = useCallback(() => {
         fileUpload.cancel('*');
-        setProgress(0);
+        reset();
     }, []);
 
     const addProgress = useCallback((increment: number) => setProgress((val) => val + increment), []);
@@ -51,7 +53,7 @@ export const useFileImporter = () => {
                                     /** Filename may include full path inside the
                                      * archive when using the zip reader */
                                     const filename = getImportFilename(path, report.provider);
-                                    const blob = await fileReader.getFile(path);
+                                    let blob = await fileReader.getFile(path);
 
                                     /** Track remaining progress for error recovery
                                      * Null means we haven't started uploading yet */
@@ -78,10 +80,10 @@ export const useFileImporter = () => {
                                                         .t`"${filename}" is too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
                                                 });
                                             }
-                                            const file = new File([blob], filename);
 
                                             const fileID = await fileUpload.start(
-                                                file,
+                                                blob,
+                                                filename,
                                                 shareId,
                                                 uniqueId(),
                                                 onFileProgress
@@ -97,6 +99,7 @@ export const useFileImporter = () => {
                                                 text: `${c('Pass_file_attachments').t`"${filename}" could not be imported.`} ${detail}`,
                                             });
                                         } finally {
+                                            blob = null;
                                             /** Handle final progress update in all cases to
                                              * ensure progress reaches 100% even when errors occur :
                                              * - If remaining is null: file was never processed
@@ -127,5 +130,5 @@ export const useFileImporter = () => {
 
     useEffect(() => cancel, []);
 
-    return { start, cancel, progress };
+    return { start, cancel, reset, progress };
 };

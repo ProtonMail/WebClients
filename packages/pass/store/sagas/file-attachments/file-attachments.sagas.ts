@@ -1,4 +1,4 @@
-import { cancelled, put, select } from 'redux-saga/effects';
+import { cancelled, select } from 'redux-saga/effects';
 
 import { FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -19,6 +19,8 @@ import {
 import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import { intoFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import type { FileStorage } from '@proton/pass/lib/file-storage/types';
+import { base64ToBlob, getSafeStorage, getSafeWriter } from '@proton/pass/lib/file-storage/utils';
 import {
     fileDownload,
     fileDownloadPublic,
@@ -29,12 +31,12 @@ import {
     fileUploadInitiate,
     filesResolve,
 } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
-import type { FileDescriptor, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
+import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import noop from '@proton/utils/noop';
 
 const initiateUpload = createRequestSaga({
     actions: fileUploadInitiate,
@@ -45,6 +47,7 @@ const initiateUpload = createRequestSaga({
             metadata: encodedMetadata,
             fileID: undefined,
             shareId,
+            pending: true,
         });
 
         const fileID = await createPendingFile(
@@ -53,8 +56,14 @@ const initiateUpload = createRequestSaga({
             encryptionVersion
         );
 
-        PassCrypto.registerFileKey({ shareId, fileID, fileKey: fileDescriptor.fileKey });
-        return fileID;
+        PassCrypto.registerFileKey({
+            shareId,
+            fileID,
+            fileKey: fileDescriptor.fileKey,
+            pending: true,
+        });
+
+        return { fileID, storageType: fileStorage.type };
     },
 });
 
@@ -66,11 +75,14 @@ const uploadChunk = createRequestSaga({
         const { shareId, fileID, chunkIndex, totalChunks, encryptionVersion } = payload;
 
         try {
-            const chunk: Blob = yield (async () => {
+            const chunk: Maybe<Blob> = yield (async () => {
                 switch (payload.type) {
                     case 'blob':
                         return payload.blob;
-                    case 'fs':
+                    case 'b64':
+                        return base64ToBlob(payload.data);
+                    case 'storage':
+                        if (fileStorage.type !== payload.storageType) throw new Error('Invalid storage instance');
                         return fileStorage.readFile(payload.ref);
                 }
             })();
@@ -89,21 +101,30 @@ const uploadChunk = createRequestSaga({
             yield uploadFileChunk(fileID, chunkIndex, encryptedChunk, signal);
 
             return true;
+        } catch (err) {
+            PassCrypto.unregisterFileKey({ fileID, shareId, pending: true });
+            throw err;
         } finally {
-            if (yield cancelled()) ctrl.abort('Operation cancelled');
+            /** Delete chunk whenever we exit from this generator */
+            if (payload.type === 'storage') fileStorage.deleteFile(payload.ref).catch(noop);
+            if (yield cancelled()) {
+                ctrl.abort('Operation cancelled');
+                PassCrypto.unregisterFileKey({ fileID, shareId, pending: true });
+            }
         }
     },
 });
 
 const downloadFile = createRequestSaga({
     actions: fileDownload,
-    call: function* (payload) {
+    call: function* (payload, options) {
         const ctrl = new AbortController();
         const { signal } = ctrl;
 
-        try {
-            const { chunkIDs, fileID, shareId, encryptionVersion } = payload;
+        const { chunkIDs, fileID, shareId, encryptionVersion, storageType } = payload;
+        const fs: FileStorage = getSafeStorage(storageType);
 
+        try {
             const downloadStream = createDownloadStream(
                 { shareId, fileID, chunkIDs, encryptionVersion },
                 (chunkID: string) => downloadFileChunk({ ...payload, chunkID }, signal),
@@ -111,9 +132,10 @@ const downloadFile = createRequestSaga({
             );
 
             const fileRef = uniqueId(32);
-            yield fileStorage.writeFile(fileRef, downloadStream, signal);
+            const write = getSafeWriter(fs, options);
+            yield write(fileRef, downloadStream, signal, payload.port);
 
-            return fileRef;
+            return { storageType: fs.type, fileRef };
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
@@ -142,7 +164,7 @@ const downloadPublicChunk = createRequestSaga({
             const fileRef = uniqueId(32);
             yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
-            return fileRef;
+            return { storageType: fileStorage.type, fileRef } satisfies FileForDownload;
         } finally {
             if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
@@ -155,18 +177,21 @@ const updateMetadata = createRequestSaga({
         const { fileID, shareId, itemId, encryptionVersion } = descriptor;
         const encodedMetadata = encodeFileMetadata(descriptor);
 
+        const pending = !(shareId && itemId);
+
         const fileDescriptor = await PassCrypto.createFileDescriptor({
             encryptionVersion,
             fileID,
             metadata: encodedMetadata,
             shareId,
+            pending,
         });
 
         const metadata = uint8ArrayToBase64String(fileDescriptor.metadata);
 
-        await (shareId && itemId
-            ? updateLinkedFileMetadata({ metadata, fileID, shareId, itemId })
-            : updatePendingFileMetadata(metadata, fileID));
+        await (pending
+            ? updatePendingFileMetadata(metadata, fileID)
+            : updateLinkedFileMetadata({ metadata, fileID, shareId, itemId }));
 
         return { ...descriptor, shareId, itemId };
     },
@@ -180,7 +205,6 @@ const linkPending = createRequestSaga({
 
         const revisionDTO = { ...dto, revision: item.revision };
         const linked: ItemRevision = yield linkPendingFiles(revisionDTO);
-        yield put(withRevalidate(filesResolve.intent(revisionDTO)));
 
         return { item: linked };
     },

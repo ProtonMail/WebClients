@@ -87,7 +87,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 await Promise.all(
                     uploads.map(async ({ file, uploadID }) =>
                         fileUpload
-                            .start(file, shareId, uploadID)
+                            .start(file, file.name, shareId, uploadID)
                             .then((fileID) => {
                                 setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
                                 return form.setValues((values) => {
@@ -157,6 +157,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
         const handleRename = async (uploadID: string, fileName: string) => {
             const file = filesMap.get(uploadID);
+            if (!fileName.trim()) return;
             if (!file || file.name === fileName || !file.fileID) return;
 
             const res = await dispatch(fileUpdateMetadata, {

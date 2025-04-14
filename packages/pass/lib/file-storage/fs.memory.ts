@@ -31,7 +31,13 @@ export class FileStorageMemory implements FileStorage {
         try {
             const blobs = this.files.get(filename);
             if (!blobs) throw new Error('Not found');
-            return new File(blobs, filename, { type });
+
+            /** Auto de-reference the blob from the storage instance
+             * when we have built the file for proper garbage-collection */
+            const file = new File(blobs, filename, { type });
+            void this.deleteFile(filename);
+
+            return file;
         } catch (err) {
             logger.debug('[fs::Memory] Could not resolve file.', err);
             return;

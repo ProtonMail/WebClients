@@ -191,6 +191,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
             }
         } finally {
             if (report) dispatch(importReport(report));
+            importFiles.reset();
             setProgress(null);
             setBusy(false);
             ctrl.current = null;

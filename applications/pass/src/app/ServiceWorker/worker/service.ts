@@ -2,7 +2,7 @@ import { type ServiceWorkerMessage } from 'proton-pass-web/app/ServiceWorker/typ
 import { COMMIT } from 'proton-pass-web/app/config';
 
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { fileStorage, fileStorageReady } from '@proton/pass/lib/file-storage/fs';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -20,7 +20,6 @@ import {
     matchSetLocalKeyRoute,
 } from './session';
 
-export default null;
 declare let self: ServiceWorkerGlobalScope;
 
 /** Claims all clients to ensure they are controlled by the latest service worker.
@@ -41,7 +40,7 @@ const onConnect = async () => {
 
         /** Clear file storage when one client is connected to this service worker. */
         const clients = await self.clients.matchAll({ includeUncontrolled: true });
-        if (clients.length <= 1) void fileStorage.clearAll();
+        if (clients.length <= 1) void fileStorageReady.then(() => fileStorage.clearAll());
     } catch {}
 };
 
@@ -65,7 +64,7 @@ self.addEventListener('activate', async (event) =>
         (() => {
             logger.debug(`[ServiceWorker] Activation in progress..`);
             void cleanCache();
-            void fileStorage.clearAll();
+            void fileStorageReady.then(() => fileStorage.clearAll());
             return onClaim();
         })()
     )
