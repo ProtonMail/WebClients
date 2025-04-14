@@ -12,7 +12,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { AuthenticationProvider, CacheProvider, DrawerProvider, useGetCalendarEventRaw } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
+import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
@@ -151,7 +151,7 @@ describe('EmailReminderWidget', () => {
         mockedUseGetCalendarEventRaw.mockImplementation(
             () => () =>
                 Promise.resolve({
-                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                    verificationStatus: EVENT_VERIFICATION_STATUS.SUCCESSFUL,
                     hasDefaultNotifications: true,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: veventBuilder(),
@@ -247,7 +247,7 @@ describe('EmailReminderWidget', () => {
         mockedUseGetCalendarEventRaw.mockImplementation(
             () => () =>
                 Promise.resolve({
-                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                    verificationStatus: EVENT_VERIFICATION_STATUS.SUCCESSFUL,
                     hasDefaultNotifications: true,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: veventBuilder({ overrides: { sequence: { value: 2 } } }),
@@ -368,7 +368,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     hasDefaultNotifications: true,
-                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                    verificationStatus: EVENT_VERIFICATION_STATUS.SUCCESSFUL,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: {
                         ...veventBuilder(),
@@ -401,7 +401,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     hasDefaultNotifications: true,
-                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                    verificationStatus: EVENT_VERIFICATION_STATUS.SUCCESSFUL,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: {
                         ...veventBuilder(),
