@@ -461,9 +461,6 @@
       "Grid layout": [
         "ბადის განლაგება"
       ],
-      "Help": [
-        "დახმარება"
-      ],
       "Help and feedback": [
         "დახმარება და გამოხმაურება"
       ],
@@ -1274,6 +1271,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
@@ -2581,6 +2582,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "ასწიეთ სატარიფო გეგმა ${ planName } -ზე, რომ შეინარჩუნოთ გაზიარებული ფაილები ჩასწორების წვდომით"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
       ],
@@ -2928,6 +2932,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "გარე მოწვევები დროებით გამორთულია. მოგვიანებით სცადეთ"
+      ],
+      "Failed to load the STL preview": [
+        "STL მინიატურის ჩატვირთვა ჩავარდა"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "ფაილი \"${ item.name }\" ვერ აიტვირთა შეცდომის გამო: ${ error }"
@@ -3762,6 +3769,9 @@
       ],
       "Create new shared album": [
         "ახალი გაზიარებული ალბომის შექმნა"
+      ],
+      "Rename album": [
+        "ალბომის სახელის გადარქმევა"
       ],
       "Security Center": [
         "უსაფრთხოების ცენტრი"
@@ -8729,6 +8739,10 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -10022,6 +10036,9 @@
       "Your panorama photos will appear here": [
         "თქვენი პანორამის სურათები აქ გამოჩნდება"
       ],
+      "Your photo bursts will appear here": [
+        "თქვენი სერიული სურათები აქ გამოჩნდება"
+      ],
       "Your portraits photos will appear here": [
         "თქვენი პორტრეტები აქ გამოჩნდება"
       ],
@@ -10718,6 +10735,9 @@
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
       ],
+      "No bursts": [
+        "სერიული სურათების გარეშე"
+      ],
       "No favorites": [
         "რჩეულების გარეშე"
       ],
@@ -11121,6 +11141,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "გამოწერის ახალი ციკლის დაწყების დრო: ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "თუ მათ არ გაშიფრავთ, დაშიფრული პაროლები დაცულია მაშინაც კი, თუ მათ ვინმე ნახავს."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"

@@ -466,9 +466,6 @@
       "Grid layout": [
         "Aspect grilă"
       ],
-      "Help": [
-        "Ajutor"
-      ],
       "Help and feedback": [
         "Ajutor și feedback"
       ],
@@ -2954,6 +2951,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Invitațiile externe sunt dezactivate temporar. Reîncercați mai târziu."
+      ],
+      "Failed to load the STL preview": [
+        "Nu s-a putut încărca examinarea STL."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
@@ -6072,7 +6072,7 @@
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Abonamentu se va reînnoi automat la ${ renewalTime }."
+        "Abonamentul se va reînnoi automat la ${ renewalTime }."
       ]
     },
     "info": {
@@ -6397,7 +6397,7 @@
         "Introduceți numele dispozitivului"
       ],
       "Erase this link and remove everyone with access": [
-        "Ștergere această legătură web și eliminare toate persoanele care au acces"
+        "Ștergere legătură și eliminare toate persoanele cu acces"
       ],
       "Expiration (${ patternExpiration })": [
         "Expirare (${ patternExpiration })"
