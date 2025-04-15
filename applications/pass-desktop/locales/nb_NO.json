@@ -1067,8 +1067,8 @@
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Import mislyktes for hvelv \"${ vaultData.name }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import mislyktes for hvelv \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Import av elementer mislyktes"
@@ -1846,6 +1846,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3475,6 +3479,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Hvis aktivert, vil alle filene dine lastes ned når du eksporterer. Dette kan ta litt tid avhengig av internettforbindelsen din."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Hvis dataene dine inneholder filvedlegg, blir de ikke importert."
+      ],
       "Include file attachments": [
         "Inkluder filvedlegg"
       ],
@@ -3514,14 +3521,14 @@
       "Total imported files: ": [
         "Totalt antall importerte filer: "
       ],
+      "Upgrade to support file attachments": [
+        "Oppgrader for å støtte filvedlegg"
+      ],
       "Upload files from your device.": [
         "Last opp filer fra enheten din."
       ],
       "You can attach files to items for a better organization": [
         "Du kan legge ved filer til elementer for en bedre organisering"
-      ],
-      "Your current plan does not support importing files": [
-        "Din nåværende plan støtter ikke import av filer"
       ]
     },
     "Placeholder": {

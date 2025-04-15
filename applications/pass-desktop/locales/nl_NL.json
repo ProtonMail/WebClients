@@ -1067,8 +1067,8 @@
       "File does not match expected format": [
         "Bestand komt niet overeen met verwacht formaat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Importeren mislukt voor kluis \"${ vaultData.name }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Importeren mislukt voor kluis \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Items importeren mislukt"
@@ -1846,6 +1846,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -3475,6 +3479,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Indien ingeschakeld, zullen al uw bestanden worden gedownload bij het exporteren. Afhankelijk van uw internetverbinding kan dit enige tijd duren."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Als uw data bestandsbijlagen bevat, worden deze niet geïmporteerd."
+      ],
       "Include file attachments": [
         "Bestandsbijlagen opnemen"
       ],
@@ -3514,14 +3521,14 @@
       "Total imported files: ": [
         "Totaal aantal geïmporteerde bestanden: "
       ],
+      "Upgrade to support file attachments": [
+        "Upgrade om bestandsbijlagen te gebruiken"
+      ],
       "Upload files from your device.": [
         "Bestanden uploaden van uw computer."
       ],
       "You can attach files to items for a better organization": [
         "U kunt bestanden toevoegen aan items voor een betere organisatie"
-      ],
-      "Your current plan does not support importing files": [
-        "Uw huidige abonnement ondersteunt het importeren van bestanden niet"
       ]
     },
     "Placeholder": {
