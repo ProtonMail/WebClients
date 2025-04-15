@@ -54,7 +54,7 @@
         "Pokročilé nastavení"
       ],
       "Apply lifetime coupon code": [
-        "Použít doživotní kupón"
+        "Použijte doživotní kupón"
       ],
       "Authenticate": [
         "Ověřit"
@@ -152,11 +152,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Vytvořit účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Vytvořit alias"
@@ -465,7 +465,7 @@
         "Odebrat člena"
       ],
       "Request a feature": [
-        "Požádat o funkci"
+        "Požádejte o funkci"
       ],
       "Resend code": [
         "Znovu odeslat kód"
@@ -1010,8 +1010,8 @@
       "File does not match expected format": [
         "Soubor neodpovídá očekávanému formátu"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Import pro trezor \"${ vaultData.name }\" selhal : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import pro trezor \"${ vaultData.name }\" selhal : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Import položek se nezdařil"
@@ -1815,12 +1815,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -3391,6 +3385,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Pokud je tato možnost povolena, budou při exportu staženy všechny soubory. To může trvat určitou dobu v závislosti na vašem internetovém připojení."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Pokud vaše data obsahují přílohy, nebudou importovány."
+      ],
       "Include file attachments": [
         "Zahrnout přílohy souborů"
       ],
@@ -3430,6 +3427,9 @@
       "Total imported files: ": [
         "Celkový počet importovaných souborů: "
       ],
+      "Upgrade to support file attachments": [
+        "Navyšte svůj tarif pro podporu příloh souborů"
+      ],
       "Upload files from your device.": [
         "Nahrajte soubory z vašeho zařízení."
       ],
@@ -3438,9 +3438,6 @@
       ],
       "You may close this window after saving the file.": [
         "Po uložení souboru můžete toto okno zavřít."
-      ],
-      "Your current plan does not support importing files": [
-        "Váš aktuální tarif nepodporuje import souborů"
       ]
     },
     "Placeholder": {

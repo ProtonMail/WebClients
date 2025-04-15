@@ -152,10 +152,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create alias": [
@@ -982,9 +982,6 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ description }"
-      ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
@@ -1743,10 +1740,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -3258,6 +3251,9 @@
       "File attachments": [
         "მიმაგრებული ფაილები"
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "თუ თქვენი მონაცემები მიმაგრებულ ფაილებს შეიცავს, მათი შემოტანა არ მოხდება."
+      ],
       "Include file attachments": [
         "მიმაგრებული ფაილების ჩათვლით"
       ],
@@ -3297,6 +3293,9 @@
       "Total imported files: ": [
         "შემოტანილი ფაილები სულ: "
       ],
+      "Upgrade to support file attachments": [
+        "ასწირეთ სატარიფო გეგმა ფაილის მიმაგრებების მხარდაჭერისთვის"
+      ],
       "Upload files from your device.": [
         "ატვირთეთ ფაილები თქვენი მოწყობილობიდან."
       ],
@@ -3305,9 +3304,6 @@
       ],
       "You may close this window after saving the file.": [
         "ფაილის შენახვის შემდეგ შეგიძლიათ, დახუროთ ეს ფანჯარა."
-      ],
-      "Your current plan does not support importing files": [
-        "თქვენს მიმდინარე სატარიფო გეგმას ფაილების შემოტანის მხარდაჭერა არ გააჩნია"
       ]
     },
     "Placeholder": {

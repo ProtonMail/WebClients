@@ -12,7 +12,7 @@
         "接受并查看项目"
       ],
       "Account": [
-        "账号"
+        "账户"
       ],
       "Account settings": [
         "账户设置"
@@ -152,10 +152,10 @@
       "Create": [
         "创建"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
       "Create alias": [
@@ -417,10 +417,10 @@
         "打开网页应用程序"
       ],
       "Pass for Android": [
-        "Android版Proton Pass"
+        "适用于 Android 的 Proton Pass"
       ],
       "Pass for iOS": [
-        "iOS版Proton Pass"
+        "适用于 iOS 的 Proton Pass"
       ],
       "Pin item": [
         "固定项"
@@ -995,8 +995,8 @@
       "File does not match expected format": [
         "文件与预期格式不匹配"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "保险库 “${ vaultData.name }” 导入失败：${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "保险库 “${ vaultData.name }” 导入失败：${ errorMessage }"
       ],
       "Importing items failed": [
         "导入项目失败"
@@ -1241,7 +1241,7 @@
         "${ memberCount } 位成员"
       ],
       "${ n } item": [
-        "${ n } 个项目"
+        "${ n } 项"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } 将始终可以访问"
@@ -1739,13 +1739,13 @@
         "不仅仅是一个密码管理器，${ PASS_APP_NAME } 通过邮箱别名保护您的密码和个人邮箱地址。它采用与 ${ MAIL_APP_NAME } 相同的技术，对您的数据进行端到端加密，只有您自己才能访问它。"
       ],
       "Move ${ count } item": [
-        "移动 ${ count } 个项目"
+        "移动 ${ count } 项"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2207,7 +2207,7 @@
         "保险库共享： ${ vaultMembersCount } 位成员"
       ],
       "Verification code": [
-        "验证码"
+        "验证码验证码"
       ],
       "Viewer": [
         "查看者"
@@ -2338,7 +2338,7 @@
         "${ months } 个月"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } 监视器"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 版本"
@@ -2401,7 +2401,7 @@
         "A-Z"
       ],
       "Account": [
-        "账号"
+        "帐户"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "创建新别名时，请为该域添加一个随机前缀。"
@@ -2773,7 +2773,7 @@
         "成员"
       ],
       "Middle name": [
-        "中间名 ( 若有 )"
+        "中间名（若有）"
       ],
       "Modified": [
         "修改时间"
@@ -3136,7 +3136,7 @@
         "您的域名"
       ],
       "ZIP": [
-        "邮政编码"
+        "ZIP 文件"
       ],
       "ZIP or Postal code": [
         "邮政编码"
@@ -3247,6 +3247,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "如果启用此选项，导出时将下载您的所有文件。该操作可能需要一定时间，具体取决于您的网络连接状况。"
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "如果您的数据包含文件附件，这些附件将不会被导入。"
+      ],
       "Include file attachments": [
         "包含文件附件"
       ],
@@ -3286,6 +3289,9 @@
       "Total imported files: ": [
         "总导入文件数： "
       ],
+      "Upgrade to support file attachments": [
+        "升级以支持文件附件"
+      ],
       "Upload files from your device.": [
         "从您的设备上传文件。"
       ],
@@ -3294,9 +3300,6 @@
       ],
       "You may close this window after saving the file.": [
         "保存文件后，您可以关闭此窗口。"
-      ],
-      "Your current plan does not support importing files": [
-        "您当前的计划不支持导入文件"
       ]
     },
     "Placeholder": {
@@ -3981,7 +3984,7 @@
         "您确定要将 ${ trashedItemsCount } 项移至回收站吗？"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "您确定要永久删除 ${ deletedItemsCount } 项吗？"
+        "您确定要永久删除这 ${ deletedItemsCount } 项吗？"
       ],
       "Are you sure you want to permanently delete this item?": [
         "确定要永久删除此项目吗？"

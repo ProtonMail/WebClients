@@ -152,10 +152,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create alias": [
@@ -976,9 +976,6 @@
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ description }"
-      ],
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
       ],
@@ -1737,10 +1734,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -3192,6 +3185,72 @@
         "Alaviiva"
       ]
     },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Tiedostoa \"${ file.name }\" ei voitu lähettää."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Tiedostoa \"${ filename }\" ei voitu tuoda."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } tiedosto",
+        "${ filesCount } tiedostoa"
+      ],
+      "Attachments": [
+        "Liitteet"
+      ],
+      "Choose a file or drag it here": [
+        "Valitse tiedosto tai pudota se tähän"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Poista ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Poista kaikki tiedostot"
+      ],
+      "Download": [
+        "Lataa"
+      ],
+      "Download \"${ filename }\"": [
+        "Lataa \"${ filename }\""
+      ],
+      "Download file": [
+        "Lataa tiedosto"
+      ],
+      "Exporting files": [
+        "Tiedostoja viedään"
+      ],
+      "Failed linking files to item": [
+        "Tiedostojen linkittäminen kohteeseen epäonnistui"
+      ],
+      "File": [
+        "Tiedosto"
+      ],
+      "File attachments": [
+        "Liitetiedostot"
+      ],
+      "Include file attachments": [
+        "Sisällytä liitetiedostot"
+      ],
+      "Open new window to upload files": [
+        "Avaa uusi ikkuna lähettääksesi tiedostoja"
+      ],
+      "Remove all files": [
+        "Poista kaikki tiedostot"
+      ],
+      "Rename": [
+        "Nimeä uudelleen"
+      ],
+      "Restore": [
+        "Palauta"
+      ],
+      "Total files: ": [
+        "Tiedostoja yhteensä: "
+      ],
+      "Upload files from your device.": [
+        "Lähetä tiedostoja laitteeltasi."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Lisää 2FA-salaisuus"
@@ -3870,6 +3929,9 @@
       ],
       "An error occurred while exporting your data": [
         "Virhe tietojasi vietäessä"
+      ],
+      "An error occurred while importing your data.": [
+        "Virhe tietojasi tuotaessa."
       ],
       "An error occurred while resuming your session": [
         "Virhe palautettaessa istuntoasi"
