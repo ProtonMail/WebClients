@@ -588,9 +588,6 @@
       "Got it": [
         "Am înțeles"
       ],
-      "Help": [
-        "Ajutor"
-      ],
       "Help and feedback": [
         "Ajutor și feedback"
       ],
@@ -4229,6 +4226,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Eșuare criptare atașament. Reîncercați."
       ],
+      "Failed to load the STL preview": [
+        "Nu s-a putut încărca examinarea STL."
+      ],
       "Filter with this name already exists": [
         "Filtrul cu acest nume există deja"
       ],
@@ -5279,7 +5279,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Confidențialitate implicită."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "forwardmessage": {
@@ -8210,7 +8210,7 @@
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Abonamentu se va reînnoi automat la ${ renewalTime }."
+        "Abonamentul se va reînnoi automat la ${ renewalTime }."
       ]
     },
     "info": {
