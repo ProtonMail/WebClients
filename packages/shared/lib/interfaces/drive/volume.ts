@@ -1,5 +1,20 @@
 import type { ShareURL } from './sharing';
 
+export enum VolumeType {
+    Regular = 1,
+    Photos = 2,
+}
+
+export enum VolumeRestoreStatus {
+    Done = 0,
+    Progress = 1,
+    Failed = -1,
+}
+
+export interface UserVolumesResult {
+    Volumes: DriveVolume[];
+}
+
 export interface CreateDriveVolume {
     AddressID: string;
     AddressKeyID: string;
@@ -13,10 +28,24 @@ export interface CreateDriveVolume {
 
 export interface DriveVolume {
     ID: string;
+    VolumeID: string;
+    CreateTime: number | null;
+    ModifyTime: number | null;
+    UsedSpace: number;
+    DownloadedBytes: number;
+    UploadedBytes: number;
+    State: number;
     Share: {
+        ShareID: string;
         ID: string;
         LinkID: string;
     };
+    Type: VolumeType;
+    RestoreStatus: VolumeRestoreStatus | null;
+}
+
+export interface GetDriveVolumeResult {
+    Volume: DriveVolume;
 }
 
 export interface CreatedDriveVolumeResult {
