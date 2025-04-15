@@ -82,6 +82,7 @@ export enum UpsellRef {
     LIMIT_SHARING = 'limit_share',
     LIMIT_VAULT = 'vault_limit',
     MENU = 'menu',
+    NAVBAR_UPGRADE = 'navbar_upgrade',
     SECURE_LINKS = 'secure_links',
     SETTING = 'setting',
     PASS_MONITOR = 'pass_monitor',

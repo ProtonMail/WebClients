@@ -2,10 +2,8 @@ import type { FC, ReactNode } from 'react';
 
 import Avatar from '@proton/atoms/Avatar/Avatar';
 import { Icon } from '@proton/components';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import clsx from '@proton/utils/clsx';
 
 type Props = {
@@ -38,17 +36,6 @@ export const UserPanel: FC<Props> = ({ actions, email, name, organization, plan,
                             {planName}
                             {organization && ` · ${organization}`}
                         </span>
-                        {plan === UserPassPlan.FREE && (
-                            <>
-                                {' · '}
-                                <UpgradeButton
-                                    upsellRef={UpsellRef.MENU}
-                                    hideIcon
-                                    inline
-                                    style={{ pointerEvents: 'auto' }}
-                                />
-                            </>
-                        )}
                     </div>
                 )}
             </div>
