@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Аб ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Актуальны памер"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Ачысціць даныя праграмы"
       ],
+      "Close Window": [
+        "Закрыць акно"
+      ],
+      "Copy": [
+        "Скапіяваць"
+      ],
+      "Cut": [
+        "Выразаць"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
       "Force Reload": [
         "Прымусовая перазагрузка"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Схаваць ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Схаваць іншыя"
+      ],
+      "Minimize": [
+        "Згарнуць"
+      ],
+      "Paste": [
+        "Уставіць"
+      ],
+      "Paste and Match Style": [
+        "Уставіць і дапасаваць стыль"
+      ],
+      "Quit": [
+        "Выйсці"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Выйсці з ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Узнавіць"
+      ],
       "Reload": [
         "Перазагрузіць"
+      ],
+      "Select All": [
+        "Выбраць усе"
+      ],
+      "Show All": [
+        "Паказаць усе"
       ],
       "Show logs": [
         "Паказаць журнал"
@@ -26,11 +71,26 @@
       "Speech": [
         "Маўленне"
       ],
-      "Start Proton Mail at login": [
-        "Запускаць Proton Mail пры ўваходзе"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Запускаць ${ MAIL_APP_NAME } пры ўваходзе"
       ],
-      "Uninstall Proton Mail": [
-        "Выдаліць Proton Mail"
+      "Start Speaking": [
+        "Пачаць агучванне"
+      ],
+      "Stop Speaking": [
+        "Спыніць агучванне"
+      ],
+      "Toggle Full Screen": [
+        "Пераключыцца ў поўнаэкранны рэжым"
+      ],
+      "Undo": [
+        "Адрабіць"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Выдаліць ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Маштаб"
       ],
       "Zoom In": [
         "Павялічыць"
@@ -39,12 +99,9 @@
         "Паменшыць"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Захаваць відарыс як..."
-      ],
-      "Speech": [
-        "Маўленне"
+    "App Menu": {
+      "Services": [
+        "Сэрвісы"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Эмодзі і сімвалы"
+      ],
+      "Save image as…": [
+        "Захаваць відарыс як..."
+      ],
+      "Speech": [
+        "Маўленне"
+      ],
+      "Start Speaking": [
+        "Пачаць агучванне"
+      ],
+      "Stop Speaking": [
+        "Спыніць агучванне"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Скапіяваць"
+      ],
+      "Cut": [
+        "Выразаць"
+      ],
+      "Look Up “${ text }”": [
+        "Шукаць “${ text }”"
+      ],
+      "Paste": [
+        "Уставіць"
+      ],
+      "Paste and Match Style": [
+        "Уставіць і дапасаваць стыль"
+      ],
+      "Redo": [
+        "Узнавіць"
+      ],
+      "Select All": [
+        "Выбраць усе"
+      ],
+      "Undo": [
+        "Адрабіць"
       ]
     },
     "Error dialog": {

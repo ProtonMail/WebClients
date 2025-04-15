@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 관하여"
+      ],
       "Actual Size": [
         "실제 크기"
       ],
@@ -14,11 +17,50 @@
       "Clear application data": [
         "어플리케이션 데이터 비우기"
       ],
+      "Close Window": [
+        "창 닫기"
+      ],
+      "Copy": [
+        "복사"
+      ],
+      "Cut": [
+        "잘라내기"
+      ],
+      "Delete": [
+        "삭제"
+      ],
       "Force Reload": [
         "강제 새로고침"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } 숨기기"
+      ],
+      "Hide Others": [
+        "다른 창 숨기기"
+      ],
+      "Minimize": [
+        "최소화"
+      ],
+      "Paste": [
+        "붙여넣기"
+      ],
+      "Quit": [
+        "나가기"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "${ MAIL_APP_NAME } 종료"
+      ],
+      "Redo": [
+        "다시 실행"
+      ],
       "Reload": [
         "새로고침"
+      ],
+      "Select All": [
+        "모두 선택"
+      ],
+      "Show All": [
+        "모든 창 보이기"
       ],
       "Show logs": [
         "로그 보기"
@@ -26,11 +68,23 @@
       "Speech": [
         "말하기"
       ],
-      "Start Proton Mail at login": [
-        "로그인시 Proton Mail 시작"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "로그인할 때 ${ MAIL_APP_NAME } 시작하기"
       ],
-      "Uninstall Proton Mail": [
-        "Proton Mail 제거하기"
+      "Start Speaking": [
+        "말하기 시작"
+      ],
+      "Stop Speaking": [
+        "말하기 중단"
+      ],
+      "Undo": [
+        "실행 취소"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } 제거"
+      ],
+      "Zoom": [
+        "확대"
       ],
       "Zoom In": [
         "확대"
@@ -39,12 +93,9 @@
         "축소"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "이미지를 다른 이름으로 저장하기…"
-      ],
-      "Speech": [
-        "말하기"
+    "App Menu": {
+      "Services": [
+        "서비스"
       ]
     },
     "Context menu": {
@@ -56,11 +107,41 @@
       ],
       "Emoji and Symbols": [
         "이모지와 기호"
+      ],
+      "Save image as…": [
+        "이미지를 다른 이름으로 저장..."
+      ],
+      "Speech": [
+        "말하기"
+      ],
+      "Start Speaking": [
+        "말하기 시작"
+      ],
+      "Stop Speaking": [
+        "말하기 중단"
       ]
     },
     "Context Menu": {
       "Copy": [
         "복사"
+      ],
+      "Cut": [
+        "잘라내기"
+      ],
+      "Paste": [
+        "붙여넣기"
+      ],
+      "Paste and Match Style": [
+        "스타일 붙여넣기 및 일치"
+      ],
+      "Redo": [
+        "다시 실행"
+      ],
+      "Select All": [
+        "모두 선택"
+      ],
+      "Undo": [
+        "실행 취소"
       ]
     },
     "Error dialog": {

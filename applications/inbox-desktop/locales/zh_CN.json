@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "关于 ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "实际大小"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "清除应用程序数据"
       ],
+      "Close Window": [
+        "关闭窗口"
+      ],
+      "Copy": [
+        "复制"
+      ],
+      "Cut": [
+        "剪切"
+      ],
+      "Delete": [
+        "删除"
+      ],
       "Force Reload": [
         "全部重新加载"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "隐藏 ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "隐藏其他"
+      ],
+      "Minimize": [
+        "最小化"
+      ],
+      "Paste": [
+        "粘贴"
+      ],
+      "Paste and Match Style": [
+        "粘贴并匹配样式"
+      ],
+      "Quit": [
+        "退出"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "退出 ${ MAIL_APP_NAME }l"
+      ],
+      "Redo": [
+        "重做"
+      ],
       "Reload": [
         "重新加载"
+      ],
+      "Select All": [
+        "全选"
+      ],
+      "Show All": [
+        "显示全部"
       ],
       "Show logs": [
         "显示日志"
@@ -26,11 +71,26 @@
       "Speech": [
         "语音"
       ],
-      "Start Proton Mail at login": [
-        "登录时启动 Proton Mail"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "在启动时登录 ${ MAIL_APP_NAME }"
       ],
-      "Uninstall Proton Mail": [
-        "卸载 Proton Mail"
+      "Start Speaking": [
+        "开始说话"
+      ],
+      "Stop Speaking": [
+        "停止说话"
+      ],
+      "Toggle Full Screen": [
+        "切换至全屏"
+      ],
+      "Undo": [
+        "撤销"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "卸载 ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "缩放"
       ],
       "Zoom In": [
         "放大"
@@ -39,12 +99,9 @@
         "缩小"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "将图像另存为…"
-      ],
-      "Speech": [
-        "语音"
+    "App Menu": {
+      "Services": [
+        "服务"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "表情和符号"
+      ],
+      "Save image as…": [
+        "将图像另存为…"
+      ],
+      "Speech": [
+        "语音"
+      ],
+      "Start Speaking": [
+        "开始说话"
+      ],
+      "Stop Speaking": [
+        "停止说话"
       ]
     },
     "Context Menu": {
       "Copy": [
         "复制"
+      ],
+      "Cut": [
+        "剪切"
+      ],
+      "Look Up “${ text }”": [
+        "查找 “${ text }”"
+      ],
+      "Paste": [
+        "粘贴"
+      ],
+      "Paste and Match Style": [
+        "粘贴并匹配样式"
+      ],
+      "Redo": [
+        "重做"
+      ],
+      "Select All": [
+        "全选"
+      ],
+      "Undo": [
+        "撤消"
       ]
     },
     "Error dialog": {
