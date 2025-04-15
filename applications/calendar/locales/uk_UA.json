@@ -344,9 +344,6 @@
       "Got it": [
         "Зрозуміло"
       ],
-      "Help": [
-        "Довідка"
-      ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
       ],
@@ -1588,7 +1585,7 @@
         "День народження"
       ],
       "Display name": [
-        "Ім'я"
+        "Показувати як"
       ],
       "Email": [
         "Е-пошта"
@@ -3035,6 +3032,9 @@
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
       ],
+      "Email is not valid": [
+        "Е-пошта недійсна"
+      ],
       "Ends on date cannot be empty": [
         "Кінцева дата не може бути порожньою"
       ],
@@ -3082,6 +3082,9 @@
       ],
       "IMAP server is required": [
         "Сервер IMAP обов'язковий"
+      ],
+      "Incorrect username": [
+        "Неправильне ім'я користувача"
       ],
       "Intended recipient does not support calendar sharing": [
         "У призначеного отримувача функція поширення календаря не підтримується"
@@ -3176,6 +3179,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Обліковий запис поза ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Номер недійсний"
+      ],
       "Number of occurrences cannot be empty": [
         "Кількість повторень не може бути порожньою"
       ],
@@ -3196,6 +3202,9 @@
       ],
       "Password is required": [
         "Пароль обов'язковий"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
       ],
       "Payment process canceled": [
         "Обробку платежу скасовано"
@@ -3302,6 +3311,9 @@
       "The amount due has changed. Please try again.": [
         "Сума до оплати змінилася. Спробуйте ще раз."
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Назва теки неправильна. Оберіть іншу назву."
       ],
@@ -3329,8 +3341,14 @@
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "У цьому полі перевищено обмеження ${ maximumLength } символів."
+      ],
       "This field is required": [
         "Це поле є обов'язковим"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Назва теки недоступна. Оберіть іншу назву."
@@ -3344,6 +3362,9 @@
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Спробуйте використовувати лише літери, цифри та символи _.-"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Неочікувана помилка, неможливо імпортувати контакти"
       ],
@@ -3352,6 +3373,12 @@
       ],
       "Unknown payment token status": [
         "Невідомий стан платіжного токена"
+      ],
+      "Username must begin with a letter or digit": [
+        "Ім'я користувача повинно починатися з літери або цифри"
+      ],
+      "Username must end with a letter or digit": [
+        "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ],
       "Validation error": [
         "Помилка перевірки"
@@ -9623,7 +9650,7 @@
         "Поле CSV"
       ],
       "Display name": [
-        "Ім'я"
+        "Показувати як"
       ],
       "First name": [
         "Ім'я"
@@ -10300,6 +10327,20 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Наскрізно зашифрований, спільний доступ з перевіреним контактом"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
       ]
     },
     "Video control": {

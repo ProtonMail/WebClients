@@ -344,9 +344,6 @@
       "Got it": [
         "Dimengerti"
       ],
-      "Help": [
-        "Bantuan"
-      ],
       "Help and feedback": [
         "Bantuan dan saran"
       ],
@@ -469,6 +466,9 @@
       ],
       "More options": [
         "Opsi lainnya"
+      ],
+      "More options for accounts": [
+        "Pilihan lainnya untuk akun"
       ],
       "New event": [
         "Acara baru"
@@ -3087,6 +3087,9 @@
       "Email address is required": [
         "Alamat email diperlukan"
       ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
       "Ends on date cannot be empty": [
         "Tanggal akhir tidak boleh kosong"
       ],
@@ -3134,6 +3137,9 @@
       ],
       "IMAP server is required": [
         "Server IMAP diperlukan"
+      ],
+      "Incorrect username": [
+        "Nama pengguna salah"
       ],
       "Intended recipient does not support calendar sharing": [
         "Penerima yang dituju tidak mendukung berbagi kalender"
@@ -3225,6 +3231,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Bukan akun ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Nomor telepon tidak valid"
+      ],
       "Number of occurrences cannot be empty": [
         "Jumlah keberlangsungan tidak boleh kosong"
       ],
@@ -3239,6 +3248,9 @@
       ],
       "Password is required": [
         "Kata sandi diperlukan"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak sesuai"
       ],
       "Payment process canceled": [
         "Proses pembayaran dibatalkan"
@@ -3339,6 +3351,9 @@
       "The amount due has changed. Please try again.": [
         "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
+      "The email addresses do not match": [
+        "Alamat email tidak sesuai"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
       ],
@@ -3366,8 +3381,14 @@
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+      ],
       "This field is required": [
         "Kolom ini wajib diisi"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain."
@@ -3381,6 +3402,9 @@
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Dasbor VPN tidak dapat dimuat. Silakan periksa koneksi Anda dan coba lagi."
       ],
@@ -3392,6 +3416,12 @@
       ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
+      ],
+      "Username must begin with a letter or digit": [
+        "Nama pengguna harus dimulai dengan huruf atau angka"
+      ],
+      "Username must end with a letter or digit": [
+        "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "Validation error": [
         "Kesalahan validasi"
@@ -5484,7 +5514,7 @@
         "Alamat email Anda telah terpapar:"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your events will be encrypted and then saved.": [
         "Acara Anda akan dienkripsi dan disimpan."
@@ -5520,7 +5550,7 @@
         "Kata sandi Anda telah bocor:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Nomor telepon Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Lokasi fisik Anda sedang terlihat dan dapat digunakan untuk membatasi akses internet Anda."
@@ -5865,6 +5895,9 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
+      "Enable desktop notifications": [
+        "Aktifkan notifikasi desktop"
+      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
@@ -5984,6 +6017,9 @@
       ],
       "Notifications": [
         "Notifikasi"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Notifikasi sedang dinonaktifkan. Untuk mengaktifkan notifikasi, ubah pengaturan browser."
       ],
       "On": [
         "Aktif"
@@ -6890,7 +6926,7 @@
         "Perlindungan kebocoran DNS"
       ],
       "Double hop": [
-        "Double hop"
+        "Koneksi double hop"
       ],
       "Easy Switch import assistant": [
         "Alat bantu impor Easy Switch"
@@ -7489,7 +7525,7 @@
         "Pada saat Anda mengirim pesan ke pengguna ${ MAIL_APP_NAME } lainnya, enkripsi akan diterapkan secara otomatis. Sebaliknya, pada saat Anda mengirim pesan ke pengguna non-${ MAIL_APP_NAME_TWO }, Anda harus menentukan kata sandi pada pesan yang Anda kirim."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Anda dapat menetapkan lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun segala hal terkait pembayaran hanya akan dapat diatur oleh admin utama."
+        "Anda dapat memiliki lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun hanya admin utamalah yang memiliki kendali atas tagihan."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10003,6 +10039,9 @@
       "Import groups": [
         "Impor grup"
       ],
+      "Information exposed in breach": [
+        "Informasi yang terpapar dalam kebocoran data"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
@@ -10331,6 +10370,9 @@
       "Load image": [
         "Muat gambar"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
@@ -10352,6 +10394,9 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "Siklus langganan baru akan dimulai pada ${ formattedTime }"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
+      ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ]
@@ -10367,6 +10412,14 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Dibagikan secara end-to-end dengan kontak yang terverifikasi"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "Video control": {

@@ -347,9 +347,6 @@
       "Got it": [
         "Rendben!"
       ],
-      "Help": [
-        "Súgó"
-      ],
       "Help and feedback": [
         "Súgó és visszajelzés"
       ],
@@ -3113,6 +3110,9 @@
       "Email address is required": [
         "E-mail cím megadása szükséges"
       ],
+      "Email is not valid": [
+        "Érvénytelen e-mail cím"
+      ],
       "Ends on date cannot be empty": [
         "A befejezés dátumát meg kell adni"
       ],
@@ -3160,6 +3160,9 @@
       ],
       "IMAP server is required": [
         "IMAP szerver megadása szükséges"
+      ],
+      "Incorrect username": [
+        "Helytelen felhasználónév"
       ],
       "Intended recipient does not support calendar sharing": [
         "A kívánt címzett nem támogatja a naptármegosztást"
@@ -3252,6 +3255,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Nem egy ${ BRAND_NAME } fiók"
       ],
+      "Not a valid number": [
+        "Érvénytelen szám"
+      ],
       "Number of occurrences cannot be empty": [
         "Az ismétlődések számát meg kell adni"
       ],
@@ -3268,6 +3274,9 @@
       ],
       "Password is required": [
         "Jelszó megadása szükséges"
+      ],
+      "Passwords do not match": [
+        "A jelszavak nem egyeznek"
       ],
       "Payment process canceled": [
         "A fizetés folyamata megszakítva"
@@ -3370,6 +3379,9 @@
       "The amount due has changed. Please try again.": [
         "A befizetendő összeg megváltozott. Kérjük próbálja meg újra."
       ],
+      "The email addresses do not match": [
+        "Az e-mail címek nem egyeznek"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Ez a mappanév érvénytelen. Adjon meg egy másik nevet."
       ],
@@ -3397,8 +3409,14 @@
       "There was an error when exporting the contacts vCards": [
         "Hiba történt a névjegyek vCard formátumra exportálásakor"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
       "This field is required": [
         "A mező kitöltése kötelező"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Ez a mappanév nem érhető el. Adjon meg egy másik nevet."
@@ -3412,6 +3430,9 @@
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Próbáljon csak betűket, számokat és _.-t használni"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nem sikerült betölteni a VPN vezérlőpultot. Ellenőrizze a kapcsolatot és próbálkozzon újra."
       ],
@@ -3423,6 +3444,12 @@
       ],
       "Unknown payment token status": [
         "Ismeretlen fizetési token állapot"
+      ],
+      "Username must begin with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
+      ],
+      "Username must end with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
       "Validation error": [
         "Érvényesítési hiba"
@@ -10579,6 +10606,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Megosztva végpontok közti titkosítással, ellenőrzött partnerrel"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     },
     "Video control": {
