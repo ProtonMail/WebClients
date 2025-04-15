@@ -1011,9 +1011,6 @@
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ description }"
-      ],
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
       ],
@@ -3216,6 +3213,69 @@
         "Alaviiva"
       ]
     },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Tiedostoa \"${ file.name }\" ei voitu lähettää."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Tiedostoa \"${ filename }\" ei voitu tuoda."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } tiedosto",
+        "${ filesCount } tiedostoa"
+      ],
+      "Attachments": [
+        "Liitteet"
+      ],
+      "Choose a file or drag it here": [
+        "Valitse tiedosto tai pudota se tähän"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Poista ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Poista kaikki tiedostot"
+      ],
+      "Download": [
+        "Lataa"
+      ],
+      "Download file": [
+        "Lataa tiedosto"
+      ],
+      "Exporting files": [
+        "Tiedostoja viedään"
+      ],
+      "Failed linking files to item": [
+        "Tiedostojen linkittäminen kohteeseen epäonnistui"
+      ],
+      "File": [
+        "Tiedosto"
+      ],
+      "File attachments": [
+        "Liitetiedostot"
+      ],
+      "Include file attachments": [
+        "Sisällytä liitetiedostot"
+      ],
+      "Open new window to upload files": [
+        "Avaa uusi ikkuna lähettääksesi tiedostoja"
+      ],
+      "Remove all files": [
+        "Poista kaikki tiedostot"
+      ],
+      "Rename": [
+        "Nimeä uudelleen"
+      ],
+      "Restore": [
+        "Palauta"
+      ],
+      "Total files: ": [
+        "Tiedostoja yhteensä: "
+      ],
+      "Upload files from your device.": [
+        "Lähetä tiedostoja laitteeltasi."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Lisää 2FA-salaisuus"
@@ -3969,6 +4029,9 @@
       ],
       "An error occurred while exporting your data": [
         "Virhe tietojasi vietäessä"
+      ],
+      "An error occurred while importing your data.": [
+        "Virhe tietojasi tuotaessa."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Haluatko varmasti siirtää ${ trashedItemsCount } kohteen roskakoriin?",
