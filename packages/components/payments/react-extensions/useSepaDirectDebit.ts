@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { electronicFormatIBAN, isValidIBAN } from 'ibantools';
-import { c } from 'ttag';
+import { electronicFormatIBAN } from 'ibantools';
 
 import type { DirectDebitBankAccount, DirectDebitCustomer, DirectDebitCustomerNameType } from '@proton/chargebee/lib';
-import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
+import { SepaEmailNotProvidedError } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type AmountAndCurrency,
@@ -13,8 +12,6 @@ import {
     type ChargebeeFetchedPaymentToken,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
-    DisplayablePaymentError,
-    type ExtendedExtractIBANResult,
     type ForceEnableChargebee,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
@@ -22,29 +19,12 @@ import {
     type PaymentVerificatorV5,
     type V5PaymentToken,
     convertPaymentIntentData,
-    extractIBAN,
 } from '@proton/payments';
 import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/shared/lib/api/payments';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/utils/isTruthy';
 
 import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
-
-export class SepaEmailNotProvidedError extends DisplayablePaymentError {
-    constructor() {
-        super(c('Info').t`SEPA payments are not available at the moment. Please try again later.`);
-        this.name = 'SepaEmailNotProvidedError';
-    }
-}
-
-export class SepaFormInvalidError extends DisplayablePaymentError {
-    constructor() {
-        super(c('Info').t`Please fill in all required fields.`);
-        this.name = 'SepaFormInvalidError';
-    }
-}
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
@@ -61,7 +41,6 @@ export interface Dependencies {
     handles: ChargebeeIframeHandles;
     forceEnableChargebee: ForceEnableChargebee;
     verifyPayment: PaymentVerificatorV5;
-    formErrors: FormErrorsHook;
 }
 
 type Overrides = {};
@@ -79,24 +58,14 @@ export type ChargebeeDirectDebitProcessorHook = Omit<PaymentProcessorHook, keyof
     setAddressLine1: (addressLine1: string) => void;
     reset: () => void;
     getFetchedPaymentToken: () => ChargebeeFetchedPaymentToken | null;
-    errors: {
-        companyError?: string;
-        firstNameError?: string;
-        lastNameError?: string;
-        ibanError?: string;
-        addressError?: string;
-    };
-    ibanStatus: ExtendedExtractIBANResult;
 } & Overrides;
 
 type DirectDebitCustomerWithoutEmail = Omit<DirectDebitCustomer, 'email'>;
 
 export const useSepaDirectDebit = (
     { amountAndCurrency, onChargeable, selectedPlanName, onBeforeSepaPayment }: Props,
-    { api, forceEnableChargebee, handles, verifyPayment, events, formErrors }: Dependencies
+    { api, forceEnableChargebee, handles, verifyPayment, events }: Dependencies
 ): ChargebeeDirectDebitProcessorHook => {
-    const { validator } = formErrors ?? {};
-
     const fetchedPaymentTokenRef = useRef<ChargebeeFetchedPaymentToken | null>(null);
     const [bankAccount, setBankAccount] = useState<DirectDebitBankAccount>({ iban: '' });
 
@@ -116,31 +85,6 @@ export const useSepaDirectDebit = (
 
     const processingToken = fetchingToken || verifyingToken;
 
-    const isCompany = customer.customerNameType === 'company';
-    const isIndividual = customer.customerNameType === 'individual';
-
-    const ibanStatus = extractIBAN(bankAccount.iban);
-
-    const errors = {
-        companyError: isCompany ? validator?.([requiredValidator(customer.company)]) : undefined,
-        firstNameError: isIndividual ? validator?.([requiredValidator(customer.firstName)]) : undefined,
-        lastNameError: isIndividual ? validator?.([requiredValidator(customer.lastName)]) : undefined,
-        ibanError: validator?.([
-            requiredValidator(bankAccount.iban),
-            isValidIBAN(bankAccount.iban) ? '' : c('Error').t`Invalid IBAN`,
-        ]),
-        addressError: ibanStatus.requiresAddress ? validator?.([requiredValidator(customer.addressLine1)]) : undefined,
-    };
-
-    const validateBeforeSubmit = () => {
-        const definedErrors = Object.values(errors).filter(isTruthy);
-        if (definedErrors.length === 0) {
-            return;
-        }
-
-        throw new SepaFormInvalidError();
-    };
-
     const fetchPaymentToken = async () => {
         if (onBeforeSepaPayment) {
             const result = await onBeforeSepaPayment();
@@ -148,12 +92,6 @@ export const useSepaDirectDebit = (
                 return;
             }
         }
-
-        if (!formErrors.onFormSubmit()) {
-            return;
-        }
-
-        validateBeforeSubmit();
 
         return withFetchingToken(async () => {
             const payload: CreatePaymentIntentDirectDebitData = {
@@ -288,8 +226,6 @@ export const useSepaDirectDebit = (
         processPaymentToken,
         reset,
         getFetchedPaymentToken,
-        errors,
-        ibanStatus,
         meta: {
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
         },
