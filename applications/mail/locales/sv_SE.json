@@ -585,9 +585,6 @@
       "Got it": [
         "Förstått"
       ],
-      "Help": [
-        "Hjälp"
-      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -4202,6 +4199,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Misslyckades att kryptera bilaga. Försök igen."
       ],
+      "Failed to load the STL preview": [
+        "Misslyckades att ladda STL-förhandsgranskningen"
+      ],
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
       ],
@@ -5236,7 +5236,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Integritet som standard."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "forwardmessage": {
@@ -8055,10 +8055,6 @@
       ],
       "Your private writing assistant": [
         "Din privata skrivassistent"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
-        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
