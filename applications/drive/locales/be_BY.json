@@ -471,9 +471,6 @@
       "Grid layout": [
         "Макет сеткі"
       ],
-      "Help": [
-        "Даведка"
-      ],
       "Help and feedback": [
         "Даведка і зваротная сувязь"
       ],
@@ -2614,7 +2611,7 @@
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
-        "Палепшыце да ${ planName }, каб працягваць абагульваць файлы з доступам для рэдагавання"
+        "Палепшыце да ${ planName }, каб працягваць абагульваць файлы з доступам да рэдагавання"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
@@ -2970,6 +2967,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Знешнія запрашэнні часова адключаны. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Failed to load the STL preview": [
+        "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" немагчыма запампаваць па прычыне памылкі \"${ error }\""
@@ -11307,7 +11307,7 @@
         "Няма панарамы"
       ],
       "No photos": [
-        "Няма фотаграфій"
+        "Няма фатаграфій"
       ],
       "No portraits": [
         "Няма партрэтаў"

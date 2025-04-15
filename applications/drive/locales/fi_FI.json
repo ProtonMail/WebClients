@@ -461,9 +461,6 @@
       "Grid layout": [
         "Ruudukkoasettelu"
       ],
-      "Help": [
-        "Tuki"
-      ],
       "Help and feedback": [
         "Tuki ja palaute"
       ],
@@ -616,6 +613,9 @@
       ],
       "New message": [
         "Uusi viesti"
+      ],
+      "New shared album": [
+        "Uusi jaettu albumi"
       ],
       "Next": [
         "Seuraava"
@@ -2799,6 +2799,9 @@
       ]
     },
     "Error": {
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" on jo olemassa"
+      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } ei voi yhdistää ulkoiseen tiliisi"
       ],
@@ -2926,6 +2929,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä. Yritä myöhemmin uudelleen."
+      ],
+      "Failed to load the STL preview": [
+        "STL-esikatselun lataus epäonnistui"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Tiedostoa \"${ item.name }\" ei voida tallentaa virheen \"${ error }\" vuoksi"
@@ -3754,6 +3760,12 @@
       ],
       "Create new album": [
         "Luo uusi albumi"
+      ],
+      "Create new shared album": [
+        "Luo uusi jaettu albumi"
+      ],
+      "Rename album": [
+        "Nimeä albumi uudelleen"
       ],
       "Security Center": [
         "Suojauskeskus"
@@ -5361,6 +5373,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Kiitos tilauksestasi. Suojattu selaaminen alkaa nyt."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Tilillä saattaa olla uusi avain tai seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa se vain, jos luotat siihen."
@@ -8670,12 +8685,18 @@
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
       ],
+      "terms & conditions": [
+        "käyttöehdot"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
+      ],
+      "Your payment is still being processed": [
+        "Maksuasi käsitellään vielä"
       ]
     },
     "Payments.Error": {
@@ -9951,6 +9972,38 @@
         "Säästä"
       ]
     },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Sinulle jaetut albumit näkyvät tässä"
+      ],
+      "Albums you've shared will appear here": [
+        "Jakamasi albumit näkyvät tässä"
+      ],
+      "Your favorited photos will appear here": [
+        "Suosikkikuvasi näkyvät tässä"
+      ],
+      "Your Live Photos will appear here": [
+        "Live Photo -kuvasi näkyvät tässä"
+      ],
+      "Your panorama photos will appear here": [
+        "Panoraamakuvasi näkyvät tässä"
+      ],
+      "Your photo bursts will appear here": [
+        "Sarjakuvauksesi näkyvät tässä"
+      ],
+      "Your portraits photos will appear here": [
+        "Muotokuvasi näkyvät tässä"
+      ],
+      "Your RAW photos will appear here": [
+        "RAW-kuvasi näkyvät tässä"
+      ],
+      "Your screenshots will appear here": [
+        "Kuvankaappauksesi näkyvät tässä"
+      ],
+      "Your selfies photos will appear here": [
+        "Selfie-kuvasi näkyvät tässä"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
@@ -10577,6 +10630,9 @@
       "Location": [
         "Sijainti"
       ],
+      "Make a secure connection your default": [
+        "Aseta suojattu yhteys oletuksesi"
+      ],
       "Manage secure link": [
         "Hallitse suojattua linkkiä"
       ],
@@ -10616,8 +10672,41 @@
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
       ],
+      "No bursts": [
+        "Ei sarjakuvia"
+      ],
+      "No favorites": [
+        "Ei suosikkeja"
+      ],
+      "No Live Photos": [
+        "Ei Live Photo -kuvia"
+      ],
+      "No panorama": [
+        "Ei panoraamoja"
+      ],
+      "No photos": [
+        "Ei kuvia"
+      ],
+      "No portraits": [
+        "Ei muotokuvia"
+      ],
+      "No RAW": [
+        "Ei RAW-tiedostoja"
+      ],
       "No results found": [
         "Tuloksia ei löytynyt"
+      ],
+      "No screenshots": [
+        "Ei kuvakaappauksia"
+      ],
+      "No selfies": [
+        "Ei selfieitä"
+      ],
+      "No shared albums": [
+        "Ei jaettuja albumeja"
+      ],
+      "No videos": [
+        "Ei videoita"
       ],
       "Notes": [
         "Muistiinpanot"
