@@ -52,9 +52,17 @@ var Module = {
     })(),
     print: function (text) {
         console.log(text);
+        if (
+            text.includes('PNAMES not found') ||
+            text.includes('COLORMAP not found') ||
+            text.includes('failed to read directory')
+        ) {
+            window.parent.postMessage('FAILED_RUNNING_GAME', '*');
+        }
     },
     printErr: function (text) {
         console.error(text);
+        window.parent.postMessage('FAILED_RUNNING_GAME', '*');
     },
     setStatus: function (text) {
         if (!text) {
