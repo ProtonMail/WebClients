@@ -9,12 +9,29 @@ import { Icon } from '@proton/components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
-import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 import { PhotosClearSelectionButton } from '../components/PhotosClearSelectionButton';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
+import type { PhotosLayoutOutletContext } from '../layout/PhotosLayout';
 import { ToolbarLeftActionsAlbumsGallery, ToolbarLeftActionsGallery } from './PhotosWithAlbumsToolbar';
 
-export const TitleArea = () => {
+export const TitleArea = ({
+    isAlbumsLoading,
+    isPhotosLoading,
+    albums,
+    photos,
+    photoLinkIdToIndexMap,
+    albumPhotos,
+    albumPhotosLinkIdToIndexMap,
+}: Pick<
+    PhotosLayoutOutletContext,
+    | 'isAlbumsLoading'
+    | 'isPhotosLoading'
+    | 'albums'
+    | 'photos'
+    | 'photoLinkIdToIndexMap'
+    | 'albumPhotos'
+    | 'albumPhotosLinkIdToIndexMap'
+>) => {
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -22,9 +39,13 @@ export const TitleArea = () => {
         }))
     );
     const { navigateToAlbums, navigateToAlbum, navigateToPhotos } = useNavigate();
-    const { isAlbumsLoading, isPhotosLoading, albums } = usePhotosWithAlbumsView();
 
-    const { selectedItems, clearSelection } = usePhotosSelection();
+    const { selectedItems, clearSelection } = usePhotosSelection({
+        photos,
+        photoLinkIdToIndexMap,
+        albumPhotos,
+        albumPhotosLinkIdToIndexMap,
+    });
 
     const album = useMemo(() => {
         if (!albumLinkId) {
