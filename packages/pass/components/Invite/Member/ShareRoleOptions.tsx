@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
+import type { InviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { AccessTarget } from '@proton/pass/lib/access/types';
 import { ShareRole } from '@proton/pass/types';
 
 export const getShareRoleDefinition = (
-    target: AccessTarget
+    target: AccessTarget,
+    labels: InviteLabels
 ): Record<ShareRole, { title: string; description: string }> => ({
     [ShareRole.READ]: {
         title: c('Info').t`Viewer`,
@@ -20,24 +22,11 @@ export const getShareRoleDefinition = (
                 ? c('Info').t`Can create, edit, and delete items in this vault.`
                 : c('Info').t`Can create, edit, and delete this item.`,
     },
-    [ShareRole.ADMIN]: {
-        title: c('Info').t`Admin`,
+    [ShareRole.MANAGER]: {
+        title: labels.title,
         description:
             target === AccessTarget.Vault
                 ? c('Info').t`Can grant and revoke access to this vault.`
                 : c('Info').t`Can grant and revoke access to this item.`,
     },
 });
-
-export const shareRoleOptions = (target: AccessTarget) =>
-    Object.entries(getShareRoleDefinition(target))
-        .reverse()
-        .map(([value, { title, description }]) => ({
-            value: value as ShareRole,
-            label: (
-                <div>
-                    <div>{title}</div>
-                    <div className="color-weak">{description}</div>
-                </div>
-            ),
-        }));
