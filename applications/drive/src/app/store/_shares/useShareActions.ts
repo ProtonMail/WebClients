@@ -1,15 +1,20 @@
 import { useCallback } from 'react';
 
 import { usePreventLeave } from '@proton/components';
+import { queryPhotosVolumeMigrate, queryPhotosVolumeMigrationState } from '@proton/shared/lib/api/drive/photos';
 import {
     queryCreateShare,
     queryDeleteShare,
     queryMigrateLegacyShares,
     queryUnmigratedShares,
 } from '@proton/shared/lib/api/drive/share';
+import { queryGetDriveVolume } from '@proton/shared/lib/api/drive/volume';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { type PhotoMigrationPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import { type GetDriveVolumeResult, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { generateShareKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import chunk from '@proton/utils/chunk';
@@ -20,7 +25,17 @@ import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
+import { useVolumesState } from '../_volumes';
+import useDefaultShare from './useDefaultShare';
 import useShare from './useShare';
+
+export enum SHOULD_MIGRATE_PHOTOS_STATUS {
+    NO_PHOTOS_SHARE = 'no-photos-share',
+    NEED_MIGRATION = 'need-migration',
+    MIGRATED = 'migrated',
+}
+
+const MIGRATION_CHECK_INTERVAL = 10000;
 
 /**
  * useShareActions provides actions for manipulating with individual share.
@@ -30,8 +45,10 @@ export default function useShareActions() {
     const debouncedRequest = useDebouncedRequest();
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey } = useLink();
     const { removeLinkForMigration } = useLinksState();
+    const volumesState = useVolumesState();
     const { getShareCreatorKeys, getShare, getShareSessionKey } = useShare();
     const events = useDriveEventManager();
+    const { getDefaultPhotosShare } = useDefaultShare();
 
     const createShare = async (abortSignal: AbortSignal, shareId: string, volumeId: string, linkId: string) => {
         const [{ address, privateKey: addressPrivateKey }, { passphraseSessionKey }, link, linkPrivateKey] =
@@ -219,9 +236,66 @@ export default function useShareActions() {
         [debouncedRequest, getLinkPrivateKey, getShare, getShareSessionKey]
     );
 
+    const shouldMigratePhotos = useCallback(async (): Promise<SHOULD_MIGRATE_PHOTOS_STATUS> => {
+        const photosShare = await getDefaultPhotosShare();
+        if (!photosShare) {
+            return SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE;
+        }
+        const { Volume } = await debouncedRequest<GetDriveVolumeResult>(queryGetDriveVolume(photosShare.volumeId));
+        if (Volume.Type === VolumeType.Photos) {
+            return SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED;
+        }
+        return SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION;
+    }, [debouncedRequest, getDefaultPhotosShare]);
+
+    const migratePhotos = useCallback(
+        () =>
+            new Promise<{ shareId: string; volumeId: string }>(async (resolve, reject) => {
+                try {
+                    await debouncedRequest(queryPhotosVolumeMigrate());
+                } catch (e: unknown) {
+                    const error = e as {
+                        data?: { Code: number };
+                    };
+                    if (error?.data?.Code !== API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
+                        throw e;
+                    }
+                }
+
+                let intervalId: ReturnType<typeof setInterval>;
+                const checkMigrationState = async () => {
+                    try {
+                        const result = await debouncedRequest<PhotoMigrationPayload>(queryPhotosVolumeMigrationState());
+                        // If we receive a result with OldVolumeID and NewVolumeID, migration is complete
+                        if (result.OldVolumeID && result.NewVolumeID) {
+                            const { Volume } = await debouncedRequest<GetDriveVolumeResult>(
+                                queryGetDriveVolume(result.NewVolumeID)
+                            );
+                            volumesState.setVolumeShareIds(result.NewVolumeID, [Volume.Share.ShareID]);
+                            clearInterval(intervalId);
+                            resolve({ shareId: Volume.Share.ShareID, volumeId: Volume.VolumeID });
+                            return;
+                        }
+                    } catch (error) {
+                        reject(error);
+                    }
+                };
+
+                // Start checking migration state
+                void checkMigrationState();
+                // Check at specific interval if migration is done
+                intervalId = setInterval(() => {
+                    void checkMigrationState();
+                }, MIGRATION_CHECK_INTERVAL);
+            }),
+        [debouncedRequest, volumesState]
+    );
+
     return {
         createShare,
         deleteShare,
         migrateShares,
+        migratePhotos,
+        shouldMigratePhotos,
     };
 }

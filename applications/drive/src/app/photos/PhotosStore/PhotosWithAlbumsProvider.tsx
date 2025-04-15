@@ -26,10 +26,11 @@ import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
 import { useLinksActions } from '../../store/_links';
 import useLinksState from '../../store/_links/useLinksState';
-import { useShare } from '../../store/_shares';
+import { useShare, useShareActions } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
+import { SHOULD_MIGRATE_PHOTOS_STATUS } from '../../store/_shares/useShareActions';
 import { useBatchHelper } from '../../store/_utils/useBatchHelper';
-import { VolumeType, useVolumesState } from '../../store/_volumes';
+import { VolumeTypeForEvents, useVolumesState } from '../../store/_volumes';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
@@ -94,8 +95,15 @@ export const PhotosWithAlbumsContext = createContext<{
     deleteAlbum: (abortSignal: AbortSignal, albumLinkId: string, force: boolean) => Promise<void>;
     favoritePhoto: (abortSignal: AbortSignal, linkId: string) => Promise<void>;
     removeTagsFromPhoto: (abortSignal: AbortSignal, linkId: string, tags: PhotoTag[]) => Promise<void>;
+    migrationStatus: 'unknown' | 'migrating' | 'migrated' | 'no-share';
+    startPhotosMigration: () => void;
 } | null>(null);
 
+export enum MIGRATION_STATUS {
+    UNKNOWN = 'unknown',
+    MIGRATING = 'migrating',
+    MIGRATED = 'migrated',
+}
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
     const shareId = photosShare?.shareId;
@@ -113,6 +121,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
+    const [migrationStatus, setMigrationStatus] = useState<MIGRATION_STATUS>(MIGRATION_STATUS.UNKNOWN);
     const [currentAlbumLinkId, setCurrentAlbumLinkId] = useState<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
     const { getShareWithKey, getShare, getShareCreatorKeys } = useShare();
@@ -120,36 +129,55 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { getLink } = useLink();
     const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
+    const { shouldMigratePhotos, migratePhotos } = useShareActions();
 
     const { createNotification } = useNotifications();
 
-    useEffect(() => {
+    const startPhotosMigration = async () => {
         const signal = new AbortController().signal;
-        void Promise.all([getDefaultPhotosShare()]).then(async ([defaultPhotosShare]) => {
-            //TODO: Migration case where the share exist but is from old volume type=1
-            if (!defaultPhotosShare) {
-                // If no share, create new photo share
-                const createdPhotos = await createPhotosWithAlbumsShare();
-                const share = await getShareWithKey(signal, createdPhotos.shareId);
-                setPhotosShare(share);
-                setVolumeShareIds(share.volumeId, [share.shareId]);
-                const { address } = await getShareCreatorKeys(signal, share);
-                setUserAddressEmail(address.Email);
-            } else {
-                // use old photo share
-                setPhotosShare(defaultPhotosShare);
-                const { address } = await getShareCreatorKeys(signal, defaultPhotosShare);
-                setUserAddressEmail(address.Email);
+        const status = await shouldMigratePhotos();
+
+        const needToCreateOrMigrate =
+            status === SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE ||
+            status === SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION;
+
+        if (needToCreateOrMigrate) {
+            if (status === SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION) {
+                setMigrationStatus(MIGRATION_STATUS.MIGRATING);
             }
-        });
-    }, []);
+
+            let result;
+            if (status === SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE) {
+                result = await createPhotosWithAlbumsShare();
+            } else {
+                result = await migratePhotos();
+            }
+
+            const newPhotosShare = await getShareWithKey(signal, result.shareId);
+            const { address } = await getShareCreatorKeys(signal, newPhotosShare);
+
+            setPhotosShare(newPhotosShare);
+            setUserAddressEmail(address.Email);
+            setMigrationStatus(MIGRATION_STATUS.MIGRATED);
+        } else {
+            const defaultPhotosShare = await getDefaultPhotosShare();
+            if (!defaultPhotosShare) {
+                throw new Error('No default photos share found');
+            }
+
+            setPhotosShare(defaultPhotosShare);
+            const { address } = await getShareCreatorKeys(signal, defaultPhotosShare);
+            setUserAddressEmail(address.Email);
+            setMigrationStatus(MIGRATION_STATUS.MIGRATED);
+        }
+    };
 
     useEffect(() => {
         if (volumeId === undefined) {
             return;
         }
 
-        driveEventManager.volumes.startSubscription(volumeId, VolumeType.photo).catch(console.warn);
+        driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.photo).catch(console.warn);
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
@@ -827,6 +855,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 favoritePhoto,
                 removeTagsFromPhoto,
                 userAddressEmail,
+                migrationStatus,
+                startPhotosMigration,
             }}
         >
             {children}

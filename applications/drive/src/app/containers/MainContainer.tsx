@@ -28,7 +28,7 @@ import {
 import { useSanitization } from '../store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
-import { VolumeType } from '../store/_volumes';
+import { VolumeTypeForEvents } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
@@ -141,7 +141,7 @@ const InitContainer = () => {
             return;
         }
 
-        driveEventManager.volumes.startSubscription(volumeId, VolumeType.main).catch(console.warn);
+        driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.main).catch(console.warn);
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
