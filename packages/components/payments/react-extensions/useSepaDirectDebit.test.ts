@@ -1,5 +1,4 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { act } from '@testing-library/react-hooks';
 
 import {
     type AmountAndCurrency,
@@ -7,12 +6,13 @@ import {
     type ChargebeeIframeHandles,
     PAYMENT_METHOD_TYPES,
     PLANS,
+    SepaEmailNotProvidedError,
 } from '@proton/payments';
 import { apiMock } from '@proton/testing/index';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';
-import { type Dependencies, SepaFormInvalidError } from './useSepaDirectDebit';
-import { SepaEmailNotProvidedError, useSepaDirectDebit } from './useSepaDirectDebit';
+import { type Dependencies } from './useChargebeeCard';
+import { useSepaDirectDebit } from './useSepaDirectDebit';
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -35,11 +35,6 @@ it('should render', () => {
         handles: {} as ChargebeeIframeHandles,
         forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const { result } = renderHook(() =>
@@ -75,11 +70,6 @@ it('should fetch payment token', async () => {
         handles: getMockedIframeHandles(),
         forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const { result } = renderHook(() =>
@@ -144,11 +134,6 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
         handles: getMockedIframeHandles(),
         forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const onBeforeSepaPayment = jest.fn();
@@ -211,11 +196,6 @@ it('should verify payment token', async () => {
                 v: 5,
             };
         }),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const { result } = renderHook(() =>
@@ -275,11 +255,6 @@ it('should not verify token if amount is 0', async () => {
         handles: getMockedIframeHandles(),
         forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const { result } = renderHook(() =>
@@ -341,11 +316,6 @@ it('should reset token if verification fails', async () => {
         verifyPayment: jest.fn().mockImplementation(() => {
             return Promise.reject(new Error('Verification failed'));
         }),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const { result } = renderHook(() =>
@@ -394,11 +364,6 @@ it('automatically sets customer name type to company if plan is B2B', () => {
         handles: getMockedIframeHandles(),
         forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const { result, rerender } = renderHook(
@@ -439,11 +404,6 @@ it('should throw an error when email is not provided', async () => {
         handles: getMockedIframeHandles(),
         forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
-        formErrors: {
-            validator: jest.fn(),
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
     };
 
     const { result } = renderHook(() =>
@@ -498,164 +458,4 @@ it('should throw an error when email is not provided', async () => {
 
     expect(result.current.fetchingToken).toBe(false);
     expect(result.current.getFetchedPaymentToken()).toEqual(null);
-});
-
-it('should report the errors reported by the validator - B2B plan', () => {
-    const validator = jest.fn();
-    validator.mockReturnValue('error');
-
-    const dependencies: Dependencies = {
-        api: apiMock,
-        events: {} as ChargebeeIframeEvents,
-        handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
-        verifyPayment: jest.fn(),
-        formErrors: {
-            validator,
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
-    };
-
-    const { result } = renderHook(() =>
-        useSepaDirectDebit(
-            {
-                amountAndCurrency: {
-                    Amount: 500,
-                    Currency: 'EUR',
-                },
-                onChargeable: jest.fn(),
-                onProcessPaymentToken: jest.fn(),
-                onProcessPaymentTokenFailed: jest.fn(),
-                selectedPlanName: PLANS.MAIL_PRO,
-            },
-            dependencies
-        )
-    );
-
-    expect(result.current.errors.companyError).toEqual('error');
-    expect(result.current.errors.firstNameError).toEqual(undefined);
-    expect(result.current.errors.lastNameError).toEqual(undefined);
-    expect(result.current.errors.ibanError).toEqual('error');
-    expect(result.current.errors.addressError).toEqual(undefined);
-});
-
-it('should report the errors reported by the validator - B2C plan', () => {
-    const validator = jest.fn();
-    validator.mockReturnValue('error');
-
-    const dependencies: Dependencies = {
-        api: apiMock,
-        events: {} as ChargebeeIframeEvents,
-        handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
-        verifyPayment: jest.fn(),
-        formErrors: {
-            validator,
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
-    };
-
-    const { result } = renderHook(() =>
-        useSepaDirectDebit(
-            {
-                amountAndCurrency: {
-                    Amount: 500,
-                    Currency: 'EUR',
-                },
-                onChargeable: jest.fn(),
-                onProcessPaymentToken: jest.fn(),
-                onProcessPaymentTokenFailed: jest.fn(),
-                selectedPlanName: PLANS.MAIL,
-            },
-            dependencies
-        )
-    );
-
-    expect(result.current.errors.companyError).toEqual(undefined);
-    expect(result.current.errors.firstNameError).toEqual('error');
-    expect(result.current.errors.lastNameError).toEqual('error');
-    expect(result.current.errors.ibanError).toEqual('error');
-    expect(result.current.errors.addressError).toEqual(undefined);
-});
-
-it('should report the errors reported by the validator - no address provided', async () => {
-    const validator = jest.fn();
-    validator.mockReturnValue('error');
-
-    const dependencies: Dependencies = {
-        api: apiMock,
-        events: {} as ChargebeeIframeEvents,
-        handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
-        verifyPayment: jest.fn(),
-        formErrors: {
-            validator,
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
-    };
-
-    const { result } = renderHook(() =>
-        useSepaDirectDebit(
-            {
-                amountAndCurrency: {
-                    Amount: 500,
-                    Currency: 'EUR',
-                },
-                onChargeable: jest.fn(),
-                onProcessPaymentToken: jest.fn(),
-                onProcessPaymentTokenFailed: jest.fn(),
-                selectedPlanName: PLANS.MAIL,
-            },
-            dependencies
-        )
-    );
-
-    expect(result.current.errors.addressError).toEqual(undefined);
-
-    await act(async () => {
-        result.current.setBankAccount({ iban: 'CH9300762011623852957' });
-    });
-
-    expect(result.current.errors.addressError).toEqual('error');
-});
-
-// test for SepaFormInvalidError
-it('should throw an error when the form is invalid', async () => {
-    const validator = jest.fn();
-    validator.mockReturnValue('error');
-
-    const dependencies: Dependencies = {
-        api: apiMock,
-        events: {} as ChargebeeIframeEvents,
-        handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
-        verifyPayment: jest.fn(),
-        formErrors: {
-            validator,
-            reset: jest.fn(),
-            onFormSubmit: jest.fn().mockReturnValue(true),
-        },
-    };
-
-    const { result } = renderHook(() =>
-        useSepaDirectDebit(
-            {
-                amountAndCurrency: {
-                    Amount: 500,
-                    Currency: 'EUR',
-                },
-                onChargeable: jest.fn(),
-                onProcessPaymentToken: jest.fn(),
-                onProcessPaymentTokenFailed: jest.fn(),
-                selectedPlanName: PLANS.MAIL,
-            },
-            dependencies
-        )
-    );
-
-    await expect(result.current.fetchPaymentToken()).rejects.toThrow(SepaFormInvalidError);
-    expect(apiMock).not.toHaveBeenCalled();
 });

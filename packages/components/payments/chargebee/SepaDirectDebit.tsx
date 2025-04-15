@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 
+import { electronicFormatIBAN, isValidIBAN } from 'ibantools';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
+import { extractIBAN } from '@proton/payments';
 import { CountriesDropdown } from '@proton/payments/ui';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { type ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
 import { ChargebeeIframe } from './ChargebeeIframe';
@@ -14,13 +18,20 @@ import { SepaAuthorizationText } from './SepaAuthorizationText';
 
 export interface DirectDebitProps extends ChargebeeWrapperProps {
     directDebit: ChargebeeDirectDebitProcessorHook;
+    formErrors?: FormErrorsHook;
 }
 
-export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
+export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebitProps) => {
+    const { validator } = formErrors ?? {};
+
+    const { company, firstName, lastName } = directDebit.customer;
+    const iban = directDebit.bankAccount.iban;
+    const electronicIban = electronicFormatIBAN(iban) ?? '';
+
     const [showCountryCode, setShowCountryCode] = useState(false);
-    const { valid, requiresAddress, countryCode } = directDebit.ibanStatus;
 
     useEffect(() => {
+        const { valid, requiresAddress, countryCode } = extractIBAN(electronicIban);
         if (!valid) {
             return;
         }
@@ -39,13 +50,9 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
             directDebit.setAddressLine1('');
             return;
         }
-    }, [valid, requiresAddress, countryCode]);
+    }, [electronicIban]);
 
     const loading = directDebit.processingToken;
-    const {
-        customer: { company, firstName, lastName },
-        errors,
-    } = directDebit;
 
     return (
         <div>
@@ -58,7 +65,7 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
                     disableChange={loading}
                     autoComplete="off"
                     name="company-name"
-                    error={errors.companyError}
+                    error={validator?.([requiredValidator(company)])}
                     dense={true}
                     data-protonpass-ignore={true}
                     label={c('Label').t`Company name`}
@@ -75,7 +82,7 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
                             disableChange={loading}
                             autoComplete="off"
                             name="first-name"
-                            error={errors.firstNameError}
+                            error={validator?.([requiredValidator(firstName)])}
                             dense={true}
                             data-protonpass-ignore={true}
                         />
@@ -90,7 +97,7 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
                             disableChange={loading}
                             autoComplete="off"
                             name="last-name"
-                            error={errors.lastNameError}
+                            error={validator?.([requiredValidator(lastName)])}
                             dense={true}
                             data-protonpass-ignore={true}
                         />
@@ -115,7 +122,7 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
             <InputFieldTwo
                 label={c('Label').t`IBAN`}
                 placeholder={'XX00 0000 0000 0000 0000 00'}
-                value={directDebit.bankAccount.iban}
+                value={iban}
                 onValue={(iban: string) => {
                     directDebit.setBankAccount((bankAccount) => ({
                         ...bankAccount,
@@ -126,7 +133,10 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
                 disableChange={loading}
                 autoComplete="off"
                 name="iban"
-                error={errors.ibanError}
+                error={validator?.([
+                    requiredValidator(electronicIban),
+                    isValidIBAN(electronicIban) ? '' : c('Error').t`Invalid IBAN`,
+                ])}
                 dense={true}
             />
             {showCountryCode && (
@@ -151,7 +161,7 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
                         disableChange={loading}
                         autoComplete="off"
                         name="address"
-                        error={errors.addressError}
+                        error={validator?.([requiredValidator(directDebit.customer.addressLine1)])}
                         dense={true}
                         data-testid="sepa-address"
                         aria-describedby="address-decription"
