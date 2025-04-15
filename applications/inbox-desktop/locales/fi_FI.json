@@ -14,11 +14,44 @@
       "Clear application data": [
         "Tyhjennä sovelluksen tiedot"
       ],
+      "Close Window": [
+        "Sulje ikkuna"
+      ],
+      "Copy": [
+        "Kopioi"
+      ],
+      "Cut": [
+        "Leikkaa"
+      ],
+      "Delete": [
+        "Poista"
+      ],
       "Force Reload": [
         "Pakota uudelleenlataus"
       ],
+      "Hide Others": [
+        "Piilota muut"
+      ],
+      "Minimize": [
+        "Pienennä"
+      ],
+      "Paste": [
+        "Liitä"
+      ],
+      "Quit": [
+        "Lopeta"
+      ],
+      "Redo": [
+        "Tee uudelleen"
+      ],
       "Reload": [
         "Lataa uudelleen"
+      ],
+      "Select All": [
+        "Valitse kaikki"
+      ],
+      "Show All": [
+        "Näytä kaikki"
       ],
       "Show logs": [
         "Näytä lokit"
@@ -26,11 +59,23 @@
       "Speech": [
         "Puhe"
       ],
-      "Start Proton Mail at login": [
-        "Käynnistä Proton Mail kirjauduttaessa"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Käynnistä ${ MAIL_APP_NAME } kirjauduttaessa"
       ],
-      "Uninstall Proton Mail": [
-        "Poista Proton Mailin asennus"
+      "Start Speaking": [
+        "Aloita puhuminen"
+      ],
+      "Stop Speaking": [
+        "Lopeta puhuminen"
+      ],
+      "Undo": [
+        "Kumoa"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Poista ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Suurenna"
       ],
       "Zoom In": [
         "Lähennä"
@@ -39,12 +84,9 @@
         "Loitonna"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Tallenna kuva nimellä…"
-      ],
-      "Speech": [
-        "Puhe"
+    "App Menu": {
+      "Services": [
+        "Palvelut"
       ]
     },
     "Context menu": {
@@ -56,11 +98,38 @@
       ],
       "Emoji and Symbols": [
         "Emojit ja symbolit"
+      ],
+      "Save image as…": [
+        "Tallenna kuva nimellä…"
+      ],
+      "Speech": [
+        "Puhe"
+      ],
+      "Start Speaking": [
+        "Aloita puhuminen"
+      ],
+      "Stop Speaking": [
+        "Lopeta puhuminen"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopioi"
+      ],
+      "Cut": [
+        "Leikkaa"
+      ],
+      "Paste": [
+        "Liitä"
+      ],
+      "Redo": [
+        "Tee uudelleen"
+      ],
+      "Select All": [
+        "Valitse kaikki"
+      ],
+      "Undo": [
+        "Kumoa"
       ]
     },
     "Error dialog": {

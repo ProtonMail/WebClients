@@ -344,9 +344,6 @@
       "Got it": [
         "알겠습니다"
       ],
-      "Help": [
-        "도움말"
-      ],
       "Help and feedback": [
         "도움말 및 의견"
       ],
@@ -3090,6 +3087,9 @@
       "Email address is required": [
         "이메일 주소가 필요함"
       ],
+      "Email is not valid": [
+        "유효하지 않은 이메일"
+      ],
       "Ends on date cannot be empty": [
         "종료 날짜는 비워둘 수 없습니다"
       ],
@@ -3137,6 +3137,9 @@
       ],
       "IMAP server is required": [
         "IMAP 서버가 필요함"
+      ],
+      "Incorrect username": [
+        "잘못된 사용자 이름"
       ],
       "Intended recipient does not support calendar sharing": [
         "지정한 수신자가 캘린더 공유를 지원하지 않습니다."
@@ -3228,6 +3231,9 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정이 아님"
       ],
+      "Not a valid number": [
+        "유효하지 않은 번호"
+      ],
       "Number of occurrences cannot be empty": [
         "발생 횟수는 비워 둘 수 없습니다."
       ],
@@ -3242,6 +3248,9 @@
       ],
       "Password is required": [
         "비밀번호가 필요함"
+      ],
+      "Passwords do not match": [
+        "비밀번호가 일치하지 않습니다"
       ],
       "Payment process canceled": [
         "결제 과정 취소됨"
@@ -3342,6 +3351,9 @@
       "The amount due has changed. Please try again.": [
         "결제 예정 가격이 변경되었습니다. 다시 시도해 주세요."
       ],
+      "The email addresses do not match": [
+        "이메일 주소가 일치하지 않습니다."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "폴더 이름이 유효하지 않습니다. 다른 이름을 사용해 주세요."
       ],
@@ -3369,8 +3381,14 @@
       "There was an error when exporting the contacts vCards": [
         "연락처 vCard를 내보낼 때 오류가 발생했어요."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
+      ],
       "This field is required": [
         "필수 기재 항목입니다"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
       "This folder name is not available. Please choose a different name.": [
         "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
@@ -3384,6 +3402,9 @@
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN 대시보드를 불러오지 못했습니다. 연결 상태 확인 후 다시 시도해 주세요."
       ],
@@ -3395,6 +3416,12 @@
       ],
       "Unknown payment token status": [
         "알 수 없는 결제 토큰 상태"
+      ],
+      "Username must begin with a letter or digit": [
+        "사용자명은 문자로 시작해야 합니다"
+      ],
+      "Username must end with a letter or digit": [
+        "사용자 이름은 문자로 시작하여야 합니다."
       ],
       "Validation error": [
         "검증 오류"
@@ -10382,6 +10409,14 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "인증된 연락처의 종단 간 암호화로 공유됨"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]
     },
     "Video control": {

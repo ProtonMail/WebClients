@@ -685,9 +685,6 @@
       "Got it": [
         "Rozumím"
       ],
-      "Help": [
-        "Pomoc"
-      ],
       "Help and feedback": [
         "Nápověda a zpětná vazba"
       ],
@@ -974,7 +971,7 @@
         "Požádat o hovor"
       ],
       "Request a feature": [
-        "Požádat o funkci"
+        "Požádejte o funkci"
       ],
       "Request new code": [
         "Vyžádejte si nový kód"
@@ -4248,7 +4245,7 @@
         "${ BRAND_NAME } vás nikdy nepožádá o zadání kódu, který nepochází z domény ${ domain } nebo z oficiální aplikace ${ BRAND_NAME }."
       ],
       "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Jak to funguje:** Zadejte kód zobrazený na zařízení, ke kterému se chcete přihlásit do tohoto zařízení. Budete přihlášeni jako **${ email }**. Obě zařízení zůstanou aktivní. "
+        "**Jak to funguje:** Zadejte kód zobrazený na zařízení, ke kterému se chcete přihlásit. Budete přihlášeni jako **${ email }**. Obě zařízení zůstanou aktivní. "
       ],
       "Allow scanning a QR code to sign in": [
         "Povolte skenování QR kódu pro přihlášení"
@@ -4904,6 +4901,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Nepodařilo se načíst modální okno OAuth."
+      ],
+      "Failed to load the STL preview": [
+        "Načtení náhledu STL selhalo"
       ],
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
@@ -18986,6 +18986,9 @@
       "Bridge for ${ platform }": [
         "Bridge pro ${ platform }"
       ],
+      "Browser extensions": [
+        "Rozšíření prohlížeče"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -19231,6 +19234,9 @@
       ],
       "Description": [
         "Popis"
+      ],
+      "Desktop": [
+        "Desktop"
       ],
       "Device": [
         "Zařízení"
@@ -19627,6 +19633,9 @@
       ],
       "Minicalendar": [
         "Minikalendář"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Multi-user support": [
         "Podpora pro více uživatelů"

@@ -344,9 +344,6 @@
       "Got it": [
         "समझ गए"
       ],
-      "Help": [
-        "सहायता"
-      ],
       "Hide advanced PGP settings": [
         "एडवांस PGP सेटिंग छुपाएं"
       ],
@@ -3056,6 +3053,9 @@
       "Email address is required": [
         "ईमेल पता चाहिए"
       ],
+      "Email is not valid": [
+        "ईमेल मान्य नहीं है"
+      ],
       "Ends on date cannot be empty": [
         "समाप्ति तिथि खाली नहीं रेह सकती"
       ],
@@ -3103,6 +3103,9 @@
       ],
       "IMAP server is required": [
         "IMAP सर्वर चाहिए"
+      ],
+      "Incorrect username": [
+        "गलत यूज़रनेम"
       ],
       "Intended recipient does not support calendar sharing": [
         "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता"
@@ -3195,6 +3198,9 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } खाता नहीं"
       ],
+      "Not a valid number": [
+        "मान्य संख्या नहीं है"
+      ],
       "Number of occurrences cannot be empty": [
         "घटनाओं की संख्या खाली नहीं हो सकती"
       ],
@@ -3211,6 +3217,9 @@
       ],
       "Password is required": [
         "पासवर्ड चाहिए"
+      ],
+      "Passwords do not match": [
+        "पासवर्ड्स समान नहीं हैं"
       ],
       "Payment process canceled": [
         "भुगतान प्रॉसेस रद्द"
@@ -3313,6 +3322,9 @@
       "The amount due has changed. Please try again.": [
         "देय राशि बदल गई है। कृपया पुनः प्रयास करें।"
       ],
+      "The email addresses do not match": [
+        "ईमेल पते मेल नहीं खाते"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "फ़ोल्डर का नाम अमान्य है। कृपया कोई दूसरा नाम चुनें |"
       ],
@@ -3340,8 +3352,14 @@
       "There was an error when exporting the contacts vCards": [
         "संपर्क vCards निर्यात करते समय एक त्रुटि हुई थी"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ये फील्ड ${ maximumLength } अक्षर की सीमा पार करता है।"
+      ],
       "This field is required": [
         "यह जानकारी आवश्यक है"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "इस फ़ील्ड के लिए कम से कम ${ minimumLength } वर्णों की आवश्यकता है।"
       ],
       "This folder name is not available. Please choose a different name.": [
         "यह फ़ोल्डर नाम उपलब्ध नहीं है। कृपया कोई दूसरा नाम चुनें |"
@@ -3355,6 +3373,9 @@
       "Trusted keys are not valid for sending": [
         "विश्वसनीय कुंजियाँ भेजने के लिए मान्य नहीं हैं"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "सिर्फ अक्षर, नंबर, और _ के इस्तेमाल की कोशिश करें।-"
+      ],
       "Unexpected error, we can't import the contacts": [
         "अनपेक्षित एरर, हम संपर्कों को आयात नहीं कर सकते"
       ],
@@ -3363,6 +3384,12 @@
       ],
       "Unknown payment token status": [
         "अज्ञात भुगतान टोकन स्थिति"
+      ],
+      "Username must begin with a letter or digit": [
+        "यूज़रनेम की शुरुआत में अक्षर या अंक होना चाहिए"
+      ],
+      "Username must end with a letter or digit": [
+        "यूज़रनेम के आखिर में अक्षर या अंक होना चाहिए"
       ],
       "Validation error": [
         "मान्यता त्रुटि"
@@ -10271,6 +10298,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "सत्यापित संपर्क के साथ शुरु-से-अंत तक एन्क्रिप्ट किये तरीके से शेयर किया"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
       ]
     },
     "Video control": {

@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "Αποδοχή πρόσκλησης στο έγγραφο"
       ],
+      "Actions": [
+        "Ενέργειες"
+      ],
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
@@ -124,6 +127,9 @@
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
       ],
+      "Change sort order": [
+        "Αλλαγή σειράς ταξινόμησης"
+      ],
       "characters": [
         "χαρακτήρες"
       ],
@@ -160,6 +166,12 @@
       "Collapse": [
         "Σύμπτυξη"
       ],
+      "Collapse list": [
+        "Σύμπτυξη λίστας"
+      ],
+      "Collapse list of pending invitations": [
+        "Σύμπτυξη λίστας εκκρεμών προσκλήσεων"
+      ],
       "Compose": [
         "Σύνταξη"
       ],
@@ -171,9 +183,6 @@
       ],
       "Contact group": [
         "Ομάδα Επαφών"
-      ],
-      "Context menu": [
-        "Μενού πλαισίου"
       ],
       "Continue": [
         "Συνέχεια"
@@ -657,6 +666,9 @@
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
       ],
+      "Sort by": [
+        "Ταξινόμηση κατά"
+      ],
       "Start import": [
         "Έναρξη εισαγωγής"
       ],
@@ -752,6 +764,9 @@
       ],
       "View": [
         "Προβολή"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Προβολή όλων των ${ pendingCount } προσκλήσεων"
       ],
       "View all reports": [
         "Προβολή όλων των αναφορών"

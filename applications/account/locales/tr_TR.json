@@ -685,9 +685,6 @@
       "Got it": [
         "Anladım"
       ],
-      "Help": [
-        "Yardım"
-      ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "Varsayılan olarak ayarla"
-      ],
-      "Set as default mail application": [
-        "Varsayılan e-posta uygulaması olarak ayarla"
       ],
       "Set catch-all": [
         "Tümünü toplama adresi yap"
@@ -3771,12 +3765,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız değil."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız."
-      ],
       "Also included": [
         "Ayrıca şunlar da bulunur"
       ],
@@ -9890,9 +9878,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kapatıldığında, görsel dosyalarının bilginiz olmadan aygıtınıza yüklenmesi engellenir."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "${ MAIL_APP_NAME } uygulamasının varsayılan e-posta uygulamanız olup olmadığını denetler ve değilse sizi bilgilendirir."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
@@ -18543,9 +18528,6 @@
       "Change second password": [
         "İkinci parolayı değiştir"
       ],
-      "Check your default mail application": [
-        "Varsayılan e-posta uygulamanızı denetleyin"
-      ],
       "Choose an account": [
         "Bir hesap seçin"
       ],
@@ -18748,6 +18730,9 @@
       ],
       "Description": [
         "Açıklama"
+      ],
+      "Desktop": [
+        "Bilgisayar"
       ],
       "Device": [
         "Aygıt"
@@ -19140,6 +19125,9 @@
       ],
       "Minicalendar": [
         "Mini takvim"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Multi-user support": [
         "Çok kullanıcı desteği"

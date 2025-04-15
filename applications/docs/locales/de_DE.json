@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "Einladung zum Dokument annehmen"
       ],
+      "Actions": [
+        "Aktionen"
+      ],
       "Activate recovery": [
         "Wiederherstellung aktivieren"
       ],
@@ -124,6 +127,9 @@
       "Cancel subscription": [
         "Abonnement kündigen"
       ],
+      "Change sort order": [
+        "Sortierreihenfolge ändern"
+      ],
       "characters": [
         "Zeichen"
       ],
@@ -160,6 +166,12 @@
       "Collapse": [
         "Einklappen"
       ],
+      "Collapse list": [
+        "Liste ausblenden"
+      ],
+      "Collapse list of pending invitations": [
+        "Liste der ausstehenden Einladungen ausblenden"
+      ],
       "Compose": [
         "Verfassen"
       ],
@@ -171,9 +183,6 @@
       ],
       "Contact group": [
         "Kontaktgruppe"
-      ],
-      "Context menu": [
-        "Kontextmenü"
       ],
       "Continue": [
         "Weiter"
@@ -657,6 +666,9 @@
       "Skip verification": [
         "Überprüfung überspringen"
       ],
+      "Sort by": [
+        "Sortieren nach"
+      ],
       "Start import": [
         "Importvorgang starten"
       ],
@@ -752,6 +764,9 @@
       ],
       "View": [
         "Anzeigen"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Alle ${ pendingCount } Einladungen ansehen"
       ],
       "View all reports": [
         "Alle Berichte anzeigen"
@@ -1012,7 +1027,7 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sichere deine E-Mails und deinen Zeitplan mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliase und mehr."
+        "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
@@ -2494,7 +2509,7 @@
         "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } vorläufig angenommen"
       ]
     },
     "Email subject": {
@@ -3114,7 +3129,7 @@
     },
     "Error message": {
       "App currently unavailable": [
-        "Die App ist derzeit nicht verfügbar."
+        "App ist zurzeit nicht verfügbar"
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
@@ -3942,10 +3957,10 @@
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Ein VPN verschlüsselt deine Verbindung und verbirgt deine IP-Adresse, so dass es für andere viel schwieriger ist, dein Surfverhalten zu verfolgen oder zu überwachen."
+        "Ein VPN verschlüsselt deine Verbindung und verbirgt deine IP-Adresse, sodass es für andere viel schwieriger ist, dein Surfverhalten zu verfolgen oder zu überwachen."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Ein VPN verbirgt deine IP-Adresse und verschlüsselt deine Surf-Aktivitäten, so dass es für Websites, Werbetreibende und Internetanbieter schwieriger wird, dich im Laufe der Zeit zu verfolgen."
+        "Ein VPN verbirgt deine IP-Adresse und verschlüsselt deine Surf-Aktivitäten, sodass es für Websites, Werbetreibende und Internetanbieter schwieriger wird, dich im Laufe der Zeit zu verfolgen."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ein VPN ist ein sicherer Tunnel zwischen deinem Gerät und dem Internet. Er verbirgt deinen Standort und deine Aktivitäten vor deinem Internetdienstanbieter (ISP) und den von dir besuchten Websites."
@@ -4486,7 +4501,7 @@
         "Konten überwachen"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Die meisten öffentlichen WLAN-Netzwerke sind sicher, aber einige sind nicht sicher genug, so dass du Cyber-Bedrohungen ausgesetzt bist. Ein VPN verschlüsselt deinen Datenverkehr, damit du geschützt bist."
+        "Die meisten öffentlichen WLAN-Netzwerke sind sicher, aber einige sind nicht sicher genug, sodass du Cyber-Bedrohungen ausgesetzt bist. Ein VPN verschlüsselt deinen Datenverkehr, damit du geschützt bist."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
@@ -4650,7 +4665,7 @@
         "Primär"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Der Modus „Privates Surfen“ (oder „Inkognito“) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
+        "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
       ],
       "Public documents are not yet enabled for your organization.": [
         "Öffentliche Dokumente sind für deine Organisation noch nicht aktiviert."
@@ -4668,7 +4683,7 @@
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Registering your subscription…": [
-        "Registrierung deines Abonnements…"
+        "Dein Abonnement wird registriert…"
       ],
       "Restored version to": [
         "Wiederhergestellte Version zu"
@@ -4701,7 +4716,7 @@
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+        "SEPA-Zahlungen sind derzeit nicht verfügbar. Probiere es später erneut."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -4780,7 +4795,7 @@
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
-        "Danke, dass du dich angemeldet hast. Sicheres Surfen beginnt jetzt."
+        "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
@@ -4852,7 +4867,7 @@
         "Diese Nachricht wird später erneut angezeigt"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Dieser eindeutige Code kann von Webseiten und ISPs (Internet-Diensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
+        "Dieser eindeutige Code kann von Webseiten und ISPs (Internetdiensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
       ],
       "This will permanently delete the file you uploaded.": [
         "Dadurch wird die hochgeladene Datei endgültig gelöscht."
@@ -5133,8 +5148,8 @@
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann nach ${ renewCycle } Monat zu ${ renewAmountStr } abgerechnet.",
-        "Sie werden dann alle ${ renewCycle } Monate zu ${ renewAmountStr } abgerechnet."
+        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
+        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
       ],
       "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du bist dabei, die Beitrittseinladung für das Album ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Album nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
@@ -5355,7 +5370,7 @@
         "Anschrift"
       ],
       "Anderson": [
-        "Anderson"
+        "Mustermann"
       ],
       "Anyone on the Internet with the link can edit": [
         "Jeder mit dem Link kann bearbeiten"
@@ -5439,7 +5454,7 @@
         "Farben"
       ],
       "Company name": [
-        "Unternehmensname"
+        "Firmenname"
       ],
       "Confirm password": [
         "Passwort bestätigen"
@@ -5778,7 +5793,7 @@
         "Problembeschreibung"
       ],
       "What is your main reason for canceling or downgrading?": [
-        "Was ist dein Hauptgrund für die Kündigung oder das Downgrade?"
+        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "Your alias": [
         "Dein Alias"
@@ -6552,7 +6567,7 @@
         "Benutzerdefinierte Felder"
       ],
       "Custom snooze time": [
-        "Eigene stumm Zeit"
+        "Benutzerdefinierte Zurückstellzeit"
       ],
       "Custom workspace branding": [
         "Eigenes Workspace-Branding"
@@ -6815,7 +6830,7 @@
         "Tresor teilen (bis zu ${ n } Personen)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
       ]
     },
     "new_plans: feature highlight": {
@@ -6836,7 +6851,7 @@
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
       ],
       "Snooze messages and get reminded when you want": [
-        "Schalte Nachrichten stumm und werde daran erinnert wann immer du möchtest."
+        "Stelle Nachrichten zurück und werde daran erinnert wann immer du möchtest."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -7663,7 +7678,7 @@
         "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Jährlich abgerechnet zu ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (gegenüber 6 einzelnen ${ passPlusPlanName }-Abonnements)."
+        "Jährliche Abrechnung zum Preis von ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (im Vergleich zu 6 einzelnen ${ passPlusPlanName }-Abonnements)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
@@ -7841,7 +7856,7 @@
         "Externer Schlüssel wurde automatisch über WKD abgerufen."
       ],
       "This key is used to encrypt messages to this contact": [
-        "Dieser Schlüssel wird zum Verschlüsseln von Nachrichten an diesen Kontakt verwendet."
+        "Dieser Schlüssel wird verwendet, um Nachrichten an diesen Kontakt zu verschlüsseln"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."

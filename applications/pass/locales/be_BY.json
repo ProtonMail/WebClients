@@ -1045,8 +1045,8 @@
       "File does not match expected format": [
         "Файл не адпавядае фармату, які чакаўся"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Збой імпартавання элементаў"
@@ -3420,6 +3420,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Усе вашы файлы будуць спампаваны пры экспартаванні, калі гэта функцыя будзе ўключана. Гэта можа заняць некаторы час у залежнасці ад вашага падключэння да інтэрнэту."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Калі вашы даныя ўтрымліваюць далучэныя файлы, яны не будуць імпартаваны."
+      ],
       "Include file attachments": [
         "Уключыць далучаныя файлы"
       ],
@@ -3459,14 +3462,14 @@
       "Total imported files: ": [
         "Усяго імпартаваных файлаў: "
       ],
+      "Upgrade to support file attachments": [
+        "Палепшыць для падтрымкі далучэных файлаў"
+      ],
       "Upload files from your device.": [
         "Запампаваць файлы з вашай прылады."
       ],
       "You can attach files to items for a better organization": [
         "Вы можаце далучаць файлы да элементаў для лепшай арганізацыі"
-      ],
-      "Your current plan does not support importing files": [
-        "Ваш бягучы тарыфны план не падтрымлівае імпартаванне файлаў"
       ]
     },
     "Placeholder": {

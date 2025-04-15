@@ -36,6 +36,15 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "Accept invitation": [
+        "Prijať pozvánku"
+      ],
+      "Accept invitation to document": [
+        "Prijať pozvánku do dokumentu"
+      ],
+      "Actions": [
+        "Akcie"
+      ],
       "Activate recovery": [
         "Aktivovať obnovu"
       ],
@@ -84,6 +93,9 @@
       "Apply": [
         "Použiť"
       ],
+      "Ask me next time": [
+        "Opýtať sa nabudúce"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktov je povolený najviac ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktov sú povolené najviac ${ maxContacts } kontakty",
@@ -116,6 +128,9 @@
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Change sort order": [
+        "Zmeniť poradie triedenia"
       ],
       "characters": [
         "znakov"
@@ -153,6 +168,12 @@
       "Collapse": [
         "Zbaliť"
       ],
+      "Collapse list": [
+        "Zbaliť zoznam"
+      ],
+      "Collapse list of pending invitations": [
+        "Zbaliť zoznam čakajúcich pozvánok"
+      ],
       "Compose": [
         "Napísať správu"
       ],
@@ -164,9 +185,6 @@
       ],
       "Contact group": [
         "Skupina kontaktov"
-      ],
-      "Context menu": [
-        "Kontextová ponuka"
       ],
       "Continue": [
         "Pokračovať"
@@ -221,6 +239,12 @@
       ],
       "Customize import": [
         "Prispôsobiť import"
+      ],
+      "Decline invitation": [
+        "Odmietnuť pozvanie"
+      ],
+      "Decline invitation to document": [
+        "Odmietnuť pozvánku do dokumentu"
       ],
       "Decline invite": [
         "Odmietnuť pozvánku"
@@ -588,11 +612,17 @@
       "Save changes": [
         "Uložiť zmeny"
       ],
+      "Save preferences": [
+        "Uložiť predvoľby"
+      ],
       "Search": [
         "Hľadať"
       ],
       "Search countries": [
         "Vyhľadať krajiny"
+      ],
+      "Search recent documents": [
+        "Hľadať nedávne dokumenty"
       ],
       "See how": [
         "Pozrieť ako"
@@ -641,6 +671,9 @@
       ],
       "Skip verification": [
         "Preskočiť overenie"
+      ],
+      "Sort by": [
+        "Zoradiť podľa"
       ],
       "Start import": [
         "Spustiť import"
@@ -737,6 +770,9 @@
       ],
       "View": [
         "Zobraziť"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Zobraziť všetky ${ pendingCount } pozvánky"
       ],
       "View all reports": [
         "Zobraziť všetky hlásenia"
@@ -4035,6 +4071,9 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je bezpečný tunel medzi vaším zariadením a internetom. Skrýva vašu polohu a aktivity pred poskytovateľom internetových služieb (ISP) a navštívenými webovými stránkami."
       ],
+      "Accept/decline": [
+        "Prijať/Odmietnuť"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z dôvodu nezaplatených faktúr bol prístup k účtu obmedzený. Kontaktujte správcu Vášho účtu."
       ],
@@ -4161,6 +4200,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt bol odobraný zo skupiny ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Konverzia dokumentu..."
+      ],
       "Copy the link to clipboard": [
         "Skopírovať odkaz do schránky"
       ],
@@ -4191,6 +4233,9 @@
         "Vytvoriť bezpečný cloud pre ${ value } členov",
         "Vytvoriť bezpečný cloud pre ${ value } členov"
       ],
+      "Create an encrypted document.": [
+        "Vytvoriť zašifrovaný dokument."
+      ],
       "Create in": [
         "Vytvoriť v"
       ],
@@ -4205,6 +4250,9 @@
       ],
       "Creating link to folder": [
         "Vytváranie odkazu na priečinok"
+      ],
+      "Creating new document...": [
+        "Vytváranie nového dokumentu..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
@@ -4323,6 +4371,12 @@
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Chyba pri konverzii dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Chyba pri načítaní dokumentu ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Chyba synchronizácie"
       ],
@@ -4382,6 +4436,12 @@
       ],
       "Geoblocking": [
         "Geoblokácia"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dostávajte emailové aktualizácie o komentároch a návrhoch pridaných k vašim dokumentom."
+      ],
+      "Get Notified About Comments": [
+        "Dostávajte notifikácie o komentároch"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Prejsť do ${ DRIVE_APP_NAME }"
@@ -4527,6 +4587,9 @@
       "Low Priority": [
         "Nízka priorita"
       ],
+      "Making a copy...": [
+        "Vytváranie kópie..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -4569,6 +4632,9 @@
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "V adrese URL nie je uvedený žiadny dokument. Vráťte sa na ${ DRIVE_APP_NAME } a vyberte dokument."
+      ],
       "No email address": [
         "Žiadna emailová adresa"
       ],
@@ -4580,6 +4646,9 @@
       ],
       "No recent documents": [
         "Žiadne nedávne dokumenty"
+      ],
+      "No recent documents match your search.": [
+        "Žiadne nedávne dokumenty nezodpovedajú vášmu vyhľadávaniu."
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
@@ -4637,6 +4706,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
+      ],
+      "Pending invitations": [
+        "Čakajúce pozvánky"
       ],
       "People with access": [
         "Ľudia s prístupom"
@@ -4875,8 +4947,14 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
+        "Vami zadaná adresa URL bola zrejme nesprávne skopírovaná zo služby Slack. Pri kopírovaní dlhých odkazov zo služby Slack kliknite pravým tlačidlom myši na odkaz a vyberte možnosť „Kopírovať odkaz“, namiesto priameho kopírovania skráteného textu adresy URL."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces overenia otvorí novú kartu prehliadača. Vypnite všetky aktívne blokovania automaticky otváraných okien."
+      ],
+      "There are no documents in the trash.": [
+        "V koši nie sú žiadne dokumenty."
       ],
       "This action will delete the link and revoke access for all users.": [
         "Táto akcia odstráni prepojenie a zruší prístup pre všetkých používateľov."
@@ -4886,6 +4964,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Tento dokument obsahuje veľa aktivít. Niektoré funkcie môžu byť dočasne nedostupné."
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "Tento dokument možno neexistuje alebo máme problémy s jeho načítaním. Znovu načítajte stránku a skúste to znova."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Tento dokument nemusí existovať alebo nemáte povolenie na jeho zobrazenie. Môžete skúsiť znovu načítať stránku, aby ste zistili, či problém pretrváva, alebo sa obráťte na vlastníka, aby vám poskytol prístup."
@@ -4989,6 +5070,9 @@
       "Trash": [
         "Kôš"
       ],
+      "Trashed": [
+        "Premiestnené do koša"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -4997,6 +5081,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Bohužiaľ, zdá sa, že súbor alebo niektoré jeho údaje nemôžu byť dešifrované."
+      ],
+      "Update recent documents": [
+        "Aktualizovať nedávne dokumenty"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
@@ -5157,6 +5244,9 @@
       "You cannot undo this action.": [
         "Túto akciu nie je možné vrátiť späť."
       ],
+      "You don't have access": [
+        "Nemáte prístup"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Dostanete upozornenie, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
       ],
@@ -5168,6 +5258,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Môžete byť presmerovaní na webovú stránku vašej banky."
+      ],
+      "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Je možné, že nemáte potrebné oprávnenia na zobrazenie s vybraným účtom. Skúste použiť iný účet alebo sa obráťte na vlastníka, aby vám poskytol prístup."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Pred znížením predplatného musíte zakázať alebo odstrániť všetkých ďalších ${ MAIL_APP_NAME } používateľov, adresy a vlastné domény."
@@ -5572,6 +5665,9 @@
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
       ],
+      "Enable email notifications": [
+        "Povoliť emailové notifikácie"
+      ],
       "Encrypt emails": [
         "Šifrovať emaily"
       ],
@@ -5625,6 +5721,9 @@
       ],
       "Import to:": [
         "Importovať do:"
+      ],
+      "Include document name in notification": [
+        "Zahrnúť názov dokumentu do notifikácie"
       ],
       "Include message and file name in invite email": [
         "Zahrnúť správu a názov súboru do emailovej pozvánky"
@@ -7521,6 +7620,9 @@
       "Public link update access failed ": [
         "Aktualizácia verejného odkazu zlyhala "
       ],
+      "Recent documents updated.": [
+        "Nedávne dokumenty boli aktualizované."
+      ],
       "Root folder failed to be loaded": [
         "Nepodarilo sa načítať koreňový priečinok"
       ],
@@ -7698,6 +7800,20 @@
       ],
       "Merge with calendar": [
         "Zlúčiť s kalendárom"
+      ]
+    },
+    "Page title": {
+      "Favorites": [
+        "Obľúbené"
+      ],
+      "Recents": [
+        "Nedávne"
+      ],
+      "Searching": [
+        "Vyhľadávanie"
+      ],
+      "Trashed": [
+        "Premiestnené do koša"
       ]
     },
     "Participant name": {
@@ -8103,6 +8219,9 @@
       "Created by": [
         "Vytvorené"
       ],
+      "Deleted": [
+        "Odstránené"
+      ],
       "Earlier": [
         "Skôr"
       ],
@@ -8120,6 +8239,9 @@
       ],
       "Previous 7 days": [
         "Predchádzajúcich 7 dní"
+      ],
+      "Search results": [
+        "Výsledky vyhľadávania"
       ],
       "Today": [
         "Dnes"

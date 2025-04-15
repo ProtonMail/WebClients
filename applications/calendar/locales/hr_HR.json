@@ -252,9 +252,6 @@
       "Got it": [
         "Shvaćam"
       ],
-      "Help": [
-        "Pomoć"
-      ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
       ],
@@ -2296,6 +2293,9 @@
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
       ],
+      "Email is not valid": [
+        "Adresa e-pošte nije važeća"
+      ],
       "Ends on date cannot be empty": [
         "Datum završetka ne može biti prazan"
       ],
@@ -2383,6 +2383,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Nije ${ BRAND_NAME } račun"
       ],
+      "Not a valid number": [
+        "Broj telefona nije važeći"
+      ],
       "Number of occurrences cannot be empty": [
         "Broj ponavljanja ne može biti prazan"
       ],
@@ -2398,6 +2401,9 @@
       ],
       "Organization key is not decrypted": [
         "Organizacijski ključ nije dešifriran"
+      ],
+      "Passwords do not match": [
+        "Lozinke se ne poklapaju"
       ],
       "Payment process consumed": [
         "Proces plaćanja je konzumiran"
@@ -2470,6 +2476,9 @@
       "This field is required": [
         "Ovo polje je obavezno"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Naziv mape nije dostupan. Odaberite drugi naziv."
       ],
@@ -2487,6 +2496,12 @@
       ],
       "Unknown payment token status": [
         "Nepoznati status tokena za plaćanje"
+      ],
+      "Username must begin with a letter or digit": [
+        "Korisničko ime mora započeti s slovom ili brojkom"
+      ],
+      "Username must end with a letter or digit": [
+        "Korisničko ime mora završiti s slovom ili brojkom"
       ],
       "Validation error": [
         "Pogreška provjere valjanosti"
@@ -6094,6 +6109,13 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Dijeljeno je u end-to-end šifriranom obliku s potvrđenim kontaktom"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
       ]
     },
     "View event button tooltip": {

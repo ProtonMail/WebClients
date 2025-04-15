@@ -1030,9 +1030,6 @@
       "File does not match expected format": [
         "予期しないファイル形式です"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "保管庫「${ vaultData.name }」のインポートに失敗しました: ${ description }"
-      ],
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
       ],
@@ -3320,9 +3317,6 @@
       ],
       "You can attach files to items for a better organization": [
         "アイテムにファイルを添付して整理できます"
-      ],
-      "Your current plan does not support importing files": [
-        "現在のプランではファイルのインポートはサポートされていません"
       ]
     },
     "Placeholder": {

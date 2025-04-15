@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "A ${ MAIL_APP_NAME } névjegye"
+      ],
       "Actual Size": [
         "Tényleges méret"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Alkalmazás adatainak törlése"
       ],
+      "Close Window": [
+        "Ablak bezárása"
+      ],
+      "Copy": [
+        "Másolás"
+      ],
+      "Cut": [
+        "Kivágás"
+      ],
+      "Delete": [
+        "Törlés"
+      ],
       "Force Reload": [
         "Kényszerített újratöltés"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } elrejtése"
+      ],
+      "Hide Others": [
+        "Többi elrejtése"
+      ],
+      "Minimize": [
+        "Kis méret"
+      ],
+      "Paste": [
+        "Beillesztés"
+      ],
+      "Paste and Match Style": [
+        "Beillesztés és stílusillesztés"
+      ],
+      "Quit": [
+        "Kilépés"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "${ MAIL_APP_NAME } bezárása"
+      ],
+      "Redo": [
+        "Újra"
+      ],
       "Reload": [
         "Újratöltés"
+      ],
+      "Select All": [
+        "Összes kijelölése"
+      ],
+      "Show All": [
+        "Összes megjelenítése"
       ],
       "Show logs": [
         "Naplók megjelenítése"
@@ -26,11 +71,26 @@
       "Speech": [
         "Beszéd"
       ],
-      "Start Proton Mail at login": [
-        "A Proton Mail indítása a bejelentkezéskor"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "A(z) ${ MAIL_APP_NAME } indítása bejelentkezéskor"
       ],
-      "Uninstall Proton Mail": [
-        "A Proton Mail eltávolítása"
+      "Start Speaking": [
+        "Kezdjen beszélni"
+      ],
+      "Stop Speaking": [
+        "Beszéd vége"
+      ],
+      "Toggle Full Screen": [
+        "Teljes képernyő be-/kikapcsolása"
+      ],
+      "Undo": [
+        "Visszavonás"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } alkalmazás eltávolítása"
+      ],
+      "Zoom": [
+        "Nagyítás"
       ],
       "Zoom In": [
         "Közelítés"
@@ -39,12 +99,9 @@
         "Távolítás"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Kép mentése másként…"
-      ],
-      "Speech": [
-        "Beszéd"
+    "App Menu": {
+      "Services": [
+        "Szolgáltatások"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji és szimbólumok"
+      ],
+      "Save image as…": [
+        "Kép mentése másként…"
+      ],
+      "Speech": [
+        "Beszéd"
+      ],
+      "Start Speaking": [
+        "Kezdjen beszélni"
+      ],
+      "Stop Speaking": [
+        "Beszéd vége"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Másolás"
+      ],
+      "Cut": [
+        "Kivágás"
+      ],
+      "Look Up “${ text }”": [
+        "„${ text }” keresése"
+      ],
+      "Paste": [
+        "Beillesztés"
+      ],
+      "Paste and Match Style": [
+        "Beillesztés és stílusillesztés"
+      ],
+      "Redo": [
+        "Újra"
+      ],
+      "Select All": [
+        "Összes kijelölése"
+      ],
+      "Undo": [
+        "Visszavonás"
       ]
     },
     "Error dialog": {

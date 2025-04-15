@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "À propos de ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Taille actuelle"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Effacer les données de l'application"
       ],
+      "Close Window": [
+        "Fermer la fenêtre"
+      ],
+      "Copy": [
+        "Copier"
+      ],
+      "Cut": [
+        "Couper"
+      ],
+      "Delete": [
+        "Supprimer"
+      ],
       "Force Reload": [
         "Forcer le rechargement"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Masquer ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Masquer les autres"
+      ],
+      "Minimize": [
+        "Réduire"
+      ],
+      "Paste": [
+        "Coller"
+      ],
+      "Paste and Match Style": [
+        "Coller et adapter le style"
+      ],
+      "Quit": [
+        "Quitter"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Quitter ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Rétablir"
+      ],
       "Reload": [
         "Recharger"
+      ],
+      "Select All": [
+        "Tout sélectionner"
+      ],
+      "Show All": [
+        "Afficher tout"
       ],
       "Show logs": [
         "Afficher les journaux"
@@ -26,11 +71,26 @@
       "Speech": [
         "Synthèse vocale"
       ],
-      "Start Proton Mail at login": [
-        "Lancer Proton Mail au démarrage"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Démarrer ${ MAIL_APP_NAME } à la connexion"
       ],
-      "Uninstall Proton Mail": [
-        "Désinstaller Proton Mail"
+      "Start Speaking": [
+        "Commencer à parler"
+      ],
+      "Stop Speaking": [
+        "Arrêter de parler"
+      ],
+      "Toggle Full Screen": [
+        "Basculer en mode plein écran"
+      ],
+      "Undo": [
+        "Annuler"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Désinstaller ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Zoomer"
       ],
       "Zoom In": [
         "Zoom avant"
@@ -39,12 +99,9 @@
         "Zoom arrière"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Sauvegarder l'image comme…"
-      ],
-      "Speech": [
-        "Synthèse vocale"
+    "App Menu": {
+      "Services": [
+        "Services"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Émoticônes et symboles"
+      ],
+      "Save image as…": [
+        "Sauvegarder l'image sous…"
+      ],
+      "Speech": [
+        "Synthèse vocale"
+      ],
+      "Start Speaking": [
+        "Commencer à parler"
+      ],
+      "Stop Speaking": [
+        "Arrêter de parler"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Copier"
+      ],
+      "Cut": [
+        "Couper"
+      ],
+      "Look Up “${ text }”": [
+        "Rechercher « ${ text } »"
+      ],
+      "Paste": [
+        "Coller"
+      ],
+      "Paste and Match Style": [
+        "Coller et adapter le style"
+      ],
+      "Redo": [
+        "Rétablir"
+      ],
+      "Select All": [
+        "Tout sélectionner"
+      ],
+      "Undo": [
+        "Annuler"
       ]
     },
     "Error dialog": {

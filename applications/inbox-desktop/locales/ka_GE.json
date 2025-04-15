@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-ის შესახებ"
+      ],
       "Actual Size": [
         "რეალური ზომა"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "აპლიკაციის მონაცემების გასუფთავება"
       ],
+      "Close Window": [
+        "ფანჯრის დახურვა"
+      ],
+      "Copy": [
+        "კოპირება"
+      ],
+      "Cut": [
+        "ამოჭრა"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
       "Force Reload": [
         "ნაძალადევი გადატვირთვა"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-ის დამალვა"
+      ],
+      "Hide Others": [
+        "სხვების დამალვა"
+      ],
+      "Minimize": [
+        "ჩაკეცვა"
+      ],
+      "Paste": [
+        "ჩასმა"
+      ],
+      "Paste and Match Style": [
+        "კოპირებისა და ჩასმის სტილი"
+      ],
+      "Quit": [
+        "გასვლა"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "${ MAIL_APP_NAME }-დან გასვლა"
+      ],
+      "Redo": [
+        "გამეორება"
+      ],
       "Reload": [
         "თავიდან ჩატვირთვა"
+      ],
+      "Select All": [
+        "ყველას მონიშვნა"
+      ],
+      "Show All": [
+        "ყველას ჩვენება"
       ],
       "Show logs": [
         "ჟურნალის ჩვენება"
@@ -26,11 +71,26 @@
       "Speech": [
         "საუბარი"
       ],
-      "Start Proton Mail at login": [
-        "Proton Mail-ის გაშვება სისტემაში შესვლისას"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "${ MAIL_APP_NAME }-ის გაშვება სისტემაში შესვლისას"
       ],
-      "Uninstall Proton Mail": [
-        "Proton Mail-ის წაშლა"
+      "Start Speaking": [
+        "ლაპარაკის დაწყება"
+      ],
+      "Stop Speaking": [
+        "ლაპარაკის დასრულება"
+      ],
+      "Toggle Full Screen": [
+        "სრულ ეკრანზე გადართვა"
+      ],
+      "Undo": [
+        "დაბრუნება"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-ის წაშლა"
+      ],
+      "Zoom": [
+        "გადიდება"
       ],
       "Zoom In": [
         "გადიდება"
@@ -39,12 +99,9 @@
         "დაპატარავება"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "სურათად შენახვა როგორც…"
-      ],
-      "Speech": [
-        "საუბარი"
+    "App Menu": {
+      "Services": [
+        "სერვისები"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "ემოჯიები და სიმბოლოები"
+      ],
+      "Save image as…": [
+        "სურათად შენახვა როგორც…"
+      ],
+      "Speech": [
+        "საუბარი"
+      ],
+      "Start Speaking": [
+        "ლაპარაკის დაწყება"
+      ],
+      "Stop Speaking": [
+        "ლაპარაკის დასრულება"
       ]
     },
     "Context Menu": {
       "Copy": [
         "კოპირება"
+      ],
+      "Cut": [
+        "ამოჭრა"
+      ],
+      "Look Up “${ text }”": [
+        "\"${ text }\"-ის მოძებნა"
+      ],
+      "Paste": [
+        "ჩასმა"
+      ],
+      "Paste and Match Style": [
+        "კოპირებისა და ჩასმის სტილი"
+      ],
+      "Redo": [
+        "გამეორება"
+      ],
+      "Select All": [
+        "ყველას მონიშვნა"
+      ],
+      "Undo": [
+        "დაბრუნება"
       ]
     },
     "Error dialog": {
