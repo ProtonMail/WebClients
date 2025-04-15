@@ -22,6 +22,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
+import noop from '@proton/utils/noop';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
  * If `true` they will be by-passed - else you can pass a custom error
@@ -68,15 +69,11 @@ export function* hydrate(
                 ? (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
                 : null;
 
-        /** Only web & desktop use second password, not extension */
-        if (!EXTENSION_BUILD) {
-            const twoPasswordMode = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+        const twoPwd = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
 
-            if (twoPasswordMode !== authStore.getTwoPasswordMode()) {
-                authStore.setTwoPasswordMode(twoPasswordMode);
-                const auth = getAuthService();
-                yield auth.persistSession();
-            }
+        if (twoPwd !== authStore.getTwoPasswordMode()) {
+            authStore.setTwoPasswordMode(twoPwd);
+            yield getAuthService().persistSession().catch(noop);
         }
 
         /** Note: Settings may have been modified offline, thus they might not align

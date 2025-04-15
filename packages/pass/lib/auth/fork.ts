@@ -202,9 +202,11 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
         );
     }
 
-    /** Note: Two-Password mode is currently disabled in the extension as we don't retrieve
-     * the offline components from Account in the extension fork,
-     * we can only do a primary password SRP check in the extension. */
+    /** Note: When consuming an extension fork, we do not retrieve offline
+     * password components. Consequently, any password verification triggered
+     * in the extension will require a full SRP flow to validate the primary
+     * user password. Pass lacks sufficient scope to verify the secondary mailbox
+     * password, making secondary password verification impossible. */
     const data =
         payload.mode === 'extension'
             ? { keyPassword: payload.keyPassword, payloadVersion: SESSION_VERSION }
