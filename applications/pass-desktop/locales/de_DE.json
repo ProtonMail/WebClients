@@ -1067,8 +1067,8 @@
       "File does not match expected format": [
         "Die Datei entspricht nicht dem erwarteten Format."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Import für Tresor \"${ vaultData.name }\" fehlgeschlagen: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import für Tresor \"${ vaultData.name }\" fehlgeschlagen: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Fehler beim Importieren der Einträge."
@@ -1846,6 +1846,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -3475,6 +3479,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Wenn dies aktiviert ist, werden alle deine Dateien beim Exportieren heruntergeladen. Dies kann je nach deiner Internetverbindung einige Zeit dauern."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Wenn deine Daten Dateianhänge enthalten, werden diese nicht importiert."
+      ],
       "Include file attachments": [
         "Dateianhänge einbeziehen"
       ],
@@ -3514,14 +3521,14 @@
       "Total imported files: ": [
         "Insgesamt importierte Dateien: "
       ],
+      "Upgrade to support file attachments": [
+        "Führe ein Upgrade durch, um Datei-Anhänge zu unterstützen"
+      ],
       "Upload files from your device.": [
         "Dateien von deinem Gerät hochladen."
       ],
       "You can attach files to items for a better organization": [
         "Du kannst Dateien an Einträge anhängen, um sie besser zu organisieren."
-      ],
-      "Your current plan does not support importing files": [
-        "Dein aktuelles Abonnement unterstützt das Importieren von Dateien nicht."
       ]
     },
     "Placeholder": {

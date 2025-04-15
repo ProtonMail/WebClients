@@ -496,6 +496,9 @@
       "Reset": [
         "Resetovať"
       ],
+      "Reset history": [
+        "Resetovať históriu"
+      ],
       "Restore": [
         "Obnoviť"
       ],
@@ -837,6 +840,9 @@
       "Alias options could not be resolved": [
         "Možnosti aliasu sa nepodarilo vyriešiť"
       ],
+      "An error occured during the import process": [
+        "Počas procesu importu sa vyskytla chyba"
+      ],
       "An error occurred while resuming your session": [
         "Pri obnovení vašej relácie došlo k chybe"
       ],
@@ -902,6 +908,9 @@
       ],
       "Deleting item failed": [
         "Odstránenie položky zlyhalo"
+      ],
+      "Deleting item history failed": [
+        "Nepodarilo sa vymazať históriu položky"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Odstránenie trezoru \"${ payload.content.name }\" zlyhalo"
@@ -1067,9 +1076,6 @@
       ],
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
-      ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Import trezora \"${ vaultData.name }\" zlyhal : ${ description }"
       ],
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
@@ -1802,6 +1808,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Položka \"${ payload.item.data.metadata.name }\" bola aktualizovaná"
       ],
+      "Item history permanently deleted": [
+        "História položky natrvalo vymazaná"
+      ],
       "Item moved to trash": [
         "Položka bola presunutá do koša"
       ],
@@ -1882,6 +1891,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2063,6 +2078,9 @@
       "Please follow the steps below to set up your domain.": [
         "Pre nastavenie domény postupujte podľa nižšie uvedených krokov."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Počas importu údajov nechajte toto okno otvorené. Tento proces môže trvať niekoľko minút."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Upozorňujeme, že po vymazaní sa alias nedá obnoviť. Nechcete alias radšej deaktivovať?"
       ],
@@ -2107,6 +2125,9 @@
       ],
       "Removing secure link...": [
         "Odstraňujem bezpečný odkaz..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Resetovanie histórie natrvalo vymaže všetky predchádzajúce verzie položky a nie je možné vrátiť ich späť."
       ],
       "Restoring items from trash": [
         "Obnovenie položiek z koša"
@@ -2215,6 +2236,12 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Na použitie ${ PASS_APP_NAME } bude vyžadované dodatočné heslo. Funguje ako dodatočné heslo k vášmu heslu pre ${ BRAND_NAME }."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Nasledujúcu ${ totalIgnored } položku nebolo možné importovať:",
+        "Nasledujúce ${ totalIgnored } položky nebolo možné importovať:",
+        "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:",
+        "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:"
       ],
       "The secure link has been removed": [
         "Bezpečný odkaz bol odstránený"
@@ -3106,6 +3133,9 @@
       "Personalize": [
         "Prispôsobenie"
       ],
+      "PGP-encrypted (recommended)": [
+        "PGP-šifrované (odporúčané)"
+      ],
       "Phone number": [
         "Telefónne číslo"
       ],
@@ -3388,6 +3418,9 @@
       "Your passwords. Everywhere.": [
         "Vaše heslá. Všade."
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "PSČ"
       ]
@@ -3482,6 +3515,113 @@
       ],
       "Underscores": [
         "Podčiarkovníky"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "„${ file.name }“ nemohol byť nahratý."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "„${ filename }“ nemohol byť importovaný."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Súbor „${ filename }“ je príliš veľký na nahratie. Maximálna povolená veľkosť je (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } súbor",
+        "${ filesCount } súbory",
+        "${ filesCount } súborov",
+        "${ filesCount } súborov"
+      ],
+      "Attachments": [
+        "Prílohy"
+      ],
+      "Choose a file or drag it here": [
+        "Vyberte súbor alebo ho potiahnite sem"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Vymazať ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Vymazať všetky súbory"
+      ],
+      "Do you want to remove all the files?": [
+        "Chcete odstrániť všetky súbory?"
+      ],
+      "Download": [
+        "Stiahnuť"
+      ],
+      "Download file": [
+        "Stiahnuť súbor"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Z dôvodu obmedzenia prehliadača Firefox je potrebné pred odoslaním súborov znovu otvoriť ${ PASS_APP_NAME } v novom okne."
+      ],
+      "Exporting files": [
+        "Exportovanie súborov"
+      ],
+      "Failed linking files to item": [
+        "Nepodarilo sa prepojiť súbory s položkou"
+      ],
+      "File": [
+        "Súbor"
+      ],
+      "File attachments": [
+        "Priložené súbory"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Ak je táto možnosť povolená, pri exporte sa stiahnu všetky súbory. Môže to trvať určitý čas v závislosti od vášho internetového pripojenia."
+      ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Ak vaše údaje obsahujú prílohy, nebudú importované."
+      ],
+      "Include file attachments": [
+        "Vrátane priložených súborov"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Pre vybraté súbory nie je k dispozícii dostatok úložného priestoru."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Po vymazaní je stále možné tento súbor obnoviť z histórie položky."
+      ],
+      "Open new window to upload files": [
+        "Otvoriť nové okno na nahranie súborov"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Počas sťahovania súborov buďte trpezliví."
+      ],
+      "Remove all files": [
+        "Odstrániť všetky súbory"
+      ],
+      "Rename": [
+        "Premenovať"
+      ],
+      "Restore": [
+        "Obnoviť"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Niektoré súbory sú príliš veľké na odoslanie. Maximálna povolená veľkosť je (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Exportované súbory príloh nebudú zašifrované."
+      ],
+      "The file you are trying to import is empty": [
+        "Súbor, ktorý sa pokúšate importovať je prázdny"
+      ],
+      "Total files: ": [
+        "Celkový počet súborov: "
+      ],
+      "Total imported files: ": [
+        "Celkom importovaných súborov: "
+      ],
+      "Upgrade to support file attachments": [
+        "Navýšte úroveň na podporu súborových príloh"
+      ],
+      "Upload files from your device.": [
+        "Nahrajte súbory z vášho zariadenia."
+      ],
+      "You can attach files to items for a better organization": [
+        "Pre lepšiu organizáciu môžete k položkám pripojiť súbory"
       ]
     },
     "Placeholder": {
@@ -3881,6 +4021,9 @@
       "Domain ownership verification": [
         "Overenie vlastníctva domény"
       ],
+      "Encrypted import": [
+        "Šifrovaný import"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
       ],
@@ -3922,6 +4065,9 @@
       ],
       "Import your data": [
         "Import údajov"
+      ],
+      "Importing your data": [
+        "Import vašich údajov"
       ],
       "Inactive 2FA": [
         "Neaktívne 2FA"
@@ -4057,6 +4203,9 @@
       ],
       "Remove secure link?": [
         "Odstrániť bezpečný odkaz?"
+      ],
+      "Reset history for this item?": [
+        "Resetovať históriu tejto položky?"
       ],
       "Resolved breaches": [
         "Vyriešené úniky"
@@ -4255,6 +4404,9 @@
       ],
       "An error occurred while exporting your data": [
         "Vyskytla sa chyba počas exportovania vašich dát"
+      ],
+      "An error occurred while importing your data.": [
+        "Vyskytla sa chyba počas importovania vašich dát."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Skutočne chcete presunúť ${ trashedItemsCount } položku do koša?",

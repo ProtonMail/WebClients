@@ -1067,9 +1067,6 @@
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ description }"
-      ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
@@ -1846,6 +1843,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3519,9 +3520,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Daha iyi bir düzen için ögelere dosyalar ekleyebilirsiniz"
-      ],
-      "Your current plan does not support importing files": [
-        "Geçerli tarifeniz dosyaları içe aktarmayı desteklemiyor"
       ]
     },
     "Placeholder": {
