@@ -23,4 +23,17 @@ $header-height: 52;
 	.logo-container > * {
 		display: none;
 	}
+
+	.header {
+		-webkit-app-region: drag;
+
+		button,
+		input,
+		select,
+		textarea,
+		ol,
+		ul {
+			-webkit-app-region: no-drag;
+		}
+	}
 }
