@@ -55,9 +55,9 @@ import {
     getTeamKnowsEncryptionBenefit,
     getWorksOnAllDevicesBenefit,
 } from '../configuration/helper';
+import CustomStep from '../defaultCustomStep/CustomStep';
 import type { PlanParameters, SignupConfiguration, SignupParameters2 } from '../interface';
 import { SignupMode } from '../interface';
-import CustomStep from './CustomStep';
 import PorkbunHeader from './PorkbunHeader';
 import setupAccount from './account-setup.svg';
 
