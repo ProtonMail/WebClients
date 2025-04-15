@@ -28,7 +28,7 @@ function checkIfIbanCountryRequiresAddress(ibanCountryCode: string | undefined):
     return !!ibanCountryCode && ibanCountriesThatRequireAddress.has(ibanCountryCode);
 }
 
-export type ExtendedExtractIBANResult = ExtractIBANResult & {
+type ExtendedExtractIBANResult = ExtractIBANResult & {
     requiresAddress: boolean;
 };
 
