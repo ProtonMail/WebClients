@@ -19,13 +19,27 @@ const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async ()
 
 export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
 
+/** Should only be used once the app has booted and state hydrated*/
 export const usePasswordTypeSwitch = () => {
-    const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
-    const isSSO = useSelector(selectIsSSO);
-    /** Only web & desktop use second password, not extension */
-    const hasTwoPasswordMode = useSelector(selectHasTwoPasswordMode) && !EXTENSION_BUILD;
+    /** Only web & desktop can use the user's second password as an unlock
+     * mechanism. Any password verification done in the extension must go
+     * through SRP to validate the primary user password. */
+    const twoPwd = useSelector(selectHasTwoPasswordMode) && !EXTENSION_BUILD;
+    const extra = useSelector(selectExtraPasswordEnabled);
+    const sso = useSelector(selectIsSSO);
 
-    return useCallback(passwordTypeSwitch(hasExtraPassword, isSSO, hasTwoPasswordMode), [hasExtraPassword, isSSO]);
+    return useCallback(passwordTypeSwitch({ extra, sso, twoPwd }), [extra, sso, twoPwd]);
+};
+
+/** Should only be used before the app has booted and state
+ * has not been hydrated yet. Otherwise, prefer `usePasswordTypeSwitch` */
+export const useAuthStorePasswordTypeSwitch = () => {
+    const authStore = useAuthStore();
+    const extra = Boolean(authStore?.getExtraPassword());
+    const twoPwd = Boolean(authStore?.getTwoPasswordMode()) && !EXTENSION_BUILD;
+    const sso = Boolean(authStore?.getSSO());
+
+    return useCallback(passwordTypeSwitch({ extra, sso, twoPwd }), [extra, sso, twoPwd]);
 };
 
 export type OnReauthFn = (payload: ReauthActionPayload, forkOptions: Partial<RequestForkOptions>) => void;
