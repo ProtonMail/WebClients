@@ -283,6 +283,9 @@
       "Edit billing cycle": [
         "결제일 편집하기"
       ],
+      "Edit countries": [
+        "국가 편집"
+      ],
       "Edit display name": [
         "표시되는 이름 편집"
       ],
@@ -393,9 +396,6 @@
       ],
       "Got it": [
         "알겠습니다"
-      ],
-      "Help": [
-        "도움말"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -2818,6 +2818,9 @@
       "Error publishing changes.": [
         "변경 사항을 게시하는데 오류가 발생했습니다."
       ],
+      "Failed to load the STL preview": [
+        "STL 미리보기 불러오기 실패"
+      ],
       "Failed to process the logo": [
         "로고를 처리하지 못했습니다"
       ],
@@ -4293,6 +4296,9 @@
       "Did you know?": [
         "알고 계셨나요?"
       ],
+      "Disabled countries": [
+        "비활성화된 국가"
+      ],
       "Disabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime }에 비활성화됨"
       ],
@@ -4404,6 +4410,9 @@
       "Enable single sign-on to keep your organization safe": [
         "회원님의 조직이 안전하도록 통합 인증을 활성화하세요"
       ],
+      "Enabled countries": [
+        "활성화된 국가"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime }에 활성화됨"
       ],
@@ -4512,8 +4521,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
       ],
+      "Got it": [
+        "확인"
+      ],
       "Group deleted": [
         "그룹이 삭제됨"
+      ],
+      "Groups": [
+        "그룹"
       ],
       "here": [
         "여기"
@@ -5908,6 +5923,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount }명 사용자"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } 중 ${ humanUsedSpace }"
@@ -11768,7 +11786,7 @@
         "장기 구독 옵션으로 **최대 ${ priceString } 절약하세요**. 같은 프리미엄 기능이지만 더 저렴하게 누릴 수 있어요."
       ],
       "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "한 번의 쉬운 구독으로 모든 프리미엄 ${ BRAND_NAME } 서비스를."
+        "한 번의 간편한 구독으로 모든 프리미엄 ${ BRAND_NAME } 서비스를."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "매달 ${ fallBackString }의 가격으로 모든 프리미엄 ${ BRAND_NAME } 서비스를"

@@ -397,9 +397,6 @@
       "Got it": [
         "Förstått"
       ],
-      "Help": [
-        "Hjälp"
-      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -2731,6 +2728,9 @@
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Om du vill komma åt koden för den enhet du vill logga in på trycker du på knappen **Logga in med QR-kod** i hjälpmenyn på inloggningsskärmen och sedan på **Ange nyckel manuellt**. "
       ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Se upp för meddelanden som innehåller en kod. Ange aldrig en kod från en webbplats eller en person som du inte litar på."
+      ],
       "You have successfully signed in to another device": [
         "Du har lyckats logga in på en annan enhet"
       ]
@@ -2825,6 +2825,9 @@
       ],
       "Error publishing changes.": [
         "Fel vid publicering av ändringar."
+      ],
+      "Failed to load the STL preview": [
+        "Misslyckades att ladda STL-förhandsgranskningen"
       ],
       "Failed to process the logo": [
         "Misslyckades att bearbeta loggan"
@@ -4305,6 +4308,9 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationerna."
+      ],
+      "Data recoverable on this device": [
+        "Data återställningsbart på denna enhet"
       ],
       "Dedicated servers": [
         "Dedikerade servrar"
@@ -5813,10 +5819,6 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
-        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
-      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ],
@@ -5959,6 +5961,10 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } användare",
+        "${ group.UserCount } användare"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
