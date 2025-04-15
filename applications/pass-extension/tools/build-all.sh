@@ -36,11 +36,20 @@ function build_chromium_black {
     set_manifest_key "./manifest.json" "chrome:production"
     zip -rqX "$ARTEFACTSDIR/chrome/$BUILD_ID.black.zip" "."
 
+    on_leave "chrome/$BUILD_ID.black.zip"
+}
+
+function build_edge_black {
+    on_enter "Edge (Black)"
+    BUILD_TARGET=chrome BULD_STORE_TARGET=edge MANIFEST_KEY="" yarn run build:extension:dev >/dev/null
+
+    cd dist
+
     # QA Black Edge Build
     set_manifest_key "./manifest.json" "edge:production"
     zip -rqX "$ARTEFACTSDIR/edge/$BUILD_ID.black.zip" "."
 
-    on_leave "chrome/$BUILD_ID.black.zip" "edge/$BUILD_ID.black.zip"
+    on_leave "edge/$BUILD_ID.black.zip"
 }
 
 function build_chromium_prod {
@@ -58,11 +67,25 @@ function build_chromium_prod {
     set_manifest_key "./manifest.json" "chrome:production"
     zip -rqX "$ARTEFACTSDIR/chrome/$BUILD_ID.zip" "."
 
+    on_leave "release/$BUILD_ID-chromium.zip" "chrome/$BUILD_ID.zip"
+}
+
+function build_edge_prod {
+    on_enter "Edge (Prod)"
+
+    # store versions should not have a `key` in the manifest
+    RELEASE=true BUILD_TARGET=chrome BULD_STORE_TARGET=edge MANIFEST_KEY="" yarn run build:extension >/dev/null
+
+    cd dist
+
+    # Edge store version for release
+    zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-edge.zip" "."
+
     # QA Production Edge build
     set_manifest_key "./manifest.json" "edge:production"
     zip -rqX "$ARTEFACTSDIR/edge/$BUILD_ID.zip" "."
 
-    on_leave "release/$BUILD_ID-chromium.zip" "chrome/$BUILD_ID.zip" "edge/$BUILD_ID.zip"
+    on_leave "release/$BUILD_ID-edge.zip" "edge/$BUILD_ID.zip"
 }
 
 function build_firefox_black {
@@ -150,3 +173,6 @@ build_firefox_prod
 
 build_chromium_prod
 build_chromium_black
+
+build_edge_prod
+build_edge_black
