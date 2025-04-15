@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Icon, Tooltip } from '@proton/components';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
+import { useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
@@ -20,7 +21,9 @@ export type InviteMemberProps = ListFieldValue<InviteFormMemberValue> & {
 
 export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, onRoleChange }) => {
     const { role, email } = value;
-    const { title: roleLabel } = useMemo(() => getShareRoleDefinition(target)[role], [role]);
+    // TODO: Remove this in IDTEAM-4660
+    const labels = useInviteLabels();
+    const { title: roleLabel } = useMemo(() => getShareRoleDefinition(target, labels)[role], [role]);
 
     return (
         <div className="flex gap-3 flex-nowrap items-center  py-3 w-full">
@@ -53,10 +56,10 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
                         className={role !== ShareRole.WRITE ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
-                        label={c('Action').t`Make admin`}
-                        icon={role === ShareRole.ADMIN ? 'checkmark' : undefined}
-                        onClick={() => onRoleChange(ShareRole.ADMIN)}
-                        className={role !== ShareRole.ADMIN ? 'pl-10' : ''}
+                        label={labels.singleAction}
+                        icon={role === ShareRole.MANAGER ? 'checkmark' : undefined}
+                        onClick={() => onRoleChange(ShareRole.MANAGER)}
+                        className={role !== ShareRole.MANAGER ? 'pl-10' : ''}
                     />
 
                     {onRemove && (

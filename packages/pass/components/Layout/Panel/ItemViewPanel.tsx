@@ -89,7 +89,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
-    const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
+    const isOwnerOrManager = owner || shareRoleId === ShareRole.MANAGER;
 
     const hasMultipleVaults = vaults.length > 1;
     const canMove = (!shared || owner) && hasMultipleVaults;
@@ -238,7 +238,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online || optimistic || disabledSharing}
                                     badge={itemSharingEnabled && accessCount > 1 ? accessCount : undefined}
-                                    signaled={isOwnerOrAdmin && signalItemSharing}
+                                    signaled={isOwnerOrManager && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
                                         width: DropdownSizeUnit.Dynamic,
