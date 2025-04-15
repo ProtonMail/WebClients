@@ -352,9 +352,6 @@
       "Got it": [
         "Forstået"
       ],
-      "Help": [
-        "Hjælp"
-      ],
       "Help and feedback": [
         "Hjælp og feedback"
       ],
@@ -7289,6 +7286,9 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sidste chance for at spare 80% på den første måned af ${ plan } Plus "
       ],
+      "Last day to save": [
+        "Sidste dag til at gemme"
+      ],
       "Maybe later": [
         "Måske senere"
       ],
@@ -8175,6 +8175,9 @@
       ],
       "to be created": [
         "skal oprettes"
+      ],
+      "to be deleted": [
+        "skal slettes"
       ]
     },
     "session_recovery:available:action": {
@@ -8726,6 +8729,9 @@
       ],
       "Invalid confirmation code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Sørg for at gemme den et sikkert sted, så du kan komme tilbage til din konto, hvis du mister adgang til dine legitimationsoplysninger til din identitetsudbyder."
       ],
       "New backup password": [
         "Ny adgangskode til sikkerhedskopi"
@@ -10606,6 +10612,9 @@
     "upsell panel": {
       "Recommended": [
         "Anbefalet"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Spar ${ totals.discountPercentage }%"
       ]
     },
     "User role": {

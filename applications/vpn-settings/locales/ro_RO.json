@@ -397,9 +397,6 @@
       "Got it": [
         "Am înțeles"
       ],
-      "Help": [
-        "Ajutor"
-      ],
       "Help and feedback": [
         "Ajutor și feedback"
       ],
@@ -2843,6 +2840,9 @@
       "Error publishing changes.": [
         "Eroare publicare modificări."
       ],
+      "Failed to load the STL preview": [
+        "Nu s-a putut încărca examinarea STL."
+      ],
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
       ],
@@ -3321,7 +3321,7 @@
         "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
-        "Creați și gestionați membrii familiei și alocați-le spațiu de stocare partajat între${ DRIVE_APP_NAME } și ${ MAIL_APP_NAME }."
+        "Creați și gestionați membrii familiei și alocați-le spațiu de stocare partajat între ${ DRIVE_APP_NAME } și ${ MAIL_APP_NAME }."
       ],
       "Create and manage family members.": [
         "Creați și gestionați membrii contului de familie."
@@ -3411,7 +3411,7 @@
         "Invitare utilizator"
       ],
       "Manage family group": [
-        "Gestionare grup familie"
+        "Gestionare grup de familie"
       ],
       "Set family name": [
         "Setare nume familie"
@@ -3664,13 +3664,13 @@
         "Aceste liste se aplică tuturor conturilor din organizație. Membrii își pot crea propriile filtre individuale, dar nu vor putea înlocui adresele sau domeniile pe care le-ați blocat."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
-        "Pentru a vă asigura că nu ratați mesajele importante."
+        "pentru a vă asigura că nu ratați mesajele importante."
       ],
       "To prevent junk mail from clogging up inboxes": [
-        "Pentru a preveni ca mesajele nedorite să aglomereze lista de mesaje primite."
+        "pentru a preveni ca mesajele nedorite să aglomereze lista de mesaje primite."
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
-        "Pentru oprirea sosirii mesajelor înșelătoare sau suspecte în sistemul organizației."
+        "pentru oprirea sosirii mesajelor înșelătoare sau suspecte în sistemul organizației."
       ]
     },
     "Font face option": {
@@ -3700,7 +3700,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Confidențialitate implicită."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Go to sign in": {
@@ -5929,7 +5929,7 @@
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Abonamentu se va reînnoi automat la ${ renewalTime }."
+        "Abonamentul se va reînnoi automat la ${ renewalTime }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Veți putea adăuga aceste servere la o altă poartă de acces imediat."

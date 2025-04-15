@@ -397,9 +397,6 @@
       "Got it": [
         "Rendben!"
       ],
-      "Help": [
-        "Súgó"
-      ],
       "Help and feedback": [
         "Súgó és visszajelzés"
       ],
@@ -2825,6 +2822,9 @@
       "Error publishing changes.": [
         "A változások közzététele során hiba keletkezett."
       ],
+      "Failed to load the STL preview": [
+        "Nem sikerült betölteni az STL előnézetet"
+      ],
       "Failed to process the logo": [
         "A logó feldolgozása nem sikerült"
       ],
@@ -5115,8 +5115,14 @@
       "Securing your account": [
         "Fiók biztosítása"
       ],
+      "Select one or multiple user affiliations": [
+        "Egy vagy több felhasználói csoporthoz tartozás kiválasztása"
+      ],
       "Select recently used servers": [
         "Nemrég használt szerverek kiválasztása"
+      ],
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Válassza ki azokat a ${ getFormattedOrganization } felhasználói kapcsolatokat, amelyeket engedélyezni kíván a ${ BRAND_NAME } szervezetbe:"
       ],
       "Self-custodial crypto wallet": [
         "Önálló kriptopénztárca"
@@ -6520,6 +6526,9 @@
       ],
       "User": [
         "Felhasználó"
+      ],
+      "User affiliations": [
+        "Felhasználói kapcsolatok"
       ],
       "User's new password": [
         "A felhasználó új jelszava"
@@ -9709,11 +9718,17 @@
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel.",
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel."
       ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Az SSO-felhasználók leválasztásra kerülnek a személyazonosság-szolgáltatójáról**, és nem-SSO-felhasználókká alakulnak át."
+      ],
       "Access denied": [
         "Hozzáférés megtagadva"
       ],
       "Access granted": [
         "Hozzáférés engedélyezve"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "hozzáadva a(z) ${ BRAND_NAME } szervezetéhez"
       ],
       "Approve or deny it now": [
         "Most hagyja jóvá vagy utasítsa el"
@@ -9803,6 +9818,9 @@
       ],
       "New backup password": [
         "Új biztonsági jelszó"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "A nem SSO-felhasználók (akik manuálisan lettek létrehozva, és nem az Ön identitásszolgáltatója biztosítja őket) továbbra is bejelentkezhetnek a szervezetébe."
       ],
       "Remove single sign-on": [
         "Egyszeri bejelentkezés eltávolítása"
@@ -10497,6 +10515,11 @@
         "Lejár"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "A szervezet VPN-munkamenet részleteinek megtekintése."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Fiók törölve. Kijelentkezés..."
@@ -10971,6 +10994,9 @@
       ],
       "Change second password": [
         "Második jelszó megváltoztatása"
+      ],
+      "Choose user affiliations": [
+        "Válasszon felhasználói kapcsolatokat"
       ],
       "Click a value in the table to use it as filter": [
         "A szűréshez kattintson a táblázatban egy értékre"
@@ -11812,6 +11838,9 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ha a felhasználót priváttá teszi, nem fog tudni segíteni neki az adataihoz vagy a fiókjához való hozzáférés visszaszerzésében."
       ],
       "Cancel request": [
         "Kérelem törlése"

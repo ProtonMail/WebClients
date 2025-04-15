@@ -283,6 +283,9 @@
       "Edit billing cycle": [
         "Upraviť fakturačné obdobie"
       ],
+      "Edit countries": [
+        "Upraviť krajiny"
+      ],
       "Edit display name": [
         "Upraviť zobrazované meno"
       ],
@@ -393,9 +396,6 @@
       ],
       "Got it": [
         "Rozumiem"
-      ],
-      "Help": [
-        "Nápoveda"
       ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
@@ -2714,14 +2714,50 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
+        "${ BRAND_NAME } vás nikdy nepožiada o zadanie kódu, ktorý nepochádza z domény ${ domain } alebo z oficiálnej aplikácie ${ BRAND_NAME }."
+      ],
+      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
+        "**Ako to funguje:** Do tohto zariadenia zadajte kód zobrazený na zariadení, do ktorého sa chcete prihlásiť. Prihlásite sa ako **${ email }**. Obe zariadenia zostanú aktívne. "
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Povoľte skenovanie QR kódu pre prihlásenie"
+      ],
       "Code from the other device": [
         "Kód z iného zariadenia"
       ],
       "Enter code manually": [
         "Zadajte kód manuálne"
       ],
+      "QR code sign-in disabled": [
+        "Prihlásenie pomocou QR kódu je deaktivované"
+      ],
+      "QR code sign-in enabled": [
+        "Prihlásenie pomocou QR kódu je povolené"
+      ],
       "Safety tips:": [
         "Tipy pre bezpečnosť:"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Pre prihlásenie naskenujte QR kód na svojom mobilnom zariadení"
+      ],
+      "Sign in to another device": [
+        "Prihlásenie do iného zariadenia"
+      ],
+      "Sign in with another device": [
+        "Prihlásenie pomocou iného zariadenia"
+      ],
+      "Sign in with QR code": [
+        "Prihláste sa pomocou QR kódu"
+      ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Ak chcete získať prístup ku kódu zariadenia, do ktorého sa chcete prihlásiť, ťuknite na tlačidlo **Prihlásenie pomocou QR kódu** v ponuke pomocníka na prihlasovacej obrazovke a potom ťuknite na položku **Zadať kľúč ručne**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Dávajte si pozor na správy, ktoré obsahujú kód. Nikdy nezadávajte kód z webovej stránky alebo od osoby, ktorej nedôverujete."
+      ],
+      "You have successfully signed in to another device": [
+        "Úspešne ste sa prihlásili do iného zariadenia"
       ]
     },
     "Email spam notification": {
@@ -2814,6 +2850,9 @@
       ],
       "Error publishing changes.": [
         "Chyba pri publikovaní zmien."
+      ],
+      "Failed to load the STL preview": [
+        "Načítanie náhľadu STL zlyhalo"
       ],
       "Failed to process the logo": [
         "Spracovanie loga zlyhalo"
@@ -4407,6 +4446,9 @@
       "Did you know?": [
         "Vedeli ste?"
       ],
+      "Disabled countries": [
+        "Zakázané krajiny"
+      ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktivované ${ formattedDateAndTime }"
       ],
@@ -4521,6 +4563,9 @@
       "Enable single sign-on to keep your organization safe": [
         "Povoľte jednotné prihlásenie, aby bola vaša organizácia v bezpečí"
       ],
+      "Enabled countries": [
+        "Povolené krajiny"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "Aktivované ${ formattedDateAndTime }"
       ],
@@ -4629,8 +4674,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
       ],
+      "Got it": [
+        "Rozumiem"
+      ],
       "Group deleted": [
         "Skupina bola vymazaná"
+      ],
+      "Groups": [
+        "Skupiny"
       ],
       "here": [
         "tu"
@@ -6085,6 +6136,12 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } používateľ",
+        "${ group.UserCount } používatelia",
+        "${ group.UserCount } používateľov",
+        "${ group.UserCount } používateľov"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
