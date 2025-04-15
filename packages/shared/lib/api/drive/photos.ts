@@ -72,7 +72,7 @@ export const queryUpdateAlbumName = (
     data,
 });
 
-interface RelatedPhotos {
+export interface RelatedPhotos {
     LinkID: string;
     Hash: string;
     Name: string;
@@ -93,11 +93,10 @@ export const queryAddPhotoToFavorite = (
             NameSignatureEmail: string;
             NodePassphrase: string;
             ContentHash: string;
-
             NodePassphraseSignature?: string; // Required when moving an anonymous Node. It must be signed by the SignatureEmail address.
             SignatureEmail?: string; // Required when moving an anonymous Node. Email address used for the NodePassphraseSignature.
             RelatedPhotos: RelatedPhotos[];
-        }[];
+        };
     }
 ) => ({
     method: 'POST',

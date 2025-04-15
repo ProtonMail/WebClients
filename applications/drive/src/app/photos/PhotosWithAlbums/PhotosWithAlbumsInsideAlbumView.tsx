@@ -18,6 +18,7 @@ import type { OnFileUploadSuccessCallbackData } from '../../store';
 import { useThumbnailsDownload } from '../../store';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { useFavoritePhotoToggle } from '../PhotosActions/Albums';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
 import { AlbumCoverHeader } from './components/AlbumCoverHeader';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
@@ -52,6 +53,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const updateTitle = useAppTitleUpdate();
     let [searchParams, setSearchParams] = useSearchParams();
     const { createNotification } = useNotifications();
+    const favoritePhotoToggle = useFavoritePhotoToggle();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { setPreviewLinkId, modals } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -70,8 +72,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
         isAlbumsLoading,
         isAlbumPhotosLoading,
-
-        userAddressEmail,
 
         albumPhotosLinkIdToIndexMap,
         photoLinkIdToIndexMap,
@@ -140,6 +140,13 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             }
         },
         [createNotification, addAlbumPhoto, albumShareId, album, albumPhotos]
+    );
+
+    const addOrRemovePhotoToFavorite = useCallback(
+        async (linkId: string, isFavorite: boolean) => {
+            void favoritePhotoToggle(linkId, isFavorite);
+        },
+        [favoritePhotoToggle]
     );
 
     const isAlbumPhotosEmpty = albumPhotos.length === 0;
@@ -227,13 +234,14 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
                         isLoading={isAlbumsLoading}
                         onItemClick={setPreviewLinkId}
-                        userAddressEmail={userAddressEmail}
                         selectedItems={selectedItems}
                         onSelectChange={(i, isSelected) =>
                             handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
                         }
                         isGroupSelected={isGroupSelected}
                         isItemSelected={isItemSelected}
+                        onFavorite={addOrRemovePhotoToFavorite}
+                        rootLinkId={linkId}
                     >
                         <AlbumCoverHeader
                             shareId={albumShareId}
