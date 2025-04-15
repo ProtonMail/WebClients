@@ -5,6 +5,16 @@ import type {
     RestoreDriveVolume,
 } from '../../interfaces/drive/volume';
 
+export const queryUserVolumes = () => ({
+    method: 'GET',
+    url: 'drive/volumes',
+});
+
+export const queryGetDriveVolume = (volumeId: string) => ({
+    method: 'GET',
+    url: `drive/volumes/${volumeId}`,
+});
+
 export const queryCreateDriveVolume = (data: CreateDriveVolume) => ({
     method: 'post',
     url: 'drive/volumes',
