@@ -6,6 +6,8 @@ import {
     queryRestoreLinks,
     queryTrashLinks,
 } from '@proton/shared/lib/api/drive/link';
+import type { RelatedPhotos } from '@proton/shared/lib/api/drive/photos';
+import { queryAddPhotoToFavorite } from '@proton/shared/lib/api/drive/photos';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
 import { queryVolumeEmptyTrash } from '@proton/shared/lib/api/drive/volume';
 import { API_CODES } from '@proton/shared/lib/constants';
@@ -22,6 +24,7 @@ import { useDriveEventManager } from '../_events';
 import { ShareType, useDefaultShare, useShare } from '../_shares';
 import { useBatchHelper } from '../_utils/useBatchHelper';
 import { useVolumesState } from '../_volumes';
+import type { DecryptedLink } from './interface';
 import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';
@@ -232,6 +235,7 @@ export function useLinksActions({
             ParentLinkID: newParentLinkId,
             NewShareID: newShareId === shareId ? undefined : newShareId,
             // In case of missing xattr attributes we prefer to use the current content hash than breaking move/recovery
+            // TODO: [DRVWEB-4651]
             ContentHash: isPhotosShare ? ContentHash || link.activeRevision?.photo?.contentHash : undefined,
             NameSignatureEmail: address.Email,
             NodePassphrase,
@@ -320,6 +324,237 @@ export function useLinksActions({
                 return { successes, failures, originalParentIds };
             },
         });
+    };
+
+    const favoritePhotoLink = async (
+        abortSignal: AbortSignal,
+        {
+            shareId,
+            newParentLinkId,
+            linkId,
+            newShareId = shareId,
+            silence = false,
+        }: {
+            shareId: string;
+            newParentLinkId: string;
+            linkId: string;
+            newShareId?: string;
+            silence?: boolean;
+        }
+    ) => {
+        const [
+            link,
+            { passphrase, passphraseSessionKey },
+            newParentPrivateKey,
+            newParentHashKey,
+            { privateKey: addressKey, address },
+            newShare,
+        ] = await Promise.all([
+            getLink(abortSignal, shareId, linkId),
+            getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
+            getLinkPrivateKey(abortSignal, newShareId, newParentLinkId),
+            getLinkHashKey(abortSignal, newShareId, newParentLinkId),
+            getShareCreatorKeys(abortSignal, newShareId),
+            getShare(abortSignal, newShareId),
+        ]);
+
+        if (link.corruptedLink) {
+            throw new Error('Cannot move corrupted file');
+        }
+
+        const isPhotosShare = newShare.type === ShareType.photos;
+
+        if (!isPhotosShare) {
+            throw new Error('You can only favorite photos');
+        }
+        // PhotoData in body is included in the case the photo needs to be copied to the photo gallery
+        const includePhotoData = link.parentLinkId !== newShare.rootLinkId;
+        let body = {};
+        if (includePhotoData) {
+            const getLinkMovedParameters = async (link: DecryptedLink) => {
+                const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
+                    await Promise.all([
+                        getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+                        generateLookupHash(link.name, newParentHashKey).catch((e) =>
+                            Promise.reject(
+                                new EnrichedError('Failed to generate lookup hash during move', {
+                                    tags: {
+                                        shareId,
+                                        newParentLinkId,
+                                        newShareId: newShareId === shareId ? undefined : newShareId,
+                                        linkId,
+                                    },
+                                    extra: { e },
+                                })
+                            )
+                        ),
+                        link.digests?.sha1
+                            ? generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+                                  Promise.reject(
+                                      new EnrichedError('Failed to generate content hash during move', {
+                                          tags: {
+                                              shareId,
+                                              newParentLinkId,
+                                              newShareId: newShareId === shareId ? undefined : newShareId,
+                                              linkId,
+                                          },
+                                          extra: { e },
+                                      })
+                                  )
+                              )
+                            : undefined,
+                        encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch(
+                            (e) =>
+                                Promise.reject(
+                                    new EnrichedError('Failed to encrypt link passphrase during move', {
+                                        tags: {
+                                            shareId,
+                                            newParentLinkId,
+                                            newShareId: newShareId === shareId ? undefined : newShareId,
+                                            linkId,
+                                        },
+                                        extra: { e },
+                                    })
+                                )
+                        ),
+                    ]);
+
+                const sessionKeyName = await getDecryptedSessionKey({
+                    data: link.encryptedName,
+                    privateKeys: currentParentPrivateKey,
+                }).catch((e) =>
+                    Promise.reject(
+                        new EnrichedError('Failed to decrypt link name session key during move', {
+                            tags: {
+                                shareId,
+                                newParentLinkId,
+                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                linkId,
+                            },
+                            extra: { e },
+                        })
+                    )
+                );
+
+                const { message: encryptedName } = await CryptoProxy.encryptMessage({
+                    textData: link.name,
+                    stripTrailingSpaces: true,
+                    sessionKey: sessionKeyName,
+                    encryptionKeys: newParentPrivateKey,
+                    signingKeys: addressKey,
+                }).catch((e) =>
+                    Promise.reject(
+                        new EnrichedError('Failed to encrypt link name during move', {
+                            tags: {
+                                shareId,
+                                newParentLinkId,
+                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                linkId,
+                            },
+                            extra: { e },
+                        })
+                    )
+                );
+
+                return {
+                    Name: encryptedName,
+                    Hash,
+                    ContentHash: ContentHash,
+                    NameSignatureEmail: address.Email,
+                    NodePassphrase,
+                    ...(!!link.nameSignatureEmail &&
+                        !link.signatureEmail && {
+                            NodePassphraseSignature,
+                            SignatureEmail: address.Email,
+                        }),
+                    ...(!link.nameSignatureEmail &&
+                        !link.signatureEmail && {
+                            NodePassphraseSignature,
+                            SignatureEmail: address.Email,
+                            NameSignatureEmail: address.Email,
+                        }),
+                };
+            };
+
+            const data = await getLinkMovedParameters(link);
+
+            // TODO [DRVWEB-4651]:
+
+            /*
+                New content hash is computed from sha1 located in extended attributes. This digest is set by clients and cannot be trusted. It can be wrong, set by malicious user, or missing entirely.
+                The only truly safe method would be to download the whole content and compute sha1 again [DRVWEB-4651]. That is not great UX and we decided to ignore this fact as the only consequence is that:
+                    * user will be able to upload the same photo again (de-duplication protection will not work),
+                    * or some other photo matching malicious hash will be rejected as duplicate (de-duplication will reject).
+
+            */
+            if (!data.ContentHash) {
+                throw new Error('ContentHash could not be computed');
+            }
+
+            let RelatedPhotosData: RelatedPhotos[] = [];
+            if (link.activeRevision?.photo?.relatedPhotosLinkIds) {
+                const BATCH_SIZE = 10;
+                const processRelatedPhotosInBatches = async (
+                    link: DecryptedLink,
+                    abortSignal: AbortSignal,
+                    shareId: string,
+                    batchSize: number = 10
+                ): Promise<RelatedPhotos[]> => {
+                    const relatedIds = link.activeRevision?.photo?.relatedPhotosLinkIds;
+                    const relatedPhotosData: RelatedPhotos[] = [];
+                    if (!relatedIds) {
+                        return relatedPhotosData;
+                    }
+                    for (let i = 0; i < relatedIds.length; i += batchSize) {
+                        const batch = relatedIds.slice(i, i + batchSize);
+
+                        const batchResults = await Promise.all(
+                            batch.map(async (id: string) => {
+                                const link = await getLink(abortSignal, shareId, id);
+                                const data = await getLinkMovedParameters(link);
+
+                                if (!data.ContentHash) {
+                                    throw new Error('ContentHash could not be computed');
+                                }
+
+                                return {
+                                    ...data,
+                                    LinkID: id,
+                                    ContentHash: data.ContentHash,
+                                };
+                            })
+                        );
+
+                        relatedPhotosData.push(...batchResults);
+                    }
+
+                    return relatedPhotosData;
+                };
+                RelatedPhotosData = await processRelatedPhotosInBatches(link, abortSignal, shareId, BATCH_SIZE);
+            }
+
+            body = {
+                PhotoData: {
+                    ...data,
+                    RelatedPhotos: RelatedPhotosData,
+                },
+            };
+        }
+
+        const { LinkID } = await debouncedRequest<{
+            LinkID: string;
+            Code: number;
+        }>({
+            ...queryAddPhotoToFavorite(newShare.volumeId, linkId, body),
+            silence,
+        }).catch((err) => {
+            if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
+                throw new ValidationError(err.data.Error);
+            }
+            throw err;
+        });
+
+        return LinkID;
     };
 
     const batchHelperMultipleVolumes = async (
@@ -453,6 +688,7 @@ export function useLinksActions({
         deleteChildrenLinks,
         deleteTrashedLinks,
         emptyTrash,
+        favoritePhotoLink,
     };
 }
 

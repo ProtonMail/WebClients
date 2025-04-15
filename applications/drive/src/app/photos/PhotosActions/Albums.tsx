@@ -1,10 +1,12 @@
 import { useCallback } from 'react';
+import { useOutletContext } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { usePreventLeave } from '@proton/components';
 import { queryCreateAlbum, queryUpdateAlbumName } from '@proton/shared/lib/api/drive/photos';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import {
     encryptName,
     generateLookupHash,
@@ -17,8 +19,10 @@ import { useDebouncedRequest } from '../../store/_api';
 import { useLink, validateLinkName } from '../../store/_links';
 import { useShare } from '../../store/_shares';
 import { useErrorHandler } from '../../store/_utils';
+import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import type { PhotosLayoutOutletContext } from '../PhotosWithAlbums/layout/PhotosLayout';
 
 function useAlbumsActions() {
     const { preventLeave } = usePreventLeave();
@@ -254,5 +258,37 @@ export const useRenameAlbum = () => {
             }
         },
         [renameAlbum, createNotification, showErrorNotification]
+    );
+};
+
+export const useFavoritePhotoToggle = () => {
+    const { createNotification } = useNotifications();
+    const { updatePhotoFavoriteFromCache, favoritePhoto, removeTagsFromPhoto } =
+        useOutletContext<PhotosLayoutOutletContext>();
+
+    return useCallback(
+        async (linkId: string, isFavorite: boolean) => {
+            const abortController = new AbortController();
+
+            // Optimistic UI change
+            if (!isFavorite) {
+                updatePhotoFavoriteFromCache(linkId, true);
+                void favoritePhoto(abortController.signal, linkId).catch((e) => {
+                    // Revert if something goes wrong
+                    createNotification({ text: c('Error').t`Could not add to favorites`, type: 'error' });
+                    sendErrorReport(e);
+                    updatePhotoFavoriteFromCache(linkId, false);
+                });
+            } else {
+                updatePhotoFavoriteFromCache(linkId, false);
+                void removeTagsFromPhoto(abortController.signal, linkId, [PhotoTag.Favorites]).catch((e) => {
+                    // Revert if something goes wrong
+                    createNotification({ text: c('Error').t`Could not remove from favorites`, type: 'error' });
+                    sendErrorReport(e);
+                    updatePhotoFavoriteFromCache(linkId, true);
+                });
+            }
+        },
+        [favoritePhoto, removeTagsFromPhoto, updatePhotoFavoriteFromCache, createNotification]
     );
 };
