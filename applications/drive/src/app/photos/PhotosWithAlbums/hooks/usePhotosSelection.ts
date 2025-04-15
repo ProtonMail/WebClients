@@ -4,16 +4,22 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
 import { usePhotoSelectionStore } from '../../../zustand/photos/selection.store';
-import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
+import type { PhotosLayoutOutletContext } from '../layout/PhotosLayout';
 
 type HandleSelectionArgs = {
     isSelected: boolean;
     isMultiSelect: boolean;
 };
 
-export const usePhotosSelection = () => {
-    const { photos, photoLinkIdToIndexMap, albumPhotos, albumPhotosLinkIdToIndexMap } = usePhotosWithAlbumsView();
-
+export const usePhotosSelection = ({
+    photos,
+    photoLinkIdToIndexMap,
+    albumPhotos,
+    albumPhotosLinkIdToIndexMap,
+}: Pick<
+    PhotosLayoutOutletContext,
+    'photos' | 'photoLinkIdToIndexMap' | 'albumPhotos' | 'albumPhotosLinkIdToIndexMap'
+>) => {
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
             currentPageType: state.currentPageType,

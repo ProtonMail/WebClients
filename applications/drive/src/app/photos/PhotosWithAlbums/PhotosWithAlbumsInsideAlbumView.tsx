@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom-v5-compat';
+import { useOutletContext, useParams, useSearchParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -18,10 +18,10 @@ import type { OnFileUploadSuccessCallbackData } from '../../store';
 import { useThumbnailsDownload } from '../../store';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
-import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
 import { AlbumCoverHeader } from './components/AlbumCoverHeader';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
+import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
 
 const useAppTitleUpdate = () => {
     const { APP_NAME } = useConfig();
@@ -72,9 +72,19 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         isAlbumPhotosLoading,
 
         userAddressEmail,
-    } = usePhotosWithAlbumsView();
+
+        albumPhotosLinkIdToIndexMap,
+        photoLinkIdToIndexMap,
+        photos,
+    } = useOutletContext<PhotosLayoutOutletContext>();
+
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isAlbumsLoading);
-    const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection();
+    const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection({
+        photos,
+        albumPhotos,
+        albumPhotosLinkIdToIndexMap,
+        photoLinkIdToIndexMap,
+    });
     const isShiftPressed = useShiftKey();
 
     const [isInitialized, setIsInitialized] = useState<boolean>(false);
