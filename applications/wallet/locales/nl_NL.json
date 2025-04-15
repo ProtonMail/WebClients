@@ -117,16 +117,13 @@
         "Neem contact op"
       ],
       "Get verification code": [
-        "Krijg verificatiecode"
+        "Krijg verificatie code"
       ],
       "Go to settings": [
         "Ga naar instellingen"
       ],
       "Got it": [
         "Begrepen"
-      ],
-      "Help": [
-        "Hulp"
       ],
       "Help and feedback": [
         "Hulp en feedback"
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Meer opties"
+      ],
+      "More options for accounts": [
+        "Meer opties voor accounts"
       ],
       "Need help?": [
         "Hulp nodig?"
@@ -569,6 +569,11 @@
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ]
+    },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "Ongeldige QR-code, we bieden alleen ondersteuning voor BIP 21 URI."
       ]
     },
     "bitcoin buy": {
@@ -2096,7 +2101,7 @@
         "Ongeldige postcode"
       ],
       "Invalid verification code": [
-        "Ongeldige verificatiecode"
+        "De ingevoerde code is ongeldig"
       ],
       "Not a valid number": [
         "Geen geldig getal"
@@ -2591,7 +2596,7 @@
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Als u de e-mail niet in de inbox kan vinden, controleer dan uw spammap."
+        "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -2730,6 +2735,9 @@
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Bedankt voor uw abonnement. Veilig browsen begint nu."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
@@ -2800,7 +2808,7 @@
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
@@ -3224,11 +3232,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -3250,6 +3253,11 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -4973,10 +4981,10 @@
         "Helpcentrum"
       ],
       "Human verification": [
-        "Menselijke verificatie"
+        "Persoonsverificatie"
       ],
       "Invalid verification code": [
-        "Ongeldige verificatiecode"
+        "De ingevoerde code is ongeldig"
       ],
       "Network error": [
         "Netwerkfout"
@@ -5033,17 +5041,17 @@
         "Uw kortere adres is nu klaar"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
     "Unknown sender": {
@@ -5314,6 +5322,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Deze portemonnee moet een wachtwoordzin bevatten."
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "View change addresses": [
         "Bekijk wijzigingsadressen"
@@ -5958,6 +5969,11 @@
         "Uw privé-sleutel"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Account toevoegen"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Neem contact op met ondersteuning"
@@ -5970,6 +5986,9 @@
       ],
       "Expand user settings": [
         "Breid de gebruikersinstellingen uit"
+      ],
+      "Import wallet": [
+        "Importeer portefeuille"
       ],
       "Recovery": [
         "Herstel"
@@ -5988,11 +6007,6 @@
       ],
       "Wallets": [
         "Portemonnees"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Account toevoegen"
       ]
     },
     "Wallet terms and conditions": {
@@ -6156,29 +6170,6 @@
         "Synchroniseren is bezig. Een moment geduld alstublieft"
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Een e-mailadres kan alleen aan één portemonneeaccount worden gekoppeld. Om een e-mailadres aan dit portemonneeaccount te koppelen, verwijdert u een e-mailadres van een ander portemonneeaccount of upgrade uw abonnement om meer e-mailadressen te krijgen."
-      ],
-      "Contact your administrator to upgrade": [
-        "Neem contact op met uw beheerder om te upgraden"
-      ],
-      "Unlock more email addresses": [
-        "Ontgrendel meer e-mailadressen"
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "U heeft het maximum aantal accounts bereikt dat door uw huidige abonnement wordt ondersteund."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "U heeft het maximale aantal accounts bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer accounts aan te maken. Uw support is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "U heeft het maximum aantal portemonnees bereikt dat door uw huidige abonnement wordt ondersteund."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "U heeft het maximale aantal portemonnees bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer portemonnees aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
@@ -6191,6 +6182,35 @@
       ],
       "You have reached your limit": [
         "U heeft uw limiet bereikt"
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "Account limiet bereikt"
+      ],
+      "Contact your administrator to upgrade": [
+        "Neem contact op met uw beheerder om te upgraden"
+      ],
+      "Expand your address limit": [
+        "Verhoog uw adreslimiet"
+      ],
+      "Wallet limit reached": [
+        "Portemonnee limiet bereikt"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "U heeft het maximum aantal accounts bereikt dat door uw huidige abonnement wordt ondersteund."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "U heeft het maximale aantal accounts bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer accounts aan te maken. Uw support is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "U heeft het maximale aantal e-mailadressen bereikt dat wordt ondersteund door uw huidige abonnement. U kunt upgraden om er meer aan te maken. Uw ondersteuning is ook essentieel voor onze strijd om financiële privacy en vrijheid te beschermen."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "U heeft het maximum aantal portemonnees bereikt dat door uw huidige abonnement wordt ondersteund."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "U heeft het maximale aantal portemonnees bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer portemonnees aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
       ]
     },
     "Wallet Welcome": {

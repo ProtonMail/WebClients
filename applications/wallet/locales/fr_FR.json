@@ -125,9 +125,6 @@
       "Got it": [
         "J'ai compris"
       ],
-      "Help": [
-        "Aide"
-      ],
       "Help and feedback": [
         "Aide et commentaires"
       ],
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Plus d'options"
+      ],
+      "More options for accounts": [
+        "Plus d'options pour les comptes"
       ],
       "Need help?": [
         "Besoin d'aide ?"
@@ -571,6 +571,11 @@
         "Tous les deux ans"
       ]
     },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "Le QR code n'est pas valide. Nous ne prenons en charge que les URI BIP 21."
+      ]
+    },
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
         "Frais de service Azteco de ${ serviceFeePercentage } %"
@@ -782,6 +787,9 @@
       ]
     },
     "Bitcoin Signing Type Description": {
+      "Electrum is a compatibility signature format": [
+        "Electrum est un format de signature de compatibilité."
+      ],
       "Trezor is the standard signature format according to BIP 137": [
         "Trezor est le format de signature standard pour BIP 137."
       ]
@@ -2275,12 +2283,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -2726,6 +2734,9 @@
       ],
       "Subscription auto-renews every month.": [
         "L'abonnement est renouvelé automatiquement tous les mois."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Merci de vous être abonné. La navigation sécurisée commence maintenant."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
@@ -3221,11 +3232,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -3247,6 +3253,11 @@
       ],
       "Switch plan": [
         "Changer d'abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -4412,6 +4423,12 @@
       ],
       "Signing type": [
         "Type de signature"
+      ],
+      "This signature verifies your ownership of this Bitcoin address without revealing your private key.": [
+        "Cette signature vérifie que vous êtes bien le propriétaire de cette adresse Bitcoin sans dévoiler votre clé privée."
+      ],
+      "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
+        "Nous utilisons par défaut la méthode de signature Electrum, car c'est la plus simple et la plus couramment demandée par les banques. La méthode BIP 137, plus avancée, est utilisée pour la signature des transactions hors ligne."
       ]
     },
     "specialoffer: Deal": {
@@ -5024,17 +5041,17 @@
         "Votre adresse au format plus court est maintenant prête."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Unknown sender": {
@@ -5305,6 +5322,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Ce portefeuille a besoin d'une phrase secrète pour pouvoir être utilisé."
+      ],
+      "Upgrade": [
+        "Améliorer votre abonnement"
       ],
       "View change addresses": [
         "Afficher les adresses modifiées"
@@ -5949,6 +5969,11 @@
         "Votre clé privée"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Ajouter un compte"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Contacter le support"
@@ -5961,6 +5986,9 @@
       ],
       "Expand user settings": [
         "Développer les paramètres utilisateur"
+      ],
+      "Import wallet": [
+        "Importer le portefeuille"
       ],
       "Recovery": [
         "Récupération"
@@ -5979,11 +6007,6 @@
       ],
       "Wallets": [
         "Portefeuilles"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Ajouter un compte"
       ]
     },
     "Wallet terms and conditions": {
@@ -6147,29 +6170,6 @@
         "La synchronisation est en cours. Veuillez patienter"
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Un e-mail ne peut être associé qu'à un seul compte de portefeuille. Pour associer un e-mail à ce compte de portefeuille, veuillez retirer un e-mail d'un autre compte de portefeuille ou passer à un abonnement supérieur pour obtenir plus d'adresses e-mail."
-      ],
-      "Contact your administrator to upgrade": [
-        "Contactez votre administrateur pour améliorer votre abonnement."
-      ],
-      "Unlock more email addresses": [
-        "Débloquer plus d'adresses e-mail"
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Vous avez atteint le nombre maximum de comptes pris en charge par votre abonnement actuel."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Vous avez atteint le nombre maximum de comptes pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Vous avez atteint le nombre maximum de portefeuilles pris en charge par votre abonnement actuel."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Vous avez atteint le nombre maximal de portefeuilles pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "En continuant, vous acceptez nos ${ termsAndConditionsLink }."
@@ -6182,6 +6182,35 @@
       ],
       "You have reached your limit": [
         "Vous avez atteint la limite."
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "La limite du compte est atteinte."
+      ],
+      "Contact your administrator to upgrade": [
+        "Contactez votre administrateur pour améliorer votre abonnement."
+      ],
+      "Expand your address limit": [
+        "Augmentez votre limite d’adresses"
+      ],
+      "Wallet limit reached": [
+        "La limite du portefeuille est atteinte."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Vous avez atteint le nombre maximum de comptes pris en charge par votre abonnement actuel."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Vous avez atteint le nombre maximum de comptes pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Vous avez atteint le nombre maximal d’adresses e-mail prises en charge par votre abonnement actuel. Veuillez changer d'abonnement pour en créer d’autres. Votre support sera également essentiel dans notre combat pour protéger le respect de la vie privée financière et la liberté."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Vous avez atteint le nombre maximum de portefeuilles pris en charge par votre abonnement actuel."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Vous avez atteint le nombre maximal de portefeuilles pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
       ]
     },
     "Wallet Welcome": {
