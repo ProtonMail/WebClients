@@ -175,7 +175,7 @@ export const PhotosCard: FC<Props> = ({
 
                     {(!isOwnedByCurrentUser || photo.signatureIssues || photo.isShared) && (
                         <div className="absolute bottom-0 flex left-0 ml-2 mb-2 gap-1">
-                            {!isOwnedByCurrentUser && (
+                            {!isOwnedByCurrentUser && !isFavorite && (
                                 <div
                                     data-testid="photo-cloud-icon"
                                     className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
