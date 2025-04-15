@@ -14,6 +14,7 @@ import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMet
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import { useThumbnailsDownload, useUserSettings } from '../../store';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { useFavoritePhotoToggle } from '../PhotosActions/Albums';
 import { EmptyPhotos } from './EmptyPhotos';
 import { EmptyTagView } from './EmptyTagView';
 import { PhotosGrid } from './PhotosGrid';
@@ -41,14 +42,11 @@ export const PhotosWithAlbumsView = () => {
         selectedTags,
         handleSelectTag,
         isPhotosEmpty,
-        userAddressEmail,
-        favoritePhoto,
-        updatePhotoFavoriteFromCache,
-        removeTagsFromPhoto,
         albumPhotosLinkIdToIndexMap,
         photoLinkIdToIndexMap,
     } = useOutletContext<PhotosLayoutOutletContext>();
 
+    const favoritePhotoToggle = useFavoritePhotoToggle();
     const { photoTags } = useUserSettings();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const isShiftPressed = useShiftKey();
@@ -87,28 +85,9 @@ export const PhotosWithAlbumsView = () => {
 
     const addOrRemovePhotoToFavorite = useCallback(
         async (linkId: string, isFavorite: boolean) => {
-            if (!photos) {
-                return;
-            }
-
-            const abortController = new AbortController();
-
-            // Optimistic UI change
-            if (!isFavorite) {
-                updatePhotoFavoriteFromCache(linkId, true);
-                void favoritePhoto(abortController.signal, linkId).catch(() => {
-                    // Revert if something goes wrong
-                    updatePhotoFavoriteFromCache(linkId, false);
-                });
-            } else {
-                updatePhotoFavoriteFromCache(linkId, false);
-                void removeTagsFromPhoto(abortController.signal, linkId, [PhotoTag.Favorites]).catch(() => {
-                    // Revert if something goes wrong
-                    updatePhotoFavoriteFromCache(linkId, true);
-                });
-            }
+            void favoritePhotoToggle(linkId, isFavorite);
         },
-        [photos, favoritePhoto, removeTagsFromPhoto, updatePhotoFavoriteFromCache]
+        [favoritePhotoToggle]
     );
 
     // We want to show the view in case they are more page to load, we can start to show what we already have
@@ -149,9 +128,9 @@ export const PhotosWithAlbumsView = () => {
                         }
                         isGroupSelected={isGroupSelected}
                         isItemSelected={isItemSelected}
-                        userAddressEmail={userAddressEmail}
                         onFavorite={addOrRemovePhotoToFavorite}
                         isAddAlbumPhotosView={currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}
+                        rootLinkId={linkId}
                     />
                 )}
             </UploadDragDrop>

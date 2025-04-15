@@ -223,7 +223,8 @@ export default function useLinkActions() {
         abortSignal: AbortSignal,
         shareId: string,
         parentLinkId: string,
-        name: string
+        name: string,
+        sha1?: string
     ) => {
         const error = validateLinkName(name);
         if (error) {
@@ -236,7 +237,7 @@ export default function useLinkActions() {
             getShareCreatorKeys(abortSignal, shareId),
         ]);
 
-        const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
+        const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName, ContentHash] =
             await Promise.all([
                 generateLookupHash(name, parentHashKey).catch((e) =>
                     Promise.reject(
@@ -271,6 +272,19 @@ export default function useLinkActions() {
                         })
                     )
                 ),
+                sha1
+                    ? generateLookupHash(sha1, parentHashKey).catch((e) =>
+                          Promise.reject(
+                              new EnrichedError('Failed to generate content hash during favorite', {
+                                  tags: {
+                                      shareId,
+                                      parentLinkId,
+                                  },
+                                  extra: { e },
+                              })
+                          )
+                      )
+                    : undefined,
             ]);
 
         const { NodeHashKey } = await generateNodeHashKey(privateKey, privateKey).catch((e) =>
@@ -299,6 +313,7 @@ export default function useLinkActions() {
             NodePassphraseSignature,
             SignatureAddress: address.Email,
             ParentLinkID: parentLinkId,
+            ContentHash,
         };
     };
 
