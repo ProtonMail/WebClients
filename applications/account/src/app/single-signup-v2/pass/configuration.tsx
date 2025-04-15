@@ -73,12 +73,12 @@ import {
     getUnlimitedPasswordsBenefit,
     getWorksOnAllDevicesBenefit,
 } from '../configuration/helper';
+import recoveryKit from '../defaultCustomStep/recovery/recovery-kit.svg';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
 import CustomStep from './CustomStep';
 import { getInfo } from './InstallExtensionStep';
-import recoveryKit from './recovery-kit.svg';
 
 const getPassBenefitsTitle = (plan: PLANS | undefined) => {
     if (plan === PLANS.PASS_FAMILY) {
