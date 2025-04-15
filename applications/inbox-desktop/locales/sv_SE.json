@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Om ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Faktisk storlek"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Rensa applikationsdata"
       ],
+      "Close Window": [
+        "Stäng fönster"
+      ],
+      "Copy": [
+        "Kopiera"
+      ],
+      "Cut": [
+        "Klipp ut"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
       "Force Reload": [
         "Tvinga omladdning"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Dölj ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Dölj andra"
+      ],
+      "Minimize": [
+        "Minimera"
+      ],
+      "Paste": [
+        "Klistra in"
+      ],
+      "Paste and Match Style": [
+        "Klistra in och matcha stil"
+      ],
+      "Quit": [
+        "Avsluta"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Avsluta ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Gör om"
+      ],
       "Reload": [
         "Ladda om"
+      ],
+      "Select All": [
+        "Välj alla"
+      ],
+      "Show All": [
+        "Visa alla"
       ],
       "Show logs": [
         "Visa loggar"
@@ -26,11 +71,26 @@
       "Speech": [
         "Tal"
       ],
-      "Start Proton Mail at login": [
-        "Starta Proton Mail på inloggning"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Starta ${ MAIL_APP_NAME } vid inloggning"
       ],
-      "Uninstall Proton Mail": [
-        "Avinstallera Proton Mail"
+      "Start Speaking": [
+        "Börja prata"
+      ],
+      "Stop Speaking": [
+        "Sluta prata"
+      ],
+      "Toggle Full Screen": [
+        "Slå på/av helskärm"
+      ],
+      "Undo": [
+        "Ångra"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Avinstallera ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Zooma"
       ],
       "Zoom In": [
         "Zooma in"
@@ -39,12 +99,9 @@
         "Zooma ut"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Spara bild som…"
-      ],
-      "Speech": [
-        "Tal"
+    "App Menu": {
+      "Services": [
+        "Tjänster"
       ]
     },
     "Context menu": {
@@ -56,11 +113,41 @@
       ],
       "Emoji and Symbols": [
         "Emojis och symboler"
+      ],
+      "Save image as…": [
+        "Spara bild som …"
+      ],
+      "Speech": [
+        "Tal"
+      ],
+      "Start Speaking": [
+        "Börja prata"
+      ],
+      "Stop Speaking": [
+        "Sluta prata"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopiera"
+      ],
+      "Cut": [
+        "Klipp ut"
+      ],
+      "Paste": [
+        "Klistra in"
+      ],
+      "Paste and Match Style": [
+        "Klistra in och matcha stil"
+      ],
+      "Redo": [
+        "Gör om"
+      ],
+      "Select All": [
+        "Välj alla"
+      ],
+      "Undo": [
+        "Ångra"
       ]
     },
     "Error dialog": {

@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "O ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Skutečná velikost"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Vyčistit data aplikace"
       ],
+      "Close Window": [
+        "Zavřít okno"
+      ],
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Cut": [
+        "Vyjmout"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
       "Force Reload": [
         "Vynutit obnovení"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Skrýt ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Skrýt ostatní"
+      ],
+      "Minimize": [
+        "Minimalizovat"
+      ],
+      "Paste": [
+        "Vložit"
+      ],
+      "Paste and Match Style": [
+        "Vložit a přizpůsobit styl"
+      ],
+      "Quit": [
+        "Ukončit"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Ukončit ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Opakovat"
+      ],
       "Reload": [
         "Znovu načíst"
+      ],
+      "Select All": [
+        "Vybrat vše"
+      ],
+      "Show All": [
+        "Zobrazit vše"
       ],
       "Show logs": [
         "Zobrazit logy"
@@ -26,11 +71,26 @@
       "Speech": [
         "Řeč"
       ],
-      "Start Proton Mail at login": [
-        "Spustit Proton Mail po přihlášení"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Spustit ${ MAIL_APP_NAME } při přihlášení"
       ],
-      "Uninstall Proton Mail": [
-        "Odinstalovat Proton Mail"
+      "Start Speaking": [
+        "Začněte mluvit"
+      ],
+      "Stop Speaking": [
+        "Přestaňte mluvit"
+      ],
+      "Toggle Full Screen": [
+        "Přepnout na režim celé obrazovky"
+      ],
+      "Undo": [
+        "Zpět"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Odinstalovat ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Přiblížit"
       ],
       "Zoom In": [
         "Přiblížit"
@@ -39,12 +99,9 @@
         "Oddálit"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Uložit obrázek jako…"
-      ],
-      "Speech": [
-        "Řeč"
+    "App Menu": {
+      "Services": [
+        "Služby"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji a symboly"
+      ],
+      "Save image as…": [
+        "Uložit obrázek jako…"
+      ],
+      "Speech": [
+        "Řeč"
+      ],
+      "Start Speaking": [
+        "Začněte mluvit"
+      ],
+      "Stop Speaking": [
+        "Přestaňte mluvit"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopírovat"
+      ],
+      "Cut": [
+        "Vyjmout"
+      ],
+      "Look Up “${ text }”": [
+        "Vyhledat “${ text }”"
+      ],
+      "Paste": [
+        "Vložit"
+      ],
+      "Paste and Match Style": [
+        "Vložit a přizpůsobit styl"
+      ],
+      "Redo": [
+        "Opakovat"
+      ],
+      "Select All": [
+        "Vybrat vše"
+      ],
+      "Undo": [
+        "Vrátit"
       ]
     },
     "Error dialog": {
