@@ -117,16 +117,13 @@
         "Mettiti in contatto"
       ],
       "Get verification code": [
-        "Ottieni il codice di verifica"
+        "Invia il codice di verifica"
       ],
       "Go to settings": [
         "Vai alle impostazioni"
       ],
       "Got it": [
         "Ho capito"
-      ],
-      "Help": [
-        "Aiuto"
       ],
       "Help and feedback": [
         "Aiuto e feedback"
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Altre opzioni"
+      ],
+      "More options for accounts": [
+        "Altre opzioni per gli account"
       ],
       "Need help?": [
         "Hai bisogno di aiuto?"
@@ -210,10 +210,10 @@
         "Richiedi una funzionalità"
       ],
       "Request new code": [
-        "Richiedi un nuovo codice"
+        "Richiedi nuovo codice"
       ],
       "Resend code": [
-        "Reinvia codice"
+        "Reinvia il codice"
       ],
       "Retry": [
         "Riprova"
@@ -569,6 +569,11 @@
       ],
       "Two-year": [
         "Due anni"
+      ]
+    },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "Il QR code non è valido. Supportiamo solo URI BIP 21."
       ]
     },
     "bitcoin buy": {
@@ -2063,10 +2068,10 @@
         "Dominio non disponibile, riprovare più tardi"
       ],
       "Email is not valid": [
-        "Email non valida"
+        "Indirizzo email non valido"
       ],
       "Enter 6 digits": [
-        "Inserisci 6 cifre"
+        "Inserisci il codice a 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
@@ -2464,7 +2469,7 @@
         "Garanzia di rimborso entro 30 giorni"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
@@ -2591,7 +2596,7 @@
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -2730,6 +2735,9 @@
       "Subscription auto-renews every month.": [
         "L'abbonamento si rinnova automaticamente ogni mese."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Grazie per esserti abbonato. La navigazione sicura inizia ora."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
       ],
@@ -2746,7 +2754,7 @@
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, verifica di essere umano."
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
       "Total email addresses": [
         "Totale indirizzi email"
@@ -2869,7 +2877,7 @@
         "Il tuo abbonamento a ${ PASS_SHORT_APP_NAME } Plus verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
@@ -2878,7 +2886,7 @@
         "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà usato solamente per questa verifica una tantum."
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese.",
@@ -2966,7 +2974,7 @@
         "Categoria"
       ],
       "Code is 6 digits without spaces": [
-        "Il codice è di 6 cifre senza spazi"
+        "Codice a 6 cifre senza spazi"
       ],
       "Colors": [
         "Colori"
@@ -3224,11 +3232,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -3250,6 +3253,11 @@
       ],
       "Switch plan": [
         "Cambia piano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -3767,6 +3775,11 @@
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -3779,11 +3792,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -5005,7 +5013,7 @@
         "Segnala un problema"
       ],
       "Request new code": [
-        "Richiedi un nuovo codice"
+        "Richiedi nuovo codice"
       ],
       "Select a plan": [
         "Seleziona un piano"
@@ -5038,17 +5046,17 @@
         "Il tuo indirizzo breve ora è pronto"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se hai acquistato un codice regalo o ne hai ricevuto uno dal nostro team di supporto, puoi inserirlo qui."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Il nuovo ciclo di abbonamento inizia il ${ formattedTime }"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
       ]
     },
     "Unknown sender": {
@@ -5319,6 +5327,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Questo Wallet necessita di una frase di accesso per essere utilizzato."
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
       ],
       "View change addresses": [
         "Visualizza gli indirizzi di resto"
@@ -5963,6 +5974,11 @@
         "La tua chiave privata"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Aggiungi un account"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Contatta il supporto"
@@ -5975,6 +5991,9 @@
       ],
       "Expand user settings": [
         "Espandi le impostazioni utente"
+      ],
+      "Import wallet": [
+        "Importa un portafoglio"
       ],
       "Recovery": [
         "Recupero"
@@ -5993,11 +6012,6 @@
       ],
       "Wallets": [
         "Portafogli"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Aggiungi un account"
       ]
     },
     "Wallet terms and conditions": {
@@ -6161,29 +6175,6 @@
         "Sincronizzazione in corso. Rimani in attesa."
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Un'email può essere collegata a un solo account del portafoglio. Per collegare un'email a questo account del portafoglio, rimuovi l'email da un altro account o effettua l'upgrade del tuo piano per ottenere più indirizzi email."
-      ],
-      "Contact your administrator to upgrade": [
-        "Contatta l'amministratore per effettuare l'upgrade"
-      ],
-      "Unlock more email addresses": [
-        "Sblocca più indirizzi email"
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Hai raggiunto il numero massimo di account supportati dal tuo piano attuale."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Hai raggiunto il numero massimo di account supportati dal tuo piano attuale. Effettua l'upgrade per crearne di più. Il tuo supporto sarà fondamentale anche per il nostro impegno nel proteggere la privacy e la libertà finanziaria."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Hai raggiunto il numero massimo di portafogli supportati dal tuo piano attuale."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Hai raggiunto il numero massimo di portafogli supportati dal tuo piano attuale. Effettua l'upgrade per crearne di più. Il tuo supporto è fondamentale anche per il nostro impegno nel proteggere la privacy e la libertà finanziaria."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "Continuando, accetti i nostri ${ termsAndConditionsLink }"
@@ -6196,6 +6187,35 @@
       ],
       "You have reached your limit": [
         "Hai raggiunto il tuo limite"
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "Limite dell'account raggiunto"
+      ],
+      "Contact your administrator to upgrade": [
+        "Contatta l'amministratore per effettuare l'upgrade"
+      ],
+      "Expand your address limit": [
+        "Espandi il limite dei tuoi indirizzi"
+      ],
+      "Wallet limit reached": [
+        "Limite del portafoglio raggiunto"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Hai raggiunto il numero massimo di account supportati dal tuo piano attuale."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Hai raggiunto il numero massimo di account supportati dal tuo piano attuale. Effettua l'upgrade per crearne di più. Il tuo supporto sarà fondamentale anche per il nostro impegno nel proteggere la privacy e la libertà finanziaria."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Hai raggiunto il numero massimo di indirizzi email supportati dal tuo piano attuale. Effettua l’upgrade per crearne di più. Il tuo supporto sarà inoltre essenziale per la nostra lotta per proteggere la privacy e la libertà finanziaria."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Hai raggiunto il numero massimo di portafogli supportati dal tuo piano attuale."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Hai raggiunto il numero massimo di portafogli supportati dal tuo piano attuale. Effettua l'upgrade per crearne di più. Il tuo supporto è fondamentale anche per il nostro impegno nel proteggere la privacy e la libertà finanziaria."
       ]
     },
     "Wallet Welcome": {
