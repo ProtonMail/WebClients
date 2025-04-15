@@ -88,6 +88,8 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                                       .t`Access to ${PASS_APP_NAME} will always require your backup password.`,
                                                   extra: c('Info')
                                                       .t`Access to ${PASS_APP_NAME} will always require your extra password.`,
+                                                  twoPwd: c('Info')
+                                                      .t`Access to ${PASS_APP_NAME} will always require your second password.`,
                                                   default: c('Info')
                                                       .t`Access to ${PASS_APP_NAME} will always require your ${BRAND_NAME} password.`,
                                               })}
