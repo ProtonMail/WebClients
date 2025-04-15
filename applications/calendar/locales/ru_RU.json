@@ -350,9 +350,6 @@
       "Got it": [
         "Понятно"
       ],
-      "Help": [
-        "Помощь"
-      ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
       ],
@@ -3105,6 +3102,9 @@
       "Email address is required": [
         "Нужно указать адрес электронной почты"
       ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
       "Ends on date cannot be empty": [
         "Дата окончания не может быть пустой"
       ],
@@ -3152,6 +3152,9 @@
       ],
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
+      ],
+      "Incorrect username": [
+        "Некорректное имя пользователя"
       ],
       "Intended recipient does not support calendar sharing": [
         "Предполагаемый получатель не поддерживает совместное использование календаря"
@@ -3246,6 +3249,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Не аккаунт ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
       "Number of occurrences cannot be empty": [
         "Количество повторов не может быть пустым"
       ],
@@ -3266,6 +3272,9 @@
       ],
       "Password is required": [
         "Нужно ввести пароль"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
       ],
       "Payment process canceled": [
         "Процесс оплаты отменён"
@@ -3372,6 +3381,9 @@
       "The amount due has changed. Please try again.": [
         "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
       ],
@@ -3399,8 +3411,14 @@
       "There was an error when exporting the contacts vCards": [
         "Произошла ошибка при экспорте визитных карточек контактов"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
+      ],
       "This field is required": [
         "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля ${ minimumLength } символов."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Это имя папки недоступно. Пожалуйста, выберите другое имя."
@@ -3414,6 +3432,9 @@
       "Trusted keys are not valid for sending": [
         "Доверенные ключи недействительны для отправки"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Неожиданная ошибка, мы не можем импортировать контакты"
       ],
@@ -3422,6 +3443,12 @@
       ],
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
+      ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
       ],
       "Validation error": [
         "Ошибка проверки"
@@ -10649,6 +10676,20 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Общий доступ со сквозным шифрованием с подтверждённым контактом"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
       ]
     },
     "Video control": {

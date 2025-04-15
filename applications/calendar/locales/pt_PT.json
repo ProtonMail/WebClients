@@ -347,9 +347,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Help": [
-        "Ajuda"
-      ],
       "Help and feedback": [
         "Ajuda e comentários"
       ],
@@ -3116,6 +3113,9 @@
       "Email address is required": [
         "O endereço de e-mail é obrigatório."
       ],
+      "Email is not valid": [
+        "O e-mail não é válido."
+      ],
       "Ends on date cannot be empty": [
         "A data final não pode estar vazia"
       ],
@@ -3163,6 +3163,9 @@
       ],
       "IMAP server is required": [
         "Servidor IMAP é necessário."
+      ],
+      "Incorrect username": [
+        "Nome de utilizador incorreto"
       ],
       "Intended recipient does not support calendar sharing": [
         "O destinatário pretendido não suporta a partilha de calendário."
@@ -3255,6 +3258,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Não é uma conta do ${ BRAND_NAME }."
       ],
+      "Not a valid number": [
+        "O número não é válido."
+      ],
       "Number of occurrences cannot be empty": [
         "O número de ocorrências não pode estar vazio"
       ],
@@ -3271,6 +3277,9 @@
       ],
       "Password is required": [
         "A palavra-passe é obrigatória."
+      ],
+      "Passwords do not match": [
+        "As palavras-passe não correspondem."
       ],
       "Payment process canceled": [
         "Processo de pagamento cancelado"
@@ -3373,6 +3382,9 @@
       "The amount due has changed. Please try again.": [
         "O montante devido foi alterado. Tente novamente."
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não correspondem."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta não é válido. Escolha um nome diferente."
       ],
@@ -3400,8 +3412,14 @@
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo é obrigatório"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
@@ -3415,6 +3433,9 @@
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente utilizar apenas letras, números e _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Não foi possível carregar o painel de controlo VPN. Verifique a sua ligação e tente novamente."
       ],
@@ -3426,6 +3447,12 @@
       ],
       "Unknown payment token status": [
         "Estado do símbolo de pagamento desconhecido"
+      ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
       ],
       "Validation error": [
         "Erro de validação"
@@ -10585,6 +10612,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Partilhado com encriptação de ponta a ponta e com contacto verificado"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
+        "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
       ]
     },
     "Video control": {
