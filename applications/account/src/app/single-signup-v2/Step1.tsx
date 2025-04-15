@@ -95,6 +95,7 @@ import type {
 import { SignupMode, UpsellTypes } from './interface';
 import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
+import PassTrial2024UpsellModal from './modals/PassTrial2024UpsellModal';
 import { type CheckTrialPriceParams, type CheckTrialPriceResult, checkTrialPrice } from './modals/Trial2024UpsellModal';
 import PassLifetimeSpecialOffer from './pass/LifetimeOfferMessage';
 import PassLifetimeFeaturedSection from './pass/PassLifetimeFeaturedSection';
@@ -169,6 +170,7 @@ const Step1 = ({
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
+    const passTrialOfferEnabled = useFlag('PassTrialOffer');
 
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
@@ -180,6 +182,7 @@ const Step1 = ({
     const [checkingTrial, withCheckingTrial] = useLoading();
 
     const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
+    const [upsellPassTrialModal, setUpsellPassTrialModal, renderUpsellPassTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
@@ -825,6 +828,9 @@ const Step1 = ({
             {renderUpsellDriveTrialModal && (
                 <DriveTrial2024UpsellModal {...upsellDriveTrialModal} {...upsellModalCommonProps} />
             )}
+            {renderUpsellPassTrialModal && (
+                <PassTrial2024UpsellModal {...upsellPassTrialModal} {...upsellModalCommonProps} />
+            )}
             <div className="flex items-center flex-column">
                 {title}
                 {hasPlanSelector && model.upsell.mode !== UpsellTypes.UPSELL && (
@@ -1178,6 +1184,20 @@ const Step1 = ({
                                                                               await fetchTrialPrice(PLANS.DRIVE);
 
                                                                               setUpsellDriveTrialModal(true);
+
+                                                                              return;
+                                                                          } catch {}
+                                                                      }
+                                                                      if (
+                                                                          app === APPS.PROTONPASS &&
+                                                                          passTrialOfferEnabled &&
+                                                                          // only show Pass trial upsell if the URL has "plan=free"
+                                                                          signupParameters.preSelectedPlan === 'free'
+                                                                      ) {
+                                                                          try {
+                                                                              await fetchTrialPrice(PLANS.PASS);
+
+                                                                              setUpsellPassTrialModal(true);
 
                                                                               return;
                                                                           } catch {}
