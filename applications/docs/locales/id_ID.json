@@ -150,6 +150,9 @@
       "Collapse": [
         "Ciutkan"
       ],
+      "Collapse list of pending invitations": [
+        "Ciutkan daftar undangan yang menunggu jawaban"
+      ],
       "Compose": [
         "Tulis"
       ],
@@ -161,9 +164,6 @@
       ],
       "Contact group": [
         "Grup kontak"
-      ],
-      "Context menu": [
-        "Menu konteks"
       ],
       "Continue": [
         "Lanjutkan"
@@ -425,6 +425,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Pilihan lainnya untuk akun"
       ],
       "Move": [
         "Pindahkan"
@@ -5104,7 +5107,7 @@
         "Alamat email Anda akan terlihat selaku pemilik tautan pada halaman pembagian"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
@@ -5137,7 +5140,7 @@
         "Kata sandi Anda telah bocor:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Nomor telepon Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Lokasi fisik Anda sedang terlihat dan dapat digunakan untuk membatasi akses internet Anda."
@@ -5413,6 +5416,9 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
+      "Enable email notifications": [
+        "Aktifkan notifikasi email"
+      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
@@ -5466,6 +5472,9 @@
       ],
       "Import to:": [
         "Impor ke:"
+      ],
+      "Include document name in notification": [
+        "Sertakan nama dokumen dalam notifikasi"
       ],
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama berkas dalam email undangan"
@@ -6445,7 +6454,7 @@
         "Perlindungan kebocoran DNS"
       ],
       "Double hop": [
-        "Double hop"
+        "Koneksi double hop"
       ],
       "Easy Switch import assistant": [
         "Alat bantu impor Easy Switch"
@@ -7044,7 +7053,7 @@
         "Pada saat Anda mengirim pesan ke pengguna ${ MAIL_APP_NAME } lainnya, enkripsi akan diterapkan secara otomatis. Sebaliknya, pada saat Anda mengirim pesan ke pengguna non-${ MAIL_APP_NAME_TWO }, Anda harus menentukan kata sandi pada pesan yang Anda kirim."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Anda dapat menetapkan lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun segala hal terkait pembayaran hanya akan dapat diatur oleh admin utama."
+        "Anda dapat memiliki lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun hanya admin utamalah yang memiliki kendali atas tagihan."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7281,6 +7290,9 @@
       "Public link update access failed ": [
         "Gagal memperbarui akses tautan publik "
       ],
+      "Recent documents updated.": [
+        "Dokumen terkini diperbarui"
+      ],
       "Root folder failed to be loaded": [
         "Folder akar gagal dimuat"
       ],
@@ -7455,6 +7467,11 @@
       ],
       "Merge with calendar": [
         "Gabungkan dengan kalender"
+      ]
+    },
+    "Page title": {
+      "Searching": [
+        "Mencari"
       ]
     },
     "Participant name": {
@@ -9118,6 +9135,9 @@
       "Import groups": [
         "Impor grup"
       ],
+      "Information exposed in breach": [
+        "Informasi yang terpapar dalam kebocoran data"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
@@ -9416,6 +9436,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Pesan dan nama berkas disimpan dengan enkripsi zero-access pada saat diikutsertakan pada email"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
@@ -9436,6 +9459,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Siklus langganan baru akan dimulai pada ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"

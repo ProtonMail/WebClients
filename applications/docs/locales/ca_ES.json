@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "Accepta la invitació al document"
       ],
+      "Actions": [
+        "Accions"
+      ],
       "Activate recovery": [
         "Activa la recuperació"
       ],
@@ -124,6 +127,9 @@
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
+      "Change sort order": [
+        "Canvia l'ordenació"
+      ],
       "characters": [
         "caràcters"
       ],
@@ -160,6 +166,12 @@
       "Collapse": [
         "Replega"
       ],
+      "Collapse list": [
+        "Reduí la llista"
+      ],
+      "Collapse list of pending invitations": [
+        "Reduí la llista d'invitacions pendents"
+      ],
       "Compose": [
         "Redactar"
       ],
@@ -171,9 +183,6 @@
       ],
       "Contact group": [
         "Grups de contactes"
-      ],
-      "Context menu": [
-        "Menú contextual"
       ],
       "Continue": [
         "Continua"
@@ -660,6 +669,9 @@
       "Skip verification": [
         "Omet la verificació"
       ],
+      "Sort by": [
+        "Ordena per"
+      ],
       "Start import": [
         "Comença la importació"
       ],
@@ -755,6 +767,9 @@
       ],
       "View": [
         "Mostra"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Visualitza totes les ${ pendingCount } invitacions"
       ],
       "View all reports": [
         "Mostra tots els informes"
