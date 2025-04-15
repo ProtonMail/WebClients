@@ -137,10 +137,10 @@
       "Create": [
         "Створити"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -958,9 +958,6 @@
       ],
       "File does not match expected format": [
         "Файл не відповідає очікуваному формату"
-      ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Не вдалося імпортувати дані до сховища \"${ vaultData.name }\" : ${ description }"
       ],
       "Importing items failed": [
         "Не вдалося імпортувати елементи"
@@ -2479,7 +2476,7 @@
         "Показувати"
       ],
       "Display name": [
-        "Ім'я"
+        "Показувати як"
       ],
       "DNS": [
         "DNS"
@@ -3098,7 +3095,7 @@
         "Додати текст"
       ],
       "Alias Display Name": [
-        "Ім'я псевдоніма"
+        "Показувати псевдонім як"
       ],
       "Email address": [
         "Адреса е-пошти"
@@ -3263,7 +3260,7 @@
         "Поштову скриньку за замовчуванням успішно оновлено"
       ],
       "Display name successfully updated": [
-        "Ім'я показу успішно оновлено"
+        "Ім'я для показу оновлено"
       ],
       "Domain ownership verified. You can now set up MX record.": [
         "Право власності на домен підтверджено. Тепер ви можете налаштувати MX-запис."
@@ -3375,7 +3372,7 @@
         "За замовчуванням"
       ],
       "Default Display Name": [
-        "Ім'я показу за замовчуванням"
+        "Типове ім'я для показу"
       ],
       "Delete ${ deletedItemsCount } item?": [
         "Видалити ${ deletedItemsCount } елемент?",

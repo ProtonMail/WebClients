@@ -152,10 +152,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -1000,8 +1000,8 @@
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Error de importación para la bóveda \"${ vaultData.name }\": ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Error al importar la bóveda \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Error al importar elementos"
@@ -1769,8 +1769,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -3297,6 +3296,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Si se activa, todos sus archivos se van a descargar al exportar. Esto puede tomar un tiempo dependiendo de su conexión de internet"
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Si sus datos contienen archivos adjuntos, estos no se importarán."
+      ],
       "Include file attachments": [
         "Incluir archivos adjuntos"
       ],
@@ -3336,6 +3338,9 @@
       "Total imported files: ": [
         "Total de archivos importados: "
       ],
+      "Upgrade to support file attachments": [
+        "Mejore su plan para admitir archivos adjuntos."
+      ],
       "Upload files from your device.": [
         "Cargue archivos desde el dispositivo."
       ],
@@ -3344,9 +3349,6 @@
       ],
       "You may close this window after saving the file.": [
         "Puede cerrar esta ventana después de guardar el archivo."
-      ],
-      "Your current plan does not support importing files": [
-        "El plan actual no admite importar archivos."
       ]
     },
     "Placeholder": {
