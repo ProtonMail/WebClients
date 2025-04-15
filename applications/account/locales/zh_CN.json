@@ -685,9 +685,6 @@
       "Got it": [
         "知道了"
       ],
-      "Help": [
-        "帮助"
-      ],
       "Help and feedback": [
         "帮助和反馈"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "设为默认"
-      ],
-      "Set as default mail application": [
-        "设置为默认邮件应用"
       ],
       "Set catch-all": [
         "设置通配邮箱"
@@ -2423,16 +2417,16 @@
     },
     "color": {
       "apple": [
-        "苹果"
+        "苹果红"
       ],
       "azureish white": [
-        "蓝白色"
+        "天蓝白"
       ],
       "black": [
         "黑色"
       ],
       "blanched almond": [
-        "白杏仁"
+        "杏仁黄"
       ],
       "blue-gray": [
         "蓝灰色"
@@ -2459,7 +2453,7 @@
         "青蓝色"
       ],
       "dandelion": [
-        "蒲公英"
+        "蒲公英白"
       ],
       "dark cerulean": [
         "藏蓝色"
@@ -2468,10 +2462,10 @@
         "午夜蓝"
       ],
       "dim gray": [
-        "暗灰"
+        "暗灰色"
       ],
       "enzian": [
-        "浅紫蓝色"
+        "龙胆蓝"
       ],
       "fern": [
         "丝袍绿"
@@ -2486,10 +2480,10 @@
         "淡灰色"
       ],
       "japanese laurel": [
-        "日本月桂"
+        "日本月桂绿"
       ],
       "kiwi": [
-        "猕猴桃"
+        "猕猴桃绿"
       ],
       "lemon yellow": [
         "柠檬黄"
@@ -2504,7 +2498,7 @@
         "浅红色"
       ],
       "maize": [
-        "玉米"
+        "玉米黄"
       ],
       "mughal green": [
         "莫卧儿绿"
@@ -2516,7 +2510,7 @@
         "橄榄绿"
       ],
       "outer space": [
-        "外太空"
+        "星空黑"
       ],
       "pacific": [
         "太平洋蓝"
@@ -2531,7 +2525,7 @@
         "淡灰色"
       ],
       "persian plum": [
-        "波斯杨李色"
+        "波斯绛紫色"
       ],
       "persian red": [
         "波斯红"
@@ -2552,7 +2546,7 @@
         "粉色"
       ],
       "pistachio": [
-        "淡草绿色"
+        "开心果绿"
       ],
       "plum": [
         "绛紫色"
@@ -2573,13 +2567,13 @@
         "缎光金"
       ],
       "slateblue": [
-        "石蓝色"
+        "板岩蓝"
       ],
       "soil": [
-        "土地"
+        "土地灰"
       ],
       "strawberry": [
-        "紫红色"
+        "草莓红"
       ],
       "vivid auburn": [
         "红褐色"
@@ -3755,12 +3749,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } 不是您的默认邮件应用程序。"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } 是您的默认邮件应用程序。"
-      ],
       "Also included": [
         "还包含"
       ],
@@ -4851,6 +4839,9 @@
       "Failed to load OAuth modal.": [
         "无法加载 OAuth 模式。"
       ],
+      "Failed to load the STL preview": [
+        "加载 STL 预览失败"
+      ],
       "Failed to process the logo": [
         "无法处理图标"
       ],
@@ -5516,7 +5507,7 @@
         "证书 ${ name } 不存在，或者已被吊销"
       ],
       "Display name cannot be empty": [
-        "显示名称不能为空"
+        "昵称不能为空"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -6672,7 +6663,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "邮件"
+        "邮箱验证"
       ],
       "Manual": [
         "人工验证"
@@ -6681,7 +6672,7 @@
         "没有可用的验证方法"
       ],
       "SMS": [
-        "短信"
+        "短信验证"
       ]
     },
     "ICS event error": {
@@ -9795,9 +9786,6 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "启用后，我们将检查 ${ MAIL_APP_NAME } 是否是您的默认邮件应用程序，如果不是，则会通知您。"
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
       ],
@@ -10454,12 +10442,6 @@
       ],
       "Insert link": [
         "插入链接"
-      ],
-      "Jump to first": [
-        "选择第一项"
-      ],
-      "Jump to last": [
-        "选择最后一项"
       ],
       "Label as...": [
         "加标签"
@@ -13042,7 +13024,7 @@
         "优先与客服实时沟通"
       ],
       "Private photo backup": [
-        "隐私照片备份"
+        "私人照片备份"
       ],
       "Proofread and refine your emails": [
         "为您校对并润色邮件"
@@ -13078,7 +13060,7 @@
         "Secure Core 服务器"
       ],
       "Secure file storage and sharing": [
-        "安全的文件存储和共享"
+        "安全文件存储与共享"
       ],
       "Secure link sharing": [
         "安全链接共享"
@@ -16610,7 +16592,7 @@
         "${ n } 月"
       ],
       "/ month": [
-        "/ 月"
+        "/月"
       ],
       "/month": [
         "/月"
@@ -17241,7 +17223,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "总计${ totalPrice }"
+        "总计 ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -18278,6 +18260,9 @@
       "Bridge for ${ platform }": [
         "Bridge ${ platform } 客户端"
       ],
+      "Browser extensions": [
+        "浏览器扩展程序"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 订阅"
       ],
@@ -18313,9 +18298,6 @@
       ],
       "Change second password": [
         "修改第二密码"
-      ],
-      "Check your default mail application": [
-        "检查您的默认邮件应用"
       ],
       "Choose an account": [
         "选择账户"
@@ -18517,6 +18499,9 @@
       ],
       "Description": [
         "描述"
+      ],
+      "Desktop": [
+        "桌面版"
       ],
       "Device": [
         "台设备"
@@ -18907,6 +18892,9 @@
       ],
       "Minicalendar": [
         "迷你日历"
+      ],
+      "Mobile": [
+        "移动版"
       ],
       "Multi-user support": [
         "多用户功能"
@@ -20393,7 +20381,7 @@
         "${ n } 个 ${ BRAND_NAME } 邮箱地址"
       ],
       "${ n } account per wallet": [
-        "每个钱包${ n }个 账户"
+        "每个钱包 ${ n } 个账户"
       ],
       "${ n } wallet": [
         "${ n } 个钱包"

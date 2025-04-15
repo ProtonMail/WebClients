@@ -634,9 +634,6 @@
       "Got it": [
         "Forstået"
       ],
-      "Help": [
-        "Hjælp"
-      ],
       "Help and feedback": [
         "Hjælp og feedback"
       ],
@@ -981,6 +978,9 @@
       ],
       "Save address": [
         "Gem adresse"
+      ],
+      "Save and continue": [
+        "Gem og fortsæt"
       ],
       "Save changes": [
         "Gem ændringer"
@@ -8056,6 +8056,9 @@
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
+      "Password generator rules successfully saved": [
+        "Regler for adgangskodegenerator er blevet gemt."
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Adgangskoden skal bestå af ${ MIN_PASSWORD_LENGTH } tegn eller mere."
       ],
@@ -8337,6 +8340,9 @@
       ],
       "Set recovery phrase": [
         "Indstil gendannelsessætning"
+      ],
+      "Setting successfully saved": [
+        "Indstillingen er gemt"
       ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
@@ -12970,6 +12976,9 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sidste chance for at spare 80% på den første måned af ${ plan } Plus "
       ],
+      "Last day to save": [
+        "Sidste dag til at gemme"
+      ],
       "Maybe later": [
         "Måske senere"
       ],
@@ -14782,6 +14791,9 @@
       ],
       "to be created": [
         "skal oprettes"
+      ],
+      "to be deleted": [
+        "skal slettes"
       ]
     },
     "Service provider": {
@@ -15564,6 +15576,9 @@
       ],
       "Invalid confirmation code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Sørg for at gemme den et sikkert sted, så du kan komme tilbage til din konto, hvis du mister adgang til dine legitimationsoplysninger til din identitetsudbyder."
       ],
       "New backup password": [
         "Ny adgangskode til sikkerhedskopi"
@@ -18475,6 +18490,9 @@
     "upsell panel": {
       "Recommended": [
         "Anbefalet"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Spar ${ totals.discountPercentage }%"
       ]
     },
     "User referee invited via email": {

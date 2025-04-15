@@ -676,9 +676,6 @@
       "Got it": [
         "समझ गए"
       ],
-      "Help": [
-        "सहायता"
-      ],
       "Hide": [
         "छिपाएं"
       ],
@@ -1113,9 +1110,6 @@
       ],
       "Set as default": [
         "डिफाल्ट के रूप में सेट करें"
-      ],
-      "Set as default mail application": [
-        "डिफॉल्ट मेल एप्लीकेशन के रूप में सेट करें"
       ],
       "Set catch-all": [
         "कैच-ऑल सेट करें"
@@ -3698,12 +3692,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } आपका डिफॉल्ट मेल एप्लीकेशन नहीं है।"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } आपका डिफॉल्ट मेल एप्लीकेशन है।"
-      ],
       "Also included": [
         "साथ ही शामिल"
       ],
@@ -9595,9 +9583,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "अक्षम होने पर, यह छवि फ़ाइलों को आपकी जानकारी के बिना आपके डिवाइस पर लोड होने से रोकता है।"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "यदि सक्षम है, तो हम यह जांचेंगे कि क्या ${ MAIL_APP_NAME } आपका डिफॉल्ट मेल एप्लीकेशन है और यदि नहीं, तो आपको सूचित करेंगे।"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "पहचान प्रदाता में ${ appName } के लिए SAML सक्षम करते समय, कॉलबैक (ACS) URL और जारीकर्ता ID का उपयोग करने के लिए कहा जा सकता है। बस नीचे दिए गए डाटा को पहचान प्रदाता फील्ड में कॉपी-पेस्ट करें।"
@@ -18103,9 +18088,6 @@
       ],
       "Change second password": [
         "दूसरा पासवर्ड बदलें"
-      ],
-      "Check your default mail application": [
-        "अपने डिफॉल्ट मेल एप्लीकेशन की जाँच करें"
       ],
       "Choose an account": [
         "खाता चुनें"

@@ -23,6 +23,9 @@
       "Add domain": [
         "Dodaj domeno"
       ],
+      "Add mailbox": [
+        "Dodaj poštni predal"
+      ],
       "Add more": [
         "Dodaj več"
       ],
@@ -71,6 +74,9 @@
       "Change email": [
         "Spremeni naslov"
       ],
+      "Check DNS": [
+        "Preveri DNS"
+      ],
       "Choose a file or drag it here": [
         "Izberite datoteko ali jo povlecite sem"
       ],
@@ -95,6 +101,9 @@
       "Confirm access": [
         "Potrdi dostop"
       ],
+      "Confirm all": [
+        "Potrdi vse"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Povežite svoj račun ${ BRAND_NAME }"
       ],
@@ -116,11 +125,11 @@
       "Create": [
         "Ustvari"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Ustvarite račun ${ BRAND_NAME }."
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Ustvarite račun ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Ustvarite račun ${ BRAND_NAME }."
       ],
       "Create alias": [
         "Ustvari vzdevek"
@@ -136,6 +145,9 @@
       ],
       "Create identity": [
         "Ustvari identiteto"
+      ],
+      "Create item": [
+        "Ustvari predmet"
       ],
       "Create login": [
         "Ustvari prijavo"
@@ -355,6 +367,9 @@
       ],
       "Pin item": [
         "Pripni predmet"
+      ],
+      "Re-verify": [
+        "Ponovno preveri"
       ],
       "Reactivate now": [
         "Ponovno aktivirajte zdaj"
@@ -755,9 +770,6 @@
       ],
       "File does not match expected format": [
         "Datoteka se ne ujema s pričakovano obliko"
-      ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Uvoz za trezor \"${ vaultData.name }\" : ${ description } ni uspel"
       ],
       "Importing items failed": [
         "Uvoz predmetov ni uspel"
@@ -1864,6 +1876,9 @@
       "Facebook account": [
         "Račun Facebook"
       ],
+      "Feedback": [
+        "Povratne informacije"
+      ],
       "Field name": [
         "Ime polja"
       ],
@@ -2161,6 +2176,12 @@
       "Share": [
         "Deli"
       ],
+      "Shared": [
+        "V skupni rabi"
+      ],
+      "Shared link": [
+        "Deli povezavo"
+      ],
       "Show website favicons": [
         "Pokaži ikone spletnega mesta"
       ],
@@ -2284,6 +2305,9 @@
       "You are about to create": [
         "Ustvarili boste"
       ],
+      "Your domain": [
+        "Vaša domena"
+      ],
       "ZIP or Postal code": [
         "Poštna številka"
       ]
@@ -2330,6 +2354,20 @@
         "Podčrtaji"
       ]
     },
+    "Pass_file_attachments": {
+      "Attachments": [
+        "Priponke"
+      ],
+      "Download": [
+        "Naloži"
+      ],
+      "File": [
+        "Datoteka"
+      ],
+      "Rename": [
+        "Preimenuj"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Dodaj skrivni ključ 2FA"
@@ -2342,6 +2380,9 @@
       ],
       "Add text": [
         "Dodaj tekst"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Email address": [
         "E-poštni naslov"
@@ -2446,6 +2487,9 @@
       ],
       "Activity": [
         "Opravilo"
+      ],
+      "Add mailbox": [
+        "Dodaj poštni predal"
       ],
       "Aliases": [
         "Vzdevki"
@@ -2715,6 +2759,9 @@
       ]
     },
     "Warning": {
+      "2 consecutive dots are not allowed": [
+        "2 zaporedni piki nista dovoljeni"
+      ],
       "A description of the problem is required": [
         "Potreben je opis težave"
       ],
@@ -2723,6 +2770,12 @@
       ],
       "At least one email address is required": [
         "Potreben je vsaj en e-poštni naslov"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Na začetku ne sme biti pika"
+      ],
+      "Cannot contain a dot at the end": [
+        "Ne sme vsebovati pike na koncu"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nabiralnikov za ta vzdevek trenutno ni mogoče pridobiti"
@@ -2804,6 +2857,9 @@
       ],
       "No results": [
         "Ni rezultatov"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
       ],
       "Passphrase is required": [
         "Zahtevano je geslo"

@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Acerca de ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Tamaño actual"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Borrar los datos de la aplicación"
       ],
+      "Close Window": [
+        "Cerrar la ventana"
+      ],
+      "Copy": [
+        "Copiar"
+      ],
+      "Cut": [
+        "Cortar"
+      ],
+      "Delete": [
+        "Borrar"
+      ],
       "Force Reload": [
         "Forzar la recarga"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Esconder ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Esconder otros"
+      ],
+      "Minimize": [
+        "Minimizar"
+      ],
+      "Paste": [
+        "Pegar"
+      ],
+      "Paste and Match Style": [
+        "Pegar y adaptar al estilo"
+      ],
+      "Quit": [
+        "Salir"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Salir de ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Rehacer"
+      ],
       "Reload": [
         "Recargar"
+      ],
+      "Select All": [
+        "Seleccionar todo"
+      ],
+      "Show All": [
+        "Mostrar todo"
       ],
       "Show logs": [
         "Mostrar los registros"
@@ -26,11 +71,26 @@
       "Speech": [
         "Dictar"
       ],
-      "Start Proton Mail at login": [
-        "Iniciar Proton Mail al iniciar sesión"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Lanzar ${ MAIL_APP_NAME } al inicio de sesión"
       ],
-      "Uninstall Proton Mail": [
-        "Desinstalar Proton Mail"
+      "Start Speaking": [
+        "Empieza a hablar"
+      ],
+      "Stop Speaking": [
+        "Deja de hablar"
+      ],
+      "Toggle Full Screen": [
+        "Activar la pantalla completa"
+      ],
+      "Undo": [
+        "Deshacer"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Desinstalar ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Aumentar"
       ],
       "Zoom In": [
         "Acercar"
@@ -39,12 +99,9 @@
         "Alejar"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Guardar la imagen como…"
-      ],
-      "Speech": [
-        "Dictar"
+    "App Menu": {
+      "Services": [
+        "Servicios"
       ]
     },
     "Context menu": {
@@ -56,16 +113,49 @@
       ],
       "Emoji and Symbols": [
         "Emojis y símbolos"
+      ],
+      "Save image as…": [
+        "Guardar la imagen como…"
+      ],
+      "Speech": [
+        "Dictar"
+      ],
+      "Start Speaking": [
+        "Empieza a hablar"
+      ],
+      "Stop Speaking": [
+        "Deja de hablar"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Copiar"
+      ],
+      "Cut": [
+        "Cortar"
+      ],
+      "Look Up “${ text }”": [
+        "Buscar «${ text }»"
+      ],
+      "Paste": [
+        "Pegar"
+      ],
+      "Paste and Match Style": [
+        "Pegar y adaptar al estilo"
+      ],
+      "Redo": [
+        "Rehacer"
+      ],
+      "Select All": [
+        "Seleccionar todo"
+      ],
+      "Undo": [
+        "Deshacer"
       ]
     },
     "Error dialog": {
       "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "Debido a un error, la aplicación se cerrará. Intenta ejecutarla nuevamente y, si el problema persiste, contáctanos. Puedes encontrar información sobre el error en el registro de la aplicación."
+        "Debido a un error, la aplicación se cerrará. Intenta ejecutarla de nuevo y, si el problema persiste, contáctanos. Puedes encontrar información sobre el error en el registro de la aplicación."
       ],
       "Unexpected error": [
         "Error inesperado"

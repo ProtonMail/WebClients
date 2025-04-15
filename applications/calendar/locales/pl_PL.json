@@ -353,9 +353,6 @@
       "Got it": [
         "Ok"
       ],
-      "Help": [
-        "Pomoc"
-      ],
       "Help and feedback": [
         "Pomoc i opinia"
       ],
@@ -3168,6 +3165,9 @@
       "Email address is required": [
         "Adres e-mail jest wymagany"
       ],
+      "Email is not valid": [
+        "Adres e-mail nie jest prawidłowy"
+      ],
       "Ends on date cannot be empty": [
         "Data zakończenia nie może być pusta"
       ],
@@ -3215,6 +3215,9 @@
       ],
       "IMAP server is required": [
         "Serwer IMAP jest wymagany"
+      ],
+      "Incorrect username": [
+        "Nazwa użytkownika jest nieprawidłowa"
       ],
       "Intended recipient does not support calendar sharing": [
         "Odbiorca nie obsługuje udostępniania kalendarza"
@@ -3309,6 +3312,9 @@
       "Not a ${ BRAND_NAME } account": [
         "To nie jest konto ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Numer telefonu nie jest prawidłowy"
+      ],
       "Number of occurrences cannot be empty": [
         "Liczba powtórzeń nie może być pusta"
       ],
@@ -3329,6 +3335,9 @@
       ],
       "Password is required": [
         "Hasło jest wymagane"
+      ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
       ],
       "Payment process canceled": [
         "Przetwarzanie płatności zostało anulowane"
@@ -3435,6 +3444,9 @@
       "The amount due has changed. Please try again.": [
         "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
+      "The email addresses do not match": [
+        "Adresy e-mail nie pasują do siebie"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Nazwa folderu jest nieprawidłowa. Wpisz inną nazwę."
       ],
@@ -3462,8 +3474,14 @@
       "There was an error when exporting the contacts vCards": [
         "Wystąpił błąd podczas eksportowania kontaktów do plików vCard"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
       "This field is required": [
         "Pole jest wymagane"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Nazwa folderu nie jest dostępna. Wpisz inną nazwę."
@@ -3477,6 +3495,9 @@
       "Trusted keys are not valid for sending": [
         "Zaufane klucze nie są przeznaczone do wysyłania wiadomości"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie można załadować pulpitu VPN. Sprawdź połączenie i spróbuj ponownie."
       ],
@@ -3488,6 +3509,12 @@
       ],
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
+      ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
       ],
       "Validation error": [
         "Błąd weryfikacji"
@@ -10982,6 +11009,20 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Udostępniono z szyfrowaniem end-to-end do zweryfikowanego kontaktu"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     },
     "Video control": {

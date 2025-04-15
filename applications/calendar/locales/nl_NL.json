@@ -347,9 +347,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "Help": [
-        "Hulp"
-      ],
       "Help and feedback": [
         "Hulp en feedback"
       ],
@@ -3116,6 +3113,9 @@
       "Email address is required": [
         "E-mailadres is vereist"
       ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
       "Ends on date cannot be empty": [
         "Einddatum mag niet leeg blijven"
       ],
@@ -3163,6 +3163,9 @@
       ],
       "IMAP server is required": [
         "IMAP-server is vereist"
+      ],
+      "Incorrect username": [
+        "Onjuiste gebruikersnaam"
       ],
       "Intended recipient does not support calendar sharing": [
         "De bedoelde ontvangen heeft geen ondersteuning voor het delen van een agenda."
@@ -3255,6 +3258,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Geen ${ BRAND_NAME }-account"
       ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
       "Number of occurrences cannot be empty": [
         "Aantal herhalingen mag niet leeg blijven"
       ],
@@ -3271,6 +3277,9 @@
       ],
       "Password is required": [
         "Wachtwoord is vereist"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
       ],
       "Payment process canceled": [
         "Betalingsverzoek geannuleerd"
@@ -3373,6 +3382,9 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -3400,8 +3412,14 @@
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
       "This field is required": [
         "Dit veld is vereist"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Deze mapnaam is niet beschikbaar. Kies een andere naam."
@@ -3415,6 +3433,9 @@
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan VPN dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
       ],
@@ -3426,6 +3447,12 @@
       ],
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Validation error": [
         "Validatiefout"
@@ -4472,7 +4499,7 @@
         "(${ serverPrice }/maand)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat inschakelt."
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
@@ -10585,6 +10612,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "End-to-end versleuteld gedeeld met geverifieerd contact"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "Video control": {

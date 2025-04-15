@@ -461,9 +461,6 @@
       "Grid layout": [
         "Oppsett av rutenett"
       ],
-      "Help": [
-        "Hjelp"
-      ],
       "Help and feedback": [
         "Hjelp og tilbakemelding"
       ],
@@ -2585,6 +2582,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Oppgrader til ${ planName } for å fortsette å dele filer med redigeringstilgang"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Oppgrader kontoen din for å aktivere ${ PROTON_SENTINEL_NAME }, vår banebrytende AI-drevne sikkerhetsløsning med dedikert 24/7 ekspertstøtte."
       ],
@@ -2935,6 +2935,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Eksterne invitasjoner er midlertidig deaktivert. Prøv igjen senere."
+      ],
+      "Failed to load the STL preview": [
+        "Kan ikke laste inn STL-forhåndsvisningen"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fil \"${ item.name }\" kunne ikke lastes opp på grunn av \"${ error }\" feilmelding"
@@ -3769,6 +3772,9 @@
       ],
       "Create new shared album": [
         "Opprett nytt delt album"
+      ],
+      "Rename album": [
+        "Gi album nytt navn"
       ],
       "Security Center": [
         "Sikkerhetssenter"
@@ -10171,13 +10177,13 @@
         "Albumene du har delt, vises her"
       ],
       "Your favorited photos will appear here": [
-        "Dine favorittbilder vil vises her"
+        "Dine favorittbilder vises her"
       ],
       "Your Live Photos will appear here": [
-        "Dine Live-bilder vil vises her"
+        "Dine Live-bilder vises her"
       ],
       "Your panorama photos will appear here": [
-        "Panoramabildene dine vil vises her"
+        "Panoramabildene dine vises her"
       ],
       "Your photo bursts will appear here": [
         "Fotoseriene dine vises her"
@@ -10189,16 +10195,16 @@
         "RAW-bildene dine vises her"
       ],
       "Your screenshots will appear here": [
-        "Skjermbildene dine vil vises her"
+        "Skjermbildene dine vises her"
       ],
       "Your selfies photos will appear here": [
-        "Dine selfier vil vises her"
+        "Dine selfier vises her"
       ],
       "Your tagged photos will appear here": [
         "Dine taggede bilder vises her"
       ],
       "Your videos will appear here": [
-        "Videoene dine vil vises her"
+        "Videoene dine vises her"
       ]
     },
     "Success": {

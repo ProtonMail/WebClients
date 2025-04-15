@@ -344,9 +344,6 @@
       "Got it": [
         "はい"
       ],
-      "Help": [
-        "ヘルプ"
-      ],
       "Help and feedback": [
         "ヘルプとフィードバック"
       ],
@@ -3087,6 +3084,9 @@
       "Email address is required": [
         "メールアドレスは必須です"
       ],
+      "Email is not valid": [
+        "メールアドレスが無効です"
+      ],
       "Ends on date cannot be empty": [
         "最終日を設定してください"
       ],
@@ -3134,6 +3134,9 @@
       ],
       "IMAP server is required": [
         "IMAP サーバーは必須です"
+      ],
+      "Incorrect username": [
+        "ユーザー名に間違いがあります。"
       ],
       "Intended recipient does not support calendar sharing": [
         "対象の受信者はカレンダーの共有をサポートしていません"
@@ -3225,6 +3228,9 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントではありません"
       ],
+      "Not a valid number": [
+        "無効な番号です"
+      ],
       "Number of occurrences cannot be empty": [
         "繰り返しの数を設定してください"
       ],
@@ -3239,6 +3245,9 @@
       ],
       "Password is required": [
         "パスワードは必須です"
+      ],
+      "Passwords do not match": [
+        "パスワードが一致しません"
       ],
       "Payment process canceled": [
         "支払い処理がキャンセルされました"
@@ -3339,6 +3348,9 @@
       "The amount due has changed. Please try again.": [
         "金額が変更されました。もう一度やり直してください。"
       ],
+      "The email addresses do not match": [
+        "メールアドレスが一致しません"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "このフォルダー名は無効です。別の名前を選択してください。"
       ],
@@ -3366,8 +3378,14 @@
       "There was an error when exporting the contacts vCards": [
         "連絡先の vCard のエクスポート中にエラーが発生しました"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
       "This field is required": [
         "この項目の入力は必須です"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください。"
@@ -3381,6 +3399,9 @@
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "文字、数字、_.- のみを使用してみてください。"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPNダッシュボードを読み込むことができません。接続を確認してもう一度お試しください。"
       ],
@@ -3392,6 +3413,12 @@
       ],
       "Unknown payment token status": [
         "支払いトークンの状態が不明です。"
+      ],
+      "Username must begin with a letter or digit": [
+        "ユーザー名は英字か数字で始めなければいけません"
+      ],
+      "Username must end with a letter or digit": [
+        "ユーザー名の最後は英字か数字でなければいけません"
       ],
       "Validation error": [
         "検証エラー"
@@ -10382,6 +10409,14 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "検証済みの連絡先とのエンドツーエンド暗号化された共有"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     },
     "Video control": {

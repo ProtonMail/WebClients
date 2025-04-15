@@ -1049,9 +1049,6 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ description }"
-      ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
@@ -1822,6 +1819,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -3418,6 +3419,9 @@
       "File attachments": [
         "მიმაგრებული ფაილები"
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "თუ თქვენი მონაცემები მიმაგრებულ ფაილებს შეიცავს, მათი შემოტანა არ მოხდება."
+      ],
       "Include file attachments": [
         "მიმაგრებული ფაილების ჩათვლით"
       ],
@@ -3457,14 +3461,14 @@
       "Total imported files: ": [
         "შემოტანილი ფაილები სულ: "
       ],
+      "Upgrade to support file attachments": [
+        "ასწირეთ სატარიფო გეგმა ფაილის მიმაგრებების მხარდაჭერისთვის"
+      ],
       "Upload files from your device.": [
         "ატვირთეთ ფაილები თქვენი მოწყობილობიდან."
       ],
       "You can attach files to items for a better organization": [
         "უკეთესად ორგანიზმებისთვის ელემენტებს, შეგიძლიათ, ფაილები მიამაგროთ"
-      ],
-      "Your current plan does not support importing files": [
-        "თქვენს მიმდინარე სატარიფო გეგმას ფაილების შემოტანის მხარდაჭერა არ გააჩნია"
       ]
     },
     "Placeholder": {
@@ -4176,6 +4180,9 @@
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "თუ მათ არ გაშიფრავთ, დაშიფრული პაროლები დაცულია მაშინაც კი, თუ მათ ვინმე ნახავს."
       ]
     },
     "Validation": {

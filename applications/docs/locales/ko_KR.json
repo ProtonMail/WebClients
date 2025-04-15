@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "문서 초대 수락"
       ],
+      "Actions": [
+        "작업"
+      ],
       "Activate recovery": [
         "복구 활성화"
       ],
@@ -123,6 +126,9 @@
       "Cancel subscription": [
         "구독 취소"
       ],
+      "Change sort order": [
+        "정렬 순서 변경"
+      ],
       "characters": [
         "자"
       ],
@@ -159,6 +165,12 @@
       "Collapse": [
         "접기"
       ],
+      "Collapse list": [
+        "목록 축소"
+      ],
+      "Collapse list of pending invitations": [
+        "보류 중인 초대 목록 축소"
+      ],
       "Compose": [
         "메일 쓰기"
       ],
@@ -170,9 +182,6 @@
       ],
       "Contact group": [
         "연락처 그룹"
-      ],
-      "Context menu": [
-        "세부 메뉴"
       ],
       "Continue": [
         "계속"
@@ -654,6 +663,9 @@
       "Skip verification": [
         "인증 건너뛰기"
       ],
+      "Sort by": [
+        "정렬 기준"
+      ],
       "Start import": [
         "가져오기 시작"
       ],
@@ -749,6 +761,9 @@
       ],
       "View": [
         "보기"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "모든 ${ pendingCount }개의 초대 보기"
       ],
       "View all reports": [
         "모든 보고서 확인하기"

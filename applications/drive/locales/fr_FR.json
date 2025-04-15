@@ -461,9 +461,6 @@
       "Grid layout": [
         "Disposition en grille"
       ],
-      "Help": [
-        "Aide"
-      ],
       "Help and feedback": [
         "Aide et commentaires"
       ],
@@ -2938,6 +2935,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Les invitations externes sont temporairement désactivées. Réessayez plus tard."
+      ],
+      "Failed to load the STL preview": [
+        "Le chargement de l’aperçu STL n'a pas abouti."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
@@ -10891,7 +10891,7 @@
         "Aucune fuite de données n'a été détectée."
       ],
       "No bursts": [
-        "Aucunes rafales"
+        "Aucune rafale"
       ],
       "No favorites": [
         "Aucuns favoris"

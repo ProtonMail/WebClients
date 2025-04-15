@@ -461,9 +461,6 @@
       "Grid layout": [
         "Disposición en cuadrícula"
       ],
-      "Help": [
-        "Ayuda"
-      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -2939,6 +2936,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Las invitaciones externas están desactivadas temporalmente. Inténtalo más tarde."
       ],
+      "Failed to load the STL preview": [
+        "Error al cargar la vista previa STL"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no se puede cargar debido al error \"${ error }\"."
       ],
@@ -4515,7 +4515,7 @@
         "Borrar datos de búsqueda cifrada"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Borrar los datos del navegador limpiará el índice de búsqueda en este dispositivo. Tendrás que reindexar nuevamente todos los archivos al utilizar la función de búsqueda."
+        "Borrar los datos del navegador limpiará el índice de búsqueda en este dispositivo. Tendrás que reindexar de nuevo todos los archivos al utilizar la función de búsqueda."
       ],
       "Clears browser data related to the encrypted search.": [
         "Borra los datos del navegador relacionados con la búsqueda cifrada."
@@ -5133,7 +5133,7 @@
         "Se ha establecido la foto como portada de álbum."
       ],
       "Photos have been successfully recovered.": [
-        "Las fotos han sido recuperadas."
+        "Se han recuperado las fotos."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Pide al propietario que te invite directamente al documento."
@@ -5783,7 +5783,7 @@
         "Ya tienes una cuenta gratuita."
       ],
       "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Estás a punto de abandonar el elemento compartido. No podrás volver a acceder a él hasta que el propietario lo comparta contigo nuevamente."
+        "Estás a punto de abandonar el elemento compartido. No podrás volver a acceder a él hasta que el propietario lo comparta contigo de nuevo."
       ],
       "You are about to open another browser tab and visit:": [
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
@@ -6838,7 +6838,7 @@
         "mejora para obtener más almacenamiento"
       ],
       "Upgrade to restore full access": [
-        "Mejora para restaurar el acceso a todo"
+        "Mejora tu plan para restaurar el acceso a todo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El ${ driveStorage } está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
@@ -7599,7 +7599,7 @@
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
-        "Requerir 2FA para organización"
+        "Requerir 2FA para la organización"
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
@@ -8321,7 +8321,7 @@
         "Se ha eliminado la invitación externa de los elementos compartidos."
       ],
       "External invitation's email was sent again": [
-        "Se ha enviado nuevamente el correo de invitación externa."
+        "Se ha enviado de nuevo el correo de invitación externa."
       ],
       "Failed to accept share invitation": [
         "Se ha producido un error al aceptar la invitación compartida"
@@ -8364,7 +8364,7 @@
         "Se ha eliminado el archivo."
       ],
       "Invitation's email was sent again": [
-        "Se ha enviado nuevamente el correo de invitación."
+        "Se ha enviado de nuevo el correo de invitación."
       ],
       "Link copied to clipboard": [
         "Se ha copiado el enlace al portapapeles."
@@ -8394,7 +8394,7 @@
         "Error al cargar la carpeta raíz"
       ],
       "Share invitation accepted successfully": [
-        "La invitación compartida ha sido aceptada."
+        "Se ha aceptado la invitación compartida."
       ],
       "Share invitation declined": [
         "Se ha rechazado la invitación compartida."
@@ -8694,7 +8694,7 @@
         "Comparte archivos y carpetas"
       ],
       "Sync and access your files from anywhere": [
-        "Sincroniza y accede a tus archivos dondequiera que estés"
+        "Sincroniza y accede a tus archivos desde cualquier lugar"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "El propietario necesita confirmar el acceso a compartir. Recibirás un correo en cuanto lo haga."

@@ -1035,8 +1035,8 @@
       "File does not match expected format": [
         "O arquivo não corresponde ao formato esperado"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Erro na importação para o cofre \"${ vaultData.name }\": ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Falha na importação para o cofre \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Erro ao importar itens"
@@ -3324,6 +3324,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Se ativado, todos os seus arquivos serão baixados durante a exportação. Isso pode levar algum tempo dependendo da sua conexão com a Internet."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Se seus dados contiverem arquivos de anexos, não poderão ser importados."
+      ],
       "Include file attachments": [
         "Incluir anexos de arquivo"
       ],
@@ -3363,14 +3366,14 @@
       "Total imported files: ": [
         "Total de arquivos importados : "
       ],
+      "Upgrade to support file attachments": [
+        "Faça upgrade para suportar arquivos de anexos"
+      ],
       "Upload files from your device.": [
         "Enviar arquivos do seu dispositivo."
       ],
       "You can attach files to items for a better organization": [
         "Você pode anexar arquivos aos itens para uma melhor organização"
-      ],
-      "Your current plan does not support importing files": [
-        "Seu plano atual não oferece suporte à importação de arquivos"
       ]
     },
     "Placeholder": {

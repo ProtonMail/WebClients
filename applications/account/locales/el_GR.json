@@ -685,9 +685,6 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "Help": [
-        "Βοήθεια"
-      ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
       ],
@@ -4869,6 +4866,9 @@
       "Failed to load OAuth modal.": [
         "Αποτυχία φόρτωσης του παράθυρου OAuth."
       ],
+      "Failed to load the STL preview": [
+        "Αποτυχία φόρτωσης της προεπισκόπησης STL"
+      ],
       "Failed to process the logo": [
         "Αποτυχία επεξεργασίας του λογότυπου"
       ],
@@ -6321,7 +6321,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Απόρρητο από προεπιλογή."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Free trial dekstop": {
@@ -18504,6 +18504,9 @@
       "Bridge for ${ platform }": [
         "Γέφυρα για ${ platform }"
       ],
+      "Browser extensions": [
+        "Επεκτάσεις προγράμματος περιήγησης"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -18745,6 +18748,9 @@
       ],
       "Description": [
         "Περιγραφή"
+      ],
+      "Desktop": [
+        "Υπολογιστής"
       ],
       "Device": [
         "Συσκευή"
@@ -19137,6 +19143,9 @@
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"
+      ],
+      "Mobile": [
+        "Κινητό"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
