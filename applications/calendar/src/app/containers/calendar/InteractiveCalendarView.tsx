@@ -1329,14 +1329,6 @@ const InteractiveCalendarView = ({
         }
     };
 
-    // const getAttendeeInfosFromTemporaryEvent = () => {
-    //     const eventData = temporaryEvent?.data?.eventData;
-    //     if (!eventData || !getIsCalendarEvent(eventData)) {
-    //         return;
-    //     }
-    //     return eventData.AttendeesInfo;
-    // };
-
     const handleSyncActions = async (multiActions: SyncEventActionOperations[]) => {
         if (!multiActions.length) {
             return [];
@@ -1435,6 +1427,13 @@ const InteractiveCalendarView = ({
                                     return null;
                                 }
 
+                                // I'm organiser needing to re-encrypt comments because of key packets changes
+                                // If i don't re-encrypt them with new key packets they'll become undecryptable.
+                                // But i need to keep the signature made by the attendees so:
+                                // 1. I decrypt commetns with old keypackets
+                                // 2. I reuse the decrypted comment signature to sign new comments
+                                //
+                                // If any change is performed on the comment content, signature will become invalid so we remain covered
                                 const decryptedComment = await getDecryptedRSVPComment({
                                     attendeeVerificationPreferences,
                                     encryptedMessage: attendeeFromApi.Comment.Message,
