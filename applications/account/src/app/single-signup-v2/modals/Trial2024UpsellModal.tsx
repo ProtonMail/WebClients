@@ -73,11 +73,13 @@ export async function checkTrialPriceCommon({
     };
 }
 
+type PlanWithTrial = PLANS.MAIL | PLANS.DRIVE | PLANS.PASS;
+
 export type CheckTrialPriceParams = Pick<
     Parameters<typeof checkTrialPriceCommon>[0],
     'paymentsApi' | 'plansMap' | 'currency'
 > & {
-    planName: PLANS.MAIL | PLANS.DRIVE;
+    planName: PlanWithTrial;
 };
 
 export async function checkTrialPrice(params: CheckTrialPriceParams) {
@@ -93,6 +95,11 @@ export async function checkTrialPrice(params: CheckTrialPriceParams) {
                     cycle: CYCLE.MONTHLY,
                     coupon: COUPON_CODES.TRYDRIVEPLUS2024,
                 };
+            case PLANS.PASS:
+                return {
+                    cycle: CYCLE.MONTHLY,
+                    coupon: COUPON_CODES.PASSPLUSINTRO2024,
+                };
         }
     })();
 
@@ -102,7 +109,7 @@ export async function checkTrialPrice(params: CheckTrialPriceParams) {
 export interface Props extends ModalProps {
     onConfirm: (data: { planIDs: PlanIDs; cycle: Cycle; coupon: string }) => Promise<unknown>;
     onContinue: () => void;
-    planName: PLANS;
+    planName: PlanWithTrial;
     ctaTitle: string;
     features: { name: string; icon?: IconName }[];
     telemetry?: SignupUpsellTelemetryHook;
@@ -218,11 +225,15 @@ const Trial2024UpsellModal = ({
                         planIDs,
                         short: true,
                         app: ((): APP_NAMES => {
-                            if (planName === PLANS.DRIVE) {
-                                return APPS.PROTONDRIVE;
+                            switch (planName) {
+                                case PLANS.DRIVE:
+                                    return APPS.PROTONDRIVE;
+                                case PLANS.PASS:
+                                    return APPS.PROTONPASS;
+                                case PLANS.MAIL:
+                                default:
+                                    return APPS.PROTONMAIL;
                             }
-
-                            return APPS.PROTONMAIL;
                         })(),
                     })}
                 </div>
