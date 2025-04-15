@@ -97,7 +97,7 @@
         "Zu Gruppe hinzufügen"
       ],
       "Adds it above your existing message": [
-        "Fügt es über deine bestehende Nachricht hinzu"
+        "Fügt es oberhalb deiner bestehenden Nachricht hinzu"
       ],
       "Align center": [
         "Zentrieren"
@@ -206,7 +206,7 @@
         "Alle Formatierungen entfernen"
       ],
       "Clear application data": [
-        "Anwendungsdaten löschen"
+        "Anwendungsdaten entfernen"
       ],
       "Clear browser data": [
         "Browserdaten löschen"
@@ -230,7 +230,7 @@
         "Hier klicken."
       ],
       "Click to copy ${ defaultEmailAddress } to clipboard": [
-        "Klick um ${ defaultEmailAddress } in die Zwischenablage zu kopieren"
+        "Klicken, um ${ defaultEmailAddress } in die Zwischenablage zu kopieren"
       ],
       "Close": [
         "Schließen"
@@ -585,9 +585,6 @@
       "Got it": [
         "Verstanden"
       ],
-      "Help": [
-        "Hilfe"
-      ],
       "Help and feedback": [
         "Hilfe und Feedback"
       ],
@@ -613,7 +610,7 @@
         "Nachrichten ausblenden"
       ],
       "Hide my email": [
-        "Hide-my-email"
+        "Meine E-Mail-Adresse verstecken"
       ],
       "Hide toolbar": [
         "Symbolleiste verstecken"
@@ -1250,7 +1247,7 @@
         "Überprüfung überspringen"
       ],
       "Snooze": [
-        "Später lesen"
+        "Zurückstellen"
       ],
       "Star": [
         "Markieren"
@@ -1831,7 +1828,7 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sichere deine E-Mails und deinen Zeitplan mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliase und mehr."
+        "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
@@ -3748,7 +3745,7 @@
         "Schalte mit dem Upgrade individuelle Nachrichtenplanung und weitere Premium-Funktionen frei."
       ],
       "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Schalte individuelle Schlummerzeiten und weitere Premium-Funktionen frei, indem du ein Upgrade durchführst."
+        "Schalte benutzerdefiniertes Zurückstellen und weitere Premium-Funktionen frei, indem du ein Upgrade durchführst."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Schalte mit einem Upgrade kürzere E-Mail-Adressen und weitere Premiumfunktionen frei."
@@ -3781,7 +3778,7 @@
         "Mit Kontaktgruppen kannst du mit einem Klick E-Mails an alle Mitglieder der Gruppe senden."
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
-        "Mit der benutzerdefinierten Schlummerfunktion kannst du E-Mails ausblenden und so einstellen, dass sie zu einem günstigeren Zeitpunkt wieder erscheinen."
+        "Mit benutzerdefiniertem Zurückstellen kannst du E-Mails ausblenden und so einstellen, dass sie zu einem günstigeren Zeitpunkt wieder erscheinen."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
@@ -3973,7 +3970,7 @@
         "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } vorläufig angenommen"
       ]
     },
     "Email reminder banner": {
@@ -4205,6 +4202,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Der Anhang konnte nicht verschlüsselt werden. Bitte versuche es erneut."
       ],
+      "Failed to load the STL preview": [
+        "Das Laden der STL-Vorschau ist fehlgeschlagen"
+      ],
       "Filter with this name already exists": [
         "Filter mit diesem Namen bereits vorhanden"
       ],
@@ -4415,10 +4415,10 @@
         "Zeitüberschreitung bei der Anfrage"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
-        "Der Versand von Anhängen ist eingeschränkt, bis du die Grenzen deines Abonnements erfüllst oder ein Upgrade durchgeführt hast."
+        "Der Versand von Anhängen ist eingeschränkt, bis du die Grenzen deines Abonnements erfüllst oder ein Upgrade durchführst."
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
-        "Der Versand von Anhängen ist eingeschränkt, solange du die Grenzen deines Tarifs überschreitest oder bis du deinen Tarif aktualisiert hast."
+        "Das Senden von Anhängen ist eingeschränkt, solange du die Grenzen deines Abonnements überschreitest oder bis du dein Abonnement aktualisierst."
       ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
@@ -4764,7 +4764,7 @@
         "Aliasse können nicht verwendet werden, wenn ein zusätzliches Passwort in ${ PASS_APP_NAME } aktiviert ist."
       ],
       "App currently unavailable": [
-        "Die App ist derzeit nicht verfügbar."
+        "App ist zurzeit nicht verfügbar"
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
@@ -4989,7 +4989,7 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
-        "Konfiguriere dein Family-Konto und lade andere Benutzer ein"
+        "Konfiguriere dein Familienkonto und lade Benutzer ein"
       ],
       "Invite members and get everything up and running.": [
         "Lade Mitglieder ein und bringe alles zum Laufen."
@@ -5258,7 +5258,7 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-Desktop App"
+        "${ MAIL_APP_NAME }-Desktop-App"
       ],
       "14-day desktop app trial.": [
         "Desktop-App 14 Tage ausprobieren."
@@ -6102,10 +6102,10 @@
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Ein VPN verschlüsselt deine Verbindung und verbirgt deine IP-Adresse, so dass es für andere viel schwieriger ist, dein Surfverhalten zu verfolgen oder zu überwachen."
+        "Ein VPN verschlüsselt deine Verbindung und verbirgt deine IP-Adresse, sodass es für andere viel schwieriger ist, dein Surfverhalten zu verfolgen oder zu überwachen."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Ein VPN verbirgt deine IP-Adresse und verschlüsselt deine Surf-Aktivitäten, so dass es für Websites, Werbetreibende und Internetanbieter schwieriger wird, dich im Laufe der Zeit zu verfolgen."
+        "Ein VPN verbirgt deine IP-Adresse und verschlüsselt deine Surf-Aktivitäten, sodass es für Websites, Werbetreibende und Internetanbieter schwieriger wird, dich im Laufe der Zeit zu verfolgen."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ein VPN ist ein sicherer Tunnel zwischen deinem Gerät und dem Internet. Er verbirgt deinen Standort und deine Aktivitäten vor deinem Internetdienstanbieter (ISP) und den von dir besuchten Websites."
@@ -6192,7 +6192,7 @@
         "Ein weiterer Tipp wird beim nächsten Öffnen von Mail angezeigt"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "Alle geplanten oder aufgeschobenen Nachrichten werden verworfen."
+        "Alle geplanten oder zurückgestellten Nachrichten werden verworfen."
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner Alle Nachrichten gefunden werden."
@@ -6923,7 +6923,7 @@
         "Weitere Verbesserungsaktionen"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Die meisten öffentlichen WLAN-Netzwerke sind sicher, aber einige sind nicht sicher genug, so dass du Cyber-Bedrohungen ausgesetzt bist. Ein VPN verschlüsselt deinen Datenverkehr, damit du geschützt bist."
+        "Die meisten öffentlichen WLAN-Netzwerke sind sicher, aber einige sind nicht sicher genug, sodass du Cyber-Bedrohungen ausgesetzt bist. Ein VPN verschlüsselt deinen Datenverkehr, damit du geschützt bist."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
@@ -7132,7 +7132,7 @@
         "E-Mail drucken"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Der Modus „Privates Surfen“ (oder „Inkognito“) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
+        "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
       ],
       "Proofread selection": [
         "Auswahl gegenlesen"
@@ -7159,7 +7159,7 @@
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Registering your subscription…": [
-        "Registrierung deines Abonnements…"
+        "Dein Abonnement wird registriert…"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Denk daran, dies in deinem Passwort-Manager oder wo auch immer du deine Konto- und Anmeldeinformationen aufbewahrst, zu aktualisieren."
@@ -7259,7 +7259,7 @@
         "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+        "SEPA-Zahlungen sind derzeit nicht verfügbar. Probiere es später erneut."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -7295,10 +7295,10 @@
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "Pausiere Nachrichten und lies sie später, damit sie jederzeit oben in deinem Posteingang angezeigt werden."
+        "Stelle Nachrichten zurück, damit sie ganz oben in deinem Posteingang angezeigt werden, sobald du sie brauchst."
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
-        "Aufgeschoben bis zum ${ dateString } um ${ formattedTime }"
+        "Zurückgestellt bis zum ${ dateString } um ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Aufgeschoben bis heute, ${ formattedTime }"
@@ -7374,7 +7374,7 @@
         "Anzuzeigender Text"
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
-        "Danke, dass du dich angemeldet hast. Sicheres Surfen beginnt jetzt."
+        "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn du die Seite verlässt."
@@ -7545,7 +7545,7 @@
         "Dem öffentlichen Schlüssel dieses Absenders wurde noch nicht vertraut."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Dieser eindeutige Code kann von Webseiten und ISPs (Internet-Diensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
+        "Dieser eindeutige Code kann von Webseiten und ISPs (Internetdiensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Dies wurde dir angezeigt, weil die Betreffzeile deiner E-Mail Schlüsselwörter zum Zurücksetzen des Passworts enthält."
@@ -7973,8 +7973,8 @@
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann nach ${ renewCycle } Monat zu ${ renewAmountStr } abgerechnet.",
-        "Sie werden dann alle ${ renewCycle } Monate zu ${ renewAmountStr } abgerechnet."
+        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
+        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du hast die maximale Anzahl von Adressen in der/den Kontaktgruppe(n) erreicht:"
@@ -8409,7 +8409,7 @@
         "und"
       ],
       "Anderson": [
-        "Anderson"
+        "Mustermann"
       ],
       "ANY": [
         "JEDE"
@@ -8493,7 +8493,7 @@
         "Farben"
       ],
       "Company name": [
-        "Unternehmensname"
+        "Firmenname"
       ],
       "Composer": [
         "Verfassen-Fenster"
@@ -8907,7 +8907,7 @@
         "Problembeschreibung"
       ],
       "What is your main reason for canceling or downgrading?": [
-        "Was ist dein Hauptgrund für die Kündigung oder das Downgrade?"
+        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "With attachment": [
         "Mit Anhängen"
@@ -9150,10 +9150,10 @@
         "Kostenlos registrieren"
       ],
       "Snooze": [
-        "Aufgeschoben"
+        "Zurückstellen"
       ],
       "Snoozed": [
-        "Aufgeschoben"
+        "Zurückgestellt"
       ],
       "Spam": [
         "Spam"
@@ -9811,7 +9811,7 @@
         "Benutzerdefinierte Felder"
       ],
       "Custom snooze time": [
-        "Eigene stumm Zeit"
+        "Benutzerdefinierte Zurückstellzeit"
       ],
       "Custom workspace branding": [
         "Eigenes Workspace-Branding"
@@ -10074,7 +10074,7 @@
         "Tresor teilen (bis zu ${ n } Personen)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
       ]
     },
     "new_plans: feature highlight": {
@@ -10095,7 +10095,7 @@
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
       ],
       "Snooze messages and get reminded when you want": [
-        "Schalte Nachrichten stumm und werde daran erinnert wann immer du möchtest."
+        "Stelle Nachrichten zurück und werde daran erinnert wann immer du möchtest."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -10519,13 +10519,13 @@
         "Link in die Zwischenablage kopiert"
       ],
       "Meeting host copied to clipboard": [
-        "Meeting-Host in die Zwischenablage kopiert."
+        "Meeting-Host in die Zwischenablage kopiert"
       ],
       "Meeting ID copied to clipboard": [
-        "Meeting-ID in die Zwischenablage kopiert."
+        "Meeting-ID in die Zwischenablage kopiert"
       ],
       "Passcode copied to clipboard": [
-        "Passcode in die Zwischenablage kopiert."
+        "Passcode in die Zwischenablage kopiert"
       ],
       "Password has been set successfully": [
         "Das Passwort wurde erfolgreich festgelegt"
@@ -10925,7 +10925,7 @@
         "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Jährlich abgerechnet zu ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (gegenüber 6 einzelnen ${ passPlusPlanName }-Abonnements)."
+        "Jährliche Abrechnung zum Preis von ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (im Vergleich zu 6 einzelnen ${ passPlusPlanName }-Abonnements)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
@@ -11103,7 +11103,7 @@
         "Externer Schlüssel wurde automatisch über WKD abgerufen."
       ],
       "This key is used to encrypt messages to this contact": [
-        "Dieser Schlüssel wird zum Verschlüsseln von Nachrichten an diesen Kontakt verwendet."
+        "Dieser Schlüssel wird verwendet, um Nachrichten an diesen Kontakt zu verschlüsseln"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
@@ -11417,7 +11417,7 @@
         "Keine Ergebnisse"
       ],
       "No snoozed messages": [
-        "Keine aufgeschobenen Nachrichten"
+        "Keine zurückgestellten Nachrichten"
       ],
       "No unread messages found": [
         "Keine ungelesenen Nachrichten gefunden"
@@ -11828,7 +11828,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Nachricht aufschieben"
+        "Nachricht zurückstellen"
       ],
       "When should the message reappear in your inbox?": [
         "Wann soll diese Nachricht wieder in deinem Posteingang erscheinen?"
@@ -12044,7 +12044,7 @@
     },
     "Spotlight": {
       "Check out what's included with your subscription and start enjoying the benefits.": [
-        "Sieh dir an, was in deinem Abonnement enthalten ist, und fang an, die Vorteile zu genießen."
+        "Sieh dir an, was in deinem Abonnement enthalten ist, und genieße die Vorteile."
       ],
       "Discover your subscription benefits": [
         "Entdecke die Vorteile deines Abonnements"
@@ -13641,7 +13641,7 @@
         "Eine zum Versenden geplante Nachricht wird verschoben"
       ],
       "Moving a snoozed message": [
-        "Verschieben einer aufgeschobenen Nachricht"
+        "Verschieben einer zurückgestellten Nachricht"
       ],
       "Need more aliases?": [
         "Brauchst du mehr Aliasse?"
@@ -13854,13 +13854,13 @@
         "Abmelden"
       ],
       "Snooze": [
-        "Später lesen"
+        "Zurückstellen"
       ],
       "Snooze message": [
-        "Nachricht aufschieben"
+        "Nachricht zurückstellen"
       ],
       "Snooze:": [
-        "Später lesen:"
+        "Zurückstellen:"
       ],
       "Sort conversations": [
         "Unterhaltungen sortieren"
@@ -13933,7 +13933,7 @@
         "VPN erklärt"
       ],
       "Want to snooze any time?": [
-        "Möchtest du jederzeit aufschieben?"
+        "Möchtest du jederzeit zurückstellen?"
       ],
       "Warning": [
         "Warnhinweis"

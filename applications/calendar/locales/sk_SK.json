@@ -353,9 +353,6 @@
       "Got it": [
         "Rozumiem"
       ],
-      "Help": [
-        "Nápoveda"
-      ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
       ],
@@ -3168,6 +3165,9 @@
       "Email address is required": [
         "Emailová adresa je požadovaná"
       ],
+      "Email is not valid": [
+        "Emailová adresa nie je platná"
+      ],
       "Ends on date cannot be empty": [
         "Dátum ukončenia nemôže byť prázdny"
       ],
@@ -3215,6 +3215,9 @@
       ],
       "IMAP server is required": [
         "IMAP server je požadovaný"
+      ],
+      "Incorrect username": [
+        "Nesprávne používateľské meno"
       ],
       "Intended recipient does not support calendar sharing": [
         "Zamýšľaný príjemca nepodporuje zdieľanie kalendára"
@@ -3309,6 +3312,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Nie je ${ BRAND_NAME } účet"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Number of occurrences cannot be empty": [
         "Počet výskytov nemôže byť prázdny"
       ],
@@ -3329,6 +3335,9 @@
       ],
       "Password is required": [
         "Heslo je požadované"
+      ],
+      "Passwords do not match": [
+        "Heslá sa nezhodujú"
       ],
       "Payment process canceled": [
         "Proces platby zrušený"
@@ -3435,6 +3444,9 @@
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
       ],
+      "The email addresses do not match": [
+        "Emailové adresy sa nezhodujú"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Názov priečinka je neplatný. Zvoľte prosím iný názov."
       ],
@@ -3462,8 +3474,14 @@
       "There was an error when exporting the contacts vCards": [
         "Pri exporte kontaktov do vCard došlo k chybe"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
+      ],
       "This field is required": [
         "Povinné pole"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tento názov priečinka nie je k dispozícii. Zvoľte prosím iný názov."
@@ -3477,6 +3495,9 @@
       "Trusted keys are not valid for sending": [
         "Dôveryhodné kľúče nie sú použiteľné na odosielanie"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Skúste používať iba písmená, číslice a _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie je možné načítať nástenku VPN. Skontrolujte svoje pripojenie a skúste to znova, prosím."
       ],
@@ -3488,6 +3509,12 @@
       ],
       "Unknown payment token status": [
         "Neznámy stav platobného tokenu"
+      ],
+      "Username must begin with a letter or digit": [
+        "Používateľské meno musí začínať písmenom alebo číslom"
+      ],
+      "Username must end with a letter or digit": [
+        "Používateľské meno musí končiť písmenom alebo číslom"
       ],
       "Validation error": [
         "Chyba overenia"
@@ -10985,6 +11012,20 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Zdieľané end-to-end šifrované s overeným kontaktom"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
       ]
     },
     "Video control": {

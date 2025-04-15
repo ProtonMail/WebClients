@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Vizitka ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Dejanska velikost"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Počisti podatke o aplikaciji"
       ],
+      "Close Window": [
+        "Zapri okno"
+      ],
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Cut": [
+        "Izreži"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
       "Force Reload": [
         "Vsili ponovno nalaganje"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Skrij ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Skrij druge"
+      ],
+      "Minimize": [
+        "Pomanjšaj"
+      ],
+      "Paste": [
+        "Prilepi"
+      ],
+      "Paste and Match Style": [
+        "Prilepi in spoji oblikovanje"
+      ],
+      "Quit": [
+        "Končaj"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Zapri ${ MAIL_APP_NAME }l"
+      ],
+      "Redo": [
+        "Uveljavi"
+      ],
       "Reload": [
         "Ponovno naloži"
+      ],
+      "Select All": [
+        "Izberi vse"
+      ],
+      "Show All": [
+        "Pokaži vse"
       ],
       "Show logs": [
         "Prikaži dnevnike"
@@ -26,11 +71,26 @@
       "Speech": [
         "Govor"
       ],
-      "Start Proton Mail at login": [
-        "Zaženi Proton Mail ob prijavi"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Zaženi ${ MAIL_APP_NAME } ob prijavi"
       ],
-      "Uninstall Proton Mail": [
-        "Odstrani Proton Mail"
+      "Start Speaking": [
+        "Začni govoriti"
+      ],
+      "Stop Speaking": [
+        "Nehaj govoriti"
+      ],
+      "Toggle Full Screen": [
+        "Preklopi celozaslonski način"
+      ],
+      "Undo": [
+        "Razveljavi"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Odstrani ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Povečaj"
       ],
       "Zoom In": [
         "Približaj"
@@ -39,12 +99,9 @@
         "Oddalji"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Shrani sliko kot …"
-      ],
-      "Speech": [
-        "Govor"
+    "App Menu": {
+      "Services": [
+        "Storitve"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji in simboli"
+      ],
+      "Save image as…": [
+        "Shrani sliko kot …"
+      ],
+      "Speech": [
+        "Govor"
+      ],
+      "Start Speaking": [
+        "Začni govoriti"
+      ],
+      "Stop Speaking": [
+        "Nehaj govoriti"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopiraj"
+      ],
+      "Cut": [
+        "Izreži"
+      ],
+      "Look Up “${ text }”": [
+        "Poišči »${ text }«"
+      ],
+      "Paste": [
+        "Prilepi"
+      ],
+      "Paste and Match Style": [
+        "Prilepi in spoji oblikovanje"
+      ],
+      "Redo": [
+        "Uveljavi"
+      ],
+      "Select All": [
+        "Izberi vse"
+      ],
+      "Undo": [
+        "Razveljavi"
       ]
     },
     "Error dialog": {

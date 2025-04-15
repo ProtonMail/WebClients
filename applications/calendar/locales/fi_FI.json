@@ -347,9 +347,6 @@
       "Got it": [
         "Selvä"
       ],
-      "Help": [
-        "Tuki"
-      ],
       "Help and feedback": [
         "Tuki ja palaute"
       ],
@@ -3110,6 +3107,9 @@
       "Email address is required": [
         "Sähköpostiosoite vaaditaan"
       ],
+      "Email is not valid": [
+        "Virheellinen sähköpostiosoite"
+      ],
       "Ends on date cannot be empty": [
         "Päättymispäivä ei voi olla tyhjä"
       ],
@@ -3157,6 +3157,9 @@
       ],
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
+      ],
+      "Incorrect username": [
+        "Virheellinen käyttäjätunnus"
       ],
       "Intended recipient does not support calendar sharing": [
         "Tarkoitettu vastaanottaja ei tue kalenterin jakamista"
@@ -3249,6 +3252,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Tämä ei ole ${ BRAND_NAME }-tili"
       ],
+      "Not a valid number": [
+        "Virheellinen numero"
+      ],
       "Number of occurrences cannot be empty": [
         "Toistomäärä ei voi olla tyhjä"
       ],
@@ -3265,6 +3271,9 @@
       ],
       "Password is required": [
         "Salasana vaaditaan"
+      ],
+      "Passwords do not match": [
+        "Salasanat eivät täsmää"
       ],
       "Payment process canceled": [
         "Maksutapahtuma peruttiin"
@@ -3367,6 +3376,9 @@
       "The amount due has changed. Please try again.": [
         "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
+      "The email addresses do not match": [
+        "Sähköpostiosoitteet eivät täsmää"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Kansion nimi on virheellinen. Valitse eri nimi."
       ],
@@ -3394,8 +3406,14 @@
       "There was an error when exporting the contacts vCards": [
         "Yhteystietojen vCardeja vietäessä tapahtui virhe"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
+      ],
       "This field is required": [
         "Tämä kenttä vaaditaan"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
@@ -3409,6 +3427,9 @@
       "Trusted keys are not valid for sending": [
         "Luotetut avaimet eivät kelpaa lähetykseen"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
       ],
@@ -3417,6 +3438,12 @@
       ],
       "Unknown payment token status": [
         "Tuntematon maksutunnisteen tila"
+      ],
+      "Username must begin with a letter or digit": [
+        "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
+      ],
+      "Username must end with a letter or digit": [
+        "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
       "Validation error": [
         "Vahvistusvirhe"
@@ -5177,6 +5204,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Kiitos tilauksestasi. Suojattu selaaminen alkaa nyt."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
       ],
@@ -5912,6 +5942,9 @@
       ],
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
+      ],
+      "Enable desktop notifications": [
+        "Ota työpöytäilmoitukset käyttöön"
       ],
       "Encrypt emails": [
         "Salaa viestit"
@@ -8143,12 +8176,18 @@
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
       ],
+      "terms & conditions": [
+        "käyttöehdot"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
+      ],
+      "Your payment is still being processed": [
+        "Maksuasi käsitellään vielä"
       ]
     },
     "Payments.Error": {
@@ -10117,6 +10156,9 @@
       "Link confirmation": [
         "Linkin vahvistus"
       ],
+      "Make a secure connection your default": [
+        "Aseta suojattu yhteys oletuksesi"
+      ],
       "Merge contacts": [
         "Yhdistä yhteystietoja"
       ],
@@ -10469,6 +10511,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Jaettu päästä päähän -salattuna vahvistetulla yhteystiedolla"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
       ]
     },
     "Video control": {

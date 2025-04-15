@@ -1067,8 +1067,8 @@
       "File does not match expected format": [
         "Il formato del file non è corretto"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Importazione per la cassaforte \"${ vaultData.name }\" non riuscita: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Importazione non riuscita per la cassaforte \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Importazione degli elementi non riuscita"
@@ -1846,6 +1846,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3475,6 +3479,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Se abilitato, tutti i file verranno scaricati durante l'esportazione. L'operazione potrebbe richiedere del tempo a seconda della connessione Internet."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Se i tuoi dati contengono file allegati, non verranno importati."
+      ],
       "Include file attachments": [
         "Includi file allegati"
       ],
@@ -3514,14 +3521,14 @@
       "Total imported files: ": [
         "File importati totali: "
       ],
+      "Upgrade to support file attachments": [
+        "Effettua l’upgrade per supportare i file allegati"
+      ],
       "Upload files from your device.": [
         "Carica file dal tuo dispositivo."
       ],
       "You can attach files to items for a better organization": [
         "Puoi allegare file agli elementi per una migliore organizzazione."
-      ],
-      "Your current plan does not support importing files": [
-        "Il tuo piano attuale non supporta l'importazione di file"
       ]
     },
     "Placeholder": {

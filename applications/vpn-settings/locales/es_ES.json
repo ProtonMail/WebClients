@@ -397,9 +397,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Help": [
-        "Ayuda"
-      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -809,7 +806,7 @@
         "Verificar código"
       ],
       "Verify code again": [
-        "Verifica el código nuevamente"
+        "Verifica el código de nuevo"
       ],
       "Verify domain": [
         "Verificar el dominio"
@@ -2409,7 +2406,7 @@
         "¿Eliminar la dirección?"
       ],
       "Once deleted, this address ${ address } can't be used again by anyone else.": [
-        "Una vez eliminada, esta dirección ${ address } no puede ser usada nuevamente por otra persona."
+        "Una vez eliminada, esta dirección ${ address } no puede ser usada de nuevo por otra persona."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
         "Toma en cuenta que si eliminas esta dirección ${ address }, ya no podrás enviar o recibir correos electrónicos usando esta dirección."
@@ -2832,6 +2829,9 @@
       "Error publishing changes.": [
         "Error al publicar los cambios."
       ],
+      "Failed to load the STL preview": [
+        "Error al cargar la vista previa STL"
+      ],
       "Failed to process the logo": [
         "Error al procesar el logo"
       ],
@@ -2944,7 +2944,7 @@
         "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
       "Please enter a valid Entity ID URL": [
-        "Introduce una URL de identificación de entidad válida."
+        "Introduce una URL de ID de entidad válida."
       ],
       "Please generate keys before you try to change your password": [
         "Genera claves antes de intentar cambiar tu contraseña."
@@ -3496,7 +3496,7 @@
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Error al registrar tu llave de seguridad. Inténtalo nuevamente."
+        "Error al registrar tu llave de seguridad. Inténtalo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -3676,7 +3676,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacidad por defecto."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Go to sign in": {
@@ -5562,7 +5562,7 @@
         "No hemos podido procesar tu pago."
       ],
       "We generated a strong password for you": [
-        "Te hemos generado una contraseña fuerte."
+        "Hemos generado una contraseña segura para ti."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar el método de pago con tu banco."
@@ -6806,7 +6806,7 @@
         "mejora para obtener más almacenamiento"
       ],
       "Upgrade to restore full access": [
-        "Mejora para restaurar el acceso a todo"
+        "Mejora tu plan para restaurar el acceso a todo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El ${ driveStorage } está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
@@ -7407,7 +7407,7 @@
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
-        "Requerir 2FA para organización"
+        "Requerir 2FA para la organización"
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
@@ -8769,7 +8769,7 @@
         "por ejemplo https://ejemplo.com/app/protonvpn/XXXXX/sso/metadata"
       ],
       "e.g. https://idp.example.com/sso/saml": [
-        "por ejemplo https://idp.ejemplo.com/sso/saml"
+        "por ejemplo https://idp.ejemplo.es/sso/saml"
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "por ejemplo https://idp.ejemplo.com/XXXXX"
@@ -9083,7 +9083,7 @@
         "Ingresa la URL y token en tu proveedor de identidad"
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
-        "Por razones de seguridad, el token SCIM permanecerá oculto después de guardar tus cambios y no podrás verlo nuevamente."
+        "Por razones de seguridad, el token SCIM permanecerá oculto después de guardar tus cambios y no podrás verlo de nuevo."
       ],
       "For security reasons, the token is hidden": [
         "Por razones de seguridad, el token está oculto"
@@ -9113,7 +9113,7 @@
         "La URL y token base de SCIM serán eliminados."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
-        "Para reactivar la sincronización con tu proveedor de identidad, necesitas completar la integración SCIM nuevamente."
+        "Para reactivar la sincronización con tu proveedor de identidad, necesitas completar la integración SCIM de nuevo."
       ]
     },
     "scim: Label": {

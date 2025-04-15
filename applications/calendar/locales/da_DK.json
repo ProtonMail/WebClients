@@ -347,9 +347,6 @@
       "Got it": [
         "Forstået"
       ],
-      "Help": [
-        "Hjælp"
-      ],
       "Help and feedback": [
         "Hjælp og feedback"
       ],
@@ -3071,6 +3068,9 @@
       "Email address is required": [
         "E-mailadresse er påkrævet."
       ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
       "Ends on date cannot be empty": [
         "Sluttdato kan ikke være tom"
       ],
@@ -3118,6 +3118,9 @@
       ],
       "IMAP server is required": [
         "IMAP-server er påkrævet."
+      ],
+      "Incorrect username": [
+        "Forkert brugernavn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Den tiltænkte modtager understøtter ikke kalenderdeling"
@@ -3210,6 +3213,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
       ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
       "Number of occurrences cannot be empty": [
         "Antallet af forekomster kan ikke være tom"
       ],
@@ -3226,6 +3232,9 @@
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
+      ],
+      "Passwords do not match": [
+        "Adgangskoder stemmer ikke overens"
       ],
       "Payment process canceled": [
         "Betalingproces annulleret"
@@ -3328,6 +3337,9 @@
       "The amount due has changed. Please try again.": [
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
+      "The email addresses do not match": [
+        "E-Mailadresserne stemmer ikke overens"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
@@ -3355,8 +3367,14 @@
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
       "This field is required": [
         "Feltet er påkrævet"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn."
@@ -3370,6 +3388,9 @@
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
       ],
@@ -3378,6 +3399,12 @@
       ],
       "Unknown payment token status": [
         "Ukendt betalingstokens status"
+      ],
+      "Username must begin with a letter or digit": [
+        "Brugernavn skal begynde med et bogstav eller ciffer"
+      ],
+      "Username must end with a letter or digit": [
+        "Brugernavn skal ende på et bogstav eller ciffer"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -7631,6 +7658,9 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sidste chance for at spare 80% på den første måned af ${ plan } Plus "
       ],
+      "Last day to save": [
+        "Sidste dag til at gemme"
+      ],
       "Maybe later": [
         "Måske senere"
       ],
@@ -10194,6 +10224,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Delt end-to-end krypteret med verificeret kontakt"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ]
     },
     "Video control": {

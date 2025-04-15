@@ -585,9 +585,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Help": [
-        "Ayuda"
-      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -4205,6 +4202,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Error al cifrar el archivo adjunto. Inténtalo de nuevo."
       ],
+      "Failed to load the STL preview": [
+        "Error al cargar la vista previa STL"
+      ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre."
       ],
@@ -5239,7 +5239,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacidad por defecto."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "forwardmessage": {
@@ -9246,7 +9246,7 @@
         "mejora para obtener más almacenamiento"
       ],
       "Upgrade to restore full access": [
-        "Mejora para restaurar el acceso a todo"
+        "Mejora tu plan para restaurar el acceso a todo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El ${ driveStorage } está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
@@ -9944,7 +9944,7 @@
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
-        "Requerir 2FA para organización"
+        "Requerir 2FA para la organización"
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
@@ -13120,7 +13120,7 @@
         "Descargar la aplicación de escritorio"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
-        "Activa ${ DARK_WEB_MONITORING_NAME }"
+        "Activar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Obtener mi dirección «@${ PM_DOMAIN }»"
@@ -14553,7 +14553,7 @@
         "Cada domingo hasta ${ untilString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Semanalmente los jueves, ${ untilString }"
+        "Cada semana los jueves ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
         "Semanalmente los martes, ${ untilString }"

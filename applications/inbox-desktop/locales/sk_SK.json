@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "O aplikácii ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Skutočná veľkosť"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Vymazať dáta aplikácie"
       ],
+      "Close Window": [
+        "Zavrieť okno"
+      ],
+      "Copy": [
+        "Kopírovať"
+      ],
+      "Cut": [
+        "Vystrihnúť"
+      ],
+      "Delete": [
+        "Vymazať"
+      ],
       "Force Reload": [
         "Vynútené obnovenie"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Skryť ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Skryť ostatné"
+      ],
+      "Minimize": [
+        "Minimalizovať"
+      ],
+      "Paste": [
+        "Prilepiť"
+      ],
+      "Paste and Match Style": [
+        "Prilepiť a prispôsobiť štýl"
+      ],
+      "Quit": [
+        "Ukončiť"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Ukončiť ${ MAIL_APP_NAME }l"
+      ],
+      "Redo": [
+        "Znovu"
+      ],
       "Reload": [
         "Obnoviť"
+      ],
+      "Select All": [
+        "Vybrať všetko"
+      ],
+      "Show All": [
+        "Zobraziť všetko"
       ],
       "Show logs": [
         "Zobraziť záznamy"
@@ -26,11 +71,26 @@
       "Speech": [
         "Reč"
       ],
-      "Start Proton Mail at login": [
-        "Spustenie služby Proton Mail pri prihlásení"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Spustiť ${ MAIL_APP_NAME } pri prihlásení"
       ],
-      "Uninstall Proton Mail": [
-        "Odinštalovať Proton Mail"
+      "Start Speaking": [
+        "Začať rozprávať"
+      ],
+      "Stop Speaking": [
+        "Prestať rozprávať"
+      ],
+      "Toggle Full Screen": [
+        "Prepnúť na celú obrazovku"
+      ],
+      "Undo": [
+        "Vrátiť späť"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Odinštalovať ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Priblížiť"
       ],
       "Zoom In": [
         "Priblížiť"
@@ -39,12 +99,9 @@
         "Oddialiť"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Uložiť obrázok ako…"
-      ],
-      "Speech": [
-        "Reč"
+    "App Menu": {
+      "Services": [
+        "Služby"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji a symboly"
+      ],
+      "Save image as…": [
+        "Uložiť obrázok ako…"
+      ],
+      "Speech": [
+        "Hovorené slovo"
+      ],
+      "Start Speaking": [
+        "Začať rozprávať"
+      ],
+      "Stop Speaking": [
+        "Prestať rozprávať"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopírovať"
+      ],
+      "Cut": [
+        "Vystrihnúť"
+      ],
+      "Look Up “${ text }”": [
+        "Vyhľadať výraz „${ text }“"
+      ],
+      "Paste": [
+        "Prilepiť"
+      ],
+      "Paste and Match Style": [
+        "Prilepiť a prispôsobiť štýl"
+      ],
+      "Redo": [
+        "Znovu"
+      ],
+      "Select All": [
+        "Vybrať všetko"
+      ],
+      "Undo": [
+        "Vrátiť späť"
       ]
     },
     "Error dialog": {

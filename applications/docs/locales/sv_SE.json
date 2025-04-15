@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "Acceptera inbjudan till dokument"
       ],
+      "Actions": [
+        "Åtgärder"
+      ],
       "Activate recovery": [
         "Aktivera återställning"
       ],
@@ -124,6 +127,9 @@
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
+      "Change sort order": [
+        "Ändra sorteringsordning"
+      ],
       "characters": [
         "tecken"
       ],
@@ -160,6 +166,12 @@
       "Collapse": [
         "Mimimera"
       ],
+      "Collapse list": [
+        "Minimera lista"
+      ],
+      "Collapse list of pending invitations": [
+        "Minimera listan med väntande inbjudningar"
+      ],
       "Compose": [
         "Skriv"
       ],
@@ -171,9 +183,6 @@
       ],
       "Contact group": [
         "Kontaktgrupp"
-      ],
-      "Context menu": [
-        "Kontextmeny"
       ],
       "Continue": [
         "Fortsätt"
@@ -657,6 +666,9 @@
       "Skip verification": [
         "Hoppa över verifiering"
       ],
+      "Sort by": [
+        "Sortera efter"
+      ],
       "Start import": [
         "Starta import"
       ],
@@ -752,6 +764,9 @@
       ],
       "View": [
         "Visa"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Visa alla ${ pendingCount } inbjudningar"
       ],
       "View all reports": [
         "Visa alla rapporter"
@@ -5220,10 +5235,6 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiska plats är synlig och kan användas för att begränsa din åtkomst till internet."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
-        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
