@@ -42,6 +42,7 @@ enum AccountFlag {
     MagicLink = 'MagicLink',
     MailTrialOffer = 'MailTrialOffer',
     DriveTrialOffer = 'DriveTrialOffer',
+    PassTrialOffer = 'PassTrialOffer',
     MaintenanceImporter = 'MaintenanceImporter',
     VisionarySignup = 'VisionarySignup',
     BreachesAccountDashboard = 'BreachesAccountDashboard',
