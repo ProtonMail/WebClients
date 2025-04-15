@@ -21,7 +21,7 @@ export const mockShare: ShareItem = {
     owner: true,
     shared: false,
     shareId: mockShareId,
-    shareRoleId: ShareRole.ADMIN,
+    shareRoleId: ShareRole.MANAGER,
     targetId: uniqueId(),
     targetMaxMembers: 1,
     targetMembers: 1,
