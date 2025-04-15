@@ -125,9 +125,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Help": [
-        "Ayuda"
-      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Más opciones"
+      ],
+      "More options for accounts": [
+        "Más opciones para las cuentas"
       ],
       "Need help?": [
         "¿Necesita ayuda?"
@@ -306,7 +306,7 @@
         "Verificar"
       ],
       "Verify account": [
-        "Verificar la cuenta"
+        "Verificar cuenta"
       ],
       "View invoice": [
         "Ver factura"
@@ -569,6 +569,11 @@
       ],
       "Two-year": [
         "Dos años"
+      ]
+    },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "El código QR no es válido. Solo admitimos URI BIP 21."
       ]
     },
     "bitcoin buy": {
@@ -2096,7 +2101,7 @@
         "Código postal inválido"
       ],
       "Invalid verification code": [
-        "El código de verificación no es válido."
+        "Código de verificación inválido"
       ],
       "Not a valid number": [
         "Número no válido"
@@ -2105,7 +2110,7 @@
         "La clave de la organización no está descifrada"
       ],
       "Passwords do not match": [
-        "Las contraseñas no coinciden."
+        "Las contraseñas no coinciden"
       ],
       "Payment process canceled": [
         "Proceso de pago cancelado"
@@ -2171,10 +2176,10 @@
         "Estado del token de pago desconocido"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un número."
+        "El nombre de usuario debe comenzar con una letra o dígito"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un número."
+        "El nombre de usuario debe terminar con una letra o dígito"
       ]
     },
     "Error message": {
@@ -2730,6 +2735,9 @@
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Gracias por suscribirse. La navegación segura comienza ahora."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."
       ],
@@ -2800,7 +2808,7 @@
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Quiere recibir otro código de verificación o usar un método de verificación alternativo?"
+        "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
@@ -3017,7 +3025,7 @@
         "Ubicación de la carpeta"
       ],
       "Hide password": [
-        "Ocultar la contraseña"
+        "Ocultar contraseña"
       ],
       "IBAN": [
         "IBAN"
@@ -3059,7 +3067,7 @@
         "Método de pago"
       ],
       "Phone number": [
-        "Número de teléfono"
+        "Número telefónico"
       ],
       "Postal code": [
         "Código postal"
@@ -3224,11 +3232,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -3250,6 +3253,11 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -4852,7 +4860,7 @@
         "Cancelar"
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
-        "No se puede usar el escáner QRCode. Compruebe la compatibilidad del navegador."
+        "No se puede utilizar el escáner QRCode. Compruebe la compatibilidad del navegador."
       ],
       "Confirm and import": [
         "Confirmar e importar"
@@ -4976,7 +4984,7 @@
         "Verificación humana"
       ],
       "Invalid verification code": [
-        "El código de verificación no es válido."
+        "Código de verificación inválido"
       ],
       "Network error": [
         "Error de red"
@@ -5033,17 +5041,17 @@
         "Su dirección en formato más corto ya está lista."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Unknown sender": {
@@ -5232,7 +5240,7 @@
         "Ajustes avanzados"
       ],
       "Signing method": [
-        "Método de inicio de sesión"
+        "Método de firma"
       ],
       "This account is already created": [
         "Esta cuenta ya se ha creado"
@@ -5314,6 +5322,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Esta cartera necesita una frase de contraseña para su uso."
+      ],
+      "Upgrade": [
+        "Actualizar"
       ],
       "View change addresses": [
         "Ver los cambios de dirección"
@@ -5958,6 +5969,11 @@
         "Su clave privada"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Agregar cuenta"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Contactar con soporte"
@@ -5970,6 +5986,9 @@
       ],
       "Expand user settings": [
         "Expandir ajustes del usuario"
+      ],
+      "Import wallet": [
+        "Importar la cartera"
       ],
       "Recovery": [
         "Recuperación"
@@ -5988,11 +6007,6 @@
       ],
       "Wallets": [
         "Carteras"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Agregar una cuenta"
       ]
     },
     "Wallet terms and conditions": {
@@ -6156,29 +6170,6 @@
         "Sincronización en curso. Espere un momento"
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Un correo electrónico solo se puede vincular a una cuenta de cartera. Para vincular un correo electrónico a esta cuenta de cartera, elimine un correo electrónico de otra cuenta o actualice su plan para obtener más direcciones."
-      ],
-      "Contact your administrator to upgrade": [
-        "Contacte con su administrador para actualizar"
-      ],
-      "Unlock more email addresses": [
-        "Desbloquee más direcciones de correo"
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Ha alcanzado el número máximo de cuentas soportadas por su plan actual."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Ha alcanzado el número máximo de cuentas que admite su plan actual. Mejore el plan para crear más. Su apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financiera."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Ha alcanzado el número máximo de carteras soportadas por su plan actual."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Ha alcanzado el número máximo de carteras que admite su plan actual. Cambie de plan para crear más. Su apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "Al continuar, acepta nuestros ${ termsAndConditionsLink }"
@@ -6191,6 +6182,35 @@
       ],
       "You have reached your limit": [
         "Ha alcanzado su límite."
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "Se ha alcanzado el límite de la cuenta"
+      ],
+      "Contact your administrator to upgrade": [
+        "Contacte con su administrador para actualizar"
+      ],
+      "Expand your address limit": [
+        "Ampliar el límite de direcciones"
+      ],
+      "Wallet limit reached": [
+        "Se ha alcanzado el límite de la cartera"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Ha alcanzado el número máximo de cuentas soportadas por su plan actual."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Ha alcanzado el número máximo de cuentas que admite su plan actual. Mejore el plan para crear más. Su apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financiera."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Has alcanzado el número máximo de direcciones de correo electrónico admitidas por su plan actual. Mejore su plan para crear más. Su soporte también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Ha alcanzado el número máximo de carteras soportadas por su plan actual."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Ha alcanzado el número máximo de carteras que admite su plan actual. Cambie de plan para crear más. Su apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
       ]
     },
     "Wallet Welcome": {
@@ -6226,7 +6246,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera más segura de guardar Bitcoin"
+        "Una manera más segura de guardar sus bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

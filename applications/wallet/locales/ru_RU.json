@@ -111,16 +111,13 @@
         "Связаться с нами"
       ],
       "Get verification code": [
-        "Получить код подтверждения"
+        "Получить проверочный код"
       ],
       "Go to settings": [
         "Перейти в настройки"
       ],
       "Got it": [
         "Понятно"
-      ],
-      "Help": [
-        "Помощь"
       ],
       "Increase": [
         "Увеличить"
@@ -2828,7 +2825,7 @@
         "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Ваш номер телефона будет использован только для этой разовой проверки."
+        "Ваш номер телефона будет использоваться только для этой разовой проверки."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
@@ -3163,11 +3160,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -3189,6 +3181,11 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -4847,10 +4844,10 @@
         "Справочный центр"
       ],
       "Human verification": [
-        "Проверка пользователя"
+        "Проверка \"Я не робот\""
       ],
       "Invalid verification code": [
-        "Неверный код подтверждения"
+        "Неверный проверочный код"
       ],
       "Network error": [
         "Ошибка сети"
@@ -4907,17 +4904,17 @@
         "Ваш укороченный адрес готов"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Unknown sender": {
@@ -5005,6 +5002,12 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Автоматически выбирается из ${ numberOfCountries } страны",
+        "Автоматически выбирается из ${ numberOfCountries } стран",
+        "Автоматически выбирается из ${ numberOfCountries } стран",
+        "Автоматически выбирается из ${ numberOfCountries } стран"
       ]
     },
     "vpn_2024: renew": {
@@ -5817,6 +5820,11 @@
         "Ваши ключи — ваши монеты."
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Добавить аккаунт"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Связаться с поддержкой"
@@ -5847,11 +5855,6 @@
       ],
       "Wallets": [
         "Кошельки"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Добавить аккаунт"
       ]
     },
     "Wallet terms and conditions": {
@@ -6015,29 +6018,6 @@
         "Выполняется синхронизация. Подождите"
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Адрес электронной почты можно связать только с одной учётной записью кошелька. Чтобы привязать электронную почту к этой учётной записи, удалите адрес электронной почты из другой учётной записи или обновите свой план, чтобы получить больше адресов электронной почты."
-      ],
-      "Contact your administrator to upgrade": [
-        "Свяжитесь с вашим администратором для обновления плана"
-      ],
-      "Unlock more email addresses": [
-        "Разблокировать больше адресов электронной почты"
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Вы достигли максимального количества аккаунтов, поддерживаемых вашим текущим тарифом."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Вы достигли максимального количества аккаунтов, поддерживаемых вашим текущим тарифом. Обновите тариф, чтобы создать больше. Ваша поддержка также будет необходима для нашей борьбы за защиту финансовой тайны и свободы."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Вы достигли максимального количества кошельков, поддерживаемых вашим текущим тарифом."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Вы создали максимальное количество кошельков, поддерживаемое вашим тарифом. Чтобы создать больше, улучшите тариф. Ваша поддержка поможет в нашей борьбе за защиту свободы и конфиденциальности финансовых данных."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "Продолжая, вы соглашаетесь с нашими ${ termsAndConditionsLink }"
@@ -6050,6 +6030,23 @@
       ],
       "You have reached your limit": [
         "Вы достигли предела"
+      ]
+    },
+    "Wallet upgrade": {
+      "Contact your administrator to upgrade": [
+        "Свяжитесь с вашим администратором для обновления плана"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Вы достигли максимального количества аккаунтов, поддерживаемых вашим текущим тарифом."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Вы достигли максимального количества аккаунтов, поддерживаемых вашим текущим тарифом. Обновите тариф, чтобы создать больше. Ваша поддержка также будет необходима для нашей борьбы за защиту финансовой тайны и свободы."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Вы достигли максимального количества кошельков, поддерживаемых вашим текущим тарифом."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Вы создали максимальное количество кошельков, поддерживаемое вашим тарифом. Чтобы создать больше, улучшите тариф. Ваша поддержка поможет в нашей борьбе за защиту свободы и конфиденциальности финансовых данных."
       ]
     },
     "Wallet Welcome": {
