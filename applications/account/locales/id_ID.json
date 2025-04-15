@@ -499,6 +499,9 @@
       "Edit billing cycle": [
         "Sunting siklus tagihan"
       ],
+      "Edit countries": [
+        "Sunting negara"
+      ],
       "Edit display name": [
         "Ubah nama tampilan"
       ],
@@ -682,9 +685,6 @@
       "Got it": [
         "Dimengerti"
       ],
-      "Help": [
-        "Bantuan"
-      ],
       "Help and feedback": [
         "Bantuan dan saran"
       ],
@@ -822,6 +822,9 @@
       ],
       "More options": [
         "Opsi lainnya"
+      ],
+      "More options for accounts": [
+        "Pilihan lainnya untuk akun"
       ],
       "move emails to": [
         "pindahkan email ke"
@@ -1131,9 +1134,6 @@
       ],
       "Set as default": [
         "Atur sebagai bawaan"
-      ],
-      "Set as default mail application": [
-        "Tentukan sebagai aplikasi email bawaan"
       ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
@@ -3749,12 +3749,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } bukan merupakan aplikasi email bawaan Anda."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } merupakan aplikasi email bawaan Anda."
-      ],
       "Also included": [
         "Turut meliputi"
       ],
@@ -3786,10 +3780,10 @@
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
       "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktifkan rekaman peristiwa terperinci dan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur ini"
+        "Aktifkan rekaman peristiwa terperinci dan ${ PROTON_SENTINEL_NAME } untuk mengakses rangkaian fitur ini"
       ],
       "Enable detailed events to access these features": [
-        "Aktifkan rekaman peristiwa terperinci untuk mengakses berbagai fitur ini"
+        "Aktifkan rekaman peristiwa terperinci untuk mengakses rangkaian fitur ini"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
@@ -3812,11 +3806,17 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Pisahkan aspek kehidupan Anda dan rapikan kotak masuk Anda dengan alamat tambahan."
       ],
+      "Learn more about common problems": [
+        "Pelajari lebih lanjut seputar masalah yang umum dijumpai"
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Buat footer email milik Anda — tampilkan merek Anda, bukan merek kami."
       ],
       "No one in your organization can connect to shared servers.": [
         "Tidak ada siapa pun dalam organisasi Anda yang dapat menghubungkan ke server terbagi."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Kirim kode ke alamat email atau nomor telepon pemulihan Anda"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
@@ -4190,14 +4190,44 @@
       "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
         "**Bagaimana metode ini bekerja:** Masukkan kode yang muncul pada perangkat yang ingin Anda masuki di perangkat ini. Anda akan masuk sebagai **${ email }**. Kedua perangkat ini akan tetap aktif. "
       ],
+      "Allow scanning a QR code to sign in": [
+        "Izinkan memindai kode QR untuk masuk"
+      ],
       "Code copied to clipboard": [
         "Kode disalin ke papan klip"
+      ],
+      "Code from the other device": [
+        "Kode dari perangkat lain"
+      ],
+      "Enter code manually": [
+        "Masukkan kode secara manual"
+      ],
+      "New QR code": [
+        "Kode QR baru"
       ],
       "Open the ${ BRAND_NAME } app on your phone": [
         "Buka aplikasi ${ BRAND_NAME } di ponsel Anda"
       ],
+      "Please scan a new QR code to try again": [
+        "Silakan salin kode QR yang baru atau coba lagi"
+      ],
+      "QR code expired": [
+        "Kode QR kedaluwarsa"
+      ],
+      "QR code sign-in disabled": [
+        "Entri masuk via kode QR dinonaktifkan"
+      ],
+      "QR code sign-in enabled": [
+        "Entri masuk via kode QR diaktifkan"
+      ],
       "Safety tips:": [
         "Tips keamanan:"
+      ],
+      "Scan a QR code with your phone": [
+        "Pindai kode QR dengan ponsel Anda"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Pindai kode QR pada perangkat seluler Anda untuk masuk"
       ],
       "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
         "Pindai kode QR ini pada aplikasi ${ BRAND_NAME } di ponsel Anda untuk masuk secara instan."
@@ -4205,14 +4235,26 @@
       "Sign in to another device": [
         "Masuk ke perangkat lain"
       ],
+      "Sign in with another device": [
+        "Masuk dengan perangkat lain"
+      ],
+      "Sign in with QR code": [
+        "Masuk dengan kode QR"
+      ],
       "Tap **Scan QR code**": [
         "Ketuk **Pindai kode QR**"
       ],
       "Tap into **Settings**, then tap **Sign in to another device**": [
         "Ketuk **Pengaturan**, lalu ketuk **Masuk ke perangkat lain**"
       ],
+      "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
+        "Untuk mengakses kode milik perangkat yang ingin Anda gunakan untuk masuk, ketuk tombol **Masuk dengan kode QR** pada menu bantuan di layar masuk, dan lalu ketuk **Masukkan kunci secara manual**. "
+      ],
       "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
         "Berhati-hatilah terhadap pesan yang mengandung kode tertentu. Jangan pernah masukkan kode apa pun dari situs web atau orang lain yang tidak Anda percayai."
+      ],
+      "We couldn't sign you in": [
+        "Kami tidak dapat memasukkan Anda ke akun"
       ],
       "You have successfully signed in to another device": [
         "Anda telah berhasil masuk ke perangkat lain"
@@ -4796,6 +4838,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Modal OAuth gagal dimuat."
+      ],
+      "Failed to load the STL preview": [
+        "Pratinjau STL gagal dimuat"
       ],
       "Failed to process the logo": [
         "Logo gagal diproses"
@@ -6231,7 +6276,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privasi sebagai hal yang baku."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Free trial dekstop": {
@@ -6993,6 +7038,14 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Apabila diaktifkan, kunci ini akan digunakan untuk dekripsi"
+      ],
+      "If reactivated, the key will be used for decryption and verification": [
+        "Apabila diaktifkan ulang, kunci ini akan digunakan untuk dekripsi dan verifikasi"
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } pengguna saat ini memiliki akses ke server bersama."
@@ -7699,6 +7752,9 @@
       "Data locked": [
         "Data terkunci"
       ],
+      "Data recoverable on this device": [
+        "Data pada perangkat ini dapat dipulihkan"
+      ],
       "Dedicated servers": [
         "Server khusus"
       ],
@@ -7734,6 +7790,9 @@
       ],
       "Disable recovery by phone number": [
         "Nonaktifkan pemulihan melalui nomor telepon"
+      ],
+      "Disabled countries": [
+        "Negara yang dinonaktifkan"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Dinonaktifkan pada ${ formattedDateAndTime }"
@@ -7884,6 +7943,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktifkan TLS atau SSL pada layanan eksternal apabila didukung."
+      ],
+      "Enabled countries": [
+        "Negara yang diaktifkan"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Diaktifkan pada ${ formattedDateAndTime }"
@@ -8074,8 +8136,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Tuju penyedia identitas Anda, dapatkan metadata SAML untuk ${ appName }, dan impor metadata tersebut di sini."
       ],
+      "Got it": [
+        "Mengerti"
+      ],
       "Group deleted": [
         "Grup dihapus"
+      ],
+      "Groups": [
+        "Grup"
       ],
       "here": [
         "di sini"
@@ -9332,7 +9400,7 @@
         "Tindakan ini akan menghapus SSO untuk ${ boldDomainName }."
       ],
       "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
-        "Ini akan menghilangkan akses ke semua layanan terhubung dan menghapus semua data Anda, termasuk kontak, lampiran, acara, kata sandi, dan berkas."
+        "Tindakan ini akan menghilangkan akses Anda ke seluruh layanan yang terhubung dan menghapus seluruh data Anda, termasuk kontak, lampiran, acara, kata sandi, dan berkas."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
@@ -9436,6 +9504,9 @@
       "Total VPN connections": [
         "Total koneksi VPN"
       ],
+      "trusted device": [
+        "perangkat terpercaya"
+      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Coba ${ productName } tanpa risiko apa pun - apabila karena satu dan lain hal Anda berubah pikiran, uang Anda akan dikembalikan sepenuhnya. Tanpa ada basa-basi."
       ],
@@ -9503,7 +9574,7 @@
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
       "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Tingkatkan ke paket ${ firstPlanNames } atau ${ lastPlanName } untuk mendapatkan akses ke ${ PROTON_SENTINEL_NAME }."
+        "Tingkatkan ke paket ${ firstPlanNames } atau ${ lastPlanName } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
@@ -9670,6 +9741,9 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Kami menyimpan informasi pemulihan pada perangkat yang Anda percaya secara aman untuk mencegah Anda kehilangan data"
       ],
+      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
+        "Kami menyimpan berkas cadangan pada browser ini karena Anda mengizinkan pemulihan data pada ${ deviceLink }. Apabila berkas cadangan ini valid, Anda akan segera memperoleh kembali akses menuju data terenkripsi Anda baik secara parsial ataupun menyeluruh."
+      ],
       "We use 3-D Secure to protect your payments": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran Anda"
       ],
@@ -9711,9 +9785,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pada saat dinonaktifkan, opsi ini akan mencegah berkas gambar untuk dimuat pada perangkat Anda tanpa Anda ketahui."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Pada saat diaktifkan, kami akan memeriksa apakah ${ MAIL_APP_NAME } adalah aplikasi email bawaan Anda dan memberitahukan Anda apabila aplikasi kami tidak diatur sebagai aplikasi bawaan."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
@@ -9953,7 +10024,7 @@
         "Anda akan kehilangan akses ke berbagai fitur ${ planTitle } pada tanggal ini."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
+        "Anda akan memerlukan alamat ${ BRAND_NAME } untuk menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Anda TIDAK akan dapat mendekripsi pesan, berkas, dan data lainnya yang terenkripsi dengan kunci ini. Seluruh data yang ditandatangani dengan kunci ini tidak akan lagi diverifikasi oleh aplikasi ${ BRAND_NAME }."
@@ -10019,7 +10090,7 @@
         "Metode pemulihan data Anda telah ditentukan"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
@@ -10052,7 +10123,7 @@
         "Rincian pembayaran Anda dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Nomor telepon Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Paket Anda terbatas pada 10 versi hingga 7 hari"
@@ -10122,7 +10193,7 @@
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Anda dapat menambahkan metode pembayaran agar langganan Anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
+        "Anda dapat menambahkan metode pembayaran agar langganan Anda dapat diperpanjang secara otomatis. Kami juga menerima metode pembayaran di samping kartu kredit/debit dan PayPal."
       ]
     },
     "Info message for custom invoice modal": {
@@ -10246,6 +10317,12 @@
       ]
     },
     "Key function description": {
+      "Decryption": [
+        "Dekripsi"
+      ],
+      "Decryption, verification": [
+        "Dekripsi, verifikasi"
+      ],
       "Encryption, decryption, signing, verification": [
         "Enkripsi, dekripsi, penandatanganan, verifikasi"
       ]
@@ -10568,6 +10645,9 @@
       ],
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } pengguna"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -10917,6 +10997,9 @@
       "Could you please specify?": [
         "Dapatkah Anda memberikan penjelasan lebih lanjut?"
       ],
+      "Countries": [
+        "Negara"
+      ],
       "Country": [
         "Negara"
       ],
@@ -11152,7 +11235,7 @@
         "Impor ke:"
       ],
       "Inbox": [
-        "Kotak Masuk"
+        "Kotak masuk"
       ],
       "Inherit color from parent folder": [
         "Ikuti warna folder induk"
@@ -12135,7 +12218,7 @@
         "Layanan email terenkripsi yang mengutamakan privasi Anda"
       ],
       "Encrypted email and calendar to get you started": [
-        "Email dan kalender terenkripsi untuk membantu Anda memulai"
+        "Email dan kalender terenkripsi untuk membantu Anda memulai bisnis"
       ],
       "Encrypted solutions to protect your entire business": [
         "Solusi terenkripsi untuk melindungi seluruh bisnis Anda"
@@ -12842,7 +12925,7 @@
         "Perlindungan kebocoran DNS"
       ],
       "Double hop": [
-        "Double hop"
+        "Koneksi double hop"
       ],
       "Easy Switch import assistant": [
         "Alat bantu impor Easy Switch"
@@ -13293,7 +13376,7 @@
         "Nama organisasi ini akan dapat dilihat oleh para pengguna Anda ketika mereka masuk."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Untuk memulai, tentukan nama layar Anda. Nama ini merupakan nama yang akan dilihat oleh orang lain pada saat Anda mengirim email, mengirim undangan, atau membagikan berkas kepada mereka."
+        "Untuk memulai, tentukan nama tampilan Anda. Nama ini merupakan nama yang akan dilihat oleh orang lain pada saat Anda mengirim email, mengajukan undangan, atau membagikan berkas kepada mereka."
       ],
       "Your ${ planName } subscription is now active.": [
         "Langganan ${ planName } Anda kini telah aktif."
@@ -13329,7 +13412,7 @@
         "Peninjauan dan pembayaran langganan"
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
-        "Mulai jelajahi semesta ${ BRAND_NAME }"
+        "Mulai jelajahi jagat ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Ubah paket?"
@@ -13553,7 +13636,7 @@
         "Pada saat Anda mengirim pesan ke pengguna ${ MAIL_APP_NAME } lainnya, enkripsi akan diterapkan secara otomatis. Sebaliknya, pada saat Anda mengirim pesan ke pengguna non-${ MAIL_APP_NAME_TWO }, Anda harus menentukan kata sandi pada pesan yang Anda kirim."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Anda dapat menetapkan lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun segala hal terkait pembayaran hanya akan dapat diatur oleh admin utama."
+        "Anda dapat memiliki lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun hanya admin utamalah yang memiliki kendali atas tagihan."
       ]
     },
     "new_plans: upgrade": {
@@ -13658,7 +13741,7 @@
         "1 email per bulan"
       ],
       "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 email per bulan. Dapatkan kabar privasi terkini dan informasi seputar apa-apa saja yang terjadi pada semesta ${ BRAND_NAME }."
+        "1 email per bulan. Dapatkan kabar privasi terkini dan informasi seputar apa-apa saja yang terjadi pada jagat ${ BRAND_NAME }."
       ],
       "1 email per quarter": [
         "1 email per kuartal"
@@ -13682,7 +13765,7 @@
         "Notifikasi email harian"
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Menonaktifkan hal ini akan menghilangkan kemampuan untuk menerima notifikasi pada aplikasi ${ BRAND_NAME }"
+        "Menonaktifkan pilihan ini akan membuat Anda tidak lagi dapat menerima notifikasi pada aplikasi ${ BRAND_NAME }"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Selama bulan pertama Anda mengunakan produk ${ BRAND_NAME }"
@@ -15415,7 +15498,7 @@
     },
     "Safety review": {
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " **Aktifkan pemulihan melalui ponsel** untuk mendapatkan akses ke akun Anda jika Anda lupa kata sandi Anda."
+        " **Aktifkan pemulihan melalui nomor telepon** untuk memperoleh kembali akses ke akun Anda apabila Anda lupa kata sandi Anda."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } akan menggunakan alamat ini untuk mengirimkan kode pengaturan ulang melalui email ketika Anda mengatur ulang kata sandi Anda."
@@ -15427,7 +15510,7 @@
         "${ enableDeviceRecovery } untuk memastikan data Anda dapat dipulihkan."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Aktifkan pemulihan melalui email** untuk mendapatkan akses ke akun Anda jika Anda lupa kata sandi Anda."
+        "**Aktifkan pemulihan melalui email** untuk memperoleh kembali akses ke akun Anda apabila Anda lupa kata sandi Anda."
       ],
       "Account safety review": [
         "Peninjauan keamanan akun"
@@ -18183,6 +18266,9 @@
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
       ],
+      "Browser extensions": [
+        "Ekstensi browser"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -18218,9 +18304,6 @@
       ],
       "Change second password": [
         "Ubah kata sandi kedua"
-      ],
-      "Check your default mail application": [
-        "Periksa aplikasi email bawaan Anda"
       ],
       "Choose an account": [
         "Pilih akun"
@@ -18422,6 +18505,9 @@
       ],
       "Description": [
         "Deskripsi"
+      ],
+      "Desktop": [
+        "Desktop"
       ],
       "Device": [
         "Perangkat"
@@ -18696,6 +18782,9 @@
       "Home": [
         "Beranda"
       ],
+      "How can we help?": [
+        "Bagaimana kami dapat membantu Anda?"
+      ],
       "How does it work?": [
         "Bagaimana cara hal ini bekerja?"
       ],
@@ -18746,6 +18835,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Tingkatkan privasi Anda dengan lebih banyak alamat"
+      ],
+      "Information exposed in breach": [
+        "Informasi yang terpapar dalam kebocoran data"
       ],
       "Integrations": [
         "Integrasi"
@@ -18806,6 +18898,9 @@
       ],
       "Minicalendar": [
         "Kalender mini"
+      ],
+      "Mobile": [
+        "Seluler"
       ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
@@ -18875,6 +18970,9 @@
       ],
       "Other preferences": [
         "Preferensi lainnya"
+      ],
+      "Other sign-in issues": [
+        "Masalah masuk lainnya"
       ],
       "Password": [
         "Kata sandi"
@@ -19413,11 +19511,20 @@
       "Actions": [
         "Tindakan"
       ],
+      "Creation date": [
+        "Tanggal pembuatan"
+      ],
       "Fingerprint": [
         "Sidik jari"
       ],
+      "Function": [
+        "Fungsi"
+      ],
       "Status": [
         "Status"
+      ],
+      "Type": [
+        "Jenis"
       ]
     },
     "Title header for members table": {
@@ -19554,6 +19661,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Pesan yang terdapat pada folder Terkirim atau Draf akan tetap muncul pada folder tersebut, bahkan apabila Anda memindahkan pesan ini ke folder lain."
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Hapus metadata dari gambar untuk melindungi privasi Anda."
       ],
@@ -19567,7 +19677,7 @@
         "Tentukan apakah jendela Komposer akan tampil dalam layar kecil atau layar penuh secara bawaan."
       ],
       "Set the default layout for your Inbox.": [
-        "Tentukan tata letak bawaan Kotak masuk Anda."
+        "Tentukan tata letak bawaan untuk Kotak masuk Anda."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Mengatur footer berikut dalam email yang Anda kirim: ${ signature } Tautan tersebut mengarah ke tautan rujukan Anda. Footer akan muncul di bawah tanda tangan Anda. Anda dapat mempersonalisasi tanda tangan Anda kapan saja di pengaturan."
@@ -19643,6 +19753,9 @@
       ],
       "This key is used for email forwarding": [
         "Kunci ini digunakan untuk penerusan email"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Gunakan scrollbar bawaan milik browser Anda. Scrollbar ini pada umumnya lebih besar dan lebih mudah untuk digunakan"

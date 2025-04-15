@@ -685,9 +685,6 @@
       "Got it": [
         "Зразумела"
       ],
-      "Help": [
-        "Даведка"
-      ],
       "Help and feedback": [
         "Даведка і зваротная сувязь"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "Зрабіць прадвызначанай"
-      ],
-      "Set as default mail application": [
-        "Задаць у якасці прадвызначанай паштовай праграмы"
       ],
       "Set catch-all": [
         "Задаць адрас для ўсёй пошты дамена"
@@ -3803,12 +3797,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не з'яўляецца вашай прадвызначанай паштовай праграмай."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } з'яўляецца вашай прадвызначанай паштовай праграмай."
-      ],
       "Also included": [
         "Таксама ўключана"
       ],
@@ -4904,6 +4892,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Не ўдалося загрузіць акно OAuth."
+      ],
+      "Failed to load the STL preview": [
+        "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
@@ -10082,9 +10073,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Калі адключана, то гэта не дазволіць загружаць відарысы на вашу прыладу без вашай згоды.\t"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Пры ўключанай функцыі будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
@@ -18959,6 +18947,9 @@
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
       ],
+      "Browser extensions": [
+        "Пашырэнні для браўзера"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -18994,9 +18985,6 @@
       ],
       "Change second password": [
         "Змяніць другі пароль"
-      ],
-      "Check your default mail application": [
-        "Праверце сваю прадвызначаную паштовую праграму"
       ],
       "Choose an account": [
         "Выберыце ўліковы запіс"
@@ -19204,6 +19192,9 @@
       ],
       "Description": [
         "Апісанне"
+      ],
+      "Desktop": [
+        "Для камп'ютара"
       ],
       "Device": [
         "Прылада"
@@ -19600,6 +19591,9 @@
       ],
       "Minicalendar": [
         "Мінікаляндар"
+      ],
+      "Mobile": [
+        "Для смартфона"
       ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"

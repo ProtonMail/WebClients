@@ -664,9 +664,6 @@
       "Got it": [
         "Понятно"
       ],
-      "Help": [
-        "Помощь"
-      ],
       "Hide": [
         "Скрыть"
       ],
@@ -1101,9 +1098,6 @@
       ],
       "Set as default": [
         "Установить по умолчанию"
-      ],
-      "Set as default mail application": [
-        "Установить как почтовое приложение по умолчанию"
       ],
       "Set catch-all": [
         "Установить прием всей почты домена"
@@ -3660,12 +3654,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не является вашим почтовым приложением по умолчанию."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } - это ваше почтовое приложение по умолчанию."
-      ],
       "Also included": [
         "Также включены"
       ],
@@ -6047,7 +6035,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Free trial dekstop": {
@@ -9551,9 +9539,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Если отключено, то предотвращает загрузку изображений на вашем устройстве без вашего ведома."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Если эта функция включена, мы проверим, является ли ${ MAIL_APP_NAME } вашим почтовым приложением по умолчанию, и уведомим вас, если это не так."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "При включении SAML для ${ appName } у поставщика личных данных вам может быть предложено использовать URL обратного вызова (ACS) и ID эмитента. Просто скопируйте и вставьте приведенные ниже данные в поля поставщика личных данных."
@@ -18266,9 +18251,6 @@
       ],
       "Change second password": [
         "Изменить второй пароль"
-      ],
-      "Check your default mail application": [
-        "Проверьте почтовое приложение по умолчанию"
       ],
       "Choose an account": [
         "Выберите аккаунт"

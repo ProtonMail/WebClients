@@ -685,9 +685,6 @@
       "Got it": [
         "Förstått"
       ],
-      "Help": [
-        "Hjälp"
-      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "Ställ in som standard"
-      ],
-      "Set as default mail application": [
-        "Ställ in som standardapplikation för e-post"
       ],
       "Set catch-all": [
         "Ställ in \"Catch-all\""
@@ -3768,12 +3762,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } är inte din standardapplikation för e-post."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } är din standardapplikation för e-post."
-      ],
       "Also included": [
         "Även inkluderat"
       ],
@@ -4269,8 +4257,14 @@
       "Tap **Scan QR code**": [
         "Tryck **Skanna QR-kod**"
       ],
+      "Tap into **Settings**, then tap **Sign in to another device**": [
+        "Klicka på **Inställningar**, tryck sedan på **Logga in på annan enhet**"
+      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Om du vill komma åt koden för den enhet du vill logga in på trycker du på knappen **Logga in med QR-kod** i hjälpmenyn på inloggningsskärmen och sedan på **Ange nyckel manuellt**. "
+      ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "Se upp för meddelanden som innehåller en kod. Ange aldrig en kod från en webbplats eller en person som du inte litar på."
       ],
       "We couldn't sign you in": [
         "Vi kunde inte logga in dig"
@@ -4859,6 +4853,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Misslyckades att ladda OAuth-modal."
+      ],
+      "Failed to load the STL preview": [
+        "Misslyckades att ladda STL-förhandsgranskningen"
       ],
       "Failed to process the logo": [
         "Misslyckades att bearbeta loggan"
@@ -6315,7 +6312,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Integritet som standard."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Free trial dekstop": {
@@ -7820,6 +7817,9 @@
       ],
       "Data locked": [
         "Data låst"
+      ],
+      "Data recoverable on this device": [
+        "Data återställningsbart på denna enhet"
       ],
       "Dedicated servers": [
         "Dedikerade servrar"
@@ -9839,9 +9839,6 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "När den är inaktiverad förhindrar detta att bildfiler laddas på din enhet utan din vetskap."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
       ],
@@ -10193,10 +10190,6 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Din återställningsfras är en serie av 12 slumpmässigt genererade ord i en specifik ordning."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
-        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
@@ -10708,6 +10701,10 @@
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } användare",
+        "${ group.UserCount } användare"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
@@ -18488,9 +18485,6 @@
       "Change second password": [
         "Ändra andra lösenord"
       ],
-      "Check your default mail application": [
-        "Kontrollera din standardapplikation för e-post"
-      ],
       "Choose an account": [
         "Välj ett konto"
       ],
@@ -18693,6 +18687,9 @@
       ],
       "Description": [
         "Beskrivning"
+      ],
+      "Desktop": [
+        "Stationär dator"
       ],
       "Device": [
         "Enhet"
@@ -19088,6 +19085,9 @@
       ],
       "Minicalendar": [
         "Minikalender"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Multi-user support": [
         "Stöd för flera användare"
