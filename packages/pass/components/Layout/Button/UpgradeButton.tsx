@@ -5,17 +5,19 @@ import { c } from 'ttag';
 import { Button, ButtonLike, type ButtonLikeSize } from '@proton/atoms';
 import type { IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
-import { type UpsellRef } from '@proton/pass/constants';
+import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
+import type { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-type UpgradeButtonProps = {
+type UpgradeButtonProps = PromotionButtonProps<typeof ButtonLike> & {
     buttonSize?: ButtonLikeSize;
     className?: string;
-    hideIcon?: boolean;
     iconSize?: IconSize;
+    gradient?: boolean;
     inline?: boolean;
     label?: string;
     onClick?: () => void;
@@ -27,16 +29,17 @@ type UpgradeButtonProps = {
 export const UpgradeButton: FC<UpgradeButtonProps> = ({
     buttonSize,
     className,
-    hideIcon = false,
     iconSize,
+    gradient = false,
     inline = false,
     label,
     onClick = noop,
     path,
     style,
     upsellRef,
+    ...rest
 }) => {
-    const ButtonComponent = inline ? ButtonLike : Button;
+    const ButtonComponent = inline ? ButtonLike : gradient ? PromotionButton : Button;
     const buttonProps = inline ? ({ as: 'a', shape: 'underline' } as const) : ({ pill: true, shape: 'solid' } as const);
 
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path });
@@ -61,9 +64,10 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
             size={buttonSize}
             style={style}
             {...buttonProps}
+            {...rest}
         >
             {label || c('Action').t`Upgrade`}
-            {!hideIcon && <Icon className="ml-2" name="arrow-out-square" size={iconSize} />}
+            {!gradient && <Icon className="ml-2" name="arrow-out-square" size={iconSize} />}
         </ButtonComponent>
     );
 };
