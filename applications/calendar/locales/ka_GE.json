@@ -347,9 +347,6 @@
       "Got it": [
         "გავიგე"
       ],
-      "Help": [
-        "დახმარება"
-      ],
       "Help and feedback": [
         "დახმარება და გამოხმაურება"
       ],
@@ -1114,6 +1111,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
@@ -3109,6 +3110,9 @@
       "Email address is required": [
         "ელფოსტის მისამართი აუცილებელია"
       ],
+      "Email is not valid": [
+        "ელფოსტა არასწორია"
+      ],
       "Ends on date cannot be empty": [
         "დამთავრების თარიღი ცარიელი არ შეიძლება იყოს"
       ],
@@ -3156,6 +3160,9 @@
       ],
       "IMAP server is required": [
         "IMAP სერვერის მითითება აუცილებელია"
+      ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
       ],
       "Intended recipient does not support calendar sharing": [
         "სამიზნე მიმღებს კალენდრის გაზიარების მხარდაჭერა არ გააჩნია"
@@ -3248,6 +3255,9 @@
       "Not a ${ BRAND_NAME } account": [
         "არა-${ BRAND_NAME }-ის ანგარიში"
       ],
+      "Not a valid number": [
+        "არასწორი ნომერი"
+      ],
       "Number of occurrences cannot be empty": [
         "მოხდენების რიცხვი ცარიელი ვერ იქნება"
       ],
@@ -3264,6 +3274,9 @@
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
+      ],
+      "Passwords do not match": [
+        "პაროლები არ ემთხვევა"
       ],
       "Payment process canceled": [
         "გადახდის პროცესი გაუქმდა"
@@ -3366,6 +3379,9 @@
       "The amount due has changed. Please try again.": [
         "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
       ],
+      "The email addresses do not match": [
+        "ელფოსტის მისამართები არ ემთხვევა"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "საქაღალდის სახელი არასწორია. აირჩიეთ სხვა სახელი."
       ],
@@ -3393,8 +3409,14 @@
       "There was an error when exporting the contacts vCards": [
         "კონტაქტების vCard-ების გატანის შეცდომა"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
+      ],
       "This field is required": [
         "ეს ველი აუცილებელია"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
       ],
       "This folder name is not available. Please choose a different name.": [
         "საქაღალდის სახელი მიუწვდომელია. აირჩიეთ სხვა სახელი."
@@ -3408,6 +3430,9 @@
       "Trusted keys are not valid for sending": [
         "სანდო გასაღებების გაგზავნა არ შეიძლება"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN-ის სამუშაო მაგიდის ჩატვირთვა შეუძლებელია. გადაამოწმეთ თქვენი კავშირი და თავიდან სცადეთ."
       ],
@@ -3419,6 +3444,12 @@
       ],
       "Unknown payment token status": [
         "გადახდის სტატუსის არასწორი კოდი"
+      ],
+      "Username must begin with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
+      ],
+      "Username must end with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
       "Validation error": [
         "გადამოწმების შეცდომა"
@@ -8176,6 +8207,10 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -10498,6 +10533,9 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "გამოწერის ახალი ციკლის დაწყების დრო: ${ formattedTime }"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "თუ მათ არ გაშიფრავთ, დაშიფრული პაროლები დაცულია მაშინაც კი, თუ მათ ვინმე ნახავს."
+      ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
       ]
@@ -10513,6 +10551,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "გაზიარებულია გამჭოლი შიფრაციით სანდო კონტაქტთან"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
       ]
     },
     "Video control": {

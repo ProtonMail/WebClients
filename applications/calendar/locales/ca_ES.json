@@ -347,9 +347,6 @@
       "Got it": [
         "D'acord"
       ],
-      "Help": [
-        "Ajuda"
-      ],
       "Help and feedback": [
         "Ajuda i comentaris"
       ],
@@ -3116,6 +3113,9 @@
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
       ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
       "Ends on date cannot be empty": [
         "La data final no pot estar buida."
       ],
@@ -3163,6 +3163,9 @@
       ],
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
+      ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
       ],
       "Intended recipient does not support calendar sharing": [
         "El destinatari escollit no admet la compartició de calendari."
@@ -3255,6 +3258,9 @@
       "Not a ${ BRAND_NAME } account": [
         "No és un compte de ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
       "Number of occurrences cannot be empty": [
         "El nombre d’ocurrències no pot estar buit."
       ],
@@ -3271,6 +3277,9 @@
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen."
       ],
       "Payment process canceled": [
         "S'ha cancel·lat el procés de pagament"
@@ -3373,6 +3382,9 @@
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nom de la carpeta no és vàlid. Escolliu-ne un altre."
       ],
@@ -3400,8 +3412,14 @@
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
+      ],
       "This field is required": [
         "Aquest camp és obligatori."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Aquest nom de carpeta no està disponible. Trieu-ne un altre."
@@ -3415,6 +3433,9 @@
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzar només lletres, numerals i _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "No es pot carregar el tauler de control de VPN. Comproveu la vostra connexió i torneu-ho a provar."
       ],
@@ -3426,6 +3447,12 @@
       ],
       "Unknown payment token status": [
         "Estat del token de pagament desconegut"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nom d'usuari ha de començar amb una lletra o un dígit."
+      ],
+      "Username must end with a letter or digit": [
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
       "Validation error": [
         "S'ha produït un error de validació"
@@ -10588,6 +10615,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Compartit amb xifratge d'extrem a extrem amb un contacte verificat"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "Video control": {

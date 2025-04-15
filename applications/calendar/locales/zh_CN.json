@@ -344,9 +344,6 @@
       "Got it": [
         "知道了"
       ],
-      "Help": [
-        "帮助"
-      ],
       "Help and feedback": [
         "帮助和反馈"
       ],
@@ -1530,7 +1527,7 @@
         "紫铜色"
       ],
       "enzian": [
-        "浅紫蓝色"
+        "龙胆蓝"
       ],
       "fern": [
         "丝袍绿"
@@ -1569,13 +1566,13 @@
         "撒哈拉棕"
       ],
       "slateblue": [
-        "石蓝色"
+        "板岩蓝"
       ],
       "soil": [
-        "土地"
+        "土地灰"
       ],
       "strawberry": [
-        "紫红色"
+        "草莓红"
       ]
     },
     "Commander action": {
@@ -3090,6 +3087,9 @@
       "Email address is required": [
         "邮箱地址必须填写"
       ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
       "Ends on date cannot be empty": [
         "结束日期不能为空"
       ],
@@ -3137,6 +3137,9 @@
       ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
+      ],
+      "Incorrect username": [
+        "用户名不正确"
       ],
       "Intended recipient does not support calendar sharing": [
         "目标收件人不支持日历共享"
@@ -3228,6 +3231,9 @@
       "Not a ${ BRAND_NAME } account": [
         "不是 ${ BRAND_NAME } 账户"
       ],
+      "Not a valid number": [
+        "无效号码"
+      ],
       "Number of occurrences cannot be empty": [
         "重复次数不能为空"
       ],
@@ -3242,6 +3248,9 @@
       ],
       "Password is required": [
         "密码必须填写"
+      ],
+      "Passwords do not match": [
+        "密码不匹配"
       ],
       "Payment process canceled": [
         "支付已取消"
@@ -3342,6 +3351,9 @@
       "The amount due has changed. Please try again.": [
         "应付金额已更改，请重试。"
       ],
+      "The email addresses do not match": [
+        "邮箱地址不一致"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
       ],
@@ -3369,8 +3381,14 @@
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
       "This field is required": [
         "此项必须填写"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "文件夹名称不可用，请重新填写。"
@@ -3384,6 +3402,9 @@
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "无法加载VPN控制面板。请检查你的网络连接，然后重试。"
       ],
@@ -3395,6 +3416,12 @@
       ],
       "Unknown payment token status": [
         "支付状态不明"
+      ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
       ],
       "Validation error": [
         "验证失败"
@@ -3590,7 +3617,7 @@
     },
     "Error notification": {
       "Display name cannot be empty": [
-        "显示名称不能为空"
+        "昵称不能为空"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4004,7 +4031,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "邮件"
+        "邮箱验证"
       ],
       "Manual": [
         "人工验证"
@@ -4013,7 +4040,7 @@
         "没有可用的验证方法"
       ],
       "SMS": [
-        "短信"
+        "短信验证"
       ]
     },
     "ICS event error": {
@@ -6995,7 +7022,7 @@
         "优先与客服实时沟通"
       ],
       "Private photo backup": [
-        "隐私照片备份"
+        "私人照片备份"
       ],
       "Proofread and refine your emails": [
         "为您校对并润色邮件"
@@ -7031,7 +7058,7 @@
         "Secure Core 服务器"
       ],
       "Secure file storage and sharing": [
-        "安全的文件存储和共享"
+        "安全文件存储与共享"
       ],
       "Secure link sharing": [
         "安全链接共享"
@@ -8767,7 +8794,7 @@
         "${ n } 月"
       ],
       "/ month": [
-        "/ 月"
+        "/月"
       ],
       "/month": [
         "/月"
@@ -9074,7 +9101,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "总计${ totalPrice }"
+        "总计 ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -10387,6 +10414,14 @@
         "与经过验证的联系人端对端加密共享"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "点击回放视频"
@@ -10461,7 +10496,7 @@
         "${ n } 个 ${ BRAND_NAME } 邮箱地址"
       ],
       "${ n } account per wallet": [
-        "每个钱包${ n }个 账户"
+        "每个钱包 ${ n } 个账户"
       ],
       "${ n } wallet": [
         "${ n } 个钱包"
