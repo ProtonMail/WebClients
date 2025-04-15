@@ -125,9 +125,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Help": [
-        "Ayuda"
-      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Más opciones"
+      ],
+      "More options for accounts": [
+        "Más opciones para las cuentas"
       ],
       "Need help?": [
         "¿Necesitas ayuda?"
@@ -249,7 +249,7 @@
         "Mostrar código QR"
       ],
       "Sign message": [
-        "Firmar mensaje"
+        "Firmar un mensaje"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -306,7 +306,7 @@
         "Verificar"
       ],
       "Verify account": [
-        "Verificar la cuenta"
+        "Verificar cuenta"
       ],
       "View invoice": [
         "Ver factura"
@@ -536,7 +536,7 @@
         "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte de dominios de correo electrónico personalizados, asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, alias ilimitados hide-my-email y más."
+        "Protege tus correos electrónicos y agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protege tus archivos con almacenamiento en la nube cifrado. Incluye editor de documentos en línea, copia de seguridad de fotos, historial de versiones, uso de intercambio de archivos cifrados y más."
@@ -569,6 +569,11 @@
       ],
       "Two-year": [
         "Bienal"
+      ]
+    },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "El código QR no es válido. Solo admitimos URI BIP 21."
       ]
     },
     "bitcoin buy": {
@@ -783,10 +788,10 @@
     },
     "Bitcoin Signing Type Description": {
       "Electrum is a compatibility signature format": [
-        "Electrum es un formato de firma de compatibilidad"
+        "Electrum es un formato de firma de compatibilidad."
       ],
       "Trezor is the standard signature format according to BIP 137": [
-        "Trezor es el formato de firma estándar de acuerdo a BIP 137"
+        "Trezor es el formato de firma estándar según BIP 137."
       ]
     },
     "Bitcoin Unit": {
@@ -980,7 +985,7 @@
         "Prueba ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Prueba ${ upsellPlanName } y mantén acceso a todas las características prémium de email y calendario."
+        "Prueba ${ upsellPlanName } y mantén acceso a todas las características de correo electrónico y calendario prémium."
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida y privada"
@@ -2072,7 +2077,7 @@
         "Se ha producido un error al conectar a la API de Bitcoin."
       ],
       "Incorrect username": [
-        "Nombre de usuario incorrecto"
+        "El nombre de usuario no es correcto."
       ],
       "Input isn't a valid email or bitcoin address": [
         "La entrada no es una dirección de correo electrónico o de Bitcoin válida"
@@ -2096,7 +2101,7 @@
         "Código postal no válido"
       ],
       "Invalid verification code": [
-        "El código de verificación no es válido."
+        "Código de verificación no válido"
       ],
       "Not a valid number": [
         "No es un número válido."
@@ -2558,7 +2563,7 @@
         "Cada código puede utilizarse solo una vez."
       ],
       "Edit email address": [
-        "Editar dirección de correo electrónico"
+        "Editar la dirección de correo electrónico"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
@@ -2591,7 +2596,7 @@
         "Si cancelas, tu suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentras el correo en tu bandeja de entrada, comprueba tu carpeta de spam."
+        "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -2709,7 +2714,7 @@
         "El tiempo de la sesión ha expirado."
       ],
       "Setting up ${ feature }…": [
-        "Configurando ${ feature }"
+        "Configurando ${ feature }…"
       ],
       "Setting up your new address…": [
         "Configurando tu nueva dirección…"
@@ -2729,6 +2734,9 @@
       ],
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Gracias por suscribirte. La navegación segura comienza ahora."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
@@ -2888,7 +2896,7 @@
         "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Tu suscripción se renovará automáticamente el ${ renewalTime }"
+        "Tu suscripción se renovará automáticamente el ${ renewalTime }."
       ]
     },
     "info": {
@@ -3017,7 +3025,7 @@
         "Ubicación de la carpeta"
       ],
       "Hide password": [
-        "Ocultar la contraseña"
+        "Ocultar contraseña"
       ],
       "IBAN": [
         "IBAN"
@@ -3068,7 +3076,7 @@
         "Prorrateo"
       ],
       "Reveal password": [
-        "Mostrar la contraseña"
+        "Mostrar contraseña"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
@@ -3080,7 +3088,7 @@
         "Mostrar código QR"
       ],
       "Sign message": [
-        "Firmar mensaje"
+        "Firmar un mensaje"
       ],
       "Start date": [
         "Fecha de inicio"
@@ -3224,11 +3232,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -3250,6 +3253,11 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -3355,7 +3363,7 @@
         "Historial de 10 años de las versiones de los archivos"
       ],
       "24/7 account management support": [
-        "Soporte de administración de cuenta 24/7"
+        "Soporte de gestión de cuenta 24/7"
       ],
       "99.95% SLA": [
         "SLA del 99,95 %"
@@ -3539,7 +3547,7 @@
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
-        "Requerir 2FA para organización"
+        "Requerir 2FA para la organización"
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
@@ -4143,7 +4151,7 @@
         "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+        "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
       "Got it": [
         "Entendido"
@@ -4152,7 +4160,7 @@
         "MM/AA"
       ],
       "More plans are available in other currencies": [
-        "Hay más planes disponibles en otras divisas"
+        "Hay más planes disponibles en otras divisas."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
@@ -4204,7 +4212,7 @@
         "Se ha agotado el tiempo de espera."
       ],
       "Your payment is still being processed": [
-        "Su pago aún está siendo procesado"
+        "Tu pago aún está siendo procesado."
       ]
     },
     "Payments.Error": {
@@ -4393,13 +4401,13 @@
         "Ajustes avanzados"
       ],
       "Copy signature": [
-        "Copiar firma"
+        "Copiar la firma"
       ],
       "Enter or paste the message you want to sign.": [
         "Introduce o pega el mensaje que quieres firmar."
       ],
       "Generate signature": [
-        "Generar firma"
+        "Generar una firma"
       ],
       "Message": [
         "Mensaje"
@@ -4420,7 +4428,7 @@
         "Esta firma verifica tu propiedad de esta dirección de Bitcoin sin revelar tu clave privada."
       ],
       "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
-        "Por defecto el método de firma de Electrum es el método más sencillo y común solicitado por los bancos. El BIP 137 se utiliza para firmar transacciones fuera de línea y es más avanzado."
+        "Por defecto el método de firma de Electrum es el método más sencillo y común solicitado por los bancos. El BIP 137 se usa para firmar transacciones fuera de línea y es más avanzado."
       ]
     },
     "specialoffer: Deal": {
@@ -4805,7 +4813,7 @@
         "Se ha notificado el problema."
       ],
       "Signature copied to clipboard": [
-        "Firma copiada al portapapeles"
+        "Se ha copiado la firma al portapapeles."
       ],
       "Verification successful": [
         "Verificación completada"
@@ -4955,7 +4963,7 @@
         "Ingresa el código 2FA"
       ],
       "Enter your password": [
-        "Ingresa tu contraseña"
+        "Introduce tu contraseña."
       ],
       "Error": [
         "Error"
@@ -4976,7 +4984,7 @@
         "Verificación humana"
       ],
       "Invalid verification code": [
-        "El código de verificación no es válido."
+        "Código de verificación no válido"
       ],
       "Network error": [
         "Error de red"
@@ -5033,17 +5041,17 @@
         "Tu dirección en formato más corto ya está lista."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Unknown sender": {
@@ -5314,6 +5322,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Esta cartera necesita una frase de contraseña para su uso."
+      ],
+      "Upgrade": [
+        "Mejorar"
       ],
       "View change addresses": [
         "Ver cambios de dirección"
@@ -5780,7 +5791,7 @@
         "Se ha aplicado una nueva moneda fiduciaria"
       ],
       "Preferred bitcoin unit could not be changed. Please try again.": [
-        "No se pudo cambiar la unidad de bitcoin preferida. Inténtalo nuevamente."
+        "No se pudo cambiar la unidad de bitcoin preferida. Inténtalo de nuevo."
       ],
       "Preferred bitcoin unit was changed": [
         "Se ha cambiado la unidad de Bitcoin preferida"
@@ -5850,7 +5861,7 @@
         "Terminado"
       ],
       "Email address could not be linked to wallet account. Please try again.": [
-        "No se pudo vincular la dirección de correo electrónico a la cuenta del Wallet. Inténtalo nuevamente."
+        "No se pudo vincular la dirección de correo electrónico a la cuenta del Wallet. Inténtalo de nuevo."
       ],
       "Error creating your wallet account. Please try again.": [
         "Error al crear la cuenta de tu cartera. Inténtalo de nuevo."
@@ -5931,7 +5942,7 @@
         "El nivel de entropía o aleatoriedad de la frase de recuperación de la cartera no es válido. Debería tener entre 128 y 256 bits de longitud."
       ],
       "Wallet seed phrase is incorrect. Please check it and try again.": [
-        "La frase de recuperación de la cartera es incorrecta. Verifica esto e intenta nuevamente."
+        "La frase de recuperación de la cartera es incorrecta. Verifica esto e intenta de nuevo."
       ],
       "Wallet seed phrase language is not supported.": [
         "No se admite el idioma de la frase de recuperación de la cartera."
@@ -5958,6 +5969,11 @@
         "Tu clave privada"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Añadir una cuenta"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Contactar con soporte"
@@ -5970,6 +5986,9 @@
       ],
       "Expand user settings": [
         "Expandir los ajustes del usuario"
+      ],
+      "Import wallet": [
+        "Importar la cartera"
       ],
       "Recovery": [
         "Recuperación"
@@ -5990,14 +6009,9 @@
         "Carteras"
       ]
     },
-    "Wallet sidebar": {
-      "Add account": [
-        "Añadir una cuenta"
-      ]
-    },
     "Wallet terms and conditions": {
       "Error with Terms and Conditions acceptance. Please try again.": [
-        "Error con la aceptación de Términos y Condiciones. Inténtalo nuevamente."
+        "Error con la aceptación de Términos y Condiciones. Inténtalo de nuevo."
       ],
       "Terms and conditions were accepted": [
         "Los términos y condiciones se han aceptado"
@@ -6156,29 +6170,6 @@
         "Sincronización en curso. Espera un momento."
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Un correo electrónico solo se puede vincular a una cuenta de cartera. Para vincular un correo electrónico a esta cuenta de cartera, elimina un correo electrónico de otra cuenta o actualiza tu plan para obtener más direcciones."
-      ],
-      "Contact your administrator to upgrade": [
-        "Contacta con tu administrador para cambiar de plan"
-      ],
-      "Unlock more email addresses": [
-        "Desbloquea más direcciones de correo."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Has alcanzado el número máximo de cuentas soportadas por tu plan actual."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Has alcanzado el número máximo de cuentas que admite tu plan actual. Cambia de plan para crear más. Tu apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Has alcanzado el número máximo de carteras soportadas por tu plan actual."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Has alcanzado el número máximo de carteras que admite tu plan actual. Cambia de plan para crear más. Tu apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "Al continuar, aceptas nuestros ${ termsAndConditionsLink }"
@@ -6191,6 +6182,35 @@
       ],
       "You have reached your limit": [
         "Has alcanzado el límite."
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "Se ha alcanzado el límite de la cuenta."
+      ],
+      "Contact your administrator to upgrade": [
+        "Contacta con tu administrador para cambiar de plan"
+      ],
+      "Expand your address limit": [
+        "Ampliar el límite de direcciones"
+      ],
+      "Wallet limit reached": [
+        "Se ha alcanzado el límite de la cartera."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Has alcanzado el número máximo de cuentas soportadas por tu plan actual."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Has alcanzado el número máximo de cuentas que admite tu plan actual. Cambia de plan para crear más. Tu apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Has alcanzado el número máximo de direcciones de correo electrónico que admite tu plan actual. Mejora tu plan para crear más. Tu soporte también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Has alcanzado el número máximo de carteras soportadas por tu plan actual."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Has alcanzado el número máximo de carteras que admite tu plan actual. Cambia de plan para crear más. Tu apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
       ]
     },
     "Wallet Welcome": {
@@ -6226,7 +6246,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera más segura de guardar Bitcoin"
+        "Una manera más segura de guardar tus bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -117,16 +117,13 @@
         "Bizimle görüşün"
       ],
       "Get verification code": [
-        "Doğrulama kodu al"
+        "Doğrulama kodu alın"
       ],
       "Go to settings": [
         "Ayarlara git"
       ],
       "Got it": [
         "Anladım"
-      ],
-      "Help": [
-        "Yardım"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Diğer seçenekler"
+      ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
       ],
       "Need help?": [
         "Yardım gerekiyor mu?"
@@ -249,7 +249,7 @@
         "Kare kodu görüntüle"
       ],
       "Sign message": [
-        "Mesajı imzala"
+        "İletiyi imzala"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -571,6 +571,11 @@
         "Iki yıllık"
       ]
     },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "Geçersiz karekod, yalnızca BIP 21 URI'yi destekliyoruz."
+      ]
+    },
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
         "%${ serviceFeePercentage } Azteco hizmeti ücreti"
@@ -783,10 +788,10 @@
     },
     "Bitcoin Signing Type Description": {
       "Electrum is a compatibility signature format": [
-        "Electrum bir uyumluluk imza formatıdır"
+        "Electrum bir uyumluluk imza biçimidir"
       ],
       "Trezor is the standard signature format according to BIP 137": [
-        "Trezor, BIP 137'ye göre standart imza formatıdır"
+        "BIP 137 için Trezor standart imza biçimidir"
       ]
     },
     "Bitcoin Unit": {
@@ -2424,7 +2429,7 @@
         "Kullanılabilecek bir doğrulama yöntemi yok"
       ],
       "SMS": [
-        "SMS"
+        "Kısa mesaj"
       ]
     },
     "Info": {
@@ -2591,7 +2596,7 @@
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -2730,6 +2735,9 @@
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Abone olduğunuz için teşekkürler. Artık güvenli gezinebilirsiniz."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
@@ -2800,7 +2808,7 @@
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+        "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
@@ -3068,7 +3076,7 @@
         "Hesap bakiyesi"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Parolayı görüntüle"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
@@ -3080,7 +3088,7 @@
         "Kare kodu görüntüle"
       ],
       "Sign message": [
-        "Mesajı imzala"
+        "İletiyi imzala"
       ],
       "Start date": [
         "Başlangıç tarihi"
@@ -3154,7 +3162,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Request an invite": [
-        "Davet isteğinde bulun"
+        "Davet iste"
       ],
       "settings": [
         "ayarlar"
@@ -3224,11 +3232,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -3250,6 +3253,11 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
       ]
     },
     "new_plans: feature": {
@@ -4393,22 +4401,22 @@
         "Gelişmiş ayarlar"
       ],
       "Copy signature": [
-        "İmzayı kopyalayın"
+        "İmzayı kopyala"
       ],
       "Enter or paste the message you want to sign.": [
-        "İmzalamak istediğiniz mesajı girin veya yapıştırın."
+        "İmzalamak istediğiniz iletiyi yazın ya da yapıştırın."
       ],
       "Generate signature": [
-        "İmza oluşturun"
+        "İmza oluştur"
       ],
       "Message": [
         "İleti"
       ],
       "Message signed": [
-        "Mesaj imzalandı"
+        "İleti imzalandı"
       ],
       "Sign a message": [
-        "Bir mesajı imzala"
+        "Bir iletiyi imzala"
       ],
       "Signature": [
         "İmza"
@@ -4417,10 +4425,10 @@
         "İmzalama türü"
       ],
       "This signature verifies your ownership of this Bitcoin address without revealing your private key.": [
-        "Bu imza, özel anahtarınızı ifşa etmeden bu Bitcoin adresine sahip olduğunuzu doğrular."
+        "Bu imza, kişisel anahtarınızı açığa çıkarmadan bu Bitcoin adresinin sahibi olduğunuzu doğrular."
       ],
       "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
-        "Bankalar tarafından talep edilen en kolay ve en yaygın yöntem olduğu için Electrum imzalama yöntemini varsayılan olarak kullanıyoruz. BIP 137, işlemleri çevrimdışı imzalamak için kullanılır ve daha gelişmiş bir yöntemdir."
+        "Varsayılan olarak, bankalar tarafından istenilen en kolay ve en yaygın yöntem olduğu için Electrum imzalama yöntemini kullanıyoruz. BIP 137, işlemleri çevrim dışı imzalamak için kullanılır ve daha gelişmiş bir yöntemdir."
       ]
     },
     "specialoffer: Deal": {
@@ -5033,17 +5041,17 @@
         "Daha kısa adresiniz hazır"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Unknown sender": {
@@ -5314,6 +5322,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Bu cüzdanı kullanabilmek için bir parola ifadesi gereklidir."
+      ],
+      "Upgrade": [
+        "Yükselt"
       ],
       "View change addresses": [
         "Takas adreslerini görüntüle"
@@ -5958,6 +5969,11 @@
         "Kişisel anahtarınız"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Hesap ekle"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Destek ekibimizle görüşün"
@@ -5970,6 +5986,9 @@
       ],
       "Expand user settings": [
         "Kullanıcı ayarlarını genişlet"
+      ],
+      "Import wallet": [
+        "Cüzdanı içe aktar"
       ],
       "Recovery": [
         "Kurtarma"
@@ -5988,11 +6007,6 @@
       ],
       "Wallets": [
         "Cüzdanlar"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Hesap ekle"
       ]
     },
     "Wallet terms and conditions": {
@@ -6156,29 +6170,6 @@
         "Eşitleniyor. Lütfen bekleyin"
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Bir e-posta yalnızca bir cüzdan hesabı ile ilişkilendirilebilir. Bu cüzdan hesabını bir e-posta ile ilişkilendirmek için, lütfen e-posta adresini başka bir cüzdan hesabından kaldırın veya daha fazla e-posta adresi elde etmek için tarifenizi yükseltin."
-      ],
-      "Contact your administrator to upgrade": [
-        "Yükseltme için yöneticinizle görüşün"
-      ],
-      "Unlock more email addresses": [
-        "Daha fazla e-posta adresi elde edin"
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Geçerli tarifeniz ile oluşturabileceğiniz en fazla hesap sayısına ulaştınız."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Geçerli tarifeniz tarafından desteklenen en fazla hesap sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Geçerli tarifeniz ile oluşturabileceğiniz en fazla cüzdan sayısına ulaştınız."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Geçerli tarifeniz tarafından desteklenen en fazla cüzdan sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "İlerleyerek ${ termsAndConditionsLink } metnini kabul etmiş olursunuz"
@@ -6191,6 +6182,35 @@
       ],
       "You have reached your limit": [
         "Sınırınıza ulaştınız"
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "Hesap sınırına ulaşıldı"
+      ],
+      "Contact your administrator to upgrade": [
+        "Yükseltme için yöneticinizle görüşün"
+      ],
+      "Expand your address limit": [
+        "Adres sınırınızı genişletin"
+      ],
+      "Wallet limit reached": [
+        "Cüzdan sınırına ulaşıldı"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Geçerli tarifeniz ile oluşturabileceğiniz en fazla hesap sayısına ulaştınız."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Geçerli tarifeniz tarafından desteklenen en fazla hesap sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Geçerli tarifeniz tarafından desteklenen en fazla e-posta adresi sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Geçerli tarifeniz ile oluşturabileceğiniz en fazla cüzdan sayısına ulaştınız."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Geçerli tarifeniz tarafından desteklenen en fazla cüzdan sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
       ]
     },
     "Wallet Welcome": {
