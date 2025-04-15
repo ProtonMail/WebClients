@@ -685,9 +685,6 @@
       "Got it": [
         "Rendben!"
       ],
-      "Help": [
-        "Súgó"
-      ],
       "Help and feedback": [
         "Súgó és visszajelzés"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "Beállítás alapértelmezettként"
-      ],
-      "Set as default mail application": [
-        "Beállítás alapértelmezett e-mail alkalmazásnak"
       ],
       "Set catch-all": [
         "Gyűjtő e-mail beállítása"
@@ -3764,12 +3758,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "A(z) ${ MAIL_APP_NAME } nem az alapértelmezett levelező alkalmazás."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "A(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás."
-      ],
       "Also included": [
         "Benne van a csomagban"
       ],
@@ -4861,6 +4849,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Az OAuth menü betöltése sikertelen."
+      ],
+      "Failed to load the STL preview": [
+        "Nem sikerült betölteni az STL előnézetet"
       ],
       "Failed to process the logo": [
         "A logó feldolgozása nem sikerült"
@@ -6458,6 +6449,11 @@
       ],
       "Left group": [
         "Kilépett a csoportból"
+      ]
+    },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "Nincsenek kezelhető csoportjai"
       ]
     },
     "group_invite_2024: Error message, recovery": {
@@ -9089,8 +9085,14 @@
       "Select a service to continue": [
         "Válasszon egy szolgáltatást a folytatáshoz"
       ],
+      "Select one or multiple user affiliations": [
+        "Egy vagy több felhasználói csoporthoz tartozás kiválasztása"
+      ],
       "Select recently used servers": [
         "Nemrég használt szerverek kiválasztása"
+      ],
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Válassza ki azokat a ${ getFormattedOrganization } felhasználói kapcsolatokat, amelyeket engedélyezni kíván a ${ BRAND_NAME } szervezetbe:"
       ],
       "Select what you want to import.": [
         "Válassza ki, mit szeretne importálni."
@@ -9868,9 +9870,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Ha engedélyezve van, megnézzük, hogy a(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás-e, és értesítjük, ha nem az."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Amikor engedélyezi a SAML-t a ${ appName } szolgáltatáshoz a személyazonosság-szolgáltatójában, a rendszer kérheti a visszahívási (ACS) URL-t és a kiállító azonosítóját. Másolja be az alábbi adatokat a személyazonosság-szolgáltatója mezőibe."
@@ -11822,6 +11821,9 @@
       ],
       "User": [
         "Felhasználó"
+      ],
+      "User affiliations": [
+        "Felhasználói kapcsolatok"
       ],
       "User's new password": [
         "A felhasználó új jelszava"
@@ -16895,11 +16897,17 @@
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel.",
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel."
       ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Az SSO-felhasználók leválasztásra kerülnek a személyazonosság-szolgáltatójáról**, és nem-SSO-felhasználókká alakulnak át."
+      ],
       "Access denied": [
         "Hozzáférés megtagadva"
       ],
       "Access granted": [
         "Hozzáférés engedélyezve"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "hozzáadva a(z) ${ BRAND_NAME } szervezetéhez"
       ],
       "Approve": [
         "Jóváhagy"
@@ -17010,6 +17018,9 @@
       ],
       "No, it wasn’t me": [
         "Nem, nem én voltam"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "A nem SSO-felhasználók (akik manuálisan lettek létrehozva, és nem az Ön identitásszolgáltatója biztosítja őket) továbbra is bejelentkezhetnek a szervezetébe."
       ],
       "Reject": [
         "Elutasítás"
@@ -17778,6 +17789,11 @@
         "Lejár"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "A szervezet VPN-munkamenet részleteinek megtekintése."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Fiók törölve. Kijelentkezés..."
@@ -18450,6 +18466,9 @@
       "Bridge for ${ platform }": [
         "Bridge ${ platform } eszközökre"
       ],
+      "Browser extensions": [
+        "Böngésző bővítmények"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } előfizetés lemondása"
       ],
@@ -18486,11 +18505,11 @@
       "Change second password": [
         "Második jelszó megváltoztatása"
       ],
-      "Check your default mail application": [
-        "Nézze meg az alapértelmezett levelező alkalmazását"
-      ],
       "Choose an account": [
         "Válasszon egy fiókot"
+      ],
+      "Choose user affiliations": [
+        "Válasszon felhasználói kapcsolatokat"
       ],
       "Clear": [
         "Törlés"
@@ -18688,6 +18707,9 @@
       ],
       "Description": [
         "Leírás"
+      ],
+      "Desktop": [
+        "Asztali számítógép"
       ],
       "Device": [
         "Eszköz"
@@ -19080,6 +19102,9 @@
       ],
       "Minicalendar": [
         "Mini naptár"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Multi-user support": [
         "Többfelhasználós lehetőség"
@@ -20126,6 +20151,9 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "A(z) **${ orgName }** szervezet (**${ adminEmail }**) egyik rendszergazdája rendszergazdai hozzáférést szeretne engedélyezni az Ön fiókja számára."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ha a felhasználót priváttá teszi, nem fog tudni segíteni neki az adataihoz vagy a fiókjához való hozzáférés visszaszerzésében."
       ],
       "Cancel": [
         "Mégsem"

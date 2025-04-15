@@ -682,9 +682,6 @@
       "Got it": [
         "はい"
       ],
-      "Help": [
-        "ヘルプ"
-      ],
       "Help and feedback": [
         "ヘルプとフィードバック"
       ],
@@ -1134,9 +1131,6 @@
       ],
       "Set as default": [
         "既定にする"
-      ],
-      "Set as default mail application": [
-        "デフォルトのメールアプリとして設定"
       ],
       "Set catch-all": [
         "Catch-All を設定"
@@ -3749,12 +3743,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }はデフォルトのメールアプリではありません。"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME }はデフォルトのメールアプリです。"
-      ],
       "Also included": [
         "含まれています"
       ],
@@ -9773,9 +9761,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "無効にすると、知らないうちに画像ファイルがデバイスに読み込まれるのを防ぎます。"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "有効にすると、 ${ MAIL_APP_NAME } がデフォルトのメールアプリケーションであるかどうかを確認し、そうでない場合は通知します。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
@@ -18293,9 +18278,6 @@
       "Change second password": [
         "セカンドパスワードを変更"
       ],
-      "Check your default mail application": [
-        "デフォルトのメールアプリを確認"
-      ],
       "Choose an account": [
         "アカウントの選択"
       ],
@@ -18496,6 +18478,9 @@
       ],
       "Description": [
         "説明"
+      ],
+      "Desktop": [
+        "デスクトップ"
       ],
       "Device": [
         "デバイス"
@@ -18886,6 +18871,9 @@
       ],
       "Minicalendar": [
         "ミニカレンダー"
+      ],
+      "Mobile": [
+        "モバイル"
       ],
       "Multi-user support": [
         "複数ユーザー対応"

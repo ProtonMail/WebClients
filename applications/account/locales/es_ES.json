@@ -685,9 +685,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Help": [
-        "Ayuda"
-      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -1358,7 +1355,7 @@
         "Verificar código"
       ],
       "Verify code again": [
-        "Verifica el código nuevamente"
+        "Verifica el código de nuevo"
       ],
       "Verify domain": [
         "Verificar el dominio"
@@ -3718,7 +3715,7 @@
         "¿Eliminar la dirección?"
       ],
       "Once deleted, this address ${ address } can't be used again by anyone else.": [
-        "Una vez eliminada, esta dirección ${ address } no puede ser usada nuevamente por otra persona."
+        "Una vez eliminada, esta dirección ${ address } no puede ser usada de nuevo por otra persona."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
         "Toma en cuenta que si eliminas esta dirección ${ address }, ya no podrás enviar o recibir correos electrónicos usando esta dirección."
@@ -4683,7 +4680,7 @@
         "El correo ha sido enviado a ${ forward.ForwardeeEmail }."
       ],
       "Email sent to ${ model.forwardeeEmail }.": [
-        "El correo ha sido enviado a ${ model.forwardeeEmail }."
+        "Se ha enviado el correo a ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Se ha aceptado el reenvío."
@@ -4869,6 +4866,9 @@
       "Failed to load OAuth modal.": [
         "Error al cargar la ventana OAuth"
       ],
+      "Failed to load the STL preview": [
+        "Error al cargar la vista previa STL"
+      ],
       "Failed to process the logo": [
         "Error al procesar el logo"
       ],
@@ -5045,7 +5045,7 @@
         "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
       "Please enter a valid Entity ID URL": [
-        "Introduce una URL de identificación de entidad válida."
+        "Introduce una URL de ID de entidad válida."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
@@ -6047,7 +6047,7 @@
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Error al registrar tu llave de seguridad. Inténtalo nuevamente."
+        "Error al registrar tu llave de seguridad. Inténtalo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -6324,7 +6324,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacidad por defecto."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Free trial dekstop": {
@@ -8048,7 +8048,7 @@
         "Activando la eliminación automática…"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "Activar la recuperación por frase nuevamente generará una nueva frase de recuperación."
+        "Activar la recuperación por frase de nuevo generará una nueva frase de recuperación."
       ],
       "Encryption setting updated": [
         "Se han actualizado los ajustes de cifrado."
@@ -9236,7 +9236,7 @@
         "Empieza a usar la versión más corta y atractiva de tu dirección de correo electrónico."
       ],
       "Stay tuned for future promotions.": [
-        "Manténgate al tanto de promociones futuras."
+        "Mantente al tanto de promociones futuras."
       ],
       "Step ${ step }": [
         "Paso ${ step }",
@@ -9817,7 +9817,7 @@
         "No hemos podido procesar tu pago."
       ],
       "We generated a strong password for you": [
-        "Te hemos generado una contraseña fuerte."
+        "Hemos generado una contraseña segura para ti."
       ],
       "We just sent you a new link.": [
         "Acabamos de enviarte un nuevo enlace."
@@ -9895,7 +9895,7 @@
         "Cuando está desactivado, esto evita que los archivos de imagen se carguen en tu dispositivo sin tu conocimiento.\t"
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Cuando esta opción esté activada, comprobaremos si ${ MAIL_APP_NAME } es tu aplicación de correo por defecto y te notificaremos si no lo es."
+        "Cuando esté activada, comprobaremos si ${ MAIL_APP_NAME } es tu aplicación de correo por defecto y te notificaremos si no lo es."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Al habilitar SAML para ${ appName } en tu proveedor de identidad, es posible que se te solicite que uses la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copia y pega los datos a continuación en los campos de tu proveedor de identidad."
@@ -12282,7 +12282,7 @@
         "mejora para obtener más almacenamiento"
       ],
       "Upgrade to restore full access": [
-        "Mejora para restaurar el acceso a todo"
+        "Mejora tu plan para restaurar el acceso a todo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El ${ driveStorage } está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
@@ -12420,7 +12420,7 @@
     },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
-        "Inténtalo nuevamente en unos minutos."
+        "Inténtalo de nuevo en unos minutos."
       ],
       "This feature is temporarily unavailable": [
         "Esta función no está disponible temporalmente."
@@ -12822,7 +12822,7 @@
         "Cambiar plan"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
-        "Cambiar a ${ upsellPlanHumanSize }"
+        "Mejorar a ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -13204,7 +13204,7 @@
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
-        "Requerir 2FA para organización"
+        "Requerir 2FA para la organización"
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
@@ -15348,7 +15348,7 @@
         "por ejemplo https://ejemplo.com/app/protonvpn/XXXXX/sso/metadata"
       ],
       "e.g. https://idp.example.com/sso/saml": [
-        "por ejemplo https://idp.ejemplo.com/sso/saml"
+        "por ejemplo https://idp.ejemplo.es/sso/saml"
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "por ejemplo https://idp.ejemplo.com/XXXXX"
@@ -16017,7 +16017,7 @@
         "Ingresa la URL y token en tu proveedor de identidad"
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
-        "Por razones de seguridad, el token SCIM permanecerá oculto después de guardar tus cambios y no podrás verlo nuevamente."
+        "Por razones de seguridad, el token SCIM permanecerá oculto después de guardar tus cambios y no podrás verlo de nuevo."
       ],
       "For security reasons, the token is hidden": [
         "Por razones de seguridad, el token está oculto"
@@ -16047,7 +16047,7 @@
         "La URL y token base de SCIM serán eliminados."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
-        "Para reactivar la sincronización con tu proveedor de identidad, necesitas completar la integración SCIM nuevamente."
+        "Para reactivar la sincronización con tu proveedor de identidad, necesitas completar la integración SCIM de nuevo."
       ]
     },
     "scim: Label": {
@@ -16658,7 +16658,7 @@
         "Cifrado de extremo a extremo"
       ],
       "From the team that knows encryption": [
-        "Del equipo que conoce de cifrado"
+        "Del equipo que conoce el cifrado"
       ],
       "Integrated email, calendar, file storage, password manager, and VPN": [
         "Correo electrónico, calendario, almacenamiento de archivos, gestor de contraseñas y VPN integrados"
@@ -18513,6 +18513,9 @@
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
       ],
+      "Browser extensions": [
+        "Extensiones de navegador"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar ${ MAIL_SHORT_APP_NAME } subscripción"
       ],
@@ -18754,6 +18757,9 @@
       ],
       "Description": [
         "Descripción"
+      ],
+      "Desktop": [
+        "Escritorio"
       ],
       "Device": [
         "Dispositivo"
@@ -19146,6 +19152,9 @@
       ],
       "Minicalendar": [
         "Minicalendario"
+      ],
+      "Mobile": [
+        "Móvil"
       ],
       "Multi-user support": [
         "Soporte multiusuario"
@@ -19923,7 +19932,7 @@
         "Establece el tamaño por defecto de la ventana emergente de compositor como pequeña o pantalla completa."
       ],
       "Set the default layout for your Inbox.": [
-        "Establece la disposición por defecto para tu bandeja de entrada."
+        "Establece el diseño por defecto para tu bandeja de entrada."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Establece el siguiente pie de página en los correos electrónicos que envíes: ${ signature }. El enlace apunta a tu enlace de referido. El pie de página aparecerá debajo de tu firma. Puedes personalizar tu firma en cualquier momento en la configuración."
@@ -19989,7 +19998,7 @@
         "Esta es la clave por defecto que usan otros usuarios de ${ MAIL_APP_NAME } para cifrar los datos que te envían."
       ],
       "This key cannot be used for encryption": [
-        "Esta clave no puede utilizarse para cifrar."
+        "Esta clave no puede usarse para cifrar."
       ],
       "This key is encrypted with an old password": [
         "Esta clave está cifrada con una contraseña antigua."
@@ -19998,7 +20007,7 @@
         "${ MAIL_APP_NAME } utiliza esta clave para cifrar los datos de tu contacto."
       ],
       "This key is used for email forwarding": [
-        "Esta clave se utiliza para el reenvío de correo electrónico."
+        "Esta clave se usa para el reenvío de correo electrónico."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
@@ -21029,7 +21038,7 @@
         "Cada domingo hasta ${ untilString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Semanalmente los jueves, ${ untilString }"
+        "Cada semana los jueves ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
         "Semanalmente los martes, ${ untilString }"

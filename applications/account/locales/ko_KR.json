@@ -499,6 +499,9 @@
       "Edit billing cycle": [
         "결제일 편집하기"
       ],
+      "Edit countries": [
+        "국가 편집"
+      ],
       "Edit display name": [
         "표시되는 이름 편집"
       ],
@@ -681,9 +684,6 @@
       ],
       "Got it": [
         "알겠습니다"
-      ],
-      "Help": [
-        "도움말"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -1134,9 +1134,6 @@
       ],
       "Set as default": [
         "기본으로 설정"
-      ],
-      "Set as default mail application": [
-        "기본 매일 애플리케이션으로 설정"
       ],
       "Set catch-all": [
         "Catch-all 설정"
@@ -3752,12 +3749,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있지 않습니다."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있지 않습니다."
-      ],
       "Also included": [
         "이것 외에도"
       ],
@@ -3814,6 +3805,9 @@
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "내 삶의 다른 부분을 분리하고 받은 편지함을 추가 주소로 정리하세요."
+      ],
+      "Learn more about common problems": [
+        "일반적인 문제에 대해 자세히 알아보기"
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "나만의 것으로 이메일 바닥 글을 만들어 보세요 — 기본값이 아닌 내 독특한 브랜드의 것으로 보여주세요."
@@ -4844,6 +4838,9 @@
       ],
       "Failed to load OAuth modal.": [
         "OAuth 창을 불러오지 못했습니다."
+      ],
+      "Failed to load the STL preview": [
+        "STL 미리보기 불러오기 실패"
       ],
       "Failed to process the logo": [
         "로고를 처리하지 못했습니다"
@@ -7794,6 +7791,9 @@
       "Disable recovery by phone number": [
         "전화번호로 복구 비활성화"
       ],
+      "Disabled countries": [
+        "비활성화된 국가"
+      ],
       "Disabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime }에 비활성화됨"
       ],
@@ -7943,6 +7943,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "지원시 외부 서비스의 TLS 및 SSL을 활성화 하십시오."
+      ],
+      "Enabled countries": [
+        "활성화된 국가"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime }에 활성화됨"
@@ -8133,8 +8136,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
       ],
+      "Got it": [
+        "확인"
+      ],
       "Group deleted": [
         "그룹이 삭제됨"
+      ],
+      "Groups": [
+        "그룹"
       ],
       "here": [
         "여기"
@@ -9780,9 +9789,6 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "비활성화시, 사용자가 알아차리기 전 이미지가 다운로드 되는 것을 방지해 줍니다."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "활성화시 ${ MAIL_APP_NAME }이 회원님의 기본 메일 애플리케이션인지 확인 및 설정이 되어 있지 않다면 알려드려요."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
       ],
@@ -10642,6 +10648,9 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount }명 사용자"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } 중 ${ humanUsedSpace }"
@@ -18275,6 +18284,9 @@
       "Bridge for ${ platform }": [
         "${ platform }용 Bridge"
       ],
+      "Browser extensions": [
+        "브라우저 확장 기능"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } 구독 해지"
       ],
@@ -18310,9 +18322,6 @@
       ],
       "Change second password": [
         "2차 비밀번호 변경"
-      ],
-      "Check your default mail application": [
-        "기본 메일 애플리케이션을 확인해 주세요"
       ],
       "Choose an account": [
         "계정 선택"
@@ -18514,6 +18523,9 @@
       ],
       "Description": [
         "설명"
+      ],
+      "Desktop": [
+        "데스크톱"
       ],
       "Device": [
         "기기"
@@ -18904,6 +18916,9 @@
       ],
       "Minicalendar": [
         "간편 캘린더"
+      ],
+      "Mobile": [
+        "모바일"
       ],
       "Multi-user support": [
         "다중 사용자 지원"
@@ -20067,7 +20082,7 @@
         "장기 구독 옵션으로 **최대 ${ priceString } 절약하세요**. 같은 프리미엄 기능이지만 더 저렴하게 누릴 수 있어요."
       ],
       "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "한 번의 쉬운 구독으로 모든 프리미엄 ${ BRAND_NAME } 서비스를."
+        "한 번의 간편한 구독으로 모든 프리미엄 ${ BRAND_NAME } 서비스를."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "매달 ${ fallBackString }의 가격으로 모든 프리미엄 ${ BRAND_NAME } 서비스를"
