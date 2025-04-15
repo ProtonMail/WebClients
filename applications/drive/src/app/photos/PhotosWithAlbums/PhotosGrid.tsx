@@ -22,8 +22,8 @@ type Props = {
     isItemSelected: (linkId: string) => boolean;
     categoryLoading?: string;
     isAddAlbumPhotosView?: boolean;
-    userAddressEmail?: string;
     onFavorite: (linkId: string, isFavorite: boolean) => void;
+    rootLinkId: string;
 };
 
 export const PhotosGrid: FC<Props> = ({
@@ -37,8 +37,8 @@ export const PhotosGrid: FC<Props> = ({
     isGroupSelected,
     isItemSelected,
     isAddAlbumPhotosView,
-    userAddressEmail,
     onFavorite,
+    rootLinkId,
 }) => {
     const hasSelection = selectedItems.length > 0;
     const containerRef = useRef<HTMLDivElement>(null);
@@ -188,7 +188,7 @@ export const PhotosGrid: FC<Props> = ({
                             }}
                             hasSelection={hasSelection}
                             isFavorite={item.photoProperties?.isFavorite || false}
-                            isOwnedByCurrentUser={item.activeRevision?.signatureEmail === userAddressEmail}
+                            isOwnedByCurrentUser={item.parentLinkId === rootLinkId}
                             onFavorite={
                                 !isAddAlbumPhotosView
                                     ? () => {
