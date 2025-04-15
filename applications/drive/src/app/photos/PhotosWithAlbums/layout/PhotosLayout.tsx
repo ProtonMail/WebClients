@@ -40,6 +40,8 @@ import { usePhotosSelection } from '../hooks/usePhotosSelection';
 import { TitleArea } from '../toolbar/TitleArea';
 import { Toolbar } from '../toolbar/Toolbar';
 
+export type PhotosLayoutOutletContext = ReturnType<typeof usePhotosWithAlbumsView>;
+
 export const PhotosLayout = () => {
     /*
         States and Hooks
@@ -50,6 +52,8 @@ export const PhotosLayout = () => {
     const { createNotification } = useNotifications();
     const { removeMe } = useSharedWithMeActions();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const photosView = usePhotosWithAlbumsView();
+
     const {
         volumeId,
         shareId,
@@ -75,7 +79,9 @@ export const PhotosLayout = () => {
         refreshSharedWithMeAlbums,
 
         userAddressEmail,
-    } = usePhotosWithAlbumsView();
+        isAlbumsLoading,
+        isPhotosLoading,
+    } = photosView;
 
     const { currentPageType, previewLinkId, setPageType, setPreviewLinkId, setLayoutModals } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -88,7 +94,12 @@ export const PhotosLayout = () => {
     );
 
     const { moveLinks } = useLinksActions();
-    const { selectedItems, clearSelection } = usePhotosSelection();
+    const { selectedItems, clearSelection } = usePhotosSelection({
+        photos,
+        albumPhotos,
+        albumPhotosLinkIdToIndexMap,
+        photoLinkIdToIndexMap,
+    });
 
     const createAlbum = useCreateAlbum();
     const [detailsModal, showDetailsModal] = useDetailsModal();
@@ -537,7 +548,17 @@ export const PhotosLayout = () => {
                 className={clsx('m-2 rounded toolbar-row--no-responsive', selectedCount > 0 && 'bg-weak')}
                 withBorder={false}
                 withPadding={false}
-                titleArea={<TitleArea />}
+                titleArea={
+                    <TitleArea
+                        isAlbumsLoading={isAlbumsLoading}
+                        isPhotosLoading={isPhotosLoading}
+                        albums={albums}
+                        photos={photos}
+                        albumPhotos={albumPhotos}
+                        albumPhotosLinkIdToIndexMap={albumPhotosLinkIdToIndexMap}
+                        photoLinkIdToIndexMap={photoLinkIdToIndexMap}
+                    />
+                }
                 toolbar={
                     <Toolbar
                         currentPageType={currentPageType}
@@ -567,8 +588,9 @@ export const PhotosLayout = () => {
                 }
             />
 
+            {/* TODO: Remove outlet context or combine it with PhotoLayoutStore */}
             {/** Outlet will render the routed page grid */}
-            <Outlet />
+            <Outlet context={photosView} />
 
             {/** Modals that are necessary on all views */}
             {linkSharingModal}
