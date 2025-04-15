@@ -603,7 +603,7 @@
         "Papelera"
       ],
       "Try again.": [
-        "Intenta nuevamente."
+        "Intenta de nuevo."
       ],
       "Try for free": [
         "Pruébalo gratis"
@@ -634,7 +634,7 @@
         "Cambiar de plan"
       ],
       "Upgrade now to share with more people": [
-        "Mejora ahora para compartir con más personas."
+        "Mejora tu plan ahora para compartir con más personas."
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -1035,8 +1035,8 @@
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Error de importación para la caja fuerte \"${ vaultData.name }\": ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Error al importar la bóveda \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Error al importar los elementos"
@@ -1400,7 +1400,7 @@
         "Se han movido todos los elementos."
       ],
       "All trashed items permanently deleted": [
-        "Todos los elementos de la papelera han sido eliminados permanentemente."
+        "Se han eliminado todos los elementos de la papelera permanentemente."
       ],
       "All trashed items successfully restored": [
         "Todos los elementos de la papelera han sido restaurados."
@@ -1430,7 +1430,7 @@
         "Se ha registrado el bloqueo automático biométrico. Úsalo para desbloquear ${ PASS_APP_NAME }."
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
-        "Los datos biométricos se desactivarán y será necesario activarlos nuevamente."
+        "Los datos biométricos se desactivarán y será necesario activarlos de nuevo."
       ],
       "Breaches detected": [
         "Vulneraciones detectadas"
@@ -1733,7 +1733,7 @@
         "El elemento ha sido excluido del monitoreo."
       ],
       "Item successfully included in monitoring": [
-        "El elemento ha sido incluido en el monitoreo."
+        "Se ha incluido el elemento en el monitoreo."
       ],
       "Item successfully moved": [
         "Se ha movido el elemento"
@@ -1784,7 +1784,7 @@
         "Monitoreo de cuentas"
       ],
       "Monitoring settings successfully updated": [
-        "Los ajustes de monitoreo se han actualizado."
+        "Se han actualizado los ajustes de monitoreo."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
@@ -3077,7 +3077,7 @@
         "Texto"
       ],
       "The URL has been copied to the clipboard": [
-        "El URL se ha copiado al portapapeles."
+        "Se ha copiado la URL al portapapeles."
       ],
       "Theme": [
         "Tema"
@@ -3228,7 +3228,7 @@
     },
     "new_plans: feature": {
       "Require 2FA for organization": [
-        "Requerir 2FA para organización"
+        "Requerir 2FA para la organización"
       ],
       "SSO integration": [
         "Integración SSO"
@@ -3307,7 +3307,7 @@
         "Descargar el archivo"
       ],
       "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
-        "Por una limitación de Firefox, ${ PASS_APP_NAME } necesita abrir nuevamente en una nueva ventana antes de que pueda cargar archivos."
+        "Por una limitación de Firefox, ${ PASS_APP_NAME } necesita abrir de nuevo en una nueva ventana antes de que pueda cargar archivos."
       ],
       "Exporting files": [
         "Exportando archivos"
@@ -3323,6 +3323,9 @@
       ],
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Si está activado, todos tus archivos se descargarán al exportar. Esto puede tardar algún tiempo dependiendo de tu conexión a internet."
+      ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Si sus datos contienen archivos adjuntos, estos no serán importados."
       ],
       "Include file attachments": [
         "Incluir archivos adjuntos"
@@ -3363,14 +3366,14 @@
       "Total imported files: ": [
         "Total de archivos importados: "
       ],
+      "Upgrade to support file attachments": [
+        "Mejora tu plan para admitir archivos adjuntos."
+      ],
       "Upload files from your device.": [
         "Carga archivos desde el dispositivo."
       ],
       "You can attach files to items for a better organization": [
         "Puedes adjuntar archivos a los elementos para una mejor organización."
-      ],
-      "Your current plan does not support importing files": [
-        "Tu plan actual no admite la importación de archivos."
       ]
     },
     "Placeholder": {
@@ -3591,7 +3594,7 @@
         "Los elementos no pueden contener más de ${ share.targetMaxMembers } usuarios."
       ],
       "Mailbox change successfully cancelled": [
-        "Se ha cancelado el cambio el buzón."
+        "Se ha cancelado el cambio de buzón."
       ],
       "Mailbox successfully deleted": [
         "Se ha eliminado el buzón."
@@ -3979,7 +3982,7 @@
         "Configura 2FA para una mejor seguridad"
       ],
       "Set up 2FA for more security": [
-        "Configura la 2FA para más seguridad"
+        "Configura 2FA para más seguridad"
       ],
       "Settings": [
         "Configuración"

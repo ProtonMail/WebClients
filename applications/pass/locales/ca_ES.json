@@ -1035,9 +1035,6 @@
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "No s'ha pogut importar la caixa forta \"${ vaultData.name }\": ${ description }"
-      ],
       "Importing items failed": [
         "No s'ha pogut importar els elements."
       ],
@@ -3324,6 +3321,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Si està activat, es descarregaran tots els fitxers en exportar. Això pot trigar una mica depenent de la vostra connexió a internet."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Si les vostres dades contenen fitxers adjunts, no s'importaran."
+      ],
       "Include file attachments": [
         "Inclou fitxers adjunts"
       ],
@@ -3363,14 +3363,14 @@
       "Total imported files: ": [
         "Total de fitxers importats: "
       ],
+      "Upgrade to support file attachments": [
+        "Milloreu el pla per a admetre fitxers adjunts"
+      ],
       "Upload files from your device.": [
         "Carregueu fitxers des del vostre dispositiu."
       ],
       "You can attach files to items for a better organization": [
         "Podeu adjuntar fitxers als elements per a una millor organització."
-      ],
-      "Your current plan does not support importing files": [
-        "El vostre pla actual no admet la importació de fitxers."
       ]
     },
     "Placeholder": {

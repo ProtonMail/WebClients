@@ -1045,8 +1045,8 @@
       "File does not match expected format": [
         "Format pliku jest nieprawidłowy"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Importowanie sejfu \"${ vaultData.name }\" nie powiodło się: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Importowanie sejfu \"${ vaultData.name }\" nie powiodło się: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Importowanie elementów nie powiodło się"
@@ -3420,6 +3420,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Włączenie opcji spowoduje pobranie wszystkich plików podczas eksportowania. Proces może zająć trochę czasu w zależności od połączenia internetowego."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Załączniki nie zostaną zaimportowane."
+      ],
       "Include file attachments": [
         "Dołącz załączniki"
       ],
@@ -3459,14 +3462,14 @@
       "Total imported files: ": [
         "Zaimportowane pliki: "
       ],
+      "Upgrade to support file attachments": [
+        "Ulepsz konto, aby uzyskać dostęp do załączników"
+      ],
       "Upload files from your device.": [
         "Prześlij pliki ze swojego urządzenia."
       ],
       "You can attach files to items for a better organization": [
         "Do elementów możesz dodawać pliki w celu lepszej organizacji"
-      ],
-      "Your current plan does not support importing files": [
-        "Obecny plan nie obsługuje importowania plików"
       ]
     },
     "Placeholder": {
