@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
+import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
@@ -16,19 +17,16 @@ import type { ChargebeeCardProcessorHook } from '@proton/components/payments/rea
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import {
-    BILLING_ADDRESS_VALID,
-    type BillingAddressStatus,
     type CardModel,
-    type Currency,
     MIN_CREDIT_AMOUNT,
-    PAYMENT_METHOD_TYPES,
     type PaymentMethodFlows,
     type PaymentMethodStatusExtended,
     type PaymentMethodType,
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
-    canUseChargebee,
 } from '@proton/payments';
+import { type Currency, PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
+import { BILLING_ADDRESS_VALID, type BillingAddressStatus } from '@proton/payments';
 import { CreditCard } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
@@ -97,6 +95,7 @@ export interface NoApiProps extends Props {
     directDebit: ChargebeeDirectDebitProcessorHook;
     isChargebeeEnabled: () => ChargebeeEnabled;
     billingAddressStatus?: BillingAddressStatus;
+    formErrors?: FormErrorsHook;
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
 }
@@ -142,6 +141,7 @@ export const PaymentsNoApi = ({
     directDebit,
     billingAddressStatus = BILLING_ADDRESS_VALID,
     paymentStatus,
+    formErrors,
     onChargebeeInitialized,
     showCardIcons,
 }: NoApiProps) => {
@@ -283,7 +283,7 @@ export const PaymentsNoApi = ({
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
-                        <SepaDirectDebit {...sharedCbProps} />
+                        <SepaDirectDebit formErrors={formErrors} {...sharedCbProps} />
                     )}
                     {(() => {
                         if (!showBitcoinMethod) {
