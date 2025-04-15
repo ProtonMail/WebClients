@@ -685,9 +685,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Help": [
-        "Ajuda"
-      ],
       "Help and feedback": [
         "Ajuda e comentários"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "Predefinir"
-      ],
-      "Set as default mail application": [
-        "Definir como aplicação de e-mail predefinida"
       ],
       "Set catch-all": [
         "Definir Catch-all"
@@ -3771,12 +3765,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "O ${ MAIL_APP_NAME } não é a sua aplicação de e-mail predefinida."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "O ${ MAIL_APP_NAME } é a sua aplicação de e-mail predefinida."
-      ],
       "Also included": [
         "Também incluído"
       ],
@@ -4868,6 +4856,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Erro ao carregar a janela OAuth"
+      ],
+      "Failed to load the STL preview": [
+        "Erro ao carregar a pré-visualização STL"
       ],
       "Failed to process the logo": [
         "Erro ao processar o logo"
@@ -9893,9 +9884,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quando a opção estiver ativada, verificaremos se o ${ MAIL_APP_NAME } é a sua aplicação de e-mail predefinida e iremos notificá-lo caso não esteja."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para o ${ appName } no seu fornecedor de identidade, poderá ser solicitado a utilizar o URL de callback (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu fornecedor de identidade."
@@ -18516,6 +18504,9 @@
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
       ],
+      "Browser extensions": [
+        "Extensões de navegador"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar a subscrição do ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -18551,9 +18542,6 @@
       ],
       "Change second password": [
         "Alterar a segunda palavra-passe"
-      ],
-      "Check your default mail application": [
-        "Verifique a sua aplicação de e-mail predefinida"
       ],
       "Choose an account": [
         "Escolha uma conta"
@@ -18757,6 +18745,9 @@
       ],
       "Description": [
         "Descrição"
+      ],
+      "Desktop": [
+        "Área de trabalho"
       ],
       "Device": [
         "Dispositivo"
@@ -19149,6 +19140,9 @@
       ],
       "Minicalendar": [
         "Minicalendário"
+      ],
+      "Mobile": [
+        "Móvel"
       ],
       "Multi-user support": [
         "Suporte a múltiplos utilizadores"
