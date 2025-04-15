@@ -11,10 +11,10 @@ import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
+import { useAuthStorePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
 import { PasswordVerification } from '@proton/pass/lib/auth/password';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
-import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import {
     clientBusy,
     clientErrored,
@@ -67,8 +67,11 @@ export const LobbyContent: FC<Props> = ({
     const [offlineEnabled, setOfflineEnabled] = useState<Maybe<boolean>>(undefined);
 
     const localID = authStore?.getLocalID();
+
     const hasExtraPassword = Boolean(authStore?.getExtraPassword());
     const isSSO = Boolean(authStore?.getSSO());
+
+    const passwordTypeSwitch = useAuthStorePasswordTypeSwitch();
 
     const stale = clientStale(status);
     const locked = clientSessionLocked(status);
@@ -141,12 +144,10 @@ export const LobbyContent: FC<Props> = ({
                             case AppStatus.SESSION_LOCKED:
                                 return c('Info').jt`Enter your PIN code`;
                             case AppStatus.PASSWORD_LOCKED:
-                                return passwordTypeSwitch(
-                                    hasExtraPassword,
-                                    isSSO
-                                )({
+                                return passwordTypeSwitch({
                                     sso: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your backup password`,
                                     extra: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your extra password`,
+                                    twoPwd: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your second password`,
                                     default: c('Info')
                                         .t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`,
                                 });

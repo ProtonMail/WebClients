@@ -84,6 +84,8 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                                 .t`Please confirm your extra password in order to export your ${PASS_APP_NAME} data`,
                             sso: c('Info')
                                 .t`Please confirm your backup password in order to export your ${PASS_APP_NAME} data`,
+                            twoPwd: c('Info')
+                                .t`Please confirm your second password in order to export your ${PASS_APP_NAME} data`,
                             default: c('Info')
                                 .t`Please confirm your ${BRAND_NAME} password in order to export your ${PASS_APP_NAME} data`,
                         }),
@@ -126,6 +128,8 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                                             .t`Authentication failed. Confirm your backup password in order to proceed with the export`,
                                         extra: c('Error')
                                             .t`Authentication failed. Confirm your extra password in order to proceed with the export`,
+                                        twoPwd: c('Error')
+                                            .t`Authentication failed. Confirm your second password in order to proceed with the export`,
                                         default: c('Error')
                                             .t`Authentication failed. Confirm your ${BRAND_NAME} password in order to proceed with the export`,
                                     });

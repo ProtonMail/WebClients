@@ -12,9 +12,8 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineToggle } from '@proton/pass/store/actions';
-import { selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
+import { selectHasTwoPasswordMode, selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
 import { SettingsPanel } from './SettingsPanel';
 
@@ -25,9 +24,8 @@ export const Offline: FC = () => {
 
     const enabled = useSelector(selectOfflineEnabled);
     const plan = useSelector(selectPassPlan);
-    const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const freeUser = !isPaidPlan(plan);
-    const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+    const twoPwdMode = useSelector(selectHasTwoPasswordMode);
 
     const validUserType = !freeUser;
     const validPasswordMode = !twoPwdMode || (authStore?.hasOfflinePassword() ?? false);
@@ -51,6 +49,9 @@ export const Offline: FC = () => {
                 sso: enabled
                     ? c('Info').t`Please confirm your backup password in order to enable offline mode`
                     : c('Info').t`Please confirm your backup password in order to disable offline mode`,
+                twoPwd: enabled
+                    ? c('Info').t`Please confirm your second password in order to enable offline mode`
+                    : c('Info').t`Please confirm your second password in order to disable offline mode`,
                 default: enabled
                     ? c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`
                     : c('Info').t`Please confirm your ${BRAND_NAME} password in order to disable offline mode`,
