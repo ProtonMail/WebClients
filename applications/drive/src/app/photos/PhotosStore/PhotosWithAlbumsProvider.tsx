@@ -6,7 +6,6 @@ import { c, msgid } from 'ttag';
 import { useNotifications } from '@proton/components/index';
 import {
     queryAddAlbumPhotos,
-    queryAddPhotoToFavorite,
     queryAlbumPhotos,
     queryAlbums,
     queryDeleteAlbum,
@@ -25,6 +24,7 @@ import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
+import { useLinksActions } from '../../store/_links';
 import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
@@ -103,6 +103,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
     const { getDefaultPhotosShare } = useDefaultShare();
     const { getPhotoCloneForAlbum } = useLinkActions();
+    const { favoritePhotoLink } = useLinksActions();
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const request = useDebouncedRequest();
     const batchHelper = useBatchHelper();
@@ -525,20 +526,19 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
     const favoritePhoto = useCallback(
         async (abortSignal: AbortSignal, linkId: string) => {
-            if (!volumeId) {
-                throw new Error('Photo volume not found');
+            if (!photosShare || !photosShare.shareId) {
+                throw new Error('Photo share not found');
             }
-            const addPhotoToFavoriteCall = async () => {
-                const response = await request<{
-                    Code: number;
-                }>(queryAddPhotoToFavorite(volumeId, linkId, {}), abortSignal);
-                if (response.Code !== 1000) {
-                    throw new Error('Failed to set favorite photo');
-                }
-            };
-            return addPhotoToFavoriteCall();
+            const album = albums.get(currentAlbumLinkId || '');
+
+            await favoritePhotoLink(abortSignal, {
+                shareId: album?.rootShareId || photosShare.shareId,
+                linkId,
+                newShareId: photosShare.shareId,
+                newParentLinkId: photosShare.rootLinkId,
+            });
         },
-        [request, volumeId]
+        [albums, currentAlbumLinkId, favoritePhotoLink, photosShare]
     );
 
     const removeTagsFromPhoto = useCallback(
@@ -763,8 +763,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (!shareId) {
                 return;
             }
-            const photo = photos.find((photo) => photo.linkId === linkId);
-            if (photo) {
+
+            const updateTagsForPhoto = <T extends Photo>(photo: T, photoList: T[]) => {
+                if (!photo) {
+                    return;
+                }
                 // eslint-disable-next-line
                 const updatedTags = isFavorite
                     ? photo.tags.includes(PhotoTag.Favorites)
@@ -774,14 +777,28 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
                 updatePhotoLinkTags(shareId, linkId, updatedTags);
 
-                setPhotos(
-                    photos.map((original) =>
-                        original.linkId === linkId ? { ...original, tags: updatedTags } : original
-                    )
+                return photoList.map((original) =>
+                    original.linkId === linkId ? { ...original, tags: updatedTags } : original
                 );
+            };
+
+            const photo = photos.find((photo) => photo.linkId === linkId);
+            if (photo) {
+                const update = updateTagsForPhoto(photo, photos);
+                if (update) {
+                    setPhotos(update);
+                }
+            }
+
+            const albumPhoto = albumPhotos.find((photo) => photo.linkId === linkId);
+            if (albumPhoto) {
+                const update = updateTagsForPhoto(albumPhoto, albumPhotos);
+                if (update) {
+                    setAlbumPhotos(update);
+                }
             }
         },
-        [shareId, photos, updatePhotoLinkTags]
+        [shareId, photos, albumPhotos, updatePhotoLinkTags]
     );
 
     return (
