@@ -549,6 +549,9 @@
       ]
     },
     "Label": {
+      "${ name } text color with no background": [
+        "${ name } tekstin väri ilman taustaa"
+      ],
       "Add link": [
         "Lisää linkki"
       ],
@@ -635,6 +638,9 @@
       ],
       "Replace link": [
         "Korvaa linkki"
+      ],
+      "Text and highlight color": [
+        "Tekstin ja korostuksen väri"
       ],
       "with \"${ replaceWith }\"": [
         "tekstillä \"${ replaceWith }\""
