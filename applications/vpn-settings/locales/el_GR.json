@@ -397,9 +397,6 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "Help": [
-        "Βοήθεια"
-      ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
       ],
@@ -2832,6 +2829,9 @@
       "Error publishing changes.": [
         "Σφάλμα κατά τη δημοσίευση αλλαγών."
       ],
+      "Failed to load the STL preview": [
+        "Αποτυχία φόρτωσης της προεπισκόπησης STL"
+      ],
       "Failed to process the logo": [
         "Αποτυχία επεξεργασίας του λογότυπου"
       ],
@@ -3676,7 +3676,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Απόρρητο από προεπιλογή."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Go to sign in": {
