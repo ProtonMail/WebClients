@@ -158,8 +158,8 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                                 })()}
                             </div>
                             <div className="mb-4 color-weak">
-                                <div>{c('edm').t`We couldn't sign you in`}</div>
-                                <div className="mb-2">{c('edm').t`Please scan a new QR code to try again`}</div>
+                                <div>{c('edm').t`We couldn't sign you in.`}</div>
+                                <div className="mb-2">{c('edm').t`Please scan a new QR code to try again.`}</div>
                                 {(() => {
                                     if (result.error instanceof GiveUpError) {
                                         return null;
