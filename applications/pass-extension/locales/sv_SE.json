@@ -152,10 +152,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -1000,9 +1000,6 @@
       "File does not match expected format": [
         "Fil matchar inte förväntat format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Import misslyckades för valv “${ vaultData.name }“: ${ description }"
-      ],
       "Importing items failed": [
         "Misslyckades att importera objekt"
       ],
@@ -1767,10 +1764,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -3294,6 +3287,9 @@
       "File attachments": [
         "Filbilagor"
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Om dina data innehåller filbilagor kommer de inte att importeras."
+      ],
       "Include file attachments": [
         "Inkludera filbilagor"
       ],
@@ -3330,6 +3326,9 @@
       "Total imported files: ": [
         "Totalt antal importerade filer: "
       ],
+      "Upgrade to support file attachments": [
+        "Uppgradera för att stödja filbilagor"
+      ],
       "Upload files from your device.": [
         "Ladda upp filer från din enhet."
       ],
@@ -3338,9 +3337,6 @@
       ],
       "You may close this window after saving the file.": [
         "Du kan stänga detta fönster efter att ha sparat filen."
-      ],
-      "Your current plan does not support importing files": [
-        "Ditt nuvarande paket stöder inte import av filer"
       ]
     },
     "Placeholder": {
