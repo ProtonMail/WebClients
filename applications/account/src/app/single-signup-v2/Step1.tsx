@@ -950,19 +950,19 @@ const Step1 = ({
                                 )}
                             </BoxContent>
                         </Box>
-
-                        {!model.loadingDependencies &&
-                            app === APPS.PROTONPASS &&
-                            audience === Audience.B2C &&
-                            signupParameters.preSelectedPlan !== PLANS.PASS_LIFETIME && (
-                                <PassLifetimeSpecialOffer
-                                    price={model.plansMap[PLANS.PASS_LIFETIME]?.Pricing?.[CYCLE.YEARLY] ?? null}
-                                    currency={options.currency}
-                                    email={signupParameters.email}
-                                />
-                            )}
                     </>
                 )}
+                {!model.loadingDependencies &&
+                    app === APPS.PROTONPASS &&
+                    audience === Audience.B2C &&
+                    signupParameters.preSelectedPlan !== PLANS.PASS_LIFETIME &&
+                    (hasPlanSelector || signupParameters.preSelectedPlan === PLANS.FREE) && (
+                        <PassLifetimeSpecialOffer
+                            price={model.plansMap[PLANS.PASS_LIFETIME]?.Pricing?.[CYCLE.YEARLY] ?? null}
+                            currency={options.currency}
+                            email={signupParameters.email}
+                        />
+                    )}
                 {hasUserSelector && (
                     <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                         {(() => {
