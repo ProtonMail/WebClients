@@ -125,9 +125,6 @@
       "Got it": [
         "Entendi"
       ],
-      "Help": [
-        "Ajuda"
-      ],
       "Help and feedback": [
         "Ajuda e comentários"
       ],
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Mais opções"
+      ],
+      "More options for accounts": [
+        "Mais opções para contas"
       ],
       "Need help?": [
         "Precisa de ajuda?"
@@ -569,6 +569,11 @@
       ],
       "Two-year": [
         "Dois anos"
+      ]
+    },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "O código QR no é válido. Apenas suportamos o URI BIP 21."
       ]
     },
     "bitcoin buy": {
@@ -2105,7 +2110,7 @@
         "A chave de organização não está descriptografada"
       ],
       "Passwords do not match": [
-        "Senhas não correspondem"
+        "As senhas não correspondem"
       ],
       "Payment process canceled": [
         "Processo de pagamento cancelado"
@@ -2730,6 +2735,9 @@
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Obrigado por se inscrever. A navegação segura começa agora."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
@@ -2869,7 +2877,7 @@
         "Sua assinatura do ${ PASS_SHORT_APP_NAME } Plus será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu e-mail será usado somente nesta verificação única."
+        "Seu e-mail só será usado para essa verificação única."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
@@ -2878,7 +2886,7 @@
         "Sua próxima data de cobrança é ${ renewalTime }. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "O seu número de telefone será usado somente nesta verificação única."
+        "Seu número de telefone somente será usado nessa verificação única."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Seu plano começa em ${ renewalTime } e será renovado automaticamente a cada ${ cycle } mês.",
@@ -3224,11 +3232,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -3250,6 +3253,11 @@
       ],
       "Switch plan": [
         "Mudar de plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -3767,6 +3775,11 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -3779,11 +3792,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -5044,17 +5052,17 @@
         "Seu endereço mais curto já está pronto"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Unknown sender": {
@@ -5325,6 +5333,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Essa carteira precisa de uma frase secreta para ser usada."
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
       ],
       "View change addresses": [
         "Exibir endereços de troco"
@@ -5969,6 +5980,11 @@
         "Sua chave privada"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Adicionar conta"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Entre em contato com o Suporte"
@@ -5981,6 +5997,9 @@
       ],
       "Expand user settings": [
         "Expandir configurações do usuário"
+      ],
+      "Import wallet": [
+        "Importar uma carteira"
       ],
       "Recovery": [
         "Recuperação"
@@ -5999,11 +6018,6 @@
       ],
       "Wallets": [
         "Carteiras"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Adicionar conta"
       ]
     },
     "Wallet terms and conditions": {
@@ -6167,29 +6181,6 @@
         "Sincronização em andamento. Aguarde."
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Somente um e-mail pode ser vinculado a uma conta de carteira. Para vincular um e-mail a essa conta, remova um e-mail de outra ou faça upgrade do seu plano para poder ter mais endereços de e-mail."
-      ],
-      "Contact your administrator to upgrade": [
-        "Entre em contato com o administrador para fazer o upgrade"
-      ],
-      "Unlock more email addresses": [
-        "Desbloqueie mais endereços de e-mail"
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Você atingiu o número máximo de contas suportadas pelo seu plano atual."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Você atingiu o número máximo de contas aceitas pelo seu plano atual. Faça upgrade para criar mais. Seu apoio também será essencial em nossa luta para proteger a privacidade e liberdade financeiras."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Você atingiu o número máximo de carteiras suportadas pelo seu plano atual."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Você atingiu o número máximo de carteiras aceito pelo seu plano atual. Faça upgrade para criar mais. Seu apoio também será essencial em nossa luta para proteger a privacidade e liberdade financeiras."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "Ao continuar, você concorda com nosso ${ termsAndConditionsLink }"
@@ -6202,6 +6193,35 @@
       ],
       "You have reached your limit": [
         "Você atingiu seu limite"
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "Limite de conta atingido"
+      ],
+      "Contact your administrator to upgrade": [
+        "Entre em contato com o administrador para fazer o upgrade"
+      ],
+      "Expand your address limit": [
+        "Expandir limite de seus endereços"
+      ],
+      "Wallet limit reached": [
+        "O limite da carteira foi atingido"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Você atingiu o número máximo de contas suportadas pelo seu plano atual."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Você atingiu o número máximo de contas aceitas pelo seu plano atual. Faça upgrade para criar mais. Seu apoio também será essencial em nossa luta para proteger a privacidade e liberdade financeiras."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Você atingiu o número máximo de endereços de e-mail aceito pelo seu plano atual. Faça upgrade para criar mais. Seu apoio também será essencial em nossa luta para proteger a privacidade e liberdade financeiras."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Você atingiu o número máximo de carteiras suportadas pelo seu plano atual."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Você atingiu o número máximo de carteiras aceito pelo seu plano atual. Faça upgrade para criar mais. Seu apoio também será essencial em nossa luta para proteger a privacidade e liberdade financeiras."
       ]
     },
     "Wallet Welcome": {
