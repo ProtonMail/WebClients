@@ -9,7 +9,7 @@ import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hoo
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
-import { selectExtraPasswordEnabled, selectIsSSO } from '@proton/pass/store/selectors';
+import { selectExtraPasswordEnabled, selectHasTwoPasswordMode, selectIsSSO } from '@proton/pass/store/selectors';
 
 import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
@@ -19,10 +19,27 @@ const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async ()
 
 export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
 
+/** Should only be used once the app has booted and state hydrated*/
 export const usePasswordTypeSwitch = () => {
-    const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
-    const isSSO = useSelector(selectIsSSO);
-    return useCallback(passwordTypeSwitch(hasExtraPassword, isSSO), [hasExtraPassword, isSSO]);
+    /** Only web & desktop can use the user's second password as an unlock
+     * mechanism. Any password verification done in the extension must go
+     * through SRP to validate the primary user password. */
+    const twoPwd = useSelector(selectHasTwoPasswordMode) && !EXTENSION_BUILD;
+    const extra = useSelector(selectExtraPasswordEnabled);
+    const sso = useSelector(selectIsSSO);
+
+    return useCallback(passwordTypeSwitch({ extra, sso, twoPwd }), [extra, sso, twoPwd]);
+};
+
+/** Should only be used before the app has booted and state
+ * has not been hydrated yet. Otherwise, prefer `usePasswordTypeSwitch` */
+export const useAuthStorePasswordTypeSwitch = () => {
+    const authStore = useAuthStore();
+    const extra = Boolean(authStore?.getExtraPassword());
+    const twoPwd = Boolean(authStore?.getTwoPasswordMode()) && !EXTENSION_BUILD;
+    const sso = Boolean(authStore?.getSSO());
+
+    return useCallback(passwordTypeSwitch({ extra, sso, twoPwd }), [extra, sso, twoPwd]);
 };
 
 export type OnReauthFn = (payload: ReauthActionPayload, forkOptions: Partial<RequestForkOptions>) => void;
@@ -48,6 +65,11 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
                 label: c('Label').t`Backup password`,
                 message: c('Info').t`Please confirm your backup password`,
                 title: c('Title').t`Enter your backup password`,
+            },
+            twoPwd: {
+                label: c('Label').t`Second password`,
+                message: c('Info').t`Please confirm your second password`,
+                title: c('Title').t`Enter your second password`,
             },
             default: {
                 label: c('Label').t`Password`,
