@@ -207,3 +207,14 @@ export const queryDeleteAlbum = (
     params,
     silence: [API_CUSTOM_ERROR_CODES.ALBUM_DATA_LOSS],
 });
+
+export const queryPhotosVolumeMigrationState = () => ({
+    method: 'GET',
+    url: `drive/photos/migrate-legacy`,
+});
+
+export const queryPhotosVolumeMigrate = () => ({
+    method: 'POST',
+    url: `drive/photos/migrate-legacy`,
+    silence: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
+});

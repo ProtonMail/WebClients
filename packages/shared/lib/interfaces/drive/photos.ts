@@ -37,3 +37,8 @@ export interface CreateAlbum {
         XAttr?: string;
     };
 }
+
+export interface PhotoMigrationPayload {
+    OldVolumeID: string;
+    NewVolumeID: string | null;
+}
