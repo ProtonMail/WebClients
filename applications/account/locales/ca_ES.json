@@ -685,9 +685,6 @@
       "Got it": [
         "D'acord"
       ],
-      "Help": [
-        "Ajuda"
-      ],
       "Help and feedback": [
         "Ajuda i comentaris"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "Estableix com a predeterminat"
-      ],
-      "Set as default mail application": [
-        "Estableix com a aplicació de correu electrònic per defecte"
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
@@ -3771,12 +3765,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } no és la vostra aplicació de correu per defecte."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte."
-      ],
       "Also included": [
         "També inclòs"
       ],
@@ -4868,6 +4856,9 @@
       ],
       "Failed to load OAuth modal.": [
         "No s'ha pogut carregar la finestra OAuth."
+      ],
+      "Failed to load the STL preview": [
+        "No s'ha pogut carregar la previsualització STL."
       ],
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
@@ -9890,9 +9881,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Si s'inactiva, s'evita que els arxius d'imatge es carreguin al vostre dispositiu sense el vostre coneixement.\t"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us notificarem si no ho és."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
@@ -18510,6 +18498,9 @@
       "Bridge for ${ platform }": [
         "Bridge per a ${ platform }"
       ],
+      "Browser extensions": [
+        "Extensions del navegador"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -18545,9 +18536,6 @@
       ],
       "Change second password": [
         "Canvia la segona contrasenya"
-      ],
-      "Check your default mail application": [
-        "Comproveu la vostra aplicació de correu electrònic per defecte"
       ],
       "Choose an account": [
         "Tria un compte"
@@ -18751,6 +18739,9 @@
       ],
       "Description": [
         "Descripció"
+      ],
+      "Desktop": [
+        "Escriptori"
       ],
       "Device": [
         "Dispositiu"
@@ -19143,6 +19134,9 @@
       ],
       "Minicalendar": [
         "Minicalendari"
+      ],
+      "Mobile": [
+        "Mòbil"
       ],
       "Multi-user support": [
         "Suport multi-usuari"

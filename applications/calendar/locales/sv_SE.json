@@ -347,9 +347,6 @@
       "Got it": [
         "Förstått"
       ],
-      "Help": [
-        "Hjälp"
-      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -3113,6 +3110,9 @@
       "Email address is required": [
         "E-postadress är obligatoriskt"
       ],
+      "Email is not valid": [
+        "E-post är inte giltig"
+      ],
       "Ends on date cannot be empty": [
         "Slutdatum kan inte vara tomt"
       ],
@@ -3160,6 +3160,9 @@
       ],
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
+      ],
+      "Incorrect username": [
+        "Felaktigt användarnamn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Avsedd mottagare stöder inte kalenderdelning"
@@ -3252,6 +3255,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Inte ett ${ BRAND_NAME }-konto"
       ],
+      "Not a valid number": [
+        "Inte ett giltigt nummer"
+      ],
       "Number of occurrences cannot be empty": [
         "Antalet förekomster kan inte vara tomt"
       ],
@@ -3268,6 +3274,9 @@
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
+      ],
+      "Passwords do not match": [
+        "Lösenorden matchar inte"
       ],
       "Payment process canceled": [
         "Betalningsprocess avbruten"
@@ -3370,6 +3379,9 @@
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
       ],
+      "The email addresses do not match": [
+        "E-postadresserna matchar inte"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappnamnet är ogiltigt. Välj ett annat namn."
       ],
@@ -3397,8 +3409,14 @@
       "There was an error when exporting the contacts vCards": [
         "Det uppstod ett fel vid export av vCards-kontakterna"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
+      ],
       "This field is required": [
         "Detta fält är obligatoriskt"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Detta fält kräver minst ${ minimumLength } tecken."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
@@ -3412,6 +3430,9 @@
       "Trusted keys are not valid for sending": [
         "Betrodda nycklar är inte giltiga för att skicka"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova använda endast bokstäver, siffror och _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Det går inte att ladda VPN-instrumentpanelen. Kontrollera din anslutning och försök igen."
       ],
@@ -3423,6 +3444,12 @@
       ],
       "Unknown payment token status": [
         "Okänd status för betalningstoken"
+      ],
+      "Username must begin with a letter or digit": [
+        "Användarnamn måste börja med en bokstav eller siffra"
+      ],
+      "Username must end with a letter or digit": [
+        "Användarnamn måste sluta med en bokstav eller siffra"
       ],
       "Validation error": [
         "Verifieringsfel"
@@ -5597,10 +5624,6 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiska plats är synlig och kan användas för att begränsa din åtkomst till internet."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
-        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
@@ -10570,6 +10593,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Delad end-to-end-krypterad med verifierad kontakt"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
       ]
     },
     "Video control": {

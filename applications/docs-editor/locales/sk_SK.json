@@ -557,6 +557,15 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } farba pozadia a biela farba textu"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } farba textu a zvýraznenie"
+      ],
+      "${ name } text color with no background": [
+        "${ name } farba textu bez pozadia"
+      ],
       "Add link": [
         "Pridať odkaz"
       ],
@@ -643,6 +652,9 @@
       ],
       "Replace link": [
         "Nahradiť odkaz"
+      ],
+      "Text and highlight color": [
+        "Farba textu a zvýraznenia"
       ],
       "with \"${ replaceWith }\"": [
         "s \"${ replaceWith }\""

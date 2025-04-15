@@ -685,9 +685,6 @@
       "Got it": [
         "Verstanden"
       ],
-      "Help": [
-        "Hilfe"
-      ],
       "Help and feedback": [
         "Hilfe und Feedback"
       ],
@@ -1139,7 +1136,7 @@
         "Als Standard festlegen"
       ],
       "Set as default mail application": [
-        "Als Standard-E-Mail-Anwendung festlegen"
+        "Als Standard-Mail-Anwendung festlegen"
       ],
       "Set catch-all": [
         "Catch-All festlegen"
@@ -1909,7 +1906,7 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sichere deine E-Mails und deinen Zeitplan mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliase und mehr."
+        "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
@@ -3772,10 +3769,10 @@
     },
     "Description": {
       "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } ist nicht deine Standard-E-Mail-Anwendung."
+        "${ MAIL_APP_NAME } ist nicht deine Standard-Mail-Anwendung."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } ist deine Standard-E-Mail-Anwendung."
+        "${ MAIL_APP_NAME } ist deine Standard-Mail-Anwendung."
       ],
       "Also included": [
         "Ebenfalls enthalten"
@@ -4362,7 +4359,7 @@
         "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } vorläufig angenommen"
       ]
     },
     "Email spam notification": {
@@ -4868,6 +4865,9 @@
       ],
       "Failed to load OAuth modal.": [
         "OAuth-Modal konnte nicht geladen werden."
+      ],
+      "Failed to load the STL preview": [
+        "Das Laden der STL-Vorschau ist fehlgeschlagen"
       ],
       "Failed to process the logo": [
         "Fehler beim Verarbeiten des Logos"
@@ -5464,7 +5464,7 @@
     },
     "Error message": {
       "App currently unavailable": [
-        "Die App ist derzeit nicht verfügbar."
+        "App ist zurzeit nicht verfügbar"
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
@@ -6331,7 +6331,7 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-Desktop App"
+        "${ MAIL_APP_NAME }-Desktop-App"
       ],
       "Back to sign in": [
         "Zurück zur Anmeldung"
@@ -9034,7 +9034,7 @@
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Registering your subscription…": [
-        "Registrierung deines Abonnements…"
+        "Dein Abonnement wird registriert…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
@@ -9133,7 +9133,7 @@
         "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+        "SEPA-Zahlungen sind derzeit nicht verfügbar. Probiere es später erneut."
       ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
@@ -9215,7 +9215,7 @@
         "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um diese Funktion zu nutzen, erzeuge zunächst ein neues Token."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "Pausiere Nachrichten und lies sie später, damit sie jederzeit oben in deinem Posteingang angezeigt werden."
+        "Stelle Nachrichten zurück, damit sie ganz oben in deinem Posteingang angezeigt werden, sobald du sie brauchst."
       ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
@@ -9316,7 +9316,7 @@
         "Vielen Dank, dass du ${ BRAND_NAME } gewählt hast."
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
-        "Danke, dass du dich angemeldet hast. Sicheres Surfen beginnt jetzt."
+        "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vielen Dank für die Unterstützung unserer Mission, ein besseres Internet zu schaffen, in dem Privatsphäre und Freiheit an erster Stelle stehen."
@@ -9892,7 +9892,7 @@
         "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne dein Wissen auf dein Gerät geladen werden."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Wenn diese Option aktiviert ist, wird geprüft, ob ${ MAIL_APP_NAME } deine Standard-E-Mail-Anwendung ist, und du wirst benachrichtigt, wenn dies nicht der Fall ist."
+        "Wenn diese Option aktiviert ist, wird geprüft, ob ${ MAIL_APP_NAME } deine Standard-Mail-Anwendung ist, und du wirst benachrichtigt, wenn dies nicht der Fall ist."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Beim Aktivieren von SAML für ${ appName } in deinem Identitätsanbieter wirst du vielleicht aufgefordert, die Callback (ACS) URL und die Aussteller-ID zu nutzen. Kopiere einfach die Daten unten in die Felder deines Identitätsanbieters."
@@ -9975,7 +9975,7 @@
         "Du verwendest derzeit ${ usedMembers } deiner ${ maxMembers } verfügbaren Benutzerlizenzen und ${ usedAI } deiner ${ maxAI } verfügbaren Schreibassistentenlizenzen."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "Du verwendest derzeit ${ usedMembers } deiner ${ maxMembers } verfügbaren Benutzerlizenz und keine deiner ${ maxAI } verfügbaren Schreibassistentenlizenz.",
+        "Du verwendest derzeit ${ usedMembers } deiner ${ maxMembers } verfügbaren Benutzerlizenzen und keine deiner ${ maxAI } verfügbaren Schreibassistentenlizenzen.",
         "Du verwendest derzeit ${ usedMembers } deiner ${ maxMembers } verfügbaren Benutzerlizenzen und keine deiner ${ maxAI } verfügbaren Schreibassistentenlizenzen."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
@@ -10159,8 +10159,8 @@
         "Verschlüsselte Daten können mit den heruntergeladenen Wiederherstellungsdateien nicht wiederhergestellt werden. Dadurch wird auch die gerätebasierte Wiederherstellung deaktiviert."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann nach ${ renewCycle } Monat zu ${ renewAmountStr } abgerechnet.",
-        "Sie werden dann alle ${ renewCycle } Monate zu ${ renewAmountStr } abgerechnet."
+        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
+        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Deine ${ boldDiscountPercent } auf ${ boldPlanTitle } wurden angewendet."
@@ -10921,7 +10921,7 @@
         "und"
       ],
       "Anderson": [
-        "Anderson"
+        "Mustermann"
       ],
       "ANY": [
         "JEDE"
@@ -11062,7 +11062,7 @@
         "Unternehmen"
       ],
       "Company name": [
-        "Unternehmensname"
+        "Firmenname"
       ],
       "Composer": [
         "Verfassen-Fenster"
@@ -11900,7 +11900,7 @@
         "Was ist der Hauptgrund für die Löschung deines Kontos?"
       ],
       "What is your main reason for canceling or downgrading?": [
-        "Was ist dein Hauptgrund für die Kündigung oder das Downgrade?"
+        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "Who can send to this group address?": [
         "Wer kann an diese Gruppenadresse senden?"
@@ -13059,7 +13059,7 @@
         "Benutzerdefinierte Felder"
       ],
       "Custom snooze time": [
-        "Eigene stumm Zeit"
+        "Benutzerdefinierte Zurückstellzeit"
       ],
       "Custom workspace branding": [
         "Eigenes Workspace-Branding"
@@ -13350,7 +13350,7 @@
         "Tresor teilen (bis zu ${ n } Personen)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
       ]
     },
     "new_plans: feature highlight": {
@@ -13371,7 +13371,7 @@
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
       ],
       "Snooze messages and get reminded when you want": [
-        "Schalte Nachrichten stumm und werde daran erinnert wann immer du möchtest."
+        "Stelle Nachrichten zurück und werde daran erinnert wann immer du möchtest."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -15020,7 +15020,7 @@
         "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Jährlich abgerechnet zu ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (gegenüber 6 einzelnen ${ passPlusPlanName }-Abonnements)."
+        "Jährliche Abrechnung zum Preis von ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (im Vergleich zu 6 einzelnen ${ passPlusPlanName }-Abonnements)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
@@ -18507,6 +18507,9 @@
       "Bridge for ${ platform }": [
         "Bridge für ${ platform }"
       ],
+      "Browser extensions": [
+        "Browser-Erweiterungen"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-Abonnement kündigen"
       ],
@@ -18544,7 +18547,7 @@
         "Zusätzliches Passwort ändern"
       ],
       "Check your default mail application": [
-        "Überprüfe deine Standard-E-Mail-Anwendung"
+        "Überprüfe deine Standard-Mail-Anwendung"
       ],
       "Choose an account": [
         "Konto auswählen"
@@ -18748,6 +18751,9 @@
       ],
       "Description": [
         "Beschreibung"
+      ],
+      "Desktop": [
+        "Desktop"
       ],
       "Device": [
         "Gerät"
@@ -19141,6 +19147,9 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "Mobile": [
+        "Mobilgerät"
+      ],
       "Multi-user support": [
         "Mehrbenutzerunterstützung"
       ],
@@ -19475,7 +19484,7 @@
         "SMTP-Übermittlung"
       ],
       "Snooze:": [
-        "Später lesen:"
+        "Zurückstellen:"
       ],
       "Sort folders alphabetically": [
         "Ordner alphabetisch sortieren"

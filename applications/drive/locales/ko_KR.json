@@ -456,9 +456,6 @@
       "Grid layout": [
         "격자 레이아웃"
       ],
-      "Help": [
-        "도움말"
-      ],
       "Help and feedback": [
         "도움말 및 의견"
       ],
@@ -614,6 +611,9 @@
       ],
       "New message": [
         "새 메시지"
+      ],
+      "New shared album": [
+        "새로운 공유된 앨범"
       ],
       "Next": [
         "다음"
@@ -2568,6 +2568,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
       ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "편집 권한으로 파일 공유를 계속하려면 ${ planName }(으)로 업그레이드하세요."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "지정 24시간 추가적인 지원이 포함된 최첨단 AI 방식의 보안 솔루션인 ${ PROTON_SENTINEL_NAME }을 활성화 하려면 계정을 업그레이드 하세요."
       ],
@@ -2916,6 +2919,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "외부 초대가 일시적으로 비활성화 되었습니다. 나중에 다시 시도하세요."
+      ],
+      "Failed to load the STL preview": [
+        "STL 미리보기 불러오기 실패"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" 파일을  \"${ error }\" 오류로 인해 업로드할 수 없습니다."
@@ -3733,6 +3739,12 @@
       ],
       "Create new album": [
         "새로운 앨범 생성"
+      ],
+      "Create new shared album": [
+        "새 공유 앨범 만들기"
+      ],
+      "Rename album": [
+        "앨범 이름 변경"
       ],
       "Security Center": [
         "보안 센터"
@@ -9906,6 +9918,44 @@
         "절약되는 가격:"
       ]
     },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "나와 공유된 앨범이 여기에 표시됩니다"
+      ],
+      "Albums you've shared will appear here": [
+        "내가 공유한 앨범이 여기에 표시됩니다"
+      ],
+      "Your favorited photos will appear here": [
+        "즐겨찾는 사진이 여기에 표시됩니다"
+      ],
+      "Your Live Photos will appear here": [
+        "Live Photo가 여기에 표시됩니다"
+      ],
+      "Your panorama photos will appear here": [
+        "파노라마 사진이 여기에 표시됩니다"
+      ],
+      "Your photo bursts will appear here": [
+        "연사 사진이 여기에 표시됩니다"
+      ],
+      "Your portraits photos will appear here": [
+        "인물 사진이 여기에 표시됩니다"
+      ],
+      "Your RAW photos will appear here": [
+        "RAW 사진이 여기에 표시됩니다"
+      ],
+      "Your screenshots will appear here": [
+        "스크린 샷이 여기에 표시됩니다"
+      ],
+      "Your selfies photos will appear here": [
+        "셀카 사진이 여기에 표시됩니다"
+      ],
+      "Your tagged photos will appear here": [
+        "태그된 사진이 여기에 표시됩니다"
+      ],
+      "Your videos will appear here": [
+        "동영상이 여기에 표시됩니다"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
@@ -10557,11 +10607,47 @@
       "Night theme": [
         "야간 테마"
       ],
+      "No albums shared with me": [
+        "나와 공유된 앨범 없음"
+      ],
       "No breaches detected": [
         "감지한 침해사례 없음"
       ],
+      "No bursts": [
+        "연사 사진 없음"
+      ],
+      "No favorites": [
+        "즐겨찾기 없음"
+      ],
+      "No Live Photos": [
+        "Live Photo 사진 없음"
+      ],
+      "No panorama": [
+        "파노라마 사진 없음"
+      ],
+      "No photos": [
+        "사진 없음"
+      ],
+      "No portraits": [
+        "인물 사진 없음"
+      ],
+      "No RAW": [
+        "RAW 사진 없음"
+      ],
       "No results found": [
         "결과를 찾을 수 없음"
+      ],
+      "No screenshots": [
+        "스크린샷 없음"
+      ],
+      "No selfies": [
+        "셀카 없음"
+      ],
+      "No shared albums": [
+        "공유된 앨범 없음"
+      ],
+      "No videos": [
+        "비디오 없음"
       ],
       "Notes": [
         "메모"

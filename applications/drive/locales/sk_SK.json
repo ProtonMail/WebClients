@@ -471,9 +471,6 @@
       "Grid layout": [
         "Rozloženie s mriežkou"
       ],
-      "Help": [
-        "Nápoveda"
-      ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
       ],
@@ -629,6 +626,9 @@
       ],
       "New message": [
         "Nová správa"
+      ],
+      "New shared album": [
+        "Nový zdieľaný album"
       ],
       "Next": [
         "Ďalej"
@@ -2610,6 +2610,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Navýšte na ${ planName }, aby ste mohli naďalej zdieľať súbory s prístupom na úpravu"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Aktualizujte si svoj účet a aktivujte si ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostné riešenie založené na umelej inteligencii (AI) s vyhradenou nepretržitou (24/7) odbornou podporou."
       ],
@@ -2964,6 +2967,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Externé pozvánky sú dočasne deaktivované. Skúste to znova neskôr, prosím"
+      ],
+      "Failed to load the STL preview": [
+        "Načítanie náhľadu STL zlyhalo"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Súbor „${ item.name }“ nemôže byť nahratý kvôli chybe „${ error }“"
@@ -3823,6 +3829,12 @@
       ],
       "Create new album": [
         "Vytvoriť nový album"
+      ],
+      "Create new shared album": [
+        "Vytvoriť nový zdieľaný album"
+      ],
+      "Rename album": [
+        "Premenovať album"
       ],
       "Security Center": [
         "Centrum zabezpečenia"
@@ -10476,6 +10488,44 @@
         "Ušetríte"
       ]
     },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Tu sa zobrazia vám zdieľané albumy"
+      ],
+      "Albums you've shared will appear here": [
+        "Tu sa zobrazia albumy, ktoré zdieľate"
+      ],
+      "Your favorited photos will appear here": [
+        "Tu sa zobrazia vaše obľúbené fotografie"
+      ],
+      "Your Live Photos will appear here": [
+        "Tu sa zobrazia vaše živé fotografie"
+      ],
+      "Your panorama photos will appear here": [
+        "Tu sa zobrazia vaše panorámy"
+      ],
+      "Your photo bursts will appear here": [
+        "Tu sa zobrazia vaše sekvenčne snímané fotografie"
+      ],
+      "Your portraits photos will appear here": [
+        "Tu sa zobrazia vaše portréty"
+      ],
+      "Your RAW photos will appear here": [
+        "Tu sa zobrazia vaše RAW fotografie"
+      ],
+      "Your screenshots will appear here": [
+        "Tu sa zobrazia vaše snímky obrazovky"
+      ],
+      "Your selfies photos will appear here": [
+        "Tu sa zobrazia vaše selfíčka"
+      ],
+      "Your tagged photos will appear here": [
+        "Tu sa zobrazia vaše označené fotografie"
+      ],
+      "Your videos will appear here": [
+        "Tu sa zobrazia vaše videá"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt vyzerá rovnako.",
@@ -11187,11 +11237,47 @@
       "Night theme": [
         "Nočný motív"
       ],
+      "No albums shared with me": [
+        "Žiadne so mnou zdieľané albumy"
+      ],
       "No breaches detected": [
         "Nebol zistený únik"
       ],
+      "No bursts": [
+        "Žiadne sekvencie"
+      ],
+      "No favorites": [
+        "Žiadne obľúbené"
+      ],
+      "No Live Photos": [
+        "Žiadne Živé fotografie"
+      ],
+      "No panorama": [
+        "Žiadne panorámy"
+      ],
+      "No photos": [
+        "Žiadne fotografie"
+      ],
+      "No portraits": [
+        "Žiadne portréty"
+      ],
+      "No RAW": [
+        "Žiadne RAW fotky"
+      ],
       "No results found": [
         "Žiadne nájdené výsledky"
+      ],
+      "No screenshots": [
+        "Žiadne snímky obrazovky"
+      ],
+      "No selfies": [
+        "Žiadne selfíčka"
+      ],
+      "No shared albums": [
+        "Žiadny zdieľaný album"
+      ],
+      "No videos": [
+        "Žiadne videá"
       ],
       "Notes": [
         "Poznámky"

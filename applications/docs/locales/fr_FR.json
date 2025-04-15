@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "Accepter l'invitation au document"
       ],
+      "Actions": [
+        "Actions"
+      ],
       "Activate recovery": [
         "Activer la récupération"
       ],
@@ -124,6 +127,9 @@
       "Cancel subscription": [
         "Annuler l'abonnement"
       ],
+      "Change sort order": [
+        "Modifier l'ordre de tri"
+      ],
       "characters": [
         "caractères"
       ],
@@ -160,6 +166,12 @@
       "Collapse": [
         "Réduire"
       ],
+      "Collapse list": [
+        "Réduire la liste"
+      ],
+      "Collapse list of pending invitations": [
+        "Réduire la liste des invitations en attente"
+      ],
       "Compose": [
         "Rédiger"
       ],
@@ -171,9 +183,6 @@
       ],
       "Contact group": [
         "Groupe de contacts"
-      ],
-      "Context menu": [
-        "Menu contextuel"
       ],
       "Continue": [
         "Continuer"
@@ -660,6 +669,9 @@
       "Skip verification": [
         "Ignorer la vérification"
       ],
+      "Sort by": [
+        "Trier par"
+      ],
       "Start import": [
         "Démarrer l'importation"
       ],
@@ -755,6 +767,9 @@
       ],
       "View": [
         "Afficher"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Afficher toutes les ${ pendingCount } invitations"
       ],
       "View all reports": [
         "Afficher tous les rapports"

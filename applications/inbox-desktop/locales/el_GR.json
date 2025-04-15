@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Σχετικά με το ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Πραγματικό Μέγεθος"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Εκκαθάριση δεδομένων εφαρμογής"
       ],
+      "Close Window": [
+        "Κλείσιμο Παραθύρου"
+      ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
+      "Cut": [
+        "Αποκοπή"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
       "Force Reload": [
         "Αναγκαστική Επαναφόρτωση"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Απόκρυψη ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Απόκρυψη άλλων"
+      ],
+      "Minimize": [
+        "Ελαχιστοποίηση"
+      ],
+      "Paste": [
+        "Επικόλληση"
+      ],
+      "Paste and Match Style": [
+        "Επικόλληση και Αντιστοίχιση Στυλ"
+      ],
+      "Quit": [
+        "Έξοδος"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Έξοδος από ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Επανάληψη"
+      ],
       "Reload": [
         "Επαναφόρτωση"
+      ],
+      "Select All": [
+        "Επιλογή Όλων"
+      ],
+      "Show All": [
+        "Εμφάνιση Όλων"
       ],
       "Show logs": [
         "Εμφάνιση αρχείων καταγραφής"
@@ -26,11 +71,26 @@
       "Speech": [
         "Ομιλία"
       ],
-      "Start Proton Mail at login": [
-        "Έναρξη του Proton Mail κατά τη σύνδεση"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Εκκίνηση ${ MAIL_APP_NAME } κατά τη σύνδεση"
       ],
-      "Uninstall Proton Mail": [
-        "Απεγκαταστήστε το Proton Mail"
+      "Start Speaking": [
+        "Αρχίστε να Μιλάτε"
+      ],
+      "Stop Speaking": [
+        "Σταματήστε να Μιλάτε"
+      ],
+      "Toggle Full Screen": [
+        "Εναλλαγή Πλήρους Οθόνης"
+      ],
+      "Undo": [
+        "Αναίρεση"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Απεγκατάσταση ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Μεγέθυνση"
       ],
       "Zoom In": [
         "Μεγέθυνση"
@@ -39,12 +99,9 @@
         "Σμίκρυνση"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Αποθήκευση εικόνας ως…"
-      ],
-      "Speech": [
-        "Ομιλία"
+    "App Menu": {
+      "Services": [
+        "Υπηρεσίες"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji και Σύμβολα"
+      ],
+      "Save image as…": [
+        "Αποθήκευση εικόνας ως…"
+      ],
+      "Speech": [
+        "Ομιλία"
+      ],
+      "Start Speaking": [
+        "Αρχίστε να Μιλάτε"
+      ],
+      "Stop Speaking": [
+        "Σταματήστε να Μιλάτε"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Αντιγραφή"
+      ],
+      "Cut": [
+        "Αποκοπή"
+      ],
+      "Look Up “${ text }”": [
+        "Αναζήτηση για “${ text }”"
+      ],
+      "Paste": [
+        "Επικόλληση"
+      ],
+      "Paste and Match Style": [
+        "Επικόλληση και Αντιστοίχιση Στυλ"
+      ],
+      "Redo": [
+        "Ακύρωση αναίρεσης"
+      ],
+      "Select All": [
+        "Επιλογή Όλων"
+      ],
+      "Undo": [
+        "Αναίρεση"
       ]
     },
     "Error dialog": {

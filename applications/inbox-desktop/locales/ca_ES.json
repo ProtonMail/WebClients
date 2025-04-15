@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Quant a ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Mida actual"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Neteja les dades de l'aplicació"
       ],
+      "Close Window": [
+        "Tanca finestra"
+      ],
+      "Copy": [
+        "Copia"
+      ],
+      "Cut": [
+        "Retalla"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
       "Force Reload": [
         "Força la recàrrega"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Amaga ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Amaga els altres"
+      ],
+      "Minimize": [
+        "Minimitza"
+      ],
+      "Paste": [
+        "Enganxa"
+      ],
+      "Paste and Match Style": [
+        "Enganxa i aplica l'estil"
+      ],
+      "Quit": [
+        "Abandona"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Surt de ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Refés"
+      ],
       "Reload": [
         "Torna a carregar"
+      ],
+      "Select All": [
+        "Selecciona-ho tot"
+      ],
+      "Show All": [
+        "Mostra tot"
       ],
       "Show logs": [
         "Mostra els registres"
@@ -26,11 +71,26 @@
       "Speech": [
         "Dicteu"
       ],
-      "Start Proton Mail at login": [
-        "Inicia el Proton Mail en iniciar la sessió"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Inicia ${ MAIL_APP_NAME } a l'inici de sessió"
       ],
-      "Uninstall Proton Mail": [
-        "Desinstal·la Proton Mail"
+      "Start Speaking": [
+        "Comenceu a parlar"
+      ],
+      "Stop Speaking": [
+        "Deixeu de parlar"
+      ],
+      "Toggle Full Screen": [
+        "Activar/desactivar la pantalla completa"
+      ],
+      "Undo": [
+        "Desfés"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Desinstal·la ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Zoom"
       ],
       "Zoom In": [
         "Apropa"
@@ -39,12 +99,9 @@
         "Allunya"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Desa la imatge com a..."
-      ],
-      "Speech": [
-        "Parleu"
+    "App Menu": {
+      "Services": [
+        "Serveis"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji i símbols"
+      ],
+      "Save image as…": [
+        "Desa la imatge com a..."
+      ],
+      "Speech": [
+        "Dicteu"
+      ],
+      "Start Speaking": [
+        "Comenceu a parlar"
+      ],
+      "Stop Speaking": [
+        "Deixeu de parlar"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Copia"
+      ],
+      "Cut": [
+        "Retalla"
+      ],
+      "Look Up “${ text }”": [
+        "Cerca «${ text }»"
+      ],
+      "Paste": [
+        "Enganxa"
+      ],
+      "Paste and Match Style": [
+        "Enganxa i aplica l'estil"
+      ],
+      "Redo": [
+        "Refés"
+      ],
+      "Select All": [
+        "Selecciona-ho tot"
+      ],
+      "Undo": [
+        "Desfés"
       ]
     },
     "Error dialog": {

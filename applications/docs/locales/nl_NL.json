@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "Uitnodiging voor document accepteren"
       ],
+      "Actions": [
+        "Acties"
+      ],
       "Activate recovery": [
         "Herstel activeren"
       ],
@@ -124,6 +127,9 @@
       "Cancel subscription": [
         "Abonnement opzeggen"
       ],
+      "Change sort order": [
+        "Wijzig sorteervolgorde"
+      ],
       "characters": [
         "tekens"
       ],
@@ -160,6 +166,12 @@
       "Collapse": [
         "Inklappen"
       ],
+      "Collapse list": [
+        "Lijst inklappen"
+      ],
+      "Collapse list of pending invitations": [
+        "Lijst met openstaande uitnodigingen inklappen"
+      ],
       "Compose": [
         "Opstellen"
       ],
@@ -171,9 +183,6 @@
       ],
       "Contact group": [
         "Contactgroep"
-      ],
-      "Context menu": [
-        "Contextmenu"
       ],
       "Continue": [
         "Doorgaan"
@@ -657,6 +666,9 @@
       "Skip verification": [
         "Verificatie overslaan"
       ],
+      "Sort by": [
+        "Sorteren op"
+      ],
       "Start import": [
         "Begin met importeren"
       ],
@@ -752,6 +764,9 @@
       ],
       "View": [
         "Bekijken"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Bekijk alle ${ pendingCount } uitnodigingen"
       ],
       "View all reports": [
         "Bekijk alle rapporten"
@@ -3911,7 +3926,7 @@
         "(${ serverPrice }/maand)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat inschakelt."
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."

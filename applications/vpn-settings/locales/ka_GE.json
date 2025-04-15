@@ -397,9 +397,6 @@
       "Got it": [
         "გავიგე"
       ],
-      "Help": [
-        "დახმარება"
-      ],
       "Help and feedback": [
         "დახმარება და გამოხმაურება"
       ],
@@ -1140,6 +1137,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
@@ -2704,6 +2705,9 @@
       "Sign in with QR code": [
         "შესვლა QR კოდით"
       ],
+      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
+        "დააკვირდით შეტყობინებებს, რომლებიც კოდს შეიცავს. არასდროს შეიყვანოთ კოდი ვებგვერდიდან, ან პიროვნებისგან, რომელიც სანდო არაა."
+      ],
       "You have successfully signed in to another device": [
         "თქვენ წარმატებით შესვედით სხვა მოწყობილობაზე"
       ]
@@ -2795,6 +2799,9 @@
       ],
       "Error publishing changes.": [
         "ცვლილებების გამოცემის შეცდომა."
+      ],
+      "Failed to load the STL preview": [
+        "STL მინიატურის ჩატვირთვა ჩავარდა"
       ],
       "Failed to process the logo": [
         "ლოგოს დამუშავება ჩავარდა"
@@ -5631,6 +5638,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
+      ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "შეგიძლიათ, ყველა ჩვენი ფასიანი ფუნქცია ერთ პაკეტში მიიღოთ - და ის მხოლოდ **${ priceString } ღირს თვეში**."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
@@ -8586,6 +8596,10 @@
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "ტრანზაქცია წარამატებითაა აღმოჩენილი. კრედიტები დაემატება თქვენს ანგარიშს, როცა ტრანზაქცია ბოლომდე დადასტურდება."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -11823,6 +11837,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "ეს გააუქმებს ადმინისტრატორის წვდომებს, რომ ეს მომხმრებლის ანგარიში მართონ"
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "იმისათვის, რომ მიიღოთ ადმინისტრატორის უფლებები, მათ მარქაფის პაროლი უნდა დააყენონ შემდეგ ჯერზე, როცა ისინი ${ BRAND_NAME }-ში შესვლას სცდიან."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "გასაგრძელებლად მომხმარებლის მონაცემებთან წვდომისთვის და მათი პაროლის ჩამოსაყრელად მათგან უფლების თხოვნა მოგიწევთ"

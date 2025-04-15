@@ -347,9 +347,6 @@
       "Got it": [
         "Ho capito"
       ],
-      "Help": [
-        "Aiuto"
-      ],
       "Help and feedback": [
         "Aiuto e feedback"
       ],
@@ -3116,6 +3113,9 @@
       "Email address is required": [
         "L'indirizzo email è obbligatorio"
       ],
+      "Email is not valid": [
+        "Indirizzo email non valido"
+      ],
       "Ends on date cannot be empty": [
         "La data di fine non può essere vuota"
       ],
@@ -3163,6 +3163,9 @@
       ],
       "IMAP server is required": [
         "È richiesto il server IMAP"
+      ],
+      "Incorrect username": [
+        "Username non corretto"
       ],
       "Intended recipient does not support calendar sharing": [
         "Il destinatario non supporta la condivisione dei calendari"
@@ -3255,6 +3258,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Non è un account ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Numero non valido"
+      ],
       "Number of occurrences cannot be empty": [
         "Il numero di occorrenze non può essere vuoto"
       ],
@@ -3271,6 +3277,9 @@
       ],
       "Password is required": [
         "Password necessaria"
+      ],
+      "Passwords do not match": [
+        "Le password non corrispondono"
       ],
       "Payment process canceled": [
         "Processo di pagamento annullato"
@@ -3373,6 +3382,9 @@
       "The amount due has changed. Please try again.": [
         "L'importo dovuto è cambiato. Per favore riprova."
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Il nome della cartella non è valido. Scegli un nome differente."
       ],
@@ -3400,8 +3412,14 @@
       "There was an error when exporting the contacts vCards": [
         "Si è verificato un errore nell'esportazione delle vCard dei contatti"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
       "This field is required": [
         "Campo necessario"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
@@ -3415,6 +3433,9 @@
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova ad usare solo lettere, numeri e _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Impossibile caricare il pannello di controllo della VPN. Controlla la tua connessione e riprova."
       ],
@@ -3426,6 +3447,12 @@
       ],
       "Unknown payment token status": [
         "Stato del token di pagamento sconosciuto"
+      ],
+      "Username must begin with a letter or digit": [
+        "Il nome utente deve iniziare con una lettera o un numero."
+      ],
+      "Username must end with a letter or digit": [
+        "Il nome utente deve terminare con una lettera o un numero/"
       ],
       "Validation error": [
         "Errore nella convalida"
@@ -10593,6 +10620,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Condividi crittografato end-to-end con i contatti verificati"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova un nome utente più corto (massimo ${ n } carattere)",
+        "Prova un nome utente più corto (massimo ${ n } caratteri)"
       ]
     },
     "Video control": {

@@ -1040,8 +1040,8 @@
       "File does not match expected format": [
         "Fișierul nu are formatul așteptat."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Importarea eșuată pentru seiful „${ vaultData.name }”: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Importare eșuată pentru seiful „${ vaultData.name }”: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Importarea articolelor a eșuat."
@@ -3372,6 +3372,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Dacă e activată, la exportare, vor fi descărcate toate fișierele. Aceasta ar putea dura în funcție de viteza conexiuni la internet."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Dacă datele conțin atașamente, acestea nu vor fi importate."
+      ],
       "Include file attachments": [
         "Includere fișiere atașate"
       ],
@@ -3411,14 +3414,14 @@
       "Total imported files: ": [
         "Total fișiere importate: "
       ],
+      "Upgrade to support file attachments": [
+        "Treceți la alt plan pentru a putea folosi atașamente"
+      ],
       "Upload files from your device.": [
         "Încărcare fișiere din dispozitiv."
       ],
       "You can attach files to items for a better organization": [
         "Puteți atașa fișiere la articole pentru o organizare mai bună."
-      ],
-      "Your current plan does not support importing files": [
-        "Planul actual nu suportă importarea fișierelor."
       ]
     },
     "Placeholder": {

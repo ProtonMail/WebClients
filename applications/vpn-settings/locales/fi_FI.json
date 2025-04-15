@@ -280,6 +280,9 @@
       "Edit billing cycle": [
         "Muokkaa laskutuskautta"
       ],
+      "Edit countries": [
+        "Muokkaa maita"
+      ],
       "Edit display name": [
         "Muokkaa näyttönimeä"
       ],
@@ -387,9 +390,6 @@
       ],
       "Got it": [
         "Selvä"
-      ],
-      "Help": [
-        "Tuki"
       ],
       "Help and feedback": [
         "Tuki ja palaute"
@@ -1185,6 +1185,9 @@
       "**Streaming** is included in your subscription.": [
         "**Suoratoisto** sisältyy tilaukseesi."
       ],
+      "Get round-the-clock protection": [
+        "Hanki ympärivuorokautinen suojaus"
+      ],
       "How safe is Telegram?": [
         "Kuinka turvallinen Telegram on?"
       ],
@@ -1464,6 +1467,12 @@
     "Confirmation title": {
       "Delete payment method": [
         "Poista maksutapa"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } selected": [
+        "${ selectedCitiesCount } valittu",
+        "${ selectedCitiesCount } valittu"
       ]
     },
     "Country name": {
@@ -2626,6 +2635,29 @@
         "Ensisijainen tuki"
       ]
     },
+    "edm": {
+      "Allow scanning a QR code to sign in": [
+        "Salli kirjautuminen QR-koodin skannaamalla"
+      ],
+      "Code from the other device": [
+        "Koodi toisesta laitteesta"
+      ],
+      "Enter code manually": [
+        "Syötä koodi manuaalisesti"
+      ],
+      "QR code sign-in disabled": [
+        "QR-koodilla kirjautuminen ei käytössä"
+      ],
+      "QR code sign-in enabled": [
+        "QR-koodilla kirjautuminen otettu käyttöön"
+      ],
+      "Sign in to another device": [
+        "Kirjaudu toiseen laitteeseen"
+      ],
+      "Sign in with QR code": [
+        "Kirjaudu QR-koodilla"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } lisättiin"
@@ -2713,6 +2745,9 @@
       ],
       "Error publishing changes.": [
         "Virhe julkaistaessa muutoksia."
+      ],
+      "Failed to load the STL preview": [
+        "STL-esikatselun lataus epäonnistui"
       ],
       "Failed to process the logo": [
         "Logon käsittely epäonnistui"
@@ -4186,6 +4221,9 @@
       "Did you know?": [
         "Tiesitkö?"
       ],
+      "Disabled countries": [
+        "Käytöstä poistetut maat"
+      ],
       "Disabled on ${ formattedDateAndTime }": [
         "Poistettu käytöstä ${ formattedDateAndTime }"
       ],
@@ -4295,6 +4333,9 @@
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
       ],
+      "Enabled countries": [
+        "Käytössä olevat maat"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "Otettu käyttöön ${ formattedDateAndTime }"
       ],
@@ -4403,8 +4444,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Nouda ${ appName }:n SAML-metatiedot identiteetintarjoajastasi ja tuo ne tähän."
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "Group deleted": [
         "Ryhmä poistettiin"
+      ],
+      "Groups": [
+        "Ryhmät"
       ],
       "here": [
         "tässä"
@@ -5058,6 +5105,9 @@
       ],
       "Thank you": [
         "Kiitos"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Kiitos tilauksestasi. Suojattu selaaminen alkaa nyt."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Kiitos, että tuet tehtäviämme rakentaa parempaa Internetiä, jossa yksityisyys ja vapaus ovat etusijalla."
@@ -5777,6 +5827,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } käyttäjä",
+        "${ group.UserCount } käyttäjää"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace }/${ humanMaxSpace }"
       ],
@@ -5959,6 +6013,9 @@
       ],
       "Could you please specify?": [
         "Tarkentaisitko?"
+      ],
+      "Countries": [
+        "Maat"
       ],
       "Country": [
         "Maa"
@@ -8388,6 +8445,9 @@
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
       ],
+      "terms & conditions": [
+        "käyttöehdot"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
@@ -8400,6 +8460,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "${ amountToCharge } veloitetaan valitsemaltasi maksutavalta."
+      ],
+      "Your payment is still being processed": [
+        "Maksuasi käsitellään vielä"
       ]
     },
     "Payments.Error": {

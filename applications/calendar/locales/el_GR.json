@@ -347,9 +347,6 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "Help": [
-        "Βοήθεια"
-      ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
       ],
@@ -3116,6 +3113,9 @@
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
       ],
+      "Email is not valid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
       "Ends on date cannot be empty": [
         "Η ημερομηνία λήξης δεν μπορεί να είναι κενή"
       ],
@@ -3163,6 +3163,9 @@
       ],
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
+      ],
+      "Incorrect username": [
+        "Εσφαλμένο όνομα χρήστη"
       ],
       "Intended recipient does not support calendar sharing": [
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
@@ -3255,6 +3258,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Δεν είναι λογαριασμός ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Μη έγκυρος αριθμός"
+      ],
       "Number of occurrences cannot be empty": [
         "Ο αριθμός επαναλήψεων δεν μπορεί να είναι κενός"
       ],
@@ -3271,6 +3277,9 @@
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
+      ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
       "Payment process canceled": [
         "Η διαδικασία πληρωμής ακυρώθηκε"
@@ -3373,6 +3382,9 @@
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "The email addresses do not match": [
+        "Οι διευθύνσεις email δεν ταιριάζουν."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
@@ -3400,8 +3412,14 @@
       "There was an error when exporting the contacts vCards": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών σε vCards"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -3415,6 +3433,9 @@
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Δεν είναι δυνατή η φόρτωση του πίνακα ελέγχου VPN. Παρακαλούμε ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά."
       ],
@@ -3426,6 +3447,12 @@
       ],
       "Unknown payment token status": [
         "Άγνωστη κατάσταση πληρωμής"
+      ],
+      "Username must begin with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
+      ],
+      "Username must end with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
       "Validation error": [
         "Σφάλμα επικύρωσης"
@@ -10585,6 +10612,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Κοινοποιημένο, διατερματικά κρυπτογραφημένο, με επαληθευμένη επαφή"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     },
     "Video control": {

@@ -461,9 +461,6 @@
       "Grid layout": [
         "Rács elrendezés"
       ],
-      "Help": [
-        "Súgó"
-      ],
       "Help and feedback": [
         "Súgó és visszajelzés"
       ],
@@ -2582,6 +2579,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Névjegyeinek importálásához a Google-ból vagy az Outlookból ${ easySwitchLink }."
       ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Frissítsen a(z) ${ planName } verzióra, hogy továbbra is meg tudjon osztani fájlokat szerkesztési hozzáféréssel"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Frissítse fiókját, hogy aktiválja a ${ PROTON_SENTINEL_NAME } fejlesztést, az élvonalbeli, mesterséges intelligencia vezérelt biztonsági megoldásunkat, amelyhez 24/7 szakértői támogatást biztosítunk."
       ],
@@ -2932,6 +2932,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "A külső meghívók ideiglenesen le vannak tiltva. Kérjük, próbálja meg később újra"
+      ],
+      "Failed to load the STL preview": [
+        "Nem sikerült betölteni az STL előnézetet"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "A fájl: \"${ item.name }\", hiba miatt nem tölthető fel: \"${ error }\""
@@ -3766,6 +3769,9 @@
       ],
       "Create new shared album": [
         "Új megosztott album létrehozása"
+      ],
+      "Rename album": [
+        "Album átnevezése"
       ],
       "Security Center": [
         "Biztonsági központ"

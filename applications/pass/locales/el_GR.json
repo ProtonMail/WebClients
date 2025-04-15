@@ -1035,8 +1035,8 @@
       "File does not match expected format": [
         "Το αρχείο δεν ταιριάζει με την αναμενόμενη μορφή"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.name }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Η εισαγωγή στοιχείων απέτυχε"
@@ -3324,6 +3324,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Εάν ενεργοποιηθεί, όλα τα αρχεία σας θα ληφθούν κατά την εξαγωγή. Αυτό μπορεί να διαρκέσει λίγο, ανάλογα με τη σύνδεσή σας στο διαδίκτυο."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Εάν τα δεδομένα σας περιέχουν συνημμένα αρχεία, δεν θα εισαχθούν."
+      ],
       "Include file attachments": [
         "Συμπερίληψη συνημμένων αρχείων"
       ],
@@ -3363,14 +3366,14 @@
       "Total imported files: ": [
         "Σύνολο εισαγόμενων φακέλων: "
       ],
+      "Upgrade to support file attachments": [
+        "Αναβάθμιση για υποστήριξη συνημμένων αρχείων"
+      ],
       "Upload files from your device.": [
         "Ανεβάστε αρχεία από τη συσκευή σας."
       ],
       "You can attach files to items for a better organization": [
         "Μπορείτε να επισυνάψετε αρχεία στα στοιχεία για καλύτερη οργάνωση"
-      ],
-      "Your current plan does not support importing files": [
-        "Το τρέχον πλάνο σας δεν υποστηρίζει την εισαγωγή αρχείων"
       ]
     },
     "Placeholder": {

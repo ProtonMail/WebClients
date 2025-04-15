@@ -1035,8 +1035,8 @@
       "File does not match expected format": [
         "Le fichier ne correspond pas au format attendu."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "L'importation du coffre-fort « ${ vaultData.name } » n'a pas abouti : ${ description }."
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "L'importation du coffre-fort « ${ vaultData.name } » n'a pas abouti : ${ errorMessage }"
       ],
       "Importing items failed": [
         "L'importation d'éléments n'a pas abouti."
@@ -3324,6 +3324,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Si cette option est activée, tous vos fichiers seront téléchargés lors de l'exportation. Cette opération peut prendre un certain temps selon votre connexion internet."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Si vos données contiennent des pièces jointes, elles ne seront pas importées."
+      ],
       "Include file attachments": [
         "Inclure les pièces jointes des fichiers"
       ],
@@ -3363,14 +3366,14 @@
       "Total imported files: ": [
         "Nombre total de fichiers importés : "
       ],
+      "Upgrade to support file attachments": [
+        "Changez d'abonnement pour prendre en charge les pièces jointes."
+      ],
       "Upload files from your device.": [
         "Importez des fichiers depuis votre ordinateur."
       ],
       "You can attach files to items for a better organization": [
         "Vous pouvez joindre des fichiers aux éléments pour mieux vous organiser."
-      ],
-      "Your current plan does not support importing files": [
-        "Votre abonnement actuel ne permet pas l'importation de fichiers."
       ]
     },
     "Placeholder": {
