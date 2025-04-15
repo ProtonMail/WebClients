@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import React, { useCallback, useState } from 'react';
+import { useOutletContext } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -16,12 +17,12 @@ import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { useRenameAlbum } from '../PhotosActions/Albums';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
-import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
 import { AlbumsInvitations } from './AlbumsInvitations';
 import { EmptyAlbums } from './EmptyAlbums';
 import { EmptyTagView } from './EmptyTagView';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
+import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
 
 import './BannerInvite.scss';
 
@@ -50,7 +51,7 @@ export const AlbumsView: FC = () => {
         loadPhotoLink,
         deleteAlbum,
         refreshSharedWithMeAlbums,
-    } = usePhotosWithAlbumsView();
+    } = useOutletContext<PhotosLayoutOutletContext>();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const { modals } = usePhotoLayoutStore(
