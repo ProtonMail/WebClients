@@ -15,6 +15,7 @@ const fs = require('fs');
 
 const {
     BUILD_TARGET,
+    BUILD_STORE_TARGET,
     CLEAN_MANIFEST,
     ENV,
     HOT_MANIFEST_UPDATE,
@@ -44,6 +45,7 @@ const ARGON2_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_argon2id_min_mj
 console.log(`ENV = ${ENV}`);
 console.log(`RELEASE = ${RELEASE}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
+console.log(`BUILD_STORE_TARGET = ${BUILD_STORE_TARGET}`);
 console.log(`MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
 console.log(`PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
 console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
@@ -230,6 +232,7 @@ module.exports = {
         new webpack.EnvironmentPlugin({ NODE_ENV: ENV }),
         new webpack.DefinePlugin({
             BUILD_TARGET: JSON.stringify(BUILD_TARGET),
+            BUILD_STORE_TARGET: JSON.stringify(BUILD_STORE_TARGET),
             DESKTOP_BUILD: false,
             ENV: JSON.stringify(ENV),
             EXTENSION_BUILD: true,
