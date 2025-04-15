@@ -347,9 +347,6 @@
       "Got it": [
         "Anladım"
       ],
-      "Help": [
-        "Yardım"
-      ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
       ],
@@ -3116,6 +3113,9 @@
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
       ],
+      "Email is not valid": [
+        "E-posta geçersiz"
+      ],
       "Ends on date cannot be empty": [
         "Bitiş tarihi boş olamaz"
       ],
@@ -3163,6 +3163,9 @@
       ],
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
+      ],
+      "Incorrect username": [
+        "Kullanıcı adı yanlış"
       ],
       "Intended recipient does not support calendar sharing": [
         "İstenilen alıcı takvim paylaşımını desteklemiyor"
@@ -3255,6 +3258,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı değil"
       ],
+      "Not a valid number": [
+        "Numara geçerli değil"
+      ],
       "Number of occurrences cannot be empty": [
         "Yinelenme sayısı boş olamaz"
       ],
@@ -3271,6 +3277,9 @@
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
       ],
       "Payment process canceled": [
         "Ödeme işlemi iptal edildi"
@@ -3373,6 +3382,9 @@
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
       ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
       ],
@@ -3400,8 +3412,14 @@
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin."
@@ -3415,6 +3433,9 @@
       "Trusted keys are not valid for sending": [
         "Güvenilen anahtarlar gönderim için geçerli değil"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN panosu yüklenemedi. Lütfen bağlantınızı denetleyip yeniden deneyin."
       ],
@@ -3426,6 +3447,12 @@
       ],
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
+      ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
       "Validation error": [
         "Doğrulama sorunu"
@@ -10585,6 +10612,16 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Uçtan uca şifrelenmiş olarak doğrulanmış kişi ile paylaşıldı"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     },
     "Video control": {
