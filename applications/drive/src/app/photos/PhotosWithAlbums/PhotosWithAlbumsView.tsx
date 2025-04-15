@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { useOutletContext } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -13,12 +14,12 @@ import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMet
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import { useThumbnailsDownload, useUserSettings } from '../../store';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
-import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { EmptyPhotos } from './EmptyPhotos';
 import { EmptyTagView } from './EmptyTagView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosTags } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
+import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
 
 export const PhotosWithAlbumsView = () => {
     useAppTitle(c('Title').t`Photos`);
@@ -29,9 +30,10 @@ export const PhotosWithAlbumsView = () => {
         }))
     );
     const {
+        albumPhotos,
+
         shareId,
         linkId,
-
         photos,
         isPhotosLoading,
         loadPhotoLink,
@@ -43,7 +45,10 @@ export const PhotosWithAlbumsView = () => {
         favoritePhoto,
         updatePhotoFavoriteFromCache,
         removeTagsFromPhoto,
-    } = usePhotosWithAlbumsView();
+        albumPhotosLinkIdToIndexMap,
+        photoLinkIdToIndexMap,
+    } = useOutletContext<PhotosLayoutOutletContext>();
+
     const { photoTags } = useUserSettings();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const isShiftPressed = useShiftKey();
@@ -52,7 +57,12 @@ export const PhotosWithAlbumsView = () => {
             setPreviewLinkId: state.setPreviewLinkId,
         }))
     );
-    const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection();
+    const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection({
+        photos,
+        albumPhotos,
+        albumPhotosLinkIdToIndexMap,
+        photoLinkIdToIndexMap,
+    });
 
     const thumbnails = useThumbnailsDownload();
     const handleItemRender = useCallback(
