@@ -15,7 +15,7 @@ import { useActiveShare } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';
-import { VolumeType, useVolumesState } from '../store/_volumes';
+import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
 import PreviewContainer from './PreviewContainer';
 
 const hasValidLinkType = (type: string) => {
@@ -99,7 +99,7 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
             .then((defaultShare) => {
                 // We exclude subscribing to volumes event of main share (Already done in MainContainer)
                 if (defaultShare.volumeId !== volumeId) {
-                    driveEventManager.volumes.startSubscription(volumeId, VolumeType.shared).catch(noop);
+                    driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.shared).catch(noop);
                 }
             })
             .catch(noop);

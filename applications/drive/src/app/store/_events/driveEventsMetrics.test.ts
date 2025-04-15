@@ -4,7 +4,7 @@ import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/even
 
 import type { DriveEvent } from '.';
 import type { EncryptedLink } from '../_links';
-import { VolumeType } from '../_volumes';
+import { VolumeTypeForEvents } from '../_volumes';
 import { EventsMetrics, countEventsPerType } from './driveEventsMetrics';
 
 jest.mock('@proton/metrics', () => ({
@@ -69,10 +69,10 @@ describe('EventsMetrics', () => {
             eventType: EVENT_TYPES.CREATE,
             encryptedLink: { volumeId: 'vol1', linkId: 'link1' } as EncryptedLink,
         });
-        eventsMetrics.batchCompleted('vol1', 'event1', VolumeType.main);
+        eventsMetrics.batchCompleted('vol1', 'event1', VolumeTypeForEvents.main);
 
         expect(metrics.drive_sync_event_unecessary_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.main, eventType: 'delete' },
+            { volumeType: VolumeTypeForEvents.main, eventType: 'delete' },
             1
         );
     });
@@ -94,30 +94,30 @@ describe('countEventsPerType', () => {
             ],
         } as DriveEventsResult;
 
-        countEventsPerType(VolumeType.main, driveEvents);
+        countEventsPerType(VolumeTypeForEvents.main, driveEvents);
 
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledTimes(4);
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.main, eventType: 'create' },
+            { volumeType: VolumeTypeForEvents.main, eventType: 'create' },
             1
         );
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.main, eventType: 'update' },
+            { volumeType: VolumeTypeForEvents.main, eventType: 'update' },
             2
         );
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.main, eventType: 'delete' },
+            { volumeType: VolumeTypeForEvents.main, eventType: 'delete' },
             1
         );
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.main, eventType: 'update_metadata' },
+            { volumeType: VolumeTypeForEvents.main, eventType: 'update_metadata' },
             1
         );
     });
 
     test('handles undefined events', () => {
         const driveEvents: DriveEventsResult = {} as DriveEventsResult;
-        countEventsPerType(VolumeType.main, driveEvents);
+        countEventsPerType(VolumeTypeForEvents.main, driveEvents);
         expect(metrics.drive_sync_event_total.increment).not.toHaveBeenCalled();
     });
 });

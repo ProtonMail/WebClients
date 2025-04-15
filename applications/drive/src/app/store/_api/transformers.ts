@@ -16,6 +16,7 @@ import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/
 import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
@@ -36,6 +37,7 @@ import type {
     SharedUrlInfo,
 } from '../_shares';
 import { ThumbnailType } from '../_uploads/media';
+import type { DriveVolume } from '../_volumes';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
@@ -418,3 +420,23 @@ export const sharedUrlInfoPayloadToSharedUrlInfo = (sharedUrlInfoPayload: Shared
         token: sharedUrlInfoPayload.Token,
     };
 };
+
+export function volumePayloadToVolume(volume: DriveVolumePayload): DriveVolume {
+    return {
+        id: volume.ID,
+        volumeId: volume.VolumeID,
+        createTime: volume.CreateTime || undefined,
+        modifyTime: volume.ModifyTime || undefined,
+        usedSpace: volume.UsedSpace,
+        downloadedBytes: volume.DownloadedBytes,
+        uploadedBytes: volume.UploadedBytes,
+        state: volume.State,
+        share: {
+            shareId: volume.Share.ShareID,
+            id: volume.Share.ID,
+            linkId: volume.Share.LinkID,
+        },
+        type: volume.Type,
+        restoreStatus: volume.RestoreStatus || undefined,
+    };
+}
