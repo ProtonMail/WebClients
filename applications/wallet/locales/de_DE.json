@@ -117,16 +117,13 @@
         "Kontakt aufnehmen"
       ],
       "Get verification code": [
-        "Bestätigungscode abrufen"
+        "Verifizierungscode anfordern"
       ],
       "Go to settings": [
         "Einstellungen öffnen"
       ],
       "Got it": [
         "Verstanden"
-      ],
-      "Help": [
-        "Hilfe"
       ],
       "Help and feedback": [
         "Hilfe und Feedback"
@@ -160,6 +157,9 @@
       ],
       "More options": [
         "Weitere Optionen"
+      ],
+      "More options for accounts": [
+        "Mehr Optionen für Konten"
       ],
       "Need help?": [
         "Benötigst du Hilfe?"
@@ -231,7 +231,7 @@
         "${ planTitle } auswählen"
       ],
       "Select billing cycle ${ billingText }": [
-        "Abrechnungszyklus auswählen: ${ billingText }"
+        "Abrechnungszeitraum auswählen: ${ billingText }"
       ],
       "Select country": [
         "Land wählen"
@@ -300,7 +300,7 @@
         "Authentifizierungscode verwenden"
       ],
       "Use recovery code": [
-        "Wiederherstellungsschlüssel verwenden"
+        "Wiederherstellungscode verwenden"
       ],
       "Verify": [
         "Verifizieren"
@@ -536,7 +536,7 @@
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sichere deine E-Mails und deinen Zeitplan mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliase und mehr."
+        "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
@@ -569,6 +569,11 @@
       ],
       "Two-year": [
         "Zwei Jahre"
+      ]
+    },
+    "BIP 21 error": {
+      "Invalid QR code, we only support BIP 21 URI.": [
+        "Ungültiger QR-Code, wir unterstützen nur BIP 21 URI."
       ]
     },
     "bitcoin buy": {
@@ -2096,7 +2101,7 @@
         "Ungültige Postleitzahl"
       ],
       "Invalid verification code": [
-        "Bestätigungscode ungültig"
+        "Ungültiger Verifizierungscode"
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
@@ -2678,7 +2683,7 @@
         "Bitte authentifiziere deine Zahlung im Verifikationstab."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "Please try again using a different payment method, or contact your bank.": [
@@ -2697,10 +2702,10 @@
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Registering your subscription…": [
-        "Registrierung deines Abonnements…"
+        "Dein Abonnement wird registriert…"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+        "SEPA-Zahlungen sind derzeit nicht verfügbar. Probiere es später erneut."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -2729,6 +2734,9 @@
       ],
       "Subscription auto-renews every month.": [
         "Abonnement wird automatisch jeden Monat verlängert."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
@@ -2800,7 +2808,7 @@
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchtest du einen neuen Bestätigungscode erhalten oder eine alternative Bestätigungsmethode verwenden?"
+        "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
       ],
       "Would you like to receive a new verification code?": [
         "Möchtest du einen neuen Verifizierungscode erhalten?"
@@ -2856,8 +2864,8 @@
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann nach ${ renewCycle } Monat zu ${ renewAmountStr } abgerechnet.",
-        "Sie werden dann alle ${ renewCycle } Monate zu ${ renewAmountStr } abgerechnet."
+        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
+        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -2924,7 +2932,7 @@
         "Anschrift"
       ],
       "Anderson": [
-        "Anderson"
+        "Mustermann"
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
@@ -2972,7 +2980,7 @@
         "Farben"
       ],
       "Company name": [
-        "Unternehmensname"
+        "Firmenname"
       ],
       "Copy": [
         "Kopieren"
@@ -3017,7 +3025,7 @@
         "Pfad des Ordners"
       ],
       "Hide password": [
-        "Passwort verbergen"
+        "Passwort ausblenden"
       ],
       "IBAN": [
         "IBAN"
@@ -3101,13 +3109,13 @@
         "MwSt."
       ],
       "Verification code": [
-        "Bestätigungsschlüssel"
+        "Verifizierungscode"
       ],
       "What happened?": [
         "Problembeschreibung"
       ],
       "What is your main reason for canceling or downgrading?": [
-        "Was ist dein Hauptgrund für die Kündigung oder das Downgrade?"
+        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
@@ -3154,7 +3162,7 @@
         "Mehr erfahren"
       ],
       "Request an invite": [
-        "Anfrage einreichen"
+        "Einladung anfordern"
       ],
       "settings": [
         "Einstellungen"
@@ -3224,11 +3232,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -3250,6 +3253,11 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -3657,7 +3665,7 @@
         "Tresor teilen (bis zu ${ n } Personen)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+        "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
       ]
     },
     "new_plans: feature highlight": {
@@ -4898,7 +4906,7 @@
     },
     "Title": {
       "${ feature } is now active": [
-        "${ feature } ist jetzt aktiv."
+        "${ feature } ist jetzt aktiv"
       ],
       "Add credit/debit card": [
         "Kredit-/Debitkarte hinzufügen"
@@ -4913,7 +4921,7 @@
         "Bist du sicher?"
       ],
       "Auto-deletion is active": [
-        "Automatisches Löschen ist aktiv."
+        "Automatisches Löschen ist aktiv"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -4934,7 +4942,7 @@
         "Den Verlust der ${ BRAND_NAME }-Boni bestätigen"
       ],
       "Coupon": [
-        "Rabattcode"
+        "Gutschein"
       ],
       "Credits": [
         "Guthaben"
@@ -4970,13 +4978,13 @@
         "Hilfe und Feedback"
       ],
       "Help center": [
-        "Hilfecenter"
+        "Hilfezentrum"
       ],
       "Human verification": [
-        "Menschliche Verifizierung"
+        "Captcha"
       ],
       "Invalid verification code": [
-        "Bestätigungscode ungültig"
+        "Ungültiger Verifizierungscode"
       ],
       "Network error": [
         "Netzwerkfehler"
@@ -5027,10 +5035,15 @@
         "Wallet"
       ],
       "You can now create unlimited folders and labels": [
-        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
       "Your shorter address is now ready": [
-        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Tooltip": {
@@ -5039,11 +5052,6 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Unknown sender": {
@@ -5314,6 +5322,9 @@
       ],
       "This wallet needs a passphrase to be used.": [
         "Diese Wallet benötigt eine Passphrase, um verwendet zu werden."
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "View change addresses": [
         "Änderungsadressen anzeigen"
@@ -5958,6 +5969,11 @@
         "Dein privater Schlüssel"
       ]
     },
+    "Wallet sidebar": {
+      "Add account": [
+        "Konto hinzufügen"
+      ]
+    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Support kontaktieren"
@@ -5970,6 +5986,9 @@
       ],
       "Expand user settings": [
         "Benutzereinstellungen ausklappen"
+      ],
+      "Import wallet": [
+        "Wallet importieren"
       ],
       "Recovery": [
         "Wiederherstellung"
@@ -5988,11 +6007,6 @@
       ],
       "Wallets": [
         "Wallets"
-      ]
-    },
-    "Wallet sidebar": {
-      "Add account": [
-        "Konto hinzufügen"
       ]
     },
     "Wallet terms and conditions": {
@@ -6156,29 +6170,6 @@
         "Synchronisierung läuft. Bitte warten"
       ]
     },
-    "Wallet upgrade": {
-      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
-        "Eine E-Mail-Adresse kann nur mit einem Wallet-Konto verknüpft werden. Um eine E-Mail-Adresse mit diesem Wallet-Konto zu verknüpfen, entferne bitte eine E-Mail-Adresse von einem anderen Wallet-Konto oder upgrade dein Abonnement, um mehr E-Mail-Adressen zu erhalten."
-      ],
-      "Contact your administrator to upgrade": [
-        "Wende dich für ein Upgrade an deinen Administrator."
-      ],
-      "Unlock more email addresses": [
-        "Entsperre weitere E-Mail-Adressen."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan.": [
-        "Du hast die maximale Anzahl von Konten erreicht, die von deinem aktuellen Abonnement unterstützt werden."
-      ],
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Du hast die maximale Anzahl von Konten erreicht, die von deinem aktuellen Abonnement unterstützt werden. Bitte führe ein Upgrade durch, um mehr zu erstellen. Auch deine Unterstützung ist wichtig für unseren Kampf zum Schutz der finanziellen Privatsphäre und Freiheit."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan.": [
-        "Du hast die maximale Anzahl von Wallets erreicht, die von deinem aktuellen Abonnement unterstützt werden."
-      ],
-      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Du hast die maximale Anzahl von Wallets erreicht, die von deinem aktuellen Abonnement unterstützt werden. Bitte führe ein Upgrade durch, um mehr zu erstellen.  Deine Unterstützung ist auch wichtig für unseren Kampf zum Schutz der finanziellen Privatsphäre und Freiheit."
-      ]
-    },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditionsLink } einverstanden"
@@ -6191,6 +6182,35 @@
       ],
       "You have reached your limit": [
         "Du hast dein Limit erreicht"
+      ]
+    },
+    "Wallet upgrade": {
+      "Account limit reached": [
+        "Kontolimit erreicht"
+      ],
+      "Contact your administrator to upgrade": [
+        "Wende dich für ein Upgrade an deinen Administrator."
+      ],
+      "Expand your address limit": [
+        "Erweitere dein Adressenlimit"
+      ],
+      "Wallet limit reached": [
+        "Wallet-Limit erreicht"
+      ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Du hast die maximale Anzahl von Konten erreicht, die von deinem aktuellen Abonnement unterstützt werden."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Du hast die maximale Anzahl von Konten erreicht, die von deinem aktuellen Abonnement unterstützt werden. Bitte führe ein Upgrade durch, um mehr zu erstellen. Auch deine Unterstützung ist wichtig für unseren Kampf zum Schutz der finanziellen Privatsphäre und Freiheit."
+      ],
+      "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Du hast die maximale Anzahl von E-Mail-Adressen erreicht, die von deinem aktuellen Abonnement unterstützt werden. Bitte führe ein Upgrade durch, um mehr zu erstellen. Dein Support ist auch wichtig für unseren Kampf zum Schutz der finanziellen Privatsphäre und Freiheit."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Du hast die maximale Anzahl von Wallets erreicht, die von deinem aktuellen Abonnement unterstützt werden."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Du hast die maximale Anzahl von Wallets erreicht, die von deinem aktuellen Abonnement unterstützt werden. Bitte führe ein Upgrade durch, um mehr zu erstellen.  Deine Unterstützung ist auch wichtig für unseren Kampf zum Schutz der finanziellen Privatsphäre und Freiheit."
       ]
     },
     "Wallet Welcome": {
