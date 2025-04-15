@@ -1035,9 +1035,6 @@
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ description }"
-      ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
@@ -3368,9 +3365,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Daha iyi bir düzen için ögelere dosyalar ekleyebilirsiniz"
-      ],
-      "Your current plan does not support importing files": [
-        "Geçerli tarifeniz dosyaları içe aktarmayı desteklemiyor"
       ]
     },
     "Placeholder": {

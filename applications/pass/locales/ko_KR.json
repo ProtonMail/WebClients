@@ -1030,9 +1030,6 @@
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "\"${ vaultData.name }\" 금고로 불러오기 실패: ${ description }"
-      ],
       "Importing items failed": [
         "항목 불러오기 실패"
       ],
@@ -3273,6 +3270,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "활성화시 모든 파일이 내보내기 작업 중 다운로드됩니다. 인터넷 연결 상태에 따라 시간이 소요될 수 있습니다."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "데이터에 파일 첨부 파일이 있는 경우 해당 파일은 불러오기되지 않습니다."
+      ],
       "Not enough available storage space for the selected files.": [
         "선택한 파일에 대한 사용 가능한 스토리지 공간이 충분하지 않습니다."
       ],
@@ -3309,14 +3309,14 @@
       "Total imported files: ": [
         "총 불러온 파일 수: "
       ],
+      "Upgrade to support file attachments": [
+        "파일 첨부 파일을 지원하도록 업그레이드"
+      ],
       "Upload files from your device.": [
         "기기에서 파일을 업로드하세요."
       ],
       "You can attach files to items for a better organization": [
         "더 나은 조직을 위해 항목에 파일 첨부가 가능합니다."
-      ],
-      "Your current plan does not support importing files": [
-        "현재 플랜에서 파일 불러오기가 지원되지 않습니다."
       ]
     },
     "Placeholder": {
