@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Om ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Faktisk størrelse"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Tøm applikasjonsdata"
       ],
+      "Close Window": [
+        "Lukk vindu"
+      ],
+      "Copy": [
+        "Kopier"
+      ],
+      "Cut": [
+        "Klipp ut"
+      ],
+      "Delete": [
+        "Slett"
+      ],
       "Force Reload": [
         "Tving omlasting"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Skjul ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Skjul andre"
+      ],
+      "Minimize": [
+        "Minimer"
+      ],
+      "Paste": [
+        "Lim inn"
+      ],
+      "Paste and Match Style": [
+        "Lim inn i samsvar med stil"
+      ],
+      "Quit": [
+        "Avslutt"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Avslutt ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Gjør om"
+      ],
       "Reload": [
         "Last inn på nytt"
+      ],
+      "Select All": [
+        "Velg alle"
+      ],
+      "Show All": [
+        "Vis alle"
       ],
       "Show logs": [
         "Vis logger"
@@ -26,11 +71,26 @@
       "Speech": [
         "Tale"
       ],
-      "Start Proton Mail at login": [
-        "Start Proton Mail ved pålogging"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Start ${ MAIL_APP_NAME } ved pålogging"
       ],
-      "Uninstall Proton Mail": [
-        "Avinstaller Proton Mail"
+      "Start Speaking": [
+        "Begynn å snakke"
+      ],
+      "Stop Speaking": [
+        "Slutt å snakke"
+      ],
+      "Toggle Full Screen": [
+        "Slå full skjerm på/av"
+      ],
+      "Undo": [
+        "Angre"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Avinstaller ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Zoom"
       ],
       "Zoom In": [
         "Zoom inn"
@@ -39,12 +99,9 @@
         "Zoom ut"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Lagre bilde som..."
-      ],
-      "Speech": [
-        "Tale"
+    "App Menu": {
+      "Services": [
+        "Tjenester"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji og symboler"
+      ],
+      "Save image as…": [
+        "Lagre bilde som..."
+      ],
+      "Speech": [
+        "Tale"
+      ],
+      "Start Speaking": [
+        "Begynn å snakke"
+      ],
+      "Stop Speaking": [
+        "Slutt å snakke"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopier"
+      ],
+      "Cut": [
+        "Klipp ut"
+      ],
+      "Look Up “${ text }”": [
+        "Slå opp “${ text }”"
+      ],
+      "Paste": [
+        "Lim inn"
+      ],
+      "Paste and Match Style": [
+        "Lim inn i samsvar med stil"
+      ],
+      "Redo": [
+        "Gjør om"
+      ],
+      "Select All": [
+        "Velg alle"
+      ],
+      "Undo": [
+        "Angre"
       ]
     },
     "Error dialog": {
