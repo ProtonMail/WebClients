@@ -152,7 +152,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
-    const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
+    const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan || hasPassBusiness(subscription);
 
     const { MaxAI = 0, UsedAI = 0, MaxLumo = 0, UsedLumo = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
