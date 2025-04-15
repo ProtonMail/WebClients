@@ -15,6 +15,13 @@ jest.mock('./ChargebeeIframe', () => ({
 // Mock useFormErrors hook
 const mockValidator = jest.fn();
 const mockOnFormSubmit = jest.fn();
+jest.mock('../../components/v2/useFormErrors', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+        validator: mockValidator,
+        onFormSubmit: mockOnFormSubmit,
+    })),
+}));
 
 const TestComponent = () => {
     const directDebit = useSepaDirectDebit(
@@ -47,11 +54,6 @@ const TestComponent = () => {
             } as any,
             forceEnableChargebee: () => true,
             verifyPayment: jest.fn(),
-            formErrors: {
-                validator: mockValidator,
-                onFormSubmit: mockOnFormSubmit,
-                reset: jest.fn(),
-            },
         }
     );
 
@@ -62,7 +64,11 @@ const TestComponent = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <SepaDirectDebit directDebit={directDebit} iframeHandles={{} as any} />
+            <SepaDirectDebit
+                directDebit={directDebit}
+                formErrors={{ validator: mockValidator, onFormSubmit: mockOnFormSubmit, reset: jest.fn() }}
+                iframeHandles={{} as any}
+            />
             <button type="submit">Submit</button>
         </form>
     );

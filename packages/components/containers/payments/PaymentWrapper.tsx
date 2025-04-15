@@ -1,3 +1,4 @@
+import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import type { BillingAddressStatus, PAYMENT_METHOD_TYPES } from '@proton/payments';
@@ -17,6 +18,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     themeCode: ThemeCode;
     onMethod?: (method: string | undefined) => void;
     billingAddressStatus?: BillingAddressStatus;
+    formErrors?: FormErrorsHook;
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
 };
@@ -50,6 +52,7 @@ const PaymentWrapper = ({
     user,
     billingAddressStatus,
     directDebit,
+    formErrors,
     onChargebeeInitialized,
     showCardIcons,
 }: Props) => {
@@ -98,6 +101,7 @@ const PaymentWrapper = ({
             billingAddressStatus={billingAddressStatus}
             paymentStatus={methods.status}
             directDebit={directDebit}
+            formErrors={formErrors}
             onChargebeeInitialized={onChargebeeInitialized}
             showCardIcons={showCardIcons}
         />

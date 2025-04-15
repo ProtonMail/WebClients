@@ -558,7 +558,6 @@ const SubscriptionContainer = ({
         subscription,
         planIDs: model.planIDs,
         coupon: couponCode,
-        formErrors,
         onBeforeSepaPayment: async () => {
             if (checkResult.ProrationMode === ProrationMode.Exact) {
                 const currentAmountDue = checkResult.AmountDue;
@@ -1166,6 +1165,7 @@ const SubscriptionContainer = ({
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
                                     billingAddressStatus={billingAddressStatus}
+                                    formErrors={formErrors}
                                     onMethod={(value) => {
                                         formErrors.reset();
 

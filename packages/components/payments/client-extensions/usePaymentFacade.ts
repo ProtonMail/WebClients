@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-import useFormErrors, { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -115,7 +114,6 @@ type PaymentFacadeProps = {
     ) => void;
     onBeforeSepaPayment?: () => Promise<boolean>;
     planIDs?: PlanIDs;
-    formErrors?: FormErrorsHook;
 };
 
 /**
@@ -151,11 +149,8 @@ export const usePaymentFacade = ({
     onCurrencyChange,
     onBeforeSepaPayment,
     planIDs,
-    formErrors: formErrorsOverride,
 }: PaymentFacadeProps) => {
     const enableSepa = useFlag('SepaPayments');
-    const defaultFormErrors = useFormErrors();
-    const formErrors = formErrorsOverride ?? defaultFormErrors;
 
     const { APP_NAME } = useConfig();
     const defaultApi = useApi();
@@ -238,7 +233,6 @@ export const usePaymentFacade = ({
             chargebeeHandles,
             chargebeeEvents,
             chargebeePaypalModalHandles,
-            formErrors,
         }
     );
 
