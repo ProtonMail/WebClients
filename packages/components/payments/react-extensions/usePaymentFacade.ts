@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react';
 
+import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import type {
     AmountAndCurrency,
     BillingAddress,
@@ -244,6 +245,7 @@ export const usePaymentFacade = (
         chargebeeHandles,
         chargebeeEvents,
         chargebeePaypalModalHandles,
+        formErrors,
     }: {
         api: Api;
         isAuthenticated: boolean;
@@ -253,6 +255,7 @@ export const usePaymentFacade = (
         chargebeeHandles: ChargebeeIframeHandles;
         chargebeeEvents: ChargebeeIframeEvents;
         chargebeePaypalModalHandles?: ChargebeePaypalModalHandles;
+        formErrors: FormErrorsHook;
     }
 ) => {
     const amountAndCurrency: AmountAndCurrency = useMemo(
@@ -549,6 +552,7 @@ export const usePaymentFacade = (
             handles: chargebeeHandles,
             events: chargebeeEvents,
             verifyPayment: verifyPaymentChargebeeCard,
+            formErrors,
         }
     );
 
