@@ -42,6 +42,9 @@
       "Accept invitation to document": [
         "Aceptar la invitación para el documento"
       ],
+      "Actions": [
+        "Acciones"
+      ],
       "Activate recovery": [
         "Activar recuperación"
       ],
@@ -124,6 +127,9 @@
       "Cancel subscription": [
         "Cancelar tu suscripción"
       ],
+      "Change sort order": [
+        "Cambiar orden"
+      ],
       "characters": [
         "caracteres"
       ],
@@ -160,6 +166,12 @@
       "Collapse": [
         "Minimizar"
       ],
+      "Collapse list": [
+        "Contraer la lista"
+      ],
+      "Collapse list of pending invitations": [
+        "Contraer la lista de invitaciones pendientes"
+      ],
       "Compose": [
         "Escribir"
       ],
@@ -171,9 +183,6 @@
       ],
       "Contact group": [
         "Grupo de contactos"
-      ],
-      "Context menu": [
-        "Menú contextual"
       ],
       "Continue": [
         "Continuar"
@@ -660,6 +669,9 @@
       "Skip verification": [
         "Omitir verificación"
       ],
+      "Sort by": [
+        "Ordenar por"
+      ],
       "Start import": [
         "Iniciar la importación"
       ],
@@ -755,6 +767,9 @@
       ],
       "View": [
         "Ver"
+      ],
+      "View all ${ pendingCount } invitations": [
+        "Ver todas las ${ pendingCount } invitaciones"
       ],
       "View all reports": [
         "Ver todos los informes"
@@ -4268,7 +4283,7 @@
         "Error al abrir un enlace seguro. Motivo: ${ error }"
       ],
       "Failing signatures will be re-signed by you": [
-        "Las firmas con errores serán firmadas nuevamente por ti."
+        "Las firmas con errores serán firmadas de nuevo por ti."
       ],
       "Favorites": [
         "Favoritos"
@@ -5103,7 +5118,7 @@
         "No se puede deshacer esta acción."
       ],
       "You don't have access": [
-        "No tienes acceso."
+        "No tienes acceso"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -5927,7 +5942,7 @@
         "mejora para obtener más almacenamiento"
       ],
       "Upgrade to restore full access": [
-        "Mejora para restaurar el acceso a todo"
+        "Mejora tu plan para restaurar el acceso a todo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El ${ driveStorage } está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
@@ -6688,7 +6703,7 @@
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
-        "Requerir 2FA para organización"
+        "Requerir 2FA para la organización"
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
@@ -7382,7 +7397,7 @@
         "Se ha eliminado la invitación externa de los elementos compartidos."
       ],
       "External invitation's email was sent again": [
-        "Se ha enviado nuevamente el correo de invitación externa."
+        "Se ha enviado de nuevo el correo de invitación externa."
       ],
       "Failed to accept share invitation": [
         "Se ha producido un error al aceptar la invitación compartida"
@@ -7410,7 +7425,7 @@
         "Falta el nombre del archivo o carpeta"
       ],
       "Invitation's email was sent again": [
-        "Se ha enviado nuevamente el correo de invitación."
+        "Se ha enviado de nuevo el correo de invitación."
       ],
       "Link copied to clipboard": [
         "Se ha copiado el enlace al portapapeles."
@@ -7443,7 +7458,7 @@
         "Error al cargar la carpeta raíz"
       ],
       "Share invitation accepted successfully": [
-        "La invitación compartida ha sido aceptada."
+        "Se ha aceptado la invitación compartida."
       ],
       "Share invitation declined": [
         "Se ha rechazado la invitación compartida."
