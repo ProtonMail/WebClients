@@ -485,7 +485,7 @@
         "Descărcare fișier de recuperare"
       ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
-        "Descărcați instrumentul de exportare ${ MAIL_APP_NAME }"
+        "Descărcare ${ MAIL_APP_NAME } Export Tool"
       ],
       "Download the desktop app": [
         "Descărcați aplicația pentru desktop"
@@ -684,9 +684,6 @@
       ],
       "Got it": [
         "Am înțeles"
-      ],
-      "Help": [
-        "Ajutor"
       ],
       "Help and feedback": [
         "Ajutor și feedback"
@@ -1137,9 +1134,6 @@
       ],
       "Set as default": [
         "Setare ca implicit"
-      ],
-      "Set as default mail application": [
-        "Setare ca aplicație de e-mail implicită"
       ],
       "Set catch-all": [
         "Setare adresă de agregare"
@@ -3787,12 +3781,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } nu este aplicația de e-mail implicită."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } este aplicația de e-mail implicită."
-      ],
       "Also included": [
         "De asemenea, inclus"
       ],
@@ -4887,6 +4875,9 @@
       "Failed to load OAuth modal.": [
         "Eșuare încărcare panou modal OAuth."
       ],
+      "Failed to load the STL preview": [
+        "Nu s-a putut încărca examinarea STL."
+      ],
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
       ],
@@ -5878,7 +5869,7 @@
         "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
-        "Creați și gestionați membrii familiei și alocați-le spațiu de stocare partajat între${ DRIVE_APP_NAME } și ${ MAIL_APP_NAME }."
+        "Creați și gestionați membrii familiei și alocați-le spațiu de stocare partajat între ${ DRIVE_APP_NAME } și ${ MAIL_APP_NAME }."
       ],
       "Create and manage family members.": [
         "Creați și gestionați membrii contului de familie."
@@ -5971,7 +5962,7 @@
         "Invitare utilizator"
       ],
       "Manage family group": [
-        "Gestionare grup familie"
+        "Gestionare grup de familie"
       ],
       "Set family name": [
         "Setare nume familie"
@@ -6305,19 +6296,19 @@
         "Aceste liste se aplică tuturor conturilor din organizație. Membrii își pot crea propriile filtre individuale, dar nu vor putea înlocui adresele sau domeniile pe care le-ați blocat."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
-        "Pentru a vă asigura că nu ratați mesajele importante."
+        "pentru a vă asigura că nu ratați mesajele importante."
       ],
       "To prevent junk mail from clogging up inboxes": [
-        "Pentru a preveni ca mesajele nedorite să aglomereze lista de mesaje primite."
+        "pentru a preveni ca mesajele nedorite să aglomereze lista de mesaje primite."
       ],
       "To prevent junk mail from clogging up your inbox": [
-        "Pentru a preveni ca mesajele nedorite să vă aglomereze lista de mesaje primite."
+        "pentru a preveni ca mesajele nedorite să vă aglomereze lista de mesaje primite."
       ],
       "To stop phishing or suspicious emails from entering your email system": [
-        "Pentru oprirea sosirii mesajelor înșelătoare sau suspecte."
+        "pentru oprirea sosirii mesajelor înșelătoare sau suspecte."
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
-        "Pentru oprirea sosirii mesajelor înșelătoare sau suspecte în sistemul organizației."
+        "pentru oprirea sosirii mesajelor înșelătoare sau suspecte în sistemul organizației."
       ]
     },
     "Font Face Default": {
@@ -6357,7 +6348,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Confidențialitate implicită."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Free trial dekstop": {
@@ -9421,7 +9412,7 @@
         "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "Instrumentul de export ${ MAIL_APP_NAME } vă permite să exportați e-mailuri decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont de e-mail sau client de e-mail."
+        "${ MAIL_APP_NAME } Export Tool vă permite să exportați e-mailuri decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont sau client de e-mail."
       ],
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
@@ -9990,9 +9981,6 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Când e activată, se va verifica dacă ${ MAIL_APP_NAME } este aplicația de e-mail implicită și vă va notifica dacă nu e."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
       ],
@@ -10372,7 +10360,7 @@
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Abonamentu se va reînnoi automat la ${ renewalTime }."
+        "Abonamentul se va reînnoi automat la ${ renewalTime }."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tichetul de asistență a fost închis. Vă mulțumim că ați contactat asistența de la ${ BRAND_NAME }."
@@ -11186,7 +11174,7 @@
         "Compunere mesaje"
       ],
       "Composer default font/size": [
-        "Marime/tip font implicit editor mesaje"
+        "Mărime/tip font implicit editor mesaje"
       ],
       "Composer mode": [
         "Editor de mesaje"
@@ -18552,7 +18540,7 @@
         "${ feature } este acum activă"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
-        "Instrumentul de exportare ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME } Export Tool"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Raport monitorizare ${ PASS_SHORT_APP_NAME }"
@@ -18760,6 +18748,9 @@
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
       ],
+      "Browser extensions": [
+        "Extensii navigator web"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -18795,9 +18786,6 @@
       ],
       "Change second password": [
         "Modificare parolă secundară"
-      ],
-      "Check your default mail application": [
-        "Verificați aplicația implicită de e-mail"
       ],
       "Choose an account": [
         "Alegeţi un cont"
@@ -19003,6 +18991,9 @@
       ],
       "Description": [
         "Descriere"
+      ],
+      "Desktop": [
+        "Desktop"
       ],
       "Device": [
         "Dispozitiv"
@@ -19397,6 +19388,9 @@
       ],
       "Minicalendar": [
         "Minicalendar"
+      ],
+      "Mobile": [
+        "Dispozitive mobile"
       ],
       "Multi-user support": [
         "Suport utilizatori multipli"
