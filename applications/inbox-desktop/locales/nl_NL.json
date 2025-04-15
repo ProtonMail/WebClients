@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Over ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Ware grootte"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Verwijder applicatiegegevens"
       ],
+      "Close Window": [
+        "Venster sluiten"
+      ],
+      "Copy": [
+        "Kopiëren"
+      ],
+      "Cut": [
+        "Knippen"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
       "Force Reload": [
         "Opnieuw laden forceren"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } verbergen"
+      ],
+      "Hide Others": [
+        "Anderen verbergen"
+      ],
+      "Minimize": [
+        "Minimaliseren"
+      ],
+      "Paste": [
+        "Plakken"
+      ],
+      "Paste and Match Style": [
+        "Plakken en stijl aanpassen"
+      ],
+      "Quit": [
+        "Afsluiten"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "${ MAIL_APP_NAME }l afsluiten"
+      ],
+      "Redo": [
+        "Herstel ongedaan maken"
+      ],
       "Reload": [
         "Opnieuw laden"
+      ],
+      "Select All": [
+        "Alles selecteren"
+      ],
+      "Show All": [
+        "Alles tonen"
       ],
       "Show logs": [
         "Logboeken weergeven"
@@ -26,11 +71,26 @@
       "Speech": [
         "Spraak"
       ],
-      "Start Proton Mail at login": [
-        "Start Proton Mail bij het aanmelden"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Start ${ MAIL_APP_NAME } bij inloggen"
       ],
-      "Uninstall Proton Mail": [
-        "Proton Mail deïnstalleren"
+      "Start Speaking": [
+        "Begin met spreken"
+      ],
+      "Stop Speaking": [
+        "Stop met spreken"
+      ],
+      "Toggle Full Screen": [
+        "Volledig scherm in-/uitschakelen"
+      ],
+      "Undo": [
+        "Ongedaan maken"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Deinstalleer ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Inzoomen"
       ],
       "Zoom In": [
         "Inzoomen"
@@ -39,12 +99,9 @@
         "Zoom uit"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Afbeelding opslaan als…"
-      ],
-      "Speech": [
-        "Spraak"
+    "App Menu": {
+      "Services": [
+        "Diensten"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji's en Symbolen"
+      ],
+      "Save image as…": [
+        "Afbeelding opslaan als…"
+      ],
+      "Speech": [
+        "Spraak"
+      ],
+      "Start Speaking": [
+        "Begin met spreken"
+      ],
+      "Stop Speaking": [
+        "Stop met spreken"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopiëren"
+      ],
+      "Cut": [
+        "Knippen"
+      ],
+      "Look Up “${ text }”": [
+        "Opzoeken “${ text }”"
+      ],
+      "Paste": [
+        "Plakken"
+      ],
+      "Paste and Match Style": [
+        "Plakken en stijl aanpassen"
+      ],
+      "Redo": [
+        "Herstel ongedaan maken"
+      ],
+      "Select All": [
+        "Alles selecteren"
+      ],
+      "Undo": [
+        "Ongedaan maken"
       ]
     },
     "Error dialog": {

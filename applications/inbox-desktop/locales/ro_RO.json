@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Despre ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Mărime actuală"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Ștergere date aplicație"
       ],
+      "Close Window": [
+        "Închidere fereastră"
+      ],
+      "Copy": [
+        "Copiere"
+      ],
+      "Cut": [
+        "Decupare"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
       "Force Reload": [
         "Reîncărcare forțată"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Ascundere ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Ascundere restul"
+      ],
+      "Minimize": [
+        "Micșorare"
+      ],
+      "Paste": [
+        "Lipire"
+      ],
+      "Paste and Match Style": [
+        "Lipire și potrivire stil"
+      ],
+      "Quit": [
+        "Ieșire"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Închidere ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Refacere"
+      ],
       "Reload": [
         "Reîncărcare"
+      ],
+      "Select All": [
+        "Selectare toate"
+      ],
+      "Show All": [
+        "Afișare toate"
       ],
       "Show logs": [
         "Afișare jurnale"
@@ -26,11 +71,26 @@
       "Speech": [
         "Vorbire"
       ],
-      "Start Proton Mail at login": [
-        "Pornire Proton Mail la pornirea sistemului"
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Pornire ${ MAIL_APP_NAME } la conectare"
       ],
-      "Uninstall Proton Mail": [
-        "Dezinstalare Proton Mail"
+      "Start Speaking": [
+        "Pornire vorbire"
+      ],
+      "Stop Speaking": [
+        "Oprire vorbire"
+      ],
+      "Toggle Full Screen": [
+        "Comutare ecran complet"
+      ],
+      "Undo": [
+        "Anulare"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Dezinstalare ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Scalare"
       ],
       "Zoom In": [
         "Mărire"
@@ -39,12 +99,9 @@
         "Micșorare"
       ]
     },
-    "Conext menu": {
-      "Save image as…": [
-        "Salvare imagine ca…"
-      ],
-      "Speech": [
-        "Vorbire"
+    "App Menu": {
+      "Services": [
+        "Servicii"
       ]
     },
     "Context menu": {
@@ -56,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoticoane și simboluri"
+      ],
+      "Save image as…": [
+        "Salvare imagine ca…"
+      ],
+      "Speech": [
+        "Vorbire"
+      ],
+      "Start Speaking": [
+        "Pornire vorbire"
+      ],
+      "Stop Speaking": [
+        "Oprire vorbire"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Copiere"
+      ],
+      "Cut": [
+        "Decupare"
+      ],
+      "Look Up “${ text }”": [
+        "Căutare „${ text }”"
+      ],
+      "Paste": [
+        "Lipire"
+      ],
+      "Paste and Match Style": [
+        "Lipire și potrivire stil"
+      ],
+      "Redo": [
+        "Refacere"
+      ],
+      "Select All": [
+        "Selectare toate"
+      ],
+      "Undo": [
+        "Anulare"
       ]
     },
     "Error dialog": {
