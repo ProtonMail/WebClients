@@ -461,9 +461,6 @@
       "Grid layout": [
         "Rutnätslayout"
       ],
-      "Help": [
-        "Hjälp"
-      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -2582,6 +2579,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Uppgradera till ${ planName } för att fortsätta dela filer med redigeringsåtkomst"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Uppgradera ditt konto för att aktivera ${ PROTON_SENTINEL_NAME }, vår banbrytande AI-drivna säkerhetslösning med dedikerad expertsupport dygnet runt."
       ],
@@ -2932,6 +2932,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Externa inbjudningar är tillfälligt inaktiverade. Försök igen senare"
+      ],
+      "Failed to load the STL preview": [
+        "Misslyckades att ladda STL-förhandsgranskningen"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen “${ item.name }“ kan inte laddas upp på grund felet “${ error }“"
@@ -3766,6 +3769,9 @@
       ],
       "Create new shared album": [
         "Skapa nytt delat album"
+      ],
+      "Rename album": [
+        "Byt namn på album"
       ],
       "Security Center": [
         "Säkerhetscenter"
@@ -5955,10 +5961,6 @@
       ],
       "Your previous recovery phrase": [
         "Din föregående återställningsfras"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Din schemalagda plan börjar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
-        "Ditt schemalagda plan startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
@@ -10158,6 +10160,9 @@
       "Your favorited photos will appear here": [
         "Dina favoritfoton kommer visas här"
       ],
+      "Your portraits photos will appear here": [
+        "Dina porträttfoton kommer visas här"
+      ],
       "Your screenshots will appear here": [
         "Dina skärmdumpar kommer visas här"
       ],
@@ -10845,11 +10850,17 @@
       "No favorites": [
         "Inga favoriter"
       ],
+      "No panorama": [
+        "Ingen panorama"
+      ],
       "No photos": [
         "Inga foton"
       ],
       "No portraits": [
         "Inga porträtt"
+      ],
+      "No RAW": [
+        "Ingen RAW"
       ],
       "No results found": [
         "Inga resultat hittades"
