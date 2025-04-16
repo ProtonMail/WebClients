@@ -49,6 +49,9 @@ module.exports = {
 
         return {
             ...config,
+            experiments: {
+                asyncWebAssembly: true,
+            },
             resolve: {
                 ...config.resolve,
                 fallback: {
