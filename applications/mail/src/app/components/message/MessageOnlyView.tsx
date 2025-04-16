@@ -10,12 +10,9 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
-
 import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
-import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
 import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import ConversationHeader from '../conversation/ConversationHeader';
 import type { MessageViewRef } from './MessageView';
@@ -51,8 +48,6 @@ const MessageOnlyView = ({
     const { message, messageLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as MessageWithOptionalBody));
 
-    const dispatch = useMailDispatch();
-
     // Manage loading the message
     useEffect(() => {
         if (
@@ -68,11 +63,6 @@ const MessageOnlyView = ({
             void load();
         }
     }, [messageLoaded]);
-
-    useEffect(() => {
-        // When the user is switching message we need to remove potential quick replies draft flags
-        dispatch(removeAllQuickReplyFlags());
-    }, [messageID]);
 
     // Message content could be undefined
     const data = message.data || ({ ID: messageID } as Message);
@@ -128,12 +118,6 @@ const MessageOnlyView = ({
         return document.querySelector(selector) as HTMLElement;
     };
 
-    const handleOpenQuickReply = () => {
-        const element = handleGetMessageElement();
-
-        element?.scrollIntoView({ block: 'end', behavior: 'smooth' });
-    };
-
     useEffect(() => {
         if (messageID && isMessageReady) {
             const element = handleGetMessageElement();
@@ -169,7 +153,6 @@ const MessageOnlyView = ({
                     onBlur={handleBlurCallback}
                     onFocus={handleFocusCallback}
                     hasFocus={isMessageFocused}
-                    onOpenQuickReply={handleOpenQuickReply}
                 />
             </div>
         </Scroll>

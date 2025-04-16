@@ -47,7 +47,6 @@ export interface ComposeExisting {
     type: ComposeTypes.existingDraft;
     existingDraft: MessageState;
     fromUndo: boolean;
-    fromQuickReply?: boolean;
 }
 
 export interface ComposeNew {

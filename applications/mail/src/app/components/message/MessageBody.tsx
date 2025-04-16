@@ -33,7 +33,6 @@ interface Props {
     isPrint?: boolean;
     onIframeReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     onFocusIframe?: () => void;
-    hasQuickReply?: boolean;
 }
 
 const MessageBody = ({
@@ -49,7 +48,6 @@ const MessageBody = ({
     labelID,
     onIframeReady,
     onFocusIframe,
-    hasQuickReply = false,
 }: Props) => {
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -122,7 +120,6 @@ const MessageBody = ({
                 isPrint && 'message-content-print',
                 isPrint || !isIframeContentSet ? '' : 'p-0 md:py-4 px-5',
                 !placeholderMode && !hasDarkStyles && theme.information.dark && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
-                hasQuickReply && 'message-content-has-quick-reply',
             ])}
             data-testid="message-content:body"
         >
