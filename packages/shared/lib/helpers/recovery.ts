@@ -1,7 +1,7 @@
 import type { UserModel } from '../interfaces';
 import { getIsSSOVPNOnlyAccount } from '../keys';
 
-export const getIsRecoveryAvailable = (user: UserModel) => {
+export const getIsAccountRecoveryAvailable = (user: UserModel) => {
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
     return user.isPrivate && !isSSOUser;
