@@ -299,11 +299,6 @@ export default function useLinkActions() {
             )
         );
 
-        const volumeId = volumeState.findVolumeId(shareId);
-        if (volumeId) {
-            await events.pollEvents.volumes(volumeId);
-        }
-
         return {
             Hash,
             NodeHashKey,
