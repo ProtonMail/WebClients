@@ -65,7 +65,7 @@ describe('useBatchHelper', () => {
 
     it('should process batches correctly with successful requests', async () => {
         const { result } = renderHook(() => useBatchHelper());
-        const batchHelper = result.current;
+        const { batchAPIHelper } = result.current;
 
         when(debouncedRequestMock)
             .calledWith({ batchLinkIds: ['link1', 'link2'] }, abortSignal)
@@ -85,7 +85,7 @@ describe('useBatchHelper', () => {
                 ],
             });
 
-        const response = await batchHelper(abortSignal, {
+        const response = await batchAPIHelper(abortSignal, {
             linkIds,
             query: queryMock,
             request: debouncedRequestMock,
@@ -105,7 +105,7 @@ describe('useBatchHelper', () => {
 
     it('should handle request failures correctly', async () => {
         const { result } = renderHook(() => useBatchHelper());
-        const batchHelper = result.current;
+        const { batchAPIHelper } = result.current;
 
         when(debouncedRequestMock)
             .calledWith({ batchLinkIds: ['link1', 'link2'] }, abortSignal)
@@ -120,7 +120,7 @@ describe('useBatchHelper', () => {
                 ],
             });
 
-        const response = await batchHelper(abortSignal, {
+        const response = await batchAPIHelper(abortSignal, {
             linkIds,
             query: queryMock,
             request: debouncedRequestMock,
@@ -135,7 +135,7 @@ describe('useBatchHelper', () => {
 
     it('should respect custom batch size and max parallel requests', async () => {
         const { result } = renderHook(() => useBatchHelper());
-        const batchHelper = result.current;
+        const { batchAPIHelper } = result.current;
 
         const customBatchSize = 1;
         const customMaxParallelRequests = 2;
@@ -168,7 +168,7 @@ describe('useBatchHelper', () => {
                 Responses: [{ LinkID: 'link4', Response: { Code: API_CODES.SINGLE_SUCCESS } }],
             });
 
-        await batchHelper(abortSignal, {
+        await batchAPIHelper(abortSignal, {
             linkIds,
             query: queryMock,
             batchRequestSize: customBatchSize,
@@ -183,7 +183,7 @@ describe('useBatchHelper', () => {
 
     it('should use provided request function instead of debouncedRequest if specified', async () => {
         const { result } = renderHook(() => useBatchHelper());
-        const batchHelper = result.current;
+        const { batchAPIHelper } = result.current;
 
         const customRequestMock = jest.fn();
 
@@ -205,7 +205,7 @@ describe('useBatchHelper', () => {
             });
         });
 
-        await batchHelper(abortSignal, {
+        await batchAPIHelper(abortSignal, {
             linkIds,
             query: queryMock,
             request: customRequestMock,
@@ -217,7 +217,7 @@ describe('useBatchHelper', () => {
 
     it('should consider allowedCodes as successful responses', async () => {
         const { result } = renderHook(() => useBatchHelper());
-        const batchHelper = result.current;
+        const { batchAPIHelper } = result.current;
 
         const CUSTOM_CODE_1 = 1001;
         const CUSTOM_CODE_2 = 1002;
@@ -240,7 +240,7 @@ describe('useBatchHelper', () => {
                 ],
             });
 
-        const response = await batchHelper(abortSignal, {
+        const response = await batchAPIHelper(abortSignal, {
             linkIds,
             query: queryMock,
             request: debouncedRequestMock,
