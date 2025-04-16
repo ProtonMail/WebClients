@@ -78,7 +78,7 @@ export const useDraft = () => {
     }, [cache, addresses, mailSettings]);
 
     const createDraft = useCallback(
-        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState, isQuickReply?: boolean) => {
+        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState) => {
             const [mailSettings, addresses] = await Promise.all([getMailSettings(), getAddresses()]);
 
             await draftVerifications(action, referenceMessage);
@@ -95,8 +95,7 @@ export const useDraft = () => {
                     userSettings,
                     addresses,
                     getAttachment,
-                    false,
-                    isQuickReply
+                    false
                 ) as MessageState;
             }
 

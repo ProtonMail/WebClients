@@ -24,6 +24,7 @@ import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import { MESSAGE_ACTIONS } from '../../constants';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
@@ -33,7 +34,6 @@ import { getExpiresIn } from '../expiration';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
 import { getEmbeddedImages, getRemoteImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -263,8 +263,7 @@ export const createNewDraft = (
     userSettings: UserSettings,
     addresses: Address[],
     getAttachment: (ID: string) => DecryptedAttachment | undefined,
-    isOutside = false,
-    isQuickReply = false
+    isOutside = false
 ): PartialMessageState => {
     const MIMEType = isOutside
         ? (mailSettings.DraftMIMEType as unknown as MIME_TYPES)
@@ -364,7 +363,6 @@ export const createNewDraft = (
             originalAddressID,
             originalMessageFlags: referenceMessage?.data?.Flags,
             initialAttachments,
-            isQuickReply,
             expiresIn,
         },
         messageImages,

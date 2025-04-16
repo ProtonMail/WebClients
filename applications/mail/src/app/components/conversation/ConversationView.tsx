@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 import useUnreadNotifications from 'proton-mail/hooks/useUnreadNotifications';
 import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
@@ -25,9 +25,7 @@ import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
-import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
-import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
 import { SOURCE_ACTION } from '../list/useListTelemetry';
 import type { MessageViewRef } from '../message/MessageView';
 import MessageView from '../message/MessageView';
@@ -67,8 +65,6 @@ const ConversationView = ({
     isComposerOpened,
     containerRef,
 }: Props) => {
-    const dispatch = useMailDispatch();
-    const getMessage = useGetMessage();
     const { isSearchResult } = useEncryptedSearchContext();
     const [labels = []] = useLabels();
     const {
@@ -95,17 +91,12 @@ const ConversationView = ({
 
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
 
-    const messagesWithoutQuickReplies = messagesToShow
-        .filter((message) => {
-            const messageFromState = getMessage(message.ID);
-            return !messageFromState?.draftFlags?.isQuickReply;
-        })
-        .sort((a, b) => a.Time - b.Time);
+    const sortedMessages = messagesToShow.sort((a, b) => a.Time - b.Time);
 
     // "messagesWithoutQuickReplies" contains filtered messages to display or not in the conversation view.
     // We can use this variable to get unread notifications since trashed or inbox messages (depending on the current location) will be filtered or not.
     const { unreadMessageAfterTimeMarkerIds, handleReadMessage } = useUnreadNotifications(
-        messagesWithoutQuickReplies,
+        sortedMessages,
         conversationID
     );
 
@@ -116,8 +107,7 @@ const ConversationView = ({
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
     const { markAs } = useMarkAs();
 
-    const { focusIndex, handleFocus, handleScrollToMessage, handleBlur, getFocusedId } =
-        useConversationFocus(messagesWithoutQuickReplies);
+    const { focusIndex, handleFocus, handleBlur, getFocusedId } = useConversationFocus(sortedMessages);
 
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
         messageViewsRefs.current[messageID || '']?.expand();
@@ -131,14 +121,14 @@ const ConversationView = ({
     };
 
     const { elementRef } = useConversationHotkeys(
-        { messages: messagesWithoutQuickReplies, focusIndex },
+        { messages: sortedMessages, focusIndex },
         { handleFocus, getFocusedId, expandMessage }
     );
 
     // Open the first message of a conversation if none selected in URL
     useEffect(() => {
         if (!loadingMessages && !messageID) {
-            expandMessage(findMessageToExpand(labelID, messagesWithoutQuickReplies)?.ID);
+            expandMessage(findMessageToExpand(labelID, sortedMessages)?.ID);
         }
     }, [conversationID, messageID, loadingMessages]);
 
@@ -153,11 +143,6 @@ const ConversationView = ({
         setFilter(DEFAULT_FILTER_VALUE);
     }, [inputConversationID]);
 
-    useEffect(() => {
-        // When the user is switching conversation we need to remove potential quick replies draft flags
-        dispatch(removeAllQuickReplyFlags());
-    }, [conversationID]);
-
     // Mark conversation as read when opened and reminded (snooze feature)
     useEffect(() => {
         const isReminded = isElementReminded(conversation);
@@ -170,10 +155,6 @@ const ConversationView = ({
             });
         }
     }, [conversation]);
-
-    const handleOpenQuickReply = (messageIndex?: number) => {
-        handleScrollToMessage(messageIndex, 'end');
-    };
 
     const handleClickUnreadNotification = (messageID: string) => {
         handleReadMessage(messageID);
@@ -210,7 +191,7 @@ const ConversationView = ({
                     {showTrashWarning && (
                         <TrashWarning ref={trashWarningRef} inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
                     )}
-                    {messagesWithoutQuickReplies.map((message, index) => (
+                    {sortedMessages.map((message, index) => (
                         <MessageView
                             key={message.ID}
                             ref={(ref) => {
@@ -234,7 +215,6 @@ const ConversationView = ({
                             isComposerOpened={isComposerOpened}
                             containerRef={containerRef}
                             wrapperRef={wrapperRef}
-                            onOpenQuickReply={handleOpenQuickReply}
                             onReadMessage={handleReadMessage}
                         />
                     ))}
