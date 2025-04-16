@@ -3,13 +3,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, Tooltip, usePopperAnchor } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useUrlifyString } from '../../hooks/useUrlifyString';
 import ParticipantDropdown from './ParticipantDropdown';
 
 interface Props {
     icon: React.ReactNode;
     name: string;
+    comment?: string;
     extraText?: string;
     title: string;
     initials: string;
@@ -25,6 +28,7 @@ const Participant = ({
     icon,
     name,
     title,
+    comment,
     tooltip,
     initials,
     extraText,
@@ -38,11 +42,15 @@ const Participant = ({
     const hasEmail = !!email;
     const displayDropdown = hasEmail;
     const showEmailAddress = !isCurrentUser && hasEmail && normalize(email) !== normalize(name);
+    const isRsvpNoteEnabled = useFlag('RsvpCommentWeb');
+
+    const parsedComment = useUrlifyString({ text: comment, urlifyOptions: { target: '_blank' } });
 
     return (
         <div
             className={clsx([
-                'participant flex flex-nowrap items-center w-full relative interactive-pseudo interactive--no-background text-left',
+                'participant flex flex-nowrap w-full relative interactive-pseudo interactive--no-background text-left',
+                !!comment ? 'items-start' : 'items-center',
                 className,
             ])}
             data-testid="participant-in-popover"
@@ -59,10 +67,15 @@ const Participant = ({
                     <div className="max-w-full text-ellipsis participant-extra-text text-sm m-0">{email}</div>
                 ) : null}
                 {!!extraText && (
-                    <div className="max-w-full text-ellipsis participant-extra-text color-weak text-sm m-0">
+                    <div className="max-w-full text-ellipsis participant-extra-text color-weak text-sm m-0 mb-1">
                         {extraText}
                     </div>
                 )}
+                {isRsvpNoteEnabled && parsedComment ? (
+                    <div className="max-w-full participant-extra-text color-weak text-break text-sm m-0">
+                        <span dangerouslySetInnerHTML={{ __html: parsedComment }} />
+                    </div>
+                ) : null}
             </div>
             <Button
                 shape="ghost"
@@ -72,7 +85,7 @@ const Participant = ({
                 onClick={() => {
                     toggle();
                 }}
-                className="ml-1"
+                className={clsx(['ml-1', !!comment && 'mt-1'])}
                 title={c('Action').t`More options`}
             >
                 <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />

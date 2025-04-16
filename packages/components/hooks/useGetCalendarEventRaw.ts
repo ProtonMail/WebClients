@@ -27,10 +27,11 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
             const {
                 CalendarID,
                 ID,
+                UID,
                 SharedEvents,
                 CalendarEvents,
                 AttendeesEvents,
-                Attendees,
+                AttendeesInfo,
                 Notifications,
                 Color,
                 FullDay,
@@ -51,16 +52,26 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                 calendarEvent: Event,
                 privateKeys,
             });
+
+            const getAttendeeVerificationPreferences = async (attendeeEmail: string) => {
+                const result = await getVerificationPreferences({
+                    email: attendeeEmail,
+                    contactEmailsMap,
+                });
+                return result;
+            };
+
             return readCalendarEvent({
                 event: {
                     SharedEvents: withNormalizedAuthors(SharedEvents),
                     CalendarEvents: withNormalizedAuthors(CalendarEvents),
                     AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
-                    Attendees,
+                    AttendeesInfo,
                     Notifications,
                     FullDay,
                     CalendarID,
                     ID,
+                    UID,
                     Color,
                 },
                 publicKeysMap,
@@ -69,6 +80,7 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                 calendarSettings,
                 addresses,
                 encryptingAddressID,
+                getAttendeeVerificationPreferences,
             });
         },
         [getAddresses, getAddressKeys, getCalendarKeys, contactEmailsMap]

@@ -33,21 +33,23 @@ export const getUpdatePartstatOperation = ({
     timestamp: number;
     silence: boolean;
 }): UpdatePartstatOperation | undefined => {
-    const { partstat, selfAttendeeIndex } = inviteActions;
+    const { partstat, selfAttendeeIndex, comment } = inviteActions;
     if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(eventComponent)) {
         return;
     }
     const token = eventComponent.attendee[selfAttendeeIndex]?.parameters?.['x-pm-token'];
-    const attendeeID = event.Attendees.find(({ Token }) => Token === token)?.ID;
+    const attendeeID = event.AttendeesInfo?.Attendees?.find(({ Token }) => Token === token)?.ID;
     if (!attendeeID) {
         return;
     }
+
     return {
         data: {
             calendarID: event.CalendarID,
             eventID: event.ID,
             attendeeID,
             partstat,
+            comment,
             updateTime: getUnixTime(timestamp),
         },
         silence,
@@ -74,11 +76,12 @@ const getAutoUpdatePersonalPartOperation = ({
         return;
     }
     const token = getAttendeeToken(eventComponent.attendee[selfAttendeeIndex]);
-    const oldAttendee = event.Attendees.find(({ Token }) => Token === token);
+    const oldAttendee = event.AttendeesInfo.Attendees.find(({ Token }) => Token === token);
     if (!oldAttendee) {
         return;
     }
     const oldPartstat = toIcsPartstat(oldAttendee.Status);
+
     if (
         oldPartstat === partstat ||
         (partstat === ACCEPTED && oldPartstat === TENTATIVE) ||
@@ -87,6 +90,7 @@ const getAutoUpdatePersonalPartOperation = ({
         // no need to update the notifications in such cases
         return;
     }
+
     return getUpdatePersonalPartOperation({
         eventComponent,
         hasDefaultNotifications,

@@ -98,6 +98,7 @@ export const getDeleteRecurringEventActions = async ({
                 inviteActions: updatedInviteActions,
                 silence: true,
             });
+
             if (updatePartstatOperation) {
                 updatePartstatOperations.push(updatePartstatOperation);
             }
@@ -137,6 +138,7 @@ export const getDeleteRecurringEventActions = async ({
                         calendarEvent: originalEvent,
                         hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
                         isAttendee,
+                        resetNotes: false,
                         cancelledOccurrenceVevent: hasCancelledMainSeriesWithProtonAttendees
                             ? cancelledOccurrenceVevent
                             : undefined,
@@ -193,6 +195,7 @@ export const getDeleteRecurringEventActions = async ({
             calendarEvent: originalEvent,
             hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
             isAttendee,
+            resetNotes: false,
         });
 
         return {

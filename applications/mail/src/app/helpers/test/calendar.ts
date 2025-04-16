@@ -1,6 +1,7 @@
 import { getUnixTime } from 'date-fns';
 
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { ATTENDEE_MORE_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
@@ -99,7 +100,10 @@ export const generateApiCalendarEvent = async ({
         AddressID: null,
         Notifications,
         AttendeesEvents: AttendeesEventContent.map((card) => withAuthorCard(card, author)),
-        Attendees: toApiAttendees(Attendees),
+        AttendeesInfo: {
+            Attendees: toApiAttendees(Attendees),
+            MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+        },
         Color: null,
     };
 };

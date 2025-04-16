@@ -421,9 +421,9 @@ const updateEventApi = async ({
     } = calendarData;
     // organizer mode
     if (updateTime !== undefined && updatePartstat) {
-        const { ID: eventID, Attendees } = calendarEvent;
+        const { ID: eventID, AttendeesInfo } = calendarEvent;
         const token = attendee?.token;
-        const attendeeID = Attendees.find(({ Token }) => Token === token)?.ID;
+        const attendeeID = AttendeesInfo.Attendees.find(({ Token }) => Token === token)?.ID;
         if (!attendeeID) {
             throw new Error('Missing data for updating participation status');
         }
@@ -964,9 +964,9 @@ export const updatePartstatFromInvitation = async ({
         throw new Error('Missing data for updating calendar event from invitation');
     }
     // update attendee partstat
-    const { ID: eventID, Attendees } = calendarEvent;
+    const { ID: eventID, AttendeesInfo } = calendarEvent;
     const isSingleEdit = getHasRecurrenceId(veventIcs);
-    const attendeeID = Attendees.find(({ Token }) => Token === attendeeToken)?.ID;
+    const attendeeID = AttendeesInfo.Attendees.find(({ Token }) => Token === attendeeToken)?.ID;
     if (!attendeeID) {
         throw new Error('Missing data for updating participation status');
     }

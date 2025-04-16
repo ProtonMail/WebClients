@@ -6,8 +6,9 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
+import { fetchPaginatedAttendeesInfo } from '@proton/shared/lib/calendar/attendeeInfos';
 import { withPartstat } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { ATTENDEE_MORE_ATTENDEES, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getInviteLocale } from '@proton/shared/lib/calendar/getSettings';
 import {
     createInviteIcs,
@@ -256,6 +257,10 @@ const useInviteButtons = ({
                         calendarKeys,
                         api: silentApi,
                     });
+
+                    if (maybeReencryptedEvent.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
+                        await fetchPaginatedAttendeesInfo(api, maybeReencryptedEvent);
+                    }
                 } catch (error: any) {
                     onReencryptEventError(error);
                     return;
@@ -279,7 +284,12 @@ const useInviteButtons = ({
                 if (!result) {
                     return;
                 }
-                const updateTime = result.savedEvent.Attendees.find(
+
+                if (result.savedEvent.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
+                    await fetchPaginatedAttendeesInfo(api, result.savedEvent);
+                }
+
+                const updateTime = result.savedEvent.AttendeesInfo.Attendees.find(
                     ({ Token }) => Token === attendee?.token
                 )?.UpdateTime;
                 if (!updateTime) {

@@ -1,9 +1,11 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { type PrivateKeyReference, type PublicKeyReference, type SessionKey } from '@proton/crypto';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
 import type { Address, Nullable } from '../interfaces';
+import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
 import type {
     CalendarEvent,
     CalendarNotificationSettings,
@@ -40,7 +42,7 @@ export const readSessionKey = (
 /**
  * Read the session keys.
  */
-export const readSessionKeys = async ({
+export const readSessionKeys = ({
     calendarEvent,
     decryptedSharedKeyPacket,
     privateKeys,
@@ -222,11 +224,12 @@ interface ReadCalendarEventArguments {
         | 'SharedEvents'
         | 'CalendarEvents'
         | 'AttendeesEvents'
-        | 'Attendees'
+        | 'AttendeesInfo'
         | 'Notifications'
         | 'FullDay'
         | 'CalendarID'
         | 'ID'
+        | 'UID'
         | 'Color'
     >;
     publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
@@ -235,6 +238,7 @@ interface ReadCalendarEventArguments {
     calendarSettings: CalendarSettings;
     addresses: Address[];
     encryptingAddressID?: string;
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>;
 }
 
 export const readCalendarEvent = async ({
@@ -242,12 +246,13 @@ export const readCalendarEvent = async ({
         SharedEvents = [],
         CalendarEvents = [],
         AttendeesEvents = [],
-        Attendees = [],
+        AttendeesInfo,
         Notifications,
         FullDay,
         CalendarID: calendarID,
         ID: eventID,
         Color,
+        UID: eventUID,
     },
     publicKeysMap = {},
     addresses,
@@ -255,6 +260,7 @@ export const readCalendarEvent = async ({
     calendarSessionKey,
     calendarSettings,
     encryptingAddressID,
+    getAttendeeVerificationPreferences,
 }: ReadCalendarEventArguments) => {
     const decryptedEventsResults = await Promise.all([
         Promise.all(SharedEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
@@ -285,16 +291,30 @@ export const readCalendarEvent = async ({
         calendarSettings
     );
 
-    const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {
-        if (!event) {
-            return acc;
-        }
-        const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
-        if (!getIsEventComponent(parsedComponent)) {
-            return acc;
-        }
-        return acc.concat(toInternalAttendee(parsedComponent, Attendees));
-    }, []);
+    const veventAttendeesPromises = decryptedAttendeesEvents
+        .map((event) => {
+            if (!event) {
+                return false;
+            }
+
+            const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
+
+            if (!getIsEventComponent(parsedComponent)) {
+                return false;
+            }
+
+            return toInternalAttendee(
+                parsedComponent,
+                AttendeesInfo?.Attendees || [],
+                sharedSessionKey,
+                eventUID,
+                getAttendeeVerificationPreferences
+            );
+        })
+        .filter(isTruthy)
+        .flat();
+
+    const veventAttendees = await Promise.all(veventAttendeesPromises);
 
     if (valarmComponents.length) {
         vevent.components = valarmComponents;

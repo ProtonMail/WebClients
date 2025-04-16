@@ -1,6 +1,11 @@
 import { build } from '@jackfranklin/test-data-bot';
 
-import { CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
+import {
+    ATTENDEE_MORE_ATTENDEES,
+    CALENDAR_DISPLAY,
+    CALENDAR_FLAGS,
+    CALENDAR_TYPE,
+} from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, AddressKey } from '@proton/shared/lib/interfaces';
@@ -260,20 +265,25 @@ export const calendarEventBuilder = build<CalendarEvent>('Event', {
                 Author: 'stest1@proton.black',
             },
         ],
-        Attendees: [
-            {
-                ID: 'Proye_ciptkeikxsRdv3sVlYdqVXqRAJOfIjn_Bcug_9PaEDxga9-gHHa0Bkds25K3GBt50C4gJNsNexeirkrg==',
-                Token: '3c5c89a60b8e36ff0b4b1399152b0551c73e373f',
-                Status: 0,
-                UpdateTime: null,
-            },
-            {
-                ID: '_rJk4ub7qapyIkWd-d3EwIbJ7svqscEuq_HfWM_E6oBHEQAIKFFpx-89fW27J8waIU39_hcJQ34yM4p9GlYChQ==',
-                Token: '5578255a302f0938e7f5628487a06ed0fd0f5c8c',
-                Status: 0,
-                UpdateTime: null,
-            },
-        ],
+        AttendeesInfo: {
+            Attendees: [
+                {
+                    ID: 'Proye_ciptkeikxsRdv3sVlYdqVXqRAJOfIjn_Bcug_9PaEDxga9-gHHa0Bkds25K3GBt50C4gJNsNexeirkrg==',
+                    Token: '3c5c89a60b8e36ff0b4b1399152b0551c73e373f',
+                    Status: 0,
+                    UpdateTime: null,
+                    Comment: null,
+                },
+                {
+                    ID: '_rJk4ub7qapyIkWd-d3EwIbJ7svqscEuq_HfWM_E6oBHEQAIKFFpx-89fW27J8waIU39_hcJQ34yM4p9GlYChQ==',
+                    Token: '5578255a302f0938e7f5628487a06ed0fd0f5c8c',
+                    Status: 0,
+                    UpdateTime: null,
+                    Comment: null,
+                },
+            ],
+            MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+        },
     },
     traits: {
         canceled: {
