@@ -148,7 +148,6 @@ enum MailFeatureFlag {
     MailMetrics = 'MailMetrics',
     RemoveImageMetadata = 'RemoveImageMetadata',
     MailWebListTelemetry = 'MailWebListTelemetry',
-    QuickReply = 'QuickReply',
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     MailboxRefactoring = 'MailboxRefactoring',

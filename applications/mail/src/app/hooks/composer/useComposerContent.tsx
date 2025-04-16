@@ -1,11 +1,11 @@
-import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'react';
+import type { MutableRefObject, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import type { EditorActions, EditorMetadata } from '@proton/components';
+import type { EditorMetadata } from '@proton/components';
 import { useHandler, useNotifications } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { getHasAssistantStatus } from '@proton/llm/lib';
@@ -35,27 +35,19 @@ import { messageByID } from 'proton-mail/store/messages/messagesSelectors';
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { getDate } from '../../helpers/elements';
 import {
     exportPlainText,
     getComposerDefaultFontStyles,
     getContent,
-    getContentWithBlockquotes,
     setContent,
 } from '../../helpers/message/messageContent';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { mergeMessages } from '../../helpers/message/messages';
 import type { ComposerID } from '../../store/composers/composerTypes';
-import {
-    deleteDraft as deleteDraftAction,
-    removeInitialAttachments,
-    removeQuickReplyFlag,
-    updateDraftContent,
-    updateIsSavingFlag,
-} from '../../store/messages/draft/messagesDraftActions';
+import { removeInitialAttachments, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
 import type { MessageState } from '../../store/messages/messagesTypes';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
@@ -64,8 +56,6 @@ import { useMessageSendInfo, useReloadSendInfo } from '../useSendInfo';
 import { useAttachments } from './useAttachments';
 import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
-import { ComposeTypes } from './useCompose';
-import type { EditorHotkeysHandlers } from './useComposerHotkeys';
 import { useComposerHotkeys } from './useComposerHotkeys';
 import { useComposerInnerModals } from './useComposerInnerModals';
 import { useDraftSenderVerification } from './useDraftSenderVerification';
@@ -73,13 +63,11 @@ import { useHandleMessageAlreadySent } from './useHandleMessageAlreadySent';
 import useReduxRefac from './useReduxRefac';
 import { useSendHandler } from './useSendHandler';
 
-export enum EditorTypes {
-    composer,
-    quickReply,
-}
-
-export interface EditorComposer {
-    type: EditorTypes.composer;
+export type EditorArgs = {
+    onClose: () => void;
+    composerFrameRef: RefObject<HTMLDivElement>;
+    isFocused?: boolean;
+    editorReady: boolean;
     editorRef: MutableRefObject<ExternalEditorActions | undefined>;
     addressesFocusRef?: MutableRefObject<() => void>;
     toggleMinimized?: () => void;
@@ -91,24 +79,6 @@ export interface EditorComposer {
     closeAssistant: (id: string) => void;
     setAssistantStatus: (id: string, status: OpenedAssistantStatus) => void;
     handleResetAssistantState: () => void;
-}
-
-export interface EditorQuickReply {
-    type: EditorTypes.quickReply;
-    messageID: string;
-    editorRef: MutableRefObject<EditorActions | undefined>;
-    referenceMessage?: MessageState;
-    replyUpdated?: boolean;
-    setReplyUpdated?: Dispatch<SetStateAction<boolean>>;
-    setDeleteDraftModalOpen?: (newValue: boolean) => void;
-    onNoAttachments?: (keyword: string) => Promise<unknown>;
-}
-
-export type EditorArgs = (EditorComposer | EditorQuickReply) & {
-    onClose: () => void;
-    composerFrameRef: RefObject<HTMLDivElement>;
-    isFocused?: boolean;
-    editorReady: boolean;
 };
 
 export const useComposerContent = (args: EditorArgs) => {
@@ -117,27 +87,17 @@ export const useComposerContent = (args: EditorArgs) => {
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
-    const onCompose = useOnCompose();
     const dispatch = useMailDispatch();
     const store = useMailStore();
-    const skipNextInputRef = useRef(false);
 
     const handleOnBackMoveAction = useMoveBackAction();
 
-    const { onClose, composerFrameRef, type: editorType, isFocused, editorReady } = args;
+    const { onClose, composerFrameRef, isFocused, editorReady } = args;
 
     const messageID = useMemo(() => {
-        switch (editorType) {
-            case EditorTypes.composer:
-                const composer = selectComposer(store.getState(), args.composerID);
-                return composer.messageID;
-            case EditorTypes.quickReply:
-                return args.messageID;
-        }
+        const composer = selectComposer(store.getState(), args.composerID);
+        return composer.messageID;
     }, []);
-
-    const isComposer = editorType === EditorTypes.composer;
-    const isQuickReply = editorType === EditorTypes.quickReply;
 
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
@@ -166,25 +126,19 @@ export const useComposerContent = (args: EditorArgs) => {
     const { sendSendMessageAssistantReport } = useAssistantTelemetry();
 
     const isAssistantExpanded = useMemo(() => {
-        return (
-            isComposer && getHasAssistantStatus(args.openedAssistants, args.composerID, OpenedAssistantStatus.EXPANDED)
-        );
+        return getHasAssistantStatus(args.openedAssistants, args.composerID, OpenedAssistantStatus.EXPANDED);
     }, [args]);
 
     const handleCloseAssistant = () => {
-        if (isComposer) {
-            const { composerID, closeAssistant } = args;
-            closeAssistant(composerID);
-        }
+        const { composerID, closeAssistant } = args;
+        closeAssistant(composerID);
     };
 
     const handleCollapseAssistant = () => {
-        if (isComposer) {
-            const { composerID, setAssistantStatus } = args;
-            if (isAssistantExpanded) {
-                args.handleResetAssistantState();
-                setAssistantStatus(composerID, OpenedAssistantStatus.COLLAPSED);
-            }
+        const { composerID, setAssistantStatus } = args;
+        if (isAssistantExpanded) {
+            args.handleResetAssistantState();
+            setAssistantStatus(composerID, OpenedAssistantStatus.COLLAPSED);
         }
     };
 
@@ -212,14 +166,6 @@ export const useComposerContent = (args: EditorArgs) => {
         restart: restartAutoSave,
         hasNetworkError,
     } = useAutoSave({ onMessageAlreadySent });
-
-    useEffect(() => {
-        if (isQuickReply && (pendingSave.isPending || pendingAutoSave.isPending)) {
-            dispatch(updateIsSavingFlag({ ID: messageID, isSaving: true }));
-        } else {
-            dispatch(updateIsSavingFlag({ ID: messageID, isSaving: false }));
-        }
-    }, [pendingSave.isPending, pendingAutoSave.isPending]);
 
     const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
 
@@ -251,11 +197,9 @@ export const useComposerContent = (args: EditorArgs) => {
                 await initialize(syncedMessage.localID);
                 const initializedMessage = messageByID(store.getState(), { ID: syncedMessage.localID });
 
-                if (editorType === EditorTypes.composer) {
-                    const composerID = args.composerID;
-                    if (initializedMessage?.data && composerID) {
-                        dispatch(composerActions.setInitialized({ ID: composerID, message: initializedMessage }));
-                    }
+                const composerID = args.composerID;
+                if (initializedMessage?.data && composerID) {
+                    dispatch(composerActions.setInitialized({ ID: composerID, message: initializedMessage }));
                 }
             }
         };
@@ -363,13 +307,6 @@ export const useComposerContent = (args: EditorArgs) => {
                 messageImages: syncedMessage.messageImages,
             };
 
-            // If the message was expanded from a quick reply, we need to save it because it might not be saved yet
-            // and to remove the flag otherwise the element will not be displayed in the conversation view
-            if (isComposer && newModelMessage.draftFlags?.isQuickReply) {
-                dispatch(removeQuickReplyFlag(modelMessage.localID));
-                void autoSave(newModelMessage);
-            }
-
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
         }
@@ -386,14 +323,7 @@ export const useComposerContent = (args: EditorArgs) => {
 
     // Manage focus at opening
     useEffect(() => {
-        if (!opening && isQuickReply) {
-            const { editorRef } = args;
-            editorRef.current?.focus();
-            // In plaintext quick reply, the textarea is scrolled to bottom by default
-            if (isPlainText) {
-                editorRef.current?.scroll?.({ top: 0 });
-            }
-        } else if (isComposer && !opening && isFocused) {
+        if (!opening && isFocused) {
             const { addressesFocusRef, editorRef } = args;
             timeoutRef.current = window.setTimeout(() => {
                 if (getRecipients(syncedMessage.data).length === 0) {
@@ -425,77 +355,26 @@ export const useComposerContent = (args: EditorArgs) => {
 
     const handleChangeContent = useHandler(
         (content: string, refreshEditor: boolean = false, silent: boolean = false) => {
-            if (isQuickReply) {
-                const { referenceMessage, replyUpdated, setReplyUpdated, editorRef } = args;
-                // Rooster (but not plaintext) triggers an onContentChange event when the initial content is inserted
-                if (!isPlainText && skipNextInputRef.current) {
-                    skipNextInputRef.current = false;
-                    return;
+            const { editorRef } = args;
+            setModelMessage((modelMessage) => {
+                setContent(modelMessage, content);
+                const newModelMessage = { ...modelMessage };
+
+                dispatch(
+                    updateDraftContent({
+                        ID: newModelMessage.localID,
+                        content: content,
+                    })
+                );
+
+                if (!silent) {
+                    void autoSave(newModelMessage);
                 }
-
-                if (!mailSettings || !referenceMessage) {
-                    return;
+                if (refreshEditor) {
+                    editorRef.current?.setContent(newModelMessage);
                 }
-
-                if (!replyUpdated) {
-                    setReplyUpdated?.(true);
-                }
-
-                setModelMessage((modelMessage) => {
-                    const newModelMessageContent = getContentWithBlockquotes(
-                        content,
-                        isPlainText,
-                        referenceMessage,
-                        mailSettings,
-                        userSettings,
-                        addresses,
-                        modelMessage.draftFlags?.action || MESSAGE_ACTIONS.REPLY
-                    );
-                    setContent(modelMessage, newModelMessageContent);
-                    const newModelMessage = { ...modelMessage };
-
-                    dispatch(
-                        updateDraftContent({
-                            ID: newModelMessage.localID,
-                            content: newModelMessageContent,
-                        })
-                    );
-
-                    if (!silent) {
-                        void autoSave(newModelMessage);
-                    } else {
-                        // Only the first initialisation should be silent,
-                        // in that case we don't want to trigger a change and a save
-                        skipNextInputRef.current = true;
-                    }
-
-                    if (refreshEditor) {
-                        editorRef.current?.setContent(content);
-                    }
-                    return newModelMessage;
-                });
-            } else if (isComposer) {
-                const { editorRef } = args;
-                setModelMessage((modelMessage) => {
-                    setContent(modelMessage, content);
-                    const newModelMessage = { ...modelMessage };
-
-                    dispatch(
-                        updateDraftContent({
-                            ID: newModelMessage.localID,
-                            content: content,
-                        })
-                    );
-
-                    if (!silent) {
-                        void autoSave(newModelMessage);
-                    }
-                    if (refreshEditor) {
-                        editorRef.current?.setContent(newModelMessage);
-                    }
-                    return newModelMessage;
-                });
-            }
+                return newModelMessage;
+            });
         }
     );
 
@@ -503,14 +382,8 @@ export const useComposerContent = (args: EditorArgs) => {
      * Returns plain text content before the blockquote and signature in the editor
      */
     const getContentBeforeBlockquote = (returnType: ComposerReturnType = 'plaintext') => {
-        const { editorRef, type } = args;
-        // Do nothing if quick reply
-        if (type === EditorTypes.quickReply) {
-            return '';
-        }
-
         const editorType = isPlainText ? 'plaintext' : 'html';
-        const editorContent = editorRef.current?.getContent() || '';
+        const editorContent = args.editorRef.current?.getContent() || '';
 
         // Plain text only
         const addressSignature = (() => {
@@ -536,14 +409,8 @@ export const useComposerContent = (args: EditorArgs) => {
     };
 
     const setContentBeforeBlockquote = (content: string) => {
-        const { editorRef, type } = args;
-        // Do nothing if quick reply
-        if (type === EditorTypes.quickReply) {
-            return;
-        }
-
         const editorType = isPlainText ? 'plaintext' : 'html';
-        const editorContent = editorRef.current?.getContent() || '';
+        const editorContent = args.editorRef.current?.getContent() || '';
 
         // Plain text only
         const addressSignature = (() => {
@@ -580,40 +447,15 @@ export const useComposerContent = (args: EditorArgs) => {
         let actualContent;
         let modelContent;
 
-        if (isQuickReply) {
-            const { referenceMessage, replyUpdated, editorRef } = args;
-            if (!editorRef.current || editorRef.current.isDisposed() || !referenceMessage || !mailSettings) {
-                return;
-            }
+        const { editorRef } = args;
+        if (!editorRef.current || editorRef.current.isDisposed()) {
+            return;
+        }
+        actualContent = editorRef.current.getContent();
+        modelContent = getContent(modelMessage);
 
-            const actualContentInEditor = editorRef?.current?.getContent();
-            // The editor does not contain the reply, so we need to add it
-            actualContent = getContentWithBlockquotes(
-                actualContentInEditor,
-                isPlainText,
-                referenceMessage,
-                mailSettings,
-                userSettings,
-                addresses,
-                modelMessage.draftFlags?.action || MESSAGE_ACTIONS.REPLY
-            );
-            modelContent = getContent(modelMessage);
-
-            // Do not handle change content if reply has not been updated
-            if (actualContent.trim() !== modelContent.trim() && replyUpdated) {
-                handleChangeContent(actualContent);
-            }
-        } else if (isComposer) {
-            const { editorRef } = args;
-            if (!editorRef.current || editorRef.current.isDisposed()) {
-                return;
-            }
-            actualContent = editorRef.current.getContent();
-            modelContent = getContent(modelMessage);
-
-            if (actualContent.trim() !== modelContent.trim()) {
-                handleChangeContent(actualContent);
-            }
+        if (actualContent.trim() !== modelContent.trim()) {
+            handleChangeContent(actualContent);
         }
     };
 
@@ -631,7 +473,7 @@ export const useComposerContent = (args: EditorArgs) => {
         message: modelMessage,
         onChange: handleChange,
         saveNow,
-        editorActionsRef: isComposer ? args.editorRef : undefined,
+        editorActionsRef: args.editorRef,
         onMessageAlreadySent,
     });
 
@@ -662,7 +504,7 @@ export const useComposerContent = (args: EditorArgs) => {
      */
     const { verifyDraftSender, modal: senderVerificationModal } = useDraftSenderVerification({
         onChange: handleChange,
-        composerID: isQuickReply ? '' : args.composerID,
+        composerID: args.composerID,
     });
 
     useEffect(() => {
@@ -681,21 +523,9 @@ export const useComposerContent = (args: EditorArgs) => {
             handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.PERMANENT_DELETE, elements: [modelMessage.data] });
         }
 
-        if (isQuickReply) {
-            const message = getMessage(modelMessage.localID);
-            if (message) {
-                await deleteDraft(message);
-            }
-
-            // We can remove the draft from the state
-            if (modelMessage.localID) {
-                void dispatch(deleteDraftAction(modelMessage.localID));
-            }
-        } else {
-            const message = getMessage(messageID);
-            if (message) {
-                await deleteDraft(message);
-            }
+        const message = getMessage(messageID);
+        if (message) {
+            await deleteDraft(message);
         }
 
         // Do not display the notification if the draft has no changes
@@ -773,99 +603,47 @@ export const useComposerContent = (args: EditorArgs) => {
         setIsSending,
         handleNoRecipients,
         handleNoSubjects,
-        handleNoAttachments: isQuickReply ? args.onNoAttachments : handleNoAttachments,
+        handleNoAttachments: handleNoAttachments,
         handleNoReplyEmail,
-        isQuickReply,
         hasNetworkError,
         onSendAssistantReport: handleSendAssistantReport,
     });
-
-    const handleSendQuickReply = async () => {
-        // Can send only if a modification has been made, otherwise we can send empty message with the shortcut
-        if (isQuickReply && args.replyUpdated && !isSending) {
-            setIsSending(true);
-            dispatch(removeQuickReplyFlag(modelMessage.localID));
-            void handleSend({ sendAsScheduled: false })();
-        }
-    };
-
-    const handleDeleteQuickReplyFromShortcut = async () => {
-        void handleDelete();
-        onClose();
-    };
-
-    const handleExpandComposer = async () => {
-        autoSave.cancel?.();
-        await onCompose({ type: ComposeTypes.fromMessage, modelMessage });
-    };
 
     const lock = opening || !hasRecipients;
 
     const hasHotkeysEnabled = mailSettings.Shortcuts === SHORTCUTS.ENABLED;
 
-    const composerHotkeysArgs: EditorHotkeysHandlers = isComposer
-        ? {
-              type: EditorTypes.composer,
-              composerRef: composerFrameRef,
-              handleClose,
-              handleDelete,
-              handleExpiration,
-              handleManualSave,
-              handlePassword,
-              handleSend: handleSend({ sendAsScheduled: false }),
-              toggleMinimized: args.toggleMinimized || noop,
-              toggleMaximized: args.toggleMaximized || noop,
-              lock,
-              saving,
-              hasHotkeysEnabled,
-              editorRef: args.editorRef,
-              minimizeButtonRef: args.minimizeButtonRef,
-              isAssistantExpanded,
-              closeAssistant: handleCloseAssistant,
-              collapseAssistant: handleCollapseAssistant,
-          }
-        : {
-              type: EditorTypes.quickReply,
-              composerRef: composerFrameRef,
-              handleDelete: handleDeleteQuickReplyFromShortcut,
-              handleManualSave,
-              handleSend: handleSendQuickReply,
-              toggleMaximized: handleExpandComposer,
-              lock,
-              saving,
-              hasHotkeysEnabled,
-              editorRef: args.editorRef,
-          };
-
-    const attachmentTriggerRef = useComposerHotkeys(composerHotkeysArgs);
+    const attachmentTriggerRef = useComposerHotkeys({
+        composerRef: composerFrameRef,
+        handleClose,
+        handleDelete,
+        handleExpiration,
+        handleManualSave,
+        handlePassword,
+        handleSend: handleSend({ sendAsScheduled: false }),
+        toggleMinimized: args.toggleMinimized || noop,
+        toggleMaximized: args.toggleMaximized || noop,
+        lock,
+        saving,
+        hasHotkeysEnabled,
+        editorRef: args.editorRef,
+        minimizeButtonRef: args.minimizeButtonRef,
+        isAssistantExpanded,
+        closeAssistant: handleCloseAssistant,
+        collapseAssistant: handleCollapseAssistant,
+    });
 
     const handleDeleteDraft = () => {
-        if (isQuickReply) {
-            const { setDeleteDraftModalOpen } = args;
-            const messageFromState = getMessage(modelMessage.localID);
-            // If the message has no changes yet, delete it without opening the delete draft inner modal
-            if (
-                messageFromState &&
-                !messageFromState.data?.ID &&
-                !pendingSave.isPending &&
-                !pendingAutoSave.isPending
-            ) {
-                void handleDelete(false);
-            } else {
-                setDeleteDraftModalOpen?.(true);
-            }
+        // If the message has no changes yet, delete it without opening the delete draft inner modal
+        if (!modelMessage.data?.ID && !pendingSave.isPending && !pendingAutoSave.isPending) {
+            void handleDelete(false);
         } else {
-            // If the message has no changes yet, delete it without opening the delete draft inner modal
-            if (!modelMessage.data?.ID && !pendingSave.isPending && !pendingAutoSave.isPending) {
-                void handleDelete(false);
-            } else {
-                handleOpenDeleteDraftModal();
-            }
+            handleOpenDeleteDraftModal();
         }
     };
 
     useReduxRefac({
-        composerID: editorType === EditorTypes.composer ? args.composerID : undefined,
+        composerID: args.composerID,
         handleChange,
         handleChangeContent,
         modelMessage,
@@ -925,10 +703,6 @@ export const useComposerContent = (args: EditorArgs) => {
         handleAddAttachmentsUpload,
         handleRemoveAttachment,
         handleRemoveUpload,
-
-        // Quick reply specific
-        handleExpandComposer,
-        handleSendQuickReply,
 
         // Assistant
         setHasUsedAssistantText,
