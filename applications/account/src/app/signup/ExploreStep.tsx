@@ -27,6 +27,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
+    const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isAccessControlEnabled = useFlag('AccessControl');
 
     useEffect(() => {
@@ -44,7 +45,14 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
             <Content>
                 <ExploreAppsList
                     subscription={{ subscribed, plan }}
-                    apps={getExploreApps({ subscribed, user, organization, isLumoAvailable, isAccessControlEnabled })}
+                    apps={getExploreApps({
+                        subscribed,
+                        user,
+                        organization,
+                        isLumoAvailable,
+                        isDocsHomepageAvailable,
+                        isAccessControlEnabled,
+                    })}
                     onExplore={onExplore}
                 />
             </Content>

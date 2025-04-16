@@ -4,6 +4,8 @@ import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO, APPS.PROTONDOCS];
+
 interface ProductIconProps {
     appToLinkTo: APP_NAMES;
     current?: boolean;
@@ -15,10 +17,15 @@ const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
     return (
         <>
             <div
-                className="apps-dropdown-logo-wrapper flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                className="apps-dropdown-logo-wrapper relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style={{ '--w-custom': '3.25rem', '--h-custom': '3.25rem' }}
             >
                 <Logo appName={appToLinkTo} variant="glyph-only" className="shrink-0" size={9} />
+                {NEW_BADGE_APPS.includes(appToLinkTo) ? (
+                    <span className="apps-dropdown-new-badge absolute">
+                        <NewBadge />
+                    </span>
+                ) : null}
             </div>
             <span
                 className={clsx(
@@ -29,7 +36,6 @@ const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
             >
                 {appToLinkToName}
             </span>
-            {appToLinkTo === APPS.PROTONLUMO ? <NewBadge /> : null}
         </>
     );
 };
