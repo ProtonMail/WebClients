@@ -34,7 +34,7 @@ const getLumoPlusFeatures = () => {
     return [];
 };
 
-export const getLumoConfiguration = (): SignupConfiguration => {
+export const getLumoConfiguration = ({ defaultPlan }: { defaultPlan?: string }): SignupConfiguration => {
     const logo = <Logo appName={APPS.PROTONLUMO} />;
 
     const appName = LUMO_APP_NAME;
@@ -83,10 +83,19 @@ export const getLumoConfiguration = (): SignupConfiguration => {
         audience: Audience.B2C,
         signupTypes: [SignupType.Email, SignupType.Username],
         generateMnemonic: false,
-        defaults: {
-            plan: PLANS.LUMO,
-            cycle: CYCLE.YEARLY,
-        },
+        defaults: (() => {
+            if (defaultPlan && [PLANS.FREE, PLANS.LUMO].includes(defaultPlan as PLANS)) {
+                return {
+                    plan: defaultPlan as PLANS,
+                    cycle: CYCLE.YEARLY,
+                };
+            }
+
+            return {
+                plan: PLANS.FREE,
+                cycle: CYCLE.YEARLY,
+            };
+        })(),
         onboarding: {
             user: false,
             signup: true,
