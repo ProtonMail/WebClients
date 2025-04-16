@@ -159,6 +159,29 @@ export interface MoveLink {
     ContentHash?: string;
 }
 
+export interface RecoverPhotoLinks {
+    ParentLinkID: string;
+    Links: MoveLink[];
+    NameSignatureEmail: string;
+    SignatureEmail: string;
+    NewShareId: string;
+}
+
+export type TransferPhotoLinks = Omit<RecoverPhotoLinks, 'NewShareId'>;
+
+export type MoveLinks = RecoverPhotoLinks;
+
+export interface MultipleMoveResponse {
+    LinkID: string;
+    Responses: {
+        LinkID: string;
+        Response: {
+            Code: number;
+            Error: string;
+        };
+    }[];
+}
+
 export type DriveSectionSortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size' | 'Name'>;
 export type SharedLinksSectionSortKeys =
     | keyof Pick<DriveLink, 'Name'>
