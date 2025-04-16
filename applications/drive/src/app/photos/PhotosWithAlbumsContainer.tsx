@@ -16,7 +16,7 @@ export const PhotosWithAlbumsContainer: FC = () => {
         if (migrationStatus === MIGRATION_STATUS.UNKNOWN) {
             void startPhotosMigration();
         }
-    }, [migrationStatus, startPhotosMigration]);
+    }, []);
 
     if (migrationStatus === MIGRATION_STATUS.MIGRATING) {
         return <PhotosMigrationView />;
