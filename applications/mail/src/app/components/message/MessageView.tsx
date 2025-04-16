@@ -5,12 +5,10 @@ import type { Breakpoints } from '@proton/components';
 import { useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
-import { useFlag } from '@proton/unleash/index';
+import { hasAttachments, isDraft, isOutbox, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -22,7 +20,6 @@ import { getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/mess
 import { isElementReminded } from '../../helpers/snooze';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
@@ -33,7 +30,6 @@ import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { useMailECRTMetric } from '../../metrics/useMailECRTMetric';
 import type { Element } from '../../models/element';
 import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
-import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
 import { SOURCE_ACTION } from '../list/useListTelemetry';
 import MessageBody from './MessageBody';
 import MessageFooter from './MessageFooter';
@@ -61,7 +57,6 @@ interface Props {
     isComposerOpened: boolean;
     containerRef?: React.RefObject<HTMLElement>;
     wrapperRef?: React.RefObject<HTMLDivElement>;
-    onOpenQuickReply?: (index?: number) => void;
     onReadMessage?: (messageID?: string) => void;
 }
 
@@ -91,12 +86,10 @@ const MessageView = (
         isComposerOpened,
         containerRef,
         wrapperRef,
-        onOpenQuickReply,
         onReadMessage,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
-    const quickReplyFeatureEnabled = useFlag('QuickReply');
     const getInitialExpand = () => !conversationMode && !isDraft(inputMessage) && !isOutbox(inputMessage);
 
     // Actual expanded state
@@ -224,21 +217,6 @@ const MessageView = (
         },
     }));
 
-    const { hasFocus: hasQuickReplyFocus, setHasFocus: setHasQuickReplyFocus } = useQuickReplyFocus();
-
-    // 1- If on conversation mode
-    //      If we click inside another message body (which is an iframe), we will change the hasFocus in that case, the conversation is not focused.
-    //      Else, if focused conversation is the one of the quick reply, the focused is managed by hasQuickReplyFocus
-    // 2- If on message mode, we only rely on the hasQuickReplyFocus
-    const quickReplyIsFocused = hasFocus !== undefined ? hasQuickReplyFocus && hasFocus : hasQuickReplyFocus;
-
-    const canShowQuickReply =
-        quickReplyFeatureEnabled &&
-        !isDraft(message.data) &&
-        !isScheduled(message.data) &&
-        !isOutbox(message.data) &&
-        !isUnread(message.data, labelID);
-
     // Manage loading the message
     useEffect(() => {
         if (
@@ -250,21 +228,8 @@ const MessageView = (
              * Composer will load it if we open it
              */
             labelID !== MAILBOX_LABEL_IDS.DRAFTS &&
-            labelID !== MAILBOX_LABEL_IDS.ALL_DRAFTS &&
-            /**
-             * When a Quick reply is deleted, the draft is not filtered from the conversation thread for a few ms.
-             * This condition is being triggered with the message being "empty", we have no data on Redux.
-             * Using the inputMessage label ids, we can add the same check as above, so that we do not load draft.
-             */
-            !inputMessage.LabelIDs?.some((labelID) =>
-                [MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS)
-            )
+            labelID !== MAILBOX_LABEL_IDS.ALL_DRAFTS
         ) {
-            // After spending some time on investigations and debugging, we're not sure that this condition is still triggered in the app.
-            // Instead of removing it completely, we want to track on Sentry if it is being triggered
-            captureMessage('Load message call from message view', {
-                extra: { labelID, loading, messageLoaded, bodyLoaded },
-            });
             void load();
         }
 
@@ -406,7 +371,6 @@ const MessageView = (
         if (context === 'IFRAME') {
             return () => {
                 onFocus(conversationIndex);
-                setHasQuickReplyFocus(false);
             };
         }
 
@@ -478,7 +442,6 @@ const MessageView = (
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
                         onFocusIframe={handleFocus('IFRAME')}
-                        hasQuickReply={canShowQuickReply}
                         onIframeReady={() => {
                             // The sent folder doesn't behave as other folders.
                             // The inidividual message are displayed and not the conversation.
@@ -491,17 +454,6 @@ const MessageView = (
                         }}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
-                    {canShowQuickReply && (
-                        <QuickReplyContainer
-                            referenceMessageID={message.data?.ID || ''}
-                            conversationID={conversationID}
-                            conversationIndex={conversationIndex}
-                            onOpenQuickReply={onOpenQuickReply}
-                            onFocus={handleFocus('IFRAME')}
-                            hasFocus={quickReplyIsFocused}
-                            setHasFocus={setHasQuickReplyFocus}
-                        />
-                    )}
                 </>
             ) : (
                 <HeaderCollapsed
