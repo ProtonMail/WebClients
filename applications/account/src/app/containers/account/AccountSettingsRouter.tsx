@@ -54,6 +54,7 @@ import {
     YourPlanUpsellsSectionV2,
     YourStorageSection,
 } from '@proton/components';
+import NonPrivateRecoverySection from '@proton/components/containers/account/NonPrivateRecoveySection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -185,6 +186,7 @@ const AccountSettingsRouter = ({
                             <PasswordsSection />
                         </>
                         <TwoFactorSection />
+                        <NonPrivateRecoverySection />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
                         <PaymentMethodsSection />

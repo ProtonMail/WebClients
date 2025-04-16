@@ -78,38 +78,37 @@ const SignInWithAnotherDeviceModal = (props: Props) => {
             size="small"
             {...props}
         >
-            <ModalHeader title={c('edm').t`Sign in to another device`} />
+            <ModalHeader title={c('edm').t`Sign in on another device`} />
             <ModalContent>
                 {step === 'warning' && (
                     <>
                         <div className="mb-4">
                             {getBoldFormattedText(
                                 c('edm')
-                                    .t`**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${email}**. Both devices will stay active. `
+                                    .t`**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${email}**. Both devices will stay active.`
                             )}
                         </div>
-                        <div className="mb-4">
-                            <b>{c('edm').t`Safety tips:`}</b>
-                            <div className="border border-weak rounded">
-                                <div className="flex gap-2 flex-nowrap p-2 border-bottom border-weak">
-                                    <div>
-                                        <Icon name="info-circle" />
-                                    </div>
-                                    <div className="flex-1">
-                                        {c('edm')
-                                            .t`Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.`}
-                                    </div>
+                        <div className="p-3 border border-weak rounded">
+                            <div className="flex gap-2 flex-nowrap items-center">
+                                <div className="shrink-0">
+                                    <Icon name="lightbulb" />
                                 </div>
-                                <div className="flex gap-2 flex-nowrap p-2">
-                                    <div>
-                                        <Icon name="info-circle" />
-                                    </div>
-                                    <div className="flex-1">
-                                        {c('edm')
-                                            .t`${BRAND_NAME} will never ask you to enter a code that does not come from the domain ${domain}, or from an official ${BRAND_NAME} application.`}
-                                    </div>
-                                </div>
+                                <div className="flex-1 text-bold">{c('edm').t`Security tips`}</div>
                             </div>
+                            <ul className="my-2">
+                                <li className="mb-2">
+                                    {c('edm')
+                                        .t`Be cautious of messages with QR codes. Only scan a code if you trust the source.`}
+                                </li>
+                                <li className="mb-2">
+                                    {c('edm')
+                                        .t`${BRAND_NAME} will never contact you unexpectedly asking you to sign in with a QR code.`}
+                                </li>
+                                <li className="mb-2">
+                                    {c('edm')
+                                        .t`${BRAND_NAME} will never ask you to scan a QR code that’s not from ${domain} or an official ${BRAND_NAME} app.`}
+                                </li>
+                            </ul>
                         </div>
                     </>
                 )}

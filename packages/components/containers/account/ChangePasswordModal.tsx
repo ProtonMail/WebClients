@@ -37,7 +37,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
+import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
@@ -572,7 +572,7 @@ const ChangePasswordModal = ({
                             {c('Info')
                                 .t`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`}
                         </div>
-                        {getIsRecoveryAvailable(user) && !signedInRecoveryFlow ? (
+                        {getIsAccountRecoveryAvailable(user) && !signedInRecoveryFlow ? (
                             <div className="mb-4">
                                 {
                                     // translator: Make sure you add a recovery method so that you can get back into your account if you forget your password.
