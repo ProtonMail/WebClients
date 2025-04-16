@@ -160,6 +160,7 @@ const MainContainer = () => {
     const canDisplayPassReports = useFlag('PassB2BReports');
     const isAccessControlEnabled = useFlag('AccessControl');
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
+    const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -364,6 +365,7 @@ const MainContainer = () => {
         context: 'app',
         organization,
         isLumoAvailable,
+        isDocsHomepageAvailable,
         isAccessControlEnabled,
     });
 

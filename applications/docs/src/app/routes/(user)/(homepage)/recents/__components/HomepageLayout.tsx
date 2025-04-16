@@ -88,7 +88,7 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
   return (
     <div className="homepage-header shrink-0 items-center justify-center small:pe-8">
       <PrivateHeader
-        className={clsx('flex !h-[4.25rem] items-center !pe-0 !ps-2 small:!px-0', USER_DROPDOWN_OVERRIDES)}
+        className={clsx('flex items-center !pe-0 !ps-2 small:!px-0', USER_DROPDOWN_OVERRIDES)}
         app={APPS.PROTONDRIVE}
         userDropdown={<UserDropdown app={APPS.PROTONDOCS} />}
         title={c('Title').t`Docs`}
@@ -239,7 +239,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
       expanded={expanded}
       onToggleExpand={onToggle}
       className={clsx(
-        'ui-standard -me-1 !pt-3 small:!pt-0 small:[&_.app-infos]:!px-[1.125rem] [&_.logo-container]:!hidden [&_.logo-container]:!h-[4.25rem] [&_.logo-container]:!p-[1.125rem] small:[&_.logo-container]:!flex',
+        'ui-standard -me-1 !pt-3 small:!pt-0 [&_.logo-container]:!hidden small:[&_.logo-container]:!flex',
         USER_DROPDOWN_OVERRIDES,
       )}
       primary={newDocumentButton}
@@ -277,7 +277,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
                       }
                       await updateRecentDocuments()
                       createNotification({
-                        text: c('Notification').t`Recent documents updated.`,
+                        text: c('Notification').t`Recent documents updated`,
                         expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
                       })
                       setExpanded(false)
