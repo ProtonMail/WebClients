@@ -2,12 +2,13 @@ import { useCallback, useEffect, useState } from 'react';
 
 import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useSharesStore } from '../../zustand/share/shares.store';
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
-import type { Share, ShareWithKey } from '../_shares';
+import { type Share, type ShareWithKey } from '../_shares';
 import { waitFor } from '../_utils';
 import { usePhotosOrPhotosWithAlbums } from './PhotosOrPhotosWithAlbumsProvider';
 
@@ -27,10 +28,10 @@ export type RECOVERY_STATE =
 const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = () => {
-    const { shareId, linkId, deletePhotosShare } = usePhotosOrPhotosWithAlbums();
+    const { shareId, linkId, volumeId, volumeType, deletePhotosShare } = usePhotosOrPhotosWithAlbums();
     const getRestoredPhotosShares = useSharesStore((state) => state.getRestoredPhotosShares);
     const { getCachedChildren, getCachedTrashed, loadChildren } = useLinksListing();
-    const { moveLinks } = useLinksActions();
+    const { recoverPhotoLinks, moveLinks } = useLinksActions();
     const [countOfUnrecoveredLinksLeft, setCountOfUnrecoveredLinksLeft] = useState<number>(0);
     const [countOfFailedLinks, setCountOfFailedLinks] = useState<number>(0);
     const [state, setState] = useState<RECOVERY_STATE>('READY');
@@ -115,21 +116,41 @@ export const usePhotosRecovery = () => {
                 newLinkId: string;
             }
         ) => {
-            for (const data of dataList) {
-                await moveLinks(abortSignal, {
-                    shareId: data.shareId,
-                    linkIds: data.links.map((link) => link.linkId),
-                    newParentLinkId: newLinkId,
-                    newShareId: shareId,
-                    onMoved: () => setCountOfUnrecoveredLinksLeft((prevState) => prevState - 1),
-                    onError: () => {
-                        setCountOfUnrecoveredLinksLeft((prevState) => prevState - 1);
-                        setCountOfFailedLinks((prevState) => prevState + 1);
-                    },
-                });
+            if (volumeType === VolumeType.Photos) {
+                if (!volumeId || !shareId) {
+                    return Promise.reject('Missing volumeId or shareId for recovery');
+                }
+
+                for (const data of dataList) {
+                    const { successes, failures } = await recoverPhotoLinks(abortSignal, volumeId, {
+                        shareId: data.shareId,
+                        linkIds: data.links.map((link) => link.linkId),
+                        newParentLinkId: newLinkId,
+                        newShareId: shareId,
+                    });
+                    setCountOfUnrecoveredLinksLeft(
+                        (prevState) => prevState - (successes.length + Object.keys(failures).length)
+                    );
+                    setCountOfFailedLinks((prevState) => prevState + Object.keys(failures).length);
+                }
+            } else {
+                // legacy photo share recovery
+                for (const data of dataList) {
+                    await moveLinks(abortSignal, {
+                        shareId: data.shareId,
+                        linkIds: data.links.map((link) => link.linkId),
+                        newParentLinkId: newLinkId,
+                        newShareId: shareId,
+                        onMoved: () => setCountOfUnrecoveredLinksLeft((prevState) => prevState - 1),
+                        onError: () => {
+                            setCountOfUnrecoveredLinksLeft((prevState) => prevState - 1);
+                            setCountOfFailedLinks((prevState) => prevState + 1);
+                        },
+                    });
+                }
             }
         },
-        [moveLinks, shareId]
+        [recoverPhotoLinks, moveLinks, volumeType, volumeId, shareId]
     );
 
     useEffect(() => {
