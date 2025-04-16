@@ -1,6 +1,5 @@
 import { forwardRef, useMemo } from 'react';
 
-import type { Locale } from 'date-fns';
 import { addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
 
@@ -46,8 +45,8 @@ type Actions = {
     onSubmit: () => void;
 }[];
 
-const formatDate = (initialDate: number | Date, locale: Locale) =>
-    format(initialDate, 'PPPp', { locale }).replace(YEAR_REGEX, '').replace(',', '');
+const formatDate = (initialDate: number | Date) =>
+    format(initialDate, 'PPPp', { locale: dateLocale }).replace(YEAR_REGEX, '').replace(',', '');
 
 const EIGHT_AM = {
     hours: 8,
@@ -80,7 +79,7 @@ const ScheduleSendActions = ({
                     : // translator: Full sentence is: 'Tomorrow | February 14th at 8:00'
                       c('Action').t`Tomorrow`,
                 testId: 'composer:schedule-send:tomorrow',
-                value: isNight ? formatDate(today8am, dateLocale) : formatDate(tomorrow8am, dateLocale),
+                value: isNight ? formatDate(today8am) : formatDate(tomorrow8am),
                 onSubmit: () =>
                     isNight ? onScheduleSend(getUnixTime(today8am)) : onScheduleSend(getUnixTime(tomorrow8am)),
             },
@@ -90,7 +89,7 @@ const ScheduleSendActions = ({
                           id: 'next-monday',
                           title: c('Action').t`Monday`,
                           testId: 'composer:schedule-send:next-monday',
-                          value: formatDate(monday8am, dateLocale),
+                          value: formatDate(monday8am),
                           onSubmit: () => onScheduleSend(getUnixTime(monday8am)),
                       },
                   ]
@@ -121,7 +120,7 @@ const ScheduleSendActions = ({
                 id: 'as-scheduled',
                 title: c('Action').t`As Scheduled`,
                 testId: 'composer:schedule-send-as-scheduled',
-                value: formatDate(scheduledAt, dateLocale),
+                value: formatDate(scheduledAt),
                 onSubmit: () => onScheduleSend(getUnixTime(scheduledAt)),
             });
         }

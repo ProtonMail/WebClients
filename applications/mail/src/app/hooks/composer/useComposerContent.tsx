@@ -268,7 +268,7 @@ export const useComposerContent = (args: EditorArgs) => {
         // First, if the message is a new draft. and we haven't loaded the images yet, load them.
         const messageIsNewDraft = isNewDraft(syncedMessage.localID);
         if (messageIsNewDraft && newDraftImageLoadingStatus.current === 'not-loaded' && hasImages) {
-            handleLoadImages();
+            void handleLoadImages();
             return;
         }
 

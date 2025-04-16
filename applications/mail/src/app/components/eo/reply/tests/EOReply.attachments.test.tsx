@@ -1,4 +1,4 @@
-import { act, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
@@ -27,22 +27,20 @@ describe('EO Reply attachments', () => {
     const file = new File([blob], fileName, { type: fileType });
 
     it('should add attachments to a EO message and be able to preview them', async () => {
-        const { getByText, getByTestId } = await setup();
+        await setup();
 
-        await waitFor(() => getByText(EOSubject));
+        await screen.findByText(EOSubject);
 
-        const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
-        await act(async () => {
-            fireEvent.change(inputAttachment, { target: { files: [file] } });
-            await wait(100);
-        });
+        const inputAttachment = screen.getByTestId('composer-attachments-button') as HTMLInputElement;
+        fireEvent.change(inputAttachment, { target: { files: [file] } });
+        await wait(100);
 
-        const toggleList = await waitFor(() => getByTestId('attachment-list:toggle'));
+        const toggleList = await screen.findByTestId('attachment-list:toggle');
         fireEvent.click(toggleList);
 
         await tick();
 
-        const item = getByTestId('attachment-item').querySelectorAll('button')[1];
+        const item = screen.getByTestId('attachment-item').querySelectorAll('button')[1];
 
         fireEvent.click(item);
         await tick();
@@ -51,22 +49,19 @@ describe('EO Reply attachments', () => {
 
         expect(preview).toBeDefined();
         expect(preview?.textContent).toMatch(new RegExp(fileName));
-        getByText(fileContent);
+        screen.getByText(fileContent);
     });
 
     it('should not be possible to add 10+ attachments', async () => {
-        const { getByText, getByTestId } = await setup();
-
-        await waitFor(() => getByText(EOSubject));
+        await setup();
+        await screen.findByText(EOSubject);
 
         // Add 11 files
-        const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
-        await act(async () => {
-            fireEvent.change(inputAttachment, {
-                target: { files: [file, file, file, file, file, file, file, file, file, file, file] },
-            });
-            await wait(100);
+        const inputAttachment = screen.getByTestId('composer-attachments-button') as HTMLInputElement;
+        fireEvent.change(inputAttachment, {
+            target: { files: [file, file, file, file, file, file, file, file, file, file, file] },
         });
+        await wait(100);
 
         await waitForNotification(`Maximum number of attachments (${EO_REPLY_NUM_ATTACHMENTS_LIMIT}) exceeded`);
     });

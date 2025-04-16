@@ -17,7 +17,7 @@ export const useOnMailTo = () => {
 
     return (src: string) => {
         const referenceMessage = mailtoParser(src);
-        onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW, referenceMessage });
+        void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW, referenceMessage });
     };
 };
 

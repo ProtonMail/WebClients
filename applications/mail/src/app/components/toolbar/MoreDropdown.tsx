@@ -121,11 +121,11 @@ const MoreDropdown = ({
             actionLocation: SOURCE_ACTION.TOOLBAR,
             numberMessage: SELECTED_RANGE.ALL,
         });
-        emptyLabel(labelID);
+        void emptyLabel(labelID);
     };
 
     const handleMoveAllToArchive = () => {
-        moveAllToFolder({
+        void moveAllToFolder({
             type: MoveAllType.moveAll,
             sourceLabelID: labelID,
             destinationLabelID: ARCHIVE,
@@ -134,7 +134,7 @@ const MoreDropdown = ({
         });
     };
     const handleMoveAllToTrash = () => {
-        moveAllToFolder({
+        void moveAllToFolder({
             type: MoveAllType.moveAll,
             sourceLabelID: labelID,
             destinationLabelID: TRASH,

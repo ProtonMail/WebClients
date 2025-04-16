@@ -104,7 +104,7 @@ const MailRecipientItemSingle = ({
 
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
-        onCompose({
+        void onCompose({
             type: ComposeTypes.newMessage,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: [recipient] } },
