@@ -130,6 +130,7 @@ export const getSignupSearchParams = (
 
     // plan is validated by comparing plans after it's loaded
     const maybePreSelectedPlan = searchParams.get('plan');
+    const maybeDefaultPlan = searchParams.get('defaultplan');
 
     const referrer = searchParams.get('referrer') || undefined; // referral ID
     const invite = searchParams.get('invite') || undefined;
@@ -149,6 +150,7 @@ export const getSignupSearchParams = (
         cycle: cycle || defaults?.cycle,
         minimumCycle,
         preSelectedPlan: fixPlanName(maybePreSelectedPlan || defaults?.plan, 'GetSignupSearchParams'),
+        defaultPlan: fixPlanName(maybeDefaultPlan || defaults?.plan, 'GetSignupSearchParams'),
         product,
         users,
         noPromo: noPromo !== null && noPromo !== 'false' && noPromo !== '0',
