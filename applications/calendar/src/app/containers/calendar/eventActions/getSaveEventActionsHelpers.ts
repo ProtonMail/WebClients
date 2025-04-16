@@ -154,6 +154,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
     sendIcs,
     onSendPrefsErrors,
     handleSyncActions,
+    isBreakingChange,
 }: {
     inviteActions: InviteActions;
     vevent: VcalVeventComponent;
@@ -165,6 +166,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
     getCalendarKeys: GetCalendarKeys;
     sendIcs: SendIcs;
     onSendPrefsErrors: OnSendPrefsErrors;
+    isBreakingChange: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
     const {
@@ -209,6 +211,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         hasDefaultNotifications,
         isAttendee: false,
         addedAttendeesPublicKeysMap,
+        resetNotes: isBreakingChange,
     });
 };
 

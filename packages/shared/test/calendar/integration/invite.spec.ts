@@ -451,7 +451,9 @@ I am a good description`;
                 parameters: { type: 'date' },
             },
         };
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 TIME:
 Sunday March 22nd, 2020 - Monday March 23rd, 2020
@@ -483,7 +485,9 @@ Removed`;
             summary: { value: 'Watch movie' },
             description: { value: 'I am a good description' },
         };
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 TITLE:
 Watch movie
@@ -510,7 +514,9 @@ I am a good description`;
             location: { value: 'Watch movie' },
             description: { value: 'I am a good description' },
         };
-        const expected = `This event was updated. Here's what changed:
+        const expected = `This event was updated.
+
+Here's what changed:
 
 LOCATION:
 Watch movie
@@ -654,7 +660,9 @@ I am a good description`;
             },
         };
 
-        const expected = `This event occurrence was updated. Here's what changed:
+        const expected = `This event occurrence was updated.
+
+Here's what changed:
 
 TITLE:
 Watch movie
@@ -679,7 +687,9 @@ I am a good description`;
             description: { value: 'I am a good description' },
         };
 
-        const expected = `All events in this series were updated. Here's what changed:
+        const expected = `All events in this series were updated.
+
+Here's what changed:
 
 TITLE:
 Watch movie
@@ -708,7 +718,9 @@ I am a good description`;
             dtend: undefined,
         };
 
-        const expected = `All events in this series were updated. Here's what changed:
+        const expected = `All events in this series were updated.
+
+Here's what changed:
 
 TIME:
 Sunday March 22nd, 2020 at 12:30 PM (GMT+1)`;
@@ -722,5 +734,328 @@ Sunday March 22nd, 2020 at 12:30 PM (GMT+1)`;
                 recurringType: RECURRING_TYPES.ALL,
             })
         ).toEqual(expected);
+    });
+
+    // New test cases for comment/note handling
+
+    it('should return the expected body for a new invite with a comment', () => {
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            comment: [{ value: 'Please prepare your weekly updates' }],
+            dtstart: {
+                value: { year: 2020, month: 10, day: 12, hours: 14, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtend: {
+                value: { year: 2020, month: 10, day: 12, hours: 15, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        const expected = `You are invited to Team Meeting.
+
+TIME:
+Monday October 12th, 2020 at 2:00 PM (GMT+2) - Monday October 12th, 2020 at 3:00 PM (GMT+2)
+
+LOCATION:
+asd
+
+NOTE:
+Please prepare your weekly updates`;
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: true,
+                options: { locale: enUS },
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for an event update with only a comment change', () => {
+        const oldVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+        };
+
+        const vevent: VcalVeventComponent = {
+            ...oldVevent,
+            comment: [{ value: 'Please prepare your weekly updates' }],
+        };
+
+        const expected = `This event was updated.
+
+Here's what changed:
+
+NOTE:
+Please prepare your weekly updates`;
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                oldVevent,
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for a reply with a comment', () => {
+        const emailAddress = 'andy@pm.me';
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            comment: [{ value: "I'll be 5 minutes late" }],
+        };
+
+        const expected = `${emailAddress} tentatively accepted your invitation to Team Meeting
+
+NOTE:
+I'll be 5 minutes late`;
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REPLY,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                emailAddress,
+                partstat: ICAL_ATTENDEE_STATUS.TENTATIVE,
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for a cancellation with a comment', () => {
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            comment: [{ value: 'Canceled due to scheduling conflicts' }],
+        };
+        const expected = `Team Meeting was canceled.
+
+Here's what changed:
+NOTE:
+Canceled due to scheduling conflicts`;
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.CANCEL,
+                isCreateEvent: false,
+                options: { locale: enUS },
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for an event update with multiple changes including a comment', () => {
+        const oldVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            location: { value: 'Conference Room A' },
+        };
+
+        const vevent: VcalVeventComponent = {
+            ...oldVevent,
+            summary: { value: 'Weekly Team Sync' },
+            location: { value: 'Conference Room B' },
+            comment: [{ value: 'This is our new regular meeting room' }],
+        };
+
+        const expected = `This event was updated.
+
+Here's what changed:
+
+TITLE:
+Weekly Team Sync
+
+LOCATION:
+Conference Room B
+
+NOTE:
+This is our new regular meeting room`;
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                oldVevent,
+            })
+        ).toEqual(expected);
+    });
+
+    // Add these variations of the reply test for different partstat values
+    it('should return the expected body for a reply with comment (accepted)', () => {
+        const emailAddress = 'andy@pm.me';
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            comment: [{ value: "I'll be there" }],
+        };
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REPLY,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                emailAddress,
+                partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+            })
+        ).toEqual(`${emailAddress} accepted your invitation to Team Meeting
+
+NOTE:
+I'll be there`);
+    });
+
+    it('should return the expected body for a reply with comment (tentatively accepted)', () => {
+        const emailAddress = 'andy@pm.me';
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            comment: [{ value: "I'll try to make it" }],
+        };
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REPLY,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                emailAddress,
+                partstat: ICAL_ATTENDEE_STATUS.TENTATIVE,
+            })
+        ).toEqual(`${emailAddress} tentatively accepted your invitation to Team Meeting
+
+NOTE:
+I'll try to make it`);
+    });
+
+    it('should return the expected body for a reply with comment (declined)', () => {
+        const emailAddress = 'andy@pm.me';
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            comment: [{ value: "Sorry, I can't make it" }],
+        };
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REPLY,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                emailAddress,
+                partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+            })
+        ).toEqual(`${emailAddress} declined your invitation to Team Meeting
+
+NOTE:
+Sorry, I can't make it`);
+    });
+
+    it('should return the expected body for a reply with an updated comment', () => {
+        const emailAddress = 'andy@pm.me';
+        const oldVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Team Meeting' },
+            comment: [{ value: "I'll be joining" }],
+        };
+
+        const vevent: VcalVeventComponent = {
+            ...oldVevent,
+            comment: [{ value: "I'll be 5 minutes late" }],
+        };
+
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REPLY,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                emailAddress,
+                partstat: ICAL_ATTENDEE_STATUS.TENTATIVE,
+                oldVevent,
+            })
+        ).toEqual(`${emailAddress} tentatively accepted your invitation to Team Meeting
+
+Here's what changed:
+
+NOTE:
+I'll be 5 minutes late`);
+    });
+
+    it('should include "Here\'s what changed" when a comment is added with unchanged RSVP status (fixed bug)', () => {
+        const oldVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: undefined,
+        };
+
+        const newVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: [{ value: 'Looking forward!' }],
+        };
+
+        const body = generateEmailBody({
+            vevent: newVevent,
+            oldVevent,
+            method: ICAL_METHOD.REPLY,
+            partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+            emailAddress: 'test@example.com',
+            options: { locale: enUS },
+        });
+
+        expect(body).toContain("Here's what changed");
+        expect(body).toContain('NOTE:\nLooking forward!');
+    });
+
+    it('should include "Here\'s what changed" when a comment is removed with unchanged RSVP status', () => {
+        const oldVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: [{ value: "Sorry can't make it" }],
+        };
+
+        const newVevent: VcalVeventComponent = {
+            ...exampleVevent,
+            attendee: [
+                {
+                    value: 'mailto:name@proton.me',
+                    parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED },
+                },
+            ],
+            comment: undefined,
+        };
+
+        const body = generateEmailBody({
+            vevent: newVevent,
+            oldVevent,
+            method: ICAL_METHOD.REPLY,
+            partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+            emailAddress: 'test@example.com',
+            options: { locale: enUS },
+        });
+
+        expect(body).toContain("Here's what changed");
+        expect(body).toContain('NOTE:\nRemoved');
     });
 });

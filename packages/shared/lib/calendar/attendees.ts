@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, type SessionKey } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
@@ -7,7 +7,9 @@ import unary from '@proton/utils/unary';
 import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 import { buildMailTo, canonicalizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { omit } from '../helpers/object';
+import { SentryCalendarInitiatives, traceInitiativeError } from '../helpers/sentry';
 import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
+import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
 import type {
     Attendee,
     AttendeeModel,
@@ -18,7 +20,15 @@ import type {
 } from '../interfaces/calendar';
 import type { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import type { RequireSome, SimpleMap } from '../interfaces/utils';
-import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from './constants';
+import {
+    ATTENDEE_COMMENT_ENCRYPTION_TYPE,
+    ATTENDEE_STATUS_API,
+    ICAL_ATTENDEE_ROLE,
+    ICAL_ATTENDEE_RSVP,
+    ICAL_ATTENDEE_STATUS,
+} from './constants';
+import { getDecryptedRSVPComment } from './crypto/helpers';
+import { escapeInvalidHtmlTags } from './sanitize';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
 
 export const NO_CANONICAL_EMAIL_ERROR = 'No canonical email provided';
@@ -77,25 +87,66 @@ export const fromInternalAttendee = ({
 
 export const toInternalAttendee = (
     { attendee: attendees = [] }: Pick<VcalVeventComponent, 'attendee'>,
-    clear: Attendee[] = []
-): VcalAttendeeProperty[] => {
-    return attendees.map((attendee) => {
+    clear: Attendee[] = [],
+    sharedSessionKey: SessionKey | undefined,
+    eventUID: string,
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>
+): Promise<VcalAttendeeProperty>[] => {
+    return attendees.map(async (attendee) => {
         if (!attendee.parameters) {
             return attendee;
         }
+
         const token = attendee.parameters['x-pm-token'];
         const extra = clear.find(({ Token }) => Token === token);
         if (!token || !extra) {
             return attendee;
         }
+
+        let comment = extra.Comment?.Message;
+
+        if (
+            sharedSessionKey &&
+            extra.Comment?.Message &&
+            extra.Comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED_AND_SIGNED
+        ) {
+            const attendeeEmail = attendee.parameters.cn;
+
+            if (!attendeeEmail) {
+                return attendee;
+            }
+
+            try {
+                const attendeeVerificationPreferences = await getAttendeeVerificationPreferences(attendeeEmail);
+                const decryptedMessageResult = await getDecryptedRSVPComment({
+                    attendeeVerificationPreferences,
+                    encryptedMessage: extra.Comment.Message,
+                    eventUID,
+                    sharedSessionKey,
+                });
+
+                comment = decryptedMessageResult.data;
+            } catch (e) {
+                traceInitiativeError(SentryCalendarInitiatives.RSVP_NOTE, e);
+                comment = undefined;
+            }
+        }
+
         const partstat = toIcsPartstat(extra.Status);
-        return {
+
+        const result = {
             ...attendee,
             parameters: {
                 ...attendee.parameters,
                 partstat,
             },
         };
+
+        if (comment) {
+            result.parameters['x-pm-comment'] = comment;
+        }
+
+        return result;
     });
 };
 
@@ -150,7 +201,7 @@ export const getSupportedOrganizer = (organizer: VcalOrganizerProperty) => {
 };
 
 export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
-    const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token } = {} } = attendee;
+    const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token, 'x-pm-comment': comment } = {} } = attendee;
     const emailAddress = getAttendeeEmail(attendee);
     const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
         value: buildMailTo(emailAddress),
@@ -177,6 +228,10 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
 
     if (token?.length === 40) {
         supportedAttendee.parameters['x-pm-token'] = token;
+    }
+
+    if (comment) {
+        supportedAttendee.parameters['x-pm-comment'] = escapeInvalidHtmlTags(comment);
     }
 
     return supportedAttendee;

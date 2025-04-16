@@ -325,7 +325,14 @@ export enum SentryCommonInitiatives {
     ENCRYPTED_SEARCH = 'encrypted-search',
 }
 
-export type SentryInitiative = `${SentryMailInitiatives}` | `${SentryCommonInitiatives}`;
+export enum SentryCalendarInitiatives {
+    RSVP_NOTE = 'rsvp-note',
+}
+
+export type SentryInitiative =
+    | `${SentryMailInitiatives}`
+    | `${SentryCommonInitiatives}`
+    | `${SentryCalendarInitiatives}`;
 
 type CaptureExceptionArgs = Parameters<typeof captureException>;
 

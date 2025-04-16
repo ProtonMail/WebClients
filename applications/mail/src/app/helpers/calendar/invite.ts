@@ -512,7 +512,7 @@ export const processEventInvitation = <T>(
                 contactEmails,
                 emailTo: originalTo,
                 index,
-                calendarAttendees: calendarEvent?.Attendees,
+                calendarAttendees: calendarEvent?.AttendeesInfo?.Attendees,
                 xYahooUserStatus: vevent['x-yahoo-user-status']?.value,
             });
         } else {
@@ -527,7 +527,7 @@ export const processEventInvitation = <T>(
                 selfAttendee,
                 contactEmails,
                 emailTo: originalTo,
-                calendarAttendees: calendarEvent?.Attendees,
+                calendarAttendees: calendarEvent?.AttendeesInfo?.Attendees,
             });
         } else if (!isImport) {
             // The user is a party crasher
@@ -938,7 +938,7 @@ export const getIsPartyCrasher = async ({
                 canonicalizeEmailByGuess(message.data.Sender.Address),
                 calendarEvent.UID
             );
-            return !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);
+            return !calendarEvent.AttendeesInfo.Attendees.some(({ Token }) => Token === senderToken);
         }
         return false;
     } else {

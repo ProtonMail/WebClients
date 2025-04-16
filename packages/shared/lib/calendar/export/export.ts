@@ -20,6 +20,7 @@ import {
 } from '../../date/timezone';
 import { dateLocale } from '../../i18n';
 import type { Address, Api, Key } from '../../interfaces';
+import type { VerificationPreferences } from '../../interfaces/VerificationPreferences';
 import type {
     CalendarEvent,
     CalendarSettings,
@@ -116,6 +117,7 @@ const decryptEvent = async ({
     addresses,
     getAddressKeys,
     getCalendarKeys,
+    getAttendeeVerificationPreferences,
 }: {
     event: CalendarEvent;
     calendarEmail: string;
@@ -125,6 +127,7 @@ const decryptEvent = async ({
     getCalendarKeys: GetCalendarKeys;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>;
 }) => {
     const defaultParams = { event, defaultTzid, weekStartsOn };
     const eventDecryptionKeys = await getCalendarEventDecryptionKeys({
@@ -139,19 +142,29 @@ const decryptEvent = async ({
             privateKeys: eventDecryptionKeys,
         });
 
-        const { CalendarID, ID, SharedEvents, CalendarEvents, AttendeesEvents, Attendees, Notifications, FullDay } =
-            event;
+        const {
+            CalendarID,
+            ID,
+            SharedEvents,
+            UID,
+            CalendarEvents,
+            AttendeesEvents,
+            Notifications,
+            FullDay,
+            AttendeesInfo,
+        } = event;
 
         const { veventComponent } = await readCalendarEvent({
             event: {
                 SharedEvents: withNormalizedAuthors(SharedEvents),
                 CalendarEvents: withNormalizedAuthors(CalendarEvents),
                 AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
-                Attendees,
+                AttendeesInfo,
                 Notifications,
                 FullDay,
                 CalendarID,
                 ID,
+                UID,
                 // do not export color
                 Color: null,
             },
@@ -160,6 +173,7 @@ const decryptEvent = async ({
             calendarSessionKey,
             addresses,
             encryptingAddressID: getIsAutoAddedInvite(event) ? event.AddressID : undefined,
+            getAttendeeVerificationPreferences,
         });
 
         return withSupportedSequence(withMandatoryPublishFields(veventComponent, calendarEmail));
@@ -181,6 +195,7 @@ const tryDecryptEvent = async ({
     addresses,
     getAddressKeys,
     getCalendarKeys,
+    getAttendeeVerificationPreferences,
 }: {
     calendar: VisualCalendar;
     event: CalendarEvent;
@@ -190,6 +205,7 @@ const tryDecryptEvent = async ({
     getCalendarKeys: GetCalendarKeys;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>;
 }) => {
     // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
     if (!getIsOwnedCalendar(calendar) && getIsAutoAddedInvite(event)) {
@@ -204,6 +220,7 @@ const tryDecryptEvent = async ({
         addresses,
         getAddressKeys,
         getCalendarKeys,
+        getAttendeeVerificationPreferences,
     });
 };
 
@@ -217,6 +234,7 @@ const fetchAndTryDecryptEvent = async ({
     addresses,
     getAddressKeys,
     getCalendarKeys,
+    getAttendeeVerificationPreferences,
 }: {
     api: Api;
     eventID: string;
@@ -227,6 +245,7 @@ const fetchAndTryDecryptEvent = async ({
     getCalendarKeys: GetCalendarKeys;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>;
 }) => {
     const { Event: event } = await getSilentApi(api)<{ Event: CalendarEvent }>(getEvent(calendar.ID, eventID));
     return tryDecryptEvent({
@@ -238,6 +257,7 @@ const fetchAndTryDecryptEvent = async ({
         addresses,
         getAddressKeys,
         getCalendarKeys,
+        getAttendeeVerificationPreferences,
     });
 };
 
@@ -257,6 +277,7 @@ interface ProcessData {
     calendarSettings: CalendarSettings;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>;
 }
 
 export const processInBatches = async ({
@@ -271,6 +292,7 @@ export const processInBatches = async ({
     calendarSettings,
     weekStartsOn,
     defaultTzid,
+    getAttendeeVerificationPreferences,
 }: ProcessData): Promise<[VcalVeventComponent[], ExportError[], number]> => {
     const PAGE_SIZE = 100;
     const batchesLength = Math.ceil(totalToProcess / PAGE_SIZE);
@@ -314,6 +336,7 @@ export const processInBatches = async ({
                     addresses,
                     getAddressKeys,
                     getCalendarKeys,
+                    getAttendeeVerificationPreferences,
                 })
             )
         )

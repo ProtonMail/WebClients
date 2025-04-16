@@ -1,13 +1,19 @@
 import type { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import type { Address, RequireSome } from '@proton/shared/lib/interfaces';
-import type { CalendarEvent, VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    AttendeeComment,
+    CalendarEvent,
+    VcalAttendeeProperty,
+    VcalVeventComponent,
+} from '@proton/shared/lib/interfaces/calendar';
+import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { AugmentedSendPreferences } from '../containers/calendar/interface';
 
 export enum INVITE_ACTION_TYPES {
     NONE,
-    CHANGE_PARTSTAT,
+    CHANGE_PARTSTAT, // attendee changed RSVP response and/or RSVP comment
     DECLINE_INVITATION,
     DECLINE_DISABLED,
     SEND_INVITATION, // organizer creates new invitation, or just adds/removes attendees
@@ -22,6 +28,12 @@ export interface InviteActions {
     sharedSessionKey?: string;
     isProtonProtonInvite?: boolean;
     partstat?: ICAL_ATTENDEE_STATUS;
+    /** The encrypted and signed comment for to send to the API */
+    comment?: AttendeeComment;
+    /** The clearText comment to insert in the ICS */
+    commentClearText?: string;
+    /** The old partstat data for comparison in email bodies */
+    oldPartstatData?: PartstatData;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;
     deleteSingleEdits?: boolean;
@@ -88,6 +100,7 @@ export interface UpdatePartstatOperation {
         eventID: string;
         attendeeID: string;
         partstat: ICAL_ATTENDEE_STATUS;
+        comment?: AttendeeComment;
         updateTime: number;
     };
     silence: boolean;

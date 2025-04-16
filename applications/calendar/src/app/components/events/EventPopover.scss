@@ -44,4 +44,12 @@
 			}
 		}
 	}
+
+	&-rsvp-section {
+		inset-inline: 0;
+		inset-block-end: 0;
+		padding-inline: 1.5rem;
+		box-shadow: 0 calc(var(--1px) * -1) calc(var(--1px) * 4) 0
+			rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-norm-opacity));
+	}
 }
