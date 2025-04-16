@@ -80,6 +80,7 @@ const MailStartupModals = () => {
                         }}
                         onExit={onboardingModal.onExit}
                         open={onboardingModal.open}
+                        onClose={onboardingModal.onClose}
                         hideDiscoverApps
                     />
                 </EasySwitchProvider>
