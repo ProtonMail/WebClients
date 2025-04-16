@@ -27,6 +27,7 @@ import {
     useSharedWithMeActions,
 } from '../../../store';
 import { useLinksActions } from '../../../store/_links';
+import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
 import { useCreateAlbum } from '../../PhotosActions/Albums';
@@ -101,6 +102,8 @@ export const PhotosLayout = () => {
         photoLinkIdToIndexMap,
     });
 
+    const cachedSelectedItems = useMemoArrayNoMatterTheOrder(selectedItems);
+
     const createAlbum = useCreateAlbum();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const { navigateToAlbums, navigateToAlbum } = useNavigate();
@@ -152,6 +155,7 @@ export const PhotosLayout = () => {
     }, [album?.permissions.isAdmin, selectedItems, userAddressEmail]);
 
     const selectedCount = selectedItems.length;
+    const selectedItemsLinkIds = useMemo(() => cachedSelectedItems.map((item) => item.linkId), [cachedSelectedItems]);
 
     const uploadLinkId = useMemo(() => {
         // If you own the root photo share, your uploads always goes to the root (photo stream) and then we add the photos to the album
@@ -281,22 +285,22 @@ export const PhotosLayout = () => {
     }, [albumPhotosLinkIds, photoLinkIds, handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
     const handleToolbarPreview = useCallback(() => {
-        let selected = selectedItems[0];
+        let selectedLinkId = selectedItemsLinkIds[0];
 
-        if (selectedItems.length === 1 && selected) {
-            setPreviewLinkId(selected.linkId);
+        if (selectedItemsLinkIds.length === 1 && selectedLinkId) {
+            setPreviewLinkId(selectedLinkId);
         }
-    }, [selectedItems, setPreviewLinkId]);
+    }, [selectedItemsLinkIds, setPreviewLinkId]);
 
     const onSelectCoverToolbar = useCallback(async () => {
-        const selectedItem = selectedItems[0];
-        if (!selectedItem) {
+        const selectedItemLinkId = selectedItemsLinkIds[0];
+        if (!selectedItemLinkId) {
             sendErrorReport(new Error('Unable to set photo as cover'));
             createNotification({ text: c('Error').t`Unable to set photo as cover`, type: 'error' });
             return;
         }
-        await onSelectCover(selectedItem.linkId);
-    }, [createNotification, onSelectCover, selectedItems]);
+        await onSelectCover(selectedItemLinkId);
+    }, [createNotification, onSelectCover, selectedItemsLinkIds]);
 
     const handleRemoveAlbumPhotos = useCallback(
         async (
@@ -333,15 +337,15 @@ export const PhotosLayout = () => {
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
-        const { missingPhotosIds, selectedPhotosIds } = selectedItems.reduce<{
+        const { missingPhotosIds, selectedPhotosIds } = selectedItemsLinkIds.reduce<{
             selectedPhotosIds: string[];
             missingPhotosIds: string[];
         }>(
-            (acc, item) => {
-                if (!photoLinkIds.includes(item.linkId)) {
-                    acc.missingPhotosIds.push(item.linkId);
+            (acc, linkId) => {
+                if (!photoLinkIds.includes(linkId)) {
+                    acc.missingPhotosIds.push(linkId);
                 }
-                acc.selectedPhotosIds.push(item.linkId);
+                acc.selectedPhotosIds.push(linkId);
                 return acc;
             },
             { selectedPhotosIds: [], missingPhotosIds: [] }
@@ -359,7 +363,7 @@ export const PhotosLayout = () => {
                     }),
             });
         }
-    }, [selectedItems, photoLinkIds, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
+    }, [selectedItemsLinkIds, photoLinkIds, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
 
     const onPhotoUploadedToAlbum = useCallback(
         async (file: OnFileUploadSuccessCallbackData) => {
@@ -458,19 +462,14 @@ export const PhotosLayout = () => {
             if (!albumShareId || !albumLinkId) {
                 return;
             }
-            await addAlbumPhotos(
-                new AbortController().signal,
-                albumShareId,
-                albumLinkId,
-                selectedItems.map((item) => item.linkId)
-            );
+            await addAlbumPhotos(new AbortController().signal, albumShareId, albumLinkId, selectedItemsLinkIds);
             navigateToAlbum(albumShareId, albumLinkId);
         } else {
             if (albumLinkId && previewShareId) {
                 navigateToAlbum(previewShareId, albumLinkId, { addPhotos: true });
             }
         }
-    }, [currentPageType, albumLinkId, albumShareId, selectedItems, previewShareId]);
+    }, [currentPageType, albumLinkId, albumShareId, selectedItemsLinkIds, previewShareId]);
 
     /*
         Effects
@@ -498,7 +497,7 @@ export const PhotosLayout = () => {
         }
     }, [pathname, setPageType, clearSelection]);
 
-    if (!previewShareId || !uploadLinkId) {
+    if (!previewShareId || !uploadLinkId || !currentPageType) {
         return <Loader />;
     }
 
@@ -613,7 +612,7 @@ export const PhotosLayout = () => {
                         onCreateAlbumWithPhotos={onCreateAlbumWithPhotos}
                         onAddAlbumPhotos={onAddAlbumPhotos}
                         albums={albums}
-                        photos={selectedItems}
+                        photosLinkIds={selectedItemsLinkIds}
                         share={isAddModalShared}
                     />
                 </>
