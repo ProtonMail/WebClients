@@ -1,3 +1,5 @@
+import { screen } from '@testing-library/react';
+
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { clearAll, render } from '../../../../helpers/test/helper';
@@ -11,16 +13,16 @@ describe('ExtraExpirationTime', () => {
     const seconds = 50;
 
     const setup = async (ExpirationTime: number) => {
-        const result = await render(
+        const view = await render(
             <ExtraExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
         );
         const rerender = async (ExpirationTime: number) => {
-            await result.rerender(
+            await view.rerender(
                 <ExtraExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
             );
-            return result.queryByTestId('expiration-banner');
+            return screen.queryByTestId('expiration-banner');
         };
-        return { banner: result.queryByTestId('expiration-banner'), rerender };
+        return { banner: screen.queryByTestId('expiration-banner'), rerender };
     };
 
     afterEach(() => {

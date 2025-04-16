@@ -40,7 +40,7 @@ const defaultState: {
 const App = () => {
     const [state, setState] = useState(defaultState);
     useEffectOnce(() => {
-        (async () => {
+        void (async () => {
             try {
                 const { scopes, userSettings, MainContainer, store } = await bootstrapApp({ config });
                 setState({

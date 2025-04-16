@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { addDays, addYears, getUnixTime } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -21,7 +21,7 @@ const remindedConversation = {
 
 describe('ItemDateSnoozedMessage', () => {
     it('Should display the snooze time when user is in Snooze folder', () => {
-        const { getByTestId } = render(
+        render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozedMessage.SnoozeTime}
                 element={snoozedMessage}
@@ -29,14 +29,14 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByTestId('item-date-snoozed'));
+        expect(screen.getByTestId('item-date-snoozed'));
     });
 
     it('Should display today when the snooze time is today', () => {
         const today = new Date();
         const formattedDate = formatScheduledTimeString(today);
         const snoozeTime = getUnixTime(today);
-        const { getByText } = render(
+        render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozeTime}
                 element={{ ...snoozedMessage, SnoozeTime: snoozeTime }}
@@ -44,14 +44,14 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByText(`${formattedDate}`));
+        expect(screen.getByText(`${formattedDate}`));
     });
 
     it('Should display tomorrow when the snooze time is tomorrow', () => {
         const tomorrow = addDays(new Date(), 1);
         const formattedDate = formatScheduledTimeString(tomorrow);
         const snoozeTime = getUnixTime(tomorrow);
-        const { getByText } = render(
+        render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozeTime}
                 element={{ ...snoozedMessage, SnoozeTime: snoozeTime }}
@@ -59,14 +59,14 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByText(`Tomorrow, ${formattedDate}`));
+        expect(screen.getByText(`Tomorrow, ${formattedDate}`));
     });
 
     it('Should display the full date when the snooze time is not today or tomorrow', () => {
         const date = addYears(new Date(), 1);
         const formattedDate = formatFullDate(date);
         const snoozeTime = getUnixTime(date);
-        const { getByText } = render(
+        render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozeTime}
                 element={{ ...snoozedMessage, SnoozeTime: snoozeTime }}
@@ -74,11 +74,11 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByText(formattedDate));
+        expect(screen.getByText(formattedDate));
     });
 
     it('Should not display the snooze time when user is in Inbox folder', () => {
-        const { queryByTestId } = render(
+        render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozedMessage.SnoozeTime}
                 element={snoozedMessage}
@@ -86,11 +86,11 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(queryByTestId('item-date-snooze')).toBeNull();
+        expect(screen.queryByTestId('item-date-snooze')).toBeNull();
     });
 
     it('Should display reminded when message is a reminded conversation and user is in Inbox folder', () => {
-        const { getByTestId } = render(
+        render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozedMessage.SnoozeTime}
                 element={remindedConversation}
@@ -98,11 +98,11 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByTestId('item-date-reminded'));
+        expect(screen.getByTestId('item-date-reminded'));
     });
 
     it('Should not display reminded when message is a not a reminded conversation and user is in Inbox folder', () => {
-        const { queryByTestId } = render(
+        render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozedMessage.SnoozeTime}
                 element={{ ...remindedConversation, DisplaySnoozedReminder: false }}
@@ -110,6 +110,6 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(queryByTestId('item-date-reminded')).toBeNull();
+        expect(screen.queryByTestId('item-date-reminded')).toBeNull();
     });
 });

@@ -10,7 +10,7 @@ export const useLoadMessage = (inputMessage: MessageWithOptionalBody) => {
     const dispatch = useMailDispatch();
 
     return useCallback(async () => {
-        dispatch(load({ ID: inputMessage.ID }));
+        void dispatch(load({ ID: inputMessage.ID }));
     }, [inputMessage]);
 };
 

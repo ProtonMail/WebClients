@@ -1,4 +1,4 @@
-import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/react';
+import { fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
@@ -61,29 +61,29 @@ describe('Composer outside encryption', () => {
     };
 
     it('should set outside encryption and display the expiration banner', async () => {
-        const { getByTestId, getByText, container } = await setup({
+        const { container } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
 
-        const expirationButton = getByTestId('composer:password-button');
+        const expirationButton = screen.getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
         await tick();
 
         // modal is displayed and we can set a password
-        getByText('Encrypt message');
+        screen.getByText('Encrypt message');
 
-        const passwordInput = getByTestId('encryption-modal:password-input');
+        const passwordInput = screen.getByTestId('encryption-modal:password-input');
         fireEvent.change(passwordInput, { target: { value: password } });
 
-        const setEncryptionButton = getByTestId('modal-footer:set-button');
+        const setEncryptionButton = screen.getByTestId('modal-footer:set-button');
         fireEvent.click(setEncryptionButton);
 
         await waitForNotification('Password has been set successfully');
 
         // The expiration banner is displayed
-        getByText(/This message will expire/);
+        screen.getByText(/This message will expire/);
 
         await saveNow(container);
     });
@@ -91,7 +91,7 @@ describe('Composer outside encryption', () => {
     it('should set outside encryption with a default expiration time', async () => {
         // Message will expire tomorrow
 
-        const { getByTestId, getByText } = await setup({
+        await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
@@ -100,31 +100,31 @@ describe('Composer outside encryption', () => {
             },
         });
 
-        const expirationButton = getByTestId('composer:password-button');
+        const expirationButton = screen.getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
 
         // Modal and expiration date are displayed
-        getByText('Edit encryption');
-        getByText('Your message will expire tomorrow.');
+        screen.getByText('Edit encryption');
+        screen.getByText('Your message will expire tomorrow.');
     });
 
     it('should be able to edit encryption', async () => {
-        const { getByTestId, getByText, container } = await setup({
+        const { container } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
 
-        const expirationButton = getByTestId('composer:password-button');
+        const expirationButton = screen.getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
 
         // modal is displayed and we can set a password
-        getByText('Encrypt message');
+        screen.getByText('Encrypt message');
 
-        const passwordInput = getByTestId('encryption-modal:password-input');
+        const passwordInput = screen.getByTestId('encryption-modal:password-input');
         fireEvent.change(passwordInput, { target: { value: password } });
 
-        const setEncryptionButton = getByTestId('modal-footer:set-button');
+        const setEncryptionButton = screen.getByTestId('modal-footer:set-button');
         fireEvent.click(setEncryptionButton);
 
         await waitForNotification('Password has been set successfully');
@@ -132,7 +132,7 @@ describe('Composer outside encryption', () => {
 
         // Edit encryption
         // Open the encryption dropdown
-        const encryptionDropdownButton = getByTestId('composer:encryption-options-button');
+        const encryptionDropdownButton = screen.getByTestId('composer:encryption-options-button');
         fireEvent.click(encryptionDropdownButton);
 
         const dropdown = await getDropdown();
@@ -141,47 +141,47 @@ describe('Composer outside encryption', () => {
         const editEncryptionButton = getByTestIdDefault(dropdown, 'composer:edit-outside-encryption');
         fireEvent.click(editEncryptionButton);
 
-        const passwordInputAfterUpdate = getByTestId('encryption-modal:password-input') as HTMLInputElement;
+        const passwordInputAfterUpdate = screen.getByTestId('encryption-modal:password-input') as HTMLInputElement;
         const passwordValue = passwordInputAfterUpdate.value;
 
         expect(passwordValue).toEqual(password);
     });
 
     it('should be able to remove encryption', async () => {
-        const { getByTestId, getByText, queryByText, container, findByText } = await setup({
+        const { container } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
 
-        const expirationButton = getByTestId('composer:password-button');
+        const expirationButton = screen.getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
         await tick();
 
         // modal is displayed and we can set a password
-        getByText('Encrypt message');
+        screen.getByText('Encrypt message');
 
-        const passwordInput = getByTestId('encryption-modal:password-input');
+        const passwordInput = screen.getByTestId('encryption-modal:password-input');
         fireEvent.change(passwordInput, { target: { value: password } });
 
-        const setEncryptionButton = getByTestId('modal-footer:set-button');
+        const setEncryptionButton = screen.getByTestId('modal-footer:set-button');
         fireEvent.click(setEncryptionButton);
 
         await waitForNotification('Password has been set successfully');
 
         // Edit encryption
         // Open the encryption dropdown
-        const encryptionDropdownButton = getByTestId('composer:encryption-options-button');
+        const encryptionDropdownButton = screen.getByTestId('composer:encryption-options-button');
         fireEvent.click(encryptionDropdownButton);
 
         const dropdown = await getDropdown();
 
-        await findByText(/This message will expire on/);
+        await screen.findByText(/This message will expire on/);
         // Click on remove button
         const editEncryptionButton = getByTestIdDefault(dropdown, 'composer:remove-outside-encryption');
         fireEvent.click(editEncryptionButton);
 
-        expect(queryByText(/This message will expire on/)).toBe(null);
+        expect(screen.queryByText(/This message will expire on/)).toBe(null);
 
         await saveNow(container);
     });

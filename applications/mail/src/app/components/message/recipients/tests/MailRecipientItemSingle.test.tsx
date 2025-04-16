@@ -1,5 +1,4 @@
-import type { Matcher } from '@testing-library/react';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
@@ -36,33 +35,28 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
 
     afterEach(clearAll);
 
-    const openDropdown = async (
-        getByTestId: (text: Matcher) => HTMLElement,
-        getByText: (text: Matcher) => HTMLElement
-    ) => {
+    const openDropdown = async () => {
         // Open the dropdown
-        const recipientItem = getByTestId(`recipient:details-dropdown-${sender.Address}`);
+        const recipientItem = screen.getByTestId(`recipient:details-dropdown-${sender.Address}`);
         fireEvent.click(recipientItem);
         await tick();
 
         // The dropdown must be open
-        getByText('New message');
+        screen.getByText('New message');
     };
 
     it('should not contain the trust key action in the dropdown', async () => {
-        const { queryByText, getByTestId, getByText } = await render(
-            <MailRecipientItemSingle recipient={sender} {...modalsHandlers} />
-        );
+        await render(<MailRecipientItemSingle recipient={sender} {...modalsHandlers} />);
 
-        await openDropdown(getByTestId, getByText);
+        await openDropdown();
 
         // Trust public key dropdown item should not be found
-        const dropdownItem = queryByText('Trust public key');
+        const dropdownItem = screen.queryByText('Trust public key');
         expect(dropdownItem).toBeNull();
     });
 
     it('should contain the trust key action in the dropdown if signing key', async () => {
-        const { getByTestId, getByText } = await render(
+        await render(
             <MailRecipientItemSingle
                 recipient={sender}
                 signingPublicKey={senderKeys.publicKeys[0]}
@@ -70,14 +64,14 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
             />
         );
 
-        await openDropdown(getByTestId, getByText);
+        await openDropdown();
 
         // Trust public key dropdown item should be found
-        getByText('Trust public key');
+        screen.getByText('Trust public key');
     });
 
     it('should contain the trust key action in the dropdown if attached key', async () => {
-        const { getByTestId, getByText } = await render(
+        await render(
             <MailRecipientItemSingle
                 recipient={sender}
                 attachedPublicKey={senderKeys.publicKeys[0]}
@@ -85,9 +79,9 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
             />
         );
 
-        await openDropdown(getByTestId, getByText);
+        await openDropdown();
 
         // Trust public key dropdown item should be found
-        getByText('Trust public key');
+        screen.getByText('Trust public key');
     });
 });

@@ -1,3 +1,5 @@
+import { screen } from '@testing-library/react';
+
 import { render } from '../../../helpers/test/helper';
 import type { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
 import ExtraErrors from './ExtraErrors';
@@ -5,8 +7,8 @@ import ExtraErrors from './ExtraErrors';
 describe('Errors banner', () => {
     const setup = async (errors: MessageErrors) => {
         const message = { localID: 'localID', errors } as MessageState;
-        const { getByTestId } = await render(<ExtraErrors message={message} />);
-        return getByTestId('errors-banner');
+        await render(<ExtraErrors message={message} />);
+        return screen.getByTestId('errors-banner');
     };
 
     it('should show error banner for network error', async () => {
