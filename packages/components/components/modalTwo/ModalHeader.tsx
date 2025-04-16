@@ -43,6 +43,10 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      */
     titleClassName?: string;
     /**
+     * Optional additional subline classNames
+     */
+    sublineClassName?: string;
+    /**
      * Additional content to be rendered above the scrollable section.
      */
     additionalContent?: JSX.Element;
@@ -76,6 +80,7 @@ const ModalHeader = ({
     actions,
     closeButtonProps,
     titleClassName,
+    sublineClassName,
     additionalContent,
     hasClose = true,
     ...rest
@@ -106,7 +111,7 @@ const ModalHeader = ({
                         >
                             {title}
                         </h1>
-                        {subline && <div className="color-weak text-break">{subline}</div>}
+                        {subline && <div className={clsx('color-weak text-break', sublineClassName)}>{subline}</div>}
                     </div>
                 )}
 

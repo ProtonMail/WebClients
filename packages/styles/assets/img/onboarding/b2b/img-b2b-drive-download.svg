@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="none" viewBox="0 0 72 72">
+    <g clip-path="url(#a)">
+        <path fill="url(#b)" d="M12 7a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v59a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V7Z" />
+        <circle cx="30" cy="6" r=".875" fill="#8591A8" stroke="#E2E5E9" stroke-width=".25" />
+        <path
+            fill="url(#c)"
+            fill-rule="evenodd"
+            d="M12 19a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1v-5Zm0 6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1v-5Z"
+            clip-rule="evenodd"
+        />
+        <path fill="#F1F3F8" d="M12 8h36v57H12z" />
+        <g filter="url(#d)">
+            <path
+                fill="url(#e)"
+                d="m19 29.357 3.143-1.572 5.5 3.143h9.428v13.286l-.785.785H21.357A2.357 2.357 0 0 1 19 42.642V29.357Z"
+            />
+            <path
+                fill="url(#f)"
+                fill-rule="evenodd"
+                d="M27.612 28.12c.403.294.889.451 1.387.451h9.644A2.357 2.357 0 0 1 41 30.93v11.714A2.357 2.357 0 0 1 38.643 45h-2.357V33.679c0-1.085-.88-1.965-1.965-1.965h-8.25c-.51 0-1.006-.165-1.414-.471l-1.886-1.414a2.357 2.357 0 0 0-1.414-.472H19A2.357 2.357 0 0 1 21.357 27h3.948c.498 0 .983.158 1.386.45l.921.67Z"
+                clip-rule="evenodd"
+            />
+        </g>
+        <g filter="url(#g)">
+            <path fill="#2CCFB4" fill-opacity=".3" d="M40 15a8 8 0 0 1 8-8v23a8 8 0 0 1-8-8v-7Z" />
+        </g>
+        <mask id="j" fill="#fff">
+            <path d="M70 18c0 7.732-6.268 14-14 14s-14-6.268-14-14S48.268 4 56 4s14 6.268 14 14Z" />
+        </mask>
+        <path fill="url(#h)" d="M70 18c0 7.732-6.268 14-14 14s-14-6.268-14-14S48.268 4 56 4s14 6.268 14 14Z" />
+        <path
+            fill="url(#i)"
+            fill-opacity=".1"
+            d="M69 18c0 7.18-5.82 13-13 13v2c8.284 0 15-6.716 15-15h-2ZM56 31c-7.18 0-13-5.82-13-13h-2c0 8.284 6.716 15 15 15v-2ZM43 18c0-7.18 5.82-13 13-13V3c-8.284 0-15 6.716-15 15h2ZM56 5c7.18 0 13 5.82 13 13h2c0-8.284-6.716-15-15-15v2Z"
+            mask="url(#j)"
+        />
+        <path
+            fill="url(#k)"
+            fill-rule="evenodd"
+            d="M57 11a1 1 0 1 0-2 0v7.586l-2.293-2.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L57 18.586V11Zm-5 12a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2h-8Z"
+            clip-rule="evenodd"
+        />
+    </g>
+    <defs>
+        <linearGradient id="b" x1="45.943" x2="25.544" y1="3.5" y2="70.47" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#DDE0E7" />
+            <stop offset="1" stop-color="#C3CBD3" />
+        </linearGradient>
+        <linearGradient id="c" x1="12.5" x2="9" y1="16.5" y2="55.5" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#D5DADE" />
+            <stop offset="1" stop-color="#8591A8" />
+        </linearGradient>
+        <linearGradient id="f" x1="18.71" x2="45.866" y1="17.606" y2="47.792" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#7341FF" />
+            <stop offset=".359" stop-color="#B487FF" />
+            <stop offset="1" stop-color="#FFC8FF" />
+        </linearGradient>
+        <linearGradient id="h" x1="69.533" x2="47.623" y1="4" y2="35.578" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B6FFCE" />
+            <stop offset="1" stop-color="#30B49E" />
+        </linearGradient>
+        <linearGradient id="i" x1="67.2" x2="53.88" y1="3.176" y2="32.937" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C8FAE9" />
+            <stop offset="1" stop-color="#BCFFD2" />
+        </linearGradient>
+        <linearGradient id="k" x1="63.5" x2="54.849" y1="-18.077" y2="24.767" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#154E44" />
+            <stop offset="1" stop-color="#30B49E" />
+        </linearGradient>
+        <filter
+            id="d"
+            width="48"
+            height="48"
+            x="6"
+            y="14"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="2" />
+            <feGaussianBlur stdDeviation="4" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.733333 0 0 0 0 0.305882 0 0 0 0 0.87451 0 0 0 0.2 0" />
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_50101_131871" />
+            <feBlend in="SourceGraphic" in2="effect1_dropShadow_50101_131871" result="shape" />
+        </filter>
+        <filter
+            id="g"
+            width="24"
+            height="39"
+            x="32"
+            y="-1"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur result="effect1_foregroundBlur_50101_131871" stdDeviation="4" />
+        </filter>
+        <radialGradient
+            id="e"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientTransform="matrix(33.721 0 0 35.6429 38.585 15.96)"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop offset=".556" stop-color="#6D4AFF" />
+            <stop offset="1" stop-color="#FF50C3" />
+        </radialGradient>
+        <clipPath id="a">
+            <path fill="#fff" d="M0 0h72v72H0z" />
+        </clipPath>
+    </defs>
+</svg>

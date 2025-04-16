@@ -730,7 +730,7 @@ const updateGroups = ({
     }
 };
 
-interface RotateOrganizationKeysState extends KtState, OrganizationKeyState, GroupsState {}
+export interface RotateOrganizationKeysState extends KtState, OrganizationKeyState, GroupsState {}
 
 export const rotateOrganizationKeys = ({
     password: newPassword,

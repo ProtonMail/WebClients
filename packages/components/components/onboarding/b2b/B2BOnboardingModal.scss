@@ -1,0 +1,52 @@
+@import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+
+.b2b-onboarding-modal {
+	&.modal-two-dialog--xlarge {
+		--size: #{rem(648)};
+
+		.modal-two-header {
+			margin-block-start: 1.5em;
+		}
+
+		.b2b-onboarding-modal-title {
+			font-size: em(36);
+			font-weight: normal;
+		}
+
+		.b2b-onboarding-modal-subline {
+			color: var(--text-norm);
+		}
+	}
+
+	.modal-two-header-title {
+		inline-size: 100%;
+	}
+
+	&-list {
+		max-inline-size: rem(470);
+
+		&.is-loading {
+			pointer-events: none;
+
+			.b2b-onboarding-modal-loading-element,
+			.b2b-onboarding-modal-loading-element-square {
+				min-inline-size: 6em;
+				color: var(--text-weak);
+
+				&::before {
+					@extend %item-loading-pseudo;
+					@extend %placeholder-loading;
+
+					inline-size: 100%;
+				}
+			}
+
+			.b2b-onboarding-modal-loading-element-square {
+				&::before {
+					aspect-ratio: 1/1;
+				}
+			}
+		}
+	}
+}
