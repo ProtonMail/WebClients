@@ -11,9 +11,9 @@ interface EditButtonProps {
 
 export const EditNoteButton = ({ onEdit, disabled }: EditButtonProps) => {
     return (
-        <Tooltip title={c('Edit note button tooltip').t`Edit note`}>
+        <Tooltip title={c('RSVP Note').t`Edit note`}>
             <ButtonLike className="shrink-0" shape="ghost" onClick={onEdit} disabled={disabled} icon size="small">
-                <Icon name="pen" alt={c('Edit note button tooltip').t`Edit note`} />
+                <Icon name="pen" alt={c('RSVP Note').t`Edit note`} />
             </ButtonLike>
         </Tooltip>
     );
@@ -26,7 +26,7 @@ interface DeleteButtonProps {
 }
 export const DeleteNoteButton = ({ loading, onDelete, disabled }: DeleteButtonProps) => {
     return (
-        <Tooltip title={c('Remove note button tooltip').t`Remove note`}>
+        <Tooltip title={c('RSVP Note').t`Remove note`}>
             <ButtonLike
                 className="shrink-0"
                 shape="ghost"
@@ -36,7 +36,7 @@ export const DeleteNoteButton = ({ loading, onDelete, disabled }: DeleteButtonPr
                 icon
                 size="small"
             >
-                <Icon name="cross" alt={c('Remove note button tooltip').t`Remove note`} />
+                <Icon name="cross" alt={c('RSVP Note').t`Remove note`} />
             </ButtonLike>
         </Tooltip>
     );
