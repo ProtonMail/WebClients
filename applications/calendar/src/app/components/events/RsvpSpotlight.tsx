@@ -7,6 +7,7 @@ import useSpotlightShow from '@proton/components/components/spotlight/useSpotlig
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
+import useFlag from '@proton/unleash/useFlag';
 
 const today = new Date();
 
@@ -32,11 +33,12 @@ export const useRSVPSpotlight = () => {
     const {
         welcomeFlags: { isWelcomeFlow },
     } = useWelcomeFlags();
+    const isFeatureActive = useFlag('RsvpCommentWeb');
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.CalendarRsvpNoteSpotlight,
         // Accounts that are more than two days old
-        differenceInDays(today, fromUnixTime(user.CreateTime)) >= 2 && !isWelcomeFlow
+        differenceInDays(today, fromUnixTime(user.CreateTime)) >= 2 && !isWelcomeFlow && isFeatureActive
     );
 
     const shouldShowSpotlight = useSpotlightShow(show);
