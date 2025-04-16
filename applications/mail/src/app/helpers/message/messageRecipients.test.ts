@@ -5,7 +5,8 @@ import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/c
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { fromFields, recipients } from '../../components/composer/quickReply/tests/QuickReply.test.data';
+import { fromFields, recipients } from 'proton-mail/components/composer/tests/Composer.test.data';
+
 import { MESSAGE_ACTIONS } from '../../constants';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';

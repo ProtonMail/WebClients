@@ -2,8 +2,9 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import type { Cancellable } from '@proton/components';
-import { getOnlineStatus, useEventManager, useHandler, useNotifications } from '@proton/components';
+import type { Cancellable} from '@proton/components';
+import { getOnlineStatus } from '@proton/components';
+import { useEventManager, useHandler, useNotifications } from '@proton/components';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -46,7 +47,6 @@ export interface UseSendHandlerParameters {
     handleNoAttachments?: (keyword: string) => void;
     handleNoReplyEmail?: (email: string) => void;
     setIsSending?: Dispatch<SetStateAction<boolean>>;
-    isQuickReply?: boolean;
     hasNetworkError: boolean;
     onSendAssistantReport?: () => void;
 }
@@ -68,7 +68,6 @@ export const useSendHandler = ({
     handleNoAttachments,
     handleNoReplyEmail,
     setIsSending,
-    isQuickReply,
     hasNetworkError,
     onSendAssistantReport,
 }: UseSendHandlerParameters) => {
@@ -136,7 +135,7 @@ export const useSendHandler = ({
                 alreadySaved,
                 sendingMessageNotificationManager: notifManager,
                 useSilentApi: true,
-                sendingFrom: isQuickReply ? 'quick-reply' : 'composer',
+                sendingFrom: 'composer',
             });
         } catch (error: any) {
             hideNotification(notifManager.ID);
@@ -239,8 +238,7 @@ export const useSendHandler = ({
             const isOnline = getOnlineStatus();
 
             // Closing the composer instantly, all the send process will be in background
-            // In quick reply however, we want to keep the editor opened while saving
-            if (!isQuickReply && isOnline) {
+            if (isOnline) {
                 onClose();
             }
 
@@ -273,10 +271,6 @@ export const useSendHandler = ({
                 dispatch(endSending(localID));
 
                 setIsSending?.(false);
-                // If quick reply we can close the editor
-                if (isQuickReply) {
-                    onClose();
-                }
             };
             void asyncFinally();
         }

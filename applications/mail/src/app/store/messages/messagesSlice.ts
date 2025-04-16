@@ -59,9 +59,6 @@ const messagesSlice = createSlice({
         builder.addCase(draftAction.createDraft, draftReducer.createDraft);
         builder.addCase(draftAction.openDraft, draftReducer.openDraft);
         builder.addCase(draftAction.removeInitialAttachments, draftReducer.removeInitialAttachments);
-        builder.addCase(draftAction.removeQuickReplyFlag, draftReducer.removeQuickReplyFlag);
-        builder.addCase(draftAction.removeAllQuickReplyFlags, draftReducer.removeAllQuickReplyFlags);
-        builder.addCase(draftAction.updateIsSavingFlag, draftReducer.updateIsSavingFlag);
         builder.addCase(draftAction.updateDraftContent, draftReducer.updateDraftContent);
         builder.addCase(draftAction.draftSaved, draftReducer.draftSaved);
         builder.addCase(draftAction.updateExpires, draftReducer.updateExpires);

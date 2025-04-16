@@ -22,7 +22,7 @@ import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
-import { EditorTypes, useComposerContent } from '../../hooks/composer/useComposerContent';
+import { useComposerContent } from '../../hooks/composer/useComposerContent';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
@@ -187,7 +187,6 @@ const Composer = (
         getContentBeforeBlockquote,
         setContentBeforeBlockquote,
     } = useComposerContent({
-        type: EditorTypes.composer,
         composerID,
         onClose,
         addressesFocusRef,

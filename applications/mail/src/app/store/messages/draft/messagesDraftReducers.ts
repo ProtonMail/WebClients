@@ -9,9 +9,7 @@ import { isPlainText, setFlag } from '@proton/shared/lib/mail/messages';
 import { setDocumentContent } from '../../../helpers/message/messageContent';
 import { replaceEmbeddedAttachments } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
-import type { MailState } from '../../store';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import { allMessages } from '../messagesSelectors';
 import type {
     MessageDraftFlags,
     MessageEmbeddedImage,
@@ -20,17 +18,13 @@ import type {
     PartialMessageState,
 } from '../messagesTypes';
 
-const getAllMessages = (state: Draft<MessagesState>) => allMessages({ messages: state } as MailState);
-
 export const createDraft = (state: Draft<MessagesState>, { payload: message }: PayloadAction<MessageState>) => {
     (state as MessagesState)[message.localID] = message;
 };
 
 export const openDraft = (
     state: Draft<MessagesState>,
-    {
-        payload: { ID, fromUndo, fromQuickReply },
-    }: PayloadAction<{ ID: string; fromUndo: boolean; fromQuickReply?: boolean }>
+    { payload: { ID, fromUndo } }: PayloadAction<{ ID: string; fromUndo: boolean }>
 ) => {
     const localID = getLocalID(state, ID);
     const messageState = getMessage(state, ID);
@@ -38,11 +32,6 @@ export const openDraft = (
     if (messageState) {
         // Drafts have a different sanitization as mail content
         // So we have to restart the sanitization process on a cached draft
-        // If the message is opened from a quick reply, we don't want to restart the sanitization
-        if (!fromQuickReply) {
-            messageState.messageDocument = undefined;
-            messageState.messageImages = undefined;
-        }
         if (!messageState.draftFlags) {
             messageState.draftFlags = {};
         }
@@ -61,37 +50,6 @@ export const removeInitialAttachments = (state: Draft<MessagesState>, { payload:
 
     if (messageState && messageState.draftFlags) {
         messageState.draftFlags.initialAttachments = undefined;
-    }
-};
-
-export const removeQuickReplyFlag = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
-    const messageState = getMessage(state, ID);
-
-    if (messageState && messageState.draftFlags) {
-        messageState.draftFlags.isQuickReply = undefined;
-    }
-};
-
-export const removeAllQuickReplyFlags = (state: Draft<MessagesState>) => {
-    const messages = getAllMessages(state);
-
-    if (messages) {
-        messages.forEach((message) => {
-            if (message && message.draftFlags) {
-                message.draftFlags.isQuickReply = undefined;
-            }
-        });
-    }
-};
-
-export const updateIsSavingFlag = (
-    state: Draft<MessagesState>,
-    { payload: { ID, isSaving } }: PayloadAction<{ ID: string; isSaving: boolean }>
-) => {
-    const messageState = getMessage(state, ID);
-
-    if (messageState && messageState.draftFlags) {
-        messageState.draftFlags.isSaving = isSaving;
     }
 };
 
