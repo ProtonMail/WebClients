@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { addHours, set } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -62,53 +62,53 @@ describe('Scheduled messages banner', () => {
         const sendingDate = new Date();
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText, queryByText } = await render(<ExtraSnoozedMessage message={message} />);
+        await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:snooze-banner');
-        getByText(`Snoozed until today, ${formattedTime}`);
-        expect(queryByText('Unsnooze')).toBeNull();
+        screen.getByTestId('message:snooze-banner');
+        screen.getByText(`Snoozed until today, ${formattedTime}`);
+        expect(screen.queryByText('Unsnooze')).toBeNull();
     });
 
     it('should have text will be sent today', async () => {
         const sendingDate = addHours(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
+        await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:snooze-banner');
+        screen.getByTestId('message:snooze-banner');
         const text = `Snoozed until today, ${formattedTime}`;
-        getByText(text);
-        getByText('Unsnooze');
+        screen.getByText(text);
+        screen.getByText('Unsnooze');
     });
 
     it('should have text will be sent tomorrow', async () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
+        await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:snooze-banner');
-        getByText(`Snoozed until tomorrow, ${formattedTime}`);
-        getByText('Unsnooze');
+        screen.getByTestId('message:snooze-banner');
+        screen.getByText(`Snoozed until tomorrow, ${formattedTime}`);
+        screen.getByText('Unsnooze');
     });
 
     it('should have text will be sent in the future', async () => {
         const sendingDate = addDays(new Date(), 100);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
+        await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime, dateString } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:snooze-banner');
-        getByText(`Snoozed until ${dateString} at ${formattedTime}`);
-        getByText('Unsnooze');
+        screen.getByTestId('message:snooze-banner');
+        screen.getByText(`Snoozed until ${dateString} at ${formattedTime}`);
+        screen.getByText('Unsnooze');
     });
 
     it('should call the unsnooze method if has element', async () => {
@@ -122,18 +122,16 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: true,
         });
 
-        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
+        await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:snooze-banner');
-        getByText(`Snoozed until tomorrow, ${formattedTime}`);
-        const editButton = getByText('Unsnooze');
+        screen.getByTestId('message:snooze-banner');
+        screen.getByText(`Snoozed until tomorrow, ${formattedTime}`);
+        const editButton = screen.getByText('Unsnooze');
 
         // Edit the snooze message
-        await act(async () => {
-            fireEvent.click(editButton);
-        });
+        fireEvent.click(editButton);
 
         // Unsnooze route is called
         expect(unsnoozeCall).toHaveBeenCalled();
@@ -151,18 +149,16 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: true,
         });
 
-        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
+        await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:snooze-banner');
-        getByText(`Snoozed until tomorrow, ${formattedTime}`);
-        const editButton = getByText('Unsnooze');
+        screen.getByTestId('message:snooze-banner');
+        screen.getByText(`Snoozed until tomorrow, ${formattedTime}`);
+        const editButton = screen.getByText('Unsnooze');
 
         // Edit the snooze message
-        await act(async () => {
-            fireEvent.click(editButton);
-        });
+        fireEvent.click(editButton);
 
         // Unsnooze route is called
         expect(unsnoozeCall).not.toHaveBeenCalled();
@@ -178,13 +174,13 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: false,
         });
 
-        const { getByTestId, getByText, queryByText } = await render(<ExtraSnoozedMessage message={message} />);
+        await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:snooze-banner');
-        getByText(`Snoozed until tomorrow, ${formattedTime}`);
-        const editButton = queryByText('Unsnooze');
+        screen.getByTestId('message:snooze-banner');
+        screen.getByText(`Snoozed until tomorrow, ${formattedTime}`);
+        const editButton = screen.queryByText('Unsnooze');
 
         expect(editButton).toBeNull();
     });

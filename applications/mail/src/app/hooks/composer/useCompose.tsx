@@ -117,7 +117,7 @@ export const useCompose = ({
             const message = getMessage(messageID);
 
             if (type === ComposeTypes.existingDraft) {
-                dispatch(
+                void dispatch(
                     addComposerAction({
                         messageID,
                         senderEmailAddress: undefined,
@@ -130,7 +130,7 @@ export const useCompose = ({
                     throw new Error('No address');
                 }
 
-                dispatch(
+                void dispatch(
                     addComposerAction({
                         messageID,
                         senderEmailAddress: message.data.Sender.Address,

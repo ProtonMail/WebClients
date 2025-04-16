@@ -49,12 +49,12 @@ describe('MailHeader', () => {
 
         props = getProps();
 
-        const result = await render(<MailHeader {...props} />, {
+        const view = await render(<MailHeader {...props} />, {
             preloadedState: {
                 user: getModelState(user),
             },
         });
-        const search = result.getByTitle('Search');
+        const search = screen.getByTitle('Search');
 
         const openSearch = async () => {
             fireEvent.click(search);
@@ -65,7 +65,7 @@ describe('MailHeader', () => {
             return { overlay, submitButton, submit };
         };
 
-        return { ...result, openSearch };
+        return { ...view, openSearch };
     };
 
     afterEach(clearAll);
@@ -85,9 +85,9 @@ describe('MailHeader', () => {
         });
 
         it('should show upgrade button', async () => {
-            const { getByTestId } = await setup();
+            await setup();
 
-            const upgradeLabel = getByTestId('cta:upgrade-plan');
+            const upgradeLabel = screen.getByTestId('cta:upgrade-plan');
             expect(upgradeLabel).toBeInTheDocument();
         });
     });
@@ -96,7 +96,7 @@ describe('MailHeader', () => {
         it('should search with keyword', async () => {
             const searchTerm = 'test';
 
-            const { getByTestId, openSearch, rerender, history } = await setup();
+            const { openSearch, rerender, history } = await setup();
             const { submit } = await openSearch();
 
             const keywordInput = document.getElementById('search-keyword') as HTMLInputElement;
@@ -110,7 +110,7 @@ describe('MailHeader', () => {
 
             await rerender(<MailHeader {...props} />);
 
-            const searchKeyword = getByTestId('search-keyword') as HTMLInputElement;
+            const searchKeyword = screen.getByTestId('search-keyword') as HTMLInputElement;
             expect(searchKeyword.value).toBe(searchTerm);
         });
 

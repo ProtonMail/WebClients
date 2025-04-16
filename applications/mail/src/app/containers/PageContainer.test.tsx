@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -46,7 +46,7 @@ describe('PageContainer', () => {
 
         minimalCache();
 
-        const result = await render(<Component {...props} />, {
+        const view = await render(<Component {...props} />, {
             preloadedState: {
                 mailSettings: getModelState({
                     Shortcuts: SHORTCUTS.ENABLED,
@@ -66,9 +66,9 @@ describe('PageContainer', () => {
                 } as UserSettings),
             },
         });
-        const { container } = result;
+        const { container } = view;
         return {
-            ...result,
+            ...view,
             questionMark: () => fireEvent.keyDown(container, { key: '?' }),
             tab: () => fireEvent.keyDown(container, { key: 'Tab' }),
             slash: () => fireEvent.keyDown(container, { key: '/' }),
@@ -78,13 +78,13 @@ describe('PageContainer', () => {
 
     describe('hotkeys', () => {
         it('should open hotkeys modal on ?', async () => {
-            const { questionMark, getByText } = await setup();
+            const { questionMark } = await setup();
 
             const appName = getAppName(APPS.PROTONMAIL);
 
             questionMark();
 
-            getByText(`${appName} keyboard shortcuts`);
+            screen.getByText(`${appName} keyboard shortcuts`);
         });
 
         it('should focus element list on Tab', async () => {

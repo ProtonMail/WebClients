@@ -1,4 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
 import { queryConversations } from '@proton/shared/lib/api/conversations';
@@ -355,16 +355,16 @@ describe('Mailbox element list', () => {
             }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
-            const { getByTestId, store, history } = await setup({
+            const { store, history } = await setup({
                 conversations,
                 page: 1,
                 mockConversations: false,
             });
 
-            const selectAll = getByTestId('toolbar:select-all-checkbox');
+            const selectAll = screen.getByTestId('toolbar:select-all-checkbox');
             fireEvent.click(selectAll);
 
-            const archive = getByTestId('toolbar:movetoarchive');
+            const archive = screen.getByTestId('toolbar:movetoarchive');
             fireEvent.click(archive);
 
             await sendEvent(store, {

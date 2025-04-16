@@ -112,26 +112,20 @@ describe('Composer scheduled messages', () => {
     it('Should see the schedule send when FF is active', async () => {
         const message = setupMessage('Subject', [user as Recipient]);
 
-        const { queryByTestId } = await helper(
-            message,
-            getPreloadState({ hasPaidMail: false, featureFlagActive: true })
-        );
+        await helper(message, getPreloadState({ hasPaidMail: false, featureFlagActive: true }));
 
-        expect(queryByTestId('composer:send-button')).toBeTruthy();
-        expect(queryByTestId('composer:scheduled-send:open-dropdown')).toBeTruthy();
+        expect(screen.getByTestId('composer:send-button')).toBeTruthy();
+        expect(screen.getByTestId('composer:scheduled-send:open-dropdown')).toBeTruthy();
     });
 
     it('Should not see the schedule send when FF is not active', async () => {
         const message = setupMessage('Subject', [user as Recipient]);
         setupTest();
 
-        const { queryByTestId } = await helper(
-            message,
-            getPreloadState({ hasPaidMail: false, featureFlagActive: false })
-        );
+        await helper(message, getPreloadState({ hasPaidMail: false, featureFlagActive: false }));
 
-        expect(queryByTestId('composer:send-button')).toBeTruthy();
-        expect(queryByTestId('composer:scheduled-send:open-dropdown')).toBeNull();
+        expect(screen.getByTestId('composer:send-button')).toBeTruthy();
+        expect(screen.queryByTestId('composer:scheduled-send:open-dropdown')).toBeNull();
     });
 
     describe('Dropdown', () => {
@@ -154,10 +148,10 @@ describe('Composer scheduled messages', () => {
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
 
-            expect(screen.queryByTestId('composer:schedule-send:dropdown-title')).toBeTruthy();
-            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toBeTruthy();
-            expect(screen.queryByTestId('composer:schedule-send:next-monday')).toBeTruthy();
-            expect(screen.queryByTestId('composer:schedule-send:custom')).toBeTruthy();
+            expect(screen.getByTestId('composer:schedule-send:dropdown-title')).toBeTruthy();
+            expect(screen.getByTestId('composer:schedule-send:tomorrow')).toBeTruthy();
+            expect(screen.getByTestId('composer:schedule-send:next-monday')).toBeTruthy();
+            expect(screen.getByTestId('composer:schedule-send:custom')).toBeTruthy();
             // Scheduled At should not be there
             expect(screen.queryByTestId('composer:schedule-send-as-scheduled')).toBeNull();
 
@@ -186,10 +180,10 @@ describe('Composer scheduled messages', () => {
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
 
-            expect(screen.queryByTestId('composer:schedule-send:dropdown-title')).toBeTruthy();
-            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toBeTruthy();
+            expect(screen.getByTestId('composer:schedule-send:dropdown-title')).toBeTruthy();
+            expect(screen.getByTestId('composer:schedule-send:tomorrow')).toBeTruthy();
             expect(screen.queryByTestId('composer:schedule-send:next-monday')).toBeNull();
-            expect(screen.queryByTestId('composer:schedule-send:custom')).toBeTruthy();
+            expect(screen.getByTestId('composer:schedule-send:custom')).toBeTruthy();
             // Scheduled At should not be there
             expect(screen.queryByTestId('composer:schedule-send-as-scheduled')).toBeNull();
 
@@ -342,12 +336,9 @@ describe('Composer scheduled messages', () => {
         const message = setupMessage('Subject', [user as Recipient]);
         setupTest();
 
-        const { getByTestId, getByText } = await helper(
-            message,
-            getPreloadState({ hasPaidMail: true, scheduledTotalCount: 100 })
-        );
+        await helper(message, getPreloadState({ hasPaidMail: true, scheduledTotalCount: 100 }));
 
-        const sendActions = getByTestId('composer:send-actions');
+        const sendActions = screen.getByTestId('composer:send-actions');
         const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
         fireEvent.click(dropdownButton);
 
@@ -355,7 +346,7 @@ describe('Composer scheduled messages', () => {
         const scheduledSendButton = getByTestIdDefault(dropdown, 'composer:schedule-send:custom');
         fireEvent.click(scheduledSendButton);
 
-        getByText(
+        screen.getByText(
             'Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.'
         );
     });
@@ -364,9 +355,9 @@ describe('Composer scheduled messages', () => {
         const message = setupMessage();
         setupTest();
 
-        const { getByTestId } = await helper(message, getPreloadState({ hasPaidMail: true }));
+        await helper(message, getPreloadState({ hasPaidMail: true }));
 
-        const sendActions = getByTestId('composer:send-actions');
+        const sendActions = screen.getByTestId('composer:send-actions');
         const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
         fireEvent.click(dropdownButton);
 
@@ -374,7 +365,7 @@ describe('Composer scheduled messages', () => {
         const scheduledSendButton = getByTestIdDefault(dropdown, 'composer:schedule-send:custom');
         fireEvent.click(scheduledSendButton);
 
-        const modal = getByTestId('composer:modal:norecipients');
+        const modal = screen.getByTestId('composer:modal:norecipients');
         getByTextDefault(modal, 'Recipient missing');
     });
 
@@ -419,9 +410,9 @@ describe('Composer scheduled messages', () => {
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
 
-            const { getByTestId } = await helper(message, getPreloadState({ hasPaidMail: true }));
+            await helper(message, getPreloadState({ hasPaidMail: true }));
 
-            const sendActions = getByTestId('composer:send-actions');
+            const sendActions = screen.getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
 
@@ -431,9 +422,9 @@ describe('Composer scheduled messages', () => {
                 fireEvent.click(scheduledSendButton);
             });
 
-            getByTestId('composer:schedule-send:custom-modal:title');
-            const dateInput = getByTestId('composer:schedule-date-input') as HTMLInputElement;
-            const timeInput = getByTestId('composer:schedule-time-input') as HTMLInputElement;
+            screen.getByTestId('composer:schedule-send:custom-modal:title');
+            const dateInput = screen.getByTestId('composer:schedule-date-input') as HTMLInputElement;
+            const timeInput = screen.getByTestId('composer:schedule-time-input') as HTMLInputElement;
 
             // Check if default date is Tomorrow, 8:00 AM
             expect(dateInput.value).toEqual('Tomorrow');
@@ -444,9 +435,9 @@ describe('Composer scheduled messages', () => {
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
 
-            const { getByTestId } = await helper(message, getPreloadState({ hasPaidMail: true }));
+            await helper(message, getPreloadState({ hasPaidMail: true }));
 
-            const sendActions = getByTestId('composer:send-actions');
+            const sendActions = screen.getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
 
@@ -456,10 +447,10 @@ describe('Composer scheduled messages', () => {
                 fireEvent.click(scheduledSendButton);
             });
 
-            getByTestId('composer:schedule-send:custom-modal:title');
-            const dateInput = getByTestId('composer:schedule-date-input') as HTMLInputElement;
+            screen.getByTestId('composer:schedule-send:custom-modal:title');
+            const dateInput = screen.getByTestId('composer:schedule-date-input') as HTMLInputElement;
 
-            const timeInput = getByTestId('composer:schedule-time-input') as HTMLInputElement;
+            const timeInput = screen.getByTestId('composer:schedule-time-input') as HTMLInputElement;
 
             // format today date to change the input
             const todayDate = format(new Date(Date.now()), 'PP', { locale: enUS });
@@ -489,9 +480,9 @@ describe('Composer scheduled messages', () => {
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
 
-            const { getByTestId } = await helper(message, getPreloadState({ hasPaidMail: true }));
+            await helper(message, getPreloadState({ hasPaidMail: true }));
 
-            const sendActions = getByTestId('composer:send-actions');
+            const sendActions = screen.getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
 
@@ -501,10 +492,10 @@ describe('Composer scheduled messages', () => {
                 fireEvent.click(scheduledSendButton);
             });
 
-            getByTestId('composer:schedule-send:custom-modal:title');
-            const dateInput = getByTestId('composer:schedule-date-input') as HTMLInputElement;
+            screen.getByTestId('composer:schedule-send:custom-modal:title');
+            const dateInput = screen.getByTestId('composer:schedule-date-input') as HTMLInputElement;
 
-            const timeInput = getByTestId('composer:schedule-time-input') as HTMLInputElement;
+            const timeInput = screen.getByTestId('composer:schedule-time-input') as HTMLInputElement;
 
             const laterDate = format(addDays(new Date(Date.now()), 5), 'PP', { locale: enUS });
 
@@ -521,9 +512,9 @@ describe('Composer scheduled messages', () => {
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
 
-            const { getByTestId } = await helper(message, getPreloadState({ hasPaidMail: true }));
+            await helper(message, getPreloadState({ hasPaidMail: true }));
 
-            const sendActions = getByTestId('composer:send-actions');
+            const sendActions = screen.getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
 
@@ -533,9 +524,9 @@ describe('Composer scheduled messages', () => {
                 fireEvent.click(scheduledSendButton);
             });
 
-            const dateInput = getByTestId('composer:schedule-date-input') as HTMLInputElement;
-            const timeInput = getByTestId('composer:schedule-time-input') as HTMLInputElement;
-            const button = getByTestId('modal-footer:set-button') as HTMLButtonElement;
+            const dateInput = screen.getByTestId('composer:schedule-date-input') as HTMLInputElement;
+            const timeInput = screen.getByTestId('composer:schedule-time-input') as HTMLInputElement;
+            const button = screen.getByTestId('modal-footer:set-button') as HTMLButtonElement;
 
             // set date input to the past
             const previousDate = format(addDays(new Date(), -5), 'PP', { locale: enUS });
