@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/index';
 import { Icon } from '@proton/components/index';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { type Paths } from '../content/helper';
@@ -29,7 +29,7 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
     return (
         <Layout toApp={toApp} onBack={handleBack} hasDecoration>
             <Main>
-                <Header title={c('Title').t`How can we help?`} onBack={handleBack} />
+                <Header title={c('Title').t`Forgot password`} onBack={handleBack} />
                 <Content className="text-center">
                     <Link
                         className="flex items-center gap-3 text-no-decoration color-norm hover:color-norm py-4 border-bottom border-weak"
@@ -37,8 +37,9 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
                     >
                         <Icon name="qr-code" size={6} />
                         <div className="text-left flex-1">
-                            <div className="text-lg">{c('edm').t`Sign in with another device`}</div>
-                            <div className="color-weak">{c('edm').t`Scan a QR code with your phone`}</div>
+                            <div className="text-lg">{c('edm').t`Sign in with QR code`}</div>
+                            <div className="color-weak">{c('edm')
+                                .t`Works if you have another device that’s signed in to ${BRAND_NAME}`}</div>
                         </div>
                     </Link>
 
