@@ -4,6 +4,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsDivider from '@proton/components/containers/account/SettingsDivider';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
@@ -69,74 +70,69 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                 );
             })}
             <SettingsSection>
-                {qrCodeSignInEnabled && (
-                    <>
-                        <SignInWithAnotherDeviceSettings />
-                        <hr className="my-8" />
-                    </>
-                )}
+                <SettingsDivider enabled={divider}>
+                    {qrCodeSignInEnabled && <SignInWithAnotherDeviceSettings />}
 
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="recovery-email-input">
-                            {c('Label').t`Recovery email address`}
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-1">
-                        <RecoveryEmail
-                            className="mb-4 md:mb-0"
-                            email={userSettings.Email}
-                            hasReset={!!userSettings.Email.Reset}
-                            hasNotify={!!userSettings.Email.Notify}
-                        />
-                        <div className="flex items-center">
-                            <Toggle
-                                className="mr-2"
-                                loading={loadingEmailReset}
-                                checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
-                                id="passwordEmailResetToggle"
-                                onChange={({ target: { checked } }) =>
-                                    withLoadingEmailReset(handleChangePasswordEmailToggle(+checked).catch(noop))
-                                }
-                            />
-                            <label htmlFor="passwordEmailResetToggle" className="flex-1">
-                                {c('Label').t`Allow recovery by email`}
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="recovery-email-input">
+                                {c('Label').t`Recovery email address`}
                             </label>
-                        </div>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-
-                {divider && <hr className="my-8" />}
-
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="phoneInput">
-                            {c('label').t`Recovery phone number`}
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-1">
-                        <RecoveryPhone
-                            className="mb-4 md:mb-0"
-                            defaultCountry={defaultCountry}
-                            phone={userSettings.Phone}
-                            hasReset={!!userSettings.Phone.Reset}
-                        />
-                        <div className="flex items-center">
-                            <Toggle
-                                className="mr-2"
-                                loading={loadingPhoneReset}
-                                checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
-                                id="passwordPhoneResetToggle"
-                                onChange={({ target: { checked } }) =>
-                                    withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked).catch(noop))
-                                }
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight className="flex-1">
+                            <RecoveryEmail
+                                className="mb-4 md:mb-0"
+                                email={userSettings.Email}
+                                hasReset={!!userSettings.Email.Reset}
+                                hasNotify={!!userSettings.Email.Notify}
                             />
-                            <label htmlFor="passwordPhoneResetToggle" className="flex-1">
-                                {c('Label').t`Allow recovery by phone`}
+                            <div className="flex items-center">
+                                <Toggle
+                                    className="mr-2"
+                                    loading={loadingEmailReset}
+                                    checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
+                                    id="passwordEmailResetToggle"
+                                    onChange={({ target: { checked } }) =>
+                                        withLoadingEmailReset(handleChangePasswordEmailToggle(+checked).catch(noop))
+                                    }
+                                />
+                                <label htmlFor="passwordEmailResetToggle" className="flex-1">
+                                    {c('Label').t`Allow recovery by email`}
+                                </label>
+                            </div>
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
+
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="phoneInput">
+                                {c('label').t`Recovery phone number`}
                             </label>
-                        </div>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight className="flex-1">
+                            <RecoveryPhone
+                                className="mb-4 md:mb-0"
+                                defaultCountry={defaultCountry}
+                                phone={userSettings.Phone}
+                                hasReset={!!userSettings.Phone.Reset}
+                            />
+                            <div className="flex items-center">
+                                <Toggle
+                                    className="mr-2"
+                                    loading={loadingPhoneReset}
+                                    checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
+                                    id="passwordPhoneResetToggle"
+                                    onChange={({ target: { checked } }) =>
+                                        withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked).catch(noop))
+                                    }
+                                />
+                                <label htmlFor="passwordPhoneResetToggle" className="flex-1">
+                                    {c('Label').t`Allow recovery by phone`}
+                                </label>
+                            </div>
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
+                </SettingsDivider>
             </SettingsSection>
         </>
     );

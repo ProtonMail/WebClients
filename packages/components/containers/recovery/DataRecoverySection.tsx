@@ -9,6 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsDivider from '@proton/components/containers/account/SettingsDivider';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -141,146 +142,156 @@ export const DataRecoverySection = () => {
                     </Href>
                 </SettingsParagraph>
 
-                {isMnemonicAvailable && (
-                    <>
-                        {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
-                            <p className="color-danger">
-                                <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" size={3.5} />
-                                {c('Warning')
-                                    .t`Your recovery phrase is outdated. It can't recover new data if you reset your password again.`}
-                            </p>
-                        )}
-
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="mnemonicToggle">
-                                    <span className="mr-2">{c('label').t`Recovery phrase`}</span>
-                                    <Info
-                                        title={c('Info')
-                                            .t`A recovery phrase lets you access your account and recover your encrypted messages if you forget your password`}
+                <SettingsDivider>
+                    {isMnemonicAvailable && (
+                        <>
+                            {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
+                                <p className="color-danger">
+                                    <Icon
+                                        className="mr-2 float-left mt-1"
+                                        name="exclamation-circle-filled"
+                                        size={3.5}
                                     />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight isToggleContainer={user.MnemonicStatus !== MNEMONIC_STATUS.OUTDATED}>
-                                {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
-                                    <Button color="norm" onClick={() => setGenerateMnemonicModalButtonOpen(true)}>
-                                        {c('Action').t`Update recovery phrase`}
-                                    </Button>
-                                ) : (
-                                    <>
-                                        <div className="flex items-start">
-                                            <Toggle
-                                                className="mr-2"
-                                                loading={disableMnemonicModal.open || generateMnemonicModal.open}
-                                                checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
-                                                id="mnemonicToggle"
-                                                onChange={({ target: { checked } }) => {
-                                                    if (checked) {
-                                                        setGenerateMnemonicModalOpen(true);
-                                                    } else {
-                                                        setDisableMnemonicModalOpen(true);
-                                                    }
-                                                }}
-                                            />
+                                    {c('Warning')
+                                        .t`Your recovery phrase is outdated. It can't recover new data if you reset your password again.`}
+                                </p>
+                            )}
 
-                                            <label
-                                                data-testid="account:recovery:mnemonicToggle"
-                                                htmlFor="mnemonicToggle"
-                                                className="flex-1 mt-0.5"
-                                            >
-                                                {c('Label').t`Allow recovery by recovery phrase`}
-                                            </label>
-                                        </div>
-
-                                        {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
-                                            <Button
-                                                className="mt-4"
-                                                shape="outline"
-                                                onClick={() => setGenerateMnemonicModalButtonOpen(true)}
-                                            >
-                                                {c('Action').t`Generate new recovery phrase`}
-                                            </Button>
-                                        )}
-                                    </>
-                                )}
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                    </>
-                )}
-
-                {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="my-8" />}
-
-                {isRecoveryFileAvailable && (
-                    <>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="deviceRecoveryToggle">
-                                    <span className="mr-2">{c('label').t`Device-based recovery`}</span>
-                                    <Info
-                                        url={getKnowledgeBaseUrl('/device-data-recovery')}
-                                        title={c('Info')
-                                            .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
-                                    />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight isToggleContainer>
-                                <div className="flex items-start">
-                                    <Toggle
-                                        className="mr-2"
-                                        loading={loadingDeviceRecovery}
-                                        checked={!!userSettings.DeviceRecovery}
-                                        id="deviceRecoveryToggle"
-                                        onChange={({ target: { checked } }) =>
-                                            withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
-                                        }
-                                    />
-                                    <label
-                                        htmlFor="deviceRecoveryToggle"
-                                        className="flex-1 mt-0.5"
-                                        data-testid="account:recovery:trustedDevice"
-                                    >
-                                        {c('Label').t`Allow recovery using a trusted device`}
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="mnemonicToggle">
+                                        <span className="mr-2">{c('label').t`Recovery phrase`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`A recovery phrase lets you access your account and recover your encrypted messages if you forget your password`}
+                                        />
                                     </label>
-                                </div>
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <span className="pt-0 mb-2 md:mb-0 text-semibold">
-                                    <span className="mr-2">{c('Title').t`Recovery file`}</span>
-                                    <Info
-                                        title={c('Info')
-                                            .t`A recovery file lets you unlock and view your data after account recovery`}
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight
+                                    isToggleContainer={user.MnemonicStatus !== MNEMONIC_STATUS.OUTDATED}
+                                >
+                                    {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
+                                        <Button color="norm" onClick={() => setGenerateMnemonicModalButtonOpen(true)}>
+                                            {c('Action').t`Update recovery phrase`}
+                                        </Button>
+                                    ) : (
+                                        <>
+                                            <div className="flex items-start">
+                                                <Toggle
+                                                    className="mr-2"
+                                                    loading={disableMnemonicModal.open || generateMnemonicModal.open}
+                                                    checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
+                                                    id="mnemonicToggle"
+                                                    onChange={({ target: { checked } }) => {
+                                                        if (checked) {
+                                                            setGenerateMnemonicModalOpen(true);
+                                                        } else {
+                                                            setDisableMnemonicModalOpen(true);
+                                                        }
+                                                    }}
+                                                />
+
+                                                <label
+                                                    data-testid="account:recovery:mnemonicToggle"
+                                                    htmlFor="mnemonicToggle"
+                                                    className="flex-1 mt-0.5"
+                                                >
+                                                    {c('Label').t`Allow recovery by recovery phrase`}
+                                                </label>
+                                            </div>
+
+                                            {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
+                                                <Button
+                                                    className="mt-4"
+                                                    shape="outline"
+                                                    onClick={() => setGenerateMnemonicModalButtonOpen(true)}
+                                                >
+                                                    {c('Action').t`Generate new recovery phrase`}
+                                                </Button>
+                                            )}
+                                        </>
+                                    )}
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        </>
+                    )}
+
+                    {isRecoveryFileAvailable && (
+                        <>
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="deviceRecoveryToggle">
+                                        <span className="mr-2">{c('label').t`Device-based recovery`}</span>
+                                        <Info
+                                            url={getKnowledgeBaseUrl('/device-data-recovery')}
+                                            title={c('Info')
+                                                .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
+                                        />
+                                    </label>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight isToggleContainer>
+                                    <div className="flex items-start">
+                                        <Toggle
+                                            className="mr-2"
+                                            loading={loadingDeviceRecovery}
+                                            checked={!!userSettings.DeviceRecovery}
+                                            id="deviceRecoveryToggle"
+                                            onChange={({ target: { checked } }) =>
+                                                withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
+                                            }
+                                        />
+                                        <label
+                                            htmlFor="deviceRecoveryToggle"
+                                            className="flex-1 mt-0.5"
+                                            data-testid="account:recovery:trustedDevice"
+                                        >
+                                            {c('Label').t`Allow recovery using a trusted device`}
+                                        </label>
+                                    </div>
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <span className="pt-0 mb-2 md:mb-0 text-semibold">
+                                        <span className="mr-2">{c('Title').t`Recovery file`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`A recovery file lets you unlock and view your data after account recovery`}
+                                        />
+                                    </span>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight>
+                                    <ExportRecoveryFileButton className="block" color="norm">
+                                        {hasOutdatedRecoveryFile
+                                            ? c('Action').t`Update recovery file`
+                                            : c('Action').t`Download recovery file`}
+                                    </ExportRecoveryFileButton>
+                                    {canRevokeRecoveryFiles && (
+                                        <Button
+                                            className="mt-4"
+                                            color="danger"
+                                            shape="underline"
+                                            onClick={() => setVoidRecoveryFilesModalOpen(true)}
+                                        >
+                                            {c('Action').t`Void all recovery files`}
+                                        </Button>
+                                    )}
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                            {hasOutdatedRecoveryFile && (
+                                <p className="color-danger flex flex-nowrap">
+                                    <Icon
+                                        className="mr-2 shrink-0 mt-0.5"
+                                        name="exclamation-circle-filled"
+                                        size={3.5}
                                     />
-                                </span>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight>
-                                <ExportRecoveryFileButton className="block" color="norm">
-                                    {hasOutdatedRecoveryFile
-                                        ? c('Action').t`Update recovery file`
-                                        : c('Action').t`Download recovery file`}
-                                </ExportRecoveryFileButton>
-                                {canRevokeRecoveryFiles && (
-                                    <Button
-                                        className="mt-4"
-                                        color="danger"
-                                        shape="underline"
-                                        onClick={() => setVoidRecoveryFilesModalOpen(true)}
-                                    >
-                                        {c('Action').t`Void all recovery files`}
-                                    </Button>
-                                )}
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                        {hasOutdatedRecoveryFile && (
-                            <p className="color-danger flex flex-nowrap">
-                                <Icon className="mr-2 shrink-0 mt-0.5" name="exclamation-circle-filled" size={3.5} />
-                                <span className="flex-1">{c('Warning')
-                                    .t`Your recovery file is outdated. It can't recover new data if you reset your password again.`}</span>
-                            </p>
-                        )}
-                    </>
-                )}
+                                    <span className="flex-1">{c('Warning')
+                                        .t`Your recovery file is outdated. It can't recover new data if you reset your password again.`}</span>
+                                </p>
+                            )}
+                        </>
+                    )}
+                </SettingsDivider>
             </SettingsSection>
         </>
     );
