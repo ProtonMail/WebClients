@@ -16,10 +16,13 @@ import {
     querySharedWithMeAlbums,
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
+import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
@@ -489,37 +492,57 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             const { name: albumName } = await getLink(abortSignal, albumShareId, albumLinkId);
 
+            // Preload links in queue to prevent doing queue in batches
+            const linksInfoForAlbum = new Map<
+                string,
+                {
+                    LinkID: string;
+                    Hash: string;
+                    Name: string;
+                    NodePassphrase: string;
+                    NodePassphraseSignature: string;
+                    NameSignatureEmail?: string;
+                    SignatureEmail?: string;
+                    ContentHash?: string;
+                }
+            >();
+            const queue = LinkIDs.map((linkId) => async () => {
+                if (abortSignal.aborted) {
+                    return;
+                }
+                const link = await getLink(abortSignal, albumShareId, linkId);
+                const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
+                    abortSignal,
+                    albumShareId,
+                    albumLinkId,
+                    link.name
+                );
+                linksInfoForAlbum.set(link.linkId, {
+                    LinkID: link.linkId,
+                    Hash,
+                    Name,
+                    NodePassphrase,
+                    NodePassphraseSignature,
+                    NameSignatureEmail: link.nameSignatureEmail,
+                    SignatureEmail: link.signatureEmail,
+                    ContentHash: link.activeRevision?.photo?.contentHash,
+                });
+            });
+            await runInQueue(queue, MAX_THREADS_PER_REQUEST);
+
             const result = await batchHelper(abortSignal, {
                 linkIds: LinkIDs,
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
                 query: async (batchLinkIds) => {
-                    const links = await Promise.all(
-                        batchLinkIds.map(async (linkId) => {
-                            const link = await getLink(abortSignal, albumShareId, linkId);
-                            const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
-                                abortSignal,
-                                albumShareId,
-                                albumLinkId,
-                                link.name
-                            );
-                            return {
-                                LinkID: link.linkId,
-                                Hash: Hash,
-                                Name: Name,
-                                NodePassphrase: NodePassphrase,
-                                NodePassphraseSignature: NodePassphraseSignature,
-                                NameSignatureEmail: link.nameSignatureEmail,
-                                SignatureEmail: link.signatureEmail,
-                                ContentHash: link.activeRevision?.photo?.contentHash,
-                            };
-                        })
-                    );
+                    const links = await Promise.all(batchLinkIds.map(async (linkId) => linksInfoForAlbum.get(linkId)));
+
                     return queryAddAlbumPhotos(volumeId, albumLinkId, {
-                        AlbumData: links,
+                        AlbumData: links.filter(isTruthy),
                     });
                 },
             });
+
             // refreshing the album is only needed after adding photos for the first time to an album
             if (albumPhotos.length === 0) {
                 void loadAlbums(abortSignal);

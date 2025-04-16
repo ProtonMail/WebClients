@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
-import { type DecryptedLink, type PhotoLink, isDecryptedLink } from '../../store';
+import { type DecryptedLink, isDecryptedLink } from '../../store';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { CreateAlbumModal } from './CreateAlbumModal';
 
@@ -82,7 +82,7 @@ const AlbumSquare = ({
 };
 
 export const AddAlbumPhotosModal = ({
-    photos,
+    photosLinkIds,
     addAlbumPhotosModal,
     onCreateAlbumWithPhotos,
     onAddAlbumPhotos,
@@ -92,7 +92,7 @@ export const AddAlbumPhotosModal = ({
     addAlbumPhotosModal: ModalStateReturnObj;
     onCreateAlbumWithPhotos: (name: string, linkIds: string[]) => Promise<void>;
     onAddAlbumPhotos: (albumLinkId: string, linkIds: string[]) => Promise<void>;
-    photos: PhotoLink[];
+    photosLinkIds: string[];
     albums: DecryptedAlbum[];
     share: boolean;
 }) => {
@@ -108,9 +108,10 @@ export const AddAlbumPhotosModal = ({
 
     const [activeAlbumId, setActiveAlbumId] = useState<string | undefined>();
 
+    const photoCount = photosLinkIds.length;
+
     const handleSelectAlbum = async (linkId: string) => {
         setActiveAlbumId(linkId);
-        const photosLinkIds = photos.map((photo) => photo.linkId);
         await onAddAlbumPhotos(linkId, photosLinkIds);
         setActiveAlbumId(undefined);
     };
@@ -126,14 +127,14 @@ export const AddAlbumPhotosModal = ({
                         title={
                             share
                                 ? c('Heading').ngettext(
-                                      msgid`Share ${photos.length} photo via`,
-                                      `Share ${photos.length} photos via`,
-                                      photos.length
+                                      msgid`Share ${photoCount} photo via`,
+                                      `Share ${photoCount} photos via`,
+                                      photoCount
                                   )
                                 : c('Heading').ngettext(
-                                      msgid`Add ${photos.length} photo to`,
-                                      `Add ${photos.length} photos to`,
-                                      photos.length
+                                      msgid`Add ${photoCount} photo to`,
+                                      `Add ${photoCount} photos to`,
+                                      photoCount
                                   )
                         }
                     />
@@ -147,9 +148,9 @@ export const AddAlbumPhotosModal = ({
                             }}
                             shape="ghost"
                             aria-label={c('Action').ngettext(
-                                msgid`Add ${photos.length} photo to a new album`,
-                                `Add ${photos.length} photos to a new album`,
-                                photos.length
+                                msgid`Add ${photoCount} photo to a new album`,
+                                `Add ${photoCount} photos to a new album`,
+                                photoCount
                             )}
                         >
                             <span
@@ -233,10 +234,7 @@ export const AddAlbumPhotosModal = ({
                     share={share}
                     createAlbumModal={createAlbumModal}
                     createAlbum={(name) => {
-                        return onCreateAlbumWithPhotos(
-                            name,
-                            photos.map((photo) => photo.linkId)
-                        );
+                        return onCreateAlbumWithPhotos(name, photosLinkIds);
                     }}
                 />
             )}
