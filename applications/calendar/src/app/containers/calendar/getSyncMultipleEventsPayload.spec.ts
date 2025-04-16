@@ -42,6 +42,9 @@ END:VEVENT`;
                             veventComponent: vcalVeventComponent,
                             removedAttendeesEmails: [],
                             hasDefaultNotifications: false,
+                            resetNotes: true,
+                            // @ts-expect-error mock
+                            getAttendeeEncryptedComment: () => null,
                         },
                     },
                 ],

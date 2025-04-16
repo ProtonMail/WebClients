@@ -1,6 +1,6 @@
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
@@ -9,7 +9,7 @@ import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getVeventColorValue, withoutRedundantDtEnd } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { AttendeeComment, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import type {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -58,6 +58,7 @@ export interface UpdateEventActionOperation {
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
         color?: string;
+        resetNotes: boolean;
     };
 }
 
@@ -77,6 +78,10 @@ export interface SyncMultipleEventsArguments {
     sync: SyncEventActionOperations;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    getAttendeeEncryptedComment: (
+        nextSessionKey: SessionKey | undefined,
+        operation: CreateEventActionOperation | UpdateEventActionOperation
+    ) => Promise<{ [attendeeToken: string]: AttendeeComment }>;
 }
 
 export const getIsDeleteSyncOperation = (
@@ -112,6 +117,7 @@ export const getUpdateSyncOperation = (data: {
     isBreakingChange?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
+    resetNotes: boolean;
 }): UpdateEventActionOperation => ({
     type: SyncOperationTypes.UPDATE,
     data: {
@@ -139,7 +145,7 @@ const getRequiredKeys = ({
     sync: { operations, calendarID, addressID },
     getCalendarKeys,
     getAddressKeys,
-}: SyncMultipleEventsArguments) => {
+}: Omit<SyncMultipleEventsArguments, 'getAttendeeEncryptedComment'>) => {
     const allCalendarIDs = operations.reduce<Set<string>>(
         (acc, operation) => {
             // No key needed for delete.
@@ -173,7 +179,12 @@ const getRequiredKeys = ({
     return Promise.all([getKeysMap(allCalendarIDs, getCalendarKeys), getKeysMap(new Set([addressID]), getAddressKeys)]);
 };
 
-const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, sync }: SyncMultipleEventsArguments) => {
+const getSyncMultipleEventsPayload = async ({
+    getAddressKeys,
+    getCalendarKeys,
+    sync,
+    getAttendeeEncryptedComment,
+}: SyncMultipleEventsArguments) => {
     const [calendarKeysMap, addressKeysMap] = await getRequiredKeys({ sync, getCalendarKeys, getAddressKeys });
 
     const { operations, calendarID, memberID, addressID } = sync;
@@ -203,13 +214,19 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             if (getIsCreateSyncOperation(operation)) {
                 const { hasDefaultNotifications, addedAttendeesPublicKeysMap, isPersonalSingleEdit } = operation.data;
 
+                const creationKeys = await getCreationKeys({ newAddressKeys, newCalendarKeys });
+
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
                     isCreateEvent: true,
                     isSwitchCalendar: false,
                     hasDefaultNotifications,
                     addedAttendeesPublicKeysMap,
-                    ...(await getCreationKeys({ newAddressKeys, newCalendarKeys })),
+                    getAttendeesCommentsMap: async (sharedSessionKey: SessionKey) => {
+                        const eventCommentsMap = await getAttendeeEncryptedComment(sharedSessionKey, operation);
+                        return eventCommentsMap;
+                    },
+                    ...creationKeys,
                 });
 
                 const isPersonalSingleEditData = {
@@ -254,6 +271,14 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 const oldAddressKeys = oldAddressID ? await getAddressKeys(oldAddressID) : undefined;
                 const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
 
+                const creationKeys = await getCreationKeys({
+                    calendarEvent,
+                    newAddressKeys,
+                    oldAddressKeys,
+                    newCalendarKeys,
+                    oldCalendarKeys,
+                });
+
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
                     cancelledOccurrenceVevent,
@@ -263,13 +288,11 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     isSwitchCalendar,
                     hasDefaultNotifications,
                     isAttendee,
-                    ...(await getCreationKeys({
-                        calendarEvent,
-                        newAddressKeys,
-                        oldAddressKeys,
-                        newCalendarKeys,
-                        oldCalendarKeys,
-                    })),
+                    getAttendeesCommentsMap: async (sharedSessionKey: SessionKey) => {
+                        const eventCommentsMap = await getAttendeeEncryptedComment(sharedSessionKey, operation);
+                        return eventCommentsMap;
+                    },
+                    ...creationKeys,
                 });
                 const isOrganizerData = { IsOrganizer: booleanToNumber(!isAttendee) };
                 const isBreakingChangeData = { IsBreakingChange: booleanToNumber(isBreakingChange || false) };

@@ -1,4 +1,5 @@
 import type {
+    AttendeeComment,
     CalendarNotificationSettings,
     CreateOrUpdateCalendarEventData,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -29,6 +30,7 @@ interface FormatDataArguments {
     attendeesEncryptedSessionKeysMap?: SimpleMap<Uint8Array>;
     notificationsPart?: CalendarNotificationSettings[];
     colorPart?: string;
+    eventCommentsMap?: { [token: string]: AttendeeComment };
 }
 export const formatData = ({
     sharedSignedPart,
@@ -44,6 +46,7 @@ export const formatData = ({
     attendeesClearPart,
     removedAttendeesEmails,
     attendeesEncryptedSessionKeysMap,
+    eventCommentsMap,
 }: FormatDataArguments) => {
     const result: Omit<CreateOrUpdateCalendarEventData, 'Permissions'> = {
         Notifications: notificationsPart || null,
@@ -112,6 +115,7 @@ export const formatData = ({
         result.Attendees = attendeesClearPart.map(({ token, status }) => ({
             Token: token,
             Status: status,
+            Comment: eventCommentsMap?.[token] || null,
         }));
     }
 

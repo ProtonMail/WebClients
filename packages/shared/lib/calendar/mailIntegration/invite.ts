@@ -213,6 +213,7 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
         const propertiesToKeep: (keyof VcalVeventComponent)[] = [
             'uid',
             'dtstart',
+            'comment',
             'dtend',
             'sequence',
             'recurrence-id',
@@ -231,9 +232,14 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
                 if (!partstat) {
                     throw new Error('Cannot reply without participant status');
                 }
+
+                const parameters: Record<string, string> = {};
+
+                parameters.partstat = partstat;
+
                 return {
                     value,
-                    parameters: { partstat },
+                    parameters,
                 };
             }
             return { value };
@@ -531,6 +537,7 @@ const getUpdateEmailBodyText = ({
     whenText,
     locationText,
     descriptionText,
+    commentText,
 }: {
     vevent: VcalVeventComponent;
     oldVevent: VcalVeventComponent;
@@ -538,12 +545,15 @@ const getUpdateEmailBodyText = ({
     whenText: string;
     locationText: string;
     descriptionText: string;
+    commentText: string;
 }) => {
     const hasSameTime = !getHasModifiedDateTimes(vevent, oldVevent);
     const hasSameTitle = getSupportedStringValue(vevent.summary) === getSupportedStringValue(oldVevent.summary);
     const hasSameLocation = getSupportedStringValue(vevent.location) === getSupportedStringValue(oldVevent.location);
     const hasSameDescription =
         getSupportedStringValue(vevent.description) === getSupportedStringValue(oldVevent.description);
+    const hasSameComment =
+        getSupportedStringValue(vevent.comment?.[0]) === getSupportedStringValue(oldVevent.comment?.[0]);
 
     let updatedBodyText = '';
     if (!hasSameTitle) {
@@ -558,6 +568,9 @@ const getUpdateEmailBodyText = ({
     if (!hasSameDescription) {
         updatedBodyText = buildUpdatedFieldText(updatedBodyText, descriptionText, 'DESCRIPTION');
     }
+    if (!hasSameComment) {
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, commentText, 'NOTE');
+    }
     return updatedBodyText;
 };
 
@@ -566,10 +579,12 @@ const getEmailBodyTexts = (
     oldVevent?: VcalVeventComponent,
     dateFormatOptions?: Options
 ) => {
-    const { summary, location, description } = vevent;
+    const { summary, location, description, comment } = vevent;
     const eventTitle = getDisplayTitle(summary?.value);
     const eventLocation = location?.value;
     const eventDescription = description?.value;
+    // Access the first comment's value if it exists
+    const eventComment = comment && comment.length > 0 ? comment[0].value : undefined;
 
     const whenText = getWhenText(vevent, dateFormatOptions);
     const locationText = eventLocation
@@ -580,16 +595,32 @@ ${eventLocation}`
         ? c('Email body for description (description part)').t`DESCRIPTION:
 ${eventDescription}`
         : '';
+    const commentText = eventComment
+        ? c('Email body for comment (comment part)').t`NOTE:
+${eventComment}`
+        : '';
     const locationAndDescriptionText =
         locationText && descriptionText
             ? `${locationText}
 
 ${descriptionText}`
             : `${locationText || descriptionText}`;
-    const eventDetailsText = locationAndDescriptionText
+
+    // Add the comment to the details if it exists
+    const detailsWithComment = commentText
+        ? `${
+              locationAndDescriptionText
+                  ? `${locationAndDescriptionText}
+
+${commentText}`
+                  : commentText
+          }`
+        : locationAndDescriptionText;
+
+    const eventDetailsText = detailsWithComment
         ? `${whenText}
 
-${locationAndDescriptionText}`
+${detailsWithComment}`
         : `${whenText}`;
 
     const titleText = `TITLE:
@@ -602,10 +633,159 @@ ${eventTitle}`;
               whenText,
               locationText,
               descriptionText,
+              commentText,
           })
         : undefined;
 
     return { eventTitle, eventDetailsText, updateEventDetailsText };
+};
+
+/**
+ * Checks if a comment has been updated, added, or removed between two versions of an event
+ */
+export const isCommentUpdated = (vevent?: VcalVeventComponent, oldVevent?: VcalVeventComponent): boolean => {
+    const newComment = vevent?.comment;
+    const oldComment = oldVevent?.comment;
+
+    return !!(
+        // Case 1: Both have comments but values are different
+        (
+            (newComment?.[0]?.value && oldComment?.[0]?.value && newComment[0].value !== oldComment[0].value) ||
+            // Case 2: Old comment exists but new comment doesn't (comment was removed)
+            (oldComment?.[0]?.value && (!newComment || !newComment[0]?.value)) ||
+            // Case 3: New comment exists but old comment doesn't (comment was added)
+            (newComment?.[0]?.value && (!oldComment || !oldComment[0]?.value))
+        )
+    );
+};
+
+/**
+ * Helper function to create consistent event update messages
+ */
+const createUpdateMessage = ({
+    messageType,
+    updateEventDetailsText,
+    commentStatus,
+    hasUpdatedComment,
+}: {
+    messageType: 'single' | 'recurring' | 'regular';
+    updateEventDetailsText: string;
+    commentStatus: string;
+    hasUpdatedComment: boolean;
+}) => {
+    const hasUpdatedText = updateEventDetailsText && updateEventDetailsText.trim() !== '';
+
+    let messageIntro;
+    if (messageType === 'single') {
+        messageIntro = c('Email body for invitation').t`This event occurrence was updated.`;
+    } else if (messageType === 'recurring') {
+        messageIntro = c('Email body for invitation').t`All events in this series were updated.`;
+    } else {
+        messageIntro = c('Email body for invitation').t`This event was updated.`;
+    }
+
+    // If there's updated text or a comment change that needs the "Here's what changed" header,
+    // format with exactly two spaces after the newline before "Here's what changed:"
+    if (hasUpdatedText || (hasUpdatedComment && commentStatus)) {
+        const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
+        return `${messageIntro}\n\nHere's what changed:\n\n${updateEventDetailsText}${formattedComment}`;
+    }
+
+    // If there's only a comment update without the header
+    if (commentStatus) {
+        return `${messageIntro}\n\n${commentStatus}`;
+    }
+
+    // No changes or comments
+    return messageIntro;
+};
+
+/**
+ * Helper function to create consistent response messages (accept/tentative/decline)
+ */
+const createResponseMessage = ({
+    emailAddress,
+    responseType,
+    eventTitle,
+    commentStatus,
+    updateEventDetailsText,
+    hasUpdatedComment,
+}: {
+    emailAddress: string;
+    responseType: 'accepted' | 'tentatively accepted' | 'declined';
+    eventTitle: string;
+    commentStatus: string;
+    updateEventDetailsText: string;
+    hasUpdatedComment: boolean;
+}) => {
+    const hasUpdatedText = updateEventDetailsText && updateEventDetailsText.trim() !== '';
+
+    // Use separate translated strings for each response type
+    let responseMessage;
+    if (responseType === 'accepted') {
+        responseMessage = c('Email body for response to invitation')
+            .t`${emailAddress} accepted your invitation to ${eventTitle}`;
+    } else if (responseType === 'tentatively accepted') {
+        responseMessage = c('Email body for response to invitation')
+            .t`${emailAddress} tentatively accepted your invitation to ${eventTitle}`;
+    } else if (responseType === 'declined') {
+        responseMessage = c('Email body for response to invitation')
+            .t`${emailAddress} declined your invitation to ${eventTitle}`;
+    } else {
+        throw new Error('Invalid response type');
+    }
+
+    // Only show "Here's what changed" if there were actual property changes, not just for a new comment
+    if (hasUpdatedText) {
+        return `${responseMessage}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${commentStatus ? `\n\n${commentStatus}` : ''}`;
+    }
+
+    // For comment updates, don't include "Here's what changed" header
+    if (hasUpdatedComment) {
+        return `${responseMessage}\n\n${commentStatus}`;
+    }
+
+    // If there's no text change but there is a comment, just add the comment with proper spacing
+    if (commentStatus) {
+        return `${responseMessage}\n\n${commentStatus}`;
+    }
+
+    // No changes and no comment, just return the response message
+    return responseMessage;
+};
+
+/**
+ * Helper function to create consistent cancellation messages
+ */
+const createCancellationMessage = ({
+    isSingleOccurrence,
+    eventTitle,
+    commentStatus,
+    updateEventDetailsText,
+}: {
+    isSingleOccurrence: boolean;
+    eventTitle: string;
+    commentStatus: string;
+    updateEventDetailsText: string;
+}) => {
+    const messageIntro = isSingleOccurrence
+        ? c('Email body for invitation').t`This event occurrence was canceled.`
+        : c('Email body for invitation').t`${eventTitle} was canceled.`;
+
+    const hasUpdatedText = updateEventDetailsText && updateEventDetailsText.trim() !== '';
+
+    // If there's updated text, show "Here's what changed"
+    if (hasUpdatedText) {
+        return `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${commentStatus ? `\n\n${commentStatus}` : ''}`;
+    }
+
+    // If only a comment is present, include "Here's what changed:" header as expected in tests
+    if (commentStatus) {
+        return `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}\n${commentStatus}`;
+    }
+
+    // Regular cancellation without comment
+    return messageIntro;
 };
 
 export const generateEmailBody = ({
@@ -634,56 +814,98 @@ export const generateEmailBody = ({
     );
     const hasUpdatedText = updateEventDetailsText && updateEventDetailsText !== '';
 
+    // Get comment directly from vevent to append to the email body
+    const comment = vevent.comment;
+    const commentText =
+        comment && comment.length > 0 ? `${c('Email body for invitation').t`NOTE:`}\n${comment[0].value}` : '';
+
+    // Check if comment has been updated
+    const hasUpdatedComment = isCommentUpdated(vevent, oldVevent);
+
     if (method === ICAL_METHOD.REQUEST) {
-        if (getHasRecurrenceId(vevent)) {
-            return hasUpdatedText
-                ? c('Email body for invitation').t`This event occurrence was updated. Here's what changed:
+        // For REQUEST method, don't include the comment in commentStatus if it's already in updateEventDetailsText
+        // This prevents duplication of the note
+        const shouldIncludeComment = !hasUpdatedText || !hasUpdatedComment;
+        const commentStatus = shouldIncludeComment ? commentText : '';
 
-${updateEventDetailsText}`
-                : c('Email body for invitation').t`This event occurrence was updated.`;
+        if (getHasRecurrenceId(vevent)) {
+            return createUpdateMessage({
+                messageType: 'single',
+                updateEventDetailsText: hasUpdatedText ? updateEventDetailsText : '',
+                commentStatus,
+                hasUpdatedComment,
+            });
         }
+
         if (recurringType === RECURRING_TYPES.ALL) {
-            return hasUpdatedText
-                ? c('Email body for invitation').t`All events in this series were updated. Here's what changed:
-
-${updateEventDetailsText}`
-                : c('Email body for invitation').t`All events in this series were updated.`;
+            return createUpdateMessage({
+                messageType: 'recurring',
+                updateEventDetailsText: hasUpdatedText ? updateEventDetailsText : '',
+                commentStatus,
+                hasUpdatedComment,
+            });
         }
+
         if (isCreateEvent) {
-            return c('Email body for invitation').t`You are invited to ${eventTitle}.
-
-${eventDetailsText}`;
+            // For new invites, the comment is already included in eventDetailsText - we don't need to add it again
+            return `You are invited to ${eventTitle}.\n\n${eventDetailsText}`;
         }
-        return hasUpdatedText
-            ? c('Email body for invitation').t`This event was updated. Here's what changed:
 
-${updateEventDetailsText}`
-            : c('Email body for invitation').t`This event was updated.`;
+        return createUpdateMessage({
+            messageType: 'regular',
+            updateEventDetailsText: hasUpdatedText ? updateEventDetailsText : '',
+            commentStatus,
+            hasUpdatedComment,
+        });
     }
+
     if (method === ICAL_METHOD.CANCEL) {
-        if (getHasRecurrenceId(vevent)) {
-            return c('Email body for invitation').t`This event occurrence was canceled.`;
-        }
-        return c('Email body for invitation').t`${eventTitle} was canceled.`;
+        // For CANCEL method, don't include the comment in commentStatus if it's already in updateEventDetailsText
+        // This prevents duplication of the note
+        const shouldIncludeComment = !hasUpdatedText || !hasUpdatedComment;
+        const commentStatus = shouldIncludeComment ? commentText : '';
+
+        return createCancellationMessage({
+            isSingleOccurrence: !!getHasRecurrenceId(vevent),
+            eventTitle,
+            commentStatus,
+            updateEventDetailsText: updateEventDetailsText || '',
+        });
     }
+
     if (method === ICAL_METHOD.REPLY) {
         if (!partstat || !emailAddress) {
             throw new Error('Missing parameters for reply body');
         }
+
+        // For REPLY method, don't include the comment in commentStatus if it's already in updateEventDetailsText
+        // This prevents duplication of the note
+        const shouldIncludeComment = !hasUpdatedText || !hasUpdatedComment;
+        const commentStatus = shouldIncludeComment ? commentText : '';
+
+        let responseType: 'accepted' | 'tentatively accepted' | 'declined';
+
         if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
-            return c('Email body for response to invitation')
-                .t`${emailAddress} accepted your invitation to ${eventTitle}`;
+            responseType = 'accepted';
+        } else if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
+            responseType = 'tentatively accepted';
+        } else if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
+            responseType = 'declined';
+        } else {
+            throw new Error('Unanswered partstat');
         }
-        if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
-            return c('Email body for response to invitation')
-                .t`${emailAddress} tentatively accepted your invitation to ${eventTitle}`;
-        }
-        if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
-            return c('Email body for response to invitation')
-                .t`${emailAddress} declined your invitation to ${eventTitle}`;
-        }
-        throw new Error('Unanswered partstat');
+
+        // Remove debug logs and suppression logic
+        return createResponseMessage({
+            emailAddress,
+            responseType,
+            eventTitle,
+            commentStatus,
+            updateEventDetailsText: updateEventDetailsText || '',
+            hasUpdatedComment, // pass raw value directly
+        });
     }
+
     throw new Error('Unexpected method');
 };
 
@@ -765,7 +987,7 @@ export const getResetPartstatActions = (
                 // no need to reset the partsat as it should have been done already
                 return;
             }
-            const selfAttendee = event.Attendees.find(({ Token }) => Token === token);
+            const selfAttendee = event.AttendeesInfo.Attendees.find(({ Token }) => Token === token);
             if (!selfAttendee) {
                 return;
             }
@@ -804,7 +1026,7 @@ export const getMustResetPartstat = (singleEdits: CalendarEvent[], token?: strin
         if (getIsEventCancelled(event)) {
             return false;
         }
-        const selfAttendee = event.Attendees.find(({ Token }) => Token === token);
+        const selfAttendee = event.AttendeesInfo.Attendees.find(({ Token }) => Token === token);
         if (!selfAttendee) {
             return false;
         }

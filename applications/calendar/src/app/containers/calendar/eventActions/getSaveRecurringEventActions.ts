@@ -151,6 +151,7 @@ const getSaveRecurringEventActions = async ({
                       calendarEvent: originalEvent,
                       hasDefaultNotifications,
                       isAttendee,
+                      resetNotes: isBreakingChange,
                   }),
               ]
             : [];
@@ -263,6 +264,7 @@ const getSaveRecurringEventActions = async ({
                 // we only need to specify isPersonalSingleEdit when we need to change its value
                 // here that is in case the existing single edit was a personal one, but we're now propagating the change to attendees
                 isPersonalSingleEdit: hasUpdatedInviteData && oldEvent.IsPersonalSingleEdit ? false : undefined,
+                resetNotes: isBreakingChange,
             });
 
             return {
@@ -324,6 +326,7 @@ const getSaveRecurringEventActions = async ({
                   sendIcs,
                   onSendPrefsErrors,
                   handleSyncActions,
+                  isBreakingChange,
               })
             : undefined;
 
@@ -384,6 +387,7 @@ const getSaveRecurringEventActions = async ({
             calendarEvent: originalEvent,
             hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
             isAttendee,
+            resetNotes: isBreakingChange,
         });
         const createOperation = getCreateSyncOperation({
             veventComponent: createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence),
@@ -649,6 +653,7 @@ const getSaveRecurringEventActions = async ({
                             removedAttendeesEmails: updatedSingleEditInviteActions.removedAttendees?.map(
                                 unary(getAttendeeEmail)
                             ),
+                            resetNotes: isBreakingChange,
                         });
                         updateSingleEditOperations.push(updateSingleEditOperation);
                     })
@@ -728,6 +733,7 @@ const getSaveRecurringEventActions = async ({
                         isAttendee,
                         isBreakingChange: false,
                         isPersonalSingleEdit: event.IsPersonalSingleEdit,
+                        resetNotes: isBreakingChange,
                     });
                     updateSingleEditOperations.push(updateSingleEditOperation);
                 })
@@ -741,6 +747,7 @@ const getSaveRecurringEventActions = async ({
             isBreakingChange,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,
+            resetNotes: isBreakingChange,
         });
 
         const hasStartChanged = getHasStartChanged(updatedVeventComponent, originalVeventComponent);

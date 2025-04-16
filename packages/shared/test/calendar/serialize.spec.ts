@@ -3,9 +3,11 @@ import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
+import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import {
+    ATTENDEE_MORE_ATTENDEES,
     ATTENDEE_STATUS_API,
     CALENDAR_SHARE_BUSY_TIME_SLOTS,
     EVENT_VERIFICATION_STATUS,
@@ -117,15 +119,37 @@ const transformToExternal = (
         return (x || []).map((y, i) => ({ ...y, ID: `${ID}-${i}`, UpdateTime }));
     };
 
+    const getAttendeeVerificationPreferences = async () => {
+        return null as unknown as VerificationPreferences;
+    };
+
     return {
         event: {
             SharedEvents: withAuthor(data.SharedEventContent, 'me'),
             CalendarEvents: withAuthor(data.CalendarEventContent, 'me'),
             AttendeesEvents: withAuthor(data.AttendeesEventContent, 'me'),
             Attendees: withFullAttendee(data.Attendees),
+            AttendeesInfo: {
+                Attendees: [
+                    {
+                        Status: ATTENDEE_STATUS_API.NEEDS_ACTION,
+                        Token: 'abc',
+                    },
+                    {
+                        Status: ATTENDEE_STATUS_API.TENTATIVE,
+                        Token: 'bcd',
+                    },
+                    {
+                        Status: ATTENDEE_STATUS_API.ACCEPTED,
+                        Token: 'cde',
+                    },
+                ] as Attendee[],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
             Notifications: data.Notifications,
             FullDay: +isAllDay,
             CalendarID: 'calendarID',
+            UID: 'eventUID',
             ID: 'eventID',
             Color: null,
         },
@@ -143,6 +167,7 @@ const transformToExternal = (
             MakesUserBusy: CALENDAR_SHARE_BUSY_TIME_SLOTS.YES,
         },
         addresses: [],
+        getAttendeeVerificationPreferences,
     };
 };
 
@@ -211,9 +236,9 @@ describe('calendar encryption', () => {
                 },
             ],
             Attendees: [
-                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
-                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
+                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION, Comment: null },
+                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE, Comment: null },
+                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED, Comment: null },
             ],
             Color: ACCENT_COLORS_MAP.enzian.color,
         });
@@ -270,9 +295,9 @@ describe('calendar encryption', () => {
                 },
             ],
             Attendees: [
-                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
-                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
+                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION, Comment: null },
+                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE, Comment: null },
+                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED, Comment: null },
             ],
             Color: null,
         });
@@ -303,15 +328,14 @@ describe('calendar encryption', () => {
             privateKeys: calendarKey,
         });
 
-        const { veventComponent: decryptedVeventComponent, verificationStatus } = await readCalendarEvent(
-            transformToExternal(
-                data,
-                publicAddressKey,
-                getIsAllDay(veventComponent),
-                sharedSessionKey,
-                calendarSessionKey
-            )
+        const externalData = transformToExternal(
+            data,
+            publicAddressKey,
+            getIsAllDay(veventComponent),
+            sharedSessionKey,
+            calendarSessionKey
         );
+        const { veventComponent: decryptedVeventComponent, verificationStatus } = await readCalendarEvent(externalData);
 
         expect(decryptedVeventComponent).toEqual(omit(veventComponent, ['color']));
         expect(verificationStatus).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);

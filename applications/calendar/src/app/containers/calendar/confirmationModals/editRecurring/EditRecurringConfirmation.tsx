@@ -87,6 +87,10 @@ const EditRecurringConfirmModal = ({
         onConfirm({ type, inviteActions });
     };
 
+    const handleCancel = () => {
+        onClose();
+    };
+
     return (
         <Prompt
             title={title}
@@ -94,10 +98,10 @@ const EditRecurringConfirmModal = ({
                 <Button color="norm" onClick={handleSubmit}>
                     {confirm}
                 </Button>,
-                <Button onClick={onClose}>{cancel}</Button>,
+                <Button onClick={handleCancel}>{cancel}</Button>,
             ]}
             onSubmit={handleSubmit}
-            onClose={onClose}
+            onClose={handleCancel}
             open={isOpen}
         >
             <div className="mb-4">{alertText}</div>
