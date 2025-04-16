@@ -133,7 +133,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
     const { createNotification } = useNotifications();
 
-    const startPhotosMigration = async () => {
+    const startPhotosMigration = useCallback(async () => {
         const signal = new AbortController().signal;
         const status = await shouldMigratePhotos();
 
@@ -159,6 +159,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             setPhotosShare(newPhotosShare);
             setUserAddressEmail(address.Email);
             setMigrationStatus(MIGRATION_STATUS.MIGRATED);
+            setVolumeShareIds(newPhotosShare.volumeId, [newPhotosShare.shareId]);
         } else {
             const defaultPhotosShare = await getDefaultPhotosShare();
             if (!defaultPhotosShare) {
@@ -169,8 +170,17 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             const { address } = await getShareCreatorKeys(signal, defaultPhotosShare);
             setUserAddressEmail(address.Email);
             setMigrationStatus(MIGRATION_STATUS.MIGRATED);
+            setVolumeShareIds(defaultPhotosShare.volumeId, [defaultPhotosShare.shareId]);
         }
-    };
+    }, [
+        createPhotosWithAlbumsShare,
+        getDefaultPhotosShare,
+        getShareCreatorKeys,
+        getShareWithKey,
+        migratePhotos,
+        setVolumeShareIds,
+        shouldMigratePhotos,
+    ]);
 
     useEffect(() => {
         if (volumeId === undefined) {
