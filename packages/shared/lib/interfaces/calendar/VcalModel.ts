@@ -215,6 +215,16 @@ export interface VcalAttendeePropertyParameters extends VcalOrganizerPropertyPar
     'delegated-from'?: string;
     'delegated-to'?: string;
     'x-pm-token'?: string;
+    /**
+     * According to ICS SPEC `comment` can't be added to `ATTENDEE` property.
+     * It should be in "VEVENT" calendar components.
+     *
+     * Source: https://www.kanzaki.com/docs/ical/comment.html
+     *
+     * Adding a custom `comment` entry named `x-pm-comment` to compensate
+     * Gmail uses `x-response-comment` on his side for example.
+     */
+    'x-pm-comment'?: string;
 }
 
 export interface VcalAttendeeProperty {

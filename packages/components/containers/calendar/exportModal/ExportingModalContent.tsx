@@ -9,6 +9,7 @@ import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
+import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { getEventsCount } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { processInBatches } from '@proton/shared/lib/calendar/export/export';
@@ -16,6 +17,7 @@ import type { ExportCalendarModel, ExportError, VcalVeventComponent } from '@pro
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
 import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
+import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 
 interface Props {
     model: ExportCalendarModel;
@@ -30,6 +32,8 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const getAddressKeys = useGetAddressKeys();
     const getCalendarKeys = useGetCalendarKeys();
     const getCalendarUserSettings = useGetCalendarUserSettings();
+    const { contactEmailsMap } = useContactEmailsCache();
+    const getVerificationPreferences = useGetVerificationPreferences();
 
     const { totalFetched, totalToProcess, totalProcessed, exportErrors } = model;
     const totalErrors = exportErrors.length;
@@ -78,6 +82,14 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     totalToProcess,
                 }));
 
+                const getAttendeeVerificationPreferences = async (attendeeEmail: string) => {
+                    const result = await getVerificationPreferences({
+                        email: attendeeEmail,
+                        contactEmailsMap,
+                    });
+                    return result;
+                };
+
                 const [exportedEvents, exportErrors, totalEventsFetched] = await processInBatches({
                     calendar: model.calendar,
                     addresses,
@@ -90,6 +102,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     weekStartsOn: model.weekStartsOn,
                     calendarSettings,
                     defaultTzid: calendarUserSettings.PrimaryTimezone,
+                    getAttendeeVerificationPreferences,
                 });
 
                 if (totalToProcess !== totalEventsFetched) {

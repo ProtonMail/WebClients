@@ -223,13 +223,21 @@ const getSaveEventActions = async ({
         }
         modelVeventComponent.organizer = buildVcalOrganizer(organizerEmail, organizerEmail);
     }
+
     // Also add selfAddress to inviteActions if it doesn't have one
     const inviteActionsWithSelfAddress = { ...inviteActions };
     if (!inviteActions.selfAddress) {
         inviteActionsWithSelfAddress.selfAddress = selfAddress;
     }
+
+    // If user commented the event, update his comment in the vevent attendees
+    if (inviteActions.commentClearText) {
+        modelVeventComponent.comment = [{ value: inviteActions.commentClearText }];
+    }
+
     // Handle duplicate attendees if any
     const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmailsMap);
+
     const handleEquivalentAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
         const equivalentAttendees = getEquivalentAttendeesSend(vevent, inviteActions);
         if (equivalentAttendees) {

@@ -1,4 +1,4 @@
-import type { ReactElement, RefObject } from 'react';
+import type { ReactElement } from 'react';
 import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
@@ -15,12 +15,8 @@ import {
     useContactEmailsCache,
     useContactModals,
 } from '@proton/components';
-import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { escapeInvalidHtmlTags, restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
-import urlify from '@proton/shared/lib/calendar/urlify';
 import { APPS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
@@ -36,6 +32,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { DisplayNameEmail } from '../../containers/calendar/interface';
 import { getOrganizerDisplayData } from '../../helpers/attendees';
+import { useUrlifyString } from '../../hooks/useUrlifyString';
 import AttendeeStatusIcon from './AttendeeStatusIcon';
 import Participant from './Participant';
 import PopoverNotification from './PopoverNotification';
@@ -53,6 +50,8 @@ type AttendeeViewModel = {
     isCurrentUser?: boolean;
     /** If registered in contacts */
     contactID?: string;
+    /** RSVP note */
+    comment?: string;
 };
 type GroupedAttendees = {
     [key: string]: AttendeeViewModel[];
@@ -64,18 +63,9 @@ interface Props {
     model: EventModelReadView;
     formatTime: (date: Date) => string;
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
-    popoverEventContentRef: RefObject<HTMLDivElement>;
     isDrawerApp: boolean;
 }
-const PopoverEventContent = ({
-    calendar,
-    model,
-    formatTime,
-    displayNameEmailMap,
-    popoverEventContentRef,
-    isDrawerApp,
-}: Props) => {
-    const [mailSettings] = useMailSettings();
+const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap, isDrawerApp }: Props) => {
     const { Name: calendarName } = calendar;
     const { contactEmailsMap } = useContactEmailsCache();
     const { modals: contactModals, onDetails, onEdit } = useContactModals();
@@ -130,16 +120,8 @@ const PopoverEventContent = ({
         contactEmailsMap,
         displayNameEmailMap
     );
-    const sanitizedLocation = useMemo(() => {
-        const urlified = urlify(model.location.trim());
-        const escaped = escapeInvalidHtmlTags(urlified);
-        return restrictedCalendarSanitize(escaped);
-    }, [model.location]);
-    const htmlString = useMemo(() => {
-        const urlified = urlify(model.description.trim());
-        const escaped = escapeInvalidHtmlTags(urlified);
-        return restrictedCalendarSanitize(escaped);
-    }, [model.description]);
+    const sanitizedLocation = useUrlifyString({ text: model.location });
+    const htmlString = useUrlifyString({ text: model.description });
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
@@ -162,8 +144,6 @@ const PopoverEventContent = ({
             </span>
         );
     }, [calendarName, isCalendarDisabled]);
-
-    const { modal: linkModal } = useLinkHandler(popoverEventContentRef, mailSettings);
 
     const canonicalizedOrganizerEmail = canonicalizeEmailByGuess(organizer?.email || '');
 
@@ -195,6 +175,7 @@ const PopoverEventContent = ({
                 tooltip,
                 extraText,
                 email: attendeeEmail,
+                comment: attendee.comment,
                 isCurrentUser,
                 contactID: contactEmail?.ContactID,
             };
@@ -226,24 +207,27 @@ const PopoverEventContent = ({
                     ...groupedAttendees[DECLINED],
                     ...groupedAttendees[NEEDS_ACTION],
                     ...groupedAttendees.other,
-                ].map(({ icon, name, title, initials, tooltip, extraText, email, contactID, isCurrentUser }) => (
-                    <li className="pr-1" key={title}>
-                        <Participant
-                            title={title}
-                            initials={initials}
-                            icon={icon}
-                            name={name}
-                            tooltip={tooltip}
-                            extraText={extraText}
-                            email={email}
-                            isContact={!!contactID}
-                            isCurrentUser={isCurrentUser}
-                            onCreateOrEditContact={
-                                contactID ? handleContactDetails(contactID) : handleContactAdd(email, name)
-                            }
-                        />
-                    </li>
-                ))}
+                ].map(
+                    ({ icon, name, comment, title, initials, tooltip, extraText, email, contactID, isCurrentUser }) => (
+                        <li className="pr-1" key={title}>
+                            <Participant
+                                title={title}
+                                initials={initials}
+                                icon={icon}
+                                name={name}
+                                tooltip={tooltip}
+                                extraText={extraText}
+                                comment={comment}
+                                email={email}
+                                isContact={!!contactID}
+                                isCurrentUser={isCurrentUser}
+                                onCreateOrEditContact={
+                                    contactID ? handleContactDetails(contactID) : handleContactAdd(email, name)
+                                }
+                            />
+                        </li>
+                    )
+                )}
             </ul>
         );
     };
@@ -359,7 +343,6 @@ const PopoverEventContent = ({
                     <div className="text-break my-0 text-pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
                 </IconRow>
             ) : null}
-            {linkModal}
             {contactModals}
         </>
     );

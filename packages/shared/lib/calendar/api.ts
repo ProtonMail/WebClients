@@ -1,7 +1,8 @@
 import { getEventByUID } from '../api/calendars';
 import type { Api } from '../interfaces';
 import type { CalendarEvent, GetEventByUIDArguments } from '../interfaces/calendar';
-import type { CALENDAR_TYPE } from './constants';
+import { fetchPaginatedAttendeesInfo } from './attendeeInfos';
+import { ATTENDEE_MORE_ATTENDEES, type CALENDAR_TYPE } from './constants';
 
 const MAX_ITERATIONS = 100;
 
@@ -34,6 +35,17 @@ export const getPaginatedEventsByUID = async ({
             params.CalendarType = calendarType;
         }
         const page = await api<{ Events: CalendarEvent[] }>(getEventByUID(params));
+
+        if (page.Events) {
+            await Promise.all(
+                page.Events.map(async (Event) => {
+                    if (Event.AttendeesInfo?.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
+                        await fetchPaginatedAttendeesInfo(api, Event);
+                    }
+                })
+            );
+        }
+
         result = result.concat(page.Events);
         if (page.Events.length !== pageSize) {
             break;

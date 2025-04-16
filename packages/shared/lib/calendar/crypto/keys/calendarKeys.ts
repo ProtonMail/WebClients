@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, toPublicKeyReference } from '@proton/crypto';
-import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
+import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../../constants';
@@ -126,7 +126,7 @@ export async function encryptPassphraseSessionKey({
         signingKeys: signingKey,
         detached: true,
         format: 'armored',
-        signatureContext: { critical: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
+        signatureContext: { critical: true, value: getSignatureContext('calendar.sharing.invite') },
     });
 
     if (publicKey) {

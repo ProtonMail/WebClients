@@ -9,13 +9,15 @@ export const propertiesToAttendeeModel = (attendee?: VcalAttendeeProperty[]): At
     if (!attendee) {
         return [];
     }
+
     return attendee
         .map<AttendeeModel | null>((attendee) => {
             const email = extractEmailAddress(attendee);
-            if (email === undefined) {
+            if (email === undefined || email === '' || email === 'undefined') {
                 captureMessage('Malformed attendee', { extra: { attendee } });
                 return null;
             }
+
             const result: AttendeeModel = {
                 email,
                 rsvp: ICAL_ATTENDEE_RSVP.TRUE,
@@ -23,6 +25,7 @@ export const propertiesToAttendeeModel = (attendee?: VcalAttendeeProperty[]): At
                 partstat: getAttendeePartstat(attendee),
                 role: getAttendeeRole(attendee),
                 token: attendee?.parameters?.['x-pm-token'],
+                comment: attendee?.parameters?.['x-pm-comment'],
             };
             return result;
         })
