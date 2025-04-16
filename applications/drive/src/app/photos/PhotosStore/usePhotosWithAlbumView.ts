@@ -299,7 +299,7 @@ export const usePhotosWithAlbumsView = () => {
     }, [albums, cachedAlbumsCover, linkId, shareId]);
 
     useEffect(() => {
-        if (!volumeId || !shareId || !currentPageType) {
+        if (!volumeId || !shareId) {
             return;
         }
         const abortController = new AbortController();
@@ -321,10 +321,24 @@ export const usePhotosWithAlbumsView = () => {
                 void Promise.all([
                     loadAlbums(abortController.signal),
                     loadSharedWithMeAlbums(abortController.signal),
+                    // TODO: Temporary fix when you reload the page on AlbumsPageTypes.ALBUMSADDPHOTOS and you go back, you need albumPhotos
+                    albumShareId && albumLinkId
+                        ? loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId)
+                        : undefined,
                 ]).finally(() => {
                     setIsAlbumsLoading(false);
                 });
             });
+        }
+
+        return () => {
+            abortController.abort();
+        };
+    }, [volumeId, shareId, albumLinkId, albumShareId]);
+
+    useEffect(() => {
+        if (!shareId) {
+            return;
         }
 
         const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
@@ -336,9 +350,8 @@ export const usePhotosWithAlbumsView = () => {
 
         return () => {
             eventsManager.eventHandlers.unregister(callbackId);
-            abortController.abort();
         };
-    }, [volumeId, shareId, albumLinkId, albumShareId, currentPageType]);
+    }, [eventsManager.eventHandlers, shareId]);
 
     const loadPhotoLink = useCallback((shareId: string, linkId: string, domRef?: React.MutableRefObject<unknown>) => {
         if (!shareId || !linkId) {
