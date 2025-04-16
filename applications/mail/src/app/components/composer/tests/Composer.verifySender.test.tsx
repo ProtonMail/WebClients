@@ -1,4 +1,4 @@
-import { getByText as getByTextDefault } from '@testing-library/react';
+import { getByText as getByTextDefault, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
@@ -111,11 +111,11 @@ describe('Composer verify sender', () => {
 
     it('should display the sender address if the address is valid', async () => {
         const sender = { Name: name1, Address: address1 } as Recipient;
-        const { composerID, findByTestId, rerender } = await setup(sender);
+        const { composerID, rerender } = await setup(sender);
 
         await rerender(<Composer {...props} composerID={composerID} />);
 
-        const fromField = await findByTestId('composer:from');
+        const fromField = await screen.findByTestId('composer:from');
         getByTextDefault(fromField, address1);
     });
 
@@ -123,17 +123,17 @@ describe('Composer verify sender', () => {
         addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
 
         const sender = { Name: name2, Address: address2 } as Recipient;
-        const { composerID, findByTestId, getByText, container, rerender } = await setup(sender);
+        const { composerID, container, rerender } = await setup(sender);
 
         await rerender(<Composer {...props} composerID={composerID} />);
 
         await saveNow(container);
 
         // Sender is invalid, so we should see a modal
-        getByText('Sender changed');
+        screen.getByText('Sender changed');
 
         // Then, the from field must have been replaced by the default address
-        const fromField = await findByTestId('composer:from');
+        const fromField = await screen.findByTestId('composer:from');
         getByTextDefault(fromField, address1);
     });
 
@@ -141,17 +141,17 @@ describe('Composer verify sender', () => {
         addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
 
         const sender = { Name: 'Address 3', Address: 'address3@protonmail.com' } as Recipient;
-        const { rerender, composerID, findByTestId, container, getByText } = await setup(sender);
+        const { rerender, composerID, container } = await setup(sender);
 
         await rerender(<Composer {...props} composerID={composerID} />);
 
         await saveNow(container);
 
         // Sender is invalid, so we should see a modal
-        getByText('Sender changed');
+        screen.getByText('Sender changed');
 
         // Then, the from field must have been replaced by the default address
-        const fromField = await findByTestId('composer:from');
+        const fromField = await screen.findByTestId('composer:from');
         getByTextDefault(fromField, address1);
     });
 });

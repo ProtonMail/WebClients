@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 
 import { ConditionType } from '@proton/components';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -24,12 +24,16 @@ const props = {
 
 describe('CustomFilterDropdown', () => {
     it('should create a filter based on all options', async () => {
-        const { getByTestId } = await render(<CustomFilterDropdown {...props} />);
+        await render(<CustomFilterDropdown {...props} />);
 
-        const subjectCheckbox = getByTestId(`custom-filter-checkbox:${ConditionType.SUBJECT}`) as HTMLInputElement;
-        const recipientCheckbox = getByTestId(`custom-filter-checkbox:${ConditionType.RECIPIENT}`) as HTMLInputElement;
-        const senderCheckbox = getByTestId(`custom-filter-checkbox:${ConditionType.SENDER}`) as HTMLInputElement;
-        const attachmentCheckbox = getByTestId(
+        const subjectCheckbox = screen.getByTestId(
+            `custom-filter-checkbox:${ConditionType.SUBJECT}`
+        ) as HTMLInputElement;
+        const recipientCheckbox = screen.getByTestId(
+            `custom-filter-checkbox:${ConditionType.RECIPIENT}`
+        ) as HTMLInputElement;
+        const senderCheckbox = screen.getByTestId(`custom-filter-checkbox:${ConditionType.SENDER}`) as HTMLInputElement;
+        const attachmentCheckbox = screen.getByTestId(
             `custom-filter-checkbox:${ConditionType.ATTACHMENTS}`
         ) as HTMLInputElement;
 
@@ -65,7 +69,7 @@ describe('CustomFilterDropdown', () => {
         expect(attachmentCheckbox.checked).toBeTruthy();
 
         // Open the filter modal
-        const applyButton = getByTestId('filter-dropdown:next-button');
+        const applyButton = screen.getByTestId('filter-dropdown:next-button');
         fireEvent.click(applyButton);
 
         /* TODO enable this part of the test when Sieve will be part of the monorepo

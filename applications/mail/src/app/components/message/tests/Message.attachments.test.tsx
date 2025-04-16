@@ -1,4 +1,4 @@
-import { fireEvent, waitFor, within } from '@testing-library/react';
+import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -76,9 +76,9 @@ describe('Message attachments', () => {
     });
 
     it('should show attachments with their correct icon', async () => {
-        const { getAllByTestId } = await setup({ data: { NumAttachments, Attachments } });
+        await setup({ data: { NumAttachments, Attachments } });
 
-        const items = getAllByTestId('attachment-item');
+        const items = screen.getAllByTestId('attachment-item');
 
         expect(items.length).toBe(NumAttachments);
         for (let i = 0; i < NumAttachments; i++) {
@@ -94,9 +94,9 @@ describe('Message attachments', () => {
     });
 
     it('should show global size and counters', async () => {
-        const { getByTestId } = await setup({ data: { NumAttachments, Attachments }, messageImages });
+        await setup({ data: { NumAttachments, Attachments }, messageImages });
 
-        const header = getByTestId('attachment-list:header');
+        const header = screen.getByTestId('attachment-list:header');
 
         expect(header.textContent).toMatch(String(totalSize));
         expect(header.textContent).toMatch(/2\s*files/);
@@ -106,18 +106,18 @@ describe('Message attachments', () => {
     it('should open preview when clicking', async () => {
         window.URL.createObjectURL = jest.fn();
 
-        const { getAllByTestId, getByTestId } = await setup({ data: { NumAttachments, Attachments } }, undefined, {
+        await setup({ data: { NumAttachments, Attachments } }, undefined, {
             preloadedState: {
                 addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [fromKeys]),
             },
         });
 
-        const items = getAllByTestId('attachment-item');
+        const items = screen.getAllByTestId('attachment-item');
         const itemButton = items[2].querySelectorAll('button')[1];
 
         fireEvent.click(itemButton);
 
-        const preview = getByTestId('file-preview');
+        const preview = screen.getByTestId('file-preview');
         expect(preview).toBeDefined();
         expect(preview?.textContent).toMatch(new RegExp(attachment3.Name));
         expect(preview?.textContent).toMatch(/3of3/);

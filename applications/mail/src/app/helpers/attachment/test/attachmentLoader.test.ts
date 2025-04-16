@@ -97,7 +97,7 @@ describe('getDecryptedAttachment', () => {
 
         const result = getDecryptedAttachment(attachment1, verificationWithError, messageKeys, api);
 
-        expect(result).rejects.toThrow('Attachment decryption error');
+        await expect(result).rejects.toThrow('Attachment decryption error');
     });
 });
 

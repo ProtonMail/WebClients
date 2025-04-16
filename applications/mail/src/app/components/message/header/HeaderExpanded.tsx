@@ -120,7 +120,7 @@ const HeaderExpanded = ({
     };
 
     const handleCompose = (action: MESSAGE_ACTIONS) => async () => {
-        onCompose({
+        void onCompose({
             type: ComposeTypes.newMessage,
             action,
             referenceMessage: message,

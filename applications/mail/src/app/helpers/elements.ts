@@ -1,4 +1,4 @@
-import { format, formatRelative, fromUnixTime } from 'date-fns';
+import { formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -69,9 +69,6 @@ export const getDate = (element: Element | undefined, labelID: string | undefine
  */
 export const getReadableTime = (element: Element | undefined, labelID: string | undefined) =>
     formatRelative(getDate(element, labelID), new Date());
-
-export const getReadableFullTime = (element: Element | undefined, labelID: string | undefined) =>
-    format(getDate(element, labelID), 'Ppp');
 
 /**
  * Return if the element is to be considered in read or unread status

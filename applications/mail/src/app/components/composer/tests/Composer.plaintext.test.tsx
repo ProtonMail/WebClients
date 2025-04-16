@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
@@ -62,7 +62,7 @@ describe('Composer switch plaintext <-> html', () => {
     it('should switch from plaintext to html content without loosing content', async () => {
         const content = 'content';
 
-        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, {
+        await render(<Composer {...props} composerID={composerID} />, {
             onStore: (store) => {
                 prepareMessage(
                     store,
@@ -81,13 +81,13 @@ describe('Composer switch plaintext <-> html', () => {
             },
         });
 
-        const moreOptionsButton = await findByTestId('composer:more-options-button');
+        const moreOptionsButton = await screen.findByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);
 
-        const toHtmlButton = await findByTestId('editor-to-html');
+        const toHtmlButton = await screen.findByTestId('editor-to-html');
         fireEvent.click(toHtmlButton);
 
-        await findByTestId('rooster-iframe');
+        await screen.findByTestId('rooster-iframe');
 
         await waitForSpyCall({ spy: mockSetContent });
 
@@ -105,7 +105,7 @@ describe('Composer switch plaintext <-> html', () => {
           <div>content line 2<br><div>
         `;
 
-        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, {
+        await render(<Composer {...props} composerID={composerID} />, {
             onStore: (store) => {
                 prepareMessage(
                     store,
@@ -124,13 +124,13 @@ describe('Composer switch plaintext <-> html', () => {
             },
         });
 
-        const moreOptionsButton = await findByTestId('composer:more-options-button');
+        const moreOptionsButton = await screen.findByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);
 
-        const toHtmlButton = await findByTestId('editor-to-plaintext');
+        const toHtmlButton = await screen.findByTestId('editor-to-plaintext');
         fireEvent.click(toHtmlButton);
 
-        const textarea = (await findByTestId('editor-textarea')) as HTMLTextAreaElement;
+        const textarea = (await screen.findByTestId('editor-textarea')) as HTMLTextAreaElement;
 
         expect(textarea.value).toBe('content line 1\ncontent line 2');
 
