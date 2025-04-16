@@ -14,7 +14,7 @@ import {
     PROTON_SENTINEL_NAME,
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
-import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
+import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import {
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
@@ -42,6 +42,7 @@ export const getAccountAppRoutes = ({
     subscription,
     isDataRecoveryAvailable,
     isReferralProgramEnabled,
+    isQRCodeSignInEnabled,
     recoveryNotification,
     organization,
     isBreachesAccountDashboardEnabled,
@@ -59,6 +60,7 @@ export const getAccountAppRoutes = ({
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
+    isQRCodeSignInEnabled: boolean;
     recoveryNotification?: ThemeColor;
     organization?: OrganizationWithSettings;
     isBreachesAccountDashboardEnabled: boolean;
@@ -101,6 +103,8 @@ export const getAccountAppRoutes = ({
         isZoomIntegrationEnabled &&
         !isExternalUser &&
         (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
+
+    const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
 
     return <const>{
         available: true,
@@ -318,7 +322,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Recovery`,
                 to: '/recovery',
                 icon: 'key',
-                available: getIsRecoveryAvailable(user),
+                available: isAccountRecoveryAvailable,
                 notification: recoveryNotification,
                 subsections: [
                     {
@@ -355,6 +359,12 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Two-factor authentication`,
                         id: 'two-fa',
                         available: !user.Flags.sso,
+                    },
+                    {
+                        text: c('Title').t`Account recovery`,
+                        id: 'account-recovery',
+                        // This is a special section for non-private users that only contains the QR code sign in
+                        available: isQRCodeSignInEnabled && !user.isPrivate && !isAccountRecoveryAvailable,
                     },
                     {
                         text: isFamilyOrg
