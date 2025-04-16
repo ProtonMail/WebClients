@@ -36,6 +36,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ) => {
         const { APP_NAME } = useConfig();
         const isLumoAvailable = useFlag('LumoInProductSwitcher');
+        const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
         const isAccessControlEnabled = useFlag('AccessControl');
 
         const availableApps = getAvailableApps({
@@ -43,6 +44,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
             user,
             organization,
             isLumoAvailable,
+            isDocsHomepageAvailable,
             isAccessControlEnabled,
         });
 

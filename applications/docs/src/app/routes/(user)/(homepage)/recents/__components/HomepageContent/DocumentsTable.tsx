@@ -207,7 +207,7 @@ function Row({ document, variant }: RowProps) {
   const documentActions = useDocumentActions()
   const { location } = document
   const displayName = useOwnerName(document)
-  const { updateRecentDocuments } = useHomepageView()
+  const { updateRenamedDocumentInCache } = useHomepageView()
 
   // Force re-render every REFRESH_DATE_INTERVAL milliseconds
   const [, setState] = useState(false)
@@ -306,9 +306,7 @@ function Row({ document, variant }: RowProps) {
                 if (event.key === 'Enter') {
                   const { value } = event.currentTarget
                   await documentActions.rename(document, value)
-                  ;(document as any).__renamedHack = true // big hack just don't look at it
-                  document.name = value
-                  await updateRecentDocuments()
+                  await updateRenamedDocumentInCache(document.uniqueId(), value)
                 }
                 if (event.key === 'Escape') {
                   if (documentActions.isRenameSaving) {
