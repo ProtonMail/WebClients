@@ -39,6 +39,7 @@ export interface RecentDocumentsInterface {
   fetch(): Promise<void>
   trashDocument(recentDocument: RecentDocumentsItem): Promise<void>
   getSortedRecents(): RecentDocumentsItem[]
+  updateRenamedDocumentInCache(uniqueId: string, name: string): Promise<void>
 }
 
 const RECENTS_LOCAL_STORAGE_KEY = 'recent-documents'
@@ -150,6 +151,16 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
     this.#lastResolvedIds = new Set()
   }
 
+  async updateRenamedDocumentInCache(uniqueId: string, name: string) {
+    const item = this.snapshot.get(uniqueId)
+    if (!item) {
+      return
+    }
+    const newItem = RecentDocumentsItem.create({ ...item.value, name })
+    this.setSnapshotItem(newItem)
+    await this.cacheSnapshot()
+  }
+
   async fetch() {
     const state = this.state.getProperty('state')
     if (state !== 'not_fetched' && state !== 'done') {
@@ -224,13 +235,6 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
 
       this.#lastResolvedIds?.add(record.uniqueId())
 
-      const previousItem = this.snapshot.get(record.uniqueId())
-      const hasRenamedFlag = previousItem && Boolean((previousItem as any).__renamedHack)
-      if (hasRenamedFlag) {
-        ;(record as any).__renamedHack = true
-        record.name = previousItem.name
-      }
-
       this.setSnapshotItem(record)
     } catch (error) {
       this.#logger.error('Failed to resolve recent document', { error, item: apiItem })
@@ -276,29 +280,13 @@ export type RecentDocumentsItemValue = {
 
 export class RecentDocumentsItem implements RecentDocumentsItemValue {
   #value: RecentDocumentsItemValue
-  name: string
-  linkId: string
-  parentLinkId: string | undefined
-  volumeId: string
-  lastViewed: ServerTime
-  lastModified: ServerTime
-  createdBy: string | undefined
-  location: RecentDocumentsItemLocation
-  isSharedWithMe: boolean
-  shareId: string
+
+  get value(): RecentDocumentsItemValue {
+    return this.#value
+  }
 
   private constructor(value: RecentDocumentsItemValue) {
     this.#value = value
-    this.name = value.name
-    this.linkId = value.linkId
-    this.parentLinkId = value.parentLinkId
-    this.volumeId = value.volumeId
-    this.lastViewed = value.lastViewed
-    this.lastModified = value.lastModified
-    this.createdBy = value.createdBy
-    this.location = value.location
-    this.isSharedWithMe = value.isSharedWithMe
-    this.shareId = value.shareId
   }
 
   static create(value: RecentDocumentsItemValue): RecentDocumentsItem {
@@ -323,6 +311,37 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
 
   uniqueId(): string {
     return nodeMetaUniqueId({ linkId: this.linkId, volumeId: this.volumeId })
+  }
+
+  get name() {
+    return this.#value.name
+  }
+  get linkId() {
+    return this.#value.linkId
+  }
+  get parentLinkId() {
+    return this.#value.parentLinkId
+  }
+  get volumeId() {
+    return this.#value.volumeId
+  }
+  get lastViewed() {
+    return this.#value.lastViewed
+  }
+  get lastModified() {
+    return this.#value.lastModified
+  }
+  get createdBy() {
+    return this.#value.createdBy
+  }
+  get location() {
+    return this.#value.location
+  }
+  get isSharedWithMe() {
+    return this.#value.isSharedWithMe
+  }
+  get shareId() {
+    return this.#value.shareId
   }
 }
 
