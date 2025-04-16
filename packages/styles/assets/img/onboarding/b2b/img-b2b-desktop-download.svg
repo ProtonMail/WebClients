@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="none" viewBox="0 0 72 72">
+    <path fill="url(#a)" d="M5 19a4 4 0 0 1 4-4h50a4 4 0 0 1 4 4v41H5V19Z" />
+    <path fill="url(#b)" d="M1 58a1 1 0 0 1 1-1h64a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1Z" />
+    <path fill="#F1F3F8" d="M5 19h58v36H5z" />
+    <g filter="url(#c)">
+        <path fill="#2CCFB4" fill-opacity=".3" d="M45 20a8 8 0 0 1 8-8v17a8 8 0 0 1-8-8v-1Z" />
+    </g>
+    <mask id="f" fill="#fff">
+        <path d="M72 18c0 7.732-6.268 14-14 14s-14-6.268-14-14S50.268 4 58 4s14 6.268 14 14Z" />
+    </mask>
+    <path fill="url(#d)" d="M72 18c0 7.732-6.268 14-14 14s-14-6.268-14-14S50.268 4 58 4s14 6.268 14 14Z" />
+    <path
+        fill="url(#e)"
+        fill-opacity=".1"
+        d="M71 18c0 7.18-5.82 13-13 13v2c8.284 0 15-6.716 15-15h-2ZM58 31c-7.18 0-13-5.82-13-13h-2c0 8.284 6.716 15 15 15v-2ZM45 18c0-7.18 5.82-13 13-13V3c-8.284 0-15 6.716-15 15h2ZM58 5c7.18 0 13 5.82 13 13h2c0-8.284-6.716-15-15-15v2Z"
+        mask="url(#f)"
+    />
+    <path
+        fill="url(#g)"
+        fill-rule="evenodd"
+        d="M59 11a1 1 0 1 0-2 0v7.586l-2.293-2.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L59 18.586V11Zm-5 12a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2h-8Z"
+        clip-rule="evenodd"
+    />
+    <g clip-path="url(#h)">
+        <path
+            fill="#fff"
+            d="M22 30.667A6.667 6.667 0 0 1 28.667 24h10.666A6.667 6.667 0 0 1 46 30.667v10.666A6.667 6.667 0 0 1 39.333 48H28.667A6.667 6.667 0 0 1 22 41.333V30.667Z"
+        />
+        <path
+            fill="url(#i)"
+            fill-rule="evenodd"
+            d="m36.025 34.378-4.168 4.525-5.357-5.766V30.65c0-.285.34-.441.565-.26l5.944 4.827a1.579 1.579 0 0 0 1.982 0l1.034-.84Z"
+            clip-rule="evenodd"
+        />
+        <path
+            fill="url(#j)"
+            d="m38.286 32.543-2.261 1.836-2.992 2.586c-.51.44-1.272.451-1.796.026L26.5 33.138v7.392c0 .837.695 1.47 1.552 1.47h10.234l1.071-4.705-1.071-4.752Z"
+        />
+        <path
+            fill="url(#k)"
+            fill-rule="evenodd"
+            d="M38.286 32.544v9.454h1.662c.857 0 1.552-.68 1.552-1.517v-9.83c0-.286-.34-.443-.565-.26l-2.65 2.153Z"
+            clip-rule="evenodd"
+        />
+    </g>
+    <defs>
+        <linearGradient id="a" x1="59.686" x2="53.543" y1="15.336" y2="63.709" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#DDE0E7" />
+            <stop offset="1" stop-color="#C3CBD3" />
+        </linearGradient>
+        <linearGradient id="b" x1="63.229" x2="63.204" y1="57.022" y2="60.299" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#DDE0E7" />
+            <stop offset="1" stop-color="#C3CBD3" />
+        </linearGradient>
+        <linearGradient id="d" x1="71.533" x2="49.623" y1="4" y2="35.578" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B6FFCE" />
+            <stop offset="1" stop-color="#30B49E" />
+        </linearGradient>
+        <linearGradient id="e" x1="69.2" x2="55.88" y1="3.176" y2="32.937" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C8FAE9" />
+            <stop offset="1" stop-color="#BCFFD2" />
+        </linearGradient>
+        <linearGradient id="g" x1="65.5" x2="56.849" y1="-18.077" y2="24.767" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#154E44" />
+            <stop offset="1" stop-color="#30B49E" />
+        </linearGradient>
+        <linearGradient id="i" x1="32.129" x2="27.303" y1="38.983" y2="21.837" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E3D9FF" />
+            <stop offset="1" stop-color="#7341FF" />
+        </linearGradient>
+        <linearGradient id="k" x1="46.351" x2="35.276" y1="49.574" y2="25.041" gradientUnits="userSpaceOnUse">
+            <stop offset=".271" stop-color="#E3D9FF" />
+            <stop offset="1" stop-color="#7341FF" />
+        </linearGradient>
+        <radialGradient
+            id="j"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientTransform="matrix(14.9937 0 0 13.7493 39.301 33.7)"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop offset=".556" stop-color="#6D4AFF" />
+            <stop offset=".994" stop-color="#AA8EFF" />
+        </radialGradient>
+        <clipPath id="h">
+            <path fill="#fff" d="M22 24h24v24H22z" />
+        </clipPath>
+        <filter
+            id="c"
+            width="24"
+            height="33"
+            x="37"
+            y="4"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur result="effect1_foregroundBlur_50101_131872" stdDeviation="4" />
+        </filter>
+    </defs>
+</svg>

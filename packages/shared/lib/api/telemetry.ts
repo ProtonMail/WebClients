@@ -47,6 +47,7 @@ export enum TelemetryMeasurementGroups {
     clientInstalls = 'common.any.client_installs',
     upsellModals = 'any.web.upsell_modals',
     clientSearch = 'any.web.client_search',
+    b2bOnboarding = 'any.web.b2b_onboarding',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
 }
@@ -292,6 +293,12 @@ export enum TelemetryEncryptedSearchEvents {
     switch_search_type = 'switch_search_type',
 }
 
+export enum TelemetryB2BOnboardingEvents {
+    modal_displayed = 'modal_displayed',
+    click_modal_item = 'click_modal_item',
+    hide_navbar_button = 'hide_navbar_button',
+}
+
 // Offers telemetry events
 export enum TelemetryMailDrivePostSignupOneDollarEvents {
     automaticModalOpen = 'automatic_modal_open',
@@ -348,6 +355,7 @@ export type TelemetryEvents =
     | TelemetryDocsEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents
+    | TelemetryB2BOnboardingEvents
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents
     | TelemetryPaidUsersNudge

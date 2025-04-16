@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="none" viewBox="0 0 72 72">
+    <g clip-path="url(#a)">
+        <path
+            fill="url(#b)"
+            d="M10.033 66h36.934A8.031 8.031 0 0 0 55 57.967v-8.9H2v8.9A8.031 8.031 0 0 0 10.033 66Z"
+        />
+        <g filter="url(#c)">
+            <path
+                fill="url(#d)"
+                d="M10.033 60.223h36.934A8.031 8.031 0 0 0 55 52.19V21.719H2v30.47a8.031 8.031 0 0 0 8.033 8.034Z"
+            />
+        </g>
+        <path
+            fill="#A171FA"
+            d="M31.593 30.383v17.336h-3.726V34.593a4.601 4.601 0 0 1-.733.52 8.441 8.441 0 0 1-.887.438 9.563 9.563 0 0 1-.981.33 7.75 7.75 0 0 1-1.005.19v-3.146a15.54 15.54 0 0 0 2.743-1.088 15.61 15.61 0 0 0 2.33-1.454h2.259Z"
+        />
+        <path
+            fill="url(#e)"
+            d="M2 24.75h53.265v-6.217a8.031 8.031 0 0 0-8.033-8.033H10.033A8.031 8.031 0 0 0 2 18.533v6.217Z"
+        />
+        <path fill="url(#f)" d="M55 52.19a8.031 8.031 0 0 1-8.033 8.034H35.339L55 40.563V52.19Z" />
+        <path fill="#fff" d="M35.339 48.842a8.253 8.253 0 0 1 8.256-8.256H55L35.339 60.247V48.842Z" />
+        <path
+            fill="url(#g)"
+            fill-rule="evenodd"
+            d="m68.5 28 3.75 6-3.75 6H64V28h4.5ZM63 40h-4V28h4v12Zm-8 0h3V28h-3v12Z"
+            clip-rule="evenodd"
+        />
+    </g>
+    <defs>
+        <linearGradient id="b" x1="18.937" x2="55.265" y1="32.719" y2="64.594" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#fff" />
+            <stop offset="1" stop-color="#EBAAFF" />
+        </linearGradient>
+        <linearGradient id="d" x1="28.547" x2="46.531" y1="17.484" y2="64.359" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#fff" />
+            <stop offset="1" stop-color="#FAEBFF" />
+        </linearGradient>
+        <linearGradient id="e" x1="28.633" x2="28.633" y1="5.508" y2="25.1" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EBAAFF" />
+            <stop offset="1" stop-color="#A171FA" />
+        </linearGradient>
+        <linearGradient id="f" x1="43.781" x2="48.234" y1="48.188" y2="69.516" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FAEBFF" />
+            <stop offset="1" stop-color="#EBAAFF" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="g" x1="73.25" x2="53.388" y1="35.25" y2="35.25" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EBAAFF" stop-opacity=".8" />
+            <stop offset="1" stop-color="#EBAAFF" stop-opacity=".2" />
+        </linearGradient>
+        <clipPath id="a">
+            <path fill="#fff" d="M0 0h72v72H0z" />
+        </clipPath>
+        <filter
+            id="c"
+            width="53"
+            height="39.979"
+            x="2"
+            y="20.243"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="-1.475" />
+            <feGaussianBlur stdDeviation="1.967" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix values="0 0 0 0 1 0 0 0 0 0.986667 0 0 0 0 0.96 0 0 0 1 0" />
+            <feBlend in2="shape" result="effect1_innerShadow_50101_131859" />
+        </filter>
+    </defs>
+</svg>
