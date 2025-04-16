@@ -68,6 +68,10 @@ export enum FeatureCode {
     DrivePostSignupOneDollarState = 'DrivePostSignupOneDollarState',
     DrivePostSignupOneDollarAccountAge = 'DrivePostSignupOneDollarAccountAge',
 
+    // Flags needed by the b2b onboarding
+    B2BOnboardingSpotlight = 'B2BOnboardingSpotlight',
+    ShowB2BOnboardingButton = 'ShowB2BOnboardingButton',
+
     // Flags needed by the monthly subscribers nudge
     MailPaidUserNudgeTimestamp = 'MailPaidUserNudgeTimestamp',
     DrivePaidUserNudgeTimestamp = 'DrivePaidUserNudgeTimestamp',

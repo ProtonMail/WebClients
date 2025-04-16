@@ -1,0 +1,11 @@
+@import '~@proton/styles/scss/lib';
+
+.topnav-org-setup.topnav-link {
+	@include media('<=medium') {
+		padding: rem(5);
+	}
+
+	.topnav-icon {
+		margin-inline-end: var(--space-2);
+	}
+}
