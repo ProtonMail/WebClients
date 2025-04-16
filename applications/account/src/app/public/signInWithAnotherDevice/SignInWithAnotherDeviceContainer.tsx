@@ -154,12 +154,11 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                                     if (result.error instanceof GiveUpError) {
                                         return c('edm').t`QR code expired`;
                                     }
-                                    return c('Error').t`Something went wrong`;
+                                    return c('Error').t`We couldn't sign you in`;
                                 })()}
                             </div>
                             <div className="mb-4 color-weak">
-                                <div>{c('edm').t`We couldn't sign you in.`}</div>
-                                <div className="mb-2">{c('edm').t`Please scan a new QR code to try again.`}</div>
+                                <div className="mb-2">{c('edm').t`Try generating a new QR code.`}</div>
                                 {(() => {
                                     if (result.error instanceof GiveUpError) {
                                         return null;
@@ -179,7 +178,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                                     color="norm"
                                     fullWidth
                                 >
-                                    {c('edm').t`New QR code`}
+                                    {c('edm').t`Generate QR code`}
                                 </Button>
                                 <ButtonLike size="large" as={Link} to={paths.login} fullWidth>
                                     {c('Action').t`Sign in with ${BRAND_NAME}`}
@@ -196,7 +195,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
         <Layout hasDecoration={true} toApp={toApp}>
             <Main>
                 <Header
-                    title={c('edm').t`Sign in with another device`}
+                    title={c('edm').t`Sign in with QR code`}
                     subTitle={toAppName ? getContinueToString(toAppName) : ''}
                 />
                 <Content>
@@ -210,17 +209,19 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                         </div>
                     </div>
                     <div className="flex flex-column gap-4">
-                        <p className="m-0">
-                            {c('edm').t`Scan this QR code in the ${BRAND_NAME} app on your phone to sign in instantly.`}
-                        </p>
+                        <div className="text-lg text-bold">{c('edm').t`How to sign in using another device`}</div>
                         <ol className="m-0 pl-4">
-                            <li className="mb-2">{c('edm').t`Open the ${BRAND_NAME} app on your phone`}</li>
+                            <li className="mb-2">{c('edm')
+                                .t`Get another device that’s signed in to your ${BRAND_NAME} Account`}</li>
                             <li className="mb-2">
                                 {getBoldFormattedText(
-                                    c('edm').t`Tap into **Settings**, then tap **Sign in to another device**`
+                                    c('edm').t`Using that device, open any ${BRAND_NAME} app and select **Settings**`
                                 )}
                             </li>
-                            <li className="mb-2">{getBoldFormattedText(c('edm').t`Tap **Scan QR code**`)}</li>
+                            <li className="mb-2">
+                                {getBoldFormattedText(c('edm').t`Select **Sign in on another device → Scan QR code**`)}
+                            </li>
+                            <li className="mb-2">{c('edm').t`Scan the code to sign in`}</li>
                         </ol>
 
                         <ButtonLike size="large" as={Link} to={paths.login} color="weak" fullWidth>

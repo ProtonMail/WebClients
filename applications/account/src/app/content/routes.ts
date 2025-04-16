@@ -1,14 +1,3 @@
-import type { ThemeColor } from '@proton/colors';
-import { type Subscription } from '@proton/payments';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type {
-    Address,
-    Group,
-    GroupMembershipReturn,
-    OrganizationWithSettings,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
-
 import { getAccountAppRoutes } from '../containers/account/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
 import { getDocsAppRoutes } from '../containers/docs/routes';
@@ -19,36 +8,13 @@ import { getPassAppRoutes } from '../containers/pass/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
 import { getWalletAppRoutes } from '../containers/wallet/routes';
 
-interface Arguments {
-    app: APP_NAMES;
-    user: UserModel;
-    addresses: Address[] | undefined;
-    subscription: Subscription | undefined;
-    organization: OrganizationWithSettings | undefined;
-    isReferralProgramEnabled: boolean;
-    isDataRecoveryAvailable: boolean;
-    isSessionRecoveryAvailable: boolean;
-    recoveryNotification?: ThemeColor;
-    isBreachesAccountDashboardEnabled: boolean;
-    showVPNDashboard: boolean;
-    isUserGroupsFeatureEnabled: boolean;
-    showThemeSelection: boolean;
-    assistantKillSwitch: boolean;
-    canDisplayB2BLogsPass: boolean;
-    canDisplayB2BLogsVPN: boolean;
-    canDisplayPassReports: boolean;
-    memberships: GroupMembershipReturn[] | undefined;
-    groups: Group[] | undefined;
-    isUserGroupsMembershipFeatureEnabled: boolean;
-    canB2BHidePhotos: boolean;
-    isB2BDrive: boolean;
-    isB2BAuthLogsEnabled: boolean;
-    isScribeEnabled: boolean;
-    isZoomIntegrationEnabled: boolean;
-    isSharedServerFeatureEnabled: boolean;
-    isCalendarHotkeysEnabled: boolean;
-    isAccessControlEnabled: boolean;
-}
+type Arguments = Parameters<typeof getAccountAppRoutes>[0] &
+    Parameters<typeof getMailAppRoutes>[0] &
+    Parameters<typeof getCalendarAppRoutes>[0] &
+    Parameters<typeof getDriveAppRoutes>[0] &
+    Parameters<typeof getPassAppRoutes>[0] &
+    Parameters<typeof getVpnAppRoutes>[0] &
+    Parameters<typeof getOrganizationAppRoutes>[0];
 
 export const getRoutes = ({
     app,
@@ -58,6 +24,7 @@ export const getRoutes = ({
     subscription,
     isDataRecoveryAvailable,
     isSessionRecoveryAvailable,
+    isQRCodeSignInEnabled,
     isReferralProgramEnabled,
     recoveryNotification,
     isBreachesAccountDashboardEnabled,
@@ -89,6 +56,7 @@ export const getRoutes = ({
             isDataRecoveryAvailable,
             isSessionRecoveryAvailable,
             isReferralProgramEnabled,
+            isQRCodeSignInEnabled,
             recoveryNotification,
             organization,
             isBreachesAccountDashboardEnabled,

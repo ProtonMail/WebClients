@@ -67,6 +67,9 @@ const getPersistedForkData = (): ForkDataResult | null => {
         const result: Omit<ForkDataResult, 'extra'> = JSON.parse(edmItem);
         const qrCode = result.qrCode;
         const qrCodePayload = deserializeQrCodePayload(qrCode);
+        if (!qrCodePayload.encodedBytes) {
+            throw new Error('Invalid code');
+        }
         return {
             selector: result.selector,
             qrCode,
