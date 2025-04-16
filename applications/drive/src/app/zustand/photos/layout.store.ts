@@ -17,7 +17,7 @@ interface Modals {
     createAlbum?: ModalStateReturnObj;
 }
 interface PhotoLayoutStore {
-    currentPageType: AlbumsPageTypes;
+    currentPageType: AlbumsPageTypes | undefined;
     previewLinkId: string | undefined;
     modals: Modals;
     setPageType: (pageType: AlbumsPageTypes) => void;
@@ -26,7 +26,7 @@ interface PhotoLayoutStore {
 }
 
 export const usePhotoLayoutStore = create<PhotoLayoutStore>((set) => ({
-    currentPageType: AlbumsPageTypes.GALLERY,
+    currentPageType: undefined,
     previewLinkId: undefined,
     modals: {
         linkSharing: undefined,
