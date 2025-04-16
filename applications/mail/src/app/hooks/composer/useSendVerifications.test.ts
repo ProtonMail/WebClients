@@ -192,8 +192,8 @@ afterAll(() => {
 
 describe('useSendVerifications', () => {
     const setup = async () => {
-        const result = await renderHook({ useCallback: () => useSendVerifications() });
-        return result.result.current.extendedVerifications as any;
+        const view = await renderHook({ useCallback: () => useSendVerifications() });
+        return view.result.current.extendedVerifications as any;
     };
 
     afterEach(clearAll);

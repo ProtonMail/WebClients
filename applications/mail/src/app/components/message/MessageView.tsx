@@ -150,7 +150,7 @@ const MessageView = (
 
     const handleToggle = (value: boolean) => () => {
         if (draft && !outbox) {
-            onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
+            void onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
             return;
         }
 

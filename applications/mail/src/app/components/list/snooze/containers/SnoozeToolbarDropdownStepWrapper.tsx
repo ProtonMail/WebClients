@@ -31,7 +31,7 @@ const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displa
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {
         event.stopPropagation();
-        snooze({ elements, duration, snoozeTime }, SOURCE_ACTION.TOOLBAR);
+        void snooze({ elements, duration, snoozeTime }, SOURCE_ACTION.TOOLBAR);
         onClose();
     };
 
@@ -47,7 +47,7 @@ const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displa
 
     const handleUnsnoozeClick = (event: MouseEvent) => {
         event.stopPropagation();
-        unsnooze(elements, SOURCE_ACTION.TOOLBAR);
+        void unsnooze(elements, SOURCE_ACTION.TOOLBAR);
         onClose();
     };
 

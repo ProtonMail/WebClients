@@ -36,8 +36,8 @@ import {
     readSessionKey,
 } from '../../../helpers/test/helper';
 import { addAttachment } from '../../../store/attachments/attachmentsActions';
-import { ID, clickSend, getMessage, renderComposer, send } from './Composer.test.helpers';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
+import { ID, clickSend, getMessage, renderComposer, send } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -609,12 +609,12 @@ describe('Composer sending', () => {
         });
 
         const preloadedState = getPreloadedState();
-        const renderResult = await renderComposer({ preloadedState, message });
+        const view = await renderComposer({ preloadedState, message });
 
-        triggerEditorInput(renderResult.container, editorContent);
+        triggerEditorInput(view.container, editorContent);
         addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');
 
-        const sendRequest = await clickSend(renderResult);
+        const sendRequest = await clickSend(view);
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];

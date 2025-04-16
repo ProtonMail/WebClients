@@ -44,7 +44,7 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
             return;
         }
 
-        unsnooze(elements, SOURCE_ACTION.MESSAGE_VIEW);
+        void unsnooze(elements, SOURCE_ACTION.MESSAGE_VIEW);
     };
 
     const getSnoozeBannerMessage = () => {

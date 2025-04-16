@@ -45,7 +45,7 @@ describe('MoveDropdown', () => {
 
         const message = getMessage(labelIDs);
 
-        const result = await render(<MoveDropdown {...props} />, {
+        const view = await render(<MoveDropdown {...props} />, {
             preloadedState: {
                 categories: getModelState([
                     {
@@ -65,30 +65,30 @@ describe('MoveDropdown', () => {
                 ]),
             },
         });
-        result.store.dispatch(initialize(message));
-        return result;
+        view.store.dispatch(initialize(message));
+        return view;
     };
 
     it("should display user's folders in the dropdowm", async () => {
-        const { findAllByTestId, getAllByText } = await setup();
+        await setup();
 
-        const folders = (await findAllByTestId(/label-dropdown:folder-radio-/)) as HTMLInputElement[];
+        const folders = (await screen.findAllByTestId(/label-dropdown:folder-radio-/)) as HTMLInputElement[];
 
         // Should contain default folders (Inbox, Archive, Spam, Trash) + custom folders
         expect(folders.length).toBe(6);
         expect(folders[0].checked).toBe(false);
         expect(folders[1].checked).toBe(false);
-        getAllByText(folder1Name);
-        getAllByText(folder2Name);
+        screen.getAllByText(folder1Name);
+        screen.getAllByText(folder2Name);
     });
 
     it('should move to a folder', async () => {
         const apiMock = jest.fn(() => ({ UndoToken: 1000 }));
         addApiMock(`mail/v4/messages/label`, apiMock);
 
-        const { getByTestId } = await setup();
+        await setup();
 
-        const radio1 = getByTestId(`label-dropdown:folder-radio-${folder1Name}`) as HTMLInputElement;
+        const radio1 = screen.getByTestId(`label-dropdown:folder-radio-${folder1Name}`) as HTMLInputElement;
 
         // Check the first radio
         expect(radio1.checked).toBe(false);
@@ -100,7 +100,7 @@ describe('MoveDropdown', () => {
         expect(radio1.checked).toBe(true);
 
         // Apply the label
-        const applyButton = getByTestId('move-dropdown:apply');
+        const applyButton = screen.getByTestId('move-dropdown:apply');
 
         await act(async () => {
             fireEvent.click(applyButton);
@@ -111,10 +111,10 @@ describe('MoveDropdown', () => {
     });
 
     it('should create a folder from the button', async () => {
-        const { getByTestId, queryAllByTestId } = await setup();
+        await setup();
 
         // Search for a label which does not exist
-        const searchInput = getByTestId('folder-dropdown:search-folder');
+        const searchInput = screen.getByTestId('folder-dropdown:search-folder');
 
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
@@ -123,11 +123,11 @@ describe('MoveDropdown', () => {
         });
 
         // No more option are displayed
-        const labels = queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
+        const labels = screen.queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
         expect(labels.length).toBe(0);
 
         // Click on the create label button
-        const createLabelButton = getByTestId('folder-dropdown:add-folder');
+        const createLabelButton = screen.getByTestId('folder-dropdown:add-folder');
 
         fireEvent.click(createLabelButton);
 
@@ -140,10 +140,10 @@ describe('MoveDropdown', () => {
     });
 
     it('should create a folder from the option', async () => {
-        const { getByTestId, queryAllByTestId } = await setup();
+        await setup();
 
         // Search for a label which does not exist
-        const searchInput = getByTestId('folder-dropdown:search-folder');
+        const searchInput = screen.getByTestId('folder-dropdown:search-folder');
 
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
@@ -152,11 +152,11 @@ describe('MoveDropdown', () => {
         });
 
         // No more option are displayed
-        const labels = queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
+        const labels = screen.queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
         expect(labels.length).toBe(0);
 
         // Click on the create label option
-        const createLabelOption = getByTestId('folder-dropdown:create-folder-option');
+        const createLabelOption = screen.getByTestId('folder-dropdown:create-folder-option');
 
         fireEvent.click(createLabelOption);
 

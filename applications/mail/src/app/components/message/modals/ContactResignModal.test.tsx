@@ -1,4 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -42,7 +42,7 @@ describe('Contact resign modal', () => {
 
         const onResignSpy = jest.fn();
 
-        const view = await render(
+        await render(
             <ContactResignModal
                 title={title}
                 contacts={contacts}
@@ -61,28 +61,23 @@ describe('Contact resign modal', () => {
             }
         );
 
-        return { container: view, senderKeys, updateSpy, onResignSpy };
+        return { senderKeys, updateSpy, onResignSpy };
     };
 
     it('should resign the contact and render email rows', async () => {
-        const {
-            container: { getByText, getByTestId, findByText },
-            senderKeys,
-            updateSpy,
-            onResignSpy,
-        } = await setup(true);
+        const { senderKeys, updateSpy, onResignSpy } = await setup(true);
 
         // Modal and content are displayed
-        getByText(title);
-        getByText(children);
+        screen.getByText(title);
+        screen.getByText(children);
 
         // Email rows are rendered (Email + fingerprints)
-        await findByText(`${sender.Address}:`);
+        await screen.findByText(`${sender.Address}:`);
         const expectedFingerPrint = senderKeys.publicKeys[0].getFingerprint();
-        getByText(expectedFingerPrint);
+        screen.getByText(expectedFingerPrint);
 
         // Click on Re-sign button
-        const resignButton = getByTestId('resign-contact');
+        const resignButton = screen.getByTestId('resign-contact');
         await waitFor(() => expect(resignButton).not.toBeDisabled(), { timeout: 1000 });
         fireEvent.click(resignButton);
         await tick();
@@ -95,22 +90,18 @@ describe('Contact resign modal', () => {
     });
 
     it('should resign the contact not render email rows', async () => {
-        const {
-            container: { getByText, queryByText, getByTestId },
-            updateSpy,
-            onResignSpy,
-        } = await setup(false);
+        const { updateSpy, onResignSpy } = await setup(false);
 
         // Modal and content are displayed
-        getByText(title);
-        getByText(children);
+        screen.getByText(title);
+        screen.getByText(children);
 
         // Email rows are not rendered
-        const emailRow = queryByText(`${sender.Address}:`);
+        const emailRow = screen.queryByText(`${sender.Address}:`);
         expect(emailRow).toBeNull();
 
         // Click on Re-sign button
-        const resignButton = getByTestId('resign-contact');
+        const resignButton = screen.getByTestId('resign-contact');
         await waitFor(() => expect(resignButton).not.toBeDisabled());
         fireEvent.click(resignButton);
 

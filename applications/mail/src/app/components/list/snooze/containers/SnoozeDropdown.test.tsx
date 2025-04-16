@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { nextMonday } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -69,45 +69,45 @@ describe('Snooze dropdown', () => {
     it('should not return anything when cannot snooze or unsnooze', async () => {
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, canSnooze: false, canUnsnooze: false });
 
-        const { queryByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        expect(queryByTestId('dropdown-button')).toBeNull();
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
+        expect(screen.queryByTestId('dropdown-button')).toBeNull();
     });
 
     it('should not return anything when element is an empty array', async () => {
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps });
 
-        const { queryByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[]} />);
-        expect(queryByTestId('dropdown-button')).toBeNull();
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[]} />);
+        expect(screen.queryByTestId('dropdown-button')).toBeNull();
     });
 
     it('should open dropdown with all Monday options', async () => {
         jest.useFakeTimers({ now: nextMonday(new Date()).getTime() });
 
-        const { getByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        const button = getByTestId('dropdown-button');
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
+        const button = screen.getByTestId('dropdown-button');
         fireEvent.click(button);
 
         expect(useAppDispatchMock).toHaveBeenCalled();
-        expect(getByTestId('snooze-duration-tomorrow'));
-        expect(getByTestId('snooze-duration-later'));
-        expect(getByTestId('snooze-duration-weekend'));
-        expect(getByTestId('snooze-duration-nextweek'));
+        expect(screen.getByTestId('snooze-duration-tomorrow'));
+        expect(screen.getByTestId('snooze-duration-later'));
+        expect(screen.getByTestId('snooze-duration-weekend'));
+        expect(screen.getByTestId('snooze-duration-nextweek'));
     });
 
     it('should open dropdown with all Monday options and unsnooze', async () => {
         jest.useFakeTimers({ now: nextMonday(new Date()).getTime() });
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, canUnsnooze: true });
 
-        const { getByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        const button = getByTestId('dropdown-button');
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
+        const button = screen.getByTestId('dropdown-button');
         fireEvent.click(button);
 
         expect(useAppDispatchMock).toHaveBeenCalled();
-        expect(getByTestId('snooze-duration-tomorrow'));
-        expect(getByTestId('snooze-duration-later'));
-        expect(getByTestId('snooze-duration-weekend'));
-        expect(getByTestId('snooze-duration-nextweek'));
-        expect(getByTestId('snooze-duration-unsnooze'));
+        expect(screen.getByTestId('snooze-duration-tomorrow'));
+        expect(screen.getByTestId('snooze-duration-later'));
+        expect(screen.getByTestId('snooze-duration-weekend'));
+        expect(screen.getByTestId('snooze-duration-nextweek'));
+        expect(screen.getByTestId('snooze-duration-unsnooze'));
     });
 
     it('should call snooze method when pressing any option', async () => {
@@ -115,11 +115,11 @@ describe('Snooze dropdown', () => {
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, snooze: spySnooze });
 
-        const { getByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        const button = getByTestId('dropdown-button');
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
+        const button = screen.getByTestId('dropdown-button');
         fireEvent.click(button);
 
-        fireEvent.click(getByTestId('snooze-duration-tomorrow'));
+        fireEvent.click(screen.getByTestId('snooze-duration-tomorrow'));
         expect(spySnooze).toHaveBeenCalledTimes(1);
         expect(spySnooze).toHaveBeenCalledWith(
             { elements: [element], duration: 'tomorrow', snoozeTime: undefined },
@@ -132,11 +132,11 @@ describe('Snooze dropdown', () => {
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, unsnooze: spySnooze, canUnsnooze: true });
 
-        const { getByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        const button = getByTestId('dropdown-button');
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
+        const button = screen.getByTestId('dropdown-button');
         fireEvent.click(button);
 
-        fireEvent.click(getByTestId('snooze-duration-unsnooze'));
+        fireEvent.click(screen.getByTestId('snooze-duration-unsnooze'));
         expect(spySnooze).toHaveBeenCalledTimes(1);
         expect(spySnooze).toHaveBeenCalledWith([element], 'HOVER_BUTTONS');
     });
@@ -146,25 +146,25 @@ describe('Snooze dropdown', () => {
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, handleCustomClick: spyCustom });
 
-        const { getByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        const button = getByTestId('dropdown-button');
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
+        const button = screen.getByTestId('dropdown-button');
         fireEvent.click(button);
 
-        const customButton = getByTestId('snooze-duration-custom');
+        const customButton = screen.getByTestId('snooze-duration-custom');
         fireEvent.click(customButton);
         expect(spyCustom).toHaveBeenCalledTimes(1);
     });
 
     it('should open upsell modal when free user press the custom button', async () => {
-        const { getByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        const button = getByTestId('dropdown-button');
+        render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
+        const button = screen.getByTestId('dropdown-button');
         fireEvent.click(button);
 
-        const customButton = getByTestId('snooze-duration-custom');
+        const customButton = screen.getByTestId('snooze-duration-custom');
         fireEvent.click(customButton);
 
         setTimeout(() => {
-            getByTestId('composer:snooze-message:upsell-modal');
+            screen.getByTestId('composer:snooze-message:upsell-modal');
         }, 1);
     });
 });

@@ -18,6 +18,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
@@ -86,7 +87,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
     const nextSat = nextSaturday(today);
     const daysUntilNextMon = differenceInDays(nextMon, today);
     const daysUntilNextSat = differenceInDays(nextSat, today);
-    const formattedDayOfWeek = format(addDays(today, 2), 'EEE');
+    const formattedDayOfWeek = format(addDays(today, 2), 'EEE', { locale: dateLocale });
 
     const time = set(today, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
     const formatTime = formatSimpleDate(time);

@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -62,7 +62,7 @@ with a link -> https://protonmail.com/`;
             return null;
         };
 
-        const { findByTestId, unmount } = await render(
+        const { unmount } = await render(
             <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
@@ -74,14 +74,14 @@ with a link -> https://protonmail.com/`;
         );
 
         await act(async () => {
-            onCompose({
+            await onCompose({
                 type: ComposeTypes.newMessage,
                 action: MESSAGE_ACTIONS.REPLY,
                 referenceMessage: message,
             });
         });
 
-        const textarea = (await findByTestId('editor-textarea')) as HTMLTextAreaElement;
+        const textarea = (await screen.findByTestId('editor-textarea')) as HTMLTextAreaElement;
 
         expect(textarea.value).toBe(`
 
@@ -141,7 +141,7 @@ with a link -> https://protonmail.com/`;
             return null;
         };
 
-        const { findByTestId, unmount } = await render(
+        const { unmount } = await render(
             <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
@@ -153,14 +153,14 @@ with a link -> https://protonmail.com/`;
         );
 
         await act(async () => {
-            onCompose({
+            await onCompose({
                 type: ComposeTypes.newMessage,
                 action: MESSAGE_ACTIONS.FORWARD,
                 referenceMessage: message,
             });
         });
 
-        const textarea = (await findByTestId('editor-textarea')) as HTMLTextAreaElement;
+        const textarea = (await screen.findByTestId('editor-textarea')) as HTMLTextAreaElement;
 
         expect(textarea.value).toBe(`
 

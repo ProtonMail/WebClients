@@ -1,9 +1,10 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { addDays, format, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
 import type { Element } from 'proton-mail/models/element';
@@ -22,7 +23,7 @@ describe('SnoozeCustomTime', () => {
     });
 
     it('should render with default time', async () => {
-        const screen = render(<SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} />);
+        render(<SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} />);
 
         expect(screen.getByTestId('snooze-custom-duration-form')).toBeInTheDocument();
 
@@ -39,22 +40,20 @@ describe('SnoozeCustomTime', () => {
             Labels: [{ ID: MAILBOX_LABEL_IDS.SNOOZED, ContextSnoozeTime: futureDate.getTime() / 1000 }],
         } as Element;
 
-        const screen = render(
-            <SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} element={element} />
-        );
+        render(<SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} element={element} />);
 
         expect(screen.getByTestId('snooze-custom-duration-form')).toBeInTheDocument();
 
         const dateInput = screen.getByTestId('snooze-date-input');
         const timeInput = screen.getByTestId('snooze-time-input');
 
-        const expectedDate = format(futureDate, 'PP');
+        const expectedDate = format(futureDate, 'PP', { locale: enUSLocale });
         expect(dateInput).toHaveValue(expectedDate);
         expect(timeInput).toHaveValue('10:10 AM');
     });
 
     it('should call the handleSnooze method when clicking on the snooze button', async () => {
-        const screen = render(<SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} />);
+        render(<SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} />);
 
         const dateInput = screen.getByTestId('snooze-date-input');
         expect(dateInput).toHaveValue('Tomorrow');
@@ -74,7 +73,7 @@ describe('SnoozeCustomTime', () => {
 
     it('should disable the snooze button if the date is in the past', async () => {
         const previousDate = format(addDays(new Date(), -5), 'PP', { locale: enUS });
-        const screen = render(<SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} />);
+        render(<SnoozeCustomTime onClose={mockedOnClose} handleSnooze={mockedHandleSnooze} />);
 
         const dateInput = screen.getByTestId('snooze-date-input');
         fireEvent.change(dateInput, { target: { value: previousDate } });

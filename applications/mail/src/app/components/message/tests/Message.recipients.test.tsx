@@ -92,7 +92,7 @@ describe('Message recipients rendering', () => {
         ];
 
         const { store } = await setup({ data: { ToList } });
-        act(() => store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] })));
+        await act(() => store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] })));
 
         const expectation = `${ContactGroup.Name} (${contacts.length})`;
 
