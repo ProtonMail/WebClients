@@ -9,10 +9,15 @@ import {
 import type { RelatedPhotos } from '@proton/shared/lib/api/drive/photos';
 import { queryAddPhotoToFavorite } from '@proton/shared/lib/api/drive/photos';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
-import { queryVolumeEmptyTrash } from '@proton/shared/lib/api/drive/volume';
+import {
+    queryRecoverPhotoLinks,
+    queryTransferPhotoLinks,
+    queryVolumeEmptyTrash,
+} from '@proton/shared/lib/api/drive/volume';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import type { MoveLink, MultipleMoveResponse } from '@proton/shared/lib/interfaces/drive/link';
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import groupWith from '@proton/utils/groupWith';
@@ -59,7 +64,7 @@ export function useLinksActions({
     const { getShareCreatorKeys, getShare } = useShare();
     const volumeState = useVolumesState();
 
-    const batchHelper = useBatchHelper();
+    const { batchAPIHelper, batchPromiseHelper } = useBatchHelper();
 
     /**
      * withLinkLock is helper to lock provided `linkIds` before the action done
@@ -107,14 +112,13 @@ export function useLinksActions({
         }
     };
 
-    const moveLink = async (
+    const getMoveLinkData = async (
         abortSignal: AbortSignal,
         {
             shareId,
             newParentLinkId,
             linkId,
             newShareId = shareId,
-            silence = false,
         }: {
             shareId: string;
             newParentLinkId: string;
@@ -265,8 +269,35 @@ export function useLinksActions({
                 }),
         };
 
+        return { data: requestBody, link };
+    };
+
+    const moveLink = async (
+        abortSignal: AbortSignal,
+        {
+            shareId,
+            newParentLinkId,
+            linkId,
+            newShareId = shareId,
+            silence = false,
+        }: {
+            shareId: string;
+            newParentLinkId: string;
+            linkId: string;
+            newShareId?: string;
+            silence?: boolean;
+        }
+    ) => {
+        const { data, link } = await getMoveLinkData(abortSignal, {
+            shareId,
+            newParentLinkId,
+            linkId,
+            newShareId,
+            silence,
+        });
+
         await debouncedRequest({
-            ...queryMoveLink(shareId, linkId, requestBody),
+            ...queryMoveLink(shareId, linkId, data),
             silence,
         }).catch((err) => {
             if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
@@ -324,6 +355,121 @@ export function useLinksActions({
                 return { successes, failures, originalParentIds };
             },
         });
+    };
+
+    const transferPhotoLinks = async (
+        abortSignal: AbortSignal,
+        volumeId: string,
+        {
+            shareId,
+            linkIds,
+            newParentLinkId,
+            newShareId,
+            silence,
+        }: {
+            shareId: string;
+            linkIds: string[];
+            newParentLinkId: string;
+            newShareId: string;
+            silence?: boolean;
+        },
+        recovery?: boolean
+    ) => {
+        return withLinkLock({
+            shareId,
+            linkIds,
+            callback: async () => {
+                const originalParentIds: { [linkId: string]: string } = {};
+                const { address } = await getShareCreatorKeys(abortSignal, newShareId);
+                const Links: MoveLink[] = [];
+                for (const linkId of linkIds) {
+                    const { data, link } = await preventLeave(
+                        getMoveLinkData(abortSignal, {
+                            shareId,
+                            newParentLinkId,
+                            linkId,
+                            newShareId,
+                            silence,
+                        })
+                    );
+
+                    originalParentIds[linkId] = link.parentLinkId;
+                    Links.push(data);
+                }
+                const successes: string[] = [];
+                const failures: { [linkId: string]: any } = {};
+                const { Responses } = await preventLeave(
+                    debouncedRequest<MultipleMoveResponse>(
+                        recovery
+                            ? {
+                                  ...queryRecoverPhotoLinks(volumeId, {
+                                      NewShareId: newShareId,
+                                      ParentLinkID: newParentLinkId,
+                                      Links,
+                                      NameSignatureEmail: address.Email,
+                                      SignatureEmail: address.Email,
+                                  }),
+                                  silence,
+                              }
+                            : {
+                                  ...queryTransferPhotoLinks(volumeId, {
+                                      ParentLinkID: newParentLinkId,
+                                      Links,
+                                      NameSignatureEmail: address.Email,
+                                      SignatureEmail: address.Email,
+                                  }),
+                                  silence,
+                              }
+                    ).catch((err) => {
+                        if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
+                            throw new ValidationError(err.data.Error);
+                        }
+                        throw err;
+                    })
+                );
+
+                for (const response of Responses) {
+                    if (response.Response.Code === 1000) {
+                        successes.push(response.LinkID);
+                    } else {
+                        failures[response.LinkID] = response.Response.Error;
+                    }
+                }
+
+                return { successes, failures, originalParentIds };
+            },
+        });
+    };
+
+    const recoverPhotoLinks = async (
+        abortSignal: AbortSignal,
+        volumeId: string,
+        {
+            shareId,
+            linkIds,
+            newParentLinkId,
+            newShareId,
+            silence,
+        }: {
+            shareId: string;
+            linkIds: string[];
+            newParentLinkId: string;
+            newShareId: string;
+            silence?: boolean;
+        }
+    ) => {
+        return transferPhotoLinks(
+            abortSignal,
+            volumeId,
+            {
+                shareId,
+                linkIds,
+                newParentLinkId,
+                newShareId,
+                silence,
+            },
+            true
+        );
     };
 
     const favoritePhotoLink = async (
@@ -492,45 +638,41 @@ export function useLinksActions({
             }
 
             let RelatedPhotosData: RelatedPhotos[] = [];
+
             if (link.activeRevision?.photo?.relatedPhotosLinkIds) {
-                const BATCH_SIZE = 10;
-                const processRelatedPhotosInBatches = async (
+                const processRelatedPhotos = async (
                     link: DecryptedLink,
                     abortSignal: AbortSignal,
-                    shareId: string,
-                    batchSize: number = 10
+                    shareId: string
                 ): Promise<RelatedPhotos[]> => {
                     const relatedIds = link.activeRevision?.photo?.relatedPhotosLinkIds;
-                    const relatedPhotosData: RelatedPhotos[] = [];
+
                     if (!relatedIds) {
-                        return relatedPhotosData;
-                    }
-                    for (let i = 0; i < relatedIds.length; i += batchSize) {
-                        const batch = relatedIds.slice(i, i + batchSize);
-
-                        const batchResults = await Promise.all(
-                            batch.map(async (id: string) => {
-                                const link = await getLink(abortSignal, shareId, id);
-                                const data = await getLinkMovedParameters(link);
-
-                                if (!data.ContentHash) {
-                                    throw new Error('ContentHash could not be computed');
-                                }
-
-                                return {
-                                    ...data,
-                                    LinkID: id,
-                                    ContentHash: data.ContentHash,
-                                };
-                            })
-                        );
-
-                        relatedPhotosData.push(...batchResults);
+                        return [];
                     }
 
-                    return relatedPhotosData;
+                    return batchPromiseHelper(
+                        relatedIds,
+                        async (id: string) => {
+                            const link = await getLink(abortSignal, shareId, id);
+                            const data = await getLinkMovedParameters(link);
+
+                            if (!data.ContentHash) {
+                                throw new Error('ContentHash could not be computed');
+                            }
+
+                            return {
+                                ...data,
+                                LinkID: id,
+                                ContentHash: data.ContentHash,
+                            };
+                        },
+                        10,
+                        abortSignal
+                    );
                 };
-                RelatedPhotosData = await processRelatedPhotosInBatches(link, abortSignal, shareId, BATCH_SIZE);
+
+                RelatedPhotosData = await processRelatedPhotos(link, abortSignal, shareId);
             }
 
             body = {
@@ -571,7 +713,7 @@ export function useLinksActions({
                     volumeId: group[0].volumeId,
                     linkIds,
                     callback: () =>
-                        batchHelper(abortSignal, {
+                        batchAPIHelper(abortSignal, {
                             linkIds,
                             query: (batchLinkIds) => query(batchLinkIds, group[0].volumeId),
                             maxParallelRequests,
@@ -656,7 +798,7 @@ export function useLinksActions({
             shareId,
             linkIds,
             callback: () =>
-                batchHelper(abortSignal, {
+                batchAPIHelper(abortSignal, {
                     linkIds,
                     query: (batchLinkIds) => queryDeleteChildrenLinks(shareId, parentLinkId, batchLinkIds),
                 }),
@@ -683,6 +825,8 @@ export function useLinksActions({
 
     return {
         moveLinks,
+        transferPhotoLinks,
+        recoverPhotoLinks,
         trashLinks,
         restoreLinks,
         deleteChildrenLinks,

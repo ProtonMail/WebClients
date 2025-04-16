@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 import { queryDeletePhotosShare, queryPhotos } from '@proton/shared/lib/api/drive/photos';
 import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
 import type { ShareWithKey } from '../_shares';
@@ -16,6 +17,7 @@ export const PhotosContext = createContext<{
     volumeId?: string;
     isPhotosLoading: boolean;
     photos: Photo[];
+    volumeType: VolumeType.Regular;
     loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
     removePhotosFromCache: (linkIds: string[]) => void;
     deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
@@ -86,6 +88,7 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
                 shareId: photosShare?.shareId,
                 linkId: photosShare?.rootLinkId,
                 volumeId: photosShare?.volumeId,
+                volumeType: VolumeType.Regular,
                 isPhotosLoading: photosLoading,
                 photos,
                 loadPhotos,
