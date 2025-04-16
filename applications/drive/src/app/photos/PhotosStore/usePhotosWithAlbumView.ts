@@ -299,7 +299,7 @@ export const usePhotosWithAlbumsView = () => {
     }, [albums, cachedAlbumsCover, linkId, shareId]);
 
     useEffect(() => {
-        if (!volumeId || !shareId) {
+        if (!volumeId || !shareId || !currentPageType) {
             return;
         }
         const abortController = new AbortController();
@@ -338,7 +338,7 @@ export const usePhotosWithAlbumsView = () => {
             eventsManager.eventHandlers.unregister(callbackId);
             abortController.abort();
         };
-    }, [volumeId, shareId, albumLinkId, albumShareId]);
+    }, [volumeId, shareId, albumLinkId, albumShareId, currentPageType]);
 
     const loadPhotoLink = useCallback((shareId: string, linkId: string, domRef?: React.MutableRefObject<unknown>) => {
         if (!shareId || !linkId) {
