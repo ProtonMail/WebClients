@@ -1,4 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import type { PublicKeyReference } from '@proton/crypto';
@@ -38,27 +38,24 @@ describe('Trust public key modal', () => {
 
     const setup = async (senderKeys: GeneratedKey, isContact: boolean, options?: Parameters<typeof render>[1]) => {
         const contact = getContact(senderKeys.publicKeys[0], isContact);
-
-        const component = await render(<TrustPublicKeyModal contact={contact} open />, options);
-
-        return component;
+        await render(<TrustPublicKeyModal contact={contact} open />, options);
     };
 
     it('should update contact when trusting key if contact already exists', async () => {
         // Create the contact
         const { senderKeys, receiverKeys, updateSpy } = await setupContactsForPinKeys();
 
-        const { getByText, getByTestId } = await setup(senderKeys, true, {
+        await setup(senderKeys, true, {
             preloadedState: {
                 userKeys: getModelState(getStoredUserKey(receiverKeys)),
             },
         });
 
         // Modal is displayed
-        getByText('Trust public key?');
+        screen.getByText('Trust public key?');
 
         // Click on Trust key button
-        const submitButton = getByTestId('trust-key-modal:submit');
+        const submitButton = screen.getByTestId('trust-key-modal:submit');
 
         fireEvent.click(submitButton);
 
@@ -81,17 +78,17 @@ describe('Trust public key modal', () => {
         });
         addApiMock('contacts/v4/contacts', createSpy, 'post');
 
-        const { getByText, getByTestId } = await setup(senderKeys, false, {
+        await setup(senderKeys, false, {
             preloadedState: {
                 userKeys: getModelState(getStoredUserKey(receiverKeys)),
             },
         });
 
         // Modal is displayed
-        getByText('Trust public key?');
+        screen.getByText('Trust public key?');
 
         // Click on Trust key button
-        const submitButton = getByTestId('trust-key-modal:submit');
+        const submitButton = screen.getByTestId('trust-key-modal:submit');
         fireEvent.click(submitButton);
 
         // Contact has been created
@@ -113,17 +110,17 @@ describe('Trust public key modal', () => {
         });
         addApiMock('contacts/v4/contacts', createSpy, 'post');
 
-        const { getByText, getByTestId } = await setup(senderKeys, false, {
+        await setup(senderKeys, false, {
             preloadedState: {
                 userKeys: getModelState(getStoredUserKey(receiverKeys)),
             },
         });
 
         // Modal is displayed
-        getByText('Trust public key?');
+        screen.getByText('Trust public key?');
 
         // Click on Trust key button
-        const submitButton = getByTestId('trust-key-modal:submit');
+        const submitButton = screen.getByTestId('trust-key-modal:submit');
         fireEvent.click(submitButton);
 
         // Contact has been created

@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -34,23 +34,23 @@ describe('Encrypted Outside Unlock', () => {
     afterEach(EOClearAll);
 
     it('should display an error if the EO id is not present', async () => {
-        const { getByText } = await EORender(<EOUnlock {...props} />, { invalid: true });
+        await EORender(<EOUnlock {...props} />, { invalid: true });
 
-        getByText('Error');
-        getByText('Sorry, this message does not exist or has already expired.');
+        screen.getByText('Error');
+        screen.getByText('Sorry, this message does not exist or has already expired.');
     });
 
     it('should display an error if the EO id is invalid', async () => {
         addApiMock('mail/v4/eo/token/invalidID', () => ({}));
 
-        const { getByText } = await EORender(<EOUnlock {...props} />, {
+        await EORender(<EOUnlock {...props} />, {
             routePath: '/eo/:id',
             initialEntries: ['/eo/invalidID'],
             invalid: true,
         });
 
-        getByText('Error');
-        getByText('Sorry, this message does not exist or has already expired.');
+        screen.getByText('Error');
+        screen.getByText('Sorry, this message does not exist or has already expired.');
     });
 
     it('should see the form if the EO id is valid and an error if password is invalid', async () => {
@@ -59,15 +59,15 @@ describe('Encrypted Outside Unlock', () => {
         // Get token from id mock
         addApiMock(`mail/v4/eo/token/${validID}`, () => ({ Token: 'token' }));
 
-        const { getByText, getByTestId } = await EORender(<EOUnlock {...props} />, {
+        await EORender(<EOUnlock {...props} />, {
             routePath: '/eo/:id',
             initialEntries: [`/eo/${validID}`],
         });
 
         // Unlock form is displayed
-        getByText('Unlock message');
+        screen.getByText('Unlock message');
 
-        const unlockInput = getByTestId('unlock:input');
+        const unlockInput = screen.getByTestId('unlock:input');
 
         // Type the password
         fireEvent.change(unlockInput, { target: { value: EOInvalidPassword } });
@@ -90,15 +90,15 @@ describe('Encrypted Outside Unlock', () => {
             PublicKey: '',
         }));
 
-        const { getByText, getByTestId, history } = await EORender(<EOUnlock {...props} />, {
+        const { history } = await EORender(<EOUnlock {...props} />, {
             routePath: '/eo/:id',
             initialEntries: [`/eo/${validID}`],
         });
 
         // Unlock form is displayed
-        getByText('Unlock message');
+        screen.getByText('Unlock message');
 
-        const unlockInput = getByTestId('unlock:input');
+        const unlockInput = screen.getByTestId('unlock:input');
 
         // Type the password
         fireEvent.change(unlockInput, { target: { value: EOPassword } });

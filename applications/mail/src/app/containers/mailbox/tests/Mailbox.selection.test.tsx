@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { clearAll } from '../../../helpers/test/helper';
 import { props, setup } from './Mailbox.test.helpers';
@@ -26,12 +26,12 @@ describe('Mailbox elements selection', () => {
     });
 
     it('should select all', async () => {
-        const { getByTestId, getAllByTestId } = await setup({ conversations });
+        await setup({ conversations });
 
-        const checkAll = getByTestId('toolbar:select-all-checkbox');
+        const checkAll = screen.getByTestId('toolbar:select-all-checkbox');
         fireEvent.click(checkAll);
 
-        const allChecks = getAllByTestId('item-checkbox') as HTMLInputElement[];
+        const allChecks = screen.getAllByTestId('item-checkbox') as HTMLInputElement[];
         expect(allChecks.length > 0).toBe(true);
 
         const checked = [...allChecks].every((oneCheck) => oneCheck.checked);

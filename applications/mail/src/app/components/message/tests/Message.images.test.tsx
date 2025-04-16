@@ -1,4 +1,4 @@
-import { findByTestId, fireEvent } from '@testing-library/react';
+import { findByTestId, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
@@ -236,7 +236,7 @@ describe('Message images', () => {
 
         minimalCache();
 
-        const { getByTestId, rerender, container } = await setup(
+        const { rerender, container } = await setup(
             message,
             {},
             {
@@ -254,7 +254,7 @@ describe('Message images', () => {
         const image = await findByTestId(iframe, 'image');
         expect(image.getAttribute('proton-src')).toEqual(imageURL);
 
-        let loadButton = getByTestId('remote-content:load');
+        let loadButton = screen.getByTestId('remote-content:load');
         fireEvent.click(loadButton);
 
         // Rerender the message view to check that images have been loaded through URL
@@ -266,7 +266,7 @@ describe('Message images', () => {
         expect(placeholder).not.toBe(null);
         assertIcon(placeholder.querySelector('svg'), 'file-slash');
 
-        loadButton = getByTestId('remote-content:load');
+        loadButton = screen.getByTestId('remote-content:load');
         fireEvent.click(loadButton);
 
         // Rerender the message view to check that images have been loaded

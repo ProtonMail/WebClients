@@ -25,6 +25,7 @@ import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { cancelSendMessage, endUndo, sent, updateExpires } from '../../store/messages/draft/messagesDraftActions';
 import type { MessageStateWithData, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
@@ -35,7 +36,6 @@ import useDelaySendSeconds from '../useDelaySendSeconds';
 import type { OnCompose } from './useCompose';
 import { ComposeTypes } from './useCompose';
 import { useSendModifications } from './useSendModifications';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
@@ -126,7 +126,7 @@ export const useSendMessage = () => {
                     throw error;
                 }
                 // Re-open draft
-                onCompose({
+                void onCompose({
                     type: ComposeTypes.existingDraft,
                     existingDraft: {
                         localID,
@@ -245,7 +245,7 @@ export const useSendMessage = () => {
                     ].includes(error?.data?.Code)
                 ) {
                     hasClickedUndoSend = false;
-                    onCompose({
+                    void onCompose({
                         type: ComposeTypes.existingDraft,
                         existingDraft: {
                             localID,
