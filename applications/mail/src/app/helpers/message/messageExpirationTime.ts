@@ -1,6 +1,8 @@
 import { format, fromUnixTime, isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
+import { dateLocale } from '@proton/shared/lib/i18n';
+
 import type { MessageState } from '../../store/messages/messagesTypes';
 import { formatFullDate } from '../date';
 
@@ -30,7 +32,7 @@ const getOnText = (value: string) => {
 };
 
 export const getExpiresOnMessage = (expirationDate: Date) => {
-    const shortDateMessage = format(expirationDate, 'p');
+    const shortDateMessage = format(expirationDate, 'p', { locale: dateLocale });
 
     if (isToday(expirationDate)) {
         return getTodayText(shortDateMessage);
@@ -52,7 +54,7 @@ const getDeletedAtText = (value: string) => {
 };
 
 export const getAutoDeleteOnMessage = (expirationDate: Date) => {
-    const shortDateMessage = format(expirationDate, 'p');
+    const shortDateMessage = format(expirationDate, 'p', { locale: dateLocale });
 
     if (isToday(expirationDate)) {
         return getDeletedAtText(shortDateMessage);
