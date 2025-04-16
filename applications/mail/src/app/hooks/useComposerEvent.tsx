@@ -41,7 +41,7 @@ const useComposerEvent = () => {
                 onMailTo(detail.mailto);
             } else {
                 // Otherwise, just open a new empty composer
-                onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
+                void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
             }
         };
 

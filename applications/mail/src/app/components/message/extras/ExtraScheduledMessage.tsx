@@ -69,7 +69,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         createNotification({
             text: c('Message notification').t`Scheduling canceled. Message has been moved to Drafts.`,
         });
-        onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
+        void onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
 
         if (location.pathname.includes(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED])) {
             const redirectToLocation = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)

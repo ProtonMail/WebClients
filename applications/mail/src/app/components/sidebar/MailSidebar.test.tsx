@@ -108,9 +108,9 @@ describe('MailSidebar', () => {
             items: new Set(),
         } as OnboardingChecklistContext);
 
-        const result = await render(<MailSidebar {...props} />);
+        const view = await render(<MailSidebar {...props} />);
 
-        return { ...result };
+        return { ...view };
     };
 
     afterEach(() => {
@@ -121,8 +121,8 @@ describe('MailSidebar', () => {
     });
 
     it('should redirect on inbox when click on logo', async () => {
-        const { getByTestId, history } = await setup();
-        const logo = getByTestId('main-logo') as HTMLAnchorElement;
+        const { history } = await setup();
+        const logo = screen.getByTestId('main-logo') as HTMLAnchorElement;
         fireEvent.click(logo);
 
         expect(history.length).toBe(1);
@@ -130,9 +130,9 @@ describe('MailSidebar', () => {
     });
 
     it('should open app dropdown', async () => {
-        const { getByTitle } = await setup();
+        await setup();
 
-        const appsButton = getByTitle('Proton applications');
+        const appsButton = screen.getByTitle('Proton applications');
         fireEvent.click(appsButton);
 
         const dropdown = await getDropdown();
@@ -146,19 +146,19 @@ describe('MailSidebar', () => {
     it('should show folder tree', async () => {
         setupTest();
 
-        const { getByTestId, queryByTestId } = await render(<MailSidebar {...props} />, {
+        await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState([folder, subfolder]),
             },
         });
 
-        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
+        const folderElement = screen.getByTestId(`navigation-link:${folder.ID}`);
         const folderIcon = folderElement.querySelector('svg:not(.navigation-icon--expand)');
 
         expect(folderElement.textContent).toContain(folder.Name);
         expect((folderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-folders');
 
-        const subfolderElement = getByTestId(`navigation-link:${subfolder.ID}`);
+        const subfolderElement = screen.getByTestId(`navigation-link:${subfolder.ID}`);
         const subfolderIcon = subfolderElement.querySelector('svg');
 
         expect(subfolderElement.textContent).toContain(subfolder.Name);
@@ -170,19 +170,19 @@ describe('MailSidebar', () => {
             fireEvent.click(collapseButton);
         }
 
-        expect(queryByTestId(`sidebar-item-${subfolder.ID}`)).toBeNull();
+        expect(screen.queryByTestId(`sidebar-item-${subfolder.ID}`)).toBeNull();
     });
 
     it('should show label list', async () => {
         setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, {
+        await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState([label]),
             },
         });
 
-        const labelElement = getByTestId(`navigation-link:${label.ID}`);
+        const labelElement = screen.getByTestId(`navigation-link:${label.ID}`);
         const labelIcon = labelElement.querySelector('svg');
 
         expect(labelElement.textContent).toContain(label.Name);
@@ -192,17 +192,17 @@ describe('MailSidebar', () => {
     it('should show unread counters', async () => {
         setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, {
+        await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState([folder, label, ...systemFolders]),
                 conversationCounts: getModelState([inboxMessages, allMailMessages, folderMessages, labelMessages]),
             },
         });
 
-        const inboxElement = getByTestId(`navigation-link:inbox`);
-        const allMailElement = getByTestId(`navigation-link:all-mail`);
-        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
-        const labelElement = getByTestId(`navigation-link:${label.ID}`);
+        const inboxElement = screen.getByTestId(`navigation-link:inbox`);
+        const allMailElement = screen.getByTestId(`navigation-link:all-mail`);
+        const folderElement = screen.getByTestId(`navigation-link:${folder.ID}`);
+        const labelElement = screen.getByTestId(`navigation-link:${label.ID}`);
 
         const inBoxLocationAside = inboxElement.querySelector('.navigation-counter-item');
         const allMailLocationAside = allMailElement.querySelector('.navigation-counter-item');
@@ -218,19 +218,17 @@ describe('MailSidebar', () => {
     it('should navigate to the label on click', async () => {
         setupTest();
 
-        const { getByTestId, history } = await render(<MailSidebar {...props} />, {
+        const { history } = await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState([folder]),
             },
         });
 
-        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
+        const folderElement = screen.getByTestId(`navigation-link:${folder.ID}`);
 
         expect(history.location.pathname).toBe('/inbox');
 
-        act(() => {
-            fireEvent.click(folderElement);
-        });
+        fireEvent.click(folderElement);
 
         expect(history.location.pathname).toBe(`/${folder.ID}`);
     });
@@ -238,26 +236,22 @@ describe('MailSidebar', () => {
     it('should call event manager on click if already on label', async () => {
         setupTest();
 
-        const { getByTestId, history } = await render(<MailSidebar {...props} />, {
+        const { history } = await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState([folder]),
             },
         });
 
-        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
+        const folderElement = screen.getByTestId(`navigation-link:${folder.ID}`);
 
         // Click on the label to be redirected in it
-        act(() => {
-            fireEvent.click(folderElement);
-        });
+        fireEvent.click(folderElement);
 
         // Check if we are in the label
         expect(history.location.pathname).toBe(`/${folder.ID}`);
 
         // Click again on the label to trigger the event manager
-        act(() => {
-            fireEvent.click(folderElement);
-        });
+        fireEvent.click(folderElement);
 
         expect(useEventManager.call).toHaveBeenCalled();
     });
@@ -265,14 +259,14 @@ describe('MailSidebar', () => {
     it('should be updated when counters are updated', async () => {
         setupTest();
 
-        const { getByTestId, store } = await render(<MailSidebar {...props} />, {
+        const { store } = await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState(systemFolders),
                 conversationCounts: getModelState([inboxMessages]),
             },
         });
 
-        const inboxElement = getByTestId('navigation-link:inbox');
+        const inboxElement = screen.getByTestId('navigation-link:inbox');
 
         const inBoxLocationAside = inboxElement.querySelector('.navigation-counter-item');
         expect(inBoxLocationAside?.innerHTML).toBe(`${inboxMessages.Unread}`);
@@ -289,27 +283,27 @@ describe('MailSidebar', () => {
     it('should not show scheduled sidebar item when feature flag is disabled', async () => {
         setupTest();
 
-        const { queryByTestId } = await render(<MailSidebar {...props} />, {
+        await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState(systemFolders),
                 conversationCounts: getModelState([scheduledMessages]),
             },
         });
 
-        expect(queryByTestId(`Scheduled`)).toBeNull();
+        expect(screen.queryByTestId(`Scheduled`)).toBeNull();
     });
 
     it('should show scheduled sidebar item if scheduled messages', async () => {
         setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, {
+        await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState(systemFolders),
                 conversationCounts: getModelState([scheduledMessages]),
             },
         });
 
-        const scheduledLocationAside = getByTestId(`navigation-link:unread-count`);
+        const scheduledLocationAside = screen.getByTestId(`navigation-link:unread-count`);
 
         // We have two navigation counters for scheduled messages, one to display the number of scheduled messages and one for unread scheduled messages
         expect(scheduledLocationAside.innerHTML).toBe(`${scheduledMessages.Total}`);
@@ -318,30 +312,29 @@ describe('MailSidebar', () => {
     it('should not show scheduled sidebar item without scheduled messages', async () => {
         setupTest();
 
-        const { queryByTestId } = await render(<MailSidebar {...props} />);
-
-        expect(queryByTestId(`Scheduled`)).toBeNull();
+        await render(<MailSidebar {...props} />);
+        expect(screen.queryByTestId(`Scheduled`)).toBeNull();
     });
 
     describe('Sidebar hotkeys', () => {
         it('should navigate with the arrow keys', async () => {
             setupTest();
 
-            const { getByTestId, getByTitle, container } = await render(<MailSidebar {...props} />, {
+            const { container } = await render(<MailSidebar {...props} />, {
                 preloadedState: {
                     categories: getModelState([label, folder, ...systemFolders]),
                 },
             });
 
             const sidebar = container.querySelector('nav > div') as HTMLDivElement;
-            const More = getByTitle('Less'); // When opened, it becomes "LESS"
-            const Folders = getByTitle('Folders');
-            const Labels = getByTitle('Labels');
+            const More = screen.getByTitle('Less'); // When opened, it becomes "LESS"
+            const Folders = screen.getByTitle('Folders');
+            const Labels = screen.getByTitle('Labels');
 
-            const Inbox = getByTestId('navigation-link:inbox');
-            const Drafts = getByTestId('navigation-link:drafts');
-            const Folder = getByTestId(`navigation-link:${folder.ID}`);
-            const Label = getByTestId(`navigation-link:${label.ID}`);
+            const Inbox = screen.getByTestId('navigation-link:inbox');
+            const Drafts = screen.getByTestId('navigation-link:drafts');
+            const Folder = screen.getByTestId(`navigation-link:${folder.ID}`);
+            const Label = screen.getByTestId(`navigation-link:${label.ID}`);
 
             const down = () => fireEvent.keyDown(sidebar, { key: 'ArrowDown' });
             const up = () => fireEvent.keyDown(sidebar, { key: 'ArrowUp' });

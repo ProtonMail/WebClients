@@ -240,7 +240,7 @@ describe('EmailReminderWidget', () => {
 
         await tick();
 
-        expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).toBeInTheDocument();
+        expect(screen.getByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).toBeInTheDocument();
     });
 
     it('displays an error instead of the widget when there has been a breaking change', async () => {
@@ -305,8 +305,8 @@ describe('EmailReminderWidget', () => {
                 );
 
                 expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).not.toBeInTheDocument();
-                expect(screen.queryByText(/Learn more/)).toBeInTheDocument();
-                expect(screen.queryByText(new RegExp(`Open ${CALENDAR_APP_NAME}`))).toBeInTheDocument();
+                expect(screen.getByText(/Learn more/)).toBeInTheDocument();
+                expect(screen.getByText(new RegExp(`Open ${CALENDAR_APP_NAME}`))).toBeInTheDocument();
             }
 
             it('displays an error instead of the widget when the calendar needs a reset', async () => {
@@ -352,7 +352,7 @@ describe('EmailReminderWidget', () => {
 
                 await screen.findByText(new RegExp('Event details cannot be decrypted.'));
                 expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).not.toBeInTheDocument();
-                expect(screen.queryByText(new RegExp('Why not?'))).toBeInTheDocument();
+                expect(screen.getByText(new RegExp('Why not?'))).toBeInTheDocument();
             });
         });
     });

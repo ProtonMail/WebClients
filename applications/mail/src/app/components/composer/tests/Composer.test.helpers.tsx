@@ -78,7 +78,7 @@ export const prepareMessage = (store: MailStore, messageProp: PartialMessageStat
 
     store.dispatch(initialize(message));
 
-    store.dispatch(
+    void store.dispatch(
         addComposerAction({
             ID: composerID,
             messageID: message.localID,

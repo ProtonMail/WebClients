@@ -1,6 +1,5 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import type { RenderResult } from '@testing-library/react';
-import { queryByTestId } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -50,14 +49,10 @@ const getTestMessageToBlock = (sender: Recipient) => {
     } as MessageState;
 };
 
-const openDropdown = async (container: RenderResult, sender: Recipient) => {
-    const { getByTestId } = container;
-    const recipientItem = getByTestId(`recipient:details-dropdown-${sender.Address}`);
-
+const openDropdown = async (sender: Recipient) => {
+    const recipientItem = screen.getByTestId(`recipient:details-dropdown-${sender.Address}`);
     fireEvent.click(recipientItem);
-
-    const fromDropdown = await getDropdown();
-    return fromDropdown;
+    return getDropdown();
 };
 
 const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfimationChecked = false) => {
@@ -88,7 +83,7 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
     });
     const message = getTestMessageToBlock(sender);
 
-    const container = await render(
+    const view = await render(
         <MailRecipientItemSingle message={message} recipient={sender} isRecipient={isRecipient} {...modalsHandlers} />,
         {
             preloadedState: {
@@ -107,14 +102,14 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
 
     // Load manually incoming defaults
     await act(async () => {
-        await container.store.dispatch(load());
+        await view.store.dispatch(load());
     });
 
-    const dropdown = await openDropdown(container, sender);
+    const dropdown = await openDropdown(sender);
 
-    const blockSenderOption = queryByTestId(dropdown, 'block-sender:button');
+    const blockSenderOption = screen.queryByTestId('block-sender:button');
 
-    return { container, dropdown, blockSenderOption };
+    return { container: view, dropdown, blockSenderOption };
 };
 
 describe('MailRecipientItemSingle block sender option in dropdown', () => {
@@ -207,31 +202,25 @@ describe('MailRecipientItemSingle blocking a sender', () => {
         blockSenderOption: HTMLElement | null,
         selectDoNotAsk = false
     ) => {
-        const { findByText, findByTestId } = container;
-
         if (blockSenderOption) {
             fireEvent.click(blockSenderOption);
         }
 
         // Modal is displayed
-        await findByText('Block sender');
-        await findByText(`New emails from ${senderAddress} won't be delivered and will be permanently deleted.`);
+        await screen.findByText('Block sender');
+        await screen.findByText(`New emails from ${senderAddress} won't be delivered and will be permanently deleted.`);
 
         // Should check do not ask again
         if (selectDoNotAsk) {
-            const checkbox = await findByTestId('block-sender-modal-dont-show:checkbox');
+            const checkbox = await screen.findByTestId('block-sender-modal-dont-show:checkbox');
 
-            act(() => {
-                fireEvent.click(checkbox);
-            });
+            fireEvent.click(checkbox);
         }
 
         // Block sender
-        const blockButton = await findByTestId('block-sender-modal-block:button');
+        const blockButton = await screen.findByTestId('block-sender-modal-block:button');
 
-        act(() => {
-            fireEvent.click(blockButton);
-        });
+        fireEvent.click(blockButton);
     };
 
     it('should block a sender', async () => {
