@@ -62,7 +62,7 @@ export const AlbumsView: FC = () => {
     const renameAlbumModal = useModalStateObject();
     const renameAlbum = useRenameAlbum();
     const [renameAlbumLinkId, setRenameAlbumLinkId] = useState<string>('');
-    const { moveLinks } = useLinksActions();
+    const { transferPhotoLinks } = useLinksActions();
     const { createNotification } = useNotifications();
 
     const thumbnails = useThumbnailsDownload();
@@ -120,12 +120,12 @@ export const AlbumsView: FC = () => {
             album: DecryptedAlbum,
             { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
         ) => {
-            if (!linkId) {
+            if (!linkId || !volumeId || !shareId) {
                 return;
             }
             try {
                 if (!force) {
-                    await moveLinks(abortSignal, {
+                    await transferPhotoLinks(abortSignal, volumeId, {
                         shareId: album.rootShareId,
                         linkIds: missingPhotosIds,
                         newShareId: shareId,
@@ -144,7 +144,7 @@ export const AlbumsView: FC = () => {
                 text: c('Info').t`${albumName} has been successfully deleted`,
             });
         },
-        [linkId, createNotification, deleteAlbum, moveLinks, shareId]
+        [linkId, createNotification, deleteAlbum, transferPhotoLinks, shareId, volumeId]
     );
 
     // For delete album we do the happy path and just compare with photos you have in cache.

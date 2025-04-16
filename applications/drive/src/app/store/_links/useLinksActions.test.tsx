@@ -115,7 +115,10 @@ jest.mock('../_shares/useDefaultShare', () => {
 });
 
 jest.mock('../_utils/useBatchHelper', () => {
-    const useBatchHelper = () => mockBatchHelper;
+    const useBatchHelper = () => ({
+        batchAPIHelper: mockBatchHelper,
+        batchPromiseHelper: jest.fn(),
+    });
     return { useBatchHelper };
 });
 

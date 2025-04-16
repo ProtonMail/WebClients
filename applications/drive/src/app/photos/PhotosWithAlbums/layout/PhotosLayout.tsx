@@ -94,7 +94,7 @@ export const PhotosLayout = () => {
         }))
     );
 
-    const { moveLinks } = useLinksActions();
+    const { transferPhotoLinks } = useLinksActions();
     const { selectedItems, clearSelection } = usePhotosSelection({
         photos,
         albumPhotos,
@@ -237,12 +237,12 @@ export const PhotosLayout = () => {
             abortSignal: AbortSignal,
             { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
         ) => {
-            if (!albumShareId || !linkId || !albumName || !albumLinkId) {
+            if (!albumShareId || !linkId || !albumName || !albumLinkId || !volumeId || !shareId) {
                 return;
             }
             try {
                 if (missingPhotosIds.length && !force) {
-                    await moveLinks(abortSignal, {
+                    await transferPhotoLinks(abortSignal, volumeId, {
                         shareId: albumShareId,
                         linkIds: missingPhotosIds,
                         newShareId: shareId,
@@ -260,7 +260,17 @@ export const PhotosLayout = () => {
                 text: c('Info').t`${albumName} has been successfully deleted`,
             });
         },
-        [albumShareId, linkId, shareId, moveLinks, deleteAlbum, albumLinkId, albumName, createNotification]
+        [
+            albumShareId,
+            linkId,
+            shareId,
+            transferPhotoLinks,
+            deleteAlbum,
+            albumLinkId,
+            albumName,
+            createNotification,
+            volumeId,
+        ]
     );
 
     // For delete album we do the happy path and just compare with photos you have in cache.
@@ -313,12 +323,12 @@ export const PhotosLayout = () => {
                 missingPhotosIds?: string[];
             }
         ) => {
-            if (!albumShareId || !linkId || !albumLinkId) {
+            if (!albumShareId || !linkId || !albumLinkId || !volumeId) {
                 return;
             }
             try {
                 if (missingPhotosIds) {
-                    await moveLinks(abortSignal, {
+                    await transferPhotoLinks(abortSignal, volumeId, {
                         shareId: albumShareId,
                         linkIds: missingPhotosIds,
                         newShareId: albumShareId,
@@ -333,7 +343,7 @@ export const PhotosLayout = () => {
                 sendErrorReport(e);
             }
         },
-        [albumShareId, linkId, albumLinkId, removeAlbumPhotos, createNotification, moveLinks]
+        [albumShareId, linkId, albumLinkId, volumeId, removeAlbumPhotos, createNotification, transferPhotoLinks]
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {

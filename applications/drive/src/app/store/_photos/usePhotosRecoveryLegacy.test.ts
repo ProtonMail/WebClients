@@ -79,16 +79,13 @@ const mockedSetItem = jest.mocked(setItem);
 
 describe('usePhotosRecovery', () => {
     const links = [generateDecryptedLink('linkId1'), generateDecryptedLink('linkId2')];
-    const trashedLinks = [generateDecryptedLink('linkId3'), generateDecryptedLink('linkId4')];
     const mockedUsePhotos = jest.mocked(usePhotosOrPhotosWithAlbums);
     const mockedUseLinksListing = jest.mocked(useLinksListing);
     const mockedUseLinksActions = jest.mocked(useLinksActions);
     const mockedGetCachedChildren = jest.fn();
     const mockedGetCachedTrashed = jest.fn();
     const mockedLoadChildren = jest.fn();
-    // New mocks for the updated implementation
-    const mockedRecoverPhotoLinks = jest.fn();
-    const mockedGetDefaultPhotosShare = jest.fn();
+    const mockedMoveLinks = jest.fn();
     const mockedDeletePhotosShare = jest.fn();
 
     beforeEach(() => {
@@ -96,16 +93,12 @@ describe('usePhotosRecovery', () => {
         mockedDeletePhotosShare.mockResolvedValue(undefined);
         mockedLoadChildren.mockResolvedValue(undefined);
 
-        // Setup default photo share mock
-        mockedGetDefaultPhotosShare.mockResolvedValue({ volumeId: 'volumeId' });
-
-        // Setup recoverPhotoLinks default behavior
-        mockedRecoverPhotoLinks.mockImplementation(async (abortSignal, volumeId, { linkIds }) => {
-            return {
-                successes: linkIds,
-                failures: {},
-            };
-        });
+        mockedMoveLinks.mockImplementation(
+            async (abortSignal: AbortSignal, { linkIds, onMoved }: { linkIds: string[]; onMoved?: () => void }) => {
+                // Reproduce the async behavior of moveLinks
+                linkIds.forEach(() => setTimeout(() => onMoved?.(), 10));
+            }
+        );
 
         // @ts-ignore
         mockedUseLinksListing.mockReturnValue({
@@ -113,19 +106,16 @@ describe('usePhotosRecovery', () => {
             getCachedChildren: mockedGetCachedChildren,
             getCachedTrashed: mockedGetCachedTrashed,
         });
-
         // @ts-ignore
         mockedUsePhotos.mockReturnValue({
             shareId: 'shareId',
             linkId: 'linkId',
             deletePhotosShare: mockedDeletePhotosShare,
-            volumeId: 'volumeId',
-            volumeType: VolumeType.Photos,
+            volumeType: VolumeType.Regular,
         });
-
         // @ts-ignore
         mockedUseLinksActions.mockReturnValue({
-            recoverPhotoLinks: mockedRecoverPhotoLinks,
+            moveLinks: mockedMoveLinks,
         });
 
         const { result } = renderHook(() => useSharesStore());
@@ -150,9 +140,11 @@ describe('usePhotosRecovery', () => {
 
     it('should pass all state if files need to be recovered', async () => {
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Decrypting step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Preparing step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
         mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
 
@@ -165,30 +157,38 @@ describe('usePhotosRecovery', () => {
         expect(result.current.countOfUnrecoveredLinksLeft).toEqual(0);
         expect(mockedGetCachedChildren).toHaveBeenCalledTimes(3);
         expect(mockedGetCachedTrashed).toHaveBeenCalledTimes(3);
-        expect(mockedRecoverPhotoLinks).toHaveBeenCalledTimes(1);
+        expect(mockedMoveLinks).toHaveBeenCalledTimes(1);
         expect(mockedLoadChildren).toHaveBeenCalledTimes(1);
         expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(1);
+        expect(result.current.countOfUnrecoveredLinksLeft).toEqual(0);
         expect(mockedRemoveItem).toHaveBeenCalledTimes(1);
         expect(mockedRemoveItem).toHaveBeenCalledWith('photos-recovery-state');
     });
 
-    it('should pass and set errors count if some recoveries failed', async () => {
+    it('should pass and set errors count if some moves failed', async () => {
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Decrypting step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Preparing step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links: [links[0]], isDecrypting: false }); // Deleting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: [trashedLinks[0]], isDecrypting: false }); // Deleting step
-        mockedRecoverPhotoLinks.mockImplementation(
-            // eslint-disable-next-line
-            async (abortSignal: AbortSignal, volumeId: string, { linkIds }) => {
-                return {
-                    successes: ['linkId1', 'linkId3'],
-                    failures: { linkId2: 'Error recovering link', linkId4: 'Error recovering link' },
-                };
+        mockedGetCachedTrashed.mockReturnValueOnce({ links: [links[0]], isDecrypting: false }); // Deleting step
+
+        mockedMoveLinks.mockImplementation(
+            async (
+                abortSignal: AbortSignal,
+                { linkIds, onMoved, onError }: { linkIds: string[]; onMoved?: () => void; onError?: () => void }
+            ) => {
+                linkIds.forEach((linkId) => {
+                    if (linkId === 'linkId2') {
+                        onError?.();
+                    } else {
+                        onMoved?.();
+                    }
+                });
             }
         );
-
         const { result } = renderHook(() => usePhotosRecovery());
         act(() => {
             result.current.start();
@@ -207,13 +207,14 @@ describe('usePhotosRecovery', () => {
 
     it('should failed if deleteShare failed', async () => {
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Decrypting step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
 
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Preparing step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
 
         mockedGetCachedChildren.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
         mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
+
         mockedDeletePhotosShare.mockRejectedValue(undefined);
         const { result } = renderHook(() => usePhotosRecovery());
         act(() => {
@@ -229,40 +230,16 @@ describe('usePhotosRecovery', () => {
         expect(mockedSetItem).toHaveBeenCalledWith('photos-recovery-state', 'failed');
     });
 
-    it('should failed if recoverPhotoLinks helper failed', async () => {
-        mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Decrypting step
-
-        mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Preparing step
-
-        mockedGetCachedChildren.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
-        mockedRecoverPhotoLinks.mockRejectedValue(undefined);
-        const { result } = renderHook(() => usePhotosRecovery());
-        act(() => {
-            result.current.start();
-        });
-
-        await waitFor(() => expect(result.current.state).toEqual('FAILED'));
-        expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(0);
-        expect(mockedRecoverPhotoLinks).toHaveBeenCalledTimes(1);
-        expect(mockedGetCachedChildren).toHaveBeenCalledTimes(2);
-        expect(mockedGetItem).toHaveBeenCalledTimes(1);
-        expect(mockedSetItem).toHaveBeenCalledTimes(2);
-        expect(mockedSetItem).toHaveBeenCalledWith('photos-recovery-state', 'progress');
-        expect(mockedSetItem).toHaveBeenCalledWith('photos-recovery-state', 'failed');
-    });
-
     it('should failed if loadChildren failed', async () => {
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Decrypting step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Preparing step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
         mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
         mockedLoadChildren.mockRejectedValue(undefined);
-
         const { result } = renderHook(() => usePhotosRecovery());
         act(() => {
             result.current.start();
@@ -271,21 +248,23 @@ describe('usePhotosRecovery', () => {
         await waitFor(() => expect(result.current.state).toEqual('FAILED'));
         expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(0);
         expect(mockedGetCachedChildren).toHaveBeenCalledTimes(0);
+
         expect(mockedGetItem).toHaveBeenCalledTimes(1);
         expect(mockedSetItem).toHaveBeenCalledTimes(2);
         expect(mockedSetItem).toHaveBeenCalledWith('photos-recovery-state', 'progress');
         expect(mockedSetItem).toHaveBeenCalledWith('photos-recovery-state', 'failed');
     });
 
-    it('should failed if recoverPhotoLinks helper failed', async () => {
+    it('should failed if moveLinks helper failed', async () => {
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Decrypting step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Preparing step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
         mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
-        mockedRecoverPhotoLinks.mockRejectedValue(undefined);
-
+        mockedMoveLinks.mockRejectedValue(undefined);
         const { result } = renderHook(() => usePhotosRecovery());
         act(() => {
             result.current.start();
@@ -293,7 +272,7 @@ describe('usePhotosRecovery', () => {
 
         await waitFor(() => expect(result.current.state).toEqual('FAILED'));
         expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(0);
-        expect(mockedRecoverPhotoLinks).toHaveBeenCalledTimes(1);
+        expect(mockedMoveLinks).toHaveBeenCalledTimes(1);
         expect(mockedGetCachedChildren).toHaveBeenCalledTimes(2);
         expect(mockedGetItem).toHaveBeenCalledTimes(1);
         expect(mockedSetItem).toHaveBeenCalledTimes(2);
@@ -303,14 +282,16 @@ describe('usePhotosRecovery', () => {
 
     it('should start the process if localStorage value was set to progress', async () => {
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Decrypting step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
-        mockedGetCachedTrashed.mockReturnValueOnce({ links: trashedLinks, isDecrypting: false }); // Preparing step
+        mockedGetCachedTrashed.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
+
         mockedGetCachedChildren.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
         mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
         mockedGetItem.mockReturnValueOnce('progress');
-
         const { result } = renderHook(() => usePhotosRecovery());
+
         await waitFor(() => expect(result.current.state).toEqual('SUCCEED'));
         expect(mockedGetItem).toHaveBeenCalledTimes(1);
     });
@@ -318,6 +299,7 @@ describe('usePhotosRecovery', () => {
     it('should set state to failed if localStorage value was set to failed', async () => {
         mockedGetItem.mockReturnValueOnce('failed');
         const { result } = renderHook(() => usePhotosRecovery());
+
         await waitFor(() => expect(result.current.state).toEqual('FAILED'));
     });
 });
