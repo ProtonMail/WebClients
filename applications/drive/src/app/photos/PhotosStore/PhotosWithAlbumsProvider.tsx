@@ -22,6 +22,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
@@ -68,6 +69,7 @@ export const PhotosWithAlbumsContext = createContext<{
     shareId?: string;
     linkId?: string;
     volumeId?: string;
+    volumeType: VolumeType.Photos;
     userAddressEmail?: string;
     isPhotosLoading: boolean;
     isAlbumPhotosLoading: boolean;
@@ -117,7 +119,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { favoritePhotoLink } = useLinksActions();
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const request = useDebouncedRequest();
-    const batchHelper = useBatchHelper();
+    const { batchAPIHelper } = useBatchHelper();
     const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
@@ -530,7 +532,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             });
             await runInQueue(queue, MAX_THREADS_PER_REQUEST);
 
-            const result = await batchHelper(abortSignal, {
+            const result = await batchAPIHelper(abortSignal, {
                 linkIds: LinkIDs,
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
@@ -580,7 +582,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             volumeId,
             shareId,
             albumPhotos,
-            batchHelper,
+            batchAPIHelper,
             createNotification,
         ]
     );
@@ -769,7 +771,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         ): Promise<void> => {
             const albumLink = await getLink(abortSignal, albumShareId, albumLinkId);
 
-            const result = await batchHelper(abortSignal, {
+            const result = await batchAPIHelper(abortSignal, {
                 linkIds: LinkIDs,
                 batchRequestSize: MAX_REMOVE_ALBUM_PHOTOS_BATCH,
                 allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
@@ -816,7 +818,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 return newAlbums;
             });
         },
-        [getLink, batchHelper, createNotification]
+        [getLink, batchAPIHelper, createNotification]
     );
 
     const updatePhotoFavoriteFromCache = useCallback(
@@ -868,6 +870,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 shareId: photosShare?.shareId,
                 linkId: photosShare?.rootLinkId,
                 volumeId: photosShare?.volumeId,
+                volumeType: VolumeType.Photos,
                 isPhotosLoading: photosLoading,
                 isAlbumPhotosLoading: albumPhotosLoading,
                 photos,

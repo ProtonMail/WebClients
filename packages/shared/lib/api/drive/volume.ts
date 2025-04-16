@@ -1,4 +1,5 @@
 import { FOLDER_PAGE_SIZE } from '../../drive/constants';
+import type { MoveLinks, RecoverPhotoLinks, TransferPhotoLinks } from '../../interfaces/drive/link';
 import type {
     CreateDrivePhotosWithAlbumsVolume,
     CreateDriveVolume,
@@ -78,4 +79,23 @@ export const queryLatestVolumeEvent = (volumeId: string) => ({
 export const queryVolumeEvents = (volumeId: string, eventId: string) => ({
     url: `drive/volumes/${volumeId}/events/${eventId}`,
     method: 'get',
+});
+
+export const queryTransferPhotoLinks = (volumeID: string, data: TransferPhotoLinks) => ({
+    method: 'put',
+    url: `drive/volumes/${volumeID}/links/transfer-multiple`,
+    data,
+});
+
+export const queryRecoverPhotoLinks = (volumeID: string, data: RecoverPhotoLinks) => ({
+    method: 'put',
+    url: `drive/volumes/${volumeID}/recover-multiple`,
+    data,
+});
+
+// TODO: Migrate single moves to batch move for My Files
+export const queryMoveLinks = (volumeID: string, data: MoveLinks) => ({
+    method: 'put',
+    url: `drive/volumes/${volumeID}/links/move-multiple`,
+    data,
 });
