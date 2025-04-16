@@ -6,13 +6,14 @@ import {
   HOMEPAGE_TRASHED_PATH,
 } from '../../../__components/AppContainer'
 import type { ReactNode } from 'react'
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
 import type { DecryptedLink } from '@proton/drive-store/store'
-import { useTrashView } from '@proton/drive-store/store'
+import { useDefaultShare, useDriveEventManager, useTrashView } from '@proton/drive-store/store'
 import { ServerTime } from '@proton/docs-shared'
 import { useApplication } from '~/utils/application-context'
 import { useEvent, useSubscribe } from '~/utils/misc'
+import { VolumeType } from '@proton/drive-store/store/_volumes'
 
 // constants
 // ---------
@@ -65,6 +66,7 @@ export type HomepageViewValue = {
   setRecentsSort: (value: RecentsSort) => void
   setSearch: (value: string | undefined, exclusive?: boolean) => void
   updateRecentDocuments: () => Promise<void>
+  updateRenamedDocumentInCache: (uniqueId: string, name: string) => Promise<void>
   isRecentsUpdating: boolean
 }
 
@@ -75,6 +77,8 @@ export type HomepageViewProviderProps = {
 }
 
 export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
+  useSubscribeToMainVolume()
+
   const isRecentsRoute = Boolean(useRouteMatch(HOMEPAGE_RECENTS_PATH))
   const isFavoritesRoute = Boolean(useRouteMatch(HOMEPAGE_FAVORITES_PATH))
   const isTrashedRoute = Boolean(useRouteMatch(HOMEPAGE_TRASHED_PATH))
@@ -85,6 +89,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   const {
     recentDocuments,
     updateRecentDocuments,
+    updateRenamedDocumentInCache,
     isLoading: isRecentsLoading,
     isUpdating: isRecentsUpdating,
     isInitial: isRecentsInitial,
@@ -109,9 +114,10 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
       setRecentsSort,
       setSearch,
       updateRecentDocuments,
+      updateRenamedDocumentInCache,
       isRecentsUpdating,
     }),
-    [isRecentsUpdating, setRecentsSort, setSearch, state, updateRecentDocuments],
+    [isRecentsUpdating, setRecentsSort, setSearch, state, updateRecentDocuments, updateRenamedDocumentInCache],
   )
 
   return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>
@@ -332,6 +338,9 @@ function useRecentDocuments({ search }: { search?: string }) {
   const filteredItems = useMemo(() => filterDocuments(items, search), [items, search])
 
   const updateRecentDocuments = useEvent(() => recentDocumentsService.fetch())
+  const updateRenamedDocumentInCache = useEvent((uniqueId: string, name: string) =>
+    recentDocumentsService.updateRenamedDocumentInCache(uniqueId, name),
+  )
 
   // Initial update.
   useEffect(() => {
@@ -341,6 +350,7 @@ function useRecentDocuments({ search }: { search?: string }) {
   return {
     recentDocuments: filteredItems,
     updateRecentDocuments,
+    updateRenamedDocumentInCache,
     isInitial,
     isUpdating,
     isLoading,
@@ -451,4 +461,30 @@ function splitIntoSectionsByName(
   return [
     { id: isSearchResults ? 'search-results' : 'name', items: items.sort((a, b) => a.name.localeCompare(b.name)) },
   ]
+}
+
+// subscribe to main volume
+// ------------------------
+
+function useSubscribeToMainVolume() {
+  const driveEventManager = useDriveEventManager()
+  const { getDefaultShare } = useDefaultShare()
+  const [volumeId, setVolumeId] = useState<string>()
+  const obtainVolumeId = useEvent(async () => {
+    const { volumeId } = await getDefaultShare()
+    setVolumeId(volumeId)
+  })
+  useEffect(() => {
+    void obtainVolumeId()
+  }, [obtainVolumeId])
+
+  useEffect(() => {
+    if (!volumeId) {
+      return
+    }
+    driveEventManager.volumes.startSubscription(volumeId, VolumeType.main).catch(console.error)
+    return () => {
+      driveEventManager.volumes.unsubscribe(volumeId)
+    }
+  }, [driveEventManager.volumes, volumeId])
 }

@@ -176,6 +176,7 @@ describe('HomepageContent', () => {
           setRecentsSort: jest.fn,
           setSearch: jest.fn,
           updateRecentDocuments: jest.fn as any,
+          updateRenamedDocumentInCache: jest.fn as any,
           isRecentsUpdating: false,
           state,
         }}

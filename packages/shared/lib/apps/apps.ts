@@ -1,3 +1,5 @@
+import isTruthy from '@proton/utils/isTruthy';
+
 import { APPS, APPS_CONFIGURATION, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronApp } from '../helpers/desktop';
 import type {
@@ -29,6 +31,7 @@ export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
     isLumoAvailable: boolean;
+    isDocsHomepageAvailable: boolean;
     oauth?: boolean;
 }
 
@@ -56,12 +59,10 @@ export const getAvailableAppsByUserType = (options: GetAvailableAppsByUserTypeAr
         APPS.PROTONDRIVE,
         APPS.PROTONVPN_SETTINGS,
         APPS.PROTONPASS,
+        options.isDocsHomepageAvailable && APPS.PROTONDOCS,
         APPS.PROTONWALLET,
-    ];
-
-    if (options.isLumoAvailable) {
-        apps.push(APPS.PROTONLUMO);
-    }
+        options.isLumoAvailable && APPS.PROTONLUMO,
+    ].filter(isTruthy);
 
     return apps;
 };
