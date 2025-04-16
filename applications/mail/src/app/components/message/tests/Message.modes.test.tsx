@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 
 import { addApiResolver, clearAll } from '../../../helpers/test/helper';
 import { messageID, setup } from './Message.test.helpers';
@@ -11,9 +11,9 @@ describe('Message display modes', () => {
     it('loading mode', async () => {
         addApiResolver(`mail/v4/messages/${messageID}`);
 
-        const { ref, getByTestId } = await setup(undefined);
+        const { ref } = await setup(undefined);
 
-        const messageView = getByTestId('message-view-0');
+        const messageView = screen.getByTestId('message-view-0');
 
         act(() => ref.current?.expand());
 
@@ -25,31 +25,31 @@ describe('Message display modes', () => {
     it('encrypted mode', async () => {
         const encryptedBody = 'body-test';
 
-        const { getByTestId } = await setup({
+        await setup({
             data: { Body: encryptedBody },
             errors: { decryption: [new Error('test')] },
         });
 
-        const errorsBanner = getByTestId('errors-banner');
+        const errorsBanner = screen.getByTestId('errors-banner');
         expect(errorsBanner.textContent).toContain('Decryption error');
 
-        const messageView = getByTestId('message-view-0');
+        const messageView = screen.getByTestId('message-view-0');
         expect(messageView.textContent).toContain(encryptedBody);
     });
 
     it('source mode on processing error', async () => {
         const decryptedBody = 'decrypted-test';
 
-        const { getByTestId } = await setup({
+        await setup({
             data: { Body: 'test' },
             errors: { processing: [new Error('test')] },
             decryption: { decryptedBody },
         });
 
-        const errorsBanner = getByTestId('errors-banner');
+        const errorsBanner = screen.getByTestId('errors-banner');
         expect(errorsBanner.textContent).toContain('processing error');
 
-        const messageView = getByTestId('message-view-0');
+        const messageView = screen.getByTestId('message-view-0');
         expect(messageView.textContent).toContain(decryptedBody);
     });
 });

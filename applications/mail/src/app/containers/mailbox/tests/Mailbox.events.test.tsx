@@ -261,7 +261,7 @@ describe('Mailbox elements list reacting to events', () => {
         let { resolve } = addApiResolver('mail/v4/messages');
 
         const { initialPath, ...props } = getProps({ search, labelID });
-        const { rerender, getAllByTestId, history } = await render(<MailboxContainer {...props} />, {
+        const { rerender, history } = await render(<MailboxContainer {...props} />, {
             preloadedState: {
                 conversationCounts: getModelState([]),
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
@@ -269,7 +269,7 @@ describe('Mailbox elements list reacting to events', () => {
             },
             initialPath,
         });
-        const getItems = () => getAllByTestId('message-item', { exact: false });
+        const getItems = () => screen.getAllByTestId('message-item', { exact: false });
 
         // First load pending
         expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);

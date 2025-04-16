@@ -174,7 +174,7 @@ export const useMessageHotkeys = (
                 if (draft) {
                     e.stopPropagation();
                     e.preventDefault();
-                    onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
+                    void onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
                 }
             },
         ],
@@ -213,7 +213,7 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
                     e.preventDefault();
                     e.stopPropagation();
-                    onCompose({
+                    void onCompose({
                         type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.REPLY,
                         referenceMessage: message,
@@ -227,7 +227,7 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
                     e.preventDefault();
                     e.stopPropagation();
-                    onCompose({
+                    void onCompose({
                         type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.REPLY_ALL,
                         referenceMessage: message,
@@ -241,7 +241,7 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
                     e.preventDefault();
                     e.stopPropagation();
-                    onCompose({
+                    void onCompose({
                         type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.FORWARD,
                         referenceMessage: message,
@@ -254,7 +254,7 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
-                    await handleLoadRemoteImages();
+                    handleLoadRemoteImages();
                 }
             },
         ],
@@ -263,7 +263,7 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
-                    await handleLoadEmbeddedImages();
+                    handleLoadEmbeddedImages();
                 }
             },
         ],

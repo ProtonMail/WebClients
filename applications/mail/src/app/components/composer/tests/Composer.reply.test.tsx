@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
@@ -69,7 +69,7 @@ describe('Composer reply and forward', () => {
         // Will use update only on the wrong path, but it allows to have a "nice failure"
         const updateSpy = jest.fn(() => Promise.reject(new Error('Should not update here')));
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
-        const renderResult = await renderComposer({
+        const view = await renderComposer({
             preloadedState: {
                 addressKeys: getAddressKeyCache(address, [fromKeys]),
                 mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
@@ -81,7 +81,7 @@ describe('Composer reply and forward', () => {
             },
         });
 
-        const sendRequest = await send(renderResult);
+        const sendRequest = await send(view);
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];
@@ -97,7 +97,7 @@ describe('Composer reply and forward', () => {
         minimalCache();
         addApiKeys(true, toAddress, [toKeys]);
 
-        const renderResult = await renderComposer({
+        const view = await renderComposer({
             preloadedState: {
                 addressKeys: getAddressKeyCache(address, [fromKeys]),
                 mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
@@ -109,18 +109,16 @@ describe('Composer reply and forward', () => {
             },
         });
 
-        const iframe = (await renderResult.findByTestId('rooster-iframe')) as HTMLIFrameElement;
+        const iframe = (await view.findByTestId('rooster-iframe')) as HTMLIFrameElement;
         const button = iframe.contentWindow?.document.getElementById('ellipsis') as HTMLButtonElement;
 
-        await act(async () => {
-            fireEvent.click(button);
-        });
+        fireEvent.click(button);
 
         // Will use update only on the wrong path, but it allows to have a "nice failure"
         const updateSpy = jest.fn(() => Promise.reject(new Error('Should not update here')));
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
 
-        const sendRequest = await clickSend(renderResult);
+        const sendRequest = await clickSend(view);
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];

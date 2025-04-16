@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
@@ -14,9 +14,9 @@ describe('Message banners', () => {
     it('should show expiration banner', async () => {
         const ExpirationTime = new Date().getTime() / 1000 + 1000;
 
-        const { getByTestId } = await setup({ data: { ExpirationTime } });
+        await setup({ data: { ExpirationTime } });
 
-        const banner = await waitFor(() => getByTestId('expiration-banner'));
+        const banner = await screen.findByTestId('expiration-banner');
 
         expect(banner.textContent).toMatch(/This message will expire/);
     });
@@ -24,15 +24,15 @@ describe('Message banners', () => {
     it('should show the decrypted subject banner', async () => {
         const decryptedSubject = 'decrypted-subject';
 
-        const { getByTestId } = await setup({ data: { Subject: '...' }, decryption: { decryptedSubject } });
+        await setup({ data: { Subject: '...' }, decryption: { decryptedSubject } });
 
-        const banner = getByTestId('encrypted-subject-banner');
+        const banner = screen.getByTestId('encrypted-subject-banner');
 
         expect(banner.textContent).toMatch(new RegExp(decryptedSubject));
     });
 
     it('should show the spam banner', async () => {
-        const { getByTestId } = await setup({
+        await setup({
             data: {
                 Flags: setBit(
                     MESSAGE_FLAGS.FLAG_PHISHING_AUTO,
@@ -41,15 +41,15 @@ describe('Message banners', () => {
             },
         });
 
-        const banner = getByTestId('spam-banner:phishing-banner');
+        const banner = screen.getByTestId('spam-banner:phishing-banner');
 
         expect(banner.textContent).toMatch(/phishing/);
     });
 
     it('should show error banner for network error', async () => {
-        const { getByTestId } = await setup({ errors: { network: [new Error('test')] } });
+        await setup({ errors: { network: [new Error('test')] } });
 
-        const banner = getByTestId('errors-banner');
+        const banner = screen.getByTestId('errors-banner');
 
         expect(banner.textContent).toMatch(/error/);
     });
@@ -57,7 +57,7 @@ describe('Message banners', () => {
     it('should show the unsubscribe banner with one click method', async () => {
         const toAddress = 'to@domain.com';
 
-        const { getByTestId } = await setup(
+        await setup(
             {
                 data: {
                     ParsedHeaders: { 'X-Original-To': toAddress },
@@ -72,7 +72,7 @@ describe('Message banners', () => {
             }
         );
 
-        const banner = getByTestId('unsubscribe-banner');
+        const banner = screen.getByTestId('unsubscribe-banner');
 
         expect(banner.textContent).toMatch(/Unsubscribe/);
     });

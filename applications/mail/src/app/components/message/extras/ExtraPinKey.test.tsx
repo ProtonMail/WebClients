@@ -1,5 +1,4 @@
-import type { Matcher } from '@testing-library/react';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import type { PublicKeyReference } from '@proton/crypto';
@@ -32,7 +31,7 @@ const setup = async (
 ) => {
     minimalCache();
 
-    const component = await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, {
+    await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, {
         preloadedState: {
             addresses: getModelState(isOwnAddress ? [getCompleteAddress({ Email: 'sender@protonmail.com' })] : []),
             mailSettings: getModelState({
@@ -40,8 +39,6 @@ const setup = async (
             } as MailSettings),
         },
     });
-
-    return component;
 };
 
 describe('Extra pin key banner not displayed', () => {
@@ -65,8 +62,8 @@ describe('Extra pin key banner not displayed', () => {
             verificationStatus: SIGNED_AND_VALID,
         } as MessageVerification;
 
-        const { queryByTestId } = await setup(message, messageVerification, true);
-        const banner = queryByTestId('extra-pin-key:banner');
+        await setup(message, messageVerification, true);
+        const banner = screen.queryByTestId('extra-pin-key:banner');
 
         expect(banner).toBeNull();
     });
@@ -85,8 +82,8 @@ describe('Extra pin key banner not displayed', () => {
             verificationStatus,
         } as MessageVerification;
 
-        const { queryByTestId } = await setup(message, messageVerification);
-        const banner = queryByTestId('extra-pin-key:banner');
+        await setup(message, messageVerification);
+        const banner = screen.queryByTestId('extra-pin-key:banner');
 
         expect(banner).toBeNull();
     });
@@ -103,13 +100,13 @@ describe('Extra pin key banner displayed', () => {
 
     afterEach(clearAll);
 
-    const openTrustKeyModal = async (getByText: (text: Matcher) => HTMLElement) => {
-        const trustKeyButton = getByText('Trust key');
+    const openTrustKeyModal = async () => {
+        const trustKeyButton = screen.getByText('Trust key');
         fireEvent.click(trustKeyButton);
         await tick();
 
         // Trust public key modal is open
-        getByText('Trust public key?');
+        screen.getByText('Trust public key?');
     };
 
     // AUTOPROMPT
@@ -129,24 +126,24 @@ describe('Extra pin key banner displayed', () => {
                 verificationStatus,
             } as MessageVerification;
 
-            const { getByTestId, getByText } = await setup(message, messageVerification, false, true);
-            getByTestId('extra-pin-key:banner');
+            await setup(message, messageVerification, false, true);
+            screen.getByTestId('extra-pin-key:banner');
             // Expected text is displayed
-            getByText("This sender's public key has not been trusted yet.");
+            screen.getByText("This sender's public key has not been trusted yet.");
 
             // Test disable prompt button
             if (shouldDisablePrompt) {
                 const updateSpy = jest.fn(() => Promise.resolve({}));
                 addApiMock('mail/v4/settings/promptpin', updateSpy, 'put');
 
-                const disableAutopromtButton = getByText('Never show');
+                const disableAutopromtButton = screen.getByText('Never show');
                 fireEvent.click(disableAutopromtButton);
                 await tick();
 
                 expect(updateSpy).toBeCalled();
             } else {
                 // Open trust public key modal and trust the key
-                await openTrustKeyModal(getByText);
+                await openTrustKeyModal();
             }
         }
     );
@@ -163,12 +160,12 @@ describe('Extra pin key banner displayed', () => {
             verificationStatus: NOT_VERIFIED,
         } as MessageVerification;
 
-        const { getByTestId, getByText } = await setup(message, messageVerification);
-        getByTestId('extra-pin-key:banner');
+        await setup(message, messageVerification);
+        screen.getByTestId('extra-pin-key:banner');
         // Expected text is displayed
-        getByText('This message is signed by a key that has not been trusted yet.');
+        screen.getByText('This message is signed by a key that has not been trusted yet.');
 
-        await openTrustKeyModal(getByText);
+        await openTrustKeyModal();
     });
 
     it('should not render the banner when prompt key pinning is PIN_UNSEEN but the signature is invalid', async () => {
@@ -181,8 +178,8 @@ describe('Extra pin key banner displayed', () => {
             verificationStatus: SIGNED_AND_INVALID,
         } as MessageVerification;
 
-        const { queryByTestId } = await setup(message, messageVerification);
-        expect(queryByTestId('extra-pin-key:banner')).toBeNull();
+        await setup(message, messageVerification);
+        expect(screen.queryByTestId('extra-pin-key:banner')).toBeNull();
     });
 
     // PIN_ATTACHED_SIGNING
@@ -199,12 +196,12 @@ describe('Extra pin key banner displayed', () => {
             verificationStatus,
         } as MessageVerification;
 
-        const { getByTestId, getByText } = await setup(message, messageVerification);
-        getByTestId('extra-pin-key:banner');
+        await setup(message, messageVerification);
+        screen.getByTestId('extra-pin-key:banner');
         // Expected text is displayed
-        getByText('This message is signed by the key attached, that has not been trusted yet.');
+        screen.getByText('This message is signed by the key attached, that has not been trusted yet.');
 
-        await openTrustKeyModal(getByText);
+        await openTrustKeyModal();
     });
 
     // PIN_ATTACHED
@@ -225,12 +222,12 @@ describe('Extra pin key banner displayed', () => {
                 verificationStatus,
             } as MessageVerification;
 
-            const { getByTestId, getByText } = await setup(message, messageVerification, false, true);
-            getByTestId('extra-pin-key:banner');
+            await setup(message, messageVerification, false, true);
+            screen.getByTestId('extra-pin-key:banner');
             // Expected text is displayed
-            getByText('An unknown public key has been detected for this recipient.');
+            screen.getByText('An unknown public key has been detected for this recipient.');
 
-            await openTrustKeyModal(getByText);
+            await openTrustKeyModal();
         }
     );
 });

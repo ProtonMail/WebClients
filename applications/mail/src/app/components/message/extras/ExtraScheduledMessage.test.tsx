@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { addHours, addSeconds } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -29,27 +29,27 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 3);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
+        await render(<ExtraScheduledMessage message={message} />);
 
         const { dateString, formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:schedule-banner');
-        getByText(`This message will be sent on ${dateString} at ${formattedTime}`);
-        getByText('Edit');
+        screen.getByTestId('message:schedule-banner');
+        screen.getByText(`This message will be sent on ${dateString} at ${formattedTime}`);
+        screen.getByText('Edit');
     });
 
     it('should have text will be sent tomorrow', async () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
+        await render(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:schedule-banner');
-        const scheduledBannerText = getByText(`This message will be sent tomorrow at ${formattedTime}`);
+        screen.getByTestId('message:schedule-banner');
+        const scheduledBannerText = screen.getByText(`This message will be sent tomorrow at ${formattedTime}`);
         expect(scheduledBannerText.innerHTML).toContain('tomorrow');
-        getByText('Edit');
+        screen.getByText('Edit');
     });
 
     it('should have text will be sent in the morning', async () => {
@@ -59,14 +59,14 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addHours(aDayInTheMorningDate, 3);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
+        await render(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:schedule-banner');
-        const scheduledBannerText = getByText(`This message will be sent in the morning at ${formattedTime}`);
+        screen.getByTestId('message:schedule-banner');
+        const scheduledBannerText = screen.getByText(`This message will be sent in the morning at ${formattedTime}`);
         expect(scheduledBannerText.innerHTML).toContain('in the morning');
-        getByText('Edit');
+        screen.getByText('Edit');
 
         dateSpy.mockRestore();
     });
@@ -77,14 +77,14 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addHours(new Date(Date.now()), 3);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
+        await render(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:schedule-banner');
-        const scheduledBannerText = getByText(`This message will be sent today at ${formattedTime}`);
+        screen.getByTestId('message:schedule-banner');
+        const scheduledBannerText = screen.getByText(`This message will be sent today at ${formattedTime}`);
         expect(scheduledBannerText.innerHTML).toContain('today');
-        getByText('Edit');
+        screen.getByText('Edit');
 
         dateSpy.mockRestore();
     });
@@ -93,11 +93,11 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addSeconds(new Date(), 29);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText, queryByTestId } = await render(<ExtraScheduledMessage message={message} />);
+        await render(<ExtraScheduledMessage message={message} />);
 
-        getByTestId('message:schedule-banner');
-        getByText(`This message will be sent shortly`);
-        expect(queryByTestId(`Edit`)).toBeNull();
+        screen.getByTestId('message:schedule-banner');
+        screen.getByText(`This message will be sent shortly`);
+        expect(screen.queryByTestId(`Edit`)).toBeNull();
     });
 
     it('should be able to edit the message', async () => {
@@ -107,24 +107,22 @@ describe('Scheduled messages banner', () => {
         const unscheduleCall = jest.fn();
         addApiMock(`mail/v4/messages/${message.data?.ID}/cancel_send`, unscheduleCall);
 
-        const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
+        await render(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
-        getByTestId('message:schedule-banner');
-        getByText(`This message will be sent tomorrow at ${formattedTime}`);
-        const editButton = getByText('Edit');
+        screen.getByTestId('message:schedule-banner');
+        screen.getByText(`This message will be sent tomorrow at ${formattedTime}`);
+        const editButton = screen.getByText('Edit');
 
         // Edit the scheduled message
         fireEvent.click(editButton);
 
-        getByText('Edit and reschedule');
-        const editDraftButton = getByText('Edit draft');
+        screen.getByText('Edit and reschedule');
+        const editDraftButton = screen.getByText('Edit draft');
 
-        await act(async () => {
-            // Unschedule the message
-            fireEvent.click(editDraftButton);
-        });
+        // Unschedule the message
+        fireEvent.click(editDraftButton);
 
         // Unschedule route is called
         expect(unscheduleCall).toHaveBeenCalled();

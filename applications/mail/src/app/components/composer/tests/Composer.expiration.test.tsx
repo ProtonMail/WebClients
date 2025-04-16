@@ -1,5 +1,5 @@
-import { fireEvent } from '@testing-library/react';
-import { act, getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
+import { getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
 import { format } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
@@ -59,13 +59,13 @@ describe('Composer expiration', () => {
         const expirationDate = addDays(new Date(), 7);
         const datePlaceholder = format(expirationDate, 'PP', { locale: dateLocale });
 
-        const { getByTestId, getByText } = await setup({
+        await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
 
-        const moreOptionsButton = getByTestId('composer:more-options-button');
+        const moreOptionsButton = screen.getByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);
 
         const dropdown = await getDropdown();
@@ -73,13 +73,11 @@ describe('Composer expiration', () => {
         getByTextDefault(dropdown, 'Expiration time');
 
         const expirationButton = getByTestIdDefault(dropdown, 'composer:expiration-button');
-        await act(async () => {
-            fireEvent.click(expirationButton);
-        });
+        fireEvent.click(expirationButton);
 
-        getByText('Expiring message');
-        const dayInput = getByTestId('composer:expiration-days') as HTMLInputElement;
-        const hoursInput = getByTestId('composer:expiration-hours') as HTMLInputElement;
+        screen.getByText('Expiring message');
+        const dayInput = screen.getByTestId('composer:expiration-days') as HTMLInputElement;
+        const hoursInput = screen.getByTestId('composer:expiration-hours') as HTMLInputElement;
 
         // Check if default expiration is in 7 days and at 9 o'clock
         expect(dayInput.value).toEqual(datePlaceholder);
@@ -90,7 +88,7 @@ describe('Composer expiration', () => {
         const expirationDate = addDays(new Date(), 7);
         const datePlaceholder = format(expirationDate, 'PP', { locale: dateLocale });
 
-        const { getByText, getByTestId } = await setup({
+        await setup({
             localID: ID,
             draftFlags: {
                 expiresIn: expirationDate,
@@ -98,16 +96,14 @@ describe('Composer expiration', () => {
             messageDocument: { plainText: '' },
         });
 
-        getByText(/This message will expire/);
+        screen.getByText(/This message will expire/);
 
-        const editButton = getByTestId('message:expiration-banner-edit-button');
-        await act(async () => {
-            fireEvent.click(editButton);
-        });
+        const editButton = screen.getByTestId('message:expiration-banner-edit-button');
+        fireEvent.click(editButton);
 
-        getByText('Edit expiration time');
-        const dayInput = getByTestId('composer:expiration-days') as HTMLInputElement;
-        const hoursInput = getByTestId('composer:expiration-hours') as HTMLInputElement;
+        screen.getByText('Edit expiration time');
+        const dayInput = screen.getByTestId('composer:expiration-days') as HTMLInputElement;
+        const hoursInput = screen.getByTestId('composer:expiration-hours') as HTMLInputElement;
 
         const time = expirationDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
 
