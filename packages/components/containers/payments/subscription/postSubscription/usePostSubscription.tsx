@@ -2,6 +2,7 @@ import { Suspense, lazy, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -9,6 +10,9 @@ import { PLANS, type PlanIDs } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES, MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
+import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';
 
 import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
@@ -20,6 +24,14 @@ import {
 
 const PostSubscriptionModal = lazy(
     () => import(/* webpackChunkName: "PostSubscriptionModals" */ './PostSubscriptionModal')
+);
+
+const B2BOnboardingModal = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "B2BOnboardingModal" */
+            '@proton/components/components/onboarding/b2b/B2BOnboardingModal'
+        )
 );
 
 const ALLOWED_APPS: APP_NAMES[] = [APPS.PROTONMAIL];
@@ -68,9 +80,11 @@ const getPostSubscriptionFlowName = (
 
 export const usePostSubscription = () => {
     const [user] = useUser();
+    const [subscription] = useSubscription();
     /** Allow to ensure user was free before subscribing */
     const userIsFreeRef = useRef<boolean>(user.isFree);
     const isPostSubscriptionFlowEnabled = useFlag('InboxWebPostSubscriptionFlow');
+    const isB2BPostSubscriptionFlowEnabled = useFlag('B2BOnboarding');
     const { APP_NAME } = useConfig();
 
     /**
@@ -79,7 +93,7 @@ export const usePostSubscription = () => {
      * - Feature flag is enabled
      * - User was on free plan before subscribing
      */
-    const canShowPostSubscriptionFlow = (() => {
+    const canShowB2CPostSubscriptionFlow = (() => {
         const isAllowedApp = (() => {
             if (APP_NAME === 'proton-account') {
                 const appFromPathname = getAppFromPathnameSafe(window.location.pathname);
@@ -93,7 +107,7 @@ export const usePostSubscription = () => {
 
     return {
         // We must force thanks step display in the UpsellModal config
-        ...(canShowPostSubscriptionFlow ? { disableThanksStep: false } : {}),
+        ...(canShowB2CPostSubscriptionFlow || isB2BPostSubscriptionFlowEnabled ? { disableThanksStep: false } : {}),
         renderCustomStepModal: ({
             modalProps,
             step,
@@ -108,7 +122,33 @@ export const usePostSubscription = () => {
             /** User selected plans */
             planIDs: PlanIDs;
         }) => {
-            if (!canShowPostSubscriptionFlow) {
+            // Show b2b onboarding as post subscription flow if :
+            // - Unleash feature flag is enabled
+            // - Subscription is not older than 60 days
+            // - The user is a b2b admin
+            const canShowB2BPostSubscription = canShowB2BOnboardingButton(subscription);
+            if (isB2BPostSubscriptionFlowEnabled && canShowB2BPostSubscription) {
+                const planName = getPlanNameFromIDs(planIDs);
+                const isB2BAdmin = isAdmin(user) && getIsB2BAudienceFromPlan(planName);
+
+                if (isB2BAdmin) {
+                    return (
+                        <Suspense
+                            fallback={
+                                <PostSubscriptionModalWrapper {...modalProps} canClose={false}>
+                                    <PostSubscriptionModalLoadingContent
+                                        title={c('Info').t`Registering your subscription…`}
+                                    />
+                                </PostSubscriptionModalWrapper>
+                            }
+                        >
+                            <B2BOnboardingModal source="post-subscription" {...modalProps} />
+                        </Suspense>
+                    );
+                }
+            }
+
+            if (!canShowB2CPostSubscriptionFlow) {
                 return undefined;
             }
 

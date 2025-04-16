@@ -79,6 +79,12 @@ const slice = createSlice({
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
         },
+        update: (state, action: PayloadAction<{ Organization: Partial<OrganizationWithSettings> }>) => {
+            if (!state.value) {
+                return;
+            }
+            state.value = { ...state.value, ...action.payload.Organization };
+        },
         updateOrganizationSettings: (
             state,
             action: PayloadAction<{ value: Partial<OrganizationWithSettings['Settings']> }>
