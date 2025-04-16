@@ -35,6 +35,7 @@ enum CommonFeatureFlag {
     SubscriberNudgeBundleMonthly = 'SubscriberNudgeBundleMonthly',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     SubscriberNudgeDriveMonthly = 'SubscriberNudgeDriveMonthly',
+    B2BOnboarding = 'B2BOnboarding',
 }
 
 enum AccountFlag {

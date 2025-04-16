@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import TopNavbar from '@proton/components/components/topnavbar/TopNavbar';
+import TopNavbarB2BOnboardingButton from '@proton/components/components/topnavbar/TopNavbarB2BOnboardingButton';
 import TopNavbarList from '@proton/components/components/topnavbar/TopNavbarList';
 import TopNavbarListItem from '@proton/components/components/topnavbar/TopNavbarListItem';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
@@ -58,10 +59,11 @@ const PrivateHeader = ({
         <Header className={clsx(isProminent && 'ui-prominent', isCalendarOnElectron && 'pl-16 md:pl-2', className)}>
             {!hideMenuButton && <Hamburger expanded={expanded} onToggle={onToggleExpand} />}
             {/* Handle actionArea in components itself rather than here */}
-            <div className="flex-1">{actionArea}</div>
+            <div className="flex-1 flex items-center">{actionArea}</div>
 
             <TopNavbar>
                 <TopNavbarList>
+                    {!isSmallViewport && <TopNavbarB2BOnboardingButton />}
                     {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {settingsButton ? (
