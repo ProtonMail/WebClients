@@ -3,7 +3,8 @@ import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/int
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
-import { data, fromFields, recipients } from '../../components/composer/quickReply/tests/QuickReply.test.data';
+import { fromFields, protonSignature, recipients } from 'proton-mail/components/composer/tests/Composer.test.data';
+
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
 import { MESSAGE_ACTIONS } from '../../constants';
 import type { MessageDecryption, MessageState } from '../../store/messages/messagesTypes';
@@ -50,14 +51,14 @@ describe('messageContent', () => {
     let addresses: Address[] = [];
     const plaintextReferenceMessageBody = 'Hello this is the reference message';
     const plaintextReplyContent = 'Hello this is the reply';
-    const plainTextContent = `${plaintextReplyContent} ${data.protonSignature}
+    const plainTextContent = `${plaintextReplyContent} ${protonSignature}
 On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.fromAddress}> wrote:
 
 > ${plaintextReferenceMessageBody}`;
 
     const htmlReferenceMessageBody = '<div>Hello this is the reference message</div>';
     const htmlReplyContent = '<div>Hello this is the reply<div>';
-    const htmlTextContent = `${htmlReplyContent} ${data.protonSignature}
+    const htmlTextContent = `${htmlReplyContent} ${protonSignature}
 <div class=\"protonmail_quote\">
         On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} &lt;${fromFields.fromAddress}&gt; wrote:<br>
         <blockquote class=\"protonmail_quote\" type=\"cite\">
@@ -116,7 +117,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
                 MESSAGE_ACTIONS.NEW
             );
 
-            const expectedContent = `${plaintextReplyContent} ${data.protonSignature}`;
+            const expectedContent = `${plaintextReplyContent} ${protonSignature}`;
 
             // Only the content + the protonSignature should remain
             expect((contentWithoutBlockquotes || '').trim()).toEqual(expectedContent);
@@ -132,7 +133,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
                 addresses,
                 MESSAGE_ACTIONS.NEW
             );
-            const messageToCleanBody = `${htmlReplyContent} ${data.protonSignature} ${messageToCleanBlockquotes}`;
+            const messageToCleanBody = `${htmlReplyContent} ${protonSignature} ${messageToCleanBlockquotes}`;
 
             const messageToClean = getMessage(false, false, messageToCleanBody);
 
@@ -145,7 +146,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
                 MESSAGE_ACTIONS.NEW
             );
 
-            const expectedContent = `${htmlReplyContent} ${data.protonSignature}`;
+            const expectedContent = `${htmlReplyContent} ${protonSignature}`;
             // Only the content + the protonSignature should remain
             expect((contentWithoutBlockquotes || '').trim()).toEqual(expectedContent);
         });
@@ -172,7 +173,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
         it('should generate content with blockquote string for a plaintext message', async () => {
             const referenceMessage = getMessage(true, true, plaintextReferenceMessageBody);
 
-            const replyContent = `${plaintextReplyContent} ${data.protonSignature}`;
+            const replyContent = `${plaintextReplyContent} ${protonSignature}`;
             const contentWithBlockquotes = getContentWithBlockquotes(
                 replyContent,
                 true,
@@ -189,7 +190,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
         it('should generate content with blockquote string for an HTML message', async () => {
             const referenceMessage = getMessage(false, true, htmlReferenceMessageBody);
 
-            const replyContent = `${htmlReplyContent} ${data.protonSignature}`;
+            const replyContent = `${htmlReplyContent} ${protonSignature}`;
             const contentWithBlockquotes = getContentWithBlockquotes(
                 replyContent,
                 false,

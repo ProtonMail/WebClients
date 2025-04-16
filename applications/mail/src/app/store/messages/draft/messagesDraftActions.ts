@@ -8,17 +8,9 @@ import type { MessageDraftFlags, MessageEmbeddedImage, MessageState } from '../m
 
 export const createDraft = createAction<MessageState>('message/draft/create');
 
-export const openDraft = createAction<{ ID: string; fromUndo: boolean; fromQuickReply?: boolean }>(
-    'messages/draft/open'
-);
+export const openDraft = createAction<{ ID: string; fromUndo: boolean }>('messages/draft/open');
 
 export const removeInitialAttachments = createAction<string>('messages/draft/removeInitialAttachments');
-
-export const removeQuickReplyFlag = createAction<string>('message/draft/removeQuickReplyFlag');
-
-export const removeAllQuickReplyFlags = createAction('message/draft/removeAllQuickReplyFlags');
-
-export const updateIsSavingFlag = createAction<{ ID: string; isSaving: boolean }>('message/draft/updateIsSavingFlag');
 
 export const updateDraftContent = createAction<{ ID: string; content: string }>('message/draft/update');
 
