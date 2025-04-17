@@ -121,7 +121,7 @@ const UpsellModal = ({
             return config;
         };
 
-        fetchUpsellConfigWithTimeout()
+        void fetchUpsellConfigWithTimeout()
             .then((config) => {
                 setConfig(config);
             })
@@ -141,11 +141,7 @@ const UpsellModal = ({
                     className="relative flex justify-center items-center h-custom custom-bg"
                     style={{ '--h-custom': '11rem', '--custom-bg': 'var(--optional-background-lowered)' }}
                 >
-                    <ModalHeaderCloseButton
-                        buttonProps={{
-                            className: 'absolute right-0 top-0 mt-3 mr-3',
-                        }}
-                    />
+                    <ModalHeaderCloseButton buttonProps={{ className: 'absolute right-0 top-0 mt-3 mr-3' }} />
                     <img src={illustration} alt="" />
                 </div>
                 <div className="m-8 text-center">
@@ -153,16 +149,16 @@ const UpsellModal = ({
                     {description && <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>}
                     {config ? (
                         <UpgradeButton
+                            closeModal={handleClose}
                             onClick={handleUpgrade}
                             path={config.upgradePath}
                             submitText={config.submitText}
-                            closeModal={handleClose}
                         />
                     ) : (
                         <Loader size="medium" className="color-primary" />
                     )}
-                    {customDescription && <div className="my-6">{customDescription}</div>}
-                    {config?.footerText ? <p className="mt-2 m-0 text-sm color-weak">{config.footerText}</p> : null}
+                    {!!customDescription && <div className="my-6">{customDescription}</div>}
+                    {!!config?.footerText && <p className="mt-2 m-0 text-sm color-weak">{config.footerText}</p>}
                 </div>
             </ModalTwoContent>
         </ModalTwo>
