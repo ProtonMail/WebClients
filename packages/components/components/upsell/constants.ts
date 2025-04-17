@@ -5,22 +5,15 @@ import { getStorageFeature } from '@proton/components/containers/payments/featur
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
 import { FREE_PLAN, PLANS, type Plan } from '@proton/payments';
-import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { getNCalendarsText } from '../../containers/payments/features/calendar';
 import type { UpsellFeature, UpsellFeatureGetter } from './interface';
 
 export type UpsellFeatureName =
-    | 'auto-delete-trash-and-spam'
-    | 'schedule-messages'
     | 'unlimited-folders-and-labels'
-    | 'search-message-content'
     | 'more-storage'
     | 'more-email-addresses'
     | 'custom-email-domains'
-    | 'snooze-messages'
-    | 'more-calendars'
     | 'calendar-sharing'
     | 'generate-emails-with-prompt'
     | 'quickly-craft-replies'
@@ -58,21 +51,9 @@ const getTextFromFeature = (feature: PlanCardFeatureDefinition) => {
  * Default upsell features
  */
 export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFeatureGetter> = {
-    'auto-delete-trash-and-spam': {
-        icon: 'trash-clock',
-        getText: () => c('new_plans: feature').t`Auto-delete spam and trashed messages`,
-    },
-    'schedule-messages': {
-        icon: 'paper-plane-clock',
-        getText: () => c('new_plans: feature').t`Schedule messages at any time`,
-    },
     'unlimited-folders-and-labels': {
         icon: 'folders',
         getText: () => c('new_plans: feature').t`Unlimited folders, labels, and filters`,
-    },
-    'search-message-content': {
-        icon: 'magnifier',
-        getText: () => c('new_plans: feature').t`Search message content`,
     },
     'more-storage': {
         icon: 'storage',
@@ -92,17 +73,6 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFea
         icon: 'globe',
         getText: () => c('new_plans: feature').t`Custom email domains`,
         getTooltip: () => c('new_plans: feature info').t`1 custom email domain`,
-    },
-    'snooze-messages': {
-        icon: 'clock',
-        getText: () => c('new_plans: feature').t`Custom snooze time`,
-        getTooltip: () => c('new_plans: feature info').t`Snooze messages and get reminded when you want`,
-    },
-    'more-calendars': {
-        icon: 'calendar-grid',
-        getText: () => {
-            return getNCalendarsText(MAX_CALENDARS_PAID);
-        },
     },
     'calendar-sharing': {
         icon: 'users',
