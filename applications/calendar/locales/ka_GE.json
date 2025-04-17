@@ -2909,26 +2909,14 @@
       "All events in this series were updated.": [
         "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ყველა მოვლენა ამ სერიაში განახლდა. რა შეიცვალა:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "ამ მოვლენის მოხდენა გაუქმდა."
       ],
       "This event occurrence was updated.": [
         "ამ მოვლენის მოხდენის დრო განახლდა."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ამ მოვლენის მოხდენის დრო განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "ეს მოვლენა განახლდა."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ეს მოვლენა განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "მიწვეული ბრძანდებით მოვლენაზე ${ eventTitle }.\n\nროდის: ${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3363,6 +3351,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
+      ],
+      "Something went wrong. Please try again.": [
+        "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
       ],
       "Start time must be before end time": [
         "დაწყების დრო დასრულების დრომდე უნდა იყოს"
@@ -4544,6 +4535,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
       ],
+      "Admin account allocation": [
+        "ადმინისტრატორის ანგარიშის გამოყოფა"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ],
@@ -4561,6 +4555,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "გამოყოფილი"
+      ],
+      "Already allocated": [
+        "გამოყოფილია"
+      ],
+      "Already used": [
+        "გამოყენებულია"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey-ის ლოგო"
@@ -5176,6 +5179,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
+      ],
+      "Storage allocated to this user": [
+        "ამ მომხმარებლისთვის გამოყოფილი საცავი"
+      ],
+      "Storage for users": [
+        "საცავი მომხმარებლებისთვის"
+      ],
+      "Storage used by this user": [
+        "ამ მომხმარებლის მიერ გამოყენებული საცავი"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
@@ -5777,6 +5792,9 @@
       ],
       "Account holder": [
         "ანგარიშის მფლობელი"
+      ],
+      "Account storage": [
+        "ანგარიშის საცავი"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
@@ -6734,6 +6752,26 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6755,26 +6793,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8115,14 +8133,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "არა-კონფიდენციალური მომხმარებლები შეიძლება, ადმინისტრატორამდე ასწიოთ, თუ მათ გასაღებები მორგებული აქვთ"
+      ],
       "Organization key does not exist.": [
         "ორგანიზაციის გასაღები არ არსებობს."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "ადმინისტრატორის უფლებების მისაცემად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
+      ],
       "The organization key must be activated first.": [
         "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "ახალი ორგანიზაციის გასაღების გენერაციამდე ყველა ჯგუფი უნდა წაშალოთ"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
       ],
       "You need access to the organization key to perform this operation.": [
         "ოპერაციის შესასრულებლად ორგანიზაციის გასაღებთან წვდომა გჭირდებათ."
@@ -10135,6 +10168,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "მიიღეთ ${ appName[APP_NAME] } აპები"
       ],
+      "Get the apps": [
+        "აპების გადმოწერა"
+      ],
       "Get Zooming faster": [
         "Zoom-ის გასწრაფება"
       ],
@@ -10551,6 +10587,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "გაზიარებულია გამჭოლი შიფრაციით სანდო კონტაქტთან"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
       ]
     },
     "Validation": {

@@ -2609,6 +2609,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Kra n yismawen n tebzimin ɛeddan talast tafellayt n yisekkilen n ${ MAIL_APP_NAME }. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
+      "Something went wrong. Please try again.": [
+        "Yella kra i yeḍran, ttxil ɛreḍ tikkelt-nniḍen."
+      ],
       "Start time must be before end time": [
         "Asrag n beddu yessfk ad yili send asrag n tagara"
       ],
@@ -3445,6 +3448,15 @@
         "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
         "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Allocated": [
+        "Ittuheṛṛ"
+      ],
+      "Already allocated": [
+        "Ḥerren-t yakan"
+      ],
+      "Already used": [
+        "Yettwaseqdec yakan"
+      ],
       "American Express SafeKey logo": [
         "Alugu n American Express SafeKey"
       ],
@@ -3845,6 +3857,12 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Kra seg tririyin-inek·inem ɣef tneḍruyin yettwaleqqmen yakan sɣur amsuddes ad ṛuḥen."
       ],
+      "Storage for users": [
+        "Asekles i yiseqdacen"
+      ],
+      "Storage used by this user": [
+        "Aḥraz yettwasqedcen sɣur useqdec-a"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
       ],
@@ -4155,6 +4173,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
+      ],
+      "Account storage": [
+        "Amḍiq n usekles n umiḍan"
       ],
       "Add email address": [
         "Rnu tansa n yimayl"
@@ -4963,6 +4984,17 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -4981,17 +5013,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {

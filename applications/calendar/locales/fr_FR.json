@@ -581,6 +581,9 @@
       "Remove Zoom meeting": [
         "Retirer la réunion Zoom"
       ],
+      "Reply with a note": [
+        "Répondre avec une note"
+      ],
       "Report a problem": [
         "Signaler un bug"
       ],
@@ -2897,6 +2900,11 @@
         "Modifier l’événement"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTE :\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPTION :\n${ eventDescription }"
@@ -2909,8 +2917,11 @@
       "All events in this series were updated.": [
         "Tous les événements de cette série ont été mis à jour."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tous les événements de cette série ont été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Voici ce qui a été modifié :"
+      ],
+      "NOTE:": [
+        "NOTE :"
       ],
       "This event occurrence was canceled.": [
         "L'occurrence de cet événement a été annulée."
@@ -2918,17 +2929,8 @@
       "This event occurrence was updated.": [
         "L'occurrence de cet événement a été mise à jour."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "L'occurrence de cet événement a été mise à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Cet événement a été mis à jour."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Cet événement a été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3366,6 +3368,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
+      ],
+      "Something went wrong. Please try again.": [
+        "Il y a eu un problème. Nous vous invitons à réessayer plus tard."
       ],
       "Start time must be before end time": [
         "L'heure de début doit être avant celle de fin."
@@ -4562,6 +4567,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
       ],
+      "Admin account allocation": [
+        "Attribution de compte administrateur"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
       ],
@@ -4582,6 +4590,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }.",
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Alloué"
+      ],
+      "Already allocated": [
+        "Déjà alloué"
+      ],
+      "Already used": [
+        "Déjà utilisé"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -4639,6 +4656,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
+      ],
+      "Calendar is disabled": [
+        "Le calendrier est désactivé."
       ],
       "Calendar side panel": [
         "Panneau latéral du calendrier"
@@ -5214,6 +5234,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Restez connecté facilement en activant les paramètres VPN suivants :"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
+      ],
+      "Storage allocated to this user": [
+        "Espace de stockage alloué à cet utilisateur"
+      ],
+      "Storage for users": [
+        "Espace de stockage pour les utilisateurs"
+      ],
+      "Storage used by this user": [
+        "Espace de stockage utilisé par cet utilisateur"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -5829,6 +5861,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Account storage": [
+        "Espace de stockage du compte"
+      ],
       "Add email address": [
         "Ajouter une adresse e-mail"
       ],
@@ -6071,6 +6106,9 @@
       ],
       "Last name": [
         "Nom"
+      ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "Indiquez aux autres si vous avez un conflit, si vous serez en retard ou si vous ne pouvez pas attendre l'événement."
       ],
       "Location": [
         "Lieu"
@@ -6785,6 +6823,26 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Commencez pour ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "À partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -6806,26 +6864,6 @@
       ],
       "Switch plan": [
         "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Commencez pour ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "À partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7709,6 +7747,11 @@
         "Prise en charge pour ${ n } domaines de messagerie personnalisés"
       ]
     },
+    "Note": {
+      "Note:": [
+        "Note :"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } a été désactivé."
@@ -8166,14 +8209,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
+      ],
       "Organization key does not exist.": [
         "La clé de l'organisation n'existe pas."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La clé de l'organisation doit être activée pour accorder des droits administrateur."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "L'autorisation est refusée. Les droits administrateur ont été restreints."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Les utilisateurs privés peuvent être promus administrateurs lorsqu'ils se connectent pour la première fois."
+      ],
       "The organization key must be activated first.": [
         "La clé de l'organisation doit d'abord être activée."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Vous devez supprimer tous les groupes avant de créer une nouvelle clé d'organisation."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Vous devez rendre tous les utilisateurs privés avant de créer une nouvelle clé d'organisation."
       ],
       "You need access to the organization key to perform this operation.": [
         "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
@@ -8388,6 +8446,9 @@
       "Last name": [
         "Nom"
       ],
+      "Leave a note for all participants": [
+        "Laisser une note à tous les participants"
+      ],
       "Name": [
         "Nom"
       ],
@@ -8517,6 +8578,14 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Recharger l'événement"
+      ]
+    },
+    "RSVP Note": {
+      "Edit note": [
+        "Modifier la note"
+      ],
+      "Remove note": [
+        "Retirer la note"
       ]
     },
     "Safety review": {
@@ -10199,6 +10268,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Télécharger les applications ${ appName[APP_NAME] }"
       ],
+      "Get the apps": [
+        "Obtenir les applications"
+      ],
       "Get Zooming faster": [
         "Obtenez Zoom plus rapidement"
       ],
@@ -10340,6 +10412,9 @@
       ],
       "Remove participants": [
         "Retirer des participants"
+      ],
+      "Reply with a note": [
+        "Répondre avec une note"
       ],
       "Report a problem": [
         "Signaler un bug"
@@ -10615,6 +10690,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Partagé avec un chiffrement de bout en bout avec un contact vérifié"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ]
     },
     "Validation": {
