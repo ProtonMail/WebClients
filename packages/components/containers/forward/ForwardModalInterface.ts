@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import type { Condition, FilterStatement } from '@proton/components/containers/filters/interfaces';
 import type { PublicKeyReference } from '@proton/crypto';
 
@@ -19,6 +21,7 @@ export interface ForwardModalState {
     keyErrors?: string[];
     statement: FilterStatement;
     conditions: Condition[];
+    encryptionFixupDetails?: { setup: ReactNode; success: ReactNode } | null;
 }
 
 export interface ForwardModalKeyState {
