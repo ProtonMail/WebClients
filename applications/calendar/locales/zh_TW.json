@@ -2823,26 +2823,14 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該系列中的所有行程皆已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "該行程已被取消。"
       ],
       "This event occurrence was updated.": [
         "該行程已更新。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "該行程已更新。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "您已被邀請至 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3269,6 +3257,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Something went wrong. Please try again.": [
+        "發生錯誤，請稍後再試。"
       ],
       "Start time must be before end time": [
         "起始時間必須在結束時間之前"
@@ -4403,6 +4394,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
+      "Admin account allocation": [
+        "管理員帳號指派"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
       ],
@@ -4417,6 +4411,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "所有聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
+      ],
+      "Allocated": [
+        "已分配"
+      ],
+      "Already allocated": [
+        "已分配"
+      ],
+      "Already used": [
+        "已使用"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 標誌"
@@ -4997,6 +5000,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "開始共享此內容和使用於線上服務。"
       ],
+      "Storage allocated to other users in this organisation": [
+        "儲存空間已分配給這個組織中的其他使用者"
+      ],
+      "Storage allocated to this user": [
+        "此位使用者分配的儲存空間"
+      ],
+      "Storage for users": [
+        "使用者的儲存空間"
+      ],
+      "Storage used by this user": [
+        "此位使用者已用的儲存空間"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
@@ -5546,6 +5561,9 @@
       ],
       "Account holder": [
         "帳戶持有人"
+      ],
+      "Account storage": [
+        "帳號儲存空間"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -6473,6 +6491,26 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6494,26 +6532,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7760,6 +7778,9 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "如取有設定金鑰, 非私人用戶便可以提升至管理員"
+      ],
       "Organization key does not exist.": [
         "組織金鑰不存在。"
       ],
@@ -7768,6 +7789,9 @@
       ],
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在產生新的組織金鑰前，用戶必須將所有使用者私有化"
       ],
       "You need access to the organization key to perform this operation.": [
         "您要先存取至組織金鑰以完成此操作"
@@ -9670,6 +9694,9 @@
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "獲得 ${ appName[APP_NAME] } 應用程式"
+      ],
+      "Get the apps": [
+        "取得應用程式"
       ],
       "Get Zooming faster": [
         "更快速取得 Zoom"

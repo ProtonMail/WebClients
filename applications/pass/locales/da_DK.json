@@ -397,10 +397,10 @@
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flyt til papirkurv"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flyt til papirkurv"
       ],
       "Multiple select": [
@@ -1167,6 +1167,9 @@
       "Wrong PIN code. Try again.": [
         "Forkert pinkode. Prøv igen."
       ],
+      "Wrong second password": [
+        "Forkert anden adgangskode"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du er i øjeblikket offline. Genopret venligst forbindelsen for at oplåse ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1771,10 +1774,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2925,6 +2924,9 @@
       ],
       "Reveal password": [
         "Vis adgangskode"
+      ],
+      "Second password": [
+        "Anden adgangskode"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Gem, del og log automatisk ind på dine konti med ${ PASS_APP_NAME } ved hjælp af end-to-end-kryptering, som millioner har tillid til."

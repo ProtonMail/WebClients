@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Authenticate": [
         "Kimliği doğrula"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "Pencereye sığdır"
       ],
-      "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
-      ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -640,11 +640,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "Tümünü görüntüle"
+      ],
+      "Show more": [
+        "Daha fazla görüntüle"
       ],
       "Show preview": [
         "Ön izlemeyi görüntüle"
@@ -2457,6 +2460,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşılan sunuculara bağlanabilir."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
+      ],
       "If disabled, only admins will have access.": [
         "Kapatıldığında yalnızca yöneticiler erişebilir."
       ],
@@ -2692,15 +2698,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME }, hiçbir zaman ${ domain } etki alanından veya resmi bir ${ BRAND_NAME } uygulamasından gelmeyen bir kodu yazmanızı istemez."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Nasıl çalışır:** Oturum açmak istediğiniz aygıtta görüntülenen kodu bu aygıta yazın. **${ email }** olarak oturumunuz açılır. Her iki aygıt da etkin kalır. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Oturum açmak için bir kare kod taranabilsin"
-      ],
       "Code from the other device": [
         "Diğer aygıttaki kod"
       ],
@@ -2713,26 +2710,14 @@
       "QR code sign-in enabled": [
         "Kare kod ile oturum açma özelliği açık"
       ],
-      "Safety tips:": [
-        "Güvenlik ipuçları:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Oturum açmak için mobil aygıtınızdaki kare kodu tarayın"
-      ],
-      "Sign in to another device": [
-        "Başka bir aygıtta oturum açın"
-      ],
-      "Sign in with another device": [
-        "Başka bir aygıtta oturum açın"
       ],
       "Sign in with QR code": [
         "Kare kod ile oturum aç"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Oturum açmak istediğiniz aygıtın koduna erişmek için, oturum açma ekranının yardım menüsündeki **Kare kod ile oturum aç** düğmesine ve ardından **Anahtarı el ile yazın** üzerine dokunun. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "İçinde bir kod bulunan iletilere karşı dikkatli olun. Güvenmediğiniz bir siteden veya kişiden gelen bir kodu asla yazmayın."
       ],
       "You have successfully signed in to another device": [
         "Başka bir aygıtta oturum açtınız"
@@ -2828,6 +2813,9 @@
       ],
       "Error publishing changes.": [
         "Değişiklikler yayınlanırken sorun çıktı."
+      ],
+      "Failed to load the STL preview": [
+        "STL ön izlemesi yüklenemedi"
       ],
       "Failed to process the logo": [
         "Logo işlenemedi"
@@ -2993,6 +2981,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+      ],
+      "Something went wrong. Please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "status page": [
         "durum sayfası"
@@ -4518,9 +4509,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
       ],
-      "Enter your own password (as organization admin).": [
-        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
@@ -5492,11 +5480,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -6045,10 +6033,10 @@
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6592,9 +6580,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
       ],
-      "Your password (admin)": [
-        "Parolanız (yönetici)"
-      ],
       "ZIP code": [
         "Posta kodu"
       ]
@@ -7008,29 +6993,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Hesabı sil"
-      ],
-      "Downgrade account": [
-        "Hesap tarifesini düşür"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Ücretsiz ${ BRAND_NAME } edinin"
-      ],
-      "Get ${ planName }": [
-        "${ planName } alın"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } tarifesinde kal"
-      ],
-      "Keep account": [
-        "Hesabı tut"
-      ],
-      "Switch plan": [
-        "Tarifeyi değiştir"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
@@ -7055,6 +7017,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } tarifesine yükselt"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Hesabı sil"
+      ],
+      "Downgrade account": [
+        "Hesap tarifesini düşür"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Ücretsiz ${ BRAND_NAME } edinin"
+      ],
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } tarifesinde kal"
+      ],
+      "Keep account": [
+        "Hesabı tut"
+      ],
+      "Switch plan": [
+        "Tarifeyi değiştir"
       ]
     },
     "new_plans: feature": {
@@ -8248,17 +8233,6 @@
         "${ appName } hoş geldiniz"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Ülke yapılandırmaları"
@@ -8316,6 +8290,17 @@
       ],
       "The whole organization": [
         "Tüm kuruluş"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
       ]
     },
     "Organization capacity error": {
@@ -9851,9 +9836,6 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
-      "Sign in": [
-        "Oturum aç"
-      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -9898,9 +9880,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
@@ -10994,10 +10973,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -11218,9 +11197,6 @@
       "Enable for all users": [
         "Tüm kullanıcılar için aç"
       ],
-      "Enter 2FA code": [
-        "İki adımlı doğrulama kodunu yazın"
-      ],
       "Enter endpoints into your identity provider": [
         "Kimlik hizmeti sağlayıcınızın uç noktalarını ekleyin"
       ],
@@ -11229,9 +11205,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
-      ],
-      "Enter your password": [
-        "Parolanızı yazın"
       ],
       "Error": [
         "Hata"
@@ -11278,6 +11251,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Uygulamayı tüm aygıtlarınıza indirin ve aynı anda ${ VPN_CONNECTIONS } aygıta kadar koruyun."
+      ],
+      "Get the apps": [
+        "Uygulamaları indirme"
       ],
       "Gift": [
         "Hediye"

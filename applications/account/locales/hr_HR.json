@@ -670,11 +670,11 @@
       "Select country": [
         "Odaberi državu"
       ],
-      "Select file": [
-        "Odaberi datoteku"
-      ],
       "select file": [
         "odaberi datoteku"
+      ],
+      "Select file": [
+        "Odaberi datoteku"
       ],
       "Select files": [
         "Odabir datoteka"
@@ -2892,9 +2892,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
-      ],
-      "Something went wrong": [
-        "Nešto je pošlo po zlu"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
@@ -5188,10 +5185,10 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -5464,11 +5461,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "If": [
-        "Ako"
-      ],
       "IF": [
         "AKO"
+      ],
+      "If": [
+        "Ako"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5593,14 +5590,14 @@
       "Optional": [
         "Neobavezno"
       ],
+      "OR": [
+        "ILI"
+      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
-      ],
-      "OR": [
-        "ILI"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -6489,11 +6486,6 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6503,6 +6495,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8102,10 +8099,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

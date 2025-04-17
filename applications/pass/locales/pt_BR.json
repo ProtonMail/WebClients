@@ -364,6 +364,9 @@
       "Make editor": [
         "Tornar editor"
       ],
+      "Make manager": [
+        "Tornar gerente"
+      ],
       "Make viewer": [
         "Tornar visualizador"
       ],
@@ -397,11 +400,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to Trash": [
-        "Mover para a Lixeira"
-      ],
       "Move to trash": [
         "Mover para a lixeira"
+      ],
+      "Move to Trash": [
+        "Mover para a Lixeira"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -820,6 +823,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Falha na autenticação. Confirme sua senha adicional para prosseguir com a exportação."
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Falha na autenticação. Confirme sua segunda senha para prosseguir com a exportação."
+      ],
       "Biometric authentication failed": [
         "A Autenticação biométrica falhou"
       ],
@@ -1179,6 +1185,9 @@
       "Wrong PIN code. Try again.": [
         "Código PIN errado. Tente novamente."
       ],
+      "Wrong second password": [
+        "Segunda senha incorreta"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Você está atualizando sem conexão. Retome a conectividade para desbloquear o ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1350,6 +1359,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha adicional"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "O acesso do ${ PASS_APP_NAME } sempre exigirá sua segunda senha"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "O acesso a ${ PASS_APP_NAME } exigirá sua impressão digital ou o PIN do dispositivo."
@@ -1774,6 +1786,9 @@
       "Make it your own": [
         "Deixe do seu jeito"
       ],
+      "Manager": [
+        "Gerente"
+      ],
       "me": [
         "eu"
       ],
@@ -1795,10 +1810,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -1959,6 +1970,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirme o seu código PIN para editar essa configuração."
+      ],
+      "Please confirm your second password": [
+        "Confirme sua nova segunda senha"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Confirme sua segunda senha para bloquear automaticamente com a sua biometria."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Confirme sua segunda senha para bloquear automaticamente com a sua senha."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Confirme sua segunda senha para desativar o modo off-line"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirme sua segunda senha para ativar o modo off-line"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirme sua segunda senha para exportar os dados de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Confirme sua segunda senha para cancelar o registro do seu bloqueio atual."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Confirme sua segunda senha para atualizar o tempo do bloqueio automático."
       ],
       "Please consider leaving a review.": [
         "Considere deixar uma avaliação"
@@ -2215,6 +2250,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha adicional"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Desbloqueie ${ PASS_SHORT_APP_NAME } com sua segunda senha"
       ],
       "Unlock with biometrics": [
         "Desbloquear com a biometria"
@@ -2830,6 +2868,9 @@
       "Make all editors": [
         "Definir todos como editores"
       ],
+      "Make all managers": [
+        "Definir todos como gerente"
+      ],
       "Make all viewers": [
         "Definir todos como leitores"
       ],
@@ -2982,6 +3023,9 @@
       ],
       "Reveal password": [
         "Mostrar senha"
+      ],
+      "Second password": [
+        "Segunda senha"
       ],
       "Secure links": [
         "Links seguros"
@@ -3787,6 +3831,9 @@
       ],
       "Enter your PIN": [
         "Digite o seu PIN"
+      ],
+      "Enter your second password": [
+        "Digite sua segunda senha"
       ],
       "Excluded items": [
         "Itens excluídos"

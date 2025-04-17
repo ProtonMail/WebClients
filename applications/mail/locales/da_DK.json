@@ -235,9 +235,6 @@
       "Close": [
         "Luk"
       ],
-      "Close & discard": [
-        "Luk og kassér"
-      ],
       "Close composer": [
         "Luk skrivevinduet"
       ],
@@ -898,9 +895,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
-      "Open composer": [
-        "Åbn skriveværktøj"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Åbn i ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -1015,12 +1009,6 @@
       "Replaces the selected text in your message": [
         "Erstatter den valgte tekst i din besked"
       ],
-      "Reply": [
-        "Svar"
-      ],
-      "Reply all": [
-        "Svar alle"
-      ],
       "Reply securely": [
         "Svar sikkert"
       ],
@@ -1108,10 +1096,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1203,6 +1191,9 @@
       ],
       "Show messages": [
         "Vis beskeder"
+      ],
+      "Show more": [
+        "Vis mere"
       ],
       "Show more search options": [
         "Vis flere søgemuligheder"
@@ -1302,10 +1293,6 @@
       ],
       "Trust": [
         "Hav tillid til"
-      ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -3862,26 +3849,14 @@
       "All events in this series were updated.": [
         "Alle begivenheder i denne serie er blevet opdateret."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle begivenheder i denne serie er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Denne forekomst af begivenheden blev aflyst."
       ],
       "This event occurrence was updated.": [
         "Denne begivenhed er blevet opdateret."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne begivenhed er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Denne begivenhed er blevet opdateret."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne begivenhed er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du er inviteret til ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6030,6 +6005,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
       ],
+      "Admin account allocation": [
+        "Admin-konto tildeling"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ],
@@ -6062,6 +6040,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
         "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Tildelt"
+      ],
+      "Already allocated": [
+        "Allerede tildelt"
+      ],
+      "Already used": [
+        "Allerede anvendt"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -6624,7 +6611,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7169,8 +7157,20 @@
       "Start using the shorter, catchier version of your email address.": [
         "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Lagerplads tildelt andre brugere i denne organisation"
+      ],
+      "Storage allocated to this user": [
+        "Lagerplads tildelt denne bruger"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunktioner understøttes ikke i denne browser, vi har brug for denne understøttelse for at kunne søge efter beskedindhold."
+      ],
+      "Storage for users": [
+        "Lagerplads til brugere"
+      ],
+      "Storage used by this user": [
+        "Lagerplads brugt af denne bruger"
       ],
       "Subject": [
         "Emne"
@@ -8153,6 +8153,9 @@
       "Account holder": [
         "Kontohaver"
       ],
+      "Account storage": [
+        "Kontolagerplads"
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -8183,11 +8186,11 @@
       "Always move sender's emails": [
         "Flyt altid afsenders e-mails"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -8414,11 +8417,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -8528,14 +8531,14 @@
       "Optional": [
         "Valgfrit"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Oprindeligt link"
@@ -9326,6 +9329,26 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -9347,26 +9370,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Få ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10591,14 +10594,26 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brugere kan forfremmes til admin, når de har opsætningsnøgler"
+      ],
       "Organization key does not exist.": [
         "Organisationsnøglen findes ikke."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnøgle skal aktiveres for at give administratorrettigheder"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
+      ],
       "The organization key must be activated first.": [
         "Organisationsnøglen skal først aktiveres."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du skal privatisere alle brugere, før du genererer en ny organisationsnøgle"
       ],
       "You need access to the organization key to perform this operation.": [
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
@@ -13033,6 +13048,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Hent ${ appName[APP_NAME] } apps"
       ],
+      "Get the apps": [
+        "Hent appsene"
+      ],
       "Gift": [
         "Gave"
       ],
@@ -13598,6 +13616,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denne version af Tor Browser er ikke understøttet. Opdater venligst til den seneste ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
       ]
     },
     "Update font modal": {

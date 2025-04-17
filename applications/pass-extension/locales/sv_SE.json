@@ -152,10 +152,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -782,6 +782,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Autentisering misslyckades. Bekräfta ditt extra lösenord för att fortsätta med exporten"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Autentisering misslyckades. Bekräfta ditt andra lösenord för att fortsätta med exporten"
+      ],
       "Authentication failure: ${ message }": [
         "Autentiseringsfel: ${ message }"
       ],
@@ -1000,6 +1003,9 @@
       "File does not match expected format": [
         "Fil matchar inte förväntat format"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import misslyckades för valv “${ vaultData.name }“: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Misslyckades att importera objekt"
       ],
@@ -1155,6 +1161,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Fel PIN-kod. Försök igen."
+      ],
+      "Wrong second password": [
+        "Felaktigt andralösenord"
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du är för närvarande offline. Återuppta anslutning för att låsa upp ${ PASS_SHORT_APP_NAME }."
@@ -1334,6 +1343,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt extra lösenord."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt andra lösenord."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
@@ -1765,6 +1777,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -1909,6 +1925,24 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bekräfta din PIN-kod för att redigera denna inställning."
+      ],
+      "Please confirm your second password": [
+        "Bekräfta ditt andra lösenord"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Bekräfta ditt andra lösenord för att låsa automatiskt med biometri."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Bekräfta ditt andra lösenord för att låsa automatiskt med ditt lösenord."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekräfta ditt andra lösenord för att exportera din ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Bekräfta ditt andra lösenord för att avregistrera ditt nuvarande lås."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Bekräfta ditt andra lösenord för att uppdatera tiden för automatisk låsning."
       ],
       "Please consider leaving a review.": [
         "Överväg att lämna en recension."
@@ -2180,6 +2214,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt extralösenord"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt andra lösenord"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås upp den med din PIN-kod för att komma åt inställningarna"
@@ -2968,6 +3005,9 @@
       "Save passkeys": [
         "Spara passkeys"
       ],
+      "Second password": [
+        "Andra lösenord"
+      ],
       "Secure links": [
         "Säkra länkar"
       ],
@@ -3721,6 +3761,9 @@
       ],
       "Enter your PIN": [
         "Ange din PIN-kod"
+      ],
+      "Enter your second password": [
+        "Ange ditt andra lösenord"
       ],
       "Fill & copy password": [
         "Fyll och kopiera lösenord"

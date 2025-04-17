@@ -232,9 +232,6 @@
       "Close": [
         "बंद करें"
       ],
-      "Close & discard": [
-        "बंद और रद्द करें"
-      ],
       "Close composer": [
         "कंपोजर बंद करे"
       ],
@@ -889,9 +886,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
       ],
-      "Open composer": [
-        "रचना-जगह खोलें"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "${ DOCS_SHORT_APP_NAME } में खोलें"
       ],
@@ -1006,12 +1000,6 @@
       "Replaces the selected text in your message": [
         "आपके संदेश में चयनित पाठ को बदल देता है"
       ],
-      "Reply": [
-        "जवाब दें"
-      ],
-      "Reply all": [
-        "सब का जवाब दें"
-      ],
       "Reply securely": [
         "उत्तर सुरक्षित रूप से"
       ],
@@ -1099,10 +1087,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1197,6 +1185,9 @@
       ],
       "Show messages": [
         "संदेश दिखाएं"
+      ],
+      "Show more": [
+        "और दिखाएँ"
       ],
       "Show more search options": [
         "अधिक खोज विकल्प दिखाएं"
@@ -1298,8 +1289,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
+        "विश्वसनीय चाबी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -3850,26 +3840,14 @@
       "All events in this series were updated.": [
         "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस श्रृंखला के सभी कार्यक्रम अपडेट किए गए। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "इस कार्यक्रम घटना रद्द कर दी गई।"
       ],
       "This event occurrence was updated.": [
         "इस कार्यक्रम घटना को अपडेट किया गया था।"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस कार्यक्रम घटना को अपडेट किया गया था। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "यह कार्यक्रम अपडेट किया गया था।"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस कार्यक्रम को अपडेट किया गया था। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "आपको ${ eventTitle } में आमंत्रित किया गया है\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6038,6 +6016,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "इस पते के लिए विश्वसनीय कुंजी के साथ पता सत्यापन सक्षम है। इस पते पर भेजने में सक्षम होने के लिए, पहले सार्वजनिक कुंजियों पर भरोसा करें जिनका उपयोग भेजने के लिए किया जा सकता है।"
       ],
+      "Admin account allocation": [
+        "एडमिन खाता बंटवारा"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "एआई से समर्थित सहायक जो आपको बेहतर ईमेल तैयार करने में, जल्दी और बिना किसी प्रयास के मदद करता है।"
       ],
@@ -6070,6 +6051,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "आपके सभी संपर्क आयात किए जाएंगे, ${ MAX_CONTACTS_PER_USER } की सीमा तक",
         "आपके सभी संपर्क आयात किए जाएंगे, ${ MAX_CONTACTS_PER_USER } की सीमा तक"
+      ],
+      "Allocated": [
+        "आवंटित"
+      ],
+      "Already allocated": [
+        "पहले से दिया गया"
+      ],
+      "Already used": [
+        "पहले से ही इस्तेमाल किया हुआ"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey लोगो"
@@ -6632,7 +6622,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -7165,8 +7156,20 @@
       "Start using the shorter, catchier version of your email address.": [
         "अपने ईमेल पते के छोटे और आकर्षक संस्करण का उपयोग शुरू करें।"
       ],
+      "Storage allocated to other users in this organisation": [
+        "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
+      ],
+      "Storage allocated to this user": [
+        "इस यूज़र को दिया गया स्टोरेज"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "इस ब्राउज़र में स्टोरेज क्षमताएँ समर्थित नहीं हैं, हमें संदेश सामग्री खोज को सक्षम करने के लिए यह समर्थन आवश्यक है।"
+      ],
+      "Storage for users": [
+        "यूज़र के लिए स्टोरेज"
+      ],
+      "Storage used by this user": [
+        "इस यूज़र का स्टोरेज इस्तेमाल"
       ],
       "Subject": [
         "विषय"
@@ -8153,6 +8156,9 @@
       "Account holder": [
         "खाता धारक"
       ],
+      "Account storage": [
+        "खाता संग्रहण"
+      ],
       "Actions": [
         "कार्रवाई"
       ],
@@ -8183,10 +8189,10 @@
       "Always move sender's emails": [
         "भेजनेवाले के ईमेल हमेशा ले जाएं"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
       "and": [
@@ -8414,10 +8420,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
       "Import all messages": [
@@ -8528,13 +8534,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
+      "OR": [
+        "या"
+      ],
       "or": [
         "या"
       ],
       "Or": [
-        "या"
-      ],
-      "OR": [
         "या"
       ],
       "Original link": [
@@ -9332,29 +9338,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -9376,6 +9359,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -10680,14 +10686,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "गैर-निजी उपयोगकर्ताओं को व्यवस्थापक बनाया जा सकता है जब उन्होंने कुंजी सेटअप कर ली हो"
+      ],
       "Organization key does not exist.": [
         "संगठन कुंजी मौजूद नहीं है।"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "व्यवस्थापकीय विशेषाधिकार देने के लिए संगठन कुंजी सक्रिय होनी चाहिए"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "निजी उपयोगकर्ताओं को पहली बार साइन इन करने पर व्यवस्थापक के रूप में पदोन्नत किया जा सकता है"
+      ],
       "The organization key must be activated first.": [
         "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "नई संगठन कुंजी बनाने से पहले आपको सभी ग्रुप्स को मिटा दें"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
       ],
       "You need access to the organization key to perform this operation.": [
         "इस कार्य को करने के लिए आपको संगठन कुंजी तक पहुंच की आवश्यकता है।"
@@ -13169,6 +13190,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } ऐप्स प्राप्त करें"
       ],
+      "Get the apps": [
+        "ऐप प्राप्त करें"
+      ],
       "Gift": [
         "तोहफा"
       ],
@@ -13746,6 +13770,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tor ब्राउज़र का यह संस्करण समर्थित नहीं है। कृपया नवीनतम ${ stableRelease } में अपडेट करें"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "एडमिन निजी उपयोगकर्ताओं के डाटा तक पहुंच नहीं सकते और उनके पासवर्ड रीसेट नहीं कर सकते।"
       ]
     },
     "Update font modal": {

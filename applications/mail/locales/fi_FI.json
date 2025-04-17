@@ -235,9 +235,6 @@
       "Close": [
         "Sulje"
       ],
-      "Close & discard": [
-        "Sulje ja hylkää"
-      ],
       "Close composer": [
         "Sulje viestin kirjoitus"
       ],
@@ -904,9 +901,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
-      "Open composer": [
-        "Avaa viestin kirjoitus"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Avaa ${ DOCS_SHORT_APP_NAME }issa"
       ],
@@ -1021,12 +1015,6 @@
       "Replaces the selected text in your message": [
         "Korvaa valitun tekstin viestissäsi"
       ],
-      "Reply": [
-        "Vastaa"
-      ],
-      "Reply all": [
-        "Vastaa kaikille"
-      ],
       "Reply securely": [
         "Vastaa turvallisesti"
       ],
@@ -1114,10 +1102,10 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Valitse kaikki"
       ],
-      "Select All": [
+      "Select all": [
         "Valitse kaikki"
       ],
       "Select all messages": [
@@ -1212,6 +1200,9 @@
       ],
       "Show messages": [
         "Näytä viestit"
+      ],
+      "Show more": [
+        "Näytä lisää"
       ],
       "Show more search options": [
         "Näytä lisää hakuvalintoja"
@@ -1311,10 +1302,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -3913,26 +3900,14 @@
       "All events in this series were updated.": [
         "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ketjun kaikkia tapahtumakertoja muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Tämä tapahtumakerta peruttiin."
       ],
       "This event occurrence was updated.": [
         "Tämä tapahtumakerta päivitettiin."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tätä tapahtumakertaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Tapahtuma päivitettiin."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tapahtumaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6119,6 +6094,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
+      "Admin account allocation": [
+        "Varattu ylläpitäjän tilille"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
@@ -6151,6 +6129,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
+      ],
+      "Allocated": [
+        "Varattu"
+      ],
+      "Already allocated": [
+        "Jo varattu"
+      ],
+      "Already used": [
+        "Jo käytetty"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
@@ -6722,7 +6709,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7285,8 +7273,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Pysy vaivattomasti yhdistettynä ottamalla käyttöön seuraavat VPN-asetukset:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Organisaation käyttäjille varattu tallennustila"
+      ],
+      "Storage allocated to this user": [
+        "Käyttäjälle varattu tallennustila"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Tämä selain ei tue tallennusominaisuuksia, joita tarvitaan viestin sisältöhaun suorittamiseen."
+      ],
+      "Storage for users": [
+        "Tallennustilaa käyttäjille"
+      ],
+      "Storage used by this user": [
+        "Käyttäjän varaama tallennustila"
       ],
       "Subject": [
         "Aihe"
@@ -8318,6 +8318,9 @@
       "Account holder": [
         "Tilinhaltija"
       ],
+      "Account storage": [
+        "Tilin tallennustila"
+      ],
       "Actions": [
         "Toiminnot"
       ],
@@ -8348,11 +8351,11 @@
       "Always move sender's emails": [
         "Siirrä lähettäjän viestit aina"
       ],
-      "And": [
-        "Ja"
-      ],
       "AND": [
         "JA"
+      ],
+      "And": [
+        "Ja"
       ],
       "and": [
         "ja"
@@ -8582,11 +8585,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jos"
-      ],
       "IF": [
         "JOS"
+      ],
+      "If": [
+        "Jos"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -8696,14 +8699,14 @@
       "Optional": [
         "Valinnainen"
       ],
+      "OR": [
+        "TAI"
+      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
-      ],
-      "OR": [
-        "TAI"
       ],
       "Original link": [
         "Alkuperäinen linkki"
@@ -9509,29 +9512,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Poista tili"
-      ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Hanki ${ BRAND_NAME } ilmaiseksi"
-      ],
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Säilytä ${ plan }"
-      ],
-      "Keep account": [
-        "Säilytä tili"
-      ],
-      "Switch plan": [
-        "Vaihda tilausta"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
@@ -9553,6 +9533,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Poista tili"
+      ],
+      "Downgrade account": [
+        "Alenna tili"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Hanki ${ BRAND_NAME } ilmaiseksi"
+      ],
+      "Get ${ planName }": [
+        "Hanki ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Säilytä ${ plan }"
+      ],
+      "Keep account": [
+        "Säilytä tili"
+      ],
+      "Switch plan": [
+        "Vaihda tilausta"
       ]
     },
     "new_plans: feature": {
@@ -10864,14 +10867,26 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ei-yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun heillä on asetusavaimet"
+      ],
       "Organization key does not exist.": [
         "Organisaatioavainta ei ole olemassa."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisaatioavain on aktivoitava hallintaoikeuksien myöntämiseksi"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Lupa evätty, hallintaoikeuksia on rajoitettu."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
+      ],
       "The organization key must be activated first.": [
         "Organisaatioavain on ensin aktivoitava."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaatioavaimen luontia"
       ],
       "You need access to the organization key to perform this operation.": [
         "Sinulla on oltava oikeus käyttää organisaatioavainta suorittaaksesi tämä toiminnon."
@@ -13370,6 +13385,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Hanki ${ appName[APP_NAME] } -sovellukset"
       ],
+      "Get the apps": [
+        "Hanki sovellukset"
+      ],
       "Gift": [
         "Lahja"
       ],
@@ -13971,6 +13989,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tätä Tor-selaimen versiota ei tueta. Päivitä viimeisimpään ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
       ]
     },
     "Update font modal": {

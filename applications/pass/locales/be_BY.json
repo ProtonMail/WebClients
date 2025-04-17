@@ -364,6 +364,9 @@
       "Make editor": [
         "Можа рэдагаваць"
       ],
+      "Make manager": [
+        "Зрабіць менеджарам"
+      ],
       "Make viewer": [
         "Можа праглядаць"
       ],
@@ -397,11 +400,11 @@
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
       ],
-      "Move to Trash": [
-        "Перамясціць у Сметніцу"
-      ],
       "Move to trash": [
         "Перамясціць у сметніцу"
+      ],
+      "Move to Trash": [
+        "Перамясціць у Сметніцу"
       ],
       "Multiple select": [
         "Выбар некалькіх элементаў"
@@ -826,6 +829,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш дадатковы пароль, каб працягнуць экспартаванне"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Збой аўтэнтыфікацыі. Пацвердзіце свой другі пароль, каб працягнуць экспартаванне"
+      ],
       "Biometric authentication failed": [
         "Збой аўтэнтыфікацыі біяметрыі"
       ],
@@ -1189,6 +1195,9 @@
       "Wrong PIN code. Try again.": [
         "Няправільны PIN-код. Паспрабуйце яшчэ раз."
       ],
+      "Wrong second password": [
+        "Няправільны другі пароль"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "У цяперашні момант вы па-за сеткай. Узнавіце падключэнне, каб разблакіраваць ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1390,6 +1399,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш дадатковы пароль."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш другі пароль."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
@@ -1820,6 +1832,9 @@
       "Make it your own": [
         "Персаналізуйце выгляд"
       ],
+      "Manager": [
+        "Менеджар"
+      ],
       "me": [
         "я"
       ],
@@ -1843,12 +1858,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2011,6 +2020,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Пацвердзіце PIN-код для рэдагавання гэтых налад."
+      ],
+      "Please confirm your second password": [
+        "Пацвердзіце свой другі пароль"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Пацвердзіце свой другі пароль для аўтаблакіроўкі з дапамогай біяметрыі."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Пацвердзіце свой другі пароль для аўтаблакіроўкі з дапамогай вашага пароля."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Пацвердзіце свой другі пароль, каб адключыць рэжым па-за сеткай"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Пацвердзіце свой другі пароль, каб уключыць рэжым па-за сеткай"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Пацвердзіце свой другі пароль, каб экспартаваць даныя ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Пацвердзіце свой другі пароль для скасавання рэгістрацыі бягучай блакіроўкі."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Пацвердзіце свой другі пароль для абнаўлення часу аўтаблакіроўкі."
       ],
       "Please consider leaving a review.": [
         "Падумайце пра тое, каб пакінуць водгук."
@@ -2269,6 +2302,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай дадатковага пароля"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай другога пароля"
       ],
       "Unlock with biometrics": [
         "Разблакіраваць з дапамогай біяметрыі"
@@ -2920,6 +2956,9 @@
       "Make all editors": [
         "Даць усім правы рэдагавання"
       ],
+      "Make all managers": [
+        "Зрабіць усіх менеджарамі"
+      ],
       "Make all viewers": [
         "Даць усім правы прагляду"
       ],
@@ -3072,6 +3111,9 @@
       ],
       "Reveal password": [
         "Паказаць пароль"
+      ],
+      "Second password": [
+        "Другі пароль"
       ],
       "Secure links": [
         "Бяспечныя спасылкі"
@@ -3421,7 +3463,7 @@
         "Усе вашы файлы будуць спампаваны пры экспартаванні, калі гэта функцыя будзе ўключана. Гэта можа заняць некаторы час у залежнасці ад вашага падключэння да інтэрнэту."
       ],
       "If your data contains file attachments, they will not be imported.": [
-        "Калі вашы даныя ўтрымліваюць далучэныя файлы, яны не будуць імпартаваны."
+        "Даныя не будуць імпартаваныя, калі яны змяшчаюць далучэнні з файламі."
       ],
       "Include file attachments": [
         "Уключыць далучаныя файлы"
@@ -3463,7 +3505,7 @@
         "Усяго імпартаваных файлаў: "
       ],
       "Upgrade to support file attachments": [
-        "Палепшыць для падтрымкі далучэных файлаў"
+        "Палепшыце свой тарыфны план, каб атрымаць магчымасць далучаць файлы"
       ],
       "Upload files from your device.": [
         "Запампаваць файлы з вашай прылады."
@@ -3889,6 +3931,9 @@
       ],
       "Enter your PIN": [
         "Увядзіце свой PIN"
+      ],
+      "Enter your second password": [
+        "Увядзіце свой другі пароль"
       ],
       "Excluded items": [
         "Выключаныя элементы"

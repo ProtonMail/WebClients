@@ -152,11 +152,11 @@
       "Create": [
         "Buat"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Buat Akun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Buat Akun ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Buat alias"
@@ -1151,6 +1151,9 @@
       "Wrong PIN code. Try again.": [
         "Kode PIN salah. Coba lagi."
       ],
+      "Wrong second password": [
+        "Kata sandi kedua salah"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Anda sedang offline. Silakan hubungkan kembali diri Anda ke jaringan internet untuk membuka ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1740,6 +1743,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2924,6 +2930,9 @@
       ],
       "Save passkeys": [
         "Simpan passkey"
+      ],
+      "Second password": [
+        "Kata sandi kedua"
       ],
       "Secure links": [
         "Tautan aman"

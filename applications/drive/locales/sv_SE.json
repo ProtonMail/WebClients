@@ -45,9 +45,9 @@
       "Add": [
         "Lägg till"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Lägg till ${ photos.length } foto till ett nytt album",
-        "Lägg till ${ photos.length } foton till ett nytt album"
+      "Add ${ photoCount } photo to a new album": [
+        "Lägg till ${ photoCount } foto till ett nytt album",
+        "Lägg till ${ photoCount } foton till ett nytt album"
       ],
       "Add account": [
         "Lägg till konto"
@@ -186,6 +186,9 @@
       "Close transfers": [
         "Stäng överföringar"
       ],
+      "Collaborate on documents": [
+        "Samarbeta på dokument"
+      ],
       "Collapse": [
         "Mimimera"
       ],
@@ -203,6 +206,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekräfta öppnande av länken ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Anslut appar och enheter"
+      ],
+      "Connect to video conferencing": [
+        "Anslut till videokonferens"
       ],
       "Contact group": [
         "Kontaktgrupp"
@@ -434,6 +443,9 @@
       "Get Started": [
         "Kom igång"
       ],
+      "Get the apps": [
+        "Skaffa apparna"
+      ],
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
@@ -494,6 +506,9 @@
       "Import emails": [
         "Importera e-post"
       ],
+      "Import emails, calendars, contacts": [
+        "Importera e-post, kalendrar, kontakter"
+      ],
       "Import from .csv or vCard": [
         "Importera från .csv eller vCard"
       ],
@@ -542,8 +557,14 @@
       "Loading verification": [
         "Laddar verifiering"
       ],
+      "Manage advanced account protections": [
+        "Hantera avancerade kontoskydd"
+      ],
       "Manage folders": [
         "Hantera mappar"
+      ],
+      "Manage groups": [
+        "Hantera grupper"
       ],
       "Manage labels": [
         "Hantera etiketter"
@@ -553,6 +574,9 @@
       ],
       "Manage share": [
         "Hantera delning"
+      ],
+      "Manage users/addresses": [
+        "Hantera användare/adresser"
       ],
       "Mark as favorite": [
         "Markera som favorit"
@@ -704,6 +728,9 @@
       "Remove bonuses": [
         "Ta bort bonusar"
       ],
+      "Remove button": [
+        "Ta bort knapp"
+      ],
       "Remove device": [
         "Ta bort enhet"
       ],
@@ -842,8 +869,20 @@
       "Set as cover": [
         "Ställ in som omslag"
       ],
+      "Set recovery methods": [
+        "Ställ in återställningsmetoder"
+      ],
       "Set recovery phrase": [
         "Ställ in återställningsfras"
+      ],
+      "Set up 2FA": [
+        "Ställ in 2FA"
+      ],
+      "Set up a custom domain": [
+        "Ställ in en anpassad domän"
+      ],
+      "Set up email forwarding": [
+        "Ställ in vidarebefordran av e-post"
       ],
       "Settings": [
         "Inställningar"
@@ -863,11 +902,17 @@
       "Share via link": [
         "Dela via länk"
       ],
+      "Share your calendar with your team": [
+        "Dela din kalender med ditt team"
+      ],
       "Sharing options": [
         "Delningsalternativ"
       ],
       "Show advanced PGP settings": [
         "Visa avancerade PGP-inställningar"
+      ],
+      "Show more": [
+        "Visa mer"
       ],
       "Show more download options": [
         "Visa fler nedladdningsalternativ"
@@ -944,6 +989,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Ångra"
       ],
@@ -974,6 +1022,9 @@
       "Upload": [
         "Ladda upp"
       ],
+      "Upload and share files": [
+        "Ladda upp och dela filer"
+      ],
       "Upload anyway": [
         "Ladda upp ändå"
       ],
@@ -997,6 +1048,9 @@
       ],
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
       "Use a different card": [
         "Använd ett annat kort"
@@ -2528,14 +2582,32 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Lägg till mappar och filer i ${ DRIVE_APP_NAME } och bjud in gruppmedlemmar att visa eller redigera."
+      ],
       "Also included": [
         "Även inkluderat"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Vidarebefordra automatiskt inkommande e-post till annan e-postadress."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Anslut din CRM, webbplats, skrivare och mer."
+      ],
+      "Create groups you can email with a single address.": [
+        "Skapa grupper du kan skicka e-post till med en enda adress."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
@@ -2546,8 +2618,26 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Designad för användare som söker utökat skydd för sina konton."
       ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Uppmuntra användningen av tvåfaktorsautentisering i din organisation för extra säkerhet."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Säkerställ säker åtkomst till organisationens data, även om ditt team är på distans eller använder offentligt WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Säkerställ förstklassig säkerhet för ditt konto med programmet ${ PROTON_SENTINEL_NAME } ."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Se till att du fortfarande kan komma åt ditt konto och dina data även om du förlorar ditt ${ BRAND_NAME }-lösenord."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "För en sömlös övergång till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckts från en tredjepartstjänst."
@@ -2555,8 +2645,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ PLAN_NAMES[PLANS.BUNDLE] }"
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Låter dig omedelbart lägga till möteslänkar i dina händelseinbjudningar."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sammanfogar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
@@ -2570,6 +2666,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Konfigurera en återställningsmetod för att förhindra att du förlorar åtkomst till ditt konto."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Ställ in konton för alla användare och bjud in dem att gå med i ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Förenkla synkronisering och schemaläggning med delade kalendrar."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, välj en återställningsfras."
       ],
@@ -2578,6 +2680,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Börja med att ge din organisation ett namn."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Uppgradera till ${ planName } för att fortsätta dela filer med redigeringsåtkomst"
@@ -2727,8 +2832,8 @@
       "All events in this series were updated.": [
         "Alla händelser i denna serie uppdaterades."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alla händelser i denna serie har uppdaterats. Detta ändrades:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Här är vad som ändrades:"
       ],
       "This event occurrence was canceled.": [
         "Denna händelseförekomst blev inställd."
@@ -2736,17 +2841,8 @@
       "This event occurrence was updated.": [
         "Denna händelseförekomst uppdaterades."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denna händelseförekomst uppdaterades. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Denna händelse uppdaterades."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denna händelse uppdaterades. Detta ändrades:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du är inbjuden till ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2886,11 +2982,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innehållssökning kan inte aktiveras. Starta om applikationen eller rensa data."
       ],
+      "Could not add to favorites": [
+        "Kunde inte lägga till i favoriter"
+      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
+      ],
+      "Could not remove from favorites": [
+        "Kunde inte ta bort från favoriter"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Avmarkera minst ${ calendarsToFixCount } kalender",
@@ -3141,6 +3243,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong. Please try again.": [
+        "Något gick fel. Försök igen."
       ],
       "status page": [
         "statussida"
@@ -3778,9 +3883,9 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Lägg till ${ photos.length } foto till",
-        "Lägg till ${ photos.length } foton till"
+      "Add ${ photoCount } photo to": [
+        "Lägg till ${ photoCount } foto till",
+        "Lägg till ${ photoCount } foton till"
       ],
       "Add to shared album": [
         "Lägg till i delat album"
@@ -3791,9 +3896,9 @@
       "Recent": [
         "Senaste"
       ],
-      "Share ${ photos.length } photo via": [
-        "Dela ${ photos.length } foto via",
-        "Dela ${ photos.length } foton via"
+      "Share ${ photoCount } photo via": [
+        "Dela ${ photoCount } foto via",
+        "Dela ${ photoCount } foton via"
       ]
     },
     "Hint": {
@@ -4370,6 +4475,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
       ],
+      "Admin account allocation": [
+        "Allokering för administratörskonto"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annonsörer spårar din surfning för att visa riktade annonser. ${ VPN_APP_NAME } blockerar spårare och annonser, vilket gör din anslutning snabbare och förbättrar din upplevelse online."
       ],
@@ -4390,6 +4498,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Tilldelad"
+      ],
+      "Already allocated": [
+        "Redan tilldelad"
+      ],
+      "Already used": [
+        "Redan använd"
       ],
       "Also try looking in Trash.": [
         "Prova också att titta i papperskorgen."
@@ -5081,6 +5198,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Endast personer med länken och lösenordet kan komma åt denna mapp."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Öppna guiden för rekommenderade åtgärder och användbara länkar."
+      ],
       "or discover other features:": [
         "eller upptäck andra funktioner:"
       ],
@@ -5193,6 +5313,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
+      ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Vänta medan vi uppdaterar dina data. Det kan ta några sekunder."
       ],
       "Preparing link to file": [
         "Förbereder länk till fil"
@@ -5326,6 +5449,9 @@
       "Session timed out": [
         "Session timeout"
       ],
+      "Set up your organization": [
+        "Ställ in din organisation"
+      ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
       ],
@@ -5394,6 +5520,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Håll dig ansluten utan ansträngning genom att aktivera följande VPN-inställningar:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Lagringsutrymme tilldelad andra användare i denna organisation"
+      ],
+      "Storage allocated to this user": [
+        "Lagringsutrymme tilldelad till denna användare"
+      ],
+      "Storage for users": [
+        "Lagringsutrymme för användare"
+      ],
+      "Storage used by this user": [
+        "Lagringsutrymme som används av denna användare"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
@@ -5469,6 +5607,9 @@
       ],
       "This folder is empty": [
         "Denna mapp är tom"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Detta är ett namn eller smeknamn för din organisation som dina användare kommer att se. Du kan ändra det när som helst."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
@@ -6081,6 +6222,9 @@
       ],
       "Account holder": [
         "Kontoinnehavare"
+      ],
+      "Account storage": [
+        "Kontolagring"
       ],
       "Add email address": [
         "Lägg till e-postadress"
@@ -6728,8 +6872,50 @@
       "Drafts": [
         "Utkast"
       ],
+      "How to add users": [
+        "Hur man lägger till användare"
+      ],
+      "How to add Zoom links": [
+        "Hur man lägger till Zoom-länkar"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Hur man samarbetar i ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hur man aktiverar ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Hur man migrerar till ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Hur man ställer in ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Hur man ställer in en anpassad domän"
+      ],
+      "How to set up SMTP": [
+        "Hur man ställer in SMTP"
+      ],
+      "How to share a calendar": [
+        "Hur man delar en kalender"
+      ],
+      "How to share via email": [
+        "Hur man delar via e-post"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hur man använder ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Hur man använder ${ PASS_APP_NAME } för Business"
+      ],
+      "How to use email forwarding": [
+        "Hur man använder vidarebefordran av e-post"
+      ],
+      "How to use Groups": [
+        "Hur man använder grupper"
       ],
       "if your data is leaked": [
         "om dina uppgifter läcker ut"
@@ -6778,6 +6964,9 @@
       ],
       "Trash": [
         "Papperskorg"
+      ],
+      "Types of recovery methods": [
+        "Typer av återställningsmetoder"
       ],
       "What’s this?": [
         "Vad är detta?"
@@ -7209,29 +7398,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ta bort konto"
-      ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Skaffa ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behåll ${ plan }"
-      ],
-      "Keep account": [
-        "Behåll konto"
-      ],
-      "Switch plan": [
-        "Byt paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
@@ -7253,6 +7419,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ta bort konto"
+      ],
+      "Downgrade account": [
+        "Nedgradera konto"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Skaffa ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behåll ${ plan }"
+      ],
+      "Keep account": [
+        "Behåll konto"
+      ],
+      "Switch plan": [
+        "Byt paket"
       ]
     },
     "new_plans: feature": {
@@ -7846,11 +8035,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7863,6 +8047,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8776,14 +8965,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Icke-privata användare kan befordras till admin när de har inställningsnycklar"
+      ],
       "Organization key does not exist.": [
         "Organisationsnyckel finns inte."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnyckel måste aktiveras för att ge administratörsrättigheter"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Åtkomst nekad, administratörsrättigheter har begränsats."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privata användare kan befordras till admin när de har loggat in för första gången"
+      ],
       "The organization key must be activated first.": [
         "Organisationsnyckeln måste aktiveras först."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Du måste ta bort alla grupper innan du genererar en ny organisationsnyckel"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
       ],
       "You need access to the organization key to perform this operation.": [
         "Du behöver åtkomst till organisationsnyckeln för att utföra denna åtgärd."
@@ -8992,6 +9196,9 @@
       "New name": [
         "Nytt namn"
       ],
+      "Organization name": [
+        "Organisationsnamn"
+      ],
       "Password": [
         "Lösenord"
       ],
@@ -9024,6 +9231,9 @@
       ],
       "Start typing an email address": [
         "Börja skriva en e-postadress"
+      ],
+      "Your organization name": [
+        "Ditt organisationsnamn"
       ]
     },
     "Placeholder for contact group name": {
@@ -10160,11 +10370,26 @@
       "Your favorited photos will appear here": [
         "Dina favoritfoton kommer visas här"
       ],
+      "Your panorama photos will appear here": [
+        "Dina panoramafoton kommer visas här"
+      ],
+      "Your photo bursts will appear here": [
+        "Dina fotoserier kommer visas här"
+      ],
       "Your portraits photos will appear here": [
         "Dina porträttfoton kommer visas här"
       ],
+      "Your RAW photos will appear here": [
+        "Dina RAW-foton kommer visas här"
+      ],
       "Your screenshots will appear here": [
         "Dina skärmdumpar kommer visas här"
+      ],
+      "Your selfies photos will appear here": [
+        "Dina selfie-foton kommer visas här"
+      ],
+      "Your tagged photos will appear here": [
+        "Dina märkta foton kommer visas här"
       ],
       "Your videos will appear here": [
         "Dina videoklipp kommer visas här"
@@ -10467,6 +10692,9 @@
       "Add to ${ groupName }": [
         "Lägg till i ${ groupName }"
       ],
+      "Add user": [
+        "Lägg till användare"
+      ],
       "Addresses": [
         "Adresser"
       ],
@@ -10543,6 +10771,9 @@
       "Clearing data": [
         "Rensar data"
       ],
+      "Collaborate on documents": [
+        "Samarbeta på dokument"
+      ],
       "Completed": [
         "Slutförd"
       ],
@@ -10557,6 +10788,15 @@
       ],
       "Confirmation required": [
         "Bekräftelse krävs"
+      ],
+      "Connect apps and devices": [
+        "Anslut appar och enheter"
+      ],
+      "Connect to video conferencing": [
+        "Anslut till videokonferens"
+      ],
+      "Connect your custom domain": [
+        "Anslut din anpassad domän"
       ],
       "Contact Details": [
         "Kontaktdetaljer"
@@ -10704,8 +10944,14 @@
       "Enable 2FA": [
         "Aktivera 2FA"
       ],
+      "Enable advanced account protection": [
+        "Aktivera avancerat kontoskydd"
+      ],
       "Enable drive search": [
         "Aktivera enhets-sökning"
+      ],
+      "Enhance security with 2FA": [
+        "Förbättra säkerhet med 2FA"
       ],
       "Enter 2FA code": [
         "Ange 2FA-kod"
@@ -10741,6 +10987,9 @@
       "Get more from your VPN": [
         "Få ut mer av din VPN"
       ],
+      "Get the apps": [
+        "Skaffa appen"
+      ],
       "Gift": [
         "Gåva"
       ],
@@ -10771,6 +11020,9 @@
       ],
       "Import contacts": [
         "Importera kontakter"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importera e-post, kalendrar, kontakter"
       ],
       "Import events": [
         "Importera händelser"
@@ -10847,6 +11099,9 @@
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
+      "No bursts": [
+        "Inga serier"
+      ],
       "No favorites": [
         "Inga favoriter"
       ],
@@ -10888,6 +11143,9 @@
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
+      ],
+      "Organization setup": [
+        "Organisationsinställning"
       ],
       "Original size": [
         "Originalstorlek"
@@ -10998,14 +11256,26 @@
       "Select link expiration time": [
         "Välj länkens utgångstid"
       ],
+      "Set recovery methods": [
+        "Ställ in återställningsmetoder"
+      ],
       "Set recovery phrase": [
         "Välj återställningsfras"
+      ],
+      "Set up email forwarding": [
+        "Ställ in vidarebefordran av e-post"
+      ],
+      "Set up your organization": [
+        "Ställ in din organisation"
       ],
       "Settings": [
         "Inställningar"
       ],
       "Share ${ name }": [
         "Dela ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Dela din kalender med ditt team"
       ],
       "Shared": [
         "Delade"
@@ -11021,6 +11291,12 @@
       ],
       "Sign out": [
         "Logga ut"
+      ],
+      "Simplify email distribution": [
+        "Förenkla distribution av e-post"
+      ],
+      "Simplify password management": [
+        "Förenkla lösenordshantering"
       ],
       "Size": [
         "Storlek"
@@ -11067,6 +11343,9 @@
       "Trash": [
         "Papperskorg"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Typ"
       ],
@@ -11076,8 +11355,14 @@
       "Untitled document ${ date }": [
         "Dokument utan rubrik ${ date }"
       ],
+      "Updating your photos": [
+        "Uppdaterar dina foton"
+      ],
       "Upgrade complete!": [
         "Uppgradering slutförd!"
+      ],
+      "Upload and share files": [
+        "Ladda upp och dela filer"
       ],
       "Uploaded": [
         "Uppladdat"
@@ -11087,6 +11372,9 @@
       ],
       "Uploading a large file or folder": [
         "Laddar upp en stor fil eller mapp"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
       "Verification failed": [
         "Verifiering misslyckades"
@@ -11111,6 +11399,9 @@
       ],
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Välkommen till ${ BRAND_NAME } för Business"
       ],
       "What can a VPN protect you from?": [
         "Vad kan en VPN skydda dig från?"
@@ -11263,6 +11554,11 @@
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
@@ -11354,6 +11650,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-postadress",
+        "${ n } ${ BRAND_NAME } e-postadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto per plånbok",
         "${ n } konton per plånbok"

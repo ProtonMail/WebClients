@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -139,6 +142,9 @@
       "Close this banner": [
         "Sluit deze banner"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Compare all plans": [
         "Alle abonnementen vergelijken"
       ],
@@ -150,6 +156,12 @@
       ],
       "Confirm": [
         "Bevestigen"
+      ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videovergadering"
       ],
       "Contact support": [
         "Neem contact op met ondersteuning"
@@ -268,6 +280,9 @@
       "Download": [
         "Downloaden"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
+      ],
       "Download CSV sample": [
         "CSV-voorbeeld downloaden"
       ],
@@ -349,9 +364,6 @@
       "Fit to window": [
         "Passend in venster"
       ],
-      "Forgot password?": [
-        "Wachtwoord vergeten?"
-      ],
       "Forgot recovery method?": [
         "Herstelmethode vergeten?"
       ],
@@ -382,6 +394,9 @@
       "Get more servers": [
         "Krijg meer servers"
       ],
+      "Get the apps": [
+        "De apps downloaden"
+      ],
       "Get the deal": [
         "Pak deze deal"
       ],
@@ -408,6 +423,9 @@
       ],
       "Hide plan features": [
         "Verberg abonnementsfuncties"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
       ],
       "Import new SAML metadata": [
         "Importeer nieuwe SAML-metadata"
@@ -442,8 +460,17 @@
       "Make admin": [
         "Tot beheerder benoemen"
       ],
+      "Manage advanced account protections": [
+        "Geavanceerde accountbeveiligingen beheren"
+      ],
+      "Manage groups": [
+        "Groepen beheren"
+      ],
       "Manage subscription": [
         "Abonnement beheren"
+      ],
+      "Manage users/addresses": [
+        "Gebruikers/adressen beheren"
       ],
       "Mark as default": [
         "Markeren als standaard"
@@ -523,11 +550,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -537,6 +564,9 @@
       ],
       "Remove bonuses": [
         "Verwijder bonussen"
+      ],
+      "Remove button": [
+        "Knop verwijderen"
       ],
       "Remove domain": [
         "Verwijder bestand"
@@ -640,11 +670,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Send code": [
         "Code versturen"
@@ -670,6 +700,18 @@
       "Set new password": [
         "Nieuw wachtwoord instellen"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
+      "Set up 2FA": [
+        "2FA instellen"
+      ],
+      "Set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
       "Settings": [
         "Instellingen"
       ],
@@ -679,6 +721,9 @@
       "Share via link": [
         "Deel via link"
       ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
+      ],
       "Sharing options": [
         "Opties voor delen"
       ],
@@ -687,6 +732,9 @@
       ],
       "Show all": [
         "Alles weergeven"
+      ],
+      "Show more": [
+        "Meer weergeven"
       ],
       "Show preview": [
         "Voorbeeld tonen"
@@ -751,6 +799,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
       "Unlock": [
         "Ontgrendel"
       ],
@@ -769,11 +820,20 @@
       "Upload": [
         "Uploaden"
       ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
       "Upload logo": [
         "Logo uploaden"
       ],
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Gebruik ${ PASS_APP_NAME } voor Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor gegevensprivacy"
       ],
       "Use a different card": [
         "Gebruik een andere kaart"
@@ -2457,6 +2517,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Iedereen in uw organisatie kan verbinding maken met gedeelde servers in alle landen."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
+      ],
       "If disabled, only admins will have access.": [
         "Indien uitgeschakeld, hebben alleen beheerders toegang."
       ],
@@ -2692,15 +2755,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } zal u nooit vragen om een code in te voeren die niet afkomstig is van het domein ${ domain }, of van een officiële ${ BRAND_NAME } applicatie."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Hoe het werkt:** Voer de code die wordt weergegeven op het apparaat waarop u wilt inloggen, op dit apparaat in. U wordt vervolgens ingelogd als **${ email }**. Beide apparaten blijven actief."
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Sta het scannen van een QR-code toe om in te loggen"
-      ],
       "Code from the other device": [
         "Code van het andere apparaat"
       ],
@@ -2713,26 +2767,14 @@
       "QR code sign-in enabled": [
         "Aanmelden via QR-code ingeschakeld"
       ],
-      "Safety tips:": [
-        "Veiligheidstips:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Scan de QR-code op uw mobiele apparaat om in te loggen"
-      ],
-      "Sign in to another device": [
-        "Inloggen op een ander apparaat"
-      ],
-      "Sign in with another device": [
-        "Inloggen met een ander apparaat"
       ],
       "Sign in with QR code": [
         "Inloggen met QR-code"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Om toegang te krijgen tot de code van het apparaat waarop u wilt inloggen, klikt u op de knop **Inloggen met QR-code** in het hulpmenu van het inlogscherm en klikt u vervolgens op **Sleutel handmatig invoeren**."
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Let op voor berichten die een code bevatten. Voer nooit een code in van een website of een persoon die u niet vertrouwt."
       ],
       "You have successfully signed in to another device": [
         "U bent succesvol ingelogd op een ander apparaat"
@@ -2996,6 +3038,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Er ging iets mis. Probeer het later nog eens."
       ],
       "status page": [
         "statuspagina"
@@ -4521,9 +4566,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
       ],
-      "Enter your own password (as organization admin).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
       ],
@@ -4902,6 +4944,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Open de handleiding voor aanbevolen acties en nuttige links."
+      ],
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
       ],
@@ -5156,6 +5201,9 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
       ],
@@ -5314,6 +5362,9 @@
       ],
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dit is een naam of bijnaam voor uw organisatie die uw gebruikers zullen zien. U kunt dit op elk moment wijzigen."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
@@ -5495,11 +5546,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -6048,11 +6099,11 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
-      "Allowed Domain": [
-        "Toegestaan domein"
-      ],
       "Allowed domain": [
         "Domein toegestaan"
+      ],
+      "Allowed Domain": [
+        "Toegestaan domein"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -6595,9 +6646,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
       ],
-      "Your password (admin)": [
-        "Uw wachtwoord (admin)"
-      ],
       "ZIP code": [
         "Postcode"
       ]
@@ -6711,6 +6759,9 @@
       "Don't have access to your 2FA?": [
         "Heeft u geen tot uw 2FA?"
       ],
+      "Enforcing 2FA for organizations": [
+        "2FA forceren voor organisaties"
+      ],
       "Forgot email?": [
         "E-mail vergeten?"
       ],
@@ -6729,8 +6780,50 @@
       "here": [
         "hier"
       ],
+      "How to add users": [
+        "Hoe gebruikers toe te voegen"
+      ],
+      "How to add Zoom links": [
+        "Zoom-koppelingen toevoegen"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Samenwerken in ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hoe schakelt u ${ PROTON_SENTINEL_NAME } in"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Hoe migreer ik naar ${ BRAND_NAME }?"
+      ],
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } instellen"
+      ],
+      "How to set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "How to set up SMTP": [
+        "SMTP instellen"
+      ],
+      "How to share a calendar": [
+        "Hoe een agenda te delen"
+      ],
+      "How to share via email": [
+        "Delen via e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hoe gebruikt u ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } voor Business gebruiken"
+      ],
+      "How to use email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
+      "How to use Groups": [
+        "Hoe gebruik je Groepen"
       ],
       "Learn more": [
         "Meer informatie"
@@ -6767,6 +6860,9 @@
       ],
       "Trouble signing in?": [
         "Problemen met inloggen?"
+      ],
+      "Types of recovery methods": [
+        "Soorten herstelmethoden"
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
@@ -7011,29 +7107,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Account verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Gebruik ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Kies ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behouden"
-      ],
-      "Keep account": [
-        "Account behouden"
-      ],
-      "Switch plan": [
-        "Van abonnement wisselen"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
@@ -7058,6 +7131,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Account verwijderen"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Gebruik ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behouden"
+      ],
+      "Keep account": [
+        "Account behouden"
+      ],
+      "Switch plan": [
+        "Van abonnement wisselen"
       ]
     },
     "new_plans: feature": {
@@ -8251,17 +8347,6 @@
         "Welkom bij ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Landconfiguraties"
@@ -8319,6 +8404,17 @@
       ],
       "The whole organization": [
         "De hele organisatie"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
       ]
     },
     "Organization capacity error": {
@@ -9854,9 +9950,6 @@
       "Share the confirmation code with your administrator": [
         "Deel de bevestigingscode met uw beheerder"
       ],
-      "Sign in": [
-        "Inloggen"
-      ],
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
       ],
@@ -9901,9 +9994,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "U moet handmatig nieuwe gebruikers aanmaken om ze toe te voegen aan uw organisatie."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ],
       "Your SSO configuration will be deleted.": [
         "Uw SSO-configuratie wordt verwijderd."
@@ -10940,6 +11030,9 @@
       "Add to spam list": [
         "Toevoegen aan spamlijst"
       ],
+      "Add user": [
+        "Gebruiker toevoegen"
+      ],
       "Add user accounts": [
         "Gebruikersaccounts toevoegen"
       ],
@@ -10997,11 +11090,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -11045,11 +11138,17 @@
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
       ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
       "Connect organization": [
         "Connecteer organisatie"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Verbind met ${ VPN_CONNECTIONS } apparaten tegelijk met ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect your custom domain": [
+        "Verbind uw eigen domein"
       ],
       "Contact us": [
         "Contacteer ons"
@@ -11218,11 +11317,14 @@
       "Email subscriptions": [
         "Nieuwsbrieven"
       ],
+      "Enable advanced account protection": [
+        "Schakel geavanceerde accountbeveiliging in"
+      ],
       "Enable for all users": [
         "Inschakelen voor alle gebruikers"
       ],
-      "Enter 2FA code": [
-        "Voer 2FA-code in"
+      "Enhance security with 2FA": [
+        "Verbeter de beveiliging met 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Voer eindpunten in bij uw identiteitsprovider"
@@ -11232,9 +11334,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
       ],
       "Error": [
         "Fout"
@@ -11282,6 +11381,9 @@
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Download de app op al uw apparaten en bescherm tot ${ VPN_CONNECTIONS } tegelijk."
       ],
+      "Get the apps": [
+        "Verkrijg de apps"
+      ],
       "Gift": [
         "Geschenk"
       ],
@@ -11305,6 +11407,9 @@
       ],
       "Human verification": [
         "Persoonsverificatie"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
       ],
       "Increase your privacy with more addresses": [
         "Verbeter uw privacy met meer adressen"
@@ -11462,8 +11567,17 @@
       "Set organization name": [
         "Organisatienaam instellen"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
       "Set up two-factor authentication": [
         "Tweestapsverificatie instellen"
+      ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
       ],
       "Set your password": [
         "Stel uw wachtwoord in"
@@ -11488,6 +11602,9 @@
       ],
       "Signed in to member account": [
         "Ingelogd op een gebruikersaccount"
+      ],
+      "Simplify email distribution": [
+        "Vereenvoudig de e-maildistributie"
       ],
       "Single sign-on": [
         "Single sign-on"
@@ -11519,6 +11636,9 @@
       ],
       "There are no groups": [
         "Er zijn geen groepen"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
       "TV sign in": [
         "TV inloggen"
@@ -11579,6 +11699,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "We zullen een e-mail naar uw nieuwe e-mailadres sturen met instructies voor het voltooien van de wijziging."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Welkom bij ${ BRAND_NAME } voor Business"
       ],
       "WireGuard configuration": [
         "WireGuard configuratie"

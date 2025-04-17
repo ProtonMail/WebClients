@@ -367,6 +367,9 @@
       "Make editor": [
         "Maak de persoon een bewerker"
       ],
+      "Make manager": [
+        "Beheerder maken"
+      ],
       "Make viewer": [
         "Maak de persoon een kijker"
       ],
@@ -852,6 +855,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Authenticatie mislukt. Bevestig uw extra wachtwoord om verder te gaan met de export"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Authenticatie mislukt. Bevestig uw extra wachtwoord om verder te gaan met de export"
+      ],
       "Biometric authentication failed": [
         "Biometrische authenticatie mislukt"
       ],
@@ -1211,6 +1217,9 @@
       "Wrong PIN code. Try again.": [
         "Verkeerde pincode. Probeer opnieuw."
       ],
+      "Wrong second password": [
+        "Foutief tweede wachtwoord"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
       ],
@@ -1406,6 +1415,9 @@
         "Toegang tot ${ PASS_APP_NAME } vereist altijd uw back-upwachtwoord."
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw extra wachtwoord."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
         "Toegang tot ${ PASS_APP_NAME } vereist altijd uw extra wachtwoord."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
@@ -1825,6 +1837,9 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
+      "Manager": [
+        "Beheerder"
+      ],
       "me": [
         "ik"
       ],
@@ -2013,6 +2028,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bevestig uw pincode om deze instelling te wijzigen."
+      ],
+      "Please confirm your second password": [
+        "Bevestig uw extra wachtwoord"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Bevestig uw extra wachtwoord om biometrische gegevens automatisch te kunnen vergrendelen."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw wachtwoord."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Bevestig uw extra wachtwoord om offline modus uit te schakelen"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bevestig uw extra wachtwoord om offline modus in te schakelen"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Bevestig uw extra wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Bevestig uw extra wachtwoord om uw huidige vergrendeling uit te zetten."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Bevestig uw extra wachtwoord om de auto-lock tijd bij te werken."
       ],
       "Please consider leaving a review.": [
         "Overweeg om een review te schrijven."
@@ -2268,6 +2307,9 @@
         "Ontgrendel ${ PASS_SHORT_APP_NAME } met uw back-upwachtwoord"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Ontgrendel ${ PASS_SHORT_APP_NAME } met uw extra wachtwoord"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Ontgrendel ${ PASS_SHORT_APP_NAME } met uw extra wachtwoord"
       ],
       "Unlock with biometrics": [
@@ -2929,6 +2971,9 @@
       "Make all editors": [
         "Maak alle bewerkers"
       ],
+      "Make all managers": [
+        "Maak iedereen beheerder"
+      ],
       "Make all viewers": [
         "Maak alle lezers"
       ],
@@ -3096,6 +3141,9 @@
       ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Second password": [
+        "Tweede wachtwoord"
       ],
       "Secure links": [
         "Beveiligde links"
@@ -3942,6 +3990,9 @@
       ],
       "Enter your PIN": [
         "Voer uw pincode in"
+      ],
+      "Enter your second password": [
+        "Voer uw extra wachtwoord in"
       ],
       "Excluded items": [
         "Uitgesloten items"
