@@ -31,6 +31,7 @@ export const PhotosAddAlbumPhotosToolbar = ({
                     loading={isLoading}
                     disabled={selectedCount === 0}
                     onClick={() => withLoading(onAddAlbumPhotos)}
+                    data-testid="toolbar-add-to-album"
                 >
                     <Icon className="mr-2" name="checkmark" />
                     <span>{c('Action').t`Add to album`}</span>
