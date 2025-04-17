@@ -85,10 +85,25 @@ const getForwarderAddress = (addresses: Address[], addressID: string) => {
     return address;
 };
 
-const getKeyFixupDetails = (
+const getEncryptionFixupDetails = (
+    isExternalRecipient: boolean | undefined,
     forwarderPrimaryKeysInfo: ForwardModalKeyState['forwarderPrimaryKeysInfo'] | undefined,
     boldForwarderEmail: ReactNode
 ) => {
+    if (isExternalRecipient) {
+        const learnMoreLink = (
+            <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link')
+                .t`Learn more`}</Href>
+        );
+
+        return {
+            setup: c('email_forwarding_2023: Info')
+                .jt`Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`,
+            success: c('email_forwarding_2023: Info')
+                .jt`End-to-end encryption has been disabled for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`,
+        };
+    }
+
     if (!forwarderPrimaryKeysInfo) {
         return null;
     }
@@ -166,8 +181,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
     );
     const handleError = useErrorHandler();
     const keyStateRef = useRef<ForwardModalKeyState | null>(null);
-    // keep track of primary key changes, to re-notify user about them at the end of the setup
-    const keyFixupDetails = useRef<ReturnType<typeof getKeyFixupDetails> | null>(null);
 
     const inputsDisabled = model.loading || isEditingFilters || isReEnablingForwarding;
     const initialForwarderAddress = getForwarderAddress(addresses, model.addressID);
@@ -178,9 +191,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
 
     const boldForwardeeEmail = <strong key="forwardee-email">{model.forwardeeEmail}</strong>;
     const boldForwarderEmail = <strong key="forwarder-email">{forwarderEmail}</strong>;
-    const learnMoreLink = (
-        <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link').t`Learn more`}</Href>
-    );
 
     const handleEdit = async () => {
         if (!existingForwardingConfig) {
@@ -211,11 +221,15 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         );
 
         keyStateRef.current = keyState;
-        keyFixupDetails.current = getKeyFixupDetails(keyStateRef.current?.forwarderPrimaryKeysInfo, boldForwarderEmail);
 
         setModel({
             ...model,
             ...modelState,
+            encryptionFixupDetails: getEncryptionFixupDetails(
+                modelState.isExternal,
+                keyState.forwarderPrimaryKeysInfo,
+                boldForwarderEmail
+            ),
             step: ForwardModalStep.UserConfirmation,
         });
     };
@@ -399,21 +413,14 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                             <p>{c('email_forwarding_2023: Info')
                                 .t`Forwarding to this address will become active once the recipient accepts the forwarding.`}</p>
                         </div>
-                        {model.isExternal ? (
+                        {model.encryptionFixupDetails ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
                                 <Icon name="exclamation-circle" className="shrink-0 color-danger" />
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
-                                    {c('email_forwarding_2023: Info')
-                                        .jt`Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`}
+                                    {model.encryptionFixupDetails.setup}
                                 </p>
                             </div>
                         ) : null}
-                        {model.isExternal || !keyFixupDetails.current ? null : (
-                            <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
-                                <Icon name="exclamation-circle" className="shrink-0 color-danger" />
-                                <p className="text-sm color-weak flex-1 pl-4 my-0">{keyFixupDetails.current.setup}</p>
-                            </div>
-                        )}
                         {model?.keyErrors?.length ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center">
                                 <Icon name="exclamation-circle" className="shrink-0 color-danger" />
@@ -450,15 +457,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                                 {c('email_forwarding_2023: Info')
                                     .jt`Forwarding to ${boldForwardeeEmail} will become active once the recipient accepts the request.`}
                             </p>
-                            {model.isExternal ? (
-                                <p>
-                                    {c('email_forwarding_2023: Info')
-                                        .jt`End-to-end encryption has been disabled for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`}
-                                </p>
-                            ) : null}
-                            {model.isExternal || !keyFixupDetails.current ? null : (
-                                <p>{keyFixupDetails.current.success}</p>
-                            )}
+                            {model.encryptionFixupDetails ? <p>{model.encryptionFixupDetails.success}</p> : null}
                         </div>
                     </>
                 )}
