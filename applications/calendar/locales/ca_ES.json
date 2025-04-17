@@ -581,6 +581,9 @@
       "Remove Zoom meeting": [
         "Elimina la reunió de Zoom"
       ],
+      "Reply with a note": [
+        "Respon amb una nota"
+      ],
       "Report a problem": [
         "Notifica un problema"
       ],
@@ -2897,6 +2900,11 @@
         "Edita l'esdeveniment"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPCIÓ:\n${ eventDescription }"
@@ -2909,8 +2917,11 @@
       "All events in this series were updated.": [
         "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tots els esdeveniments d'aquesta sèrie s'han actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Això és el que ha canviat:"
+      ],
+      "NOTE:": [
+        "NOTA:"
       ],
       "This event occurrence was canceled.": [
         "S'ha cancel·lat aquesta ocurrència d'esdeveniment."
@@ -2918,17 +2929,8 @@
       "This event occurrence was updated.": [
         "Aquesta ocurrència d'esdeveniment s'ha actualitzat."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquesta ocurrència d'esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "S'ha actualitzat aquest esdeveniment. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3366,6 +3368,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong. Please try again.": [
+        "Alguna cosa ha anat malament. Torneu a provar-ho."
       ],
       "Start time must be before end time": [
         "L’hora d’inici ha de ser abans de l’hora de finalització."
@@ -4562,6 +4567,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
+      "Admin account allocation": [
+        "Assignació del compte d'administrador"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, fent que la vostra connexió sigui més ràpida i millorant la vostra experiència en línia."
       ],
@@ -4582,6 +4590,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tots els vostres contactes s'importaran, fins a un límit d'${ MAX_CONTACTS_PER_USER }",
         "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Assignat"
+      ],
+      "Already allocated": [
+        "Ja assignat"
+      ],
+      "Already used": [
+        "Ja utilitzat"
       ],
       "American Express SafeKey logo": [
         "Logo d'American Express SafeKey"
@@ -4639,6 +4656,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Pel fet de compartir tots els detalls dels esdeveniments d'aquest calendari, accepteu donar a ${ BRAND_NAME } accés a la informació xifrada d'aquest calendari."
+      ],
+      "Calendar is disabled": [
+        "El calendari està desactivat."
       ],
       "Calendar side panel": [
         "Panell lateral del calendari"
@@ -5214,6 +5234,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantingueu-vos connectat sense esforç activant la configuració VPN següent:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Emmagatzematge assignat a altres usuaris d'aquesta organització"
+      ],
+      "Storage allocated to this user": [
+        "Emmagatzematge assignat a aquest usuari"
+      ],
+      "Storage for users": [
+        "Emmagatzematge per als usuaris"
+      ],
+      "Storage used by this user": [
+        "Emmagatzematge utilitzat per aquest usuari"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
@@ -5829,6 +5861,9 @@
       "Account holder": [
         "Titular del compte"
       ],
+      "Account storage": [
+        "Emmagatzematge del compte"
+      ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
       ],
@@ -6071,6 +6106,9 @@
       ],
       "Last name": [
         "Cognom"
+      ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "Feu saber als altres si teniu algun conflicte, si arribareu tard o si no podeu esperar a l'esdeveniment."
       ],
       "Location": [
         "Ubicació"
@@ -6785,6 +6823,26 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -6806,26 +6864,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7709,6 +7747,11 @@
         "Suport per a ${ n } dominis de correu personalitzats"
       ]
     },
+    "Note": {
+      "Note:": [
+        "Nota:"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
@@ -8166,14 +8209,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Els usuaris no privats es poden promocionar a administrador quan tenen claus de configuració"
+      ],
       "Organization key does not exist.": [
         "La clau de l'organització no existeix."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "S'ha d'activar la clau de l'organització per a donar privilegis d'administrador"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Els usuaris privats poden ascendir a administradors quan inicien sessió per primera vegada"
+      ],
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau de l'organització."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Heu d'eliminar tots els grups abans de generar una clau d'organització nova."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
       ],
       "You need access to the organization key to perform this operation.": [
         "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
@@ -8388,6 +8446,9 @@
       "Last name": [
         "Cognom"
       ],
+      "Leave a note for all participants": [
+        "Deixa una nota per a tots els assistents"
+      ],
       "Name": [
         "Nom"
       ],
@@ -8517,6 +8578,14 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Recarrega l'esdeveniment"
+      ]
+    },
+    "RSVP Note": {
+      "Edit note": [
+        "Edita la nota"
+      ],
+      "Remove note": [
+        "Esborra la nota"
       ]
     },
     "Safety review": {
@@ -10199,6 +10268,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Obteniu les aplicacions ${ appName[APP_NAME] }"
       ],
+      "Get the apps": [
+        "Aconseguiu les aplicacions"
+      ],
       "Get Zooming faster": [
         "Obteniu Zoom més ràpidament"
       ],
@@ -10340,6 +10412,9 @@
       ],
       "Remove participants": [
         "Esborra participants"
+      ],
+      "Reply with a note": [
+        "Respon amb una nota"
       ],
       "Report a problem": [
         "Notifica un problema"
@@ -10615,6 +10690,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Compartit amb xifratge d'extrem a extrem amb un contacte verificat"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
       ]
     },
     "Validation": {
