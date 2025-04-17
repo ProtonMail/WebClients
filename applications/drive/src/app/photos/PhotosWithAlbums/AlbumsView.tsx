@@ -14,6 +14,7 @@ import { AlbumTag, useThumbnailsDownload } from '../../store';
 import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
 import { useRenameAlbum } from '../PhotosActions/Albums';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
@@ -69,6 +70,7 @@ export const AlbumsView: FC = () => {
     const { navigateToAlbum, navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
     const [selectedTags, setSelectedTags] = useState<AlbumsTagsProps['selectedTags']>([AlbumTag.All]);
+    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -181,7 +183,9 @@ export const AlbumsView: FC = () => {
             {!isAlbumsEmpty && (
                 <AlbumsTags
                     selectedTags={selectedTags}
-                    tags={[AlbumTag.All, AlbumTag.MyAlbums, AlbumTag.Shared, AlbumTag.SharedWithMe]}
+                    tags={[AlbumTag.All, AlbumTag.MyAlbums].concat(
+                        isAlbumsWithSharingDisabled ? [] : [AlbumTag.Shared, AlbumTag.SharedWithMe]
+                    )}
                     onTagSelect={setSelectedTags}
                 />
             )}
