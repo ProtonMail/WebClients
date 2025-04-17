@@ -121,8 +121,11 @@ export const PhotosLayout = () => {
     const previewRef = useRef<HTMLDivElement>(null);
 
     const previewIndex = useMemo(
-        () => albumPhotosLinkIds.findIndex((item) => item === previewLinkId),
-        [albumPhotosLinkIds, previewLinkId]
+        () =>
+            currentPageType === AlbumsPageTypes.GALLERY
+                ? photoLinkIds.findIndex((item) => item === previewLinkId)
+                : albumPhotosLinkIds.findIndex((item) => item === previewLinkId),
+        [currentPageType, photoLinkIds, albumPhotosLinkIds, previewLinkId]
     );
 
     const previewItem = useMemo(() => {
@@ -183,8 +186,11 @@ export const PhotosLayout = () => {
         Callbacks
     */
     const setPreviewIndex = useCallback(
-        (index: number) => setPreviewLinkId(albumPhotosLinkIds[index]),
-        [setPreviewLinkId, albumPhotosLinkIds]
+        (index: number) =>
+            setPreviewLinkId(
+                currentPageType === AlbumsPageTypes.GALLERY ? photoLinkIds[index] : albumPhotosLinkIds[index]
+            ),
+        [setPreviewLinkId, currentPageType, photoLinkIds, albumPhotosLinkIds]
     );
 
     const onSelectCover = useCallback(
@@ -540,11 +546,15 @@ export const PhotosLayout = () => {
                             : () => showLinkSharingModal({ shareId: previewShareId, linkId: previewItem.linkId })
                     }
                     onDetails={onShowDetails}
-                    onSelectCover={currentPageType === AlbumsPageTypes.GALLERY ? undefined : onSelectCoverPreview}
+                    onSelectCover={
+                        currentPageType === AlbumsPageTypes.GALLERY || album?.cover?.linkId === previewItem.linkId
+                            ? undefined
+                            : onSelectCoverPreview
+                    }
                     navigationControls={
                         <NavigationControl
                             current={previewIndex + 1}
-                            total={photoCount - 1}
+                            total={photoCount}
                             rootRef={previewRef}
                             onPrev={() => setPreviewIndex(previewIndex - 1)}
                             onNext={() => setPreviewIndex(previewIndex + 1)}
