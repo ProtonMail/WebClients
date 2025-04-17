@@ -1,7 +1,7 @@
 import { FileStorageMemory } from '@proton/pass/lib/file-storage/fs.memory';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 import { FileStorageIDB, openPassFileDB } from './fs.idb';
@@ -13,7 +13,12 @@ export const fileStorageReady = awaiter<boolean>();
 /** isSafari() works on web app but not on extension
  * background script, so we have to use BUILD_TARGET */
 const isOPFSSupported = () =>
-    BUILD_TARGET !== 'safari' && !isSafari() && Boolean(navigator.storage && navigator.storage.getDirectory);
+    BUILD_TARGET !== 'safari' &&
+    !isSafari() &&
+    !isMobile() &&
+    Boolean(navigator.storage && navigator.storage.getDirectory) &&
+    typeof FileSystemFileHandle !== 'undefined' &&
+    FileSystemFileHandle.prototype.createWritable !== undefined;
 
 type StorageOptions = { OPFS: boolean; IDB: boolean };
 
