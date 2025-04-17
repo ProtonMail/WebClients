@@ -2886,26 +2886,14 @@
       "All events in this series were updated.": [
         "この連続した全てのイベントは更新されました。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "この連続した全てのイベントは更新されました。更新内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "この繰り返しイベントはキャンセルされました。"
       ],
       "This event occurrence was updated.": [
         "この繰り返しイベントは更新されました。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "この繰り返しイベントは更新されました。更新内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "この予定は更新されました。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "この予定は更新されました。変更点は下記の通りです。\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "${ eventTitle } に招待されました。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3332,6 +3320,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Something went wrong. Please try again.": [
+        "問題が発生しました。再度お試しください。"
       ],
       "Start time must be before end time": [
         "開始日時は終了日時の前に設定してください。"
@@ -4493,6 +4484,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
+      "Admin account allocation": [
+        "管理者アカウント割り当て"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "広告主はあなたのブラウジングを追跡してターゲット広告を表示します。 ${ VPN_APP_NAME } はトラッカーや広告をブロックし、接続を高速化し、オンラインエクスペリエンスを向上させます。"
       ],
@@ -4510,6 +4504,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
+      ],
+      "Allocated": [
+        "割り当て"
+      ],
+      "Already allocated": [
+        "割り当て済み"
+      ],
+      "Already used": [
+        "すでに使用されています"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey ロゴ"
@@ -5135,6 +5138,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "次のVPN設定を有効にして、簡単に接続を維持します。"
       ],
+      "Storage allocated to other users in this organisation": [
+        "この組織の他のユーザーに割り当てられたストレージ"
+      ],
+      "Storage allocated to this user": [
+        "ストレージはこのユーザーに割り当て済みです"
+      ],
+      "Storage for users": [
+        "ユーザーのストレージ"
+      ],
+      "Storage used by this user": [
+        "ストレージはこのユーザーによって使われています"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
@@ -5735,6 +5750,9 @@
       ],
       "Account holder": [
         "アカウント所有者"
+      ],
+      "Account storage": [
+        "アカウントの容量"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -6683,6 +6701,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -6704,26 +6742,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -8012,14 +8030,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "非プライベートユーザーは、セットアップキーがある場合に管理者に昇格することができます"
+      ],
       "Organization key does not exist.": [
         "組織の鍵が存在しません。"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "管理者権限を付与するには、組織の鍵を有効にする必要があります"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "アクセスが拒否されました。管理者権限は制限されています。"
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "プライベート ユーザーは、初めてサインインしたときに管理者に昇格できます"
+      ],
       "The organization key must be activated first.": [
         "まず、組織の鍵を有効にする必要があります。"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "新しい組織の鍵を生成する前に、すべてのグループを削除する必要があります"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "新しい組織の鍵を生成する前に、すべてのユーザーをプライベート化する必要があります"
       ],
       "You need access to the organization key to perform this operation.": [
         "この操作を実行するには、組織キーにアクセスする必要があります。"
@@ -9994,6 +10027,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } アプリを入手"
       ],
+      "Get the apps": [
+        "アプリを入手"
+      ],
       "Get Zooming faster": [
         "ズームの速度を上げる。"
       ],
@@ -10409,6 +10445,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "検証済みの連絡先とのエンドツーエンド暗号化された共有"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "管理者はプライベートユーザーのデータにアクセスすることやパスワードをリセットすることはできません。"
       ]
     },
     "Validation": {

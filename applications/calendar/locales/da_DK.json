@@ -2864,26 +2864,14 @@
       "All events in this series were updated.": [
         "Alle begivenheder i denne serie er blevet opdateret."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle begivenheder i denne serie er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Denne forekomst af begivenheden blev aflyst."
       ],
       "This event occurrence was updated.": [
         "Denne begivenhed er blevet opdateret."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne begivenhed er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Denne begivenhed er blevet opdateret."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne begivenhed er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du er inviteret til ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3321,6 +3309,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong. Please try again.": [
+        "Besked er optaget. Prøv venligst igen."
       ],
       "Start time must be before end time": [
         "Starttidspunkt skal være før sluttidspunkt"
@@ -4481,6 +4472,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
       ],
+      "Admin account allocation": [
+        "Admin-konto tildeling"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ],
@@ -4498,6 +4492,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
         "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Tildelt"
+      ],
+      "Already allocated": [
+        "Allerede tildelt"
+      ],
+      "Already used": [
+        "Allerede anvendt"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -5089,6 +5092,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Lagerplads tildelt andre brugere i denne organisation"
+      ],
+      "Storage allocated to this user": [
+        "Lagerplads tildelt denne bruger"
+      ],
+      "Storage for users": [
+        "Lagerplads til brugere"
+      ],
+      "Storage used by this user": [
+        "Lagerplads brugt af denne bruger"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
       ],
@@ -5641,6 +5656,9 @@
       ],
       "Account holder": [
         "Kontohaver"
+      ],
+      "Account storage": [
+        "Kontolagerplads"
       ],
       "Add email address": [
         "Tilføj e-mailadresse"
@@ -6568,6 +6586,23 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6589,23 +6624,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7878,14 +7896,26 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brugere kan forfremmes til admin, når de har opsætningsnøgler"
+      ],
       "Organization key does not exist.": [
         "Organisationsnøglen findes ikke."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnøgle skal aktiveres for at give administratorrettigheder"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
+      ],
       "The organization key must be activated first.": [
         "Organisationsnøglen skal først aktiveres."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du skal privatisere alle brugere, før du genererer en ny organisationsnøgle"
       ],
       "You need access to the organization key to perform this operation.": [
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
@@ -9841,6 +9871,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Hent ${ appName[APP_NAME] } apps"
       ],
+      "Get the apps": [
+        "Hent appsene"
+      ],
       "Get Zooming faster": [
         "Kom hurtigt videre til Zoom"
       ],
@@ -10224,6 +10257,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Delt end-to-end krypteret med verificeret kontakt"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
       ]
     },
     "Validation": {
