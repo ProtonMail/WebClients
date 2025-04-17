@@ -21,7 +21,7 @@ type Props = {
     isItemSelected: (linkId: string) => boolean;
     categoryLoading?: string;
     children: ReactNode;
-    onFavorite: (linkId: string, isFavorite: boolean) => void;
+    onFavorite?: (linkId: string, isFavorite: boolean) => void;
     rootLinkId: string;
 };
 
@@ -188,9 +188,13 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
                             hasSelection={hasSelection}
                             isFavorite={item.photoProperties?.isFavorite || false}
                             isOwnedByCurrentUser={item.parentLinkId === rootLinkId}
-                            onFavorite={() => {
-                                onFavorite(item.linkId, item.photoProperties?.isFavorite || false);
-                            }}
+                            onFavorite={
+                                onFavorite
+                                    ? () => {
+                                          onFavorite(item.linkId, item.photoProperties?.isFavorite || false);
+                                      }
+                                    : undefined
+                            }
                         />
                     );
                 }

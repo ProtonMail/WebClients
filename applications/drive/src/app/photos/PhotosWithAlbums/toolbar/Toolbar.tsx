@@ -11,7 +11,7 @@ interface ToolbarProps {
     previewShareId: string;
     uploadLinkId: string;
     selectedCount: number;
-    viewOnly: boolean;
+    uploadDisabled: boolean;
     canRemoveSelectedPhotos: boolean;
 
     albums: PhotoGridItem[];
@@ -39,7 +39,7 @@ export const Toolbar = ({
     previewShareId,
     uploadLinkId,
     selectedCount,
-    viewOnly,
+    uploadDisabled,
     canRemoveSelectedPhotos,
     albums,
     album,
@@ -92,7 +92,7 @@ export const Toolbar = ({
                     onPreview={onPreview}
                     requestDownload={requestDownload}
                     data={AlbumsPageTypes.ALBUMSGALLERY ? albumPhotos : photos}
-                    uploadDisabled={viewOnly}
+                    uploadDisabled={uploadDisabled}
                     tabSelection={currentPageType}
                     createAlbumModal={createAlbumModal}
                     onFileUpload={onFileUpload}
