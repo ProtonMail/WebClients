@@ -9,6 +9,7 @@ import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePo
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import SignatureIcon from '../../../components/SignatureIcon';
@@ -43,6 +44,8 @@ interface AlbumDropdownButtonprops {
 export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
+
     return (
         <>
             <DropdownButton
@@ -61,7 +64,7 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    <DropdownMenuButton
+                    {!driveAlbumsDisabled && <DropdownMenuButton
                         onClick={(e) => {
                             e.stopPropagation();
                             onRename();
@@ -70,7 +73,7 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                     >
                         <Icon className="mr-2" name="pencil" />
                         {c('Action').t`Rename album`}
-                    </DropdownMenuButton>
+                    </DropdownMenuButton>}
                     {!isAlbumsWithSharingDisabled && (
                         <DropdownMenuButton
                             onClick={(e) => {
@@ -84,17 +87,18 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                         </DropdownMenuButton>
                     )}
 
-                    {/* TODO: Add delete album logic from album grid view */}
-                    <DropdownMenuButton
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onDelete();
-                        }}
-                        className="text-left flex items-center flex-nowrap"
-                    >
-                        <Icon className="mr-2" name="trash" />
-                        {c('Action').t`Delete album`}
-                    </DropdownMenuButton>
+                    {!driveAlbumsDisabled && (
+                        <DropdownMenuButton
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onDelete();
+                            }}
+                            className="text-left flex items-center flex-nowrap"
+                        >
+                            <Icon className="mr-2" name="trash" />
+                            {c('Action').t`Delete album`}
+                        </DropdownMenuButton>
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>

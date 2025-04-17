@@ -22,7 +22,7 @@ type Props = {
     isItemSelected: (linkId: string) => boolean;
     categoryLoading?: string;
     isAddAlbumPhotosView?: boolean;
-    onFavorite: (linkId: string, isFavorite: boolean) => void;
+    onFavorite?: (linkId: string, isFavorite: boolean) => void;
     rootLinkId: string;
 };
 
@@ -190,7 +190,7 @@ export const PhotosGrid: FC<Props> = ({
                             isFavorite={item.photoProperties?.isFavorite || false}
                             isOwnedByCurrentUser={item.parentLinkId === rootLinkId}
                             onFavorite={
-                                !isAddAlbumPhotosView
+                                !isAddAlbumPhotosView && onFavorite
                                     ? () => {
                                           onFavorite(item.linkId, item.photoProperties?.isFavorite || false);
                                       }

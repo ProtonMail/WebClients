@@ -49,6 +49,7 @@ export const PhotosLayout = () => {
         States and Hooks
     */
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { pathname } = useLocation();
     const { createNotification } = useNotifications();
@@ -167,7 +168,7 @@ export const PhotosLayout = () => {
         return album?.permissions.isOwner ? linkId : albumLinkId || linkId;
     }, [album?.permissions.isOwner, linkId, albumLinkId]);
 
-    const viewOnly = useMemo(() => {
+    const uploadDisabled = useMemo(() => {
         if (currentPageType === AlbumsPageTypes.GALLERY || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS) {
             return isUploadDisabled;
         }
@@ -526,6 +527,11 @@ export const PhotosLayout = () => {
                     .t`We are experiencing technical issues. Uploading new photos is temporarily disabled.`}</TopBanner>
             )}
 
+            {driveAlbumsDisabled && (
+                <TopBanner className="bg-warning">{c('Info')
+                    .t`We are experiencing technical issues. Any albums related actions are temporarily disabled.`}</TopBanner>
+            )}
+
             {currentPageType === AlbumsPageTypes.GALLERY && <PhotosRecoveryBanner />}
 
             {hasPreview && (
@@ -547,7 +553,7 @@ export const PhotosLayout = () => {
                     }
                     onDetails={onShowDetails}
                     onSelectCover={
-                        currentPageType === AlbumsPageTypes.GALLERY || album?.cover?.linkId === previewItem.linkId
+                        !driveAlbumsDisabled && (currentPageType === AlbumsPageTypes.GALLERY || album?.cover?.linkId === previewItem.linkId)
                             ? undefined
                             : onSelectCoverPreview
                     }
@@ -586,7 +592,7 @@ export const PhotosLayout = () => {
                         previewShareId={previewShareId}
                         uploadLinkId={uploadLinkId}
                         selectedCount={selectedCount}
-                        viewOnly={viewOnly}
+                        uploadDisabled={uploadDisabled}
                         canRemoveSelectedPhotos={canRemoveSelectedPhotos}
                         albums={albums}
                         album={album}

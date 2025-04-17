@@ -15,6 +15,7 @@ import {
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
@@ -282,6 +283,7 @@ const ToolbarRightActionsAlbumGallery = ({
     onShowDetails,
     onAddAlbumPhotos,
 }: ToolbarRightActionsAlbumGalleryProps) => {
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { viewportWidth } = useActiveBreakpoint();
     const showIconOnly = !viewportWidth['>=large'];
@@ -289,7 +291,7 @@ const ToolbarRightActionsAlbumGallery = ({
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     return (
         <>
-            {!showIconOnly && album.permissions.isOwner && (
+            {!showIconOnly && album.permissions.isOwner && !driveAlbumsDisabled && (
                 <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} type="toolbar" />
             )}
             {!showIconOnly && showUploadButton && (
@@ -347,9 +349,9 @@ const ToolbarRightActionsAlbumGallery = ({
                 shareId={shareId}
                 linkId={linkId}
                 showUploadButton={showIconOnly && showUploadButton}
-                showAddAlbumPhotosButton={showIconOnly && album.permissions.isOwner}
-                showDeleteAlbumButton={album.permissions.isAdmin}
-                showLeaveAlbumButton={!album.permissions.isOwner}
+                showAddAlbumPhotosButton={showIconOnly && album.permissions.isOwner && !driveAlbumsDisabled}
+                showDeleteAlbumButton={album.permissions.isAdmin && !driveAlbumsDisabled}
+                showLeaveAlbumButton={!album.permissions.isOwner && !driveAlbumsDisabled}
             />
             {linkSharingModal}
         </>
@@ -425,6 +427,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onShowDetails,
     onAddAlbumPhotos,
 }) => {
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { viewportWidth } = useActiveBreakpoint();
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
@@ -438,15 +441,18 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
             album &&
             selectedItems.length &&
             album.cover?.linkId !== selectedItems[0].linkId &&
-            album.permissions.isAdmin
+            album.permissions.isAdmin &&
+            !driveAlbumsDisabled
     );
-    const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos);
+    const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const canShare = Boolean(
         (!hasMultipleSelected && !album) || (!hasMultipleSelected && album && album.permissions.isAdmin)
     );
     const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
-    const canAddPhotosFromGallery = Boolean(openAddPhotosToAlbumModal && tabSelection === AlbumsPageTypes.GALLERY);
+    const canAddPhotosFromGallery = Boolean(
+        openAddPhotosToAlbumModal && tabSelection === AlbumsPageTypes.GALLERY && !driveAlbumsDisabled
+    );
 
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
@@ -454,7 +460,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 {tabSelection === AlbumsPageTypes.GALLERY && !hasSelection && (
                     <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
                 )}
-                {tabSelection === AlbumsPageTypes.ALBUMS && (
+                {tabSelection === AlbumsPageTypes.ALBUMS && !driveAlbumsDisabled && (
                     <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />
                 )}
 
