@@ -528,6 +528,9 @@
       "Remove gift code": [
         "Удалить подарочный код"
       ],
+      "Rename": [
+        "Переименовать"
+      ],
       "Rename document": [
         "Переименовать документ"
       ],
@@ -611,6 +614,9 @@
       ],
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
+      ],
+      "Show more": [
+        "Показать больше"
       ],
       "Show options": [
         "Показать параметры"
@@ -2191,6 +2197,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2266,11 +2277,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2369,26 +2375,14 @@
       "All events in this series were updated.": [
         "Все события в этой серии были обновлены."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Все события в этой серии были обновлены. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Частота этого события была отменена"
       ],
       "This event occurrence was updated.": [
         "Частота этого события была обновлена"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Это событие было обновлено."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Вы приглашены на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2788,6 +2782,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Something went wrong. Please try again.": [
+        "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
       ],
       "status page": [
         "страница статуса"
@@ -3943,6 +3940,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
+      "Admin account allocation": [
+        "Распределение аккаунтов администраторов"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ],
@@ -3963,6 +3963,15 @@
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Выделено"
+      ],
+      "Already allocated": [
+        "Уже выделено"
+      ],
+      "Already used": [
+        "Уже используется"
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
@@ -4648,6 +4657,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Хранилище, выделенное другим пользователям в этой организации"
+      ],
+      "Storage allocated to this user": [
+        "Хранилище, выделенное этому пользователю"
+      ],
+      "Storage for users": [
+        "Хранилище для пользователей"
+      ],
+      "Storage used by this user": [
+        "Хранилище, используемое этим пользователем"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
@@ -5140,6 +5161,9 @@
       ],
       "Account holder": [
         "Владелец счёта"
+      ],
+      "Account storage": [
+        "Хранилище учётной записи"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -7446,14 +7470,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Нечастные пользователи могут быть переведены в разряд администраторов, если у них есть ключи настройки"
+      ],
       "Organization key does not exist.": [
         "Ключ организации не существует."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Для предоставления прав администратора ключ организации должен быть активирован"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Отказано в доступе, права администратора ограничены."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Рядовые пользователи могут быть повышены до администратора при первом входе в систему"
+      ],
       "The organization key must be activated first.": [
         "Сначала должен быть активирован ключ организации."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Вы должны удалить все группы перед созданием нового ключа организации"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Вы должны приватизировать всех пользователей перед генерированием нового ключа организации"
       ],
       "You need access to the organization key to perform this operation.": [
         "Для выполнения этой операции вам необходим доступ к ключу организации."
@@ -9057,6 +9096,9 @@
       "Get advanced protection": [
         "Получить расширенную защиту"
       ],
+      "Get the apps": [
+        "Получить приложения"
+      ],
       "Gift": [
         "Подарок"
       ],
@@ -9389,6 +9431,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
       ]
     },
     "Validation": {
