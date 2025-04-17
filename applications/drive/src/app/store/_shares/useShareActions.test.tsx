@@ -225,9 +225,7 @@ describe('useShareActions', () => {
         it('should return MIGRATED when photos share already exists in Photos volume', async () => {
             mockedGetDefaultPhotosShare.mockResolvedValue({
                 volumeId: 'photos-volume-id',
-            });
-            mockedDebounceRequest.mockResolvedValueOnce({
-                Volume: { Type: VolumeType.Photos },
+                volumeType: VolumeType.Photos,
             });
 
             const { result } = renderHook(() => useShareActions());
@@ -235,14 +233,13 @@ describe('useShareActions', () => {
 
             expect(status).toBe(SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED);
             expect(mockedGetDefaultPhotosShare).toHaveBeenCalled();
+            expect(mockedDebounceRequest).not.toHaveBeenCalled();
         });
 
         it('should return NEED_MIGRATION when photos share exists but not in Photos volume', async () => {
             mockedGetDefaultPhotosShare.mockResolvedValue({
                 volumeId: 'drive-volume-id',
-            });
-            mockedDebounceRequest.mockResolvedValueOnce({
-                Volume: { Type: VolumeType.Regular },
+                volumeType: VolumeType.Regular,
             });
 
             const { result } = renderHook(() => useShareActions());
@@ -250,6 +247,7 @@ describe('useShareActions', () => {
 
             expect(status).toBe(SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION);
             expect(mockedGetDefaultPhotosShare).toHaveBeenCalled();
+            expect(mockedDebounceRequest).not.toHaveBeenCalled();
         });
     });
 
