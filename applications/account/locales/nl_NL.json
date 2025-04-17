@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -256,6 +259,9 @@
       "Close this banner": [
         "Sluit deze banner"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Color": [
         "Kleur"
       ],
@@ -276,6 +282,12 @@
       ],
       "Connect": [
         "Verbinden"
+      ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videovergadering"
       ],
       "Connected": [
         "Verbonden"
@@ -472,6 +484,9 @@
       "Download": [
         "Downloaden"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
+      ],
       "Download CSV sample": [
         "CSV-voorbeeld downloaden"
       ],
@@ -661,6 +676,9 @@
       "Get the app": [
         "Download de app"
       ],
+      "Get the apps": [
+        "De apps downloaden"
+      ],
       "Get the browser extension": [
         "Download de browserextensie"
       ],
@@ -708,6 +726,9 @@
       ],
       "Import emails": [
         "E-mails importeren"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
       ],
       "Import from Google": [
         "Importeren uit Google"
@@ -784,17 +805,26 @@
       "Make admin": [
         "Tot beheerder benoemen"
       ],
+      "Manage advanced account protections": [
+        "Geavanceerde accountbeveiligingen beheren"
+      ],
       "Manage communication preferences": [
         "Beheer communicatievoorkeuren"
       ],
       "Manage folders": [
         "Mappen beheren"
       ],
+      "Manage groups": [
+        "Groepen beheren"
+      ],
       "Manage labels": [
         "Labels beheeren"
       ],
       "Manage subscription": [
         "Abonnement beheren"
+      ],
+      "Manage users/addresses": [
+        "Gebruikers/adressen beheren"
       ],
       "Mark as default": [
         "Markeren als standaard"
@@ -942,6 +972,9 @@
       ],
       "Remove bonuses": [
         "Verwijder bonussen"
+      ],
+      "Remove button": [
+        "Knop verwijderen"
       ],
       "Remove calendar": [
         "Agenda verwijderen"
@@ -1093,11 +1126,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -1144,8 +1177,20 @@
       "Set new password": [
         "Nieuw wachtwoord instellen"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Set up 2FA": [
+        "2FA instellen"
+      ],
+      "Set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
       ],
       "Settings": [
         "Instellingen"
@@ -1155,6 +1200,9 @@
       ],
       "Share via link": [
         "Deel via link"
+      ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
       ],
       "Sharing options": [
         "Opties voor delen"
@@ -1261,6 +1309,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
       "Underline": [
         "Onderstreept"
       ],
@@ -1312,6 +1363,9 @@
       "Upload": [
         "Uploaden"
       ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
       "Upload logo": [
         "Logo uploaden"
       ],
@@ -1320,6 +1374,12 @@
       ],
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Gebruik ${ PASS_APP_NAME } voor Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor gegevensprivacy"
       ],
       "Use a different card": [
         "Gebruik een andere kaart"
@@ -4209,15 +4269,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } zal u nooit vragen om een code in te voeren die niet afkomstig is van het domein ${ domain }, of van een officiële ${ BRAND_NAME } applicatie."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Hoe het werkt:** Voer de code die wordt weergegeven op het apparaat waarop u wilt inloggen, op dit apparaat in. U wordt vervolgens ingelogd als **${ email }**. Beide apparaten blijven actief."
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Sta het scannen van een QR-code toe om in te loggen"
-      ],
       "Code copied to clipboard": [
         "Code gekopieerd naar klembord"
       ],
@@ -4226,15 +4277,6 @@
       ],
       "Enter code manually": [
         "Voer code handmatig in"
-      ],
-      "New QR code": [
-        "Nieuwe QR-code"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Open de ${ BRAND_NAME } app op uw telefoon"
-      ],
-      "Please scan a new QR code to try again": [
-        "Scan een nieuwe QR-code om het opnieuw te proberen"
       ],
       "QR code expired": [
         "QR-code is verlopen"
@@ -4245,41 +4287,14 @@
       "QR code sign-in enabled": [
         "Aanmelden via QR-code ingeschakeld"
       ],
-      "Safety tips:": [
-        "Veiligheidstips:"
-      ],
-      "Scan a QR code with your phone": [
-        "Scan een QR-code met uw telefoon"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Scan de QR-code op uw mobiele apparaat om in te loggen"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Scan deze QR-code in de ${ BRAND_NAME } app op uw telefoon om direct in te loggen."
-      ],
-      "Sign in to another device": [
-        "Inloggen op een ander apparaat"
-      ],
-      "Sign in with another device": [
-        "Inloggen met een ander apparaat"
       ],
       "Sign in with QR code": [
         "Inloggen met QR-code"
       ],
-      "Tap **Scan QR code**": [
-        "Klik op **Scan QR-code**"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "Klik op **Instellingen** en klik vervolgens op **Inloggen op een ander apparaat**"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Om toegang te krijgen tot de code van het apparaat waarop u wilt inloggen, klikt u op de knop **Inloggen met QR-code** in het hulpmenu van het inlogscherm en klikt u vervolgens op **Sleutel handmatig invoeren**."
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Let op voor berichten die een code bevatten. Voer nooit een code in van een website of een persoon die u niet vertrouwt."
-      ],
-      "We couldn't sign you in": [
-        "We konden u niet aanmelden"
       ],
       "You have successfully signed in to another device": [
         "U bent succesvol ingelogd op een ander apparaat"
@@ -4308,26 +4323,14 @@
       "All events in this series were updated.": [
         "Alle gebeurtenissen in deze serie zijn bijgewerkt."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle gebeurtenissen in deze serie zijn bijgewerkt. Hier is wat er veranderd is:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Deze afspraakgebeurtenis werd geannuleerd."
       ],
       "This event occurrence was updated.": [
         "Deze afspraakgebeurtenis werd bijgewerkt."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Deze afspraak werd bijgewerkt. Dit is wat er veranderd is:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Deze afspraak werd bijgewerkt."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Deze afspraak is bijgewerkt. Dit is wat is veranderd:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "U bent uitgenodigd voor ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5142,11 +5145,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
-      "Something went wrong": [
-        "Er is iets fout gegaan."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Er ging iets mis. Probeer het later nog eens."
       ],
       "status page": [
         "statuspagina"
@@ -8763,6 +8766,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Open de handleiding voor aanbevolen acties en nuttige links."
+      ],
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
       ],
@@ -9156,6 +9162,9 @@
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
       "Setting successfully saved": [
         "Instellingen succesvol bijgewerkt"
       ],
@@ -9428,6 +9437,9 @@
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dit is een zin van 12 woorden die u moest instellen."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dit is een naam of bijnaam voor uw organisatie die uw gebruikers zullen zien. U kunt dit op elk moment wijzigen."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Dit is een herstelbestand of een coderingssleutel die u misschien eerder hebt opgeslagen."
@@ -9726,11 +9738,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -10896,11 +10908,11 @@
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
-      "Allowed Domain": [
-        "Toegestaan domein"
-      ],
       "Allowed domain": [
         "Domein toegestaan"
+      ],
+      "Allowed Domain": [
+        "Toegestaan domein"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -10911,11 +10923,11 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "And": [
-        "En"
-      ],
       "AND": [
         "EN"
+      ],
+      "And": [
+        "En"
       ],
       "and": [
         "en"
@@ -11343,11 +11355,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Als"
-      ],
       "IF": [
         "ALS"
+      ],
+      "If": [
+        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -11550,14 +11562,14 @@
       "Optional": [
         "Optioneel"
       ],
+      "OR": [
+        "OF"
+      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
-      ],
-      "OR": [
-        "OF"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -12130,6 +12142,9 @@
       "Encryption and keys": [
         "Versleuteling en sleutels"
       ],
+      "Enforcing 2FA for organizations": [
+        "2FA forceren voor organisaties"
+      ],
       "Forgot email?": [
         "E-mail vergeten?"
       ],
@@ -12160,11 +12175,53 @@
       "How does monitoring work?": [
         "Hoe werkt monitoring?"
       ],
+      "How to add users": [
+        "Hoe gebruikers toe te voegen"
+      ],
+      "How to add Zoom links": [
+        "Zoom-koppelingen toevoegen"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Samenwerken in ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hoe schakelt u ${ PROTON_SENTINEL_NAME } in"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Hoe migreer ik naar ${ BRAND_NAME }?"
+      ],
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
       ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } instellen"
+      ],
+      "How to set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "How to set up SMTP": [
+        "SMTP instellen"
+      ],
+      "How to share a calendar": [
+        "Hoe een agenda te delen"
+      ],
+      "How to share via email": [
+        "Delen via e-mail"
+      ],
       "How to unlock data": [
         "Hoe gegevens ontgrendelen"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hoe gebruikt u ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } voor Business gebruiken"
+      ],
+      "How to use email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
+      "How to use Groups": [
+        "Hoe gebruik je Groepen"
       ],
       "if your data is leaked": [
         "als uw gegevens zijn gelekt"
@@ -12190,11 +12247,11 @@
       "perform a password reset from your active session": [
         "mogelijk een wachtwoord reset vanuit uw actieve sessie uitvoeren"
       ],
-      "Privacy policy": [
-        "Privacybeleid"
-      ],
       "privacy policy": [
         "privacybeleid"
+      ],
+      "Privacy policy": [
+        "Privacybeleid"
       ],
       "Reactivate now": [
         "Nu heractiveren"
@@ -12219,6 +12276,9 @@
       ],
       "Trouble signing in?": [
         "Problemen met inloggen?"
+      ],
+      "Types of recovery methods": [
+        "Soorten herstelmethoden"
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
@@ -13559,14 +13619,6 @@
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -13585,6 +13637,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -14222,17 +14282,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10e dag van de maand"
@@ -14461,6 +14510,17 @@
       ],
       "Trash": [
         "Prullenbak"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
       ]
     },
     "Option delay send seconds": {
@@ -18429,6 +18489,9 @@
       "Add to spam list": [
         "Toevoegen aan spamlijst"
       ],
+      "Add user": [
+        "Gebruiker toevoegen"
+      ],
       "Add user accounts": [
         "Gebruikersaccounts toevoegen"
       ],
@@ -18522,11 +18585,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -18588,11 +18651,17 @@
       "Connect ${ name }": [
         "Verbind ${ name }"
       ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
       "Connect organization": [
         "Connecteer organisatie"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Verbind met ${ VPN_CONNECTIONS } apparaten tegelijk met ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect your custom domain": [
+        "Verbind uw eigen domein"
       ],
       "Connection status": [
         "Verbindingsstatus"
@@ -18872,11 +18941,17 @@
       "Email privacy": [
         "E-mail privacy"
       ],
+      "Enable advanced account protection": [
+        "Schakel geavanceerde accountbeveiliging in"
+      ],
       "Enable for all users": [
         "Inschakelen voor alle gebruikers"
       ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
+      ],
+      "Enhance security with 2FA": [
+        "Verbeter de beveiliging met 2FA"
       ],
       "Enter 2FA code": [
         "Voer 2FA-code in"
@@ -19029,9 +19104,6 @@
       "Home": [
         "Home"
       ],
-      "How can we help?": [
-        "Hoe kunnen we u helpen?"
-      ],
       "How does it work?": [
         "Hoe werkt het?"
       ],
@@ -19059,6 +19131,9 @@
       ],
       "Import contacts": [
         "Contactpersonen importeren"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
       ],
       "Import events": [
         "Afspraken importeren"
@@ -19429,11 +19504,17 @@
       "Set organization name": [
         "Organisatienaam instellen"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "Instellen ${ protonDuoPlanName }"
       ],
       "Set up a recovery method": [
         "Een herstelmethode instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
       ],
       "Set up forwarding": [
         "Doorsturen instellen"
@@ -19443,6 +19524,9 @@
       ],
       "Set up your family account": [
         "Stel je familie account in"
+      ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
       ],
       "Set your password": [
         "Stel uw wachtwoord in"
@@ -19477,6 +19561,9 @@
       "Signed in to member account": [
         "Ingelogd op een gebruikersaccount"
       ],
+      "Simplify email distribution": [
+        "Vereenvoudig de e-maildistributie"
+      ],
       "Single sign-on": [
         "Single sign-on"
       ],
@@ -19494,6 +19581,9 @@
       ],
       "Spam, block, and allow lists": [
         "Spam, blokkeer en accepteer lijsten"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
       ],
       "Start a new import": [
         "Start een nieuwe import"
@@ -19558,6 +19648,9 @@
       ],
       "Track your referrals": [
         "Uw doorverwijzingen opvolgen"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
       "TV sign in": [
         "TV inloggen"
@@ -19648,6 +19741,9 @@
       ],
       "Weak passwords": [
         "Zwakke wachtwoorden"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Welkom bij ${ BRAND_NAME } voor Business"
       ],
       "What is an alias?": [
         "Wat is een alias?"

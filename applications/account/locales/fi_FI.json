@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
+      "Attention required": [
+        "Huomiota vaaditaan"
+      ],
       "Authenticate": [
         "Tunnistaudu"
       ],
@@ -1084,11 +1087,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "Select file": [
-        "Valitse tiedosto"
-      ],
       "select file": [
         "valitse tiedosto"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -4144,9 +4147,6 @@
       ]
     },
     "edm": {
-      "Allow scanning a QR code to sign in": [
-        "Salli kirjautuminen QR-koodin skannaamalla"
-      ],
       "Code copied to clipboard": [
         "Koodi kopioitiin leikepöydälle"
       ],
@@ -4156,32 +4156,14 @@
       "Enter code manually": [
         "Syötä koodi manuaalisesti"
       ],
-      "New QR code": [
-        "Uusi QR-koodi"
-      ],
-      "Please scan a new QR code to try again": [
-        "Yritä uudelleen lukemalla uusi QR-koodi"
-      ],
       "QR code sign-in disabled": [
         "QR-koodilla kirjautuminen ei käytössä"
       ],
       "QR code sign-in enabled": [
         "QR-koodilla kirjautuminen otettu käyttöön"
       ],
-      "Scan a QR code with your phone": [
-        "Skannaa QR-koodi puhelimellasi"
-      ],
-      "Sign in to another device": [
-        "Kirjaudu toiseen laitteeseen"
-      ],
       "Sign in with QR code": [
         "Kirjaudu QR-koodilla"
-      ],
-      "Tap **Scan QR code**": [
-        "Napauta **Skannaa QR-koodi**"
-      ],
-      "We couldn't sign you in": [
-        "Sinua ei voitu kirjata sisään"
       ]
     },
     "Email": {
@@ -4207,26 +4189,14 @@
       "All events in this series were updated.": [
         "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ketjun kaikkia tapahtumakertoja muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Tämä tapahtumakerta peruttiin."
       ],
       "This event occurrence was updated.": [
         "Tämä tapahtumakerta päivitettiin."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tätä tapahtumakertaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Tapahtuma päivitettiin."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tapahtumaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5032,11 +5002,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
-      "Something went wrong": [
-        "Jotain meni pieleen"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "status page": [
         "tilasivumme"
@@ -9515,11 +9485,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -10659,10 +10629,10 @@
       "Allow sharing outside the organization": [
         "Salli organisaation ulkopuolinen jakaminen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10674,11 +10644,11 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
-      "And": [
-        "Ja"
-      ],
       "AND": [
         "JA"
+      ],
+      "And": [
+        "Ja"
       ],
       "and": [
         "ja"
@@ -11103,11 +11073,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jos"
-      ],
       "IF": [
         "JOS"
+      ],
+      "If": [
+        "Jos"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -11307,14 +11277,14 @@
       "Optional": [
         "Valinnainen"
       ],
+      "OR": [
+        "TAI"
+      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
-      ],
-      "OR": [
-        "TAI"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11944,11 +11914,11 @@
       "perform a password reset from your active session": [
         "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
       ],
-      "Privacy policy": [
-        "Tietosuojakäytäntö"
-      ],
       "privacy policy": [
         "tietosuojakäytäntömme"
+      ],
+      "Privacy policy": [
+        "Tietosuojakäytäntö"
       ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
@@ -13299,14 +13269,6 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -13325,6 +13287,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -13956,17 +13926,6 @@
         "Työpöytä"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Kuukauden 10. päivä"
@@ -14195,6 +14154,17 @@
       ],
       "Trash": [
         "Poista"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Option delay send seconds": {
@@ -18188,10 +18158,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -18685,9 +18655,6 @@
       ],
       "Home": [
         "Koti"
-      ],
-      "How can we help?": [
-        "Miten voimme auttaa?"
       ],
       "How does it work?": [
         "Miten se toimii?"
