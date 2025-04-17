@@ -385,11 +385,11 @@
       "Move to another vault": [
         "Переместить в другое хранилище"
       ],
-      "Move to Trash": [
-        "Переместить в корзину"
-      ],
       "Move to trash": [
         "Переместить в Корзину"
+      ],
+      "Move to Trash": [
+        "Переместить в корзину"
       ],
       "Multiple select": [
         "Множественный выбор"
@@ -1144,6 +1144,9 @@
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
       ],
+      "Wrong second password": [
+        "Неверный второй пароль"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "В настоящее время вы не в сети. Возобновите подключение, чтобы разблокировать ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1750,12 +1753,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -2904,6 +2901,9 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Second password": [
+        "Второй пароль"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Защищенно храните, делитесь и автоматически входите в свои аккаунты с помощью ${ PASS_APP_NAME }, использующего сквозное шифрование, которому доверяют миллионы."
