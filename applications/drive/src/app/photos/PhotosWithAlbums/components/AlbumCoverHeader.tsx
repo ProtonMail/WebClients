@@ -7,6 +7,7 @@ import { Icon, Tooltip } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { type OnFileSkippedSuccessCallbackData, type OnFileUploadSuccessCallbackData } from '../../../store';
+import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 import { PhotosUploadButton } from '../toolbar/PhotosUploadButton';
@@ -40,6 +41,7 @@ export const AlbumCoverHeader = ({
     }).format(fromUnixTime(album.createTime));
     const [user] = useUser();
     const displayName = user.DisplayName || user.Name;
+    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
 
     return (
         <div
@@ -79,13 +81,17 @@ export const AlbumCoverHeader = ({
                     </span>
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
-                    <Tooltip title={displayName}>
-                        <UserAvatar name={displayName} data-testid="user-avatar" />
-                    </Tooltip>
+                    {!isAlbumsWithSharingDisabled && (
+                        <Tooltip title={displayName}>
+                            <UserAvatar name={displayName} data-testid="user-avatar" />
+                        </Tooltip>
+                    )}
 
-                    {album.permissions.isAdmin && <AlbumMembers shareId={shareId} linkId={linkId} onShare={onShare} />}
+                    {!isAlbumsWithSharingDisabled && album.permissions.isAdmin && (
+                        <AlbumMembers shareId={shareId} linkId={linkId} onShare={onShare} />
+                    )}
 
-                    {album.permissions.isAdmin && (
+                    {!isAlbumsWithSharingDisabled && album.permissions.isAdmin && (
                         <Button
                             color="weak"
                             shape="solid"
