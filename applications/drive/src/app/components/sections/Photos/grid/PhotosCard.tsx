@@ -94,97 +94,99 @@ export const PhotosCard: FC<Props> = ({
     const showCheckbox = hasSelection;
 
     return (
-        <ButtonLike
-            as="div"
-            ref={ref}
-            style={style}
-            className={clsx(
-                'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
-                'relative photos-card p-0 border-none rounded-none',
-                isThumbnailLoading && 'photos-card--loading',
-                !showCheckbox && 'photos-card--hide-checkbox',
-                selected && 'photos-card--selected'
-            )}
-            data-testid="photos-card"
-            onClick={onClick}
-            onKeyDown={onKeyDown}
-            tabIndex={0}
-            aria-busy={!isLoaded}
-        >
-            <Checkbox
-                className="absolute top-0 left-0 ml-2 mt-2"
-                data-testid="photos-card-checkbox"
-                checked={selected}
-                onClick={stopPropagation}
-                onKeyDown={(e) => {
-                    if (e.key !== 'Shift') {
-                        e.stopPropagation();
+        <div className="old-photos">
+            <ButtonLike
+                as="div"
+                ref={ref}
+                style={style}
+                className={clsx(
+                    'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
+                    'relative photos-card p-0 border-none rounded-none',
+                    isThumbnailLoading && 'photos-card--loading',
+                    !showCheckbox && 'photos-card--hide-checkbox',
+                    selected && 'photos-card--selected'
+                )}
+                data-testid="photos-card"
+                onClick={onClick}
+                onKeyDown={onKeyDown}
+                tabIndex={0}
+                aria-busy={!isLoaded}
+            >
+                <Checkbox
+                    className="absolute top-0 left-0 ml-2 mt-2"
+                    data-testid="photos-card-checkbox"
+                    checked={selected}
+                    onClick={stopPropagation}
+                    onKeyDown={(e) => {
+                        if (e.key !== 'Shift') {
+                            e.stopPropagation();
+                        }
+                    }}
+                    onChange={() => {
+                        onSelect(!selected);
+                    }}
+                    // If we are in select mode, then we don't need to focus the checkbox
+                    // as the main card action is already bound to select
+                    tabIndex={hasSelection ? -1 : 0}
+                    aria-label={
+                        // translator: This string is used by screen readers to inform the user of a selection action
+                        c('Info').t`Select item`
                     }
-                }}
-                onChange={() => {
-                    onSelect(!selected);
-                }}
-                // If we are in select mode, then we don't need to focus the checkbox
-                // as the main card action is already bound to select
-                tabIndex={hasSelection ? -1 : 0}
-                aria-label={
-                    // translator: This string is used by screen readers to inform the user of a selection action
-                    c('Info').t`Select item`
-                }
-            ></Checkbox>
+                ></Checkbox>
 
-            {isLoaded ? (
-                <div className="w-full h-full relative">
-                    {thumbUrl ? (
-                        <img
-                            data-testid="photo-card-thumbnail"
-                            src={thumbUrl}
-                            alt={getAltText(photo)}
-                            className="w-full h-full photos-card-thumbnail"
-                        />
-                    ) : (
-                        <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
-                            <FileIcon mimeType={photo.mimeType || ''} size={12} />
-                        </div>
-                    )}
-                    {(photo.signatureIssues || photo.isShared) && (
-                        <div className="absolute top-0 right-0 mr-2 mt-2 flex items-center gap-1">
-                            {photo.signatureIssues && (
-                                <SignatureIcon
-                                    isFile
-                                    mimeType={photo.mimeType}
-                                    signatureIssues={photo.signatureIssues}
-                                    className="color-danger"
-                                    haveParentAccess={!!photo.parentLinkId}
-                                />
-                            )}
-                            {photo.isShared && (
-                                <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
-                                    <Icon name="users" color="white" size={3} />
-                                </div>
-                            )}
-                        </div>
-                    )}
-                    {photo.mimeType && isVideo(photo.mimeType) && (
-                        <div className="w-full absolute bottom-0 flex justify-end items-center px-2 py-2 photos-card-video-info">
-                            {photo.duration && (
-                                <time
-                                    className="text-semibold mr-1"
-                                    dateTime={formatDuration(
-                                        { seconds: Math.floor(photo.duration) },
-                                        {
-                                            locale: dateLocale,
-                                        }
-                                    )}
-                                >
-                                    {formatVideoDuration(photo.duration)}
-                                </time>
-                            )}
-                            <img src={playCircleFilledIcon} alt="" />
-                        </div>
-                    )}
-                </div>
-            ) : null}
-        </ButtonLike>
+                {isLoaded ? (
+                    <div className="w-full h-full relative">
+                        {thumbUrl ? (
+                            <img
+                                data-testid="photos-card-thumbnail"
+                                src={thumbUrl}
+                                alt={getAltText(photo)}
+                                className="w-full h-full photos-card-thumbnail"
+                            />
+                        ) : (
+                            <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
+                                <FileIcon mimeType={photo.mimeType || ''} size={12} />
+                            </div>
+                        )}
+                        {(photo.signatureIssues || photo.isShared) && (
+                            <div className="absolute top-0 right-0 mr-2 mt-2 flex items-center gap-1">
+                                {photo.signatureIssues && (
+                                    <SignatureIcon
+                                        isFile
+                                        mimeType={photo.mimeType}
+                                        signatureIssues={photo.signatureIssues}
+                                        className="color-danger"
+                                        haveParentAccess={!!photo.parentLinkId}
+                                    />
+                                )}
+                                {photo.isShared && (
+                                    <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
+                                        <Icon name="users" color="white" size={3} />
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                        {photo.mimeType && isVideo(photo.mimeType) && (
+                            <div className="w-full absolute bottom-0 flex justify-end items-center px-2 py-2 photos-card-video-info">
+                                {photo.duration && (
+                                    <time
+                                        className="text-semibold mr-1"
+                                        dateTime={formatDuration(
+                                            { seconds: Math.floor(photo.duration) },
+                                            {
+                                                locale: dateLocale,
+                                            }
+                                        )}
+                                    >
+                                        {formatVideoDuration(photo.duration)}
+                                    </time>
+                                )}
+                                <img src={playCircleFilledIcon} alt="" />
+                            </div>
+                        )}
+                    </div>
+                ) : null}
+            </ButtonLike>
+        </div>
     );
 };
