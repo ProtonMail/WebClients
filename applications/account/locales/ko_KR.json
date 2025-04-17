@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "스크린샷 첨부"
       ],
+      "Attention required": [
+        "주의 필요"
+      ],
       "Authenticate": [
         "인증"
       ],
@@ -943,6 +946,9 @@
       "Remove bonuses": [
         "보너스 제거"
       ],
+      "Remove button": [
+        "버튼 삭제"
+      ],
       "Remove calendar": [
         "캘린더 삭제"
       ],
@@ -1093,10 +1099,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -4184,14 +4190,8 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME }은 도메인 ${ domain } 또는 공식 ${ BRAND_NAME } 앱에서 발송된 것이 아닌 코드를 입력하도록 요청하지 않습니다."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**작동 방식:** 로그인하려는 기기에 표시된 코드를 입력하세요. **${ email }**(으)로 로그인됩니다. 두 기기 모두 활성 상태로 유지됩니다. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "QR 코드를 스캔하여 로그인할 수 있도록 허용"
+      "Allow QR code sign‒in": [
+        "QR 코드 로그인 허용"
       ],
       "Code copied to clipboard": [
         "코드가 클립보드에 복사되었습니다"
@@ -4202,14 +4202,8 @@
       "Enter code manually": [
         "수동으로 코드 입력하기"
       ],
-      "New QR code": [
-        "새 QR 코드"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "휴대폰에서 ${ BRAND_NAME } 앱을 실행하세요"
-      ],
-      "Please scan a new QR code to try again": [
-        "새 QR 코드를 스캔하여 다시 시도해 주세요."
+      "Generate QR code": [
+        "QR 코드 생성"
       ],
       "QR code expired": [
         "QR 코드가 만료됨"
@@ -4220,41 +4214,23 @@
       "QR code sign-in enabled": [
         "QR 코드 로그인이 활성화됨"
       ],
-      "Safety tips:": [
-        "보안을 위한 팁:"
-      ],
-      "Scan a QR code with your phone": [
-        "휴대폰으로 QR 코드를 스캔하세요"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "로그인하려면 모바일 디바이스에서 QR 코드를 스캔하세요"
       ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "즉시 로그인하려면 휴대폰의 ${ BRAND_NAME } 앱에서 이 QR 코드를 스캔하세요."
+      "Security tips": [
+        "보안 팁"
       ],
-      "Sign in to another device": [
+      "Sign in on another device": [
         "다른 기기에서 로그인"
-      ],
-      "Sign in with another device": [
-        "다른 기기로 로그인"
       ],
       "Sign in with QR code": [
         "QR 코드로 로그인"
       ],
-      "Tap **Scan QR code**": [
-        "**QR 코드 스캔**을 탭하세요."
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "**설정**을 탭한 다음 **다른 기기에서 로그인**을 탭하세요."
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "로그인하려는 기기의 코드에 접근하려면 로그인 화면의 도움말 메뉴에서 **QR 코드로 로그인** 버튼을 탭한 다음 **키 수동으로 입력하기**을 탭하세요. "
       ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "코드가 포함된 메시지에 유의하세요. 웹사이트나 신뢰할 수 없는 사람의 코드를 절대 입력하지 마세요."
-      ],
-      "We couldn't sign you in": [
-        "로그인할 수 없습니다."
+      "Try generating a new QR code.": [
+        "새로운 QR 코드를 생성해 보세요."
       ],
       "You have successfully signed in to another device": [
         "다른 기기에서 로그인하는데 성공했습니다."
@@ -4283,8 +4259,8 @@
       "All events in this series were updated.": [
         "해당 주제의 모든 이벤트가 업데이트되었습니다."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "해당 주제의 모든 이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "바뀐 점은 다음과 같습니다:"
       ],
       "This event occurrence was canceled.": [
         "이 이벤트의 개최는 취소되었습니다."
@@ -4292,17 +4268,8 @@
       "This event occurrence was updated.": [
         "이 이벤트의 개최가 업데이트되었습니다."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "이벤트 변경사항이 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "이 이벤트는 업데이트 되었습니다."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "${ eventTitle }에 초대받았습니다.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5112,11 +5079,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
-      "Something went wrong": [
-        "문제가 발생했습니다"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
+      ],
+      "Something went wrong. Please try again.": [
+        "문제가 발생했습니다. 다시 시도해주세요."
       ],
       "status page": [
         "상태 페이지"
@@ -9624,10 +9591,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -10772,10 +10739,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10787,11 +10754,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "And": [
-        "그리고"
-      ],
       "AND": [
         "및"
+      ],
+      "And": [
+        "그리고"
       ],
       "and": [
         "그리고"
@@ -11219,10 +11186,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
       "Import all messages": [
@@ -11426,13 +11393,13 @@
       "Optional": [
         "선택 사항"
       ],
+      "OR": [
+        "또는"
+      ],
       "or": [
         "또는"
       ],
       "Or": [
-        "또는"
-      ],
-      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -12038,8 +12005,20 @@
       "How does monitoring work?": [
         "모니터링이 어떻게 작동하나요?"
       ],
+      "How to add Zoom links": [
+        "Zoom 링크를 추가하는 방법"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
+      ],
+      "How to set up SMTP": [
+        "SMTP을 설정하는 방법"
+      ],
+      "How to share a calendar": [
+        "캘린더를 공유하는 방법"
+      ],
+      "How to share via email": [
+        "이메일을 통해 공유하는 방법"
       ],
       "How to unlock data": [
         "데이터 잠금해제 방법"
@@ -12068,11 +12047,11 @@
       "perform a password reset from your active session": [
         "활성 세션에서 비밀번호 재설정을 수행하세요"
       ],
-      "Privacy policy": [
-        "개인 정보 정책"
-      ],
       "privacy policy": [
         "개인정보 취급방침"
+      ],
+      "Privacy policy": [
+        "개인 정보 정책"
       ],
       "Reactivate now": [
         "지금 재활성화"
@@ -13396,14 +13375,6 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -13422,6 +13393,14 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -14052,17 +14031,6 @@
         "데스크탑"
       ]
     },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "매월 10일"
@@ -14312,6 +14280,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Option delay send seconds": {
@@ -18206,6 +18185,9 @@
       "Add to spam list": [
         "스팸 목록에 추가"
       ],
+      "Add user": [
+        "사용자 추가"
+      ],
       "Add user accounts": [
         "사용자 계정 추가"
       ],
@@ -18299,11 +18281,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -18800,9 +18782,6 @@
       "Home": [
         "홈"
       ],
-      "How can we help?": [
-        "어떻게 도와드릴까요?"
-      ],
       "How does it work?": [
         "어떻게 작동하나요?"
       ],
@@ -19264,6 +19243,9 @@
       ],
       "Spam, block, and allow lists": [
         "스팸, 차단 및 허용 리스트"
+      ],
+      "Special Offer": [
+        "특가"
       ],
       "Start a new import": [
         "사용자 지정 시작"
