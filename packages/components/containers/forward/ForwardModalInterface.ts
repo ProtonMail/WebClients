@@ -4,6 +4,7 @@ import type { PublicKeyReference } from '@proton/crypto';
 export enum ForwardModalStep {
     Setup,
     UserConfirmation,
+    FixupPrimaryKeys,
     FinalizeForwardingSetup,
 }
 

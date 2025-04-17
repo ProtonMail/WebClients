@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Main from '../public/Main';
-import { LoadingTextStepper } from '../signup/LoadingStep';
+import { FakeLoadingTextStepper } from '../signup/LoadingStep';
 import type { Background } from './Layout';
 import Layout from './Layout';
 import illustration from './business-onboarding-illustration.svg';
@@ -53,7 +53,7 @@ const Step4 = ({
                     </div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
                         <div className="inline-block w-7/10">
-                            <LoadingTextStepper steps={steps} />
+                            <FakeLoadingTextStepper steps={steps} />
                         </div>
                     </div>
                 </Content>
