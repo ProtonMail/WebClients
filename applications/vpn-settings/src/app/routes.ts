@@ -264,12 +264,12 @@ export const getRoutes = ({ user, subscription, showVPNDashboard }: Arguments) =
                     id: 'protonvpn-clients',
                 },
                 {
-                    text: c('Title').t`OpenVPN configuration files`,
-                    id: 'openvpn-configuration-files',
-                },
-                {
                     text: c('Title').t`WireGuard configuration`,
                     id: 'wireguard-configuration',
+                },
+                {
+                    text: c('Title').t`OpenVPN configuration files`,
+                    id: 'openvpn-configuration-files',
                 },
             ],
         },
