@@ -1,7 +1,9 @@
 import { useCallback } from 'react';
 
 import { queryUserShares } from '@proton/shared/lib/api/drive/share';
+import { queryGetDriveVolume } from '@proton/shared/lib/api/drive/volume';
 import type { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
+import { type GetDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from '../../zustand/share/shares.store';
 import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
@@ -157,7 +159,16 @@ export function useDefaultShare() {
                     const share = defaultPhotosShareId
                         ? await getShareWithKey(abortSignal || new AbortController().signal, defaultPhotosShareId)
                         : undefined;
-                    return share;
+
+                    if (!share) {
+                        return;
+                    }
+
+                    const { Volume } = await debouncedRequest<GetDriveVolumeResult>(
+                        queryGetDriveVolume(share.volumeId)
+                    );
+
+                    return { ...share, volumeType: Volume.Type };
                 },
                 ['getDefaultPhotosShare'],
                 abortSignal

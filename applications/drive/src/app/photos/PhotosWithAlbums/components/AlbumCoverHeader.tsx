@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button, UserAvatar } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import useFlag from '@proton/unleash/useFlag';
 
 import { type OnFileSkippedSuccessCallbackData, type OnFileUploadSuccessCallbackData } from '../../../store';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
@@ -36,6 +37,7 @@ export const AlbumCoverHeader = ({
     onShare,
     onAddAlbumPhotos,
 }: AlbumCoverHeaderProps) => {
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
     }).format(fromUnixTime(album.createTime));
@@ -105,7 +107,7 @@ export const AlbumCoverHeader = ({
                         </Button>
                     )}
 
-                    {photoCount === 0 && (
+                    {photoCount === 0 && !driveAlbumsDisabled && (
                         <>
                             {album.permissions.isAdmin && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}
                             {!album.permissions.isAdmin && album.permissions.isEditor && (

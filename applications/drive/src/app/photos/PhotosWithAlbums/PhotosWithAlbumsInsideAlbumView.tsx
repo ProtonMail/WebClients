@@ -50,6 +50,7 @@ const useAppTitleUpdate = () => {
 export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const updateTitle = useAppTitleUpdate();
     let [searchParams, setSearchParams] = useSearchParams();
     const { createNotification } = useNotifications();
@@ -185,8 +186,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     }, [album?.permissions.isOwner, linkId, albumLinkId]);
 
     const viewOnly = useMemo(() => {
-        return isUploadDisabled || !album?.permissions.isEditor;
-    }, [isUploadDisabled, album?.permissions.isEditor]);
+        return isUploadDisabled || !album?.permissions.isEditor || driveAlbumsDisabled;
+    }, [isUploadDisabled, album?.permissions.isEditor, driveAlbumsDisabled]);
 
     useEffect(() => {
         if (isAlbumsLoading === false && isAlbumPhotosLoading === false) {
@@ -240,7 +241,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         }
                         isGroupSelected={isGroupSelected}
                         isItemSelected={isItemSelected}
-                        onFavorite={addOrRemovePhotoToFavorite}
+                        onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
                         rootLinkId={linkId}
                     >
                         <AlbumCoverHeader
