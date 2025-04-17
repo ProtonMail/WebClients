@@ -24,6 +24,7 @@ import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
 
 export const PhotosWithAlbumsView = () => {
     useAppTitle(c('Title').t`Photos`);
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -128,7 +129,7 @@ export const PhotosWithAlbumsView = () => {
                         }
                         isGroupSelected={isGroupSelected}
                         isItemSelected={isItemSelected}
-                        onFavorite={addOrRemovePhotoToFavorite}
+                        onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
                         isAddAlbumPhotosView={currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}
                         rootLinkId={linkId}
                     />
