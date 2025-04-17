@@ -6,6 +6,7 @@ export enum ForwardModalStep {
     UserConfirmation,
     FixupPrimaryKeys,
     FinalizeForwardingSetup,
+    SuccessNotification,
 }
 
 export interface ForwardModalState {
