@@ -6,7 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -98,21 +98,23 @@ const getKeyFixupDetails = (
             : null;
     } else {
         return forwarderPrimaryKeysInfo?.v6
-            ? c('email_forwarding_2023: Info').jt`A new encryption key will be generated for ${boldForwarderEmail}.`
-            : c('email_forwarding_2023: Info')
-                  .jt`Post-quantum encryption will be disabled, and a new encryption key will be generated for ${boldForwarderEmail}.`;
+            ? c('email_forwarding_2023: Info')
+                  .jt`Post-quantum encryption will be disabled, and a new encryption key will be generated for ${boldForwarderEmail}.`
+            : c('email_forwarding_2023: Info').jt`A new encryption key will be generated for ${boldForwarderEmail}.`;
     }
 };
 
 const getTitle = (model: ForwardModalState) => {
-    const { step } = model;
-
-    if (step === ForwardModalStep.Setup) {
+    if (model.step === ForwardModalStep.Setup) {
         return c('email_forwarding_2023: Title').t`Set up forwarding`;
     }
 
-    if (step === ForwardModalStep.UserConfirmation || model.step === ForwardModalStep.FinalizeForwardingSetup) {
-        return c('email_forwarding_2023: Title').t`Request confirmation`;
+    if (model.step === ForwardModalStep.UserConfirmation) {
+        return c('email_forwarding_2023: Title').t`Request confirmation?`;
+    }
+
+    if (model.step === ForwardModalStep.FixupPrimaryKeys || model.step === ForwardModalStep.FinalizeForwardingSetup) {
+        return c('email_forwarding_2023: Title').t`Requesting confirmation`;
     }
     return '';
 };
@@ -230,9 +232,9 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             keyState.forwarderPrimaryKeysInfo
         );
 
-        setModel({ ...model, step: ForwardModalStep.FinalizeForwardingSetup });
-
         if (isE2EEForwarding && keyState.forwarderPrimaryKeysInfo?.v6) {
+            setModel({ ...model, step: ForwardModalStep.FixupPrimaryKeys });
+
             const result = await dispatch(
                 fixupPrimaryKeyV6({
                     forwarderAddressID: model.addressID,
@@ -248,6 +250,8 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         }
 
         if (isE2EEForwarding && !keyState.forwarderPrimaryKeysInfo.v4.supportsE2EEForwarding) {
+            setModel({ ...model, step: ForwardModalStep.FixupPrimaryKeys });
+
             const result = await dispatch(
                 fixupUnsupportedPrimaryKeyV4({
                     forwarderAddressID: model.addressID,
@@ -262,6 +266,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             return handleUserConfirmation();
         }
 
+        setModel({ ...model, step: ForwardModalStep.FinalizeForwardingSetup });
         return handleFinalizeSetup();
     };
 
@@ -310,7 +315,10 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             }}
             {...rest}
         >
-            <ModalTwoHeader title={getTitle(model)} />
+            <ModalTwoHeader
+                title={getTitle(model)}
+                hasClose={model.step === ForwardModalStep.Setup || model.step === ForwardModalStep.UserConfirmation}
+            />
             <ModalTwoContent>
                 {model.step === ForwardModalStep.Setup && (
                     <>
@@ -405,17 +413,22 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                         ) : null}
                     </>
                 )}
-                {model.step === ForwardModalStep.FinalizeForwardingSetup && (
+                {(model.step === ForwardModalStep.FixupPrimaryKeys ||
+                    model.step === ForwardModalStep.FinalizeForwardingSetup) && (
                     <>
                         <div className="text-center">
                             <img src={illustration} alt="" />
-                            <p>{c('email_forwarding_2023: Info')
-                                .jt`A confirmation email will be sent to ${boldForwardeeEmail}`}</p>
-                            <p>{c('email_forwarding_2023: Info')
-                                .t`Forwarding to this address will become active once the recipient accepts the forwarding.`}</p>
-                            <div>
-                                {c('Info').t`Finalizing forwarding setup`}
-                                <EllipsisLoader />
+                            <div className="text-center" role="alert">
+                                <div className="inline-block">
+                                    <LoadingTextStepper
+                                        steps={[
+                                            c('email_forwarding_2023: Progress status').t`Setting up forwarding`,
+                                            c('email_forwarding_2023: Progress status').t`Sending confirmation email`,
+                                        ]}
+                                        stepIndex={model.step === ForwardModalStep.FixupPrimaryKeys ? 0 : 1}
+                                        hideFutureSteps={false}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </>
@@ -432,8 +445,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                         </Button>
                     </>
                 )}
-                {(model.step === ForwardModalStep.UserConfirmation ||
-                    model.step === ForwardModalStep.FinalizeForwardingSetup) && (
+                {model.step === ForwardModalStep.UserConfirmation && (
                     <>
                         <Button onClick={handleBack} disabled={loading}>
                             {c('email_forwarding_2023: Action').t`Back`}
