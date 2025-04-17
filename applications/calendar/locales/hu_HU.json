@@ -2906,26 +2906,14 @@
       "All events in this series were updated.": [
         "Minden esemény ebben a sorozatban frissítve lett."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "A sorozat összes eseménye frissítve lett. Ezek változtak:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Az esemény előfordulása törölve lett."
       ],
       "This event occurrence was updated.": [
         "Ennek az események az előfordulása frissítve lett."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ennek az eseménynek az előfordulása megváltozott. Ezek változtak:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Ez az esemény frissítve lett."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ez az esemény megváltozott. Ezek változtak:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Meghívták a következő eseményre: ${ eventTitle }\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3363,6 +3351,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      ],
+      "Something went wrong. Please try again.": [
+        "Valami hiba történt. Kérjük próbálja újra."
       ],
       "Start time must be before end time": [
         "A kezdés idejének meg kell előznie a befejezés idejét"
@@ -4559,6 +4550,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
       ],
+      "Admin account allocation": [
+        "Tárhely admin fiók számára"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "A hirdetők nyomon követik az Ön böngészési tevékenységét, hogy célzott hirdetéseket mutassanak. A ${ VPN_APP_NAME } blokkolja a követőket és a hirdetéseket, ezáltal felgyorsítja a kapcsolatot, és javítja az online élményt."
       ],
@@ -4579,6 +4573,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig",
         "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig"
+      ],
+      "Allocated": [
+        "Lefoglalva"
+      ],
+      "Already allocated": [
+        "Már lefoglalva"
+      ],
+      "Already used": [
+        "Már használatban"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logó"
@@ -5212,6 +5215,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Maradjon könnyedén kapcsolatban a következő VPN-beállítások engedélyezésével:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "A szervezet további felhasználói számára lefoglalt tárhely"
+      ],
+      "Storage allocated to this user": [
+        "A felhasználó számára lefoglalt tárhely"
+      ],
+      "Storage for users": [
+        "Tárhely felhasználók számára"
+      ],
+      "Storage used by this user": [
+        "A felhasználó által használt tárhely"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Küldje el a befizetést az alábbi címre, vagy olvassa be a QR-kódot. A befizetés a megerősítést követően megjelenik a számláján."
       ],
@@ -5822,6 +5837,9 @@
       ],
       "Account holder": [
         "Fiók tulajdonos"
+      ],
+      "Account storage": [
+        "Fiók tárhely"
       ],
       "Add email address": [
         "E-mail cím hozzáadása"
@@ -6779,6 +6797,26 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kezdje el a használatot ${ priceCoupon } áron"
+      ],
+      "Starting from ${ pricing }": [
+        "Kezdőár: ${ pricing }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6800,26 +6838,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
       ]
     },
     "new_plans: feature": {
@@ -8160,14 +8178,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nem-privát felhasználók akkor kaphatnak adminisztrátori jogot, ha van beállítási kulcsuk"
+      ],
       "Organization key does not exist.": [
         "A szervezeti kulcs nem létezik."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "A szervezeti kulcsot aktiválni kell, az adminisztrátorok hozzáadásához."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privát felhasználók akkor kaphatnak adminisztrátori jogot, ha már legalább egyszer beléptek"
+      ],
       "The organization key must be activated first.": [
         "Először a szervezeti kulcs aktiválása szükséges."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Az összes csoportot törölnie kell, mielőtt új szervezeti kulcsot generál"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Az összes felhasználót privátra kell állítani, mielőtt egy új szervezeti kulcsot hozna létre"
       ],
       "You need access to the organization key to perform this operation.": [
         "A művelet végrehajtásához a szervezeti kulcs elérésére van szüksége."
@@ -10190,6 +10223,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } alkalmazások"
       ],
+      "Get the apps": [
+        "Alkalmazások letöltése"
+      ],
       "Get Zooming faster": [
         "Gyorsabb Zoomolás"
       ],
@@ -10606,6 +10642,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Megosztva végpontok közti titkosítással, ellenőrzött partnerrel"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
       ]
     },
     "Validation": {
