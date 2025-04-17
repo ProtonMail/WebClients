@@ -367,6 +367,9 @@
       "Make editor": [
         "Dar permisos para editar"
       ],
+      "Make manager": [
+        "Convertir como gestor"
+      ],
       "Make viewer": [
         "Dar permisos para ver"
       ],
@@ -852,6 +855,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Error con la autenticación. Confirma tu contraseña adicional para continuar con la exportación."
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Error de autenticación. Confirma tu segunda contraseña para continuar con la exportación"
+      ],
       "Biometric authentication failed": [
         "Error en la autenticación biométrica"
       ],
@@ -1068,7 +1074,7 @@
         "El archivo no coincide con el formato esperado."
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Error al importar la bóveda \"${ vaultData.name }\" : ${ errorMessage }"
+        "Error al importar la caja fuerte «${ vaultData.name }» : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Error al importar los elementos"
@@ -1210,6 +1216,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "El código PIN no es correcto. Intenta de nuevo."
+      ],
+      "Wrong second password": [
+        "La segunda contraseña no es correcta."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "No hay conexión. Reanuda la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
@@ -1407,6 +1416,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "El acceso a ${ PASS_APP_NAME } siempre requerirá la contraseña adicional."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "El acceso a ${ PASS_APP_NAME } siempre requerirá tu segunda contraseña."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "El acceso a ${ PASS_APP_NAME } requerirá tu huella dactilar o el código PIN del dispositivo."
@@ -1825,6 +1837,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Manager": [
+        "Gestor"
+      ],
       "me": [
         "conmigo"
       ],
@@ -2013,6 +2028,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirma tu código PIN para editar este ajuste."
+      ],
+      "Please confirm your second password": [
+        "Confirma tu segunda contraseña"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Confirma tu segunda contraseña para habilitar el bloqueo automático con datos biométricos."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Confirma tu segunda contraseña para activar el bloqueo automático con tu contraseña."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Confirma tu segunda contraseña para desactivar el modo sin conexión"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirma tu segunda contraseña para activar el modo sin conexión"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirma tu segunda contraseña para poder exportar tus datos de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Confirma tu segunda contraseña para cancelar el registro del bloqueo actual."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Confirma tu segunda contraseña para actualizar el tiempo de bloqueo automático."
       ],
       "Please consider leaving a review.": [
         "Te invitamos a dejar una reseña."
@@ -2269,6 +2308,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña adicional."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Desbloquea ${ PASS_SHORT_APP_NAME } con tu segunda contraseña"
       ],
       "Unlock with biometrics": [
         "Desbloquear usando datos biométricos"
@@ -2929,6 +2971,9 @@
       "Make all editors": [
         "Promover a todos como editores"
       ],
+      "Make all managers": [
+        "Convertir a todos como gestores"
+      ],
       "Make all viewers": [
         "Promover a todos como lectores"
       ],
@@ -3096,6 +3141,9 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Second password": [
+        "Segunda contraseña"
       ],
       "Secure links": [
         "Enlaces seguros"
@@ -3942,6 +3990,9 @@
       ],
       "Enter your PIN": [
         "Ingresa el código PIN"
+      ],
+      "Enter your second password": [
+        "Ingresa tu segunda contraseña"
       ],
       "Excluded items": [
         "Elementos excluidos"

@@ -1203,6 +1203,9 @@
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
       ],
+      "Wrong second password": [
+        "セカンドパスワードが正しくありません"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "現在オフラインです。 ${ PASS_SHORT_APP_NAME }のロックを解除するためにネットワークに接続してください。"
       ],
@@ -3048,6 +3051,9 @@
       ],
       "Reveal password": [
         "パスワードを表示する"
+      ],
+      "Second password": [
+        "セカンドパスワード"
       ],
       "Secure links": [
         "安全なリンク"
