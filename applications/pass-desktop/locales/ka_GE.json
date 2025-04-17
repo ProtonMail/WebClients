@@ -367,6 +367,9 @@
       "Make editor": [
         "რედაქტორობის მინიჭება"
       ],
+      "Make manager": [
+        "მენეჯერობის მინიჭება"
+      ],
       "Make viewer": [
         "მნახველობის მინიჭება"
       ],
@@ -1049,6 +1052,9 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ errorMessage }"
+      ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
@@ -1189,6 +1195,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
+      ],
+      "Wrong second password": [
+        "არასწორი მეორე პაროლი"
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
@@ -1797,6 +1806,9 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
+      ],
+      "Manager": [
+        "მენეჯერი"
       ],
       "me": [
         "მე"
@@ -2884,6 +2896,9 @@
       "Make all editors": [
         "ყველას მონიშვნა რედაქტორად"
       ],
+      "Make all managers": [
+        "მენეჯერობის მინიჭება ყველასთვის"
+      ],
       "Make all viewers": [
         "ყველას მონიშვნა დამთვალიერებლად"
       ],
@@ -3045,6 +3060,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Second password": [
+        "მეორე პაროლი"
       ],
       "Secure links": [
         "დაცული ბმულები"
@@ -3882,6 +3900,9 @@
       ],
       "Enter your PIN": [
         "შეიყვანეთ PIN-კოდი"
+      ],
+      "Enter your second password": [
+        "შეიყვანეთ თქვენი მეორე პაროლი"
       ],
       "Excluded items": [
         "ამოღებული ელემენტები"

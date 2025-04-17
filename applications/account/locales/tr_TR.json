@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Authenticate": [
         "Kimliği doğrula"
       ],
@@ -1093,11 +1096,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -1134,6 +1137,9 @@
       ],
       "Set as default": [
         "Varsayılan olarak ayarla"
+      ],
+      "Set as default mail application": [
+        "Varsayılan e-posta uygulaması olarak ayarla"
       ],
       "Set catch-all": [
         "Tümünü toplama adresi yap"
@@ -4200,15 +4206,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME }, hiçbir zaman ${ domain } etki alanından veya resmi bir ${ BRAND_NAME } uygulamasından gelmeyen bir kodu yazmanızı istemez."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Nasıl çalışır:** Oturum açmak istediğiniz aygıtta görüntülenen kodu bu aygıta yazın. **${ email }** olarak oturumunuz açılır. Her iki aygıt da etkin kalır. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Oturum açmak için bir kare kod taranabilsin"
-      ],
       "Code copied to clipboard": [
         "Kod panoya kopyalandı"
       ],
@@ -4217,15 +4214,6 @@
       ],
       "Enter code manually": [
         "Anahtarı el ile yazın"
-      ],
-      "New QR code": [
-        "Yeni kare kod"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Telefonunuzdaki ${ BRAND_NAME } uygulamasını açın"
-      ],
-      "Please scan a new QR code to try again": [
-        "Lütfen yeniden denemek için yeni bir kare kod tarayın"
       ],
       "QR code expired": [
         "Kare kodun süresi geçmiş"
@@ -4236,41 +4224,14 @@
       "QR code sign-in enabled": [
         "Kare kod ile oturum açma özelliği açık"
       ],
-      "Safety tips:": [
-        "Güvenlik ipuçları:"
-      ],
-      "Scan a QR code with your phone": [
-        "Telefonunuzla bir kare kod tarayın"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Oturum açmak için mobil aygıtınızdaki kare kodu tarayın"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Hemen oturum açmak için telefonunuzdaki ${ BRAND_NAME } uygulamasıyla bu kare kodu tarayın."
-      ],
-      "Sign in to another device": [
-        "Başka bir aygıtta oturum açın"
-      ],
-      "Sign in with another device": [
-        "Başka bir aygıtta oturum açın"
       ],
       "Sign in with QR code": [
         "Kare kod ile oturum aç"
       ],
-      "Tap **Scan QR code**": [
-        "**Kare kodu tara** üzerine dokunun"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "**Ayarlar** üzerine ve ardından **Başka bir aygıtta oturum aç** üzerine dokunun"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Oturum açmak istediğiniz aygıtın koduna erişmek için, oturum açma ekranının yardım menüsündeki **Kare kod ile oturum aç** düğmesine ve ardından **Anahtarı el ile yazın** üzerine dokunun. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "İçinde bir kod bulunan iletilere karşı dikkatli olun. Güvenmediğiniz bir siteden veya kişiden gelen bir kodu asla yazmayın."
-      ],
-      "We couldn't sign you in": [
-        "Oturumunuz açılamadı"
       ],
       "You have successfully signed in to another device": [
         "Başka bir aygıtta oturum açtınız"
@@ -4299,26 +4260,14 @@
       "All events in this series were updated.": [
         "Bu dizideki tüm etkinlikler güncellendi."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu dizideki tüm etkinlikler güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Bu etkinlik kopyası iptal edildi."
       ],
       "This event occurrence was updated.": [
         "Bu etkinlik kopyası güncellendi."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu etkinlik kopyası güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu etkinlik güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "${ eventTitle } etkinliğine davet edildiniz.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4857,6 +4806,9 @@
       "Failed to load OAuth modal.": [
         "OAuth penceresi yüklenemedi."
       ],
+      "Failed to load the STL preview": [
+        "STL ön izlemesi yüklenemedi"
+      ],
       "Failed to process the logo": [
         "Logo işlenemedi"
       ],
@@ -5130,11 +5082,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
-      "Something went wrong": [
-        "Bir sorun çıktı"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+      ],
+      "Something went wrong. Please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "status page": [
         "durum sayfası"
@@ -9714,11 +9666,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -10881,10 +10833,10 @@
       "Allow sharing outside the organization": [
         "Kuruluş dışına paylaşım yapılabilsin"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10896,11 +10848,11 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "And": [
-        "Ve"
-      ],
       "AND": [
         "VE"
+      ],
+      "And": [
+        "Ve"
       ],
       "and": [
         "ve"
@@ -11328,11 +11280,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Eğer"
-      ],
       "IF": [
         "EĞER"
+      ],
+      "If": [
+        "Eğer"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -11535,14 +11487,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
+      "OR": [
+        "VEYA"
+      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
-      ],
-      "OR": [
-        "VEYA"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -12175,11 +12127,11 @@
       "perform a password reset from your active session": [
         "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
       ],
-      "Privacy policy": [
-        "Gizlilik ilkesi"
-      ],
       "privacy policy": [
         "gizlilik ilkesi"
+      ],
+      "Privacy policy": [
+        "Gizlilik ilkesi"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
@@ -13544,14 +13496,6 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -13570,6 +13514,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -14207,17 +14159,6 @@
         "Bilgisayar"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ayın 10. günü"
@@ -14446,6 +14387,17 @@
       ],
       "Trash": [
         "Çöpe at"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
       ]
     },
     "Option delay send seconds": {
@@ -18492,6 +18444,9 @@
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
       ],
+      "Browser extensions": [
+        "Tarayıcı eklentileri"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
@@ -18504,10 +18459,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -18527,6 +18482,9 @@
       ],
       "Change second password": [
         "İkinci parolayı değiştir"
+      ],
+      "Check your default mail application": [
+        "Varsayılan e-posta uygulamanızı kontrol edin"
       ],
       "Choose an account": [
         "Bir hesap seçin"
@@ -19007,9 +18965,6 @@
       ],
       "Home": [
         "Giriş"
-      ],
-      "How can we help?": [
-        "Nasıl yardımcı olabiliriz?"
       ],
       "How does it work?": [
         "Nasıl çalışır?"

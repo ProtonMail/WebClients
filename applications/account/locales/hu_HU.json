@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
+      "Attention required": [
+        "Figyelem szükséges"
+      ],
       "Authenticate": [
         "Azonosítás"
       ],
@@ -1093,11 +1096,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "Select file": [
-        "Fájl kiválasztása"
-      ],
       "select file": [
         "fájl kiválasztása"
+      ],
+      "Select file": [
+        "Fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -4193,15 +4196,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "A ${ BRAND_NAME } soha nem fogja kérni, hogy olyan kódot adjon meg, amely nem a ${ domain } domain névről vagy egy hivatalos ${ BRAND_NAME } alkalmazásból származik."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Hogyan működik:** Írja be erre az eszközre azt a kódot, amely azon az eszközön jelenik meg, amelyre be szeretne jelentkezni. Ön **${ email }** néven lesz bejelentkezve. Mindkét eszköz aktív marad. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "QR-kód használatának engedélyezése a bejelentkezéshez"
-      ],
       "Code copied to clipboard": [
         "A kód a vágólapra másolva"
       ],
@@ -4210,15 +4204,6 @@
       ],
       "Enter code manually": [
         "Kód megadása manuálisan"
-      ],
-      "New QR code": [
-        "Új QR-kód"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Nyissa meg a(z) ${ BRAND_NAME } alkalmazást a telefonon"
-      ],
-      "Please scan a new QR code to try again": [
-        "Olvasson be egy új QR-kódot, és próbálja újra"
       ],
       "QR code expired": [
         "A QR-kód lejárt"
@@ -4229,41 +4214,14 @@
       "QR code sign-in enabled": [
         "A QR-kódos bejelentkezés engedélyezve"
       ],
-      "Safety tips:": [
-        "Biztonsági tippek:"
-      ],
-      "Scan a QR code with your phone": [
-        "Olvasson be egy QR-kódot a telefonjával"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "A QR-kód beolvasásával a mobilkészülékén bejelentkezhet"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Azonnali bejelentkezéshez olvassa be ezt a QR-kódot a telefonon lévő ${ BRAND_NAME } alkalmazásban."
-      ],
-      "Sign in to another device": [
-        "Bejelentkezés egy másik eszközre"
-      ],
-      "Sign in with another device": [
-        "Bejelentkezés egy másik eszközzel"
       ],
       "Sign in with QR code": [
         "Bejelentkezés QR-kóddal"
       ],
-      "Tap **Scan QR code**": [
-        "Érintse meg a **QR-kód beolvasása** opciót"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "Érintse meg a **Beállítások**-at, majd a **Bejelentkezés másik eszközre** lehetőséget"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "A bejelentkezni kívánt eszköz kódjának eléréséhez koppintson a bejelentkezési képernyő súgómenüjében a **Bejelentkezés QR-kóddal** gombra, majd a **Kulcs kézi beírása** lehetőségre. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Óvakodjon azoktól az üzenetektől, amelyek kódot tartalmaznak. Soha ne adjon meg kódot olyan weboldalon vagy személynek, amely nem megbízható."
-      ],
-      "We couldn't sign you in": [
-        "Nem sikerült bejelentkeznie"
       ],
       "You have successfully signed in to another device": [
         "Sikeresen bejelentkezett egy másik eszközre"
@@ -4292,26 +4250,14 @@
       "All events in this series were updated.": [
         "Minden esemény ebben a sorozatban frissítve lett."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "A sorozat összes eseménye frissítve lett. Ezek változtak:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Az esemény előfordulása törölve lett."
       ],
       "This event occurrence was updated.": [
         "Ennek az események az előfordulása frissítve lett."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ennek az eseménynek az előfordulása megváltozott. Ezek változtak:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Ez az esemény frissítve lett."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ez az esemény megváltozott. Ezek változtak:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Meghívták a következő eseményre: ${ eventTitle }\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5126,11 +5072,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
-      "Something went wrong": [
-        "Hiba történt"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Valami hiba történt. Kérjük próbálja újra."
       ],
       "status page": [
         "állapotjelző oldalunkat"
@@ -9706,11 +9652,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -10870,10 +10816,10 @@
       "Allow sharing outside the organization": [
         "A szervezeten kívüli megosztás engedélyezése"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10885,11 +10831,11 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -11317,11 +11263,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -11524,14 +11470,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -12164,11 +12110,11 @@
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
-      "Privacy policy": [
-        "Adatvédelmi irányelvek"
-      ],
       "privacy policy": [
         "adatvédelmi irányelvek"
+      ],
+      "Privacy policy": [
+        "Adatvédelmi irányelvek"
       ],
       "Reactivate now": [
         "Újraaktiválás most"
@@ -13533,14 +13479,6 @@
         "Oldja fel az összes ${ BRAND_NAME } prémium terméket és funkciót mindössze ${ priceLine }-ért. Bármikor lemondható."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -13559,6 +13497,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -14196,17 +14142,6 @@
         "Asztali számítógép"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "a hónap 10-ik napja"
@@ -14435,6 +14370,17 @@
       ],
       "Trash": [
         "Lomtár"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
       ]
     },
     "Option delay send seconds": {
@@ -18481,10 +18427,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -18984,9 +18930,6 @@
       ],
       "Home": [
         "Otthoni"
-      ],
-      "How can we help?": [
-        "Miben segíthetünk?"
       ],
       "How does it work?": [
         "Hogyan működik?"

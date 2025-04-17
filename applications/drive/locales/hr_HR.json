@@ -576,6 +576,9 @@
       "Show advanced PGP settings": [
         "Pokaži napredne PGP postavke"
       ],
+      "Show more": [
+        "Prikaži više"
+      ],
       "Show preview": [
         "Prikaži pregled"
       ],
@@ -3295,6 +3298,9 @@
       "(Expired)": [
         "(Isteklo)"
       ],
+      "Account storage": [
+        "Prostor za pohranu računa"
+      ],
       "Add email address": [
         "Dodaj adresu e-pošte"
       ],
@@ -3841,6 +3847,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3850,14 +3864,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -4969,6 +4975,9 @@
       ],
       "Folder details": [
         "Detalji mape"
+      ],
+      "Get the apps": [
+        "Preuzmite aplikacije"
       ],
       "Groups": [
         "Grupe"

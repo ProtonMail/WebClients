@@ -45,9 +45,9 @@
       "Add": [
         "Adicionar"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Adicionar ${ photos.length } foto para um novo álbum",
-        "Adicionar ${ photos.length } fotos para um novo álbum"
+      "Add ${ photoCount } photo to a new album": [
+        "Adicionar ${ photoCount } foto para um novo álbum",
+        "Adicionar ${ photoCount } fotos para um novo álbum"
       ],
       "Add account": [
         "Adicionar conta"
@@ -186,6 +186,9 @@
       "Close transfers": [
         "Fechar transferências"
       ],
+      "Collaborate on documents": [
+        "Colaborar em documentos"
+      ],
       "Collapse": [
         "Recolher"
       ],
@@ -203,6 +206,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura do link ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Conectar aplicativos e dispositivos"
       ],
       "Contact group": [
         "Grupo de contatos"
@@ -344,6 +350,9 @@
       "Download": [
         "Baixar"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
+      ],
       "Download (${ count })": [
         "Baixar (${ count })"
       ],
@@ -434,6 +443,9 @@
       "Get Started": [
         "Começar"
       ],
+      "Get the apps": [
+        "Obtenha os aplicativos"
+      ],
       "Get verification code": [
         "Obter código de verificação"
       ],
@@ -494,6 +506,9 @@
       "Import emails": [
         "Importar e-mails"
       ],
+      "Import emails, calendars, contacts": [
+        "Importar e-mails, calendários e contatos"
+      ],
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
       ],
@@ -542,8 +557,14 @@
       "Loading verification": [
         "Carregando verificação"
       ],
+      "Manage advanced account protections": [
+        "Gerenciar proteções avançada de conta"
+      ],
       "Manage folders": [
         "Gerenciar pastas"
+      ],
+      "Manage groups": [
+        "Gerenciar grupos"
       ],
       "Manage labels": [
         "Gerenciar marcadores"
@@ -553,6 +574,9 @@
       ],
       "Manage share": [
         "Gerenciar compartilhamentos"
+      ],
+      "Manage users/addresses": [
+        "Gerenciar usuários/endereços"
       ],
       "Mark as favorite": [
         "Marcar como favorito"
@@ -704,6 +728,9 @@
       "Remove bonuses": [
         "Remover bônus"
       ],
+      "Remove button": [
+        "Remover botão"
+      ],
       "Remove device": [
         "Remover dispositivo"
       ],
@@ -842,8 +869,20 @@
       "Set as cover": [
         "Definir como capa"
       ],
+      "Set recovery methods": [
+        "Definir métodos de recuperação"
+      ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
+      ],
+      "Set up 2FA": [
+        "Configurar A2F"
+      ],
+      "Set up a custom domain": [
+        "Configurar um domínio personalizado"
+      ],
+      "Set up email forwarding": [
+        "Configurar encaminhamento de e-mail"
       ],
       "Settings": [
         "Configurações"
@@ -863,11 +902,17 @@
       "Share via link": [
         "Compartilhar via link"
       ],
+      "Share your calendar with your team": [
+        "Compartilhar seu calendário com sua equipe"
+      ],
       "Sharing options": [
         "Opções de compartilhamento"
       ],
       "Show advanced PGP settings": [
         "Mostrar configurações PGP avançadas"
+      ],
+      "Show more": [
+        "Mostrar mais"
       ],
       "Show more download options": [
         "Mostrar mais opções de download"
@@ -944,6 +989,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ativar ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Desfazer"
       ],
@@ -974,6 +1022,9 @@
       "Upload": [
         "Enviar"
       ],
+      "Upload and share files": [
+        "Enviar e compartilhar arquivo"
+      ],
       "Upload anyway": [
         "Enviar assim mesmo"
       ],
@@ -997,6 +1048,12 @@
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Usar o ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usar o ${ VPN_SHORT_APP_NAME } para a privacidade de dados"
       ],
       "Use a different card": [
         "Usar outro cartão"
@@ -2718,6 +2775,11 @@
         "Suporte prioritário"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -2730,8 +2792,11 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Todos os eventos desta série foram atualizados. Aqui está o que mudou:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Aqui está o que mudou:"
+      ],
+      "NOTE:": [
+        "NOTA:"
       ],
       "This event occurrence was canceled.": [
         "Esta ocorrência de evento foi cancelada."
@@ -2739,17 +2804,8 @@
       "This event occurrence was updated.": [
         "Esta ocorrência de evento foi atualizada."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Esta ocorrência de evento foi atualizada. Aqui está o que mudou:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Este evento foi atualizado."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Este evento foi atualizado. Aqui está o que mudou:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Você está convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2889,11 +2945,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A pesquisa de conteúdo não pode ser ativada. Reinicie o aplicativo ou limpe os dados."
       ],
+      "Could not add to favorites": [
+        "Não foi possível adicionar aos favoritos"
+      ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
       ],
       "Could not open updated vault": [
         "Não foi possível abrir o cofre atualizado"
+      ],
+      "Could not remove from favorites": [
+        "Não foi possível remover dos favoritos."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -3144,6 +3206,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente mais tarde."
       ],
       "status page": [
         "página de status"
@@ -3781,9 +3846,9 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Adicionar ${ photos.length } foto a",
-        "Adicionar ${ photos.length } fotos a"
+      "Add ${ photoCount } photo to": [
+        "Adicionar ${ photoCount } foto a",
+        "Adicionar ${ photoCount } fotos a"
       ],
       "Add to shared album": [
         "Adicionar ao álbum compartilhado"
@@ -3794,9 +3859,9 @@
       "Recent": [
         "Recente"
       ],
-      "Share ${ photos.length } photo via": [
-        "Compartilhar ${ photos.length } foto via",
-        "Compartilhar ${ photos.length } fotos via"
+      "Share ${ photoCount } photo via": [
+        "Compartilhar ${ photoCount } foto via",
+        "Compartilhar ${ photoCount } fotos via"
       ]
     },
     "Hint": {
@@ -4373,6 +4438,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
+      "Admin account allocation": [
+        "Alocação da conta do administrador"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Os anunciantes rastreiam sua navegação para exibir anúncios segmentados. O ${ VPN_APP_NAME } bloqueia rastreadores e anúncios, tornando sua conexão mais rápida e melhorando sua experiência on-line."
       ],
@@ -4393,6 +4461,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Alocado"
+      ],
+      "Already allocated": [
+        "Já alocado"
+      ],
+      "Already used": [
+        "Já usado"
       ],
       "Also try looking in Trash.": [
         "Verifique sua lixeira."
@@ -5197,6 +5274,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Aguarde enquanto atualizamos seus dados. Isso pode levar alguns segundos."
+      ],
       "Preparing link to file": [
         "Preparando link para o arquivo"
       ],
@@ -5329,6 +5409,9 @@
       "Session timed out": [
         "Sessão expirada"
       ],
+      "Set up your organization": [
+        "Configure a sua organização"
+      ],
       "Setting up ${ feature }…": [
         "Configurando ${ feature }…"
       ],
@@ -5397,6 +5480,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantenha-se conectado de forma simples ativando as seguintes configurações de VPN:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Armazenamento atribuído a outros usuários desta organização"
+      ],
+      "Storage allocated to this user": [
+        "Armazenamento alocado a este usuário"
+      ],
+      "Storage for users": [
+        "Armazenamento para usuários"
+      ],
+      "Storage used by this user": [
+        "Armazenamento usado por este usuário"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
@@ -6097,6 +6192,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Account storage": [
+        "Armazenamento da conta"
+      ],
       "Add email address": [
         "Adicionar endereços de e-mail"
       ],
@@ -6746,8 +6844,50 @@
       "Drafts": [
         "Rascunhos"
       ],
+      "How to add users": [
+        "Como adicionar usuários"
+      ],
+      "How to add Zoom links": [
+        "Como adicionar os links do Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Como colaborar em ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Como ativar o ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Como migrar para a ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Como configurar o ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Como configurar um domínio personalizado"
+      ],
+      "How to set up SMTP": [
+        "Como configurar SMTP"
+      ],
+      "How to share a calendar": [
+        "Como compartilhar um calendário"
+      ],
+      "How to share via email": [
+        "Como compartilhar via e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Como usar o ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Como usar o ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Como usar o encaminhamento de e-mail"
+      ],
+      "How to use Groups": [
+        "Como usar os grupos"
       ],
       "if your data is leaked": [
         "se seus dados vazarem"
@@ -6796,6 +6936,9 @@
       ],
       "Trash": [
         "Lixeira"
+      ],
+      "Types of recovery methods": [
+        "Tipos de métodos de recuperação"
       ],
       "What’s this?": [
         "O que é isso?"
@@ -7221,29 +7364,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Excluir conta"
-      ],
-      "Downgrade account": [
-        "Fazer downgrade da conta"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter o ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Manter o ${ plan }"
-      ],
-      "Keep account": [
-        "Manter conta"
-      ],
-      "Switch plan": [
-        "Mudar de plano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
@@ -7265,6 +7385,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Excluir conta"
+      ],
+      "Downgrade account": [
+        "Fazer downgrade da conta"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Manter o ${ plan }"
+      ],
+      "Keep account": [
+        "Manter conta"
+      ],
+      "Switch plan": [
+        "Mudar de plano"
       ]
     },
     "new_plans: feature": {
@@ -7858,11 +8001,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7875,6 +8013,11 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8788,14 +8931,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Usuários não privados podem ser promovidos a administradores quando configurarem suas chaves"
+      ],
       "Organization key does not exist.": [
         "A chave da organização não existe."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "A chave da organização deve ser ativada para conceder privilégios de administrador"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Usuários privados podem ser promovidos a administradores quando fizerem login pela primeira vez"
+      ],
       "The organization key must be activated first.": [
         "A chave da organização deve ser ativada primeiro."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Você deve excluir todos os grupos antes de gerar uma nova chave de organização."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Você deve tornar privados todos os usuários antes de gerar uma nova chave de organização."
       ],
       "You need access to the organization key to perform this operation.": [
         "Você precisa ter acesso à chave da organização para realizar esta operação."
@@ -9022,6 +9180,9 @@
       "New name": [
         "Novo nome"
       ],
+      "Organization name": [
+        "Nome da organização"
+      ],
       "Password": [
         "Senha"
       ],
@@ -9054,6 +9215,9 @@
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
+      ],
+      "Your organization name": [
+        "Seu nome da organização"
       ]
     },
     "Placeholder for contact group name": {
@@ -10515,6 +10679,9 @@
       "Add to ${ groupName }": [
         "Adicionar a ${ groupName }"
       ],
+      "Add user": [
+        "Adicionar usuário"
+      ],
       "Addresses": [
         "Endereços"
       ],
@@ -10591,6 +10758,9 @@
       "Clearing data": [
         "Limpando dados"
       ],
+      "Collaborate on documents": [
+        "Colaborar em documentos"
+      ],
       "Completed": [
         "Concluído"
       ],
@@ -10605,6 +10775,9 @@
       ],
       "Confirmation required": [
         "Confirmação necessária"
+      ],
+      "Connect apps and devices": [
+        "Conectar aplicativos e dispositivos"
       ],
       "Contact Details": [
         "Detalhes do contato"
@@ -10704,6 +10877,9 @@
       "Download ${ date }": [
         "Baixar ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Baixar aplicativo"
       ],
@@ -10752,6 +10928,9 @@
       "Enable 2FA": [
         "Ativar A2F"
       ],
+      "Enable advanced account protection": [
+        "Ativar proteção avançada de conta com"
+      ],
       "Enable drive search": [
         "Ativar pesquisa de drive"
       ],
@@ -10789,6 +10968,9 @@
       "Get more from your VPN": [
         "Obter mais da sua VPN"
       ],
+      "Get the apps": [
+        "Obtenha os aplicativos"
+      ],
       "Gift": [
         "Presente"
       ],
@@ -10819,6 +11001,9 @@
       ],
       "Import contacts": [
         "Importar contatos"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importar e-mails, calendários e contatos"
       ],
       "Import events": [
         "Importar eventos"
@@ -10943,6 +11128,12 @@
       "Open actions dropdown": [
         "Abrir menu de ações"
       ],
+      "Org setup": [
+        "Configuração da organização"
+      ],
+      "Organization setup": [
+        "Configuração da organização"
+      ],
       "Original size": [
         "Tamanho original"
       ],
@@ -11052,14 +11243,26 @@
       "Select link expiration time": [
         "Selecionar hora de expiração do link"
       ],
+      "Set recovery methods": [
+        "Definir um métodos de recuperação"
+      ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
+      ],
+      "Set up email forwarding": [
+        "Configurar encaminhamento de e-mail"
+      ],
+      "Set up your organization": [
+        "Configure a sua organização"
       ],
       "Settings": [
         "Configurações"
       ],
       "Share ${ name }": [
         "Compartilhar ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Compartilhar seu calendário com sua equipe"
       ],
       "Shared": [
         "Compartilhado"
@@ -11121,6 +11324,9 @@
       "Trash": [
         "Lixeira"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ativar ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Tipo"
       ],
@@ -11130,8 +11336,14 @@
       "Untitled document ${ date }": [
         "Documento sem título ${ date }"
       ],
+      "Updating your photos": [
+        "Atualizando suas fotos"
+      ],
       "Upgrade complete!": [
         "Upgrade concluído!"
+      ],
+      "Upload and share files": [
+        "Enviar e compartilhar arquivo"
       ],
       "Uploaded": [
         "Enviado"
@@ -11141,6 +11353,9 @@
       ],
       "Uploading a large file or folder": [
         "Carregar um arquivo ou pasta grande"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usar o ${ VPN_SHORT_APP_NAME } para a privacidade de dados"
       ],
       "Verification failed": [
         "Erro na verificação"
@@ -11315,6 +11530,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
       ]
     },
     "Validation": {

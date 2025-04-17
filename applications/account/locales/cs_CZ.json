@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
+      "Attention required": [
+        "Vyžadována pozornost"
+      ],
       "Authenticate": [
         "Ověřit"
       ],
@@ -256,6 +259,9 @@
       "Close this banner": [
         "Zavřít tento banner"
       ],
+      "Collaborate on documents": [
+        "Spolupracovat na dokumentech"
+      ],
       "Color": [
         "Barva"
       ],
@@ -276,6 +282,12 @@
       ],
       "Connect": [
         "Připojit"
+      ],
+      "Connect apps and devices": [
+        "Připojit aplikace a zařízení"
+      ],
+      "Connect to video conferencing": [
+        "Připojit se k videokonferenci"
       ],
       "Connected": [
         "Připojeno"
@@ -472,6 +484,9 @@
       "Download": [
         "Stáhnout"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
       "Download CSV sample": [
         "Stáhnout ukázku CSV"
       ],
@@ -661,6 +676,9 @@
       "Get the app": [
         "Získat aplikaci"
       ],
+      "Get the apps": [
+        "Získat aplikace"
+      ],
       "Get the browser extension": [
         "Získat rozšíření prohlížeče"
       ],
@@ -708,6 +726,9 @@
       ],
       "Import emails": [
         "Importovat e-maily"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovat e-maily, kalendáře a kontakty"
       ],
       "Import from Google": [
         "Importovat z Google"
@@ -784,17 +805,26 @@
       "Make admin": [
         "Nastavit správcem"
       ],
+      "Manage advanced account protections": [
+        "Spravovat pokročilé ochrany účtu"
+      ],
       "Manage communication preferences": [
         "Spravovat nastavení komunikace"
       ],
       "Manage folders": [
         "Spravovat složky"
       ],
+      "Manage groups": [
+        "Spravovat skupiny"
+      ],
       "Manage labels": [
         "Spravovat štítky"
       ],
       "Manage subscription": [
         "Spravovat předplatné"
+      ],
+      "Manage users/addresses": [
+        "Spravovat uživatele/ adresy"
       ],
       "Mark as default": [
         "Označit jako výchozí"
@@ -942,6 +972,9 @@
       ],
       "Remove bonuses": [
         "Odebrat bonusy"
+      ],
+      "Remove button": [
+        "Odebrat tlačítko"
       ],
       "Remove calendar": [
         "Odebrat kalendář"
@@ -1093,11 +1126,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -1144,8 +1177,20 @@
       "Set new password": [
         "Nastavit nové heslo"
       ],
+      "Set recovery methods": [
+        "Nastavit metody obnovení"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
+      ],
+      "Set up 2FA": [
+        "Nastavit 2FA"
+      ],
+      "Set up a custom domain": [
+        "Nastavte vlastní doménu"
+      ],
+      "Set up email forwarding": [
+        "Nastavit přeposílání e-mailů"
       ],
       "Settings": [
         "Nastavení"
@@ -1155,6 +1200,9 @@
       ],
       "Share via link": [
         "Sdílet přes odkaz"
+      ],
+      "Share your calendar with your team": [
+        "Sdílet kalendář se svým týmem"
       ],
       "Sharing options": [
         "Možnosti sdílení"
@@ -1261,6 +1309,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnout ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Underline": [
         "Podtržení"
       ],
@@ -1312,6 +1363,9 @@
       "Upload": [
         "Nahrát"
       ],
+      "Upload and share files": [
+        "Nahrát a sdílet soubory"
+      ],
       "Upload logo": [
         "Nahrát logo"
       ],
@@ -1320,6 +1374,12 @@
       ],
       "Use ${ label } theme": [
         "Použít ${ label } motiv"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Použit ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
       "Use a different card": [
         "Použít jinou kartu"
@@ -3800,11 +3860,17 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
+      ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME } není vaše výchozí e-mailová aplikace."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } je vaše výchozí e-mailová aplikace."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Přidejte složky a soubory do ${ DRIVE_APP_NAME } a pozvěte členy týmu k prohlížení nebo úpravám."
       ],
       "Also included": [
         "Zahrnuje také"
@@ -3815,14 +3881,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Automatické přeposílání příchozích e-mailů na jinou e-mailovou adresu."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické třídění příchozích zpráv předtím, než se dostanou do doručené pošty."
       ],
       "Available with ${ MAIL_APP_NAME } Plus": [
         "K dispozici s ${ MAIL_APP_NAME } Plus"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Při konfiguraci nejprve aktivujte svou organizaci a přizpůsobte e-mailovou adresu."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Propojte svůj CRM, webové stránky, tiskárny a další."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvořte schůzku na Zoomu a jedním kliknutím přidejte podrobnosti o připojení k události."
@@ -3830,8 +3905,17 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
       ],
+      "Create groups you can email with a single address.": [
+        "Vytvářejte skupiny, kterým můžete posílat e-maily pomocí jediné adresy."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Snadný přístup k e-mailu a kalendáři na počítači i v mobilu."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
@@ -3842,17 +3926,35 @@
       "Enable detailed events to access these features": [
         "Povolením podrobných událostí získáte přístup k těmto funkcím"
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Podporujte používání dvoufaktorového ověřování ve vaší organizaci pro zvýšení bezpečnosti."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Zajistěte bezpečný přístup k datům organizace, i když je váš tým vzdálený nebo používá veřejnou Wi-Fi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zajistěte špičkové zabezpečení svého účtu pomocí programu ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Zajistěte si přístup ke svému účtu a datům i v případě ztráty hesla ${ BRAND_NAME }."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Každý člen vaší organizace se může připojit ke sdíleným serverům ve všech zemích."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémový přechod na ${ BRAND_NAME } importujte data ze služeb Google, Outlook a dalších."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Pozváním přátel do ${ BRAND_NAME } získáte až ${ credits } kreditů."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Pomozte svému týmu bezpečně ukládat hesla k citlivým obchodním informacím a informacím o klientech."
       ],
       "If disabled, only admins will have access.": [
         "Pokud je deaktivováno, budou mít přístup pouze správci."
@@ -3866,6 +3968,9 @@
       "Learn more about common problems": [
         "Více informací o běžných problémech"
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Umožňuje okamžitě přidávat odkazy na schůzky do pozvánek na události."
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Vytvořte si vlastní zápatí e-mailu — prezentujte svou jedinečnou značku, ne naši."
       ],
@@ -3878,8 +3983,14 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Nastavte účty pro všechny uživatele a pozvěte je, aby se připojili k ${ BRAND_NAME }."
+      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Nastavení automatického přeposílání pro přesměrování příchozích e-mailů na jinou e-mailovou adresu."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
@@ -3889,6 +4000,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "K odstranění zápatí ${ MAIL_APP_NAME } navyšte tarif a odemkněte ještě více prémiových funkcí."
+      ],
+      "To start, give your organization a name.": [
+        "Nejprve pojmenujte vaši organizaci."
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
@@ -3904,6 +4018,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Navyšte a získejte kratší, snadno zapamatovatelnou adresu ${ activatePmUser } kromě své stávající e-mailové adresy."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Můžete nadále zvát přátele, ale nebudete moci získávat další kredity"
@@ -4241,14 +4358,20 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } vás nikdy nepožádá o zadání kódu, který nepochází z domény ${ domain } nebo z oficiální aplikace ${ BRAND_NAME }."
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } vás nikdy nepožádá o naskenování QR kódu, který nepochází z ${ domain } nebo z oficiální aplikace ${ BRAND_NAME }."
       ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Jak to funguje:** Zadejte kód zobrazený na zařízení, ke kterému se chcete přihlásit. Budete přihlášeni jako **${ email }**. Obě zařízení zůstanou aktivní. "
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } vás nikdy nebude nečekaně kontaktovat s žádostí o přihlášení pomocí QR kódu."
       ],
-      "Allow scanning a QR code to sign in": [
-        "Povolte skenování QR kódu pro přihlášení"
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Jak to funguje:** V tomto zařízení zadejte kód zobrazený na zařízení, ke kterému se chcete přihlásit. Budete přihlášeni jako **${ email }**. Obě zařízení zůstanou aktivní."
+      ],
+      "Allow QR code sign‒in": [
+        "Povolit přihlášení pomocí QR kódu"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Dávejte si pozor na zprávy s QR kódy. Kód skenujte pouze v případě, že důvěřujete jeho zdroji."
       ],
       "Code copied to clipboard": [
         "Kód zkopírován do schránky"
@@ -4259,14 +4382,14 @@
       "Enter code manually": [
         "Zadejte kód ručně"
       ],
-      "New QR code": [
-        "Nový QR kód"
+      "Generate QR code": [
+        "Generovat QR kód"
       ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Otevřete aplikaci ${ BRAND_NAME } v telefonu"
+      "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
+        "Získejte jiné zařízení, které je přihlášeno k vašemu účtu ${ BRAND_NAME }"
       ],
-      "Please scan a new QR code to try again": [
-        "Prosím, naskenujte nový QR kód a zkuste to znovu"
+      "How to sign in using another device": [
+        "Jak se přihlásit pomocí jiného zařízení"
       ],
       "QR code expired": [
         "Platnost QR kódu vypršela"
@@ -4277,41 +4400,35 @@
       "QR code sign-in enabled": [
         "Přihlášení pomocí QR kódu je povoleno"
       ],
-      "Safety tips:": [
-        "Bezpečnostní tipy:"
-      ],
-      "Scan a QR code with your phone": [
-        "Naskenujte QR kód pomocí telefonu"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Naskenujte QR kód na svém mobilním zařízení a přihlaste se"
       ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Naskenujte tento QR kód v aplikaci ${ BRAND_NAME } ve svém telefonu a okamžitě se přihlaste."
+      "Scan the code to sign in": [
+        "Naskenujte kód a přihlaste se"
       ],
-      "Sign in to another device": [
-        "Přihlaste se k jinému zařízení"
+      "Security tips": [
+        "Bezpečnostní tipy"
       ],
-      "Sign in with another device": [
-        "Přihlášení pomocí jiného zařízení"
+      "Select **Sign in on another device → Scan QR code**": [
+        "Vyberte **Přihlásit se na jiném zařízení → Skenovat QR kód**"
+      ],
+      "Sign in on another device": [
+        "Přihlaste se na jiném zařízení"
       ],
       "Sign in with QR code": [
         "Přihlaste se pomocí QR kódu"
       ],
-      "Tap **Scan QR code**": [
-        "Klepněte na **Skenovat QR kód**"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "Klepněte na **Nastavení** a poté na **Přihlásit se k jinému zařízení**"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Chcete-li získat přístup ke kódu zařízení, ke kterému se chcete přihlásit, klepněte na tlačítko **Přihlásit se pomocí QR kódu** v nabídce nápovědy na přihlašovací obrazovce a poté klepněte na **Zadat klíč ručně**. "
       ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Dávejte si pozor na zprávy, které obsahují kód. Nikdy nezadávejte kód z webové stránky nebo od osoby, které nedůvěřujete."
+      "Try generating a new QR code.": [
+        "Zkuste vygenerovat nový QR kód."
       ],
-      "We couldn't sign you in": [
-        "Nemohli jsme vás přihlásit"
+      "Using that device, open any ${ BRAND_NAME } app and select **Settings**": [
+        "Pomocí tohoto zařízení otevřete libovolnou aplikaci ${ BRAND_NAME } a vyberte **Nastavení**"
+      ],
+      "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
+        "Funguje, pokud máte jiné zařízení, které je přihlášeno k ${ BRAND_NAME }"
       ],
       "You have successfully signed in to another device": [
         "Úspěšně jste se přihlásili k jinému zařízení"
@@ -4328,6 +4445,11 @@
         "Tuto záložku můžete bezpečně zavřít."
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "POZNÁMKA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -4340,8 +4462,11 @@
       "All events in this series were updated.": [
         "Všechny události této série byly aktualizovány."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všechny události této série byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Toto se změnilo:"
+      ],
+      "NOTE:": [
+        "POZNÁMKA:"
       ],
       "This event occurrence was canceled.": [
         "Tento výskyt události byl zrušen."
@@ -4349,17 +4474,8 @@
       "This event occurrence was updated.": [
         "Tento výskyt události byl aktualizován."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tento výskyt události byl aktualizován. Zde jsou uvedeny změny:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tato událost byla aktualizována. Zde jsou změny:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Jste pozváni na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5184,11 +5300,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
       ],
-      "Something went wrong": [
-        "Něco se pokazilo"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Něco se pokazilo, prosím zkuste to později."
       ],
       "status page": [
         "stavová stránka"
@@ -5306,6 +5422,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Ověření se nezdařilo, zkuste to prosím za hodinu znovu."
+      ],
+      "We couldn't sign you in": [
+        "Nemohli jsme vás přihlásit"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Zastavili jsme podepisování DKIM kvůli problémům s vaší konfigurací DNS. Chcete-li pokračovat v podepisování, postupujte podle pokynů níže."
@@ -8931,6 +9050,9 @@
       "Open source": [
         "Otevřený zdrojový kód"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otevřete průvodce, kde najdete doporučené kroky a užitečné odkazy."
+      ],
       "or ${ selectFileButton }": [
         "nebo ${ selectFileButton }"
       ],
@@ -9339,6 +9461,9 @@
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
+      "Set up your organization": [
+        "Nastavte svou organizaci"
+      ],
       "Setting successfully saved": [
         "Nastavení úspěšně uloženo"
       ],
@@ -9623,6 +9748,9 @@
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráze, kterou jste byli vyzváni nastavit."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Jedná se o název nebo přezdívku vaší organizace, kterou uživatelé uvidí. Můžete je kdykoli změnit."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Toto je soubor pro obnovení nebo šifrovací klíč, který jste si dříve uložili."
@@ -9921,11 +10049,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -11129,10 +11257,10 @@
       "Allow sharing outside the organization": [
         "Povolit sdílení mimo organizaci"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11144,10 +11272,10 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -11576,11 +11704,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Pokud"
-      ],
       "IF": [
         "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -11783,14 +11911,14 @@
       "Optional": [
         "Volitelné"
       ],
+      "OR": [
+        "NEBO"
+      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
-      ],
-      "OR": [
-        "NEBO"
       ],
       "Organization name": [
         "Název organizace"
@@ -12368,6 +12496,9 @@
       "Encryption and keys": [
         "Šifrování a klíče"
       ],
+      "Enforcing 2FA for organizations": [
+        "Vynucení 2FA pro organizace"
+      ],
       "Forgot email?": [
         "Zapomněli jste e-mail?"
       ],
@@ -12398,11 +12529,53 @@
       "How does monitoring work?": [
         "Jak sledování funguje?"
       ],
+      "How to add users": [
+        "Jak přidat uživatele"
+      ],
+      "How to add Zoom links": [
+        "Jak přidat odkazy na Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Jak spolupracovat v ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Jak povolit ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Jak migrovat do ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
       ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Jak nastavit ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Jak nastavit vlastní doménu"
+      ],
+      "How to set up SMTP": [
+        "Jak nastavit SMTP"
+      ],
+      "How to share a calendar": [
+        "Jak sdílet kalendář"
+      ],
+      "How to share via email": [
+        "Jak sdílet pomocí e-mailu"
+      ],
       "How to unlock data": [
         "Jak odemknout údaje"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Jak používat ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Jak používat ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Jak používat přeposílání e-mailů"
+      ],
+      "How to use Groups": [
+        "Jak používat skupiny"
       ],
       "if your data is leaked": [
         "když dojde k úniku vašich dat"
@@ -12428,11 +12601,11 @@
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
       ],
-      "Privacy policy": [
-        "Zásady ochrany osobních údajů"
-      ],
       "privacy policy": [
         "zásadami ochrany osobních údajů"
+      ],
+      "Privacy policy": [
+        "Zásady ochrany osobních údajů"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -12457,6 +12630,9 @@
       ],
       "Trouble signing in?": [
         "Potíže s přihlášením?"
+      ],
+      "Types of recovery methods": [
+        "Typy metod obnovení"
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
@@ -13867,14 +14043,6 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -13893,6 +14061,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14544,17 +14720,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. den v měsíci"
@@ -14804,6 +14969,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Option delay send seconds": {
@@ -15739,6 +15915,9 @@
       "Name": [
         "Jméno"
       ],
+      "Organization name": [
+        "Název organizace"
+      ],
       "Other": [
         "Ostatní"
       ],
@@ -15804,6 +15983,9 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "Your organization name": [
+        "Název vaší organizace"
       ],
       "yourdomain.com": [
         "vasedomena.cz"
@@ -16440,6 +16622,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL konektoru SCIM které váš IdP agent zprovoznění přeposílá data SCIM"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Nastavení organizace a zabezpečení účtu"
       ]
     },
     "Security Center - Info": {
@@ -18908,6 +19095,9 @@
       "Add to spam list": [
         "Přidat do seznamu spamů"
       ],
+      "Add user": [
+        "Přidat uživatele"
+      ],
       "Add user accounts": [
         "Přidat uživatelské účty"
       ],
@@ -19001,10 +19191,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -19046,6 +19236,9 @@
       "Close": [
         "Zavřít"
       ],
+      "Collaborate on documents": [
+        "Spolupracovat na dokumentech"
+      ],
       "Composing": [
         "Psaní"
       ],
@@ -19067,11 +19260,20 @@
       "Connect ${ name }": [
         "Připojit ${ name }"
       ],
+      "Connect apps and devices": [
+        "Připojit aplikace a zařízení"
+      ],
       "Connect organization": [
         "Připojení organizace"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Připojte se k ${ VPN_CONNECTIONS } zařízení současně s ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Připojit se k videokonferenci"
+      ],
+      "Connect your custom domain": [
+        "Připojení vlastní domény"
       ],
       "Connection status": [
         "Stav připojení"
@@ -19274,6 +19476,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Snížit na ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
       ],
@@ -19355,11 +19560,17 @@
       "Email privacy": [
         "Soukromí emailu"
       ],
+      "Enable advanced account protection": [
+        "Povolení pokročilé ochrany účtu"
+      ],
       "Enable for all users": [
         "Povolit pro všechny uživatele"
       ],
       "Encryption and keys": [
         "Šifrování a klíče"
+      ],
+      "Enhance security with 2FA": [
+        "Zvýšení zabezpečení pomocí 2FA"
       ],
       "Enter 2FA code": [
         "Zadejte kód 2FA"
@@ -19432,6 +19643,9 @@
       ],
       "For Windows": [
         "Pro Windows"
+      ],
+      "Forgot password": [
+        "Zapomenuté heslo"
       ],
       "Forgot recovery method": [
         "Zapomenutá metoda obnovení"
@@ -19514,9 +19728,6 @@
       "Home": [
         "Domovská stránka"
       ],
-      "How can we help?": [
-        "Jak můžeme pomoci?"
-      ],
       "How does it work?": [
         "Jak to funguje?"
       ],
@@ -19546,6 +19757,9 @@
       ],
       "Import contacts": [
         "Importovat kontakty"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovat e-maily, kalendáře a kontakty"
       ],
       "Import events": [
         "Import událostí"
@@ -19685,6 +19899,9 @@
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
       ],
+      "Org setup": [
+        "Nastavení organizace"
+      ],
       "Organization filters": [
         "Filtry organizace"
       ],
@@ -19693,6 +19910,9 @@
       ],
       "Organization name": [
         "Název organizace"
+      ],
+      "Organization setup": [
+        "Nastavení organizace"
       ],
       "Origin": [
         "Původ"
@@ -19916,11 +20136,17 @@
       "Set organization name": [
         "Nastavit název organizace"
       ],
+      "Set recovery methods": [
+        "Nastavit metody obnovení"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "Nastavit ${ protonDuoPlanName }"
       ],
       "Set up a recovery method": [
         "Nastavit metodu obnovení"
+      ],
+      "Set up email forwarding": [
+        "Nastavit přeposílání e-mailů"
       ],
       "Set up forwarding": [
         "Nastavit přeposílání"
@@ -19931,6 +20157,9 @@
       "Set up your family account": [
         "Nastavte si rodinný účet"
       ],
+      "Set up your organization": [
+        "Nastavte svou organizaci"
+      ],
       "Set your password": [
         "Nastavte si heslo"
       ],
@@ -19939,6 +20168,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Nastavení vyhrazených serverů upgradem na Business"
+      ],
+      "Share your calendar with your team": [
+        "Sdílet kalendář se svým týmem"
       ],
       "Shared servers": [
         "Sdílené servery"
@@ -19964,6 +20196,12 @@
       "Signed in to member account": [
         "Přihlášeno k členskému účtu"
       ],
+      "Simplify email distribution": [
+        "Zjednodušení distribuce e-mailů"
+      ],
+      "Simplify password management": [
+        "Zjednodušení správy hesel"
+      ],
       "Single sign-on": [
         "Jednotné přihlášení"
       ],
@@ -19981,6 +20219,9 @@
       ],
       "Spam, block, and allow lists": [
         "Seznamy spamu, blokovaných a povolených"
+      ],
+      "Special Offer": [
+        "Speciální nabídka"
       ],
       "Start a new import": [
         "Zahájit nový import"
@@ -20048,6 +20289,9 @@
       "Track your referrals": [
         "Sledujte svá doporučení"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnout ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "TV přihlášení"
       ],
@@ -20075,6 +20319,9 @@
       "Upgrade your privacy": [
         "Zvyšte své soukromí"
       ],
+      "Upload and share files": [
+        "Nahrát a sdílet soubory"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Nahrajte soubor CSV pro vytvoření více účtů"
       ],
@@ -20083,6 +20330,9 @@
       ],
       "Usage Report": [
         "Hlášení o používání"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
       "User": [
         "Uživatel"
@@ -20137,6 +20387,9 @@
       ],
       "Weak passwords": [
         "Slabá hesla"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vítejte v ${ BRAND_NAME } for Business"
       ],
       "What is an alias?": [
         "Co je alias?"

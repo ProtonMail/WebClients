@@ -364,6 +364,9 @@
       "Make editor": [
         "成为编辑者"
       ],
+      "Make manager": [
+        "设为管理员"
+      ],
       "Make viewer": [
         "成为查看者"
       ],
@@ -397,10 +400,10 @@
       "Move to another vault": [
         "移至另一个保险库"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至回收站"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至回收站"
       ],
       "Multiple select": [
@@ -817,6 +820,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "身份验证失败。请确认您的额外密码以继续导出"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "身份验证失败。请确认您的二次密码以继续导出"
+      ],
       "Biometric authentication failed": [
         "生物特征认证失败"
       ],
@@ -1174,6 +1180,9 @@
       "Wrong PIN code. Try again.": [
         "解锁密码错误，请重试。"
       ],
+      "Wrong second password": [
+        "副密码错误"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "您目前处于离线状态。请恢复连接以解锁 ${ PASS_SHORT_APP_NAME }。"
       ],
@@ -1330,6 +1339,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "访问 ${ PASS_APP_NAME } 将始终需要您的额外密码。"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "访问 ${ PASS_APP_NAME } 将始终需要您的二次密码。"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
@@ -1751,6 +1763,9 @@
       "Make it your own": [
         "让它属于您自己"
       ],
+      "Manager": [
+        "管理员"
+      ],
       "me": [
         "我"
       ],
@@ -1771,9 +1786,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -1933,6 +1945,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "请输入 PIN 码以更改此设置。"
+      ],
+      "Please confirm your second password": [
+        "请确认您的二次密码"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "请确认您的二次密码，以便使用生物识别技术自动锁定。"
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "请确认您的二次密码，以便使用您的密码自动锁定。"
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "请确认您的二次密码，以便停用离线模式"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "请确认您的二次密码，以便启用离线模式"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "请确认您的二次密码，以便导出您的 ${ PASS_APP_NAME } 数据"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "请确认您的二次密码，以取消您当前的锁定。"
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "请确认您的二次密码，以便更新自动锁定时间。"
       ],
       "Please consider leaving a review.": [
         "请考虑留下评论。"
@@ -2188,6 +2224,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "用您的额外密码解锁 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "使用您的二次密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock with biometrics": [
         "使用生物识别技术解锁"
@@ -2782,6 +2821,9 @@
       "Make all editors": [
         "将所有编辑者设为"
       ],
+      "Make all managers": [
+        "将所有人设为管理者"
+      ],
       "Make all viewers": [
         "将所有查看者设为"
       ],
@@ -2934,6 +2976,9 @@
       ],
       "Reveal password": [
         "显示密码"
+      ],
+      "Second password": [
+        "副密码"
       ],
       "Secure links": [
         "安全链接"
@@ -3733,6 +3778,9 @@
       ],
       "Enter your PIN": [
         "输入 PIN 码"
+      ],
+      "Enter your second password": [
+        "输入您的二次密码"
       ],
       "Excluded items": [
         "不包括的项目"

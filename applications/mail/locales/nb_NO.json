@@ -235,9 +235,6 @@
       "Close": [
         "Lukk"
       ],
-      "Close & discard": [
-        "Lukk & forkast"
-      ],
       "Close composer": [
         "Lukk skrivevinduet"
       ],
@@ -907,9 +904,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Åpne skrivevinduet"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Åpne i ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -1024,12 +1018,6 @@
       "Replaces the selected text in your message": [
         "Erstatter den merkede teksten i meldingen din"
       ],
-      "Reply": [
-        "Svar"
-      ],
-      "Reply all": [
-        "Svar alle"
-      ],
       "Reply securely": [
         "Svar sikkert"
       ],
@@ -1117,10 +1105,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -1215,6 +1203,9 @@
       ],
       "Show messages": [
         "Vis meldinger"
+      ],
+      "Show more": [
+        "Vis mer"
       ],
       "Show more search options": [
         "Vis flere søkealternativer"
@@ -1317,10 +1308,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -3919,26 +3906,14 @@
       "All events in this series were updated.": [
         "Alle hendelsene i denne serien ble oppdatert."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle hendelsene i denne serien ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Denne hendelsesforekomsten ble kansellert."
       ],
       "This event occurrence was updated.": [
         "Hendelsesforekomsten ble oppdatert."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne hendelsesforekomsten ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne hendelsen ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du er invitert til ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6137,6 +6112,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
       ],
+      "Admin account allocation": [
+        "Adminkonto tildeling"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
@@ -6172,6 +6150,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Tildelt"
+      ],
+      "Already allocated": [
+        "Allerede allokert"
+      ],
+      "Already used": [
+        "Allerede brukt"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -6752,7 +6739,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7327,8 +7315,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Lagringsplass allokert til andre brukere i denne organisasjonen"
+      ],
+      "Storage allocated to this user": [
+        "Lagringsplass tildelt denne brukeren"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunksjoner støttes ikke i denne nettleseren, vi trenger denne støtten for å aktivere søk etter meldingsinnhold."
+      ],
+      "Storage for users": [
+        "Lagring for brukere"
+      ],
+      "Storage used by this user": [
+        "Lagringsplass anvendt av denne brukeren"
       ],
       "Subject": [
         "Emne"
@@ -8369,6 +8369,9 @@
       "Account holder": [
         "Kontoinnehaver"
       ],
+      "Account storage": [
+        "Kontolagring"
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -8399,11 +8402,11 @@
       "Always move sender's emails": [
         "Alltid flytt avsenderens e-poster"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -8633,11 +8636,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -8750,14 +8753,14 @@
       "Optional": [
         "Valgfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Opprinnelig kobling"
@@ -9569,29 +9572,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -9613,6 +9593,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -10941,14 +10944,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brukere kan forfremmes til administrator når de har installasjonsnøkler."
+      ],
       "Organization key does not exist.": [
         "Organisasjonsnøkkel eksisterer ikke."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisasjonsnøkkelen må aktiveres for å gi administratorrettigheter."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
+      ],
       "The organization key must be activated first.": [
         "Organisasjonsnøkkelen må aktiveres først."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Du må slette alle grupper før du genererer en ny organisasjonsnøkkel"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du må privatisere alle brukere før genererering av en ny organisasjonsnøkkel."
       ],
       "You need access to the organization key to perform this operation.": [
         "Du trenger tilgang til organisasjonsnøkkelen for å utføre denne operasjonen."
@@ -13474,6 +13492,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Skaff deg ${ appName[APP_NAME] }-appene"
       ],
+      "Get the apps": [
+        "Skaff deg appene"
+      ],
       "Gift": [
         "Gave"
       ],
@@ -14090,6 +14111,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denne versjonen av Tor-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
       ]
     },
     "Update font modal": {

@@ -178,6 +178,9 @@
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
+      "Attention required": [
+        "需要您的處理"
+      ],
       "Authenticate": [
         "驗證"
       ],
@@ -1042,10 +1045,10 @@
       "Select country": [
         "選擇國家"
       ],
-      "Select file": [
+      "select file": [
         "選取檔案"
       ],
-      "select file": [
+      "Select file": [
         "選取檔案"
       ],
       "Select files": [
@@ -3866,26 +3869,14 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該系列中的所有行程皆已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "該行程已被取消。"
       ],
       "This event occurrence was updated.": [
         "該行程已更新。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "該行程已更新。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "您已被邀請至 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4639,11 +4630,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
       ],
-      "Something went wrong": [
-        "發生錯誤"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
+      ],
+      "Something went wrong. Please try again.": [
+        "發生錯誤，請稍後再試。"
       ],
       "status page": [
         "狀態頁面"
@@ -8792,10 +8783,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
       "Users": [
@@ -9843,11 +9834,11 @@
       "Allow recovery using a trusted device": [
         "允許復原時使用信任的裝置"
       ],
-      "Allowed Domain": [
-        "網域白名單"
-      ],
       "Allowed domain": [
         "已允許網域"
+      ],
+      "Allowed Domain": [
+        "網域白名單"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -9858,10 +9849,10 @@
       "Amount due": [
         "應付金額"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -10272,10 +10263,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
       "Import all messages": [
@@ -10473,13 +10464,13 @@
       "Optional": [
         "自由列席"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11086,10 +11077,10 @@
       "perform a password reset from your active session": [
         "從您目前的作業階段採取密碼重設"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隱私權政策"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隱私權政策"
       ],
       "Reactivate now": [
@@ -12327,14 +12318,6 @@
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -12353,6 +12336,14 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -12885,11 +12876,6 @@
         "電腦版應用程式"
       ]
     },
-    "option": {
-      "Group members": [
-        "群組成員"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "每月10日"
@@ -13115,6 +13101,11 @@
       ],
       "Trash": [
         "垃圾"
+      ]
+    },
+    "option": {
+      "Group members": [
+        "群組成員"
       ]
     },
     "Option delay send seconds": {
@@ -16498,10 +16489,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
