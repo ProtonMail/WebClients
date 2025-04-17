@@ -45,11 +45,6 @@
       "Add": [
         "Adăugare"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Adăugare ${ photos.length } fotografie în album nou",
-        "Adăugare ${ photos.length } fotografii în album nou",
-        "Adăugare ${ photos.length } de fotografii în album nou"
-      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -873,6 +868,9 @@
       ],
       "Show advanced PGP settings": [
         "Afișare setări PGP avansate"
+      ],
+      "Show more": [
+        "Afișare mai mult"
       ],
       "Show more download options": [
         "Afișare alte opțiuni de descărcare"
@@ -2744,26 +2742,14 @@
       "All events in this series were updated.": [
         "Toate evenimentele din serie au fost modificate."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Toate evenimentele au fost modificate. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Acest eveniment a fost anulat."
       ],
       "This event occurrence was updated.": [
         "Acest eveniment a fost modificat."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acest eveniment a fost modificat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Acest eveniment a fost modificat."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acest eveniment a fost actualizat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Invitație la ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2903,11 +2889,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Căutarea în conținut nu poate fi activată. Reporniți aplicația sau ștergeți datele."
       ],
+      "Could not add to favorites": [
+        "Nu s-a putut adăuga la favorite."
+      ],
       "Could not open created vault": [
         "Nu s-a putut deschide seiful creat."
       ],
       "Could not open updated vault": [
         "Nu s-a putut deschide seiful actualizat."
+      ],
+      "Could not remove from favorites": [
+        "Nu s-a putut elimina din favorite."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
@@ -3165,6 +3157,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ceva nu a funcționat bine. Mai încercați."
       ],
       "status page": [
         "pagina de stare"
@@ -3811,11 +3806,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Adăugare ${ photos.length } fotografie în",
-        "Adăugare ${ photos.length } fotografii în",
-        "Adăugare ${ photos.length } de fotografii în"
-      ],
       "Add to shared album": [
         "Adăugare la album partajat"
       ],
@@ -3824,11 +3814,6 @@
       ],
       "Recent": [
         "Recente"
-      ],
-      "Share ${ photos.length } photo via": [
-        "Partajare ${ photos.length } fotografie via",
-        "Partajare ${ photos.length } fotografii via",
-        "Partajare ${ photos.length } de fotografii via"
       ]
     },
     "Hint": {
@@ -4444,6 +4429,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
       ],
+      "Admin account allocation": [
+        "Alocare cont admin"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Agenții de publicitate vă urmăresc navigarea pentru a afișa anunțuri țintite. ${ VPN_APP_NAME } blochează instrumentele de urmărire și reclamele, făcându-vă conexiunea mai rapidă și îmbunătățindu-vă experiența online."
       ],
@@ -4467,6 +4455,15 @@
         "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
         "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
         "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Alocat"
+      ],
+      "Already allocated": [
+        "Deja alocat"
+      ],
+      "Already used": [
+        "Deja folosit"
       ],
       "Also try looking in Trash.": [
         "Puteți căuta și în «Gunoi»."
@@ -5279,6 +5276,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
       ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Așteptați până se actualizează datele. Acest lucru poate dura câteva secunde."
+      ],
       "Preparing link to file": [
         "Se pregătește legătura către fișier."
       ],
@@ -5479,6 +5479,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Păstrați-vă conexiunea fără efort, activând următoarele setări VPN:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Spațiu alocat altor utilizatori din această organizație"
+      ],
+      "Storage allocated to this user": [
+        "Spațiu alocat acestui utilizator"
+      ],
+      "Storage for users": [
+        "Spațiu pentru utilizatori"
+      ],
+      "Storage used by this user": [
+        "Spațiu folosit de utilizator"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
@@ -6189,6 +6201,9 @@
       ],
       "Account holder": [
         "Titular cont"
+      ],
+      "Account storage": [
+        "Spațiu cont"
       ],
       "Add email address": [
         "Adăugare e-mail"
@@ -7266,29 +7281,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
@@ -7310,6 +7302,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Trecere la ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ștergere cont"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Păstrare ${ plan }"
+      ],
+      "Keep account": [
+        "Păstrare cont"
+      ],
+      "Switch plan": [
+        "Schimbare plan"
       ]
     },
     "new_plans: feature": {
@@ -8877,14 +8892,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Utilizatorii neprivați pot fi promovați la funcția de administrator atunci când au chei de configurare."
+      ],
       "Organization key does not exist.": [
         "Cheia organizației nu există."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Cheia organizației trebuie activată pentru a acorda drepturi administrative."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permisiune refuzată, drepturile de administrator au fost restricționate."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Utilizatorii privați pot fi promovați la funcția de administrator atunci când s-au conectat pentru prima dată."
+      ],
       "The organization key must be activated first.": [
         "Cheia organizației trebuie mai întâi activată."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Trebuie să ștergeți toate grupurile înainte de a genera o cheie nouă pentru organizație."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Trebuie să faceți privați toți utilizatorii înainte de a genera o cheie nouă pentru organizație."
       ],
       "You need access to the organization key to perform this operation.": [
         "Aveți nevoie de accesul la cheia organizației pentru a efectua această operație."
@@ -10928,6 +10958,9 @@
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
       ],
+      "Get the apps": [
+        "Luați aplicațiile"
+      ],
       "Gift": [
         "Cadou"
       ],
@@ -11271,6 +11304,9 @@
       "Untitled document ${ date }": [
         "Document nedenumit ${ date }"
       ],
+      "Updating your photos": [
+        "Se actualizează fotografiile"
+      ],
       "Upgrade complete!": [
         "Modificare finalizată!"
       ],
@@ -11456,6 +11492,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
       ]
     },
     "Validation": {
