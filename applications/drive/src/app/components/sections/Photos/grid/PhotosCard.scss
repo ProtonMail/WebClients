@@ -15,7 +15,7 @@
 	}
 }
 
-.photos-card {
+.old-photos .photos-card {
 	user-select: none;
 	background-color: var(--background-weak);
 
@@ -67,7 +67,7 @@
 	}
 }
 
-.photos-card-thumbnail {
+.old-photos .photos-card-thumbnail {
 	pointer-events: none;
 	object-fit: cover;
 
@@ -76,13 +76,13 @@
 	}
 }
 
-.photos-card-video-info {
+.old-photos .photos-card-video-info {
 	padding-block-start: 100%;
 	background: linear-gradient(180deg, rgb(0 0 0 / 0) 86.82%, rgb(0 0 0 / 0.4) 100%);
 	color: white;
 }
 
-.photos-card-share-icon {
+.old-photos .photos-card-share-icon {
 	background-color: rgb(112 109 107 / 0.8);
 	inline-size: 20px;
 	block-size: 20px;
