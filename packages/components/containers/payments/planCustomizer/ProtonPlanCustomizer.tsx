@@ -1,11 +1,11 @@
 import type { ComponentPropsWithoutRef } from 'react';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
 import {
-    type ADDON_NAMES,
+    ADDON_NAMES,
     AddonKey,
     AddonLimit,
     type Currency,
@@ -18,6 +18,7 @@ import {
     type Subscription,
     isFreeSubscription,
 } from '@proton/payments';
+import { MAX_MEMBER_PASS_PRO_ADDON, MIN_MEMBER_PASS_B2B_ADDON } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
 import {
@@ -28,11 +29,13 @@ import {
     isLumoAddon,
     isMemberAddon,
     isOrgSizeAddon,
+    isPassOrgSizeAddon,
     isScribeAddon,
 } from '@proton/shared/lib/helpers/addons';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import {
     getAddonMultiplier,
+    getHasPassB2BPlan,
     getMaxValue,
     getVPNDedicatedIPs,
     hasBundlePro,
@@ -52,6 +55,17 @@ import type { DecreaseBlockedReason } from './helpers';
 import './ProtonPlanCustomizer.scss';
 
 export type CustomiserMode = 'signup' | undefined;
+
+/**
+ * PASS PRO organization min size: 3, max size: 30.
+ * PASS BUSINESS organization min size: 3, max size: none.
+ * Only hardcoded in the UI, not BE.
+ */
+const isWithinPassOrgSizeLimit = ({ size, isPassPro }: { size: number; isPassPro: boolean }) => {
+    const min = MIN_MEMBER_PASS_B2B_ADDON;
+    const max = isPassPro ? MAX_MEMBER_PASS_PRO_ADDON : null;
+    return size >= min && (!max || max >= size);
+};
 
 interface AddonCustomizerProps {
     addonName: string;
@@ -89,13 +103,16 @@ const AddonCustomizer = ({
     mode,
 }: AddonCustomizerProps) => {
     const ipAddonDowngrade = useFlag('IpAddonDowngrade');
+    const passOrgSizeLimitFlag = useFlag('PassOrgSizeLimit');
 
     const addon = plansMap[addonName];
     const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
 
-    if (!addon) {
-        return null;
-    }
+    const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
+    const planTotalMembers = selectedPlan.getTotalUsers();
+
+    const subscriptionPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
+    const latestPlanTotalMembers = subscriptionPlan.getTotalUsers();
 
     const addonNameKey = addon.Name as ADDON_NAMES;
     const quantity = planIDs[addon.Name] ?? 0;
@@ -108,7 +125,22 @@ const AddonCustomizer = ({
 
     const value = min + quantity * addonMultiplier;
 
-    const subscriptionPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
+    const isPassProOrgSizeAddon = addonNameKey === ADDON_NAMES.MEMBER_PASS_PRO;
+
+    /**
+     * Only enforce Pass organization size limit for:
+     * - users who currently don't have a Pass B2B plan
+     * - users with an existing Pass B2B plan within organization size limit.
+     * Don't enforce for existing Pass B2B users who aren't within limit.
+     */
+    const enforcePassOrgSizeLimit =
+        passOrgSizeLimitFlag &&
+        isPassOrgSizeAddon(addonNameKey) &&
+        (!getHasPassB2BPlan(latestSubscription) ||
+            isWithinPassOrgSizeLimit({
+                size: latestPlanTotalMembers,
+                isPassPro: isPassProOrgSizeAddon,
+            }));
 
     const decreaseBlockedReasons: DecreaseBlockedReason[] = [];
 
@@ -148,14 +180,17 @@ const AddonCustomizer = ({
             return applyForbiddenModificationLimitation(minNumberOfServers);
         }
 
+        if (enforcePassOrgSizeLimit) {
+            return applyForbiddenModificationLimitation(MIN_MEMBER_PASS_B2B_ADDON);
+        }
+
         return applyForbiddenModificationLimitation(min);
     })();
 
-    const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
     // The total number of scribe or lumo addons can't be higher than the total number of members
     const max =
         isScribeAddon(addonNameKey) || isLumoAddon(addonNameKey)
-            ? selectedPlan.getTotalUsers()
+            ? planTotalMembers
             : AddonLimit[addonNameKey] * addonMultiplier;
 
     const sharedNumberCustomizerProps: Pick<
@@ -210,6 +245,21 @@ const AddonCustomizer = ({
         decreaseBlockedReasons,
     };
 
+    useEffect(() => {
+        // Hardcode client-side the Pass B2B organization size limit:
+        // - min 3 for any Pass B2B plan
+        // - max 30 only for Pass Pro plan
+        if (enforcePassOrgSizeLimit) {
+            if (planTotalMembers < MIN_MEMBER_PASS_B2B_ADDON) {
+                const newPlanIDs = setQuantity(planIDs, addon.Name, MIN_MEMBER_PASS_B2B_ADDON - min);
+                onChangePlanIDs(newPlanIDs);
+            } else if (isPassProOrgSizeAddon && planTotalMembers > MAX_MEMBER_PASS_PRO_ADDON) {
+                const newPlanIDs = setQuantity(planIDs, addon.Name, MAX_MEMBER_PASS_PRO_ADDON - min);
+                onChangePlanIDs(newPlanIDs);
+            }
+        }
+    }, [planTotalMembers]);
+
     if (isMemberAddon(addonNameKey)) {
         if (isDriveOrgSizeAddon(addonNameKey)) {
             return (
@@ -231,6 +281,7 @@ const AddonCustomizer = ({
                     key={`${addon.Name}-org-size`}
                     label={c('Info').t`Organization size`}
                     {...sharedNumberCustomizerProps}
+                    {...(enforcePassOrgSizeLimit && isPassProOrgSizeAddon ? { max: MAX_MEMBER_PASS_PRO_ADDON } : {})}
                 />
             );
         }
@@ -376,7 +427,7 @@ export const ProtonPlanCustomizer = ({
             {Object.keys(supportedAddons).map((key) => {
                 const addonName = key as ADDON_NAMES;
 
-                if (!isAllowedAddon(addonName)) {
+                if (!isAllowedAddon(addonName) || !plansMap[addonName]) {
                     return null;
                 }
 

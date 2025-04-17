@@ -249,6 +249,9 @@ export const MAX_MEMBER_LUMO_ADDON = 5000;
 // VPN B2B limits
 export const MAX_MEMBER_VPN_B2B_ADDON = 5000;
 export const MAX_IPS_ADDON = 100;
+// Pass B2B member limits (only hardcoded FE side not BE side, and only applicable to new subscriptions)
+export const MIN_MEMBER_PASS_B2B_ADDON = 3;
+export const MAX_MEMBER_PASS_PRO_ADDON = 30;
 
 export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
