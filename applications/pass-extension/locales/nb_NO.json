@@ -152,10 +152,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -358,6 +358,9 @@
       ],
       "Make editor": [
         "Gjør til redaktør"
+      ],
+      "Make manager": [
+        "Gjør til administrator"
       ],
       "Make viewer": [
         "Gjør til leser"
@@ -782,6 +785,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ekstra passordet for å forsette med eksporten."
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Autentisering mislyktes. Bekreft ditt andre passord for å fortsette med eksporteringen"
+      ],
       "Authentication failure: ${ message }": [
         "Autentiseringsfeil: ${ message }"
       ],
@@ -1159,6 +1165,9 @@
       "Wrong PIN code. Try again.": [
         "Feil PIN-kode. Prøv igjen."
       ],
+      "Wrong second password": [
+        "Feil andre passord"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du er frakoblet. Gjenoppta tilkoblingen for å låse opp ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1337,6 +1346,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Tilgang til ${ PASS_APP_NAME } vil alltid kreve det ekstra passordet ditt."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ditt andre passord."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
@@ -1752,6 +1764,9 @@
       "Make it your own": [
         "Gjør det til ditt eget"
       ],
+      "Manager": [
+        "Administrator"
+      ],
       "me": [
         "meg"
       ],
@@ -1767,6 +1782,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -1912,6 +1931,24 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bekreft PIN-koden for å redigere denne innstillingen."
+      ],
+      "Please confirm your second password": [
+        "Bekreft ditt andre passord"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Bekreft det andre passordet ditt for å låse automatisk med biometri."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Bekreft det andre passordet ditt for å bruke autolås med passordet ditt."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekreft det andre passordet ditt for å eksportere ${ PASS_APP_NAME }-dataene"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Bekreft ditt andre passord for å oppheve registreringen av din nåværende lås."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Bekreft det andre passordet ditt for å oppdatere tiden for autolås."
       ],
       "Please consider leaving a review.": [
         "Vurder å legge igjen en anmeldelse."
@@ -2183,6 +2220,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med ditt ekstra passord"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Lås opp ${ PASS_SHORT_APP_NAME } med det andre passordet ditt"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den opp med PIN-koden din for å få tilgang til innstillingene"
@@ -2806,6 +2846,9 @@
       "Make all editors": [
         "Gjør alle redaktører"
       ],
+      "Make all managers": [
+        "Gjør alle til administratorer"
+      ],
       "Make all viewers": [
         "Gjør alle seere"
       ],
@@ -2970,6 +3013,9 @@
       ],
       "Save passkeys": [
         "Lagre tilgangsnøkler"
+      ],
+      "Second password": [
+        "Andre passord"
       ],
       "Secure links": [
         "Sikre koblinger"
@@ -3730,6 +3776,9 @@
       ],
       "Enter your PIN": [
         "Skriv inn PIN-koden din"
+      ],
+      "Enter your second password": [
+        "Skriv inn det andre passordet ditt"
       ],
       "Fill & copy password": [
         "Fyll ut & kopier passord"

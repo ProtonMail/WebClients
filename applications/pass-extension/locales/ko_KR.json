@@ -152,10 +152,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create alias": [
@@ -1151,6 +1151,9 @@
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
       ],
+      "Wrong second password": [
+        "2차 비밀번호 모드가 알맞지 않습니다"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "현재 오프라인 상태입니다. ${ PASS_SHORT_APP_NAME }를 잠금 해제하려면 인터넷에 연결하세요."
       ],
@@ -1740,6 +1743,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2921,6 +2927,9 @@
       ],
       "Save passkeys": [
         "패스키 저장"
+      ],
+      "Second password": [
+        "2차 비밀번호"
       ],
       "Secure links": [
         "안전한 링크"
