@@ -149,11 +149,11 @@
       "Create": [
         "Создать"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Создайте свой аккаунт ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Создать аккаунт ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Создать псевдоним"
@@ -1124,6 +1124,9 @@
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
       ],
+      "Wrong second password": [
+        "Неверный второй пароль"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "В настоящее время вы не в сети. Возобновите подключение, чтобы разблокировать ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1725,6 +1728,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -2888,6 +2897,9 @@
       ],
       "Save passkeys": [
         "Сохранить passkeys"
+      ],
+      "Second password": [
+        "Второй пароль"
       ],
       "Security": [
         "Безопасность"

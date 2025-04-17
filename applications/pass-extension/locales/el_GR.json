@@ -152,11 +152,11 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
       ],
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
@@ -358,6 +358,9 @@
       ],
       "Make editor": [
         "Ορισμός ως επεξεργαστή"
+      ],
+      "Make manager": [
+        "Θέσετε διαχειριστή"
       ],
       "Make viewer": [
         "Ορισμός ως θεατή"
@@ -782,6 +785,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης σας για να προχωρήσετε στην εξαγωγή"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Η ταυτοποίηση απέτυχε. Επιβεβαιώστε τον δεύτερο κωδικό πρόσβασής σας για να συνεχίσετε με την εξαγωγή"
+      ],
       "Authentication failure: ${ message }": [
         "Αποτυχία ελέγχου ταυτότητας: ${ message }"
       ],
@@ -1159,6 +1165,9 @@
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
       ],
+      "Wrong second password": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Παρακαλούμε συνεχίστε τη συνδεσιμότητα για να ξεκλειδώσετε ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1337,6 +1346,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον επιπλέον κωδικό πρόσβασής σας ."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον δεύτερο κωδικό πρόσβασής σας ."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
@@ -1752,6 +1764,9 @@
       "Make it your own": [
         "Κάντε το δικό σας"
       ],
+      "Manager": [
+        "Διαχειριστης"
+      ],
       "me": [
         "εγώ"
       ],
@@ -1767,6 +1782,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -1912,6 +1931,24 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Επιβεβαιώστε τον κωδικό PIN για να επεξεργαστείτε αυτήν τη ρύθμιση."
+      ],
+      "Please confirm your second password": [
+        "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασής σας"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό σας για αυτόματο κλείδωμα με βιομετρικά στοιχεία."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασης για αυτόματο κλείδωμα με τον κωδικό πρόσβασής σας."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασής σας για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασης σας για να καταργήσετε το τρέχον κλείδωμα."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Επιβεβαιώστε τον δεύτερο κωδικό πρόσβασης για να ενημερώσετε την ώρα αυτόματου κλειδώματος."
       ],
       "Please consider leaving a review.": [
         "Παρακαλούμε εξετάστε το ενδεχόμενο να αφήσετε μια κριτική."
@@ -2183,6 +2220,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον επιπλέον κωδικό πρόσβασης σας"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον δεύτερο κωδικό πρόσβασής σας"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ξεκλειδώστε το με το PIN σας για πρόσβαση στις ρυθμίσεις"
@@ -2806,6 +2846,9 @@
       "Make all editors": [
         "Κάντε τους όλους συντάκτες"
       ],
+      "Make all managers": [
+        "Θέσετε όλους διαχειριστές"
+      ],
       "Make all viewers": [
         "Κάντε τους όλους θεατές"
       ],
@@ -2970,6 +3013,9 @@
       ],
       "Save passkeys": [
         "Αποθήκευση κλειδιών πρόσβασης"
+      ],
+      "Second password": [
+        "Δεύτερος κωδικός πρόσβασης"
       ],
       "Secure links": [
         "Ασφαλείς σύνδεσμοι"
@@ -3730,6 +3776,9 @@
       ],
       "Enter your PIN": [
         "Εισαγάγετε το PIN σας"
+      ],
+      "Enter your second password": [
+        "Εισαγάγετε τον δεύτερο κωδικό πρόσβασης σας"
       ],
       "Fill & copy password": [
         "Συμπλήρωση & αντιγραφή κωδικού πρόσβασης"
