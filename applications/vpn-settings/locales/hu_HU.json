@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
+      "Attention required": [
+        "Figyelem szükséges"
+      ],
       "Authenticate": [
         "Azonosítás"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "Ablakhoz illesztés"
       ],
-      "Forgot password?": [
-        "Elfelejtette a jelszavát?"
-      ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Remove": [
         "Eltávolítás"
@@ -640,11 +640,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "Select file": [
-        "Fájl kiválasztása"
-      ],
       "select file": [
         "fájl kiválasztása"
+      ],
+      "Select file": [
+        "Fájl kiválasztása"
       ],
       "Send code": [
         "Kód küldése"
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "Összes megjelenítése"
+      ],
+      "Show more": [
+        "Több megjelenítése"
       ],
       "Show preview": [
         "Előnézet megmutatása"
@@ -2450,6 +2453,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "A szervezetben mindenki kapcsolódhat a megosztott szerverekhez az összes országban."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban."
+      ],
       "If disabled, only admins will have access.": [
         "Ha le van tiltva, csak az adminisztrátorok férhetnek hozzá."
       ],
@@ -2685,15 +2691,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "A ${ BRAND_NAME } soha nem fogja kérni, hogy olyan kódot adjon meg, amely nem a ${ domain } domain névről vagy egy hivatalos ${ BRAND_NAME } alkalmazásból származik."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Hogyan működik:** Írja be erre az eszközre azt a kódot, amely azon az eszközön jelenik meg, amelyre be szeretne jelentkezni. Ön **${ email }** néven lesz bejelentkezve. Mindkét eszköz aktív marad. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "QR-kód használatának engedélyezése a bejelentkezéshez"
-      ],
       "Code from the other device": [
         "Kód a másik eszközről"
       ],
@@ -2706,26 +2703,14 @@
       "QR code sign-in enabled": [
         "A QR-kódos bejelentkezés engedélyezve"
       ],
-      "Safety tips:": [
-        "Biztonsági tippek:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "A QR-kód beolvasásával a mobilkészülékén bejelentkezhet"
-      ],
-      "Sign in to another device": [
-        "Bejelentkezés egy másik eszközre"
-      ],
-      "Sign in with another device": [
-        "Bejelentkezés egy másik eszközzel"
       ],
       "Sign in with QR code": [
         "Bejelentkezés QR-kóddal"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "A bejelentkezni kívánt eszköz kódjának eléréséhez koppintson a bejelentkezési képernyő súgómenüjében a **Bejelentkezés QR-kóddal** gombra, majd a **Kulcs kézi beírása** lehetőségre. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Óvakodjon azoktól az üzenetektől, amelyek kódot tartalmaznak. Soha ne adjon meg kódot olyan weboldalon vagy személynek, amely nem megbízható."
       ],
       "You have successfully signed in to another device": [
         "Sikeresen bejelentkezett egy másik eszközre"
@@ -2989,6 +2974,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Valami hiba történt. Kérjük próbálja újra."
       ],
       "status page": [
         "állapotjelző oldalunkat"
@@ -4510,9 +4498,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
       ],
-      "Enter your own password (as organization admin).": [
-        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
       ],
@@ -5484,11 +5469,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -6037,10 +6022,10 @@
       "Allow recovery by phone": [
         "Helyreállítás engedélyezése telefonszámmal"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6584,9 +6569,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
       ],
-      "Your password (admin)": [
-        "Jelszó (adminisztrátor)"
-      ],
       "ZIP code": [
         "Irányítószám"
       ]
@@ -7000,29 +6982,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Fiók törlése"
-      ],
-      "Downgrade account": [
-        "Váltás kisebb csomagra"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Legyen ${ BRAND_NAME }os ingyen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } megszerzése"
-      ],
-      "Keep ${ plan }": [
-        "Maradjon ${ plan }"
-      ],
-      "Keep account": [
-        "Maradjon a fiók"
-      ],
-      "Switch plan": [
-        "Csomag váltása"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }"
@@ -7047,6 +7006,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Váltás ${ planName } csomagra"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Fiók törlése"
+      ],
+      "Downgrade account": [
+        "Váltás kisebb csomagra"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Legyen ${ BRAND_NAME }os ingyen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } megszerzése"
+      ],
+      "Keep ${ plan }": [
+        "Maradjon ${ plan }"
+      ],
+      "Keep account": [
+        "Maradjon a fiók"
+      ],
+      "Switch plan": [
+        "Csomag váltása"
       ]
     },
     "new_plans: feature": {
@@ -8240,17 +8222,6 @@
         "Üdvözli a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Ország konfigurációk"
@@ -8308,6 +8279,17 @@
       ],
       "The whole organization": [
         "A teljes szervezet"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
       ]
     },
     "Organization capacity error": {
@@ -9837,9 +9819,6 @@
       "Share the confirmation code with your administrator": [
         "Ossza meg az ellenőrző kódot az adminisztrátorral."
       ],
-      "Sign in": [
-        "Bejelentkezés"
-      ],
       "Sign in to your organization": [
         "Jelentkezzen be a szervezetébe"
       ],
@@ -10971,10 +10950,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -11195,9 +11174,6 @@
       "Enable for all users": [
         "Engedélyezés minden felhasználónak"
       ],
-      "Enter 2FA code": [
-        "Írja be a kétlépcsős hitelesítési kódot"
-      ],
       "Enter endpoints into your identity provider": [
         "Adja meg a végpontokat a személyazonosság-szolgáltatójának"
       ],
@@ -11206,9 +11182,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"
@@ -11255,6 +11228,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Szerezze be az alkalmazást az összes eszközére, és védjen egyszerre akár ${ VPN_CONNECTIONS } eszközt."
+      ],
+      "Get the apps": [
+        "Alkalmazások letöltése"
       ],
       "Gift": [
         "Ajándék"

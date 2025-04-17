@@ -85,6 +85,9 @@
       "Attach screenshot(s)": [
         "स्क्रीनशॉट जोड़ें"
       ],
+      "Attention required": [
+        "ध्यान दें"
+      ],
       "Authenticate": [
         "सत्यापन करें"
       ],
@@ -340,9 +343,6 @@
       "Fit to window": [
         "विंडो में फिट करें"
       ],
-      "Forgot password?": [
-        "पासवर्ड भूल गए?"
-      ],
       "Forgot recovery method?": [
         "रिकवरी विधि भूल गए?"
       ],
@@ -502,11 +502,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "refresh the page": [
-        "पृष्ठ रिफ्रेश करें"
-      ],
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
+      ],
+      "refresh the page": [
+        "पृष्ठ रिफ्रेश करें"
       ],
       "Remove": [
         "हटाएं"
@@ -619,11 +619,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "Select file": [
-        "फाइल चुनें"
-      ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Send code": [
         "कोड भेजें"
@@ -666,6 +666,9 @@
       ],
       "Show all": [
         "सब दिखाएं"
+      ],
+      "Show more": [
+        "और दिखाएँ"
       ],
       "Show preview": [
         "प्रिव्यू दिखाएं"
@@ -2387,6 +2390,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "आपके संगठन के सभी सदस्य सभी देशों में साझा सर्वर से कनेक्ट कर सकते हैं।"
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "यदि आपका पासवर्ड या अन्य डाटा किसी तीसरें-पार्टी से लीक हुआ है, तो इसकी सूचना प्राप्त करें।"
+      ],
       "If disabled, only admins will have access.": [
         "यदि अक्षम है, तो केवल एडमिन को ही पहुँच प्राप्त होगी।"
       ],
@@ -2873,6 +2879,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "कुछ गलत हुआ, आगे बढ़ने के लिए कृपया पेज ${ refresh } करें। अगर फिर भी यह त्रुटि है तो ${ supportTeam } से सम्पर्क करें।"
+      ],
+      "Something went wrong. Please try again.": [
+        "कुछ गलती हो गई। कृपया वापिस कोशिश करें।"
       ],
       "status page": [
         "स्थिति पृष्ठ"
@@ -4352,9 +4361,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "अपने ${ BRAND_NAME } खाते का ईमेल पता या यूज़रनेम डालें।"
       ],
-      "Enter your own password (as organization admin).": [
-        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
       ],
@@ -5286,10 +5292,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -5815,10 +5821,10 @@
       "Allow recovery by phone": [
         "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6359,9 +6365,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "हां, मैं इस खाते और इसके सभी डेटा को स्थायी रूप से हटाना चाहता हूं।"
       ],
-      "Your password (admin)": [
-        "आपका पासवर्ड (व्यवस्थापक)"
-      ],
       "ZIP code": [
         "ज़िप कोड"
       ]
@@ -6772,29 +6775,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -6819,6 +6799,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -7994,17 +7997,6 @@
         "${ appName } में आपका स्वागत है"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "Country configs": [
         "देश विन्यास"
@@ -8062,6 +8054,17 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Organization capacity error": {
@@ -9557,9 +9560,6 @@
       "Share the confirmation code with your administrator": [
         "पुष्टीकरण कोड अपने एडमिनिस्ट्रेटर के साथ साझा करें"
       ],
-      "Sign in": [
-        "साइनइन करें"
-      ],
       "Sign in to your organization": [
         "अपने संगठन में साइन इन करें"
       ],
@@ -9604,9 +9604,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "आपको उन्हें अपने संगठन में जोड़ने के लिए नए उपयोगकर्ता मैन्युअल रूप से बनाना होगा।"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "आपको आपके तीसरें-पार्टी SSO प्रदाता पर रीडायरेक्ट कर दिया जाएगा।"
       ],
       "Your SSO configuration will be deleted.": [
         "आपकी SSO संरचना हटा दी जाएगी।"
@@ -10684,10 +10681,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -10908,9 +10905,6 @@
       "Enable for all users": [
         "सभी उपयोगकर्ताओं के लिए सक्षम करें"
       ],
-      "Enter 2FA code": [
-        "2-एफए कोड डालें"
-      ],
       "Enter endpoints into your identity provider": [
         "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
       ],
@@ -10919,9 +10913,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } बीटा कार्यक्रम में शामिल होने के लिए अपनी ${ BRAND_NAME } खाता जानकारी दर्ज करें"
-      ],
-      "Enter your password": [
-        "आपका पासवर्ड डालें"
       ],
       "Error": [
         "गड़बड़"
@@ -10968,6 +10959,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "अपने सभी डिवाइस पर ऐप प्राप्त करें और एक बार में ${ VPN_CONNECTIONS } तक सुरक्षा प्रदान करें।"
+      ],
+      "Get the apps": [
+        "ऐप प्राप्त करें"
       ],
       "Gift": [
         "तोहफा"

@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "스크린샷 첨부"
       ],
+      "Attention required": [
+        "주의 필요"
+      ],
       "Authenticate": [
         "인증"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "창에 맞게"
       ],
-      "Forgot password?": [
-        "비밀번호를 잊으셨나요?"
-      ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Remove": [
         "삭제"
@@ -537,6 +537,9 @@
       ],
       "Remove bonuses": [
         "보너스 제거"
+      ],
+      "Remove button": [
+        "버튼 삭제"
       ],
       "Remove domain": [
         "도메인 제거"
@@ -640,10 +643,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
       "Send code": [
@@ -687,6 +690,9 @@
       ],
       "Show all": [
         "모두 보기"
+      ],
+      "Show more": [
+        "더보기"
       ],
       "Show preview": [
         "미리보기 표시"
@@ -2446,6 +2452,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
+      ],
       "If disabled, only admins will have access.": [
         "비활성화시 관리자만 접근 가능합니다."
       ],
@@ -2681,14 +2690,8 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME }은 도메인 ${ domain } 또는 공식 ${ BRAND_NAME } 앱에서 발송된 것이 아닌 코드를 입력하도록 요청하지 않습니다."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**작동 방식:** 로그인하려는 기기에 표시된 코드를 입력하세요. **${ email }**(으)로 로그인됩니다. 두 기기 모두 활성 상태로 유지됩니다. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "QR 코드를 스캔하여 로그인할 수 있도록 허용"
+      "Allow QR code sign‒in": [
+        "QR 코드 로그인 허용"
       ],
       "Code from the other device": [
         "다른 기기의 코드"
@@ -2702,26 +2705,20 @@
       "QR code sign-in enabled": [
         "QR 코드 로그인이 활성화됨"
       ],
-      "Safety tips:": [
-        "보안을 위한 팁:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "로그인하려면 모바일 디바이스에서 QR 코드를 스캔하세요"
       ],
-      "Sign in to another device": [
-        "다른 기기에서 로그인"
+      "Security tips": [
+        "보안 팁"
       ],
-      "Sign in with another device": [
-        "다른 기기로 로그인"
+      "Sign in on another device": [
+        "다른 기기에서 로그인"
       ],
       "Sign in with QR code": [
         "QR 코드로 로그인"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "로그인하려는 기기의 코드에 접근하려면 로그인 화면의 도움말 메뉴에서 **QR 코드로 로그인** 버튼을 탭한 다음 **키 수동으로 입력하기**을 탭하세요. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "코드가 포함된 메시지에 유의하세요. 웹사이트나 신뢰할 수 없는 사람의 코드를 절대 입력하지 마세요."
       ],
       "You have successfully signed in to another device": [
         "다른 기기에서 로그인하는데 성공했습니다."
@@ -2985,6 +2982,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
+      ],
+      "Something went wrong. Please try again.": [
+        "문제가 발생했습니다. 다시 시도해주세요."
       ],
       "status page": [
         "상태 페이지"
@@ -4470,9 +4470,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하세요."
       ],
-      "Enter your own password (as organization admin).": [
-        "자신의 비밀번호 입력 (조직 관리자와 같음)"
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "복구 이메일 주소를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
       ],
@@ -5436,10 +5433,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -5975,10 +5972,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6524,9 +6521,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
       ],
-      "Your password (admin)": [
-        "사용자의 비밀번호 (관리자)"
-      ],
       "ZIP code": [
         "우편번호"
       ]
@@ -6658,8 +6652,20 @@
       "here": [
         "."
       ],
+      "How to add Zoom links": [
+        "Zoom 링크를 추가하는 방법"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
+      ],
+      "How to set up SMTP": [
+        "SMTP을 설정하는 방법"
+      ],
+      "How to share a calendar": [
+        "캘린더를 공유하는 방법"
+      ],
+      "How to share via email": [
+        "이메일을 통해 공유하는 방법"
       ],
       "Learn more": [
         "더 알아보기"
@@ -6937,29 +6943,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "계정 삭제"
-      ],
-      "Downgrade account": [
-        "계정 다운그레이드"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "무료로 ${ BRAND_NAME } 받기"
-      ],
-      "Get ${ planName }": [
-        "${ planName } 받기"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }  유지"
-      ],
-      "Keep account": [
-        "계정 유지"
-      ],
-      "Switch plan": [
-        "플랜 변경"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
@@ -6984,6 +6967,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName }(으)로 업그레이드"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "계정 삭제"
+      ],
+      "Downgrade account": [
+        "계정 다운그레이드"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "무료로 ${ BRAND_NAME } 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }  유지"
+      ],
+      "Keep account": [
+        "계정 유지"
+      ],
+      "Switch plan": [
+        "플랜 변경"
       ]
     },
     "new_plans: feature": {
@@ -8147,17 +8153,6 @@
         "${ appName }에 오신 것을 환영합니다"
       ]
     },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8236,6 +8231,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Organization capacity error": {
@@ -9733,9 +9739,6 @@
       "Share the confirmation code with your administrator": [
         "관리자에게 확인 코드를 공유하세요"
       ],
-      "Sign in": [
-        "로그인"
-      ],
       "Sign in to your organization": [
         "조직에 로그인"
       ],
@@ -9780,9 +9783,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "새 사용자를 회원님의 조직에 추가하려면 직접 생성해야 합니다."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO 구성 또한 삭제됩니다."
@@ -10793,6 +10793,9 @@
       "Add to spam list": [
         "스팸 목록에 추가"
       ],
+      "Add user": [
+        "사용자 추가"
+      ],
       "Add user accounts": [
         "사용자 계정 추가"
       ],
@@ -10850,11 +10853,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -11072,9 +11075,6 @@
       "Enable for all users": [
         "모든 사용자에게 활성화"
       ],
-      "Enter 2FA code": [
-        "2단계 인증 코드 입력"
-      ],
       "Enter endpoints into your identity provider": [
         "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
       ],
@@ -11083,9 +11083,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
-      ],
-      "Enter your password": [
-        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"
@@ -11131,6 +11128,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "가지고 계신 기기에 앱을 설치하여 최대 ${ VPN_CONNECTIONS }대 기기를 한 번에 보호하세요."
+      ],
+      "Get the apps": [
+        "앱 다운로드"
       ],
       "Gift": [
         "선물"
