@@ -26,6 +26,7 @@ import {
 } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
 import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
+import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import { PhotosAddToAlbumButton } from './PhotosAddToAlbumButton';
@@ -283,6 +284,7 @@ const ToolbarRightActionsAlbumGallery = ({
     const { viewportWidth } = useActiveBreakpoint();
     const showIconOnly = !viewportWidth['>=large'];
     const showUploadButton = !album.permissions.isOwner && !uploadDisabled;
+    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     return (
         <>
             {!showIconOnly && album.permissions.isOwner && (
@@ -323,7 +325,7 @@ const ToolbarRightActionsAlbumGallery = ({
                     <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Download`}</span>
                 </ToolbarButton>
             )}
-            {album.permissions.isOwner && (
+            {!isAlbumsWithSharingDisabled && album.permissions.isOwner && (
                 <PhotosAlbumShareButton
                     showIconOnly={showIconOnly}
                     onClick={() => {
@@ -436,6 +438,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
             album.permissions.isAdmin
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos);
+    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const canShare = Boolean(
         (!hasMultipleSelected && !album) || (!hasMultipleSelected && album && album.permissions.isAdmin)
     );
@@ -486,10 +489,10 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {canSelectCover && (
                             <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover!} />
                         )}
-                        {canShare && (
+                        {!isAlbumsWithSharingDisabled && canShare && (
                             <PhotosShareLinkButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
                         )}
-                        {canShareMultiple && (
+                        {!isAlbumsWithSharingDisabled && canShareMultiple && (
                             <PhotosShareMultipleLinkButton
                                 showIconOnly={showIconOnly}
                                 onClick={openSharePhotosIntoAnAlbumModal!}
@@ -524,7 +527,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                     onSelectCover={onSelectCover!}
                                 />
                             )}
-                            {canShare && (
+                            {!isAlbumsWithSharingDisabled && canShare && (
                                 <PhotosShareLinkButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
