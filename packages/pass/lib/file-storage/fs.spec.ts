@@ -20,6 +20,15 @@ describe('file-storage/fs', () => {
             configurable: true,
         });
 
+        Object.defineProperty(global, 'FileSystemFileHandle', {
+            value: {
+                prototype: {
+                    createWritable: jest.fn(),
+                },
+            },
+            configurable: true,
+        });
+
         Object.defineProperty(global, 'indexedDB', {
             value: {},
             configurable: true,
@@ -144,8 +153,6 @@ describe('file-storage/fs', () => {
         });
 
         test('calls `onReady` when no fallback needed', async () => {
-            self.navigator.storage.getDirectory.mockResolvedValue({});
-
             let instance: FileStorage = new OPFS.FileStorageOPFS();
             const onSwitch = jest.fn();
             const onReady = jest.fn();
