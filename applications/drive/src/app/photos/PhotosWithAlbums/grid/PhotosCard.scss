@@ -17,7 +17,7 @@
 	}
 }
 
-.photos-card {
+.new-photos .photos-card {
 	user-select: none;
 	background-color: var(--background-weak);
 	overflow: hidden;
@@ -86,11 +86,11 @@
 	}
 }
 
-.photos-card-thumbnail-holder {
+.new-photos .photos-card-thumbnail-holder {
 	transition: transform 0.15s linear;
 }
 
-.photos-card-thumbnail {
+.new-photos .photos-card-thumbnail {
 	pointer-events: none;
 	object-fit: cover;
 	transition: transform 0.15s linear;
@@ -101,12 +101,12 @@
 	}
 }
 
-.photo-card-video-info {
+.new-photos .photos-card-video-info {
 	background: rgb(112 109 107 / 0.7); // static colors
 	color: white;
 }
 
-.photos-card-bottom-icon {
+.new-photos .photos-card-bottom-icon {
 	background-color: rgb(112 109 107 / 0.8);
 	inline-size: rem(20);
 	block-size: rem(20);
