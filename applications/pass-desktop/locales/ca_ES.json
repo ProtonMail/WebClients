@@ -367,6 +367,9 @@
       "Make editor": [
         "Estableix com a editor"
       ],
+      "Make manager": [
+        "Defineix com a gestor"
+      ],
       "Make viewer": [
         "Estableix com a visualitzador"
       ],
@@ -852,6 +855,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Ha fallat l'autenticació. Confirmeu la contrasenya addicional per a continuar amb l'exportació."
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "S'ha produït un error amb l'autenticació. Confirmeu la segona contrasenya per continuar amb l'exportació."
+      ],
       "Biometric authentication failed": [
         "L'autenticació biomètrica no ha funcionat."
       ],
@@ -1067,6 +1073,9 @@
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "No s'ha pogut importar la caixa forta «${ vaultData.name }»: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "No s'ha pogut importar els elements."
       ],
@@ -1207,6 +1216,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "El codi PIN no és correcte. Torneu a provar."
+      ],
+      "Wrong second password": [
+        "La segona contrasenya és incorrecta."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
@@ -1404,6 +1416,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la contrasenya addicional."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la segona contrasenya."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
@@ -1822,6 +1837,9 @@
       "Low Priority": [
         "Prioritat baixa"
       ],
+      "Manager": [
+        "Gestor"
+      ],
       "me": [
         "jo"
       ],
@@ -2010,6 +2028,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmeu el codi PIN per a editar aquesta preferència."
+      ],
+      "Please confirm your second password": [
+        "Confirmeu la segona contrasenya"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Confirmeu la segona contrasenya per tal de bloquejar automàticament amb dades biomètriques."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Confirmeu la segona contrasenya per tal de bloquejar-la automàticament amb la vostra contrasenya."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Confirmeu la segona contrasenya per a desactivar el mode fora de línia."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirmeu la segona contrasenya per a activar el mode fora de línia."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmeu la segona contrasenya per a exportar les vostres dades de ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Confirmeu la segona contrasenya per desregistrar el bloqueig actual."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Confirmeu la segona contrasenya per actualitzar l'hora del bloqueig automàtic."
       ],
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
@@ -2266,6 +2308,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya addicional."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la segona contrasenya"
       ],
       "Unlock with biometrics": [
         "Desbloqueja amb dades biomètriques"
@@ -2926,6 +2971,9 @@
       "Make all editors": [
         "Estableix tots com a editors"
       ],
+      "Make all managers": [
+        "Defineix tots com a gestor"
+      ],
       "Make all viewers": [
         "Estableix tots com a visualitzadors"
       ],
@@ -3093,6 +3141,9 @@
       ],
       "Reveal password": [
         "Mostra la contrasenya"
+      ],
+      "Second password": [
+        "Segona contrasenya"
       ],
       "Secure links": [
         "Enllaços segurs"
@@ -3939,6 +3990,9 @@
       ],
       "Enter your PIN": [
         "Introduïu el vostre codi PIN"
+      ],
+      "Enter your second password": [
+        "Introduïu la segona contrasenya"
       ],
       "Excluded items": [
         "Elements exclosos"

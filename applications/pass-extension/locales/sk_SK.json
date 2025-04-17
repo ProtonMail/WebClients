@@ -152,11 +152,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
       ],
       "Create alias": [
         "Vytvoriť alias"
@@ -358,6 +358,9 @@
       ],
       "Make editor": [
         "Urobiť editorom"
+      ],
+      "Make manager": [
+        "Urobiť správcom"
       ],
       "Make viewer": [
         "Urobiť čitateľom"
@@ -788,6 +791,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje dodatočné heslo, aby ste mohli pokračovať v exporte"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Overenie zlyhalo. Potvrďte svoje druhé heslo, aby ste mohli pokračovať v exporte"
+      ],
       "Authentication failure: ${ message }": [
         "Zlyhanie overenia: ${ message }"
       ],
@@ -1010,6 +1016,9 @@
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Import trezora \"${ vaultData.name }\" zlyhal : ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
       ],
@@ -1165,6 +1174,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Nesprávny PIN. Skúste to znova."
+      ],
+      "Wrong second password": [
+        "Nesprávne druhé heslo"
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Momentálne ste offline. Obnovte, prosím, pripojenie, aby ste mohli odomknúť ${ PASS_SHORT_APP_NAME }."
@@ -1374,6 +1386,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše dodatočné heslo"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše druhé heslo."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
@@ -1795,6 +1810,9 @@
       "Make it your own": [
         "Prispôsobte si to podľa seba"
       ],
+      "Manager": [
+        "Správca"
+      ],
       "me": [
         "ja"
       ],
@@ -1812,6 +1830,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -1959,6 +1983,24 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Potvrďte váš PIN kód na úpravu tohto nastavenia"
+      ],
+      "Please confirm your second password": [
+        "Potvrďte vaše druhé heslo, prosím"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Potvrďte, prosím, vaše druhé heslo pre automatické uzamknutie pomocou biometrie."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Potvrďte, prosím, vaše druhé heslo pre automatické uzamknutie pomocou vášho hesla."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Potvrďte, prosím, vaše druhé heslo, aby ste mohli exportovať vaše údaje z ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Potvrďte, prosím, vaše druhé heslo pre zrušenie vášho aktuálneho zámku."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Potvrďte, prosím, vaše druhé heslo pre aktualizovanie času automatického uzamknutia."
       ],
       "Please consider leaving a review.": [
         "Zvážte napísanie recenzie, prosím."
@@ -2232,6 +2274,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho dodatočného hesla"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho druhého hesla"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
@@ -2889,6 +2934,9 @@
       "Make all editors": [
         "Urobiť všetkých editormi"
       ],
+      "Make all managers": [
+        "Urobiť zo všetkých správcov"
+      ],
       "Make all viewers": [
         "Urobiť všetkých čitateľmi"
       ],
@@ -3053,6 +3101,9 @@
       ],
       "Save passkeys": [
         "Uložiť prístupové kľúče"
+      ],
+      "Second password": [
+        "Druhé heslo"
       ],
       "Secure links": [
         "Bezpečné odkazy"
@@ -3825,6 +3876,9 @@
       ],
       "Enter your PIN": [
         "Zadejte Váš PIN kód"
+      ],
+      "Enter your second password": [
+        "Zadajte vaše druhé heslo"
       ],
       "Fill & copy password": [
         "Vyplniť a kopírovať heslo"

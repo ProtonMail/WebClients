@@ -152,10 +152,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create alias": [
@@ -1132,6 +1132,9 @@
       "Wrong PIN code. Try again.": [
         "Väärä PIN-koodi. Yritä uudelleen."
       ],
+      "Wrong second password": [
+        "Toinen salasana on väärin"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Olet tällä hetkellä yhteydettömässä tilassa. Palauta yhteys avataksesi ${ PASS_SHORT_APP_NAME }in."
       ],
@@ -1734,6 +1737,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2918,6 +2925,9 @@
       ],
       "Save passkeys": [
         "Tallenna pääsyavaimet"
+      ],
+      "Second password": [
+        "Toinen salasana"
       ],
       "Secure links": [
         "Suojatut linkit"

@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
+      "Attention required": [
+        "Necesită atenție"
+      ],
       "Authenticate": [
         "Autentificare"
       ],
@@ -1093,11 +1096,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "Select file": [
-        "Selectare fișier"
-      ],
       "select file": [
         "selectați fișierul"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -1134,6 +1137,9 @@
       ],
       "Set as default": [
         "Setare ca implicit"
+      ],
+      "Set as default mail application": [
+        "Setare ca aplicație de e-mail implicită"
       ],
       "Set catch-all": [
         "Setare adresă de agregare"
@@ -3781,6 +3787,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } nu este aplicația de e-mail implicită."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } este aplicația de e-mail implicită."
+      ],
       "Also included": [
         "De asemenea, inclus"
       ],
@@ -4216,15 +4228,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } nu vă va cere niciodată să introduceți un cod care nu provine de pe domeniul ${ domain } sau dintr-o aplicație oficială ${ BRAND_NAME }."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Cum funcționează**: Introduceți codul afișat pe dispozitivul de pe care doriți să vă autentificați în acest dispozitiv. Se va conecta la contul **${ email }**. Ambele dispozitive vor rămâne active."
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Permiteți scanarea unui cod QR pentru a vă conecta"
-      ],
       "Code copied to clipboard": [
         "Cod copiat în memorie."
       ],
@@ -4233,15 +4236,6 @@
       ],
       "Enter code manually": [
         "Introduce manuală cod"
-      ],
-      "New QR code": [
-        "Cod QR nou"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Deschideți aplicația ${ BRAND_NAME } pe telefon."
-      ],
-      "Please scan a new QR code to try again": [
-        "Scanați un cod QR nou pentru a reîncerca"
       ],
       "QR code expired": [
         "Codul QR a expirat"
@@ -4252,41 +4246,14 @@
       "QR code sign-in enabled": [
         "Autentificare cu cod QR activată"
       ],
-      "Safety tips:": [
-        "Sfaturi de siguranță:"
-      ],
-      "Scan a QR code with your phone": [
-        "Scanați un cod QR cu telefonul"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Scanați codul QR pe dispozitivul mobil pentru a vă conecta"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Scanați acest cod QR în aplicația ${ BRAND_NAME } de pe telefon pentru a vă conecta instant."
-      ],
-      "Sign in to another device": [
-        "Conectați-vă de pe alt dispozitiv"
-      ],
-      "Sign in with another device": [
-        "Conectare cu alt dispozitiv"
       ],
       "Sign in with QR code": [
         "Conectare cu cod QR"
       ],
-      "Tap **Scan QR code**": [
-        "Atingeți **Scanare cod QR**"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "Apăsați **Setări**, apoi **Conectare cu alt dispozitiv**"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Pentru a accesa codul dispozitivului de pe care doriți să vă autentificați, apăsați butonul **Autentificare cu cod QR** din meniul de ajutor al ecranului de autentificare, apoi apăsați **Introducere manuală cod**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Atenție la mesajele care conțin un cod. Nu introduceți un cod provenit de pe un site sau de la o persoană în care nu aveți încredere."
-      ],
-      "We couldn't sign you in": [
-        "Nu s-a putut conecta"
       ],
       "You have successfully signed in to another device": [
         "V-ați conectat pe alt dispozitiv"
@@ -4315,26 +4282,14 @@
       "All events in this series were updated.": [
         "Toate evenimentele din serie au fost modificate."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Toate evenimentele au fost modificate. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Acest eveniment a fost anulat."
       ],
       "This event occurrence was updated.": [
         "Acest eveniment a fost modificat."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acest eveniment a fost modificat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Acest eveniment a fost modificat."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acest eveniment a fost actualizat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Invitație la ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5154,11 +5109,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
-      "Something went wrong": [
-        "Ceva nu a funcționat corect."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ceva nu a funcționat bine. Mai încercați."
       ],
       "status page": [
         "pagina de stare"
@@ -9816,11 +9771,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -9980,6 +9935,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Când e activată, se va verifica dacă ${ MAIL_APP_NAME } este aplicația de e-mail implicită și vă va notifica dacă nu e."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
@@ -11002,10 +10960,10 @@
       "Allow sharing outside the organization": [
         "Permitere partajare în afara organizației"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11017,11 +10975,11 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "And": [
-        "Şi"
-      ],
       "AND": [
         "ȘI"
+      ],
+      "And": [
+        "Şi"
       ],
       "and": [
         "și"
@@ -11449,11 +11407,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Dacă"
-      ],
       "IF": [
         "DACĂ"
+      ],
+      "If": [
+        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -11656,14 +11614,14 @@
       "Optional": [
         "Opțional"
       ],
+      "OR": [
+        "SAU"
+      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
-      ],
-      "OR": [
-        "SAU"
       ],
       "Organization name": [
         "Nume organizație"
@@ -12300,11 +12258,11 @@
       "perform a password reset from your active session": [
         "efectuați o resetare a parolei din sesiunea activă"
       ],
-      "Privacy policy": [
-        "Politica de confidențialitate"
-      ],
       "privacy policy": [
         "politica de confidențialitate"
+      ],
+      "Privacy policy": [
+        "Politica de confidențialitate"
       ],
       "Reactivate now": [
         "Reactivare"
@@ -13704,14 +13662,6 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -13730,6 +13680,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -14374,17 +14332,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "Ziua 10 a lunii"
@@ -14634,6 +14581,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
       ]
     },
     "Option delay send seconds": {
@@ -18763,10 +18721,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -18786,6 +18744,9 @@
       ],
       "Change second password": [
         "Modificare parolă secundară"
+      ],
+      "Check your default mail application": [
+        "Verificați aplicația implicită de e-mail"
       ],
       "Choose an account": [
         "Alegeţi un cont"
@@ -19270,9 +19231,6 @@
       "Home": [
         "Început"
       ],
-      "How can we help?": [
-        "Cum vă putem ajuta?"
-      ],
       "How does it work?": [
         "Cum funcționează?"
       ],
@@ -19736,6 +19694,9 @@
       ],
       "Spam, block, and allow lists": [
         "Listă adrese blocate și permise"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
       ],
       "Start a new import": [
         "Începere importare nouă"

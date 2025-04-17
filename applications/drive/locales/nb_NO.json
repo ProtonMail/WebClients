@@ -45,10 +45,6 @@
       "Add": [
         "Legg til"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Legg til ${ photos.length } bilde i et nytt album",
-        "Legg til ${ photos.length } bilder i et nytt album"
-      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -868,6 +864,9 @@
       ],
       "Show advanced PGP settings": [
         "Vis avanserte PGP-innstillinger"
+      ],
+      "Show more": [
+        "Vis mer"
       ],
       "Show more download options": [
         "Vis flere nedlastingsalternativer"
@@ -2730,26 +2729,14 @@
       "All events in this series were updated.": [
         "Alle hendelsene i denne serien ble oppdatert."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle hendelsene i denne serien ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Denne hendelsesforekomsten ble kansellert."
       ],
       "This event occurrence was updated.": [
         "Hendelsesforekomsten ble oppdatert."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne hendelsesforekomsten ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne hendelsen ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du er invitert til ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2889,11 +2876,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
       ],
+      "Could not add to favorites": [
+        "Kunne ikke legge til i favoritter"
+      ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
       ],
       "Could not open updated vault": [
         "Kunne ikke åpne oppdatert hvelv"
+      ],
+      "Could not remove from favorites": [
+        "Kunne ikke fjerne fra favoritter"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fjern valget fra minst ${ calendarsToFixCount } kalender",
@@ -3144,6 +3137,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Something went wrong. Please try again.": [
+        "Noe gikk galt. Forsøk igjen."
       ],
       "status page": [
         "statusside"
@@ -3781,10 +3777,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Legg til ${ photos.length } bilde til",
-        "Legg til ${ photos.length } bilder til"
-      ],
       "Add to shared album": [
         "Legg til i delt album"
       ],
@@ -3793,10 +3785,6 @@
       ],
       "Recent": [
         "Nylige"
-      ],
-      "Share ${ photos.length } photo via": [
-        "Del ${ photos.length } bilde via",
-        "Del ${ photos.length } bilder via"
       ]
     },
     "Hint": {
@@ -4373,6 +4361,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
       ],
+      "Admin account allocation": [
+        "Adminkonto tildeling"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
@@ -4393,6 +4384,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Tildelt"
+      ],
+      "Already allocated": [
+        "Allerede allokert"
+      ],
+      "Already used": [
+        "Allerede brukt"
       ],
       "Also try looking in Trash.": [
         "Prøv også å se i papirkurven."
@@ -5197,6 +5197,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Vent mens vi oppdaterer dataene dine. Dette kan ta noen sekunder."
+      ],
       "Preparing link to file": [
         "Forbereder kobling til fil"
       ],
@@ -5397,6 +5400,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Lagringsplass allokert til andre brukere i denne organisasjonen"
+      ],
+      "Storage allocated to this user": [
+        "Lagringsplass tildelt denne brukeren"
+      ],
+      "Storage for users": [
+        "Lagring for brukere"
+      ],
+      "Storage used by this user": [
+        "Lagringsplass anvendt av denne brukeren"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
@@ -6093,6 +6108,9 @@
       ],
       "Account holder": [
         "Kontoinnehaver"
+      ],
+      "Account storage": [
+        "Kontolagring"
       ],
       "Add email address": [
         "Legg til e-postadresse"
@@ -7221,29 +7239,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -7265,6 +7260,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -8783,14 +8801,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brukere kan forfremmes til administrator når de har installasjonsnøkler."
+      ],
       "Organization key does not exist.": [
         "Organisasjonsnøkkel eksisterer ikke."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisasjonsnøkkelen må aktiveres for å gi administratorrettigheter."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
+      ],
       "The organization key must be activated first.": [
         "Organisasjonsnøkkelen må aktiveres først."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Du må slette alle grupper før du genererer en ny organisasjonsnøkkel"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du må privatisere alle brukere før genererering av en ny organisasjonsnøkkel."
       ],
       "You need access to the organization key to perform this operation.": [
         "Du trenger tilgang til organisasjonsnøkkelen for å utføre denne operasjonen."
@@ -10778,6 +10811,9 @@
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
       ],
+      "Get the apps": [
+        "Skaff deg appene"
+      ],
       "Gift": [
         "Gave"
       ],
@@ -11119,6 +11155,9 @@
       "Untitled document ${ date }": [
         "Dokument uten tittel ${ date }"
       ],
+      "Updating your photos": [
+        "Oppdaterer bildene dine"
+      ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
       ],
@@ -11304,6 +11343,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
       ]
     },
     "Validation": {

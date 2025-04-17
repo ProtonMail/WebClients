@@ -555,8 +555,14 @@
       "Remove bonuses": [
         "보너스 제거"
       ],
+      "Remove button": [
+        "버튼 삭제"
+      ],
       "Remove gift code": [
         "기프트 코드 삭제"
+      ],
+      "Rename": [
+        "이름 바꾸기"
       ],
       "Rename document": [
         "문서 이름 바꾸기"
@@ -647,6 +653,9 @@
       ],
       "Show advanced PGP settings": [
         "고급 PGP 설정 보기"
+      ],
+      "Show more": [
+        "더보기"
       ],
       "Show options": [
         "옵션 보기"
@@ -2254,6 +2263,11 @@
         "기한이 지난 청구서"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2332,11 +2346,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2446,8 +2455,8 @@
       "All events in this series were updated.": [
         "해당 주제의 모든 이벤트가 업데이트되었습니다."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "해당 주제의 모든 이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "바뀐 점은 다음과 같습니다:"
       ],
       "This event occurrence was canceled.": [
         "이 이벤트의 개최는 취소되었습니다."
@@ -2455,17 +2464,8 @@
       "This event occurrence was updated.": [
         "이 이벤트의 개최가 업데이트되었습니다."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "이벤트 변경사항이 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "이 이벤트는 업데이트 되었습니다."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "${ eventTitle }에 초대받았습니다.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2844,6 +2844,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+      ],
+      "Something went wrong. Please try again.": [
+        "문제가 발생했습니다. 다시 시도해주세요."
       ],
       "status page": [
         "상태 페이지"
@@ -3930,6 +3933,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
+      "Admin account allocation": [
+        "관리자 계정 할당 됨"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "광고주는 타겟 광고를 표시하기 위해 브라우징을 추적합니다. ${ VPN_APP_NAME }이 트래커와 광고를 차단하여 연결 속도를 증대시키고 온라인 경험을 개선합니다."
       ],
@@ -3944,6 +3950,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처를 가져옵니다"
+      ],
+      "Allocated": [
+        "할당 됨"
+      ],
+      "Already allocated": [
+        "이미 할당 됨"
+      ],
+      "Already used": [
+        "이미 사용됨"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 로고"
@@ -4713,6 +4728,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "다음 VPN 설정을 활성화하여 손쉽게 연결 상태를 유지해 보세요:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "스토리지가 이 조직의 다른 사용자들에게 할당됨"
+      ],
+      "Storage allocated to this user": [
+        "이 사용자에게 스토리지가 할당 됨"
+      ],
+      "Storage for users": [
+        "사용자당 저장공간"
+      ],
+      "Storage used by this user": [
+        "이 사용자로 인해 사용된 스토리지"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
       ],
@@ -5287,6 +5314,9 @@
       "Account holder": [
         "예금주"
       ],
+      "Account storage": [
+        "계정 저장공간"
+      ],
       "Add email address": [
         "이메일 주소 추가"
       ],
@@ -5804,8 +5834,20 @@
       "click here": [
         "여기를 클릭"
       ],
+      "How to add Zoom links": [
+        "Zoom 링크를 추가하는 방법"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
+      ],
+      "How to set up SMTP": [
+        "SMTP을 설정하는 방법"
+      ],
+      "How to share a calendar": [
+        "캘린더를 공유하는 방법"
+      ],
+      "How to share via email": [
+        "이메일을 통해 공유하는 방법"
       ],
       "if your data is leaked": [
         "사용자의 데이터가 유출된 경우"
@@ -7269,9 +7311,6 @@
       "Public link update access failed ": [
         "공개 링크 업데이트 접근 실패 "
       ],
-      "Recent documents updated.": [
-        "최근 문서 업데이트됨."
-      ],
       "Root folder failed to be loaded": [
         "루트 폴더 불러오는 중 문제 발생"
       ],
@@ -7516,14 +7555,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "비개인 사용자는 키 설정을 하면 관리자로 승격 가능합니다."
+      ],
       "Organization key does not exist.": [
         "조직 키가 존재하지 없습니다."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "관리자 권한을 부여하기 위해 조직 키는 활성화되어야 합니다."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "권한이 거부되었으며 관리자 권한이 제한되었습니다."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "개인 사용자는 처음 로그인하면 관리자로 승격할 수 있습니다."
+      ],
       "The organization key must be activated first.": [
         "조직 키가 먼저 활성화되어야 합니다."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "새로운 조직 키를 생성하기 전에 모든 그룹을 삭제해야 합니다."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
       ],
       "You need access to the organization key to perform this operation.": [
         "이 작업을 수행하려면 조직 키에 접근해야 합니다."
@@ -8868,6 +8922,9 @@
       "Add to ${ groupName }": [
         "${ groupName }그룹에 추가"
       ],
+      "Add user": [
+        "사용자 추가"
+      ],
       "Addresses": [
         "주소"
       ],
@@ -9086,6 +9143,9 @@
       ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
+      ],
+      "Get the apps": [
+        "앱 다운로드"
       ],
       "Gift": [
         "선물"
@@ -9461,6 +9521,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
       ]
     },
     "Validation": {

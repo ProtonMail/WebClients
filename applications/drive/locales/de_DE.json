@@ -45,10 +45,6 @@
       "Add": [
         "Hinzufügen"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "${ photos.length } Foto zu einem neuen Album hinzufügen",
-        "${ photos.length } Fotos zu einem neuen Album hinzufügen"
-      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -868,6 +864,9 @@
       ],
       "Show advanced PGP settings": [
         "Erweiterte PGP-Einstellungen anzeigen"
+      ],
+      "Show more": [
+        "Mehr anzeigen"
       ],
       "Show more download options": [
         "Weitere Download-Optionen anzeigen"
@@ -2730,26 +2729,14 @@
       "All events in this series were updated.": [
         "Alle Termine in dieser Serie wurden aktualisiert."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle Termine in dieser Serie wurden aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Dieser Termin wurde abgesagt."
       ],
       "This event occurrence was updated.": [
         "Die Häufigkeit des Termins wurde aktualisiert."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Die Häufigkeit des Termins wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Dieser Termin wurde aktualisiert."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Dieser Termin wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du wurdest zu ${ eventTitle } eingeladen.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3144,6 +3131,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Something went wrong. Please try again.": [
+        "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
       "status page": [
         "Statusseite"
@@ -3781,10 +3771,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "${ photos.length } Foto hinzufügen zu",
-        "${ photos.length } Fotos hinzufügen zu"
-      ],
       "Add to shared album": [
         "Zu geteiltem Album hinzufügen"
       ],
@@ -3793,10 +3779,6 @@
       ],
       "Recent": [
         "Kürzlich"
-      ],
-      "Share ${ photos.length } photo via": [
-        "Teile ${ photos.length } Foto über",
-        "Teile ${ photos.length } Fotos über"
       ]
     },
     "Hint": {
@@ -4373,6 +4355,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
+      "Admin account allocation": [
+        "Admin-Konto-Zuweisung"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Werbetreibende verfolgen dein Surfverhalten, um gezielte Werbung anzuzeigen. ${ VPN_APP_NAME } blockiert Tracker und Werbung, macht deine Verbindung schneller und verbessert dein Online-Erlebnis."
       ],
@@ -4393,6 +4378,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Zugewiesen"
+      ],
+      "Already allocated": [
+        "Bereits zugewiesen"
+      ],
+      "Already used": [
+        "Bereits verwendet"
       ],
       "Also try looking in Trash.": [
         "Versuchen, auch den Papierkorb zu durchsuchen."
@@ -5157,7 +5151,7 @@
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt.",
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "Please open the document to view it.": [
@@ -5397,6 +5391,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bleibe mühelos verbunden, indem du die folgenden VPN-Einstellungen aktivierst:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
+      ],
+      "Storage allocated to this user": [
+        "Diesem Benutzer zugewiesener Speicherplatz"
+      ],
+      "Storage for users": [
+        "Speicherplatz für Benutzer"
+      ],
+      "Storage used by this user": [
+        "Von diesem Benutzer verwendeter Speicherplatz"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -6093,6 +6099,9 @@
       ],
       "Account holder": [
         "Kontoinhaber"
+      ],
+      "Account storage": [
+        "Kontenspeicher"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -7221,29 +7230,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Konto löschen"
-      ],
-      "Downgrade account": [
-        "Konto downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } kostenlos holen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } holen"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behalten"
-      ],
-      "Keep account": [
-        "Konto behalten"
-      ],
-      "Switch plan": [
-        "Abonnement wechseln"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
@@ -7265,6 +7251,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Konto löschen"
+      ],
+      "Downgrade account": [
+        "Konto downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } kostenlos holen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } holen"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behalten"
+      ],
+      "Keep account": [
+        "Konto behalten"
+      ],
+      "Switch plan": [
+        "Abonnement wechseln"
       ]
     },
     "new_plans: feature": {
@@ -8783,14 +8792,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nicht-private Benutzer können zu Administratoren befördert werden, wenn sie Setup-Schlüssel haben"
+      ],
       "Organization key does not exist.": [
         "Organisation-Schlüssel ist nicht vorhanden."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Der Organisationsschlüssel muss aktiviert sein, um Admin-Rechte zu erhalten"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private Benutzer können zum Administrator befördert werden, wenn sie sich zum ersten Mal angemeldet haben."
+      ],
       "The organization key must be activated first.": [
         "Der Organisationsschlüssel muss zuerst aktiviert werden."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Du musst alle Gruppen löschen, bevor du einen neuen Organisationsschlüssel erzeugst."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du musst alle Benutzer privatisieren, bevor du einen neuen Organisationsschlüssel erzeugst."
       ],
       "You need access to the organization key to perform this operation.": [
         "Du benötigst Zugriff auf den Organisationsschlüssel, um diese Operation durchzuführen."
@@ -10778,6 +10802,9 @@
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
       ],
+      "Get the apps": [
+        "Apps herunterladen"
+      ],
       "Gift": [
         "Geschenk"
       ],
@@ -11304,6 +11331,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
       ]
     },
     "Validation": {

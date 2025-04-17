@@ -85,6 +85,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Authenticate": [
         "Аутентифицировать"
       ],
@@ -328,9 +331,6 @@
       "Fit to window": [
         "Вписать в окно"
       ],
-      "Forgot password?": [
-        "Забыли пароль?"
-      ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
       ],
@@ -490,11 +490,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -607,11 +607,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -654,6 +654,9 @@
       ],
       "Show all": [
         "Показать все"
+      ],
+      "Show more": [
+        "Показать больше"
       ],
       "Show preview": [
         "Показать предпросмотр"
@@ -2339,6 +2342,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Все в вашей организации могут подключиться к общим серверам во всех странах"
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
+      ],
       "If disabled, only admins will have access.": [
         "Если отключено, доступ будет иметь только администраторы."
       ],
@@ -2733,6 +2739,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
       ],
       "status page": [
         "страница статуса"
@@ -4223,9 +4232,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Введите собственный пароль (как администратор организации)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты, и мы отправим вам ваше имя пользователя или адрес электронной почты."
       ],
@@ -5174,11 +5180,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -5719,11 +5725,11 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allowed Domain": [
-        "Разрешённый Домен"
-      ],
       "Allowed domain": [
         "Разрешённый домен"
+      ],
+      "Allowed Domain": [
+        "Разрешённый Домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -6265,9 +6271,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить этот аккаунт и все его данные."
       ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
-      ],
       "ZIP code": [
         "Почтовый индекс"
       ]
@@ -6678,29 +6681,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Удалить аккаунт"
-      ],
-      "Downgrade account": [
-        "Перейти на более дешевую версию аккаунта"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Получить ${ BRAND_NAME } бесплатно"
-      ],
-      "Get ${ planName }": [
-        "Получить ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Сохранить ${ plan }"
-      ],
-      "Keep account": [
-        "Сохранить аккаунт"
-      ],
-      "Switch plan": [
-        "Сменить тариф"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
@@ -6725,6 +6705,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Улучшить на ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Downgrade account": [
+        "Перейти на более дешевую версию аккаунта"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Получить ${ BRAND_NAME } бесплатно"
+      ],
+      "Get ${ planName }": [
+        "Получить ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Сохранить ${ plan }"
+      ],
+      "Keep account": [
+        "Сохранить аккаунт"
+      ],
+      "Switch plan": [
+        "Сменить тариф"
       ]
     },
     "new_plans: feature": {
@@ -7954,17 +7957,6 @@
         "Добро пожаловать в ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Конфигурации стран"
@@ -8022,6 +8014,17 @@
       ],
       "The whole organization": [
         "Вся организация"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
       ]
     },
     "Organization capacity error": {
@@ -9554,9 +9557,6 @@
       "Share the confirmation code with your administrator": [
         "Сообщите код подтверждения своему администратору"
       ],
-      "Sign in": [
-        "Войти"
-      ],
       "Sign in to your organization": [
         "Войдите в свою организацию"
       ],
@@ -9601,9 +9601,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вы должны будете создать новых пользователей вручную, чтобы добавить их в вашу организацию."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша конфигурация SSO будет удалена."
@@ -10725,10 +10722,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -10947,9 +10944,6 @@
       "Enable for all users": [
         "Включить для всех пользователей"
       ],
-      "Enter 2FA code": [
-        "Введите код двухфакторной аутентификации"
-      ],
       "Enter endpoints into your identity provider": [
         "Введите конечные точки в провайдер личных данных"
       ],
@@ -10958,9 +10952,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
       ],
       "Error": [
         "Ошибка"
@@ -11000,6 +10991,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
+      ],
+      "Get the apps": [
+        "Получить приложения"
       ],
       "Gift": [
         "Подарок"

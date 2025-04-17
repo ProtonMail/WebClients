@@ -188,9 +188,6 @@
       "Fit to window": [
         "متناسب کردن با پنجره"
       ],
-      "Forgot password?": [
-        "فراموشی گذرواژه?"
-      ],
       "Get a new encrypted email address": [
         "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
       ],
@@ -293,10 +290,10 @@
       "Refresh status": [
         "وضعیت بازخوانی"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "بازخوانی صفحه"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "بازخوانی صفحه"
       ],
       "Remove": [
@@ -371,10 +368,10 @@
       "Select country": [
         "انتخاب کشور"
       ],
-      "Select file": [
+      "select file": [
         "انتخاب فایل"
       ],
-      "select file": [
+      "Select file": [
         "انتخاب فایل"
       ],
       "Send code": [
@@ -403,6 +400,9 @@
       ],
       "Show": [
         "نمایش"
+      ],
+      "Show more": [
+        "نمایش بیشتر"
       ],
       "Show preview": [
         "نمایش پیش‌نمایش"
@@ -1833,6 +1833,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
       ],
+      "Something went wrong. Please try again.": [
+        "مشکلی پیش آمده است. لطفا دوباره امتحان کنید."
+      ],
       "Tab closed": [
         "زبانه بسته شد"
       ],
@@ -2399,9 +2402,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "آدرس ایمیل یا نام کاربری حساب ${ BRAND_NAME } خودرا وارد کنید."
-      ],
-      "Enter your own password (as organization admin).": [
-        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "رایانشانی بازیابی خود را وارد کنید و ما نام کاربری‌ یا رایانشانی شما را برایتان ارسال خواهیم کرد."
@@ -3313,9 +3313,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "بلی، من می‌خواهم که برای همیشه این حساب و همه داده‌هایش را حذف کنم."
-      ],
-      "Your password (admin)": [
-        "گذرواژه شما (مدیر)"
       ]
     },
     "label": {
@@ -3564,6 +3561,23 @@
         "سرعت متوسط VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ],
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "حذف حساب کاربری"
@@ -3585,23 +3599,6 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "Upgrade": [
-        "ارتقاء"
-      ],
-      "Upgrade now": [
-        "اکنون ارتقا دهید"
       ]
     },
     "new_plans: feature": {
@@ -4936,11 +4933,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-All address": [
-        "نشانی همه‌گیر"
-      ],
       "Catch-all address": [
         "نشانی دریافت-همه"
+      ],
+      "Catch-All address": [
+        "نشانی همه‌گیر"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
@@ -5058,9 +5055,6 @@
       ],
       "Email subscriptions": [
         "اشتراک‌های رایانامه"
-      ],
-      "Enter your password": [
-        "گذرواژه خود را وارد کنید"
       ],
       "Error": [
         "خطا"

@@ -397,10 +397,10 @@
       "Move to another vault": [
         "別の保管庫に移動"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ごみ箱に移動"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ごみ箱に移動"
       ],
       "Multiple select": [
@@ -1171,6 +1171,9 @@
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
       ],
+      "Wrong second password": [
+        "セカンドパスワードが正しくありません"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "現在オフラインです。 ${ PASS_SHORT_APP_NAME }のロックを解除するためにネットワークに接続してください。"
       ],
@@ -1768,9 +1771,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2934,6 +2934,9 @@
       ],
       "Reveal password": [
         "パスワードを表示する"
+      ],
+      "Second password": [
+        "セカンドパスワード"
       ],
       "Secure links": [
         "安全なリンク"

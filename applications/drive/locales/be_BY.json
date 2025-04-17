@@ -45,12 +45,6 @@
       "Add": [
         "Дадаць"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Дадаць ${ photos.length } фатаграфію ў новы альбом",
-        "Дадаць ${ photos.length } фатаграфіі ў новы альбом",
-        "Дадаць ${ photos.length } фатаграфій у новы альбом",
-        "Дадаць ${ photos.length } фатаграфій у новы альбом"
-      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -192,6 +186,9 @@
       "Close transfers": [
         "Закрыць перадачы"
       ],
+      "Collaborate on documents": [
+        "Сумесная праца над дакументамі"
+      ],
       "Collapse": [
         "Згарнуць"
       ],
@@ -209,6 +206,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Пацвердзіць адкрыццё спасылкі ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Падключыць праграмы і прылады"
+      ],
+      "Connect to video conferencing": [
+        "Падключыцца да відэаканферэнцыі"
       ],
       "Contact group": [
         "Група кантактаў"
@@ -354,6 +357,9 @@
       "Download": [
         "Спампаваць"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Спампаваць праграмы ${ DRIVE_APP_NAME }"
+      ],
       "Download (${ count })": [
         "Спампаваць (${ count })"
       ],
@@ -444,6 +450,9 @@
       "Get Started": [
         "Пачаць працу"
       ],
+      "Get the apps": [
+        "Атрымаць праграмы"
+      ],
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
@@ -504,6 +513,9 @@
       "Import emails": [
         "Імпартаваць лісты"
       ],
+      "Import emails, calendars, contacts": [
+        "Імпартаваць лісты, календары, кантакты"
+      ],
       "Import from .csv or vCard": [
         "Імпартаванне з .csv або vCard"
       ],
@@ -552,8 +564,14 @@
       "Loading verification": [
         "Загружаецца праверка"
       ],
+      "Manage advanced account protections": [
+        "Кіраваць пашыранай абаронай уліковага запісу"
+      ],
       "Manage folders": [
         "Кіраванне папкамі"
+      ],
+      "Manage groups": [
+        "Кіраваць групамі"
       ],
       "Manage labels": [
         "Кіраванне меткамі"
@@ -563,6 +581,9 @@
       ],
       "Manage share": [
         "Кіраваць абагульваннем"
+      ],
+      "Manage users/addresses": [
+        "Кіраваць карыстальнікамі/адрасамі"
       ],
       "Mark as favorite": [
         "Пазначыць як абранае"
@@ -714,6 +735,9 @@
       "Remove bonuses": [
         "Выдаліць бонусы"
       ],
+      "Remove button": [
+        "Кнопка \"Выдаліць\""
+      ],
       "Remove device": [
         "Выдаліць прыладу"
       ],
@@ -852,8 +876,20 @@
       "Set as cover": [
         "Задаць у якасці вокладкі"
       ],
+      "Set recovery methods": [
+        "Задаць спосабы аднаўлення"
+      ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
+      ],
+      "Set up 2FA": [
+        "Наладзіць 2ФА"
+      ],
+      "Set up a custom domain": [
+        "Наладзіць карыстальніцкі дамен"
+      ],
+      "Set up email forwarding": [
+        "Наладзіць перасылку лістоў"
       ],
       "Settings": [
         "Налады"
@@ -873,11 +909,17 @@
       "Share via link": [
         "Абагуліць праз спасылку"
       ],
+      "Share your calendar with your team": [
+        "Абагуліць каляндар са сваёй камандай"
+      ],
       "Sharing options": [
         "Параметры сумеснага доступу"
       ],
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
+      ],
+      "Show more": [
+        "Паказаць больш"
       ],
       "Show more download options": [
         "Паказаць больш параметраў спампоўвання"
@@ -954,6 +996,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Уключыць ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Адрабіць"
       ],
@@ -984,6 +1029,9 @@
       "Upload": [
         "Запампаваць"
       ],
+      "Upload and share files": [
+        "Запампаваць і абагуліць файлы"
+      ],
       "Upload anyway": [
         "Запампаваць усё роўна"
       ],
@@ -1007,6 +1055,12 @@
       ],
       "Use ${ label } theme": [
         "Выкарыстоўваць тэму ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Выкарыстоўваць ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
       "Use a different card": [
         "Скарыстацца іншай карткай"
@@ -2758,26 +2812,14 @@
       "All events in this series were updated.": [
         "Усе падзеі ў гэтай серыі былі абноўлены."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Усе падзеі ў гэтай серыі былі абноўлены. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Паўтарэнне гэтай падзеі было скасавана."
       ],
       "This event occurrence was updated.": [
         "Паўтарэнне гэтай падзеі было абноўлена."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Паўтарэнне гэтай падзеі было абноўлена. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Гэта падзея была абноўлена."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Гэта падзея была абноўлена. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Вас запрасілі на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2917,11 +2959,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Немагчыма ўключыць пошук па кантэксце. Перазапусціце праграму або ачысціце яе даныя."
       ],
+      "Could not add to favorites": [
+        "Немагчыма дадаць у абранае"
+      ],
       "Could not open created vault": [
         "Немагчыма адкрыць створанае сховішча"
       ],
       "Could not open updated vault": [
         "Немагчыма адкрыць абноўленае сховішча"
+      ],
+      "Could not remove from favorites": [
+        "Немагчыма выдаліць з абранага"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
@@ -3186,6 +3234,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+      ],
+      "Something went wrong. Please try again.": [
+        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
       "status page": [
         "статус старонкі"
@@ -3841,12 +3892,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Дадаць ${ photos.length } фатаграфію ў",
-        "Дадаць ${ photos.length } фатаграфіі ў",
-        "Дадаць ${ photos.length } фатаграфій у",
-        "Дадаць ${ photos.length } фатаграфій у"
-      ],
       "Add to shared album": [
         "Дадаць у абагулены альбом"
       ],
@@ -3855,12 +3900,6 @@
       ],
       "Recent": [
         "Нядаўнія"
-      ],
-      "Share ${ photos.length } photo via": [
-        "Абагуліць ${ photos.length } фатаграфію праз",
-        "Абагуліць ${ photos.length } фатаграфіі праз",
-        "Абагуліць ${ photos.length } фатаграфій праз",
-        "Абагуліць ${ photos.length } фатаграфій праз"
       ]
     },
     "Hint": {
@@ -4515,6 +4554,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
+      "Admin account allocation": [
+        "Вылучэнне ўліковага запісу адміністратара"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
@@ -4541,6 +4583,15 @@
         "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
         "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
         "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Вылучана"
+      ],
+      "Already allocated": [
+        "Ужо вылучана"
+      ],
+      "Already used": [
+        "Ужо выкарыстоўваўся"
       ],
       "Also try looking in Trash.": [
         "Таксама паспрабуйце пашукаць у Сметніцы."
@@ -5244,6 +5295,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да гэтай папкі."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Адкрыццё дапаможніка з рэкамендаванымі дзеяннямі і карыснымі спасылкамі."
+      ],
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
       ],
@@ -5360,6 +5414,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
+      ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Пачакайце, пакуль мы абновім вашы даныя. Гэта можа заняць некалькі секунд."
       ],
       "Preparing link to file": [
         "Падрыхтоўка спасылкі на файл"
@@ -5493,6 +5550,9 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
+      "Set up your organization": [
+        "Наладзьце сваю арганізацыю"
+      ],
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
       ],
@@ -5561,6 +5621,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Сховішча, вылучанае для іншых карыстальнікаў у гэтай арганізацыі"
+      ],
+      "Storage allocated to this user": [
+        "Сховішча, вылучанае для гэтага карыстальніка"
+      ],
+      "Storage for users": [
+        "Сховішча для карыстальнікаў"
+      ],
+      "Storage used by this user": [
+        "Сховішча, выкарыстанае гэтым карыстальнікам"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -5642,6 +5714,9 @@
       ],
       "This folder is empty": [
         "Гэта папка пустая"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Гэта імя або псеўданім для вашай арганізацыі, якое будзе бачнае вашым карыстальнікам. Яго можна змяніць у любы час."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
@@ -6285,6 +6360,9 @@
       ],
       "Account holder": [
         "Трымальнік уліковага запісу"
+      ],
+      "Account storage": [
+        "Сховішча ўліковага запісу"
       ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
@@ -6934,8 +7012,53 @@
       "Drafts": [
         "Чарнавікі"
       ],
+      "Enforcing 2FA for organizations": [
+        "Прымусовае ўключэнне 2ФА для арганізацый"
+      ],
+      "How to add users": [
+        "Як дадаць карыстальнікаў"
+      ],
+      "How to add Zoom links": [
+        "Як дадаць спасылкі Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Як супрацоўнічаць у ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Як перайсці ў ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Як наладзіць ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Як наладзіць карыстальніцкі дамен"
+      ],
+      "How to set up SMTP": [
+        "Як наладзіць SMTP"
+      ],
+      "How to share a calendar": [
+        "Як абагуліць каляндар"
+      ],
+      "How to share via email": [
+        "Як абагуліць праз электронную пошту"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Як выкарыстоўваць ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Як выкарыстоўваць ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Як выкарыстоўваць перасылку электроннай пошты"
+      ],
+      "How to use Groups": [
+        "Як выкарыстоўваць групы"
       ],
       "if your data is leaked": [
         "пры ўцечцы вашых даных"
@@ -6984,6 +7107,9 @@
       ],
       "Trash": [
         "Сметніца"
+      ],
+      "Types of recovery methods": [
+        "Тыпы спосабаў аднаўлення"
       ],
       "What’s this?": [
         "Што гэта?"
@@ -7419,29 +7545,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
@@ -7463,6 +7566,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Downgrade account": [
+        "Панізіць уліковы запіс"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Пакінуць ${ plan }"
+      ],
+      "Keep account": [
+        "Пакінуць уліковы запіс"
+      ],
+      "Switch plan": [
+        "Змяніць тарыфны план"
       ]
     },
     "new_plans: feature": {
@@ -9079,14 +9205,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры наладжванні ключоў"
+      ],
       "Organization key does not exist.": [
         "Ключ арганізацыі не існуе."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Ключ арганізацыі павінен быць актываваны, каб даць прывілеі адміністратара"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "У доступе адмоўлена, а правы адміністратара абмежаваны."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры першым уваходзе ў сістэму"
+      ],
       "The organization key must be activated first.": [
         "Спачатку неабходна актываваць ключ арганізацыі."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Вы павінны выдаліць усе групы перад генерацыяй новага ключа арганізацыі"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новага ключа арганізацыі"
       ],
       "You need access to the organization key to perform this operation.": [
         "Вам патрэбны доступ да ключа арганізацыі, каб выканаць гэту аперацыю."
@@ -10904,6 +11045,9 @@
       "Add to ${ groupName }": [
         "Дадаць у ${ groupName }"
       ],
+      "Add user": [
+        "Дадаванне карыстальніка"
+      ],
       "Addresses": [
         "Адрасы"
       ],
@@ -10996,6 +11140,12 @@
       ],
       "Confirmation required": [
         "Патрабуецца пацвярджэнне"
+      ],
+      "Connect apps and devices": [
+        "Падключэнне праграм і прылад"
+      ],
+      "Connect your custom domain": [
+        "Падключэнне свайго карыстальніцкага дамена"
       ],
       "Contact Details": [
         "Кантактныя звесткі"
@@ -11147,8 +11297,14 @@
       "Enable 2FA": [
         "Уключыць 2ФА"
       ],
+      "Enable advanced account protection": [
+        "Уключэнне пашыранай абароны ўліковага запісу"
+      ],
       "Enable drive search": [
         "Уключыць пошук на дыску"
+      ],
+      "Enhance security with 2FA": [
+        "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
       "Enter 2FA code": [
         "Увядзіце код 2ФА"
@@ -11186,6 +11342,9 @@
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
       ],
+      "Get the apps": [
+        "Атрымаць праграмы"
+      ],
       "Gift": [
         "Падарунак"
       ],
@@ -11218,6 +11377,9 @@
       ],
       "Import contacts": [
         "Імпартаваць кантакты"
+      ],
+      "Import emails, calendars, contacts": [
+        "Імпартаванне лістоў, календароў, кантактаў"
       ],
       "Import events": [
         "Імпартаванне падзей"
@@ -11453,8 +11615,17 @@
       "Select link expiration time": [
         "Выберыце час завяршэння тэрміну дзеяння спасылкі"
       ],
+      "Set recovery methods": [
+        "Прызначэнне спосабаў аднаўлення"
+      ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
+      ],
+      "Set up email forwarding": [
+        "Наладжванне перысылкі лістоў"
+      ],
+      "Set up your organization": [
+        "Наладзьце сваю арганізацыю"
       ],
       "Settings": [
         "Налады"
@@ -11476,6 +11647,9 @@
       ],
       "Sign out": [
         "Выйсці"
+      ],
+      "Simplify email distribution": [
+        "Спрашчэнне распаўсюджвання электроннай пошты"
       ],
       "Size": [
         "Памер"
@@ -11522,6 +11696,9 @@
       "Trash": [
         "Сметніца"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Тып"
       ],
@@ -11530,6 +11707,9 @@
       ],
       "Untitled document ${ date }": [
         "Дакумент без назвы ад ${ date }"
+      ],
+      "Updating your photos": [
+        "Абнаўленне вашых фатаграфій"
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"
@@ -11566,6 +11746,9 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Вітаем у ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Ад чаго можа абараніць VPN?"
@@ -11716,6 +11899,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
       ]
     },
     "Validation": {

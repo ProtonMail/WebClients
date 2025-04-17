@@ -364,6 +364,9 @@
       "Make editor": [
         "რედაქტორობის მინიჭება"
       ],
+      "Make manager": [
+        "მენეჯერობის მინიჭება"
+      ],
       "Make viewer": [
         "მნახველობის მინიჭება"
       ],
@@ -397,10 +400,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -1017,6 +1020,9 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ errorMessage }"
+      ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
@@ -1157,6 +1163,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
+      ],
+      "Wrong second password": [
+        "არასწორი მეორე პაროლი"
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
@@ -1747,6 +1756,9 @@
       "Make it your own": [
         "გახადეთ ის თქვენი"
       ],
+      "Manager": [
+        "მენეჯერი"
+      ],
       "me": [
         "მე"
       ],
@@ -1768,10 +1780,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2794,6 +2802,9 @@
       "Make all editors": [
         "ყველას მონიშვნა რედაქტორად"
       ],
+      "Make all managers": [
+        "მენეჯერობის მინიჭება ყველასთვის"
+      ],
       "Make all viewers": [
         "ყველას მონიშვნა დამთვალიერებლად"
       ],
@@ -2946,6 +2957,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Second password": [
+        "მეორე პაროლი"
       ],
       "Secure links": [
         "დაცული ბმულები"
@@ -3745,6 +3759,9 @@
       ],
       "Enter your PIN": [
         "შეიყვანეთ PIN-კოდი"
+      ],
+      "Enter your second password": [
+        "შეიყვანეთ თქვენი მეორე პაროლი"
       ],
       "Excluded items": [
         "ამოღებული ელემენტები"

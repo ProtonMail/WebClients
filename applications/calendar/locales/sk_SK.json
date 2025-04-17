@@ -587,6 +587,9 @@
       "Remove Zoom meeting": [
         "Odstrániť Zoom stretnutie"
       ],
+      "Reply with a note": [
+        "Odpovedať s poznámkou"
+      ],
       "Report a problem": [
         "Nahlásiť problém"
       ],
@@ -2937,6 +2940,11 @@
         "Upraviť udalosť"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "POZNÁMKA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -2949,8 +2957,11 @@
       "All events in this series were updated.": [
         "Všetky udalosti v tejto sérii boli aktualizované."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všetky udalosti v tejto sérii boli aktualizované. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Popis zmien:"
+      ],
+      "NOTE:": [
+        "POZNÁMKA:"
       ],
       "This event occurrence was canceled.": [
         "Táto udalosť bola zrušená."
@@ -2958,17 +2969,8 @@
       "This event occurrence was updated.": [
         "Výskyt tejto udalosti bol aktualizovaný."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Výskyt tejto udalosti bol aktualizovaný. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Táto udalosť bola aktualizovaná."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Táto udalosť bola aktualizovaná. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Dostali ste pozvánku na udalosť ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3428,6 +3430,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Something went wrong. Please try again.": [
+        "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
       "Start time must be before end time": [
         "Čas začiatku musí byť pred časom konca"
@@ -4694,6 +4699,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Overenie adresy pomocou dôveryhodného kľúča je pre túto adresu povolené. Ak chcete posielať správy na túto adresu, najprv dôverujte verejnému kľúču, ktorý môže byť použitý na odosielanie."
       ],
+      "Admin account allocation": [
+        "Pridelenie účtu správcu"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Inzerenti sledujú vaše prehliadanie, aby mohli zobrazovať cielené reklamy. ${ VPN_APP_NAME } blokuje sledovače a reklamy, čím zrýchľuje vaše pripojenie a zlepšuje váš online zážitok."
       ],
@@ -4720,6 +4728,15 @@
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Pridelené"
+      ],
+      "Already allocated": [
+        "Už pridelené"
+      ],
+      "Already used": [
+        "Už využité"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -4777,6 +4794,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Zdieľaním úplných údajov o udalosti tohto kalendára súhlasíte s udelením prístupu ${ BRAND_NAME } k zašifrovaným informáciám tohto kalendára."
+      ],
+      "Calendar is disabled": [
+        "Kalendár je deaktivovaný"
       ],
       "Calendar side panel": [
         "Bočný panel kalendára"
@@ -5368,6 +5388,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Udržujte pripojenie bez námahy povolením nasledujúcich nastavení siete VPN:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Úložisko pridelené iným používateľom v tejto organizácii"
+      ],
+      "Storage allocated to this user": [
+        "Úložisko pridelené tomuto používateľovi"
+      ],
+      "Storage for users": [
+        "Úložisko pre používateľov"
+      ],
+      "Storage used by this user": [
+        "Úložisko používané týmto používateľom"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
@@ -6000,6 +6032,9 @@
       "Account holder": [
         "Vlastník účtu"
       ],
+      "Account storage": [
+        "Úložisko účtu"
+      ],
       "Add email address": [
         "Pridať emailovú adresu"
       ],
@@ -6242,6 +6277,9 @@
       ],
       "Last name": [
         "Priezvisko"
+      ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "Dajte ostatným vedieť, ak máte konflikt, meškáte alebo nemôžete čakať na udalosť."
       ],
       "Location": [
         "Poloha"
@@ -6974,6 +7012,26 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -6995,26 +7053,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7950,6 +7988,11 @@
         "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
+    "Note": {
+      "Note:": [
+        "Poznámka:"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } bol zakázaný"
@@ -8459,14 +8502,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesúkromní používatelia môžu byť povýšení na správcu, ak majú inštalačné kľúče"
+      ],
       "Organization key does not exist.": [
         "Kľúč organizácie neexistuje."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Súkromní používatelia môžu byť po prvom prihlásení povýšení na správcu"
+      ],
       "The organization key must be activated first.": [
         "Najprv musí byť aktivovaný kľúč organizácie."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Pred vytvorením nového kľúča organizácie musíte odstrániť všetky skupiny."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
       ],
       "You need access to the organization key to perform this operation.": [
         "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
@@ -8689,6 +8747,9 @@
       "Last name": [
         "Priezvisko"
       ],
+      "Leave a note for all participants": [
+        "Nechajte odkaz pre všetkých účastníkov"
+      ],
       "Name": [
         "Meno"
       ],
@@ -8824,6 +8885,14 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Znovu načítať udalosť"
+      ]
+    },
+    "RSVP Note": {
+      "Edit note": [
+        "Upraviť poznámku"
+      ],
+      "Remove note": [
+        "Odstrániť poznámku"
       ]
     },
     "Safety review": {
@@ -10594,6 +10663,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Získať ${ appName[APP_NAME] } aplikácie"
       ],
+      "Get the apps": [
+        "Získajte aplikácie"
+      ],
       "Get Zooming faster": [
         "Zoomujte rýchlejšie"
       ],
@@ -10737,6 +10809,9 @@
       ],
       "Remove participants": [
         "Odstrániť účastníkov"
+      ],
+      "Reply with a note": [
+        "Odpovedať s poznámkou"
       ],
       "Report a problem": [
         "Nahlásiť problém"
@@ -11012,6 +11087,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Zdieľané end-to-end šifrované s overeným kontaktom"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
       ]
     },
     "Validation": {

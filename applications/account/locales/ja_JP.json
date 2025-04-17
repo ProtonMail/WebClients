@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -1090,10 +1093,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
       "Select files": [
@@ -4175,15 +4178,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME }が、${ domain }ドメイン、または公式の${ BRAND_NAME }アプリ以外から送信されたコードの入力を求めることは決してありません。"
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**動作方法:** サインインしたいデバイスに表示されたコードをこのデバイスに入力します。**${ email }** としてサインインされます。両方のデバイスがアクティブのままになります。 "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "QRコードをスキャンしてサインインできるようにする"
-      ],
       "Code copied to clipboard": [
         "コードがクリップボードにコピーされました"
       ],
@@ -4192,15 +4186,6 @@
       ],
       "Enter code manually": [
         "手動でコードを入力"
-      ],
-      "New QR code": [
-        "新しいQRコード"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "携帯電話で ${ BRAND_NAME } アプリを開く"
-      ],
-      "Please scan a new QR code to try again": [
-        "新しいQRコードをスキャンして、もう一度お試しください"
       ],
       "QR code expired": [
         "QRコードは有効期限切れ"
@@ -4211,41 +4196,14 @@
       "QR code sign-in enabled": [
         "QRコードサインインが有効になりました"
       ],
-      "Safety tips:": [
-        "安全のためのヒント:"
-      ],
-      "Scan a QR code with your phone": [
-        "携帯電話でQRコードをスキャン"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "モバイルデバイスの QR コードをスキャンして、サインインしてください"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "携帯電話で${ BRAND_NAME } アプリのQRコードをスキャンして、すぐにサインイン。"
-      ],
-      "Sign in to another device": [
-        "別のデバイスにサインイン"
-      ],
-      "Sign in with another device": [
-        "別のデバイスでサインイン"
       ],
       "Sign in with QR code": [
         "QRコードでサインイン"
       ],
-      "Tap **Scan QR code**": [
-        "**QRコードをスキャン**をタップ"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "**設定**をタップし、次に**別のデバイスにサインイン**をタップしてください"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "サインインしたいデバイスのコードにアクセスするには、サインイン画面のヘルプメニューで**QRコードでサインイン**ボタンをタップし、その後に**キーを手動で入力**をタップします。 "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "コードが含まれているメッセージに注意してください。信頼できないウェブサイトまたは個人からのコードを絶対に入力しないでください。"
-      ],
-      "We couldn't sign you in": [
-        "サインインできませんでした"
       ],
       "You have successfully signed in to another device": [
         "別のデバイスでのサインインに成功しました"
@@ -4274,26 +4232,14 @@
       "All events in this series were updated.": [
         "この連続した全てのイベントは更新されました。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "この連続した全てのイベントは更新されました。更新内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "この繰り返しイベントはキャンセルされました。"
       ],
       "This event occurrence was updated.": [
         "この繰り返しイベントは更新されました。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "この繰り返しイベントは更新されました。更新内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "この予定は更新されました。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "この予定は更新されました。変更点は下記の通りです。\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "${ eventTitle } に招待されました。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5100,11 +5046,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
-      "Something went wrong": [
-        "何か問題が発生しました"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
+      ],
+      "Something went wrong. Please try again.": [
+        "問題が発生しました。再度お試しください。"
       ],
       "status page": [
         "ステータスページ"
@@ -9597,11 +9543,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "username": [
-        "ユーザー名"
-      ],
       "Username": [
         "ユーザーネーム"
+      ],
+      "username": [
+        "ユーザー名"
       ],
       "Users": [
         "ユーザー"
@@ -10742,10 +10688,10 @@
       "Allow sharing outside the organization": [
         "組織外の共有を許可"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10757,11 +10703,11 @@
       "Amount due": [
         "支払い総額"
       ],
-      "And": [
-        "と"
-      ],
       "AND": [
         "かつ"
+      ],
+      "And": [
+        "と"
       ],
       "and": [
         "と"
@@ -11189,10 +11135,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
       "Import all messages": [
@@ -11396,13 +11342,13 @@
       "Optional": [
         "任意"
       ],
+      "OR": [
+        "または"
+      ],
       "or": [
         "または"
       ],
       "Or": [
-        "または"
-      ],
-      "OR": [
         "または"
       ],
       "Organization name": [
@@ -12035,10 +11981,10 @@
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "プライバシーポリシー"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "プライバシーポリシー"
       ],
       "Reactivate now": [
@@ -13369,14 +13315,6 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -13395,6 +13333,14 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -14025,17 +13971,6 @@
         "デスクトップ"
       ]
     },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "毎月 10 日"
@@ -14264,6 +14199,17 @@
       ],
       "Trash": [
         "ごみ箱"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
       ]
     },
     "Option delay send seconds": {
@@ -18254,10 +18200,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -18754,9 +18700,6 @@
       ],
       "Home": [
         "ホーム"
-      ],
-      "How can we help?": [
-        "お困りですか？"
       ],
       "How does it work?": [
         "どのように動作しますか?"

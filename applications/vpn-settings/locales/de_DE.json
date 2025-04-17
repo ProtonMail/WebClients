@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "An das Fenster anpassen"
       ],
-      "Forgot password?": [
-        "Passwort vergessen?"
-      ],
       "Forgot recovery method?": [
         "Wiederherstellungsmethode vergessen?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Remove": [
         "Entfernen"
@@ -640,10 +640,10 @@
       "Select country ${ country }": [
         "Land ${ country } auswählen"
       ],
-      "Select file": [
+      "select file": [
         "Datei auswählen"
       ],
-      "select file": [
+      "Select file": [
         "Datei auswählen"
       ],
       "Send code": [
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "Alle anzeigen"
+      ],
+      "Show more": [
+        "Mehr anzeigen"
       ],
       "Show preview": [
         "Vorschau anzeigen"
@@ -2457,6 +2460,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Jeder in Ihrem Unternehmen kann sich mit gemeinsamen Servern in allen Ländern verbinden."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
+      ],
       "If disabled, only admins will have access.": [
         "Wenn diese Funktion deaktiviert ist, haben nur Administratoren Zugriff."
       ],
@@ -2692,15 +2698,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } wird dich niemals auffordern, einen Code einzugeben, der nicht von der Domain ${ domain } oder von einer offiziellen ${ BRAND_NAME }-Anwendung stammt."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**So funktioniert es:** Gib den Code, der auf dem Gerät angezeigt wird, bei dem du dich anmelden möchtest, auf diesem Gerät ein. Du wirst als **${ email }** angemeldet. Beide Geräte bleiben aktiv. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Erlaube, dich mit dem Scannen eines QR-Codes anzumelden"
-      ],
       "Code from the other device": [
         "Code vom anderen Gerät"
       ],
@@ -2713,26 +2710,14 @@
       "QR code sign-in enabled": [
         "QR-Code-Anmeldung aktiviert"
       ],
-      "Safety tips:": [
-        "Sicherheitstipps:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Scanne den QR-Code auf deinem Mobilgerät, um dich anzumelden"
-      ],
-      "Sign in to another device": [
-        "Bei einem anderen Gerät anmelden"
-      ],
-      "Sign in with another device": [
-        "Mit einem anderen Gerät anmelden"
       ],
       "Sign in with QR code": [
         "Mit QR-Code anmelden"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Um auf den Code des Geräts zuzugreifen, bei dem du dich anmelden möchtest, tippst du im Hilfemenü des Anmeldebildschirms auf die Schaltfläche **Mit QR-Code anmelden** und anschließend auf **Schlüssel manuell eingeben**."
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Achte auf Nachrichten, die einen Code enthalten. Gib niemals einen Code von einer Website oder einer Person ein, der du nicht vertraust."
       ],
       "You have successfully signed in to another device": [
         "Du hast dich erfolgreich bei einem anderen Gerät angemeldet"
@@ -2996,6 +2981,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
       "status page": [
         "Statusseite"
@@ -4521,9 +4509,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Gib die E-Mail-Adresse oder den Benutzernamen deines ${ BRAND_NAME }-Kontos ein."
       ],
-      "Enter your own password (as organization admin).": [
-        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Gib deine E-Mail-Adresse für die Wiederherstellung ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugeschickt."
       ],
@@ -5003,7 +4988,7 @@
         "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt.",
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "please open a support ticket": [
@@ -5495,10 +5480,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -6048,10 +6033,10 @@
       "Allow recovery by phone": [
         "Wiederherstellung per Telefon zulassen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Erlaubte Domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Erlaubte Domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6595,9 +6580,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
       ],
-      "Your password (admin)": [
-        "Dein Passwort (Admin)"
-      ],
       "ZIP code": [
         "Postleitzahl"
       ]
@@ -7011,29 +6993,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Konto löschen"
-      ],
-      "Downgrade account": [
-        "Konto downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } kostenlos holen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } holen"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behalten"
-      ],
-      "Keep account": [
-        "Konto behalten"
-      ],
-      "Switch plan": [
-        "Abonnement wechseln"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
@@ -7058,6 +7017,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Konto löschen"
+      ],
+      "Downgrade account": [
+        "Konto downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } kostenlos holen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } holen"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behalten"
+      ],
+      "Keep account": [
+        "Konto behalten"
+      ],
+      "Switch plan": [
+        "Abonnement wechseln"
       ]
     },
     "new_plans: feature": {
@@ -8251,17 +8233,6 @@
         "Willkommen bei ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Länderkonfigurationen"
@@ -8319,6 +8290,17 @@
       ],
       "The whole organization": [
         "Die gesamte Organisation"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Organization capacity error": {
@@ -9854,9 +9836,6 @@
       "Share the confirmation code with your administrator": [
         "Teile den Bestätigungscode mit deinem Administrator"
       ],
-      "Sign in": [
-        "Anmelden"
-      ],
       "Sign in to your organization": [
         "Bei deiner Organisation anmelden"
       ],
@@ -9901,9 +9880,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du musst neue Benutzer manuell anlegen, um sie zu deiner Organisation hinzuzufügen."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Du wirst zu deinem SSO-Anbieter weitergeleitet."
       ],
       "Your SSO configuration will be deleted.": [
         "Deine SSO-Konfiguration wird gelöscht."
@@ -10997,11 +10973,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -11221,9 +11197,6 @@
       "Enable for all users": [
         "Für alle Benutzer aktivieren"
       ],
-      "Enter 2FA code": [
-        "2FA Code eingeben"
-      ],
       "Enter endpoints into your identity provider": [
         "Trage die Endpunkte bei deinem Identitätsanbieter ein."
       ],
@@ -11232,9 +11205,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
-      ],
-      "Enter your password": [
-        "Passwort eingeben"
       ],
       "Error": [
         "Fehler"
@@ -11281,6 +11251,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Lade dir die App auf allen deinen Geräten herunter und schütze bis zu ${ VPN_CONNECTIONS } gleichzeitig."
+      ],
+      "Get the apps": [
+        "Apps herunterladen"
       ],
       "Gift": [
         "Geschenk"
