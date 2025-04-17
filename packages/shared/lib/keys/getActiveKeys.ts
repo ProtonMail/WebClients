@@ -1,7 +1,7 @@
 import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 
-import { ADDRESS_TYPE, KEY_FLAG } from '../constants';
+import { KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
 import type { DecryptedAddressKey } from '../interfaces';
 import {
@@ -14,7 +14,7 @@ import {
     type SignedKeyList,
     isActiveKeyV6,
 } from '../interfaces';
-import { getDefaultKeyFlags, setExternalFlags } from './keyFlags';
+import { getDefaultKeyFlags } from './keyFlags';
 import { ParsedSignedKeyList } from './signedKeyList';
 
 export const getPrimaryFlag = (keys: ActiveKey[]): 1 | 0 => {
@@ -134,7 +134,6 @@ export const getActiveUserKeys = async (keys: Key[], decryptedKeys: DecryptedKey
 export const getNormalizedActiveAddressKeys = (address: Address | undefined, keys: ActiveAddressKeysByVersion) => {
     const normalize = <V extends ActiveKeyWithVersion>(result: V, index: number): V => ({
         ...result,
-        flags: address?.Type === ADDRESS_TYPE.TYPE_EXTERNAL ? setExternalFlags(result.flags) : result.flags,
         // Reset and normalize the primary key. The primary values can be doubly set to 1 if an old SKL is used.
         // v6 keys might not have any primary key set
         primary: isActiveKeyV6(result) ? (index === 0 ? result.primary : 0) : index === 0 ? 1 : 0,
@@ -150,7 +149,6 @@ export const getNormalizedActiveAddressKeys = (address: Address | undefined, key
 export const getNormalizedActiveUserKeys = (address: Address | undefined, keys: ActiveKey[]) => {
     const normalize = (result: ActiveKey, index: number): ActiveKey => ({
         ...result,
-        flags: address?.Type === ADDRESS_TYPE.TYPE_EXTERNAL ? setExternalFlags(result.flags) : result.flags,
         // Reset and normalize the primary key. For user key, there is always a single primary key (either v4 or v6)
         primary: index === 0 ? 1 : 0,
     });
