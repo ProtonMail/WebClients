@@ -45,11 +45,11 @@
       "Add": [
         "Pridať"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Pridať ${ photos.length } fotografiu do nového albumu",
-        "Pridať ${ photos.length } fotografie do nového albumu",
-        "Pridať ${ photos.length } fotografií do nového albumu",
-        "Pridať ${ photos.length } fotografií do nového albumu"
+      "Add ${ photoCount } photo to a new album": [
+        "Pridať ${ photoCount } fotografiu do nového albumu",
+        "Pridať ${ photoCount } fotografie do nového albumu",
+        "Pridať ${ photoCount } fotografií do nového albumu",
+        "Pridať ${ photoCount } fotografií do nového albumu"
       ],
       "Add account": [
         "Pridať účet"
@@ -878,6 +878,9 @@
       ],
       "Show advanced PGP settings": [
         "Zobraziť pokročilé nastavenia PGO"
+      ],
+      "Show more": [
+        "Zobraziť viac"
       ],
       "Show more download options": [
         "Zobraziť ďalšie možnosti sťahovania"
@@ -2746,6 +2749,11 @@
         "Prioritná podpora"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "POZNÁMKA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -2758,8 +2766,11 @@
       "All events in this series were updated.": [
         "Všetky udalosti v tejto sérii boli aktualizované."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všetky udalosti v tejto sérii boli aktualizované. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Popis zmien:"
+      ],
+      "NOTE:": [
+        "POZNÁMKA:"
       ],
       "This event occurrence was canceled.": [
         "Táto udalosť bola zrušená."
@@ -2767,17 +2778,8 @@
       "This event occurrence was updated.": [
         "Výskyt tejto udalosti bol aktualizovaný."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Výskyt tejto udalosti bol aktualizovaný. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Táto udalosť bola aktualizovaná."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Táto udalosť bola aktualizovaná. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Dostali ste pozvánku na udalosť ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2917,11 +2919,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Vyhľadávanie obsahu nie je možné povoliť. Reštartujte aplikáciu alebo vymažte údaje."
       ],
+      "Could not add to favorites": [
+        "Nepodarilo sa pridať do obľúbených"
+      ],
       "Could not open created vault": [
         "Nepodarilo sa otvoriť vytvorený trezor"
       ],
       "Could not open updated vault": [
         "Nepodarilo sa otvoriť aktualizovaný trezor"
+      ],
+      "Could not remove from favorites": [
+        "Nepodarilo sa odstrániť z obľúbených"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
@@ -3186,6 +3194,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Something went wrong. Please try again.": [
+        "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
       "status page": [
         "stránka stavu"
@@ -3841,11 +3852,11 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Pridať ${ photos.length } fotografiu do",
-        "Pridať ${ photos.length } fotografie do",
-        "Pridať ${ photos.length } fotografií do",
-        "Pridať ${ photos.length } fotografií do"
+      "Add ${ photoCount } photo to": [
+        "Pridať ${ photoCount } fotografiu do",
+        "Pridať ${ photoCount } fotografie do",
+        "Pridať ${ photoCount } fotografií do",
+        "Pridať ${ photoCount } fotografií do"
       ],
       "Add to shared album": [
         "Pridať do zdieľaného albumu"
@@ -3856,11 +3867,11 @@
       "Recent": [
         "Nedávne"
       ],
-      "Share ${ photos.length } photo via": [
-        "Zdieľať ${ photos.length } fotografiu cez",
-        "Zdieľať ${ photos.length } fotografie cez",
-        "Zdieľať ${ photos.length } fotografií cez",
-        "Zdieľať ${ photos.length } fotografií cez"
+      "Share ${ photoCount } photo via": [
+        "Zdieľať ${ photoCount } fotografiu cez",
+        "Zdieľať ${ photoCount } fotografie cez",
+        "Zdieľať ${ photoCount } fotografií cez",
+        "Zdieľať ${ photoCount } fotografií cez"
       ]
     },
     "Hint": {
@@ -4515,6 +4526,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Overenie adresy pomocou dôveryhodného kľúča je pre túto adresu povolené. Ak chcete posielať správy na túto adresu, najprv dôverujte verejnému kľúču, ktorý môže byť použitý na odosielanie."
       ],
+      "Admin account allocation": [
+        "Pridelenie účtu správcu"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Inzerenti sledujú vaše prehliadanie, aby mohli zobrazovať cielené reklamy. ${ VPN_APP_NAME } blokuje sledovače a reklamy, čím zrýchľuje vaše pripojenie a zlepšuje váš online zážitok."
       ],
@@ -4541,6 +4555,15 @@
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Pridelené"
+      ],
+      "Already allocated": [
+        "Už pridelené"
+      ],
+      "Already used": [
+        "Už využité"
       ],
       "Also try looking in Trash.": [
         "Skúste tiež pohľadať v Koši."
@@ -5361,6 +5384,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Počkajte, prosím, kým aktualizujeme vaše údaje, čo môže trvať niekoľko sekúnd."
+      ],
       "Preparing link to file": [
         "Príprava odkazu na súbor"
       ],
@@ -5561,6 +5587,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Udržujte pripojenie bez námahy povolením nasledujúcich nastavení siete VPN:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Úložisko pridelené iným používateľom v tejto organizácii"
+      ],
+      "Storage allocated to this user": [
+        "Úložisko pridelené tomuto používateľovi"
+      ],
+      "Storage for users": [
+        "Úložisko pre používateľov"
+      ],
+      "Storage used by this user": [
+        "Úložisko používané týmto používateľom"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
@@ -6285,6 +6323,9 @@
       ],
       "Account holder": [
         "Vlastník účtu"
+      ],
+      "Account storage": [
+        "Úložisko účtu"
       ],
       "Add email address": [
         "Pridať emailovú adresu"
@@ -7368,29 +7409,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Zmazať účet"
-      ],
-      "Downgrade account": [
-        "Znížiť účet"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získať ${ BRAND_NAME } zadarmo"
-      ],
-      "Get ${ planName }": [
-        "Získať ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechať ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechať účet"
-      ],
-      "Switch plan": [
-        "Zmeniť plán"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
@@ -7412,6 +7430,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšiť na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Zmazať účet"
+      ],
+      "Downgrade account": [
+        "Znížiť účet"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získať ${ BRAND_NAME } zadarmo"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechať ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechať účet"
+      ],
+      "Switch plan": [
+        "Zmeniť plán"
       ]
     },
     "new_plans: feature": {
@@ -9028,14 +9069,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesúkromní používatelia môžu byť povýšení na správcu, ak majú inštalačné kľúče"
+      ],
       "Organization key does not exist.": [
         "Kľúč organizácie neexistuje."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Súkromní používatelia môžu byť po prvom prihlásení povýšení na správcu"
+      ],
       "The organization key must be activated first.": [
         "Najprv musí byť aktivovaný kľúč organizácie."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Pred vytvorením nového kľúča organizácie musíte odstrániť všetky skupiny."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
       ],
       "You need access to the organization key to perform this operation.": [
         "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
@@ -11135,6 +11191,9 @@
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
       ],
+      "Get the apps": [
+        "Získajte aplikácie"
+      ],
       "Gift": [
         "Dar"
       ],
@@ -11480,6 +11539,9 @@
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
       ],
+      "Updating your photos": [
+        "Aktualizácia vašich fotografií"
+      ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
       ],
@@ -11665,6 +11727,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
       ]
     },
     "Validation": {

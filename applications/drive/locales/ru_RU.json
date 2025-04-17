@@ -45,12 +45,6 @@
       "Add": [
         "Добавить"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Добавить фото ${ photos.length } в новый альбом",
-        "Добавить фото ${ photos.length } в новый альбом",
-        "Добавить фото ${ photos.length } в новый альбом",
-        "Добавить фото ${ photos.length } в новый альбом"
-      ],
       "Add account": [
         "Добавить аккаунт"
       ],
@@ -851,6 +845,9 @@
       ],
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
+      ],
+      "Show more": [
+        "Показать больше"
       ],
       "Show more download options": [
         "Показать больше параметров скачивания"
@@ -2674,26 +2671,14 @@
       "All events in this series were updated.": [
         "Все события в этой серии были обновлены."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Все события в этой серии были обновлены. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Частота этого события была отменена"
       ],
       "This event occurrence was updated.": [
         "Частота этого события была обновлена"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Это событие было обновлено."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Вы приглашены на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3096,6 +3081,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Something went wrong. Please try again.": [
+        "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
       ],
       "status page": [
         "страница статуса"
@@ -3739,12 +3727,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Добавить фото ${ photos.length } в",
-        "Добавить фото ${ photos.length } в",
-        "Добавить фото ${ photos.length } в",
-        "Добавить фото ${ photos.length } в"
-      ],
       "All albums": [
         "Все альбомы"
       ],
@@ -4371,6 +4353,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
+      "Admin account allocation": [
+        "Распределение аккаунтов администраторов"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ],
@@ -4394,6 +4379,15 @@
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Выделено"
+      ],
+      "Already allocated": [
+        "Уже выделено"
+      ],
+      "Already used": [
+        "Уже используется"
       ],
       "Also try looking in Trash.": [
         "Попробуйте поискать и в Корзине."
@@ -5367,6 +5361,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Хранилище, выделенное другим пользователям в этой организации"
+      ],
+      "Storage allocated to this user": [
+        "Хранилище, выделенное этому пользователю"
+      ],
+      "Storage for users": [
+        "Хранилище для пользователей"
+      ],
+      "Storage used by this user": [
+        "Хранилище, используемое этим пользователем"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
@@ -6000,6 +6006,9 @@
       ],
       "Account holder": [
         "Владелец счёта"
+      ],
+      "Account storage": [
+        "Хранилище учётной записи"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -7068,6 +7077,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7089,26 +7118,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8674,14 +8683,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Нечастные пользователи могут быть переведены в разряд администраторов, если у них есть ключи настройки"
+      ],
       "Organization key does not exist.": [
         "Ключ организации не существует."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Для предоставления прав администратора ключ организации должен быть активирован"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Отказано в доступе, права администратора ограничены."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Рядовые пользователи могут быть повышены до администратора при первом входе в систему"
+      ],
       "The organization key must be activated first.": [
         "Сначала должен быть активирован ключ организации."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Вы должны удалить все группы перед созданием нового ключа организации"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Вы должны приватизировать всех пользователей перед генерированием нового ключа организации"
       ],
       "You need access to the organization key to perform this operation.": [
         "Для выполнения этой операции вам необходим доступ к ключу организации."
@@ -10677,6 +10701,9 @@
       "Get advanced protection": [
         "Получить расширенную защиту"
       ],
+      "Get the apps": [
+        "Получить приложения"
+      ],
       "Gift": [
         "Подарок"
       ],
@@ -11126,6 +11153,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
       ]
     },
     "Validation": {
