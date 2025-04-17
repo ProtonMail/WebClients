@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
+      "Attention required": [
+        "საჭიროა ყურადღება"
+      ],
       "Authenticate": [
         "ავთენტიკაცია"
       ],
@@ -1093,10 +1096,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
       "Select files": [
@@ -1134,6 +1137,9 @@
       ],
       "Set as default": [
         "ნაგულისხმევად დაყენება"
+      ],
+      "Set as default mail application": [
+        "ნაგულიხმევ ელფოსტის აპლიკაციად დაყენება"
       ],
       "Set catch-all": [
         "დომენის ყველა ელფოსტის მიღება"
@@ -3756,6 +3762,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია არაა."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაციაა."
+      ],
       "Also included": [
         "ასევე შეიცავს"
       ],
@@ -4183,9 +4195,6 @@
       ]
     },
     "edm": {
-      "Allow scanning a QR code to sign in": [
-        "შესასვლელად QR კოდის სკანირების დაშვება"
-      ],
       "Code copied to clipboard": [
         "კოდი დაკოპირდა გაცვლის ბუფერში"
       ],
@@ -4194,15 +4203,6 @@
       ],
       "Enter code manually": [
         "კოდის ხელით შეყვანა"
-      ],
-      "New QR code": [
-        "ახალი QR კოდი"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "გახსენით ${ BRAND_NAME } აპი თქვენს ტელეფონზე"
-      ],
-      "Please scan a new QR code to try again": [
-        "დაასკანერეთ ახალი QR კოდი თავიდან საცდელად"
       ],
       "QR code expired": [
         "QR კოდი ვადაგასულია"
@@ -4213,38 +4213,11 @@
       "QR code sign-in enabled": [
         "QR კოდით შესვლა ჩართულია"
       ],
-      "Safety tips:": [
-        "უსაფრთხოებასთან დაკავშირებული რჩევები:"
-      ],
-      "Scan a QR code with your phone": [
-        "დაასკანერეთ QR კოდი თქვენი ტელეფონით"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "შესასვლელად დაასკანერეთ QR კოდი თქვენს მობილურ მოწყობილობაზე"
       ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "დაასკანერეთ ეს QR კოდი ${ BRAND_NAME }-ის აპით თქვენი ტელეფონდან, რომ მყისიერად შეხვიდეთ."
-      ],
-      "Sign in to another device": [
-        "შესვლა სხვა მოწყობილობით"
-      ],
-      "Sign in with another device": [
-        "შესვლა სხვა მოწყობილობით"
-      ],
       "Sign in with QR code": [
         "შესვლა QR კოდით"
-      ],
-      "Tap **Scan QR code**": [
-        "დაატყაპუნეთ **QR კოდის სკანირებაზე**"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "დაატყაპუნეთ **მორგებაზე**, შემდეგ კი **სხვა მოწყობილობაზე შესვლაზე**"
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "დააკვირდით შეტყობინებებს, რომლებიც კოდს შეიცავს. არასდროს შეიყვანოთ კოდი ვებგვერდიდან, ან პიროვნებისგან, რომელიც სანდო არაა."
-      ],
-      "We couldn't sign you in": [
-        "ვერ შეგიშვებთ"
       ],
       "You have successfully signed in to another device": [
         "თქვენ წარმატებით შესვედით სხვა მოწყობილობაზე"
@@ -4273,26 +4246,14 @@
       "All events in this series were updated.": [
         "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ყველა მოვლენა ამ სერიაში განახლდა. რა შეიცვალა:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "ამ მოვლენის მოხდენა გაუქმდა."
       ],
       "This event occurrence was updated.": [
         "ამ მოვლენის მოხდენის დრო განახლდა."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ამ მოვლენის მოხდენის დრო განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "ეს მოვლენა განახლდა."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ეს მოვლენა განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "მიწვეული ბრძანდებით მოვლენაზე ${ eventTitle }.\n\nროდის: ${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5104,11 +5065,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
       ],
-      "Something went wrong": [
-        "რაღაც არასწორად წავიდა"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
       ],
       "status page": [
         "სტატუსის გვერდი"
@@ -9647,10 +9608,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -10800,10 +10761,10 @@
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10815,10 +10776,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -11244,10 +11205,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -11451,13 +11412,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -12091,11 +12052,11 @@
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
       ],
-      "Privacy policy": [
-        "პირადულობის დაცვა"
-      ],
       "privacy policy": [
         "კონფიდენციალობის პოლიტიკა"
+      ],
+      "Privacy policy": [
+        "პირადულობის დაცვა"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
@@ -13460,14 +13421,6 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -13486,6 +13439,14 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -14123,17 +14084,6 @@
         "სამუშაო მაგიდა"
       ]
     },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "თვის მეათე დღე"
@@ -14362,6 +14312,17 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
       ]
     },
     "Option delay send seconds": {
@@ -18398,10 +18359,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -18421,6 +18382,9 @@
       ],
       "Change second password": [
         "მეორე პაროლის შეცვლა"
+      ],
+      "Check your default mail application": [
+        "შეამოწმეთ თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია"
       ],
       "Choose an account": [
         "აირჩიეთ ანგარიში"
@@ -18902,9 +18866,6 @@
       "Home": [
         "მთავარი"
       ],
-      "How can we help?": [
-        "რით შეგვიძლია დახმარება?"
-      ],
       "How does it work?": [
         "როგორ მუშაობს?"
       ],
@@ -19367,6 +19328,9 @@
       ],
       "Spam, block, and allow lists": [
         "სპამი, დაბლოკვა და დაშვებული სიები"
+      ],
+      "Special Offer": [
+        "სპეციალური შეთავაზება"
       ],
       "Start a new import": [
         "ახალი შემოტანის დაწყება"

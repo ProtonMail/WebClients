@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
       ],
+      "Attention required": [
+        "Oppmerksomhet kreves"
+      ],
       "Authenticate": [
         "Autentiser"
       ],
@@ -1093,11 +1096,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "Select file": [
-        "Velg fil"
-      ],
       "select file": [
         "velg fil"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Select files": [
         "Velg filer"
@@ -4209,15 +4212,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } vil aldri be deg om å taste inn en kode som ikke kommer fra domenet ${ domain }, eller fra en offisiell ${ BRAND_NAME }-applikasjon."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Slik fungerer det:** Skriv inn koden som vises på enheten du vil logge på, på denne enheten. Du blir logget på som **${ email }**. Begge enhetene vil forbli aktive. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Tillat skanning av en QR-kode for å logge på"
-      ],
       "Code copied to clipboard": [
         "Kode kopiert til utklippstavlen"
       ],
@@ -4226,15 +4220,6 @@
       ],
       "Enter code manually": [
         "Skriv inn kode manuelt"
-      ],
-      "New QR code": [
-        "Ny QR-kode"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Åpne ${ BRAND_NAME }-app-en på telefonen din"
-      ],
-      "Please scan a new QR code to try again": [
-        "Skann en ny QR-kode for å prøve igjen"
       ],
       "QR code expired": [
         "QR-kode utløpt"
@@ -4245,41 +4230,14 @@
       "QR code sign-in enabled": [
         "QR-kode pålogging aktivert"
       ],
-      "Safety tips:": [
-        "Sikkerhetstips:"
-      ],
-      "Scan a QR code with your phone": [
-        "Skann en QR-kode med telefonen din"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Skann QR-koden på mobilenheten for å logge på"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Skann denne QR-koden i ${ BRAND_NAME }-appen på telefonen din for å logge på umiddelbart."
-      ],
-      "Sign in to another device": [
-        "Logg på en annen enhet"
-      ],
-      "Sign in with another device": [
-        "Logg på med en annen enhet"
       ],
       "Sign in with QR code": [
         "Logg på med QR-kode"
       ],
-      "Tap **Scan QR code**": [
-        "Trykk på **Skann QR-kode**"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "Trykk på **Innstillinger**, og trykk deretter på **Logg på en annen enhet**"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "For å få tilgang til koden til enheten du vil logge på med, trykker du på knappen **Logg på med QR-kode** i hjelpemenyen på påloggingsskjermen, og trykker deretter på **Skriv inn nøkkel manuelt**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Vær oppmerksom på meldinger som inneholder en kode. Du må aldri taste inn en kode fra et nettsted eller en person du ikke stoler på."
-      ],
-      "We couldn't sign you in": [
-        "Vi kunne ikke logge deg på"
       ],
       "You have successfully signed in to another device": [
         "Du har logget på en annen enhet"
@@ -4308,26 +4266,14 @@
       "All events in this series were updated.": [
         "Alle hendelsene i denne serien ble oppdatert."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle hendelsene i denne serien ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Denne hendelsesforekomsten ble kansellert."
       ],
       "This event occurrence was updated.": [
         "Hendelsesforekomsten ble oppdatert."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne hendelsesforekomsten ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denne hendelsen ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du er invitert til ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5142,11 +5088,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
-      "Something went wrong": [
-        "Noe gikk galt"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Noe gikk galt. Forsøk igjen."
       ],
       "status page": [
         "statusside"
@@ -9729,11 +9675,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -10899,10 +10845,10 @@
       "Allow sharing outside the organization": [
         "Tillat deling utenfor organisasjonen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10914,11 +10860,11 @@
       "Amount due": [
         "Skyldig beløp"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -11346,11 +11292,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -11553,14 +11499,14 @@
       "Optional": [
         "Valgfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -12196,11 +12142,11 @@
       "perform a password reset from your active session": [
         "utføre en tilbakestilling av passord fra den aktive økten"
       ],
-      "Privacy policy": [
-        "Personvernerklæring"
-      ],
       "privacy policy": [
         "personvernerklæring"
+      ],
+      "Privacy policy": [
+        "Personvernerklæring"
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
@@ -13565,14 +13511,6 @@
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -13591,6 +13529,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -14228,17 +14174,6 @@
         "Skrivebord"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. i måneden"
@@ -14488,6 +14423,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -18546,10 +18492,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -19053,9 +18999,6 @@
       "Home": [
         "Hjem"
       ],
-      "How can we help?": [
-        "Hvordan kan vi hjelpe?"
-      ],
       "How does it work?": [
         "Hvordan fungerer det?"
       ],
@@ -19518,6 +19461,9 @@
       ],
       "Spam, block, and allow lists": [
         "Lister over søppelpost, blokkeringer og tillatelser"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
       ],
       "Start a new import": [
         "Start en ny import"
