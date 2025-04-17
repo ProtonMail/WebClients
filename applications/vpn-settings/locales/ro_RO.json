@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
+      "Attention required": [
+        "Necesită atenție"
+      ],
       "Authenticate": [
         "Autentificare"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "Potrivire la fereastră"
       ],
-      "Forgot password?": [
-        "Ați uitat parola?"
-      ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Remove": [
         "Eliminare"
@@ -640,11 +640,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "Select file": [
-        "Selectare fișier"
-      ],
       "select file": [
         "selectați fișierul"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Send code": [
         "Trimitere cod"
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "Arată tot"
+      ],
+      "Show more": [
+        "Afișare mai mult"
       ],
       "Show preview": [
         "Afișare previzualizare"
@@ -2468,6 +2471,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Oricine din organizație se poate conecta la serverele partajate din toate țările."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
+      ],
       "If disabled, only admins will have access.": [
         "Dacă e dezactivată, doar administratorii vor avea acces."
       ],
@@ -2703,15 +2709,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } nu vă va cere niciodată să introduceți un cod care nu provine de pe domeniul ${ domain } sau dintr-o aplicație oficială ${ BRAND_NAME }."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Cum funcționează**: Introduceți codul afișat pe dispozitivul de pe care doriți să vă autentificați în acest dispozitiv. Se va conecta la contul **${ email }**. Ambele dispozitive vor rămâne active."
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Permiteți scanarea unui cod QR pentru a vă conecta"
-      ],
       "Code from the other device": [
         "Cod de pe celălalt dispozitiv"
       ],
@@ -2724,26 +2721,14 @@
       "QR code sign-in enabled": [
         "Autentificare cu cod QR activată"
       ],
-      "Safety tips:": [
-        "Sfaturi de siguranță:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Scanați codul QR pe dispozitivul mobil pentru a vă conecta"
-      ],
-      "Sign in to another device": [
-        "Conectați-vă de pe alt dispozitiv"
-      ],
-      "Sign in with another device": [
-        "Conectare cu alt dispozitiv"
       ],
       "Sign in with QR code": [
         "Conectare cu cod QR"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Pentru a accesa codul dispozitivului de pe care doriți să vă autentificați, apăsați butonul **Autentificare cu cod QR** din meniul de ajutor al ecranului de autentificare, apoi apăsați **Introducere manuală cod**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Atenție la mesajele care conțin un cod. Nu introduceți un cod provenit de pe un site sau de la o persoană în care nu aveți încredere."
       ],
       "You have successfully signed in to another device": [
         "V-ați conectat pe alt dispozitiv"
@@ -3007,6 +2992,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ceva nu a funcționat bine. Mai încercați."
       ],
       "status page": [
         "pagina de stare"
@@ -4572,9 +4560,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Introduceți parola (ca administrator al organizației)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
@@ -5560,11 +5545,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -6127,10 +6112,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6678,9 +6663,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
       ],
-      "Your password (admin)": [
-        "Parola dvs. (administrator)"
-      ],
       "ZIP code": [
         "Cod poștal"
       ]
@@ -7094,29 +7076,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
@@ -7141,6 +7100,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Trecere la ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ștergere cont"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Păstrare ${ plan }"
+      ],
+      "Keep account": [
+        "Păstrare cont"
+      ],
+      "Switch plan": [
+        "Schimbare plan"
       ]
     },
     "new_plans: feature": {
@@ -8361,17 +8343,6 @@
         "Bun venit la ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8450,6 +8421,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
       ]
     },
     "Organization capacity error": {
@@ -10023,9 +10005,6 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
-      "Sign in": [
-        "Conectare"
-      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -10070,9 +10049,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
@@ -11189,10 +11165,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -11415,9 +11391,6 @@
       "Enable for all users": [
         "Activare pentru toți utilizatorii"
       ],
-      "Enter 2FA code": [
-        "Introduceți codul de A2F"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
       ],
@@ -11426,9 +11399,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
-      ],
-      "Enter your password": [
-        "Introduceţi parola"
       ],
       "Error": [
         "Eroare"
@@ -11476,6 +11446,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Luați aplicația pe toate dispozitivele și protejați până la ${ VPN_CONNECTIONS } dispozitive simultan."
+      ],
+      "Get the apps": [
+        "Luați aplicațiile"
       ],
       "Gift": [
         "Cadou"

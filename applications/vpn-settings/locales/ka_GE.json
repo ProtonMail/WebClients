@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
+      "Attention required": [
+        "საჭიროა ყურადღება"
+      ],
       "Authenticate": [
         "ავთენტიკაცია"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
-      "Forgot password?": [
-        "დაგავიწყდათ პაროლი?"
-      ],
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
       ],
@@ -523,10 +523,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Remove": [
@@ -640,10 +640,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
       "Send code": [
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "ყველაფრის ჩვენება"
+      ],
+      "Show more": [
+        "მეტის ჩვენება"
       ],
       "Show preview": [
         "გადახედვის ჩვენება"
@@ -2448,6 +2451,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
+      ],
       "If disabled, only admins will have access.": [
         "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
       ],
@@ -2675,9 +2681,6 @@
       ]
     },
     "edm": {
-      "Allow scanning a QR code to sign in": [
-        "შესასვლელად QR კოდის სკანირების დაშვება"
-      ],
       "Code from the other device": [
         "კოდი სხვა მოწყობილობიდან"
       ],
@@ -2690,23 +2693,11 @@
       "QR code sign-in enabled": [
         "QR კოდით შესვლა ჩართულია"
       ],
-      "Safety tips:": [
-        "უსაფრთხოებასთან დაკავშირებული რჩევები:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "შესასვლელად დაასკანერეთ QR კოდი თქვენს მობილურ მოწყობილობაზე"
       ],
-      "Sign in to another device": [
-        "შესვლა სხვა მოწყობილობით"
-      ],
-      "Sign in with another device": [
-        "შესვლა სხვა მოწყობილობით"
-      ],
       "Sign in with QR code": [
         "შესვლა QR კოდით"
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "დააკვირდით შეტყობინებებს, რომლებიც კოდს შეიცავს. არასდროს შეიყვანოთ კოდი ვებგვერდიდან, ან პიროვნებისგან, რომელიც სანდო არაა."
       ],
       "You have successfully signed in to another device": [
         "თქვენ წარმატებით შესვედით სხვა მოწყობილობაზე"
@@ -2967,6 +2958,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
       ],
       "status page": [
         "სტატუსის გვერდი"
@@ -4481,9 +4475,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "შეიყვანეთ ${ BRAND_NAME }-ის თქვენი ანგარიშის მისამართი ან მომხმარებლის სახელი."
       ],
-      "Enter your own password (as organization admin).": [
-        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "შეიყვანეთ აღდგენის ელფოსტის მისამართი და ჩვენ მომხმარებლის სახელსა და ელფოსტის მისამართს გამოგიგზავნით."
       ],
@@ -5446,10 +5437,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -5985,10 +5976,10 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6529,9 +6520,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
       ],
-      "Your password (admin)": [
-        "თქვენი პაროლი (admin)"
-      ],
       "ZIP code": [
         "საფოსტო კოდი"
       ]
@@ -6945,29 +6933,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -6992,6 +6957,29 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -8185,17 +8173,6 @@
         "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
-      ]
-    },
     "Option": {
       "Country configs": [
         "ქვეყნების მორგება"
@@ -8253,6 +8230,17 @@
       ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
       ]
     },
     "Organization capacity error": {
@@ -9778,9 +9766,6 @@
       "Share the confirmation code with your administrator": [
         "გაუზიარეთ დადასტურების კოდი თქვენს ადმინისტრატორს"
       ],
-      "Sign in": [
-        "შესვლა"
-      ],
       "Sign in to your organization": [
         "შედით თქვენს ორგანიზაციაში"
       ],
@@ -9819,9 +9804,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "თქვენს ორგანიზაციაშ დასამატებლად ახალი მომხმარებლების ხელით შექმნა მოგიწევთ."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ],
       "Your SSO configuration will be deleted.": [
         "თქვენი SSO-ის კონფიგურაცია წაიშლება."
@@ -10912,10 +10894,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -11136,9 +11118,6 @@
       "Enable for all users": [
         "ჩართვა ყველა მომხმარებლისთვის"
       ],
-      "Enter 2FA code": [
-        "შეიყვანეთ 2FA კოდი"
-      ],
       "Enter endpoints into your identity provider": [
         "შეიყვანეთ ბოლოწერტილები თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
@@ -11147,9 +11126,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
-      ],
-      "Enter your password": [
-        "შეიყვანეთ თქვენი პაროლი"
       ],
       "Error": [
         "შეცდომა"
@@ -11196,6 +11172,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "მიიღეთ აპი ყველა თქვენს მოწყობილობაზე და დაიცავით ${ VPN_CONNECTIONS }-მდე მოწყობილობა ერთდროულად."
+      ],
+      "Get the apps": [
+        "აპების გადმოწერა"
       ],
       "Gift": [
         "საჩუქარი"
