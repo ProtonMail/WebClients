@@ -235,9 +235,6 @@
       "Close": [
         "დახურვა"
       ],
-      "Close & discard": [
-        "დახურვა და მოცილება"
-      ],
       "Close composer": [
         "რედაქტორის დახურვა"
       ],
@@ -907,9 +904,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
-      "Open composer": [
-        "რედაქტორის გახსნა"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "${ DOCS_SHORT_APP_NAME }-ში გახსნა"
       ],
@@ -1024,12 +1018,6 @@
       "Replaces the selected text in your message": [
         "ჩაანაცვლებს მონიშნულ ტექსტს თქვენს შეტყობინებაში"
       ],
-      "Reply": [
-        "პასუხი"
-      ],
-      "Reply all": [
-        "ყველასთვის პასუხი"
-      ],
       "Reply securely": [
         "უსაფრთხოდ პასუხი"
       ],
@@ -1117,10 +1105,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -1215,6 +1203,9 @@
       ],
       "Show messages": [
         "შეტყობინებების ჩვენება"
+      ],
+      "Show more": [
+        "მეტის ჩვენება"
       ],
       "Show more search options": [
         "მეტი ძებნის პარამეტრის ჩვენება"
@@ -1317,10 +1308,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -3919,26 +3906,14 @@
       "All events in this series were updated.": [
         "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ყველა მოვლენა ამ სერიაში განახლდა. რა შეიცვალა:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "ამ მოვლენის მოხდენა გაუქმდა."
       ],
       "This event occurrence was updated.": [
         "ამ მოვლენის მოხდენის დრო განახლდა."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ამ მოვლენის მოხდენის დრო განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "ეს მოვლენა განახლდა."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "ეს მოვლენა განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "მიწვეული ბრძანდებით მოვლენაზე ${ eventTitle }.\n\nროდის: ${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6113,6 +6088,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
       ],
+      "Admin account allocation": [
+        "ადმინისტრატორის ანგარიშის გამოყოფა"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ],
@@ -6145,6 +6123,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "გამოყოფილი"
+      ],
+      "Already allocated": [
+        "გამოყოფილია"
+      ],
+      "Already used": [
+        "გამოყენებულია"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey-ის ლოგო"
@@ -6722,6 +6709,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -7282,8 +7270,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
+      ],
+      "Storage allocated to this user": [
+        "ამ მომხმარებლისთვის გამოყოფილი საცავი"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "ამ ბრაუზერში საცავის შესაძლებლობები მხარდაჭერილი არაა. ჩვენ, ის, შეტყობინების შემცველობაში ძებნის ჩასართავად გვჭირდება."
+      ],
+      "Storage for users": [
+        "საცავი მომხმარებლებისთვის"
+      ],
+      "Storage used by this user": [
+        "ამ მომხმარებლის მიერ გამოყენებული საცავი"
       ],
       "Subject": [
         "საგანი"
@@ -8309,6 +8309,9 @@
       "Account holder": [
         "ანგარიშის მფლობელი"
       ],
+      "Account storage": [
+        "ანგარიშის საცავი"
+      ],
       "Actions": [
         "ქმედებები"
       ],
@@ -8339,10 +8342,10 @@
       "Always move sender's emails": [
         "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -8573,10 +8576,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -8690,13 +8693,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Original link": [
@@ -9509,29 +9512,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -9553,6 +9533,29 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -10878,14 +10881,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "არა-კონფიდენციალური მომხმარებლები შეიძლება, ადმინისტრატორამდე ასწიოთ, თუ მათ გასაღებები მორგებული აქვთ"
+      ],
       "Organization key does not exist.": [
         "ორგანიზაციის გასაღები არ არსებობს."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "ადმინისტრატორის უფლებების მისაცემად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
+      ],
       "The organization key must be activated first.": [
         "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "ახალი ორგანიზაციის გასაღების გენერაციამდე ყველა ჯგუფი უნდა წაშალოთ"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
       ],
       "You need access to the organization key to perform this operation.": [
         "ოპერაციის შესასრულებლად ორგანიზაციის გასაღებთან წვდომა გჭირდებათ."
@@ -13398,6 +13416,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "მიიღეთ ${ appName[APP_NAME] } აპები"
       ],
+      "Get the apps": [
+        "აპების გადმოწერა"
+      ],
       "Gift": [
         "საჩუქარი"
       ],
@@ -14014,6 +14035,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
       ]
     },
     "Update font modal": {
