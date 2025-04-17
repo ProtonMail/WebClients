@@ -234,9 +234,6 @@
       "Close": [
         "Закрыть"
       ],
-      "Close & discard": [
-        "Закрыть и сбросить"
-      ],
       "Close composer": [
         "Закрыть редактор писем"
       ],
@@ -897,9 +894,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Открыть редактор писем"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Открыть в ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -1014,12 +1008,6 @@
       "Replaces the selected text in your message": [
         "Заменяет выбранный текст в вашем сообщении"
       ],
-      "Reply": [
-        "Ответить"
-      ],
-      "Reply all": [
-        "Ответить всем"
-      ],
       "Reply securely": [
         "Ответить безопасно"
       ],
@@ -1107,11 +1095,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select all": [
-        "Выделить все"
-      ],
       "Select All": [
         "Выбрать все"
+      ],
+      "Select all": [
+        "Выделить все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1205,6 +1193,9 @@
       ],
       "Show messages": [
         "Показать сообщения"
+      ],
+      "Show more": [
+        "Показать больше"
       ],
       "Show more search options": [
         "Показать больше настроек поиска"
@@ -1304,12 +1295,6 @@
       ],
       "Trust": [
         "Доверять"
-      ],
-      "Trust key": [
-        "Доверять ключу",
-        "Доверять ключам",
-        "Доверять ключам",
-        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -3887,26 +3872,14 @@
       "All events in this series were updated.": [
         "Все события в этой серии были обновлены."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Все события в этой серии были обновлены. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Частота этого события была отменена"
       ],
       "This event occurrence was updated.": [
         "Частота этого события была обновлена"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Это событие было обновлено."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Это событие было обновлено. Вот что изменилось:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Вы приглашены на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6223,6 +6196,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
+      "Admin account allocation": [
+        "Распределение аккаунтов администраторов"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ],
@@ -6261,6 +6237,15 @@
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Выделено"
+      ],
+      "Already allocated": [
+        "Уже выделено"
+      ],
+      "Already used": [
+        "Уже используется"
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
@@ -6850,9 +6835,6 @@
       "Initializing…": [
         "Инициализация…"
       ],
-      "Insert image": [
-        "Вставить изображение"
-      ],
       "Insert link": [
         "Вставить ссылку"
       ],
@@ -7390,8 +7372,20 @@
       "Start using the shorter, catchier version of your email address.": [
         "Начните использовать более короткий и запоминающийся вариант своего адреса электронной почты."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Хранилище, выделенное другим пользователям в этой организации"
+      ],
+      "Storage allocated to this user": [
+        "Хранилище, выделенное этому пользователю"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Возможности хранения не поддерживаются в этом браузере, нам нужна эта поддержка для включения поиска по содержимому сообщений."
+      ],
+      "Storage for users": [
+        "Хранилище для пользователей"
+      ],
+      "Storage used by this user": [
+        "Хранилище, используемое этим пользователем"
       ],
       "Subject": [
         "Тема"
@@ -8426,6 +8420,9 @@
       "Account holder": [
         "Владелец счёта"
       ],
+      "Account storage": [
+        "Хранилище учётной записи"
+      ],
       "Actions": [
         "Действия"
       ],
@@ -8456,10 +8453,10 @@
       "Always move sender's emails": [
         "Всегда перемещать сообщения отправителя"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
       "and": [
@@ -8687,11 +8684,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Если"
-      ],
       "IF": [
         "ЕСЛИ"
+      ],
+      "If": [
+        "Если"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -8801,14 +8798,14 @@
       "Optional": [
         "Необязательно"
       ],
+      "OR": [
+        "ИЛИ"
+      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
-      ],
-      "OR": [
-        "ИЛИ"
       ],
       "Original link": [
         "Оригинальная ссылка"
@@ -9621,29 +9618,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Удалить аккаунт"
-      ],
-      "Downgrade account": [
-        "Перейти на более дешевую версию аккаунта"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Получить ${ BRAND_NAME } бесплатно"
-      ],
-      "Get ${ planName }": [
-        "Получить ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Сохранить ${ plan }"
-      ],
-      "Keep account": [
-        "Сохранить аккаунт"
-      ],
-      "Switch plan": [
-        "Сменить тариф"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
@@ -9665,6 +9639,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Улучшить на ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Downgrade account": [
+        "Перейти на более дешевую версию аккаунта"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Получить ${ BRAND_NAME } бесплатно"
+      ],
+      "Get ${ planName }": [
+        "Получить ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Сохранить ${ plan }"
+      ],
+      "Keep account": [
+        "Сохранить аккаунт"
+      ],
+      "Switch plan": [
+        "Сменить тариф"
       ]
     },
     "new_plans: feature": {
@@ -11023,14 +11020,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Нечастные пользователи могут быть переведены в разряд администраторов, если у них есть ключи настройки"
+      ],
       "Organization key does not exist.": [
         "Ключ организации не существует."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Для предоставления прав администратора ключ организации должен быть активирован"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Отказано в доступе, права администратора ограничены."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Рядовые пользователи могут быть повышены до администратора при первом входе в систему"
+      ],
       "The organization key must be activated first.": [
         "Сначала должен быть активирован ключ организации."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Вы должны удалить все группы перед созданием нового ключа организации"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Вы должны приватизировать всех пользователей перед генерированием нового ключа организации"
       ],
       "You need access to the organization key to perform this operation.": [
         "Для выполнения этой операции вам необходим доступ к ключу организации."
@@ -13667,6 +13679,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Получить приложения ${ appName[APP_NAME] }"
       ],
+      "Get the apps": [
+        "Получить приложения"
+      ],
       "Gift": [
         "Подарок"
       ],
@@ -14250,6 +14265,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
       ]
     },
     "Update font modal": {
