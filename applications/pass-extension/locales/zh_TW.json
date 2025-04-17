@@ -95,10 +95,10 @@
       "Create": [
         "創建"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
       "Create alias": [
@@ -791,6 +791,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "錯誤的個人識別數字代碼，請再嘗試。"
+      ],
+      "Wrong second password": [
+        "第二密碼錯誤"
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "您的瀏覽器在啟用 ${ PASS_APP_NAME } 時發生問題"
@@ -1830,6 +1833,9 @@
       ],
       "Save passkeys": [
         "儲存密碼金鑰"
+      ],
+      "Second password": [
+        "第二密碼"
       ],
       "Security": [
         "安全"

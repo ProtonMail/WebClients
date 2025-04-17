@@ -181,6 +181,9 @@
       "Attach screenshot(s)": [
         "स्क्रीनशॉट जोड़ें"
       ],
+      "Attention required": [
+        "ध्यान दें"
+      ],
       "Authenticate": [
         "सत्यापन करें"
       ],
@@ -1069,11 +1072,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "Select file": [
-        "फाइल चुनें"
-      ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Select files": [
         "फ़ाइल चुनें"
@@ -4143,26 +4146,14 @@
       "All events in this series were updated.": [
         "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस श्रृंखला के सभी कार्यक्रम अपडेट किए गए। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "इस कार्यक्रम घटना रद्द कर दी गई।"
       ],
       "This event occurrence was updated.": [
         "इस कार्यक्रम घटना को अपडेट किया गया था।"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस कार्यक्रम घटना को अपडेट किया गया था। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "यह कार्यक्रम अपडेट किया गया था।"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस कार्यक्रम को अपडेट किया गया था। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "आपको ${ eventTitle } में आमंत्रित किया गया है\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4971,11 +4962,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
       ],
-      "Something went wrong": [
-        "कोई गड़बड़ हो गई"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "कुछ गलत हुआ, आगे बढ़ने के लिए कृपया पेज ${ refresh } करें। अगर फिर भी यह त्रुटि है तो ${ supportTeam } से सम्पर्क करें।"
+      ],
+      "Something went wrong. Please try again.": [
+        "कुछ गलती हो गई। कृपया वापिस कोशिश करें।"
       ],
       "status page": [
         "स्थिति पृष्ठ"
@@ -9425,10 +9416,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -10551,10 +10542,10 @@
       "Allow sharing outside the organization": [
         "संगठन के बाहर शेयर करने की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10566,10 +10557,10 @@
       "Amount due": [
         "देय राशि"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
       "and": [
@@ -10995,10 +10986,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
       "Import all messages": [
@@ -11202,13 +11193,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
+      "OR": [
+        "या"
+      ],
       "or": [
         "या"
       ],
       "Or": [
-        "या"
-      ],
-      "OR": [
         "या"
       ],
       "Organization name": [
@@ -11839,11 +11830,11 @@
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
       ],
-      "Privacy policy": [
-        "गोपनीयता नीति"
-      ],
       "privacy policy": [
         "निजता नीति"
+      ],
+      "Privacy policy": [
+        "गोपनीयता नीति"
       ],
       "Reactivate now": [
         "अब पुनः सक्रिय करें"
@@ -13193,14 +13184,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -13219,6 +13202,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -13850,17 +13841,6 @@
         "डेस्कटॉप"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "महीने की 10 तारीख"
@@ -14089,6 +14069,17 @@
       ],
       "Trash": [
         "कचरा"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Option delay send seconds": {
@@ -18065,10 +18056,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [

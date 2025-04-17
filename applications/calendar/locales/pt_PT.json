@@ -581,6 +581,9 @@
       "Remove Zoom meeting": [
         "Remover a reunião Zoom"
       ],
+      "Reply with a note": [
+        "Responder com uma nota"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -2897,6 +2900,11 @@
         "Editar o evento"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -2909,8 +2917,11 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Todos os eventos desta série foram atualizados. Veja o que mudou:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Aqui está o que mudou:"
+      ],
+      "NOTE:": [
+        "NOTA:"
       ],
       "This event occurrence was canceled.": [
         "A ocorrência deste evento foi cancelada."
@@ -2918,17 +2929,8 @@
       "This event occurrence was updated.": [
         "Esta ocorrência do evento foi atualizada."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Esta ocorrência de evento foi atualizada. Veja o que mudou:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Este evento foi atualizado."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Este evento foi atualizado. Veja o que mudou:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3366,6 +3368,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente mais tarde."
       ],
       "Start time must be before end time": [
         "A hora inicial tem de ser anterior à hora final"
@@ -4562,6 +4567,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Está ativada a verificação de endereço com chaves confiadas para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser utilizadas para enviar."
       ],
+      "Admin account allocation": [
+        "Alocação da conta do administrador"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Os anunciantes rastreiam a sua navegação para mostrar anúncios segmentados. O ${ VPN_APP_NAME } bloqueia os rastreadores e os anúncios, tornando a sua ligação mais rápida e melhorando a sua experiência online."
       ],
@@ -4582,6 +4590,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Alocado"
+      ],
+      "Already allocated": [
+        "Já foi alocado"
+      ],
+      "Already used": [
+        "Já utilizado"
       ],
       "American Express SafeKey logo": [
         "Logotipo do American Express SafeKey"
@@ -4639,6 +4656,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ao partilhar todos os detalhes de evento deste calendário, aceita conceder acesso ao ${ BRAND_NAME } à informação encriptada neste calendário."
+      ],
+      "Calendar is disabled": [
+        "O calendário está desativado."
       ],
       "Calendar side panel": [
         "Painel lateral de calendário"
@@ -5214,6 +5234,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantenha-se ligado sem esforço ativando as seguintes definições de VPN:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Armazenamento atribuído a outros utilizadores desta organização"
+      ],
+      "Storage allocated to this user": [
+        "Armazenamento alocado a este utilizador"
+      ],
+      "Storage for users": [
+        "Armazenamento para utilizadores"
+      ],
+      "Storage used by this user": [
+        "Armazenamento utilizado por este utilizador"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
@@ -5826,6 +5858,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Account storage": [
+        "Armazenamento da conta"
+      ],
       "Add email address": [
         "Adicionar um endereço de e-mail"
       ],
@@ -6068,6 +6103,9 @@
       ],
       "Last name": [
         "Apelido"
+      ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "Informe outras pessoas se tiver um conflito, se vai chegar atrasado ou se não pode esperar pelo evento."
       ],
       "Location": [
         "Localização"
@@ -6782,6 +6820,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -6803,26 +6861,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7706,6 +7744,11 @@
         "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
+    "Note": {
+      "Note:": [
+        "Nota:"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } foi desativado"
@@ -8163,14 +8206,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Os utilizadores não privados podem ser promovidos a administradores quando têm chaves de configuração."
+      ],
       "Organization key does not exist.": [
         "Não existe uma chave da organização."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "A chave da organização deve ser ativada para dar privilégios de administrador."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Os utilizadores privados podem ser promovidos a administradores quando iniciarem sessão pela primeira vez."
+      ],
       "The organization key must be activated first.": [
         "Tem de ativar a chave da organização primeiro."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "É necessário eliminar todos os grupos antes de gerar uma nova chave de organização."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "É necessário privatizar todos os utilizadores antes de gerar uma nova chave de organização."
       ],
       "You need access to the organization key to perform this operation.": [
         "Precisa de acesso à chave da organização para executar esta operação."
@@ -8385,6 +8443,9 @@
       "Last name": [
         "Último nome"
       ],
+      "Leave a note for all participants": [
+        "Deixar uma nota para todos os participantes"
+      ],
       "Name": [
         "Nome"
       ],
@@ -8514,6 +8575,14 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Recarregar o evento"
+      ]
+    },
+    "RSVP Note": {
+      "Edit note": [
+        "Editar a nota"
+      ],
+      "Remove note": [
+        "Remover a nota"
       ]
     },
     "Safety review": {
@@ -10196,6 +10265,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Obter as aplicações do ${ appName[APP_NAME] }"
       ],
+      "Get the apps": [
+        "Obter as aplicações"
+      ],
       "Get Zooming faster": [
         "Obtenha o Zoom mais rápido"
       ],
@@ -10337,6 +10409,9 @@
       ],
       "Remove participants": [
         "Remover participantes"
+      ],
+      "Reply with a note": [
+        "Responder com uma nota"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -10612,6 +10687,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Partilhado com encriptação de ponta a ponta e com contacto verificado"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Os administradores não podem aceder aos dados de utilizadores privados e não podem redefinir a sua palavra-passe."
       ]
     },
     "Validation": {

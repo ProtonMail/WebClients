@@ -364,6 +364,9 @@
       "Make editor": [
         "Nastavit editorem"
       ],
+      "Make manager": [
+        "Přiřadit roli správce"
+      ],
       "Make viewer": [
         "Nastavit prohlížejícím"
       ],
@@ -397,10 +400,10 @@
       "Move to another vault": [
         "Přesunout do jiného trezoru"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Přesunout do koše"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Přesunout do koše"
       ],
       "Multiple select": [
@@ -826,6 +829,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Ověření selhalo. Potvrďte své dodatečné heslo, abyste mohli pokračovat v exportu"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Ověření selhalo. Potvrďte své druhé heslo, abyste mohli pokračovat v exportu"
+      ],
       "Biometric authentication failed": [
         "Biometrické ověření selhalo"
       ],
@@ -1189,6 +1195,9 @@
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
       ],
+      "Wrong second password": [
+        "Druhé heslo je chybné"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Momentálně jste offline. Prosím obnovte připojení pro odemčení ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1390,6 +1399,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše dodatečné heslo."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše druhé heslo."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
@@ -1820,6 +1832,9 @@
       "Make it your own": [
         "Přizpůsobte podle potřeby"
       ],
+      "Manager": [
+        "Správce"
+      ],
       "me": [
         "já"
       ],
@@ -1843,12 +1858,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2011,6 +2020,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Pro úpravu tohoto nastavení potvrďte PIN kód."
+      ],
+      "Please confirm your second password": [
+        "Prosím potvrďte vaše druhé heslo"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Pro automatické zamykání pomocí biometrie prosím potvrďte své druhé heslo."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Pro automatické zamykání vaším heslem prosím potvrďte své druhé heslo."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Potvrďte prosím své druhé heslo, abyste mohli deaktivovat režim offline"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Potvrďte prosím své druhé heslo, abyste mohli povolit režim offline"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Potvrďte prosím své druhé heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Pro zrušení stávajícího zámku prosím potvrďte své druhé heslo."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Pro aktualizaci času automatického zamykání prosím potvrďte své druhé heslo."
       ],
       "Please consider leaving a review.": [
         "Zvažte prosím zanechání hodnocení."
@@ -2269,6 +2302,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho dodatečného hesla"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho druhého hesla"
       ],
       "Unlock with biometrics": [
         "Odemykání pomocí biometrie"
@@ -2920,6 +2956,9 @@
       "Make all editors": [
         "Udělat ze všech editory"
       ],
+      "Make all managers": [
+        "Přiřadit roli správce všem"
+      ],
       "Make all viewers": [
         "Udělat ze všech prohlížející"
       ],
@@ -3072,6 +3111,9 @@
       ],
       "Reveal password": [
         "Zobrazit heslo"
+      ],
+      "Second password": [
+        "Druhé heslo"
       ],
       "Secure links": [
         "Bezpečné odkazy"
@@ -3889,6 +3931,9 @@
       ],
       "Enter your PIN": [
         "Zadejte svůj PIN"
+      ],
+      "Enter your second password": [
+        "Zadejte své druhé heslo"
       ],
       "Excluded items": [
         "Vyloučené položky"

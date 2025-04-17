@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
+      "Attention required": [
+        "Χρειάζεται προσοχή"
+      ],
       "Authenticate": [
         "Ταυτοποίηση"
       ],
@@ -139,6 +142,9 @@
       "Close this banner": [
         "Κλείσιμο αυτού του banner"
       ],
+      "Collaborate on documents": [
+        "Συνεργαστείτε σε έγγραφα"
+      ],
       "Compare all plans": [
         "Συκρίνετε όλα τα πλάνα"
       ],
@@ -150,6 +156,12 @@
       ],
       "Confirm": [
         "Επιβεβαίωση"
+      ],
+      "Connect apps and devices": [
+        "Σύνδεση εφαρμογών και συσκευών"
+      ],
+      "Connect to video conferencing": [
+        "Σύνδεση σε τηλεδιάσκεψη"
       ],
       "Contact support": [
         "Επικοινωνήστε με την υποστήριξη πελατών"
@@ -268,6 +280,9 @@
       "Download": [
         "Λήψη"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
+      ],
       "Download CSV sample": [
         "Λήψη δείγματος CSV"
       ],
@@ -349,9 +364,6 @@
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
       ],
-      "Forgot password?": [
-        "Ξεχάσατε τον κωδικό πρόσβασης;"
-      ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
       ],
@@ -382,6 +394,9 @@
       "Get more servers": [
         "Αποκτήστε περισσότερους διακομιστές"
       ],
+      "Get the apps": [
+        "Αποκτήστε τις εφαρμογές"
+      ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
@@ -408,6 +423,9 @@
       ],
       "Hide plan features": [
         "Απόκρυψη δυνατοτήτων πλάνου"
+      ],
+      "Import emails, calendars, contacts": [
+        "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
       ],
       "Import new SAML metadata": [
         "Εισαγωγή νέων μεταδεδομένων SAML"
@@ -442,8 +460,17 @@
       "Make admin": [
         "Ορισμός ως διαχειριστή"
       ],
+      "Manage advanced account protections": [
+        "Διαχείριση προηγμένων προστασιών λογαριασμού"
+      ],
+      "Manage groups": [
+        "Διαχείριση ομάδων"
+      ],
       "Manage subscription": [
         "Διαχείριση συνδρομής"
+      ],
+      "Manage users/addresses": [
+        "Διαχείριση χρηστών/διευθύνσεων"
       ],
       "Mark as default": [
         "Ορισμός ως προεπιλογή"
@@ -523,11 +550,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -537,6 +564,9 @@
       ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
+      ],
+      "Remove button": [
+        "Κουμπί αναίρεσης"
       ],
       "Remove domain": [
         "Αφαίρεση τομέα"
@@ -640,11 +670,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "Select file": [
-        "Επιλέξτε αρχείο"
-      ],
       "select file": [
         "επιλέξτε αρχείο"
+      ],
+      "Select file": [
+        "Επιλέξτε αρχείο"
       ],
       "Send code": [
         "Αποστολή κωδικού"
@@ -670,6 +700,18 @@
       "Set new password": [
         "Ορίστε νέο κωδικό"
       ],
+      "Set recovery methods": [
+        "Ορισμός μεθόδων ανάκτησης"
+      ],
+      "Set up 2FA": [
+        "Ρύθμιση 2FA"
+      ],
+      "Set up a custom domain": [
+        "Ρυθμίστε ένα προσαρμοσμένο τομέα"
+      ],
+      "Set up email forwarding": [
+        "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Settings": [
         "Ρυθμίσεις"
       ],
@@ -679,6 +721,9 @@
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
       ],
+      "Share your calendar with your team": [
+        "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
+      ],
       "Sharing options": [
         "Επιλογές κοινοποίησης"
       ],
@@ -687,6 +732,9 @@
       ],
       "Show all": [
         "Εμφάνιση όλων"
+      ],
+      "Show more": [
+        "Εμφάνιση περισσότερων"
       ],
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
@@ -751,6 +799,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock": [
         "Ξεκλείδωμα"
       ],
@@ -769,11 +820,20 @@
       "Upload": [
         "Ανέβασμα"
       ],
+      "Upload and share files": [
+        "Μεταφορτώστε και μοιραστείτε αρχεία"
+      ],
       "Upload logo": [
         "Ανέβασμα λογότυπου"
       ],
       "Use ${ label } theme": [
         "Χρήση ${ label } θέματος"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Χρήση του ${ PASS_APP_NAME } για Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Χρησιμοποιήστε το ${ VPN_SHORT_APP_NAME } για την προστασία των προσωπικών δεδομένων σας"
       ],
       "Use a different card": [
         "Χρησιμοποιήστε μία άλλη κάρτα"
@@ -2451,11 +2511,56 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Προσθέστε φακέλους και αρχεία στο ${ DRIVE_APP_NAME } και προσκαλέστε μέλη της ομάδας για προβολή ή επεξεργασία."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Αυτόματα προωθήστε εισερχόμενα μηνύματα ηλεκτρονικού ταχυδρομείου σε άλλη ηλεκτρονική διεύθυνση."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Συνδέστε το CRM, την ιστοσελίδα, τους εκτυπωτές σας και άλλα."
+      ],
+      "Create groups you can email with a single address.": [
+        "Δημιουργήστε ομάδες στις οποίες μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου με μία μόνο ηλεκτρονική διεύθυνση."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Αποκτήστε εύκολα πρόσβαση στην ηλεκτρονική σας διεύθυνση και το ημερολόγιό σας σε υπολογιστή και κινητό."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Συγχρονίστε εύκολα τα αρχεία στο cloud από τον υπολογιστή σας και αποκτήστε πρόσβαση σε αυτά από την κινητή συσκευή σας."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Ενθαρρύνετε τη χρήση της ταυτοποίησης δύο παραγόντων στην οργάνωσή σας για επιπλέον ασφάλεια."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Εξασφαλίστε ασφαλή πρόσβαση στα δεδομένα του οργανισμού, ακόμα και αν η ομάδα σας είναι απομακρυσμένη ή χρησιμοποιεί δημόσιο WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Εξασφαλίστε κορυφαία ασφάλεια για τον λογαριασμό σας με το πρόγραμμα ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Βεβαιωθείτε ότι έχετε ακόμα πρόσβαση στον λογαριασμό και τα δεδομένα σας, ακόμα και αν χάσετε τον ${ BRAND_NAME } κωδικό πρόσβασής σας."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Για μια απρόσκοπτη μετάβαση στο ${ BRAND_NAME }, κάντε εισαγωγή των δεδομένων σας από το Google, το Outlook και άλλες υπηρεσίες."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Βοηθήστε την ομάδα σας να αποθηκεύει με ασφάλεια κωδικούς πρόσβασης σε ευαίσθητες επιχειρηματικές και πελατειακές πληροφορίες."
       ],
       "If disabled, only admins will have access.": [
         "Εάν είναι απενεργοποιημένο, μόνο οι διαχειριστές θα έχουν πρόσβαση."
@@ -2463,11 +2568,26 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Κρατήστε διαφορετικά μέρη της ζωής σας ξεχωριστά και τα εισερχόμενά σας οργανωμένα με πρόσθετες διευθύνσεις."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Σας επιτρέπει να προσθέτετε άμεσα συνδέσμους συσκέψεων στις προσκλήσεις εκδηλώσεων."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Κανείς στον οργανισμό σας δεν μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium δυνατότητες όταν αναβαθμίσετε."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Ρυθμίστε λογαριασμούς για όλους τους χρήστες και προσκαλέστε τους να συμμετάσχουν στο ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Απλοποιήστε τον συγχρονισμό και τον προγραμματισμό με τα κοινοποιημένα ημερολόγια."
+      ],
+      "To start, give your organization a name.": [
+        "Για να ξεκινήσετε, δώστε ένα όνομα στον οργανισμό σας."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
       ]
     },
     "Disable address prompt": {
@@ -2692,14 +2812,20 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "Η ${ BRAND_NAME } δε θα σας ζητήσει ποτέ να εισαγάγετε έναν κωδικό που δεν προέρχεται από τον τομέα ${ domain } ή από μια επίσημη ${ BRAND_NAME } εφαρμογή."
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "Η ${ BRAND_NAME } δε θα σας ζητήσει ποτέ να σαρώσετε έναν κωδικό QR που δεν προέρχεται από τον τομέα ${ domain } ή από μια επίσημη ${ BRAND_NAME } εφαρμογή."
       ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Πώς λειτουργεί:** Εισαγάγετε τον κωδικό που εμφανίζεται στη συσκευή στην οποία θέλετε να συνδεθείτε σε αυτήν τη συσκευή. Θα συνδεθείτε ως **${ email }**. Και οι δύο συσκευές θα παραμείνουν ενεργές.. "
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "Το ${ BRAND_NAME } δε θα επικοινωνήσει ποτέ μαζί σας απροσδόκητα ζητώντας σας να συνδεθείτε με έναν κώδικα QR."
       ],
-      "Allow scanning a QR code to sign in": [
-        "Να επιτρέπεται η σάρωση ενός QR κωδικού για σύνδεση"
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Πώς λειτουργεί:** Εισαγάγετε σε αυτή τη συσκευή τον κωδικό που εμφανίζεται στη συσκευή στην οποία θέλετε να συνδεθείτε. Θα συνδεθείτε ως **${ email }**. Και οι δύο συσκευές θα παραμείνουν ενεργές.."
+      ],
+      "Allow QR code sign‒in": [
+        "Να επιτρέπεται η σύνδεση με κώδικα QR"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Να είστε προσεκτικοί με τα μηνύματα που περιέχουν κωδικούς QR. Σαρώστε έναν κωδικό μόνο εάν εμπιστεύεστε την πηγή."
       ],
       "Code from the other device": [
         "Κωδικός από την άλλη συσκευή"
@@ -2713,26 +2839,20 @@
       "QR code sign-in enabled": [
         "Η σύνδεση μέσω κωδικού QR είναι ενεργοποιημένη"
       ],
-      "Safety tips:": [
-        "Συμβουλές ασφαλείας:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Σαρώστε τον κώδικα QR στην κινητή συσκευή σας για σύνδεση"
       ],
-      "Sign in to another device": [
-        "Σύνδεση με άλλη συσκευή"
+      "Security tips": [
+        "Συμβουλές ασφαλείας"
       ],
-      "Sign in with another device": [
-        "Σύνδεση με άλλη συσκευή"
+      "Sign in on another device": [
+        "Σύνδεση σε άλλη συσκευή"
       ],
       "Sign in with QR code": [
         "Συνδεθείτε με κωδικό QR"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Για να αποκτήσετε πρόσβαση στον κωδικό της συσκευής στην οποία θέλετε να συνδεθήτε, πατήστε το κουμπί **Σύνδεση με QR code** στο μενού βοήθειας της οθόνης εισόδου και, στη συνέχεια, πατήστε **Εισαγωγή κλειδιού χειροκίνητα**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Προσέξτε τα μηνύματα που περιέχουν κωδικό. Μην εισάγετε ποτέ κωδικό από ιστότοπο ή άτομο που δεν εμπιστεύεστε."
       ],
       "You have successfully signed in to another device": [
         "Συνδεθήκατε με επιτυχία σε μία άλλη συσκευή"
@@ -2996,6 +3116,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "status page": [
         "σελίδα κατάστασης"
@@ -4521,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Εισάγετε την ηλ. διεύθυνση ή το όνομα χρήστη του λογαριασμού σας ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -4902,6 +5022,9 @@
       "Open source": [
         "Ανοιχτού κώδικα"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
+      ],
       "or ${ selectFileButton }": [
         "ή ${ selectFileButton }"
       ],
@@ -5156,6 +5279,9 @@
       "Session timed out": [
         "Η συνεδρία έληξε"
       ],
+      "Set up your organization": [
+        "Ρυθμίστε τον οργανισμό σας"
+      ],
       "Setting up ${ feature }…": [
         "Ρύθμιση ${ feature }…"
       ],
@@ -5314,6 +5440,9 @@
       ],
       "This file is too large to preview": [
         "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Αυτό είναι ένα όνομα ή παρατσούκλι για τον οργανισμό σας, το οποίο θα βλέπουν οι χρήστες σας. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
@@ -5495,11 +5624,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -6048,11 +6177,11 @@
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
-      "Allowed Domain": [
-        "Επιτρεπόμενος Τομέας"
-      ],
       "Allowed domain": [
         "Επιτρεπόμενος τομέας"
+      ],
+      "Allowed Domain": [
+        "Επιτρεπόμενος Τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -6595,9 +6724,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
       ],
-      "Your password (admin)": [
-        "Ο κωδικός σας (διαχειριστής)"
-      ],
       "ZIP code": [
         "Τ.Κ."
       ]
@@ -6711,6 +6837,9 @@
       "Don't have access to your 2FA?": [
         "Δεν έχετε πρόσβαση στο 2FA σας;"
       ],
+      "Enforcing 2FA for organizations": [
+        "Επιβολή πιστοποίησης δύο παραγόντων (2FA) για οργανισμούς"
+      ],
       "Forgot email?": [
         "Ξεχάσατε το email σας;"
       ],
@@ -6729,8 +6858,50 @@
       "here": [
         "εδώ"
       ],
+      "How to add users": [
+        "Πώς να προσθέσετε χρήστες"
+      ],
+      "How to add Zoom links": [
+        "Πώς να προσθέσετε συνδέσμους Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Πώς να συνεργαστείτε στο ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Πώς να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Πώς να μετεγκατασταθείτε στο ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Πώς να πληρώσετε με Bitcoin;"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Πώς να κάνετε ρυθμίσετε το ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Πώς να ρυθμίσετε έναν προσαρμοσμένο τομέα"
+      ],
+      "How to set up SMTP": [
+        "Πώς να ρυθμίσετε το SMTP"
+      ],
+      "How to share a calendar": [
+        "Πως να κοινοποιήσετε ένα ημερολόγιο"
+      ],
+      "How to share via email": [
+        "Πώς να κοινοποιήσετε μέσω ηλεκτρονικής διεύθυνσης"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Πώς να χρησιμοποιήσετε το ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Πώς να χρησιμοποιήσετε το ${ PASS_APP_NAME } για Business"
+      ],
+      "How to use email forwarding": [
+        "Πώς να χρησιμοποιήσετε την προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "How to use Groups": [
+        "Πώς να χρησιμοποιήσετε Ομάδες"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -6767,6 +6938,9 @@
       ],
       "Trouble signing in?": [
         "Πρόβλημα σύνδεσης;"
+      ],
+      "Types of recovery methods": [
+        "Τύποι μεθόδων ανάκτησης"
       ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πλάνο σας"
@@ -7011,29 +7185,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Διαγραφή λογαριασμού"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Απόκτηση ${ BRAND_NAME } δωρεάν"
-      ],
-      "Get ${ planName }": [
-        "Απόκτηση ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Διατήρηση ${ plan }"
-      ],
-      "Keep account": [
-        "Διατήρηση λογαριασμού"
-      ],
-      "Switch plan": [
-        "Αλλαγή προγράμματος"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
@@ -7058,6 +7209,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Διαγραφή λογαριασμού"
+      ],
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Απόκτηση ${ BRAND_NAME } δωρεάν"
+      ],
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Διατήρηση ${ plan }"
+      ],
+      "Keep account": [
+        "Διατήρηση λογαριασμού"
+      ],
+      "Switch plan": [
+        "Αλλαγή προγράμματος"
       ]
     },
     "new_plans: feature": {
@@ -8251,17 +8425,6 @@
         "Καλώς ήρθατε στο ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Διαμορφώσεις χώρας"
@@ -8319,6 +8482,17 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
       ]
     },
     "Organization capacity error": {
@@ -8795,6 +8969,9 @@
       "Main street 12": [
         "Ονησίμου 12"
       ],
+      "Organization name": [
+        "Όνομα οργανισμού"
+      ],
       "Other": [
         "Άλλο"
       ],
@@ -8842,6 +9019,9 @@
       ],
       "VAT number": [
         "Α.Φ.Μ."
+      ],
+      "Your organization name": [
+        "Το όνομα του οργανισμού σας"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -9144,6 +9324,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Διεύθυνση URL της σύνδεσης SCIM στην οποία ο Φορέας Παροχής IdP προωθεί δεδομένα SCIM"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Ρύθμιση του οργανισμού και ασφάλεια λογαριασμού"
       ]
     },
     "Security Center - Info": {
@@ -9854,9 +10039,6 @@
       "Share the confirmation code with your administrator": [
         "Μοιραστείτε τον κωδικό επιβεβαίωσης με τον διαχειριστή σας"
       ],
-      "Sign in": [
-        "Σύνδεση"
-      ],
       "Sign in to your organization": [
         "Συνδεθήτε στον οργανισμό σας"
       ],
@@ -9901,9 +10083,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Για να προσθέσετε νέους χρήστες στον οργανισμό σας, θα πρέπει να τους δημιουργήσετε χειροκίνητα."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
@@ -10937,6 +11116,9 @@
       "Add to spam list": [
         "Προσθήκη στη λίστα ανεπιθύμητων"
       ],
+      "Add user": [
+        "Προσθήκη χρήστη"
+      ],
       "Add user accounts": [
         "Προσθήκη λογαριασμών χρηστών"
       ],
@@ -10994,10 +11176,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -11027,6 +11209,9 @@
       "Close": [
         "Κλείσιμο"
       ],
+      "Collaborate on documents": [
+        "Συνεργαστείτε σε έγγραφα"
+      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -11042,11 +11227,20 @@
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
       ],
+      "Connect apps and devices": [
+        "Σύνδεση εφαρμογών και συσκευών"
+      ],
       "Connect organization": [
         "Σύνδεση οργανισμού"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Συνδεθείτε σε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα με ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Σύνδεση σε τηλεδιάσκεψη"
+      ],
+      "Connect your custom domain": [
+        "Συνδέστε τον προσαρμοσμένο τομέα σας"
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
@@ -11161,6 +11355,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Λήψη ${ VPN_APP_NAME }"
       ],
@@ -11215,11 +11412,14 @@
       "Email subscriptions": [
         "Λίστες Εγγραφής E-mail"
       ],
+      "Enable advanced account protection": [
+        "Ενεργοποίηση προηγμένης προστασίας λογαριασμού"
+      ],
       "Enable for all users": [
         "Ενεργοποίηση για όλους τους χρήστες"
       ],
-      "Enter 2FA code": [
-        "Εισαγωγή κωδικού 2FA"
+      "Enhance security with 2FA": [
+        "Ενισχύστε την ασφάλεια με την πιστοποίηση δύο παραγόντων (2FA)"
       ],
       "Enter endpoints into your identity provider": [
         "Εισαγάγετε τα URL τελικού σημείου στον πάροχο ταυτότητάς σας"
@@ -11229,9 +11429,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
       ],
       "Error": [
         "Σφάλμα"
@@ -11279,6 +11476,9 @@
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Λάβετε την εφαρμογή σε όλες τις συσκευές σας και προστατεύστε μέχρι ${ VPN_CONNECTIONS } ταυτόχρονα."
       ],
+      "Get the apps": [
+        "Αποκτήστε τις εφαρμογές"
+      ],
       "Gift": [
         "Δώρο"
       ],
@@ -11302,6 +11502,9 @@
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
+      ],
+      "Import emails, calendars, contacts": [
+        "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
       ],
       "Increase your privacy with more addresses": [
         "Αυξήστε το απόρρητό σας με περισσότερες διευθύνσεις"
@@ -11345,6 +11548,9 @@
       "OpenVPN configuration files": [
         "Αρχεία διαμόρφωσης OpenVPN"
       ],
+      "Org setup": [
+        "Ρύθμιση οργανισμού"
+      ],
       "Organization filters": [
         "Φίλτρα οργανισμού"
       ],
@@ -11353,6 +11559,9 @@
       ],
       "Organization name": [
         "Όνομα οργανισμού"
+      ],
+      "Organization setup": [
+        "Ρύθμιση οργανισμού"
       ],
       "Origin": [
         "Προέλευση"
@@ -11459,8 +11668,17 @@
       "Set organization name": [
         "Ορίστε το όνομα του οργανισμού"
       ],
+      "Set recovery methods": [
+        "Ορισμός μεθόδων ανάκτησης"
+      ],
+      "Set up email forwarding": [
+        "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Set up two-factor authentication": [
         "Δημιουργήστε έλεγχο ταυτότητας δύο παραγόντων"
+      ],
+      "Set up your organization": [
+        "Ρυθμίστε τον οργανισμό σας"
       ],
       "Set your password": [
         "Ορίστε τον κωδικό πρόσβασης"
@@ -11470,6 +11688,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Παραμετροποίηση αποκλειστικών διακομιστών με αναβάθμιση σε Business"
+      ],
+      "Share your calendar with your team": [
+        "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
       ],
       "Shared servers": [
         "Κοινοποιημένοι Διακομιστές"
@@ -11485,6 +11706,12 @@
       ],
       "Signed in to member account": [
         "Σύνδεση στον λογαριασμό μέλους"
+      ],
+      "Simplify email distribution": [
+        "Απλοποιήστε τη διανομή μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Simplify password management": [
+        "Απλοποιήστε τη διαχείριση κωδικών πρόσβασης"
       ],
       "Single sign-on": [
         "Καθολική σύνδεση"
@@ -11517,6 +11744,9 @@
       "There are no groups": [
         "Δεν υπάρχουν ομάδες"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "Σύνδεση τηλεόρασης"
       ],
@@ -11544,11 +11774,17 @@
       "Upgrade your privacy": [
         "Αναβαθμίστε το απόρρητό σας"
       ],
+      "Upload and share files": [
+        "Μεταφορτώστε και μοιραστείτε αρχεία"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Ανεβάστε αρχείο CSV για να δημιουργήσετε πολλούς λογαριασμούς"
       ],
       "Upload your organization’s logo": [
         "Ανεβάστε το λογότυπο του οργανισμού σας"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Χρησιμοποιήστε το ${ VPN_SHORT_APP_NAME } για την προστασία των προσωπικών δεδομένων σας"
       ],
       "User": [
         "Χρήστης"
@@ -11576,6 +11812,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Θα στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
       "WireGuard configuration": [
         "Διαμόρφωση WireGuard"

@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
       ],
+      "Attention required": [
+        "Vyžaduje sa pozornosť"
+      ],
       "Authenticate": [
         "Overiť"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "Prispôsobiť oknu"
       ],
-      "Forgot password?": [
-        "Zabudnuté heslo?"
-      ],
       "Forgot recovery method?": [
         "Zabudli ste metódu obnovenia?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "refresh the page": [
-        "obnoviť stránku"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Remove": [
         "Vymazať"
@@ -640,11 +640,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "Select file": [
-        "Vyberte súbor"
-      ],
       "select file": [
         "vybrať súbor"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Send code": [
         "Odoslať kód"
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "Zobraziť všetko"
+      ],
+      "Show more": [
+        "Zobraziť viac"
       ],
       "Show preview": [
         "Zobraziť náhľad"
@@ -2479,6 +2482,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Každý člen vašej organizácie sa môže pripojiť k zdieľaným serverom vo všetkých krajinách."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
+      ],
       "If disabled, only admins will have access.": [
         "Ak je zakázané, prístup budú mať len administrátori."
       ],
@@ -2714,14 +2720,20 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } vás nikdy nepožiada o zadanie kódu, ktorý nepochádza z domény ${ domain } alebo z oficiálnej aplikácie ${ BRAND_NAME }."
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } vás nikdy nepožiada o naskenovanie QR kódu, ktorý nepochádza z domény ${ domain } alebo z oficiálnej aplikácie ${ BRAND_NAME } aplikácie."
       ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Ako to funguje:** Do tohto zariadenia zadajte kód zobrazený na zariadení, do ktorého sa chcete prihlásiť. Prihlásite sa ako **${ email }**. Obe zariadenia zostanú aktívne. "
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } vás nikdy nebude neočakávane kontaktovať so žiadosťou o prihlásenie pomocou kódu QR."
       ],
-      "Allow scanning a QR code to sign in": [
-        "Povoľte skenovanie QR kódu pre prihlásenie"
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Ako to funguje:** Do tohto zariadenia zadajte kód zobrazený na zariadení, do ktorého sa chcete prihlásiť. Prihlásite sa ako **${ email }**. Obe zariadenia zostanú aktívne."
+      ],
+      "Allow QR code sign‒in": [
+        "Povoliť prihlásenie pomocou QR kódu"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Dávajte si pozor na správy s QR kódmi. Kód skenujte len vtedy, ak zdroju dôverujete."
       ],
       "Code from the other device": [
         "Kód z iného zariadenia"
@@ -2735,26 +2747,20 @@
       "QR code sign-in enabled": [
         "Prihlásenie pomocou QR kódu je povolené"
       ],
-      "Safety tips:": [
-        "Tipy pre bezpečnosť:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Pre prihlásenie naskenujte QR kód na svojom mobilnom zariadení"
       ],
-      "Sign in to another device": [
-        "Prihlásenie do iného zariadenia"
+      "Security tips": [
+        "Bezpečnostné tipy"
       ],
-      "Sign in with another device": [
-        "Prihlásenie pomocou iného zariadenia"
+      "Sign in on another device": [
+        "Prihlásiť sa na inom zariadení"
       ],
       "Sign in with QR code": [
         "Prihláste sa pomocou QR kódu"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Ak chcete získať prístup ku kódu zariadenia, do ktorého sa chcete prihlásiť, ťuknite na tlačidlo **Prihlásenie pomocou QR kódu** v ponuke pomocníka na prihlasovacej obrazovke a potom ťuknite na položku **Zadať kľúč ručne**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Dávajte si pozor na správy, ktoré obsahujú kód. Nikdy nezadávajte kód z webovej stránky alebo od osoby, ktorej nedôverujete."
       ],
       "You have successfully signed in to another device": [
         "Úspešne ste sa prihlásili do iného zariadenia"
@@ -3018,6 +3024,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
       "status page": [
         "stránka stavu"
@@ -4623,9 +4632,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadajte emailovú adresu alebo používateľské meno vášho ${ BRAND_NAME } účtu."
       ],
-      "Enter your own password (as organization admin).": [
-        "Zadajte vlastné heslo (ako správca organizácie)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Zadajte vašu emailovú adresu na obnovenie a my vám pošleme vaše používateľské meno alebo emailovú adresu."
       ],
@@ -5619,11 +5625,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -6200,10 +6206,10 @@
       "Allow recovery by phone": [
         "Povoliť obnovenie telefónom"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6749,9 +6755,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Áno, chcem trvale zmazať tento účet a všetky údaje s ním spojené."
       ],
-      "Your password (admin)": [
-        "Vaše heslo (admin)"
-      ],
       "ZIP code": [
         "PSČ"
       ]
@@ -7165,29 +7168,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Zmazať účet"
-      ],
-      "Downgrade account": [
-        "Znížiť účet"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získať ${ BRAND_NAME } zadarmo"
-      ],
-      "Get ${ planName }": [
-        "Získať ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechať ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechať účet"
-      ],
-      "Switch plan": [
-        "Zmeniť plán"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
@@ -7212,6 +7192,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšiť na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Zmazať účet"
+      ],
+      "Downgrade account": [
+        "Znížiť účet"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získať ${ BRAND_NAME } zadarmo"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechať ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechať účet"
+      ],
+      "Switch plan": [
+        "Zmeniť plán"
       ]
     },
     "new_plans: feature": {
@@ -8459,17 +8462,6 @@
         "Víta vás ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Konfigurácia krajiny"
@@ -8527,6 +8519,17 @@
       ],
       "The whole organization": [
         "Celá organizácia"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
       ]
     },
     "Organization capacity error": {
@@ -10138,9 +10141,6 @@
       "Share the confirmation code with your administrator": [
         "Zdieľať potvrdzovací kód s vašim správcom"
       ],
-      "Sign in": [
-        "Prihlásiť sa"
-      ],
       "Sign in to your organization": [
         "Prihláste sa do svojej organizácie"
       ],
@@ -10185,9 +10185,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Ak chcete pridať nových používateľov do svojej organizácie, budete ich musieť vytvoriť ručne."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Presmerujeme vás na poskytovateľa SSO tretej strany."
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
@@ -11327,10 +11324,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -11555,9 +11552,6 @@
       "Enable for all users": [
         "Povoliť pre všetkých používateľov"
       ],
-      "Enter 2FA code": [
-        "Zadajte 2FA kód"
-      ],
       "Enter endpoints into your identity provider": [
         "Zadajte koncové body do vášho poskytovateľa identity"
       ],
@@ -11566,9 +11560,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadajte údaje svojho ${ BRAND_NAME } účtu pre vstup do ${ app } beta programu."
-      ],
-      "Enter your password": [
-        "Zadajte Vaše heslo"
       ],
       "Error": [
         "Chyba"
@@ -11617,6 +11608,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Nainštalujte si aplikáciu do všetkých svojich zariadení a chráňte naraz až ${ VPN_CONNECTIONS }."
+      ],
+      "Get the apps": [
+        "Získajte aplikácie"
       ],
       "Gift": [
         "Dar"

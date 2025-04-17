@@ -45,9 +45,6 @@
       "Add": [
         "添加"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "添加 ${ photos.length } 照片到新相册"
-      ],
       "Add account": [
         "添加帐户"
       ],
@@ -863,6 +860,9 @@
       ],
       "Show advanced PGP settings": [
         "显示高级 PGP 设置"
+      ],
+      "Show more": [
+        "显示更多"
       ],
       "Show more download options": [
         "显示更多下载选项"
@@ -2716,26 +2716,14 @@
       "All events in this series were updated.": [
         "此系列中的所有事件都已更新。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此系列中的所有事件都已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "此事件已被取消。"
       ],
       "This event occurrence was updated.": [
         "此事件已更新。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "此事件已更新。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "您已被邀请参加 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2875,11 +2863,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "无法启用内容搜索。请重新启动应用或清除数据。"
       ],
+      "Could not add to favorites": [
+        "无法添加到收藏"
+      ],
       "Could not open created vault": [
         "无法打开创建的保险库"
       ],
       "Could not open updated vault": [
         "无法打开已更新的保险库"
+      ],
+      "Could not remove from favorites": [
+        "无法从收藏中移除"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "至少取消选择 ${ calendarsToFixCount } 份日历"
@@ -3123,6 +3117,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong. Please try again.": [
+        "出现了一些问题。请重试。"
       ],
       "status page": [
         "运行状态网页"
@@ -3751,9 +3748,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "添加 ${ photos.length } 照片到"
-      ],
       "Add to shared album": [
         "添加到共享相册"
       ],
@@ -3762,9 +3756,6 @@
       ],
       "Recent": [
         "最近使用"
-      ],
-      "Share ${ photos.length } photo via": [
-        "通过以下方式分享 ${ photos.length } 照片"
       ]
     },
     "Hint": {
@@ -4302,6 +4293,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
+      "Admin account allocation": [
+        "分配管理员账户"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "广告商会追踪您的浏览记录来展示定向广告。${ VPN_APP_NAME } 能屏蔽追踪器和广告，从而加快连接速度，提升您的上网体验。"
       ],
@@ -4319,6 +4313,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
+      ],
+      "Allocated": [
+        "分配量"
+      ],
+      "Already allocated": [
+        "已分配"
+      ],
+      "Already used": [
+        "已使用"
       ],
       "Also try looking in Trash.": [
         "或者查看回收站中是否有您需要的文件。"
@@ -5115,6 +5118,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
       ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "请稍候，我们会更新您的数据，这可能需要几秒钟。"
+      ],
       "Preparing link to file": [
         "正在准备文件链接"
       ],
@@ -5315,6 +5321,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "请启用以下 VPN 设置，即可轻松保持网络连接："
+      ],
+      "Storage allocated to other users in this organisation": [
+        "此组织其他成员的存储空间分配量"
+      ],
+      "Storage allocated to this user": [
+        "该用户的存储空间分配量"
+      ],
+      "Storage for users": [
+        "用户存储"
+      ],
+      "Storage used by this user": [
+        "该用户的存储空间使用量"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
@@ -5997,6 +6015,9 @@
       ],
       "Account holder": [
         "账户持有人"
+      ],
+      "Account storage": [
+        "账户存储空间"
       ],
       "Add email address": [
         "添加邮箱地址"
@@ -7062,29 +7083,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "删除账户"
-      ],
-      "Downgrade account": [
-        "降级账户"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "免费获得 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "开通 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保持计划 ${ plan }"
-      ],
-      "Keep account": [
-        "保留账户"
-      ],
-      "Switch plan": [
-        "切换计划"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降级至 ${ downgradedPlanName }"
@@ -7106,6 +7104,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升级至 ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "删除账户"
+      ],
+      "Downgrade account": [
+        "降级账户"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "免费获得 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保持计划 ${ plan }"
+      ],
+      "Keep account": [
+        "保留账户"
+      ],
+      "Switch plan": [
+        "切换计划"
       ]
     },
     "new_plans: feature": {
@@ -8575,14 +8596,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "非私人用户拥有设置密钥后可晋升为管理员"
+      ],
       "Organization key does not exist.": [
         "组织密钥不存在."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "必须激活组织密钥才能赋予管理员权限"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "权限被拒绝, 管理员权限受到限制。"
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "私人用户首次登录时可晋升为管理员"
+      ],
       "The organization key must be activated first.": [
         "必须先激活机构密钥。"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "在生成新的组织密钥前，您必须删除所有群组"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在生成新的组织密钥之前，您必须先将所有用户私有化"
       ],
       "You need access to the organization key to perform this operation.": [
         "您需要访问组织密钥才能执行此操作。"
@@ -10514,6 +10550,9 @@
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
       ],
+      "Get the apps": [
+        "下载应用"
+      ],
       "Gift": [
         "礼品码"
       ],
@@ -10853,6 +10892,9 @@
       "Untitled document ${ date }": [
         "无标题文档 ${ date }"
       ],
+      "Updating your photos": [
+        "正在更新您的照片"
+      ],
       "Upgrade complete!": [
         "升级完成！"
       ],
@@ -11038,6 +11080,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "管理员无法访问私人用户的数据，也无法重置他们的密码。"
       ]
     },
     "Validation": {

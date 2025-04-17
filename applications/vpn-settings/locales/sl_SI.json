@@ -82,6 +82,9 @@
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
+      "Attention required": [
+        "Pozornost!"
+      ],
       "Authenticate": [
         "Preverjanje pristnosti"
       ],
@@ -301,9 +304,6 @@
       "Fit to window": [
         "Prilagodi oknu"
       ],
-      "Forgot password?": [
-        "Pozabljeno geslo?"
-      ],
       "Forgot recovery method?": [
         "Ste pozabili način obnovitve?"
       ],
@@ -460,11 +460,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Remove": [
         "Odstrani"
@@ -571,11 +571,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "Select file": [
-        "Izberite datoteko"
-      ],
       "select file": [
         "izberite datoteko"
+      ],
+      "Select file": [
+        "Izberite datoteko"
       ],
       "Send code": [
         "Pošlji kodo"
@@ -618,6 +618,9 @@
       ],
       "Show all": [
         "Prikaži vse"
+      ],
+      "Show more": [
+        "Prikaži več"
       ],
       "Show preview": [
         "Prikaži predogled"
@@ -2274,6 +2277,9 @@
       ]
     },
     "Description": {
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Z nadgradnjo paketa omogočite premijske storitve, kot je več e-poštnih naslovov, s katerimi ločite različne vidike svojega življenja."
       ]
@@ -2638,6 +2644,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nekaj je šlo narobe; pred nadaljevanjem ${ refresh }. Če se napaka še naprej prikazuje, se obrnite na našo ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Nekaj je šlo narobe. Poskusite znova."
       ],
       "status page": [
         "tej strani"
@@ -3944,9 +3953,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Vnesi svoj e-poštni naslov ali uporabniško ime ${ BRAND_NAME } računa."
       ],
-      "Enter your own password (as organization admin).": [
-        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Vnesite svoj naslov za obnovitev računa in poslali vam bomo vaše uporabniško ime ali naslov e-pošte."
       ],
@@ -4703,11 +4709,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -5158,10 +5164,10 @@
       "Allow recovery by phone": [
         "Omogoči obnovitev po telefonu."
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
       "Amount": [
@@ -5647,9 +5653,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ta račun in vse njegove podatke."
       ],
-      "Your password (admin)": [
-        "Vaše geslo (admin)"
-      ],
       "ZIP code": [
         "Poštna številka"
       ]
@@ -6028,29 +6031,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Izbriši račun"
-      ],
-      "Downgrade account": [
-        "Zmanjšaj račun"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Pridobite ${ BRAND_NAME } brezplačno"
-      ],
-      "Get ${ planName }": [
-        "Pridobi ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ohrani ${ plan }."
-      ],
-      "Keep account": [
-        "Ohrani račun"
-      ],
-      "Switch plan": [
-        "Zamenjaj paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
@@ -6072,6 +6052,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Nadgradi na ${ planName }."
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Izbriši račun"
+      ],
+      "Downgrade account": [
+        "Zmanjšaj račun"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Pridobite ${ BRAND_NAME } brezplačno"
+      ],
+      "Get ${ planName }": [
+        "Pridobi ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ohrani ${ plan }."
+      ],
+      "Keep account": [
+        "Ohrani račun"
+      ],
+      "Switch plan": [
+        "Zamenjaj paket"
       ]
     },
     "new_plans: feature": {
@@ -8577,9 +8580,6 @@
       "Remove single sign-on": [
         "Odstrani enotno prijavo"
       ],
-      "Sign in": [
-        "Prijava"
-      ],
       "Single sign-on removed": [
         "​Enotna prijava je odstranjena"
       ],
@@ -9505,10 +9505,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -9700,9 +9700,6 @@
       "Email subscriptions": [
         "E-poštne naročnine"
       ],
-      "Enter 2FA code": [
-        "Vnesite kodo 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Vnesite končne točke v ponudnika identitete"
       ],
@@ -9711,9 +9708,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vpišite podrobnosti vašega računa ${ BRAND_NAME } za vključitev v beta preizkuševalni program za ${ app }."
-      ],
-      "Enter your password": [
-        "Vnesite geslo"
       ],
       "Error": [
         "Napaka"
@@ -9744,6 +9738,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Pridobite ${ vpnPlus } za dostop do vseh strežnikov"
+      ],
+      "Get the apps": [
+        "Namesti aplikacije"
       ],
       "Gift": [
         "Darilo"

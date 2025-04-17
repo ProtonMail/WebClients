@@ -178,6 +178,9 @@
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
+      "Attention required": [
+        "Pozornost!"
+      ],
       "Authenticate": [
         "Preverjanje pristnosti"
       ],
@@ -1003,11 +1006,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "Select file": [
-        "Izberite datoteko"
-      ],
       "select file": [
         "izberite datoteko"
+      ],
+      "Select file": [
+        "Izberite datoteko"
       ],
       "Select files": [
         "Izberi datoteke"
@@ -3845,11 +3848,6 @@
         "90 minut"
       ]
     },
-    "edm": {
-      "New QR code": [
-        "Nova koda QR"
-      ]
-    },
     "Email": {
       "Email verified": [
         "Elektronski naslov je potrjen"
@@ -3873,26 +3871,14 @@
       "All events in this series were updated.": [
         "Vsi dogodki v tej seriji so bili posodobljeni."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Vsi dogodki v tej seriji so bili posodobljeni. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Ta dogodek je bil preklican."
       ],
       "This event occurrence was updated.": [
         "Ta dogodek je bil posodobljen."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ta dogodek je bil posodobljen. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Ta dogodek je bil posodobljen."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ta dogodek je bil posodobljen. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vabljeni ste na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4657,11 +4643,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
       ],
-      "Something went wrong": [
-        "Nekaj je šlo narobe"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nekaj je šlo narobe; pred nadaljevanjem ${ refresh }. Če se napaka še naprej prikazuje, se obrnite na našo ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Nekaj je šlo narobe. Poskusite znova."
       ],
       "status page": [
         "tej strani"
@@ -8650,11 +8636,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -9649,10 +9635,10 @@
       "Allow recovery using a trusted device": [
         "Dovoli obnovitev z uporabo zaupanja vredne naprave."
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
       "Amount": [
@@ -9661,11 +9647,11 @@
       "Amount due": [
         "Zapadli znesek"
       ],
-      "And": [
-        "In"
-      ],
       "AND": [
         "IN"
+      ],
+      "And": [
+        "In"
       ],
       "and": [
         "in"
@@ -10072,11 +10058,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Če"
-      ],
       "IF": [
         "ČE"
+      ],
+      "If": [
+        "Če"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -10252,14 +10238,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "OR": [
+        "ALI"
+      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
-      ],
-      "OR": [
-        "ALI"
       ],
       "Organization name": [
         "Ime organizacije"
@@ -12185,14 +12171,6 @@
         "Izbrali ste: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -12211,6 +12189,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -16382,10 +16368,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

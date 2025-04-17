@@ -45,12 +45,6 @@
       "Add": [
         "Dodaj"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Dodaj ${ photos.length } sliko v nov album",
-        "Dodaj ${ photos.length } sliki v nov album",
-        "Dodaj ${ photos.length } slike v nov album",
-        "Dodaj ${ photos.length } slik v nov album"
-      ],
       "Add account": [
         "Dodaj račun"
       ],
@@ -854,6 +848,9 @@
       ],
       "Show advanced PGP settings": [
         "Prikaži napredne nastavitve PGP"
+      ],
+      "Show more": [
+        "Prikaži več"
       ],
       "Show more download options": [
         "Pokaži več možnosti prenosa"
@@ -2637,26 +2634,14 @@
       "All events in this series were updated.": [
         "Vsi dogodki v tej seriji so bili posodobljeni."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Vsi dogodki v tej seriji so bili posodobljeni. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Ta dogodek je bil preklican."
       ],
       "This event occurrence was updated.": [
         "Ta dogodek je bil posodobljen."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ta dogodek je bil posodobljen. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Ta dogodek je bil posodobljen."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ta dogodek je bil posodobljen. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vabljeni ste na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3053,6 +3038,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
+      ],
+      "Something went wrong. Please try again.": [
+        "Nekaj je šlo narobe. Poskusite znova."
       ],
       "status page": [
         "tej strani"
@@ -3669,12 +3657,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Dodaj ${ photos.length } sliko v",
-        "Dodaj ${ photos.length } sliki v",
-        "Dodaj ${ photos.length } slike v",
-        "Dodaj ${ photos.length } slik v"
-      ],
       "Recent": [
         "Nedavno"
       ]
@@ -4307,6 +4289,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ta naslov je omogočena potrditev naslova z zaupnimi ključi. Če želite pošiljati na ta naslov, najprej označite javne ključe, ki jih lahko uporabite za pošiljanje, kot vredne zaupanja."
       ],
+      "Admin account allocation": [
+        "Dodeljevanje skrbniškega računa."
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Oglaševalci sledijo vašemu brskanju, da vam kažejo ciljno usmerjene oglase. ${ VPN_APP_NAME } blokira sledilnike in oglase, s čimer pospeši vašo povezavo in izboljša vašo spletno izkušnjo."
       ],
@@ -4330,6 +4315,15 @@
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Dodeljeno"
+      ],
+      "Already allocated": [
+        "Že dodeljeno"
+      ],
+      "Already used": [
+        "Že uporabljena"
       ],
       "Also try looking in Trash.": [
         "Poskusite pogledati tudi v Smetnjak."
@@ -5297,6 +5291,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Shramba, dodeljena drugim uporabnikom v tej organizaciji."
+      ],
+      "Storage allocated to this user": [
+        "Shramba dodeljena temu uporabniku."
+      ],
+      "Storage for users": [
+        "Shramba za uporabnike"
+      ],
+      "Storage used by this user": [
+        "Shramba, ki jo uporablja ta uporabnik."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
@@ -5928,6 +5934,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
+      ],
+      "Account storage": [
+        "Shramba računa"
       ],
       "Add email address": [
         "Dodaj e-poštni naslov"
@@ -6988,6 +6997,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -7009,23 +7035,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -8418,14 +8427,26 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nezasebni uporabniki se lahko povišajo v skrbnike, če imajo nastavitvene ključe."
+      ],
       "Organization key does not exist.": [
         "Ključ organizacije ne obstaja."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Ključ organizacije mora biti aktiviran, če želite pridobiti skrbniške pravice."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Dovoljenje zavrnjeno, skrbniške pravice so bile omejene."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Zasebni uporabniki so lahko povišani v skrbnike, ko se prvič prijavijo."
+      ],
       "The organization key must be activated first.": [
         "Najprej je treba aktivirati ključ organizacije."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Vsi uporabniki morajo biti zasebni pred ustvarjanjem novega ključa organizacije."
       ],
       "You need access to the organization key to perform this operation.": [
         "Za izvedbo te operacije potrebujete dostop do ključa organizacije."
@@ -10261,6 +10282,9 @@
       ],
       "Get advanced protection": [
         "Pridobite napredno zaščito"
+      ],
+      "Get the apps": [
+        "Namesti aplikacije"
       ],
       "Gift": [
         "Darilo"

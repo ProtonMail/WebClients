@@ -2909,26 +2909,14 @@
       "All events in this series were updated.": [
         "Bu dizideki tüm etkinlikler güncellendi."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu dizideki tüm etkinlikler güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Bu etkinlik kopyası iptal edildi."
       ],
       "This event occurrence was updated.": [
         "Bu etkinlik kopyası güncellendi."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu etkinlik kopyası güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu etkinlik güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "${ eventTitle } etkinliğine davet edildiniz.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3366,6 +3354,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong. Please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "Start time must be before end time": [
         "Başlangıç saati bitiş saatinden önce olmalıdır"
@@ -4562,6 +4553,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
+      "Admin account allocation": [
+        "Yönetici hesabına ayrılan"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Reklam verenler, hedeflenmiş reklamlar göstermek için gezinme etkinliğinizi izler. ${ VPN_APP_NAME } izleyicileri ve reklamları engelleyerek bağlantınızı hızlandırır ve çevrim içi deneyiminizi iyileştirir."
       ],
@@ -4582,6 +4576,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak",
         "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak"
+      ],
+      "Allocated": [
+        "Ayrılmış"
+      ],
+      "Already allocated": [
+        "Zaten ayrılmış"
+      ],
+      "Already used": [
+        "Zaten kullanılmış"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logosu"
@@ -5215,6 +5218,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlantıda kalın:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
+      ],
+      "Storage allocated to this user": [
+        "Bu kullanıcıya ayrılmış depolama alanı"
+      ],
+      "Storage for users": [
+        "Kullanıcıların depolama alanı"
+      ],
+      "Storage used by this user": [
+        "Bu kullanıcının kullandığı depolama alanı"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
@@ -5825,6 +5840,9 @@
       ],
       "Account holder": [
         "Hesap sahibi"
+      ],
+      "Account storage": [
+        "Hesap depolama alanı"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -6782,6 +6800,26 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -6803,26 +6841,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -8163,14 +8181,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Korunmayan kullanıcılar, kurulum anahtarlarına sahip olduklarında yöneticiliğe yükseltilebilir"
+      ],
       "Organization key does not exist.": [
         "Kuruluş anahtarı bulunamadı."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Yönetici yetkileri vermek için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "İzin verilmedi, yönetici yetkileri kısıtlandı."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Korunan kullanıcılar ilk kez oturum açtıklarında yöneticiliğe yükseltilebilir"
+      ],
       "The organization key must be activated first.": [
         "Önce kuruluş anahtarı kullanıma alınmalıdır."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Yeni bir kuruluş anahtarı oluşturmadan önce tüm grupları silmeniz gerekir"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Yeni bir kuruluş anahtarı oluşturmadan önce tüm kullanıcıları korunan olarak güncellemeniz gerekir"
       ],
       "You need access to the organization key to perform this operation.": [
         "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
@@ -10196,6 +10229,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } uygulamalarını edinin"
       ],
+      "Get the apps": [
+        "Uygulamaları indirme"
+      ],
       "Get Zooming faster": [
         "Daha hızlı Zoom görüşmeleri yapın"
       ],
@@ -10612,6 +10648,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Uçtan uca şifrelenmiş olarak doğrulanmış kişi ile paylaşıldı"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
       ]
     },
     "Validation": {

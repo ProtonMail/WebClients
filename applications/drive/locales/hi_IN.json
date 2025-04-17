@@ -45,10 +45,6 @@
       "Add": [
         "जोड़ें"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "नए एल्बम में ${ photos.length } फ़ोटो जोड़ें",
-        "नए एल्बम में ${ photos.length } फ़ोटो जोड़ें"
-      ],
       "Add account": [
         "खाता जोड़ें"
       ],
@@ -846,6 +842,9 @@
       ],
       "Show advanced PGP settings": [
         "एडवांस PGP सेटिंग दिखाएं"
+      ],
+      "Show more": [
+        "और दिखाएँ"
       ],
       "Show more download options": [
         "अधिक डाउनलोड विकल्प दिखाएं"
@@ -2654,26 +2653,14 @@
       "All events in this series were updated.": [
         "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस श्रृंखला के सभी कार्यक्रम अपडेट किए गए। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "इस कार्यक्रम घटना रद्द कर दी गई।"
       ],
       "This event occurrence was updated.": [
         "इस कार्यक्रम घटना को अपडेट किया गया था।"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस कार्यक्रम घटना को अपडेट किया गया था। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "यह कार्यक्रम अपडेट किया गया था।"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "इस कार्यक्रम को अपडेट किया गया था। यहाँ क्या बदला:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "आपको ${ eventTitle } में आमंत्रित किया गया है\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3062,6 +3049,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
+      ],
+      "Something went wrong. Please try again.": [
+        "कुछ गलती हो गई। कृपया वापिस कोशिश करें।"
       ],
       "status page": [
         "स्थिति पृष्ठ"
@@ -3690,10 +3680,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "“${ photos.length } फ़ोटो” में जोड़ें",
-        "“${ photos.length } फ़ोटो” में जोड़ें"
-      ],
       "All albums": [
         "सभी एल्बम"
       ],
@@ -4247,6 +4233,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "इस पते के लिए विश्वसनीय कुंजी के साथ पता सत्यापन सक्षम है। इस पते पर भेजने में सक्षम होने के लिए, पहले सार्वजनिक कुंजियों पर भरोसा करें जिनका उपयोग भेजने के लिए किया जा सकता है।"
       ],
+      "Admin account allocation": [
+        "एडमिन खाता बंटवारा"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "एआई से समर्थित सहायक जो आपको बेहतर ईमेल तैयार करने में, जल्दी और बिना किसी प्रयास के मदद करता है।"
       ],
@@ -4264,6 +4253,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "आपके सभी संपर्क आयात किए जाएंगे, ${ MAX_CONTACTS_PER_USER } की सीमा तक",
         "आपके सभी संपर्क आयात किए जाएंगे, ${ MAX_CONTACTS_PER_USER } की सीमा तक"
+      ],
+      "Allocated": [
+        "आवंटित"
+      ],
+      "Already allocated": [
+        "पहले से दिया गया"
+      ],
+      "Already used": [
+        "पहले से ही इस्तेमाल किया हुआ"
       ],
       "Also try looking in Trash.": [
         "कचरे में भी देख लें।"
@@ -5221,6 +5219,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
       ],
+      "Storage allocated to other users in this organisation": [
+        "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
+      ],
+      "Storage allocated to this user": [
+        "इस यूज़र को दिया गया स्टोरेज"
+      ],
+      "Storage for users": [
+        "यूज़र के लिए स्टोरेज"
+      ],
+      "Storage used by this user": [
+        "इस यूज़र का स्टोरेज इस्तेमाल"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
       ],
@@ -5853,6 +5863,9 @@
       ],
       "Account holder": [
         "खाता धारक"
+      ],
+      "Account storage": [
+        "खाता संग्रहण"
       ],
       "Add email address": [
         "ईमेल पता जोड़ें"
@@ -6909,29 +6922,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -6953,6 +6943,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -8431,14 +8444,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "गैर-निजी उपयोगकर्ताओं को व्यवस्थापक बनाया जा सकता है जब उन्होंने कुंजी सेटअप कर ली हो"
+      ],
       "Organization key does not exist.": [
         "संगठन कुंजी मौजूद नहीं है।"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "व्यवस्थापकीय विशेषाधिकार देने के लिए संगठन कुंजी सक्रिय होनी चाहिए"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "निजी उपयोगकर्ताओं को पहली बार साइन इन करने पर व्यवस्थापक के रूप में पदोन्नत किया जा सकता है"
+      ],
       "The organization key must be activated first.": [
         "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "नई संगठन कुंजी बनाने से पहले आपको सभी ग्रुप्स को मिटा दें"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
       ],
       "You need access to the organization key to perform this operation.": [
         "इस कार्य को करने के लिए आपको संगठन कुंजी तक पहुंच की आवश्यकता है।"
@@ -10338,6 +10366,9 @@
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
       ],
+      "Get the apps": [
+        "ऐप प्राप्त करें"
+      ],
       "Gift": [
         "तोहफा"
       ],
@@ -10792,6 +10823,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "एडमिन निजी उपयोगकर्ताओं के डाटा तक पहुंच नहीं सकते और उनके पासवर्ड रीसेट नहीं कर सकते।"
       ]
     },
     "Validation": {

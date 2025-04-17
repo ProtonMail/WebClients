@@ -228,9 +228,6 @@
       "Close": [
         "Zapri"
       ],
-      "Close & discard": [
-        "Zapri in zavrzi"
-      ],
       "Close composer": [
         "Zapri urejevalnik"
       ],
@@ -867,9 +864,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Odpri urejevalnik"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Odpri v ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -984,12 +978,6 @@
       "Replaces the selected text in your message": [
         "Zamenjaj izbrano besedilo v sporočilu"
       ],
-      "Reply": [
-        "Odgovori"
-      ],
-      "Reply all": [
-        "Odgovori vsem"
-      ],
       "Reply securely": [
         "Odgovori varno"
       ],
@@ -1074,11 +1062,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select all": [
-        "Označi vse"
-      ],
       "Select All": [
         "Izberi vse"
+      ],
+      "Select all": [
+        "Označi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -1170,6 +1158,9 @@
       "Show messages": [
         "Prikaži sporočila"
       ],
+      "Show more": [
+        "Prikaži več"
+      ],
       "Show more search options": [
         "Prikaži več možnosti iskanja"
       ],
@@ -1259,12 +1250,6 @@
       ],
       "Trust": [
         "Zaupaj"
-      ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -3772,26 +3757,14 @@
       "All events in this series were updated.": [
         "Vsi dogodki v tej seriji so bili posodobljeni."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Vsi dogodki v tej seriji so bili posodobljeni. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Ta dogodek je bil preklican."
       ],
       "This event occurrence was updated.": [
         "Ta dogodek je bil posodobljen."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ta dogodek je bil posodobljen. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Ta dogodek je bil posodobljen."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ta dogodek je bil posodobljen. Spremenilo se je naslednje:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vabljeni ste na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6052,6 +6025,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ta naslov je omogočena potrditev naslova z zaupnimi ključi. Če želite pošiljati na ta naslov, najprej označite javne ključe, ki jih lahko uporabite za pošiljanje, kot vredne zaupanja."
       ],
+      "Admin account allocation": [
+        "Dodeljevanje skrbniškega računa."
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Oglaševalci sledijo vašemu brskanju, da vam kažejo ciljno usmerjene oglase. ${ VPN_APP_NAME } blokira sledilnike in oglase, s čimer pospeši vašo povezavo in izboljša vašo spletno izkušnjo."
       ],
@@ -6090,6 +6066,15 @@
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Dodeljeno"
+      ],
+      "Already allocated": [
+        "Že dodeljeno"
+      ],
+      "Already used": [
+        "Že uporabljena"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logotip"
@@ -6673,9 +6658,6 @@
       "Initializing…": [
         "Zagon …"
       ],
-      "Insert image": [
-        "Vstavi sliko"
-      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -7210,8 +7192,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Shramba, dodeljena drugim uporabnikom v tej organizaciji."
+      ],
+      "Storage allocated to this user": [
+        "Shramba dodeljena temu uporabniku."
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Zmogljivosti shrambe niso podprte v tem brskalniku. Potrebujemo to podporo, da omogočimo iskanje po vsebini sporočil."
+      ],
+      "Storage for users": [
+        "Shramba za uporabnike"
+      ],
+      "Storage used by this user": [
+        "Shramba, ki jo uporablja ta uporabnik."
       ],
       "Subject": [
         "Zadeva"
@@ -8244,6 +8238,9 @@
       "/month": [
         "/mesec"
       ],
+      "Account storage": [
+        "Shramba računa"
+      ],
       "Actions": [
         "Dejanja"
       ],
@@ -8274,11 +8271,11 @@
       "Always move sender's emails": [
         "Vedno premakni pošiljateljeva sporočila"
       ],
-      "And": [
-        "In"
-      ],
       "AND": [
         "IN"
+      ],
+      "And": [
+        "In"
       ],
       "and": [
         "in"
@@ -8502,11 +8499,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Če"
-      ],
       "IF": [
         "ČE"
+      ],
+      "If": [
+        "Če"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -8613,14 +8610,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "OR": [
+        "ALI"
+      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
-      ],
-      "OR": [
-        "ALI"
       ],
       "Original link": [
         "Izvorna povezava"
@@ -9436,6 +9433,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -9457,23 +9471,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -10692,14 +10689,26 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nezasebni uporabniki se lahko povišajo v skrbnike, če imajo nastavitvene ključe."
+      ],
       "Organization key does not exist.": [
         "Ključ organizacije ne obstaja."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Ključ organizacije mora biti aktiviran, če želite pridobiti skrbniške pravice."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Dovoljenje zavrnjeno, skrbniške pravice so bile omejene."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Zasebni uporabniki so lahko povišani v skrbnike, ko se prvič prijavijo."
+      ],
       "The organization key must be activated first.": [
         "Najprej je treba aktivirati ključ organizacije."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Vsi uporabniki morajo biti zasebni pred ustvarjanjem novega ključa organizacije."
       ],
       "You need access to the organization key to perform this operation.": [
         "Za izvedbo te operacije potrebujete dostop do ključa organizacije."
@@ -13162,6 +13171,9 @@
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Prenesite aplikacijo ${ appName[APP_NAME] }"
+      ],
+      "Get the apps": [
+        "Namesti aplikacije"
       ],
       "Gift": [
         "Darilo"

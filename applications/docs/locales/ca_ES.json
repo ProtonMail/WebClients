@@ -564,6 +564,9 @@
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
+      "Rename": [
+        "Canvia el nom"
+      ],
       "Rename document": [
         "Canvia el nom del document"
       ],
@@ -653,6 +656,9 @@
       ],
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
+      ],
+      "Show more": [
+        "Mostrar més"
       ],
       "Show options": [
         "Mostra les opcions"
@@ -2269,6 +2275,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2347,11 +2358,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2449,6 +2455,11 @@
         "Suport prioritari"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPCIÓ:\n${ eventDescription }"
@@ -2461,8 +2472,11 @@
       "All events in this series were updated.": [
         "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tots els esdeveniments d'aquesta sèrie s'han actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Això és el que ha canviat:"
+      ],
+      "NOTE:": [
+        "NOTA:"
       ],
       "This event occurrence was canceled.": [
         "S'ha cancel·lat aquesta ocurrència d'esdeveniment."
@@ -2470,17 +2484,8 @@
       "This event occurrence was updated.": [
         "Aquesta ocurrència d'esdeveniment s'ha actualitzat."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquesta ocurrència d'esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "S'ha actualitzat aquest esdeveniment. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2866,6 +2871,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong. Please try again.": [
+        "Alguna cosa ha anat malament. Torneu a provar-ho."
       ],
       "status page": [
         "pàgina d'estat"
@@ -3986,6 +3994,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
+      "Admin account allocation": [
+        "Assignació del compte d'administrador"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, fent que la vostra connexió sigui més ràpida i millorant la vostra experiència en línia."
       ],
@@ -4003,6 +4014,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tots els vostres contactes s'importaran, fins a un límit d'${ MAX_CONTACTS_PER_USER }",
         "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Assignat"
+      ],
+      "Already allocated": [
+        "Ja assignat"
+      ],
+      "Already used": [
+        "Ja utilitzat"
       ],
       "American Express SafeKey logo": [
         "Logo d'American Express SafeKey"
@@ -4778,6 +4798,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantingueu-vos connectat sense esforç activant la configuració VPN següent:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Emmagatzematge assignat a altres usuaris d'aquesta organització"
+      ],
+      "Storage allocated to this user": [
+        "Emmagatzematge assignat a aquest usuari"
+      ],
+      "Storage for users": [
+        "Emmagatzematge per als usuaris"
+      ],
+      "Storage used by this user": [
+        "Emmagatzematge utilitzat per aquest usuari"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
       ],
@@ -5362,6 +5394,9 @@
       ],
       "Account holder": [
         "Titular del compte"
+      ],
+      "Account storage": [
+        "Emmagatzematge del compte"
       ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
@@ -7451,9 +7486,6 @@
       "Public link update access failed ": [
         "No s'ha pogut accedir a l'actualització de l'enllaç públic "
       ],
-      "Recent documents updated.": [
-        "S'han actualitzat els documents recents."
-      ],
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"
       ],
@@ -7700,14 +7732,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Els usuaris no privats es poden promocionar a administrador quan tenen claus de configuració"
+      ],
       "Organization key does not exist.": [
         "La clau de l'organització no existeix."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "S'ha d'activar la clau de l'organització per a donar privilegis d'administrador"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Els usuaris privats poden ascendir a administradors quan inicien sessió per primera vegada"
+      ],
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau de l'organització."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Heu d'eliminar tots els grups abans de generar una clau d'organització nova."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
       ],
       "You need access to the organization key to perform this operation.": [
         "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
@@ -9320,6 +9367,9 @@
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
       ],
+      "Get the apps": [
+        "Aconseguiu les aplicacions"
+      ],
       "Gift": [
         "Regal"
       ],
@@ -9695,6 +9745,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
       ]
     },
     "Validation": {

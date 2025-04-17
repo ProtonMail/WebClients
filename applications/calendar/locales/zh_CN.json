@@ -2889,26 +2889,14 @@
       "All events in this series were updated.": [
         "此系列中的所有事件都已更新。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此系列中的所有事件都已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "此事件已被取消。"
       ],
       "This event occurrence was updated.": [
         "此事件已更新。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "此事件已更新。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "您已被邀请参加 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3335,6 +3323,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong. Please try again.": [
+        "出现了一些问题。请重试。"
       ],
       "Start time must be before end time": [
         "起始时间必须早于结束时间"
@@ -4496,6 +4487,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
+      "Admin account allocation": [
+        "分配管理员账户"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "广告商会追踪您的浏览记录来展示定向广告。${ VPN_APP_NAME } 能屏蔽追踪器和广告，从而加快连接速度，提升您的上网体验。"
       ],
@@ -4513,6 +4507,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
+      ],
+      "Allocated": [
+        "分配量"
+      ],
+      "Already allocated": [
+        "已分配"
+      ],
+      "Already used": [
+        "已使用"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
@@ -5138,6 +5141,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "请启用以下 VPN 设置，即可轻松保持网络连接："
       ],
+      "Storage allocated to other users in this organisation": [
+        "此组织其他成员的存储空间分配量"
+      ],
+      "Storage allocated to this user": [
+        "该用户的存储空间分配量"
+      ],
+      "Storage for users": [
+        "用户存储"
+      ],
+      "Storage used by this user": [
+        "该用户的存储空间使用量"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
       ],
@@ -5738,6 +5753,9 @@
       ],
       "Account holder": [
         "账户持有人"
+      ],
+      "Account storage": [
+        "账户存储空间"
       ],
       "Add email address": [
         "添加邮箱地址"
@@ -6686,6 +6704,26 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6707,26 +6745,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8015,14 +8033,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "非私人用户拥有设置密钥后可晋升为管理员"
+      ],
       "Organization key does not exist.": [
         "组织密钥不存在."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "必须激活组织密钥才能赋予管理员权限"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "权限被拒绝, 管理员权限受到限制。"
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "私人用户首次登录时可晋升为管理员"
+      ],
       "The organization key must be activated first.": [
         "必须先激活机构密钥。"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "在生成新的组织密钥前，您必须删除所有群组"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在生成新的组织密钥之前，您必须先将所有用户私有化"
       ],
       "You need access to the organization key to perform this operation.": [
         "您需要访问组织密钥才能执行此操作。"
@@ -9997,6 +10030,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "下载 ${ appName[APP_NAME] } 应用"
       ],
+      "Get the apps": [
+        "下载应用"
+      ],
       "Get Zooming faster": [
         "Zoom 速度更快"
       ],
@@ -10412,6 +10448,11 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "与经过验证的联系人端对端加密共享"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "管理员无法访问私人用户的数据，也无法重置他们的密码。"
       ]
     },
     "Validation": {

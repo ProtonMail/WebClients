@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
+      "Attention required": [
+        "Патрабуецца ўвага"
+      ],
       "Authenticate": [
         "Аўтэнтыфікацыя"
       ],
@@ -139,6 +142,9 @@
       "Close this banner": [
         "Закрыць гэты банер"
       ],
+      "Collaborate on documents": [
+        "Сумесная праца над дакументамі"
+      ],
       "Compare all plans": [
         "Параўнайце ўсе тарыфныя планы"
       ],
@@ -150,6 +156,12 @@
       ],
       "Confirm": [
         "Пацвердзіць"
+      ],
+      "Connect apps and devices": [
+        "Падключыць праграмы і прылады"
+      ],
+      "Connect to video conferencing": [
+        "Падключыцца да відэаканферэнцыі"
       ],
       "Contact support": [
         "Звязацца са службай падтрымкі"
@@ -268,6 +280,9 @@
       "Download": [
         "Спампаваць"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Спампаваць праграмы ${ DRIVE_APP_NAME }"
+      ],
       "Download CSV sample": [
         "Спампаваць узор CSV"
       ],
@@ -349,9 +364,6 @@
       "Fit to window": [
         "Па памеры акна"
       ],
-      "Forgot password?": [
-        "Забылі пароль?"
-      ],
       "Forgot recovery method?": [
         "Забылі спосаб аднаўлення?"
       ],
@@ -382,6 +394,9 @@
       "Get more servers": [
         "Атрымаць больш сервераў"
       ],
+      "Get the apps": [
+        "Атрымаць праграмы"
+      ],
       "Get the deal": [
         "Скарыстацца прапановай"
       ],
@@ -408,6 +423,9 @@
       ],
       "Hide plan features": [
         "Схаваць функцыі тарыфнага плана"
+      ],
+      "Import emails, calendars, contacts": [
+        "Імпартаваць лісты, календары, кантакты"
       ],
       "Import new SAML metadata": [
         "Імпартаваць новыя метаданыя SAML"
@@ -442,8 +460,17 @@
       "Make admin": [
         "Можа адміністраваць"
       ],
+      "Manage advanced account protections": [
+        "Кіраваць пашыранай абаронай уліковага запісу"
+      ],
+      "Manage groups": [
+        "Кіраваць групамі"
+      ],
       "Manage subscription": [
         "Кіраваць падпіскай"
+      ],
+      "Manage users/addresses": [
+        "Кіраваць карыстальнікамі/адрасамі"
       ],
       "Mark as default": [
         "Пазначыць як прадвызначаны"
@@ -523,11 +550,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Remove": [
         "Выдаліць"
@@ -537,6 +564,9 @@
       ],
       "Remove bonuses": [
         "Выдаліць бонусы"
+      ],
+      "Remove button": [
+        "Кнопка \"Выдаліць\""
       ],
       "Remove domain": [
         "Выдаліць дамен"
@@ -640,11 +670,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "Select file": [
-        "Выбраць файл"
-      ],
       "select file": [
         "выбраць файл"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Send code": [
         "Адправіць код"
@@ -670,6 +700,18 @@
       "Set new password": [
         "Задаць новы пароль"
       ],
+      "Set recovery methods": [
+        "Задаць спосабы аднаўлення"
+      ],
+      "Set up 2FA": [
+        "Наладзіць 2ФА"
+      ],
+      "Set up a custom domain": [
+        "Наладзіць карыстальніцкі дамен"
+      ],
+      "Set up email forwarding": [
+        "Наладзіць перасылку лістоў"
+      ],
       "Settings": [
         "Налады"
       ],
@@ -679,6 +721,9 @@
       "Share via link": [
         "Абагуліць праз спасылку"
       ],
+      "Share your calendar with your team": [
+        "Абагуліць каляндар са сваёй камандай"
+      ],
       "Sharing options": [
         "Параметры сумеснага доступу"
       ],
@@ -687,6 +732,9 @@
       ],
       "Show all": [
         "Паказаць усё"
+      ],
+      "Show more": [
+        "Паказаць больш"
       ],
       "Show preview": [
         "Папярэдні прагляд"
@@ -751,6 +799,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Уключыць ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock": [
         "Разблакіраваць"
       ],
@@ -769,11 +820,20 @@
       "Upload": [
         "Запампаваць"
       ],
+      "Upload and share files": [
+        "Запампаваць і абагуліць файлы"
+      ],
       "Upload logo": [
         "Запампаваць лагатып"
       ],
       "Use ${ label } theme": [
         "Выкарыстоўваць тэму ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Выкарыстоўваць ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
       "Use a different card": [
         "Скарыстацца іншай карткай"
@@ -2479,6 +2539,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Кожны ўдзельнік вашай арганізацыі можа падключацца да абагуленых сервераў ва ўсіх краінах."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+      ],
       "If disabled, only admins will have access.": [
         "Калі адключана, то толькі адміністратары будуць мець доступ."
       ],
@@ -2714,14 +2777,20 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } ніколі не будзе прасіць вас увесці код, які паступае не з дамена ${ domain } або з афіцыйнай праграмы ${ BRAND_NAME }."
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } ніколі не будзе прасіць вас сканіраваць QR-код, які паступае не з дамена ${ domain } або з не афіцыйнай праграмы ${ BRAND_NAME }."
       ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Як гэта працуе:** увядзіце код, які паказаны на прыладзе, з якой вы хочаце ўвайсці. Вы ўвойдзеце ў сістэму як **${ email }**. Абедзве прылады застануцца актыўнымі. "
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } ніколі не будзе звязвацца з вамі, а потым нечакана прасіць увайсці з дапамогай QR-кода."
       ],
-      "Allow scanning a QR code to sign in": [
-        "Дазволіць сканіраванне QR-кода для ўваходу"
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Як гэта працуе:** Увядзіце на гэтай прыладзе код, паказаны на прыладзе, з якой вы хочаце ўвайсці. Вы ўвойдзеце ў сістэму як **${ email }**. Абедзве прылады застануцца актыўнымі."
+      ],
+      "Allow QR code sign‒in": [
+        "Дазволіць уваход з дапамогай QR-кода"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Будзьце асцярожныя з паведамленнямі, якія змяшчаюць QR-коды. Сканіруйце код, толькі калі вы давяраеце крыніцы."
       ],
       "Code from the other device": [
         "Код з іншай прылады"
@@ -2735,26 +2804,20 @@
       "QR code sign-in enabled": [
         "Уваход з дапамогай QR-кода ўключаны"
       ],
-      "Safety tips:": [
-        "Парады па бяспецы:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Адсканіруйце QR-код на сваёй мабільнай прыладзе для ўваходу"
       ],
-      "Sign in to another device": [
-        "Увайсці на іншай прыладзе"
+      "Security tips": [
+        "Парады па бяспецы"
       ],
-      "Sign in with another device": [
-        "Увайсці з дапамогай іншай прылады"
+      "Sign in on another device": [
+        "Увайсці на іншай прыладзе"
       ],
       "Sign in with QR code": [
         "Увайсці з дапамогай QR-кода"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Націсніце на кнопку **Увайсці з QR-кодам** у меню дапамогі экрана ўваходу, каб атрымаць код доступу прылады ў якую вы хочаце ўвайсці, а потым націсніце **Увесці ключ уручную**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Асцерагайцеся паведамленняў, якія змяшчаюць код. Ніколі не ўводзьце код з вэб-сайта або ад асобы, якой вы не давяраеце."
       ],
       "You have successfully signed in to another device": [
         "Вы паспяхова ўвайшлі ў іншую прыладу"
@@ -3018,6 +3081,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
       "status page": [
         "статус старонкі"
@@ -4623,9 +4689,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Увядзіце ваш уліковы запіс электроннай пошты ${ BRAND_NAME } або імя карыстальніка."
       ],
-      "Enter your own password (as organization admin).": [
-        "Увядзіце свой пароль (адміністратара арганізацыі)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
       ],
@@ -5004,6 +5067,9 @@
       "Open source": [
         "Адкрыты зыходны код"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Адкрыццё дапаможніка з рэкамендаванымі дзеяннямі і карыснымі спасылкамі."
+      ],
       "or ${ selectFileButton }": [
         "або ${ selectFileButton }"
       ],
@@ -5268,6 +5334,9 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
+      "Set up your organization": [
+        "Наладзьце сваю арганізацыю"
+      ],
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
       ],
@@ -5438,6 +5507,9 @@
       ],
       "This file is too large to preview": [
         "Занадта вялікі файл для папярэдняга прагляду"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Гэта імя або псеўданім для вашай арганізацыі, якое будзе бачнае вашым карыстальнікам. Яго можна змяніць у любы час."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
@@ -5619,11 +5691,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -6200,10 +6272,10 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6749,9 +6821,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
       ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
-      ],
       "ZIP code": [
         "Паштовы індэкс"
       ]
@@ -6865,6 +6934,9 @@
       "Don't have access to your 2FA?": [
         "Адсутнічае доступ да вашых 2ФА?"
       ],
+      "Enforcing 2FA for organizations": [
+        "Прымусовае ўключэнне 2ФА для арганізацый"
+      ],
       "Forgot email?": [
         "Забылі электронную пошту?"
       ],
@@ -6883,8 +6955,50 @@
       "here": [
         "тут"
       ],
+      "How to add users": [
+        "Як дадаць карыстальнікаў"
+      ],
+      "How to add Zoom links": [
+        "Як дадаць спасылкі Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Як супрацоўнічаць у ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Як перайсці ў ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Як наладзіць ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Як наладзіць карыстальніцкі дамен"
+      ],
+      "How to set up SMTP": [
+        "Як наладзіць SMTP"
+      ],
+      "How to share a calendar": [
+        "Як абагуліць каляндар"
+      ],
+      "How to share via email": [
+        "Як абагуліць праз электронную пошту"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Як выкарыстоўваць ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Як выкарыстоўваць ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Як выкарыстоўваць перасылку электроннай пошты"
+      ],
+      "How to use Groups": [
+        "Як выкарыстоўваць групы"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -6921,6 +7035,9 @@
       ],
       "Trouble signing in?": [
         "Праблемы з уваходам?"
+      ],
+      "Types of recovery methods": [
+        "Тыпы спосабаў аднаўлення"
       ],
       "Upgrade your plan": [
         "Палепшыць тарыфны план"
@@ -7165,29 +7282,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
@@ -7212,6 +7306,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Downgrade account": [
+        "Панізіць уліковы запіс"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Пакінуць ${ plan }"
+      ],
+      "Keep account": [
+        "Пакінуць уліковы запіс"
+      ],
+      "Switch plan": [
+        "Змяніць тарыфны план"
       ]
     },
     "new_plans: feature": {
@@ -8459,17 +8576,6 @@
         "Вітаем у ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Канфігурацыі краіны"
@@ -8527,6 +8633,17 @@
       ],
       "The whole organization": [
         "Уся арганізацыя"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
       ]
     },
     "Organization capacity error": {
@@ -10138,9 +10255,6 @@
       "Share the confirmation code with your administrator": [
         "Абагуліць код пацвярджэння з вашым адміністратарам"
       ],
-      "Sign in": [
-        "Уваход"
-      ],
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
@@ -10185,9 +10299,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
@@ -11270,6 +11381,9 @@
       "Add to spam list": [
         "Дадаць у спіс са спамам"
       ],
+      "Add user": [
+        "Дадаванне карыстальніка"
+      ],
       "Add user accounts": [
         "Дадаць уліковыя запісы карыстальнікаў"
       ],
@@ -11327,10 +11441,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -11375,11 +11489,17 @@
       "Confirm phone number": [
         "Пацвердзіць нумар тэлефона"
       ],
+      "Connect apps and devices": [
+        "Падключэнне праграм і прылад"
+      ],
       "Connect organization": [
         "Падключэнне арганізацыі"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Падключайце да ${ VPN_CONNECTIONS } прылад адначасова з ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect your custom domain": [
+        "Падключэнне свайго карыстальніцкага дамена"
       ],
       "Contact us": [
         "Звязацца з намі"
@@ -11552,11 +11672,14 @@
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
       ],
+      "Enable advanced account protection": [
+        "Уключэнне пашыранай абароны ўліковага запісу"
+      ],
       "Enable for all users": [
         "Уключыць для ўсіх карыстальнікаў"
       ],
-      "Enter 2FA code": [
-        "Увядзіце код 2ФА"
+      "Enhance security with 2FA": [
+        "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
@@ -11566,9 +11689,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
-      ],
-      "Enter your password": [
-        "Увядзіце пароль"
       ],
       "Error": [
         "Памылка"
@@ -11618,6 +11738,9 @@
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Атрымайце праграму на ўсе вашы прылады і абараняйце да ${ VPN_CONNECTIONS } адначасова."
       ],
+      "Get the apps": [
+        "Атрымаць праграмы"
+      ],
       "Gift": [
         "Падарунак"
       ],
@@ -11641,6 +11764,9 @@
       ],
       "Human verification": [
         "Антыспамавая праверка"
+      ],
+      "Import emails, calendars, contacts": [
+        "Імпартаванне лістоў, календароў, кантактаў"
       ],
       "Increase your privacy with more addresses": [
         "Павялічце сваю прыватнасць з большай колькасцю адрасоў"
@@ -11798,8 +11924,17 @@
       "Set organization name": [
         "Задаць назву арганізацыі"
       ],
+      "Set recovery methods": [
+        "Прызначэнне спосабаў аднаўлення"
+      ],
+      "Set up email forwarding": [
+        "Наладжванне перысылкі лістоў"
+      ],
       "Set up two-factor authentication": [
         "Наладзіць двухфактарную аўтэнтыфікацыю"
+      ],
+      "Set up your organization": [
+        "Наладзьце сваю арганізацыю"
       ],
       "Set your password": [
         "Задаць пароль"
@@ -11824,6 +11959,9 @@
       ],
       "Signed in to member account": [
         "Уваход ва ўліковы запіс удзельніка"
+      ],
+      "Simplify email distribution": [
+        "Спрашчэнне распаўсюджвання электроннай пошты"
       ],
       "Single sign-on": [
         "Адзіны ўваход"
@@ -11857,6 +11995,9 @@
       ],
       "There are no groups": [
         "Няма ніводнай групы"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
       "TV sign in": [
         "Увайсці на тэлевізары"
@@ -11917,6 +12058,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы адправілі ліст з інструкцыямі пра завяршэнне змены на ваш новы адрас."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Вітаем у ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"

@@ -190,9 +190,6 @@
       "Close": [
         "Mdel"
       ],
-      "Close & discard": [
-        "Mdel & Sefsex"
-      ],
       "Close composer": [
         "Mdel amsuddes"
       ],
@@ -721,9 +718,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Ldi amsuddes"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Ldi deg ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -826,12 +820,6 @@
       "Remove this label": [
         "Kkes tabzimt-a"
       ],
-      "Reply": [
-        "Err"
-      ],
-      "Reply all": [
-        "Err-asen akk"
-      ],
       "Reply securely": [
         "Err s wudem aɣelsan"
       ],
@@ -904,11 +892,11 @@
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select all": [
-        "Fren akk"
-      ],
       "Select All": [
         "Fren kullec"
+      ],
+      "Select all": [
+        "Fren akk"
       ],
       "Select all messages": [
         "Fren akk iznan"
@@ -988,6 +976,9 @@
       "Show messages": [
         "Sken iznan"
       ],
+      "Show more": [
+        "Sken-d ugar"
+      ],
       "Show more search options": [
         "Sken ugar n textiṛiyin n unadi"
       ],
@@ -1053,10 +1044,6 @@
       ],
       "Trust": [
         "Amen"
-      ],
-      "Trust key": [
-        "Tasarut yettwamanen",
-        "Tisura yettwamanen"
       ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
@@ -4582,6 +4569,15 @@
         "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
         "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Allocated": [
+        "Ittuheṛṛ"
+      ],
+      "Already allocated": [
+        "Ḥerren-t yakan"
+      ],
+      "Already used": [
+        "Yettwaseqdec yakan"
+      ],
       "American Express SafeKey logo": [
         "Alugu n American Express SafeKey"
       ],
@@ -4924,7 +4920,8 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna"
+        "Ger tugna",
+        "Ger tugniwn"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5235,6 +5232,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Suref-aɣ, izen-agi ur yezgi yella neɣ ahat yemmut."
+      ],
+      "Storage for users": [
+        "Asekles i yiseqdacen"
+      ],
+      "Storage used by this user": [
+        "Aḥraz yettwasqedcen sɣur useqdec-a"
       ],
       "Subject": [
         "Asentel"
@@ -5900,6 +5903,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
       ],
+      "Account storage": [
+        "Amḍiq n usekles n umiḍan"
+      ],
       "Actions": [
         "Tigawin"
       ],
@@ -5930,11 +5936,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "And": [
-        "Akked"
-      ],
       "AND": [
         "AKKED"
+      ],
+      "And": [
+        "Akked"
       ],
       "and": [
         "akked"
@@ -6137,11 +6143,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ma"
-      ],
       "IF": [
         "MA"
+      ],
+      "If": [
+        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6245,14 +6251,14 @@
       "Optional": [
         "Afrayan"
       ],
+      "OR": [
+        "NEƔ"
+      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
-      ],
-      "OR": [
-        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6926,6 +6932,17 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6944,17 +6961,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
