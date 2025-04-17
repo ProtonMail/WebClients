@@ -182,6 +182,7 @@ export { default as EllipsisLoader } from './components/loader/EllipsisLoader';
 export { default as Loader } from './components/loader/Loader';
 export { default as LoaderIcon } from './components/loader/LoaderIcon';
 export { default as TextLoader } from './components/loader/TextLoader';
+export { default as LoadingTextStepper } from './components/loader/LoadingTextStepper';
 export { default as CalendarLogo } from './components/logo/CalendarLogo';
 export { default as CustomLogo } from './components/logo/CustomLogo';
 export { default as DriveLogo } from './components/logo/DriveLogo';

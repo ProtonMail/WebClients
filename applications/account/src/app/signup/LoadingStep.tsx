@@ -2,16 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
-import { EllipsisLoader, Icon, Loader, useConfig } from '@proton/components';
+import { EllipsisLoader, Loader, LoadingTextStepper, useConfig } from '@proton/components';
 import useInterval from '@proton/hooks/useInterval';
 import metrics from '@proton/metrics';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { getSignupApplication } from './helper';
 
-export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
+export const FakeLoadingTextStepper = ({ steps }: { steps: string[] }) => {
     const [stepIndex, setStepIndex] = useState(0);
 
     useInterval(() => {
@@ -19,37 +17,7 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
         setStepIndex(nextIndex);
     }, 2500);
 
-    return (
-        <>
-            {steps.map((step, i) => {
-                const isCurrentStep = i === stepIndex;
-                const isVisibleStep = i <= stepIndex;
-                if (!isVisibleStep) {
-                    return null;
-                }
-
-                return (
-                    <div className="text-lg" key={step}>
-                        <div
-                            className={clsx(
-                                'flex *:min-size-auto items-center flex-nowrap',
-                                isCurrentStep && 'color-primary'
-                            )}
-                        >
-                            <div className="mr-2 min-w-custom flex shrink-0" style={{ '--min-w-custom': '2em' }}>
-                                {isCurrentStep ? (
-                                    <CircleLoader size="small" className="ml-1" />
-                                ) : (
-                                    <Icon size={6} className="color-success" name="checkmark" />
-                                )}
-                            </div>
-                            <div className="flex-1 p-2 text-left">{step}</div>
-                        </div>
-                    </div>
-                );
-            })}
-        </>
-    );
+    return <LoadingTextStepper steps={steps} stepIndex={stepIndex} hideFutureSteps={true} />;
 };
 
 interface Props {
