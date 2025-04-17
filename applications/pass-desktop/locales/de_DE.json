@@ -367,6 +367,9 @@
       "Make editor": [
         "Zum Bearbeiter ändern"
       ],
+      "Make manager": [
+        "Zum Manager machen"
+      ],
       "Make viewer": [
         "Zum Betrachter ändern"
       ],
@@ -852,6 +855,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Authentifizierung fehlgeschlagen. Bestätige dein zusätzliches Passwort, um mit dem Export fortzufahren."
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Authentifizierung fehlgeschlagen. Bestätige dein zweites Passwort, um mit dem Export fortzufahren"
+      ],
       "Biometric authentication failed": [
         "Biometrische Authentifizierung fehlgeschlagen"
       ],
@@ -1211,6 +1217,9 @@
       "Wrong PIN code. Try again.": [
         "Falscher PIN-Code. Versuche es erneut."
       ],
+      "Wrong second password": [
+        "Falsches zusätzliches Passwort"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du bist offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
       ],
@@ -1407,6 +1416,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Der Zugriff auf ${ PASS_APP_NAME } erfordert immer dein zusätzliches Passwort."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Der Zugriff auf ${ PASS_APP_NAME } erfordert immer dein zweites Passwort."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Zugang zu ${ PASS_APP_NAME } wird deinen Fingerabdruck oder Geräte-PIN-Code benötigen."
@@ -1825,6 +1837,9 @@
       "Low Priority": [
         "Niedrige Priorität"
       ],
+      "Manager": [
+        "Manager"
+      ],
       "me": [
         "Ich"
       ],
@@ -2013,6 +2028,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bitte bestätige deinen PIN-Code, um diese Einstellung zu bearbeiten."
+      ],
+      "Please confirm your second password": [
+        "Bitte bestätige dein zweites Passwort"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Bitte bestätige dein zweites Passwort, um die automatische Sperre mit biometrischen Merkmalen zu aktivieren."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Bitte bestätige dein zweites Passwort, um die automatische Sperre mit deinem Passwort zu aktivieren."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Bitte bestätige dein zweites Passwort, um den Offline-Modus zu deaktivieren"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bitte bestätige dein zweites Passwort, um den Offline-Modus zu aktivieren"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Bitte bestätige dein zweites Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Bitte bestätige dein zweites Passwort, um die Registrierung deiner aktuellen Sperre aufzuheben."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Bitte bestätige dein zweites Passwort, um die Zeit für die automatische Sperre zu aktualisieren."
       ],
       "Please consider leaving a review.": [
         "Bitte ziehe in Erwägung, eine Bewertung zu schreiben."
@@ -2269,6 +2308,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem zusätzlichen Passwort"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem zweiten Passwort"
       ],
       "Unlock with biometrics": [
         "Mit Biometrie entsperren"
@@ -2929,6 +2971,9 @@
       "Make all editors": [
         "Alle zu Bearbeitern machen"
       ],
+      "Make all managers": [
+        "Alle zu Managern machen"
+      ],
       "Make all viewers": [
         "Alle zu Betrachtern machen"
       ],
@@ -3096,6 +3141,9 @@
       ],
       "Reveal password": [
         "Passwort anzeigen"
+      ],
+      "Second password": [
+        "Zusätzliches Passwort"
       ],
       "Secure links": [
         "Sichere Links"
@@ -3942,6 +3990,9 @@
       ],
       "Enter your PIN": [
         "PIN eingeben"
+      ],
+      "Enter your second password": [
+        "Gib dein zweites Passwort ein"
       ],
       "Excluded items": [
         "Ausgeschlossene Einträge"
