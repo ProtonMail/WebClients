@@ -558,6 +558,9 @@
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
+      "Rename": [
+        "Nimeä uudelleen"
+      ],
       "Rename document": [
         "Nimeä dokumentti uudelleen"
       ],
@@ -644,6 +647,9 @@
       ],
       "Show advanced PGP settings": [
         "Näytä PGP-lisäasetukset"
+      ],
+      "Show more": [
+        "Näytä lisää"
       ],
       "Show options": [
         "Näytä valinnat"
@@ -2257,6 +2263,11 @@
         "Erääntynyt lasku"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2332,11 +2343,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2446,26 +2452,14 @@
       "All events in this series were updated.": [
         "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Ketjun kaikkia tapahtumakertoja muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Tämä tapahtumakerta peruttiin."
       ],
       "This event occurrence was updated.": [
         "Tämä tapahtumakerta päivitettiin."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tätä tapahtumakertaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Tapahtuma päivitettiin."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tapahtumaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2851,6 +2845,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Something went wrong. Please try again.": [
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "status page": [
         "tilasivumme"
@@ -3959,6 +3956,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
+      "Admin account allocation": [
+        "Varattu ylläpitäjän tilille"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
@@ -3973,6 +3973,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
+      ],
+      "Allocated": [
+        "Varattu"
+      ],
+      "Already allocated": [
+        "Jo varattu"
+      ],
+      "Already used": [
+        "Jo käytetty"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
@@ -4724,6 +4733,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Pysy vaivattomasti yhdistettynä ottamalla käyttöön seuraavat VPN-asetukset:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Organisaation käyttäjille varattu tallennustila"
+      ],
+      "Storage allocated to this user": [
+        "Käyttäjälle varattu tallennustila"
+      ],
+      "Storage for users": [
+        "Tallennustilaa käyttäjille"
+      ],
+      "Storage used by this user": [
+        "Käyttäjän varaama tallennustila"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
@@ -5257,6 +5278,9 @@
       ],
       "Account holder": [
         "Tilinhaltija"
+      ],
+      "Account storage": [
+        "Tilin tallennustila"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -7509,14 +7533,26 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ei-yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun heillä on asetusavaimet"
+      ],
       "Organization key does not exist.": [
         "Organisaatioavainta ei ole olemassa."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisaatioavain on aktivoitava hallintaoikeuksien myöntämiseksi"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Lupa evätty, hallintaoikeuksia on rajoitettu."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
+      ],
       "The organization key must be activated first.": [
         "Organisaatioavain on ensin aktivoitava."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaatioavaimen luontia"
       ],
       "You need access to the organization key to perform this operation.": [
         "Sinulla on oltava oikeus käyttää organisaatioavainta suorittaaksesi tämä toiminnon."
@@ -9093,6 +9129,9 @@
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
+      "Get the apps": [
+        "Hanki sovellukset"
+      ],
       "Gift": [
         "Lahja"
       ],
@@ -9453,6 +9492,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
       ]
     },
     "Validation": {

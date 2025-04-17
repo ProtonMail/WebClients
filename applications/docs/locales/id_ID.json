@@ -534,6 +534,9 @@
       "Remove gift code": [
         "Hapus kode hadiah"
       ],
+      "Rename": [
+        "Ubah nama"
+      ],
       "Rename document": [
         "Ubah nama dokumen"
       ],
@@ -620,6 +623,9 @@
       ],
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
+      ],
+      "Show more": [
+        "Tampilkan lebih banyak"
       ],
       "Show options": [
         "Tampilkan pilihan"
@@ -2221,6 +2227,11 @@
         "Faktur yang tertunggak"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2299,11 +2310,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2413,26 +2419,14 @@
       "All events in this series were updated.": [
         "Semua acara dalam seri ini telah diperbarui."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Semua acara dalam seri ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Keberlangsungan acara ini telah dibatalkan."
       ],
       "This event occurrence was updated.": [
         "Keberlangsungan acara ini telah diperbarui."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Keberlangsungan acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Anda diundang ke ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2811,6 +2805,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Something went wrong. Please try again.": [
+        "Terjadi suatu kesalahan. Silakan coba lagi."
       ],
       "status page": [
         "halaman status"
@@ -3897,6 +3894,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
       ],
+      "Admin account allocation": [
+        "Alokasi akun admin"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Para pengiklan dapat melacak penjelajahan Anda untuk menampilkan iklan yang ditargetkan. ${ VPN_APP_NAME } memblokir program pelacak dan iklan, yang mempercepat koneksi Anda dan meningkatkan pengalaman online Anda."
       ],
@@ -3911,6 +3911,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
+      ],
+      "Allocated": [
+        "Dialokasikan"
+      ],
+      "Already allocated": [
+        "Telah dialokasikan"
+      ],
+      "Already used": [
+        "Telah digunakan"
       ],
       "American Express SafeKey logo": [
         "Logo American Express Safekey"
@@ -4680,6 +4689,18 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Buat diri Anda selalu terhubung tanpa harus repot dengan mengaktifkan pengaturan VPN berikut:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
+      ],
+      "Storage allocated to this user": [
+        "Ruang penyimpanan yang dialokasikan kepada pengguna ini"
+      ],
+      "Storage for users": [
+        "Ruang penyimpanan untuk anggota"
+      ],
+      "Storage used by this user": [
+        "Ruang penyimpanan yang digunakan oleh pengguna ini"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
@@ -5247,6 +5268,9 @@
       ],
       "Account holder": [
         "Pemilik akun"
+      ],
+      "Account storage": [
+        "Penyimpanan akun"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -7290,9 +7314,6 @@
       "Public link update access failed ": [
         "Gagal memperbarui akses tautan publik "
       ],
-      "Recent documents updated.": [
-        "Dokumen terkini diperbarui"
-      ],
       "Root folder failed to be loaded": [
         "Folder akar gagal dimuat"
       ],
@@ -7528,14 +7549,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Pengguna non-privat dapat dipromosikan sebagai admin pada saat mereka memiliki kunci setup"
+      ],
       "Organization key does not exist.": [
         "Kunci organisasi tidak ada."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Kunci organisasi harus diaktifkan untuk memberikan hak admin"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Izin ditolak. Hak administrator telah dibatasi."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Pengguna privat dapat diangkat sebagai admin pada saat mereka memasuki akun untuk yang pertama kalinya"
+      ],
       "The organization key must be activated first.": [
         "Kunci organisasi harus diaktifkan terlebih dahulu."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Anda harus menghapus seluruh grup sebelum menghasilkan kunci organisasi baru"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Anda harus memprivatkan seluruh pengguna sebelum menghasilkan kunci organisasi baru"
       ],
       "You need access to the organization key to perform this operation.": [
         "Anda memerlukan akses ke kunci organisasi untuk melangsungkan tindakan ini."
@@ -9099,6 +9135,9 @@
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
       ],
+      "Get the apps": [
+        "Dapatkan aplikasinya"
+      ],
       "Gift": [
         "Hadiah"
       ],
@@ -9473,6 +9512,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
       ]
     },
     "Validation": {
