@@ -15,7 +15,6 @@ import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
-import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import {
     DriveProvider,
     useActivePing,
@@ -25,6 +24,7 @@ import {
     useSearchControl,
     useUserSettings,
 } from '../store';
+import { PhotosOrPhotosWithAlbumsContainer } from '../store/_photos/PhotosOrPhotosWithAlbumsProvider';
 import { useSanitization } from '../store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
@@ -35,7 +35,6 @@ import DevicesContainer from './DevicesContainer';
 import { FolderContainerWrapper } from './FolderContainer';
 import LocationErrorBoundary from './LocationErrorBoundary';
 import NoAccessContainer from './NoAccessContainer';
-import { PhotosContainer } from './PhotosContainer';
 import { SearchContainer } from './SearchContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import SharedWithMeContainer from './SharedWithMeContainer';
@@ -81,7 +80,7 @@ const InitContainer = () => {
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
-    const { photosEnabled, photosWithAlbumsEnabled } = useUserSettings();
+    const { photosEnabled } = useUserSettings();
     const [autoRestoreModal, showAutoRestoreModal] = useAutoRestoreModal();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
     useActivePing();
@@ -175,10 +174,7 @@ const InitContainer = () => {
             <Route path="no-access/*" element={<NoAccessContainer />} />
             <Route path="shared-urls/*" element={<SharedURLsContainer />} />
             {!isDirectSharingDisabled && <Route path="shared-with-me/*" element={<SharedWithMeContainer />} />}
-            {photosEnabled && !photosWithAlbumsEnabled && <Route path="photos/*" element={<PhotosContainer />} />}
-            {photosEnabled && photosWithAlbumsEnabled && (
-                <Route path="photos/*" element={<PhotosWithAlbumsContainer />} />
-            )}
+            {photosEnabled && <Route path="photos/*" element={<PhotosOrPhotosWithAlbumsContainer />} />}
             {searchEnabled && <Route path="search/*" element={<SearchContainer />} />}
             <Route path=":volumeId/:linkId/*" element={<VolumeLinkContainer />} />
             <Route path=":shareId/file/:linkId/*" element={<FolderContainerWrapper type={LinkURLType.FILE} />} />
