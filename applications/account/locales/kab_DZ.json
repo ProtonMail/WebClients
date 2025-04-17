@@ -140,6 +140,9 @@
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(tuṭṭfiwin) n ugdil"
       ],
+      "Attention required": [
+        "Yesra leḥdar"
+      ],
       "Authenticate": [
         "Asesteb"
       ],
@@ -815,11 +818,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "Select file": [
-        "Fren afaylu"
-      ],
       "select file": [
         "fren afaylu"
+      ],
+      "Select file": [
+        "Fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -3432,11 +3435,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Kra n yismawen n tebzimin ɛeddan talast tafellayt n yisekkilen n ${ MAIL_APP_NAME }. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
-      "Something went wrong": [
-        "Yella wayen yeḍran"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
+      ],
+      "Something went wrong. Please try again.": [
+        "Yella kra i yeḍran, ttxil ɛreḍ tikkelt-nniḍen."
       ],
       "status page": [
         "asebter n waddad"
@@ -6517,11 +6520,11 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "And": [
-        "Akked"
-      ],
       "AND": [
         "AKKED"
+      ],
+      "And": [
+        "Akked"
       ],
       "and": [
         "akked"
@@ -6856,11 +6859,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ma"
-      ],
       "IF": [
         "MA"
+      ],
+      "If": [
+        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -7003,14 +7006,14 @@
       "Optional": [
         "Afrayan"
       ],
+      "OR": [
+        "NEƔ"
+      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
-      ],
-      "OR": [
-        "NEƔ"
       ],
       "Organization name": [
         "Isem n tuddsa"
@@ -8159,14 +8162,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8176,6 +8171,14 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -10121,10 +10124,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [

@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -1093,10 +1096,10 @@
       "Select country ${ country }": [
         "Land ${ country } auswählen"
       ],
-      "Select file": [
+      "select file": [
         "Datei auswählen"
       ],
-      "select file": [
+      "Select file": [
         "Datei auswählen"
       ],
       "Select files": [
@@ -4209,15 +4212,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } wird dich niemals auffordern, einen Code einzugeben, der nicht von der Domain ${ domain } oder von einer offiziellen ${ BRAND_NAME }-Anwendung stammt."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**So funktioniert es:** Gib den Code, der auf dem Gerät angezeigt wird, bei dem du dich anmelden möchtest, auf diesem Gerät ein. Du wirst als **${ email }** angemeldet. Beide Geräte bleiben aktiv. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Erlaube, dich mit dem Scannen eines QR-Codes anzumelden"
-      ],
       "Code copied to clipboard": [
         "Code in die Zwischenablage kopiert"
       ],
@@ -4226,15 +4220,6 @@
       ],
       "Enter code manually": [
         "Code manuell eingeben"
-      ],
-      "New QR code": [
-        "Neuer QR-Code"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Öffne die ${ BRAND_NAME } App auf deinem Smartphone"
-      ],
-      "Please scan a new QR code to try again": [
-        "Bitte scanne einen neuen QR Code, um es noch einmal zu versuchen"
       ],
       "QR code expired": [
         "QR-Code abgelaufen"
@@ -4245,41 +4230,14 @@
       "QR code sign-in enabled": [
         "QR-Code-Anmeldung aktiviert"
       ],
-      "Safety tips:": [
-        "Sicherheitstipps:"
-      ],
-      "Scan a QR code with your phone": [
-        "Scanne einen QR-Code mit deinem Smartphone"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Scanne den QR-Code auf deinem Mobilgerät, um dich anzumelden"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Scanne diesen QR Code in der ${ BRAND_NAME } App auf deinem Smartphone, um dich sofort anzumelden."
-      ],
-      "Sign in to another device": [
-        "Bei einem anderen Gerät anmelden"
-      ],
-      "Sign in with another device": [
-        "Mit einem anderen Gerät anmelden"
       ],
       "Sign in with QR code": [
         "Mit QR-Code anmelden"
       ],
-      "Tap **Scan QR code**": [
-        "Tippe auf **QR-Code scannen**"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "Tippe auf **Einstellungen** und dann auf **Anmelden bei einem anderen Gerät**"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Um auf den Code des Geräts zuzugreifen, bei dem du dich anmelden möchtest, tippst du im Hilfemenü des Anmeldebildschirms auf die Schaltfläche **Mit QR-Code anmelden** und anschließend auf **Schlüssel manuell eingeben**."
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Achte auf Nachrichten, die einen Code enthalten. Gib niemals einen Code von einer Website oder einer Person ein, der du nicht vertraust."
-      ],
-      "We couldn't sign you in": [
-        "Wir konnten dich nicht anmelden"
       ],
       "You have successfully signed in to another device": [
         "Du hast dich erfolgreich bei einem anderen Gerät angemeldet"
@@ -4308,26 +4266,14 @@
       "All events in this series were updated.": [
         "Alle Termine in dieser Serie wurden aktualisiert."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle Termine in dieser Serie wurden aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Dieser Termin wurde abgesagt."
       ],
       "This event occurrence was updated.": [
         "Die Häufigkeit des Termins wurde aktualisiert."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Die Häufigkeit des Termins wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Dieser Termin wurde aktualisiert."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Dieser Termin wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Du wurdest zu ${ eventTitle } eingeladen.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5142,11 +5088,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
-      "Something went wrong": [
-        "Etwas ist schief gelaufen."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
       "status page": [
         "Statusseite"
@@ -8910,7 +8856,7 @@
         "Bitte beachte, dass, wenn du den Filter ${ nameDeleted } löschst, wir alle automatischen Aktionen, die er auslöst, nicht mehr verarbeiten."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt.",
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "please open a support ticket": [
@@ -9726,10 +9672,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -10896,10 +10842,10 @@
       "Allow sharing outside the organization": [
         "Teilen außerhalb der Organisation erlauben"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Erlaubte Domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Erlaubte Domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10911,11 +10857,11 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
-      "And": [
-        "Und"
-      ],
       "AND": [
         "UND"
+      ],
+      "And": [
+        "Und"
       ],
       "and": [
         "und"
@@ -11343,11 +11289,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Wenn"
-      ],
       "IF": [
         "WENN"
+      ],
+      "If": [
+        "Wenn"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -11550,14 +11496,14 @@
       "Optional": [
         "Optional"
       ],
+      "OR": [
+        "ODER"
+      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
-      ],
-      "OR": [
-        "ODER"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -12190,10 +12136,10 @@
       "perform a password reset from your active session": [
         "dein Passwort in deiner aktiven Sitzung zurücksetzen"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "Datenschutzerklärung"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "Datenschutzerklärung"
       ],
       "Reactivate now": [
@@ -13559,14 +13505,6 @@
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -13585,6 +13523,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -14222,17 +14168,6 @@
         "Desktop"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Jeder"
-      ],
-      "Group members": [
-        "Gruppenmitglieder"
-      ],
-      "No one": [
-        "Keiner"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10. des Monats"
@@ -14461,6 +14396,17 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Option delay send seconds": {
@@ -18522,11 +18468,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -19029,9 +18975,6 @@
       "Home": [
         "Startseite"
       ],
-      "How can we help?": [
-        "Wie können wir dir helfen?"
-      ],
       "How does it work?": [
         "Wie funktioniert das?"
       ],
@@ -19494,6 +19437,9 @@
       ],
       "Spam, block, and allow lists": [
         "Listen gesperrter und zugelassener Absender"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
       ],
       "Start a new import": [
         "Neuer Importvorgang"

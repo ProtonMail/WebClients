@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "添加截图"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Authenticate": [
         "认证"
       ],
@@ -1093,10 +1096,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
       "Select files": [
@@ -1134,6 +1137,9 @@
       ],
       "Set as default": [
         "设为默认"
+      ],
+      "Set as default mail application": [
+        "设置为默认邮件应用"
       ],
       "Set catch-all": [
         "设置通配邮箱"
@@ -3749,6 +3755,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } 不是您的默认邮件应用。"
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } 是您的默认邮件应用。"
+      ],
       "Also included": [
         "还包含"
       ],
@@ -4184,15 +4196,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } 绝不会要求您输入来自非 ${ domain } 域名或官方 ${ BRAND_NAME } 应用程序的验证码。"
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**操作方式：** 在本设备上输入您要登录设备上显示的验证码。您将以 **${ email }** 的身份登录。当前设备和登录设备都将保持激活状态。 "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "允许扫描二维码登录"
-      ],
       "Code copied to clipboard": [
         "验证码已复制到剪贴板"
       ],
@@ -4201,15 +4204,6 @@
       ],
       "Enter code manually": [
         "手动输入验证码"
-      ],
-      "New QR code": [
-        "新的二维码"
-      ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "在您的手机上打开 ${ BRAND_NAME } 应用"
-      ],
-      "Please scan a new QR code to try again": [
-        "请扫描新的二维码以重试"
       ],
       "QR code expired": [
         "二维码已失效"
@@ -4220,41 +4214,14 @@
       "QR code sign-in enabled": [
         "二维码登录已启用"
       ],
-      "Safety tips:": [
-        "安全提示："
-      ],
-      "Scan a QR code with your phone": [
-        "使用手机扫描二维码"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "扫描移动设备上的二维码以登录"
-      ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "在手机上的 ${ BRAND_NAME } 应用中扫描此二维码，即可立即登录。"
-      ],
-      "Sign in to another device": [
-        "登录到其他设备"
-      ],
-      "Sign in with another device": [
-        "使用其他设备登录"
       ],
       "Sign in with QR code": [
         "使用二维码登录"
       ],
-      "Tap **Scan QR code**": [
-        "点击 **扫描二维码**"
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "进入**设置**，然后点击**登录其他设备**"
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "要获取您想要登录设备的代码，请在登录屏幕的帮助菜单中点击**使用二维码登录**按钮，然后点击**手动输入密钥**。 "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "请警惕包含验证码的信息。切勿在任何非可信来源的网站或陌生人处输入验证码。"
-      ],
-      "We couldn't sign you in": [
-        "我们无法为您登录。"
       ],
       "You have successfully signed in to another device": [
         "您已成功登录到其他设备"
@@ -4283,26 +4250,14 @@
       "All events in this series were updated.": [
         "此系列中的所有事件都已更新。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此系列中的所有事件都已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "此事件已被取消。"
       ],
       "This event occurrence was updated.": [
         "此事件已更新。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "此事件已更新。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "您已被邀请参加 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5112,11 +5067,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
       ],
-      "Something went wrong": [
-        "出了些问题"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      ],
+      "Something went wrong. Please try again.": [
+        "出现了一些问题。请重试。"
       ],
       "status page": [
         "运行状态网页"
@@ -9621,10 +9576,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
       "Users": [
@@ -9785,6 +9740,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "启用后，我们将检查 ${ MAIL_APP_NAME } 是否为您的默认邮件应用，并在不是时通知您。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
@@ -10763,10 +10721,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10778,10 +10736,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -11210,10 +11168,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
       "Import all messages": [
@@ -11417,13 +11375,13 @@
       "Optional": [
         "非必填"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Organization name": [
@@ -12056,10 +12014,10 @@
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隐私政策"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隐私政策"
       ],
       "Reactivate now": [
@@ -13390,14 +13348,6 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -13416,6 +13366,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -14046,17 +14004,6 @@
         "电脑版"
       ]
     },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14285,6 +14232,17 @@
       ],
       "Trash": [
         "回收站"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
       ]
     },
     "Option delay send seconds": {
@@ -18275,10 +18233,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -18298,6 +18256,9 @@
       ],
       "Change second password": [
         "修改第二密码"
+      ],
+      "Check your default mail application": [
+        "检查您的默认邮件应用"
       ],
       "Choose an account": [
         "选择账户"
@@ -18776,9 +18737,6 @@
       "Home": [
         "首页"
       ],
-      "How can we help?": [
-        "我们能为您提供什么帮助呢？"
-      ],
       "How does it work?": [
         "如何操作？"
       ],
@@ -19240,6 +19198,9 @@
       ],
       "Spam, block, and allow lists": [
         "垃圾邮件与黑白名单"
+      ],
+      "Special Offer": [
+        "特别优惠"
       ],
       "Start a new import": [
         "开始导入"

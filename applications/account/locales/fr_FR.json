@@ -184,6 +184,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -1093,11 +1096,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "Select file": [
-        "Sélectionner un fichier"
-      ],
       "select file": [
         "sélectionnez un fichier."
+      ],
+      "Select file": [
+        "Sélectionner un fichier"
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -4209,14 +4212,20 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } ne vous demandera jamais de saisir un code qui ne provient pas du domaine ${ domain } ou d'une application officielle ${ BRAND_NAME }."
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } ne vous demandera jamais de scanner un QR code qui ne provient pas du domaine ${ domain } ou d'une application officielle ${ BRAND_NAME }."
       ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Fonctionnement :** Saisissez le code affiché sur l’appareil auquel vous voulez vous connecter sur cet appareil. Vous serez connecté avec **${ email }**. Les deux appareils resteront actifs. "
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } ne vous contactera jamais de manière inattendue pour vous demander de vous connecter avec un QR code."
       ],
-      "Allow scanning a QR code to sign in": [
-        "Autoriser la lecture d’un QR code pour se connecter"
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Fonctionnement :** Saisissez sur cet appareil le code affiché sur l’appareil auquel vous voulez vous connecter. Vous serez connecté en tant que **${ email }**. Les deux appareils resteront actifs."
+      ],
+      "Allow QR code sign‒in": [
+        "Autoriser la connexion par QR code"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Méfiez-vous des messages contenant des QR codes. Ne scannez un code que si vous faites confiance à la source."
       ],
       "Code copied to clipboard": [
         "Code copié dans le presse-papiers"
@@ -4227,14 +4236,14 @@
       "Enter code manually": [
         "Saisir le code manuellement"
       ],
-      "New QR code": [
-        "Nouveau QR code"
+      "Generate QR code": [
+        "Générer un QR code"
       ],
-      "Open the ${ BRAND_NAME } app on your phone": [
-        "Ouvrez l’application ${ BRAND_NAME } sur votre téléphone."
+      "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
+        "Obtenez un autre appareil connecté à votre compte ${ BRAND_NAME }"
       ],
-      "Please scan a new QR code to try again": [
-        "Veuillez scanner un nouveau QR code pour réessayer."
+      "How to sign in using another device": [
+        "Comment se connecter à l’aide d’un autre appareil"
       ],
       "QR code expired": [
         "Le QR code a expiré."
@@ -4245,41 +4254,35 @@
       "QR code sign-in enabled": [
         "Connexion par QR code activée"
       ],
-      "Safety tips:": [
-        "Conseils de sécurité :"
-      ],
-      "Scan a QR code with your phone": [
-        "Scannez un QR code avec votre téléphone"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Scannez le QR code sur votre appareil mobile pour vous connecter."
       ],
-      "Scan this QR code in the ${ BRAND_NAME } app on your phone to sign in instantly.": [
-        "Scannez ce QR code dans l'application ${ BRAND_NAME } sur votre téléphone pour vous connecter instantanément."
+      "Scan the code to sign in": [
+        "Scannez le code pour vous connecter"
       ],
-      "Sign in to another device": [
-        "Se connecter à un autre appareil"
+      "Security tips": [
+        "Conseils de sécurité"
       ],
-      "Sign in with another device": [
-        "Se connecter avec un autre appareil"
+      "Select **Sign in on another device → Scan QR code**": [
+        "Sélectionnez **Se connecter sur un autre appareil → Scanner le QR code**"
+      ],
+      "Sign in on another device": [
+        "Se connecter sur un autre appareil"
       ],
       "Sign in with QR code": [
         "Se connecter avec un QR code"
       ],
-      "Tap **Scan QR code**": [
-        "Appuyez sur **Scanner le code QR**."
-      ],
-      "Tap into **Settings**, then tap **Sign in to another device**": [
-        "Appuyez sur **Paramètres**, puis sur **Se connecter à un autre appareil**."
-      ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Pour accéder au code de l’appareil auquel vous souhaitez vous connecter, appuyez sur le bouton **Se connecter avec le QR code** dans le menu d’aide de l’écran de connexion, puis appuyez sur **Saisir la clé manuellement**. "
       ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Méfiez-vous des messages qui contiennent un code. Ne saisissez jamais un code provenant d’un site internet ou d’une personne à laquelle vous ne faites pas confiance."
+      "Try generating a new QR code.": [
+        "Essayez de générer un nouveau QR code."
       ],
-      "We couldn't sign you in": [
-        "Nous n’avons pas pu vous connecter."
+      "Using that device, open any ${ BRAND_NAME } app and select **Settings**": [
+        "Sur cet appareil, ouvrez n’importe quelle application ${ BRAND_NAME } et sélectionnez **Paramètres**"
+      ],
+      "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
+        "Fonctionne si vous avez un autre appareil connecté à ${ BRAND_NAME }"
       ],
       "You have successfully signed in to another device": [
         "Vous vous êtes connecté à un autre appareil."
@@ -4296,6 +4299,11 @@
         "Vous pouvez fermer cet onglet en toute sécurité."
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTE :\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPTION :\n${ eventDescription }"
@@ -4308,8 +4316,11 @@
       "All events in this series were updated.": [
         "Tous les événements de cette série ont été mis à jour."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tous les événements de cette série ont été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Voici ce qui a été modifié :"
+      ],
+      "NOTE:": [
+        "NOTE :"
       ],
       "This event occurrence was canceled.": [
         "L'occurrence de cet événement a été annulée."
@@ -4317,17 +4328,8 @@
       "This event occurrence was updated.": [
         "L'occurrence de cet événement a été mise à jour."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "L'occurrence de cet événement a été mise à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Cet événement a été mis à jour."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Cet événement a été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5142,11 +5144,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
-      "Something went wrong": [
-        "Une erreur s'est produite."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Il y a eu un problème. Nous vous invitons à réessayer plus tard."
       ],
       "status page": [
         "page d'état"
@@ -5264,6 +5266,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "La vérification n'a pas réussi, nous vous invitons à réessayer dans une heure."
+      ],
+      "We couldn't sign you in": [
+        "Nous n’avons pas pu vous connecter."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Nous avons arrêté la signature DKIM suite à des problèmes avec votre configuration DNS. Nous vous invitons à suivre les instructions ci-dessous pour reprendre la signature."
@@ -9729,11 +9734,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "username": [
-        "nom d'utilisateur"
-      ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "username": [
+        "nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -10899,10 +10904,10 @@
       "Allow sharing outside the organization": [
         "Autoriser le partage en dehors de l'organisation"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10914,11 +10919,11 @@
       "Amount due": [
         "Montant à payer"
       ],
-      "And": [
-        "Et"
-      ],
       "AND": [
         "ET"
+      ],
+      "And": [
+        "Et"
       ],
       "and": [
         "et"
@@ -11346,11 +11351,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -11553,14 +11558,14 @@
       "Optional": [
         "Facultatif"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -12193,11 +12198,11 @@
       "perform a password reset from your active session": [
         "réinitialiser le mot de passe depuis votre session active"
       ],
-      "Privacy policy": [
-        "Politique de confidentialité"
-      ],
       "privacy policy": [
         "politique de confidentialité"
+      ],
+      "Privacy policy": [
+        "Politique de confidentialité"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -13562,14 +13567,6 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -13588,6 +13585,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14225,17 +14230,6 @@
         "Bureau"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tout le monde"
-      ],
-      "Group members": [
-        "Membres du groupe"
-      ],
-      "No one": [
-        "Personne"
-      ]
-    },
     "Option": {
       "10th of the month": [
         "10 du mois"
@@ -14464,6 +14458,17 @@
       ],
       "Trash": [
         "Déplacer dans le dossier Corbeille"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tout le monde"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "No one": [
+        "Personne"
       ]
     },
     "Option delay send seconds": {
@@ -18528,10 +18533,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -18954,6 +18959,9 @@
       "For Windows": [
         "Pour Windows"
       ],
+      "Forgot password": [
+        "Mot de passe oublié"
+      ],
       "Forgot recovery method": [
         "Méthode de récupération oubliée"
       ],
@@ -19034,9 +19042,6 @@
       ],
       "Home": [
         "Accueil"
-      ],
-      "How can we help?": [
-        "Comment pouvons-nous vous aider ?"
       ],
       "How does it work?": [
         "Comment ça marche ?"
@@ -19500,6 +19505,9 @@
       ],
       "Spam, block, and allow lists": [
         "Indésirables/spam, adresses bloquées et autorisées"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
