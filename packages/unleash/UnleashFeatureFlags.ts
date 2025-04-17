@@ -114,6 +114,7 @@ enum DriveFeatureFlag {
     // Albums
     DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
+    DriveAlbumsTempDisabledOnRelease = 'DriveAlbumsTempDisabledOnRelease',
     // One-dollar offer
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
