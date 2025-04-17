@@ -25,6 +25,7 @@ describe('scaleImageFile', () => {
             return {
                 drawImage: jest.fn(),
                 fillRect: jest.fn(),
+                clearRect: jest.fn(),
             };
         });
         global.HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {

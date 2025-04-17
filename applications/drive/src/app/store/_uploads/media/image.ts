@@ -77,8 +77,24 @@ async function scaleImage(
 
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
+    let arrayBuffer: ArrayBuffer;
+    try {
+        arrayBuffer = await canvasToThumbnail(canvas, thumbnailType, mimeType);
+    } catch {
+        // Retry with a reduce thumbnail dimensions (70% of what it should be) one last time
+        // In case we still have a chance to have a smaller thumbnail
+        // It's better than no thumbnails at all
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.width = width * 0.7;
+        canvas.height = height * 0.7;
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, width, height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        arrayBuffer = await canvasToThumbnail(canvas, thumbnailType, mimeType);
+    }
+
     return {
         thumbnailType,
-        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas, thumbnailType, mimeType)),
+        thumbnailData: new Uint8Array(arrayBuffer),
     };
 }
