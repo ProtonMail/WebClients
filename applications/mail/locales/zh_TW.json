@@ -228,9 +228,6 @@
       "Close": [
         "關閉"
       ],
-      "Close & discard": [
-        "關閉並放棄"
-      ],
       "Close composer": [
         "關閉撰寫工具"
       ],
@@ -882,9 +879,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
       ],
-      "Open composer": [
-        "打開撰寫器"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "於 ${ DOCS_SHORT_APP_NAME } 開啟"
       ],
@@ -999,12 +993,6 @@
       "Replaces the selected text in your message": [
         "取代訊息中選取的文字"
       ],
-      "Reply": [
-        "回覆"
-      ],
-      "Reply all": [
-        "回覆所有人"
-      ],
       "Reply securely": [
         "加密回覆"
       ],
@@ -1092,11 +1080,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select all": [
-        "全選"
-      ],
       "Select All": [
         "選擇全部"
+      ],
+      "Select all": [
+        "全選"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1190,6 +1178,9 @@
       ],
       "Show messages": [
         "顯示郵件"
+      ],
+      "Show more": [
+        "顯示更多"
       ],
       "Show more search options": [
         "顯示更多搜尋選項"
@@ -1289,9 +1280,6 @@
       ],
       "Trust": [
         "信任"
-      ],
-      "Trust key": [
-        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -3827,26 +3815,14 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該系列中的所有行程皆已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "該行程已被取消。"
       ],
       "This event occurrence was updated.": [
         "該行程已更新。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "該行程已更新。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "您已被邀請至 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5941,6 +5917,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
+      "Admin account allocation": [
+        "管理員帳號指派"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
       ],
@@ -5970,6 +5949,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "所有聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
+      ],
+      "Allocated": [
+        "已分配"
+      ],
+      "Already allocated": [
+        "已分配"
+      ],
+      "Already used": [
+        "已使用"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 標誌"
@@ -6518,7 +6506,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
@@ -7048,8 +7036,20 @@
       "Start using the shorter, catchier version of your email address.": [
         "開始使用更短、更好記的電子郵件地址。"
       ],
+      "Storage allocated to other users in this organisation": [
+        "儲存空間已分配給這個組織中的其他使用者"
+      ],
+      "Storage allocated to this user": [
+        "此位使用者分配的儲存空間"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "儲存功能無法支援此瀏覽器，我們需要此支援以啟用訊息內容搜尋。"
+      ],
+      "Storage for users": [
+        "使用者的儲存空間"
+      ],
+      "Storage used by this user": [
+        "此位使用者已用的儲存空間"
       ],
       "Subject": [
         "主題"
@@ -8012,6 +8012,9 @@
       "Account holder": [
         "帳戶持有人"
       ],
+      "Account storage": [
+        "帳號儲存空間"
+      ],
       "Actions": [
         "操作"
       ],
@@ -8042,10 +8045,10 @@
       "Always move sender's emails": [
         "總是移動寄件者的電子郵件"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -8273,10 +8276,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
       "Import all messages": [
@@ -8387,13 +8390,13 @@
       "Optional": [
         "自由列席"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Original link": [
@@ -9183,29 +9186,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
@@ -9227,6 +9207,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
       ]
     },
     "new_plans: feature": {
@@ -10486,6 +10489,9 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "如取有設定金鑰, 非私人用戶便可以提升至管理員"
+      ],
       "Organization key does not exist.": [
         "組織金鑰不存在。"
       ],
@@ -10494,6 +10500,9 @@
       ],
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在產生新的組織金鑰前，用戶必須將所有使用者私有化"
       ],
       "You need access to the organization key to perform this operation.": [
         "您要先存取至組織金鑰以完成此操作"
@@ -12863,6 +12872,9 @@
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "獲得 ${ appName[APP_NAME] } 應用程式"
+      ],
+      "Get the apps": [
+        "取得應用程式"
       ],
       "Gift": [
         "禮物"

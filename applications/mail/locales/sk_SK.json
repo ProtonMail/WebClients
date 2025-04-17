@@ -237,9 +237,6 @@
       "Close": [
         "Zatvoriť"
       ],
-      "Close & discard": [
-        "Zatvoriť a zahodiť"
-      ],
       "Close composer": [
         "Zavrieť editor správy"
       ],
@@ -915,9 +912,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Otvoriť editor"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Otvoriť v ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -1032,12 +1026,6 @@
       "Replaces the selected text in your message": [
         "Nahradí vybraný text v správe"
       ],
-      "Reply": [
-        "Odpovedať"
-      ],
-      "Reply all": [
-        "Odpovedať všetkým"
-      ],
       "Reply securely": [
         "Bezpečná odpoveď"
       ],
@@ -1125,10 +1113,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -1223,6 +1211,9 @@
       ],
       "Show messages": [
         "Zobraziť správy"
+      ],
+      "Show more": [
+        "Zobraziť viac"
       ],
       "Show more search options": [
         "Zobraziť ďalšie možnosti vyhľadávania"
@@ -1325,12 +1316,6 @@
       ],
       "Trust": [
         "Dôverovať"
-      ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -3947,6 +3932,11 @@
         "Prioritná podpora"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "POZNÁMKA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -3959,8 +3949,11 @@
       "All events in this series were updated.": [
         "Všetky udalosti v tejto sérii boli aktualizované."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všetky udalosti v tejto sérii boli aktualizované. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Popis zmien:"
+      ],
+      "NOTE:": [
+        "POZNÁMKA:"
       ],
       "This event occurrence was canceled.": [
         "Táto udalosť bola zrušená."
@@ -3968,17 +3961,8 @@
       "This event occurrence was updated.": [
         "Výskyt tejto udalosti bol aktualizovaný."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Výskyt tejto udalosti bol aktualizovaný. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Táto udalosť bola aktualizovaná."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Táto udalosť bola aktualizovaná. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Dostali ste pozvánku na udalosť ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6325,6 +6309,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Overenie adresy pomocou dôveryhodného kľúča je pre túto adresu povolené. Ak chcete posielať správy na túto adresu, najprv dôverujte verejnému kľúču, ktorý môže byť použitý na odosielanie."
       ],
+      "Admin account allocation": [
+        "Pridelenie účtu správcu"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Inzerenti sledujú vaše prehliadanie, aby mohli zobrazovať cielené reklamy. ${ VPN_APP_NAME } blokuje sledovače a reklamy, čím zrýchľuje vaše pripojenie a zlepšuje váš online zážitok."
       ],
@@ -6366,6 +6353,15 @@
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Pridelené"
+      ],
+      "Already allocated": [
+        "Už pridelené"
+      ],
+      "Already used": [
+        "Už využité"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -6974,7 +6970,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7555,8 +7554,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Udržujte pripojenie bez námahy povolením nasledujúcich nastavení siete VPN:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Úložisko pridelené iným používateľom v tejto organizácii"
+      ],
+      "Storage allocated to this user": [
+        "Úložisko pridelené tomuto používateľovi"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
+      ],
+      "Storage for users": [
+        "Úložisko pre používateľov"
+      ],
+      "Storage used by this user": [
+        "Úložisko používané týmto používateľom"
       ],
       "Subject": [
         "Predmet"
@@ -8651,6 +8662,9 @@
       "Account holder": [
         "Vlastník účtu"
       ],
+      "Account storage": [
+        "Úložisko účtu"
+      ],
       "Actions": [
         "Akcia"
       ],
@@ -8681,10 +8695,10 @@
       "Always move sender's emails": [
         "Vždy presunúť emaily odosielateľa"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -8915,11 +8929,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ak"
-      ],
       "IF": [
         "AK"
+      ],
+      "If": [
+        "Ak"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -9032,14 +9046,14 @@
       "Optional": [
         "Voliteľné"
       ],
+      "OR": [
+        "ALEBO"
+      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
-      ],
-      "OR": [
-        "ALEBO"
       ],
       "Original link": [
         "Pôvodný odkaz"
@@ -9867,29 +9881,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Zmazať účet"
-      ],
-      "Downgrade account": [
-        "Znížiť účet"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získať ${ BRAND_NAME } zadarmo"
-      ],
-      "Get ${ planName }": [
-        "Získať ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechať ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechať účet"
-      ],
-      "Switch plan": [
-        "Zmeniť plán"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
@@ -9911,6 +9902,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšiť na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Zmazať účet"
+      ],
+      "Downgrade account": [
+        "Znížiť účet"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získať ${ BRAND_NAME } zadarmo"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechať ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechať účet"
+      ],
+      "Switch plan": [
+        "Zmeniť plán"
       ]
     },
     "new_plans: feature": {
@@ -11293,14 +11307,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesúkromní používatelia môžu byť povýšení na správcu, ak majú inštalačné kľúče"
+      ],
       "Organization key does not exist.": [
         "Kľúč organizácie neexistuje."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Súkromní používatelia môžu byť po prvom prihlásení povýšení na správcu"
+      ],
       "The organization key must be activated first.": [
         "Najprv musí byť aktivovaný kľúč organizácie."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Pred vytvorením nového kľúča organizácie musíte odstrániť všetky skupiny."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
       ],
       "You need access to the organization key to perform this operation.": [
         "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
@@ -13994,6 +14023,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Získať ${ appName[APP_NAME] } aplikácie"
       ],
+      "Get the apps": [
+        "Získajte aplikácie"
+      ],
       "Gift": [
         "Dar"
       ],
@@ -14616,6 +14648,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na najnovší ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
       ]
     },
     "Update font modal": {

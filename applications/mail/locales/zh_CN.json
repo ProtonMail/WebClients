@@ -234,9 +234,6 @@
       "Close": [
         "关闭"
       ],
-      "Close & discard": [
-        "放弃修改并关闭"
-      ],
       "Close composer": [
         "关闭编辑窗"
       ],
@@ -903,9 +900,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
       ],
-      "Open composer": [
-        "打开邮件编辑区"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "在 ${ DOCS_SHORT_APP_NAME } 中打开"
       ],
@@ -1020,12 +1014,6 @@
       "Replaces the selected text in your message": [
         "在您的消息中替换选中的文本"
       ],
-      "Reply": [
-        "回复"
-      ],
-      "Reply all": [
-        "回复所有人"
-      ],
       "Reply securely": [
         "安全回复"
       ],
@@ -1113,10 +1101,10 @@
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "全选"
       ],
-      "Select All": [
+      "Select all": [
         "全选"
       ],
       "Select all messages": [
@@ -1211,6 +1199,9 @@
       ],
       "Show messages": [
         "显示邮件"
+      ],
+      "Show more": [
+        "显示更多"
       ],
       "Show more search options": [
         "显示更多搜索选项"
@@ -1315,7 +1306,7 @@
         "信任"
       ],
       "Trust key": [
-        "信任此密钥"
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -3893,26 +3884,14 @@
       "All events in this series were updated.": [
         "此系列中的所有事件都已更新。"
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此系列中的所有事件都已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "此事件已被取消。"
       ],
       "This event occurrence was updated.": [
         "此事件已更新。"
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "此事件已更新。"
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "此事件已更新。以下是变化内容：\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "您已被邀请参加 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6037,6 +6016,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
+      "Admin account allocation": [
+        "分配管理员账户"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "广告商会追踪您的浏览记录来展示定向广告。${ VPN_APP_NAME } 能屏蔽追踪器和广告，从而加快连接速度，提升您的上网体验。"
       ],
@@ -6069,6 +6051,15 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
+      ],
+      "Allocated": [
+        "分配量"
+      ],
+      "Already allocated": [
+        "已分配"
+      ],
+      "Already used": [
+        "已使用"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
@@ -6635,7 +6626,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -7207,8 +7198,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "请启用以下 VPN 设置，即可轻松保持网络连接："
       ],
+      "Storage allocated to other users in this organisation": [
+        "此组织其他成员的存储空间分配量"
+      ],
+      "Storage allocated to this user": [
+        "该用户的存储空间分配量"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "此浏览器不支持储存功能，我们需要此支持才能进行信息内容检索。"
+      ],
+      "Storage for users": [
+        "用户存储"
+      ],
+      "Storage used by this user": [
+        "该用户的存储空间使用量"
       ],
       "Subject": [
         "主题"
@@ -8216,6 +8219,9 @@
       "Account holder": [
         "账户持有人"
       ],
+      "Account storage": [
+        "账户存储空间"
+      ],
       "Actions": [
         "操作"
       ],
@@ -8246,10 +8252,10 @@
       "Always move sender's emails": [
         "以后自动移动此人的邮件"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -8480,10 +8486,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
       "Import all messages": [
@@ -8597,13 +8603,13 @@
       "Optional": [
         "非必填"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Original link": [
@@ -9408,29 +9414,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "删除账户"
-      ],
-      "Downgrade account": [
-        "降级账户"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "免费获得 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "开通 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保持计划 ${ plan }"
-      ],
-      "Keep account": [
-        "保留账户"
-      ],
-      "Switch plan": [
-        "切换计划"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降级至 ${ downgradedPlanName }"
@@ -9452,6 +9435,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升级至 ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "删除账户"
+      ],
+      "Downgrade account": [
+        "降级账户"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "免费获得 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保持计划 ${ plan }"
+      ],
+      "Keep account": [
+        "保留账户"
+      ],
+      "Switch plan": [
+        "切换计划"
       ]
     },
     "new_plans: feature": {
@@ -10753,14 +10759,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "非私人用户拥有设置密钥后可晋升为管理员"
+      ],
       "Organization key does not exist.": [
         "组织密钥不存在."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "必须激活组织密钥才能赋予管理员权限"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "权限被拒绝, 管理员权限受到限制。"
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "私人用户首次登录时可晋升为管理员"
+      ],
       "The organization key must be activated first.": [
         "必须先激活机构密钥。"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "在生成新的组织密钥前，您必须删除所有群组"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在生成新的组织密钥之前，您必须先将所有用户私有化"
       ],
       "You need access to the organization key to perform this operation.": [
         "您需要访问组织密钥才能执行此操作。"
@@ -13202,6 +13223,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "下载 ${ appName[APP_NAME] } 应用"
       ],
+      "Get the apps": [
+        "下载应用"
+      ],
       "Gift": [
         "礼品码"
       ],
@@ -13815,6 +13839,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "不支持此版本的 Tor 浏览器，请更新至最新版本 ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "管理员无法访问私人用户的数据，也无法重置他们的密码。"
       ]
     },
     "Update font modal": {
