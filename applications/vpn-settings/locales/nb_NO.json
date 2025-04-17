@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
       ],
+      "Attention required": [
+        "Oppmerksomhet kreves"
+      ],
       "Authenticate": [
         "Autentiser"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "Tilpass til vindu"
       ],
-      "Forgot password?": [
-        "Glemt passord?"
-      ],
       "Forgot recovery method?": [
         "Glemt gjenopprettingsmetode?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -640,11 +640,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "Select file": [
-        "Velg fil"
-      ],
       "select file": [
         "velg fil"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "Vis alle"
+      ],
+      "Show more": [
+        "Vis mer"
       ],
       "Show preview": [
         "Vis forhåndsvisning"
@@ -2457,6 +2460,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Alle i organisasjonen kan koble til delte tjenere i alle land."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
+      ],
       "If disabled, only admins will have access.": [
         "Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
@@ -2692,15 +2698,6 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } vil aldri be deg om å taste inn en kode som ikke kommer fra domenet ${ domain }, eller fra en offisiell ${ BRAND_NAME }-applikasjon."
-      ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Slik fungerer det:** Skriv inn koden som vises på enheten du vil logge på, på denne enheten. Du blir logget på som **${ email }**. Begge enhetene vil forbli aktive. "
-      ],
-      "Allow scanning a QR code to sign in": [
-        "Tillat skanning av en QR-kode for å logge på"
-      ],
       "Code from the other device": [
         "Kode fra den andre enheten"
       ],
@@ -2713,26 +2710,14 @@
       "QR code sign-in enabled": [
         "QR-kode pålogging aktivert"
       ],
-      "Safety tips:": [
-        "Sikkerhetstips:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Skann QR-koden på mobilenheten for å logge på"
-      ],
-      "Sign in to another device": [
-        "Logg på en annen enhet"
-      ],
-      "Sign in with another device": [
-        "Logg på med en annen enhet"
       ],
       "Sign in with QR code": [
         "Logg på med QR-kode"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "For å få tilgang til koden til enheten du vil logge på med, trykker du på knappen **Logg på med QR-kode** i hjelpemenyen på påloggingsskjermen, og trykker deretter på **Skriv inn nøkkel manuelt**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Vær oppmerksom på meldinger som inneholder en kode. Du må aldri taste inn en kode fra et nettsted eller en person du ikke stoler på."
       ],
       "You have successfully signed in to another device": [
         "Du har logget på en annen enhet"
@@ -2996,6 +2981,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Noe gikk galt. Forsøk igjen."
       ],
       "status page": [
         "statusside"
@@ -4521,9 +4509,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Skriv inn din ${ BRAND_NAME }-konto e-postadresse eller brukernavn."
       ],
-      "Enter your own password (as organization admin).": [
-        "Skriv inn ditt eget passord (som organisasjonsadministrator)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Angi din gjenopprettings-e-postadresse og vi vil sende deg ditt brukernavn eller e-postadresse."
       ],
@@ -5498,11 +5483,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -6051,10 +6036,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6601,9 +6586,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker å slette denne kontoen og all dataen dens permanent."
       ],
-      "Your password (admin)": [
-        "Ditt passord (admin)"
-      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -7017,29 +6999,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -7064,6 +7023,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -8257,17 +8239,6 @@
         "Velkommen til ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8346,6 +8317,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -9881,9 +9863,6 @@
       "Share the confirmation code with your administrator": [
         "Del bekreftelseskoden med administratoren din"
       ],
-      "Sign in": [
-        "Logg på"
-      ],
       "Sign in to your organization": [
         "Logg på organisasjonen"
       ],
@@ -9928,9 +9907,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du må opprette nye brukere manuelt for å legge dem til i organisasjonen din."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-konfigurasjonen din vil bli slettet."
@@ -11021,10 +10997,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -11245,9 +11221,6 @@
       "Enable for all users": [
         "Aktiver for alle brukere"
       ],
-      "Enter 2FA code": [
-        "Angi 2FA-kode"
-      ],
       "Enter endpoints into your identity provider": [
         "Angi endepunkter i identitetsleverandøren"
       ],
@@ -11256,9 +11229,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Angi din ${ BRAND_NAME }-kontoinformasjon for å bli med i ${ app }-testprogrammet"
-      ],
-      "Enter your password": [
-        "Skriv inn passord"
       ],
       "Error": [
         "Feil"
@@ -11305,6 +11275,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Skaff deg appen på alle enhetene dine og beskytt opptil ${ VPN_CONNECTIONS } samtidig."
+      ],
+      "Get the apps": [
+        "Skaff deg appene"
       ],
       "Gift": [
         "Gave"

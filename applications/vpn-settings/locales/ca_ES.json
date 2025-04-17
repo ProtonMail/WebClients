@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
+      "Attention required": [
+        "Es requereix la vostra atenció"
+      ],
       "Authenticate": [
         "Autentica"
       ],
@@ -349,9 +352,6 @@
       "Fit to window": [
         "Ajusta a la finestra"
       ],
-      "Forgot password?": [
-        "Heu oblidat la contrasenya?"
-      ],
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
       ],
@@ -523,11 +523,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Remove": [
         "Esborra"
@@ -640,11 +640,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "Select file": [
-        "Selecciona un fitxer"
-      ],
       "select file": [
         "selecciona un fitxer"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Send code": [
         "Enviar codi"
@@ -687,6 +687,9 @@
       ],
       "Show all": [
         "Mostra-ho tot"
+      ],
+      "Show more": [
+        "Mostrar més"
       ],
       "Show preview": [
         "Mostra visualització prèvia"
@@ -2457,6 +2460,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
+      ],
       "If disabled, only admins will have access.": [
         "Si està desactivat, només els administradors hi tenen accés."
       ],
@@ -2692,14 +2698,20 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } mai us sol·licitarà que introduïu un codi que no provingui del domini ${ domain } o d'una aplicació oficial de ${ BRAND_NAME }."
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } mai us sol·licitarà que escanegeu un codi QR que no sigui de ${ domain } o d'una aplicació oficial de ${ BRAND_NAME }"
       ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Com funciona:** Introduïu el codi que es mostra al dispositiu on voleu iniciar la sessió en aquest dispositiu. Se us identificarà com a **${ email }**. Tots dos dispositius romandran actius. "
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } no us demanarà mai per sorpresa que inicieu la sessió amb un codi QR."
       ],
-      "Allow scanning a QR code to sign in": [
-        "Permet escanejar un codi QR per iniciar la sessió"
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Com funciona:** introduïu en aquest dispositiu el codi que es mostra al dispositiu on voleu iniciar la sessió. Se us identificarà com a **${ email }**. Tots dos dispositius romandran actius."
+      ],
+      "Allow QR code sign‒in": [
+        "Permet iniciar la sessió amb un codi QR"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Aneu amb compte amb els missatges amb codis QR. Només heu d’escanejar un codi si confieu en la font."
       ],
       "Code from the other device": [
         "Codi de l'altre dispositiu"
@@ -2713,26 +2725,20 @@
       "QR code sign-in enabled": [
         "S'ha activat l'inici de sessió amb codi QR."
       ],
-      "Safety tips:": [
-        "Consells de seguretat:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Escanegeu el codi QR al vostre dispositiu mòbil per iniciar la sessió"
       ],
-      "Sign in to another device": [
-        "Inicia la sessió en un altre dispositiu"
+      "Security tips": [
+        "Consells de seguretat"
       ],
-      "Sign in with another device": [
-        "Inicia la sessió amb un altre dispositiu"
+      "Sign in on another device": [
+        "Inicia la sessió en un altre dispositiu"
       ],
       "Sign in with QR code": [
         "Inicia la sessió amb un codi QR"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Per accedir al codi del dispositiu amb què voleu iniciar la sessió, toqueu el botó **Inicia la sessió amb codi QR** al menú d'ajuda de la pantalla d'inici de sessió i, a continuació, toqueu **Introduïu la clau manualment**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Aneu amb compte amb els missatges que contenen un codi. No introduïu mai un codi d’un lloc web ni d’una persona de qui no us fieu."
       ],
       "You have successfully signed in to another device": [
         "Heu iniciat la sessió correctament en un altre dispositiu."
@@ -2996,6 +3002,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Alguna cosa ha anat malament. Torneu a provar-ho."
       ],
       "status page": [
         "pàgina d'estat"
@@ -4521,9 +4530,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduïu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduïu la vostra adreça de correu electrònic de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
       ],
@@ -5495,11 +5501,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -6048,10 +6054,10 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6595,9 +6601,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
       ],
-      "Your password (admin)": [
-        "La seva contrasenya (admin)"
-      ],
       "ZIP code": [
         "Codi postal"
       ]
@@ -7011,29 +7014,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina el compte"
-      ],
-      "Downgrade account": [
-        "Passa a un pla inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtén ${ BRAND_NAME } gratuïtament"
-      ],
-      "Get ${ planName }": [
-        "Obteniu ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Segueix amb ${ plan }"
-      ],
-      "Keep account": [
-        "Conserva el compte"
-      ],
-      "Switch plan": [
-        "Canvia de pla"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
@@ -7058,6 +7038,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina el compte"
+      ],
+      "Downgrade account": [
+        "Passa a un pla inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtén ${ BRAND_NAME } gratuïtament"
+      ],
+      "Get ${ planName }": [
+        "Obteniu ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Segueix amb ${ plan }"
+      ],
+      "Keep account": [
+        "Conserva el compte"
+      ],
+      "Switch plan": [
+        "Canvia de pla"
       ]
     },
     "new_plans: feature": {
@@ -8251,17 +8254,6 @@
         "Us donem la benvinguda a ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Configuracions de país"
@@ -8319,6 +8311,17 @@
       ],
       "The whole organization": [
         "Tota l'organització"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Organization capacity error": {
@@ -9854,9 +9857,6 @@
       "Share the confirmation code with your administrator": [
         "Compartiu el codi de confirmació amb l'administrador"
       ],
-      "Sign in": [
-        "Inicia la sessió"
-      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ],
@@ -9901,9 +9901,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Haureu de crear nous usuaris manualment per afegir-los a la vostra organització."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
@@ -10997,10 +10994,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -11221,9 +11218,6 @@
       "Enable for all users": [
         "Activa per a tots els usuaris"
       ],
-      "Enter 2FA code": [
-        "Introduïu el codi 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
       ],
@@ -11232,9 +11226,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
-      ],
-      "Enter your password": [
-        "Introduïu la vostra contrasenya"
       ],
       "Error": [
         "Error"
@@ -11281,6 +11272,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Obteniu l'aplicació a tots els vostres dispositius i protegiu fins a ${ VPN_CONNECTIONS } al mateix temps."
+      ],
+      "Get the apps": [
+        "Aconseguiu les aplicacions"
       ],
       "Gift": [
         "Regal"

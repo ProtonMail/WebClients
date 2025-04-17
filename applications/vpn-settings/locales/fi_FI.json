@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
+      "Attention required": [
+        "Huomiota vaaditaan"
+      ],
       "Authenticate": [
         "Tunnistaudu"
       ],
@@ -343,9 +346,6 @@
       "Fit to window": [
         "Sovita ikkunaan"
       ],
-      "Forgot password?": [
-        "Unohditko salasanasi?"
-      ],
       "Forgot recovery method?": [
         "Unohditko palautustavan?"
       ],
@@ -514,10 +514,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Remove": [
@@ -631,11 +631,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "Select file": [
-        "Valitse tiedosto"
-      ],
       "select file": [
         "valitse tiedosto"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Send code": [
         "Lähetä koodi"
@@ -678,6 +678,9 @@
       ],
       "Show all": [
         "Näytä kaikki"
+      ],
+      "Show more": [
+        "Näytä lisää"
       ],
       "Show preview": [
         "Näytä esikatselu"
@@ -2409,6 +2412,9 @@
       ]
     },
     "Description": {
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
+      ],
       "If disabled, only admins will have access.": [
         "Vain ylläpitäjillä on käyttöoikeus, jos tämä poistetaan käytöstä."
       ],
@@ -2636,9 +2642,6 @@
       ]
     },
     "edm": {
-      "Allow scanning a QR code to sign in": [
-        "Salli kirjautuminen QR-koodin skannaamalla"
-      ],
       "Code from the other device": [
         "Koodi toisesta laitteesta"
       ],
@@ -2650,9 +2653,6 @@
       ],
       "QR code sign-in enabled": [
         "QR-koodilla kirjautuminen otettu käyttöön"
-      ],
-      "Sign in to another device": [
-        "Kirjaudu toiseen laitteeseen"
       ],
       "Sign in with QR code": [
         "Kirjaudu QR-koodilla"
@@ -2907,6 +2907,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "status page": [
         "tilasivumme"
@@ -4393,9 +4396,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Syötä ${ BRAND_NAME }-tilisi sähköpostiosoite tai käyttäjätunnus."
       ],
-      "Enter your own password (as organization admin).": [
-        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Syötä palautusosoitteesi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
@@ -5349,11 +5349,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -5882,10 +5882,10 @@
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6423,9 +6423,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
       ],
-      "Your password (admin)": [
-        "Salasanasi (ylläpitäjä)"
-      ],
       "ZIP code": [
         "Postinumero"
       ]
@@ -6839,29 +6836,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Poista tili"
-      ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Hanki ${ BRAND_NAME } ilmaiseksi"
-      ],
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Säilytä ${ plan }"
-      ],
-      "Keep account": [
-        "Säilytä tili"
-      ],
-      "Switch plan": [
-        "Vaihda tilausta"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
@@ -6886,6 +6860,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Poista tili"
+      ],
+      "Downgrade account": [
+        "Alenna tili"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Hanki ${ BRAND_NAME } ilmaiseksi"
+      ],
+      "Get ${ planName }": [
+        "Hanki ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Säilytä ${ plan }"
+      ],
+      "Keep account": [
+        "Säilytä tili"
+      ],
+      "Switch plan": [
+        "Vaihda tilausta"
       ]
     },
     "new_plans: feature": {
@@ -8062,17 +8059,6 @@
         "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
-      ]
-    },
     "Option": {
       "Country configs": [
         "Maakohtaiset määritykset"
@@ -8130,6 +8116,17 @@
       ],
       "The whole organization": [
         "Koko organisaatio"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Organization capacity error": {
@@ -9623,9 +9620,6 @@
       "Share the confirmation code with your administrator": [
         "Jaa vahvistuskoodi ylläpidollesi"
       ],
-      "Sign in": [
-        "Kirjaudu sisään"
-      ],
       "Sign in to your organization": [
         "Kirjaudu sisään organisaatioosi"
       ],
@@ -9664,9 +9658,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Sinun on luotava uusia käyttäjiä manuaalisesti lisätäksesi niitä organisaatioosi."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-määrityksesi poistetaan."
@@ -10757,10 +10748,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -10978,9 +10969,6 @@
       "Enable for all users": [
         "Ota käyttöön kaikille käyttäjille"
       ],
-      "Enter 2FA code": [
-        "Syötä vahvistuskoodi"
-      ],
       "Enter endpoints into your identity provider": [
         "Syötä päätepisteet identiteetintarjoajaasi"
       ],
@@ -10989,9 +10977,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Liity sovelluksen ${ app } beetaohjelmaan syöttämällä ${ BRAND_NAME }-tilisi tiedot"
-      ],
-      "Enter your password": [
-        "Syötä salasanasi"
       ],
       "Error": [
         "Virhe"
@@ -11038,6 +11023,9 @@
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Hanki sovellus kaikkiin laitteisiisi ja suojaa jopa ${ VPN_CONNECTIONS } kerralla."
+      ],
+      "Get the apps": [
+        "Hanki sovellukset"
       ],
       "Gift": [
         "Lahja"

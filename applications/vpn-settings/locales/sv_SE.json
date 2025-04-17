@@ -88,6 +88,9 @@
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
+      "Attention required": [
+        "Uppmärksamhet krävs"
+      ],
       "Authenticate": [
         "Autentisera"
       ],
@@ -139,6 +142,9 @@
       "Close this banner": [
         "Stäng denna banner"
       ],
+      "Collaborate on documents": [
+        "Samarbeta på dokument"
+      ],
       "Compare all plans": [
         "Jämför alla paket"
       ],
@@ -150,6 +156,12 @@
       ],
       "Confirm": [
         "Bekräfta"
+      ],
+      "Connect apps and devices": [
+        "Anslut appar och enheter"
+      ],
+      "Connect to video conferencing": [
+        "Anslut till videokonferens"
       ],
       "Contact support": [
         "Kontakta support"
@@ -349,9 +361,6 @@
       "Fit to window": [
         "Passa till fönster"
       ],
-      "Forgot password?": [
-        "Glömt lösenord?"
-      ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
       ],
@@ -382,6 +391,9 @@
       "Get more servers": [
         "Skaffa fler servrar"
       ],
+      "Get the apps": [
+        "Skaffa apparna"
+      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
@@ -408,6 +420,9 @@
       ],
       "Hide plan features": [
         "Dölj paketfunktioner"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importera e-post, kalendrar, kontakter"
       ],
       "Import new SAML metadata": [
         "Importera ny SAML-metadata"
@@ -442,8 +457,17 @@
       "Make admin": [
         "Gör till admin"
       ],
+      "Manage advanced account protections": [
+        "Hantera avancerade kontoskydd"
+      ],
+      "Manage groups": [
+        "Hantera grupper"
+      ],
       "Manage subscription": [
         "Hantera prenumeration"
+      ],
+      "Manage users/addresses": [
+        "Hantera användare/adresser"
       ],
       "Mark as default": [
         "Markera som standard"
@@ -523,11 +547,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -537,6 +561,9 @@
       ],
       "Remove bonuses": [
         "Ta bort bonusar"
+      ],
+      "Remove button": [
+        "Ta bort knapp"
       ],
       "Remove domain": [
         "Ta bort domän"
@@ -640,11 +667,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "Select file": [
-        "Välj fil"
-      ],
       "select file": [
         "välj fil"
+      ],
+      "Select file": [
+        "Välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -670,6 +697,18 @@
       "Set new password": [
         "Välj nytt lösenord"
       ],
+      "Set recovery methods": [
+        "Ställ in återställningsmetoder"
+      ],
+      "Set up 2FA": [
+        "Ställ in 2FA"
+      ],
+      "Set up a custom domain": [
+        "Ställ in en anpassad domän"
+      ],
+      "Set up email forwarding": [
+        "Ställ in vidarebefordran av e-post"
+      ],
       "Settings": [
         "Inställningar"
       ],
@@ -679,6 +718,9 @@
       "Share via link": [
         "Dela via länk"
       ],
+      "Share your calendar with your team": [
+        "Dela din kalender med ditt team"
+      ],
       "Sharing options": [
         "Delningsalternativ"
       ],
@@ -687,6 +729,9 @@
       ],
       "Show all": [
         "Visa alla"
+      ],
+      "Show more": [
+        "Visa mer"
       ],
       "Show preview": [
         "Visa förhandsgranskning"
@@ -751,6 +796,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock": [
         "Lås upp"
       ],
@@ -769,11 +817,17 @@
       "Upload": [
         "Ladda upp"
       ],
+      "Upload and share files": [
+        "Ladda upp och dela filer"
+      ],
       "Upload logo": [
         "Ladda upp logga"
       ],
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
       "Use a different card": [
         "Använd ett annat kort"
@@ -2448,11 +2502,53 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Lägg till mappar och filer i ${ DRIVE_APP_NAME } och bjud in gruppmedlemmar att visa eller redigera."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Vidarebefordra automatiskt inkommande e-post till annan e-postadress."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Anslut din CRM, webbplats, skrivare och mer."
+      ],
+      "Create groups you can email with a single address.": [
+        "Skapa grupper du kan skicka e-post till med en enda adress."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
       ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Uppmuntra användningen av tvåfaktorsautentisering i din organisation för extra säkerhet."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Säkerställ säker åtkomst till organisationens data, även om ditt team är på distans eller använder offentligt WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Säkerställ förstklassig säkerhet för ditt konto med programmet ${ PROTON_SENTINEL_NAME } ."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Se till att du fortfarande kan komma åt ditt konto och dina data även om du förlorar ditt ${ BRAND_NAME }-lösenord."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Alla i din organisation kan ansluta till delade servrar i alla länder."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "För en sömlös övergång till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Bli aviserad om ditt lösenord eller annan data har läckts från en tredjepartstjänst."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
       ],
       "If disabled, only admins will have access.": [
         "Om det är inaktiverat har endast administratörer åtkomst."
@@ -2460,11 +2556,23 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Håll olika delar av ditt liv åtskilda och din inkorg organiserad med ytterligare adresser."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Låter dig omedelbart lägga till möteslänkar i dina händelseinbjudningar."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan ansluta till delade servrar."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Ställ in konton för alla användare och bjud in dem att gå med i ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Förenkla synkronisering och schemaläggning med delade kalendrar."
+      ],
+      "To start, give your organization a name.": [
+        "Börja med att ge din organisation ett namn."
       ]
     },
     "Disable address prompt": {
@@ -2689,14 +2797,17 @@
       ]
     },
     "edm": {
-      "${ BRAND_NAME } will never ask you to enter a code that does not come from the domain ${ domain }, or from an official ${ BRAND_NAME } application.": [
-        "${ BRAND_NAME } kommer aldrig att be dig att ange en kod som inte kommer från domänen ${ domain } eller från en officiell ${ BRAND_NAME }-applikation."
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } kommer aldrig att be dig att skanna en QR-kod som inte kommer från ${ domain } eller en officiell ${ BRAND_NAME }-app."
       ],
-      "**How it works:** Enter the code displayed on the device you want to sign in to into this device. You will be signed in as **${ email }**. Both devices will stay active. ": [
-        "**Så här fungerar det:** Ange koden som visas på enheten som du vill logga in på i den här enheten. Du kommer att loggas in som **${ email }**. Båda enheterna förblir aktiva. "
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } kommer aldrig oväntat kontakta dig och be dig logga in med en QR-kod."
       ],
-      "Allow scanning a QR code to sign in": [
-        "Tillåt att skanna en QR-kod för att logga in"
+      "Allow QR code sign‒in": [
+        "Tillåt inloggning med QR-kod"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Var försiktig med meddelanden med QR-koder. Skanna bara en kod om du litar på källan."
       ],
       "Code from the other device": [
         "Kod från den andra enheten"
@@ -2710,26 +2821,20 @@
       "QR code sign-in enabled": [
         "Inloggning med QR-kod aktiverad"
       ],
-      "Safety tips:": [
-        "Säkerhetstips:"
-      ],
       "Scan QR code on your mobile device to sign in": [
         "Skanna QR-kod på din mobila enhet för att logga in"
       ],
-      "Sign in to another device": [
-        "Logga in på annan enhet"
+      "Security tips": [
+        "Säkerhetstips"
       ],
-      "Sign in with another device": [
-        "Logga in med annan enhet"
+      "Sign in on another device": [
+        "Logga in på annan enhet"
       ],
       "Sign in with QR code": [
         "Logga in med QR-kod"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Om du vill komma åt koden för den enhet du vill logga in på trycker du på knappen **Logga in med QR-kod** i hjälpmenyn på inloggningsskärmen och sedan på **Ange nyckel manuellt**. "
-      ],
-      "Watch out for messages that contain a code. Never enter a code from a website or a person you don’t trust.": [
-        "Se upp för meddelanden som innehåller en kod. Ange aldrig en kod från en webbplats eller en person som du inte litar på."
       ],
       "You have successfully signed in to another device": [
         "Du har lyckats logga in på en annan enhet"
@@ -2993,6 +3098,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Något gick fel. Försök igen."
       ],
       "status page": [
         "statussida"
@@ -4512,9 +4620,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
       ],
-      "Enter your own password (as organization admin).": [
-        "Ange ditt eget lösenord (som organisationsadministratör)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
       ],
@@ -4893,6 +4998,9 @@
       "Open source": [
         "Öppen källkod"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Öppna guiden för rekommenderade åtgärder och användbara länkar."
+      ],
       "or ${ selectFileButton }": [
         "eller ${ selectFileButton }"
       ],
@@ -5147,6 +5255,9 @@
       "Session timed out": [
         "Session timeout"
       ],
+      "Set up your organization": [
+        "Ställ in din organisation"
+      ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
       ],
@@ -5297,6 +5408,9 @@
       ],
       "This file is too large to preview": [
         "Denna fil är för stor för att förhandsgranska"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Detta är ett namn eller smeknamn för din organisation som dina användare kommer att se. Du kan ändra det när som helst."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
@@ -5478,11 +5592,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -6017,10 +6131,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6567,9 +6681,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
       ],
-      "Your password (admin)": [
-        "Ditt lösenord (admin)"
-      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -6701,8 +6812,50 @@
       "here": [
         "här"
       ],
+      "How to add users": [
+        "Hur man lägger till användare"
+      ],
+      "How to add Zoom links": [
+        "Hur man lägger till Zoom-länkar"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Hur man samarbetar i ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hur man aktiverar ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Hur man migrerar till ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Hur man ställer in ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Hur man ställer in en anpassad domän"
+      ],
+      "How to set up SMTP": [
+        "Hur man ställer in SMTP"
+      ],
+      "How to share a calendar": [
+        "Hur man delar en kalender"
+      ],
+      "How to share via email": [
+        "Hur man delar via e-post"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hur man använder ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Hur man använder ${ PASS_APP_NAME } för Business"
+      ],
+      "How to use email forwarding": [
+        "Hur man använder vidarebefordran av e-post"
+      ],
+      "How to use Groups": [
+        "Hur man använder grupper"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -6739,6 +6892,9 @@
       ],
       "Trouble signing in?": [
         "Problem att logga in?"
+      ],
+      "Types of recovery methods": [
+        "Typer av återställningsmetoder"
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
@@ -6983,29 +7139,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ta bort konto"
-      ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Skaffa ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behåll ${ plan }"
-      ],
-      "Keep account": [
-        "Behåll konto"
-      ],
-      "Switch plan": [
-        "Byt paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
@@ -7030,6 +7163,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ta bort konto"
+      ],
+      "Downgrade account": [
+        "Nedgradera konto"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Skaffa ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behåll ${ plan }"
+      ],
+      "Keep account": [
+        "Behåll konto"
+      ],
+      "Switch plan": [
+        "Byt paket"
       ]
     },
     "new_plans: feature": {
@@ -8223,17 +8379,6 @@
         "Välkommen till ${ appName }"
       ]
     },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
-      ]
-    },
     "Option": {
       "Android": [
         "Android"
@@ -8312,6 +8457,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -8776,6 +8932,9 @@
       "Main street 12": [
         "Storgatan 12"
       ],
+      "Organization name": [
+        "Organisationsnamn"
+      ],
       "Other": [
         "Annat"
       ],
@@ -8823,6 +8982,9 @@
       ],
       "VAT number": [
         "Momsnummer"
+      ],
+      "Your organization name": [
+        "Ditt organisationsnamn"
       ],
       "yourdomain.com": [
         "dindomän.com"
@@ -9831,9 +9993,6 @@
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
       ],
-      "Sign in": [
-        "Logga in"
-      ],
       "Sign in to your organization": [
         "Logga in på din organisation"
       ],
@@ -9875,9 +10034,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
@@ -10914,6 +11070,9 @@
       "Add to spam list": [
         "Lägg till i skräppostlista"
       ],
+      "Add user": [
+        "Lägg till användare"
+      ],
       "Add user accounts": [
         "Lägg till användarkonton"
       ],
@@ -10971,10 +11130,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -11004,6 +11163,9 @@
       "Close": [
         "Stäng"
       ],
+      "Collaborate on documents": [
+        "Samarbeta på dokument"
+      ],
       "Confirm": [
         "Bekräfta"
       ],
@@ -11019,11 +11181,20 @@
       "Confirm phone number": [
         "Bekräfta telefonnummer"
       ],
+      "Connect apps and devices": [
+        "Anslut appar och enheter"
+      ],
       "Connect organization": [
         "Anslut organisation"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Anslut till ${ VPN_CONNECTIONS } enheter samtidigt med ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Anslut till videokonferens"
+      ],
+      "Connect your custom domain": [
+        "Anslut din anpassad domän"
       ],
       "Contact us": [
         "Kontakta oss"
@@ -11192,11 +11363,14 @@
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
+      "Enable advanced account protection": [
+        "Aktivera avancerat kontoskydd"
+      ],
       "Enable for all users": [
         "Aktivera för alla användare"
       ],
-      "Enter 2FA code": [
-        "Ange 2FA-kod"
+      "Enhance security with 2FA": [
+        "Förbättra säkerhet med 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter hos din identitetsleverantör"
@@ -11206,9 +11380,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
-      ],
-      "Enter your password": [
-        "Ange ditt lösenord"
       ],
       "Error": [
         "Fel"
@@ -11256,6 +11427,9 @@
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Skaffa appen på alla dina enheter och skydda upp till ${ VPN_CONNECTIONS } samtidigt."
       ],
+      "Get the apps": [
+        "Skaffa appen"
+      ],
       "Gift": [
         "Gåva"
       ],
@@ -11279,6 +11453,9 @@
       ],
       "Human verification": [
         "Mänsklig verifiering"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importera e-post, kalendrar, kontakter"
       ],
       "Increase your privacy with more addresses": [
         "Öka din integritet med fler adresser"
@@ -11330,6 +11507,9 @@
       ],
       "Organization name": [
         "Organisationsnamn"
+      ],
+      "Organization setup": [
+        "Organisationsinställning"
       ],
       "Origin": [
         "Ursprung"
@@ -11436,8 +11616,17 @@
       "Set organization name": [
         "Ställ in organisationsnamn"
       ],
+      "Set recovery methods": [
+        "Ställ in återställningsmetoder"
+      ],
+      "Set up email forwarding": [
+        "Ställ in vidarebefordran av e-post"
+      ],
       "Set up two-factor authentication": [
         "Ställ in tvåfaktorsautentisering"
+      ],
+      "Set up your organization": [
+        "Ställ in din organisation"
       ],
       "Set your password": [
         "Välj ditt lösenord"
@@ -11447,6 +11636,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Konfigurera dedikerade servrar genom att uppgradera till Business"
+      ],
+      "Share your calendar with your team": [
+        "Dela din kalender med ditt team"
       ],
       "Shared servers": [
         "Delade servrar"
@@ -11462,6 +11654,12 @@
       ],
       "Signed in to member account": [
         "Loggade in på medlemskonto"
+      ],
+      "Simplify email distribution": [
+        "Förenkla distribution av e-post"
+      ],
+      "Simplify password management": [
+        "Förenkla lösenordshantering"
       ],
       "Single sign-on": [
         "Enkel inloggning"
@@ -11494,6 +11692,9 @@
       "There are no groups": [
         "Det finns inga grupper"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "TV-inloggning"
       ],
@@ -11521,11 +11722,17 @@
       "Upgrade your privacy": [
         "Uppgradera din integritet"
       ],
+      "Upload and share files": [
+        "Ladda upp och dela filer"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Ladda upp CSV-fil för att skapa flera konton"
       ],
       "Upload your organization’s logo": [
         "Ladda upp din organisationslogga"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
       "User": [
         "Användare"
@@ -11553,6 +11760,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Välkommen till ${ BRAND_NAME } för Business"
       ],
       "WireGuard configuration": [
         "WireGuard-konfiguration"
@@ -12232,6 +12442,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-postadress",
+        "${ n } ${ BRAND_NAME } e-postadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto per plånbok",
         "${ n } konton per plånbok"
