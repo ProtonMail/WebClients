@@ -91,6 +91,7 @@ const AlbumGalleryDropdownButton = ({
                 isOpen={isOpen}
                 onClick={toggle}
                 className="inline-flex flex-nowrap flex-row items-center toolbar-button"
+                data-testid="toolbar-album-more-options"
             >
                 <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
@@ -229,6 +230,7 @@ const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbu
                 shape="ghost"
                 icon={viewportWidth.xsmall}
                 className="inline-flex flex-nowrap flex-row items-center"
+                data-testid="toolbar-new-album"
             >
                 <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
                 <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`New album`}</span>
@@ -368,6 +370,7 @@ const SelectionDropdownButton = ({ children }: SelectionDropdownButtonProps) => 
                 isOpen={isOpen}
                 onClick={toggle}
                 className="inline-flex flex-nowrap flex-row items-center toolbar-button"
+                data-testid="toolbar-album-more-options"
             >
                 <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
