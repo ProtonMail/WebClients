@@ -152,10 +152,10 @@
       "Create": [
         "Opret"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -1147,6 +1147,9 @@
       "Wrong PIN code. Try again.": [
         "Forkert pinkode. Prøv igen."
       ],
+      "Wrong second password": [
+        "Forkert anden adgangskode"
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du er i øjeblikket offline. Genopret venligst forbindelsen for at oplåse ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1746,6 +1749,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2913,6 +2920,9 @@
       ],
       "Save passkeys": [
         "Gem adgangsnøgler"
+      ],
+      "Second password": [
+        "Anden adgangskode"
       ],
       "Security": [
         "Sikkerhed"
