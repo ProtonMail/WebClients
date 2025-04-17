@@ -364,6 +364,9 @@
       "Make editor": [
         "Stabilire editor"
       ],
+      "Make manager": [
+        "Setare ca administrator"
+      ],
       "Make viewer": [
         "Stabilire ca utilizator"
       ],
@@ -397,10 +400,10 @@
       "Move to another vault": [
         "Mutare în alt seif"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mutare în «Gunoi»"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mutare în «Gunoi»"
       ],
       "Multiple select": [
@@ -823,6 +826,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Autentificare eșuată. Confirmați-vă parola suplimentară pentru a continua exportarea."
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Autentificare eșuată. Confirmați parola secundară pentru continuare exportare."
+      ],
       "Biometric authentication failed": [
         "Autentificare biometrică eșuată"
       ],
@@ -1184,6 +1190,9 @@
       "Wrong PIN code. Try again.": [
         "Cod PIN greșit. Reîncercați."
       ],
+      "Wrong second password": [
+        "Parola secundară nu este corectă."
+      ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Nu aveți conexiune. Reconectați-vă pentru a debloca ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1370,6 +1379,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Accesul la ${ PASS_APP_NAME } va necesita întotdeauna parola suplimentară."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Accesul la ${ PASS_APP_NAME } va necesita întotdeauna parola secundară."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Accesul la ${ PASS_APP_NAME } va necesita amprenta digitală sau codul PIN al dispozitivului."
@@ -1797,6 +1809,9 @@
       "Make it your own": [
         "Personalizați aplicația"
       ],
+      "Manager": [
+        "Manager"
+      ],
       "me": [
         "Eu"
       ],
@@ -1819,11 +1834,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -1985,6 +1995,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmați codul PIN pentru a edita această setare."
+      ],
+      "Please confirm your second password": [
+        "Confirmați parola secundară"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Confirmați parola secundară pentru autoblocare cu date biometrice."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Confirmați parola secundară pentru autoblocare cu parola."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Confirmați parola secundară pentru dezactivare mod fără conexiune."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirmați parola secundară pentru activare mod fără conexiune."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmați parola secundară pentru a exporta datele ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Confirmați parola secundară pentru anulare blocare curentă."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Confirmați parola secundară pentru modificare timp de autoblocare."
       ],
       "Please consider leaving a review.": [
         "Luați în considerare scrierea unei recenzii."
@@ -2242,6 +2276,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu parola suplimentară."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Deblocați ${ PASS_SHORT_APP_NAME } cu parola secundară."
       ],
       "Unlock with biometrics": [
         "Deblocare cu date biometrice"
@@ -2875,6 +2912,9 @@
       "Make all editors": [
         "Setare toți acces editare"
       ],
+      "Make all managers": [
+        "Setare toți ca administratori"
+      ],
       "Make all viewers": [
         "Setare toți ca utilizator"
       ],
@@ -3027,6 +3067,9 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Second password": [
+        "Parola secundară"
       ],
       "Secure links": [
         "Legături web securizate"
@@ -3838,6 +3881,9 @@
       ],
       "Enter your PIN": [
         "Introduceți codul PIN"
+      ],
+      "Enter your second password": [
+        "Introduceți parola secundară"
       ],
       "Excluded items": [
         "Articole excluse"
