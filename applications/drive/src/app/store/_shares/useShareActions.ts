@@ -241,12 +241,10 @@ export default function useShareActions() {
         if (!photosShare) {
             return SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE;
         }
-        const { Volume } = await debouncedRequest<GetDriveVolumeResult>(queryGetDriveVolume(photosShare.volumeId));
-        if (Volume.Type === VolumeType.Photos) {
-            return SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED;
-        }
-        return SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION;
-    }, [debouncedRequest, getDefaultPhotosShare]);
+        return photosShare.volumeType === VolumeType.Photos
+            ? SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED
+            : SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION;
+    }, [getDefaultPhotosShare]);
 
     const migratePhotos = useCallback(
         () =>

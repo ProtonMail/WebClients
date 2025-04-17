@@ -3,6 +3,7 @@ import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proto
 import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 type WithSRPPayload<T extends any> = T & {
     srpModulusID: string;
@@ -49,6 +50,7 @@ export interface ShareWithKey extends Share {
     passphraseSignature: string;
     rootLinkRecoveryPassphrase?: string;
     memberships: ShareMembership[];
+    volumeType?: VolumeType;
 }
 
 export type ShareURLLEGACY = WithSRPPayload<{
