@@ -6,7 +6,7 @@ import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions
 import { type LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
-import { type DecryptedLink, useLink, usePublicLinksListing } from '../../store/_links';
+import { type DecryptedLink, useLink } from '../../store/_links';
 import { useLinksListingHelpers } from '../../store/_links/useLinksListing/useLinksListingHelpers';
 import type { SharedUrlInfo } from '../../store/_shares';
 import { usePublicShare } from '../../store/_shares';
@@ -46,20 +46,7 @@ export const usePublicNode = ({
     const { request, getAddressKeyInfo } = usePublicSession();
     const { cacheLoadedLinks } = useLinksListingHelpers();
     const { getLinkSessionKey } = useLink();
-    const { loadChildren: publicLinksLoadChildren } = usePublicLinksListing();
-    const [didLoadChildren, setDidLoadChildren] = useState(false);
     const [didPreloadNode, setDidPreloadNode] = useState(false);
-
-    const loadChildren = useCallback(
-        async (rootLink: DecryptedLink) => {
-            try {
-                void publicLinksLoadChildren(abortSignal, token, rootLink.linkId, false);
-            } catch (error) {
-                console.error('Error during initial setup', error);
-            }
-        },
-        [publicLinksLoadChildren, abortSignal, token]
-    );
 
     const preloadNode = useCallback(async (nodeMeta: PublicNodeMeta, rootLink: DecryptedLink) => {
         const cached = cache.current.get(getCacheKey(nodeMeta));
@@ -120,27 +107,8 @@ export const usePublicNode = ({
             .catch(console.error);
     }, [loadPublicShare, rootLink, isDocsTokenReady, abortSignal]);
 
-    useEffect(() => {
-        if (didLoadChildren || !rootLink) {
-            return;
-        }
-
-        if (rootLink.isFile) {
-            setDidLoadChildren(true);
-            return;
-        }
-
-        if (rootLink && token) {
-            void loadChildren(rootLink)
-                .then(() => {
-                    setDidLoadChildren(true);
-                })
-                .catch(console.error);
-        }
-    }, [didLoadChildren, loadChildren, rootLink, token]);
-
     const getNode = async (nodeMeta: PublicNodeMeta): Promise<DecryptedNode> => {
-        if (!didLoadChildren || !rootLink || !token) {
+        if (!rootLink || !token) {
             throw new Error('Attempting to get node before children have loaded');
         }
 
@@ -214,7 +182,6 @@ export const usePublicNode = ({
         getNodeContentKey,
         permissions,
         getAddressKeyInfo,
-        performInitialSetup: loadChildren,
-        didCompleteInitialSetup: didLoadChildren && didPreloadNode,
+        didCompleteInitialSetup: didPreloadNode,
     };
 };
