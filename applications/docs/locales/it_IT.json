@@ -561,6 +561,9 @@
       "Remove gift code": [
         "Rimuovi codice regalo"
       ],
+      "Rename": [
+        "Rinomina"
+      ],
       "Rename document": [
         "Rinomina il documento"
       ],
@@ -650,6 +653,9 @@
       ],
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
+      ],
+      "Show more": [
+        "Mostra di più"
       ],
       "Show options": [
         "Mostra opzioni"
@@ -2266,6 +2272,11 @@
         "Fattura scaduta"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con un monitoraggio dedicato 24 ore su 24, 7 giorni su 7, delle attività sospette, incluso l'inoltro agli specialisti della sicurezza."
@@ -2344,11 +2355,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2446,6 +2452,11 @@
         "Supporto prioritario"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIZIONE:\n${ eventDescription }"
@@ -2458,8 +2469,11 @@
       "All events in this series were updated.": [
         "Tutti gli eventi di questa serie sono stati aggiornati."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tutti gli eventi di questa serie sono stati aggiornati. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Ecco cosa è cambiato:"
+      ],
+      "NOTE:": [
+        "NOTA:"
       ],
       "This event occurrence was canceled.": [
         "Questa occorrenza dell'evento è stata cancellata."
@@ -2467,17 +2481,8 @@
       "This event occurrence was updated.": [
         "Questa occorrenza dell'evento è stata aggiornata."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Questa occorrenza dell'evento è stata aggiornata. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Questo evento è stato aggiornato."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Questo evento è stato aggiornato. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Sei stato inviato a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2863,6 +2868,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
+      ],
+      "Something went wrong. Please try again.": [
+        "Qualcosa è andato storto, riprova più tardi."
       ],
       "status page": [
         "pagina di stato"
@@ -3983,6 +3991,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
+      "Admin account allocation": [
+        "Allocazione dell'account amministratore"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Gli inserzionisti monitorano la tua navigazione per mostrarti annunci pubblicitari mirati. ${ VPN_APP_NAME } blocca tracker e annunci pubblicitari, rendendo la tua connessione più veloce e migliorando la tua esperienza online."
       ],
@@ -4000,6 +4011,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Allocato"
+      ],
+      "Already allocated": [
+        "Già allocato"
+      ],
+      "Already used": [
+        "Già usato"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -4724,6 +4744,9 @@
       "Session timed out": [
         "Sessione scaduta"
       ],
+      "Set up your organization": [
+        "Configura la tua organizzazione"
+      ],
       "Setting up ${ feature }…": [
         "Configurazione di ${ feature }…"
       ],
@@ -4774,6 +4797,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Rimani connesso senza sforzo abilitando le seguenti impostazioni VPN:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
+      ],
+      "Storage allocated to this user": [
+        "Memoria allocata per questo utente"
+      ],
+      "Storage for users": [
+        "Spazio per gli utenti"
+      ],
+      "Storage used by this user": [
+        "Memoria utilizzata da questo utente"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
@@ -4844,6 +4879,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Questo documento potrebbe non esistere o potresti non avere l'autorizzazione per visualizzarlo. Puoi provare a ricaricare la pagina per vedere se il problema persiste oppure contattare il proprietario per ottenere l'accesso."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Questo è un nome o un nickname per la tua organizzazione che sarà visualizzato dai tuoi utenti. Puoi modificarlo in qualsiasi momento."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Questo ora è il tuo ${ defaultEmailAddress } per l'invio di nuovi messaggi."
@@ -5359,6 +5397,9 @@
       ],
       "Account holder": [
         "Titolare del conto"
+      ],
+      "Account storage": [
+        "Spazio dell'account"
       ],
       "Add email address": [
         "Aggiungi indirizzo email"
@@ -5877,8 +5918,53 @@
       "click here": [
         "clicca qui"
       ],
+      "Enforcing 2FA for organizations": [
+        "Imporre l'autenticazione a 2 fattori (2FA) per le organizzazioni"
+      ],
+      "How to add users": [
+        "Come aggiungere degli utenti"
+      ],
+      "How to add Zoom links": [
+        "Come aggiungere dei link di Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Come collaborare in ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Come abilitare ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Come migrare a ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Come configurare ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Come configurare un dominio personalizzato"
+      ],
+      "How to set up SMTP": [
+        "Come configurare un SMTP"
+      ],
+      "How to share a calendar": [
+        "Come condividere un calendario"
+      ],
+      "How to share via email": [
+        "Come condividere tramite email"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Come utilizzare ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Come utilizzare ${ PASS_APP_NAME } per il Business"
+      ],
+      "How to use email forwarding": [
+        "Come utilizzare l'inoltro di email"
+      ],
+      "How to use Groups": [
+        "Come utilizzare i Gruppi"
       ],
       "if your data is leaked": [
         "se i tuoi dati vengono divulgati"
@@ -5897,6 +5983,9 @@
       ],
       "settings": [
         "impostazioni"
+      ],
+      "Types of recovery methods": [
+        "Tipi di metodi di recupero"
       ],
       "What’s this?": [
         "Cos'è questo?"
@@ -6956,11 +7045,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -6973,6 +7057,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7444,9 +7533,6 @@
       "Public link update access failed ": [
         "Impossibile aggiornare l'accesso al collegamento pubblico "
       ],
-      "Recent documents updated.": [
-        "Documenti recenti aggiornati."
-      ],
       "Root folder failed to be loaded": [
         "Caricamento della cartella principale non riuscito"
       ],
@@ -7693,14 +7779,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Gli utenti non privati possono essere promossi ad amministratore quando dispongono delle chiavi di configurazione"
+      ],
       "Organization key does not exist.": [
         "Chiave dell'organizzazione non esistente."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La chiave dell'organizzazione deve essere attivata per poter concedere i privilegi di amministratore"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Gli utenti privati possono essere promossi ad amministratore quando effettuano l'accesso per la prima volta"
+      ],
       "The organization key must be activated first.": [
         "La chiave dell'organizzazione deve essere prima attivata."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "È necessario eliminare tutti i gruppi prima di generare una nuova chiave di organizzazione"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Devi rendere privati tutti gli utenti prima di poter generare una nuova chiave dell’organizzazione"
       ],
       "You need access to the organization key to perform this operation.": [
         "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
@@ -9313,6 +9414,9 @@
       "Get more from your VPN": [
         "Ottieni di più dalla tua VPN"
       ],
+      "Get the apps": [
+        "Ottieni le app"
+      ],
       "Gift": [
         "Regalo"
       ],
@@ -9688,6 +9792,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
       ]
     },
     "Validation": {
