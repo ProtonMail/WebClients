@@ -45,9 +45,9 @@
       "Add": [
         "Adicionar"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Adicionar ${ photos.length } foto a um novo álbum",
-        "Adicionar ${ photos.length } fotos a um novo álbum"
+      "Add ${ photoCount } photo to a new album": [
+        "Adicionar ${ photoCount } foto a um novo álbum",
+        "Adicionar ${ photoCount } fotos a um novo álbum"
       ],
       "Add account": [
         "Adicionar uma conta"
@@ -868,6 +868,9 @@
       ],
       "Show advanced PGP settings": [
         "Mostrar definições de PGP avançadas"
+      ],
+      "Show more": [
+        "Mostrar mais"
       ],
       "Show more download options": [
         "Mostrar mais opções de transferência"
@@ -2718,6 +2721,11 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -2730,8 +2738,11 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Todos os eventos desta série foram atualizados. Veja o que mudou:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Aqui está o que mudou:"
+      ],
+      "NOTE:": [
+        "NOTA:"
       ],
       "This event occurrence was canceled.": [
         "A ocorrência deste evento foi cancelada."
@@ -2739,17 +2750,8 @@
       "This event occurrence was updated.": [
         "Esta ocorrência do evento foi atualizada."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Esta ocorrência de evento foi atualizada. Veja o que mudou:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Este evento foi atualizado."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Este evento foi atualizado. Veja o que mudou:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2889,11 +2891,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A pesquisa de conteúdo não pode ser ativada. Reinicie a aplicação, ou limpe os dados."
       ],
+      "Could not add to favorites": [
+        "Não foi possível adicionar aos favoritos."
+      ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
       ],
       "Could not open updated vault": [
         "Não foi possível abrir o cofre actualizado"
+      ],
+      "Could not remove from favorites": [
+        "Não foi possível remover dos favoritos."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -3144,6 +3152,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente mais tarde."
       ],
       "status page": [
         "página de status"
@@ -3781,9 +3792,9 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Adicionar ${ photos.length } foto a",
-        "Adicionar ${ photos.length } fotos a"
+      "Add ${ photoCount } photo to": [
+        "Adicionar ${ photoCount } foto a",
+        "Adicionar ${ photoCount } fotos a"
       ],
       "Add to shared album": [
         "Adicionar ao álbum partilhado"
@@ -3794,9 +3805,9 @@
       "Recent": [
         "Recentes"
       ],
-      "Share ${ photos.length } photo via": [
-        "Partilhar ${ photos.length } foto via",
-        "Partilhar ${ photos.length } fotos via"
+      "Share ${ photoCount } photo via": [
+        "Partilhar ${ photoCount } foto via",
+        "Partilhar ${ photoCount } fotos via"
       ]
     },
     "Hint": {
@@ -4373,6 +4384,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Está ativada a verificação de endereço com chaves confiadas para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser utilizadas para enviar."
       ],
+      "Admin account allocation": [
+        "Alocação da conta do administrador"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Os anunciantes rastreiam a sua navegação para mostrar anúncios segmentados. O ${ VPN_APP_NAME } bloqueia os rastreadores e os anúncios, tornando a sua ligação mais rápida e melhorando a sua experiência online."
       ],
@@ -4393,6 +4407,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Alocado"
+      ],
+      "Already allocated": [
+        "Já foi alocado"
+      ],
+      "Already used": [
+        "Já utilizado"
       ],
       "Also try looking in Trash.": [
         "Tente também procurar no Lixo."
@@ -5197,6 +5220,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto pesquisamos contactos que contenham dados encriptados com a chave inativa."
       ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Aguarde enquanto atualizamos os seus dados. Esta ação pode demorar alguns segundos."
+      ],
       "Preparing link to file": [
         "A preparar ligação ao ficheiro"
       ],
@@ -5397,6 +5423,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantenha-se ligado sem esforço ativando as seguintes definições de VPN:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Armazenamento atribuído a outros utilizadores desta organização"
+      ],
+      "Storage allocated to this user": [
+        "Armazenamento alocado a este utilizador"
+      ],
+      "Storage for users": [
+        "Armazenamento para utilizadores"
+      ],
+      "Storage used by this user": [
+        "Armazenamento utilizado por este utilizador"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
@@ -6093,6 +6131,9 @@
       ],
       "Account holder": [
         "Titular da conta"
+      ],
+      "Account storage": [
+        "Armazenamento da conta"
       ],
       "Add email address": [
         "Adicionar um endereço de e-mail"
@@ -7164,29 +7205,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Apagar conta"
-      ],
-      "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter o ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conservar ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar a conta"
-      ],
-      "Switch plan": [
-        "Alterar o plano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Mudar para ${ downgradedPlanName }"
@@ -7208,6 +7226,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Apagar conta"
+      ],
+      "Downgrade account": [
+        "Mudar para uma conta com menos funcionalidades"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter o ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Conservar ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar a conta"
+      ],
+      "Switch plan": [
+        "Alterar o plano"
       ]
     },
     "new_plans: feature": {
@@ -8726,14 +8767,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Os utilizadores não privados podem ser promovidos a administradores quando têm chaves de configuração."
+      ],
       "Organization key does not exist.": [
         "Não existe uma chave da organização."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "A chave da organização deve ser ativada para dar privilégios de administrador."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Os utilizadores privados podem ser promovidos a administradores quando iniciarem sessão pela primeira vez."
+      ],
       "The organization key must be activated first.": [
         "Tem de ativar a chave da organização primeiro."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "É necessário eliminar todos os grupos antes de gerar uma nova chave de organização."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "É necessário privatizar todos os utilizadores antes de gerar uma nova chave de organização."
       ],
       "You need access to the organization key to perform this operation.": [
         "Precisa de acesso à chave da organização para executar esta operação."
@@ -10721,6 +10777,9 @@
       "Get more from your VPN": [
         "Obtenha mais da sua VPN"
       ],
+      "Get the apps": [
+        "Obter as aplicações"
+      ],
       "Gift": [
         "Presente"
       ],
@@ -11062,6 +11121,9 @@
       "Untitled document ${ date }": [
         "Documento sem título ${ date }"
       ],
+      "Updating your photos": [
+        "Atualização das suas fotos"
+      ],
       "Upgrade complete!": [
         "A subscrição foi atualizada."
       ],
@@ -11247,6 +11309,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Os administradores não podem aceder aos dados de utilizadores privados e não podem redefinir a sua palavra-passe."
       ]
     },
     "Validation": {

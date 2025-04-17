@@ -45,9 +45,9 @@
       "Add": [
         "Voeg toe"
       ],
-      "Add ${ photos.length } photo to a new album": [
-        "Voeg ${ photos.length } foto toe aan een nieuw album",
-        "Voeg ${ photos.length } foto's toe aan een nieuw album"
+      "Add ${ photoCount } photo to a new album": [
+        "Voeg ${ photoCount } foto toe aan een nieuw album",
+        "Voeg ${ photoCount } foto's toe aan een nieuw album"
       ],
       "Add account": [
         "Account toevoegen"
@@ -186,6 +186,9 @@
       "Close transfers": [
         "Overdrachten sluiten"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Collapse": [
         "Inklappen"
       ],
@@ -203,6 +206,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bevestig het openen van link ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videovergadering"
       ],
       "Contact group": [
         "Contactgroep"
@@ -344,6 +353,9 @@
       "Download": [
         "Downloaden"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
+      ],
       "Download (${ count })": [
         "Download (${ count })"
       ],
@@ -434,6 +446,9 @@
       "Get Started": [
         "Aan de slag"
       ],
+      "Get the apps": [
+        "De apps downloaden"
+      ],
       "Get verification code": [
         "Krijg verificatie code"
       ],
@@ -494,6 +509,9 @@
       "Import emails": [
         "E-mails importeren"
       ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
+      ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
       ],
@@ -542,8 +560,14 @@
       "Loading verification": [
         "Verificatie laden"
       ],
+      "Manage advanced account protections": [
+        "Geavanceerde accountbeveiligingen beheren"
+      ],
       "Manage folders": [
         "Mappen beheren"
+      ],
+      "Manage groups": [
+        "Groepen beheren"
       ],
       "Manage labels": [
         "Labels beheeren"
@@ -553,6 +577,9 @@
       ],
       "Manage share": [
         "Delen beheren"
+      ],
+      "Manage users/addresses": [
+        "Gebruikers/adressen beheren"
       ],
       "Mark as favorite": [
         "Markeer als favoriet"
@@ -704,6 +731,9 @@
       "Remove bonuses": [
         "Verwijder bonussen"
       ],
+      "Remove button": [
+        "Knop verwijderen"
+      ],
       "Remove device": [
         "Verwijder apparaat"
       ],
@@ -842,8 +872,20 @@
       "Set as cover": [
         "Instellen als omslag"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Set up 2FA": [
+        "2FA instellen"
+      ],
+      "Set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
       ],
       "Settings": [
         "Instellingen"
@@ -863,11 +905,17 @@
       "Share via link": [
         "Deel via link"
       ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
+      ],
       "Sharing options": [
         "Opties voor delen"
       ],
       "Show advanced PGP settings": [
         "Geavanceerde PGP-instellingen tonen"
+      ],
+      "Show more": [
+        "Meer weergeven"
       ],
       "Show more download options": [
         "Toon meer download opties"
@@ -944,6 +992,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
       "Undo": [
         "Ongedaan maken"
       ],
@@ -974,6 +1025,9 @@
       "Upload": [
         "Uploaden"
       ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
       "Upload anyway": [
         "Toch uploaden"
       ],
@@ -997,6 +1051,12 @@
       ],
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Gebruik ${ PASS_APP_NAME } voor Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor gegevensprivacy"
       ],
       "Use a different card": [
         "Gebruik een andere kaart"
@@ -2730,26 +2790,14 @@
       "All events in this series were updated.": [
         "Alle gebeurtenissen in deze serie zijn bijgewerkt."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alle gebeurtenissen in deze serie zijn bijgewerkt. Hier is wat er veranderd is:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Deze afspraakgebeurtenis werd geannuleerd."
       ],
       "This event occurrence was updated.": [
         "Deze afspraakgebeurtenis werd bijgewerkt."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Deze afspraak werd bijgewerkt. Dit is wat er veranderd is:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Deze afspraak werd bijgewerkt."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Deze afspraak is bijgewerkt. Dit is wat is veranderd:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "U bent uitgenodigd voor ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2889,11 +2937,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Zoeken naar inhoud kan niet worden ingeschakeld. Herstart de applicatie of wis de gegevens."
       ],
+      "Could not add to favorites": [
+        "Kon niet aan favorieten toevoegen"
+      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
       ],
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
+      ],
+      "Could not remove from favorites": [
+        "Kon niet verwijderen uit favorieten"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselecteer tenminste ${ calendarsToFixCount } agenda",
@@ -3144,6 +3198,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong. Please try again.": [
+        "Er ging iets mis. Probeer het later nog eens."
       ],
       "status page": [
         "statuspagina"
@@ -3781,10 +3838,6 @@
       ]
     },
     "Heading": {
-      "Add ${ photos.length } photo to": [
-        "Voeg ${ photos.length } foto toe aan",
-        "Voeg ${ photos.length } foto's toe aan"
-      ],
       "Add to shared album": [
         "Toevoegen aan gedeeld album"
       ],
@@ -3793,10 +3846,6 @@
       ],
       "Recent": [
         "Recent"
-      ],
-      "Share ${ photos.length } photo via": [
-        "Deel ${ photos.length } foto via",
-        "Deel ${ photos.length } foto's via"
       ]
     },
     "Hint": {
@@ -4373,6 +4422,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
       ],
+      "Admin account allocation": [
+        "Toewijzing beheerdersaccount"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Adverteerders volgen uw internetgedrag om gerichte advertenties te tonen. ${ VPN_APP_NAME } blokkeert trackers en advertenties, maakt uw verbinding sneller en verbetert uw online ervaring."
       ],
@@ -4393,6 +4445,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Toegewezen"
+      ],
+      "Already allocated": [
+        "Reeds toegewezen"
+      ],
+      "Already used": [
+        "Al gebruikt"
       ],
       "Also try looking in Trash.": [
         "Probeer ook te zoeken in de Prullenbak."
@@ -5084,6 +5145,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Open de handleiding voor aanbevolen acties en nuttige links."
+      ],
       "or discover other features:": [
         "of andere functies ontdekken:"
       ],
@@ -5196,6 +5260,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
+      ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Even geduld terwijl we uw gegevens bijwerken. Dit kan enkele seconden duren."
       ],
       "Preparing link to file": [
         "Link naar bestand wordt voorbereid"
@@ -5329,6 +5396,9 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
       ],
@@ -5397,6 +5467,18 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
+      ],
+      "Storage allocated to this user": [
+        "Opslagruimte toegewezen aan deze gebruiker"
+      ],
+      "Storage for users": [
+        "Opslag voor gebruikers"
+      ],
+      "Storage used by this user": [
+        "Opslagruimte gebruikt door deze gebruiker"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
@@ -5476,6 +5558,9 @@
       ],
       "This folder is empty": [
         "Deze map is leeg"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dit is een naam of bijnaam voor uw organisatie die uw gebruikers zullen zien. U kunt dit op elk moment wijzigen."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
@@ -6093,6 +6178,9 @@
       ],
       "Account holder": [
         "Rekeninghouder"
+      ],
+      "Account storage": [
+        "Opslagruimte account"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -6740,8 +6828,53 @@
       "Drafts": [
         "Concepten"
       ],
+      "Enforcing 2FA for organizations": [
+        "2FA forceren voor organisaties"
+      ],
+      "How to add users": [
+        "Hoe gebruikers toe te voegen"
+      ],
+      "How to add Zoom links": [
+        "Zoom-koppelingen toevoegen"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Samenwerken in ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hoe schakelt u ${ PROTON_SENTINEL_NAME } in"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Hoe migreer ik naar ${ BRAND_NAME }?"
+      ],
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } instellen"
+      ],
+      "How to set up a custom domain": [
+        "Een eigen domein instellen"
+      ],
+      "How to set up SMTP": [
+        "SMTP instellen"
+      ],
+      "How to share a calendar": [
+        "Hoe een agenda te delen"
+      ],
+      "How to share via email": [
+        "Delen via e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hoe gebruikt u ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } voor Business gebruiken"
+      ],
+      "How to use email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
+      "How to use Groups": [
+        "Hoe gebruik je Groepen"
       ],
       "if your data is leaked": [
         "als uw gegevens zijn gelekt"
@@ -6790,6 +6923,9 @@
       ],
       "Trash": [
         "Prullenbak"
+      ],
+      "Types of recovery methods": [
+        "Soorten herstelmethoden"
       ],
       "What’s this?": [
         "Wat is dit?"
@@ -7164,29 +7300,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Account verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Gebruik ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Kies ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behouden"
-      ],
-      "Keep account": [
-        "Account behouden"
-      ],
-      "Switch plan": [
-        "Van abonnement wisselen"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
@@ -7208,6 +7321,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Account verwijderen"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Gebruik ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behouden"
+      ],
+      "Keep account": [
+        "Account behouden"
+      ],
+      "Switch plan": [
+        "Van abonnement wisselen"
       ]
     },
     "new_plans: feature": {
@@ -8726,14 +8862,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Niet-privé gebruikers kunnen worden gepromoveerd tot admin wanneer ze de configuratiesleutels hebben"
+      ],
       "Organization key does not exist.": [
         "Organisatiesleutel bestaat niet."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "De organisatiesleutel moet geactiveerd worden om admin rechten te geven"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
+      ],
       "The organization key must be activated first.": [
         "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "U moet alle groepen verwijderen voordat u een nieuwe organisatiesleutel kunt genereren"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "U moet eerst alle gebruikers privatiseren voordat u een nieuwe organisatiesleutel genereert"
       ],
       "You need access to the organization key to perform this operation.": [
         "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
@@ -10447,6 +10598,9 @@
       "Add to ${ groupName }": [
         "Toevoegen aan ${ groupName }"
       ],
+      "Add user": [
+        "Gebruiker toevoegen"
+      ],
       "Addresses": [
         "Adressen"
       ],
@@ -10537,6 +10691,12 @@
       ],
       "Confirmation required": [
         "Bevestiging vereist"
+      ],
+      "Connect apps and devices": [
+        "Apps en apparaten verbinden"
+      ],
+      "Connect your custom domain": [
+        "Verbind uw eigen domein"
       ],
       "Contact Details": [
         "Contactgegevens"
@@ -10684,8 +10844,14 @@
       "Enable 2FA": [
         "2FA inschakelen"
       ],
+      "Enable advanced account protection": [
+        "Schakel geavanceerde accountbeveiliging in"
+      ],
       "Enable drive search": [
         "Drive doorzoeken inschakelen"
+      ],
+      "Enhance security with 2FA": [
+        "Verbeter de beveiliging met 2FA"
       ],
       "Enter 2FA code": [
         "Voer 2FA-code in"
@@ -10721,6 +10887,9 @@
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
+      "Get the apps": [
+        "Verkrijg de apps"
+      ],
       "Gift": [
         "Geschenk"
       ],
@@ -10751,6 +10920,9 @@
       ],
       "Import contacts": [
         "Contactpersonen importeren"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importeer e-mails, agenda's, contacten"
       ],
       "Import events": [
         "Afspraken importeren"
@@ -10984,8 +11156,17 @@
       "Select link expiration time": [
         "Selecteer vervaltijd link"
       ],
+      "Set recovery methods": [
+        "Herstelmethoden instellen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Set up email forwarding": [
+        "E-mail doorsturen instellen"
+      ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
       ],
       "Settings": [
         "Instellingen"
@@ -11007,6 +11188,9 @@
       ],
       "Sign out": [
         "Uitloggen"
+      ],
+      "Simplify email distribution": [
+        "Vereenvoudig de e-maildistributie"
       ],
       "Size": [
         "Grootte"
@@ -11053,6 +11237,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
       "Type": [
         "Soort"
       ],
@@ -11061,6 +11248,9 @@
       ],
       "Untitled document ${ date }": [
         "Naamloos document ${ date }"
+      ],
+      "Updating your photos": [
+        "Uw foto's bijwerken"
       ],
       "Upgrade complete!": [
         "Upgrade voltooid!"
@@ -11097,6 +11287,9 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Welkom bij ${ BRAND_NAME } voor Business"
       ],
       "What can a VPN protect you from?": [
         "Waartegen kan een VPN u beschermen?"
@@ -11247,6 +11440,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
       ]
     },
     "Validation": {
