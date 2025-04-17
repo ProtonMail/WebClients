@@ -21,7 +21,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import {
-    clearExternalFlags,
+    clearKeyFlagsToEnableEmailE2EE,
     getActiveAddressKeys,
     getMemberKeys,
     getNormalizedActiveAddressKeys,
@@ -56,11 +56,14 @@ const convertToInternalAddress = async ({
         Type: ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN,
     };
     const normalizedKeys = getNormalizedActiveAddressKeys(internalAddress, activeKeys);
-    const clearFlags = <V extends ActiveKeyWithVersion>(key: V) => ({ ...key, flags: clearExternalFlags(key.flags) });
+    const adjustKeyFlags = <V extends ActiveKeyWithVersion>(key: V) => ({
+        ...key,
+        flags: clearKeyFlagsToEnableEmailE2EE(key.flags),
+    });
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         {
-            v4: normalizedKeys.v4.map(clearFlags),
-            v6: normalizedKeys.v6.map(clearFlags),
+            v4: normalizedKeys.v4.map(adjustKeyFlags),
+            v6: normalizedKeys.v6.map(adjustKeyFlags),
         },
         address,
         keyTransparencyVerify

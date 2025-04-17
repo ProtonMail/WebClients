@@ -11,11 +11,11 @@ describe('getDefaultKeyFlags', () => {
         expect(hasBit(defaultFlags, KEY_FLAG.FLAG_NOT_COMPROMISED)).toBe(true);
     });
 
-    it('should set external flags for external address', () => {
+    it('should not automatically disable e2ee for external address', () => {
         const defaultFlags = getDefaultKeyFlags({ Type: ADDRESS_TYPE.TYPE_EXTERNAL } as Address);
         expect(hasBit(defaultFlags, KEY_FLAG.FLAG_NOT_OBSOLETE)).toBe(true);
         expect(hasBit(defaultFlags, KEY_FLAG.FLAG_NOT_COMPROMISED)).toBe(true);
-        expect(hasBit(defaultFlags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT)).toBe(true);
+        expect(hasBit(defaultFlags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT)).toBe(false);
     });
 
     it('should set email no encrypt flag for address with disable e2ee flag', () => {
