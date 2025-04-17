@@ -42,7 +42,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
+import forwardingSetupIllustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
+import forwardingSuccessIllustration from '@proton/styles/assets/img/illustrations/forward-success-confirmation.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import useAddressFlags from '../../hooks/useAddressFlags';
@@ -94,13 +95,27 @@ const getKeyFixupDetails = (
 
     if (forwarderPrimaryKeysInfo.v4.supportsE2EEForwarding) {
         return forwarderPrimaryKeysInfo?.v6
-            ? c('email_forwarding_2023: Info').jt`Post-quantum encryption will be disabled for ${boldForwarderEmail}.`
+            ? {
+                  setup: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption will be disabled for ${boldForwarderEmail}.`,
+                  success: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption has been disabled for ${boldForwarderEmail}.`,
+              }
             : null;
     } else {
         return forwarderPrimaryKeysInfo?.v6
-            ? c('email_forwarding_2023: Info')
-                  .jt`Post-quantum encryption will be disabled, and a new encryption key will be generated for ${boldForwarderEmail}.`
-            : c('email_forwarding_2023: Info').jt`A new encryption key will be generated for ${boldForwarderEmail}.`;
+            ? {
+                  setup: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${boldForwarderEmail}.`,
+                  success: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${boldForwarderEmail}.`,
+              }
+            : {
+                  setup: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, a new encryption key will be generated for ${boldForwarderEmail}.`,
+                  success: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, a new encryption key has been generated for ${boldForwarderEmail}.`,
+              };
     }
 };
 
@@ -116,6 +131,11 @@ const getTitle = (model: ForwardModalState) => {
     if (model.step === ForwardModalStep.FixupPrimaryKeys || model.step === ForwardModalStep.FinalizeForwardingSetup) {
         return c('email_forwarding_2023: Title').t`Requesting confirmation`;
     }
+
+    if (model.step === ForwardModalStep.SuccessNotification) {
+        return c('email_forwarding_2023: Title').t`Request sent`;
+    }
+
     return '';
 };
 
@@ -146,6 +166,8 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
     );
     const handleError = useErrorHandler();
     const keyStateRef = useRef<ForwardModalKeyState | null>(null);
+    // keep track of primary key changes, to re-notify user about them at the end of the setup
+    const keyFixupDetails = useRef<ReturnType<typeof getKeyFixupDetails> | null>(null);
 
     const inputsDisabled = model.loading || isEditingFilters || isReEnablingForwarding;
     const initialForwarderAddress = getForwarderAddress(addresses, model.addressID);
@@ -153,6 +175,12 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
 
     const forwarderEmail = initialForwarderAddress?.Email || '';
     const addressFlags = useAddressFlags(initialForwarderAddress);
+
+    const boldForwardeeEmail = <strong key="forwardee-email">{model.forwardeeEmail}</strong>;
+    const boldForwarderEmail = <strong key="forwarder-email">{forwarderEmail}</strong>;
+    const learnMoreLink = (
+        <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link').t`Learn more`}</Href>
+    );
 
     const handleEdit = async () => {
         if (!existingForwardingConfig) {
@@ -183,6 +211,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         );
 
         keyStateRef.current = keyState;
+        keyFixupDetails.current = getKeyFixupDetails(keyStateRef.current?.forwarderPrimaryKeysInfo, boldForwarderEmail);
 
         setModel({
             ...model,
@@ -216,10 +245,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             })
         );
 
-        onClose?.();
-        createNotification({ text: c('email_forwarding_2023: Success').t`Email sent to ${email}.` });
-
-        return;
+        setModel({ ...model, step: ForwardModalStep.SuccessNotification });
     };
 
     const handleUserConfirmation = async () => {
@@ -241,10 +267,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                     keyState,
                 })
             );
-            createNotification({
-                text: c('email_forwarding_2023: Success')
-                    .t`Post-quantum encryption for email messages has been disabled for ${forwarderEmail}.`,
-            });
             keyStateRef.current = result.keyState;
             return handleUserConfirmation();
         }
@@ -258,10 +280,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                     keyState,
                 })
             );
-            createNotification({
-                text: c('email_forwarding_2023: Success')
-                    .t`A new encryption key has been generated for ${forwarderEmail}.`,
-            });
             keyStateRef.current = result.keyState;
             return handleUserConfirmation();
         }
@@ -295,19 +313,10 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         }
     };
 
-    const boldForwardeeEmail = <strong key="forwardee-email">{model.forwardeeEmail}</strong>;
-    const boldForwarderEmail = <strong key="forwarder-email">{forwarderEmail}</strong>;
-    const learnMoreLink = (
-        <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link').t`Learn more`}</Href>
-    );
-    const primaryKeyFixupDetails = getKeyFixupDetails(
-        keyStateRef.current?.forwarderPrimaryKeysInfo,
-        boldForwarderEmail
-    );
-
     return (
         <ModalTwo
             as={Form}
+            size={model.step === ForwardModalStep.SuccessNotification ? 'xsmall' : undefined}
             onClose={onClose}
             onSubmit={() => withLoading(handleSubmit().catch(handleError))}
             onReset={() => {
@@ -384,7 +393,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                 {model.step === ForwardModalStep.UserConfirmation && (
                     <>
                         <div className="text-center">
-                            <img src={illustration} alt="" />
+                            <img src={forwardingSetupIllustration} alt="" />
                             <p>{c('email_forwarding_2023: Info')
                                 .jt`A confirmation email will be sent to ${boldForwardeeEmail}`}</p>
                             <p>{c('email_forwarding_2023: Info')
@@ -399,10 +408,10 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                                 </p>
                             </div>
                         ) : null}
-                        {model.isExternal || !primaryKeyFixupDetails ? null : (
+                        {model.isExternal || !keyFixupDetails.current ? null : (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
                                 <Icon name="exclamation-circle" className="shrink-0 color-danger" />
-                                <p className="text-sm color-weak flex-1 pl-4 my-0">{primaryKeyFixupDetails}</p>
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">{keyFixupDetails.current.setup}</p>
                             </div>
                         )}
                         {model?.keyErrors?.length ? (
@@ -417,7 +426,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                     model.step === ForwardModalStep.FinalizeForwardingSetup) && (
                     <>
                         <div className="text-center">
-                            <img src={illustration} alt="" />
+                            <img src={forwardingSetupIllustration} alt="" />
                             <div className="text-center" role="alert">
                                 <div className="inline-block">
                                     <LoadingTextStepper
@@ -430,6 +439,26 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                                     />
                                 </div>
                             </div>
+                        </div>
+                    </>
+                )}
+                {model.step === ForwardModalStep.SuccessNotification && (
+                    <>
+                        <div className="text-center">
+                            <img src={forwardingSuccessIllustration} alt="" />
+                            <p>
+                                {c('email_forwarding_2023: Info')
+                                    .jt`Forwarding to ${boldForwardeeEmail} will become active once the recipient accepts the request.`}
+                            </p>
+                            {model.isExternal ? (
+                                <p>
+                                    {c('email_forwarding_2023: Info')
+                                        .jt`End-to-end encryption has been disabled for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`}
+                                </p>
+                            ) : null}
+                            {model.isExternal || !keyFixupDetails.current ? null : (
+                                <p>{keyFixupDetails.current.success}</p>
+                            )}
                         </div>
                     </>
                 )}
@@ -454,6 +483,11 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                             {c('email_forwarding_2023: Action').t`Send confirmation email`}
                         </Button>
                     </>
+                )}
+                {model.step === ForwardModalStep.SuccessNotification && (
+                    <Button onClick={onClose} fullWidth={true}>
+                        {c('email_forwarding_2023: Action').t`Got it`}
+                    </Button>
                 )}
             </ModalTwoFooter>
         </ModalTwo>
