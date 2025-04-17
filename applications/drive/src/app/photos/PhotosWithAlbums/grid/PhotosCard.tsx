@@ -106,9 +106,9 @@ export const PhotosCard: FC<Props> = ({
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
                 'relative photo-card p-0 border-none rounded',
-                isThumbnailLoading && 'photo-card--loading',
-                !hasSelection && 'photo-card--hide-checkbox',
-                selected && 'photo-card--selected'
+                isThumbnailLoading && 'photos-card--loading',
+                !hasSelection && 'photos-card--hide-checkbox',
+                selected && 'photos-card--selected'
             )}
             data-testid="photos-card"
             onClick={onClick}

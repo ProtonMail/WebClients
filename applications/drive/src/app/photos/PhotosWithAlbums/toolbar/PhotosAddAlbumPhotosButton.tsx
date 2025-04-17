@@ -16,7 +16,7 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
         return (
             <ToolbarButton
                 onClick={onClick}
-                data-testid="toolbar-album-add-photos"
+                data-testid="toolbar-add-to-album"
                 title={c('Action').t`Add photos`}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
@@ -28,7 +28,7 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
     if (type === 'dropdown') {
         return (
             <DropdownMenuButton
-                data-testid="dropdown-album-add-photos"
+                data-testid="dropdown-add-to-album"
                 className="text-left flex items-center flex-nowrap"
                 onClick={onClick}
             >
@@ -43,7 +43,7 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
             shape="solid"
             size="small"
             onClick={onClick}
-            data-testid="toolbar-album-add-photos"
+            data-testid="toolbar-add-to-album"
             title={c('Action').t`Add photos`}
             className="inline-flex flex-nowrap flex-row items-center"
         >
