@@ -656,9 +656,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvori ${ CALENDAR_APP_NAME } postavke"
       ],
-      "Open composer": [
-        "Otvori prozor za novu poruku"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Otvori u ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -752,12 +749,6 @@
       "Remove this label": [
         "Ukloni ovu oznaku"
       ],
-      "Reply": [
-        "Odgovori"
-      ],
-      "Reply all": [
-        "Odgovori svima"
-      ],
       "Reply securely": [
         "Odgovori na siguran način"
       ],
@@ -818,10 +809,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -881,6 +872,9 @@
       "Show messages": [
         "Prikaži poruke"
       ],
+      "Show more": [
+        "Prikaži više"
+      ],
       "Show more search options": [
         "Prikaži više opcija pretraživanja"
       ],
@@ -931,11 +925,6 @@
       ],
       "Trust": [
         "Vjeruj"
-      ],
-      "Trust key": [
-        "Ključ povjerenja",
-        "Ključevi povjerenja",
-        "Ključevi povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -4140,9 +4129,6 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
-      "Insert image": [
-        "Umetni sliku"
-      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -4855,6 +4841,9 @@
         "${ n } mjeseca",
         "${ n } mjeseci"
       ],
+      "Account storage": [
+        "Prostor za pohranu računa"
+      ],
       "Actions": [
         "Radnje"
       ],
@@ -4879,10 +4868,10 @@
       "Also archive": [
         "Također i arhivu"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -5041,11 +5030,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "If": [
-        "Ako"
-      ],
       "IF": [
         "AKO"
+      ],
+      "If": [
+        "Ako"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5137,14 +5126,14 @@
       "Optional": [
         "Neobavezno"
       ],
+      "OR": [
+        "ILI"
+      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
-      ],
-      "OR": [
-        "ILI"
       ],
       "Participants": [
         "Sudionici"
@@ -5708,6 +5697,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5717,14 +5714,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -7279,6 +7268,9 @@
       ],
       "Forward": [
         "Proslijedi"
+      ],
+      "Get the apps": [
+        "Preuzmite aplikacije"
       ],
       "Groups": [
         "Grupe"

@@ -237,9 +237,6 @@
       "Close": [
         "Zavřít"
       ],
-      "Close & discard": [
-        "Zavřít a zahodit"
-      ],
       "Close composer": [
         "Zavřít editor"
       ],
@@ -248,6 +245,9 @@
       ],
       "Close this banner": [
         "Zavřít tento banner"
+      ],
+      "Collaborate on documents": [
+        "Spolupracovat na dokumentech"
       ],
       "Collapse navigation bar": [
         "Sbalit navigační panel"
@@ -266,6 +266,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otevření odkazu ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Připojit aplikace a zařízení"
+      ],
+      "Connect to video conferencing": [
+        "Připojit se k videokonferenci"
       ],
       "Contact group": [
         "Skupina kontaktů"
@@ -414,6 +420,9 @@
       "Download ${ attachmentName }": [
         "Stáhnout ${ attachmentName }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
       "Download now": [
         "Stáhnout nyní"
       ],
@@ -558,6 +567,9 @@
       "Get the app": [
         "Získat aplikaci"
       ],
+      "Get the apps": [
+        "Získat aplikace"
+      ],
       "Get the browser extension": [
         "Získat rozšíření prohlížeče"
       ],
@@ -650,6 +662,9 @@
       ],
       "Import emails": [
         "Importovat e-maily"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovat e-maily, kalendáře a kontakty"
       ],
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
@@ -747,14 +762,23 @@
       "Make it friendly": [
         "Přátelská forma"
       ],
+      "Manage advanced account protections": [
+        "Spravovat pokročilé ochrany účtu"
+      ],
       "Manage folders": [
         "Spravovat složky"
+      ],
+      "Manage groups": [
+        "Spravovat skupiny"
       ],
       "Manage labels": [
         "Spravovat štítky"
       ],
       "Manage Snooze": [
         "Spravovat odložení"
+      ],
+      "Manage users/addresses": [
+        "Spravovat uživatele/ adresy"
       ],
       "Mark as read": [
         "Označit jako přečtené"
@@ -915,9 +939,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Otevřít editor"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Otevřít v ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -1008,6 +1029,9 @@
       "Remove bonuses": [
         "Odebrat bonusy"
       ],
+      "Remove button": [
+        "Odebrat tlačítko"
+      ],
       "Remove encryption": [
         "Odebrat šifrování"
       ],
@@ -1031,12 +1055,6 @@
       ],
       "Replaces the selected text in your message": [
         "Nahradí vybraný text vaší zprávy"
-      ],
-      "Reply": [
-        "Odpovědět"
-      ],
-      "Reply all": [
-        "Odpovědět všem"
       ],
       "Reply securely": [
         "Odpovědět bezpečně"
@@ -1125,10 +1143,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -1182,8 +1200,20 @@
       "Set expiration time": [
         "Nastavit dobu platnosti"
       ],
+      "Set recovery methods": [
+        "Nastavit metody obnovení"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
+      ],
+      "Set up 2FA": [
+        "Nastavit 2FA"
+      ],
+      "Set up a custom domain": [
+        "Nastavte vlastní doménu"
+      ],
+      "Set up email forwarding": [
+        "Nastavit přeposílání e-mailů"
       ],
       "Settings": [
         "Nastavení"
@@ -1193,6 +1223,9 @@
       ],
       "Share via link": [
         "Sdílet přes odkaz"
+      ],
+      "Share your calendar with your team": [
+        "Sdílet kalendář se svým týmem"
       ],
       "Sharing options": [
         "Možnosti sdílení"
@@ -1223,6 +1256,9 @@
       ],
       "Show messages": [
         "Zobrazit zprávy"
+      ],
+      "Show more": [
+        "Zobrazit více"
       ],
       "Show more search options": [
         "Zobrazit další možnosti vyhledávání"
@@ -1326,12 +1362,6 @@
       "Trust": [
         "Důvěřovat"
       ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
-      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -1343,6 +1373,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnout ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unblock": [
         "Odblokovat"
@@ -1398,6 +1431,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšit na ${ BRAND_NAME } Unlimited"
       ],
+      "Upload and share files": [
+        "Nahrát a sdílet soubory"
+      ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
@@ -1406,6 +1442,12 @@
       ],
       "Use ${ PASS_APP_NAME }": [
         "Použít ${ PASS_APP_NAME }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Použit ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
       "Use a different card": [
         "Použít jinou kartu"
@@ -3677,6 +3719,9 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } v nastavení."
       ],
@@ -3685,6 +3730,9 @@
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Přidejte složky a soubory do ${ DRIVE_APP_NAME } a pozvěte členy týmu k prohlížení nebo úpravám."
       ],
       "Also included": [
         "Zahrnuje také"
@@ -3695,11 +3743,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Automatické přeposílání příchozích e-mailů na jinou e-mailovou adresu."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické třídění příchozích zpráv předtím, než se dostanou do doručené pošty."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Při konfiguraci nejprve aktivujte svou organizaci a přizpůsobte e-mailovou adresu."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Propojte svůj CRM, webové stránky, tiskárny a další."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
+      ],
+      "Create groups you can email with a single address.": [
+        "Vytvářejte skupiny, kterým můžete posílat e-maily pomocí jediné adresy."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
@@ -3713,8 +3773,29 @@
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Nechcete odeslat e-mail hned teď? Naplánujte si odeslání přesně na ten správný čas."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Snadný přístup k e-mailu a kalendáři na počítači i v mobilu."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Podporujte používání dvoufaktorového ověřování ve vaší organizaci pro zvýšení bezpečnosti."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Zajistěte bezpečný přístup k datům organizace, i když je váš tým vzdálený nebo používá veřejnou Wi-Fi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zajistěte špičkové zabezpečení svého účtu pomocí programu ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Zajistěte si přístup ke svému účtu a datům i v případě ztráty hesla ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémový přechod na ${ BRAND_NAME } importujte data ze služeb Google, Outlook a dalších."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Pro neomezený přístup k asistentovi psaní a dalším možnostem přejděte na ${ BRAND_NAME } Duo."
@@ -3725,8 +3806,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Získejte neomezený počet aliasů a 500 GB úložiště s ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Pomozte svému týmu bezpečně ukládat hesla k citlivým obchodním informacím a informacím o klientech."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Umožňuje okamžitě přidávat odkazy na schůzky do pozvánek na události."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
@@ -3758,6 +3845,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavte metodu obnovení, abyste zabránili ztrátě přístupu k účtu."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Nastavte účty pro všechny uživatele a pozvěte je, aby se připojili k ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
+      ],
       "Starting from ${ price }": [
         "Cena od ${ price }"
       ],
@@ -3775,6 +3868,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Nejprve pojmenujte vaši organizaci."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
@@ -3805,6 +3901,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tomto e-mailu jsme nenašli žádné známé sledovací prvky a sledovací adresy URL."
@@ -3947,6 +4046,11 @@
         "Prioritní podpora"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "POZNÁMKA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -3959,8 +4063,11 @@
       "All events in this series were updated.": [
         "Všechny události této série byly aktualizovány."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všechny události této série byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Toto se změnilo:"
+      ],
+      "NOTE:": [
+        "POZNÁMKA:"
       ],
       "This event occurrence was canceled.": [
         "Tento výskyt události byl zrušen."
@@ -3968,17 +4075,8 @@
       "This event occurrence was updated.": [
         "Tento výskyt události byl aktualizován."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tento výskyt události byl aktualizován. Zde jsou uvedeny změny:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tato událost byla aktualizována. Zde jsou změny:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Jste pozváni na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6325,6 +6423,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
       ],
+      "Admin account allocation": [
+        "Přidělení účtu správce"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Inzerenti sledují vaše procházení, aby mohli zobrazovat cílené reklamy. ${ VPN_APP_NAME } blokuje sledovací prvky a reklamy, čímž zrychluje vaše připojení a zlepšuje váš online zážitek."
       ],
@@ -6366,6 +6467,15 @@
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Přiděleno"
+      ],
+      "Already allocated": [
+        "Již bylo přiděleno"
+      ],
+      "Already used": [
+        "Již použito"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -6974,7 +7084,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7221,6 +7334,9 @@
       ],
       "Open shortcut cheat sheet": [
         "Otevření nápovědy pro klávesové zkratky"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otevřete průvodce, kde najdete doporučené kroky a užitečné odkazy."
       ],
       "or discover other features:": [
         "nebo objevte další funkce:"
@@ -7501,6 +7617,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
       ],
+      "Set up your organization": [
+        "Nastavte svou organizaci"
+      ],
       "Setting up ${ feature }…": [
         "Nastavování ${ feature }…"
       ],
@@ -7555,8 +7674,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Zůstaňte snadno připojeni povolením následujících nastavení VPN:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Úložný prostor přidělený ostatním uživatelům v této organizaci"
+      ],
+      "Storage allocated to this user": [
+        "Úložný prostor přidělený tomuto uživateli"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Možnosti ukládání nejsou v tomto prohlížeči podporovány. Tuto podporu potřebujeme, abychom mohli prohledávat obsah zpráv."
+      ],
+      "Storage for users": [
+        "Úložiště pro uživatele"
+      ],
+      "Storage used by this user": [
+        "Úložného prostoru využito tímto uživatelem"
       ],
       "Subject": [
         "Předmět"
@@ -7695,6 +7826,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Tato pozvánka je uložena v zakázaném kalendáři."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Jedná se o název nebo přezdívku vaší organizace, kterou uživatelé uvidí. Můžete je kdykoli změnit."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Toto je určeno jako pomůcka pro psaní. Zkontrolujte přesnost doporučeného textu. ${ learnMoreResult }"
@@ -8651,6 +8785,9 @@
       "Account holder": [
         "Majitel účtu"
       ],
+      "Account storage": [
+        "Prostor pro účet"
+      ],
       "Actions": [
         "Akce"
       ],
@@ -8681,10 +8818,10 @@
       "Always move sender's emails": [
         "Vždy přesunout e-maily odesílatele"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -8915,11 +9052,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Pokud"
-      ],
       "IF": [
         "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -9032,14 +9169,14 @@
       "Optional": [
         "Volitelné"
       ],
+      "OR": [
+        "NEBO"
+      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
-      ],
-      "OR": [
-        "NEBO"
       ],
       "Original link": [
         "Původní odkaz"
@@ -9359,11 +9496,56 @@
       "Enable your address to answer this invitation.": [
         "Povolte svou adresu pro odpověď na tuto pozvánku."
       ],
+      "Enforcing 2FA for organizations": [
+        "Vynucení 2FA pro organizace"
+      ],
       "Folders": [
         "Složky"
       ],
+      "How to add users": [
+        "Jak přidat uživatele"
+      ],
+      "How to add Zoom links": [
+        "Jak přidat odkazy na Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Jak spolupracovat v ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Jak povolit ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Jak migrovat do ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Jak nastavit ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Jak nastavit vlastní doménu"
+      ],
+      "How to set up SMTP": [
+        "Jak nastavit SMTP"
+      ],
+      "How to share a calendar": [
+        "Jak sdílet kalendář"
+      ],
+      "How to share via email": [
+        "Jak sdílet pomocí e-mailu"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Jak používat ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Jak používat ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Jak používat přeposílání e-mailů"
+      ],
+      "How to use Groups": [
+        "Jak používat skupiny"
       ],
       "if your data is leaked": [
         "když dojde k úniku vašich dat"
@@ -9454,6 +9636,9 @@
       ],
       "Trash": [
         "Koš"
+      ],
+      "Types of recovery methods": [
+        "Typy metod obnovení"
       ],
       "What’s this?": [
         "Co je to?"
@@ -9867,29 +10052,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -9911,6 +10073,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
       ]
     },
     "new_plans: feature": {
@@ -11293,14 +11478,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesoukromí uživatelé se mohou stát správci po tom, co si nastaví klíče"
+      ],
       "Organization key does not exist.": [
         "Klíč organizace neexistuje."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Pro nastavení oprávnění správce musí být aktivován klíč organizace"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Přístup odepřen, oprávnění správce byla omezena."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Soukromí uživatelé se mohou stát správci po tom, co se poprvé přihlásí"
+      ],
       "The organization key must be activated first.": [
         "Nejprve musí být aktivován klíč organizace."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Než vytvoříte nový klíč organizace, musíte smazat všechny skupiny"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Než vytvoříte nový klíč organizace, musíte privatizovat všechny uživatele"
       ],
       "You need access to the organization key to perform this operation.": [
         "Pro provedení této operace potřebujete přístup ke klíči organizace."
@@ -11532,6 +11732,9 @@
       "Name or email address": [
         "Jméno nebo e-mail"
       ],
+      "Organization name": [
+        "Název organizace"
+      ],
       "Password": [
         "Heslo"
       ],
@@ -11612,6 +11815,9 @@
       ],
       "Type text or keyword": [
         "Zadejte text nebo klíčové slovo"
+      ],
+      "Your organization name": [
+        "Název vaší organizace"
       ]
     },
     "Placeholder for contact group name": {
@@ -11789,6 +11995,11 @@
       ],
       "No unread messages found": [
         "Nebyly nalezeny žádné nepřečtené zprávy"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Nastavení organizace a zabezpečení účtu"
       ]
     },
     "Security Center": {
@@ -13694,6 +13905,9 @@
       "Add to ${ groupName }": [
         "Přidat do ${ groupName }"
       ],
+      "Add user": [
+        "Přidat uživatele"
+      ],
       "Addresses": [
         "Adresy"
       ],
@@ -13775,6 +13989,9 @@
       "Clearing data": [
         "Mazání dat"
       ],
+      "Collaborate on documents": [
+        "Spolupracovat na dokumentech"
+      ],
       "Confirm downgrade": [
         "Potvrzení snížení"
       ],
@@ -13783,6 +14000,15 @@
       ],
       "Confirm recipient address?": [
         "Potvrdit adresu příjemce?"
+      ],
+      "Connect apps and devices": [
+        "Připojit aplikace a zařízení"
+      ],
+      "Connect to video conferencing": [
+        "Připojit se k videokonferenci"
+      ],
+      "Connect your custom domain": [
+        "Připojení vlastní domény"
       ],
       "Contact Details": [
         "Kontaktní údaje"
@@ -13916,6 +14142,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Snížit na ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Stáhněte si aplikaci"
       ],
@@ -13952,8 +14181,14 @@
       "Enable 2FA": [
         "Povolit 2FA"
       ],
+      "Enable advanced account protection": [
+        "Povolení pokročilé ochrany účtu"
+      ],
       "Enable message content search": [
         "Povolit hledání v obsahu zprávy"
+      ],
+      "Enhance security with 2FA": [
+        "Zvýšení zabezpečení pomocí 2FA"
       ],
       "Enter 2FA code": [
         "Zadejte kód 2FA"
@@ -13994,6 +14229,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Získat ${ appName[APP_NAME] } aplikace"
       ],
+      "Get the apps": [
+        "Získat aplikace"
+      ],
       "Gift": [
         "Dárek"
       ],
@@ -14032,6 +14270,9 @@
       ],
       "Import contacts": [
         "Importovat kontakty"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovat e-maily, kalendáře a kontakty"
       ],
       "Import events": [
         "Import událostí"
@@ -14213,6 +14454,12 @@
       "Open actions dropdown": [
         "Otevřít seznam akcí"
       ],
+      "Org setup": [
+        "Nastavení organizace"
+      ],
+      "Organization setup": [
+        "Nastavení organizace"
+      ],
       "Other features included in your plan": [
         "Další funkce zahrnuté v tarifu"
       ],
@@ -14354,14 +14601,23 @@
       "Sending original message": [
         "Odesílání původní zprávy"
       ],
+      "Set recovery methods": [
+        "Nastavit metody obnovení"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Nastavit ${ protonDuoPlanName }"
       ],
+      "Set up email forwarding": [
+        "Nastavit přeposílání e-mailů"
+      ],
       "Set up your family account": [
         "Nastavte si rodinný účet"
+      ],
+      "Set up your organization": [
+        "Nastavte svou organizaci"
       ],
       "Set your own schedule": [
         "Nastavte si vlastní plán"
@@ -14369,11 +14625,20 @@
       "Settings": [
         "Nastavení"
       ],
+      "Share your calendar with your team": [
+        "Sdílet kalendář se svým týmem"
+      ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
       ],
       "Sign out": [
         "Odhlásit se"
+      ],
+      "Simplify email distribution": [
+        "Zjednodušení distribuce e-mailů"
+      ],
+      "Simplify password management": [
+        "Zjednodušení správy hesel"
       ],
       "Snooze": [
         "Odložit"
@@ -14429,6 +14694,9 @@
       "Trust public key?": [
         "Důvěřovat veřejnému klíči?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnout ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Odemknout skupiny kontaktů"
       ],
@@ -14440,6 +14708,12 @@
       ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"
+      ],
+      "Upload and share files": [
+        "Nahrát a sdílet soubory"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
       "Verification error": [
         "Chyba při ověření"
@@ -14476,6 +14750,9 @@
       ],
       "Welcome ${ userName }": [
         "Vítejte ${ userName }"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vítejte v ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Před čím vás VPN může ochránit?"
@@ -14616,6 +14893,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tato verze prohlížeče Tor není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
       ]
     },
     "Update font modal": {

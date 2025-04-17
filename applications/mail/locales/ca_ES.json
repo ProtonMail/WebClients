@@ -235,9 +235,6 @@
       "Close": [
         "Tanca"
       ],
-      "Close & discard": [
-        "Tanca i descarta"
-      ],
       "Close composer": [
         "Tancar l'editor"
       ],
@@ -907,9 +904,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Obre l'editor"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Obre a ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -1024,12 +1018,6 @@
       "Replaces the selected text in your message": [
         "Reemplaça el text seleccionat al missatge"
       ],
-      "Reply": [
-        "Respon"
-      ],
-      "Reply all": [
-        "Respon a tothom"
-      ],
       "Reply securely": [
         "Respon de manera segura"
       ],
@@ -1117,10 +1105,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1215,6 +1203,9 @@
       ],
       "Show messages": [
         "Mostra els missatges"
+      ],
+      "Show more": [
+        "Mostrar més"
       ],
       "Show more search options": [
         "Mostra més opcions de cerca"
@@ -1317,10 +1308,6 @@
       ],
       "Trust": [
         "De confiança"
-      ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -3907,6 +3894,11 @@
         "Suport prioritari"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPCIÓ:\n${ eventDescription }"
@@ -3919,8 +3911,11 @@
       "All events in this series were updated.": [
         "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tots els esdeveniments d'aquesta sèrie s'han actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Això és el que ha canviat:"
+      ],
+      "NOTE:": [
+        "NOTA:"
       ],
       "This event occurrence was canceled.": [
         "S'ha cancel·lat aquesta ocurrència d'esdeveniment."
@@ -3928,17 +3923,8 @@
       "This event occurrence was updated.": [
         "Aquesta ocurrència d'esdeveniment s'ha actualitzat."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquesta ocurrència d'esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "S'ha actualitzat aquest esdeveniment. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6137,6 +6123,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
+      "Admin account allocation": [
+        "Assignació del compte d'administrador"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, fent que la vostra connexió sigui més ràpida i millorant la vostra experiència en línia."
       ],
@@ -6172,6 +6161,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tots els vostres contactes s'importaran, fins a un límit d'${ MAX_CONTACTS_PER_USER }",
         "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Allocated": [
+        "Assignat"
+      ],
+      "Already allocated": [
+        "Ja assignat"
+      ],
+      "Already used": [
+        "Ja utilitzat"
       ],
       "American Express SafeKey logo": [
         "Logo d'American Express SafeKey"
@@ -6752,7 +6750,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7327,8 +7326,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantingueu-vos connectat sense esforç activant la configuració VPN següent:"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Emmagatzematge assignat a altres usuaris d'aquesta organització"
+      ],
+      "Storage allocated to this user": [
+        "Emmagatzematge assignat a aquest usuari"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
+      ],
+      "Storage for users": [
+        "Emmagatzematge per als usuaris"
+      ],
+      "Storage used by this user": [
+        "Emmagatzematge utilitzat per aquest usuari"
       ],
       "Subject": [
         "Assumpte"
@@ -8372,6 +8383,9 @@
       "Account holder": [
         "Titular del compte"
       ],
+      "Account storage": [
+        "Emmagatzematge del compte"
+      ],
       "Actions": [
         "Accions"
       ],
@@ -8402,10 +8416,10 @@
       "Always move sender's emails": [
         "Mou sempre els correus electrònics del remitent"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -8636,11 +8650,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -8753,13 +8767,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -9572,29 +9586,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina el compte"
-      ],
-      "Downgrade account": [
-        "Passa a un pla inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtén ${ BRAND_NAME } gratuïtament"
-      ],
-      "Get ${ planName }": [
-        "Obteniu ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Segueix amb ${ plan }"
-      ],
-      "Keep account": [
-        "Conserva el compte"
-      ],
-      "Switch plan": [
-        "Canvia de pla"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
@@ -9616,6 +9607,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina el compte"
+      ],
+      "Downgrade account": [
+        "Passa a un pla inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtén ${ BRAND_NAME } gratuïtament"
+      ],
+      "Get ${ planName }": [
+        "Obteniu ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Segueix amb ${ plan }"
+      ],
+      "Keep account": [
+        "Conserva el compte"
+      ],
+      "Switch plan": [
+        "Canvia de pla"
       ]
     },
     "new_plans: feature": {
@@ -10950,14 +10964,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Els usuaris no privats es poden promocionar a administrador quan tenen claus de configuració"
+      ],
       "Organization key does not exist.": [
         "La clau de l'organització no existeix."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "S'ha d'activar la clau de l'organització per a donar privilegis d'administrador"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Els usuaris privats poden ascendir a administradors quan inicien sessió per primera vegada"
+      ],
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau de l'organització."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Heu d'eliminar tots els grups abans de generar una clau d'organització nova."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
       ],
       "You need access to the organization key to perform this operation.": [
         "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
@@ -13483,6 +13512,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Obteniu les aplicacions ${ appName[APP_NAME] }"
       ],
+      "Get the apps": [
+        "Aconseguiu les aplicacions"
+      ],
       "Gift": [
         "Regal"
       ],
@@ -14099,6 +14131,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Aquesta versió del Navegador Tor no és compatible. Actualitzeu a la darrera ${ stableRelease }."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
       ]
     },
     "Update font modal": {

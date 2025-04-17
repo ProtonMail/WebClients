@@ -235,9 +235,6 @@
       "Close": [
         "Fermer"
       ],
-      "Close & discard": [
-        "Fermer & abandonner"
-      ],
       "Close composer": [
         "Fermer l'éditeur"
       ],
@@ -907,9 +904,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
       ],
-      "Open composer": [
-        "Ouvrir l'éditeur"
-      ],
       "Open in ${ DOCS_SHORT_APP_NAME }": [
         "Ouvrir dans ${ DOCS_SHORT_APP_NAME }"
       ],
@@ -1024,12 +1018,6 @@
       "Replaces the selected text in your message": [
         "Remplace le texte sélectionné dans votre message"
       ],
-      "Reply": [
-        "Répondre"
-      ],
-      "Reply all": [
-        "Répondre à tous"
-      ],
       "Reply securely": [
         "Répondre en toute sécurité"
       ],
@@ -1117,10 +1105,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -1215,6 +1203,9 @@
       ],
       "Show messages": [
         "Afficher les messages"
+      ],
+      "Show more": [
+        "Afficher plus"
       ],
       "Show more search options": [
         "Afficher plus d'options de recherche"
@@ -1317,10 +1308,6 @@
       ],
       "Trust": [
         "Faire confiance"
-      ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -3907,6 +3894,11 @@
         "Assistance prioritaire"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTE :\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPTION :\n${ eventDescription }"
@@ -3919,8 +3911,11 @@
       "All events in this series were updated.": [
         "Tous les événements de cette série ont été mis à jour."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tous les événements de cette série ont été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
+      "Here's what changed:": [
+        "Voici ce qui a été modifié :"
+      ],
+      "NOTE:": [
+        "NOTE :"
       ],
       "This event occurrence was canceled.": [
         "L'occurrence de cet événement a été annulée."
@@ -3928,17 +3923,8 @@
       "This event occurrence was updated.": [
         "L'occurrence de cet événement a été mise à jour."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "L'occurrence de cet événement a été mise à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Cet événement a été mis à jour."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Cet événement a été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6137,6 +6123,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
       ],
+      "Admin account allocation": [
+        "Attribution de compte administrateur"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
       ],
@@ -6172,6 +6161,15 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }.",
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Alloué"
+      ],
+      "Already allocated": [
+        "Déjà alloué"
+      ],
+      "Already used": [
+        "Déjà utilisé"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -6752,7 +6750,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7327,8 +7326,20 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Restez connecté facilement en activant les paramètres VPN suivants :"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
+      ],
+      "Storage allocated to this user": [
+        "Espace de stockage alloué à cet utilisateur"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "L'accès aux capacités de stockage dans ce navigateur n'est pas possible. Nous en avons besoin pour activer la recherche de contenu dans les messages."
+      ],
+      "Storage for users": [
+        "Espace de stockage pour les utilisateurs"
+      ],
+      "Storage used by this user": [
+        "Espace de stockage utilisé par cet utilisateur"
       ],
       "Subject": [
         "Objet"
@@ -8372,6 +8383,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Account storage": [
+        "Espace de stockage du compte"
+      ],
       "Actions": [
         "Actions"
       ],
@@ -8402,11 +8416,11 @@
       "Always move sender's emails": [
         "Toujours déplacer les messages des expéditeurs"
       ],
-      "And": [
-        "Et"
-      ],
       "AND": [
         "ET"
+      ],
+      "And": [
+        "Et"
       ],
       "and": [
         "et"
@@ -8636,11 +8650,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -8753,14 +8767,14 @@
       "Optional": [
         "Facultatif"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Original link": [
         "Lien d'origine"
@@ -9572,29 +9586,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Supprimer le compte"
-      ],
-      "Downgrade account": [
-        "Passer à un abonnement inférieur"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtenir gratuitement ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "Obtenir ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conserver ${ plan }"
-      ],
-      "Keep account": [
-        "Conserver le compte"
-      ],
-      "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
@@ -9616,6 +9607,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Passer à ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Supprimer le compte"
+      ],
+      "Downgrade account": [
+        "Passer à un abonnement inférieur"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtenir gratuitement ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Conserver ${ plan }"
+      ],
+      "Keep account": [
+        "Conserver le compte"
+      ],
+      "Switch plan": [
+        "Changer d'abonnement"
       ]
     },
     "new_plans: feature": {
@@ -10950,14 +10964,29 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
+      ],
       "Organization key does not exist.": [
         "La clé de l'organisation n'existe pas."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La clé de l'organisation doit être activée pour accorder des droits administrateur."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "L'autorisation est refusée. Les droits administrateur ont été restreints."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Les utilisateurs privés peuvent être promus administrateurs lorsqu'ils se connectent pour la première fois."
+      ],
       "The organization key must be activated first.": [
         "La clé de l'organisation doit d'abord être activée."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Vous devez supprimer tous les groupes avant de créer une nouvelle clé d'organisation."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Vous devez rendre tous les utilisateurs privés avant de créer une nouvelle clé d'organisation."
       ],
       "You need access to the organization key to perform this operation.": [
         "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
@@ -13483,6 +13512,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Télécharger les applications ${ appName[APP_NAME] }"
       ],
+      "Get the apps": [
+        "Obtenir les applications"
+      ],
       "Gift": [
         "Cadeau"
       ],
@@ -14099,6 +14131,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Cette version du navigateur Tor n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ]
     },
     "Update font modal": {
