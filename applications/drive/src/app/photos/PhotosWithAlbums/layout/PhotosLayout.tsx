@@ -30,6 +30,7 @@ import { useLinksActions } from '../../../store/_links';
 import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
+import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import { useCreateAlbum } from '../../PhotosActions/Albums';
 import { AddAlbumPhotosModal } from '../../PhotosModals/AddAlbumPhotosModal';
 import { CreateAlbumModal } from '../../PhotosModals/CreateAlbumModal';
@@ -176,6 +177,7 @@ export const PhotosLayout = () => {
     const photoCount = album ? album.photoCount : photoLinkIds.length;
     const hasPreview = !!previewItem && currentPageType !== AlbumsPageTypes.ALBUMS;
     const previewShareId = albumShareId || shareId;
+    const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
 
     /*
         Callbacks
@@ -533,7 +535,7 @@ export const PhotosLayout = () => {
                         (isDecryptedLink(previewItem) ? previewItem.createTime : undefined)
                     }
                     onShare={
-                        isDecryptedLink(previewItem) && previewItem?.trashed
+                        (isDecryptedLink(previewItem) && previewItem?.trashed) || isAlbumsWithSharingDisabled
                             ? undefined
                             : () => showLinkSharingModal({ shareId: previewShareId, linkId: previewItem.linkId })
                     }
