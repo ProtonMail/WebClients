@@ -774,6 +774,9 @@
       "Show advanced PGP settings": [
         "Показати розширені налаштування PGP"
       ],
+      "Show more": [
+        "Розгорнути"
+      ],
       "Show navigation bar": [
         "Показати панель навігації"
       ],
@@ -2564,26 +2567,14 @@
       "All events in this series were updated.": [
         "Усі події в цій серії оновлено."
       ],
-      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Усі події в цій серії оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
-      ],
       "This event occurrence was canceled.": [
         "Це повторення події скасовано."
       ],
       "This event occurrence was updated.": [
         "Це повторення події оновлено."
       ],
-      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Це повторення події оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
-      ],
       "This event was updated.": [
         "Цю подію оновлено."
-      ],
-      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Цю подію оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Вас запрошено на подію ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2986,6 +2977,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      ],
+      "Something went wrong. Please try again.": [
+        "Сталася помилка. Повторіть спробу пізніше."
       ],
       "status page": [
         "сторінку стану"
@@ -4226,6 +4220,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
       ],
+      "Admin account allocation": [
+        "Розподілення для облікового запису адміністратора"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
       ],
@@ -4249,6 +4246,15 @@
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Allocated": [
+        "Розподілено"
+      ],
+      "Already allocated": [
+        "Вже розподілено"
+      ],
+      "Already used": [
+        "Вже використано"
       ],
       "Also try looking in Trash.": [
         "Також пошукайте у смітнику."
@@ -5174,6 +5180,18 @@
       "Start sharing it with contacts and use it for online services.": [
         "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
       ],
+      "Storage allocated to other users in this organisation": [
+        "Обсяг сховища, розподілений між іншими користувачами в цій організації"
+      ],
+      "Storage allocated to this user": [
+        "Обсяг сховища, розподілений для цього користувача"
+      ],
+      "Storage for users": [
+        "Сховище для користувачів"
+      ],
+      "Storage used by this user": [
+        "Сховище, використане цим користувачем"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
@@ -5766,6 +5784,9 @@
       ],
       "Account holder": [
         "Власник облікового запису"
+      ],
+      "Account storage": [
+        "Сховище облікового запису"
       ],
       "Add email address": [
         "Додати адресу е-пошти"
@@ -6813,6 +6834,20 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6834,20 +6869,6 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -8290,14 +8311,26 @@
       ]
     },
     "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Неприватні користувачі можуть бути підвищені до адміністратора, якщо вони налаштували ключі"
+      ],
       "Organization key does not exist.": [
         "Ключа організації не існує."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Для можливості надання адміністраторських повноважень необхідно налаштувати ключ організації"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Доступ заборонено. Повноваження адміністратора було обмежено."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Приватні користувачі можуть бути підвищені до адміністратора, коли вони вперше увійшли в систему"
+      ],
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Ви повинні приватизувати всіх користувачів перед створенням нового ключа організації"
       ],
       "You need access to the organization key to perform this operation.": [
         "Для виконання цієї операції вам потрібен доступ до ключа організації."
@@ -10227,6 +10260,9 @@
       "Get advanced protection": [
         "Отримайте розширений захист"
       ],
+      "Get the apps": [
+        "Отримати програми"
+      ],
       "Gift": [
         "Подарунок"
       ],
@@ -10667,6 +10703,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Адміністратори не мають доступу до даних приватних користувачів і не можуть скинути їхній пароль."
       ]
     },
     "Validation": {
