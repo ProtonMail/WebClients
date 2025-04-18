@@ -1,38 +1,42 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { getHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import {
     type OpenCallbackProps,
     type OpenSubscriptionModalCallback,
-    useSubscriptionModal,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE } from '@proton/payments';
-import type { Plan, PlanIDs, Subscription } from '@proton/payments';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import type { COUPON_CODES, Plan, PlanIDs, Subscription } from '@proton/payments';
+import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { useGetFlag } from '@proton/unleash';
+import type useGetFlag from '@proton/unleash/useGetFlag';
 import noop from '@proton/utils/noop';
 
-interface Props {
+export interface GetUpsellConfigProps {
     upsellRef?: string;
+    /**
+     * @default SUBSCRIPTION_STEPS.CHECKOUT
+     */
     step?: SUBSCRIPTION_STEPS;
-    coupon?: string;
+    coupon?: COUPON_CODES;
+    /**
+     * @default CYCLE.YEARLY
+     */
     cycle?: CYCLE;
+    /**
+     * @default CYCLE.YEARLY
+     */
     maximumCycle?: CYCLE;
     minimumCycle?: CYCLE;
     plan?: Plan['Name'];
     onSubscribed?: () => void;
     /**
      * Can be used to prevent the modal from being opened in the drawer
+     * @default false
      */
     preventInApp?: boolean;
 }
-
-export const appsWithInApp = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);
 
 export const getUpsellConfig = ({
     appName,
@@ -50,7 +54,7 @@ export const getUpsellConfig = ({
     subscription,
     upsellRef,
     user,
-}: Omit<Props, 'plan'> & {
+}: Omit<GetUpsellConfigProps, 'plan'> & {
     appName: APP_NAMES;
     planIDs?: PlanIDs;
     getFlag: ReturnType<typeof useGetFlag>;
@@ -64,7 +68,7 @@ export const getUpsellConfig = ({
     const inboxUpsellFlowEnabled = getFlag('InboxUpsellFlow');
     const hasInboxDesktopInAppPayments = getHasInboxDesktopInAppPayments(getFlag);
 
-    const hasInAppPayments = appsWithInApp.has(appName) || hasInboxDesktopInAppPayments;
+    const hasInAppPayments = APPS_WITH_IN_APP_PAYMENTS.has(appName) || hasInboxDesktopInAppPayments;
 
     if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef && !preventInApp) {
         const subscriptionCallBackProps: OpenCallbackProps = {
@@ -103,43 +107,3 @@ export const getUpsellConfig = ({
     // The user will be redirected to account app
     return { upgradePath: addUpsellPath(getUpgradePath({ user, subscription, app: appName }), upsellRef) };
 };
-
-/**
- * Return config properties to inject in the subscription modal
- */
-const useUpsellConfig = ({
-    upsellRef,
-    step,
-    coupon,
-    cycle,
-    maximumCycle,
-    minimumCycle,
-    plan,
-    onSubscribed,
-    preventInApp = false,
-}: Props): { upgradePath: string; onUpgrade?: () => void } => {
-    const [user] = useUser();
-    const [subscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
-    const { APP_NAME: appName } = useConfig();
-    const getFlag = useGetFlag();
-
-    return getUpsellConfig({
-        appName,
-        getFlag,
-        openSubscriptionModal,
-        subscription,
-        user,
-        upsellRef,
-        step,
-        coupon,
-        cycle,
-        planIDs: plan ? { [plan]: 1 } : undefined,
-        onSubscribed,
-        preventInApp,
-        maximumCycle,
-        minimumCycle,
-    });
-};
-
-export default useUpsellConfig;

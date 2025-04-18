@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useUpsellConfig, { appsWithInApp } from '@proton/components/components/upsell/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/hooks/useUpsellConfig';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useFeature from '@proton/features/useFeature';
 import { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';
@@ -111,7 +111,7 @@ export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Pr
 
     const handleClick = () => {
         sendTelemetryEvent(TelemetryPaidUsersNudge.clickUpsellButton);
-        if (appsWithInApp.has(APP_NAME) && APP_NAME !== APPS.PROTONACCOUNT) {
+        if (APPS_WITH_IN_APP_PAYMENTS.has(APP_NAME) && APP_NAME !== APPS.PROTONACCOUNT) {
             upsellInApp();
         } else {
             upsellInSettings();
