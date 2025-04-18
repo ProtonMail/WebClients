@@ -106,14 +106,16 @@
 	color: white;
 }
 
+.new-photos .photos-card-share-icon {
+	background-color: rgb(112 109 107 / 0.8);
+	inline-size: 20px;
+	block-size: 20px;
+}
+
 .new-photos .photos-card-bottom-icon {
 	background-color: rgb(112 109 107 / 0.8);
 	inline-size: rem(20);
 	block-size: rem(20);
-}
-
-.album-card {
-	border: 3px solid var(--background-norm);
 }
 
 // tiny little effect to emphasize it's clickable
