@@ -16,9 +16,22 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import type useGetFlag from '@proton/unleash/useGetFlag';
 
 /**
+ * Upsell config passed to the subscription modal
+ */
+export interface UpsellConfig {
+    cycle: CYCLE;
+    couponCode?: COUPON_CODES;
+    footerText: ReactNode;
+    submitText: ReactNode | ((closeModal: () => void) => ReactNode);
+    planIDs: PlanIDs;
+    upgradePath: string;
+    onUpgrade?: () => void;
+}
+
+/**
  * Parameters received by every upsell config cases
  */
-export interface MailUpsellConfigParams {
+export interface UpsellConfigParams {
     dispatch: ReturnType<typeof useDispatch>;
     paymentsApi: PaymentsApi;
     status: PaymentMethodStatusExtended;
@@ -33,23 +46,9 @@ export interface MailUpsellConfigParams {
 /**
  * Values returned by every upsellConfig cases
  */
-export interface MailUpsellConfig {
-    cycle: CYCLE;
-    couponCode?: COUPON_CODES;
-    footerText: ReactNode;
-    submitText: ReactNode | ((closeModal: () => void) => ReactNode);
-    planIDs: PlanIDs;
-    upgradePath: string;
-    onUpgrade?: () => void;
-}
-
-export interface GetMailUpsellConfigResult {
-    cycle: CYCLE;
-    footerText: ReactNode;
-    planIDs: PlanIDs;
-    submitText: ReactNode | ((closeModal: () => void) => ReactNode);
+export interface MailUpsellConfigResult extends Pick<UpsellConfig, 'cycle' | 'footerText' | 'planIDs' | 'submitText'> {
     configOverride?: (config: OpenCallbackProps) => void;
     coupon?: COUPON_CODES;
 }
 
-export type MailUpsellConfigCase = (params: MailUpsellConfigParams) => Promise<GetMailUpsellConfigResult>;
+export type MailUpsellConfigCase = (params: UpsellConfigParams) => Promise<MailUpsellConfigResult>;
