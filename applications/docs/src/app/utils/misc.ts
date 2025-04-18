@@ -1,4 +1,5 @@
-import type { BasePropertiesState, BasePropertyValues } from 'packages/docs-shared'
+import useFlag from '@proton/unleash/useFlag'
+import { isDevOrBlack, type BasePropertiesState, type BasePropertyValues } from '@proton/docs-shared'
 import { useCallback, useEffect, useInsertionEffect, useRef, useState } from 'react'
 
 // use event
@@ -45,4 +46,8 @@ export function useSubscribe<T extends BasePropertyValues, K extends keyof T>(
   const [value, setValue] = useState(store.getProperty(property))
   useEffect(() => store.subscribeToProperty(property, (newValue) => setValue(() => newValue)), [property, store])
   return value
+}
+
+export function useIsSheetsEnabled() {
+  return useFlag('DocsSheetsEnabled') || isDevOrBlack()
 }

@@ -25,7 +25,8 @@ export type MimeName =
     | 'xls'
     | 'xml'
     | 'zip'
-    | 'proton-doc';
+    | 'proton-doc'
+    | 'proton-sheet';
 
 const viewboxMap = {
     sm: 16,

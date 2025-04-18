@@ -62,3 +62,10 @@ body {
 .dropdown-content {
 	background-image: none;
 }
+
+.rowsncolumns-grid-container {
+	outline: none !important;
+}
+.rnc-scrollbar-shim {
+	border-color: hsl(var(--rnc-border));
+}

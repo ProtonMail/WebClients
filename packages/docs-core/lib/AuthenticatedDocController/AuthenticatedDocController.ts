@@ -21,6 +21,7 @@ import type { GetNode } from '../UseCase/GetNode'
 import { isDocumentState, type DocumentState } from '../State/DocumentState'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { getErrorString } from '../Util/GetErrorString'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 /**
  * Controls the lifecycle of a single document for an authenticated user.
@@ -271,7 +272,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     void this.driveCompat.openDocument(shell)
   }
 
-  public async createNewDocument(): Promise<void> {
+  public async createNewDocument(documentType: DocumentType): Promise<void> {
     const date = getPlatformFriendlyDateForFileName()
     // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
     const baseTitle = c('Title').t`Untitled document ${date}`
@@ -281,6 +282,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       newName,
       this.documentState.getProperty('entitlements').nodeMeta,
       this.documentState.getProperty('decryptedNode'),
+      documentType,
     )
 
     if (result.isFailed()) {

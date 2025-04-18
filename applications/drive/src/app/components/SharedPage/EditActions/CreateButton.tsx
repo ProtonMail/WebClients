@@ -65,6 +65,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
                                         linkId
                                     );
                                     openDocumentWindow({
+                                        type: 'doc',
                                         mode: 'open-url',
                                         token,
                                         urlPassword,

@@ -58,6 +58,7 @@ import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import useFlag from '@proton/unleash/useFlag'
 import type { ProviderType } from '../../../provider-type'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -67,11 +68,17 @@ export function useSuggestionsFeatureFlag() {
 export type DocumentViewerProps = {
   nodeMeta: NodeMeta | PublicNodeMeta
   editorInitializationConfig?: EditorInitializationConfig
-  action: DocumentAction['mode'] | undefined
   providerType: ProviderType
+  openAction: DocumentAction
+  documentType?: DocumentType
 }
 
-export function DocumentViewer({ nodeMeta, editorInitializationConfig, action, providerType }: DocumentViewerProps) {
+export function DocumentViewer({
+  nodeMeta,
+  editorInitializationConfig,
+  openAction,
+  providerType,
+}: DocumentViewerProps) {
   const application = useApplication()
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
@@ -112,7 +119,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action, p
     application.syncedEditorState.setProperty('suggestionsEnabled', isSuggestionsEnabled || isLocalEnvironment())
   }, [application.syncedEditorState, isSuggestionsEnabled])
 
-  const isDownloadAction = action === 'download' || action === 'open-url-download'
+  const isDownloadAction = openAction.mode === 'download' || openAction.mode === 'open-url-download'
   useEffect(() => {
     if (isDownloadAction && didLoadTitle && didLoadEditorContent && docOrchestrator) {
       void docOrchestrator.exportAndDownload('docx')
@@ -456,6 +463,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action, p
           onFrameReady={onFrameReady}
           systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
           logger={application.logger}
+          documentType={openAction.type}
         />
       )}
 
