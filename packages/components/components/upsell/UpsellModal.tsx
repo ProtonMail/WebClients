@@ -66,6 +66,18 @@ const UpgradeButton = ({
     );
 };
 
+const Description = ({ description }: { description: ReactNode }) => {
+    if (!description) {
+        return null;
+    }
+
+    if (typeof description === 'string') {
+        return <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>;
+    }
+
+    return <div className="mt-2 mb-6 color-weak">{description}</div>;
+};
+
 const UpsellModal = ({
     'data-testid': dataTestid,
     modalProps,
@@ -106,7 +118,7 @@ const UpsellModal = ({
                 </div>
                 <div className="m-8 text-center">
                     <h1 className="text-lg text-bold">{title}</h1>
-                    {description && <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>}
+                    <Description description={description} />
                     {config ? (
                         <UpgradeButton
                             closeModal={handleClose}

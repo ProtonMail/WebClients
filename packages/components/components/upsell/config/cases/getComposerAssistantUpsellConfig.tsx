@@ -4,13 +4,12 @@ import { memberThunk } from '@proton/account/member';
 import { organizationThunk } from '@proton/account/organization';
 import { Button } from '@proton/atoms/index';
 import { getAssistantUpsellConfigPlanAndCycle } from '@proton/components/hooks/assistant/assistantUpsellConfig';
-import { CYCLE, PLANS, SelectedPlan, getPlanByName, isMainCurrency } from '@proton/payments/index';
-import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
+import { CYCLE, PLANS, SelectedPlan } from '@proton/payments/index';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 import { getIsB2CUserAbleToRunScribe } from '../../modals/ComposerAssistantUpsellModal.helpers';
 import { getMailUpsellsFooterText } from '../helpers/getUpsellConfigFooterText';
-import { getMailUpsellsSubmitText } from '../helpers/getUpsellConfigSubmitText';
+import { getUpsellPlanMonthlyPrice } from '../helpers/getupsellPlanMonthlyPrice';
 import type { MailUpsellConfigCase } from '../interface';
 
 export const getComposerAssistantUpsellConfig: MailUpsellConfigCase = async ({
@@ -26,25 +25,17 @@ export const getComposerAssistantUpsellConfig: MailUpsellConfigCase = async ({
     const isOrgUser = isOrganization(organization) && !isSuperAdmin(member ? [member] : []);
     const submitText = c('Action').t`Get the writing assistant`;
 
-    /** B2C users get the writing assistant for free */
+    /** B2C user are upselled to DUO plan */
     if (isB2CUser) {
         const planIDs = { [PLANS.DUO]: 1 };
         const cycle = CYCLE.YEARLY;
-        const monthlyPrice = await (async () => {
-            let price = 0;
-            if (!isMainCurrency(currency)) {
-                const result = await paymentsApi.checkWithAutomaticVersion({
-                    Plans: planIDs,
-                    Currency: currency,
-                    Cycle: cycle,
-                });
-                price = result.AmountDue;
-            } else {
-                price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
-            }
-
-            return price / 12;
-        })();
+        const monthlyPrice = await getUpsellPlanMonthlyPrice({
+            currency,
+            cycle,
+            paymentsApi,
+            planIDs,
+            plans,
+        });
 
         return {
             planIDs,
@@ -62,22 +53,6 @@ export const getComposerAssistantUpsellConfig: MailUpsellConfigCase = async ({
 
     if (assistantUpsellConfig?.planIDs && assistantUpsellConfig.cycle) {
         const { planIDs, cycle, minimumCycle, maximumCycle } = assistantUpsellConfig;
-
-        // const monthlyPrice = await (async () => {
-        //     let price = 0;
-        //     if (!isMainCurrency(currency)) {
-        //         const result = await paymentsApi.checkWithAutomaticVersion({
-        //             Plans: planIDs,
-        //             Currency: currency,
-        //             Cycle: cycle,
-        //         });
-        //         price = result.AmountDue;
-        //     } else {
-        //         price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
-        //     }
-
-        //     return assistantUpsellConfig.cycle === CYCLE.MONTHLY ? price : price / 12;
-        // })();
 
         return {
             planIDs,
@@ -104,7 +79,7 @@ export const getComposerAssistantUpsellConfig: MailUpsellConfigCase = async ({
                           {c('Action').t`Close`}
                       </Button>
                   )
-                : getMailUpsellsSubmitText({ planIDs }),
+                : submitText,
         };
     }
 

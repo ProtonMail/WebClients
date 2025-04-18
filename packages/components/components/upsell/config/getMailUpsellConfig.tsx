@@ -1,12 +1,12 @@
 import { MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { getComposerAssistantUpsellConfig } from './cases/getComposerAssistantUpsellConfig';
-import { getDefaultMailUpsellConfig } from './cases/getDefaultMailUpsellConfig';
+import { getDefaultUpsellConfig } from './cases/getDefaultUpsellConfig';
 import { getFreeUserUpsellConfig } from './cases/getFreeUserUpsellConfig';
 import { getProtonSentinelUpsellConfig } from './cases/getProtonSentinelUpsellConfig';
-import type { GetMailUpsellConfigResult, MailUpsellConfigParams } from './interface';
+import type { MailUpsellConfigResult, UpsellConfigParams } from './interface';
 
-export const getMailUpsellConfig = async (props: MailUpsellConfigParams): Promise<GetMailUpsellConfigResult> => {
+export const getMailUpsellConfig = async (props: UpsellConfigParams): Promise<MailUpsellConfigResult> => {
     const { upsellRef, user } = props;
     const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
         upsellRef?.includes(path)
@@ -21,5 +21,5 @@ export const getMailUpsellConfig = async (props: MailUpsellConfigParams): Promis
         return getFreeUserUpsellConfig(props);
     }
 
-    return getDefaultMailUpsellConfig(props);
+    return getDefaultUpsellConfig(props);
 };

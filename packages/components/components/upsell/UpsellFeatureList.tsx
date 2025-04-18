@@ -25,6 +25,10 @@ const UpsellFeatureList = ({
     odd = false,
     plan,
 }: UpsellFeatureListProps) => {
+    if (features.length === 0) {
+        return null;
+    }
+
     return (
         <ul className={clsx('m-0 unstyled', odd && 'odd:bg-weak', className)}>
             {features.map((featureName) => {
