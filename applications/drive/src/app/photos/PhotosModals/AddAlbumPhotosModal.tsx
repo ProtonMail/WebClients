@@ -54,7 +54,7 @@ const AlbumSquare = ({
             >
                 {thumbUrl ? (
                     <img
-                        data-testid="album-card-thumbnail"
+                        data-testid="albums-card-thumbnail"
                         src={thumbUrl}
                         alt={getAltText(album)}
                         className="object-cover w-custom h-custom rounded overflow-hidden"
