@@ -6,7 +6,7 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import zoomUpsellSvg from '@proton/styles/assets/img/illustrations/upsell-zoom-header.svg';
 
-import UpsellModal from '../UpsellModal';
+import UpsellModal from '../UpsellModal/UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;

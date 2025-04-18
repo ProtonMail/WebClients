@@ -4,12 +4,12 @@ import Price from '@proton/components/components/price/Price';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, isMainCurrency } from '@proton/payments/index';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 
-import { getUpsellPlanMonthlyPrice } from '../helpers/getupsellPlanMonthlyPrice';
-import type { MailUpsellConfigCase } from '../interface';
+import { getUpsellPlanMonthlyPrice } from '../helpers/getUpsellPlanMonthlyPrice';
+import type { UpsellModalConfigCase } from '../interface';
 
 const ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE = 100;
 
-export const getFreeUserUpsellConfig: MailUpsellConfigCase = async (props) => {
+export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props) => {
     const { currency, paymentsApi, plans } = props;
 
     // Free users got 1$ promo displayed
