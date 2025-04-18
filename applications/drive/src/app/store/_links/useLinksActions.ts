@@ -17,7 +17,7 @@ import {
 import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import type { MoveLink, MultipleMoveResponse } from '@proton/shared/lib/interfaces/drive/link';
+import type { MovePhotoLink, MultipleMoveResponse } from '@proton/shared/lib/interfaces/drive/link';
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import groupWith from '@proton/utils/groupWith';
@@ -381,7 +381,7 @@ export function useLinksActions({
             callback: async () => {
                 const originalParentIds: { [linkId: string]: string } = {};
                 const { address } = await getShareCreatorKeys(abortSignal, newShareId);
-                const Links: MoveLink[] = [];
+                const Links: MovePhotoLink[] = [];
                 for (const linkId of linkIds) {
                     const { data, link } = await preventLeave(
                         getMoveLinkData(abortSignal, {
@@ -394,7 +394,7 @@ export function useLinksActions({
                     );
 
                     originalParentIds[linkId] = link.parentLinkId;
-                    Links.push(data);
+                    Links.push({ ...data, OriginalHash: link.hash, LinkID: link.linkId });
                 }
                 const successes: string[] = [];
                 const failures: { [linkId: string]: any } = {};
