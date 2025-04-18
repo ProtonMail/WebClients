@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
 import {
@@ -508,11 +508,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     ContentHash?: string;
                 }
             >();
-            const queue = LinkIDs.map((linkId) => async () => {
-                if (abortSignal.aborted) {
-                    return;
-                }
-                const link = await getLink(abortSignal, albumShareId, linkId);
+
+            const setPhotoLinksInfoForAlbum = async (link: DecryptedLink) => {
                 const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
                     abortSignal,
                     albumShareId,
@@ -529,11 +526,30 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     SignatureEmail: link.signatureEmail,
                     ContentHash: link.activeRevision?.photo?.contentHash,
                 });
+            };
+
+            const queue = LinkIDs.map((linkId) => async () => {
+                if (abortSignal.aborted) {
+                    return;
+                }
+
+                const link = await getLink(abortSignal, albumShareId, linkId);
+                await setPhotoLinksInfoForAlbum(link);
+                if (!link.activeRevision?.photo?.relatedPhotosLinkIds?.length) {
+                    return;
+                }
+                const relatedPhotosQueue = link.activeRevision.photo.relatedPhotosLinkIds.map(
+                    (relatedPhotoLinkId) => async () => {
+                        const relatedPhotoLink = await getLink(abortSignal, albumShareId, relatedPhotoLinkId);
+                        await setPhotoLinksInfoForAlbum(relatedPhotoLink);
+                    }
+                );
+                await runInQueue(relatedPhotosQueue, MAX_THREADS_PER_REQUEST);
             });
             await runInQueue(queue, MAX_THREADS_PER_REQUEST);
 
             const result = await batchAPIHelper(abortSignal, {
-                linkIds: LinkIDs,
+                linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
                 query: async (batchLinkIds) => {
@@ -556,21 +572,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').ngettext(
-                        msgid`${nbFailures} photo failed to be added to "${albumName}"`,
-                        `${nbFailures} photos failed to be added to "${albumName}"`,
-                        nbFailures
-                    ),
+                    text: c('Notification').t`⁠Some photo(s) could not be added to "${albumName}"`,
                 });
             }
             if (nbSuccesses) {
                 createNotification({
                     type: 'success',
-                    text: c('Notification').ngettext(
-                        msgid`${nbSuccesses} photo added to "${albumName}"`,
-                        `${nbSuccesses} photos added to "${albumName}"`,
-                        nbSuccesses
-                    ),
+                    text: c('Notification').t`Your photo(s) have been added to "${albumName}"`,
                 });
             }
         },
@@ -786,21 +794,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').ngettext(
-                        msgid`${nbFailures} photo failed to be removed from ${albumLink.name}`,
-                        `${nbFailures} photos failed to be removed from the ${albumLink.name}`,
-                        nbFailures
-                    ),
+                    text: c('Notification').t`⁠Some photo(s) could not be removed from ${albumLink.name}`,
                 });
             }
             if (nbSuccesses) {
                 createNotification({
                     type: 'success',
-                    text: c('Notification').ngettext(
-                        msgid`${nbSuccesses} photo removed from ${albumLink.name}`,
-                        `${nbSuccesses} photos removed from ${albumLink.name}`,
-                        nbSuccesses
-                    ),
+                    text: c('Notification').t`⁠Your photo(s) have been removed from ${albumLink.name}`,
                 });
             }
 
