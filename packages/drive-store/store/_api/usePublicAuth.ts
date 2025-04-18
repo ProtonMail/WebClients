@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -16,6 +16,8 @@ import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './us
  * needed, it also continues automatically with initiating session.
  * In case custom password is set, it will be set in `isPasswordNeeded` and
  * then `submitPassword` callback should be used.
+ *
+ * @param client - whether the consumer of this hook is the drive client or docs client
  */
 export default function usePublicAuth(
     token: string,
@@ -76,8 +78,11 @@ export default function usePublicAuth(
         setIsLoading(true);
         initHandshake(token, session)
             .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
+                // TODO: Need either a separate `IsSheet` property on handshakeInfo
+                // or change `IsDoc` allow differentiating between "doc" or "sheet"
                 if (handshakeInfo.IsDoc && client === 'drive') {
                     openDocumentWindow({
+                        type: 'doc',
                         mode: 'open-url',
                         token,
                         urlPassword,

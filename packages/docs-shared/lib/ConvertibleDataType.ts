@@ -1,3 +1,8 @@
-/** Types of data which can be converted to Super format */
+import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocsConversionType } from '@proton/shared/lib/docs/constants'
 
-export type ConvertibleDataType = 'txt' | 'md' | 'html' | 'json' | 'docx'
+/** Types of data which can be converted to a document or a sheet */
+export type ConvertibleDataType = {
+  docType: DocumentType
+  dataType: DocsConversionType
+}

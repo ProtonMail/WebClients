@@ -1,10 +1,18 @@
-import type { Configuration } from 'webpack'
+import { DefinePlugin, type Configuration } from 'webpack'
+import { config as dotenvConfig } from 'dotenv'
+import path from 'node:path'
+dotenvConfig({ path: path.join(__dirname, '.env') })
 
 import getConfig from '@proton/pack/webpack.config'
 import { addDevEntry } from '@proton/pack/webpack/entries'
 
 const result = (env: any): Configuration => {
   const config = getConfig(env)
+  config.plugins?.push(
+    new DefinePlugin({
+      'process.env.SHEETS_KEY': JSON.stringify(process.env.SHEETS_KEY),
+    }),
+  )
   if (env.appMode === 'standalone') {
     addDevEntry(config)
   }

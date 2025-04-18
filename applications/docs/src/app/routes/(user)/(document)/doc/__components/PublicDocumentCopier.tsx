@@ -29,6 +29,7 @@ export function PublicDocumentCopier() {
         const shell = result.getValue()
         void application.compatWrapper.getUserCompat().openDocumentWindow({
           ...shell,
+          type: 'doc',
           mode: 'open',
           window: window,
         })

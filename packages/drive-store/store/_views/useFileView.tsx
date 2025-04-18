@@ -4,7 +4,12 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { isProtonDocument, isRAWThumbnailExtractionSupported, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import {
+    isProtonDocument,
+    isProtonSheet,
+    isRAWThumbnailExtractionSupported,
+    isVideo,
+} from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { isIgnoredError } from '../../utils/errorHandling';
@@ -61,8 +66,18 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
         contents,
         contentsMimeType,
         downloadFile: async () => {
-            if (isProtonDocument(contentsMimeType || link?.mimeType || '')) {
+            const mimeType = contentsMimeType || link?.mimeType || '';
+
+            if (isProtonDocument(mimeType)) {
                 await downloadDocument({
+                    type: 'doc',
+                    shareId,
+                    linkId,
+                });
+                return;
+            } else if (isProtonSheet(mimeType)) {
+                await downloadDocument({
+                    type: 'sheet',
                     shareId,
                     linkId,
                 });

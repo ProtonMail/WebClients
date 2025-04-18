@@ -39,7 +39,7 @@ import type { HomepageViewState } from '../__utils/homepage-view'
 import { useHomepageView } from '../__utils/homepage-view'
 import { useHistory, useRouteMatch } from 'react-router'
 import { HOMEPAGE_RECENTS_PATH } from '../../../__components/AppContainer'
-import { useEvent } from '~/utils/misc'
+import { useEvent, useIsSheetsEnabled } from '~/utils/misc'
 import clsx from '@proton/utils/clsx'
 import { IS_REFRESH_ENABLED, IS_FAVORITES_ENABLED } from '../__utils/features'
 
@@ -216,19 +216,38 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
   const { createNotification } = useNotifications()
   const { APP_VERSION } = useConfig()
   const appVersion = getAppVersion(APP_VERSION)
+  const isSheetsEnabled = useIsSheetsEnabled()
 
   const newDocumentButton = (
-    <ButtonLike
-      as="a"
-      href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
-      target="_blank"
-      color="norm"
-      size="large"
-      shape="solid"
-      className="flex items-center justify-center gap-2 !bg-[--docs-blue-color] small:mx-[.375rem]"
-    >
-      {c('Action').t`New document`}
-    </ButtonLike>
+    <>
+      <ButtonLike
+        as="a"
+        href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
+        target="_blank"
+        color="norm"
+        size="large"
+        shape="solid"
+        className="flex items-center justify-center gap-2 !bg-[--docs-blue-color] small:mx-[.375rem]"
+      >
+        {c('Action').t`New document`}
+      </ButtonLike>
+      {isSheetsEnabled && (
+        <>
+          <div className="my-2" />
+          <ButtonLike
+            as="a"
+            href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID()) + '?type=sheet'}
+            target="_blank"
+            color="norm"
+            size="large"
+            shape="solid"
+            className="flex items-center justify-center gap-2 !bg-[--docs-blue-color] small:mx-[.375rem]"
+          >
+            {c('Action').t`New sheet`}
+          </ButtonLike>
+        </>
+      )}
+    </>
   )
 
   return (
