@@ -253,6 +253,7 @@ describe('useShareActions', () => {
 
     describe('migratePhotos', () => {
         beforeEach(() => {
+            jest.clearAllMocks();
             jest.useFakeTimers();
         });
 
@@ -273,10 +274,9 @@ describe('useShareActions', () => {
                         VolumeID: 'new-volume-id',
                     },
                 });
+
             const { result } = renderHook(() => useShareActions());
             const migrationPromise = result.current.migratePhotos();
-
-            await jest.runAllTimersAsync();
 
             const migrationResult = await migrationPromise;
 
@@ -290,7 +290,7 @@ describe('useShareActions', () => {
 
         it('should handle when migration is already in progress', async () => {
             mockedDebounceRequest
-                .mockResolvedValueOnce({
+                .mockRejectedValueOnce({
                     data: { Code: API_CUSTOM_ERROR_CODES.ALREADY_EXISTS },
                 })
                 .mockResolvedValueOnce({
@@ -307,14 +307,38 @@ describe('useShareActions', () => {
             const { result } = renderHook(() => useShareActions());
             const migrationPromise = result.current.migratePhotos();
 
-            await jest.runAllTimersAsync();
-
             const migrationResult = await migrationPromise;
 
             expect(migrationResult).toEqual({
                 shareId: 'new-share-id',
                 volumeId: 'new-volume-id',
             });
+        });
+
+        it('should skip starting migration when skipStartMigration is true', async () => {
+            mockedDebounceRequest
+                .mockResolvedValueOnce({
+                    OldVolumeID: 'old-volume-id',
+                    NewVolumeID: 'new-volume-id',
+                })
+                .mockResolvedValueOnce({
+                    Volume: {
+                        Share: { ShareID: 'new-share-id' },
+                        VolumeID: 'new-volume-id',
+                    },
+                });
+
+            const { result } = renderHook(() => useShareActions());
+            const migrationPromise = result.current.migratePhotos(true);
+
+            const migrationResult = await migrationPromise;
+
+            expect(mockedDebounceRequest).toHaveBeenCalledTimes(2);
+            expect(migrationResult).toEqual({
+                shareId: 'new-share-id',
+                volumeId: 'new-volume-id',
+            });
+            expect(mockSetVolumeShareIds).toHaveBeenCalledWith('new-volume-id', ['new-share-id']);
         });
 
         it('should reject when migration state check fails', async () => {
