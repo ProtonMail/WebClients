@@ -15,14 +15,12 @@ import useLoading from '@proton/hooks/useLoading';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 export type DeleteAlbumModalProps = {
-    missingPhotosCount: number;
     name: string;
     deleteAlbum: (force: boolean, childLinkIds?: string[]) => Promise<void>;
     onDeleted?: () => void;
 };
 
 export const DeleteAlbumModal = ({
-    missingPhotosCount,
     deleteAlbum,
     name,
     onDeleted,
@@ -56,6 +54,7 @@ export const DeleteAlbumModal = ({
                 setChildLinkIds(error.data.Details?.ChildLinkIDs);
             } else {
                 modalProps.onClose();
+                throw e;
             }
         }
     };
@@ -68,7 +67,7 @@ export const DeleteAlbumModal = ({
     // translator: ${name} is for a folder/file/album name.
     const title = c('Title').t`Delete ${name}?`;
 
-    if (!missingPhotosCount && !childLinkIds?.length) {
+    if (!childLinkIds?.length) {
         return (
             <ModalTwo
                 {...modalProps}
@@ -105,7 +104,7 @@ export const DeleteAlbumModal = ({
             <ModalTwoContent>
                 <p>
                     {c('Info')
-                        .t`Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.`}
+                        .t`Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.`}
                 </p>
                 <p>{c('Info').t`Would you like to save them before removing?`}</p>
             </ModalTwoContent>
