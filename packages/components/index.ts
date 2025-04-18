@@ -340,7 +340,7 @@ export { default as FiltersUpsellModal } from './components/upsell/modals/Filter
 export { default as LabelsUpsellModal } from './components/upsell/modals/LabelsUpsellModal';
 export { default as PmMeUpsellModal } from './components/upsell/modals/PmMeUpsellModal';
 export { default as ZoomUpsellModal } from './components/upsell/modals/ZoomUpsellModal';
-export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
+export { default as useUpsellConfig } from './components/upsell/hooks/useUpsellConfig';
 export { default as AddressesAutocompleteTwo } from './components/v2/addressesAutocomplete/AddressesAutocomplete';
 export { default as InputFieldTwo } from './components/v2/field/InputField';
 export { default as DateInputTwo } from './components/v2/input/DateInputTwo';
