@@ -23,7 +23,7 @@ export const PhotosWithAlbumsContainer: FC = () => {
     }
 
     if (migrationStatus === MIGRATION_STATUS.UNKNOWN) {
-        <Loader />;
+        return <Loader />;
     }
 
     return (
