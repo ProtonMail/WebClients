@@ -6,7 +6,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/hooks/useUpsellConfig';
 import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';

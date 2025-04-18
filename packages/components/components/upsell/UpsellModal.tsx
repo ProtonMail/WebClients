@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode } from 'react';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -7,9 +7,8 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from './useFetchMailUpsellModalConfig';
+import useUpsellModalConfig from './hooks/useUpsellModalConfig';
 
 export interface UpsellModalProps {
     title: ReactNode;
@@ -79,8 +78,11 @@ const UpsellModal = ({
     preventInAppPayment,
     onSubscribed,
 }: UpsellModalProps) => {
-    const [config, setConfig] = useState<MailUpsellConfig | null>(null);
-    const fetchUpsellConfig = useFetchMailUpsellModalConfig();
+    const config = useUpsellModalConfig({
+        upsellRef,
+        preventInAppPayment,
+        onSubscribed,
+    });
 
     const handleUpgrade = () => {
         config?.onUpgrade?.();
@@ -91,48 +93,6 @@ const UpsellModal = ({
         onClose?.();
         modalProps.onClose();
     };
-
-    useEffect(() => {
-        const fetchTimeout = 5000;
-        const controller = new AbortController();
-        const fetchUpsellConfigWithTimeout = async () => {
-            // Start timeout
-            const timeoutId = window.setTimeout(() => {
-                controller.abort(`Upsell config fetch took more than limit of ${fetchTimeout}ms`);
-            }, fetchTimeout);
-
-            controller.signal.addEventListener(
-                'abort',
-                () => {
-                    window.clearTimeout(timeoutId);
-                    throw new Error(controller.signal.reason);
-                },
-                { once: true }
-            );
-
-            const config = await fetchUpsellConfig({
-                upsellRef,
-                preventInApp: preventInAppPayment,
-                onSubscribed,
-            });
-
-            window.clearTimeout(timeoutId);
-
-            return config;
-        };
-
-        void fetchUpsellConfigWithTimeout()
-            .then((config) => {
-                setConfig(config);
-            })
-            .catch((e) => {
-                traceInitiativeError(SentryMailInitiatives.UPSELL_MODALS, e);
-            });
-
-        return () => {
-            controller.abort('Upsell Modal unmounted before config was fetched');
-        };
-    }, []);
 
     return (
         <ModalTwo {...modalProps} size="xsmall" data-testid={dataTestid} onClose={handleClose}>
