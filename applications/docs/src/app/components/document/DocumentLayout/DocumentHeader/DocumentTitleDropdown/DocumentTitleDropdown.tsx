@@ -36,6 +36,7 @@ import { APP_VERSION } from '~/config'
 import type { RenameControllerInterface } from '@proton/docs-core'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -43,6 +44,7 @@ export type DocumentTitleDropdownProps = {
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   action?: DocumentAction['mode']
+  documentType: DocumentType
 }
 
 export function DocumentTitleDropdown({
@@ -51,6 +53,7 @@ export function DocumentTitleDropdown({
   editorController,
   documentState,
   action,
+  documentType,
 }: DocumentTitleDropdownProps) {
   const application = useApplication()
   const isPublicMode = application.isPublicMode
@@ -179,11 +182,11 @@ export function DocumentTitleDropdown({
 
       setIsMakingNewDocument(true)
 
-      void authenticatedController?.createNewDocument().finally(() => {
+      void authenticatedController?.createNewDocument(documentType).finally(() => {
         setIsMakingNewDocument(false)
       })
     },
-    [authenticatedController],
+    [authenticatedController, documentType],
   )
 
   useEffect(() => {
@@ -268,7 +271,7 @@ export function DocumentTitleDropdown({
         className="w-fit whitespace-nowrap px-1.5 py-1.5"
         data-testid="document-name-dropdown"
       >
-        <MimeIcon name="proton-doc" size={5} className="mr-2 shrink-0" />
+        <MimeIcon name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'} size={5} className="mr-2 shrink-0" />
         <span className="text-ellipsis text-left head-480-749:!max-w-[215px]">{title}</span>
       </DropdownButton>
       <Dropdown

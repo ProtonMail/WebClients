@@ -72,8 +72,11 @@ export default function usePublicAuth(token: string, urlPassword: string, client
         setIsLoading(true);
         initHandshake(token)
             .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
+                // TODO: Need either a separate `IsSheet` property on handshakeInfo
+                // or change `IsDoc` allow differentiating between "doc" or "sheet"
                 if (handshakeInfo.IsDoc && client === 'drive') {
                     openDocumentWindow({
+                        type: 'doc',
                         mode: 'open-url',
                         token,
                         urlPassword,

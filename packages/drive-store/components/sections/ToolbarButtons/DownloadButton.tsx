@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { LinkDownload } from '../../../store';
 import { useDownload } from '../../../store';
@@ -25,17 +25,23 @@ const DownloadButton = ({ selectedBrowserItems, disabledFolders }: Props) => {
         // Document downloads are handled in two ways:
         //  1. single files are redirected to the Docs app using `downloadDocument`
         //  2. multiple files are ignored, using `handleContainsDocument` in the queue
-        const documentLink =
-            selectedBrowserItems.length === 1 && isProtonDocument(selectedBrowserItems[0].mimeType)
-                ? selectedBrowserItems[0]
-                : undefined;
-
-        if (documentLink) {
-            void downloadDocument({
-                shareId: documentLink.rootShareId,
-                linkId: documentLink.linkId,
-            });
-            return;
+        if (selectedBrowserItems.length === 1) {
+            const item = selectedBrowserItems[0];
+            if (isProtonDocument(item.mimeType)) {
+                void downloadDocument({
+                    type: 'doc',
+                    shareId: item.rootShareId,
+                    linkId: item.linkId,
+                });
+                return;
+            } else if (isProtonSheet(item.mimeType)) {
+                void downloadDocument({
+                    type: 'sheet',
+                    shareId: item.rootShareId,
+                    linkId: item.linkId,
+                });
+                return;
+            }
         }
 
         void download(
