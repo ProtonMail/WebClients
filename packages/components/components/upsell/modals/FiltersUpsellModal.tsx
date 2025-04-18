@@ -5,7 +5,7 @@ import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proto
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import filterImg from '@proton/styles/assets/img/illustrations/new-upsells-img/arrows-to-folder-trash.svg';
 
-import UpsellModal from '../UpsellModal';
+import UpsellModal from '../UpsellModal/UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;

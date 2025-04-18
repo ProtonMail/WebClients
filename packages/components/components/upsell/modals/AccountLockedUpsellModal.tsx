@@ -12,7 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useUpsellConfig from '@proton/components/components/upsell/hooks/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import type { Currency, Plan } from '@proton/payments';

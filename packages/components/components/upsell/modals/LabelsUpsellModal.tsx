@@ -6,7 +6,7 @@ import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/consta
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import labelsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/labels.svg';
 
-import UpsellModal from '../UpsellModal';
+import UpsellModal from '../UpsellModal/UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;

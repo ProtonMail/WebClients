@@ -4,7 +4,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useUpsellConfig from '@proton/components/components/upsell/hooks/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';

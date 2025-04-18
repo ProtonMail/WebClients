@@ -14,7 +14,7 @@ import accountLockedImage from '@proton/styles/assets/img/illustrations/account-
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type useUpsellConfig from '../hooks/useUpsellConfig';
+import type useUpsellConfig from '../config/useUpsellConfig';
 
 interface AccountLockedUpsellFormProps {
     selectedPlan?: Plan;
