@@ -98,7 +98,7 @@ const enforceStorageLimits = async (metadata: ThumbnailMetadata): Promise<void> 
 // this avoids collision between users with same linkIds
 const devOrBlack = isDevOrBlack();
 export const getCacheKey = (linkId: string, shareId: string, revisionId: string = '') => {
-    const prefix = devOrBlack ? getLastActivePersistedUserSession() : '';
+    const prefix = devOrBlack ? getLastActivePersistedUserSession()?.UID || '' : '';
     return prefix + linkId + shareId + revisionId;
 };
 
