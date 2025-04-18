@@ -12,7 +12,7 @@ import * as ReactTestUtils from '../../Utils/react-test-utils'
 import type { Logger } from '@proton/utils/logs'
 import { YjsReadonlyPlugin } from '../YjsReadonly/YjsReadonlyPlugin'
 import type { Provider } from '@lexical/yjs'
-import { LexicalDocProvider } from '@proton/docs-shared/lib/Doc/LexicalDocProvider'
+import { DocProvider } from '@proton/docs-shared'
 import type { DocStateCallbacks } from '@proton/docs-shared/lib/Doc/DocStateCallbacks'
 import type { RtsMessagePayload, YDocMap } from '@proton/docs-shared'
 import { DocState, DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
@@ -189,7 +189,7 @@ export async function createEditorClient(): Promise<EditorClient> {
   state.onEditorReadyToReceiveUpdates()
 
   const provider = (): Provider => {
-    return new LexicalDocProvider(state)
+    return new DocProvider(state)
   }
 
   let client: EditorClient

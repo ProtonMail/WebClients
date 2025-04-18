@@ -15,6 +15,8 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
+    'monorepo-cop/no-disable-monorepo-no-relative-rule': 'off',
+    'monorepo-cop/no-relative-import-outside-package': 'warn',
     'no-console': [
       'warn',
       {

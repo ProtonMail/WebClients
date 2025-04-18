@@ -8,19 +8,21 @@ import { DocumentHeader } from './DocumentHeader/DocumentHeader'
 import { DocsQuickSettings } from '../../DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 import { useDocsContext } from '../context'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export type DocumentLayoutProps = {
   children: ReactNode
+  documentType: DocumentType
   action?: DocumentAction['mode']
 }
 
-export function DocumentLayout({ children, action }: DocumentLayoutProps) {
+export function DocumentLayout({ children, documentType, action }: DocumentLayoutProps) {
   const { privateContext: privateUser } = useDocsContext()
 
   return (
     <PrivateAppContainer
       top={privateUser ? <TopBanners app={APPS.PROTONDOCS} /> : null}
-      header={<DocumentHeader action={action} />}
+      header={<DocumentHeader action={action} documentType={documentType} />}
       sidebar={null}
       drawerApp={privateUser ? <DrawerApp customAppSettings={<DocsQuickSettings />} /> : null}
     >

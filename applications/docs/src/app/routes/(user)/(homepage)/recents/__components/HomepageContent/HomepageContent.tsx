@@ -11,6 +11,7 @@ import { c } from 'ttag'
 import { useHomepageView } from '../../__utils/homepage-view'
 import { useEffect } from 'react'
 import { ContentSheet } from './shared'
+import { useIsSheetsEnabled } from '~/utils/misc'
 
 export function HomepageContent() {
   return (
@@ -107,6 +108,7 @@ function getEmptyStateText(variant: EmptyStateVariant): string {
 
 function EmptyState({ variant }: EmptyStateProps) {
   const { getLocalID } = useAuthentication()
+  const isSheetsEnabled = useIsSheetsEnabled()
 
   return (
     <ContentSheet isBottom className="flex grow items-center justify-center">
@@ -135,6 +137,23 @@ function EmptyState({ variant }: EmptyStateProps) {
             </ButtonLike>
           ) : null}
         </div>
+        {variant === 'recents' && isSheetsEnabled ? (
+          <div className="flex justify-center">
+            <ButtonLike
+              as="a"
+              href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID()) + '?type=sheet'}
+              target="_blank"
+              color="norm"
+              size="large"
+              shape="solid"
+              style={{ backgroundColor: 'var(--docs-blue-color)' }}
+              className="flex items-center justify-center gap-2"
+            >
+              <Icon name="plus" />
+              {c('Action').t`New sheet`}
+            </ButtonLike>
+          </div>
+        ) : null}
       </div>
     </ContentSheet>
   )

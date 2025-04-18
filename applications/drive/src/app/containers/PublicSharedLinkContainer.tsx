@@ -9,7 +9,7 @@ import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import useFlag from '@proton/unleash/useFlag';
@@ -101,7 +101,12 @@ function PublicShareLinkInitContainer() {
 
     const showLoadingPage = isLoading || isLoadingDecrypt;
     const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
-    const shouldRedirectToDocs = isDocsPublicSharingEnabled && link && link.isFile && isProtonDocument(link.mimeType);
+    const shouldRedirectToDocs =
+        isDocsPublicSharingEnabled &&
+        link &&
+        link.isFile &&
+        (isProtonDocument(link.mimeType) || isProtonSheet(link.mimeType));
+    const isSheet = link && link.isFile && isProtonSheet(link.mimeType);
 
     const getDocsWindow = useCallback((redirect: boolean, customPassword: string) => {
         if (redirect) {
@@ -122,6 +127,7 @@ function PublicShareLinkInitContainer() {
             }
 
             openDocumentWindow({
+                type: isSheet ? 'sheet' : 'doc',
                 mode: download ? 'open-url-download' : 'open-url',
                 token,
                 urlPassword,
@@ -129,7 +135,7 @@ function PublicShareLinkInitContainer() {
                 window: getDocsWindow(redirect || false, customPassword),
             });
         },
-        [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword, getDocsWindow]
+        [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword, getDocsWindow, isSheet]
     );
 
     // This hook automatically redirects to Docs when opening a document.

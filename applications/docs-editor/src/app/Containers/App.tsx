@@ -40,13 +40,18 @@ import { useEditorStateValues } from '../Lib/useEditorStateValues'
 import { useEditorState } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
 import { useStateRef } from '../Hooks/useStateRef'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
+// eslint-disable-next-line monorepo-cop/no-relative-import-outside-package
+import { SpreadsheetProvider } from '../../../../../vendor/rowsncolumns'
+import { Spreadsheet } from './Spreadsheet'
 
 type AppProps = {
+  documentType: DocumentType
   systemMode: EditorSystemMode
   bridgeState: ReturnType<typeof useBridge>
 }
 
-export function App({ systemMode, bridgeState }: AppProps) {
+export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
   const { suggestionsEnabled } = useSyncedState()
   const { editorState } = useEditorState()
@@ -519,39 +524,52 @@ export function App({ systemMode, bridgeState }: AppProps) {
         gridTemplateColumns: '3fr var(--comments-width)',
       }}
     >
-      {isPreviewMode && clonedEditorState && (
-        <div style={{ display: 'contents' }}>
-          <PreviewModeEditor
-            clonedEditorState={clonedEditorState}
-            role={application.getRole()}
-            onUserModeChange={onUserModeChange}
-            clientInvoker={bridge.getClientInvoker()}
+      {documentType === 'doc' ? (
+        <>
+          {isPreviewMode && clonedEditorState && (
+            <div style={{ display: 'contents' }}>
+              <PreviewModeEditor
+                clonedEditorState={clonedEditorState}
+                role={application.getRole()}
+                onUserModeChange={onUserModeChange}
+                clientInvoker={bridge.getClientInvoker()}
+              />
+            </div>
+          )}
+          <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
+            <Editor
+              clientInvoker={bridge.getClientInvoker()}
+              docMap={docMap}
+              docState={docState}
+              documentId={editorConfig.current.documentId}
+              editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+              hidden={editorHidden}
+              isSuggestionsFeatureEnabled={suggestionsEnabled}
+              lexicalError={editorError}
+              logger={application.logger}
+              onEditorError={onEditorError}
+              onEditorLoadResult={onEditorLoadResult}
+              onUserModeChange={onUserModeChange}
+              role={application.getRole()}
+              setEditorRef={setEditorRef}
+              showTreeView={showTreeView}
+              systemMode={systemMode}
+              userMode={userMode}
+              userAddress={editorConfig.current.userAddress}
+            />
+          </div>
+        </>
+      ) : (
+        <SpreadsheetProvider>
+          <Spreadsheet
+            docState={docState}
+            hidden={editorHidden}
+            onEditorLoadResult={onEditorLoadResult}
+            editorInitializationConfig={editorConfig.current.editorInitializationConfig}
           />
-        </div>
+        </SpreadsheetProvider>
       )}
-      <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
-        <Editor
-          clientInvoker={bridge.getClientInvoker()}
-          docMap={docMap}
-          docState={docState}
-          documentId={editorConfig.current.documentId}
-          editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-          editorInitializationConfig={editorConfig.current.editorInitializationConfig}
-          hidden={editorHidden}
-          isSuggestionsFeatureEnabled={suggestionsEnabled}
-          lexicalError={editorError}
-          logger={application.logger}
-          onEditorError={onEditorError}
-          onEditorLoadResult={onEditorLoadResult}
-          onUserModeChange={onUserModeChange}
-          role={application.getRole()}
-          setEditorRef={setEditorRef}
-          showTreeView={showTreeView}
-          systemMode={systemMode}
-          userMode={userMode}
-          userAddress={editorConfig.current.userAddress}
-        />
-      </div>
     </div>
   )
 }
