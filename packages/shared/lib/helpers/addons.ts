@@ -51,9 +51,14 @@ const ORG_SIZE_ADDONS = [
 ];
 
 const DRIVE_ORG_SIZE_ADDONS = [ADDON_NAMES.MEMBER_DRIVE_PRO, ADDON_NAMES.MEMBER_DRIVE_BUSINESS];
+const PASS_ORG_SIZE_ADDONS = [ADDON_NAMES.MEMBER_PASS_BUSINESS, ADDON_NAMES.MEMBER_PASS_PRO];
 
 export const isDriveOrgSizeAddon: AddonGuard = (addonOrName): boolean => {
     return DRIVE_ORG_SIZE_ADDONS.some((name) => addonOrName === name);
+};
+
+export const isPassOrgSizeAddon: AddonGuard = (addonOrName): boolean => {
+    return PASS_ORG_SIZE_ADDONS.some((name) => addonOrName === name);
 };
 
 export const isOrgSizeAddon: AddonGuard = (addonOrName): boolean => {

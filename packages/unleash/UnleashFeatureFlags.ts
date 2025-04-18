@@ -78,6 +78,7 @@ enum PaymentsFlag {
     BillingAddressModal = 'BillingAddressModal',
     EditInvoiceDetails = 'EditInvoiceDetails',
     PassLifetimeFrontend = 'PassLifetimeFrontend',
+    PassOrgSizeLimit = 'PassOrgSizeLimit',
 }
 
 enum CalendarFeatureFlag {
