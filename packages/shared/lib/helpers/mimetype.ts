@@ -1,6 +1,7 @@
 import { getBrowser, getOS, isAndroid, isDesktop, isIos, isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { MIME_TYPES } from '../constants';
+import type { DocsConversionType } from '../docs/constants';
 import {
     RAWMimeTypes,
     RAWThumbnailExtractionSupported,
@@ -139,6 +140,7 @@ export const isPDF = (mimeType: string) =>
 export const isComicBook = (mimeType: string) => mimeType === 'application/x-cbz' || mimeType === 'application/x-cbr';
 export const isCompatibleCBZ = (mimeType: string, filename: string) =>
     isComicBook(mimeType) && filename.endsWith('cbz'); // browser mime type detection is not great for CBZ (sometimes flagged as 'application/x-cbr') so we need to also check end of file name
+
 /**
  * A helper function to determine if a mimetype can be converted by Proton Docs.
  */
@@ -147,9 +149,30 @@ export const isProtonDocsConvertible = (mimeType: string) =>
     mimeType === SupportedProtonDocsMimeTypes.txt ||
     mimeType === SupportedProtonDocsMimeTypes.md ||
     mimeType === SupportedProtonDocsMimeTypes.html;
+/**
+ * Whether a given mimetype can be converted to a Proton Sheet.
+ */
+export const isConvertibleToProtonSheet = (mimeType: string) => mimeType === SupportedProtonDocsMimeTypes.xlsx;
+
+export const getDocsConversionType = (mimeType: string): DocsConversionType => {
+    switch (mimeType) {
+        case SupportedProtonDocsMimeTypes.xlsx:
+            return 'xlsx';
+        case SupportedProtonDocsMimeTypes.docx:
+            return 'docx';
+        case SupportedProtonDocsMimeTypes.txt:
+            return 'txt';
+        case SupportedProtonDocsMimeTypes.html:
+            return 'html';
+        default:
+            return 'md';
+    }
+};
 
 export const PROTON_DOC_MIMETYPE = 'application/vnd.proton.doc';
 export const isProtonDocument = (mimeType: string) => mimeType === PROTON_DOC_MIMETYPE;
+export const PROTON_SHEET_MIMETYPE = 'application/vnd.proton.sheet';
+export const isProtonSheet = (mimeType: string) => mimeType === PROTON_SHEET_MIMETYPE;
 
 export const isSTLFile = (mimeType: string) => mimeType === 'model/stl';
 export const isCompatibleSTL = (mimeType: string, filename: string) => isSTLFile(mimeType) && filename.endsWith('stl'); // browser mime type detection is not great for STL so we need to also check end of file name

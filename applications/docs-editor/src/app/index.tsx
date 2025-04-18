@@ -6,9 +6,11 @@ import { RootContainer } from './Containers/RootContainer'
 import './style'
 import { reportErrorToSentry } from './Utils/errorMessage'
 import type { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 const searchParams = new URLSearchParams(window.location.search)
 
+const documentType = (searchParams.get('type') as DocumentType) || 'doc'
 const systemMode = searchParams.get('mode')
 
 // Global Error Listener that pushes Error messages to Sentry
@@ -24,7 +26,7 @@ root.render(
       reportErrorToSentry(error)
     }}
   >
-    <RootContainer systemMode={systemMode as EditorSystemMode} />
+    <RootContainer documentType={documentType} systemMode={systemMode as EditorSystemMode} />
   </ErrorBoundary>,
 )
 

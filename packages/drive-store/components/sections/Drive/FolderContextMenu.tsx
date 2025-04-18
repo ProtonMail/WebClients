@@ -97,6 +97,7 @@ export function FolderContextMenu({
                         close={close}
                         action={() => {
                             void createDocument({
+                                type: 'doc',
                                 shareId: activeFolder.shareId,
                                 parentLinkId: activeFolder.linkId,
                             });

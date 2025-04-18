@@ -6,6 +6,7 @@ import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useGetPublicKeysForEmail, usePublicActions } from '../store';
+import type { DocumentType } from '../store/_documents';
 import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { useAbortSignal } from '../store/_views/utils';
 import type { NodeMeta, PublicNodeMeta } from './NodeMeta';
@@ -152,7 +153,8 @@ export const usePublicDriveCompatValue = (session?: ResumedSessionResult): Publi
 
     const { openDocumentWindow } = useOpenDocument();
 
-    const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
+    const redirectToAuthedDocument = (meta: NodeMeta, type: DocumentType = 'doc') =>
+        openDocumentWindow({ ...meta, type, mode: 'open', window: window });
 
     const { getPublicKeysForEmail } = useGetPublicKeysForEmail();
 

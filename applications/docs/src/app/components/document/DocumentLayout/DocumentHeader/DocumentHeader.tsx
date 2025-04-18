@@ -21,14 +21,15 @@ import type {
   RenameControllerInterface,
 } from '@proton/docs-core'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
 }
 
-export type DocsHeaderProps = { action?: DocumentAction['mode'] }
+export type DocsHeaderProps = { action?: DocumentAction['mode']; documentType: DocumentType }
 
-export function DocumentHeader({ action }: DocsHeaderProps) {
+export function DocumentHeader({ action, documentType }: DocsHeaderProps) {
   const application = useApplication()
 
   const [isReady, setIsReady] = useState(false)
@@ -69,6 +70,7 @@ export function DocumentHeader({ action }: DocsHeaderProps) {
   if (isReady && editorController && documentState) {
     return (
       <DocsHeaderForDocument
+        documentType={documentType}
         action={action}
         editorController={editorController}
         documentState={documentState}
@@ -120,6 +122,7 @@ type DocsHeaderForDocumentProps = {
   documentState: DocumentState | PublicDocumentState
   authenticatedController: AuthenticatedDocControllerInterface | undefined
   renameController: RenameControllerInterface | undefined
+  documentType: DocumentType
 }
 
 /**
@@ -131,6 +134,7 @@ function DocsHeaderForDocument({
   documentState,
   authenticatedController,
   renameController,
+  documentType,
 }: DocsHeaderForDocumentProps) {
   const { publicContext } = useDocsContext()
   const role = useMemo(() => documentState.getProperty('userRole'), [documentState])
@@ -139,6 +143,7 @@ function DocsHeaderForDocument({
     <div className="flex flex-nowrap items-center gap-2 px-3 py-2" data-testid="docs-header">
       <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
         <DocumentTitleDropdown
+          documentType={documentType}
           action={action}
           authenticatedController={authenticatedController}
           editorController={editorController}

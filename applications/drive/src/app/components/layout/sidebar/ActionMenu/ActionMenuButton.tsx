@@ -104,6 +104,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
                         <CreateDocumentButton
                             onClick={() => {
                                 void createDocument({
+                                    type: 'doc',
                                     shareId: activeFolder.shareId,
                                     parentLinkId: activeFolder.linkId,
                                 });

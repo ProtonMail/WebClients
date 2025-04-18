@@ -9,6 +9,7 @@ import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import useShare from '../_shares/useShare';
 import useAbortSignal from '../_views/utils/useAbortSignal';
 import useVolumesState from '../_volumes/useVolumesState';
+import type { DocumentType } from './useOpenDocument';
 import { useOpenDocument } from './useOpenDocument';
 
 export const useDocumentActions = () => {
@@ -47,15 +48,18 @@ export const useDocumentActions = () => {
         shareId,
         linkId,
         openBehavior = 'tab',
+        type,
     }: {
         shareId: string;
         linkId: string;
         openBehavior: 'tab' | 'redirect';
+        type: DocumentType;
     }) => {
         const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
 
         try {
             openDocumentWindow({
+                type,
                 mode: 'open',
                 window: w.handle,
                 volumeId: await findVolume(shareId),
@@ -67,11 +71,20 @@ export const useDocumentActions = () => {
         }
     };
 
-    const createDocument = async ({ shareId, parentLinkId }: { shareId: string; parentLinkId: string }) => {
+    const createDocument = async ({
+        shareId,
+        parentLinkId,
+        type,
+    }: {
+        shareId: string;
+        parentLinkId: string;
+        type: DocumentType;
+    }) => {
         const w = getNewWindow();
 
         try {
             openDocumentWindow({
+                type,
                 mode: 'create',
                 window: w.handle,
                 volumeId: await findVolume(shareId),
@@ -83,11 +96,20 @@ export const useDocumentActions = () => {
         }
     };
 
-    const convertDocument = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
+    const convertDocument = async ({
+        shareId,
+        linkId,
+        type,
+    }: {
+        shareId: string;
+        linkId: string;
+        type: DocumentType;
+    }) => {
         const w = getNewWindow();
 
         try {
             openDocumentWindow({
+                type,
                 mode: 'convert',
                 window: w.handle,
                 volumeId: await findVolume(shareId),
@@ -99,11 +121,20 @@ export const useDocumentActions = () => {
         }
     };
 
-    const downloadDocument = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
+    const downloadDocument = async ({
+        shareId,
+        linkId,
+        type,
+    }: {
+        shareId: string;
+        linkId: string;
+        type: DocumentType;
+    }) => {
         const w = getNewWindow();
 
         try {
             openDocumentWindow({
+                type,
                 mode: 'download',
                 window: w.handle,
                 volumeId: await findVolume(shareId),
@@ -115,11 +146,20 @@ export const useDocumentActions = () => {
         }
     };
 
-    const openDocumentHistory = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
+    const openDocumentHistory = async ({
+        shareId,
+        linkId,
+        type,
+    }: {
+        shareId: string;
+        linkId: string;
+        type: DocumentType;
+    }) => {
         const w = getNewWindow();
 
         try {
             openDocumentWindow({
+                type,
                 mode: 'history',
                 window: w.handle,
                 volumeId: await findVolume(shareId),

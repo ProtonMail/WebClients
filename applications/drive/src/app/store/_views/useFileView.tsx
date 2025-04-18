@@ -8,6 +8,7 @@ import {
     getFileExtension,
     isIWAD,
     isProtonDocument,
+    isProtonSheet,
     isRAWThumbnailExtractionSupported,
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
@@ -68,8 +69,18 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
         contents,
         contentsMimeType,
         downloadFile: async () => {
-            if (isProtonDocument(contentsMimeType || link?.mimeType || '')) {
+            const mimeType = contentsMimeType || link?.mimeType || '';
+
+            if (isProtonDocument(mimeType)) {
                 await downloadDocument({
+                    type: 'doc',
+                    shareId,
+                    linkId,
+                });
+                return;
+            } else if (isProtonSheet(mimeType)) {
+                await downloadDocument({
+                    type: 'sheet',
                     shareId,
                     linkId,
                 });

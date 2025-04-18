@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
@@ -132,12 +132,22 @@ export const Search = ({ shareId, searchView }: Props) => {
             if (isProtonDocument(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
-                        linkId: id,
-                        shareId,
+                        type: 'doc',
+                        linkId: item.linkId,
+                        shareId: item.rootShareId,
                         openBehavior: 'tab',
                     });
                 }
-
+                return;
+            } else if (isProtonSheet(item.mimeType)) {
+                if (isDocsEnabled) {
+                    return openDocument({
+                        type: 'sheet',
+                        linkId: item.linkId,
+                        shareId: item.rootShareId,
+                        openBehavior: 'tab',
+                    });
+                }
                 return;
             }
 
