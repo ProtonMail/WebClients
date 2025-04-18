@@ -332,7 +332,7 @@ export { default as TopNavbarUpsell } from './components/topnavbar/TopNavbarUpse
 export { default as TreeViewContainer } from './components/treeview/TreeViewContainer';
 export { default as TreeViewItem } from './components/treeview/TreeViewItem';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/interface';
-export { default as UpsellModal } from './components/upsell/UpsellModal';
+export { default as UpsellModal } from './components/upsell/UpsellModal/UpsellModal';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modals/AutoDeleteUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modals/ComposerAssistantB2BUpsellModal';
 export { default as DWMUpsellModal } from './components/upsell/modals/DWMUpsellModal';
@@ -340,7 +340,7 @@ export { default as FiltersUpsellModal } from './components/upsell/modals/Filter
 export { default as LabelsUpsellModal } from './components/upsell/modals/LabelsUpsellModal';
 export { default as PmMeUpsellModal } from './components/upsell/modals/PmMeUpsellModal';
 export { default as ZoomUpsellModal } from './components/upsell/modals/ZoomUpsellModal';
-export { default as useUpsellConfig } from './components/upsell/hooks/useUpsellConfig';
+export { default as useUpsellConfig } from './components/upsell/config/useUpsellConfig';
 export { default as AddressesAutocompleteTwo } from './components/v2/addressesAutocomplete/AddressesAutocomplete';
 export { default as InputFieldTwo } from './components/v2/field/InputField';
 export { default as DateInputTwo } from './components/v2/input/DateInputTwo';

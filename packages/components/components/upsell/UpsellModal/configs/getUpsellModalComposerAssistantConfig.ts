@@ -2,17 +2,17 @@ import { c } from 'ttag';
 
 import { memberThunk } from '@proton/account/member';
 import { organizationThunk } from '@proton/account/organization';
-import { Button } from '@proton/atoms/index';
 import { getAssistantUpsellConfigPlanAndCycle } from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { CYCLE, PLANS, SelectedPlan } from '@proton/payments/index';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 import { getIsB2CUserAbleToRunScribe } from '../../modals/ComposerAssistantUpsellModal.helpers';
-import { getMailUpsellsFooterText } from '../helpers/getUpsellConfigFooterText';
-import { getUpsellPlanMonthlyPrice } from '../helpers/getupsellPlanMonthlyPrice';
-import type { MailUpsellConfigCase } from '../interface';
+import { UpsellModalComposerAssistantSubmitButton } from '../components/UpsellModalSubmitButtons';
+import { getUpsellModalFooterText } from '../helpers/getUpsellModalFooterText';
+import { getUpsellPlanMonthlyPrice } from '../helpers/getUpsellPlanMonthlyPrice';
+import type { UpsellModalConfigCase } from '../interface';
 
-export const getComposerAssistantUpsellConfig: MailUpsellConfigCase = async ({
+export const getUpsellModalComposerAssistantConfig: UpsellModalConfigCase = async ({
     currency,
     dispatch,
     paymentsApi,
@@ -41,7 +41,7 @@ export const getComposerAssistantUpsellConfig: MailUpsellConfigCase = async ({
             planIDs,
             cycle,
             submitText,
-            footerText: getMailUpsellsFooterText({ planIDs, monthlyPrice, currency }),
+            footerText: getUpsellModalFooterText({ planIDs, monthlyPrice, currency }),
         };
     }
 
@@ -65,21 +65,7 @@ export const getComposerAssistantUpsellConfig: MailUpsellConfigCase = async ({
             footerText: null,
             // Custom submit button for b2b org users
             // Price displayed for B2B
-            submitText: isOrgUser
-                ? (closeModal: () => void) => (
-                      <Button
-                          size="large"
-                          color="norm"
-                          shape="solid"
-                          fullWidth
-                          onClick={() => {
-                              closeModal();
-                          }}
-                      >
-                          {c('Action').t`Close`}
-                      </Button>
-                  )
-                : submitText,
+            submitText: isOrgUser ? UpsellModalComposerAssistantSubmitButton : submitText,
         };
     }
 

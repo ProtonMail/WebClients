@@ -4,7 +4,7 @@ import Price from '@proton/components/components/price/Price';
 import { type Currency, PLANS, type PlanIDs } from '@proton/payments/index';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-export const getMailUpsellsFooterText = ({
+export const getUpsellModalFooterText = ({
     planIDs,
     monthlyPrice,
     currency,

@@ -4,7 +4,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import useConfig from '@proton/components/hooks/useConfig';
 import { useGetFlag } from '@proton/unleash';
 
-import { type GetUpsellConfigProps, getUpsellConfig } from '../config/getUpsellConfig';
+import { type GetUpsellConfigProps, getUpsellConfig } from './getUpsellConfig';
 
 /**
  * Return config props injected in `SubscriptionModal`
