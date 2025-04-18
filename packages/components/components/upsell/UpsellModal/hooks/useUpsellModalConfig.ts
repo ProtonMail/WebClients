@@ -14,10 +14,11 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import useGetFlag from '@proton/unleash/useGetFlag';
+import noop from '@proton/utils/noop';
 
-import { getMailUpsellConfig } from '../config/getMailUpsellConfig';
-import { getUpsellConfig } from '../config/getUpsellConfig';
-import type { UpsellConfig } from '../config/interface';
+import { getUpsellConfig } from '../../config/getUpsellConfig';
+import { getMailUpsellConfig } from '../config/getUpsellModalConfig';
+import type { UpsellModalConfig } from '../interface';
 
 interface Props {
     upsellRef?: string;
@@ -26,7 +27,7 @@ interface Props {
     step?: SUBSCRIPTION_STEPS;
 }
 
-type FetchUpsellConfig = (props: Props) => Promise<UpsellConfig>;
+type FetchUpsellConfig = (props: Props) => Promise<UpsellModalConfig>;
 
 interface Props {
     upsellRef?: string;
@@ -40,7 +41,7 @@ const CONFIG_FETCH_TIMEOUT = 5000;
 
 const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, step }: Props) => {
     const { APP_NAME } = useConfig();
-    const [config, setConfig] = useState<UpsellConfig | null>(null);
+    const [config, setConfig] = useState<UpsellModalConfig | null>(null);
     const { paymentsApi } = usePaymentsApi();
     const [openSubscriptionModal] = useSubscriptionModal();
     const dispatch = useDispatch();
@@ -56,9 +57,6 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
             step,
             upsellRef,
         }) => {
-            //
-            // Timeout and abort setup
-            //
             // If fetch takes more than 5 seconds, abort
             // Signal can be aborted on:
             // - Component unmount
@@ -67,7 +65,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                 controller.abort(`Upsell config fetch took more than limit of ${CONFIG_FETCH_TIMEOUT}ms`);
             }, CONFIG_FETCH_TIMEOUT);
 
-            // If signal is aborted, clear timeout and throw error
+            // Listen to abort signal in order to throw error properly
             controller.signal.addEventListener(
                 'abort',
                 () => {
@@ -88,11 +86,13 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
             ]);
             const plans = plansModel?.plans ?? [];
 
+            //
+            // Start logic
+            //
             try {
-                //
-                // Start logic
-                //
-                // Get currency
+                // Get user currency
+                // - If user currency is a main currency (USD, EUR, CHF) we use plans prices
+                // - If user currency is not a main currency we fetch the prices in the user currency
                 const currency = getPreferredCurrency({
                     user,
                     plans,
@@ -101,6 +101,9 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
                 });
 
+                // Get user currency
+                // - If user currency is a main currency (USD, EUR, CHF) we use plans prices
+                // - If user currency is not a main currency we fetch the prices in the user currency
                 const { cycle, coupon, planIDs, configOverride, footerText, submitText } = await getMailUpsellConfig({
                     dispatch,
                     currency,
@@ -167,11 +170,11 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     user,
                 });
 
-                const defaultConfig: UpsellConfig = {
+                const defaultConfig: UpsellModalConfig = {
                     cycle: defaultCycle,
                     planIDs: defaultPlanIDs,
                     submitText: getPlanOrAppNameText(defaultPlanName),
-                    footerText: '',
+                    footerText: null,
                     upgradePath,
                     onUpgrade,
                 };
@@ -190,13 +193,15 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
             preventInApp: preventInAppPayment,
             onSubscribed,
             step,
-        }).then((config) => {
-            setConfig(config);
-        });
+        })
+            .then((config) => {
+                setConfig(config);
+            })
+            .catch(noop);
 
+        // If component is unmounted before config is fetched then abort the fetch
         return () => {
             if (!isConfigFetched) {
-                // If component is unmounted before config is fetched, abort the fetch
                 controller.abort('Upsell Modal unmounted before config was fetched');
             }
         };

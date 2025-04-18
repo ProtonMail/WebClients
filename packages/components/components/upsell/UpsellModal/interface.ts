@@ -18,7 +18,7 @@ import type useGetFlag from '@proton/unleash/useGetFlag';
 /**
  * Upsell config passed to the subscription modal
  */
-export interface UpsellConfig {
+export interface UpsellModalConfig {
     cycle: CYCLE;
     couponCode?: COUPON_CODES;
     footerText: ReactNode;
@@ -31,7 +31,7 @@ export interface UpsellConfig {
 /**
  * Parameters received by every upsell config cases
  */
-export interface UpsellConfigParams {
+export interface UpsellModalConfigParams {
     dispatch: ReturnType<typeof useDispatch>;
     paymentsApi: PaymentsApi;
     status: PaymentMethodStatusExtended;
@@ -46,9 +46,10 @@ export interface UpsellConfigParams {
 /**
  * Values returned by every upsellConfig cases
  */
-export interface MailUpsellConfigResult extends Pick<UpsellConfig, 'cycle' | 'footerText' | 'planIDs' | 'submitText'> {
+export interface UpsellModalConfigResult
+    extends Pick<UpsellModalConfig, 'cycle' | 'footerText' | 'planIDs' | 'submitText'> {
     configOverride?: (config: OpenCallbackProps) => void;
     coupon?: COUPON_CODES;
 }
 
-export type MailUpsellConfigCase = (params: UpsellConfigParams) => Promise<MailUpsellConfigResult>;
+export type UpsellModalConfigCase = (params: UpsellModalConfigParams) => Promise<UpsellModalConfigResult>;

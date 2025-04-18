@@ -11,7 +11,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import illustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
 import UpsellFeatureList from '../UpsellFeatureList';
-import UpsellModal from '../UpsellModal';
+import UpsellModal from '../UpsellModal/UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
