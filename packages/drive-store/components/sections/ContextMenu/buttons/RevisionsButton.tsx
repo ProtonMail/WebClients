@@ -24,6 +24,7 @@ const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => 
             action={() => {
                 if (isProtonDocument(selectedLink.mimeType)) {
                     void openDocumentHistory({
+                        type: 'doc',
                         shareId: selectedLink.rootShareId,
                         linkId: selectedLink.linkId,
                     });

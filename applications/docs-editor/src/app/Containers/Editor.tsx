@@ -12,12 +12,7 @@ import type {
   EditorInitializationConfig,
   DocumentRole,
 } from '@proton/docs-shared'
-import {
-  AnonymousUserDisplayName,
-  GenerateUUID,
-  LexicalDocProvider,
-  getRandomAnonymousUserLetter,
-} from '@proton/docs-shared'
+import { AnonymousUserDisplayName, GenerateUUID, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
@@ -123,7 +118,7 @@ export function Editor({
 
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
-      return new LexicalDocProvider(docState)
+      return new DocProvider(docState)
     }
 
     return baseProvider

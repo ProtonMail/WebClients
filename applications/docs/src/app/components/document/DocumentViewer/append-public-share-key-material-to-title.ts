@@ -36,15 +36,16 @@ export function AppendPublicShareKeyMaterialToTitle({
   const { linkId, volumeId } = nodeMeta
 
   const { getLocalID } = useAuthentication()
-  const { changeURLVisually } = useDocsUrlBar()
+  const { openAction, changeURLVisually } = useDocsUrlBar()
 
   const resetURLToNormalLink = useCallback(() => {
     changeURLVisually({
+      type: openAction?.type ?? 'doc',
       mode: 'open',
       linkId,
       volumeId,
     })
-  }, [changeURLVisually, linkId, volumeId])
+  }, [changeURLVisually, linkId, openAction?.type, volumeId])
 
   const handleShareUrlInfo = useCallback(
     (shareUrl: ShareURL | undefined) => {
@@ -70,13 +71,14 @@ export function AppendPublicShareKeyMaterialToTitle({
 
       const urlPassword = new URL(sharedLink).hash
       changeURLVisually({
+        type: openAction?.type ?? 'doc',
         mode: 'open-url',
         linkId,
         token,
         urlPassword,
       })
     },
-    [application.logger, changeURLVisually, compat, getLocalID, linkId, resetURLToNormalLink],
+    [application.logger, changeURLVisually, compat, getLocalID, linkId, openAction?.type, resetURLToNormalLink],
   )
 
   const linkStateChangeInProgress = useRef(false)

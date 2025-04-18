@@ -32,6 +32,7 @@ export const DocsSuggestionsOnboardingModal = ({ onClose, ...props }: ModalProps
                     fullWidth
                     onClick={() => {
                         void createDocument({
+                            type: 'doc',
                             shareId: activeFolder.shareId,
                             parentLinkId: activeFolder.linkId,
                         });

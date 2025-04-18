@@ -207,6 +207,7 @@ export function usePublicDocumentCopying({ context, editorController, documentSt
     window.addEventListener('message', handleCopierMessage)
 
     openDocumentWindow({
+      type: 'doc',
       mode: 'copy-public',
       window: w.handle,
     })
