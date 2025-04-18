@@ -18,11 +18,18 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
     return application.eventBus.addEventCallback<DocsAwarenessStateChangeData>((data) => {
       for (const state of data.states) {
         if (!state.name) {
-          console.error('User state missing name', state)
-          state.name = '?'
+          if (state.title) {
+            state.name = state.title
+          } else {
+            console.error('User state missing name', state)
+            state.name = '?'
+          }
         }
       }
       const deduped = data.states.filter((state, index, self) => {
+        if (!state.awarenessData) {
+          return true
+        }
         return self.findIndex((t) => t.awarenessData?.userId === state.awarenessData?.userId) === index
       })
       setStates(deduped)
@@ -49,7 +56,7 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
               as="button"
               size="small"
               name={letter ? letter : name}
-              className={clsx('text-[0.75rem]', !focusing && 'opacity-50')}
+              className={clsx('text-[0.75rem]', awarenessData && !focusing && 'opacity-50')}
               color={{ hsl: color }}
               onClick={() => {
                 application.syncedEditorState.emitEvent({
@@ -95,7 +102,7 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
                       as="button"
                       size="small"
                       name={letter ? letter : name}
-                      className={clsx('text-[0.75rem]', !focusing && 'opacity-50')}
+                      className={clsx('text-[0.75rem]', awarenessData && !focusing && 'opacity-50')}
                       color={{ hsl: color }}
                       capitalize={!letter}
                     />

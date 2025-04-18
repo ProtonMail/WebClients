@@ -28,6 +28,8 @@ export type SafeDocsUserState = {
   focusing: boolean
   focusPos: null | RelativePosition
   name: string
+  /** rowsandcolumns uses title instead of name, whole type should ideally be refactored to reflect the different shapes of the awareness objects that lexical has vs rowsncolumns */
+  title?: string
 }
 
 export class DocsAwareness<T extends UnsafeDocsUserState | SafeDocsUserState = SafeDocsUserState> extends Awareness {
@@ -57,7 +59,7 @@ export class DocsAwareness<T extends UnsafeDocsUserState | SafeDocsUserState = S
 
     // Populate the map
     for (const [clientId, userState] of states) {
-      const userId = userState.awarenessData?.userId ?? userState.name
+      const userId = userState.awarenessData?.userId ?? userState.name ?? userState.title
       const existing = userClients.get(userId) ?? []
       existing.push(clientId)
       userClients.set(userId, existing)

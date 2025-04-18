@@ -1,4 +1,5 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import type { DocumentType } from '@proton/drive-store/store/_documents';
 import { queryCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -41,7 +42,8 @@ export const useDocuments = () => {
 
     const createDocumentNode = async (
         { shareId, linkId: parentLinkId }: LegacyNodeMeta,
-        name: string
+        name: string,
+        documentType: DocumentType
     ): Promise<DocumentNodeMeta> => {
         const [parentPrivateKey, parentHashKey, { privateKey: addressKey, address }] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, parentLinkId),
@@ -116,6 +118,7 @@ export const useDocuments = () => {
                 ContentKeyPacketSignature,
                 ManifestSignature,
                 XAttr: xattr,
+                DocumentType: documentType === 'doc' ? 1 : 2,
             }),
             abortSignal
         );

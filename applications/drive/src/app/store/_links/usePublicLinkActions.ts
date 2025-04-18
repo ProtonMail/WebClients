@@ -193,6 +193,7 @@ export function usePublicLinkActions() {
                     ManifestSignature,
                     SignatureEmail: addressKeyInfo?.address.Email,
                     ParentLinkID: parentLinkId,
+                    DocumentType: 1,
                 }),
             })
         );

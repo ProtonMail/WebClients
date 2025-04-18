@@ -3,7 +3,7 @@ import { useCallback, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { ContactEmailsProvider, useActiveBreakpoint } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
@@ -129,14 +129,25 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
             if (isProtonDocument(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
+                        type: 'doc',
                         linkId: item.linkId,
                         shareId: item.rootShareId,
                         openBehavior: 'tab',
                     });
                 }
-
+                return;
+            } else if (isProtonSheet(item.mimeType)) {
+                if (isDocsEnabled) {
+                    return openDocument({
+                        type: 'sheet',
+                        linkId: item.linkId,
+                        shareId: item.rootShareId,
+                        openBehavior: 'tab',
+                    });
+                }
                 return;
             }
+
             if (item.albumProperties) {
                 navigateToAlbum(item.rootShareId, item.linkId);
                 return;
