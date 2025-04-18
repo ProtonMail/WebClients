@@ -68,7 +68,7 @@ export async function initializeEditorAccordingToConfigIfRootIsEmpty(
         c('Error').t`Failed to initialize editor due to unknown error.`,
       )
     }
-  } else if (editorInitializationConfig.mode === 'conversion') {
+  } else if (editorInitializationConfig.mode === 'conversion' && editorInitializationConfig.type.docType === 'doc') {
     result = await $importDataIntoEditor(editor, editorInitializationConfig.data, editorInitializationConfig.type)
   }
 

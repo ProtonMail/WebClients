@@ -10,6 +10,8 @@ export interface CreateDocumentPayload {
     ContentKeyPacketSignature: string;
     ManifestSignature: string;
     XAttr: string;
+    /** 1 = doc, 2 = sheet */
+    DocumentType: number;
 }
 
 export interface CreateDocumentResult {

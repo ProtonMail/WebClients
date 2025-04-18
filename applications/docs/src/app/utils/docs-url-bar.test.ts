@@ -11,6 +11,7 @@ describe('parseOpenAction', () => {
     it('returns "new" mode for empty params', () => {
       expect(parseOpenAction(createSearchParams({}), docPathname)).toEqual({
         mode: 'new',
+        type: 'doc',
       })
     })
 
@@ -36,6 +37,7 @@ describe('parseOpenAction', () => {
       })
 
       expect(parseOpenAction(params, docPathname)).toEqual({
+        type: 'doc',
         mode: 'open-url',
         token: 'test-token',
         linkId: 'test-link',
@@ -57,6 +59,7 @@ describe('parseOpenAction', () => {
       })
 
       expect(parseOpenAction(params, docPathname)).toEqual({
+        type: 'doc',
         mode: 'open-url-download',
         token: 'test-token',
         linkId: 'test-link',
@@ -74,6 +77,7 @@ describe('parseOpenAction', () => {
       })
 
       expect(parseOpenAction(params, docPathname)).toEqual({
+        type: 'doc',
         mode: 'open-url-reauth',
         token: 'test-token',
         linkId: 'test-link',
@@ -88,6 +92,7 @@ describe('parseOpenAction', () => {
 
       expect(parseOpenAction(params, docPathname)).toEqual({
         mode: 'copy-public',
+        type: 'doc',
       })
     })
   })
@@ -101,6 +106,7 @@ describe('parseOpenAction', () => {
       })
 
       expect(parseOpenAction(params, docPathname)).toEqual({
+        type: 'doc',
         mode: 'create',
         volumeId: 'test-volume',
         parentLinkId: 'parent-link',
@@ -126,6 +132,7 @@ describe('parseOpenAction', () => {
         })
 
         expect(parseOpenAction(params, docPathname)).toEqual({
+          type: 'doc',
           mode,
           volumeId: 'test-volume',
           linkId: 'test-link',
@@ -151,6 +158,7 @@ describe('parseOpenAction', () => {
       })
 
       expect(parseOpenAction(params, docPathname)).toEqual({
+        type: 'doc',
         mode: 'open',
         volumeId: 'test-volume',
         linkId: 'test-link',

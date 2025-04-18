@@ -12,7 +12,7 @@ import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLi
 import type { ShareURL } from '../store';
 import { useDefaultShare, useShareUrl } from '../store';
 import { useDriveCrypto } from '../store/_crypto';
-import type { DocumentAction } from '../store/_documents';
+import type { DocumentAction, DocumentType } from '../store/_documents';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
 import { useLink } from '../store/_links';
 import { getSharedLink } from '../store/_shares';
@@ -78,7 +78,7 @@ export interface DriveCompat {
      *
      * @param parentMeta The parent node where the new node will be located.
      */
-    createDocumentNode: (parentMeta: NodeMeta, name: string) => Promise<DocumentNodeMeta>;
+    createDocumentNode: (parentMeta: NodeMeta, name: string, documentType: DocumentType) => Promise<DocumentNodeMeta>;
 
     /**
      * Gets the keys for a given document node.
@@ -173,8 +173,8 @@ export const useDriveCompat = (): DriveCompat => {
     const { loadShareUrl } = useShareUrl();
     const { getDefaultShare, getDefaultShareAddressEmail } = useDefaultShare();
 
-    const openDocument = (meta: NodeMeta) =>
-        openDocumentWindow({ ...meta, mode: 'open', window: getNewWindow().handle });
+    const openDocument = (meta: NodeMeta, type: DocumentType = 'doc') =>
+        openDocumentWindow({ ...meta, type, mode: 'open', window: getNewWindow().handle });
 
     const getPrimaryAddressKeys = async () => {
         const share = await getDefaultShare();

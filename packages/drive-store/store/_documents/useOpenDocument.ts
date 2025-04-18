@@ -14,10 +14,14 @@ export enum RedirectAction {
     MakeCopy = 'make-copy',
 }
 
+export type DocumentType = 'doc' | 'sheet';
+
 /**
  * DRIVE-DEVS: Do not remove export. Used by drive-store.
  */
-export type DocumentAction =
+export type DocumentAction = {
+    type: DocumentType;
+} & (
     | {
           mode: 'open' | 'convert' | 'download' | 'history';
           linkId: string;
@@ -67,7 +71,8 @@ export type DocumentAction =
     | {
           /** Make a copy of a public document */
           mode: 'copy-public';
-      };
+      }
+);
 
 export const useOpenDocument = () => {
     const { getLocalID } = useAuthentication();
@@ -78,11 +83,12 @@ export const useOpenDocument = () => {
      * In the Drive application, this should not be used directly, prefer `useDocumentActions`.
      */
     const openDocumentWindow = (action: DocumentAction & { window: Window }) => {
-        const { mode, window } = action;
+        const { type, mode, window } = action;
 
         const href = getAppHref(`/doc`, APPS.PROTONDOCS, getLocalID());
         const url = new URL(href);
 
+        url.searchParams.append('type', type);
         url.searchParams.append('mode', mode);
 
         if ('volumeId' in action && action.volumeId) {

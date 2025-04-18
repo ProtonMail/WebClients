@@ -2,12 +2,13 @@ import type { YjsState } from '@proton/docs-shared'
 import type { NativeVersionHistory } from '../VersionHistory'
 import type { TranslatedResult } from '@proton/docs-shared'
 import type { Result } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export interface AuthenticatedDocControllerInterface {
   didTrashDocInCurrentSession: boolean
 
   createInitialCommit(content: Uint8Array): Promise<Result<unknown>>
-  createNewDocument(): Promise<void>
+  createNewDocument(documentType: DocumentType): Promise<void>
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   destroy(): void

@@ -88,7 +88,7 @@ const DriveToolbar = ({
                             {isEditEnabled && <CreateNewFileButton />}
                             {isDocsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
                                 <CreateNewDocumentButton
-                                    onClick={() => createDocument({ shareId, parentLinkId: linkId })}
+                                    onClick={() => createDocument({ type: 'doc', shareId, parentLinkId: linkId })}
                                 />
                             )}
                             <Vr />

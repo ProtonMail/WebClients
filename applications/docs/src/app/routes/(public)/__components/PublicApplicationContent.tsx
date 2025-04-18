@@ -35,8 +35,6 @@ export function PublicApplicationContent({
 
   const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled })
 
-  const [action, setAction] = useState<DocumentAction['mode']>()
-
   const application = useMemo(() => {
     return new Application(
       api,
@@ -69,9 +67,6 @@ export function PublicApplicationContent({
         linkId: 'linkId' in openAction ? openAction.linkId : undefined,
         volumeId: 'volumeId' in openAction ? openAction.volumeId : undefined,
       })
-      if (openAction.mode === 'open-url-download') {
-        setAction('download')
-      }
     }
   }, [application.logger, openAction])
 
@@ -90,8 +85,8 @@ export function PublicApplicationContent({
             <Route
               path="*"
               element={
-                <DocumentLayout>
-                  <Content providerType={providerType} openAction={openAction} actionMode={action} />
+                <DocumentLayout documentType={openAction.type}>
+                  <Content providerType={providerType} openAction={openAction} />
                 </DocumentLayout>
               }
             />
@@ -102,15 +97,7 @@ export function PublicApplicationContent({
   )
 }
 
-function Content({
-  openAction,
-  actionMode,
-  providerType,
-}: {
-  openAction: DocumentAction | null
-  actionMode: DocumentAction['mode'] | undefined
-  providerType: ProviderType
-}) {
+function Content({ openAction, providerType }: { openAction: DocumentAction | null; providerType: ProviderType }) {
   const { linkId } = usePublicDriveCompat()
 
   if (openAction?.mode !== 'open-url' && openAction?.mode !== 'open-url-download') {
@@ -126,5 +113,5 @@ function Content({
     linkId: linkId,
   }
 
-  return <DocumentViewer nodeMeta={nodeMeta} action={actionMode} providerType={providerType} />
+  return <DocumentViewer nodeMeta={nodeMeta} openAction={openAction} providerType={providerType} />
 }

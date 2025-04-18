@@ -7,13 +7,17 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useLocation } from 'react-router-dom-v5-compat'
+import { useIsSheetsEnabled } from './misc'
 
 export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
   const { getLocalID } = useAuthentication()
 
   const { pathname, search } = useLocation()
   const searchParams = useMemo(() => new URLSearchParams(search), [search])
-  const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams, pathname))
+  const isSheetsEnabled = useIsSheetsEnabled()
+  const [openAction, setOpenAction] = useState<DocumentAction | null>(
+    parseOpenAction(searchParams, pathname, isSheetsEnabled),
+  )
 
   /**
    * Changes the URL of the page only visually, without causing any navigation or changing
@@ -27,6 +31,7 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
     const newURL = new URL(location.href)
     newURL.search = ''
     newURL.hash = ''
+    newURL.searchParams.set('type', action.type)
 
     if (action.mode === 'open') {
       newURL.searchParams.set('mode', 'open')
@@ -44,24 +49,29 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
     history.replaceState(null, '', newURL)
   }, [])
 
-  const updateParameters = useCallback((params: { newVolumeId: string; newLinkId: string; pathname?: 'doc' }) => {
-    setOpenAction({
-      mode: 'open',
-      volumeId: params.newVolumeId,
-      linkId: params.newLinkId,
-    })
+  const updateParameters = useCallback(
+    (params: { newVolumeId: string; newLinkId: string; pathname?: 'doc' }) => {
+      setOpenAction({
+        type: openAction?.type ?? 'doc',
+        mode: 'open',
+        volumeId: params.newVolumeId,
+        linkId: params.newLinkId,
+      })
 
-    const newUrl = new URL(location.href)
-    if (params.pathname) {
-      const currentPathName = newUrl.pathname
-      newUrl.pathname = replaceLastPathSegment(currentPathName, params.pathname)
-    }
-    newUrl.searchParams.set('mode', 'open')
-    newUrl.searchParams.set('volumeId', params.newVolumeId)
-    newUrl.searchParams.set('linkId', params.newLinkId)
+      const newUrl = new URL(location.href)
+      if (params.pathname) {
+        const currentPathName = newUrl.pathname
+        newUrl.pathname = replaceLastPathSegment(currentPathName, params.pathname)
+      }
+      newUrl.searchParams.set('type', openAction?.type ?? 'doc')
+      newUrl.searchParams.set('mode', 'open')
+      newUrl.searchParams.set('volumeId', params.newVolumeId)
+      newUrl.searchParams.set('linkId', params.newLinkId)
 
-    history.replaceState(null, '', newUrl.toString())
-  }, [])
+      history.replaceState(null, '', newUrl.toString())
+    },
+    [openAction?.type],
+  )
 
   const navigateToAction = useCallback((action: DocumentAction, context: 'private' | 'public' = 'private') => {
     const userPortion = location.pathname.match(/u\/\d+/)?.[0]
@@ -72,6 +82,7 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
     const newUrl = new URL(context === 'private' ? location.href : location.origin)
 
     newUrl.searchParams.set('mode', action.mode)
+    newUrl.searchParams.set('type', action.type)
 
     if ('volumeId' in action) {
       newUrl.searchParams.set('volumeId', action.volumeId)
@@ -131,7 +142,12 @@ export const DOCUMENT_EDITOR_PATH = '/doc'
 export const DOCUMENT_NEW_PATH = '/new'
 export const DOCUMENT_CREATION_PATHS = [DOCUMENT_EDITOR_PATH, DOCUMENT_NEW_PATH]
 
-export function parseOpenAction(searchParams: URLSearchParams, pathname: string): DocumentAction | null {
+export function parseOpenAction(
+  searchParams: URLSearchParams,
+  pathname: string,
+  isSheetsEnabled = false,
+): DocumentAction | null {
+  let type = (searchParams.get('type') ?? 'doc') as DocumentAction['type']
   const mode = (searchParams.get('mode') ?? 'open') as DocumentAction['mode']
   const action = searchParams.get('action') as RedirectAction | undefined
   const parentLinkId = searchParams.get('parentLinkId')
@@ -139,8 +155,13 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
   const linkId = searchParams.get('linkId') || undefined
   const token = searchParams.get('token')
 
+  if (type === 'sheet' && !isSheetsEnabled) {
+    type = 'doc'
+  }
+
   if (mode === 'copy-public') {
     return {
+      type,
       mode,
     }
   }
@@ -151,8 +172,12 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
   const hasValidRoute = hasValidPublicLink || hasRequiredParametersToLoadOrCreateADocument
 
   if (!hasValidRoute) {
-    if (DOCUMENT_CREATION_PATHS.some((path) => pathname.endsWith(path)) && searchParams.size === 0) {
+    const hasNoParamsOrHasOnlyTypeParam =
+      searchParams.size === 0 || (searchParams.size === 1 && searchParams.get('type'))
+
+    if (DOCUMENT_CREATION_PATHS.some((path) => pathname.endsWith(path)) && hasNoParamsOrHasOnlyTypeParam) {
       return {
+        type,
         mode: 'new',
       }
     }
@@ -162,6 +187,7 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
 
   if (mode === 'open-url-reauth' && hasValidPublicLink) {
     return {
+      type,
       mode,
       token,
       linkId,
@@ -171,6 +197,7 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
 
   if (mode === 'open-url-download' && hasValidPublicLink && hasLinkId) {
     return {
+      type,
       mode,
       token,
       linkId,
@@ -181,6 +208,7 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
 
   if (hasValidPublicLink) {
     return {
+      type,
       mode: 'open-url',
       token,
       linkId,
@@ -200,6 +228,7 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
     }
 
     return {
+      type,
       mode,
       volumeId,
       parentLinkId,
@@ -213,6 +242,7 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
 
   if (mode === 'open' || mode === 'convert') {
     return {
+      type,
       mode,
       volumeId,
       linkId,
@@ -221,6 +251,7 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
 
   if (mode === 'history') {
     return {
+      type,
       mode,
       volumeId,
       linkId,
@@ -229,6 +260,7 @@ export function parseOpenAction(searchParams: URLSearchParams, pathname: string)
 
   if (mode === 'download') {
     return {
+      type,
       mode,
       volumeId,
       linkId,

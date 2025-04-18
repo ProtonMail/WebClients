@@ -1,5 +1,6 @@
 import {
     PROTON_DOC_MIMETYPE,
+    PROTON_SHEET_MIMETYPE,
     isAudio,
     isExcel,
     isFont,
@@ -7,6 +8,7 @@ import {
     isImage,
     isPDF,
     isProtonDocument,
+    isProtonSheet,
     isSupportedText,
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
@@ -38,6 +40,7 @@ const iconsMap: { [mimeType: string]: MimeName } = {
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'doc',
 
     [PROTON_DOC_MIMETYPE]: 'proton-doc',
+    [PROTON_SHEET_MIMETYPE]: 'proton-sheet',
 
     'application/vnd.ms-powerpoint': 'ppt', // .ppt/.pps
     'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'ppt',
@@ -93,6 +96,8 @@ const getIconName = (mimeType: string) => {
         name = 'xls';
     } else if (isProtonDocument(mimeType)) {
         name = 'proton-doc';
+    } else if (isProtonSheet(mimeType)) {
+        name = 'proton-sheet';
     }
 
     return name;

@@ -135,6 +135,8 @@ enum DocsFeatureFlag {
     DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
     // Suggestions
     DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
+    // Sheets,
+    DocsSheetsEnabled = 'DocsSheetsEnabled',
 }
 
 enum MailFeatureFlag {

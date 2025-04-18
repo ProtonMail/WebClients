@@ -34,6 +34,10 @@ export async function $importDataIntoEditor(
     return TranslatedResult.ok()
   }
 
+  if (dataFormat.docType === 'sheet' || dataFormat.dataType === 'xlsx') {
+    return TranslatedResult.failWithTranslatedError(c('Error').t`Tried to import Sheet data into Lexical`)
+  }
+
   editor.update(
     () => {
       $getRoot().clear()
@@ -43,7 +47,7 @@ export async function $importDataIntoEditor(
     },
   )
 
-  if (dataFormat === 'docx') {
+  if (dataFormat.dataType === 'docx') {
     const result = await new Promise<TranslatedResult<void>>((resolve) => {
       editor.update(
         () => {
@@ -65,11 +69,11 @@ export async function $importDataIntoEditor(
 
   const otherFormatString = utf8ArrayToString(data)
 
-  if (dataFormat === 'json' && isValidSuperString(editor, otherFormatString)) {
+  if (dataFormat.dataType === 'json' && isValidSuperString(editor, otherFormatString)) {
     return TranslatedResult.ok()
   }
 
-  if (dataFormat === 'html') {
+  if (dataFormat.dataType === 'html') {
     const htmlOptions = options?.html || {
       addLineBreaks: false,
     }

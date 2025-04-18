@@ -65,7 +65,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
             linkId: openAction.parentLinkId,
           }
         : await driveCompat.getMyFilesNodeMeta()
-    const result = await driveCompat.createDocumentNode(root, name)
+    const result = await driveCompat.createDocumentNode(root, name, openAction?.type ?? 'doc')
 
     return result
   }, [application.logger, driveCompat, openAction])
@@ -155,7 +155,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   return (
     <WordCountProvider>
       <DocsProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
-        <DocumentLayout action={actionMode}>
+        <DocumentLayout documentType={openAction?.type ?? 'doc'} action={actionMode}>
           <PrivateHookChangesToEvents />
           <Content
             onConversionSuccess={onConversionSuccess}
@@ -274,7 +274,7 @@ function Content({
         <DocumentViewer
           editorInitializationConfig={editorInitializationConfig}
           nodeMeta={nodeMeta}
-          action={actionMode}
+          openAction={openAction}
           providerType="private"
         />
       </>
