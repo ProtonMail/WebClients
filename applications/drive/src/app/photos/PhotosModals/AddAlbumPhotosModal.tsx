@@ -41,7 +41,7 @@ const AlbumSquare = ({
     return (
         <li key={album.linkId}>
             <Button
-                className="relative w-full flex flex-nowrap items-center justify-start gap-2 pl-0 album-photo-selection"
+                className="relative flex flex-nowrap items-center justify-start gap-2 album-photo-selection"
                 onClick={() => onClick(album.linkId)}
                 disabled={disabled}
                 loading={loading}
@@ -141,7 +141,7 @@ export const AddAlbumPhotosModal = ({
                     <ModalTwoContent className="max-h-custom" style={{ '--max-h-custom': '21.25rem' }}>
                         <Button
                             disabled={!!activeAlbumId}
-                            className="relative w-full flex items-center gap-2 pl-0 album-photo-selection"
+                            className="relative flex items-center gap-2 album-photo-selection"
                             onClick={() => {
                                 createAlbumModal.openModal(true);
                                 openModal(false);
