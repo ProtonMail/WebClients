@@ -180,12 +180,10 @@ export const AlbumsView: FC = () => {
 
     return (
         <>
-            {!isAlbumsEmpty && (
+            {!isAlbumsEmpty && !isAlbumsWithSharingDisabled && (
                 <AlbumsTags
                     selectedTags={selectedTags}
-                    tags={[AlbumTag.All, AlbumTag.MyAlbums].concat(
-                        isAlbumsWithSharingDisabled ? [] : [AlbumTag.Shared, AlbumTag.SharedWithMe]
-                    )}
+                    tags={[AlbumTag.All, AlbumTag.MyAlbums, AlbumTag.Shared, AlbumTag.SharedWithMe]}
                     onTagSelect={setSelectedTags}
                 />
             )}
