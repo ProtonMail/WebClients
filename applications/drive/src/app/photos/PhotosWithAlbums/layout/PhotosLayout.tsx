@@ -12,6 +12,7 @@ import {
     useModalStateObject,
     useNotifications,
 } from '@proton/components';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -244,13 +245,13 @@ export const PhotosLayout = () => {
     const handleDeleteAlbum = useCallback(
         async (
             abortSignal: AbortSignal,
-            { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
+            { missingPhotosIds, force }: { missingPhotosIds?: string[]; force: boolean }
         ) => {
             if (!albumShareId || !linkId || !albumName || !albumLinkId || !volumeId || !shareId) {
                 return;
             }
             try {
-                if (missingPhotosIds.length && !force) {
+                if (missingPhotosIds?.length && !force) {
                     await transferPhotoLinks(abortSignal, volumeId, {
                         shareId: albumShareId,
                         linkIds: missingPhotosIds,
@@ -259,15 +260,30 @@ export const PhotosLayout = () => {
                     });
                 }
                 await deleteAlbum(abortSignal, albumLinkId, force);
-            } catch (e) {
+                createNotification({
+                    text: c('Info').t`${albumName} has been successfully deleted`,
+                });
+            } catch (e: unknown) {
+                const error = e as {
+                    data?: {
+                        Code?: number;
+                        Details?: {
+                            ChildLinkIDs?: string[];
+                        };
+                    };
+                };
+                // Error will be catch by the DeleteAlbumModal to show save and delete modal
+                if (
+                    error.data?.Code === API_CUSTOM_ERROR_CODES.ALBUM_DATA_LOSS &&
+                    error.data.Details?.ChildLinkIDs?.length
+                ) {
+                    throw e;
+                }
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
                 }
                 sendErrorReport(e);
             }
-            createNotification({
-                text: c('Info').t`${albumName} has been successfully deleted`,
-            });
         },
         [
             albumShareId,
@@ -290,18 +306,16 @@ export const PhotosLayout = () => {
             return;
         }
         const abortSignal = new AbortController().signal;
-        const missingPhotosIds = albumPhotosLinkIds.filter((photoLinkId) => !photoLinkIds.includes(photoLinkId));
         void showDeleteAlbumModal({
-            missingPhotosCount: missingPhotosIds.length,
             name: albumName,
             deleteAlbum: (force, childLinkIds) =>
                 // childLinkIds are from BE, so this is a better source of truth compare to missingPhotosIds
-                handleDeleteAlbum(abortSignal, { missingPhotosIds: childLinkIds || missingPhotosIds, force }),
+                handleDeleteAlbum(abortSignal, { missingPhotosIds: childLinkIds, force }),
             onDeleted: () => {
                 navigateToAlbums();
             },
         });
-    }, [albumPhotosLinkIds, photoLinkIds, handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
+    }, [handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
     const handleToolbarPreview = useCallback(() => {
         let selectedLinkId = selectedItemsLinkIds[0];
@@ -356,19 +370,21 @@ export const PhotosLayout = () => {
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
-        const { missingPhotosIds, selectedPhotosIds } = selectedItemsLinkIds.reduce<{
-            selectedPhotosIds: string[];
-            missingPhotosIds: string[];
-        }>(
-            (acc, linkId) => {
-                if (!photoLinkIds.includes(linkId)) {
-                    acc.missingPhotosIds.push(linkId);
-                }
-                acc.selectedPhotosIds.push(linkId);
-                return acc;
-            },
-            { selectedPhotosIds: [], missingPhotosIds: [] }
-        );
+        const { missingPhotosIds, selectedPhotosIds } = isAlbumsWithSharingDisabled
+            ? { selectedPhotosIds: [], missingPhotosIds: [] }
+            : selectedItemsLinkIds.reduce<{
+                  selectedPhotosIds: string[];
+                  missingPhotosIds: string[];
+              }>(
+                  (acc, linkId) => {
+                      if (!photoLinkIds.includes(linkId)) {
+                          acc.missingPhotosIds.push(linkId);
+                      }
+                      acc.selectedPhotosIds.push(linkId);
+                      return acc;
+                  },
+                  { selectedPhotosIds: [], missingPhotosIds: [] }
+              );
         const abortSignal = new AbortController().signal;
         if (!missingPhotosIds.length) {
             await handleRemoveAlbumPhotos(abortSignal, { selectedPhotosIds });
@@ -382,7 +398,13 @@ export const PhotosLayout = () => {
                     }),
             });
         }
-    }, [selectedItemsLinkIds, photoLinkIds, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
+    }, [
+        isAlbumsWithSharingDisabled,
+        selectedItemsLinkIds,
+        photoLinkIds,
+        handleRemoveAlbumPhotos,
+        showRemoveAlbumPhotosModal,
+    ]);
 
     const onPhotoUploadedToAlbum = useCallback(
         async (file: OnFileUploadSuccessCallbackData) => {
@@ -553,7 +575,8 @@ export const PhotosLayout = () => {
                     }
                     onDetails={onShowDetails}
                     onSelectCover={
-                        !driveAlbumsDisabled && (currentPageType === AlbumsPageTypes.GALLERY || album?.cover?.linkId === previewItem.linkId)
+                        !driveAlbumsDisabled &&
+                        (currentPageType === AlbumsPageTypes.GALLERY || album?.cover?.linkId === previewItem.linkId)
                             ? undefined
                             : onSelectCoverPreview
                     }
