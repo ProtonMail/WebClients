@@ -19,7 +19,7 @@ import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { formatVideoDuration } from './formatVideoDuration';
 
-import './PhotosCard.scss';
+import './AlbumsCard.scss';
 
 type Props = {
     album: DecryptedAlbum;
@@ -64,16 +64,18 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    {!driveAlbumsDisabled && <DropdownMenuButton
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onRename();
-                        }}
-                        className="text-left flex items-center flex-nowrap"
-                    >
-                        <Icon className="mr-2" name="pencil" />
-                        {c('Action').t`Rename album`}
-                    </DropdownMenuButton>}
+                    {!driveAlbumsDisabled && (
+                        <DropdownMenuButton
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onRename();
+                            }}
+                            className="text-left flex items-center flex-nowrap"
+                        >
+                            <Icon className="mr-2" name="pencil" />
+                            {c('Action').t`Rename album`}
+                        </DropdownMenuButton>
+                    )}
                     {!isAlbumsWithSharingDisabled && (
                         <DropdownMenuButton
                             onClick={(e) => {
@@ -171,8 +173,8 @@ export const AlbumsCard: FC<Props> = ({
             style={style}
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
-                'relative photos-card album-card p-0 border-none rounded shadow-lifted',
-                isThumbnailLoading && 'photos-card--loading'
+                'relative albums-card p-0 rounded shadow-lifted',
+                isThumbnailLoading && 'albums-card--loading'
             )}
             data-testid="albums-card"
             onClick={onClick}
@@ -186,13 +188,13 @@ export const AlbumsCard: FC<Props> = ({
                     <div className="w-full h-full relative">
                         {thumbUrl ? (
                             <img
-                                data-testid="album-card-thumbnail"
+                                data-testid="albums-card-thumbnail"
                                 src={thumbUrl}
                                 alt={getAltText(album)}
-                                className="w-full h-full photos-card-thumbnail"
+                                className="w-full h-full albums-card-thumbnail"
                             />
                         ) : (
-                            <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
+                            <div className="flex items-center justify-center w-full h-full albums-card-thumbnail albums-card-thumbnail--empty">
                                 <Icon name="album" size={6} />
                             </div>
                         )}
@@ -207,14 +209,14 @@ export const AlbumsCard: FC<Props> = ({
                                     />
                                 )}
                                 {album.isShared && (
-                                    <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
+                                    <div className="albums-card-share-icon rounded-50 flex items-center justify-center">
                                         <Icon name="users" color="white" size={3} />
                                     </div>
                                 )}
                             </div>
                         )}
                         {album.mimeType && isVideo(album.mimeType) && (
-                            <div className="w-full absolute bottom-0 flex justify-end items-center px-2 py-2 photos-card-video-info">
+                            <div className="w-full absolute bottom-0 flex justify-end items-center px-2 py-2 albums-card-video-info">
                                 {album.duration && (
                                     <time
                                         className="text-semibold mr-1"
