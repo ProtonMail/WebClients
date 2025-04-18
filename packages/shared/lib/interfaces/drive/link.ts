@@ -159,6 +159,11 @@ export interface MoveLink {
     ContentHash?: string;
 }
 
+export interface MovePhotoLink extends MoveLink {
+    OriginalHash: string;
+    LinkID: string;
+}
+
 export interface RecoverPhotoLinks {
     ParentLinkID: string;
     Links: MoveLink[];
