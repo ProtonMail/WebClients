@@ -248,25 +248,31 @@ export default function useShareActions() {
         [debouncedRequest, getLinkPrivateKey, getShare, getShareSessionKey]
     );
 
-    const checkMigrationState = useCallback(async () => {
-        const result = await debouncedRequest<PhotoMigrationPayload & { Code: number }>(
-            queryPhotosVolumeMigrationState()
-        );
-        if (result.Code === 1002) {
-            return { isMigrating: true };
-        }
-        // If we receive a result with OldVolumeID and NewVolumeID, migration is complete
-        if (result.OldVolumeID && result.NewVolumeID) {
-            const { Volume } = await debouncedRequest<GetDriveVolumeResult>(queryGetDriveVolume(result.NewVolumeID));
-            volumesState.setVolumeShareIds(Volume.VolumeID, [Volume.Share.ShareID]);
-            clearDefaultPhotosSharePromise();
-            const oldPhotosShareId = getDefaultPhotosShareId();
-            if (oldPhotosShareId) {
-                removeShares([oldPhotosShareId]);
+    const checkMigrationState = useCallback(
+        async (silence: boolean = false) => {
+            const result = await debouncedRequest<PhotoMigrationPayload & { Code: number }>({
+                ...queryPhotosVolumeMigrationState(),
+                silence,
+            });
+            if (result.Code === 1002) {
+                return { isMigrating: true };
             }
-            return { Volume, isMigrating: false };
-        }
-    }, [debouncedRequest, volumesState, clearDefaultPhotosSharePromise, getDefaultPhotosShareId, removeShares]);
+            // If we receive a result with OldVolumeID and NewVolumeID, migration is complete
+            if (result.OldVolumeID && result.NewVolumeID) {
+                const { Volume } = await debouncedRequest<GetDriveVolumeResult>(
+                    queryGetDriveVolume(result.NewVolumeID)
+                );
+                volumesState.setVolumeShareIds(Volume.VolumeID, [Volume.Share.ShareID]);
+                clearDefaultPhotosSharePromise();
+                const oldPhotosShareId = getDefaultPhotosShareId();
+                if (oldPhotosShareId) {
+                    removeShares([oldPhotosShareId]);
+                }
+                return { Volume, isMigrating: false };
+            }
+        },
+        [debouncedRequest, volumesState, clearDefaultPhotosSharePromise, getDefaultPhotosShareId, removeShares]
+    );
 
     const startMigration = useCallback(async () => {
         try {
@@ -284,10 +290,15 @@ export default function useShareActions() {
     const shouldMigratePhotos = useCallback(async (): Promise<SHOULD_MIGRATE_PHOTOS_STATUS> => {
         const photosShare = await getDefaultPhotosShare();
         if (!photosShare) {
-            const migrationState = await checkMigrationState();
-            return migrationState?.isMigrating
-                ? SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATION_IN_PROGRESS
-                : SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE;
+            try {
+                const migrationState = await checkMigrationState(true);
+                return migrationState?.isMigrating
+                    ? SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATION_IN_PROGRESS
+                    : SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE;
+            } catch {
+                // silence 422 here
+                return SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE;
+            }
         }
         return photosShare.volumeType === VolumeType.Photos
             ? SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED
