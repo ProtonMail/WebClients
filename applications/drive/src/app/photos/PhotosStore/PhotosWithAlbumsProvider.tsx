@@ -141,42 +141,37 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const startPhotosMigration = useCallback(async () => {
         const signal = new AbortController().signal;
         const status = await shouldMigratePhotos();
-
-        const needToCreateOrMigrate =
-            status === SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE ||
-            status === SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION;
-
-        if (needToCreateOrMigrate) {
-            if (status === SHOULD_MIGRATE_PHOTOS_STATUS.NEED_MIGRATION) {
-                setMigrationStatus(MIGRATION_STATUS.MIGRATING);
-            }
-
-            let result;
-            if (status === SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE) {
-                result = await createPhotosWithAlbumsShare();
-            } else {
-                result = await migratePhotos();
-            }
-
-            const newPhotosShare = await getShareWithKey(signal, result.shareId);
-            const { address } = await getShareCreatorKeys(signal, newPhotosShare);
-
-            setPhotosShare(newPhotosShare);
-            setUserAddressEmail(address.Email);
-            setMigrationStatus(MIGRATION_STATUS.MIGRATED);
-            setVolumeShareIds(newPhotosShare.volumeId, [newPhotosShare.shareId]);
-        } else {
+        let result;
+        let newPhotosShare;
+        if (status === SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED) {
             const defaultPhotosShare = await getDefaultPhotosShare();
             if (!defaultPhotosShare) {
                 throw new Error('No default photos share found');
             }
-
-            setPhotosShare(defaultPhotosShare);
-            const { address } = await getShareCreatorKeys(signal, defaultPhotosShare);
-            setUserAddressEmail(address.Email);
-            setMigrationStatus(MIGRATION_STATUS.MIGRATED);
-            setVolumeShareIds(defaultPhotosShare.volumeId, [defaultPhotosShare.shareId]);
+            newPhotosShare = defaultPhotosShare;
+        } else if (status === SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE) {
+            result = await createPhotosWithAlbumsShare();
+        } else if (status === SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATION_IN_PROGRESS) {
+            setMigrationStatus(MIGRATION_STATUS.MIGRATING);
+            result = await migratePhotos(true);
+        } else {
+            setMigrationStatus(MIGRATION_STATUS.MIGRATING);
+            result = await migratePhotos();
         }
+
+        if (!newPhotosShare && result) {
+            newPhotosShare = await getShareWithKey(signal, result.shareId);
+        }
+
+        if (!newPhotosShare) {
+            throw new Error('No photos share found during migration');
+        }
+
+        const { address } = await getShareCreatorKeys(signal, newPhotosShare);
+        setPhotosShare(newPhotosShare);
+        setUserAddressEmail(address.Email);
+        setMigrationStatus(MIGRATION_STATUS.MIGRATED);
+        setVolumeShareIds(newPhotosShare.volumeId, [newPhotosShare.shareId]);
     }, [
         createPhotosWithAlbumsShare,
         getDefaultPhotosShare,
