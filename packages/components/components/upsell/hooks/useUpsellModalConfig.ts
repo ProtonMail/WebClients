@@ -17,7 +17,7 @@ import useGetFlag from '@proton/unleash/useGetFlag';
 
 import { getMailUpsellConfig } from '../config/getMailUpsellConfig';
 import { getUpsellConfig } from '../config/getUpsellConfig';
-import type { MailUpsellConfig } from '../config/interface';
+import type { UpsellConfig } from '../config/interface';
 
 interface Props {
     upsellRef?: string;
@@ -26,7 +26,7 @@ interface Props {
     step?: SUBSCRIPTION_STEPS;
 }
 
-type FetchUpsellConfig = (props: Props) => Promise<MailUpsellConfig>;
+type FetchUpsellConfig = (props: Props) => Promise<UpsellConfig>;
 
 interface Props {
     upsellRef?: string;
@@ -40,31 +40,58 @@ const CONFIG_FETCH_TIMEOUT = 5000;
 
 const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, step }: Props) => {
     const { APP_NAME } = useConfig();
-    const [config, setConfig] = useState<MailUpsellConfig | null>(null);
+    const [config, setConfig] = useState<UpsellConfig | null>(null);
     const { paymentsApi } = usePaymentsApi();
     const [openSubscriptionModal] = useSubscriptionModal();
     const dispatch = useDispatch();
     const getFlag = useGetFlag();
 
     useEffect(() => {
+        let isConfigFetched = false;
         const controller = new AbortController();
+
         const fetchUpsellConfig: FetchUpsellConfig = async ({
             onSubscribed,
             preventInApp = false,
             step,
             upsellRef,
         }) => {
+            //
+            // Timeout and abort setup
+            //
+            // If fetch takes more than 5 seconds, abort
+            // Signal can be aborted on:
+            // - Component unmount
+            // - Timeout
+            const timeoutId = window.setTimeout(() => {
+                controller.abort(`Upsell config fetch took more than limit of ${CONFIG_FETCH_TIMEOUT}ms`);
+            }, CONFIG_FETCH_TIMEOUT);
+
+            // If signal is aborted, clear timeout and throw error
+            controller.signal.addEventListener(
+                'abort',
+                () => {
+                    window.clearTimeout(timeoutId);
+                    throw new Error(controller.signal.reason);
+                },
+                { once: true }
+            );
+
+            //
             // Fetch dependencies
+            //
             const [user, subscription, plansModel, status] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(subscriptionThunk()),
                 dispatch(plansThunk()),
                 dispatch(paymentStatusThunk()),
             ]);
+            const plans = plansModel?.plans ?? [];
 
             try {
-                const plans = plansModel?.plans ?? [];
-
+                //
+                // Start logic
+                //
                 // Get currency
                 const currency = getPreferredCurrency({
                     user,
@@ -103,6 +130,10 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     user,
                 });
 
+                // Clear timeout and set fetch flag to true
+                isConfigFetched = true;
+                window.clearTimeout(timeoutId);
+
                 return {
                     coupon,
                     cycle,
@@ -136,7 +167,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     user,
                 });
 
-                const defaultConfig: MailUpsellConfig = {
+                const defaultConfig: UpsellConfig = {
                     cycle: defaultCycle,
                     planIDs: defaultPlanIDs,
                     submitText: getPlanOrAppNameText(defaultPlanName),
@@ -145,49 +176,29 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     onUpgrade,
                 };
 
+                // Clear timeout and set fetch flag to true
+                isConfigFetched = true;
+                window.clearTimeout(timeoutId);
+
                 return defaultConfig;
             }
         };
 
-        const fetchUpsellConfigWithTimeout = async () => {
-            // If fetch takes more than 5 seconds, abort
-            const timeoutId = window.setTimeout(() => {
-                controller.abort(`Upsell config fetch took more than limit of ${CONFIG_FETCH_TIMEOUT}ms`);
-            }, CONFIG_FETCH_TIMEOUT);
-
-            // If signal is aborted, clear timeout and throw error
-            controller.signal.addEventListener(
-                'abort',
-                () => {
-                    window.clearTimeout(timeoutId);
-                    throw new Error(controller.signal.reason);
-                },
-                { once: true }
-            );
-
-            const config = await fetchUpsellConfig({
-                upsellRef,
-                preventInApp: preventInAppPayment,
-                onSubscribed,
-                step,
-            });
-
-            window.clearTimeout(timeoutId);
-
-            return config;
-        };
-
-        void fetchUpsellConfigWithTimeout()
-            .then((config) => {
-                setConfig(config);
-            })
-            .catch((e) => {
-                traceInitiativeError(SentryMailInitiatives.UPSELL_MODALS, e);
-            });
+        // Execute config fetch
+        void fetchUpsellConfig({
+            upsellRef,
+            preventInApp: preventInAppPayment,
+            onSubscribed,
+            step,
+        }).then((config) => {
+            setConfig(config);
+        });
 
         return () => {
-            // If component is unmounted before config is fetched, abort the fetch
-            controller.abort('Upsell Modal unmounted before config was fetched');
+            if (!isConfigFetched) {
+                // If component is unmounted before config is fetched, abort the fetch
+                controller.abort('Upsell Modal unmounted before config was fetched');
+            }
         };
     }, []);
 

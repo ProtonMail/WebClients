@@ -2,7 +2,7 @@ import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import * as getComposerAssistantUpsellConfigModule from './cases/getComposerAssistantUpsellConfig';
-import * as getDefaultMailUpsellConfigModule from './cases/getDefaultMailUpsellConfig';
+import * as getDefaultMailUpsellConfigModule from './cases/getDefaultUpsellConfig';
 import * as getFreeUserUpsellConfigModule from './cases/getFreeUserUpsellConfig';
 import * as getProtonSentinelUpsellConfigModule from './cases/getProtonSentinelUpsellConfig';
 import { getMailUpsellConfig } from './getMailUpsellConfig';

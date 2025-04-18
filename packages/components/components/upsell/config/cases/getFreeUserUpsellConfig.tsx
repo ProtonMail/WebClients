@@ -4,32 +4,30 @@ import Price from '@proton/components/components/price/Price';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, isMainCurrency } from '@proton/payments/index';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 
+import { getUpsellPlanMonthlyPrice } from '../helpers/getupsellPlanMonthlyPrice';
 import type { MailUpsellConfigCase } from '../interface';
 
 const ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE = 100;
 
 export const getFreeUserUpsellConfig: MailUpsellConfigCase = async (props) => {
-    const { currency, paymentsApi } = props;
+    const { currency, paymentsApi, plans } = props;
 
     // Free users got 1$ promo displayed
     const planIDs = { [PLANS.MAIL]: 1 };
     const cycle = CYCLE.MONTHLY;
     // Free users got 1$ promo displayed
     const coupon = COUPON_CODES.TRYMAILPLUS0724;
-    const monthlyPrice = await (async () => {
-        if (isMainCurrency(currency)) {
-            return ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE;
-        }
 
-        const result = await paymentsApi.checkWithAutomaticVersion({
-            Plans: planIDs,
-            Currency: currency,
-            Cycle: cycle,
-            CouponCode: coupon,
-        });
-
-        return result.AmountDue;
-    })();
+    const monthlyPrice = isMainCurrency(currency)
+        ? ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE
+        : await getUpsellPlanMonthlyPrice({
+              currency,
+              cycle,
+              paymentsApi,
+              planIDs,
+              plans,
+              coupon,
+          });
 
     const footerText = (() => {
         const priceLine = (
