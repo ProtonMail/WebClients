@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import useNavigate from '../../hooks/drive/useNavigate';
@@ -120,13 +121,13 @@ export const AlbumsView: FC = () => {
         async (
             abortSignal: AbortSignal,
             album: DecryptedAlbum,
-            { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
+            { missingPhotosIds, force }: { missingPhotosIds?: string[]; force: boolean }
         ) => {
             if (!linkId || !volumeId || !shareId) {
                 return;
             }
             try {
-                if (!force) {
+                if (missingPhotosIds?.length && !force) {
                     await transferPhotoLinks(abortSignal, volumeId, {
                         shareId: album.rootShareId,
                         linkIds: missingPhotosIds,
@@ -135,16 +136,31 @@ export const AlbumsView: FC = () => {
                     });
                 }
                 await deleteAlbum(abortSignal, album.linkId, force);
+                const albumName = album.name;
+                createNotification({
+                    text: c('Info').t`${albumName} has been successfully deleted`,
+                });
             } catch (e) {
+                const error = e as {
+                    data?: {
+                        Code?: number;
+                        Details?: {
+                            ChildLinkIDs?: string[];
+                        };
+                    };
+                };
+                // Error will be catch by the DeleteAlbumModal to show save and delete modal
+                if (
+                    error.data?.Code === API_CUSTOM_ERROR_CODES.ALBUM_DATA_LOSS &&
+                    error.data.Details?.ChildLinkIDs?.length
+                ) {
+                    throw e;
+                }
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
                 }
                 sendErrorReport(e);
             }
-            const albumName = album.name;
-            createNotification({
-                text: c('Info').t`${albumName} has been successfully deleted`,
-            });
         },
         [linkId, createNotification, deleteAlbum, transferPhotoLinks, shareId, volumeId]
     );
@@ -156,17 +172,16 @@ export const AlbumsView: FC = () => {
         async (album: DecryptedAlbum) => {
             const abortSignal = new AbortController().signal;
             void modals.deleteAlbum?.({
-                missingPhotosCount: album.photoCount,
                 name: album.name,
                 deleteAlbum: (force, childLinkIds) =>
                     // childLinkIds are from BE, so this is a better source of truth compare to missingPhotosIds
-                    handleDeleteAlbum(abortSignal, album, { missingPhotosIds: childLinkIds || [], force }),
+                    handleDeleteAlbum(abortSignal, album, { missingPhotosIds: childLinkIds, force }),
                 onDeleted: () => {
                     navigateToAlbums();
                 },
             });
         },
-        [handleDeleteAlbum, navigateToAlbums, modals]
+        [modals, handleDeleteAlbum, navigateToAlbums]
     );
 
     const isAlbumsEmpty = albums.length === 0;
