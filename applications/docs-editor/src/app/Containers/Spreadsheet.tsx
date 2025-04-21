@@ -599,7 +599,7 @@ export function Spreadsheet({
           onProtectRange={onProtectRange}
           onUnProtectRange={onUnProtectRange}
           namedRanges={namedRanges}
-          licenseKey={process.env.SHEETS_KEY}
+          licenseKey={process.env.DOCS_SHEETS_KEY}
           onRequestSearch={onRequestSearch}
           users={users}
           userId={userName}
