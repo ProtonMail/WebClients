@@ -10,7 +10,7 @@ const result = (env: any): Configuration => {
   const config = getConfig(env)
   config.plugins?.push(
     new DefinePlugin({
-      'process.env.SHEETS_KEY': JSON.stringify(process.env.SHEETS_KEY),
+      'process.env.DOCS_SHEETS_KEY': JSON.stringify(process.env.DOCS_SHEETS_KEY),
     }),
   )
   if (env.appMode === 'standalone') {
