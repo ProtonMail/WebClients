@@ -1479,7 +1479,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay }: prejeto"
+        "Nabiralnik osebe ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 sledilnikov odstranjenih"
@@ -4140,11 +4140,11 @@
       "Forward to": [
         "Posreduj na"
       ],
-      "or": [
-        "ali"
-      ],
       "Or": [
         "Ali"
+      ],
+      "or": [
+        "ali"
       ],
       "With attachment": [
         "S priponko"
@@ -4593,7 +4593,7 @@
         "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da boste lahko upravljali več uporabnikov."
       ],
       "Please upload only 1 file": [
-        "Naložite samo 1 datoteko."
+        "Naložite samo 1 datoteko"
       ],
       "Port is required": [
         "Zahtevana so vrata"
@@ -5827,7 +5827,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Samodejno posreduj"
+        "Samodejno posredujte"
       ],
       "Gmail messages to your inbox": [
         "sporočila iz Gmaila v svoj nabiralnik"
@@ -7575,16 +7575,16 @@
         "Vstavi povezavo"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Namestite konfiguracijsko datoteko za državo, če se želite povezati na naključen strežnik v izbrani državi."
+        "Namestite konfiguracijsko datoteko Country configuration, če se želite povezati na naključen strežnik v izbrani državi."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Namestite konfiguracijsko datoteko za brezplačni strežnik, če se želite povezati na točno določen strežnik na eni izmed treh brezplačnih lokacij."
+        "Namestite konfiguracijsko datoteko Free server, če se želite povezati na točno določen strežnik na eni izmed treh brezplačnih lokacij."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Namestite Secure Core konfiguracijsko datoteko za dodatno zaščito končne točke VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Namestite konfiguracijsko datoteko za državo, če se želite povezati na točno določen strežnik v izbrani državi."
+        "Namestite konfiguracijsko datoteko Server configuration, če se želite povezati na točno določen strežnik v izbrani državi."
       ],
       "Internet connection lost": [
         "Internetna povezava je prekinjena"
@@ -8079,7 +8079,7 @@
         "Povezava za priporočilo je bila kopirana v odložišče."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
+        "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Registering your subscription…": [
         "Registriram vašo naročnino …"
@@ -9635,10 +9635,10 @@
       "Allow recovery using a trusted device": [
         "Dovoli obnovitev z uporabo zaupanja vredne naprave."
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
       "Amount": [
@@ -9647,11 +9647,11 @@
       "Amount due": [
         "Zapadli znesek"
       ],
-      "AND": [
-        "IN"
-      ],
       "And": [
         "In"
+      ],
+      "AND": [
+        "IN"
       ],
       "and": [
         "in"
@@ -10058,11 +10058,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ČE"
-      ],
       "If": [
         "Če"
+      ],
+      "IF": [
+        "ČE"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -10238,14 +10238,14 @@
       "Optional": [
         "Neobvezno"
       ],
-      "OR": [
-        "ALI"
-      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
+      ],
+      "OR": [
+        "ALI"
       ],
       "Organization name": [
         "Ime organizacije"

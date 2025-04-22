@@ -1514,6 +1514,9 @@
       "${ price } per domain": [
         "${ price } per domän"
       ],
+      "${ price } per seat": [
+        "${ price } per plats"
+      ],
       "${ price } per user": [
         "${ price } per användare"
       ],
@@ -1621,7 +1624,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay }'s inkorg"
+        "${ nameToDisplay }s inkorg"
       ],
       "5 trackers removed": [
         "5 spårare borttagna"
@@ -3961,7 +3964,7 @@
         "Börja med att ge din organisation ett namn."
       ],
       "Track the status and activity of your referrals.": [
-        "Spåra status och aktivitet för dina inbjudningar."
+        "Spåra statusen och aktiviteten för dina hänvisningar."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Lås upp kortare e-postadresser och andra premiumfunktioner genom att uppgradera."
@@ -4694,11 +4697,11 @@
       "Forward to": [
         "Vidarebefordra till"
       ],
-      "or": [
-        "eller"
-      ],
       "Or": [
         "Eller"
+      ],
+      "or": [
+        "eller"
       ],
       "With attachment": [
         "Med bilaga"
@@ -6439,7 +6442,7 @@
         "Öppna ${ MAIL_APP_NAME } i ${ webAppMessage }"
       ],
       "Your desktop app free trial has ended": [
-        "Din gratis provperiod av skrivbordsappen har upphört"
+        "Din gratis provperiod av din app för stationär dator har upphört"
       ]
     },
     "Get started checklist instructions": {
@@ -6491,7 +6494,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Automatisk vidarebefordrad"
+        "Automatiskt vidarebefordrad"
       ],
       "Gmail messages to your inbox": [
         "Gmail-meddelanden till din inkorg"
@@ -7180,6 +7183,11 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
+      ]
+    },
+    "Inactive key function info": {
+      "If reactivated, the key will be used for decryption and verification": [
+        "Om den återaktiveras kommer nyckeln att användas för dekryptering och verifiering"
       ]
     },
     "Info": {
@@ -10941,10 +10949,10 @@
       "Allow sharing outside the organization": [
         "Tillåt delning utanför organisationen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10956,11 +10964,11 @@
       "Amount due": [
         "Att betala"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -11388,11 +11396,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -11488,10 +11496,10 @@
         "Markera som"
       ],
       "Maximum number of characters": [
-        "Max antal tecken"
+        "Maximalt antal tecken"
       ],
       "Maximum number of words": [
-        "Max antal ord"
+        "Maximalt antal ord"
       ],
       "Members without 2FA": [
         "Medlemmar utan 2FA"
@@ -11595,14 +11603,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -14494,7 +14502,7 @@
         "Normal"
       ],
       "Not allowed": [
-        "Ej tillåtet"
+        "Inte tillåtet"
       ],
       "Off": [
         "Av"
@@ -16179,6 +16187,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL för SCIM-anslutaren till vilken din IdP Provisioning Agent vidarebefordrar SCIM-data"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Organisationsinställning och kontosäkerhet"
       ]
     },
     "Security Center - Info": {
@@ -19329,6 +19342,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
       ],
+      "Org setup": [
+        "Organisationsinställning"
+      ],
       "Organization filters": [
         "Organisationsfilter"
       ],
@@ -19712,7 +19728,7 @@
         "Tidszon"
       ],
       "Track your referrals": [
-        "Spåra dina inbjudningar"
+        "Spåra dina hänvisningar"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
