@@ -589,7 +589,7 @@
         "Spravovat sdílení"
       ],
       "Manage users/addresses": [
-        "Spravovat uživatele/ adresy"
+        "Spravovat uživatele/adresy"
       ],
       "Mark as favorite": [
         "Označit jako oblíbené"
@@ -3043,7 +3043,7 @@
         "Nelze aktualizovat vytvořený trezor"
       ],
       "Could not remove from favorites": [
-        "Nelze odebrat do oblíbených"
+        "Nelze odebrat z oblíbených"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
@@ -5693,8 +5693,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Některé fotky v tomto albu se nemusí uložit na časovou osu. Smazáním tohoto alba budou tyto fotky trvale smazány."
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Některé fotky v tomto albu se neukládají na časovou osu. Smazáním tohoto alba budou tyto fotky trvale smazány."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Některé webové stránky a streamovací služby blokují obsah podle regionu. VPN umožňuje tato omezení obejít a volně přistupovat k internetu."
@@ -6019,6 +6019,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Výborně, právě jste si navýšili úložný prostor na 5 GB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Máme technické problémy. Veškeré akce související s alby jsou dočasně deaktivovány."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Máme technické problémy. Nahrávání nových fotek je dočasně vypnuto."
@@ -8614,30 +8617,6 @@
         "${ count } položek se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } fotku se nepodařilo přidat do \"${ albumName }\"",
-        "${ nbFailures } fotky se nepodařilo přidat do \"${ albumName }\"",
-        "${ nbFailures } fotek se nepodařilo přidat do \"${ albumName }\"",
-        "${ nbFailures } fotek se nepodařilo přidat do \"${ albumName }\""
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } fotku se nepodařilo odebrat z ${ albumLink.name }",
-        "${ nbFailures } fotky se nepodařilo odebrat z ${ albumLink.name }",
-        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }",
-        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } fotka přidána do \"${ albumName }\"",
-        "${ nbSuccesses } fotky přidány do \"${ albumName }\"",
-        "${ nbSuccesses } fotek přidáno do \"${ albumName }\"",
-        "${ nbSuccesses } fotek přidáno do \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } fotka odebrána z ${ albumLink.name }",
-        "${ nbSuccesses } fotky odebrány z ${ albumLink.name }",
-        "${ nbSuccesses } fotek odebráno z ${ albumLink.name }",
-        "${ nbSuccesses } fotek odebráno z ${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka smazána",
         "${ numberOfItems } položky smazány",
@@ -8890,11 +8869,23 @@
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Vaše fotografie byly přidány do alba \"${ albumName }\""
+      ],
       "Your settings failed to be saved": [
         "Vaše nastavení se nepodařilo uložit"
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavení bylo úspěšně změněno"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "Některé fotografie nebylo možné přidat do alba \"${ albumName }\""
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Některé fotografie se nepodařilo odebrat z alba ${ albumLink.name }"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Vaše fotografie byly odebrány z ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9032,10 +9023,10 @@
       "Invite members": [
         "Pozvat členy"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Možná později"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Možná později"
       ],
       "Select theme": [

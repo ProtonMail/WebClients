@@ -186,6 +186,9 @@
       "Close transfers": [
         "Chiudi i trasferimenti"
       ],
+      "Collaborate on documents": [
+        "Collabora sui documenti"
+      ],
       "Collapse": [
         "Comprimi"
       ],
@@ -203,6 +206,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Conferma l'apertura del link ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Connetti app e dispositivi"
+      ],
+      "Connect to video conferencing": [
+        "Connettiti alla videoconferenza"
       ],
       "Contact group": [
         "Gruppo di contatti"
@@ -344,6 +353,9 @@
       "Download": [
         "Scarica"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Scarica le app per ${ DRIVE_APP_NAME }"
+      ],
       "Download (${ count })": [
         "Scarica (${ count })"
       ],
@@ -434,6 +446,9 @@
       "Get Started": [
         "Inizia ora"
       ],
+      "Get the apps": [
+        "Ottieni le app"
+      ],
       "Get verification code": [
         "Invia il codice di verifica"
       ],
@@ -494,6 +509,9 @@
       "Import emails": [
         "Importa le email"
       ],
+      "Import emails, calendars, contacts": [
+        "Importa email, calendari, contatti"
+      ],
       "Import from .csv or vCard": [
         "Importa da .csv o vCard"
       ],
@@ -542,8 +560,14 @@
       "Loading verification": [
         "Caricamento della verifica in corso"
       ],
+      "Manage advanced account protections": [
+        "Gestisci le protezioni avanzate dell'account"
+      ],
       "Manage folders": [
         "Gestisci cartelle"
+      ],
+      "Manage groups": [
+        "Gestisci i gruppi"
       ],
       "Manage labels": [
         "Gestisci etichette"
@@ -553,6 +577,9 @@
       ],
       "Manage share": [
         "Gestisci condivisione"
+      ],
+      "Manage users/addresses": [
+        "Gestisci utenti/indirizzi"
       ],
       "Mark as favorite": [
         "Segna come preferito"
@@ -704,6 +731,9 @@
       "Remove bonuses": [
         "Rimuovi bonus"
       ],
+      "Remove button": [
+        "Rimuovi pulsante"
+      ],
       "Remove device": [
         "Rimuovi il dispositivo"
       ],
@@ -842,8 +872,20 @@
       "Set as cover": [
         "Imposta come copertina"
       ],
+      "Set recovery methods": [
+        "Imposta i metodi di recupero"
+      ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
+      ],
+      "Set up 2FA": [
+        "Configura 2FA"
+      ],
+      "Set up a custom domain": [
+        "Configura un dominio personalizzato"
+      ],
+      "Set up email forwarding": [
+        "Configura l'inoltro delle email"
       ],
       "Settings": [
         "Impostazioni"
@@ -862,6 +904,9 @@
       ],
       "Share via link": [
         "Condividi con link"
+      ],
+      "Share your calendar with your team": [
+        "Condividi il tuo calendario con il tuo team"
       ],
       "Sharing options": [
         "Opzioni di condivisione"
@@ -947,6 +992,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Annulla"
       ],
@@ -977,6 +1025,9 @@
       "Upload": [
         "Carica"
       ],
+      "Upload and share files": [
+        "Carica e condividi file"
+      ],
       "Upload anyway": [
         "Carica comunque"
       ],
@@ -1000,6 +1051,12 @@
       ],
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Usa ${ PASS_APP_NAME } per Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
       ],
       "Use a different card": [
         "Usa una carta differente"
@@ -1154,17 +1211,17 @@
         "6 utenti"
       ],
       "Premium Password Manager": [
-        "Password manager premium"
+        "Gestore di password premium"
       ]
     },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
-        "Garanzia 30 giorni soddisfatti o rimborsati"
+        "Garanzia di rimborso entro 30 giorni"
       ]
     },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione dei calendari e molto altro."
       ]
     },
     "BF2024: Deal details": {
@@ -2534,14 +2591,32 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con un monitoraggio dedicato 24 ore su 24, 7 giorni su 7, delle attività sospette, incluso l'inoltro agli specialisti della sicurezza."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA aggiunge un ulteriore livello di sicurezza, impedendo l'accesso non autorizzato."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Aggiungi cartelle e file a ${ DRIVE_APP_NAME } e invita i membri del team a visualizzare o modificare."
+      ],
       "Also included": [
         "Incluso anche"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Inoltra automaticamente le email in arrivo a un altro indirizzo email."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configura prima questa opzione per attivare la tua organizzazione e personalizzare il tuo indirizzo email."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Connetti il tuo CRM, sito web, stampanti e altro."
+      ],
+      "Create groups you can email with a single address.": [
+        "Crea gruppi a cui puoi inviare email con un singolo indirizzo."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
@@ -2552,8 +2627,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Progettato per gli utenti che cercano una maggiore protezione per i propri account."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accedi facilmente al tuo indirizzo email e calendario su computer e dispositivo mobile."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronizza facilmente i file sul cloud dal tuo desktop e accedi dal tuo dispositivo mobile."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Incoraggia l'uso dell'autenticazione a due fattori nella tua organizzazione per una maggiore sicurezza."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Garantisci un accesso sicuro ai dati dell'organizzazione, anche se il tuo team è da remoto o utilizza una rete WiFi pubblica."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garantisci la massima sicurezza per il tuo account con il programma ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
@@ -2561,8 +2657,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Aiuta il tuo team ad archiviare in modo sicuro le password relative a informazioni aziendali e dei clienti sensibili."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Ti consente di aggiungere immediatamente i link per le riunioni ai tuoi inviti a un evento."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
@@ -2576,6 +2678,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Imposta un metodo di recupero per evitare di perdere l'accesso al tuo account."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configura gli account per tutti gli user e invitali a partecipare a ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Semplifica la sincronizzazione e la pianificazione con i calendari condivisi."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
       ],
@@ -2585,6 +2693,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Per iniziare, dai un nome alla tua organizzazione."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Effettua l'upgrade a ${ planName } per continuare a condividere file con accesso in modifica."
       ],
@@ -2593,6 +2704,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Usa questa guida per fare in modo che la tua organizzazione tragga rapidamente vantaggio dalla crittografia e dall'ecosistema di privacy leader del settore di ${ BRAND_NAME }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con i gruppi di contatti, puoi inviare email a tutte le persone nel gruppo con un solo click."
@@ -5107,6 +5221,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Solamente le persone con il link e la password possono accedere a questa cartella."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Apri la guida per le azioni consigliate e i link utili."
+      ],
       "or discover other features:": [
         "o scopri altre funzionalità:"
       ],
@@ -5412,8 +5529,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alcuni dei tuoi file non sono più accessibili. Ripristina l'accesso ai tuoi file. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Alcune foto di questo album potrebbero non essere salvate nella tua cronologia. Eliminando questo album eliminerai anche le foto in modo permanente."
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Alcune delle foto in questo album non sono salvate nella tua linea temporale. Eliminando questo album eliminerai anche le foto in modo permanente."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alcuni siti web e servizi di streaming bloccano i contenuti in base alla regione. Una VPN ti consente di aggirare queste restrizioni e accedere a Internet liberamente."
@@ -5734,6 +5851,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Ben fatto, hai appena aumentato lo spazio di archiviazione a 5 GB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Stiamo riscontrando problemi tecnici. Tutte le azioni relative agli album sono temporaneamente disabilitate."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Stiamo riscontrando problemi tecnici. Il caricamento di nuove foto è temporaneamente disabilitato."
@@ -8295,22 +8415,6 @@
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "Non si è potuto aggiungere ${ nbFailures } foto a «${ albumName }».",
-        "Non si è potuto aggiungere ${ nbFailures } foto a «${ albumName }»."
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "Non si è potuto rimuovere ${ nbFailures } foto da ${ albumLink.name }.",
-        "Non si è potuto rimuovere ${ nbFailures } foto da ${ albumLink.name }."
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } foto è stata aggiunta a «${ albumName }».",
-        "${ nbSuccesses } foto sono state aggiunte a «${ albumName }»."
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } foto rimossa da ${ albumLink.name }",
-        "${ nbSuccesses } foto rimosse da ${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminato",
         "${ numberOfItems } elementi eliminati"
@@ -8529,11 +8633,23 @@
       "Your old files will be deleted in 72 hours": [
         "I tuoi vecchi file verranno eliminati entro 72 ore"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Le tue foto sono state aggiunte a \"${ albumName }\""
+      ],
       "Your settings failed to be saved": [
         "Salvataggio delle impostazioni non riuscito"
       ],
       "Your settings have been changed successfully": [
         "Le impostazioni sono state modificate con successo"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "⁠Non è stato possibile aggiungere alcune foto a \"${ albumName }\""
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Non è stato possibile rimuovere alcune foto da ${ albumLink.name }"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Le tue foto sono state rimosse da ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8671,10 +8787,10 @@
       "Invite members": [
         "Invita membri"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Forse più tardi"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Forse più tardi"
       ],
       "Select theme": [
@@ -9120,6 +9236,9 @@
       "New name": [
         "Nuovo nome"
       ],
+      "Organization name": [
+        "Nome dell'organizzazione"
+      ],
       "Password": [
         "Password"
       ],
@@ -9152,6 +9271,9 @@
       ],
       "Start typing an email address": [
         "Inizia a digitare un indirizzo email"
+      ],
+      "Your organization name": [
+        "Il nome della tua organizzazione"
       ]
     },
     "Placeholder for contact group name": {
@@ -9240,6 +9362,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "L'accesso non è stato completato correttamente."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configurazione dell'organizzazione e sicurezza dell'account"
       ]
     },
     "Security Center": {
@@ -10427,16 +10554,16 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Sono inclusi alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica con i dati delle carte di credito e altro ancora."
+        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Include alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica dei dati delle carte di credito, e molto altro."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la cronologia delle versioni, la condivisione di file crittografati e molto altro."
       ]
     },
     "Tab subscription modal": {
@@ -10613,6 +10740,9 @@
       "Add to ${ groupName }": [
         "Aggiungi a ${ groupName }"
       ],
+      "Add user": [
+        "Aggiungi utente"
+      ],
       "Addresses": [
         "Indirizzi"
       ],
@@ -10689,6 +10819,9 @@
       "Clearing data": [
         "Cancellazione dati"
       ],
+      "Collaborate on documents": [
+        "Collabora sui documenti"
+      ],
       "Completed": [
         "Completato"
       ],
@@ -10703,6 +10836,15 @@
       ],
       "Confirmation required": [
         "È necessaria una conferma"
+      ],
+      "Connect apps and devices": [
+        "Connetti app e dispositivi"
+      ],
+      "Connect to video conferencing": [
+        "Connettiti alla videoconferenza"
+      ],
+      "Connect your custom domain": [
+        "Connetti il tuo dominio personalizzato"
       ],
       "Contact Details": [
         "Dettagli contatto"
@@ -10802,6 +10944,9 @@
       "Download ${ date }": [
         "Scarica ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Scarica le app di ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Scarica l'app"
       ],
@@ -10850,8 +10995,14 @@
       "Enable 2FA": [
         "Abilita 2FA"
       ],
+      "Enable advanced account protection": [
+        "Attiva la protezione avanzata dell'account"
+      ],
       "Enable drive search": [
         "Abilita la ricerca di unità"
+      ],
+      "Enhance security with 2FA": [
+        "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
       ],
       "Enter 2FA code": [
         "Inserisci il codice di autenticazione a due fattori"
@@ -10920,6 +11071,9 @@
       ],
       "Import contacts": [
         "Importa i contatti"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importa email, calendari, contatti"
       ],
       "Import events": [
         "Importa eventi"
@@ -11044,6 +11198,12 @@
       "Open actions dropdown": [
         "Apri menu delle azioni"
       ],
+      "Org setup": [
+        "Configurazione dell'organizzazione"
+      ],
+      "Organization setup": [
+        "Configurazione dell'organizzazione"
+      ],
       "Original size": [
         "Dimensione originale"
       ],
@@ -11153,14 +11313,26 @@
       "Select link expiration time": [
         "Seleziona ora di scadenza del link"
       ],
+      "Set recovery methods": [
+        "Imposta i metodi di ripristino"
+      ],
       "Set recovery phrase": [
         "Imposta una frase di recupero"
+      ],
+      "Set up email forwarding": [
+        "Configura l'inoltro delle email"
+      ],
+      "Set up your organization": [
+        "Configura la tua organizzazione"
       ],
       "Settings": [
         "Impostazioni"
       ],
       "Share ${ name }": [
         "Condividi ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Condividi il tuo calendario con il tuo team"
       ],
       "Shared": [
         "Condivisi"
@@ -11176,6 +11348,12 @@
       ],
       "Sign out": [
         "Esci dall'account"
+      ],
+      "Simplify email distribution": [
+        "Semplifica la distribuzione di email"
+      ],
+      "Simplify password management": [
+        "Semplifica la gestione delle password"
       ],
       "Size": [
         "Dimensione"
@@ -11222,6 +11400,9 @@
       "Trash": [
         "Cestino"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Tipo"
       ],
@@ -11237,6 +11418,9 @@
       "Upgrade complete!": [
         "Aggiornamento completato!"
       ],
+      "Upload and share files": [
+        "Carica e condividi file"
+      ],
       "Uploaded": [
         "Caricato"
       ],
@@ -11245,6 +11429,9 @@
       ],
       "Uploading a large file or folder": [
         "File di grandi dimensioni o cartella in caricamento."
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
       ],
       "Verification failed": [
         "Verifica non riuscita"
@@ -11269,6 +11456,9 @@
       ],
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Benvenuto in ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Da cosa può proteggerti una VPN?"
