@@ -734,10 +734,10 @@
       "Upgrade": [
         "अपग्रेड करें"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "अभी अपग्रेड करें"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -6590,26 +6590,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -6631,6 +6611,26 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "शुरू करें ${ priceCoupon } के लिए"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {

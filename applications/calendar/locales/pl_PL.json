@@ -618,7 +618,7 @@
         "Usuń spotkanie Zoom"
       ],
       "Reply with a note": [
-        "Odpowiedz z notatką"
+        "Odpowiedz z wiadomością"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -803,10 +803,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -2865,7 +2865,7 @@
         "Ustaw metodę odzyskiwania, aby uniknąć utraty dostępu do konta."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
-        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do dołączenia do ${ BRAND_NAME }."
+        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Uprość synchronizację i planowanie za pomocą udostępnionych kalendarzy."
@@ -3056,7 +3056,7 @@
     },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
-        "NOTATKA:\n${ eventComment }"
+        "WIADOMOŚĆ:\n${ eventComment }"
       ]
     },
     "Email body for description (description part)": {
@@ -3075,7 +3075,7 @@
         "Zmiany:"
       ],
       "NOTE:": [
-        "NOTATKA:"
+        "WIADOMOŚĆ:"
       ],
       "This event occurrence was canceled.": [
         "Powtórzenie wydarzenia zostało anulowane."
@@ -7180,26 +7180,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -7221,6 +7201,26 @@
       ],
       "Switch plan": [
         "Zmień plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8158,7 +8158,7 @@
     },
     "Note": {
       "Note:": [
-        "Notatka:"
+        "Wiadomość:"
       ]
     },
     "Notification": {
@@ -8916,7 +8916,7 @@
         "Nazwisko"
       ],
       "Leave a note for all participants": [
-        "Zostaw notatkę dla wszystkich uczestników"
+        "Zostaw wiadomość dla wszystkich uczestników"
       ],
       "Name": [
         "Nazwa"
@@ -9063,10 +9063,10 @@
     },
     "RSVP Note": {
       "Edit note": [
-        "Edytuj notatkę"
+        "Edytuj wiadomość"
       ],
       "Remove note": [
-        "Usuń notatkę"
+        "Usuń wiadomość"
       ]
     },
     "Safety review": {
@@ -9487,10 +9487,10 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } miesiąc BEZPŁATNIE",
-        "${ n } miesiące BEZPŁATNIE",
-        "${ n } miesiący BEZPŁATNIE",
-        "${ n } miesiąca BEZPŁATNIE"
+        "${ n } miesiąc ZA DARMO",
+        "${ n } miesiące ZA DARMO",
+        "${ n } miesięcy ZA DARMO",
+        "${ n } miesięcy ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -10442,16 +10442,16 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Obejmuje nielimitowaną liczbę aliasów, 20 zabezpieczonych folderów, zintegrowane uwierzytelnianie dwustopniowe, automatyczne uzupełnianie danych karty kredytowej i nie tylko."
+        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, 20 sejfów, zintegrowaną aplikację uwierzytelniającą, autouzupełnianie kart płatniczych i wiele więcej."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Obsługuje 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingowych oraz z funkcją blokowania reklam i złośliwego oprogramowania i więcej."
+        "Zawiera 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostęp do globalnych usług streamingu, blokadę reklam, złośliwego oprogramowania i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny e-mail, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i nie tylko."
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Tab subscription modal": {
@@ -11023,7 +11023,7 @@
         "Usuń uczestników"
       ],
       "Reply with a note": [
-        "Odpowiedz z notatką"
+        "Odpowiedz z wiadomością"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -11463,7 +11463,7 @@
         "${ n } portfela"
       ],
       "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"

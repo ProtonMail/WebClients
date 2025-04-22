@@ -611,6 +611,9 @@
       "Remove Zoom meeting": [
         "Zoom-vergadering verwijderen"
       ],
+      "Reply with a note": [
+        "Beantwoorden met een notitie"
+      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -794,11 +797,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade now": [
-        "Nu upgraden"
-      ],
       "Upgrade Now": [
         "Upgrade Nu"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
@@ -2719,14 +2722,23 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
+      ],
       "Also included": [
         "Ook inbegrepen"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
       ],
       "Availability unknown": [
         "Beschikbaarheid onbekend"
@@ -2737,8 +2749,17 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Kleurcodering maakt het makkelijker om je dag in te delen, de tijd bij te houden en taken te prioriteren."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Verbind uw CRM, website, printers en meer."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
+      ],
+      "Create groups you can email with a single address.": [
+        "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
@@ -2749,8 +2770,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Moedig het gebruik van tweestapsverificatie in je organisatie aan voor extra beveiliging."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zorg voor de beveiliging van je account met het ${ PROTON_SENTINEL_NAME } programma."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Zorg ervoor dat u nog steeds toegang hebt tot uw account en gegevens, zelfs als u uw ${ BRAND_NAME } wachtwoord verliest."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze overgang naar ${ BRAND_NAME } kunt u uw gegevens importeren vanuit Google, Outlook en andere."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -2758,8 +2800,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Hiermee kunt u direct vergader koppelingen toevoegen aan uw afspraak uitnodigingen."
       ],
       "Loading availability": [
         "Beschikbaarheid wordt geladen"
@@ -2776,6 +2824,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Stel een herstelmethode in om te voorkomen dat u de toegang tot uw account verliest."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Dit kan enkele minuten duren. In de tussentijd kunt u zoals gebruikelijk ${ CALENDAR_APP_NAME } blijven gebruiken."
       ],
@@ -2788,11 +2842,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Geef uw organisatie een naam om te beginnen."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wilt samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
@@ -2954,6 +3014,11 @@
         "Afspraak bewerken"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "LET OP:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESCHRIJVING:\n${ eventDescription }"
@@ -2965,6 +3030,12 @@
       ],
       "All events in this series were updated.": [
         "Alle gebeurtenissen in deze serie zijn bijgewerkt."
+      ],
+      "Here's what changed:": [
+        "Dit is wat er is veranderd:"
+      ],
+      "NOTE:": [
+        "LET OP:"
       ],
       "This event occurrence was canceled.": [
         "Deze afspraakgebeurtenis werd geannuleerd."
@@ -4700,6 +4771,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
+      "Calendar is disabled": [
+        "Agenda is uitgeschakeld"
+      ],
       "Calendar side panel": [
         "Agenda zijpaneel"
       ],
@@ -6153,6 +6227,9 @@
       "Last name": [
         "Achternaam"
       ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "Laat anderen weten of u een conflict hebt, te laat zult zijn of niet op de afspraak kunt wachten."
+      ],
       "Location": [
         "Locatie"
       ],
@@ -6914,26 +6991,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -6955,6 +7012,26 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7838,6 +7915,11 @@
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
+    "Note": {
+      "Note:": [
+        "Notitie:"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } is uitgezet"
@@ -8532,11 +8614,17 @@
       "Last name": [
         "Familienaam"
       ],
+      "Leave a note for all participants": [
+        "Laat een notitie achter voor alle deelnemers"
+      ],
       "Name": [
         "Naam"
       ],
       "Name or email address": [
         "Naam of e-mailadres"
+      ],
+      "Organization name": [
+        "Organisatienaam"
       ],
       "Password": [
         "Wachtwoord"
@@ -8573,6 +8661,9 @@
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
+      ],
+      "Your organization name": [
+        "Uw organisatienaam"
       ]
     },
     "Placeholder for contact group name": {
@@ -8663,6 +8754,14 @@
         "Afspraak herladen"
       ]
     },
+    "RSVP Note": {
+      "Edit note": [
+        "Notitie bewerken"
+      ],
+      "Remove note": [
+        "Notitie verwijderen"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Accountveiligheid controleren"
@@ -8671,6 +8770,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Inloggen is niet gelukt."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Org configuratie en accountbeveiliging"
       ]
     },
     "Security Center": {
@@ -9026,26 +9130,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } uur",
-        "${ hours } uur"
-      ],
-      "${ hours } hour": [
         "${ days } dag",
         "${ days } dagen"
       ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
       "${ minutes } minute": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "${ seconds } second": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
+        "${ seconds } seconde",
+        "${ seconds } seconden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -10188,6 +10292,9 @@
       "Clearing data": [
         "Data aan het wissen"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
       ],
@@ -10196,6 +10303,9 @@
       ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videoconferentie"
       ],
       "Connect your custom domain": [
         "Verbind uw eigen domein"
@@ -10276,6 +10386,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Downgrade naar ${ downgradedPlanName }?"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
       ],
       "Download the app": [
         "Download de app"
@@ -10452,6 +10565,12 @@
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
+      "Org setup": [
+        "Org configuratie"
+      ],
+      "Organization setup": [
+        "Organisatie configuratie"
+      ],
       "Organizer cannot be notified": [
         "Organisator kan niet worden geïnformeerd"
       ],
@@ -10505,6 +10624,9 @@
       ],
       "Remove participants": [
         "Deelnemers verwijderen"
+      ],
+      "Reply with a note": [
+        "Beantwoorden met een notitie"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -10587,6 +10709,9 @@
       "Settings": [
         "Instellingen"
       ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
+      ],
       "Show time zones for event start and end times": [
         "Toon tijdzones voor afspraak start- en eindtijden"
       ],
@@ -10598,6 +10723,9 @@
       ],
       "Simplify email distribution": [
         "Vereenvoudig de e-maildistributie"
+      ],
+      "Simplify password management": [
+        "Vereenvoudig wachtwoordbeheer"
       ],
       "Start a new import": [
         "Start een nieuwe import"
@@ -10622,6 +10750,12 @@
       ],
       "Upgrade complete!": [
         "Upgrade voltooid!"
+      ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
       "Verification failed": [
         "Verificatie mislukt"

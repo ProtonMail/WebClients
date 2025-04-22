@@ -797,11 +797,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade now": [
-        "Actualizar ahora"
-      ],
       "Upgrade Now": [
         "Mejorar ahora"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Mejore a ${ BRAND_NAME } Unlimited"
@@ -1061,7 +1061,7 @@
     },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 1 dominio de correo personalizado, 10 direcciones de correo, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
     "BF2024: Deal details": {
@@ -6994,26 +6994,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -7035,6 +7015,26 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9133,26 +9133,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hours } hour": [
         "${ days } día",
         "${ days } días"
       ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
       "${ minutes } minute": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "${ seconds } second": [
-        "for ${ n } mes",
-        "for ${ n } meses"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "${ n } mes gratis",
+        "${ n } meses gratis"
       ]
     },
     "specialoffer: Deal details": {
@@ -10073,7 +10073,7 @@
         "Cree datos de inicio de sesión seguros para todos los dispositivos. Se incluyen alias ilimitados, 20 bóvedas, 2FA integrada, función de completado automático de tarjetas de crédito y más."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Incluye 2950 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
+        "Incluye más de 2950 servidores en más de 65 países, conecte hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware, bloqueador de anuncios y más."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
