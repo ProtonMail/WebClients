@@ -1141,6 +1141,9 @@
       "Set as default": [
         "기본으로 설정"
       ],
+      "Set as default mail application": [
+        "기본 매일 애플리케이션으로 설정"
+      ],
       "Set catch-all": [
         "Catch-all 설정"
       ],
@@ -1149,6 +1152,9 @@
       ],
       "Set recovery phrase": [
         "복구 코드 설정"
+      ],
+      "Set up 2FA": [
+        "2단계 인증 설정하기"
       ],
       "Settings": [
         "설정"
@@ -1569,7 +1575,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay } 의 받은 편지함"
+        "${ nameToDisplay }님의 받은 편지함"
       ],
       "5 trackers removed": [
         "5개 트래커 삭제됨"
@@ -4193,6 +4199,9 @@
       "Allow QR code sign‒in": [
         "QR 코드 로그인 허용"
       ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "QR 코드가 포함된 메시지를 주의하십시오. 출처를 신뢰할 수 있는 경우에만 코드를 스캔하십시오."
+      ],
       "Code copied to clipboard": [
         "코드가 클립보드에 복사되었습니다"
       ],
@@ -4205,6 +4214,9 @@
       "Generate QR code": [
         "QR 코드 생성"
       ],
+      "How to sign in using another device": [
+        "다른 디바이스를 사용하여 로그인하는 방법"
+      ],
       "QR code expired": [
         "QR 코드가 만료됨"
       ],
@@ -4216,6 +4228,9 @@
       ],
       "Scan QR code on your mobile device to sign in": [
         "로그인하려면 모바일 디바이스에서 QR 코드를 스캔하세요"
+      ],
+      "Scan the code to sign in": [
+        "코드를 스캔하여 로그인하세요."
       ],
       "Security tips": [
         "보안 팁"
@@ -4549,10 +4564,10 @@
       "Forward to": [
         "다음으로 전달:"
       ],
-      "or": [
+      "Or": [
         "또는"
       ],
-      "Or": [
+      "or": [
         "또는"
       ],
       "With attachment": [
@@ -4759,7 +4774,7 @@
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "최소 ${ calendarsToFixCount } 캘린더를 선택 해제하거나"
+        "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
@@ -4903,7 +4918,7 @@
         "라벨 이름은 비워둘 수 없습니다."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "존재하는 ${ BRAND_NAME } 에 최소한 ${ calendarsToFixCount } 개의 캘린더를 병합하십시오"
+        "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
       ],
       "Missing key packet": [
         "키 패킷 없음"
@@ -5201,6 +5216,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "인증이 성공하지 못했습니다. 한 시간 후에 다시 시도해주십시오."
+      ],
+      "We couldn't sign you in": [
+        "로그인할 수 없습니다."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS 설정 문제로 DKIM 로그인을 중지했습니다. 로그인을 계속하기 위해서는 아래 설명을 따라주세요."
@@ -7159,7 +7177,7 @@
         "${ remainingAddresses.length } 더 많은 주소들"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } 중 ${ providerCalendars.length } 캘린더"
+        "${ selectedCalendarsTotal }개 중 ${ providerCalendars.length }개 캘린더"
       ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length }개 선택됨"
@@ -7372,7 +7390,7 @@
         "저장하지 않은 변경사항은 손실됩니다."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처를 가져옵니다"
+        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
       ],
       "Allocated": [
         "할당 됨"
@@ -8212,7 +8230,7 @@
         "이미지가 자동 회신에 허용되지 않으므로 제거되었습니다."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ totalCalendarsCount }개 중 ${ calendarCount }개 달력 불러오기"
+        "${ totalCalendarsCount }개 중 ${ calendarCount }개 캘린더가 불러오기됩니다"
       ],
       "Import from": [
         "다음에서 가져오기"
@@ -8233,7 +8251,7 @@
         "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실한 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
+        "${ toEmail }(에)서 ${ fromEmail }(으)로 데이터를 전달 중입니다."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "필요에 따라 애플리케이션을 조정하여 ${ BRAND_NAME } 경험을 극대화 시키세요."
@@ -9313,7 +9331,7 @@
         "이 링크는 호모그래프(homograph) 공격 일 수 있습니다. 방문하려는 링크가 정확한지 확인하거나 열지 마세요."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
-        "이 메시지는 지원 팀으로 전해지지 않으므로, 저희의 서비스에 문제가 있거나 저희가 조치를 해야 한다면 ${ supportLink }."
+        "이 메시지는 지원 팀으로 전해지지 않으므로, 당사 서비스에 문제가 있거나 필요한 조치가 있다면 ${ supportLink }."
       ],
       "This promotion link has expired.": [
         "이 프로모션 링크는 만료되었습니다."
@@ -9436,7 +9454,7 @@
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink }를 방문해 보세요."
+        "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink } 해보세요."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "진행하려면, 요청을 확인할 수 있도록 계정 복구 방법을 선택하세요."
@@ -10054,7 +10072,7 @@
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
+        "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
       "Your data recovery method is set": [
         "데이터 복구 수단 설정됨"
@@ -10739,10 +10757,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10754,11 +10772,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "AND": [
-        "및"
-      ],
       "And": [
         "그리고"
+      ],
+      "AND": [
+        "및"
       ],
       "and": [
         "그리고"
@@ -11186,10 +11204,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
       "Import all messages": [
@@ -11393,13 +11411,13 @@
       "Optional": [
         "선택 사항"
       ],
-      "OR": [
-        "또는"
-      ],
       "or": [
         "또는"
       ],
       "Or": [
+        "또는"
+      ],
+      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -12023,6 +12041,9 @@
       "How to unlock data": [
         "데이터 잠금해제 방법"
       ],
+      "How to use Groups": [
+        "그룹 사용 방법"
+      ],
       "if your data is leaked": [
         "사용자의 데이터가 유출된 경우"
       ],
@@ -12121,7 +12142,7 @@
         "데이터를 모으는 중"
       ],
       "We're gathering your data from your provider": [
-        "제공자로 부터 데이터를 가져오는 중입니다"
+        "제공자로부터 데이터를 가져오는 중입니다"
       ],
       "Your import is starting": [
         "가져오기 작업이 시작 중입니다!"
@@ -12169,16 +12190,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개의 폴더에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개의 라벨에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 폴더를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 메시지를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
       ]
     },
     "mail_signup_2023: Info": {
@@ -13914,7 +13935,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "다음으로 사용자의 Google 계정에 로그인하고 ${ BRAND_NAME } 의 데이터 액세스 권한을 부여해야 합니다."
+        "다음으로 사용자의 Google 계정에 로그인한 뒤 ${ BRAND_NAME }에 데이터 접근 권한을 부여해야 합니다."
       ]
     },
     "Oauth instructions video": {
@@ -18305,6 +18326,9 @@
       "Change second password": [
         "2차 비밀번호 변경"
       ],
+      "Check your default mail application": [
+        "기본 메일 애플리케이션을 확인해 주세요"
+      ],
       "Choose an account": [
         "계정 선택"
       ],
@@ -18322,6 +18346,9 @@
       ],
       "Close": [
         "닫기"
+      ],
+      "Collaborate on documents": [
+        "문서에서 협업하기"
       ],
       "Composing": [
         "작성 중"
@@ -19201,6 +19228,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Business로 업그레이드하여 전용 서버를 설정하십시오."
+      ],
+      "Share your calendar with your team": [
+        "팀과 캘린더를 공유하세요"
       ],
       "Shared servers": [
         "공유된 서버"

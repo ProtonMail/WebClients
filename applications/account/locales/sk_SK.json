@@ -793,6 +793,9 @@
       "Manage folders": [
         "Spravovať priečinky"
       ],
+      "Manage groups": [
+        "Spravovať skupiny"
+      ],
       "Manage labels": [
         "Spravovať štítky"
       ],
@@ -1149,6 +1152,9 @@
       ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
+      ],
+      "Set up 2FA": [
+        "Nastaviť 2FA"
       ],
       "Settings": [
         "Nastavenia"
@@ -1581,7 +1587,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Doručená pošta ${ nameToDisplay }"
+        "${ nameToDisplay } doručená pošta"
       ],
       "5 trackers removed": [
         "5 sledovačov odstránených"
@@ -4641,11 +4647,11 @@
       "Forward to": [
         "Preposlať na"
       ],
-      "or": [
-        "alebo"
-      ],
       "Or": [
         "Alebo"
+      ],
+      "or": [
+        "alebo"
       ],
       "With attachment": [
         "S prílohou"
@@ -6475,10 +6481,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Automaticky preposlať"
+        "Automaticky preposielajte"
       ],
       "Gmail messages to your inbox": [
-        "Správy Gmail do vašej doručenej pošty"
+        "Gmail správy do vašej doručenej pošty"
       ],
       "Sign in with Google": [
         "Prihlásiť sa cez Google"
@@ -8936,6 +8942,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
       "or ${ selectFileButton }": [
         "alebo ${ selectFileButton }"
       ],
@@ -9341,6 +9350,9 @@
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Setting successfully saved": [
         "Nastavenie bolo úspešne uložené"
       ],
@@ -9625,6 +9637,9 @@
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráza, ktorú musíte nastaviť."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Toto je súbor pre obnovenie alebo šifrovací kľúč, ktorý ste predtým uložili."
@@ -11131,10 +11146,10 @@
       "Allow sharing outside the organization": [
         "Umožniť zdieľanie mimo organizácie"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11146,10 +11161,10 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -11578,11 +11593,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11785,14 +11800,14 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -18886,6 +18901,9 @@
       "Add to spam list": [
         "Pridať do zoznamu spamov"
       ],
+      "Add user": [
+        "Pridať používateľa"
+      ],
       "Add user accounts": [
         "Spravovať používateľské účty"
       ],
@@ -19024,6 +19042,9 @@
       "Close": [
         "Zatvoriť"
       ],
+      "Collaborate on documents": [
+        "Spolupráca na dokumentoch"
+      ],
       "Composing": [
         "Zostavovanie"
       ],
@@ -19045,11 +19066,20 @@
       "Connect ${ name }": [
         "Pripojiť ${ name }"
       ],
+      "Connect apps and devices": [
+        "Pripojenie aplikácií a zariadení"
+      ],
       "Connect organization": [
         "Pripojiť organizáciu"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Pripojte ${ VPN_CONNECTIONS } zariadení naraz s ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Pripojiť sa k videokonferencii"
+      ],
+      "Connect your custom domain": [
+        "Pripojte si vlastnú doménu"
       ],
       "Connection status": [
         "Stav pripojenia"
@@ -19252,6 +19282,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Prejsť na nižší plán ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
       ],
@@ -19338,6 +19371,9 @@
       ],
       "Encryption and keys": [
         "Šifrovanie a kľúče"
+      ],
+      "Enhance security with 2FA": [
+        "Zvýšte zabezpečenie pomocou 2FA"
       ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"
@@ -19524,6 +19560,9 @@
       ],
       "Import contacts": [
         "Importovať kontakty"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovať emaily, kalendáre a kontakty"
       ],
       "Import events": [
         "Import udalostí"
@@ -19894,11 +19933,17 @@
       "Set organization name": [
         "Nastaviť názov organizácie"
       ],
+      "Set recovery methods": [
+        "Nastaviť spôsoby obnovenia"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "Nastaviť ${ protonDuoPlanName }"
       ],
       "Set up a recovery method": [
         "Nastavte metódu obnovenia"
+      ],
+      "Set up email forwarding": [
+        "Nastaviť preposielanie emailov"
       ],
       "Set up forwarding": [
         "Nastaviť preposielanie"
@@ -19909,6 +19954,9 @@
       "Set up your family account": [
         "Nastavte si rodinný účet"
       ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Set your password": [
         "Nastavte si heslo"
       ],
@@ -19917,6 +19965,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Nastavenie dedikovaných serverov prechodom na Business plán"
+      ],
+      "Share your calendar with your team": [
+        "Zdieľajte svoj kalendár so svojím tímom"
       ],
       "Shared servers": [
         "Zdieľané servery"
@@ -20029,6 +20080,9 @@
       "Track your referrals": [
         "Sledujte svoje odporúčania"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "TV prihlásenie"
       ],
@@ -20056,6 +20110,9 @@
       "Upgrade your privacy": [
         "Zvýšte svoje súkromie"
       ],
+      "Upload and share files": [
+        "Nahrávanie a zdieľanie súborov"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Nahrajte CSV súbor, aby ste mohli vytvoriť viacero účtov"
       ],
@@ -20064,6 +20121,9 @@
       ],
       "Usage Report": [
         "Prehľad používania"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
       "User": [
         "Používateľ"
@@ -20118,6 +20178,9 @@
       ],
       "Weak passwords": [
         "Slabé heslá"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
       "What is an alias?": [
         "Čo je alias?"

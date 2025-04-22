@@ -1638,7 +1638,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Skrzynka odbiorcza ${ nameToDisplay }"
+        "Poczta ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "Usunięto 5 elementów śledzących"
@@ -3984,7 +3984,7 @@
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
-        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do dołączenia do ${ BRAND_NAME }."
+        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do ${ BRAND_NAME }."
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Skonfiguruj automatyczne przekierowanie, aby przekierowywać przychodzące wiadomości na inny adres e-mail."
@@ -4447,7 +4447,7 @@
     },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
-        "NOTATKA:\n${ eventComment }"
+        "WIADOMOŚĆ:\n${ eventComment }"
       ]
     },
     "Email body for description (description part)": {
@@ -4466,7 +4466,7 @@
         "Zmiany:"
       ],
       "NOTE:": [
-        "NOTATKA:"
+        "WIADOMOŚĆ:"
       ],
       "This event occurrence was canceled.": [
         "Powtórzenie wydarzenia zostało anulowane."
@@ -4755,10 +4755,10 @@
       "Forward to": [
         "Przekieruj do"
       ],
-      "or": [
+      "Or": [
         "lub"
       ],
-      "Or": [
+      "or": [
         "lub"
       ],
       "With attachment": [
@@ -6589,10 +6589,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Automatycznie przekieruj"
+        "Automatyczne przekierowanie"
       ],
       "Gmail messages to your inbox": [
-        "wiadomości Google do skrzynki odbiorczej"
+        "wiadomości Gmail do skrzynki odbiorczej"
       ],
       "Sign in with Google": [
         "Zaloguj się przez Google"
@@ -9600,7 +9600,7 @@
         "Ulokowany w Szwajcarii"
       ],
       "Symbols (#$&)": [
-        "Symbole (#$&)"
+        "Znaki specjalne (#$&)"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i przechowuj je bezpiecznie. To wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
@@ -11254,10 +11254,10 @@
       "Allow sharing outside the organization": [
         "Zezwalaj na udostępnianie poza organizacją"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11269,11 +11269,11 @@
       "Amount due": [
         "Do zapłaty"
       ],
-      "AND": [
-        "ORAZ"
-      ],
       "And": [
         "oraz"
+      ],
+      "AND": [
+        "ORAZ"
       ],
       "and": [
         "i"
@@ -11701,11 +11701,11 @@
       "IBAN": [
         "Numer IBAN"
       ],
-      "IF": [
-        "JEŚLI"
-      ],
       "If": [
         "Jeśli"
+      ],
+      "IF": [
+        "JEŚLI"
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
@@ -11908,14 +11908,14 @@
       "Optional": [
         "Opcjonalnie"
       ],
-      "OR": [
-        "LUB"
-      ],
       "or": [
         "lub"
       ],
       "Or": [
         "lub"
+      ],
+      "OR": [
+        "LUB"
       ],
       "Organization name": [
         "Nazwa organizacji"
@@ -18772,16 +18772,16 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Obejmuje nielimitowaną liczbę aliasów, 20 zabezpieczonych folderów, zintegrowane uwierzytelnianie dwustopniowe, automatyczne uzupełnianie danych karty kredytowej i nie tylko."
+        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, 20 sejfów, zintegrowaną aplikację uwierzytelniającą, autouzupełnianie kart płatniczych i wiele więcej."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Obsługuje 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingowych oraz z funkcją blokowania reklam i złośliwego oprogramowania i więcej."
+        "Zawiera 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostęp do globalnych usług streamingu, blokadę reklam, złośliwego oprogramowania i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny e-mail, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i nie tylko."
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Tab in domain modal": {
@@ -21411,7 +21411,7 @@
         "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Advanced account protection": [
         "Zaawansowana ochrona konta"
