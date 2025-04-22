@@ -11,7 +11,7 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { appLink } from '@proton/shared/lib/apps/appLink';
-import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
+import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -53,11 +53,7 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import {
-    getIsPublicUserWithoutProtonAddress,
-    getIsSSOVPNOnlyAccount,
-    getRequiresAddressSetup,
-} from '@proton/shared/lib/keys';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import { createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import { EVENTS, UnleashClient } from '@proton/unleash';
@@ -420,19 +416,35 @@ export const maybeRedirect = async ({
             history,
             authentication,
         });
+        // Promise that never resolves to show the loading page while the redirect is happening
         await new Promise(noop);
     }
 
-    if (getIsSSOVPNOnlyAccount(user) && ![APPS.PROTONACCOUNT, ...getSSOVPNOnlyAccountApps()].includes(appName as any)) {
-        appLink({ to: '/vpn', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
-        await new Promise(noop);
-    }
+    const availableApps = getAvailableApps({
+        user,
+        context: 'app',
+        // In app bootstrap, the lumo available feature flag can always be true because
+        // 1) in the lumo app, access isn't handled to it by this function
+        // 2) in other apps, lumo is ignored.
+        isLumoAvailable: true,
+        // In app bootstrap, the docs available feature flag can always be true because
+        // 1) in the docs app, access isn't handled to it by this function
+        // 2) in other apps, docs is ignored.
+        isDocsHomepageAvailable: true,
+        // Organization access control doesn't matter in bootstrap context because it's prevented in the fork stage.
+        // It would also require to load the organization object at app startup which we currently don't.
+        isAccessControlEnabled: false,
+    });
 
-    if (
-        getIsPublicUserWithoutProtonAddress(user) &&
-        ![APPS.PROTONACCOUNT, ...getPublicUserProtonAddressApps('app')].includes(appName as any)
-    ) {
-        appLink({ to: '/pass', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
+    if (appName !== APPS.PROTONACCOUNT && !availableApps.includes(appName)) {
+        appLink({
+            to: `/?reason=app-disabled&app=${appName}`,
+            toApp: APPS.PROTONACCOUNT,
+            app: appName,
+            history,
+            authentication,
+        });
+        // Promise that never resolves to show the loading page while the redirect is happening
         await new Promise(noop);
     }
 };
