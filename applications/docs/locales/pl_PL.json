@@ -498,6 +498,9 @@
       "New message": [
         "Nowa wiadomość"
       ],
+      "New sheet": [
+        "Nowy arkusz"
+      ],
       "Next": [
         "Dalej"
       ],
@@ -2341,11 +2344,6 @@
         "Zaległa faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
@@ -2435,7 +2433,7 @@
         "Ustaw metodę odzyskiwania, aby uniknąć utraty dostępu do konta."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
-        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do dołączenia do ${ BRAND_NAME }."
+        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Uprość synchronizację i planowanie za pomocą udostępnionych kalendarzy."
@@ -2481,6 +2479,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2580,7 +2583,7 @@
     },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
-        "NOTATKA:\n${ eventComment }"
+        "WIADOMOŚĆ:\n${ eventComment }"
       ]
     },
     "Email body for description (description part)": {
@@ -2599,7 +2602,7 @@
         "Zmiany:"
       ],
       "NOTE:": [
-        "NOTATKA:"
+        "WIADOMOŚĆ:"
       ],
       "This event occurrence was canceled.": [
         "Powtórzenie wydarzenia zostało anulowane."
@@ -10433,7 +10436,7 @@
         "${ n } portfela"
       ],
       "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"
