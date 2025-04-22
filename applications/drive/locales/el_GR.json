@@ -5529,8 +5529,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Ορισμένες φωτογραφίες σε αυτό το άλμπουμ ενδέχεται να μην αποθηκεύονται στο χρονολόγιό σας. Η διαγραφή αυτού του άλμπουμ θα διαγράψει οριστικά αυτές τις φωτογραφίες."
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Ορισμένες φωτογραφίες σε αυτό το άλμπουμ δεν αποθηκεύονται στο χρονολόγιό σας. Η διαγραφή αυτού του άλμπουμ θα διαγράψει οριστικά αυτές τις φωτογραφίες."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
@@ -5851,6 +5851,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Συγχαρητήρια, μόλις αυξήσατε τον αποθηκευτικό σας χώρο στα 5 GB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Αντιμετωπίζουμε τεχνικά προβλήματα. Οι ενέργειες που σχετίζονται με άλμπουμ είναι προσωρινά απενεργοποιημένες."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Αντιμετωπίζουμε τεχνικά προβλήματα. Η μεταφόρτωση νέων φωτογραφιών είναι προσωρινά απενεργοποιημένη."
@@ -8356,22 +8359,6 @@
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
         "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } φωτογραφία απέτυχε να προστεθεί στο \"${ albumName }\"",
-        "${ nbFailures } φωτογραφίες απέτυχαν να προστεθούν στο \"${ albumName }\""
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } φωτογραφία απέτυχε να αφαιρεθεί από το \"${ albumLink.name }",
-        "${ nbFailures } φωτογραφίες απέτυχαν να αφαιρεθούν από το \"${ albumLink.name }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } φωτογραφία προστέθηκε στο \"${ albumName }\"",
-        "${ nbSuccesses } φωτογραφίες προστέθηκαν στο \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } φωτογραφία αφαιρέθηκε από το \"${ albumLink.name }",
-        "${ nbSuccesses } φωτογραφίες αφαιρέθηκαν από το \"${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } στοιχείο διαγράφηκε",
         "${ numberOfItems } στοιχεία διαγράφηκαν"
@@ -8590,11 +8577,23 @@
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν σε 72 ώρες"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Οι φωτογραφίες σας προστέθηκαν στο ${ albumName }"
+      ],
       "Your settings failed to be saved": [
         "Αποτυχία αποθήκευσης των ρυθμίσεών σας"
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "Δεν ήταν δυνατή η προσθήκη ορισμένων φωτογραφιών στο \"${ albumName }\""
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Δεν ήταν δυνατή η κατάργηση ορισμένων φωτογραφιών από το ${ albumLink.name }"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Οι φωτογραφίες σας έχουν αφαιρεθεί από το ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8732,11 +8731,11 @@
       "Invite members": [
         "Προσκαλέστε μέλη"
       ],
-      "Maybe later": [
-        "Ίσως αργότερα"
-      ],
       "Maybe Later": [
         "Ίσως Αργότερα"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
       ],
       "Select theme": [
         "Επιλογή θέματος"

@@ -3860,11 +3860,17 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+      ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME } не з'яўляецца вашай прадвызначанай паштовай праграмай."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } з'яўляецца вашай прадвызначанай паштовай праграмай."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
       ],
       "Also included": [
         "Таксама ўключана"
@@ -3875,14 +3881,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
       "Available with ${ MAIL_APP_NAME } Plus": [
         "Даступна з ${ MAIL_APP_NAME } Plus"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Стварыце сустрэчу Zoom і дадайце падрабязнасці аб далучэнні да падзеі адным націскам."
@@ -3890,8 +3905,17 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Стварайце любую колькасць метак або папак, каб падтрымліваць парадак у сваёй паштовай скрыні."
       ],
+      "Create groups you can email with a single address.": [
+        "Стварайце групы, на якія можна адпраўляць электронныя лісты, выкарыстоўваючы адзін адрас."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Лёгка сінхранізуйце файлы ў воблака з вашага камп’ютара і атрымлівайце доступ да іх са сваёй мабільнай прылады."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
@@ -3902,17 +3926,35 @@
       "Enable detailed events to access these features": [
         "Уключыць падрабязныя падзеі для доступу да гэтых функцый"
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Забяспечце бяспечны доступ да даных арганізацыі, нават калі ваша каманда працуе аддалена або выкарыстоўвае публічны Wi-Fi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Забяспечце першакласную бяспеку для свайго ўліковага запісу з дапамогай праграмы ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Пераканайцеся, што ў вас усё яшчэ ёсць доступ да вашага ўліковага запісу і даных, нават калі вы страціце свой пароль ад ${ BRAND_NAME }."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Кожны ўдзельнік вашай арганізацыі можа падключацца да абагуленых сервераў ва ўсіх краінах."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Атрымайце да ${ credits } у крэдытах запрасіўшы сябра ў ${ BRAND_NAME }."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
       "If disabled, only admins will have access.": [
         "Калі адключана, то толькі адміністратары будуць мець доступ."
@@ -3926,6 +3968,9 @@
       "Learn more about common problems": [
         "Даведайцеся больш аб распаўсюджаных праблемах"
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Персаналізуйце ніжні калонтытул ліста. Дэманструйце іншым свой унікальны брэнд, а не наш."
       ],
@@ -3938,8 +3983,14 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Наладзьце ўліковыя запісы для ўсіх карыстальнікаў і запрасіце іх далучыцца да ${ BRAND_NAME }."
+      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Наладзьце аўтаматычную перасылку для перанакіравання ўваходных лістоў на іншы адрас электроннай пошты."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
@@ -3949,6 +4000,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Палепшыце бягучы тарыфны план і разблакіруйце магчымасць выдалення ніжняга калонтытула ${ MAIL_APP_NAME }, а таксама іншыя прэміяльныя функцыі."
+      ],
+      "To start, give your organization a name.": [
+        "Спачатку дайце назву сваёй арганізацыі."
       ],
       "Track the status and activity of your referrals.": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак."
@@ -3964,6 +4018,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Абнавіце падпіску, каб атрымаць больш кароткі і запамінальны адрас электроннай пошты ${ activatePmUser } у дадатак да вашага бягучага."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можаце далей запрашаць сяброў, але вы не будзеце больш атрымліваць за гэта крэдыты"
@@ -4325,6 +4382,9 @@
       "Enter code manually": [
         "Увесці код уручную"
       ],
+      "Generate QR code": [
+        "Згенерыраваць QR-код"
+      ],
       "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
         "Атрымайце іншую прыладу, якая ўжо аўтарызавана ў вашым уліковым запісе ${ BRAND_NAME }"
       ],
@@ -4361,8 +4421,14 @@
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Націсніце на кнопку **Увайсці з QR-кодам** у меню дапамогі экрана ўваходу, каб атрымаць код доступу прылады ў якую вы хочаце ўвайсці, а потым націсніце **Увесці ключ уручную**. "
       ],
+      "Try generating a new QR code.": [
+        "Паспрабуйце згенерыраваць новы QR-код."
+      ],
       "Using that device, open any ${ BRAND_NAME } app and select **Settings**": [
         "З дапамогай гэтай прылады адкрыйце любую праграму ${ BRAND_NAME } і выберыце **Налады**"
+      ],
+      "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
+        "Працуе, калі ў вас ёсць іншая прылада, на якой вы ўвайшлі ў ${ BRAND_NAME }"
       ],
       "You have successfully signed in to another device": [
         "Вы паспяхова ўвайшлі ў іншую прыладу"
@@ -4379,6 +4445,11 @@
         "Вы можаце бяспечна закрыць гэту ўкладку."
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "НАТАТКА:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "АПІСАННЕ:\n${ eventDescription }"
@@ -4390,6 +4461,12 @@
       ],
       "All events in this series were updated.": [
         "Усе падзеі ў гэтай серыі былі абноўлены."
+      ],
+      "Here's what changed:": [
+        "Змены, якія адбыліся:"
+      ],
+      "NOTE:": [
+        "НАТАТКА:"
       ],
       "This event occurrence was canceled.": [
         "Паўтарэнне гэтай падзеі было скасавана."
@@ -4678,11 +4755,11 @@
       "Forward to": [
         "Перасылаць на"
       ],
-      "or": [
-        "або"
-      ],
       "Or": [
         "Або"
+      ],
+      "or": [
+        "або"
       ],
       "With attachment": [
         "З далучэннем"
@@ -5345,6 +5422,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Не атрымалася праверыць. Паспрабуйце яшчэ раз праз гадзіну."
+      ],
+      "We couldn't sign you in": [
+        "Не ўдалося ўвайсці ў сістэму"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Мы прыпынілі падпісанне DKIM па прычыне праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
@@ -6509,7 +6589,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Перасылаць аўтаматычна"
+        "Аўтаматычна перасылаць"
       ],
       "Gmail messages to your inbox": [
         "паведамленні Gmail у вашу паштовую скрыню"
@@ -11174,10 +11254,10 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11189,10 +11269,10 @@
       "Amount due": [
         "Да аплаты"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
       "and": [
@@ -11621,11 +11701,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "КАЛІ"
-      ],
       "If": [
         "Калі"
+      ],
+      "IF": [
+        "КАЛІ"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -11828,14 +11908,14 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -15808,6 +15888,9 @@
       "Name": [
         "Назва"
       ],
+      "Organization name": [
+        "Назва арганізацыі"
+      ],
       "Other": [
         "Іншае"
       ],
@@ -15873,6 +15956,9 @@
       ],
       "VAT number": [
         "Нумар ПДВ"
+      ],
+      "Your organization name": [
+        "Ваша назва арганізацыі"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -16509,6 +16595,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL-адрас злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Наладжванне арганізацыі і бяспека ўліковага запісу"
       ]
     },
     "Security Center - Info": {
@@ -19118,6 +19209,9 @@
       "Close": [
         "Закрыць"
       ],
+      "Collaborate on documents": [
+        "Сумесная праца над дакументамі"
+      ],
       "Composing": [
         "Напісанне"
       ],
@@ -19147,6 +19241,9 @@
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Падключайце да ${ VPN_CONNECTIONS } прылад адначасова з ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Падключыцца да відэаканферэнцыі"
       ],
       "Connect your custom domain": [
         "Падключэнне свайго карыстальніцкага дамена"
@@ -19352,6 +19449,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Панізіць да ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Спампаваць праграмы ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Спампаваць ${ VPN_APP_NAME }"
       ],
@@ -19516,6 +19616,9 @@
       ],
       "For Windows": [
         "Для Windows"
+      ],
+      "Forgot password": [
+        "Забылі пароль"
       ],
       "Forgot recovery method": [
         "Забылі спосаб аднаўлення"
@@ -19769,6 +19872,9 @@
       "OpenVPN configuration files": [
         "Канфігурацыйныя файлы OpenVPN"
       ],
+      "Org setup": [
+        "Наладка арганізацыі"
+      ],
       "Organization filters": [
         "Фільтры арганізацыі"
       ],
@@ -19777,6 +19883,9 @@
       ],
       "Organization name": [
         "Назва арганізацыі"
+      ],
+      "Organization setup": [
+        "Наладка арганізацыі"
       ],
       "Origin": [
         "Арыгінальны"
@@ -20033,6 +20142,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Палепшыце да Business, каб наладзіць вылучаныя серверы"
       ],
+      "Share your calendar with your team": [
+        "Абагуліць каляндар са сваёй камандай"
+      ],
       "Shared servers": [
         "Абагуленыя серверы"
       ],
@@ -20059,6 +20171,9 @@
       ],
       "Simplify email distribution": [
         "Спрашчэнне распаўсюджвання электроннай пошты"
+      ],
+      "Simplify password management": [
+        "Спрасціць кіраванне паролямі"
       ],
       "Single sign-on": [
         "Адзіны ўваход"
@@ -20177,6 +20292,9 @@
       "Upgrade your privacy": [
         "Палепшыце сваю прыватнасць"
       ],
+      "Upload and share files": [
+        "Запампаваць і абагуліць файлы"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Запампаваць файл CSV, каб стварыць некалькі ўліковых запісаў"
       ],
@@ -20185,6 +20303,9 @@
       ],
       "Usage Report": [
         "Справаздача аб выкарыстанні"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
       "User": [
         "Карыстальнік"

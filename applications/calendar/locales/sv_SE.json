@@ -794,10 +794,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -926,6 +926,9 @@
       ],
       "${ price } per domain": [
         "${ price } per domän"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
       ],
       "${ price } per user": [
         "${ price } per användare"
@@ -6956,26 +6959,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -6997,6 +6980,26 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8730,6 +8733,11 @@
         "Inloggning lyckades inte slutföras."
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "Organisationsinställning och kontosäkerhet"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Alla alias"
@@ -9101,7 +9109,7 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "En ${ n } månad GRATIS",
+        "${ n } månad GRATIS",
         "${ n } månader GRATIS"
       ]
     },
@@ -10514,6 +10522,9 @@
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
+      ],
+      "Org setup": [
+        "Organisationsinställning"
       ],
       "Organization setup": [
         "Organisationsinställning"

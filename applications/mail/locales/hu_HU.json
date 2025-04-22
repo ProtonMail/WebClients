@@ -244,6 +244,9 @@
       "Close this banner": [
         "Panel bezárása"
       ],
+      "Collaborate on documents": [
+        "Együttműködés dokumentumokon"
+      ],
       "Collapse navigation bar": [
         "Navigációs sáv összecsukása"
       ],
@@ -261,6 +264,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Hivatkozás megnyitásának jóváhagyása: ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Alkalmazások és eszközök összekapcsolása"
+      ],
+      "Connect to video conferencing": [
+        "Kapcsolódás videokonferenciához"
       ],
       "Contact group": [
         "Névjegy csoport"
@@ -404,6 +413,9 @@
       ],
       "Download ${ attachmentName }": [
         "${ attachmentName } letöltése"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } alkalmazások letöltése"
       ],
       "Download now": [
         "Letöltés most"
@@ -549,6 +561,9 @@
       "Get the app": [
         "Töltse le az alkalmazást"
       ],
+      "Get the apps": [
+        "Alkalmazások letöltése"
+      ],
       "Get the browser extension": [
         "Böngészőbővítmény beszerzése"
       ],
@@ -641,6 +656,9 @@
       ],
       "Import emails": [
         "E-mailek importálása"
+      ],
+      "Import emails, calendars, contacts": [
+        "E-mailek, naptárak és névjegyek importálása"
       ],
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
@@ -736,14 +754,23 @@
       "Make it friendly": [
         "Legyen barátságos"
       ],
+      "Manage advanced account protections": [
+        "A speciális fiókvédelmek kezelése"
+      ],
       "Manage folders": [
         "Mappák kezelése"
+      ],
+      "Manage groups": [
+        "Csoportok kezelése"
       ],
       "Manage labels": [
         "Címkék kezelése"
       ],
       "Manage Snooze": [
         "Szüneteltetés kezelése"
+      ],
+      "Manage users/addresses": [
+        "Felhasználók/címek kezelése"
       ],
       "Mark as read": [
         "Megjelölés olvasottként"
@@ -994,6 +1021,9 @@
       "Remove bonuses": [
         "Kedvezmények törlése"
       ],
+      "Remove button": [
+        "Gomb eltávolítása"
+      ],
       "Remove encryption": [
         "Titkosítás kikapcsolása"
       ],
@@ -1162,8 +1192,20 @@
       "Set expiration time": [
         "Időkorlát megadása"
       ],
+      "Set recovery methods": [
+        "Helyreállítási módszerek beállítása"
+      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Set up 2FA": [
+        "Kétlépcsős hitelesítés beállítása"
+      ],
+      "Set up a custom domain": [
+        "Saját domain név beállítása"
+      ],
+      "Set up email forwarding": [
+        "E-mail továbbítás beállítása"
       ],
       "Settings": [
         "Beállítások"
@@ -1173,6 +1215,9 @@
       ],
       "Share via link": [
         "Megosztás hivatkozással"
+      ],
+      "Share your calendar with your team": [
+        "A naptár megosztása a csapatával"
       ],
       "Sharing options": [
         "Megosztási beállítások"
@@ -1321,6 +1366,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
+      ],
       "Unblock": [
         "Feloldás"
       ],
@@ -1366,14 +1414,17 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Frissítsen a ${ BRAND_NAME } Unlimited verzióra"
+      ],
+      "Upload and share files": [
+        "Fájlok feltöltése és megosztása"
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -1383,6 +1434,12 @@
       ],
       "Use ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } használata"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "A ${ PASS_APP_NAME } for Business használata"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatvédelem biztosításához"
       ],
       "Use a different card": [
         "Másik bankkártya használata"
@@ -8393,11 +8450,11 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze mappába"
       ],
-      "AND": [
-        "ÉS"
-      ],
       "And": [
         "És"
+      ],
+      "AND": [
+        "ÉS"
       ],
       "and": [
         "és"
@@ -8627,11 +8684,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "IF": [
-        "HA"
-      ],
       "If": [
         "Ha"
+      ],
+      "IF": [
+        "HA"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -8744,14 +8801,14 @@
       "Optional": [
         "Választható"
       ],
-      "OR": [
-        "VAGY"
-      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
+      ],
+      "OR": [
+        "VAGY"
       ],
       "Original link": [
         "Eredeti hivatkozás"
@@ -9071,11 +9128,20 @@
       "Enable your address to answer this invitation.": [
         "A meghívó megválaszolásához engedélyezze az e-mail címét."
       ],
+      "Enforcing 2FA for organizations": [
+        "Kétlépcsős hitelesítés megkövetelése a szervezetek számára"
+      ],
       "Folders": [
         "Mappák"
       ],
+      "How to add users": [
+        "Hogyan adhatok hozzá felhasználókat?"
+      ],
       "How to pay with Bitcoin?": [
         "Hogy lehet Bitcoinnal fizetni?"
+      ],
+      "How to set up a custom domain": [
+        "Hogyan állíthatok be saját domain nevet?"
       ],
       "if your data is leaked": [
         "ha az adatai kiszivárogtak"
@@ -9166,6 +9232,9 @@
       ],
       "Trash": [
         "Lomtár"
+      ],
+      "Types of recovery methods": [
+        "Helyreállítási módszerek típusai"
       ],
       "What’s this?": [
         "Mi ez?"
@@ -9563,29 +9632,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } beszerzése"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -9607,6 +9653,29 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kezdje el a használatot ${ priceCoupon } áron"
+      ],
+      "Starting from ${ pricing }": [
+        "Kezdőár: ${ pricing }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
       ]
     },
     "new_plans: feature": {
@@ -13190,6 +13259,9 @@
       "Add to ${ groupName }": [
         "Hozzáadás a csoporthoz: ${ groupName }"
       ],
+      "Add user": [
+        "Felhasználó hozzáadása"
+      ],
       "Addresses": [
         "Címek"
       ],
@@ -13271,6 +13343,9 @@
       "Clearing data": [
         "Adatok törlése"
       ],
+      "Collaborate on documents": [
+        "Együttműködés dokumentumokon"
+      ],
       "Confirm downgrade": [
         "Lemondás megerősítése"
       ],
@@ -13279,6 +13354,9 @@
       ],
       "Confirm recipient address?": [
         "Elfogadja a címzett címét?"
+      ],
+      "Connect to video conferencing": [
+        "Kapcsolódás videokonferenciához"
       ],
       "Contact Details": [
         "Névjegy részletei"
@@ -13402,6 +13480,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
       "Download the app": [
         "Töltse le az alkalmazást"
       ],
@@ -13440,6 +13521,9 @@
       ],
       "Enable message content search": [
         "Üzenetek tartalmában való keresés engedélyezése"
+      ],
+      "Enhance security with 2FA": [
+        "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
       ],
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
@@ -13519,6 +13603,9 @@
       ],
       "Import contacts": [
         "Névjegyek importálása"
+      ],
+      "Import emails, calendars, contacts": [
+        "E-mailek, naptárak, névjegyek importálása"
       ],
       "Import events": [
         "Események importálása"
@@ -13700,6 +13787,12 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
+      "Org setup": [
+        "Szervezet beállítása"
+      ],
+      "Organization setup": [
+        "Szervezet beállítása"
+      ],
       "Other features included in your plan": [
         "Egyéb, a csomagjában szereplő funkciók"
       ],
@@ -13841,11 +13934,17 @@
       "Sending original message": [
         "Eredeti üzenet küldése"
       ],
+      "Set recovery methods": [
+        "Helyreállítási módszerek beállítása"
+      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
       "Set up ${ protonDuoPlanName }": [
         "${ protonDuoPlanName } beállítása"
+      ],
+      "Set up email forwarding": [
+        "E-mail továbbítás beállítása"
       ],
       "Set up your family account": [
         "Family csomag beállítása"
@@ -13856,11 +13955,20 @@
       "Settings": [
         "Beállítások"
       ],
+      "Share your calendar with your team": [
+        "Naptárának megosztása a csapatával"
+      ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
       ],
       "Sign out": [
         "Kijelentkezés"
+      ],
+      "Simplify email distribution": [
+        "Egyszerűsítse az e-mail terjesztést"
+      ],
+      "Simplify password management": [
+        "Egyszerűsítse a jelszókezelést"
       ],
       "Snooze": [
         "Szüneteltetés"
@@ -13914,6 +14022,9 @@
       "Trust public key?": [
         "Nyilvános kulcs megjelölése megbízhatóként?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
+      ],
       "Unlock contacts groups": [
         "Névjegy csoportok feloldása"
       ],
@@ -13925,6 +14036,12 @@
       ],
       "Upgrade complete!": [
         "A verzió frissítése befejeződött!"
+      ],
+      "Upload and share files": [
+        "Fájlok feltöltése és megosztása"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"
       ],
       "Verification error": [
         "Ellenőrzési hiba"

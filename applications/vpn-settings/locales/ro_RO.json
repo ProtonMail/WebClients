@@ -352,6 +352,9 @@
       "Fit to window": [
         "Potrivire la fereastră"
       ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
       ],
@@ -4560,6 +4563,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
@@ -5200,6 +5206,9 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
       ],
@@ -5364,6 +5373,9 @@
       ],
       "This file is too large to preview": [
         "Acest fișier este prea mare pentru a fi examinat."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
@@ -6077,7 +6089,7 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } din ${ MaxAddresses } adresă de e-mail",
         "${ UsedAddresses } din ${ MaxAddresses } adrese de e-mail",
-        "${ UsedAddresses } din ${ MaxAddresses } de e-mail adrese"
+        "${ UsedAddresses } din ${ MaxAddresses } de adrese de e-mail"
       ],
       "Account holder": [
         "Titular cont"
@@ -6112,10 +6124,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6662,6 +6674,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
       ],
       "ZIP code": [
         "Cod poștal"
@@ -7807,14 +7822,6 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -7827,6 +7834,14 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -10005,6 +10020,9 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
+      "Sign in": [
+        "Conectare"
+      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -10049,6 +10067,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
@@ -11391,6 +11412,9 @@
       "Enable for all users": [
         "Activare pentru toți utilizatorii"
       ],
+      "Enter 2FA code": [
+        "Introduceți codul de A2F"
+      ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
       ],
@@ -11399,6 +11423,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
       ],
       "Error": [
         "Eroare"

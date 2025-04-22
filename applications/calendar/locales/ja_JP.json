@@ -155,6 +155,9 @@
       "Close this banner": [
         "このバナーを閉じる"
       ],
+      "Collaborate on documents": [
+        "ドキュメントの共同編集"
+      ],
       "Collapse navigation bar": [
         "ナビゲーションバーを閉じる"
       ],
@@ -166,6 +169,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "リンク ${ linkToShow } を確認"
+      ],
+      "Connect apps and devices": [
+        "アプリとデバイスを接続"
+      ],
+      "Connect to video conferencing": [
+        "ビデオ会議に接続"
       ],
       "Contact group": [
         "連絡先グループ"
@@ -272,6 +281,9 @@
       "Download": [
         "ダウンロード"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } アプリをダウンロード"
+      ],
       "Download now": [
         "今すぐダウンロード"
       ],
@@ -329,6 +341,9 @@
       "Get started": [
         "利用開始"
       ],
+      "Get the apps": [
+        "アプリを入手"
+      ],
       "Get verification code": [
         "認証コードを取得"
       ],
@@ -383,6 +398,9 @@
       "Import emails": [
         "メールをインポート"
       ],
+      "Import emails, calendars, contacts": [
+        "メール、カレンダー、連絡先をインポート"
+      ],
       "Import events": [
         "予定をインポート"
       ],
@@ -434,11 +452,20 @@
       "Manage addresses": [
         "アドレスの管理"
       ],
+      "Manage advanced account protections": [
+        "高度なアカウント保護を管理"
+      ],
       "Manage folders": [
         "フォルダーを管理"
       ],
+      "Manage groups": [
+        "グループの管理"
+      ],
       "Manage labels": [
         "ラベルを管理"
+      ],
+      "Manage users/addresses": [
+        "ユーザー/アドレスの管理"
       ],
       "Mark as resolved": [
         "解決済みにする"
@@ -566,6 +593,9 @@
       "Remove bonuses": [
         "ボーナスを削除"
       ],
+      "Remove button": [
+        "ボタンを削除"
+      ],
       "Remove gift code": [
         "ギフトコードを削除"
       ],
@@ -577,6 +607,9 @@
       ],
       "Remove Zoom meeting": [
         "Zoom会議を削除"
+      ],
+      "Reply with a note": [
+        "メモを付けて返信"
       ],
       "Report a problem": [
         "問題を報告"
@@ -638,14 +671,29 @@
       "Send": [
         "送信"
       ],
+      "Set recovery methods": [
+        "回復手段を設定"
+      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
+      ],
+      "Set up 2FA": [
+        "2要素認証を設定"
+      ],
+      "Set up a custom domain": [
+        "カスタムドメインを設定"
+      ],
+      "Set up email forwarding": [
+        "メール転送の設定"
       ],
       "Settings": [
         "設定"
       ],
       "Share": [
         "共有"
+      ],
+      "Share your calendar with your team": [
+        "カレンダーをチームと共有"
       ],
       "Show advanced PGP settings": [
         "拡張 PGP 設定を表示"
@@ -722,6 +770,9 @@
       "Try another method": [
         "別の方法を試してください"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } をオンにする"
+      ],
       "Unlock data": [
         "データのロックを解除"
       ],
@@ -743,10 +794,10 @@
       "Upgrade": [
         "アップグレード"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "今すぐアップグレード"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "今すぐアップグレード"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -755,11 +806,20 @@
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "${ MAIL_SHORT_APP_NAME }Plusにアップグレード"
       ],
+      "Upload and share files": [
+        "ファイルをアップロードして共有"
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
       "Use ${ label } theme": [
         "${ label } テーマを使用"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Businessを使用"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "データプライバシーのために${ VPN_SHORT_APP_NAME }を使用する"
       ],
       "Use a different card": [
         "別のカードを使用"
@@ -2639,14 +2699,23 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DRIVE_APP_NAME }の${ DOCS_SHORT_APP_NAME }では、安全で暗号化された環境で他の人と共同作業ができます。"
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "${ DRIVE_APP_NAME } にフォルダやファイルを追加し、チームメンバーを招待して表示または編集を許可します。"
+      ],
       "Also included": [
         "含まれています"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "メールを別のメールアドレスに自動的に転送します。"
       ],
       "Availability unknown": [
         "利用可能状況は不明"
@@ -2657,8 +2726,17 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "イベントを色分けして、一日の整理をしやすくし、時間を管理し、タスクの優先順位を付けましょう。"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "最初に組織を有効にし、メールアドレスをカスタマイズするように設定してください。"
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "CRM、ウェブサイト、プリンターなどを接続。"
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "ワンクリックでZoomミーティングを作成し、参加詳細をイベントに追加します。"
+      ],
+      "Create groups you can email with a single address.": [
+        "単一の アドレス でメールを送信できるグループ を作成します。"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
@@ -2669,8 +2747,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "アカウントの高度な保護を求めるユーザー向けに設計されています。"
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "デスクトップとモバイルでメールとカレンダーに簡単にアクセスできます。"
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "デスクトップからクラウドにファイルを簡単に同期し、モバイルデバイスからアクセスできます。"
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "セキュリティを強化するために、組織内で2要素認証の使用を推奨します。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "チームがリモートまたは公共のWi-Fiを使用している場合でも、組織のデータへの安全なアクセスを確保します。"
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "${ PROTON_SENTINEL_NAME } プログラムで、お客様の アカウントのセキュリティを万全にしてください。"
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "${ BRAND_NAME }のパスワードを忘れても、アカウントとデータにアクセスできることを確認してください。"
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "${ BRAND_NAME }への移行をスムーズに行うために、Google、Outlookなどのサービスからデータをインポートしてください。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知します。"
@@ -2678,8 +2777,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }で無制限のエイリアスと 500 GBの容量を獲得しましょう。"
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "イベントの招待状に会議リンクを即座に追加できます。"
       ],
       "Loading availability": [
         "利用可能状況を読み込んでいます"
@@ -2696,6 +2801,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "アカウントへのアクセスが失われないように回復手段を設定してください。"
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "すべてのユーザーに対してアカウントを設定し、${ BRAND_NAME }に参加するよう招待してください。"
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "共有カレンダーで同期やスケジューリングを簡単に。"
+      ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "これは数分かかる場合があります。その間、通常通り ${ CALENDAR_APP_NAME }を使用し続けることができます。"
       ],
@@ -2708,11 +2819,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }で、GoogleやOutlookから連絡先をインポート"
       ],
+      "To start, give your organization a name.": [
+        "まず、組織に名前を付けてください。"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "連絡先グループを使用することで、ワンクリックでそのグループ全員にメールを送信することができます。"
@@ -2874,6 +2991,11 @@
         "予定を編集"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "注意:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "説明:\n${ eventDescription }"
@@ -2885,6 +3007,12 @@
       ],
       "All events in this series were updated.": [
         "この連続した全てのイベントは更新されました。"
+      ],
+      "Here's what changed:": [
+        "変更内容:"
+      ],
+      "NOTE:": [
+        "注意:"
       ],
       "This event occurrence was canceled.": [
         "この繰り返しイベントはキャンセルされました。"
@@ -4571,6 +4699,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "このカレンダーの予定の詳細を共有すると、${ BRAND_NAME } がこのカレンダーの暗号化された情報にアクセスできるようになります。"
       ],
+      "Calendar is disabled": [
+        "カレンダーが無効です"
+      ],
       "Calendar side panel": [
         "カレンダーサイドパネル"
       ],
@@ -4985,6 +5116,9 @@
       "Open shortcut cheat sheet": [
         "ショートカットのチートシートを開く"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "推奨されるアクションと役立つリンクのガイドを開きます。"
+      ],
       "or discover other features:": [
         "または他の機能を発見することもできます:"
       ],
@@ -5111,6 +5245,9 @@
       "Session timed out": [
         "セッションがタイムアウトしました"
       ],
+      "Set up your organization": [
+        "組織を設定"
+      ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
       ],
@@ -5221,6 +5358,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "予定が更新されました。招待されたアドレスからメールを送信できないため、この予定の主催者に招待を拒否したことは通知されません。この予定を削除しますか？"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "これは、組織の名称またはニックネームであり、ユーザーに表示されます。これはいつでも変更できます。"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "これは新しいメッセージを送信するための${ defaultEmailAddress }です。"
@@ -5997,6 +6137,9 @@
       "Last name": [
         "姓"
       ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "他の人に、都合が悪い場合、遅れる場合、または予定まで待てない場合を知らせましょう。"
+      ],
       "Location": [
         "場所"
       ],
@@ -6276,8 +6419,53 @@
       "Drafts": [
         "下書き"
       ],
+      "Enforcing 2FA for organizations": [
+        "組織に2要素認証を適用"
+      ],
+      "How to add users": [
+        "ユーザーを追加する方法"
+      ],
+      "How to add Zoom links": [
+        "Zoomのリンクを追加する方法"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }でコラボレーションする方法"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME }を有効にする方法"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "${ BRAND_NAME } への移行方法"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoinで支払うには？"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } の設定方法"
+      ],
+      "How to set up a custom domain": [
+        "カスタムドメインの設定方法"
+      ],
+      "How to set up SMTP": [
+        "SMTP の設定方法"
+      ],
+      "How to share a calendar": [
+        "カレンダーを共有する方法"
+      ],
+      "How to share via email": [
+        "メールで共有する方法"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } の使用方法"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Businessの使用方法"
+      ],
+      "How to use email forwarding": [
+        "メール転送の使用方法"
+      ],
+      "How to use Groups": [
+        "グループの使用方法"
       ],
       "if your data is leaked": [
         "もしデータが漏洩した場合"
@@ -6323,6 +6511,9 @@
       ],
       "Trash": [
         "ごみ箱"
+      ],
+      "Types of recovery methods": [
+        "回復手段の種類"
       ],
       "What’s this?": [
         "これは何ですか?"
@@ -6701,26 +6892,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -6742,6 +6913,26 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -7599,6 +7790,11 @@
         "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
+    "Note": {
+      "Note:": [
+        "注意:"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } が無効になりました"
@@ -8263,11 +8459,17 @@
       "Last name": [
         "姓"
       ],
+      "Leave a note for all participants": [
+        "すべての参加者にメモを残す"
+      ],
       "Name": [
         "名前"
       ],
       "Name or email address": [
         "名前またはメールアドレス"
+      ],
+      "Organization name": [
+        "組織名"
       ],
       "Password": [
         "パスワード"
@@ -8304,6 +8506,9 @@
       ],
       "Start typing an email address": [
         "メールアドレスを入力"
+      ],
+      "Your organization name": [
+        "あなたの組織の名前"
       ]
     },
     "Placeholder for contact group name": {
@@ -8391,6 +8596,14 @@
         "予定を再読み込み"
       ]
     },
+    "RSVP Note": {
+      "Edit note": [
+        "メモを編集"
+      ],
+      "Remove note": [
+        "メモを削除"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "アカウントの安全性を確認してください"
@@ -8399,6 +8612,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "サインインは正しく完了しませんでした。"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "組織のセットアップとアカウントのセキュリティ"
       ]
     },
     "Security Center": {
@@ -8756,7 +8974,7 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } か月間無料"
+        "${ n } か月無料"
       ]
     },
     "specialoffer: Deal details": {
@@ -9814,6 +10032,9 @@
       "Add to ${ groupName }": [
         "${ groupName } に追加"
       ],
+      "Add user": [
+        "ユーザーを追加"
+      ],
       "Addresses": [
         "メールアドレス"
       ],
@@ -9871,11 +10092,23 @@
       "Clearing data": [
         "データのクリア中"
       ],
+      "Collaborate on documents": [
+        "ドキュメントの共同編集"
+      ],
       "Confirm downgrade": [
         "ダウングレードの確認"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } ボーナスの損失を確認"
+      ],
+      "Connect apps and devices": [
+        "アプリとデバイスを接続"
+      ],
+      "Connect to video conferencing": [
+        "ビデオ会議に接続"
+      ],
+      "Connect your custom domain": [
+        "カスタムドメインを接続"
       ],
       "Contact Details": [
         "連絡先の詳細"
@@ -9952,6 +10185,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } にダウングレードしますか？"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } アプリをダウンロード"
+      ],
       "Download the app": [
         "アプリをダウンロード"
       ],
@@ -9982,8 +10218,14 @@
       "Enable 2FA": [
         "2要素認証を有効にする"
       ],
+      "Enable advanced account protection": [
+        "高度なアカウント保護を有効にする"
+      ],
       "Encrypted event": [
         "暗号化された予定"
+      ],
+      "Enhance security with 2FA": [
+        "2要素認証でセキュリティを強化"
       ],
       "Enter 2FA code": [
         "2要素認証コードを入力"
@@ -10063,6 +10305,9 @@
       "Import contacts": [
         "連絡先をインポート"
       ],
+      "Import emails, calendars, contacts": [
+        "メール、カレンダー、連絡先をインポート"
+      ],
       "Import events": [
         "予定をインポート"
       ],
@@ -10117,6 +10362,12 @@
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
       ],
+      "Org setup": [
+        "組織設定"
+      ],
+      "Organization setup": [
+        "組織の設定"
+      ],
       "Organizer cannot be notified": [
         "主催者には通知が送信されません"
       ],
@@ -10170,6 +10421,9 @@
       ],
       "Remove participants": [
         "参加者を削除"
+      ],
+      "Reply with a note": [
+        "メモを付けて返信"
       ],
       "Report a problem": [
         "問題を報告"
@@ -10237,11 +10491,23 @@
       "Send invitation": [
         "招待を送信"
       ],
+      "Set recovery methods": [
+        "回復手段を設定"
+      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
       ],
+      "Set up email forwarding": [
+        "メール転送の設定"
+      ],
+      "Set up your organization": [
+        "組織を設定"
+      ],
       "Settings": [
         "設定"
+      ],
+      "Share your calendar with your team": [
+        "カレンダーをチームと共有"
       ],
       "Show time zones for event start and end times": [
         "予定の開始時間と終了時間のタイムゾーンを表示"
@@ -10252,6 +10518,12 @@
       "Sign out": [
         "サインアウト"
       ],
+      "Simplify email distribution": [
+        "メール配信を簡単に"
+      ],
+      "Simplify password management": [
+        "パスワード管理を簡単に"
+      ],
       "Start a new import": [
         "新しいインポートを開始"
       ],
@@ -10260,6 +10532,9 @@
       ],
       "Summary": [
         "概要"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } をオンにする"
       ],
       "Unlock contacts groups": [
         "連絡先グループをアンロック"
@@ -10272,6 +10547,12 @@
       ],
       "Upgrade complete!": [
         "アップグレード完了!"
+      ],
+      "Upload and share files": [
+        "ファイルのアップロードと共有"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "データプライバシーのために ${ VPN_SHORT_APP_NAME } を使用する"
       ],
       "Verification failed": [
         "検証に失敗しました"
@@ -10299,6 +10580,9 @@
       ],
       "We've locked your calendars to protect your data": [
         "データを保護するためにカレンダーをロックしました"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Businessへようこそ"
       ],
       "What can a VPN protect you from?": [
         "VPNは何からあなたを保護できますか?"

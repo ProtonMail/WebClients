@@ -1366,10 +1366,10 @@
       "Upgrade": [
         "Wechseln"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Jetzt upgraden"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Jetzt upgraden"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -8402,11 +8402,11 @@
       "Always move sender's emails": [
         "Nachrichten dieses Absenders immer verschieben"
       ],
-      "AND": [
-        "UND"
-      ],
       "And": [
         "Und"
+      ],
+      "AND": [
+        "UND"
       ],
       "and": [
         "und"
@@ -8636,11 +8636,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "WENN"
-      ],
       "If": [
         "Wenn"
+      ],
+      "IF": [
+        "WENN"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -8753,14 +8753,14 @@
       "Optional": [
         "Optional"
       ],
-      "OR": [
-        "ODER"
-      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
+      ],
+      "OR": [
+        "ODER"
       ],
       "Original link": [
         "Original-Link"
@@ -9572,29 +9572,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } holen"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -9616,6 +9593,29 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } holen"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: feature": {

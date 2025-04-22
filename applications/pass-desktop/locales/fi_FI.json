@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -812,6 +812,9 @@
       ],
       "Alias options could not be resolved": [
         "Aliasvaihtoehtoja ei voitu selvittää"
+      ],
+      "An error occured during the import process": [
+        "Virhe tuontiprosessissa"
       ],
       "An error occurred while resuming your session": [
         "Virhe istuntosi jatkamisessa"
@@ -1981,6 +1984,12 @@
       "Please confirm your PIN code to edit this setting.": [
         "Muokkaa asetusta vahvistamalla PIN-koodisi."
       ],
+      "Please confirm your second password": [
+        "Vahvista toinen salasanasi"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Vahvista toinen salasanasi viedäksesi ${ PASS_APP_NAME }-tietosi"
+      ],
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
       ],
@@ -2169,6 +2178,9 @@
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Tätä toimintoa ei voi kumota. Kaikki verkkotunnusta ${ domainTextBold } käyttävät aliakset poistetaan. Huomaa, että poistettuja aliaksia ei voi palauttaa."
+      ],
+      "This option is currently not available on your browser.": [
+        "Tämä valinta ei ole tällä hetkellä käytettävissä selaimellasi."
       ],
       "This option is currently not available on your device.": [
         "Tämä valinta ei ole tällä hetkellä käytettävissä laitteellasi."
@@ -3430,6 +3442,9 @@
       "Restore": [
         "Palauta"
       ],
+      "The file you are trying to import is empty": [
+        "Tiedosto, jota yrität tuoda, on tyhjä"
+      ],
       "Total files: ": [
         "Tiedostoja yhteensä: "
       ],
@@ -3848,6 +3863,9 @@
       ],
       "Enter your PIN": [
         "Syötä PIN-koodi"
+      ],
+      "Enter your second password": [
+        "Syötä toinen salasanasi"
       ],
       "Excluded items": [
         "Poissuljetut kohteet"

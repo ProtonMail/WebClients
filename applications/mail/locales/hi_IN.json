@@ -1348,10 +1348,10 @@
       "Upgrade": [
         "अपग्रेड करें"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "अभी अपग्रेड करें"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -8189,10 +8189,10 @@
       "Always move sender's emails": [
         "भेजनेवाले के ईमेल हमेशा ले जाएं"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
       "and": [
@@ -8420,10 +8420,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
       "Import all messages": [
@@ -8534,13 +8534,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
-      "OR": [
-        "या"
-      ],
       "or": [
         "या"
       ],
       "Or": [
+        "या"
+      ],
+      "OR": [
         "या"
       ],
       "Original link": [
@@ -9338,29 +9338,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } लें"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -9382,6 +9359,29 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } लें"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "शुरू करें ${ priceCoupon } के लिए"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
