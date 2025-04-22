@@ -734,10 +734,10 @@
       "Upgrade": [
         "Nadgradi"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadgradi zdaj"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadgradi zdaj"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
@@ -5089,7 +5089,7 @@
         "Izberite, kateri e-poštni naslov ali naslove želite dodati v ${ groupName }."
       ],
       "Please try again in a few moments": [
-        "Poskusite znova čez nekaj trenutkov."
+        "Poskusite znova čez nekaj trenutkov"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prosimo, poskusite znova z uporabo drugega načina plačila ali se obrnite na vašo banko."
@@ -5119,7 +5119,7 @@
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
+        "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Registering your subscription…": [
         "Registriram vašo naročnino …"
@@ -5194,7 +5194,7 @@
         "Shramba, ki jo uporablja ta uporabnik."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
+        "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every month.": [
         "Naročnina se samodejno podaljša vsak mesec."
@@ -5488,7 +5488,7 @@
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Imeti morate plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
+        "Imeti morate kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "To povabilo ste že zavrnili. Prosite lastnika za ponovno povabilo"
@@ -6700,23 +6700,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6738,6 +6721,23 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {

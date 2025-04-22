@@ -156,6 +156,9 @@
       "Close this banner": [
         "Lukk dette banneret"
       ],
+      "Collaborate on documents": [
+        "Samarbeid på dokumenter"
+      ],
       "Collapse navigation bar": [
         "Skjul navigasjonslinjen"
       ],
@@ -167,6 +170,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Koble til apper og enheter"
+      ],
+      "Connect to video conferencing": [
+        "Koble til videokonferanser"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -275,6 +284,9 @@
       "Download": [
         "Last ned"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Last ned ${ DRIVE_APP_NAME }-apper"
+      ],
       "Download now": [
         "Last ned nå"
       ],
@@ -332,6 +344,9 @@
       "Get started": [
         "Kom i gang"
       ],
+      "Get the apps": [
+        "Skaff deg appene"
+      ],
       "Get verification code": [
         "Få verifiseringskode"
       ],
@@ -386,6 +401,9 @@
       "Import emails": [
         "Importer e-poster"
       ],
+      "Import emails, calendars, contacts": [
+        "Importer e-poster, kalendere, kontakter"
+      ],
       "Import events": [
         "Importer hendelser"
       ],
@@ -437,11 +455,20 @@
       "Manage addresses": [
         "Administrer adresser"
       ],
+      "Manage advanced account protections": [
+        "Administrer avansert kontobeskyttelse"
+      ],
       "Manage folders": [
         "Behandle mapper"
       ],
+      "Manage groups": [
+        "Administrer grupper"
+      ],
       "Manage labels": [
         "Behandle etiketter"
+      ],
+      "Manage users/addresses": [
+        "Administrer brukere/adresser"
       ],
       "Mark as resolved": [
         "Merk som løst"
@@ -569,6 +596,9 @@
       "Remove bonuses": [
         "Fjern bonuser"
       ],
+      "Remove button": [
+        "Fjern knapp"
+      ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
@@ -580,6 +610,9 @@
       ],
       "Remove Zoom meeting": [
         "Fjern Zoom-møte"
+      ],
+      "Reply with a note": [
+        "Svar med et notat"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -641,14 +674,29 @@
       "Send": [
         "Send"
       ],
+      "Set recovery methods": [
+        "Angi gjenopprettingsmetoder"
+      ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
+      ],
+      "Set up 2FA": [
+        "Konfigurer 2FA"
+      ],
+      "Set up a custom domain": [
+        "Konfigurer et egendefinert domene"
+      ],
+      "Set up email forwarding": [
+        "Konfigurer videresending av e-post"
       ],
       "Settings": [
         "Innstillinger"
       ],
       "Share": [
         "Del"
+      ],
+      "Share your calendar with your team": [
+        "Del kalenderen din med teamet ditt"
       ],
       "Show advanced PGP settings": [
         "Vis avanserte PGP-innstillinger"
@@ -725,6 +773,9 @@
       "Try another method": [
         "Prøv annen metode"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock data": [
         "Lås opp data"
       ],
@@ -746,10 +797,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -758,11 +809,20 @@
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ],
+      "Upload and share files": [
+        "Last opp og del filer"
+      ],
       "Upload picture": [
         "Last opp bilde"
       ],
       "Use ${ label } theme": [
         "Bruk ${ label }-temaet"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Bruk ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Bruk ${ VPN_SHORT_APP_NAME } for personvern"
       ],
       "Use a different card": [
         "Bruk et annet kort"
@@ -2662,14 +2722,23 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert, kryptert miljø."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
+      ],
       "Also included": [
         "Også inkludert"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Videresend automatisk innkommende e-post til en annen e-postadresse."
       ],
       "Availability unknown": [
         "Ukjent tilgjengelighet"
@@ -2680,8 +2749,17 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Fargekode hendelser for å gjøre det enklere å organisere dagen din, spore tiden din og prioritere oppgaver."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Konfigurer dette først for å aktivere organisasjonen din og tilpasse e-postadressen din."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Koble til CRM-en, nettstedet, skriverne dine og mer."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opprett et Zoom-møte og legg til deltakelsesdetaljer til hendelsen din med ett klikk."
+      ],
+      "Create groups you can email with a single address.": [
+        "Opprett grupper du kan sende e-post til med én enkelt adresse."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
@@ -2692,8 +2770,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Designet for brukere som ønsker økt beskyttelse for kontoene sine."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Få enkel tilgang til e-posten og kalenderen din på datamaskin og mobil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synkroniser filer enkelt til skyen fra datamaskinen din, og få tilgang til dem fra mobilenheten din."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Oppmuntre bruken av tofaktorautentisering i organisasjonen din for ekstra sikkerhet."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Sørg for sikker tilgang til organisasjonsdata, selv om teamet ditt er eksternt eller bruker offentlig WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Sørg for førsteklasses sikkerhet for din konto med ${ PROTON_SENTINEL_NAME }-programmet."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Sørg for at du fortsatt har tilgang til kontoen og dataene dine selv om du mister ${ BRAND_NAME }-passordet ditt."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -2701,8 +2800,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrensede aliaser og 500 GB lagringsplass med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Hjelp teamet ditt med å lagre passord til sensitiv forretnings- og klientinformasjon på en sikker måte."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Lar deg umiddelbart legge til møtekoblinger i hendelsesinvitasjonene dine."
       ],
       "Loading availability": [
         "Laster inn tilgjengelighet"
@@ -2719,6 +2824,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Angi en gjenopprettingsmetode for å forhindre at du mister tilgang til kontoen din."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Konfigurer kontoer for alle brukere og inviter dem til å bli med i ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Forenkle synkronisering og planlegging med delte kalendere."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Dette kan ta noen få minutter. I mellomtiden kan du fortsette å bruke ${ CALENDAR_APP_NAME } som vanlig."
       ],
@@ -2731,11 +2842,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "For å starte, gi organisasjonen din et navn."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Oppgrader kontoen din for å aktivere ${ PROTON_SENTINEL_NAME }, vår banebrytende AI-drevne sikkerhetsløsning med dedikert 24/7 ekspertstøtte."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
@@ -2897,6 +3014,11 @@
         "Rediger hendelse"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTAT: \n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "Beskrivelse:\n${ eventDescription }"
@@ -2908,6 +3030,12 @@
       ],
       "All events in this series were updated.": [
         "Alle hendelsene i denne serien ble oppdatert."
+      ],
+      "Here's what changed:": [
+        "Her er hva som er endret:"
+      ],
+      "NOTE:": [
+        "NOTAT:"
       ],
       "This event occurrence was canceled.": [
         "Denne hendelsesforekomsten ble kansellert."
@@ -3483,7 +3611,7 @@
         "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Det oppsto en feil under opplasting av filen ${ formattedFilename }. Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Kun ICS-filformat støttes."
@@ -4643,6 +4771,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved å dele alle hendelsesdetaljene i denne kalenderen, godtar du å gi ${ BRAND_NAME } tilgang til denne kalenderens krypterte informasjon."
       ],
+      "Calendar is disabled": [
+        "Kalender er deaktivert"
+      ],
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
@@ -5062,6 +5193,9 @@
       "Open shortcut cheat sheet": [
         "Åpne jukseark for snarveier"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
+      ],
       "or discover other features:": [
         "eller oppdag andre funksjoner:"
       ],
@@ -5191,6 +5325,9 @@
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
+      "Set up your organization": [
+        "Konfigurer organisasjonen din"
+      ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
@@ -5302,6 +5439,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Hendelsen har blitt oppdatert. Arrangøren av denne hendelsen vil ikke bli varslet om at du avslår invitasjonen, siden du ikke kan sende e-post fra den inviterte adressen. Vil du slette denne hendelsen uansett?"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dette er et navn eller kallenavn for organisasjonen din som brukerne dine vil se. Du kan endre det når som helst."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
@@ -6087,6 +6227,9 @@
       "Last name": [
         "Etternavn"
       ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "La andre få vite om du har en konflikt, blir forsinket eller ikke kan vente på hendelsen."
+      ],
       "Location": [
         "Plassering"
       ],
@@ -6367,8 +6510,53 @@
       "Drafts": [
         "Utkast"
       ],
+      "Enforcing 2FA for organizations": [
+        "Håndheve 2FA for organisasjoner"
+      ],
+      "How to add users": [
+        "Hvordan legge til brukere"
+      ],
+      "How to add Zoom links": [
+        "Hvordan legge til Zoom-koblinger"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Hvordan samarbeide i ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hvordan aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Slik migrerer du til ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Hvordan konfigurere ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Hvordan konfigurere et egendefinert domene"
+      ],
+      "How to set up SMTP": [
+        "Hvordan konfigurere SMTP"
+      ],
+      "How to share a calendar": [
+        "Hvordan dele en kalender"
+      ],
+      "How to share via email": [
+        "Hvordan dele via e-post"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hvordan bruke ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Hvordan bruke ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Hvordan bruke postvideresending"
+      ],
+      "How to use Groups": [
+        "Hvordan bruke grupper"
       ],
       "if your data is leaked": [
         "hvis dataene dine er lekket"
@@ -6414,6 +6602,9 @@
       ],
       "Trash": [
         "Papirkurv"
+      ],
+      "Types of recovery methods": [
+        "Typer av gjenopprettingsmetoder"
       ],
       "What’s this?": [
         "Hva er det der?"
@@ -6800,26 +6991,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -6841,6 +7012,26 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7724,6 +7915,11 @@
         "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
+    "Note": {
+      "Note:": [
+        "Notat:"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } er deaktivert"
@@ -8418,11 +8614,17 @@
       "Last name": [
         "Etternavn"
       ],
+      "Leave a note for all participants": [
+        "Legg igjen et notat til alle deltakere"
+      ],
       "Name": [
         "Navn"
       ],
       "Name or email address": [
         "Navn eller e-postadresse"
+      ],
+      "Organization name": [
+        "Organisasjonsnavn"
       ],
       "Password": [
         "Passord"
@@ -8459,6 +8661,9 @@
       ],
       "Start typing an email address": [
         "Begynn å skrive inn en e-postadresse"
+      ],
+      "Your organization name": [
+        "Organisasjonsnavnet ditt"
       ]
     },
     "Placeholder for contact group name": {
@@ -8549,6 +8754,14 @@
         "Last inn hendelse på nytt"
       ]
     },
+    "RSVP Note": {
+      "Edit note": [
+        "Rediger notat"
+      ],
+      "Remove note": [
+        "Fjern notat"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Gjennomgå kontosikkerhet"
@@ -8557,6 +8770,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Påloggingen ble ikke fullført."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Konfigurasjon av organisasjon og kontosikkerhet"
       ]
     },
     "Security Center": {
@@ -10014,6 +10232,9 @@
       "Add to ${ groupName }": [
         "Legg til i ${ groupName }"
       ],
+      "Add user": [
+        "Legg til bruker"
+      ],
       "Addresses": [
         "Adresser"
       ],
@@ -10071,11 +10292,23 @@
       "Clearing data": [
         "Tømmer data"
       ],
+      "Collaborate on documents": [
+        "Samarbeid på dokumenter"
+      ],
       "Confirm downgrade": [
         "Bekreft nedgradering"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekreft tap av ${ BRAND_NAME }-bonuser"
+      ],
+      "Connect apps and devices": [
+        "Koble til apper og enheter"
+      ],
+      "Connect to video conferencing": [
+        "Koble til videokonferanser"
+      ],
+      "Connect your custom domain": [
+        "Koble til ditt egendefinerte domene"
       ],
       "Contact Details": [
         "KontaktInformasjon"
@@ -10154,6 +10387,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradere til ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Last ned ${ DRIVE_APP_NAME }-apper"
+      ],
       "Download the app": [
         "Last ned appen"
       ],
@@ -10184,8 +10420,14 @@
       "Enable 2FA": [
         "Aktiver 2FA"
       ],
+      "Enable advanced account protection": [
+        "Aktiver avansert kontobeskyttelse"
+      ],
       "Encrypted event": [
         "Kryptert hendelse"
+      ],
+      "Enhance security with 2FA": [
+        "Forbedre sikkerheten med 2FA"
       ],
       "Enter 2FA code": [
         "Angi 2FA-kode"
@@ -10266,6 +10508,9 @@
       "Import contacts": [
         "Importer kontakter"
       ],
+      "Import emails, calendars, contacts": [
+        "Importer e-poster, kalendere, kontakter"
+      ],
       "Import events": [
         "Importer hendelser"
       ],
@@ -10320,6 +10565,12 @@
       "Open actions dropdown": [
         "Åpne rullegardinmeny for handlinger"
       ],
+      "Org setup": [
+        "Organisasjonskonfigurasjon"
+      ],
+      "Organization setup": [
+        "Organisasjonsoppsett"
+      ],
       "Organizer cannot be notified": [
         "Arrangør kan ikke varsles"
       ],
@@ -10373,6 +10624,9 @@
       ],
       "Remove participants": [
         "Fjern deltakere"
+      ],
+      "Reply with a note": [
+        "Svar med et notat"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -10440,11 +10694,23 @@
       "Send invitation": [
         "Send invitasjon"
       ],
+      "Set recovery methods": [
+        "Angi gjenopprettingsmetoder"
+      ],
       "Set recovery phrase": [
         "Angi gjenopprettingsfrase"
       ],
+      "Set up email forwarding": [
+        "Sett opp videresending av e-post"
+      ],
+      "Set up your organization": [
+        "Konfigurer organisasjonen din"
+      ],
       "Settings": [
         "Innstillinger"
+      ],
+      "Share your calendar with your team": [
+        "Del kalenderen din med teamet ditt"
       ],
       "Show time zones for event start and end times": [
         "Vis tidssoner for hendelsens start- og sluttid"
@@ -10455,6 +10721,12 @@
       "Sign out": [
         "Logg av"
       ],
+      "Simplify email distribution": [
+        "Forenkle distribusjon av e-post"
+      ],
+      "Simplify password management": [
+        "Forenkle passordadministrasjon"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -10463,6 +10735,9 @@
       ],
       "Summary": [
         "Sammendrag"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unlock contacts groups": [
         "Lås opp kontaktgrupper"
@@ -10475,6 +10750,12 @@
       ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
+      ],
+      "Upload and share files": [
+        "Last opp og del filer"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Bruk ${ VPN_SHORT_APP_NAME } for personvern"
       ],
       "Verification failed": [
         "Bekreftelse mislyktes"
@@ -10502,6 +10783,9 @@
       ],
       "We've locked your calendars to protect your data": [
         "Vi har låst kalenderne dine for å beskytte dataene dine"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Velkommen til ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Hva kan et VPN beskytte deg mot?"
