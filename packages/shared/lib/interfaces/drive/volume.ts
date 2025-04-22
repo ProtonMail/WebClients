@@ -15,6 +15,28 @@ export interface UserVolumesResult {
     Volumes: DriveVolume[];
 }
 
+export interface CopyRelatedPhotos {
+    LinkID: string;
+    Name: string;
+    NodePassphrase: string;
+    Hash: string;
+    ContentHash: string;
+}
+export interface CopyNodeToVolume {
+    Name: string;
+    NodePassphrase: string;
+    Hash: string;
+    TargetVolumeID: string;
+    TargetParentLinkID: string;
+    NameSignatureEmail: string;
+    NodePassphraseSignature?: string; // Required when moving an anonymous Link. It must be signed by the SignatureEmail address.
+    SignatureEmail?: string;
+    Photos?: {
+        ContentHash: string;
+        RelatedPhotos?: CopyRelatedPhotos[];
+    };
+}
+
 export interface CreateDriveVolume {
     AddressID: string;
     AddressKeyID: string;

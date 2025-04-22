@@ -509,7 +509,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     abortSignal,
                     albumShareId,
                     albumLinkId,
-                    link.name
+                    link.linkId
                 );
                 linksInfoForAlbum.set(link.linkId, {
                     LinkID: link.linkId,

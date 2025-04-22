@@ -36,6 +36,7 @@ import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosMakeCoverButton } from './PhotosMakeCoverButton';
 import { PhotosRemoveAlbumPhotosButton } from './PhotosRemoveAlbumPhotosButton';
+import { PhotosSavePhotoButton } from './PhotosSavePhotoButton';
 import PhotosShareLinkButton from './PhotosShareLinkButton';
 import { PhotosShareMultipleLinkButton } from './PhotosShareMultipleLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
@@ -385,7 +386,8 @@ const SelectionDropdownButton = ({ children }: SelectionDropdownButtonProps) => 
 
 interface PhotosWithAlbumToolbarProps {
     shareId: string;
-    linkId: string;
+    linkId: string; // the upload folder link ID (either root or inside a share album)
+    rootLinkId?: string;
     selectedItems: PhotoLink[];
     data: PhotoGridItem[];
     onPreview?: () => void;
@@ -404,11 +406,13 @@ interface PhotosWithAlbumToolbarProps {
     onLeaveAlbum?: () => void;
     onShowDetails?: () => void;
     onAddAlbumPhotos?: () => void;
+    onSavePhoto?: () => Promise<void>;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     shareId,
     linkId,
+    rootLinkId,
     selectedItems,
     data,
     requestDownload,
@@ -426,6 +430,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onLeaveAlbum,
     onShowDetails,
     onAddAlbumPhotos,
+    onSavePhoto,
 }) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { viewportWidth } = useActiveBreakpoint();
@@ -443,6 +448,14 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
             album.cover?.linkId !== selectedItems[0].linkId &&
             album.permissions.isAdmin &&
             !driveAlbumsDisabled
+    );
+    const canSavePhoto = Boolean(
+        album &&
+            hasSelection &&
+            !hasMultipleSelected &&
+            rootLinkId &&
+            onSavePhoto &&
+            selectedItems[0].parentLinkId !== rootLinkId
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
@@ -495,6 +508,9 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             requestDownload={requestDownload}
                             selectedLinks={selectedItems}
                         />
+                        {canSavePhoto && (
+                            <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhoto={onSavePhoto!} />
+                        )}
                         {canSelectCover && (
                             <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover!} />
                         )}
@@ -529,6 +545,9 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal!} />
                         )}
                         <SelectionDropdownButton>
+                            {canSavePhoto && (
+                                <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhoto={onSavePhoto!} />
+                            )}
                             {canSelectCover && (
                                 <PhotosMakeCoverButton
                                     dropDownMenuButton={true}
