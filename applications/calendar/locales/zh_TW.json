@@ -728,11 +728,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade now": [
-        "立即升級"
-      ],
       "Upgrade Now": [
         "請升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "升級至${ BRAND_NAME }無限版"
@@ -6491,26 +6491,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6532,6 +6512,26 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8443,21 +8443,21 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } 天"
+        "${ days }天"
       ],
       "${ hours } hour": [
-        "${ hours } 小時"
+        "${ hours }小時"
       ],
       "${ minutes } minute": [
-        "${ minutes } 分鐘"
+        "${ minutes }分鐘"
       ],
       "${ seconds } second": [
-        "${ seconds } 秒"
+        "${ seconds }秒"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "免費使用 ${ n } 個月"
+        "${ n }個月免費"
       ]
     },
     "specialoffer: Deal details": {

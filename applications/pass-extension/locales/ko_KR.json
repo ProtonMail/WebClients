@@ -152,10 +152,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create alias": [
@@ -1744,9 +1744,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -3252,6 +3249,9 @@
       ],
       "If your data contains file attachments, they will not be imported.": [
         "데이터에 파일 첨부 파일이 있는 경우 해당 파일은 불러오기되지 않습니다."
+      ],
+      "Include file attachments": [
+        "파일 첨부 파일 포함"
       ],
       "Not enough available storage space for the selected files.": [
         "선택한 파일에 대한 사용 가능한 스토리지 공간이 충분하지 않습니다."

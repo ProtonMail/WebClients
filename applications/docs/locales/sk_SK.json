@@ -435,6 +435,9 @@
       "Manage folders": [
         "Spravovať priečinky"
       ],
+      "Manage groups": [
+        "Spravovať skupiny"
+      ],
       "Manage labels": [
         "Spravovať štítky"
       ],
@@ -650,6 +653,9 @@
       ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
+      ],
+      "Set up 2FA": [
+        "Nastaviť 2FA"
       ],
       "Settings": [
         "Nastavenia"
@@ -2296,11 +2302,6 @@
         "Faktúra po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2379,6 +2380,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4703,6 +4709,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto priečinku."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
       "Opening...": [
         "Otváranie..."
       ],
@@ -4868,6 +4877,9 @@
       "Session timed out": [
         "Relácia vypršala"
       ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
       ],
@@ -5002,6 +5014,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Tento dokument nemusí existovať alebo nemáte povolenie na jeho zobrazenie. Môžete skúsiť znovu načítať stránku, aby ste zistili, či problém pretrváva, alebo sa obráťte na vlastníka, aby vám poskytol prístup."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
@@ -9407,6 +9422,9 @@
       "Add to ${ groupName }": [
         "Pridať do ${ groupName }"
       ],
+      "Add user": [
+        "Pridať používateľa"
+      ],
       "Addresses": [
         "Adresy"
       ],
@@ -9455,11 +9473,23 @@
       "Clearing data": [
         "Vymazanie dát"
       ],
+      "Collaborate on documents": [
+        "Spolupráca na dokumentoch"
+      ],
       "Confirm downgrade": [
         "Potvrďte zníženie"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potvrďte stratu bonusov ${ BRAND_NAME }"
+      ],
+      "Connect apps and devices": [
+        "Pripojenie aplikácií a zariadení"
+      ],
+      "Connect to video conferencing": [
+        "Pripojiť sa k videokonferencii"
+      ],
+      "Connect your custom domain": [
+        "Pripojte si vlastnú doménu"
       ],
       "Contact Details": [
         "Kontaktné údaje"
@@ -9566,6 +9596,9 @@
       "Download ${ date }": [
         "Stiahnuť ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Stiahnuť aplikáciu"
       ],
@@ -9610,6 +9643,9 @@
       ],
       "End-to-end encrypted": [
         "End-to-end šifrované"
+      ],
+      "Enhance security with 2FA": [
+        "Zvýšte zabezpečenie pomocou 2FA"
       ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"
@@ -9664,6 +9700,9 @@
       ],
       "Import contacts": [
         "Importovať kontakty"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovať emaily, kalendáre a kontakty"
       ],
       "Import events": [
         "Import udalostí"
@@ -9812,14 +9851,26 @@
       "Select link expiration time": [
         "Vyberte čas vypršania platnosti odkazu"
       ],
+      "Set recovery methods": [
+        "Nastaviť spôsoby obnovenia"
+      ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
+      ],
+      "Set up email forwarding": [
+        "Nastaviť preposielanie emailov"
+      ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
       ],
       "Settings": [
         "Nastavenia"
       ],
       "Share ${ name }": [
         "Zdieľa ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Zdieľajte svoj kalendár so svojím tímom"
       ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
@@ -9854,6 +9905,9 @@
       "This document is password protected": [
         "Tento dokument je chránený heslom"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"
       ],
@@ -9863,8 +9917,14 @@
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
       ],
+      "Upload and share files": [
+        "Nahrávanie a zdieľanie súborov"
+      ],
       "Uploading a large file or folder": [
         "Nahrávanie veľkého súboru alebo priečinka"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
       "Verification failed": [
         "Overovanie zlyhalo"
@@ -9883,6 +9943,9 @@
       ],
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
       "What can a VPN protect you from?": [
         "Pred čím vás môže VPN ochrániť?"

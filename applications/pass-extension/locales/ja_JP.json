@@ -152,11 +152,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } アカウントを作成"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成する"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } アカウントを作成"
       ],
       "Create alias": [
         "エイリアスを作成"
@@ -358,6 +358,9 @@
       ],
       "Make editor": [
         "編集者として設定"
+      ],
+      "Make manager": [
+        "管理者にする"
       ],
       "Make viewer": [
         "閲覧者として設定"
@@ -779,6 +782,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "認証に失敗しました。エクスポートを続行するには、あなたの追加のパスワードを確認してください"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "認証に失敗しました。エクスポートを続行するには、2つ目のパスワードを確認してください"
+      ],
       "Authentication failure: ${ message }": [
         "認証失敗: ${ message }"
       ],
@@ -994,6 +1000,9 @@
       ],
       "File does not match expected format": [
         "予期しないファイル形式です"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "保管庫「${ vaultData.name }」のインポートに失敗しました: ${ errorMessage }"
       ],
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
@@ -1317,6 +1326,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "${ PASS_APP_NAME } へのアクセスには常に追加のパスワードが必要です。"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "${ PASS_APP_NAME } へのアクセスには、常に2つ目のパスワードが必要になります。"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } へのアクセスには指紋または端末のPINが必要です。"
@@ -1729,6 +1741,9 @@
       "Make it your own": [
         "自分のものにする"
       ],
+      "Manager": [
+        "管理者"
+      ],
       "me": [
         "私"
       ],
@@ -1743,9 +1758,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -1890,6 +1902,24 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "この設定を編集するには、PINコードを確認してください。"
+      ],
+      "Please confirm your second password": [
+        "2つ目のパスワードを確認してください"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "生体認証で自動ロックするには、2つ目のパスワードを確認してください。"
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "パスワードで自動ロックするには、2つ目のパスワードを確認してください。"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } のデータをエクスポートするには、2つ目のパスワードを確認してください。"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "現在のロックを解除するには、2つ目のパスワードを確認してください。"
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "自動ロック時間を更新するには、2つ目のパスワードを確認してください。"
       ],
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
@@ -2160,6 +2190,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "追加パスワードで ${ PASS_SHORT_APP_NAME } のロックを解除する"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "2つ目のパスワードで${ PASS_SHORT_APP_NAME }をアンロック"
       ],
       "Unlock it with your PIN to access the settings": [
         "設定にアクセスするには、PINでロックを解除してください。"
@@ -2766,6 +2799,9 @@
       "Make all editors": [
         "全ての編集者を対象に"
       ],
+      "Make all managers": [
+        "すべての管理者を対象にする"
+      ],
       "Make all viewers": [
         "全ての閲覧者を対象に"
       ],
@@ -3253,6 +3289,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "有効にすると、エクスポート時にすべてのファイルがダウンロードされます。インターネット接続によっては、時間がかかる場合があります。"
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "データに添付ファイルが含まれている場合、それらはインポートされません。"
+      ],
       "Include file attachments": [
         "添付ファイルを含める"
       ],
@@ -3291,6 +3330,9 @@
       ],
       "Total imported files: ": [
         "合計インポートされたファイル数: "
+      ],
+      "Upgrade to support file attachments": [
+        "添付ファイルをサポートするためにアップグレードしてください"
       ],
       "Upload files from your device.": [
         "デバイスからファイルをアップロード。"
@@ -3681,6 +3723,9 @@
       ],
       "Enter your PIN": [
         "PIN を入力してください"
+      ],
+      "Enter your second password": [
+        "2つ目のパスワードを入力してください"
       ],
       "Fill & copy password": [
         "パスワードを入力してコピー"

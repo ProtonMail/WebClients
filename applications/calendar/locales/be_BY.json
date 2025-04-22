@@ -617,6 +617,9 @@
       "Remove Zoom meeting": [
         "Выдаліць сустрэчу Zoom"
       ],
+      "Reply with a note": [
+        "Адказаць з нататкай"
+      ],
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
@@ -800,11 +803,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
       "Upgrade Now": [
         "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Палепшыць да ${ BRAND_NAME } Unlimited"
@@ -2759,14 +2762,23 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
+      ],
       "Also included": [
         "Таксама ўключана"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
       ],
       "Availability unknown": [
         "Даступнасць невядома"
@@ -2777,8 +2789,17 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Пазначайце колерам падзеі, каб з іх дапамогай прасцей арганізаваць свой дзень, адсачыць час і вызначыць прыярытэтныя заданні."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Стварыце сустрэчу Zoom і дадайце падрабязнасці аб далучэнні да падзеі адным націскам."
+      ],
+      "Create groups you can email with a single address.": [
+        "Стварайце групы, на якія можна адпраўляць электронныя лісты, выкарыстоўваючы адзін адрас."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
@@ -2789,8 +2810,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Распрацаваны для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Лёгка сінхранізуйце файлы ў воблака з вашага камп’ютара і атрымлівайце доступ да іх са сваёй мабільнай прылады."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Забяспечце бяспечны доступ да даных арганізацыі, нават калі ваша каманда працуе аддалена або выкарыстоўвае публічны Wi-Fi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Забяспечце першакласную бяспеку для свайго ўліковага запісу з дапамогай праграмы ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Пераканайцеся, што ў вас усё яшчэ ёсць доступ да вашага ўліковага запісу і даных, нават калі вы страціце свой пароль ад ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -2798,8 +2840,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
       ],
       "Loading availability": [
         "Даступнасць загрузкі"
@@ -2816,6 +2864,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту доступу да вашага ўліковага запісу."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Наладзьце ўліковыя запісы для ўсіх карыстальнікаў і запрасіце іх далучыцца да ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Гэта можа заняць некалькі хвілін. Тым часам вы можаце працягнуць карыстацца ${ CALENDAR_APP_NAME }."
       ],
@@ -2828,11 +2882,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
+      "To start, give your organization a name.": [
+        "Спачатку дайце назву сваёй арганізацыі."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Вы можаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
@@ -2994,6 +3054,11 @@
         "Рэдагаваць падзею"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "НАТАТКА:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "АПІСАННЕ:\n${ eventDescription }"
@@ -3005,6 +3070,12 @@
       ],
       "All events in this series were updated.": [
         "Усе падзеі ў гэтай серыі былі абноўлены."
+      ],
+      "Here's what changed:": [
+        "Змены, якія адбыліся:"
+      ],
+      "NOTE:": [
+        "НАТАТКА:"
       ],
       "This event occurrence was canceled.": [
         "Паўтарэнне гэтай падзеі было скасавана."
@@ -4838,6 +4909,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары, вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі."
       ],
+      "Calendar is disabled": [
+        "Каляндар адключаны"
+      ],
       "Calendar side panel": [
         "Бакавая панэль календара"
       ],
@@ -6327,6 +6401,9 @@
       "Last name": [
         "Прозвішча"
       ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "Паведаміце іншым, калі ў вас ёсць канфлікт, вы спазняецеся або не можаце чакаць падзею."
+      ],
       "Location": [
         "Размяшчэнне"
       ],
@@ -7106,26 +7183,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7147,6 +7204,26 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8082,6 +8159,11 @@
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
       ]
     },
+    "Note": {
+      "Note:": [
+        "Нататка:"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } было адключана"
@@ -8836,11 +8918,17 @@
       "Last name": [
         "Прозвішча"
       ],
+      "Leave a note for all participants": [
+        "Пакінуць нататку для ўсіх удзельнікаў"
+      ],
       "Name": [
         "Назва"
       ],
       "Name or email address": [
         "Імя або адрас пошты"
+      ],
+      "Organization name": [
+        "Назва арганізацыі"
       ],
       "Password": [
         "Пароль"
@@ -8877,6 +8965,9 @@
       ],
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
+      ],
+      "Your organization name": [
+        "Ваша назва арганізацыі"
       ]
     },
     "Placeholder for contact group name": {
@@ -8973,6 +9064,14 @@
         "Перазагрузіць падзею"
       ]
     },
+    "RSVP Note": {
+      "Edit note": [
+        "Рэдагаваць нататку"
+      ],
+      "Remove note": [
+        "Выдаліць нататку"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Агляд бяспекі ўліковага запісу"
@@ -8981,6 +9080,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Рэгістрацыя завяршылася з памылкай."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Наладжванне арганізацыі і бяспека ўліковага запісу"
       ]
     },
     "Security Center": {
@@ -9363,19 +9467,19 @@
         "${ days } дзень",
         "${ days } дні",
         "${ days } дзён",
-        "${ days } дні"
+        "${ days } дзён"
       ],
       "${ hours } hour": [
         "${ hours } гадзіна",
         "${ hours } гадзіны",
         "${ hours } гадзін",
-        "${ hours } гадзіны"
+        "${ hours } гадзін"
       ],
       "${ minutes } minute": [
         "${ minutes } хвіліна",
         "${ minutes } хвіліны",
         "${ minutes } хвілін",
-        "${ minutes } хвіліны"
+        "${ minutes } хвілін"
       ],
       "${ seconds } second": [
         "${ seconds } секунда",
@@ -9389,7 +9493,7 @@
         "${ n } месяц БЯСПЛАТНА",
         "${ n } месяцы БЯСПЛАТНА",
         "${ n } месяцаў БЯСПЛАТНА",
-        "${ n } месяцы БЯСПЛАТНА"
+        "${ n } месяцаў БЯСПЛАТНА"
       ]
     },
     "specialoffer: Deal details": {
@@ -10582,6 +10686,9 @@
       "Clearing data": [
         "Ачыстка даных"
       ],
+      "Collaborate on documents": [
+        "Сумесная праца над дакументамі"
+      ],
       "Confirm downgrade": [
         "Пацвердзіць паніжэнне тарыфнага плана"
       ],
@@ -10590,6 +10697,9 @@
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
+      ],
+      "Connect to video conferencing": [
+        "Падключыцца да відэаканферэнцыі"
       ],
       "Connect your custom domain": [
         "Падключэнне свайго карыстальніцкага дамена"
@@ -10674,6 +10784,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Панізіць да ${ downgradedPlanName }?"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Спампаваць праграму"
@@ -10852,6 +10965,12 @@
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
+      "Org setup": [
+        "Наладка арганізацыі"
+      ],
+      "Organization setup": [
+        "Наладка арганізацыі"
+      ],
       "Organizer cannot be notified": [
         "Немагчыма апавясціць арганізатара"
       ],
@@ -10905,6 +11024,9 @@
       ],
       "Remove participants": [
         "Выдаліць удзельнікаў"
+      ],
+      "Reply with a note": [
+        "Адказаць з нататкай"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -10987,6 +11109,9 @@
       "Settings": [
         "Налады"
       ],
+      "Share your calendar with your team": [
+        "Абагуліць каляндар са сваёй камандай"
+      ],
       "Show time zones for event start and end times": [
         "Паказаць часавыя паясы пачатку і завяршэння падзеі"
       ],
@@ -10998,6 +11123,9 @@
       ],
       "Simplify email distribution": [
         "Спрашчэнне распаўсюджвання электроннай пошты"
+      ],
+      "Simplify password management": [
+        "Спрасціць кіраванне паролямі"
       ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
@@ -11022,6 +11150,12 @@
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"
+      ],
+      "Upload and share files": [
+        "Запампаваць і абагуліць файлы"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
       "Verification failed": [
         "Збой праверкі"

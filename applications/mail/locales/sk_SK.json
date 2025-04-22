@@ -747,6 +747,9 @@
       "Manage folders": [
         "Spravovať priečinky"
       ],
+      "Manage groups": [
+        "Spravovať skupiny"
+      ],
       "Manage labels": [
         "Spravovať štítky"
       ],
@@ -1173,6 +1176,9 @@
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
+      "Set up 2FA": [
+        "Nastaviť 2FA"
+      ],
       "Settings": [
         "Nastavenia"
       ],
@@ -1374,11 +1380,11 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
       "Upgrade Now": [
         "Inovovať teraz"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšiť na ${ BRAND_NAME } Unlimited"
@@ -7221,6 +7227,9 @@
       "Open shortcut cheat sheet": [
         "Otvoriť zoznam skratiek"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
       "or discover other features:": [
         "alebo objavte ďalšie funkcie:"
       ],
@@ -7500,6 +7509,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
       ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
       ],
@@ -7706,6 +7718,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Táto pozvánka je uložená v zakázanom kalendári."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Tento dokument je určený ako pomôcka na písanie. Skontrolujte správnosť navrhovaného textu. ${ learnMoreResult }"
@@ -8695,10 +8710,10 @@
       "Always move sender's emails": [
         "Vždy presunúť emaily odosielateľa"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -8929,11 +8944,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -9046,14 +9061,14 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Original link": [
         "Pôvodný odkaz"
@@ -9881,29 +9896,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Získať ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -9925,6 +9917,29 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Získať ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -13723,6 +13738,9 @@
       "Add to ${ groupName }": [
         "Pridať do ${ groupName }"
       ],
+      "Add user": [
+        "Pridať používateľa"
+      ],
       "Addresses": [
         "Adresy"
       ],
@@ -13804,6 +13822,9 @@
       "Clearing data": [
         "Vymazanie dát"
       ],
+      "Collaborate on documents": [
+        "Spolupráca na dokumentoch"
+      ],
       "Confirm downgrade": [
         "Potvrďte zníženie"
       ],
@@ -13812,6 +13833,15 @@
       ],
       "Confirm recipient address?": [
         "Potvrdiť adresu príjemcu?"
+      ],
+      "Connect apps and devices": [
+        "Pripojenie aplikácií a zariadení"
+      ],
+      "Connect to video conferencing": [
+        "Pripojiť sa k videokonferencii"
+      ],
+      "Connect your custom domain": [
+        "Pripojte si vlastnú doménu"
       ],
       "Contact Details": [
         "Kontaktné údaje"
@@ -13945,6 +13975,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Prejsť na nižší plán ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Stiahnuť aplikáciu"
       ],
@@ -13983,6 +14016,9 @@
       ],
       "Enable message content search": [
         "Povoliť vyhľadávanie v obsahu správy"
+      ],
+      "Enhance security with 2FA": [
+        "Zvýšte zabezpečenie pomocou 2FA"
       ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"
@@ -14064,6 +14100,9 @@
       ],
       "Import contacts": [
         "Importovať kontakty"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovať emaily, kalendáre a kontakty"
       ],
       "Import events": [
         "Import udalostí"
@@ -14386,20 +14425,32 @@
       "Sending original message": [
         "Odoslanie pôvodnej správy"
       ],
+      "Set recovery methods": [
+        "Nastaviť spôsoby obnovenia"
+      ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Nastaviť ${ protonDuoPlanName }"
       ],
+      "Set up email forwarding": [
+        "Nastaviť preposielanie emailov"
+      ],
       "Set up your family account": [
         "Nastavte si rodinný účet"
+      ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
       ],
       "Set your own schedule": [
         "Naplánujte si svoj vlastný program"
       ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Share your calendar with your team": [
+        "Zdieľajte svoj kalendár so svojím tímom"
       ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
@@ -14461,6 +14512,9 @@
       "Trust public key?": [
         "Dôverovať verejnému kľúču?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"
       ],
@@ -14472,6 +14526,12 @@
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
+      ],
+      "Upload and share files": [
+        "Nahrávanie a zdieľanie súborov"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
       "Verification error": [
         "Chyba pri overovaní"
@@ -14508,6 +14568,9 @@
       ],
       "Welcome ${ userName }": [
         "Vitajte ${ userName }"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
       "What can a VPN protect you from?": [
         "Pred čím vás môže VPN ochrániť?"

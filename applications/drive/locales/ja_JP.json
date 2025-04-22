@@ -45,6 +45,9 @@
       "Add": [
         "追加"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "新しいアルバムに ${ photoCount } 枚の写真を追加"
+      ],
       "Add account": [
         "アカウントを追加"
       ],
@@ -180,6 +183,9 @@
       "Close transfers": [
         "転送一覧を閉じる"
       ],
+      "Collaborate on documents": [
+        "ドキュメントの共同編集"
+      ],
       "Collapse": [
         "閉じる"
       ],
@@ -197,6 +203,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "リンク ${ linkToShow } を確認"
+      ],
+      "Connect apps and devices": [
+        "アプリとデバイスを接続"
+      ],
+      "Connect to video conferencing": [
+        "ビデオ会議に接続"
       ],
       "Contact group": [
         "連絡先グループ"
@@ -336,6 +348,9 @@
       "Download": [
         "ダウンロード"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } アプリをダウンロード"
+      ],
       "Download (${ count })": [
         "ダウンロード (${ count })"
       ],
@@ -426,6 +441,9 @@
       "Get Started": [
         "始めましょう"
       ],
+      "Get the apps": [
+        "アプリを入手"
+      ],
       "Get verification code": [
         "認証コードを取得"
       ],
@@ -486,6 +504,9 @@
       "Import emails": [
         "メールをインポート"
       ],
+      "Import emails, calendars, contacts": [
+        "メール、カレンダー、連絡先をインポート"
+      ],
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
       ],
@@ -534,8 +555,14 @@
       "Loading verification": [
         "認証を読み込み中"
       ],
+      "Manage advanced account protections": [
+        "高度なアカウント保護を管理"
+      ],
       "Manage folders": [
         "フォルダーを管理"
+      ],
+      "Manage groups": [
+        "グループの管理"
       ],
       "Manage labels": [
         "ラベルを管理"
@@ -545,6 +572,9 @@
       ],
       "Manage share": [
         "共有を管理"
+      ],
+      "Manage users/addresses": [
+        "ユーザー/アドレスの管理"
       ],
       "Mark as favorite": [
         "お気に入りに追加"
@@ -608,6 +638,9 @@
       ],
       "New message": [
         "新規メッセージ"
+      ],
+      "New shared album": [
+        "新しい共有アルバム"
       ],
       "Next": [
         "次へ"
@@ -692,6 +725,9 @@
       ],
       "Remove bonuses": [
         "ボーナスを削除"
+      ],
+      "Remove button": [
+        "ボタンを削除"
       ],
       "Remove device": [
         "デバイスを削除"
@@ -831,8 +867,20 @@
       "Set as cover": [
         "カバーとして設定"
       ],
+      "Set recovery methods": [
+        "回復手段を設定"
+      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
+      ],
+      "Set up 2FA": [
+        "2要素認証を設定"
+      ],
+      "Set up a custom domain": [
+        "カスタムドメインを設定"
+      ],
+      "Set up email forwarding": [
+        "メール転送の設定"
       ],
       "Settings": [
         "設定"
@@ -851,6 +899,9 @@
       ],
       "Share via link": [
         "リンクを共有"
+      ],
+      "Share your calendar with your team": [
+        "カレンダーをチームと共有"
       ],
       "Sharing options": [
         "共有オプション"
@@ -936,6 +987,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } をオンにする"
+      ],
       "Undo": [
         "取り消し"
       ],
@@ -966,6 +1020,9 @@
       "Upload": [
         "アップロード"
       ],
+      "Upload and share files": [
+        "ファイルをアップロードして共有"
+      ],
       "Upload anyway": [
         "とにかくアップロード"
       ],
@@ -989,6 +1046,12 @@
       ],
       "Use ${ label } theme": [
         "${ label } テーマを使用"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Businessを使用"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "データプライバシーのために${ VPN_SHORT_APP_NAME }を使用する"
       ],
       "Use a different card": [
         "別のカードを使用"
@@ -2511,14 +2574,32 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DRIVE_APP_NAME }の${ DOCS_SHORT_APP_NAME }では、安全で暗号化された環境で他の人と共同作業ができます。"
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "${ DRIVE_APP_NAME } にフォルダやファイルを追加し、チームメンバーを招待して表示または編集を許可します。"
+      ],
       "Also included": [
         "含まれています"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "メールを別のメールアドレスに自動的に転送します。"
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "最初に組織を有効にし、メールアドレスをカスタマイズするように設定してください。"
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "CRM、ウェブサイト、プリンターなどを接続。"
+      ],
+      "Create groups you can email with a single address.": [
+        "単一の アドレス でメールを送信できるグループ を作成します。"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
@@ -2529,8 +2610,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "アカウントの高度な保護を求めるユーザー向けに設計されています。"
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "デスクトップとモバイルでメールとカレンダーに簡単にアクセスできます。"
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "デスクトップからクラウドにファイルを簡単に同期し、モバイルデバイスからアクセスできます。"
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "セキュリティを強化するために、組織内で2要素認証の使用を推奨します。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "チームがリモートまたは公共のWi-Fiを使用している場合でも、組織のデータへの安全なアクセスを確保します。"
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "${ PROTON_SENTINEL_NAME } プログラムで、お客様の アカウントのセキュリティを万全にしてください。"
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "${ BRAND_NAME }のパスワードを忘れても、アカウントとデータにアクセスできることを確認してください。"
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "${ BRAND_NAME }への移行をスムーズに行うために、Google、Outlookなどのサービスからデータをインポートしてください。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知します。"
@@ -2538,8 +2640,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }で無制限のエイリアスと 500 GBの容量を獲得しましょう。"
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "イベントの招待状に会議リンクを即座に追加できます。"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
@@ -2553,6 +2661,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "アカウントへのアクセスが失われないように回復手段を設定してください。"
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "すべてのユーザーに対してアカウントを設定し、${ BRAND_NAME }に参加するよう招待してください。"
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "共有カレンダーで同期やスケジューリングを簡単に。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "アカウントを可能な限り高度に保護するためには、回復用フレーズを設定してください。"
       ],
@@ -2562,11 +2676,20 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }で、GoogleやOutlookから連絡先をインポート"
       ],
+      "To start, give your organization a name.": [
+        "まず、組織に名前を付けてください。"
+      ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "編集権限でファイルを共有するには、${ planName }にアップグレードしてください"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "連絡先グループを使用することで、ワンクリックでそのグループ全員にメールを送信することができます。"
@@ -2695,6 +2818,11 @@
         "優先サポート"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "注意:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "説明:\n${ eventDescription }"
@@ -2706,6 +2834,12 @@
       ],
       "All events in this series were updated.": [
         "この連続した全てのイベントは更新されました。"
+      ],
+      "Here's what changed:": [
+        "変更内容:"
+      ],
+      "NOTE:": [
+        "注意:"
       ],
       "This event occurrence was canceled.": [
         "この繰り返しイベントはキャンセルされました。"
@@ -2854,11 +2988,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
+      "Could not add to favorites": [
+        "お気に入りに追加できませんでした"
+      ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
       ],
       "Could not open updated vault": [
         "更新された保管庫を開けませんでした"
+      ],
+      "Could not remove from favorites": [
+        "お気に入りから削除できませんでした"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "${ calendarsToFixCount } 件のカレンダーの選択を解除"
@@ -2898,6 +3038,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "外部の招待は一時的に無効です。後ほど再度お試しください。"
+      ],
+      "Failed to load the STL preview": [
+        "STLプレビューの読み込みに失敗しました"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "エラー「${ error }」のためファイル「${ item.name }」はアップロードできませんでした。"
@@ -3719,11 +3862,20 @@
       "Create new album": [
         "新しいアルバムを作る"
       ],
+      "Create new shared album": [
+        "新しい共有アルバムを作成"
+      ],
+      "Rename album": [
+        "アルバム名を変更"
+      ],
       "Security Center": [
         "セキュリティセンター"
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "${ photoCount } 枚の写真を追加"
+      ],
       "Add to shared album": [
         "共有アルバムに追加"
       ],
@@ -3732,6 +3884,9 @@
       ],
       "Recent": [
         "最近のもの"
+      ],
+      "Share ${ photoCount } photo via": [
+        "${ photoCount } 枚の写真を共有"
       ]
     },
     "Hint": {
@@ -4983,6 +5138,9 @@
       "Only the people with the link and the password can access this folder.": [
         "リンクとパスワードを知っている人のみがフォルダーにアクセスすることができます。"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "推奨されるアクションと役立つリンクのガイドを開きます。"
+      ],
       "or discover other features:": [
         "または他の機能を発見することもできます:"
       ],
@@ -5093,6 +5251,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "無効な鍵で暗号化されたデータが含まれている連絡先を探しています。しばらくお待ちください。"
+      ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "データが更新されるまでしばらくお待ちください。"
       ],
       "Preparing link to file": [
         "ファイルのリンクを準備中"
@@ -5226,6 +5387,9 @@
       "Session timed out": [
         "セッションがタイムアウトしました"
       ],
+      "Set up your organization": [
+        "組織を設定"
+      ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
       ],
@@ -5280,8 +5444,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "アクセスできなくなったファイルがあります。復元を開始を押すと、復元します。${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "このアルバムの一部の写真は、タイムラインに保存されていない可能性があります。このアルバムを削除すると、それらの写真は完全に削除されます。"
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "このアルバムの一部の写真はあなたのタイムラインに保存されていません。このアルバムを削除すると、それらの写真は完全に削除されます。"
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "一部のウェブサイトやストリーミングサービスは、地域ごとにコンテンツをブロックします。VPNを使用すると、これらの制限を回避し、インターネットに自由にアクセスできます。"
@@ -5384,6 +5548,9 @@
       ],
       "This folder is empty": [
         "このフォルダーは空です"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "これは、組織の名称またはニックネームであり、ユーザーに表示されます。これはいつでも変更できます。"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "これは新しいメッセージを送信するための${ defaultEmailAddress }です。"
@@ -5597,6 +5764,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "おめでとうございます、ストレージが 5 GBに増えました！"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "技術的な問題が発生しています。アルバムに関連する操作は一時的に無効になっています。"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "技術的な問題が発生しています。新しい写真のアップロードは一時的に無効になっています。"
@@ -6637,8 +6807,53 @@
       "Drafts": [
         "下書き"
       ],
+      "Enforcing 2FA for organizations": [
+        "組織に2要素認証を適用"
+      ],
+      "How to add users": [
+        "ユーザーを追加する方法"
+      ],
+      "How to add Zoom links": [
+        "Zoomのリンクを追加する方法"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }でコラボレーションする方法"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME }を有効にする方法"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "${ BRAND_NAME } への移行方法"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoinで支払うには？"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } の設定方法"
+      ],
+      "How to set up a custom domain": [
+        "カスタムドメインの設定方法"
+      ],
+      "How to set up SMTP": [
+        "SMTP の設定方法"
+      ],
+      "How to share a calendar": [
+        "カレンダーを共有する方法"
+      ],
+      "How to share via email": [
+        "メールで共有する方法"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } の使用方法"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Businessの使用方法"
+      ],
+      "How to use email forwarding": [
+        "メール転送の使用方法"
+      ],
+      "How to use Groups": [
+        "グループの使用方法"
       ],
       "if your data is leaked": [
         "もしデータが漏洩した場合"
@@ -6687,6 +6902,9 @@
       ],
       "Trash": [
         "ごみ箱"
+      ],
+      "Types of recovery methods": [
+        "回復手段の種類"
       ],
       "What’s this?": [
         "これは何ですか?"
@@ -8009,18 +8227,6 @@
       "${ count } item failed to be decrypted": [
         "${ count }件のアイテムの復号に失敗しました"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } 枚の写真が 「${ albumName }」 に追加できませんでした"
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } 枚の写真を ${ albumLink.name } から削除できませんでした"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } の写真が 「${ albumName }\"」に追加されました"
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } 枚の写真を ${ albumLink.name } から削除しました"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }個のアイテムが削除されました"
       ],
@@ -8222,11 +8428,23 @@
       "Your old files will be deleted in 72 hours": [
         "古いファイルは72時間で削除されます"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "写真が「${ albumName }」に追加されました"
+      ],
       "Your settings failed to be saved": [
         "設定の保存に失敗しました"
       ],
       "Your settings have been changed successfully": [
         "設定が正常に変更されました"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "「${ albumName }」に一部の写真を追加できませんでした"
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "${ albumLink.name } から一部の写真を削除できませんでした"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "⁠写真が${ albumLink.name }から削除されました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8364,10 +8582,10 @@
       "Invite members": [
         "メンバーを招待"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "たぶんあとで"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "たぶんあとで"
       ],
       "Select theme": [
@@ -8808,6 +9026,9 @@
       "New name": [
         "新しい名前"
       ],
+      "Organization name": [
+        "組織名"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -8840,6 +9061,9 @@
       ],
       "Start typing an email address": [
         "メールアドレスを入力"
+      ],
+      "Your organization name": [
+        "あなたの組織の名前"
       ]
     },
     "Placeholder for contact group name": {
@@ -8925,6 +9149,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "サインインは正しく完了しませんでした。"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "組織のセットアップとアカウントのセキュリティ"
       ]
     },
     "Security Center": {
@@ -9933,6 +10162,44 @@
         "割引率:"
       ]
     },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "あなたと共有されたアルバムはここに表示されます"
+      ],
+      "Albums you've shared will appear here": [
+        "共有したアルバムはここに表示されます"
+      ],
+      "Your favorited photos will appear here": [
+        "お気に入りの写真はここに表示されます"
+      ],
+      "Your Live Photos will appear here": [
+        "ライブ写真はここに表示されます"
+      ],
+      "Your panorama photos will appear here": [
+        "パノラマはここに表示されます"
+      ],
+      "Your photo bursts will appear here": [
+        "バーストはここに表示されます"
+      ],
+      "Your portraits photos will appear here": [
+        "ポートレートはここに表示されます"
+      ],
+      "Your RAW photos will appear here": [
+        "RAWはここに表示されます"
+      ],
+      "Your screenshots will appear here": [
+        "スクリーンショットはここに表示されます"
+      ],
+      "Your selfies photos will appear here": [
+        "セルフィーはここに表示されます"
+      ],
+      "Your tagged photos will appear here": [
+        "タグ付けされた写真はここに表示されます"
+      ],
+      "Your videos will appear here": [
+        "動画はここに表示されます"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 連絡先は同じようです"
@@ -10215,6 +10482,9 @@
       "Add to ${ groupName }": [
         "${ groupName } に追加"
       ],
+      "Add user": [
+        "ユーザーを追加"
+      ],
       "Addresses": [
         "メールアドレス"
       ],
@@ -10290,6 +10560,9 @@
       "Clearing data": [
         "データのクリア中"
       ],
+      "Collaborate on documents": [
+        "ドキュメントの共同編集"
+      ],
       "Completed": [
         "完了"
       ],
@@ -10304,6 +10577,15 @@
       ],
       "Confirmation required": [
         "確認が必要です"
+      ],
+      "Connect apps and devices": [
+        "アプリとデバイスを接続"
+      ],
+      "Connect to video conferencing": [
+        "ビデオ会議に接続"
+      ],
+      "Connect your custom domain": [
+        "カスタムドメインを接続"
       ],
       "Contact Details": [
         "連絡先の詳細"
@@ -10401,6 +10683,9 @@
       "Download ${ date }": [
         "${ date } をダウンロード"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } アプリをダウンロード"
+      ],
       "Download the app": [
         "アプリをダウンロード"
       ],
@@ -10449,8 +10734,14 @@
       "Enable 2FA": [
         "2要素認証を有効にする"
       ],
+      "Enable advanced account protection": [
+        "高度なアカウント保護を有効にする"
+      ],
       "Enable drive search": [
         "ドライブ検索を有効にする"
+      ],
+      "Enhance security with 2FA": [
+        "2要素認証でセキュリティを強化"
       ],
       "Enter 2FA code": [
         "2要素認証コードを入力"
@@ -10517,6 +10808,9 @@
       ],
       "Import contacts": [
         "連絡先をインポート"
+      ],
+      "Import emails, calendars, contacts": [
+        "メール、カレンダー、連絡先をインポート"
       ],
       "Import events": [
         "予定をインポート"
@@ -10587,11 +10881,47 @@
       "Night theme": [
         "夜間のテーマ"
       ],
+      "No albums shared with me": [
+        "私と共有されたアルバムはありません"
+      ],
       "No breaches detected": [
         "侵害は検出されませんでした"
       ],
+      "No bursts": [
+        "バーストはありません"
+      ],
+      "No favorites": [
+        "お気に入りはありません"
+      ],
+      "No Live Photos": [
+        "ライブ写真はありません"
+      ],
+      "No panorama": [
+        "パノラマはありません"
+      ],
+      "No photos": [
+        "写真はありません"
+      ],
+      "No portraits": [
+        "ポートレートはありません"
+      ],
+      "No RAW": [
+        "RAWはありません"
+      ],
       "No results found": [
         "該当する結果が見つかりませんでした"
+      ],
+      "No screenshots": [
+        "スクリーンショットはありません"
+      ],
+      "No selfies": [
+        "セルフィーはありません"
+      ],
+      "No shared albums": [
+        "共有アルバムはありません"
+      ],
+      "No videos": [
+        "動画はありません"
       ],
       "Notes": [
         "メモ"
@@ -10604,6 +10934,12 @@
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
+      ],
+      "Org setup": [
+        "組織設定"
+      ],
+      "Organization setup": [
+        "組織の設定"
       ],
       "Original size": [
         "元のサイズ"
@@ -10713,14 +11049,26 @@
       "Select link expiration time": [
         "リンクの有効時間を選択"
       ],
+      "Set recovery methods": [
+        "回復手段を設定"
+      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
+      ],
+      "Set up email forwarding": [
+        "メール転送の設定"
+      ],
+      "Set up your organization": [
+        "組織を設定"
       ],
       "Settings": [
         "設定"
       ],
       "Share ${ name }": [
         "${ name } の共有"
+      ],
+      "Share your calendar with your team": [
+        "カレンダーをチームと共有"
       ],
       "Shared": [
         "共有中"
@@ -10736,6 +11084,12 @@
       ],
       "Sign out": [
         "サインアウト"
+      ],
+      "Simplify email distribution": [
+        "メール配信を簡単に"
+      ],
+      "Simplify password management": [
+        "パスワード管理を簡単に"
       ],
       "Size": [
         "サイズ"
@@ -10782,6 +11136,9 @@
       "Trash": [
         "ごみ箱"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } をオンにする"
+      ],
       "Type": [
         "種類"
       ],
@@ -10791,8 +11148,14 @@
       "Untitled document ${ date }": [
         "無題のドキュメント ${ date }"
       ],
+      "Updating your photos": [
+        "写真の更新中"
+      ],
       "Upgrade complete!": [
         "アップグレード完了!"
+      ],
+      "Upload and share files": [
+        "ファイルのアップロードと共有"
       ],
       "Uploaded": [
         "アップロード日時"
@@ -10802,6 +11165,9 @@
       ],
       "Uploading a large file or folder": [
         "大きなファイルまたはフォルダーをアップロードしています"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "データプライバシーのために ${ VPN_SHORT_APP_NAME } を使用する"
       ],
       "Verification failed": [
         "検証に失敗しました"
@@ -10826,6 +11192,9 @@
       ],
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Businessへようこそ"
       ],
       "What can a VPN protect you from?": [
         "VPNは何からあなたを保護できますか?"

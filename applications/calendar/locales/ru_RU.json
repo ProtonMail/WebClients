@@ -740,10 +740,10 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Улучшить сейчас"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Улучшить сейчас"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -6773,26 +6773,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6814,6 +6794,26 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8961,36 +8961,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часа"
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дней"
       ],
       "${ hours } hour": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
       ],
       "${ minutes } minute": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
       ],
       "${ seconds } second": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {

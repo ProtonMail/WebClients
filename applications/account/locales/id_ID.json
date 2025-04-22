@@ -259,6 +259,9 @@
       "Close this banner": [
         "Tutup spanduk ini"
       ],
+      "Collaborate on documents": [
+        "Kolaborasikan dokumen"
+      ],
       "Color": [
         "Warna"
       ],
@@ -279,6 +282,12 @@
       ],
       "Connect": [
         "Hubungkan"
+      ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
       ],
       "Connected": [
         "Terhubung"
@@ -664,6 +673,9 @@
       "Get the app": [
         "Dapatkan aplikasinya"
       ],
+      "Get the apps": [
+        "Dapatkan aplikasinya"
+      ],
       "Get the browser extension": [
         "Dapatkan ekstensi browser"
       ],
@@ -787,11 +799,17 @@
       "Make admin": [
         "Jadikan admin"
       ],
+      "Manage advanced account protections": [
+        "Kelola perlindungan akun lanjutan"
+      ],
       "Manage communication preferences": [
         "Kelola preferensi komunikasi"
       ],
       "Manage folders": [
         "Kelola folder"
+      ],
+      "Manage groups": [
+        "Kelola grup"
       ],
       "Manage labels": [
         "Kelola label"
@@ -1138,6 +1156,9 @@
       "Set as default": [
         "Atur sebagai bawaan"
       ],
+      "Set as default mail application": [
+        "Tetapkan sebagai aplikasi email bawaan"
+      ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
       ],
@@ -1147,6 +1168,9 @@
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
+      ],
       "Settings": [
         "Pengaturan"
       ],
@@ -1155,6 +1179,9 @@
       ],
       "Share via link": [
         "Bagikan melalui tautan"
+      ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
       ],
       "Sharing options": [
         "Opsi berbagi"
@@ -1261,6 +1288,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Underline": [
         "Garis bawah"
       ],
@@ -1311,6 +1341,9 @@
       ],
       "Upload": [
         "Unggah"
+      ],
+      "Upload and share files": [
+        "Unggah dan bagikan berkas"
       ],
       "Upload logo": [
         "Unggah logo"
@@ -4187,6 +4220,21 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } tidak akan pernah meminta Anda untuk memasukkan kode yang tidak bersumber dari domain ${ domain } atau aplikasi ${ BRAND_NAME } resmi."
+      ],
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } tidak akan pernah menghubungi Anda secara tiba-tiba untuk meminta Anda masuk dengan kode QR."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Bagaimana metode ini bekerja:** Masukkan kode yang muncul pada perangkat yang ingin Anda masuki di perangkat ini. Anda akan masuk sebagai **${ email }**. Kedua perangkat ini akan tetap aktif."
+      ],
+      "Allow QR code sign‒in": [
+        "Izinkan entri masuk dengan kode QR"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Berhati-hatilah terhadap pesan yang mengandung kode QR. Pindailah kode QR hanya apabila Anda memercayai sumbernya."
+      ],
       "Code copied to clipboard": [
         "Kode disalin ke papan klip"
       ],
@@ -4195,6 +4243,15 @@
       ],
       "Enter code manually": [
         "Masukkan kode secara manual"
+      ],
+      "Generate QR code": [
+        "Hasilkan kode QR"
+      ],
+      "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
+        "Dapatkan perangkat lain yang terhubung masuk ke Akun ${ BRAND_NAME } Anda"
+      ],
+      "How to sign in using another device": [
+        "Cara masuk menggunakan perangkat lain"
       ],
       "QR code expired": [
         "Kode QR kedaluwarsa"
@@ -4208,11 +4265,23 @@
       "Scan QR code on your mobile device to sign in": [
         "Pindai kode QR pada perangkat seluler Anda untuk masuk"
       ],
+      "Security tips": [
+        "Tips keamanan"
+      ],
+      "Select **Sign in on another device → Scan QR code**": [
+        "Pilih **Masuk pada perangkat lain → Pindai kode QR**"
+      ],
+      "Sign in on another device": [
+        "Masuk pada perangkat lain"
+      ],
       "Sign in with QR code": [
         "Masuk dengan kode QR"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Untuk mengakses kode milik perangkat yang ingin Anda gunakan untuk masuk, ketuk tombol **Masuk dengan kode QR** pada menu bantuan di layar masuk, dan lalu ketuk **Masukkan kunci secara manual**. "
+      ],
+      "Try generating a new QR code.": [
+        "Cobalah untuk menghasilkan kode QR yang baru."
       ],
       "You have successfully signed in to another device": [
         "Anda telah berhasil masuk ke perangkat lain"
@@ -4528,11 +4597,11 @@
       "Forward to": [
         "Teruskan ke"
       ],
-      "or": [
-        "atau"
-      ],
       "Or": [
         "Atau"
+      ],
+      "or": [
+        "atau"
       ],
       "With attachment": [
         "Dengan lampiran"
@@ -5180,6 +5249,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verifikasi gagal, silakan coba satu jam lagi."
+      ],
+      "We couldn't sign you in": [
+        "Kami tidak dapat memasukkan Anda ke akun"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
@@ -6299,10 +6371,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Teruskan secara otomatis"
+        "Teruskan"
       ],
       "Gmail messages to your inbox": [
-        "Pesan Gmail ke kotak masuk Anda"
+        "pesan Gmail ke kotak masuk Anda secara otomatis"
       ],
       "Sign in with Google": [
         "Masuk dengan Google"
@@ -8616,6 +8688,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Buka panduan ini untuk memperoleh tindakan yang disarankan dan tautan yang dapat berguna."
+      ],
       "or ${ selectFileButton }": [
         "atau ${ selectFileButton }"
       ],
@@ -9003,6 +9078,9 @@
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
+      ],
       "Setting successfully saved": [
         "Pengaturan berhasil disimpan"
       ],
@@ -9269,6 +9347,9 @@
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Berikut ini adalah 12 kata yang telah ditentukan sebagai frasa pemulihan Anda."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Ini adalah berkas pemulihan atau kunci enkripsi yang telah Anda simpan sebelumnya."
@@ -9731,6 +9812,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pada saat dinonaktifkan, opsi ini akan mencegah berkas gambar untuk dimuat pada perangkat Anda tanpa Anda ketahui."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Pada saat diaktifkan, kami akan memeriksa apakah ${ MAIL_APP_NAME } merupakan aplikasi email bawaan Anda dan memberitahukan Anda apabila aplikasi kami tidak terpasang sebagai bawaan."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
@@ -10715,11 +10799,11 @@
       "Allow sharing outside the organization": [
         "Izinkan pembagian di luar organisasi"
       ],
-      "Allowed domain": [
-        "Domain yang diizinkan"
-      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -10730,11 +10814,11 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
-      "AND": [
-        "DAN"
-      ],
       "And": [
         "Dan"
+      ],
+      "AND": [
+        "DAN"
       ],
       "and": [
         "dan"
@@ -11162,11 +11246,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JIKA"
-      ],
       "If": [
         "Jika"
+      ],
+      "IF": [
+        "JIKA"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -11369,14 +11453,14 @@
       "Optional": [
         "Opsional"
       ],
-      "OR": [
-        "ATAU"
-      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
+      ],
+      "OR": [
+        "ATAU"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -11975,8 +12059,14 @@
       "How does monitoring work?": [
         "Bagaimana cara pemantauan ini bekerja?"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Cara berkolaborasi di ${ DOCS_SHORT_APP_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
+      ],
+      "How to share via email": [
+        "Cara berbagi via email"
       ],
       "How to unlock data": [
         "Bagaimana cara membuka kunci data"
@@ -18134,6 +18224,9 @@
       "Add to spam list": [
         "Tambahkan ke daftar spam"
       ],
+      "Add user": [
+        "Tambah pengguna"
+      ],
       "Add user accounts": [
         "Tambah akun pengguna"
       ],
@@ -18251,6 +18344,9 @@
       "Change second password": [
         "Ubah kata sandi kedua"
       ],
+      "Check your default mail application": [
+        "Periksa aplikasi email bawaan Anda"
+      ],
       "Choose an account": [
         "Pilih akun"
       ],
@@ -18290,11 +18386,20 @@
       "Connect ${ name }": [
         "Hubungkan ${ name }"
       ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
       "Connect organization": [
         "Sambungkan organisasi"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Hubungkan VPN Anda ke ${ VPN_CONNECTIONS } perangkat sekaligus dengan ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
+      ],
+      "Connect your custom domain": [
+        "Hubungkan domain khusus Anda"
       ],
       "Connection status": [
         "Status koneksi"
@@ -18572,11 +18677,17 @@
       "Email privacy": [
         "Privasi email"
       ],
+      "Enable advanced account protection": [
+        "Aktifkan perlindungan akun lanjutan"
+      ],
       "Enable for all users": [
         "Aktifkan untuk seluruh pengguna"
       ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
+      ],
+      "Enhance security with 2FA": [
+        "Tingkatkan keamanan dengan 2FA"
       ],
       "Enter 2FA code": [
         "Masukkan kode 2FA"
@@ -18646,6 +18757,9 @@
       ],
       "For Windows": [
         "Untuk Windows"
+      ],
+      "Forgot password": [
+        "Lupa kata sandi"
       ],
       "Forgot recovery method": [
         "Lupakan metode pemulihan"
@@ -18754,6 +18868,9 @@
       ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Import emails, calendars, contacts": [
+        "Impor email, kalender, kontak"
       ],
       "Import events": [
         "Impor acara"
@@ -19124,11 +19241,17 @@
       "Set organization name": [
         "Tentukan nama organisasi"
       ],
+      "Set recovery methods": [
+        "Atur metode pemulihan"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "Siapkan ${ protonDuoPlanName }"
       ],
       "Set up a recovery method": [
         "Siapkan metode pemulihan"
+      ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
       ],
       "Set up forwarding": [
         "Atur penerusan email"
@@ -19139,6 +19262,9 @@
       "Set up your family account": [
         "Siapkan akun keluarga Anda"
       ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
+      ],
       "Set your password": [
         "Tetapkan kata sandi Anda"
       ],
@@ -19147,6 +19273,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Atur server khusus dengan meningkatkan ke Business"
+      ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
       ],
       "Shared servers": [
         "Server terbagi"
@@ -19172,6 +19301,9 @@
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
       ],
+      "Simplify email distribution": [
+        "Sederhanakan distribusi email"
+      ],
       "Single sign-on": [
         "Single sign-on"
       ],
@@ -19189,6 +19321,9 @@
       ],
       "Spam, block, and allow lists": [
         "Daftar spam, blokir, dan izin"
+      ],
+      "Special Offer": [
+        "Penawaran Istimewa"
       ],
       "Start a new import": [
         "Mulai impor baru"
@@ -19252,6 +19387,9 @@
       ],
       "Track your referrals": [
         "Lacak rujukan Anda"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
       ],
       "TV sign in": [
         "Entri masuk TV"
@@ -19342,6 +19480,9 @@
       ],
       "Weak passwords": [
         "Kata sandi yang lemah"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Selamat datang di ${ BRAND_NAME } for Business"
       ],
       "What is an alias?": [
         "Apa itu alias?"

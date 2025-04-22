@@ -163,6 +163,9 @@
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
+      ],
       "Collapse": [
         "Pienennä"
       ],
@@ -180,6 +183,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Vahvista linkin ${ linkToShow } avaus"
+      ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
       ],
       "Contact group": [
         "Yhteystietoryhmä"
@@ -288,6 +294,9 @@
       "Download": [
         "Lataa"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download anyway": [
         "Lataa silti"
       ],
@@ -344,6 +353,9 @@
       ],
       "Get in touch": [
         "Ota yhteyttä"
+      ],
+      "Get the apps": [
+        "Hanki sovellukset"
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
@@ -429,8 +441,14 @@
       "Manage folders": [
         "Hallitse kansioita"
       ],
+      "Manage groups": [
+        "Hallitse ryhmiä"
+      ],
       "Manage labels": [
         "Hallitse tunnisteita"
+      ],
+      "Manage users/addresses": [
+        "Hallitse käyttäjiä/osoitteita"
       ],
       "Mark as resolved": [
         "Merkitse ratkaistuksi"
@@ -467,6 +485,9 @@
       ],
       "New message": [
         "Uusi viesti"
+      ],
+      "New sheet": [
+        "Uusi taulukko"
       ],
       "Next": [
         "Seuraava"
@@ -636,8 +657,17 @@
       "Select country": [
         "Valitse maa"
       ],
+      "Set recovery methods": [
+        "Aseta palautustavat"
+      ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
+      ],
+      "Set up 2FA": [
+        "Määritä 2FA"
+      ],
+      "Set up a custom domain": [
+        "Määritä oma verkkotunnus"
       ],
       "Settings": [
         "Asetukset"
@@ -728,6 +758,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Päivitä ${ BRAND_NAME } Unlimitediin"
+      ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
       ],
       "Upload anyway": [
         "Tallenna silti"
@@ -2263,11 +2296,6 @@
         "Erääntynyt lasku"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2320,6 +2348,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Aloita antamalla organisaatiollesi nimi."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Päivitä tilisi aktivoidaksesi huippumoderniin tekoälyyn perustuvan ${ PROTON_SENTINEL_NAME } -tietoturvaratkaisumme, johon sisältyy myös 24/7 asiantuntijatuki."
       ],
@@ -2343,6 +2374,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3835,7 +3871,7 @@
         "${ contactsLength } yhteystietoa"
       ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
-        "${ DOCS_APP_NAME } mahdollistaa tosiaikaisen yhteyistyön päästä päähän salauksella täydellistä yksityisyyttä varten. Aloita muokkaus luomalla kopio tai pyydä muokkausoikeutta tiedoston omistajalta."
+        "${ DOCS_APP_NAME } mahdollistaa tosiaikaisen yhteiskäytön päästä päähän -salauksella täydellistä yksityisyyttä varten. Aloita muokkaus luomalla kopio tai pyydä muokkausoikeutta tiedoston omistajalta."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } palvelussa"
@@ -4682,6 +4718,9 @@
       "Session timed out": [
         "Istunto aikakatkaistiin"
       ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
+      ],
       "Setting up ${ feature }…": [
         "Määritetään ${ feature }…"
       ],
@@ -4892,6 +4931,9 @@
       ],
       "Trash": [
         "Roskakori"
+      ],
+      "Trashed": [
+        "Roskakorissa"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
@@ -5796,8 +5838,23 @@
       "click here": [
         "paina tästä"
       ],
+      "How to add users": [
+        "Miten käyttäjiä lisätään"
+      ],
+      "How to add Zoom links": [
+        "Miten Zoom-linkkejä lisätään"
+      ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
+      ],
+      "How to set up SMTP": [
+        "Miten SMTP määritetään"
+      ],
+      "How to share a calendar": [
+        "Miten jaat kalenterin"
+      ],
+      "How to use Groups": [
+        "Miten ryhmiä käytetään"
       ],
       "Learn more": [
         "Lue lisää"
@@ -7476,6 +7533,9 @@
       ],
       "Searching": [
         "Haetaan"
+      ],
+      "Trashed": [
+        "Roskakorissa"
       ]
     },
     "Participant name": {
@@ -7734,6 +7794,9 @@
       "Name or email address": [
         "Nimi tai sähköpostiosoite"
       ],
+      "Organization name": [
+        "Organisaation nimi"
+      ],
       "Password": [
         "Salasana"
       ],
@@ -7847,6 +7910,9 @@
       ]
     },
     "Recent documents table header": {
+      "Deleted": [
+        "Poistettu"
+      ],
       "Earlier": [
         "Aiemmin"
       ],
@@ -8908,6 +8974,9 @@
       "Add to ${ groupName }": [
         "Lisää ryhmään ${ groupName }"
       ],
+      "Add user": [
+        "Lisää käyttäjä"
+      ],
       "Addresses": [
         "Osoitteet"
       ],
@@ -8956,11 +9025,20 @@
       "Clearing data": [
         "Tyhjennetään tietoja"
       ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
+      ],
       "Confirm downgrade": [
         "Vahvista alennus"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Vahvista ${ BRAND_NAME }-bonusten menetys"
+      ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
+      ],
+      "Connect your custom domain": [
+        "Yhdistä oma verkkotunnuksesi"
       ],
       "Contact Details": [
         "Yhteystiedon sisältö"
@@ -9063,6 +9141,9 @@
       "Download ${ date }": [
         "Lataa ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download the app": [
         "Lataa sovellus"
       ],
@@ -9107,6 +9188,9 @@
       ],
       "End-to-end encrypted": [
         "Päästä päähän -salattu"
+      ],
+      "Enhance security with 2FA": [
+        "Paranna tietoturvaa 2FA:lla"
       ],
       "Enter 2FA code": [
         "Syötä vahvistuskoodi"
@@ -9226,6 +9310,12 @@
       "Open actions dropdown": [
         "Avaa toimintovalikko"
       ],
+      "Org setup": [
+        "Organisaation määritys"
+      ],
+      "Organization setup": [
+        "Organisaation määritys"
+      ],
       "Other information": [
         "Muut tiedot"
       ],
@@ -9301,8 +9391,14 @@
       "Select link expiration time": [
         "Valitse linkin erääntymisaika"
       ],
+      "Set recovery methods": [
+        "Määritä palautustavat"
+      ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
+      ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
       ],
       "Settings": [
         "Asetukset"
@@ -9351,6 +9447,9 @@
       ],
       "Upgrade complete!": [
         "Päivitys valmis!"
+      ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
       ],
       "Uploading a large file or folder": [
         "Suuren tiedoston tai kansion tallennus"

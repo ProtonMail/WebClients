@@ -840,6 +840,9 @@
       "Set recovery phrase": [
         "복구 코드 설정"
       ],
+      "Set up 2FA": [
+        "2단계 인증 설정하기"
+      ],
       "Settings": [
         "설정"
       ],
@@ -2879,7 +2882,7 @@
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "최소 ${ calendarsToFixCount } 캘린더를 선택 해제하거나"
+        "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
       ],
       "Device name does not match": [
         "디바이스 이름이 맞지 않습니다"
@@ -2993,7 +2996,7 @@
         "성(이름)이 너무 깁니다."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "존재하는 ${ BRAND_NAME } 에 최소한 ${ calendarsToFixCount } 개의 캘린더를 병합하십시오"
+        "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
       ],
       "Missing key packet": [
         "키 패킷 없음"
@@ -4201,7 +4204,7 @@
         "${ scanErrorCount }개 스캔 실패"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } 중 ${ providerCalendars.length } 캘린더"
+        "${ selectedCalendarsTotal }개 중 ${ providerCalendars.length }개 캘린더"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
@@ -4312,7 +4315,7 @@
         "저장하지 않은 변경사항은 손실됩니다."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처를 가져옵니다"
+        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
       ],
       "Allocated": [
         "할당 됨"
@@ -4768,7 +4771,7 @@
         "다운그레이드를 진행하면 ${ VPN_APP_NAME } 유료 기능을 사용할 수 없습니다."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ totalCalendarsCount }개 중 ${ calendarCount }개 달력 불러오기"
+        "${ totalCalendarsCount }개 중 ${ calendarCount }개 캘린더가 불러오기됩니다"
       ],
       "Import from": [
         "다음에서 가져오기"
@@ -4783,7 +4786,7 @@
         "중요 사항"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
+        "${ toEmail }(에)서 ${ fromEmail }(으)로 데이터를 전달 중입니다."
       ],
       "In restrictive countries": [
         "제한적인 국가에서 사용시"
@@ -5149,7 +5152,7 @@
         "우선 순위"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "개인 브라우징(또는 \"시크릿\" 모드)은 기기에서 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 온라인에서 수행하는 작업을 볼 수 있습니다."
+        "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "비공개 검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
@@ -5303,9 +5306,6 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "일부 파일들에 더 이상 접근할 수 없습니다. 파일 액세스를 복구하세요. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "이 앨범 내의 일부 사진이 타임라인에 저장되지 않았습니다. 앨범에서 사진을 삭제하면 해당 사진 또한 영구적으로 삭제됩니다."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "일부 웹사이트와 스트리밍 서비스는 지역별로 콘텐츠를 차단합니다. VPN을 사용하면 이러한 제한을 우회하고 인터넷에 자유롭게 접속할 수 있습니다."
@@ -5833,7 +5833,7 @@
         "이 브라우저는 서비스 워커를 사용할 수 없어 큰 파일의 다운로드를 지원할 수 없습니다. 큰 파일을 다운로드하게 되면 브라우저의 프리징이 일어나거나 응답 없음 상태가 될 수 있습니다. ${ recommendedBrowser }의 최신 버전을 사용하여 다시 시도해 주세요."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
+        "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
       "Your email address and password were leaked:": [
         "사용자의 이메일 주소 및 비밀번호가 유출되었습니다:"
@@ -6676,6 +6676,9 @@
       "How to share via email": [
         "이메일을 통해 공유하는 방법"
       ],
+      "How to use Groups": [
+        "그룹 사용 방법"
+      ],
       "if your data is leaked": [
         "사용자의 데이터가 유출된 경우"
       ],
@@ -6750,7 +6753,7 @@
         "데이터를 모으는 중"
       ],
       "We're gathering your data from your provider": [
-        "제공자로 부터 데이터를 가져오는 중입니다"
+        "제공자로부터 데이터를 가져오는 중입니다"
       ],
       "Your import is starting": [
         "가져오기 작업이 시작 중입니다!"
@@ -6792,16 +6795,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개의 폴더에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개의 라벨에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 폴더를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 메시지를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
       ]
     },
     "mail_signup_2024: Info": {
@@ -8042,18 +8045,6 @@
       "${ count } item failed to be decrypted": [
         "${ count }개 암호화 해독 실패"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures }개 사진을 \"${ albumName }\"(으)로 추가하는데 실패했습니다."
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ albumLink.name }(에)서 ${ nbFailures }개 사진을 제외하는데 실패했습니다."
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses }개 사진을 \"${ albumName }\"에 추가했습니다."
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses }개 사진이 ${ albumLink.name }(에)서 제거되었습니다."
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }개 항목 삭제됨"
       ],
@@ -8269,7 +8260,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "다음으로 사용자의 Google 계정에 로그인하고 ${ BRAND_NAME } 의 데이터 액세스 권한을 부여해야 합니다."
+        "다음으로 사용자의 Google 계정에 로그인한 뒤 ${ BRAND_NAME }에 데이터 접근 권한을 부여해야 합니다."
       ]
     },
     "Oauth instructions video": {
@@ -8397,11 +8388,11 @@
       "Invite members": [
         "구성원 초대"
       ],
-      "Maybe later": [
-        "나중에"
-      ],
       "Maybe Later": [
         "나중에 시도하기"
+      ],
+      "Maybe later": [
+        "나중에"
       ],
       "Select theme": [
         "테마 선택"
@@ -10364,6 +10355,9 @@
       "Clearing data": [
         "데이터 지우기"
       ],
+      "Collaborate on documents": [
+        "문서에서 협업하기"
+      ],
       "Completed": [
         "완료"
       ],
@@ -10831,6 +10825,9 @@
       ],
       "Share ${ name }": [
         "${ name } 공유"
+      ],
+      "Share your calendar with your team": [
+        "팀과 캘린더를 공유하세요"
       ],
       "Shared": [
         "공유"
