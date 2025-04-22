@@ -160,6 +160,9 @@
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Conectar-se à videoconferência.\n"
+      ],
       "Contact support": [
         "Contatar o suporte"
       ],
@@ -360,6 +363,9 @@
       ],
       "Fit to window": [
         "Ajustar na janela"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
       ],
       "Forgot recovery method?": [
         "Esqueceu um método de recuperação?"
@@ -2508,14 +2514,56 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Adicione pastas e arquivos ao ${ DRIVE_APP_NAME } e convide os membros da equipe para visualizar ou editar."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Encaminhe automaticamente os e-mails recebidos para outro endereço de e-mail."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configure isso primeiro para ativar sua organização e personalizar seu endereço de e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "\"Conecte seu CRM, site, impressoras e outros dispositivos."
+      ],
+      "Create groups you can email with a single address.": [
+        "Crie grupos que podem ser contatados por meio de um único endereço de e-mail."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Tenha acesso facilitado ao seu e-mail e calendário, tanto no computador quanto em dispositivos móveis."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronize facilmente arquivos com a nuvem a partir do seu computador e acesse-os no seu dispositivo móvel."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Promova a adoção da autenticação de dois fatores em sua organização para garantir uma segurança adicional."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Garanta o acesso seguro aos dados da organização, mesmo que sua equipe esteja trabalhando remotamente ou utilizando redes Wi-Fi públicas."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garanta a segurança de alto nível para sua conta com o programa ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Todos na sua organização podem se conectar a servidores compartilhados em todos os países."
       ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma transição sem interrupções para o ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
       ],
       "If disabled, only admins will have access.": [
         "Se desabilitado, somente administradores terão acesso."
@@ -2523,11 +2571,26 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantenha diferentes partes de sua vida separadas e sua caixa de entrada organizada com endereços adicionais."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Permite que você adicione instantaneamente links de reunião aos convites dos seus eventos."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configure contas para todos os usuários e convide-os a ingressar no ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Facilite a sincronização e o agendamento com calendários compartilhados."
+      ],
+      "To start, give your organization a name.": [
+        "Para começar, dê um nome à sua organização."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
       ]
     },
     "Disable address prompt": {
@@ -4584,6 +4647,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
       ],
@@ -4961,6 +5027,9 @@
       ],
       "Open source": [
         "Código aberto"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Abra o guia para ver as ações recomendadas e os links úteis."
       ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
@@ -5380,6 +5449,9 @@
       ],
       "This file is too large to preview": [
         "Este arquivo é muito grande para visualizar"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Este é um nome ou apelido para sua organização que seus usuários verão. Você pode alterá-lo a qualquer momento."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este é agora o seu ${ defaultEmailAddress } para enviar novas mensagens."
@@ -6114,10 +6186,10 @@
       "Allow recovery by phone": [
         "Permitir a recuperação por telefone"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6664,6 +6736,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
       ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
+      ],
       "ZIP code": [
         "CEP"
       ]
@@ -6776,6 +6851,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Não tem acesso ao seu A2F?"
+      ],
+      "Enforcing 2FA for organizations": [
+        "Requer A2F para a organização"
       ],
       "Forgot email?": [
         "Esqueceu o e-mail?"
@@ -7828,17 +7906,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7851,6 +7918,17 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -9281,6 +9359,11 @@
         "URL do conector SCIM para o qual seu agente de provisionamento do provedor de identidade encaminha dados SCIM"
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "Configuração da organização e segurança da conta."
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
@@ -9989,6 +10072,9 @@
       "Share the confirmation code with your administrator": [
         "Compartilhe o código de confirmação com seu administrador"
       ],
+      "Sign in": [
+        "Iniciar sessão"
+      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
       ],
@@ -10033,6 +10119,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Você terá que criar manualmente novos usuários para adicioná-los à sua organização."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
@@ -10398,7 +10487,7 @@
         "Faça backup de fotos de seus dispositivos"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Gere confiança e reconhecimento da marca com endereços de e-mail profissionais no seu próprio domínio."
+        "Crie confiança e reconhecimento de marca com endereços de e-mail profissionais em seu próprio domínio."
       ],
       "Cancel subscription": [
         "Cancelar assinatura"
@@ -10518,7 +10607,7 @@
         "Envie e-mails com anexos"
       ],
       "Stay secure and connected anywhere": [
-        "Mantém seguro e conectado de qualquer lugar."
+        "Fique seguro e conectado em qualquer lugar"
       ],
       "Subscription canceled": [
         "Assinatura cancelada"
@@ -10885,7 +10974,7 @@
         "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclui 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
+        "Inclui mais de 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
@@ -11189,6 +11278,12 @@
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo com o ${ vpnPlus }. ${ upgradeButton }"
       ],
+      "Connect to video conferencing": [
+        "Conectar-se à videoconferência"
+      ],
+      "Connect your custom domain": [
+        "Conecte seu domínio personalizado"
+      ],
       "Contact us": [
         "Fale conosco"
       ],
@@ -11365,6 +11460,12 @@
       "Enable for all users": [
         "Ativar para todos os usuários"
       ],
+      "Enhance security with 2FA": [
+        "Aumente a segurança com 2FA"
+      ],
+      "Enter 2FA code": [
+        "Insira o código A2F"
+      ],
       "Enter endpoints into your identity provider": [
         "Insira endpoints em seu provedor de identidade"
       ],
@@ -11373,6 +11474,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Entre com sua conta da ${ BRAND_NAME } para participar do programa Beta do ${ app }"
+      ],
+      "Enter your password": [
+        "Digite sua senha"
       ],
       "Error": [
         "Erro"
@@ -11651,6 +11755,12 @@
       "Signed in to member account": [
         "Iniciado sessão à conta de membro"
       ],
+      "Simplify email distribution": [
+        "Simplifique a distribuição dos e-mails"
+      ],
+      "Simplify password management": [
+        "Facilite o gerenciamento de senhas"
+      ],
       "Single sign-on": [
         "Autenticação única"
       ],
@@ -11750,6 +11860,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviamos um e-mail para o seu novo endereço com as instruções para completar a mudança."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"

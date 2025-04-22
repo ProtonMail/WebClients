@@ -142,6 +142,9 @@
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
+      ],
       "Compare all plans": [
         "Vertaile kaikkia tilauksia"
       ],
@@ -153,6 +156,9 @@
       ],
       "Confirm": [
         "Vahvista"
+      ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
       ],
       "Contact support": [
         "Ota yhteyttä asiakaspalveluun"
@@ -268,6 +274,9 @@
       "Download": [
         "Lataa"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download CSV sample": [
         "Lataa CSV-näyte"
       ],
@@ -346,6 +355,9 @@
       "Fit to window": [
         "Sovita ikkunaan"
       ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
+      ],
       "Forgot recovery method?": [
         "Unohditko palautustavan?"
       ],
@@ -375,6 +387,9 @@
       ],
       "Get more servers": [
         "Hanki lisää palvelimia"
+      ],
+      "Get the apps": [
+        "Hanki sovellukset"
       ],
       "Get the deal": [
         "Hyödynnä tarjous"
@@ -436,8 +451,14 @@
       "Make admin": [
         "Määritä ylläpitäjäksi"
       ],
+      "Manage groups": [
+        "Hallitse ryhmiä"
+      ],
       "Manage subscription": [
         "Hallitse tilausta"
+      ],
+      "Manage users/addresses": [
+        "Hallitse käyttäjiä/osoitteita"
       ],
       "Mark as default": [
         "Merkitse oletukseksi"
@@ -661,6 +682,15 @@
       "Set new password": [
         "Aseta uusi salasana"
       ],
+      "Set recovery methods": [
+        "Aseta palautustavat"
+      ],
+      "Set up 2FA": [
+        "Määritä 2FA"
+      ],
+      "Set up a custom domain": [
+        "Määritä oma verkkotunnus"
+      ],
       "Settings": [
         "Asetukset"
       ],
@@ -762,6 +792,9 @@
       ],
       "Upload": [
         "Lähetä"
+      ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
       ],
       "Upload logo": [
         "Lähetä logo"
@@ -2426,6 +2459,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
+      ],
+      "To start, give your organization a name.": [
+        "Aloita antamalla organisaatiollesi nimi."
       ]
     },
     "Disable address prompt": {
@@ -2642,6 +2678,9 @@
       ]
     },
     "edm": {
+      "Allow QR code sign‒in": [
+        "Salli kirjautuminen QR-koodilla"
+      ],
       "Code from the other device": [
         "Koodi toisesta laitteesta"
       ],
@@ -2653,6 +2692,15 @@
       ],
       "QR code sign-in enabled": [
         "QR-koodilla kirjautuminen otettu käyttöön"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Kirjaudu skannaamalla QR-koodi mobiililaitteellasi"
+      ],
+      "Security tips": [
+        "Turvallisuusvinkkejä"
+      ],
+      "Sign in on another device": [
+        "Kirjaudu toisella laitteella"
       ],
       "Sign in with QR code": [
         "Kirjaudu QR-koodilla"
@@ -4396,6 +4444,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Syötä ${ BRAND_NAME }-tilisi sähköpostiosoite tai käyttäjätunnus."
       ],
+      "Enter your own password (as organization admin).": [
+        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Syötä palautusosoitteesi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
@@ -5018,6 +5069,9 @@
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
+      ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
       ],
       "Setting up ${ feature }…": [
         "Määritetään ${ feature }…"
@@ -5882,10 +5936,10 @@
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6423,6 +6477,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
       ],
+      "Your password (admin)": [
+        "Salasanasi (ylläpitäjä)"
+      ],
       "ZIP code": [
         "Postinumero"
       ]
@@ -6554,8 +6611,23 @@
       "here": [
         "täältä"
       ],
+      "How to add users": [
+        "Miten käyttäjiä lisätään"
+      ],
+      "How to add Zoom links": [
+        "Miten Zoom-linkkejä lisätään"
+      ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
+      ],
+      "How to set up SMTP": [
+        "Miten SMTP määritetään"
+      ],
+      "How to share a calendar": [
+        "Miten jaat kalenterin"
+      ],
+      "How to use Groups": [
+        "Miten ryhmiä käytetään"
       ],
       "Learn more": [
         "Lue lisää"
@@ -7531,14 +7603,6 @@
         "käyttöehtomme"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -7551,6 +7615,14 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -8569,6 +8641,9 @@
       ],
       "Main street 12": [
         "Pääkatu 12"
+      ],
+      "Organization name": [
+        "Organisaation nimi"
       ],
       "Other": [
         "Muu"
@@ -9620,6 +9695,9 @@
       "Share the confirmation code with your administrator": [
         "Jaa vahvistuskoodi ylläpidollesi"
       ],
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
       "Sign in to your organization": [
         "Kirjaudu sisään organisaatioosi"
       ],
@@ -9658,6 +9736,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Sinun on luotava uusia käyttäjiä manuaalisesti lisätäksesi niitä organisaatioosi."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-määrityksesi poistetaan."
@@ -10691,6 +10772,9 @@
       "Add to spam list": [
         "Lisää roskapostilistalle"
       ],
+      "Add user": [
+        "Lisää käyttäjä"
+      ],
       "Add user accounts": [
         "Lisää käyttäjätilejä"
       ],
@@ -10781,6 +10865,9 @@
       "Close": [
         "Sulje"
       ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
+      ],
       "Confirm": [
         "Vahvista"
       ],
@@ -10796,8 +10883,14 @@
       "Confirm phone number": [
         "Vahvista puhelinnumero"
       ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
+      ],
       "Connect organization": [
         "Yhdistä organisaatio"
+      ],
+      "Connect your custom domain": [
+        "Yhdistä oma verkkotunnuksesi"
       ],
       "Contact us": [
         "Ota yhteyttä"
@@ -10912,6 +11005,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Alennetaanko tilaukseen ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Lataa ${ VPN_APP_NAME }"
       ],
@@ -10969,6 +11065,12 @@
       "Enable for all users": [
         "Ota käyttöön kaikille käyttäjille"
       ],
+      "Enhance security with 2FA": [
+        "Paranna tietoturvaa 2FA:lla"
+      ],
+      "Enter 2FA code": [
+        "Syötä vahvistuskoodi"
+      ],
       "Enter endpoints into your identity provider": [
         "Syötä päätepisteet identiteetintarjoajaasi"
       ],
@@ -10977,6 +11079,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Liity sovelluksen ${ app } beetaohjelmaan syöttämällä ${ BRAND_NAME }-tilisi tiedot"
+      ],
+      "Enter your password": [
+        "Syötä salasanasi"
       ],
       "Error": [
         "Virhe"
@@ -11093,6 +11198,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-määritystiedostot"
       ],
+      "Org setup": [
+        "Organisaation määritys"
+      ],
       "Organization filters": [
         "Organisaation suodattimet"
       ],
@@ -11101,6 +11209,9 @@
       ],
       "Organization name": [
         "Organisaation nimi"
+      ],
+      "Organization setup": [
+        "Organisaation määritys"
       ],
       "Origin": [
         "Alkuperä"
@@ -11207,8 +11318,14 @@
       "Set organization name": [
         "Aseta organisaation nimi"
       ],
+      "Set recovery methods": [
+        "Määritä palautustavat"
+      ],
       "Set up two-factor authentication": [
         "Määritä kaksivaiheinen tunnistautuminen"
+      ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
       ],
       "Set your password": [
         "Aseta salasanasi"
@@ -11291,6 +11408,9 @@
       ],
       "Upgrade your privacy": [
         "Paranna yksityisyyttäsi"
+      ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
       ],
       "Upload CSV file to create multiple accounts": [
         "Lisää useiden tilien luontiin käytettävä CSV-malli"

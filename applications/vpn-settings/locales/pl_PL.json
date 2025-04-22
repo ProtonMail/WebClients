@@ -364,6 +364,9 @@
       "Fit to window": [
         "Dopasuj do okna"
       ],
+      "Forgot password?": [
+        "Nie pamiętasz hasła?"
+      ],
       "Forgot recovery method?": [
         "Nie pamiętasz metody odzyskiwania?"
       ],
@@ -1076,7 +1079,7 @@
     },
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
-        "Przepraszamy, ta oferta nie jest dostępna w ramach bieżącego planu."
+        "Oferta nie jest dostępna w obecnym planie."
       ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
@@ -1092,7 +1095,7 @@
     },
     "bf2023: Title": {
       "Offer unavailable": [
-        "Oferta niedostępna"
+        "Oferta jest niedostępna"
       ]
     },
     "bf2023: Tooltip": {
@@ -2600,7 +2603,7 @@
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
-        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do dołączenia do ${ BRAND_NAME }."
+        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Uprość synchronizację i planowanie za pomocą udostępnionych kalendarzy."
@@ -4746,6 +4749,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Wpisz adres e-mail lub nazwę użytkownika konta ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administrator organizacji)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Wpisz adres pomocniczy w celu wysłania Twojej nazwy użytkownika lub adresu e-mail."
       ],
@@ -5482,7 +5488,7 @@
         "Ulokowany w Szwajcarii"
       ],
       "Symbols (#$&)": [
-        "Symbole (#$&)"
+        "Znaki specjalne (#$&)"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Rekomendowany przez TechRadar Pro z oceną 4,2 na 5 gwiazdek"
@@ -6329,10 +6335,10 @@
       "Allow recovery by phone": [
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6877,6 +6883,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Tak, chcę trwale usunąć konto i wszystkie dane z nim powiązane."
+      ],
+      "Your password (admin)": [
+        "Twoje hasło (administratora)"
       ],
       "ZIP code": [
         "Kod pocztowy"
@@ -8095,14 +8104,6 @@
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -8115,6 +8116,14 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -10323,6 +10332,9 @@
       "Share the confirmation code with your administrator": [
         "Udostępnij kod potwierdzający administratorowi"
       ],
+      "Sign in": [
+        "Zaloguj się"
+      ],
       "Sign in to your organization": [
         "Zaloguj się do organizacji"
       ],
@@ -10367,6 +10379,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Konieczne będzie ręcznie utworzenie nowych użytkowników i dodanie ich do organizacji."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Konfiguracja SSO zostanie usunięta."
@@ -11260,16 +11275,16 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Obejmuje nielimitowaną liczbę aliasów, 20 zabezpieczonych folderów, zintegrowane uwierzytelnianie dwustopniowe, automatyczne uzupełnianie danych karty kredytowej i nie tylko."
+        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, 20 sejfów, zintegrowaną aplikację uwierzytelniającą, autouzupełnianie kart płatniczych i wiele więcej."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Obsługuje 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingowych oraz z funkcją blokowania reklam i złośliwego oprogramowania i więcej."
+        "Zawiera 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostęp do globalnych usług streamingu, blokadę reklam, złośliwego oprogramowania i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny e-mail, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i nie tylko."
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Tab in domain modal": {
@@ -11758,6 +11773,9 @@
       "Enhance security with 2FA": [
         "Zwiększ bezpieczeństwo za pomocą uwierzytelniania dwustopniowego"
       ],
+      "Enter 2FA code": [
+        "Wpisz kod uwierzytelniający"
+      ],
       "Enter endpoints into your identity provider": [
         "Wpisz punkty końcowe do dostawcy tożsamości"
       ],
@@ -11766,6 +11784,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Wpisz szczegóły konta ${ BRAND_NAME }, aby dołączyć do ${ app } w wersji beta"
+      ],
+      "Enter your password": [
+        "Wpisz hasło"
       ],
       "Error": [
         "Błąd"
@@ -12873,7 +12894,7 @@
         "${ n } portfela"
       ],
       "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"
