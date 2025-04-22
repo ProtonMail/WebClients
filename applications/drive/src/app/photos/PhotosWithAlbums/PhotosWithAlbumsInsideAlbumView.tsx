@@ -190,15 +190,14 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     }, [isUploadDisabled, album?.permissions.isEditor, driveAlbumsDisabled]);
 
     useEffect(() => {
-        if (isAlbumsLoading === false && isAlbumPhotosLoading === false) {
+        if (albumPhotos.length || (isAlbumsLoading === false && isAlbumPhotosLoading === false)) {
             setIsInitialized(true);
         }
-    }, [isAlbumsLoading, isAlbumPhotosLoading]);
+    }, [isAlbumsLoading, isAlbumPhotosLoading, albumPhotos]);
 
     if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized || !albumLinkId) {
         return <Loader />;
     }
-    const photoCount = album.photoCount;
 
     // TODO: Album not found view [DRVWEB-4615]
     return (
@@ -221,7 +220,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onFileUpload={onPhotoUploadedToAlbum}
                             onFileSkipped={onPhotoUploadedToAlbum}
                             album={album}
-                            photoCount={photoCount}
                             onShare={onShare}
                             onAddAlbumPhotos={() => {
                                 navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
@@ -249,7 +247,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             uploadLinkId={uploadLinkId}
                             linkId={album.linkId}
                             album={album}
-                            photoCount={photoCount}
                             onFileUpload={onPhotoUploadedToAlbum}
                             onFileSkipped={onPhotoUploadedToAlbum}
                             onShare={() => {
