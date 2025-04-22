@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } hakkında"
+      ],
       "Actual Size": [
         "Gerçek boyut"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "Uygulama verilerini temizle"
       ],
+      "Close Window": [
+        "Pencereyi kapat"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Cut": [
+        "Kes"
+      ],
+      "Delete": [
+        "Sil"
+      ],
       "Force Reload": [
         "Yeniden yüklemeye zorla"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } uygulamasını gizle"
+      ],
+      "Hide Others": [
+        "Diğerlerini gizle"
+      ],
+      "Minimize": [
+        "Küçült"
+      ],
+      "Paste": [
+        "Yapıştır"
+      ],
+      "Paste and Match Style": [
+        "Yapıştır ve biçeme uy"
+      ],
+      "Quit": [
+        "Çık"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "${ MAIL_APP_NAME } uygulamasından çık"
+      ],
+      "Redo": [
+        "Yinele"
+      ],
       "Reload": [
         "Yeniden yükle"
+      ],
+      "Select All": [
+        "Tümünü seç"
+      ],
+      "Show All": [
+        "Tümünü görüntüle"
       ],
       "Show logs": [
         "Günlüğü görüntüle"
@@ -26,11 +71,37 @@
       "Speech": [
         "Konuşma"
       ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "${ MAIL_APP_NAME } oturum açıldıında başlatılsın"
+      ],
+      "Start Speaking": [
+        "Konuşmaya başla"
+      ],
+      "Stop Speaking": [
+        "Konuşmayı durdur"
+      ],
+      "Toggle Full Screen": [
+        "Tam ekranı aç/kapat"
+      ],
+      "Undo": [
+        "Geri al"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } uygulamasını kaldır"
+      ],
+      "Zoom": [
+        "Yakınlaştır"
+      ],
       "Zoom In": [
         "Yakınlaştır"
       ],
       "Zoom Out": [
         "Uzaklaştır"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Hizmetler"
       ]
     },
     "Context menu": {
@@ -42,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "Emoji ve Semboller"
+      ],
+      "Save image as…": [
+        "Görseli farklı kaydet…"
+      ],
+      "Speech": [
+        "Konuşma"
+      ],
+      "Start Speaking": [
+        "Konuşmaya başla"
+      ],
+      "Stop Speaking": [
+        "Konuşmayı durdur"
       ]
     },
     "Context Menu": {
       "Copy": [
         "Kopyala"
+      ],
+      "Cut": [
+        "Kes"
+      ],
+      "Look Up “${ text }”": [
+        "“${ text }” ifadesini ara"
+      ],
+      "Paste": [
+        "Yapıştır"
+      ],
+      "Paste and Match Style": [
+        "Yapıştır ve biçeme uy"
+      ],
+      "Redo": [
+        "Yinele"
+      ],
+      "Select All": [
+        "Tümünü seç"
+      ],
+      "Undo": [
+        "Geri al"
       ]
     },
     "Error dialog": {
