@@ -142,6 +142,9 @@
       "Close this banner": [
         "Tutup spanduk ini"
       ],
+      "Collaborate on documents": [
+        "Kolaborasikan dokumen"
+      ],
       "Compare all plans": [
         "Bandingkan seluruh paket"
       ],
@@ -153,6 +156,12 @@
       ],
       "Confirm": [
         "Konfirmasi"
+      ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
       ],
       "Contact support": [
         "Hubungi layanan dukungan"
@@ -352,6 +361,9 @@
       "Fit to window": [
         "Sesuaikan dengan jendela"
       ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
+      ],
       "Forgot recovery method?": [
         "Lupa metode pemulihan?"
       ],
@@ -381,6 +393,9 @@
       ],
       "Get more servers": [
         "Dapatkan lebih banyak server"
+      ],
+      "Get the apps": [
+        "Dapatkan aplikasinya"
       ],
       "Get the deal": [
         "Dapatkan penawaran ini"
@@ -441,6 +456,12 @@
       ],
       "Make admin": [
         "Jadikan admin"
+      ],
+      "Manage advanced account protections": [
+        "Kelola perlindungan akun lanjutan"
+      ],
+      "Manage groups": [
+        "Kelola grup"
       ],
       "Manage subscription": [
         "Kelola langganan"
@@ -670,6 +691,9 @@
       "Set new password": [
         "Tetapkan kata sandi baru"
       ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
+      ],
       "Settings": [
         "Pengaturan"
       ],
@@ -678,6 +702,9 @@
       ],
       "Share via link": [
         "Bagikan melalui tautan"
+      ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
       ],
       "Sharing options": [
         "Opsi berbagi"
@@ -754,6 +781,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock": [
         "Membuka"
       ],
@@ -771,6 +801,9 @@
       ],
       "Upload": [
         "Unggah"
+      ],
+      "Upload and share files": [
+        "Unggah dan bagikan berkas"
       ],
       "Upload logo": [
         "Unggah logo"
@@ -2687,6 +2720,21 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } tidak akan pernah meminta Anda untuk memasukkan kode yang tidak bersumber dari domain ${ domain } atau aplikasi ${ BRAND_NAME } resmi."
+      ],
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } tidak akan pernah menghubungi Anda secara tiba-tiba untuk meminta Anda masuk dengan kode QR."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Bagaimana metode ini bekerja:** Masukkan kode yang muncul pada perangkat yang ingin Anda masuki di perangkat ini. Anda akan masuk sebagai **${ email }**. Kedua perangkat ini akan tetap aktif."
+      ],
+      "Allow QR code sign‒in": [
+        "Izinkan entri masuk dengan kode QR"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Berhati-hatilah terhadap pesan yang mengandung kode QR. Pindailah kode QR hanya apabila Anda memercayai sumbernya."
+      ],
       "Code from the other device": [
         "Kode dari perangkat lain"
       ],
@@ -2701,6 +2749,12 @@
       ],
       "Scan QR code on your mobile device to sign in": [
         "Pindai kode QR pada perangkat seluler Anda untuk masuk"
+      ],
+      "Security tips": [
+        "Tips keamanan"
+      ],
+      "Sign in on another device": [
+        "Masuk pada perangkat lain"
       ],
       "Sign in with QR code": [
         "Masuk dengan kode QR"
@@ -4458,6 +4512,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Masukkan alamat email atau nama pengguna akun ${ BRAND_NAME } Anda."
       ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Masukkan alamat email pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
@@ -4836,6 +4893,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Buka panduan ini untuk memperoleh tindakan yang disarankan dan tautan yang dapat berguna."
+      ],
       "or ${ selectFileButton }": [
         "atau ${ selectFileButton }"
       ],
@@ -5085,6 +5145,9 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
+      ],
       "Setting up ${ feature }…": [
         "Mempersiapkan ${ feature }…"
       ],
@@ -5237,6 +5300,9 @@
       ],
       "This file is too large to preview": [
         "Berkas ini terlalu besar untuk dipratinjau"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
@@ -5957,11 +6023,11 @@
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
       ],
-      "Allowed domain": [
-        "Domain yang diizinkan"
-      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -6503,6 +6569,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
       ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -6631,8 +6700,14 @@
       "here": [
         "di sini"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Cara berkolaborasi di ${ DOCS_SHORT_APP_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
+      ],
+      "How to share via email": [
+        "Cara berbagi via email"
       ],
       "Learn more": [
         "Lebih lanjut"
@@ -7594,14 +7669,6 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -7614,6 +7681,14 @@
       ],
       "Switch plans?": [
         "Ubah paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -9691,6 +9766,9 @@
       "Share the confirmation code with your administrator": [
         "Bagikan kode konfirmasi ini dengan administrator Anda"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
       ],
@@ -9735,6 +9813,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Anda akan perlu untuk membuat pengguna baru secara manual untuk menambahkan pengguna ini ke organisasi Anda."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ],
       "Your SSO configuration will be deleted.": [
         "Konfigurasi SSO Anda akan dihapus."
@@ -10748,6 +10829,9 @@
       "Add to spam list": [
         "Tambahkan ke daftar spam"
       ],
+      "Add user": [
+        "Tambah pengguna"
+      ],
       "Add user accounts": [
         "Tambah akun pengguna"
       ],
@@ -10853,11 +10937,20 @@
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
       ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
       "Connect organization": [
         "Sambungkan organisasi"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Hubungkan VPN Anda ke ${ VPN_CONNECTIONS } perangkat sekaligus dengan ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
+      ],
+      "Connect your custom domain": [
+        "Hubungkan domain khusus Anda"
       ],
       "Contact us": [
         "Hubungi kami"
@@ -11024,8 +11117,17 @@
       "Email subscriptions": [
         "Langganan email"
       ],
+      "Enable advanced account protection": [
+        "Aktifkan perlindungan akun lanjutan"
+      ],
       "Enable for all users": [
         "Aktifkan untuk seluruh pengguna"
+      ],
+      "Enhance security with 2FA": [
+        "Tingkatkan keamanan dengan 2FA"
+      ],
+      "Enter 2FA code": [
+        "Masukkan kode 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Masukkan endpoint ke penyedia identitas Anda"
@@ -11035,6 +11137,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
+      ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
       ],
       "Error": [
         "Kesalahan"
@@ -11107,6 +11212,9 @@
       ],
       "Human verification": [
         "Verifikasi manusia"
+      ],
+      "Import emails, calendars, contacts": [
+        "Impor email, kalender, kontak"
       ],
       "Increase your privacy with more addresses": [
         "Tingkatkan privasi Anda dengan lebih banyak alamat"
@@ -11264,8 +11372,17 @@
       "Set organization name": [
         "Tentukan nama organisasi"
       ],
+      "Set recovery methods": [
+        "Atur metode pemulihan"
+      ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
+      ],
       "Set up two-factor authentication": [
         "Atur autentikasi dua faktor"
+      ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
       ],
       "Set your password": [
         "Tetapkan kata sandi Anda"
@@ -11275,6 +11392,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Atur server khusus dengan meningkatkan ke Business"
+      ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
       ],
       "Shared servers": [
         "Server terbagi"
@@ -11290,6 +11410,9 @@
       ],
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
+      ],
+      "Simplify email distribution": [
+        "Sederhanakan distribusi email"
       ],
       "Single sign-on": [
         "Single sign-on"
@@ -11320,6 +11443,9 @@
       ],
       "There are no groups": [
         "Tidak ada grup"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
       ],
       "TV sign in": [
         "Entri masuk TV"
@@ -11380,6 +11506,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Kami akan mengirimkan email ke alamat baru Anda yang berisi panduan untuk menyelesaikan proses migrasi Anda."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Selamat datang di ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"

@@ -364,6 +364,9 @@
       "Fit to window": [
         "Passend in venster"
       ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
       "Forgot recovery method?": [
         "Herstelmethode vergeten?"
       ],
@@ -1068,7 +1071,7 @@
     },
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met je huidige abonnement."
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
       ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting ${ plan.Title } krijgen wanneer u zich voor ${ cycle } maand abonneert.",
@@ -2511,14 +2514,56 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Verbind uw CRM, website, printers en meer."
+      ],
+      "Create groups you can email with a single address.": [
+        "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Moedig het gebruik van tweestapsverificatie in je organisatie aan voor extra beveiliging."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zorg voor de beveiliging van je account met het ${ PROTON_SENTINEL_NAME } programma."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Zorg ervoor dat u nog steeds toegang hebt tot uw account en gegevens, zelfs als u uw ${ BRAND_NAME } wachtwoord verliest."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Iedereen in uw organisatie kan verbinding maken met gedeelde servers in alle landen."
       ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze overgang naar ${ BRAND_NAME } kunt u uw gegevens importeren vanuit Google, Outlook en andere."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
       "If disabled, only admins will have access.": [
         "Indien uitgeschakeld, hebben alleen beheerders toegang."
@@ -2526,11 +2571,26 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Houd verschillende delen van uw leven gescheiden en uw postvak in georganiseerd met extra adressen."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Hiermee kunt u direct vergader koppelingen toevoegen aan uw afspraak uitnodigingen."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Niemand in uw organisatie kan verbinding maken met gedeelde servers."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
+      ],
+      "To start, give your organization a name.": [
+        "Geef uw organisatie een naam om te beginnen."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ]
     },
     "Disable address prompt": {
@@ -2755,6 +2815,21 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } zal u nooit vragen om een QR-code te scannen die niet afkomstig is van ${ domain } of een officiële ${ BRAND_NAME } app."
+      ],
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } zal nooit onverwachts contact met u opnemen met de vraag om in te loggen met een QR-code."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Hoe het werkt:** Voer op dit apparaat de code in die wordt weergegeven op het apparaat waarop u wilt inloggen. U wordt ingelogd als **${ email }**. Beide apparaten blijven actief."
+      ],
+      "Allow QR code sign‒in": [
+        "QR-code aanmelding toestaan"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Wees voorzichtig met berichten met QR-codes. Scan een code alleen als u de bron vertrouwt."
+      ],
       "Code from the other device": [
         "Code van het andere apparaat"
       ],
@@ -2769,6 +2844,12 @@
       ],
       "Scan QR code on your mobile device to sign in": [
         "Scan de QR-code op uw mobiele apparaat om in te loggen"
+      ],
+      "Security tips": [
+        "Beveiligingstips"
+      ],
+      "Sign in on another device": [
+        "Inloggen op een ander apparaat"
       ],
       "Sign in with QR code": [
         "Inloggen met QR-code"
@@ -4566,6 +4647,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
       ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
       ],
@@ -6099,11 +6183,11 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
-      "Allowed domain": [
-        "Domein toegestaan"
-      ],
       "Allowed Domain": [
         "Toegestaan domein"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -6645,6 +6729,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (admin)"
       ],
       "ZIP code": [
         "Postcode"
@@ -7813,14 +7900,6 @@
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -7833,6 +7912,14 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -8891,6 +8978,9 @@
       "Main street 12": [
         "Hoofdstraat 12"
       ],
+      "Organization name": [
+        "Organisatienaam"
+      ],
       "Other": [
         "Anders"
       ],
@@ -8938,6 +9028,9 @@
       ],
       "VAT number": [
         "BTW-nummer"
+      ],
+      "Your organization name": [
+        "Uw organisatienaam"
       ],
       "yourdomain.com": [
         "uwdomein.com"
@@ -9240,6 +9333,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL van de SCIM-connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Org configuratie en accountbeveiliging"
       ]
     },
     "Security Center - Info": {
@@ -9950,6 +10048,9 @@
       "Share the confirmation code with your administrator": [
         "Deel de bevestigingscode met uw beheerder"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
       ],
@@ -9994,6 +10095,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "U moet handmatig nieuwe gebruikers aanmaken om ze toe te voegen aan uw organisatie."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ],
       "Your SSO configuration will be deleted.": [
         "Uw SSO-configuratie wordt verwijderd."
@@ -11123,6 +11227,9 @@
       "Close": [
         "Sluit"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -11146,6 +11253,9 @@
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Verbind met ${ VPN_CONNECTIONS } apparaten tegelijk met ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videoconferentie"
       ],
       "Connect your custom domain": [
         "Verbind uw eigen domein"
@@ -11263,6 +11373,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Downgrade naar ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } downloaden"
       ],
@@ -11326,6 +11439,9 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
+      "Enter 2FA code": [
+        "Voer 2FA-code in"
+      ],
       "Enter endpoints into your identity provider": [
         "Voer eindpunten in bij uw identiteitsprovider"
       ],
@@ -11334,6 +11450,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
       ],
       "Error": [
         "Fout"
@@ -11453,6 +11572,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
       ],
+      "Org setup": [
+        "Org configuratie"
+      ],
       "Organization filters": [
         "Organisatiefilters"
       ],
@@ -11461,6 +11583,9 @@
       ],
       "Organization name": [
         "Organisatienaam"
+      ],
+      "Organization setup": [
+        "Organisatie configuratie"
       ],
       "Origin": [
         "Bron"
@@ -11588,6 +11713,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Toegewijde servers opzetten door te upgraden naar Business"
       ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
+      ],
       "Shared servers": [
         "Gedeelde servers"
       ],
@@ -11605,6 +11733,9 @@
       ],
       "Simplify email distribution": [
         "Vereenvoudig de e-maildistributie"
+      ],
+      "Simplify password management": [
+        "Vereenvoudig wachtwoordbeheer"
       ],
       "Single sign-on": [
         "Single sign-on"
@@ -11667,11 +11798,17 @@
       "Upgrade your privacy": [
         "Upgrade uw privacy"
       ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Upload CSV-bestand om meerdere gebruikers aan te maken"
       ],
       "Upload your organization’s logo": [
         "Upload het logo van uw organisatie"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
       "User": [
         "Gebruiker"

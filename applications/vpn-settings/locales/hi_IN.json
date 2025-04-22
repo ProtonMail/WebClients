@@ -343,6 +343,9 @@
       "Fit to window": [
         "विंडो में फिट करें"
       ],
+      "Forgot password?": [
+        "पासवर्ड भूल गए?"
+      ],
       "Forgot recovery method?": [
         "रिकवरी विधि भूल गए?"
       ],
@@ -4361,6 +4364,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "अपने ${ BRAND_NAME } खाते का ईमेल पता या यूज़रनेम डालें।"
       ],
+      "Enter your own password (as organization admin).": [
+        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
       ],
@@ -5821,10 +5827,10 @@
       "Allow recovery by phone": [
         "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6364,6 +6370,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "हां, मैं इस खाते और इसके सभी डेटा को स्थायी रूप से हटाना चाहता हूं।"
+      ],
+      "Your password (admin)": [
+        "आपका पासवर्ड (व्यवस्थापक)"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -7469,14 +7478,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -7489,6 +7490,14 @@
       ],
       "Switch plans?": [
         "प्लान बदले?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -9560,6 +9569,9 @@
       "Share the confirmation code with your administrator": [
         "पुष्टीकरण कोड अपने एडमिनिस्ट्रेटर के साथ साझा करें"
       ],
+      "Sign in": [
+        "साइनइन करें"
+      ],
       "Sign in to your organization": [
         "अपने संगठन में साइन इन करें"
       ],
@@ -9604,6 +9616,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "आपको उन्हें अपने संगठन में जोड़ने के लिए नए उपयोगकर्ता मैन्युअल रूप से बनाना होगा।"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "आपको आपके तीसरें-पार्टी SSO प्रदाता पर रीडायरेक्ट कर दिया जाएगा।"
       ],
       "Your SSO configuration will be deleted.": [
         "आपकी SSO संरचना हटा दी जाएगी।"
@@ -10905,6 +10920,9 @@
       "Enable for all users": [
         "सभी उपयोगकर्ताओं के लिए सक्षम करें"
       ],
+      "Enter 2FA code": [
+        "2-एफए कोड डालें"
+      ],
       "Enter endpoints into your identity provider": [
         "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
       ],
@@ -10913,6 +10931,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } बीटा कार्यक्रम में शामिल होने के लिए अपनी ${ BRAND_NAME } खाता जानकारी दर्ज करें"
+      ],
+      "Enter your password": [
+        "आपका पासवर्ड डालें"
       ],
       "Error": [
         "गड़बड़"

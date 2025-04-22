@@ -361,6 +361,9 @@
       "Fit to window": [
         "Passa till fönster"
       ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
       ],
@@ -909,6 +912,9 @@
       ],
       "${ price } per domain": [
         "${ price } per domän"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
       ],
       "${ price } per user": [
         "${ price } per användare"
@@ -3781,7 +3787,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Integritet som standard."
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Go to sign in": {
@@ -4619,6 +4625,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
@@ -6131,10 +6140,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6680,6 +6689,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
+      ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -7842,17 +7854,6 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7865,6 +7866,17 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -9285,6 +9297,11 @@
         "URL för SCIM-anslutaren till vilken din IdP Provisioning Agent vidarebefordrar SCIM-data"
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "Organisationsinställning och kontosäkerhet"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
@@ -9993,6 +10010,9 @@
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
       ],
+      "Sign in": [
+        "Logga in"
+      ],
       "Sign in to your organization": [
         "Logga in på din organisation"
       ],
@@ -10034,6 +10054,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
@@ -11372,6 +11395,9 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
+      "Enter 2FA code": [
+        "Ange 2FA-kod"
+      ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter hos din identitetsleverantör"
       ],
@@ -11380,6 +11406,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
       ],
       "Error": [
         "Fel"
@@ -11498,6 +11527,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
+      ],
+      "Org setup": [
+        "Organisationsinställning"
       ],
       "Organization filters": [
         "Organisationsfilter"

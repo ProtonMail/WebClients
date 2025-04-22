@@ -142,6 +142,9 @@
       "Close this banner": [
         "Fechar esta faixa"
       ],
+      "Collaborate on documents": [
+        "Colabore em documentos"
+      ],
       "Compare all plans": [
         "Compare todos os planos"
       ],
@@ -153,6 +156,9 @@
       ],
       "Confirm": [
         "Confirmar"
+      ],
+      "Connect apps and devices": [
+        "Ligar aplicações e dispositivos"
       ],
       "Contact support": [
         "Contactar o suporte"
@@ -271,6 +277,9 @@
       "Download": [
         "Transferir"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Transferir as aplicações do ${ DRIVE_APP_NAME }"
+      ],
       "Download CSV sample": [
         "Transferir a amostra CSV"
       ],
@@ -352,6 +361,9 @@
       "Fit to window": [
         "Ajustar na janela"
       ],
+      "Forgot password?": [
+        "Esqueceu-se da palavra-passe?"
+      ],
       "Forgot recovery method?": [
         "Esqueceu-se do método de recuperação?"
       ],
@@ -382,6 +394,9 @@
       "Get more servers": [
         "Obter mais servidores"
       ],
+      "Get the apps": [
+        "Obter as aplicações"
+      ],
       "Get the deal": [
         "Obtenha a promoção"
       ],
@@ -408,6 +423,9 @@
       ],
       "Hide plan features": [
         "Ocultar as funcionalidades do plano"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importar e-mails, calendários, contactos"
       ],
       "Import new SAML metadata": [
         "Importar novos metadados SAML"
@@ -442,8 +460,17 @@
       "Make admin": [
         "Tornar administrador"
       ],
+      "Manage advanced account protections": [
+        "Gerir as proteções avançadas da conta"
+      ],
+      "Manage groups": [
+        "Gerir os grupos"
+      ],
       "Manage subscription": [
         "Gerir subscrição"
+      ],
+      "Manage users/addresses": [
+        "Gerir os utilizadores/endereços"
       ],
       "Mark as default": [
         "Marcar como predefinição"
@@ -670,6 +697,18 @@
       "Set new password": [
         "Definir uma nova palavra-passe"
       ],
+      "Set recovery methods": [
+        "Definir os métodos de recuperação"
+      ],
+      "Set up 2FA": [
+        "Configurar A2F"
+      ],
+      "Set up a custom domain": [
+        "Configurar um domínio personalizado"
+      ],
+      "Set up email forwarding": [
+        "Configurar o encaminhamento de e-mail"
+      ],
       "Settings": [
         "Definições"
       ],
@@ -678,6 +717,9 @@
       ],
       "Share via link": [
         "Partilhar por ligação"
+      ],
+      "Share your calendar with your team": [
+        "Partilhe o seu calendário com a sua equipa"
       ],
       "Sharing options": [
         "Opções de partilha"
@@ -754,6 +796,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente guardar novamente. Erro ao guardar devido a: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ative o ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock": [
         "Desbloquear"
       ],
@@ -772,11 +817,20 @@
       "Upload": [
         "Enviar"
       ],
+      "Upload and share files": [
+        "Enviar e partilhar ficheiros"
+      ],
       "Upload logo": [
         "Enviar o logo"
       ],
       "Use ${ label } theme": [
         "Utilizar o tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utilize o ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Use o ${ VPN_SHORT_APP_NAME } para privacidade de dados"
       ],
       "Use a different card": [
         "Utilizar um cartão diferente"
@@ -2454,14 +2508,56 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "O ${ DOCS_SHORT_APP_NAME } no ${ DRIVE_APP_NAME } permite que trabalhe em conjunto com outras pessoas num ambiente seguro e encriptado."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Adicione pastas e ficheiros ao ${ DRIVE_APP_NAME } e convide membros da equipa a visualizar ou editar."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Reencaminhe automaticamente o e-mail recebido para outro endereço de e-mail."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configure isto primeiro para ativar a sua organização e personalizar o seu endereço de e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Ligue o seu CRM, sítio web, impressoras e muito mais."
+      ],
+      "Create groups you can email with a single address.": [
+        "Crie grupos aos quais pode enviar e-mails com um único endereço."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode conectar-se a servidores partilhados em cada país."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Aceda facilmente ao seu e-mail e calendário no computador e no telemóvel."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronize facilmente os ficheiros para a nuvem a partir do seu computador e aceda aos mesmos a partir do seu dispositivo móvel."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Incentive o uso da autenticação em dois fatores na sua organização para garantir uma segurança adicional."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Garanta o acesso seguro aos dados da organização, mesmo que a sua equipa esteja remota ou a usar WiFi público."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garanta segurança de alto nível para a sua conta com o programa ${ PROTON_SENTINEL_NAME } ."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Certifique-se de que ainda consegue aceder à sua conta e aos seus dados, mesmo que perca a sua palavra-passe da ${ BRAND_NAME } ."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Todos os membros da sua organização podem conectar-se a servidores partilhados em todos os países."
       ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma transição perfeita para o ${ BRAND_NAME }, importe os seus dados do Google, Outlook e outros serviços."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ajude a sua equipa a armazenar de forma segura as palavras-passe para informações confidenciais de negócios e clientes."
       ],
       "If disabled, only admins will have access.": [
         "Se desativado, apenas os administradores terão acesso."
@@ -2469,11 +2565,26 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Separe as diferentes facetas da sua vida e organize a sua caixa de entrada com endereços adicionais."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Permite-lhe adicionar instantaneamente ligações de reunião aos seus convites de evento."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode conectar-se a servidores partilhados."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspetos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configure contas para todos os utilizadores e convide-os a aderir à ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplifique a sincronização e o agendamento com calendários partilhados."
+      ],
+      "To start, give your organization a name.": [
+        "Para começar, dê um nome à sua organização."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Use este guia para que a sua organização beneficie rapidamente da encriptação e do ecossistema de privacidade líderes do setor da ${ BRAND_NAME } ."
       ]
     },
     "Disable address prompt": {
@@ -4530,6 +4641,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduza o seu endereço de e-mail ou nome de utilizador da conta ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Introduza a sua palavra-passe (como administrador da organização)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduza o seu e-mail de recuperação e receberá o seu nome de utilizador ou endereço de e-mail."
       ],
@@ -4908,6 +5022,9 @@
       "Open source": [
         "Código aberto"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Abra o guia para ações recomendadas e ligações úteis."
+      ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
       ],
@@ -5165,6 +5282,9 @@
       "Session timed out": [
         "A sessão expirou."
       ],
+      "Set up your organization": [
+        "Configure a sua organização"
+      ],
       "Setting up ${ feature }…": [
         "A configurar ${ feature }…"
       ],
@@ -5323,6 +5443,9 @@
       ],
       "This file is too large to preview": [
         "Este ficheiro é muito grande para pré-visualizar"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Este é um nome ou uma alcunha para a sua organização que os seus utilizadores verão. Pode alterá-lo a qualquer altura."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este agora é o seu ${ defaultEmailAddress } para enviar novas mensagens."
@@ -6057,10 +6180,10 @@
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6604,6 +6727,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, quero eliminar permanentemente esta conta e todos os seus dados."
       ],
+      "Your password (admin)": [
+        "A sua palavra-passe (admin)"
+      ],
       "ZIP code": [
         "Código postal"
       ]
@@ -6735,8 +6861,50 @@
       "here": [
         "aqui"
       ],
+      "How to add users": [
+        "Como adicionar utilizadores"
+      ],
+      "How to add Zoom links": [
+        "Como adicionar ligações Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Como colaborar no ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Como ativar o ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Como migrar para a ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Como configurar o ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Como configurar um domínio personalizado"
+      ],
+      "How to set up SMTP": [
+        "Como configurar o SMTP"
+      ],
+      "How to share a calendar": [
+        "Como partilhar um calendário"
+      ],
+      "How to share via email": [
+        "Como partilhar por e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Como utilizar o ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Como usar o ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Como usar o encaminhamento de e-mail"
+      ],
+      "How to use Groups": [
+        "Como usar os grupos"
       ],
       "Learn more": [
         "Saiba mais"
@@ -6773,6 +6941,9 @@
       ],
       "Trouble signing in?": [
         "Tem problemas em iniciar sessão?"
+      ],
+      "Types of recovery methods": [
+        "Tipos de métodos de recuperação"
       ],
       "Upgrade your plan": [
         "Atualize o seu plano"
@@ -7723,14 +7894,6 @@
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -7743,6 +7906,14 @@
       ],
       "Switch plans?": [
         "Alterar o plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -8810,6 +8981,9 @@
       "Main street 12": [
         "Rua principal, 12"
       ],
+      "Organization name": [
+        "Nome da organização"
+      ],
       "Other": [
         "Outro"
       ],
@@ -8857,6 +9031,9 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "Your organization name": [
+        "O nome da sua organização"
       ],
       "yourdomain.com": [
         "oseudomínio.com"
@@ -9159,6 +9336,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "O URL do conector SCIM para o qual o agente de provisionamento do fornecedor de identidade encaminha os dados SCIM."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configuração da organização e segurança da conta"
       ]
     },
     "Security Center - Info": {
@@ -9869,6 +10051,9 @@
       "Share the confirmation code with your administrator": [
         "Partilhe o código de confirmação com o seu administrador"
       ],
+      "Sign in": [
+        "Iniciar sessão"
+      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização"
       ],
@@ -9913,6 +10098,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Precisará criar utilizadores manualmente para adicioná-los à sua organização."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Será redirecionado para o seu fornecedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "A sua configuração SSO será eliminada."
@@ -10946,6 +11134,9 @@
       "Add to spam list": [
         "Adicionar à lista de endereços spam"
       ],
+      "Add user": [
+        "Adicionar um utilizador"
+      ],
       "Add user accounts": [
         "Adicionar contas de utilizador"
       ],
@@ -11036,6 +11227,9 @@
       "Close": [
         "Fechar"
       ],
+      "Collaborate on documents": [
+        "Colabore em documentos"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -11051,11 +11245,17 @@
       "Confirm phone number": [
         "Confirmar número de telefone"
       ],
+      "Connect apps and devices": [
+        "Ligar aplicações e dispositivos"
+      ],
       "Connect organization": [
         "Conectar a organização"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo, com o ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect your custom domain": [
+        "Ligue o seu domínio personalizado"
       ],
       "Contact us": [
         "Contacte-nos"
@@ -11170,6 +11370,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Mudar para ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Transferir as aplicações do ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Transferir ${ VPN_APP_NAME }"
       ],
@@ -11224,8 +11427,17 @@
       "Email subscriptions": [
         "Subscrições de e-mail"
       ],
+      "Enable advanced account protection": [
+        "Ativar a proteção avançada da conta"
+      ],
       "Enable for all users": [
         "Ativar para todos os utilizadores"
+      ],
+      "Enhance security with 2FA": [
+        "Aumente a segurança com a A2F"
+      ],
+      "Enter 2FA code": [
+        "Introduza o código 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Introduza os endpoints no seu fornecedor de identidade"
@@ -11235,6 +11447,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduza os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
+      ],
+      "Enter your password": [
+        "Introduza a sua palavra-passe"
       ],
       "Error": [
         "Erro"
@@ -11309,6 +11524,9 @@
       "Human verification": [
         "Verificação humana"
       ],
+      "Import emails, calendars, contacts": [
+        "Importar e-mails, calendários, contactos"
+      ],
       "Increase your privacy with more addresses": [
         "Aumente a sua privacidade com mais endereços"
       ],
@@ -11351,6 +11569,9 @@
       "OpenVPN configuration files": [
         "Ficheiros de configuração OpenVPN"
       ],
+      "Org setup": [
+        "Configuração da organização"
+      ],
       "Organization filters": [
         "Filtros da organização"
       ],
@@ -11359,6 +11580,9 @@
       ],
       "Organization name": [
         "Nome da organização"
+      ],
+      "Organization setup": [
+        "Configuração da organização"
       ],
       "Origin": [
         "Origem"
@@ -11465,8 +11689,17 @@
       "Set organization name": [
         "Definir nome da organização"
       ],
+      "Set recovery methods": [
+        "Definir os métodos de recuperação"
+      ],
+      "Set up email forwarding": [
+        "Configurar o encaminhamento de e-mail"
+      ],
       "Set up two-factor authentication": [
         "Definir autenticação em dois passos"
+      ],
+      "Set up your organization": [
+        "Configure a sua organização"
       ],
       "Set your password": [
         "Defina a sua palavra-passe"
@@ -11476,6 +11709,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Configure servidores dedicados ao atualizar para Business"
+      ],
+      "Share your calendar with your team": [
+        "Partilhe o seu calendário com a sua equipa"
       ],
       "Shared servers": [
         "Servidores partilhados"
@@ -11491,6 +11727,12 @@
       ],
       "Signed in to member account": [
         "Iniciou sessão na conta de membro"
+      ],
+      "Simplify email distribution": [
+        "Simplifique a distribuição de e-mails"
+      ],
+      "Simplify password management": [
+        "Simplificar a gestão de palavras-passe"
       ],
       "Single sign-on": [
         "Autenticação única"
@@ -11523,6 +11765,9 @@
       "There are no groups": [
         "Não existem grupos"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Ativar o ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "Iniciar sessão na TV"
       ],
@@ -11550,11 +11795,17 @@
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
       ],
+      "Upload and share files": [
+        "Enviar e partilhar ficheiros"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Envie um ficheiro CSV para criar múltiplas contas."
       ],
       "Upload your organization’s logo": [
         "Carregue o logótipo da sua organização"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Use o ${ VPN_SHORT_APP_NAME } para a privacidade dos dados"
       ],
       "User": [
         "Utilizador"
@@ -11582,6 +11833,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviaremos um e-mail para o seu novo endereço com instruções para concluir a alteração."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Configuração WireGuard"
