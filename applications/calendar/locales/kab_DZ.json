@@ -614,11 +614,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ],
       "Upgrade Now": [
         "Sgerrzet amiḍan tura"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -4984,17 +4984,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -5013,6 +5002,17 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -6685,7 +6685,7 @@
         "Uṭṭunen n tiliɣṛi"
       ],
       "Processing...": [
-        "Asesfer..."
+        "Asesfer n %s..."
       ],
       "Re-sign all contacts": [
         "Tulsa n uzmel n yinermisen meṛṛa"

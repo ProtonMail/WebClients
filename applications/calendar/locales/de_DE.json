@@ -746,10 +746,10 @@
       "Upgrade": [
         "Wechseln"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Jetzt upgraden"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Jetzt upgraden"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -6800,26 +6800,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -6841,6 +6821,26 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8912,26 +8912,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } Stunde",
-        "${ hours } Stunden"
-      ],
-      "${ hours } hour": [
         "${ days } Tag",
         "${ days } Tage"
       ],
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
       "${ minutes } minute": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "${ seconds } second": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
       ]
     },
     "specialoffer: Deal details": {

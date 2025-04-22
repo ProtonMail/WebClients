@@ -797,11 +797,11 @@
       "Upgrade": [
         "Cambiar de plan"
       ],
-      "Upgrade now": [
-        "Cambiar de plan"
-      ],
       "Upgrade Now": [
         "Mejorar ahora"
+      ],
+      "Upgrade now": [
+        "Cambiar de plan"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Mejora a ${ BRAND_NAME } Unlimited"
@@ -1061,7 +1061,7 @@
     },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
+        "Incluye soporte para 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
     "BF2024: Deal details": {
@@ -2722,14 +2722,23 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } te permite trabajar con otros en un entorno seguro y cifrado."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "La autenticación de dos factores añade una capa de seguridad adicional, evitando accesos no autorizados."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Añade carpetas y archivos a ${ DRIVE_APP_NAME } e invita a los miembros del equipo a ver o editar."
+      ],
       "Also included": [
         "También incluido"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Reenvía automáticamente el correo electrónico entrante a otra dirección de correo electrónico."
       ],
       "Availability unknown": [
         "Disponibilidad desconocida"
@@ -2740,8 +2749,17 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Los eventos con códigos de colores ayudan a organizar tu día más fácilmente, registrar el tiempo y priorizar tareas."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configura esto primero para activar tu organización y personalizar tu dirección de correo electrónico."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Conecta tu CRM, sitio web, impresoras y mucho más."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crea una reunión de Zoom y añade los detalles para unirse a tu evento en un clic."
+      ],
+      "Create groups you can email with a single address.": [
+        "Crea grupos a los que puedas enviar correos electrónicos con una sola dirección."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, podrás descargar el archivo con todos tus contactos exportados."
@@ -2752,8 +2770,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Diseñado para usuarios que buscan una mayor protección para sus cuentas."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accede fácilmente a tu correo electrónico y calendario en el escritorio y en el móvil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincroniza fácilmente archivos a la nube desde tu escritorio y accede a ellos desde tu dispositivo móvil."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Recomienda el uso de la autenticación de dos factores en tu organización para mayor seguridad."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Asegúrate de tener un acceso seguro a los datos de la organización, incluso si tu equipo está de forma remota o utiliza un WiFi público."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garantiza una seguridad de primer nivel para tu cuenta con el programa ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Asegúrate de que aún puedes acceder a tu cuenta y a tus datos aunque pierdas tu contraseña de ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para una transición fluida a ${ BRAND_NAME }, importa tus datos de Google, Outlook y otros servicios."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -2761,8 +2800,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtén alias ilimitados y 500 GB de almacenamiento con ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ayuda a tu equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Te permite añadir al instante enlaces de reunión a las invitaciones de tu evento."
       ],
       "Loading availability": [
         "Cargando disponibilidad"
@@ -2779,6 +2824,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Establece un método de recuperación para evitar perder el acceso a tu cuenta."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configura cuentas para todos los usuarios e invítalos a unirse a ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplifica la sincronización y la programación con calendarios compartidos."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Esto puede tomar unos minutos. Mientras tanto puedes continuar usando ${ CALENDAR_APP_NAME }."
       ],
@@ -2791,11 +2842,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Para empezar, asigna un nombre a tu organización."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Mejora tu cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de última generación impulsada por inteligencia artificial con soporte dedicado de expertos las 24 horas, los 7 días de la semana."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con los grupos de contactos, puedes enviar correos electrónicos a todos los miembros del grupo con un clic."
@@ -6937,26 +6994,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -6978,6 +7015,26 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8569,6 +8626,9 @@
       "Name or email address": [
         "Nombre o dirección de correo electrónico"
       ],
+      "Organization name": [
+        "Nombre de la organización"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -8604,6 +8664,9 @@
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
+      ],
+      "Your organization name": [
+        "El nombre de tu organización"
       ]
     },
     "Placeholder for contact group name": {
@@ -8710,6 +8773,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "No se ha completado el inicio de sesión."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configuración de la organización y seguridad de la cuenta"
       ]
     },
     "Security Center": {
@@ -10005,7 +10073,7 @@
         "Crea credenciales seguras de inicio de sesión en todos tus dispositivos. Incluye alias ilimitados, 20 cámaras acorazadas, 2FA integrado, introducción automática de datos de tarjeta de pago, etc."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Incluye 2950 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
+        "Incluye más de 2950 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
@@ -10227,6 +10295,9 @@
       "Clearing data": [
         "Limpiando datos"
       ],
+      "Collaborate on documents": [
+        "Colabore en documentos"
+      ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
       ],
@@ -10235,6 +10306,9 @@
       ],
       "Connect apps and devices": [
         "Conectar aplicaciones y dispositivos"
+      ],
+      "Connect to video conferencing": [
+        "Conéctate a la videoconferencia"
       ],
       "Connect your custom domain": [
         "Conecta tu dominio personalizado"
@@ -10315,6 +10389,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "¿Pasar a ${ downgradedPlanName }?"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Descarga las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Descargar la aplicación"
@@ -10491,6 +10568,12 @@
       "Open actions dropdown": [
         "Abrir lista desplegable de acciones"
       ],
+      "Org setup": [
+        "Configuración de la organización"
+      ],
+      "Organization setup": [
+        "Configuración de la organización"
+      ],
       "Organizer cannot be notified": [
         "No se puede notificar al organizador."
       ],
@@ -10629,6 +10712,9 @@
       "Settings": [
         "Configuración"
       ],
+      "Share your calendar with your team": [
+        "Comparte tu calendario con tu equipo"
+      ],
       "Show time zones for event start and end times": [
         "Mostrar las zonas horarias para las horas inicial y final del evento"
       ],
@@ -10639,7 +10725,10 @@
         "Cerrar sesión"
       ],
       "Simplify email distribution": [
-        "Simplificar la distribución de correo electrónico"
+        "Simplifica la distribución de correo electrónico"
+      ],
+      "Simplify password management": [
+        "Simplifica la gestión de contraseñas"
       ],
       "Start a new import": [
         "Iniciar una nueva importación"
@@ -10664,6 +10753,12 @@
       ],
       "Upgrade complete!": [
         "Se ha mejorado tu plan."
+      ],
+      "Upload and share files": [
+        "Cargar y compartir archivos"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
       "Verification failed": [
         "Error de verificación"
