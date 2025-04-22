@@ -1630,7 +1630,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay }s inbox"
+        "Inbox van ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 trackers verwijderd"
@@ -3828,11 +3828,17 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
+      ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME } is niet uw standaard e-mailapplicatie."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } is uw standaard e-mailapplicatie."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
       ],
       "Also included": [
         "Ook inbegrepen"
@@ -3843,14 +3849,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Wis automatisch e-mails die meer dan 30 dagen geleden naar Prullenbak en Spam zijn verplaatst."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
       ],
       "Available with ${ MAIL_APP_NAME } Plus": [
         "Beschikbaar met ${ MAIL_APP_NAME } Plus"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Verbind uw CRM, website, printers en meer."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
@@ -3858,8 +3873,17 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Maak zoveel labels of mappen als u nodig hebt om uw inbox georganiseerd te houden."
       ],
+      "Create groups you can email with a single address.": [
+        "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Schakel ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
@@ -3870,17 +3894,35 @@
       "Enable detailed events to access these features": [
         "Schakel gedetailleerde gebeurtenissen in om toegang te krijgen tot deze functies"
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Moedig het gebruik van tweestapsverificatie in je organisatie aan voor extra beveiliging."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zorg voor de beveiliging van je account met het ${ PROTON_SENTINEL_NAME } programma."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Zorg ervoor dat u nog steeds toegang hebt tot uw account en gegevens, zelfs als u uw ${ BRAND_NAME } wachtwoord verliest."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Iedereen in uw organisatie kan verbinding maken met gedeelde servers in alle landen."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze overgang naar ${ BRAND_NAME } kunt u uw gegevens importeren vanuit Google, Outlook en andere."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Krijg tot wel ${ credits } aan tegoed door vrienden uit te nodigen voor ${ BRAND_NAME }."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
       "If disabled, only admins will have access.": [
         "Indien uitgeschakeld, hebben alleen beheerders toegang."
@@ -3894,6 +3936,9 @@
       "Learn more about common problems": [
         "Leer meer over veelvoorkomende problemen"
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Hiermee kunt u direct vergader koppelingen toevoegen aan uw afspraak uitnodigingen."
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Maak uw eigen voettekst — laat uw unieke merk zien, niet de onze."
       ],
@@ -3906,8 +3951,14 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
+      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Stel automatisch doorsturen van inkomende e-mails in op een ander e-mailadres."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
@@ -3917,6 +3968,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Upgrade om de ${ MAIL_APP_NAME }-voet te verwijderen en ontgrendel nog meer premium functies."
+      ],
+      "To start, give your organization a name.": [
+        "Geef uw organisatie een naam om te beginnen."
       ],
       "Track the status and activity of your referrals.": [
         "Volg de status en activiteiten van uw doorverwijzingen."
@@ -3932,6 +3986,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "U kan vrienden blijven uitnodigen, maar u kan geen tegoed meer ontvangen"
@@ -4269,6 +4326,21 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } zal u nooit vragen om een QR-code te scannen die niet afkomstig is van ${ domain } of een officiële ${ BRAND_NAME } app."
+      ],
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } zal nooit onverwachts contact met u opnemen met de vraag om in te loggen met een QR-code."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Hoe het werkt:** Voer op dit apparaat de code in die wordt weergegeven op het apparaat waarop u wilt inloggen. U wordt ingelogd als **${ email }**. Beide apparaten blijven actief."
+      ],
+      "Allow QR code sign‒in": [
+        "QR-code aanmelding toestaan"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Wees voorzichtig met berichten met QR-codes. Scan een code alleen als u de bron vertrouwt."
+      ],
       "Code copied to clipboard": [
         "Code gekopieerd naar klembord"
       ],
@@ -4277,6 +4349,15 @@
       ],
       "Enter code manually": [
         "Voer code handmatig in"
+      ],
+      "Generate QR code": [
+        "Genereer QR-code"
+      ],
+      "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
+        "Haal een ander apparaat dat is ingelogd op uw ${ BRAND_NAME } Account."
+      ],
+      "How to sign in using another device": [
+        "Hoe kunt u met een ander apparaat inloggen"
       ],
       "QR code expired": [
         "QR-code is verlopen"
@@ -4290,11 +4371,32 @@
       "Scan QR code on your mobile device to sign in": [
         "Scan de QR-code op uw mobiele apparaat om in te loggen"
       ],
+      "Scan the code to sign in": [
+        "Scan de code om in te loggen"
+      ],
+      "Security tips": [
+        "Beveiligingstips"
+      ],
+      "Select **Sign in on another device → Scan QR code**": [
+        "Selecteer **Inloggen op een ander apparaat → Scan QR-code**"
+      ],
+      "Sign in on another device": [
+        "Inloggen op een ander apparaat"
+      ],
       "Sign in with QR code": [
         "Inloggen met QR-code"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Om toegang te krijgen tot de code van het apparaat waarop u wilt inloggen, klikt u op de knop **Inloggen met QR-code** in het hulpmenu van het inlogscherm en klikt u vervolgens op **Sleutel handmatig invoeren**."
+      ],
+      "Try generating a new QR code.": [
+        "Probeer een nieuwe QR-code te genereren."
+      ],
+      "Using that device, open any ${ BRAND_NAME } app and select **Settings**": [
+        "Open op dat apparaat een ${ BRAND_NAME } app en selecteer **Instellingen**"
+      ],
+      "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
+        "Werkt als u een ander apparaat hebt waarop u bent ingelogd bij ${ BRAND_NAME }"
       ],
       "You have successfully signed in to another device": [
         "U bent succesvol ingelogd op een ander apparaat"
@@ -4311,6 +4413,11 @@
         "U kan dit tabblad veilig sluiten."
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "LET OP:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESCHRIJVING:\n${ eventDescription }"
@@ -4322,6 +4429,12 @@
       ],
       "All events in this series were updated.": [
         "Alle gebeurtenissen in deze serie zijn bijgewerkt."
+      ],
+      "Here's what changed:": [
+        "Dit is wat er is veranderd:"
+      ],
+      "NOTE:": [
+        "LET OP:"
       ],
       "This event occurrence was canceled.": [
         "Deze afspraakgebeurtenis werd geannuleerd."
@@ -4610,11 +4723,11 @@
       "Forward to": [
         "Doorsturen naar"
       ],
-      "or": [
-        "of"
-      ],
       "Or": [
         "Of"
+      ],
+      "or": [
+        "of"
       ],
       "With attachment": [
         "Met bijlage"
@@ -5267,6 +5380,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verificatie mislukt, probeer het over een uur opnieuw."
+      ],
+      "We couldn't sign you in": [
+        "We konden u niet aanmelden"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
@@ -6401,10 +6517,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Automatisch forwarden"
+        "Stuur automatisch"
       ],
       "Gmail messages to your inbox": [
-        "Gmail berichten in uw postvak"
+        "Gmail-berichten door naar je postvak"
       ],
       "Sign in with Google": [
         "Inloggen met Google"
@@ -10908,11 +11024,11 @@
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
-      "Allowed domain": [
-        "Domein toegestaan"
-      ],
       "Allowed Domain": [
         "Toegestaan domein"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -10923,11 +11039,11 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "AND": [
-        "EN"
-      ],
       "And": [
         "En"
+      ],
+      "AND": [
+        "EN"
       ],
       "and": [
         "en"
@@ -11355,11 +11471,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ALS"
-      ],
       "If": [
         "Als"
+      ],
+      "IF": [
+        "ALS"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -11562,14 +11678,14 @@
       "Optional": [
         "Optioneel"
       ],
-      "OR": [
-        "OF"
-      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
+      ],
+      "OR": [
+        "OF"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -15440,6 +15556,9 @@
       "Name": [
         "Naam"
       ],
+      "Organization name": [
+        "Organisatienaam"
+      ],
       "Other": [
         "Anders"
       ],
@@ -15505,6 +15624,9 @@
       ],
       "VAT number": [
         "BTW-nummer"
+      ],
+      "Your organization name": [
+        "Uw organisatienaam"
       ],
       "yourdomain.com": [
         "uwdomein.com"
@@ -16135,6 +16257,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL van de SCIM-connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Org configuratie en accountbeveiliging"
       ]
     },
     "Security Center - Info": {
@@ -18630,6 +18757,9 @@
       "Close": [
         "Sluit"
       ],
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Composing": [
         "Opstellen"
       ],
@@ -18659,6 +18789,9 @@
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Verbind met ${ VPN_CONNECTIONS } apparaten tegelijk met ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Verbinding maken met videoconferentie"
       ],
       "Connect your custom domain": [
         "Verbind uw eigen domein"
@@ -18860,6 +18993,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Downgrade naar ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Download ${ DRIVE_APP_NAME } apps"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } downloaden"
       ],
@@ -19022,6 +19158,9 @@
       ],
       "For Windows": [
         "Voor Windows"
+      ],
+      "Forgot password": [
+        "Wachtwoord vergeten"
       ],
       "Forgot recovery method": [
         "Herstelmethode vergeten"
@@ -19273,6 +19412,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
       ],
+      "Org setup": [
+        "Org configuratie"
+      ],
       "Organization filters": [
         "Organisatiefilters"
       ],
@@ -19281,6 +19423,9 @@
       ],
       "Organization name": [
         "Organisatienaam"
+      ],
+      "Organization setup": [
+        "Organisatie configuratie"
       ],
       "Origin": [
         "Bron"
@@ -19537,6 +19682,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Toegewijde servers opzetten door te upgraden naar Business"
       ],
+      "Share your calendar with your team": [
+        "Deel uw agenda met uw team"
+      ],
       "Shared servers": [
         "Gedeelde servers"
       ],
@@ -19563,6 +19711,9 @@
       ],
       "Simplify email distribution": [
         "Vereenvoudig de e-maildistributie"
+      ],
+      "Simplify password management": [
+        "Vereenvoudig wachtwoordbeheer"
       ],
       "Single sign-on": [
         "Single sign-on"
@@ -19679,6 +19830,9 @@
       "Upgrade your privacy": [
         "Upgrade uw privacy"
       ],
+      "Upload and share files": [
+        "Bestanden uploaden en delen"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Upload CSV-bestand om meerdere gebruikers aan te maken"
       ],
@@ -19687,6 +19841,9 @@
       ],
       "Usage Report": [
         "Gebruiksrapport"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
       "User": [
         "Gebruiker"

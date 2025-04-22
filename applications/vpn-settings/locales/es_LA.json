@@ -364,6 +364,9 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
+      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -1068,7 +1071,7 @@
     },
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual."
+        "Lo sentimos, esta oferta no está disponible con el plan actual."
       ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Lo sentimos, esta oferta no está disponible con su plan actual. Pero puede obtener ${ discountPercentage } de ${ plan.Title } al suscribirse durante ${ cycle } mes.",
@@ -1087,7 +1090,7 @@
     },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 1 dominio de correo personalizado, 10 direcciones de correo, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
     "BF2024: Deal details": {
@@ -4644,6 +4647,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ingrese la dirección de correo o usuario de ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Ingrese su propia contraseña (como administrador de la organización)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ingrese la dirección de correo electrónico de recuperación y le enviaremos el nombre de usuario o dirección de correo."
       ],
@@ -6177,10 +6183,10 @@
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6723,6 +6729,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos los datos."
+      ],
+      "Your password (admin)": [
+        "La contraseña (admin)"
       ],
       "ZIP code": [
         "Código postal"
@@ -7891,14 +7900,6 @@
         "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancele en cualquier momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7911,6 +7912,14 @@
       ],
       "Switch plans?": [
         "¿Quiere cambiar de plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -10039,6 +10048,9 @@
       "Share the confirmation code with your administrator": [
         "Comparta el código de confirmación con su administrador"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in to your organization": [
         "Iniciar sesión en la organización"
       ],
@@ -10083,6 +10095,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrá que crear los nuevos usuarios manualmente para agregarlos a su organización."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se le redirigirá a su proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
@@ -10935,7 +10950,7 @@
         "Cree datos de inicio de sesión seguros para todos los dispositivos. Se incluyen alias ilimitados, 20 bóvedas, 2FA integrada, función de completado automático de tarjetas de crédito y más."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Incluye 2950 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
+        "Incluye más de 2950 servidores en más de 65 países, conecte hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware, bloqueador de anuncios y más."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
@@ -11424,6 +11439,9 @@
       "Enhance security with 2FA": [
         "Mejore la seguridad con 2FA"
       ],
+      "Enter 2FA code": [
+        "Ingrese el código 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Ingrese puntos finales en el proveedor de identidad"
       ],
@@ -11432,6 +11450,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ingrese los detalles de la cuenta de ${ BRAND_NAME } para unirse al programa Beta de ${ app }"
+      ],
+      "Enter your password": [
+        "Ingrese la contraseña"
       ],
       "Error": [
         "Error"

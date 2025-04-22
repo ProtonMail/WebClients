@@ -111,7 +111,7 @@
         "Tạo thẻ"
       ],
       "Create item": [
-        "Tạo mới"
+        "Thêm"
       ],
       "Create login": [
         "Tạo đăng nhập"
@@ -264,7 +264,7 @@
         "Làm người xem"
       ],
       "Manage access": [
-        "Quản lý truy cập"
+        "Quản lý quyền truy cập"
       ],
       "Manually sync your data": [
         "Đồng bộ dữ liệu của bạn bằng tay"
@@ -287,11 +287,11 @@
       "Move to another vault": [
         "Chuyển đến kho lưu trữ khác"
       ],
-      "Move to Trash": [
-        "Chuyển tới thùng rác"
-      ],
       "Move to trash": [
         "Di chuyển vào thùng rác"
+      ],
+      "Move to Trash": [
+        "Chuyển tới thùng rác"
       ],
       "Multiple select": [
         "Lựa chọn nhiều nội dung"
@@ -471,7 +471,7 @@
         "Xác minh"
       ],
       "Via secure link": [
-        "Thông qua liên kết an toàn"
+        "Tạo liên kết an toàn"
       ],
       "View details": [
         "Xem chi tiết"
@@ -480,13 +480,13 @@
         "Xem lịch sử"
       ],
       "View item history": [
-        "Xem lịch sử nội dung"
+        "Xem lịch sử chỉnh sửa"
       ],
       "View older history": [
         "Xem lịch sử cũ hơn"
       ],
       "With other ${ BRAND_NAME } users": [
-        "Với những người dùng ${ BRAND_NAME } khác"
+        "Với người dùng ${ BRAND_NAME } khác"
       ]
     },
     "App menu": {
@@ -1600,6 +1600,9 @@
       "City": [
         "Thành phố"
       ],
+      "Clear clipboard after": [
+        "Xóa bộ nhớ tạm sau"
+      ],
       "Code": [
         "Mã"
       ],
@@ -1718,7 +1721,7 @@
         "Tên"
       ],
       "For a one-off sharing": [
-        "Để chia sẻ một lần"
+        "Chia sẻ một lần"
       ],
       "Forwards to": [
         "Chuyển tiếp đến"
@@ -1940,7 +1943,7 @@
         "Mã bảo mật"
       ],
       "See member and permission overview": [
-        "Xem tổng quan thành viên và quyền"
+        "Xem quyền của thành viên"
       ],
       "Select an email address": [
         "Chọn một địa chỉ email"
@@ -2036,7 +2039,7 @@
         "Sử dụng trong"
       ],
       "Useful for permanent sharing": [
-        "Hữu ích cho việc chia sẻ lâu dài"
+        "Nên dùng nếu chia sẻ dài hạn"
       ],
       "Username": [
         "Tên người dùng"

@@ -180,6 +180,9 @@
       "Close transfers": [
         "Tutup transfer"
       ],
+      "Collaborate on documents": [
+        "Kolaborasikan dokumen"
+      ],
       "Collapse": [
         "Ciutkan"
       ],
@@ -197,6 +200,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Konfirmasi untuk membuka tautan ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
       ],
       "Contact group": [
         "Grup kontak"
@@ -426,6 +435,9 @@
       "Get Started": [
         "Mulai"
       ],
+      "Get the apps": [
+        "Dapatkan aplikasinya"
+      ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
@@ -534,8 +546,14 @@
       "Loading verification": [
         "Memuat verifikasi"
       ],
+      "Manage advanced account protections": [
+        "Kelola perlindungan akun lanjutan"
+      ],
       "Manage folders": [
         "Kelola folder"
+      ],
+      "Manage groups": [
+        "Kelola grup"
       ],
       "Manage labels": [
         "Kelola label"
@@ -834,6 +852,9 @@
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
+      ],
       "Settings": [
         "Pengaturan"
       ],
@@ -851,6 +872,9 @@
       ],
       "Share via link": [
         "Bagikan melalui tautan"
+      ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
       ],
       "Sharing options": [
         "Opsi berbagi"
@@ -936,6 +960,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Urungkan"
       ],
@@ -965,6 +992,9 @@
       ],
       "Upload": [
         "Unggah"
+      ],
+      "Upload and share files": [
+        "Unggah dan bagikan berkas"
       ],
       "Upload anyway": [
         "Tetap unggah"
@@ -4986,6 +5016,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Hanya mereka yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Buka panduan ini untuk memperoleh tindakan yang disarankan dan tautan yang dapat berguna."
+      ],
       "or discover other features:": [
         "atau telusuri berbagai fitur lainnya:"
       ],
@@ -5229,6 +5262,9 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
+      ],
       "Setting up ${ feature }…": [
         "Mempersiapkan ${ feature }…"
       ],
@@ -5384,6 +5420,9 @@
       ],
       "This folder is empty": [
         "Folder ini kosong"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
@@ -5761,7 +5800,7 @@
         "Anda akan kehilangan akses ke berbagai fitur ${ planTitle } pada tanggal ini."
       ],
       "You will lose all unsaved changes.": [
-        "Anda akan kehilangan seluruh perubahan yang belum disimpan."
+        "Anda akan kehilangan semua perubahan yang belum disimpan."
       ],
       "You will need to save it again from the public link page.": [
         "Anda akan perlu untuk kembali menyimpan berkas ini dari halaman tautan publik."
@@ -6637,8 +6676,14 @@
       "Drafts": [
         "Draf"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Cara berkolaborasi di ${ DOCS_SHORT_APP_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
+      ],
+      "How to share via email": [
+        "Cara berbagi via email"
       ],
       "if your data is leaked": [
         "apabila data Anda sampai dibocorkan"
@@ -8066,12 +8111,6 @@
       "${ count } item failed to be decrypted": [
         "${ count } item gagal didekripsi"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } foto gagal ditambahkan ke \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } foto ditambahkan ke \"${ albumName }\""
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item dihapus"
       ],
@@ -8415,11 +8454,11 @@
       "Invite members": [
         "Undang anggota"
       ],
-      "Maybe later": [
-        "Mungkin nanti"
-      ],
       "Maybe Later": [
         "Nanti Saja"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ],
       "Select theme": [
         "Pilih tema"
@@ -10274,6 +10313,9 @@
       "Add to ${ groupName }": [
         "Tambahkan ke ${ groupName }"
       ],
+      "Add user": [
+        "Tambah pengguna"
+      ],
       "Addresses": [
         "Alamat"
       ],
@@ -10363,6 +10405,15 @@
       ],
       "Confirmation required": [
         "Konfirmasi dibutuhkan"
+      ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
+      ],
+      "Connect your custom domain": [
+        "Hubungkan domain khusus Anda"
       ],
       "Contact Details": [
         "Rincian Kontak"
@@ -10508,8 +10559,14 @@
       "Enable 2FA": [
         "Aktifkan 2FA"
       ],
+      "Enable advanced account protection": [
+        "Aktifkan perlindungan akun lanjutan"
+      ],
       "Enable drive search": [
         "Aktifkan pencarian drive"
+      ],
+      "Enhance security with 2FA": [
+        "Tingkatkan keamanan dengan 2FA"
       ],
       "Enter 2FA code": [
         "Masukkan kode 2FA"
@@ -10576,6 +10633,9 @@
       ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Import emails, calendars, contacts": [
+        "Impor email, kalender, kontak"
       ],
       "Import events": [
         "Impor acara"
@@ -10775,14 +10835,26 @@
       "Select link expiration time": [
         "Tentukan waktu kedaluwarsa tautan"
       ],
+      "Set recovery methods": [
+        "Atur metode pemulihan"
+      ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
+      ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
+      ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
       ],
       "Settings": [
         "Pengaturan"
       ],
       "Share ${ name }": [
         "Bagikan ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
       ],
       "Shared": [
         "Dibagikan"
@@ -10798,6 +10870,9 @@
       ],
       "Sign out": [
         "Keluar"
+      ],
+      "Simplify email distribution": [
+        "Sederhanakan distribusi email"
       ],
       "Size": [
         "Ukuran"
@@ -10844,6 +10919,9 @@
       "Trash": [
         "Sampah"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Tipe"
       ],
@@ -10888,6 +10966,9 @@
       ],
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Selamat datang di ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Dari hal apa saja VPN dapat melindungi Anda?"

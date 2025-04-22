@@ -1099,11 +1099,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ],
       "Upgrade Now": [
         "Sgerrzet amiḍan tura"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -5936,11 +5936,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6143,11 +6143,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6251,14 +6251,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6932,17 +6932,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6961,6 +6950,17 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8991,7 +8991,7 @@
         "Izen yezrin"
       ],
       "Processing...": [
-        "Asesfer..."
+        "Asesfer n %s..."
       ],
       "Protect yourself from trackers": [
         "Mmesten iman-ik seg yineḍfaren"

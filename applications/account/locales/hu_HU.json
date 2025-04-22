@@ -98,7 +98,7 @@
         "Cím hozzáadása"
       ],
       "Add address or domain": [
-        "Adjon hozzá címet vagy tartományt"
+        "E-mail cím vagy domain név hozzáadása"
       ],
       "Add another account": [
         "Másik fiók hozzáadása"
@@ -259,6 +259,9 @@
       "Close this banner": [
         "Panel bezárása"
       ],
+      "Collaborate on documents": [
+        "Együttműködés dokumentumokon"
+      ],
       "Color": [
         "Szín"
       ],
@@ -279,6 +282,12 @@
       ],
       "Connect": [
         "Csatlakozás"
+      ],
+      "Connect apps and devices": [
+        "Alkalmazások és eszközök összekapcsolása"
+      ],
+      "Connect to video conferencing": [
+        "Kapcsolódás videokonferenciához"
       ],
       "Connected": [
         "Csatlakoztatva"
@@ -475,6 +484,9 @@
       "Download": [
         "Letöltés"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
       "Download CSV sample": [
         "CSV minta letöltése"
       ],
@@ -664,6 +676,9 @@
       "Get the app": [
         "Töltse le az alkalmazást"
       ],
+      "Get the apps": [
+        "Alkalmazások letöltése"
+      ],
       "Get the browser extension": [
         "Böngészőbővítmény beszerzése"
       ],
@@ -711,6 +726,9 @@
       ],
       "Import emails": [
         "E-mailek importálása"
+      ],
+      "Import emails, calendars, contacts": [
+        "E-mailek, naptárak és névjegyek importálása"
       ],
       "Import from Google": [
         "Importálás a Google-ból"
@@ -787,17 +805,26 @@
       "Make admin": [
         "Átállítás adminisztrátornak"
       ],
+      "Manage advanced account protections": [
+        "A speciális fiókvédelmek kezelése"
+      ],
       "Manage communication preferences": [
         "Kommunikációs beállítások kezelése"
       ],
       "Manage folders": [
         "Mappák kezelése"
       ],
+      "Manage groups": [
+        "Csoportok kezelése"
+      ],
       "Manage labels": [
         "Címkék kezelése"
       ],
       "Manage subscription": [
         "Előfizetés kezelése"
+      ],
+      "Manage users/addresses": [
+        "Felhasználók/címek kezelése"
       ],
       "Mark as default": [
         "Megjelölés alapértelmezettként"
@@ -945,6 +972,9 @@
       ],
       "Remove bonuses": [
         "Kedvezmények törlése"
+      ],
+      "Remove button": [
+        "Gomb eltávolítása"
       ],
       "Remove calendar": [
         "Naptár eltávolítása"
@@ -1138,14 +1168,29 @@
       "Set as default": [
         "Beállítás alapértelmezettként"
       ],
+      "Set as default mail application": [
+        "Beállítás alapértelmezett levelező alkalmazásnak"
+      ],
       "Set catch-all": [
         "Gyűjtő e-mail beállítása"
       ],
       "Set new password": [
         "Új jelszó beállítása"
       ],
+      "Set recovery methods": [
+        "Helyreállítási módszerek beállítása"
+      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Set up 2FA": [
+        "Kétlépcsős hitelesítés beállítása"
+      ],
+      "Set up a custom domain": [
+        "Saját domain név beállítása"
+      ],
+      "Set up email forwarding": [
+        "E-mail továbbítás beállítása"
       ],
       "Settings": [
         "Beállítások"
@@ -1155,6 +1200,9 @@
       ],
       "Share via link": [
         "Megosztás hivatkozással"
+      ],
+      "Share your calendar with your team": [
+        "A naptár megosztása a csapatával"
       ],
       "Sharing options": [
         "Megosztási beállítások"
@@ -1261,6 +1309,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
+      ],
       "Underline": [
         "Aláhúzott"
       ],
@@ -1312,6 +1363,9 @@
       "Upload": [
         "Feltöltés"
       ],
+      "Upload and share files": [
+        "Fájlok feltöltése és megosztása"
+      ],
       "Upload logo": [
         "Logó feltöltése"
       ],
@@ -1320,6 +1374,12 @@
       ],
       "Use ${ label } theme": [
         "${ label } téma használata"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "A ${ PASS_APP_NAME } for Business használata"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatvédelem biztosításához"
       ],
       "Use a different card": [
         "Másik bankkártya használata"
@@ -1743,6 +1803,10 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Sajnáljuk, ez az ajánlat nem érhető el a jelenlegi csomagjához. De ${ discountPercentage } kedvezményt kaphat a ${ plan.Title } ${ cycle } hónapra történő feliratkozásakor.",
+        "Sajnáljuk, ez az ajánlat nem érhető el a jelenlegi csomagjához. De ${ discountPercentage } kedvezményt kaphat a ${ plan.Title } ${ cycle } hónapra történő feliratkozásakor."
       ]
     },
     "bf2023: Info": {
@@ -3761,6 +3825,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "A(z) ${ MAIL_APP_NAME } nem az alapértelmezett levelező alkalmazás."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "A(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás."
+      ],
       "Also included": [
         "Benne van a csomagban"
       ],
@@ -4196,6 +4266,21 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "A ${ BRAND_NAME } soha nem fogja kérni, hogy olyan QR-kódot olvasson be, amely nem a ${ domain } domainről vagy egy hivatalos ${ BRAND_NAME } alkalmazásból származik."
+      ],
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "A(z) ${ BRAND_NAME } soha nem fog váratlanul kapcsolatba lépni Önnel, és arra kérni, hogy egy QR-kóddal jelentkezzen be."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Hogyan működik:** Írja be erre az eszközre azt a kódot, amely azon az eszközön jelenik meg, amelyre be szeretne jelentkezni. Ön **${ email }** néven lesz bejelentkezve. Mindkét eszköz aktív marad."
+      ],
+      "Allow QR code sign‒in": [
+        "QR-kódos bejelentkezés engedélyezése"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Legyen óvatos a QR-kódokat tartalmazó üzenetekkel. Csak akkor olvassa be a kódot, ha megbízik a forrásban."
+      ],
       "Code copied to clipboard": [
         "A kód a vágólapra másolva"
       ],
@@ -4204,6 +4289,15 @@
       ],
       "Enter code manually": [
         "Kód megadása manuálisan"
+      ],
+      "Generate QR code": [
+        "QR-kód generálása"
+      ],
+      "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
+        "Szerezzen egy másik eszközt, amely be van jelentkezve a(z) ${ BRAND_NAME } fiókjába"
+      ],
+      "How to sign in using another device": [
+        "Hogyan lehet bejelentkezni egy másik eszköz használatával?"
       ],
       "QR code expired": [
         "A QR-kód lejárt"
@@ -4217,11 +4311,32 @@
       "Scan QR code on your mobile device to sign in": [
         "A QR-kód beolvasásával a mobilkészülékén bejelentkezhet"
       ],
+      "Scan the code to sign in": [
+        "Olvassa be a kódot a bejelentkezéshez"
+      ],
+      "Security tips": [
+        "Biztonsági tippek"
+      ],
+      "Select **Sign in on another device → Scan QR code**": [
+        "Válassza a **Bejelentkezés egy másik eszközön → QR-kód beolvasása** lehetőséget"
+      ],
+      "Sign in on another device": [
+        "Bejelentkezés egy másik eszközön"
+      ],
       "Sign in with QR code": [
         "Bejelentkezés QR-kóddal"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "A bejelentkezni kívánt eszköz kódjának eléréséhez koppintson a bejelentkezési képernyő súgómenüjében a **Bejelentkezés QR-kóddal** gombra, majd a **Kulcs kézi beírása** lehetőségre. "
+      ],
+      "Try generating a new QR code.": [
+        "Próbáljon meg új QR-kódot generálni."
+      ],
+      "Using that device, open any ${ BRAND_NAME } app and select **Settings**": [
+        "Az adott eszközön nyisson meg egy tetszőleges ${ BRAND_NAME } alkalmazást, és válassza a **Beállítások** lehetőséget."
+      ],
+      "Works if you have another device that’s signed in to ${ BRAND_NAME }": [
+        "Akkor működik, ha van egy másik eszköze, amellyel be van jelentkezve a ${ BRAND_NAME } szolgáltatásba."
       ],
       "You have successfully signed in to another device": [
         "Sikeresen bejelentkezett egy másik eszközre"
@@ -4537,11 +4652,11 @@
       "Forward to": [
         "Továbbítási cím"
       ],
-      "or": [
-        "vagy"
-      ],
       "Or": [
         "Vagy"
+      ],
+      "or": [
+        "vagy"
       ],
       "With attachment": [
         "Mellékletet tartalmaz"
@@ -5194,6 +5309,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Az igazolás sikertelen, kérjük hogy próbálja meg egy óra múlva."
+      ],
+      "We couldn't sign you in": [
+        "Nem sikerült bejelentkeznie"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
@@ -7098,6 +7216,10 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } nem-SSO-tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } nem-SSO-tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } adatokat kíván megosztani önnel a ${ PASS_APP_NAME } rendszeren"
@@ -9817,6 +9939,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
       ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Ha engedélyezve van, megnézzük, hogy a(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás-e, és értesítjük, ha nem az."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Amikor engedélyezi a SAML-t a ${ appName } szolgáltatáshoz a személyazonosság-szolgáltatójában, a rendszer kérheti a visszahívási (ACS) URL-t és a kiállító azonosítóját. Másolja be az alábbi adatokat a személyazonosság-szolgáltatója mezőibe."
       ],
@@ -10816,10 +10941,10 @@
       "Allow sharing outside the organization": [
         "A szervezeten kívüli megosztás engedélyezése"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10831,11 +10956,11 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "AND": [
-        "ÉS"
-      ],
       "And": [
         "És"
+      ],
+      "AND": [
+        "ÉS"
       ],
       "and": [
         "és"
@@ -11263,11 +11388,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "IF": [
-        "HA"
-      ],
       "If": [
         "Ha"
+      ],
+      "IF": [
+        "HA"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -11470,14 +11595,14 @@
       "Optional": [
         "Választható"
       ],
-      "OR": [
-        "VAGY"
-      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
+      ],
+      "OR": [
+        "VAGY"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -12050,6 +12175,9 @@
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
+      "Enforcing 2FA for organizations": [
+        "Kétlépcsős hitelesítés megkövetelése a szervezetek számára"
+      ],
       "Forgot email?": [
         "Elfelejtette az e-mail címét?"
       ],
@@ -12080,8 +12208,14 @@
       "How does monitoring work?": [
         "Hogyan működik a figyelés?"
       ],
+      "How to add users": [
+        "Hogyan adhatok hozzá felhasználókat?"
+      ],
       "How to pay with Bitcoin?": [
         "Hogy lehet Bitcoinnal fizetni?"
+      ],
+      "How to set up a custom domain": [
+        "Hogyan állíthatok be saját domain nevet?"
       ],
       "How to unlock data": [
         "Hogyan oldja fel adatait"
@@ -12139,6 +12273,9 @@
       ],
       "Trouble signing in?": [
         "Probléma a bejelentkezéssel?"
+      ],
+      "Types of recovery methods": [
+        "Helyreállítási módszerek típusai"
       ],
       "Upgrade your plan": [
         "Váltson nagyobb csomagra"
@@ -16843,6 +16980,9 @@
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel.",
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "A **SSO-felhasználók (amelyeket az Identity Provider biztosít) törlésre kerülnek**, és manuálisan kell létrehoznia őket, hogy visszavehesse őket a szervezetbe."
+      ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
         "**Az SSO-felhasználók leválasztásra kerülnek a személyazonosság-szolgáltatójáról**, és nem-SSO-felhasználókká alakulnak át."
       ],
@@ -16968,6 +17108,9 @@
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "A nem SSO-felhasználók (akik manuálisan lettek létrehozva, és nem az Ön identitásszolgáltatója biztosítja őket) továbbra is bejelentkezhetnek a szervezetébe."
       ],
+      "Once single sign-on is disabled for your organization:": [
+        "Miután le van tiltva az egyszeri bejelentkezés a szervezet számára:"
+      ],
       "Reject": [
         "Elutasítás"
       ],
@@ -17018,6 +17161,9 @@
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "A(z) ${ user } felhasználóé mostantól egyszeri bejelentkezési fiók. A korábbi jelszava a biztonsági mentési jelszava lett."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Újra be kell jelentkezniük a személyazonosság-szolgáltatójukkal, hogy hozzáférjenek a(z) ${ BRAND_NAME } szolgáltatásaihoz. Ahhoz, hogy ez a felhasználó be tudjon jelentkezni, győződjön meg róla, hogy létezik a személyazonosság-szolgáltatójában."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Ezzel a művelettel a felhasználó kijelentkezik a többi eszközéről, és új biztonsági jelszót kell létrehoznia."
@@ -18334,6 +18480,9 @@
       "Add to spam list": [
         "Hozzáadás a levélszemét listához"
       ],
+      "Add user": [
+        "Felhasználó hozzáadása"
+      ],
       "Add user accounts": [
         "Felhasználói fiókok hozzáadása"
       ],
@@ -18451,6 +18600,9 @@
       "Change second password": [
         "Második jelszó megváltoztatása"
       ],
+      "Check your default mail application": [
+        "Ellenőrizze az alapértelmezett levelező alkalmazását"
+      ],
       "Choose an account": [
         "Válasszon egy fiókot"
       ],
@@ -18468,6 +18620,9 @@
       ],
       "Close": [
         "Bezárás"
+      ],
+      "Collaborate on documents": [
+        "Együttműködés dokumentumokon"
       ],
       "Composing": [
         "Szerkesztés"
@@ -18495,6 +18650,9 @@
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "${ vpnPlus } segítségével egyszerre akár ${ VPN_CONNECTIONS } eszközhöz is kapcsolódhat. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Kapcsolódás videokonferenciához"
       ],
       "Connection status": [
         "Kapcsolat állapota"
@@ -18693,6 +18851,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } letöltése"
       ],
@@ -18780,6 +18941,9 @@
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
+      "Enhance security with 2FA": [
+        "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
+      ],
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
       ],
@@ -18849,6 +19013,9 @@
       ],
       "For Windows": [
         "Windowsra"
+      ],
+      "Forgot password": [
+        "Elfelejtett jelszó"
       ],
       "Forgot recovery method": [
         "Elfelejtett helyreállítási módszer"
@@ -18958,6 +19125,9 @@
       ],
       "Import contacts": [
         "Névjegyek importálása"
+      ],
+      "Import emails, calendars, contacts": [
+        "E-mailek, naptárak, névjegyek importálása"
       ],
       "Import events": [
         "Események importálása"
@@ -19097,6 +19267,9 @@
       "OpenVPN configuration files": [
         "OpenVPN konfigurációs fájlok"
       ],
+      "Org setup": [
+        "Szervezet beállítása"
+      ],
       "Organization filters": [
         "Szervezeti szűrők"
       ],
@@ -19105,6 +19278,9 @@
       ],
       "Organization name": [
         "Szervezet neve"
+      ],
+      "Organization setup": [
+        "Szervezet beállítása"
       ],
       "Origin": [
         "Forrás"
@@ -19328,11 +19504,17 @@
       "Set organization name": [
         "Szervezet nevének beállítása"
       ],
+      "Set recovery methods": [
+        "Helyreállítási módszerek beállítása"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "${ protonDuoPlanName } beállítása"
       ],
       "Set up a recovery method": [
         "Helyreállítási módszer hozzáadása"
+      ],
+      "Set up email forwarding": [
+        "E-mail továbbítás beállítása"
       ],
       "Set up forwarding": [
         "Továbbítás beállítása"
@@ -19351,6 +19533,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Állítson be dedikált szervereket a Business verzióra való verzió frissítéssel"
+      ],
+      "Share your calendar with your team": [
+        "Naptárának megosztása a csapatával"
       ],
       "Shared servers": [
         "Megosztott szerverek"
@@ -19376,6 +19561,12 @@
       "Signed in to member account": [
         "Bejelentkezve egy tagsági fiókba"
       ],
+      "Simplify email distribution": [
+        "Egyszerűsítse az e-mail terjesztést"
+      ],
+      "Simplify password management": [
+        "Egyszerűsítse a jelszókezelést"
+      ],
       "Single sign-on": [
         "Egyszeri bejelentkezés"
       ],
@@ -19393,6 +19584,9 @@
       ],
       "Spam, block, and allow lists": [
         "Levélszemét, tiltó- és engedélyező listák"
+      ],
+      "Special Offer": [
+        "Különleges ajánlat"
       ],
       "Start a new import": [
         "Új importálás indítása"
@@ -19458,6 +19652,9 @@
       "Track your referrals": [
         "Meghívók megtekintése"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
+      ],
       "TV sign in": [
         "TV bejelentkezés"
       ],
@@ -19485,6 +19682,9 @@
       "Upgrade your privacy": [
         "Fejlessze az adatvédelmét"
       ],
+      "Upload and share files": [
+        "Fájlok feltöltése és megosztása"
+      ],
       "Upload CSV file to create multiple accounts": [
         "CSV fájl feltöltése több fiók létrehozásához"
       ],
@@ -19493,6 +19693,9 @@
       ],
       "Usage Report": [
         "Használati jelentés"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"
       ],
       "User": [
         "Felhasználó"

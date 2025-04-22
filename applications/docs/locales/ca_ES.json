@@ -163,6 +163,9 @@
       "Close this banner": [
         "Tanca aquest bàner"
       ],
+      "Collaborate on documents": [
+        "Col·labora en documents"
+      ],
       "Collapse": [
         "Replega"
       ],
@@ -180,6 +183,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Connecta aplicacions i dispositius"
+      ],
+      "Connect to video conferencing": [
+        "Connecta a la videoconferència"
       ],
       "Contact group": [
         "Grups de contactes"
@@ -288,6 +297,9 @@
       "Download": [
         "Baixa"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+      ],
       "Download anyway": [
         "Baixa igualment"
       ],
@@ -345,6 +357,9 @@
       "Get in touch": [
         "Contacte"
       ],
+      "Get the apps": [
+        "Obtén les aplicacions"
+      ],
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
@@ -393,6 +408,9 @@
       "Import emails": [
         "Importa correus"
       ],
+      "Import emails, calendars, contacts": [
+        "Importa correus, calendaris i contactes"
+      ],
       "Import from .csv or vCard": [
         "Importar des de .csv o vCard"
       ],
@@ -426,11 +444,20 @@
       "Make a copy": [
         "Fes una còpia"
       ],
+      "Manage advanced account protections": [
+        "Gestiona les proteccions avançades del compte"
+      ],
       "Manage folders": [
         "Gestiona les carpetes"
       ],
+      "Manage groups": [
+        "Gestiona els grups"
+      ],
       "Manage labels": [
         "Gestiona les etiquetes"
+      ],
+      "Manage users/addresses": [
+        "Gestiona usuaris/adreces"
       ],
       "Mark as resolved": [
         "Marca com a resolt"
@@ -473,6 +500,9 @@
       ],
       "New message": [
         "Nou missatge"
+      ],
+      "New sheet": [
+        "Full nou"
       ],
       "Next": [
         "Següent"
@@ -561,6 +591,9 @@
       "Remove bonuses": [
         "Esborra les bonificacions"
       ],
+      "Remove button": [
+        "Elimina el botó"
+      ],
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
@@ -645,14 +678,29 @@
       "Select country": [
         "Seleccioneu el país"
       ],
+      "Set recovery methods": [
+        "Estableix mètodes de recuperació"
+      ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
+      ],
+      "Set up 2FA": [
+        "Configuració 2FA"
+      ],
+      "Set up a custom domain": [
+        "Configura un domini personalitzat"
+      ],
+      "Set up email forwarding": [
+        "Configura el reenviament de correu"
       ],
       "Settings": [
         "Preferències"
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share your calendar with your team": [
+        "Comparteix el calendari amb el vostre equip"
       ],
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
@@ -714,6 +762,9 @@
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Habilita ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Desfés"
       ],
@@ -741,6 +792,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Milloreu a ${ BRAND_NAME } Unlimited"
       ],
+      "Upload and share files": [
+        "Carrega i comparteix fitxers"
+      ],
       "Upload anyway": [
         "Carrega de totes maneres"
       ],
@@ -749,6 +803,12 @@
       ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utilitza ${ PASS_APP_NAME } per al Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilitza el ${ VPN_SHORT_APP_NAME } per a la privadesa de dades"
       ],
       "Use a different card": [
         "Trieu una targeta diferent"
@@ -1025,8 +1085,8 @@
         "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
-        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
+        "Protegiu els correus electrònics i l'agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
@@ -2275,20 +2335,33 @@
         "Factura vençuda"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } al ${ DRIVE_APP_NAME } us permet treballar amb altres persones en un entorn segur i xifrat."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Afegiu carpetes i fitxers al ${ DRIVE_APP_NAME } i convideu els membres de l'equip a veure'ls o a editar-los."
+      ],
       "Also included": [
         "També inclòs"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Reenvieu automàticament el correu entrant a una altra adreça electrònica."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Connecteu el vostre CRM, lloc web, impressores i molt més."
+      ],
+      "Create groups you can email with a single address.": [
+        "Creeu grups als quals podeu enviar correus amb una única adreça."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "S'estan desxifrant els contactes… Això pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
@@ -2299,8 +2372,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Dissenyat per a usuaris que busquen una major protecció per als seus comptes."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronitzeu fàcilment els fitxers al núvol des de l'ordinador i accediu-hi des del dispositiu mòbil."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Fomenteu l'ús de l'autenticació de doble factor a la vostra organització per obtenir més seguretat."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garantiu una seguretat màxima per al vostre compte amb el programa ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Assegureu-vos que encara podeu accedir al vostre compte i a les vostres dades encara que perdeu la contrasenya del ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per a una transició sense problemes al ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i altres."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -2308,8 +2402,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Us permet afegir instantàniament enllaços de reunions a les invitacions d'esdeveniments."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -2323,6 +2423,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Definiu un mètode de recuperació per evitar perdre l'accés al compte."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configureu comptes per a tots els usuaris i convideu-los a unir-se a ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplifiqueu la sincronització i la programació amb calendaris compartits."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per a garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
       ],
@@ -2332,6 +2438,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
       ],
+      "To start, give your organization a name.": [
+        "Per començar, assigneu un nom a la vostra organització."
+      ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "Milloreu el pla a ${ BRAND_NAME } ${ planName } per a continuar compartint arxius amb accés per a editar."
       ],
@@ -2340,6 +2449,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Amb els grups de contactes, podeu enviar correus electrònics a tots els membres del grup amb un sol clic."
@@ -2358,6 +2470,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3940,7 +4057,7 @@
         "**Connexió automàtica**: s'obre i es connecta a la VPN tan bon punt encengueu el dispositiu."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**kill switch**: atura les fuites de dades bloquejant la vostra Internet si la VPN es desconnecta de manera inesperada."
+        "**Interruptor de bloqueig**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -4586,6 +4703,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquesta carpeta."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Obriu la guia per obtenir accions recomanades i enllaços útils."
+      ],
       "Opening...": [
         "Obrint..."
       ],
@@ -4747,6 +4867,9 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
+      "Set up your organization": [
+        "Configura la vostra organització"
+      ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
       ],
@@ -4879,6 +5002,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "És possible que aquest document no existeixi o que no tingueu permís per visualitzar-lo. Podeu provar de tornar a carregar la pàgina per veure si el problema persisteix o contactar amb el propietari per accedir-hi."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-ho en qualsevol moment."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
@@ -5915,8 +6041,53 @@
       "click here": [
         "feu clic aquí"
       ],
+      "Enforcing 2FA for organizations": [
+        "Requereix 2FA per a organitzacions"
+      ],
+      "How to add users": [
+        "Com afegir usuaris?"
+      ],
+      "How to add Zoom links": [
+        "Com afegir enllaços del Zoom?"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Com col·laborar al ${ DOCS_SHORT_APP_NAME }?"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Com habilitar ${ PROTON_SENTINEL_NAME }?"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Com migrar a ${ BRAND_NAME }?"
+      ],
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Com configurar ${ VPN_APP_NAME }?"
+      ],
+      "How to set up a custom domain": [
+        "Com configurar un domini personalitzat?"
+      ],
+      "How to set up SMTP": [
+        "Com configurar l'SMTP?"
+      ],
+      "How to share a calendar": [
+        "Com compartir un calendari?"
+      ],
+      "How to share via email": [
+        "Com compartir per correu?"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Com utilitzar ${ DARK_WEB_MONITORING_NAME }?"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Com utilitzar ${ PASS_APP_NAME } per al Business?"
+      ],
+      "How to use email forwarding": [
+        "Com utilitzar el reenviament de correu?"
+      ],
+      "How to use Groups": [
+        "Com utilitzar grups?"
       ],
       "if your data is leaked": [
         "si es filtren les vostres dades"
@@ -5935,6 +6106,9 @@
       ],
       "settings": [
         "preferències"
+      ],
+      "Types of recovery methods": [
+        "Tipus de mètodes de recuperació"
       ],
       "What’s this?": [
         "Què és això?"
@@ -7486,6 +7660,9 @@
       "Public link update access failed ": [
         "No s'ha pogut accedir a l'actualització de l'enllaç públic "
       ],
+      "Recent documents updated": [
+        "Documents recents actualitzats"
+      ],
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"
       ],
@@ -7963,6 +8140,9 @@
       "Name or email address": [
         "Nom o adreça de correu electrònic"
       ],
+      "Organization name": [
+        "Nom de l'organització"
+      ],
       "Password": [
         "Contrasenya"
       ],
@@ -7995,6 +8175,9 @@
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"
+      ],
+      "Your organization name": [
+        "El nom de la vostra organització"
       ]
     },
     "Placeholder for contact group name": {
@@ -8121,6 +8304,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "No s'ha completat l'inici de sessió."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configuració de l'organització i seguretat del compte"
       ]
     },
     "Security Center": {
@@ -9146,6 +9334,9 @@
       "Add to ${ groupName }": [
         "Afegeix a ${ groupName }"
       ],
+      "Add user": [
+        "Addició un usuari"
+      ],
       "Addresses": [
         "Adreces"
       ],
@@ -9194,11 +9385,23 @@
       "Clearing data": [
         "Netejant dades"
       ],
+      "Collaborate on documents": [
+        "Col·laboració en documents"
+      ],
       "Confirm downgrade": [
         "Confirma el pas a un pla inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmeu la pèrdua de les bonificacions de ${ BRAND_NAME }"
+      ],
+      "Connect apps and devices": [
+        "Connexió d'aplicacions i dispositius"
+      ],
+      "Connect to video conferencing": [
+        "Connexió a la videoconferència"
+      ],
+      "Connect your custom domain": [
+        "Connexió del vostre domini personalitzat"
       ],
       "Contact Details": [
         "Detalls del contacte"
@@ -9301,6 +9504,9 @@
       "Download ${ date }": [
         "Descarrega ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Descarrega l'aplicació"
       ],
@@ -9343,8 +9549,14 @@
       "Enable 2FA": [
         "Activa l'autenticació 2FA"
       ],
+      "Enable advanced account protection": [
+        "Activació de la protecció avançada del compte"
+      ],
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
+      ],
+      "Enhance security with 2FA": [
+        "Millora la seguretat amb 2FA"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"
@@ -9397,6 +9609,9 @@
       ],
       "Import contacts": [
         "Importar contactes"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importació de correus, calendaris i contactes"
       ],
       "Import events": [
         "Importar esdeveniments"
@@ -9469,6 +9684,12 @@
       ],
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
+      ],
+      "Org setup": [
+        "Configuració de l'organització"
+      ],
+      "Organization setup": [
+        "Configuració de l'organització"
       ],
       "Other information": [
         "Altres dades"
@@ -9545,8 +9766,17 @@
       "Select link expiration time": [
         "Selecciona el temps de caducitat de l'enllaç"
       ],
+      "Set recovery methods": [
+        "Configuració dels mètodes de recuperació"
+      ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
+      ],
+      "Set up email forwarding": [
+        "Configuració del reenviament de correu"
+      ],
+      "Set up your organization": [
+        "Configuració de la vostra organització"
       ],
       "Settings": [
         "Preferències"
@@ -9554,11 +9784,20 @@
       "Share ${ name }": [
         "Comparteix ${ name }"
       ],
+      "Share your calendar with your team": [
+        "Compartició del calendari amb el vostre equip"
+      ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
       ],
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "Simplify email distribution": [
+        "Simplificació de la distribució de correu"
+      ],
+      "Simplify password management": [
+        "Simplificació de la gestió de contrasenyes"
       ],
       "Something went wrong": [
         "S'ha produït un error."
@@ -9587,6 +9826,9 @@
       "This document is password protected": [
         "El document està protegit per contrasenya."
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activació ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Desbloqueja grups de contactes"
       ],
@@ -9596,8 +9838,14 @@
       "Upgrade complete!": [
         "S'ha millorat el pla."
       ],
+      "Upload and share files": [
+        "Carregueu i compartiu fitxers"
+      ],
       "Uploading a large file or folder": [
         "Càrrega d'un fitxer o carpeta gran"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilitza ${ VPN_SHORT_APP_NAME } per a la privacitat de dades"
       ],
       "Verification failed": [
         "No s'ha pogut completar la verificació."
@@ -9616,6 +9864,9 @@
       ],
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Us donem la benvinguda a ${ BRAND_NAME } per al Business"
       ],
       "What can a VPN protect you from?": [
         "De què us pot protegir una VPN?"

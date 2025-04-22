@@ -1577,7 +1577,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Contul lui ${ nameToDisplay }"
+        "Mesajele lui ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 urmăritori eliminați"
@@ -4569,10 +4569,10 @@
       "Forward to": [
         "Redirecționare către"
       ],
-      "or": [
+      "Or": [
         "SAU"
       ],
-      "Or": [
+      "or": [
         "SAU"
       ],
       "With attachment": [
@@ -6380,10 +6380,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Redirecționare automată"
+        "Redirecționați automat"
       ],
       "Gmail messages to your inbox": [
-        "Mesaje Gmail în mesaje primite"
+        "mesajele Gmail către adresa de primire"
       ],
       "Sign in with Google": [
         "Conectare cu Google"
@@ -9195,6 +9195,9 @@
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
       "Setting successfully saved": [
         "Setările au fost salvate."
       ],
@@ -9473,6 +9476,9 @@
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Aceasta este o frază de 12 cuvinte care vi s-a solicitat să o setați."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Acesta este un fișier de recuperare sau o cheie de criptare pe care ați salvat-o anterior."
@@ -10859,7 +10865,7 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } din ${ MaxAddresses } adresă de e-mail",
         "${ UsedAddresses } din ${ MaxAddresses } adrese de e-mail",
-        "${ UsedAddresses } din ${ MaxAddresses } de e-mail adrese"
+        "${ UsedAddresses } din ${ MaxAddresses } de adrese de e-mail"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
@@ -10960,10 +10966,10 @@
       "Allow sharing outside the organization": [
         "Permitere partajare în afara organizației"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10975,11 +10981,11 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "AND": [
-        "ȘI"
-      ],
       "And": [
         "Şi"
+      ],
+      "AND": [
+        "ȘI"
       ],
       "and": [
         "și"
@@ -11407,11 +11413,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "DACĂ"
-      ],
       "If": [
         "Dacă"
+      ],
+      "IF": [
+        "DACĂ"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -11614,14 +11620,14 @@
       "Optional": [
         "Opțional"
       ],
-      "OR": [
-        "SAU"
-      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
+      ],
+      "OR": [
+        "SAU"
       ],
       "Organization name": [
         "Nume organizație"

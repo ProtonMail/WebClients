@@ -1353,10 +1353,10 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Улучшить сейчас"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Улучшить сейчас"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -8453,10 +8453,10 @@
       "Always move sender's emails": [
         "Всегда перемещать сообщения отправителя"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -8684,11 +8684,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -8798,14 +8798,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Original link": [
         "Оригинальная ссылка"
@@ -9618,29 +9618,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Перейти на тариф ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -9662,6 +9639,29 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Перейти на тариф ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {

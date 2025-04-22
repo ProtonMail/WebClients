@@ -1411,10 +1411,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1582,6 +1582,9 @@
       ],
       "${ price } per domain": [
         "${ price } per domän"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
       ],
       "${ price } per user": [
         "${ price } per användare"
@@ -8504,11 +8507,11 @@
       "Always move sender's emails": [
         "Flytta alltid avsändarens e-postmeddelanden"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -8738,11 +8741,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -8855,14 +8858,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Original link": [
         "Originallänk"
@@ -9719,29 +9722,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaffa ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -9763,6 +9743,29 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -11585,6 +11588,11 @@
       ],
       "No unread messages found": [
         "Inga olästa meddelanden hittades"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Organisationsinställning och kontosäkerhet"
       ]
     },
     "Security Center": {
@@ -13881,6 +13889,9 @@
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
+      ],
+      "Org setup": [
+        "Organisationsinställning"
       ],
       "Organization setup": [
         "Organisationsinställning"

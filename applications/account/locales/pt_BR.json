@@ -286,6 +286,9 @@
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Conectar-se à videoconferência.\n"
+      ],
       "Connected": [
         "Conectado"
       ],
@@ -1627,7 +1630,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Caixa de entrada de ${ nameToDisplay }"
+        "E-mail de ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 rastreadores removidos"
@@ -3825,11 +3828,17 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
+      ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } é seu aplicativo padrão de e-mail."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Adicione pastas e arquivos ao ${ DRIVE_APP_NAME } e convide os membros da equipe para visualizar ou editar."
       ],
       "Also included": [
         "Também incluído"
@@ -3840,14 +3849,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Limpe automaticamente os e-mails movidos para a Lixeira e Spam há mais de 30 dias."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Encaminhe automaticamente os e-mails recebidos para outro endereço de e-mail."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Classifique automaticamente as mensagens recebidas antes que elas cheguem à sua caixa de entrada."
       ],
       "Available with ${ MAIL_APP_NAME } Plus": [
         "Disponível com ${ MAIL_APP_NAME } Plus"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configure isso primeiro para ativar sua organização e personalizar seu endereço de e-mail."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Você ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "\"Conecte seu CRM, site, impressoras e outros dispositivos."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crie uma reunião no Zoom e adicione detalhes de participação ao seu evento com um clique."
@@ -3855,8 +3873,17 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Crie quantos marcadores ou pastas precisar para manter sua caixa de entrada organizada."
       ],
+      "Create groups you can email with a single address.": [
+        "Crie grupos que podem ser contatados por meio de um único endereço de e-mail."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Tenha acesso facilitado ao seu e-mail e calendário, tanto no computador quanto em dispositivos móveis."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronize facilmente arquivos com a nuvem a partir do seu computador e acesse-os no seu dispositivo móvel."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
@@ -3867,17 +3894,35 @@
       "Enable detailed events to access these features": [
         "Ative os eventos detalhados para acessar esses recursos"
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Promova a adoção da autenticação de dois fatores em sua organização para garantir uma segurança adicional."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Garanta o acesso seguro aos dados da organização, mesmo que sua equipe esteja trabalhando remotamente ou utilizando redes Wi-Fi públicas."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garanta a segurança de alto nível para sua conta com o programa ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Todos na sua organização podem se conectar a servidores compartilhados em todos os países."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma transição sem interrupções para o ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Receba até ${ credits } em créditos convidando amigos para a ${ BRAND_NAME }."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
       ],
       "If disabled, only admins will have access.": [
         "Se desabilitado, somente administradores terão acesso."
@@ -3891,6 +3936,9 @@
       "Learn more about common problems": [
         "Saiba mais sobre problemas comuns"
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Permite que você adicione instantaneamente links de reunião aos convites dos seus eventos."
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Crie seu próprio rodapé de e-mail - mostre sua marca exclusiva, não a nossa."
       ],
@@ -3903,8 +3951,14 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configure contas para todos os usuários e convide-os a ingressar no ${ BRAND_NAME }."
+      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Configure o encaminhamento automático para redirecionar os e-mails recebidos para outro endereço de e-mail."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Facilite a sincronização e o agendamento com calendários compartilhados."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar por meio de um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
@@ -3914,6 +3968,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Para remover o ${ MAIL_APP_NAME } rodapé, faça o upgrade do seu plano para conseguir ainda mais funcionalidades premium"
+      ],
+      "To start, give your organization a name.": [
+        "Para começar, dê um nome à sua organização."
       ],
       "Track the status and activity of your referrals.": [
         "Acompanhe o status e a atividade de suas referências."
@@ -3929,6 +3986,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Faça upgrade para obter ${ activatePmUser } para um endereço de e-mail mais curto e fácil de lembrar, além do seu atual."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Você pode continuar a convidar amigos, mas não poderá ganhar mais créditos"
@@ -4663,11 +4723,11 @@
       "Forward to": [
         "Encaminhar para"
       ],
-      "or": [
-        "ou"
-      ],
       "Or": [
         "Ou"
+      ],
+      "or": [
+        "ou"
       ],
       "With attachment": [
         "Com anexo"
@@ -6460,10 +6520,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Encaminhe automaticamente"
+        "encaminhe automaticamente"
       ],
       "Gmail messages to your inbox": [
-        "Mensagens do Gmail para sua caixa de entrada"
+        "mensagens do Gmail na sua caixa de entrada"
       ],
       "Sign in with Google": [
         "Iniciar sessão com Google"
@@ -8825,6 +8885,9 @@
       "Open source": [
         "Código aberto"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Abra o guia para ver as ações recomendadas e os links úteis."
+      ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
       ],
@@ -9496,6 +9559,9 @@
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Esta é uma frase de 12 palavras que lhe foi solicitado definir."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Este é um nome ou apelido para sua organização que seus usuários verão. Você pode alterá-lo a qualquer momento."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Este é um arquivo de recuperação ou uma chave de criptografia que você pode ter salvo anteriormente."
@@ -10964,10 +11030,10 @@
       "Allow sharing outside the organization": [
         "Ativar compartilhamento fora da organização"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10979,10 +11045,10 @@
       "Amount due": [
         "Valor a pagar"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
       "and": [
@@ -11411,11 +11477,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SE"
-      ],
       "If": [
         "Se"
+      ],
+      "IF": [
+        "SE"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -11618,14 +11684,14 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "OU"
-      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
+      ],
+      "OR": [
+        "OU"
       ],
       "Organization name": [
         "Nome da organização"
@@ -12201,6 +12267,9 @@
       "Encryption and keys": [
         "Criptografia e chaves"
       ],
+      "Enforcing 2FA for organizations": [
+        "Requer A2F para a organização"
+      ],
       "Forgot email?": [
         "Esqueceu o e-mail?"
       ],
@@ -12395,7 +12464,7 @@
         "faça upgrade para mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Faça upgrade para restaurar o acesso total"
+        "Atualizar para restaurar o acesso total"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Seu ${ driveStorage } está cheio. Para enviar ou sincronizar arquivos, libere espaço ou ${ cta }."
@@ -14444,9 +14513,6 @@
       "Allowed (default)": [
         "Permitido (padrão)"
       ],
-      "Android": [
-        "Android"
-      ],
       "Archive": [
         "Arquivar"
       ],
@@ -14471,9 +14537,6 @@
       "Free server configs": [
         "Configurações do servidor gratuito"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Encontrei outro serviço que considero melhor"
       ],
@@ -14497,9 +14560,6 @@
       ],
       "Left to Right": [
         "Esquerda para direita"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "Mark as read": [
         "Marcar como lido"
@@ -14590,9 +14650,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "option": {
@@ -16232,6 +16289,11 @@
         "URL do conector SCIM para o qual seu agente de provisionamento do provedor de identidade encaminha dados SCIM"
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "Configuração da organização e segurança da conta."
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
@@ -17713,7 +17775,7 @@
         "Faça backup de fotos de seus dispositivos"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Gere confiança e reconhecimento da marca com endereços de e-mail profissionais no seu próprio domínio."
+        "Crie confiança e reconhecimento de marca com endereços de e-mail profissionais em seu próprio domínio."
       ],
       "Cancel subscription": [
         "Cancelar assinatura"
@@ -17833,7 +17895,7 @@
         "Envie e-mails com anexos"
       ],
       "Stay secure and connected anywhere": [
-        "Mantém seguro e conectado de qualquer lugar."
+        "Fique seguro e conectado em qualquer lugar"
       ],
       "Subscription canceled": [
         "Assinatura cancelada"
@@ -18305,7 +18367,7 @@
         "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclui 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
+        "Inclui mais de 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
@@ -18761,6 +18823,12 @@
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo com o ${ vpnPlus }. ${ upgradeButton }"
       ],
+      "Connect to video conferencing": [
+        "Conectar-se à videoconferência"
+      ],
+      "Connect your custom domain": [
+        "Conecte seu domínio personalizado"
+      ],
       "Connection status": [
         "Status da conexão"
       ],
@@ -19050,6 +19118,9 @@
       ],
       "Encryption and keys": [
         "Criptografia e chaves"
+      ],
+      "Enhance security with 2FA": [
+        "Aumente a segurança com 2FA"
       ],
       "Enter 2FA code": [
         "Insira o código A2F"
@@ -19677,6 +19748,12 @@
       "Signed in to member account": [
         "Iniciado sessão à conta de membro"
       ],
+      "Simplify email distribution": [
+        "Simplifique a distribuição dos e-mails"
+      ],
+      "Simplify password management": [
+        "Facilite o gerenciamento de senhas"
+      ],
       "Single sign-on": [
         "Autenticação única"
       ],
@@ -19860,6 +19937,9 @@
       ],
       "Weak passwords": [
         "Senhas fracas"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
       "What is an alias?": [
         "O que é um alias?"
@@ -20863,26 +20943,8 @@
       ]
     },
     "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "iOS": [
         "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

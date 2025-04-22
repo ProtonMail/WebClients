@@ -499,7 +499,7 @@
         "외부 암호화"
       ],
       "Fewer search options": [
-        "적은 검색 옵션"
+        "간단 검색 옵션"
       ],
       "Filter on...": [
         "필터링..."
@@ -1164,6 +1164,9 @@
       "Set recovery phrase": [
         "복구 코드 설정"
       ],
+      "Set up 2FA": [
+        "2단계 인증 설정하기"
+      ],
       "Settings": [
         "설정"
       ],
@@ -1365,10 +1368,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -4113,7 +4116,7 @@
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "최소 ${ calendarsToFixCount } 캘린더를 선택 해제하거나"
+        "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
@@ -4233,7 +4236,7 @@
         "최대 첨부 파일 (${ attachmentsCountLimit }개) 도달"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "존재하는 ${ BRAND_NAME } 에 최소한 ${ calendarsToFixCount } 개의 캘린더를 병합하십시오"
+        "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
       ],
       "Message needs to be sent first": [
         "메시지가 먼저 전송되어야 합니다"
@@ -5117,7 +5120,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has attachments": [
-        "첨부 파일이 있음"
+        "첨부 파일 포함"
       ]
     },
     "Filter preview": {
@@ -5915,7 +5918,7 @@
         "파일 ${ pureAttachmentsCount }개 첨부됨"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } 중 ${ providerCalendars.length } 캘린더"
+        "${ selectedCalendarsTotal }개 중 ${ providerCalendars.length }개 캘린더"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
@@ -6059,7 +6062,7 @@
         "저장하지 않은 변경사항은 손실됩니다."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처를 가져옵니다"
+        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
       ],
       "Allocated": [
         "할당 됨"
@@ -6191,7 +6194,7 @@
         "캘린더 사이드 패널"
       ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
-        "원하시는 걸 찾지 못하셨나요? ${ displayAllMailButton }"
+        "원하시는 것을 찾을 수 없으신가요? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
@@ -6539,7 +6542,7 @@
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "${ numAttachments } 개 첨부 파일이 있음 (${ numAttachmentsSize })"
+        "${ numAttachments }개 첨부 파일 포함 (${ numAttachmentsSize })"
       ],
       "here": [
         "여기"
@@ -6593,7 +6596,7 @@
         "이미지가 자동 회신에 허용되지 않으므로 제거되었습니다."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ totalCalendarsCount }개 중 ${ calendarCount }개 달력 불러오기"
+        "${ totalCalendarsCount }개 중 ${ calendarCount }개 캘린더가 불러오기됩니다"
       ],
       "Import from": [
         "다음에서 가져오기"
@@ -6608,7 +6611,7 @@
         "중요 사항"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
+        "${ toEmail }(에)서 ${ fromEmail }(으)로 데이터를 전달 중입니다."
       ],
       "In restrictive countries": [
         "제한적인 국가에서 사용시"
@@ -6617,7 +6620,7 @@
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
       ],
       "Include Spam/Trash.": [
-        "스팸 및 휴지통 포함."
+        "스팸 및 휴지통을 포함하여 검색해 보세요."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "프롬포트와 응답을 포함하시면 정확도 개선에 도움이 됩니다."
@@ -7013,7 +7016,7 @@
         "이메일 출력"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "개인 브라우징(또는 \"시크릿\" 모드)은 기기에서 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 온라인에서 수행하는 작업을 볼 수 있습니다."
+        "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
       ],
       "Proofread selection": [
         "단락 교정"
@@ -7877,7 +7880,7 @@
         "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
+        "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
       "Your email address and password were leaked:": [
         "사용자의 이메일 주소 및 비밀번호가 유출되었습니다:"
@@ -8267,11 +8270,11 @@
       "Always move sender's emails": [
         "항상 보낸 사람 이메일 이동"
       ],
-      "AND": [
-        "및"
-      ],
       "And": [
         "그리고"
+      ],
+      "AND": [
+        "및"
       ],
       "and": [
         "그리고"
@@ -8501,10 +8504,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
       "Import all messages": [
@@ -8618,13 +8621,13 @@
       "Optional": [
         "선택 사항"
       ],
-      "OR": [
-        "또는"
-      ],
       "or": [
         "또는"
       ],
       "Or": [
+        "또는"
+      ],
+      "OR": [
         "또는"
       ],
       "Original link": [
@@ -8963,6 +8966,9 @@
       "How to share via email": [
         "이메일을 통해 공유하는 방법"
       ],
+      "How to use Groups": [
+        "그룹 사용 방법"
+      ],
       "if your data is leaked": [
         "사용자의 데이터가 유출된 경우"
       ],
@@ -9108,7 +9114,7 @@
         "데이터를 모으는 중"
       ],
       "We're gathering your data from your provider": [
-        "제공자로 부터 데이터를 가져오는 중입니다"
+        "제공자로부터 데이터를 가져오는 중입니다"
       ],
       "Your import is starting": [
         "가져오기 작업이 시작 중입니다!"
@@ -9150,16 +9156,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개의 폴더에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개의 라벨에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 폴더를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 메시지를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
       ]
     },
     "mail_signup_2024: Info": {
@@ -9438,29 +9444,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }로 계속하기"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -9482,6 +9465,29 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }로 계속하기"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -9543,7 +9549,7 @@
         "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ n }개의 hide-my-email이 포함된 ${ PASS_APP_NAME }"
+        "${ n }개의 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
@@ -10393,7 +10399,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "다음으로 사용자의 Google 계정에 로그인하고 ${ BRAND_NAME } 의 데이터 액세스 권한을 부여해야 합니다."
+        "다음으로 사용자의 Google 계정에 로그인한 뒤 ${ BRAND_NAME }에 데이터 접근 권한을 부여해야 합니다."
       ]
     },
     "Oauth instructions video": {
@@ -11041,7 +11047,7 @@
         "기대했던 것을 공유해 주세요"
       ],
       "Search date, name, email address, or subject line": [
-        "날짜, 이름, 이메일 주소 및 제목 제목을 입력하세요"
+        "날짜, 이름, 이메일 주소 및 제목을 입력하세요"
       ],
       "Search for group name": [
         "그룹 이름을 위해 검색"
@@ -13046,6 +13052,9 @@
       "Clearing data": [
         "데이터 지우기"
       ],
+      "Collaborate on documents": [
+        "문서에서 협업하기"
+      ],
       "Confirm downgrade": [
         "다운그레이드 확인"
       ],
@@ -13624,6 +13633,9 @@
       ],
       "Settings": [
         "설정"
+      ],
+      "Share your calendar with your team": [
+        "팀과 캘린더를 공유하세요"
       ],
       "Sign in and grant access": [
         "로그인 및 엑세스 권한 부여"
