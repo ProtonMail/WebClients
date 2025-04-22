@@ -259,6 +259,9 @@
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
+      ],
       "Color": [
         "Väri"
       ],
@@ -279,6 +282,9 @@
       ],
       "Connect": [
         "Yhdistä"
+      ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
       ],
       "Connected": [
         "Yhdistetty"
@@ -472,6 +478,9 @@
       "Download": [
         "Lataa"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download CSV sample": [
         "Lataa CSV-näyte"
       ],
@@ -658,6 +667,9 @@
       "Get the app": [
         "Hanki sovellus"
       ],
+      "Get the apps": [
+        "Hanki sovellukset"
+      ],
       "Get the browser extension": [
         "Hanki selainlaajennus"
       ],
@@ -787,11 +799,17 @@
       "Manage folders": [
         "Hallitse kansioita"
       ],
+      "Manage groups": [
+        "Hallitse ryhmiä"
+      ],
       "Manage labels": [
         "Hallitse tunnisteita"
       ],
       "Manage subscription": [
         "Hallitse tilausta"
+      ],
+      "Manage users/addresses": [
+        "Hallitse käyttäjiä/osoitteita"
       ],
       "Mark as default": [
         "Merkitse oletukseksi"
@@ -1129,14 +1147,26 @@
       "Set as default": [
         "Aseta oletukseksi"
       ],
+      "Set as default mail application": [
+        "Aseta oletussähköpostisovellukseksi"
+      ],
       "Set catch-all": [
         "Aseta nappaa kaikki"
       ],
       "Set new password": [
         "Aseta uusi salasana"
       ],
+      "Set recovery methods": [
+        "Aseta palautustavat"
+      ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
+      ],
+      "Set up 2FA": [
+        "Määritä 2FA"
+      ],
+      "Set up a custom domain": [
+        "Määritä oma verkkotunnus"
       ],
       "Settings": [
         "Asetukset"
@@ -1303,6 +1333,9 @@
       "Upload": [
         "Lähetä"
       ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
+      ],
       "Upload logo": [
         "Lähetä logo"
       ],
@@ -1405,7 +1438,7 @@
     },
     "action": {
       "Resuming forward": [
-        "Jatketaan ohjausta"
+        "Jatketaan välitystä"
       ]
     },
     "Action for user session": {
@@ -1561,7 +1594,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Käyttäjän ${ nameToDisplay } postilaatikko"
+        "Postilaatikko: ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 seurantaa poistetaan"
@@ -3804,6 +3837,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Poista ${ MAIL_APP_NAME } -allekirjoitus ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi ."
       ],
+      "To start, give your organization a name.": [
+        "Aloita antamalla organisaatiollesi nimi."
+      ],
       "Track the status and activity of your referrals.": [
         "Seuraa suositustesi tilaa ja tapahtumia."
       ],
@@ -4147,6 +4183,9 @@
       ]
     },
     "edm": {
+      "Allow QR code sign‒in": [
+        "Salli kirjautuminen QR-koodilla"
+      ],
       "Code copied to clipboard": [
         "Koodi kopioitiin leikepöydälle"
       ],
@@ -4156,11 +4195,32 @@
       "Enter code manually": [
         "Syötä koodi manuaalisesti"
       ],
+      "Generate QR code": [
+        "Luo QR-koodi"
+      ],
+      "How to sign in using another device": [
+        "Miten kirjaudut toisella laitteella"
+      ],
+      "QR code expired": [
+        "QR-koodi on vanhentunut"
+      ],
       "QR code sign-in disabled": [
         "QR-koodilla kirjautuminen ei käytössä"
       ],
       "QR code sign-in enabled": [
         "QR-koodilla kirjautuminen otettu käyttöön"
+      ],
+      "Scan QR code on your mobile device to sign in": [
+        "Kirjaudu skannaamalla QR-koodi mobiililaitteellasi"
+      ],
+      "Scan the code to sign in": [
+        "Kirjaudu skannaamalla koodi"
+      ],
+      "Security tips": [
+        "Turvallisuusvinkkejä"
+      ],
+      "Sign in on another device": [
+        "Kirjaudu toisella laitteella"
       ],
       "Sign in with QR code": [
         "Kirjaudu QR-koodilla"
@@ -4476,11 +4536,11 @@
       "Forward to": [
         "Ohjaa osoitteeseen"
       ],
-      "or": [
-        "tai"
-      ],
       "Or": [
         "Tai"
+      ],
+      "or": [
+        "tai"
       ],
       "With attachment": [
         "Sisällytä liitteet"
@@ -5124,6 +5184,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Vahvistus ei onnistunut. Yritä tunnin kuluttua uudelleen."
+      ],
+      "We couldn't sign you in": [
+        "Sinua ei voitu kirjata sisään"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DKIM-allekirjoitus keskeytettiin DNS-asetuksissasi ilmenneen ongelman vuoksi. Jatka allekirjoitusta seuraamalla alla olevia ohjeita."
@@ -6247,7 +6310,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Edelleenlähetä automaattisesti"
+        "Automaattiohjaa"
       ],
       "Gmail messages to your inbox": [
         "Gmail-viestit postilaatikkoosi"
@@ -8930,6 +8993,9 @@
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
+      ],
       "Setting successfully saved": [
         "Asetus tallennettiin"
       ],
@@ -10219,7 +10285,7 @@
         "Ei käytössä"
       ],
       "Forwarding": [
-        "Ohjaus"
+        "Välitys"
       ],
       "Inactive": [
         "Ei käytössä"
@@ -10629,10 +10695,10 @@
       "Allow sharing outside the organization": [
         "Salli organisaation ulkopuolinen jakaminen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10644,11 +10710,11 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
-      "AND": [
-        "JA"
-      ],
       "And": [
         "Ja"
+      ],
+      "AND": [
+        "JA"
       ],
       "and": [
         "ja"
@@ -11073,11 +11139,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JOS"
-      ],
       "If": [
         "Jos"
+      ],
+      "IF": [
+        "JOS"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -11277,14 +11343,14 @@
       "Optional": [
         "Valinnainen"
       ],
-      "OR": [
-        "TAI"
-      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
+      ],
+      "OR": [
+        "TAI"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11887,11 +11953,26 @@
       "How does monitoring work?": [
         "Miten valvonta toimii?"
       ],
+      "How to add users": [
+        "Miten käyttäjiä lisätään"
+      ],
+      "How to add Zoom links": [
+        "Miten Zoom-linkkejä lisätään"
+      ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
       ],
+      "How to set up SMTP": [
+        "Miten SMTP määritetään"
+      ],
+      "How to share a calendar": [
+        "Miten jaat kalenterin"
+      ],
       "How to unlock data": [
         "Miten tiedot avataan"
+      ],
+      "How to use Groups": [
+        "Miten ryhmiä käytetään"
       ],
       "Import/export": [
         "Tuonti/vienti"
@@ -15040,6 +15121,9 @@
       "Name": [
         "Nimi"
       ],
+      "Organization name": [
+        "Organisaation nimi"
+      ],
       "Other": [
         "Muu"
       ],
@@ -18065,6 +18149,9 @@
       "Add to spam list": [
         "Lisää roskapostilistalle"
       ],
+      "Add user": [
+        "Lisää käyttäjä"
+      ],
       "Add user accounts": [
         "Lisää käyttäjätilejä"
       ],
@@ -18182,6 +18269,9 @@
       "Change second password": [
         "Vaihda toinen salasana"
       ],
+      "Check your default mail application": [
+        "Tarkista oletussähköpostisovelluksesi"
+      ],
       "Choose an account": [
         "Valitse tili"
       ],
@@ -18199,6 +18289,9 @@
       ],
       "Close": [
         "Sulje"
+      ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
       ],
       "Composing": [
         "Kirjoitus"
@@ -18221,8 +18314,14 @@
       "Connect ${ name }": [
         "Yhdistä palveluun ${ name }"
       ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
+      ],
       "Connect organization": [
         "Yhdistä organisaatio"
+      ],
+      "Connect your custom domain": [
+        "Yhdistä oma verkkotunnuksesi"
       ],
       "Connection status": [
         "Yhteystila"
@@ -18421,6 +18520,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Alennetaanko tilaukseen ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Lataa ${ VPN_APP_NAME }"
       ],
@@ -18505,6 +18607,9 @@
       "Encryption and keys": [
         "Salaus ja avaimet"
       ],
+      "Enhance security with 2FA": [
+        "Paranna tietoturvaa 2FA:lla"
+      ],
       "Enter 2FA code": [
         "Syötä vahvistuskoodi"
       ],
@@ -18574,6 +18679,9 @@
       ],
       "For Windows": [
         "Windowsille"
+      ],
+      "Forgot password": [
+        "Unohtunut salasana"
       ],
       "Forgot recovery method": [
         "Unohtunut palautustapa"
@@ -18819,6 +18927,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-määritystiedostot"
       ],
+      "Org setup": [
+        "Organisaation määritys"
+      ],
       "Organization filters": [
         "Organisaation suodattimet"
       ],
@@ -18827,6 +18938,9 @@
       ],
       "Organization name": [
         "Organisaation nimi"
+      ],
+      "Organization setup": [
+        "Organisaation määritys"
       ],
       "Origin": [
         "Alkuperä"
@@ -19050,6 +19164,9 @@
       "Set organization name": [
         "Aseta organisaation nimi"
       ],
+      "Set recovery methods": [
+        "Määritä palautustavat"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "Määritä ${ protonDuoPlanName }"
       ],
@@ -19064,6 +19181,9 @@
       ],
       "Set up your family account": [
         "Määritä perhetilisi"
+      ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
       ],
       "Set your password": [
         "Aseta salasanasi"
@@ -19115,6 +19235,9 @@
       ],
       "Spam, block, and allow lists": [
         "Roskapostin, estettyjen ja sallittujen listat"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
       ],
       "Start a new import": [
         "Aloita uusi tuonti"
@@ -19206,6 +19329,9 @@
       ],
       "Upgrade your privacy": [
         "Paranna yksityisyyttäsi"
+      ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
       ],
       "Upload CSV file to create multiple accounts": [
         "Lisää useiden tilien luontiin käytettävä CSV-malli"

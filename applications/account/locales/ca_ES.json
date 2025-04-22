@@ -259,6 +259,9 @@
       "Close this banner": [
         "Tanca aquest bàner"
       ],
+      "Collaborate on documents": [
+        "Col·labora en documents"
+      ],
       "Color": [
         "Color"
       ],
@@ -279,6 +282,12 @@
       ],
       "Connect": [
         "Conecta"
+      ],
+      "Connect apps and devices": [
+        "Connecta aplicacions i dispositius"
+      ],
+      "Connect to video conferencing": [
+        "Connecta a la videoconferència"
       ],
       "Connected": [
         "Connectat"
@@ -475,6 +484,9 @@
       "Download": [
         "Baixa"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+      ],
       "Download CSV sample": [
         "Descarrega una mostra de CSV"
       ],
@@ -664,6 +676,9 @@
       "Get the app": [
         "Aconseguiu l'aplicació"
       ],
+      "Get the apps": [
+        "Obtén les aplicacions"
+      ],
       "Get the browser extension": [
         "Obtingueu l'extensió del navegador"
       ],
@@ -711,6 +726,9 @@
       ],
       "Import emails": [
         "Importa correus"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importa correus, calendaris i contactes"
       ],
       "Import from Google": [
         "Importa des de Google"
@@ -787,17 +805,26 @@
       "Make admin": [
         "Estableix com a administrador"
       ],
+      "Manage advanced account protections": [
+        "Gestiona les proteccions avançades del compte"
+      ],
       "Manage communication preferences": [
         "Gestiona les preferències de comunicació"
       ],
       "Manage folders": [
         "Gestiona les carpetes"
       ],
+      "Manage groups": [
+        "Gestiona els grups"
+      ],
       "Manage labels": [
         "Gestiona les etiquetes"
       ],
       "Manage subscription": [
         "Gestiona la subscripció"
+      ],
+      "Manage users/addresses": [
+        "Gestiona usuaris/adreces"
       ],
       "Mark as default": [
         "Marca per defecte"
@@ -945,6 +972,9 @@
       ],
       "Remove bonuses": [
         "Esborra les bonificacions"
+      ],
+      "Remove button": [
+        "Elimina el botó"
       ],
       "Remove calendar": [
         "Esborra el calendari"
@@ -1147,8 +1177,20 @@
       "Set new password": [
         "Estableix una nova contrasenya"
       ],
+      "Set recovery methods": [
+        "Estableix mètodes de recuperació"
+      ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
+      ],
+      "Set up 2FA": [
+        "Configuració 2FA"
+      ],
+      "Set up a custom domain": [
+        "Configura un domini personalitzat"
+      ],
+      "Set up email forwarding": [
+        "Configura el reenviament de correu"
       ],
       "Settings": [
         "Preferències"
@@ -1158,6 +1200,9 @@
       ],
       "Share via link": [
         "Comparteix amb un enllaç"
+      ],
+      "Share your calendar with your team": [
+        "Comparteix el calendari amb el vostre equip"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -1264,6 +1309,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Habilita ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Underline": [
         "Subratllat"
       ],
@@ -1315,6 +1363,9 @@
       "Upload": [
         "Carrega"
       ],
+      "Upload and share files": [
+        "Carrega i comparteix fitxers"
+      ],
       "Upload logo": [
         "Carrega el logo"
       ],
@@ -1323,6 +1374,12 @@
       ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utilitza ${ PASS_APP_NAME } per al Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilitza el ${ VPN_SHORT_APP_NAME } per a la privadesa de dades"
       ],
       "Use a different card": [
         "Trieu una targeta diferent"
@@ -1573,7 +1630,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Bustia d'entrada ${ nameToDisplay }"
+        "Enviat a ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "S'han esborrat 5 rastrejadors"
@@ -1898,8 +1955,8 @@
         "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
-        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
+        "Protegiu els correus electrònics i l'agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
@@ -3771,11 +3828,17 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } al ${ DRIVE_APP_NAME } us permet treballar amb altres persones en un entorn segur i xifrat."
+      ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME } no és la vostra aplicació de correu per defecte."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Afegiu carpetes i fitxers al ${ DRIVE_APP_NAME } i convideu els membres de l'equip a veure'ls o a editar-los."
       ],
       "Also included": [
         "També inclòs"
@@ -3786,14 +3849,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Esborra automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Reenvieu automàticament el correu entrant a una altra adreça electrònica."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ordeneu automàticament els missatges entrants abans que arribin a la safata d'entrada."
       ],
       "Available with ${ MAIL_APP_NAME } Plus": [
         "Disponible amb ${ MAIL_APP_NAME } Plus"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Felicitats! Heu guanyat el màxim de ${ rewardsLimit } mesos gratis de ${ plusPlanName }."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Connecteu el vostre CRM, lloc web, impressores i molt més."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
@@ -3801,8 +3873,17 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la safata d'entrada."
       ],
+      "Create groups you can email with a single address.": [
+        "Creeu grups als quals podeu enviar correus amb una única adreça."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronitzeu fàcilment els fitxers al núvol des de l'ordinador i accediu-hi des del dispositiu mòbil."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
@@ -3813,17 +3894,35 @@
       "Enable detailed events to access these features": [
         "Activeu els esdeveniments detallats per accedir a aquestes funcions."
       ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Fomenteu l'ús de l'autenticació de doble factor a la vostra organització per obtenir més seguretat."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garantiu una seguretat màxima per al vostre compte amb el programa ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Assegureu-vos que encara podeu accedir al vostre compte i a les vostres dades encara que perdeu la contrasenya del ${ BRAND_NAME }."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per a una transició sense problemes al ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i altres."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Rebeu fins a ${ credits } en crèdits convidant els vostres amics a ${ BRAND_NAME }."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
       ],
       "If disabled, only admins will have access.": [
         "Si està desactivat, només els administradors hi tenen accés."
@@ -3837,6 +3936,9 @@
       "Learn more about common problems": [
         "Més informació sobre problemes comuns"
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Us permet afegir instantàniament enllaços de reunions a les invitacions d'esdeveniments."
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Feu que el peu de pàgina del vostre correu electrònic sigui un reflex distintiu de la vostra marca, no de la nostra."
       ],
@@ -3849,8 +3951,14 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configureu comptes per a tots els usuaris i convideu-los a unir-se a ${ BRAND_NAME }."
+      ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Configureu el reenviament automàtic per a redirigir els correus electrònics entrants a una altra adreça de correu electrònic."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplifiqueu la sincronització i la programació amb calendaris compartits."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
@@ -3860,6 +3968,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Per a esborrar el peu de pàgina de ${ MAIL_APP_NAME }, milloreu i aconseguiu encara més característiques prèmium."
+      ],
+      "To start, give your organization a name.": [
+        "Per començar, assigneu un nom a la vostra organització."
       ],
       "Track the status and activity of your referrals.": [
         "Feu un seguiment de l'estat i l'activitat dels vostres afiliats."
@@ -3875,6 +3986,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Milloreu el vostre pla per a obtenir ${ activatePmUser } a fi de disposar d'una adreça de correu electrònic més curta i fàcil de recordar, a més de la vostra actual."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Podeu continuar convidant amics, però no podreu guanyar més crèdits"
@@ -4609,11 +4723,11 @@
       "Forward to": [
         "Reenvia a"
       ],
-      "or": [
-        "o"
-      ],
       "Or": [
         "O"
+      ],
+      "or": [
+        "o"
       ],
       "With attachment": [
         "Amb adjunt"
@@ -5099,7 +5213,7 @@
         "Es requereix el port"
       ],
       "Primary address key is not decrypted": [
-        "La clau de l'adreça principal no està desxifrada"
+        "La clau de l'adreça primària no està desxifrada."
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
@@ -5127,7 +5241,7 @@
         "Signatura no verificada"
       ],
       "Signature verification failed": [
-        "No s'ha pogut verificar la signatura"
+        "No s'ha pogut verificar la signatura."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
@@ -6403,10 +6517,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Reenviament automàtic"
+        "Reenvieu automàticament"
       ],
       "Gmail messages to your inbox": [
-        "Missatges de Gmail a la seva bustia d'entrada"
+        "els missatges de Gmail a la vostra safata d'entrada"
       ],
       "Sign in with Google": [
         "Inicia la sessió amb Google"
@@ -8384,7 +8498,7 @@
         "Heretat d'una carpeta principal"
       ],
       "Insert image": [
-        "Afegeix imatge"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8767,6 +8881,9 @@
       ],
       "Open source": [
         "Codi obert"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Obriu la guia per obtenir accions recomanades i enllaços útils."
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -9161,6 +9278,9 @@
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
+      "Set up your organization": [
+        "Configura la vostra organització"
+      ],
       "Setting successfully saved": [
         "S'ha desat la preferència."
       ],
@@ -9433,6 +9553,9 @@
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Això és una frase de 12 paraules que se't va demanar definir."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-ho en qualsevol moment."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Aquest és un fitxer de recuperació o una clau de xifratge que potser heu desat anteriorment."
@@ -10901,10 +11024,10 @@
       "Allow sharing outside the organization": [
         "Permet la compartició fora de l'organització"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10916,10 +11039,10 @@
       "Amount due": [
         "Import a deure"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -11348,11 +11471,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -11555,13 +11678,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Organization name": [
@@ -12135,6 +12258,9 @@
       "Encryption and keys": [
         "Xifratge i claus"
       ],
+      "Enforcing 2FA for organizations": [
+        "Requereix 2FA per a organitzacions"
+      ],
       "Forgot email?": [
         "Heu oblidat el vostre correu electrònic?"
       ],
@@ -12165,11 +12291,53 @@
       "How does monitoring work?": [
         "Com funciona el monitoratge?"
       ],
+      "How to add users": [
+        "Com afegir usuaris?"
+      ],
+      "How to add Zoom links": [
+        "Com afegir enllaços del Zoom?"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Com col·laborar al ${ DOCS_SHORT_APP_NAME }?"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Com habilitar ${ PROTON_SENTINEL_NAME }?"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Com migrar a ${ BRAND_NAME }?"
+      ],
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
       ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Com configurar ${ VPN_APP_NAME }?"
+      ],
+      "How to set up a custom domain": [
+        "Com configurar un domini personalitzat?"
+      ],
+      "How to set up SMTP": [
+        "Com configurar l'SMTP?"
+      ],
+      "How to share a calendar": [
+        "Com compartir un calendari?"
+      ],
+      "How to share via email": [
+        "Com compartir per correu?"
+      ],
       "How to unlock data": [
         "Com desbloquejar les dades"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Com utilitzar ${ DARK_WEB_MONITORING_NAME }?"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Com utilitzar ${ PASS_APP_NAME } per al Business?"
+      ],
+      "How to use email forwarding": [
+        "Com utilitzar el reenviament de correu?"
+      ],
+      "How to use Groups": [
+        "Com utilitzar grups?"
       ],
       "if your data is leaked": [
         "si es filtren les vostres dades"
@@ -12224,6 +12392,9 @@
       ],
       "Trouble signing in?": [
         "Teniu problemes per iniciar la sessió?"
+      ],
+      "Types of recovery methods": [
+        "Tipus de mètodes de recuperació"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -15385,6 +15556,9 @@
       "Name": [
         "Nom"
       ],
+      "Organization name": [
+        "Nom de l'organització"
+      ],
       "Other": [
         "Altres"
       ],
@@ -15450,6 +15624,9 @@
       ],
       "VAT number": [
         "Núm. IVA"
+      ],
+      "Your organization name": [
+        "El nom de la vostra organització"
       ],
       "yourdomain.com": [
         "elteudomini.com"
@@ -16080,6 +16257,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL del connector d'SCIM al qual el vostre agent d'aprovisionament IdP reenvia les dades d'SCIM"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configuració de l'organització i seguretat del compte"
       ]
     },
     "Security Center - Info": {
@@ -18437,6 +18619,9 @@
       "Add to spam list": [
         "Afegeix a la llista de correu brossa"
       ],
+      "Add user": [
+        "Addició un usuari"
+      ],
       "Add user accounts": [
         "Afegeix comptes d'usuari"
       ],
@@ -18575,6 +18760,9 @@
       "Close": [
         "Tanca"
       ],
+      "Collaborate on documents": [
+        "Col·laboració en documents"
+      ],
       "Composing": [
         "Redacció"
       ],
@@ -18596,11 +18784,20 @@
       "Connect ${ name }": [
         "Connecta ${ name }"
       ],
+      "Connect apps and devices": [
+        "Connexió d'aplicacions i dispositius"
+      ],
       "Connect organization": [
         "Connecta l'organització"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Connecteu fins a ${ VPN_CONNECTIONS } dispositius al mateix temps amb ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Connexió a la videoconferència"
+      ],
+      "Connect your custom domain": [
+        "Connexió del vostre domini personalitzat"
       ],
       "Connection status": [
         "Estat de la connexió"
@@ -18799,6 +18996,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Passar a ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
       ],
@@ -18880,11 +19080,17 @@
       "Email privacy": [
         "Privacitat del correu"
       ],
+      "Enable advanced account protection": [
+        "Activació de la protecció avançada del compte"
+      ],
       "Enable for all users": [
         "Activa per a tots els usuaris"
       ],
       "Encryption and keys": [
         "Xifratge i claus"
+      ],
+      "Enhance security with 2FA": [
+        "Millora la seguretat amb 2FA"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"
@@ -19068,6 +19274,9 @@
       "Import contacts": [
         "Importar contactes"
       ],
+      "Import emails, calendars, contacts": [
+        "Importació de correus, calendaris i contactes"
+      ],
       "Import events": [
         "Importar esdeveniments"
       ],
@@ -19206,6 +19415,9 @@
       "OpenVPN configuration files": [
         "Fitxers de configuració d'OpenVPN"
       ],
+      "Org setup": [
+        "Configuració de l'organització"
+      ],
       "Organization filters": [
         "Filtres de l'organització"
       ],
@@ -19214,6 +19426,9 @@
       ],
       "Organization name": [
         "Nom de l'organització"
+      ],
+      "Organization setup": [
+        "Configuració de l'organització"
       ],
       "Origin": [
         "Origen"
@@ -19437,11 +19652,17 @@
       "Set organization name": [
         "Estableix el nom de l’organització"
       ],
+      "Set recovery methods": [
+        "Configuració dels mètodes de recuperació"
+      ],
       "Set up ${ protonDuoPlanName }": [
         "Configureu ${ protonDuoPlanName }"
       ],
       "Set up a recovery method": [
         "Configura un mètode de recuperació"
+      ],
+      "Set up email forwarding": [
+        "Configuració del reenviament de correu"
       ],
       "Set up forwarding": [
         "Configura el reenviament"
@@ -19452,6 +19673,9 @@
       "Set up your family account": [
         "Configureu el vostre compte familiar"
       ],
+      "Set up your organization": [
+        "Configuració de la vostra organització"
+      ],
       "Set your password": [
         "Establiu la vostra contrasenya"
       ],
@@ -19460,6 +19684,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Configureu els servidors dedicats millorant el pla a Business"
+      ],
+      "Share your calendar with your team": [
+        "Compartició del calendari amb el vostre equip"
       ],
       "Shared servers": [
         "Servidors compartits"
@@ -19484,6 +19711,12 @@
       ],
       "Signed in to member account": [
         "S'ha iniciat la sessió al compte de membre"
+      ],
+      "Simplify email distribution": [
+        "Simplificació de la distribució de correu"
+      ],
+      "Simplify password management": [
+        "Simplificació de la gestió de contrasenyes"
       ],
       "Single sign-on": [
         "Inici de sessió únic"
@@ -19570,6 +19803,9 @@
       "Track your referrals": [
         "Seguiment de persones recomanades"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activació ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "Inici de sessió al TV"
       ],
@@ -19597,6 +19833,9 @@
       "Upgrade your privacy": [
         "Milloreu la vostra privacitat"
       ],
+      "Upload and share files": [
+        "Carregueu i compartiu fitxers"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Carregueu un fitxer CSV per a crear múltiples comptes"
       ],
@@ -19605,6 +19844,9 @@
       ],
       "Usage Report": [
         "Informe d'ús"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilitza ${ VPN_SHORT_APP_NAME } per a la privacitat de dades"
       ],
       "User": [
         "Usuari"
@@ -19659,6 +19901,9 @@
       ],
       "Weak passwords": [
         "Contrasenyes febles"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Us donem la benvinguda a ${ BRAND_NAME } per al Business"
       ],
       "What is an alias?": [
         "Què és un àlies?"
