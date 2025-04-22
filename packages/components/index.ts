@@ -285,6 +285,13 @@ export { default as SimpleSidebarListItemLink } from './components/sidebar/Simpl
 export { default as SkeletonLoader } from './components/skeletonLoader/SkeletonLoader';
 export { default as SmartBanner } from './components/smartBanner/SmartBanner';
 export { default as ReloadSpinner } from './components/spinner/ReloadSpinner';
+export type { StartupModal } from './components/startupModals/types';
+export { default as StartupModals } from './components/startupModals/StartupModals';
+export {
+    useCancellationReminderModal,
+    useLightLabellingFeatureModal,
+    useReferralModal,
+} from './components/startupModals/startupModalHooks';
 export { default as SpotlightProvider } from './components/spotlight/Provider';
 export { default as Spotlight } from './components/spotlight/Spotlight';
 export type { SpotlightProps } from './components/spotlight/Spotlight';

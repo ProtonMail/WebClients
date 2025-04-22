@@ -1,93 +1,68 @@
-import { useEffect, useRef } from 'react';
-
 import { useWelcomeFlags } from '@proton/account';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
 import {
-    CancellationReminderModal,
     InboxDesktopFreeTrialOnboardingModal,
-    LightLabellingFeatureModal,
-    getShouldOpenReferralModal,
-    shouldOpenReminderModal,
+    StartupModals,
+    useCancellationReminderModal,
+    useLightLabellingFeatureModal,
     useModalState,
-    useShowLightLabellingFeatureModal,
 } from '@proton/components';
-import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
-import { FeatureCode, useFeature } from '@proton/features';
-import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import type { StartupModal } from '@proton/components';
+import useInboxFreeTrial from '@proton/components/containers/desktop/freeTrial/useInboxFreeTrial';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import MailOnboardingModal from '../components/onboarding/modal/MailOnboardingModal';
 
-const MailStartupModals = () => {
-    const [subscription, subscriptionLoading] = useSubscription();
-
-    // Onboarding modal
-    const [user] = useUser();
-    const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
-
-    // Cancellation reminder modals
-    const { feature } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
-    const [reminderModal, setReminderModal, renderReminderModal] = useModalState();
-    const openReminderModal = shouldOpenReminderModal(subscriptionLoading, subscription, feature);
-
-    // Referral modal
-    const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
-    const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
+const useMailOnboardingModal: () => StartupModal = () => {
+    const [modal, setModal, renderModal] = useModalState();
 
     const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
     const onboardingOpen = !welcomeFlags.isDone || welcomeFlags.isReplay;
 
-    const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
-    const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
-        useModalState();
+    return {
+        showModal: onboardingOpen,
+        activateModal: () => setModal(true),
+        component: renderModal ? (
+            <EasySwitchProvider>
+                <MailOnboardingModal
+                    onDone={() => {
+                        setWelcomeFlagsDone();
+                        modal.onClose();
+                    }}
+                    onExit={modal.onExit}
+                    open={modal.open}
+                    onClose={modal.onClose}
+                    hideDiscoverApps
+                />
+            </EasySwitchProvider>
+        ) : null,
+    };
+};
 
-    const onceRef = useRef(false);
-    useEffect(() => {
-        if ((onceRef.current && !onboardingOpen) || isElectronMail) {
-            return;
-        }
+const useInboxDesktopFreeTrialOnboardingModal: () => StartupModal = () => {
+    const [modal, setModal, renderModal] = useModalState();
+    const { firstLogin } = useInboxFreeTrial();
+    const [user] = useUser();
 
-        const openModal = (setModalOpen: (newValue: boolean) => void) => {
-            onceRef.current = true;
-            setModalOpen(true);
-        };
+    return {
+        showModal: !!(firstLogin && isElectronMail && !user.hasPaidMail),
+        activateModal: () => setModal(true),
+        component: renderModal ? <InboxDesktopFreeTrialOnboardingModal {...modal} /> : null,
+    };
+};
 
-        if (openReminderModal) {
-            openModal(setReminderModal);
-        } else if (onboardingOpen) {
-            openModal(setOnboardingModal);
-        } else if (shouldOpenReferralModal.open) {
-            onceRef.current = true;
-            document.dispatchEvent(new CustomEvent(OPEN_OFFER_MODAL_EVENT));
-        } else if (showLightLabellingFeatureModal) {
-            onceRef.current = true;
-            setLightLabellingFeatureModal(true);
-        }
-    }, [shouldOpenReferralModal.open, showLightLabellingFeatureModal, onboardingOpen, openReminderModal]);
+const useStartupModals: () => StartupModal[] = () => {
+    const reminderModal = useCancellationReminderModal();
+    const onboardingModal = useMailOnboardingModal();
+    const inboxDesktopFreeTrialOnboardingModal = useInboxDesktopFreeTrialOnboardingModal();
+    const lightLabellingFeatureModal = useLightLabellingFeatureModal();
+    return [reminderModal, inboxDesktopFreeTrialOnboardingModal, onboardingModal, lightLabellingFeatureModal];
+};
 
-    return (
-        <>
-            {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
-            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialOnboardingModal />}
-            {renderOnboardingModal && (
-                <EasySwitchProvider>
-                    <MailOnboardingModal
-                        onDone={() => {
-                            setWelcomeFlagsDone();
-                            onboardingModal.onClose();
-                        }}
-                        onExit={onboardingModal.onExit}
-                        open={onboardingModal.open}
-                        onClose={onboardingModal.onClose}
-                        hideDiscoverApps
-                    />
-                </EasySwitchProvider>
-            )}
-            {renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}
-        </>
-    );
+const MailStartupModals = () => {
+    const modals = useStartupModals();
+    return <StartupModals modals={modals} />;
 };
 
 export default MailStartupModals;
