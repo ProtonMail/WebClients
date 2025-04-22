@@ -8,7 +8,6 @@ import { VideoConferencingWidget } from './VideoConferencingWidget';
 import { SEPARATOR_GOOGLE_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import { getGoogleMeetDataFromDescription, getGoogleMeetDataFromLocation } from './googleMeet/googleMeetHelpers';
 import { getVideoConferencingData } from './modelHelpers';
-import { getSkypeDataFromString } from './skype/skypeHelpers';
 import { getSlackDataFromString } from './slack/slackHelpers';
 import { getTeamsDataFromDescription, getTeamsDataFromLocation } from './teams/teamsHelpers';
 import { VideoConferenceSource, useVideoConfTelemetry } from './useVideoConfTelemetry';
@@ -87,12 +86,6 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
             return <VideoConferencingWidget location={widgetLocation} data={googleData} />;
         }
 
-        if (data.description.includes('join.skype.com')) {
-            const skypeData = getSkypeDataFromString(data.description);
-            sendTelemetryReport(VideoConferenceSource.skype_desc);
-            return <VideoConferencingWidget location={widgetLocation} data={skypeData} />;
-        }
-
         if (data.description.includes('app.slack.com/huddle')) {
             const slackData = getSlackDataFromString(data.description);
             sendTelemetryReport(VideoConferenceSource.slack_desc);
@@ -118,12 +111,6 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
             const googleData = getGoogleMeetDataFromLocation(data.location);
             sendTelemetryReport(VideoConferenceSource.google_meet_loc);
             return <VideoConferencingWidget location={widgetLocation} data={googleData} />;
-        }
-
-        if (data.location.includes('join.skype.com')) {
-            const skypeData = getSkypeDataFromString(data.location);
-            sendTelemetryReport(VideoConferenceSource.skype_loc);
-            return <VideoConferencingWidget location={widgetLocation} data={skypeData} />;
         }
 
         if (data.location.includes('app.slack.com/huddle')) {
