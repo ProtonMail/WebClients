@@ -8,7 +8,6 @@ import { Button } from '@proton/atoms';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { setUsedBfOffer } from '@proton/components/containers/offers/bfOffer';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
@@ -403,8 +402,6 @@ const SubscriptionContainer = ({
     const giftCodeRef = useRef<HTMLInputElement>(null);
 
     const abortControllerRef = useRef<AbortController>();
-
-    const formErrors = useFormErrors();
 
     const amount = model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0;
 
@@ -936,10 +933,6 @@ const SubscriptionContainer = ({
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
-        if (!formErrors.onFormSubmit()) {
-            return;
-        }
-
         if (model.noPaymentNeeded) {
             onCancel?.();
             return;
@@ -1165,10 +1158,7 @@ const SubscriptionContainer = ({
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
                                     billingAddressStatus={billingAddressStatus}
-                                    formErrors={formErrors}
                                     onMethod={(value) => {
-                                        formErrors.reset();
-
                                         if (
                                             value === PAYMENT_METHOD_TYPES.BITCOIN &&
                                             isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
