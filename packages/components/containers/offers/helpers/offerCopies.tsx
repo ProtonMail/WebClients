@@ -253,7 +253,7 @@ export const getTryDrivePlus2024Features = (): { name: string; icon: IconName }[
 };
 
 export const getTryPassPlus2024Features = (): { name: string; icon: IconName }[] => [
-    { name: get2FAAuthenticatorText(), icon: 'lock' },
+    { name: getUnlimitedHideMyEmailAliasesText(), icon: 'alias' },
     { name: getSecureVaultSharingText(), icon: 'users-plus' },
     { name: DARK_WEB_MONITORING_NAME, icon: 'pass-shield-ok' },
 ];

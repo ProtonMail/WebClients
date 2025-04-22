@@ -1190,9 +1190,7 @@ const Step1 = ({
                                                                       }
                                                                       if (
                                                                           app === APPS.PROTONPASS &&
-                                                                          passTrialOfferEnabled &&
-                                                                          // only show Pass trial upsell if the URL has "plan=free"
-                                                                          signupParameters.preSelectedPlan === 'free'
+                                                                          passTrialOfferEnabled
                                                                       ) {
                                                                           try {
                                                                               await fetchTrialPrice(PLANS.PASS);
