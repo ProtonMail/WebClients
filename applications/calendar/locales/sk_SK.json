@@ -446,6 +446,9 @@
       "Manage folders": [
         "Spravovať priečinky"
       ],
+      "Manage groups": [
+        "Spravovať skupiny"
+      ],
       "Manage labels": [
         "Spravovať štítky"
       ],
@@ -653,6 +656,9 @@
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
+      "Set up 2FA": [
+        "Nastaviť 2FA"
+      ],
       "Settings": [
         "Nastavenia"
       ],
@@ -755,11 +761,11 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
       "Upgrade Now": [
         "Inovovať teraz"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšiť na ${ BRAND_NAME } Unlimited"
@@ -5227,6 +5233,9 @@
       "Open shortcut cheat sheet": [
         "Otvoriť zoznam skratiek"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
       "or discover other features:": [
         "alebo objavte ďalšie funkcie:"
       ],
@@ -5362,6 +5371,9 @@
       "Session timed out": [
         "Relácia vypršala"
       ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
       ],
@@ -5475,6 +5487,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Táto udalosť bola aktualizovaná. Organizátor nebude informovaný, že ste pozvánku odmietli, pretože z pozvanej adresy nie je možné odosielať emaily. Chcete túto udalosť vymazať?"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
@@ -7012,26 +7027,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7053,6 +7048,26 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9285,10 +9300,10 @@
         "${ days } deň",
         "${ days } dni",
         "${ days } dní",
-        "${ days } dní"
+        "${ days } dňa"
       ],
       "${ hours } hour": [
-        "${ hours } hodina",
+        "${ hours } hodiny",
         "${ hours } hodiny",
         "${ hours } hodín",
         "${ hours } hodín"
@@ -9301,17 +9316,17 @@
       ],
       "${ seconds } second": [
         "${ seconds } sekunda",
-        "${ seconds } sekundy",
         "${ seconds } sekúnd",
+        "${ seconds } sekundy",
         "${ seconds } sekúnd"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mesiac ZDARMA",
-        "${ n } mesiace ZDARMA",
         "${ n } mesiacov ZDARMA",
-        "${ n } mesiacov ZDARMA"
+        "${ n } mesiac ZDARMA",
+        "${ n } mesiac ZDARMA",
+        "${ n } mesiac ZDARMA"
       ]
     },
     "specialoffer: Deal details": {
@@ -10444,6 +10459,9 @@
       "Add to ${ groupName }": [
         "Pridať do ${ groupName }"
       ],
+      "Add user": [
+        "Pridať používateľa"
+      ],
       "Addresses": [
         "Adresy"
       ],
@@ -10501,11 +10519,23 @@
       "Clearing data": [
         "Vymazanie dát"
       ],
+      "Collaborate on documents": [
+        "Spolupráca na dokumentoch"
+      ],
       "Confirm downgrade": [
         "Potvrďte zníženie"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potvrďte stratu bonusov ${ BRAND_NAME }"
+      ],
+      "Connect apps and devices": [
+        "Pripojenie aplikácií a zariadení"
+      ],
+      "Connect to video conferencing": [
+        "Pripojiť sa k videokonferencii"
+      ],
+      "Connect your custom domain": [
+        "Pripojte si vlastnú doménu"
       ],
       "Contact Details": [
         "Kontaktné údaje"
@@ -10588,6 +10618,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Prejsť na nižší plán ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Stiahnuť aplikáciu"
       ],
@@ -10620,6 +10653,9 @@
       ],
       "Encrypted event": [
         "Šifrovaná udalosť"
+      ],
+      "Enhance security with 2FA": [
+        "Zvýšte zabezpečenie pomocou 2FA"
       ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"
@@ -10701,6 +10737,9 @@
       ],
       "Import contacts": [
         "Importovať kontakty"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovať emaily, kalendáre a kontakty"
       ],
       "Import events": [
         "Import udalostí"
@@ -10879,11 +10918,23 @@
       "Send invitation": [
         "Poslať pozvánku"
       ],
+      "Set recovery methods": [
+        "Nastaviť spôsoby obnovenia"
+      ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
+      "Set up email forwarding": [
+        "Nastaviť preposielanie emailov"
+      ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Share your calendar with your team": [
+        "Zdieľajte svoj kalendár so svojím tímom"
       ],
       "Show time zones for event start and end times": [
         "Zobraziť časové pásma pre časy začiatku a konca udalosti"
@@ -10903,6 +10954,9 @@
       "Summary": [
         "Zhrnutie"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"
       ],
@@ -10914,6 +10968,12 @@
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
+      ],
+      "Upload and share files": [
+        "Nahrávanie a zdieľanie súborov"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
       "Verification failed": [
         "Overovanie zlyhalo"
@@ -10941,6 +11001,9 @@
       ],
       "We've locked your calendars to protect your data": [
         "Zamkli sme vaše kalendáre, aby sme ochránili vaše dáta"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
       "What can a VPN protect you from?": [
         "Pred čím vás môže VPN ochrániť?"

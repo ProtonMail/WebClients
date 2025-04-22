@@ -731,11 +731,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade now": [
-        "Покращити"
-      ],
       "Upgrade Now": [
         "Передплатити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Оновити до ${ BRAND_NAME } Необмежено"
@@ -6608,20 +6608,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6643,6 +6629,20 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
