@@ -244,6 +244,9 @@
       "Close this banner": [
         "Chiudi questo banner"
       ],
+      "Collaborate on documents": [
+        "Collabora sui documenti"
+      ],
       "Collapse navigation bar": [
         "Nascondi la barra di navigazione"
       ],
@@ -261,6 +264,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Conferma l'apertura del link ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Connetti app e dispositivi"
+      ],
+      "Connect to video conferencing": [
+        "Connettiti alla videoconferenza"
       ],
       "Contact group": [
         "Gruppo di contatti"
@@ -404,6 +413,9 @@
       ],
       "Download ${ attachmentName }": [
         "Scarica ${ attachmentName }"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Scarica le app per ${ DRIVE_APP_NAME }"
       ],
       "Download now": [
         "Scarica ora"
@@ -549,6 +561,9 @@
       "Get the app": [
         "Scarica l'app"
       ],
+      "Get the apps": [
+        "Ottieni le app"
+      ],
       "Get the browser extension": [
         "Ottieni l’estensione per il browser"
       ],
@@ -641,6 +656,9 @@
       ],
       "Import emails": [
         "Importa le email"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importa email, calendari, contatti"
       ],
       "Import from .csv or vCard": [
         "Importa da .csv o vCard"
@@ -736,14 +754,23 @@
       "Make it friendly": [
         "Rendilo amichevole"
       ],
+      "Manage advanced account protections": [
+        "Gestisci le protezioni avanzate dell'account"
+      ],
       "Manage folders": [
         "Gestisci cartelle"
+      ],
+      "Manage groups": [
+        "Gestisci i gruppi"
       ],
       "Manage labels": [
         "Gestisci etichette"
       ],
       "Manage Snooze": [
         "Gestisci la posticipazione"
+      ],
+      "Manage users/addresses": [
+        "Gestisci utenti/indirizzi"
       ],
       "Mark as read": [
         "Segna come letta"
@@ -994,6 +1021,9 @@
       "Remove bonuses": [
         "Rimuovi bonus"
       ],
+      "Remove button": [
+        "Rimuovi pulsante"
+      ],
       "Remove encryption": [
         "Rimuovi crittografia"
       ],
@@ -1162,8 +1192,20 @@
       "Set expiration time": [
         "Imposta l'ora di scadenza"
       ],
+      "Set recovery methods": [
+        "Imposta i metodi di recupero"
+      ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
+      ],
+      "Set up 2FA": [
+        "Configura 2FA"
+      ],
+      "Set up a custom domain": [
+        "Configura un dominio personalizzato"
+      ],
+      "Set up email forwarding": [
+        "Configura l'inoltro delle email"
       ],
       "Settings": [
         "Impostazioni"
@@ -1173,6 +1215,9 @@
       ],
       "Share via link": [
         "Condividi con link"
+      ],
+      "Share your calendar with your team": [
+        "Condividi il tuo calendario con il tuo team"
       ],
       "Sharing options": [
         "Opzioni di condivisione"
@@ -1321,6 +1366,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unblock": [
         "Sblocca"
       ],
@@ -1366,14 +1414,17 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Effettua l'upgrade ora"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Passa a ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload and share files": [
+        "Carica e condividi file"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -1383,6 +1434,12 @@
       ],
       "Use ${ PASS_APP_NAME }": [
         "Utilizza ${ PASS_APP_NAME }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Usa ${ PASS_APP_NAME } per Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
       ],
       "Use a different card": [
         "Usa una carta differente"
@@ -3628,6 +3685,9 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } nelle impostazioni."
       ],
@@ -3636,6 +3696,9 @@
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA aggiunge un ulteriore livello di sicurezza, impedendo l'accesso non autorizzato."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Aggiungi cartelle e file a ${ DRIVE_APP_NAME } e invita i membri del team a visualizzare o modificare."
       ],
       "Also included": [
         "Incluso anche"
@@ -3646,11 +3709,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimina automaticamente le email spostate nel Cestino nello Spam da più di 30 giorni."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Inoltra automaticamente le email in arrivo a un altro indirizzo email."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Riordina automaticamente i tuoi messaggi in arrivo prima che raggiungano la tua casella di posta."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configura prima questa opzione per attivare la tua organizzazione e personalizzare il tuo indirizzo email."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Connetti il tuo CRM, sito web, stampanti e altro."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Crea tutte le etichette e le cartelle che ti servono per mantenere ordinata la tua casella di posta."
+      ],
+      "Create groups you can email with a single address.": [
+        "Crea gruppi a cui puoi inviare email con un singolo indirizzo."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
@@ -3664,8 +3739,29 @@
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Non vuoi inviare l'email in questo momento? Programmala per il momento giusto."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accedi facilmente al tuo indirizzo email e calendario su computer e dispositivo mobile."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronizza facilmente i file sul cloud dal tuo desktop e accedi dal tuo dispositivo mobile."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Incoraggia l'uso dell'autenticazione a due fattori nella tua organizzazione per una maggiore sicurezza."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Garantisci un accesso sicuro ai dati dell'organizzazione, anche se il tuo team è da remoto o utilizza una rete WiFi pubblica."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garantisci la massima sicurezza per il tuo account con il programma ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Per accesso illimitato all'assistente alla scrittura e altro ancora, effettua l'upgrade a ${ BRAND_NAME } Duo."
@@ -3676,8 +3772,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Aiuta il tuo team ad archiviare in modo sicuro le password relative a informazioni aziendali e dei clienti sensibili."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Ti consente di aggiungere immediatamente i link per le riunioni ai tuoi inviti a un evento."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
@@ -3707,6 +3809,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Imposta un metodo di recupero per evitare di perdere l'accesso al tuo account."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configura gli account per tutti gli user e invitali a partecipare a ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Semplifica la sincronizzazione e la pianificazione con i calendari condivisi."
+      ],
       "Starting from ${ price }": [
         "A partire da ${ price }"
       ],
@@ -3724,6 +3832,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Per iniziare, dai un nome alla tua organizzazione."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Attiva la protezione dai tracker email per impedire agli inserzionisti e ad altri soggetti di tracciare la tua posizione geografica e la tua attività online."
@@ -3754,6 +3865,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Usa questa guida per fare in modo che la tua organizzazione tragga rapidamente vantaggio dalla crittografia e dall'ecosistema di privacy leader del settore di ${ BRAND_NAME }."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Non abbiamo trovato alcun tracker o URL di tracciamento noto in questa email."
@@ -6999,6 +7113,9 @@
       "Open shortcut cheat sheet": [
         "Apri le istruzioni per le scorciatoie"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Apri la guida per le azioni consigliate e i link utili."
+      ],
       "or discover other features:": [
         "o scopri altre funzionalità:"
       ],
@@ -8422,10 +8539,10 @@
       "Always move sender's emails": [
         "Sposta sempre le email del mittente"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
       "and": [
@@ -8656,11 +8773,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SE"
-      ],
       "If": [
         "Se"
+      ],
+      "IF": [
+        "SE"
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
@@ -8773,13 +8890,13 @@
       "Optional": [
         "Facoltativo"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Original link": [
@@ -9640,29 +9757,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Passa a ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Inizia per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partire da ${ pricing }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Effettua l'upgrade a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -9684,6 +9778,29 @@
       ],
       "Switch plan": [
         "Cambia piano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Passa a ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Inizia per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partire da ${ pricing }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -11263,6 +11380,9 @@
       "Name or email address": [
         "Nome o indirizzo email"
       ],
+      "Organization name": [
+        "Nome dell'organizzazione"
+      ],
       "Password": [
         "Password"
       ],
@@ -11343,6 +11463,9 @@
       ],
       "Type text or keyword": [
         "Inserisci testo o parola chiave"
+      ],
+      "Your organization name": [
+        "Il nome della tua organizzazione"
       ]
     },
     "Placeholder for contact group name": {
@@ -11512,6 +11635,11 @@
       ],
       "No unread messages found": [
         "Nessun messaggio non letto trovato"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configurazione dell'organizzazione e sicurezza dell'account"
       ]
     },
     "Security Center": {
@@ -13275,6 +13403,9 @@
       "Add to ${ groupName }": [
         "Aggiungi a ${ groupName }"
       ],
+      "Add user": [
+        "Aggiungi utente"
+      ],
       "Addresses": [
         "Indirizzi"
       ],
@@ -13356,6 +13487,9 @@
       "Clearing data": [
         "Cancellazione dati"
       ],
+      "Collaborate on documents": [
+        "Collabora sui documenti"
+      ],
       "Confirm downgrade": [
         "Conferma il downgrade"
       ],
@@ -13364,6 +13498,15 @@
       ],
       "Confirm recipient address?": [
         "Confermare l'indirizzo del destinatario?"
+      ],
+      "Connect apps and devices": [
+        "Connetti app e dispositivi"
+      ],
+      "Connect to video conferencing": [
+        "Connettiti alla videoconferenza"
+      ],
+      "Connect your custom domain": [
+        "Connetti il tuo dominio personalizzato"
       ],
       "Contact Details": [
         "Dettagli contatto"
@@ -13487,6 +13630,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Vuoi effettuare il downgrade a ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Scarica le app di ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Scarica l'app"
       ],
@@ -13523,8 +13669,14 @@
       "Enable 2FA": [
         "Abilita 2FA"
       ],
+      "Enable advanced account protection": [
+        "Attiva la protezione avanzata dell'account"
+      ],
       "Enable message content search": [
         "Abilita la ricerca nel contenuto dei messaggi"
+      ],
+      "Enhance security with 2FA": [
+        "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
       ],
       "Enter 2FA code": [
         "Inserisci il codice di autenticazione a due fattori"
@@ -13604,6 +13756,9 @@
       ],
       "Import contacts": [
         "Importa i contatti"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importa email, calendari, contatti"
       ],
       "Import events": [
         "Importa eventi"
@@ -13785,6 +13940,12 @@
       "Open actions dropdown": [
         "Apri menu delle azioni"
       ],
+      "Org setup": [
+        "Configurazione dell'organizzazione"
+      ],
+      "Organization setup": [
+        "Configurazione dell'organizzazione"
+      ],
       "Other features included in your plan": [
         "Altre funzionalità incluse nel tuo piano"
       ],
@@ -13926,14 +14087,23 @@
       "Sending original message": [
         "Invio messaggio originale"
       ],
+      "Set recovery methods": [
+        "Imposta i metodi di ripristino"
+      ],
       "Set recovery phrase": [
         "Imposta una frase di recupero"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Configura ${ protonDuoPlanName }"
       ],
+      "Set up email forwarding": [
+        "Configura l'inoltro delle email"
+      ],
       "Set up your family account": [
         "Configura il tuo account famiglia"
+      ],
+      "Set up your organization": [
+        "Configura la tua organizzazione"
       ],
       "Set your own schedule": [
         "Imposta la tua programmazione"
@@ -13941,11 +14111,20 @@
       "Settings": [
         "Impostazioni"
       ],
+      "Share your calendar with your team": [
+        "Condividi il tuo calendario con il tuo team"
+      ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
       ],
       "Sign out": [
         "Esci dall'account"
+      ],
+      "Simplify email distribution": [
+        "Semplifica la distribuzione di email"
+      ],
+      "Simplify password management": [
+        "Semplifica la gestione delle password"
       ],
       "Snooze": [
         "Posticipazione"
@@ -13999,6 +14178,9 @@
       "Trust public key?": [
         "Fidarsi della chiave pubblica?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Sblocca i gruppi di contatti"
       ],
@@ -14010,6 +14192,12 @@
       ],
       "Upgrade complete!": [
         "Aggiornamento completato!"
+      ],
+      "Upload and share files": [
+        "Carica e condividi file"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
       ],
       "Verification error": [
         "Errore di verifica"
@@ -14044,6 +14232,9 @@
       ],
       "Welcome ${ userName }": [
         "Ti diamo il benvenuto ${ userName }"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Benvenuto in ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Da cosa può proteggerti una VPN?"

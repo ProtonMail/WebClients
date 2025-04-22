@@ -778,7 +778,7 @@
         "Spravovat odložení"
       ],
       "Manage users/addresses": [
-        "Spravovat uživatele/ adresy"
+        "Spravovat uživatele/adresy"
       ],
       "Mark as read": [
         "Označit jako přečtené"
@@ -1422,10 +1422,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -8818,10 +8818,10 @@
       "Always move sender's emails": [
         "Vždy přesunout e-maily odesílatele"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -9052,11 +9052,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "POKUD"
-      ],
       "If": [
         "Pokud"
+      ],
+      "IF": [
+        "POKUD"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -9169,14 +9169,14 @@
       "Optional": [
         "Volitelné"
       ],
-      "OR": [
-        "NEBO"
-      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
+      ],
+      "OR": [
+        "NEBO"
       ],
       "Original link": [
         "Původní odkaz"
@@ -10052,29 +10052,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Získat ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -10096,6 +10073,29 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Získat ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {

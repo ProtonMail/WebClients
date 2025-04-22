@@ -243,6 +243,9 @@
       "Close this banner": [
         "Tutup spanduk ini"
       ],
+      "Collaborate on documents": [
+        "Kolaborasikan dokumen"
+      ],
       "Collapse navigation bar": [
         "Ciutkan bilah navigasi"
       ],
@@ -260,6 +263,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Konfirmasi untuk membuka tautan ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
       ],
       "Contact group": [
         "Grup kontak"
@@ -546,6 +555,9 @@
       "Get the app": [
         "Dapatkan aplikasinya"
       ],
+      "Get the apps": [
+        "Dapatkan aplikasinya"
+      ],
       "Get the browser extension": [
         "Dapatkan ekstensi browser"
       ],
@@ -732,8 +744,14 @@
       "Make it friendly": [
         "Buat agar lebih bersahabat"
       ],
+      "Manage advanced account protections": [
+        "Kelola perlindungan akun lanjutan"
+      ],
       "Manage folders": [
         "Kelola folder"
+      ],
+      "Manage groups": [
+        "Kelola grup"
       ],
       "Manage labels": [
         "Kelola label"
@@ -1161,6 +1179,9 @@
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
+      ],
       "Settings": [
         "Pengaturan"
       ],
@@ -1169,6 +1190,9 @@
       ],
       "Share via link": [
         "Bagikan melalui tautan"
+      ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
       ],
       "Sharing options": [
         "Opsi berbagi"
@@ -1317,6 +1341,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unblock": [
         "Buka blokir"
       ],
@@ -1362,14 +1389,17 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
       "Upgrade Now": [
         "Tingkatkan Sekarang"
       ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Tingkatkan ke ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload and share files": [
+        "Unggah dan bagikan berkas"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -6877,6 +6907,9 @@
       "Open shortcut cheat sheet": [
         "Buka lembar contekan pintasan"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Buka panduan ini untuk memperoleh tindakan yang disarankan dan tautan yang dapat berguna."
+      ],
       "or discover other features:": [
         "atau telusuri berbagai fitur lainnya:"
       ],
@@ -7147,6 +7180,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan Anda. Ke depannya, ${ MAIL_APP_NAME } akan terbuka secara otomatis pada saat Anda mengeklik tautan email."
       ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
+      ],
       "Setting up ${ feature }…": [
         "Mempersiapkan ${ feature }…"
       ],
@@ -7344,6 +7380,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Undangan ini disimpan di kalender nonaktif."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Fitur ini ditujukan sebagai alat bantu untuk menulis. Periksa ketepatan teks yang disarankan. ${ learnMoreResult }"
@@ -8261,11 +8300,11 @@
       "Always move sender's emails": [
         "Selalu pindahkan email pengirim"
       ],
-      "AND": [
-        "DAN"
-      ],
       "And": [
         "Dan"
+      ],
+      "AND": [
+        "DAN"
       ],
       "and": [
         "dan"
@@ -8495,11 +8534,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JIKA"
-      ],
       "If": [
         "Jika"
+      ],
+      "IF": [
+        "JIKA"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -8612,14 +8651,14 @@
       "Optional": [
         "Opsional"
       ],
-      "OR": [
-        "ATAU"
-      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
+      ],
+      "OR": [
+        "ATAU"
       ],
       "Original link": [
         "Tautan asli"
@@ -8942,8 +8981,14 @@
       "Folders": [
         "Folder"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Cara berkolaborasi di ${ DOCS_SHORT_APP_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
+      ],
+      "How to share via email": [
+        "Cara berbagi via email"
       ],
       "if your data is leaked": [
         "apabila data Anda sampai dibocorkan"
@@ -9423,29 +9468,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Dapatkan ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Mulai dengan harga ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Mulai dari ${ pricing }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -9467,6 +9489,29 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Dapatkan ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Mulai dengan harga ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Mulai dari ${ pricing }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12947,6 +12992,9 @@
       "Add to ${ groupName }": [
         "Tambahkan ke ${ groupName }"
       ],
+      "Add user": [
+        "Tambah pengguna"
+      ],
       "Addresses": [
         "Alamat"
       ],
@@ -13036,6 +13084,15 @@
       ],
       "Confirm recipient address?": [
         "Konfirmasi alamat penerima?"
+      ],
+      "Connect apps and devices": [
+        "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect to video conferencing": [
+        "Hubungkan ke konferensi video"
+      ],
+      "Connect your custom domain": [
+        "Hubungkan domain khusus Anda"
       ],
       "Contact Details": [
         "Rincian Kontak"
@@ -13190,8 +13247,14 @@
       "Enable 2FA": [
         "Aktifkan 2FA"
       ],
+      "Enable advanced account protection": [
+        "Aktifkan perlindungan akun lanjutan"
+      ],
       "Enable message content search": [
         "Aktifkan pencarian konten pesan"
+      ],
+      "Enhance security with 2FA": [
+        "Tingkatkan keamanan dengan 2FA"
       ],
       "Enter 2FA code": [
         "Masukkan kode 2FA"
@@ -13270,6 +13333,9 @@
       ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Import emails, calendars, contacts": [
+        "Impor email, kalender, kontak"
       ],
       "Import events": [
         "Impor acara"
@@ -13592,14 +13658,23 @@
       "Sending original message": [
         "Mengirim pesan asli"
       ],
+      "Set recovery methods": [
+        "Atur metode pemulihan"
+      ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Siapkan ${ protonDuoPlanName }"
       ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
+      ],
       "Set up your family account": [
         "Siapkan akun keluarga Anda"
+      ],
+      "Set up your organization": [
+        "Siapkan organisasi Anda"
       ],
       "Set your own schedule": [
         "Tentukan jadwal Anda sendiri"
@@ -13607,11 +13682,17 @@
       "Settings": [
         "Pengaturan"
       ],
+      "Share your calendar with your team": [
+        "Bagikan kalender Anda dengan tim Anda"
+      ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
       ],
       "Sign out": [
         "Keluar"
+      ],
+      "Simplify email distribution": [
+        "Sederhanakan distribusi email"
       ],
       "Snooze": [
         "Tunda"
@@ -13664,6 +13745,9 @@
       "Trust public key?": [
         "Percaya kunci publik?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Buka kunci grup kontak"
       ],
@@ -13708,6 +13792,9 @@
       ],
       "Welcome ${ userName }": [
         "Selamat datang ${ userName }"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Selamat datang di ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Dari hal apa saja VPN dapat melindungi Anda?"
