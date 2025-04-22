@@ -20,7 +20,7 @@ export interface HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson {
       | "4xx"
       | "5xx"
       | "unknown";
-    shareType: "main" | "device" | "photo" | "shared" | "shared_public";
+    shareType: "main" | "device" | "photo" | "shared" | "shared_public" | "shared_photo";
     initiator: "background" | "explicit";
   };
   Value: number;

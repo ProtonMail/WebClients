@@ -133,6 +133,7 @@ describe('usePhotosRecovery', () => {
                     type: ShareType.photos,
                     state: ShareState.restored,
                     createTime: 1234,
+                    linkType: 1,
                 },
             ]);
         });
