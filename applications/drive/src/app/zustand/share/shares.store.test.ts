@@ -13,6 +13,7 @@ const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     creator: 'mock',
     possibleKeyPackets: [],
     createTime: Date.now(),
+    linkType: 1,
     ...overrides,
 });
 
