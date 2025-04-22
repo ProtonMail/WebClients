@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { formatDuration } from 'date-fns';
 import { c, msgid } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonLike } from '@proton/atoms';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
@@ -15,6 +16,7 @@ import clsx from '@proton/utils/clsx';
 import SignatureIcon from '../../../components/SignatureIcon';
 import { getMimeTypeDescription } from '../../../components/sections/helpers';
 import { type DecryptedLink, isDecryptedLink } from '../../../store';
+import { useAlbumsPhotosStore } from '../../../zustand/photos/albumsPhotos.store';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { formatVideoDuration } from './formatVideoDuration';
@@ -122,6 +124,11 @@ export const AlbumsCard: FC<Props> = ({
 
     const isDecrypted = isDecryptedLink(album);
     const isCoverDecrypted = isDecryptedLink(album.cover);
+    const { photosCount } = useAlbumsPhotosStore(
+        useShallow((state) => ({
+            photosCount: state.albumsPhotosCount[album.linkId] || 0,
+        }))
+    );
 
     useEffect(() => {
         const hasName = album.name;
@@ -161,9 +168,6 @@ export const AlbumsCard: FC<Props> = ({
         },
         [onClick]
     );
-
-    // For translation context to be identical
-    const photoCount = album.photoCount;
 
     return (
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
@@ -243,7 +247,7 @@ export const AlbumsCard: FC<Props> = ({
                                 {album.name ? album.name : c('Info').t`Untitled`}
                             </div>
                             <div className="text-left mb-2 text color-weak text-semibold">
-                                {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
+                                {c('Info').ngettext(msgid`${photosCount} item`, `${photosCount} items`, photosCount)}
                                 {album.isShared && <span className="ml-1">⋅ {c('Info').t`Shared`}</span>}
                             </div>
                         </div>
