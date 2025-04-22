@@ -5411,6 +5411,9 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
       ],
@@ -5464,9 +5467,6 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Unele dintre fișiere nu mai sunt accesibile. Restaurați accesul la fișiere. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Unele fotografii din acest album ar putea să nu fie salvate în cronologie. Ștergerea acestui album va șterge definitiv acele fotografii."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
@@ -5571,6 +5571,9 @@
       ],
       "This folder is empty": [
         "Acest folder este gol."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
@@ -8288,26 +8291,6 @@
         "Nu s-au putut decripta ${ count } articole.",
         "Nu s-au putut decripta ${ count } de articole."
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }",
-        "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }",
-        "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }"
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "Fotografii care nu s-au putut elimina din albumul ${ albumLink.name }: ${ nbFailures }",
-        "Fotografii care nu s-au putut elimina din albumul ${ albumLink.name }: ${ nbFailures }",
-        "Fotografii care nu s-au putut elimina din albumul ${ albumLink.name }: ${ nbFailures }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }",
-        "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }",
-        "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }"
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "Fotografii eliminate din albumul ${ albumLink.name }: ${ nbSuccesses }",
-        "Fotografii eliminate din albumul ${ albumLink.name }: ${ nbSuccesses }",
-        "Fotografii eliminate din albumul ${ albumLink.name }: ${ nbSuccesses }"
-      ],
       "${ numberOfItems } item deleted": [
         "Articole șterse: ${ numberOfItems }",
         "Articole șterse: ${ numberOfItems }",
@@ -8685,10 +8668,10 @@
       "Invite members": [
         "Invitați membri"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Poate mai târziu"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Poate mai târziu"
       ],
       "Select theme": [

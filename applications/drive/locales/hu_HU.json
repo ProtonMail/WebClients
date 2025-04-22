@@ -45,6 +45,10 @@
       "Add": [
         "Hozzáadás"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "${ photoCount } fénykép hozzáadása egy új albumhoz",
+        "${ photoCount } fénykép hozzáadása egy új albumhoz"
+      ],
       "Add account": [
         "Fiók hozzáadása"
       ],
@@ -182,6 +186,9 @@
       "Close transfers": [
         "Le- és feltöltések bezárása"
       ],
+      "Collaborate on documents": [
+        "Együttműködés dokumentumokon"
+      ],
       "Collapse": [
         "Összecsukás"
       ],
@@ -199,6 +206,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Hivatkozás megnyitásának jóváhagyása: ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Alkalmazások és eszközök összekapcsolása"
+      ],
+      "Connect to video conferencing": [
+        "Kapcsolódás videokonferenciához"
       ],
       "Contact group": [
         "Névjegy csoport"
@@ -340,6 +353,9 @@
       "Download": [
         "Letöltés"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
       "Download (${ count })": [
         "(${ count }) letöltése"
       ],
@@ -430,6 +446,9 @@
       "Get Started": [
         "Kezdés"
       ],
+      "Get the apps": [
+        "Alkalmazások letöltése"
+      ],
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
@@ -490,6 +509,9 @@
       "Import emails": [
         "E-mailek importálása"
       ],
+      "Import emails, calendars, contacts": [
+        "E-mailek, naptárak és névjegyek importálása"
+      ],
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
       ],
@@ -538,8 +560,14 @@
       "Loading verification": [
         "Ellenőrzés folyamatban"
       ],
+      "Manage advanced account protections": [
+        "A speciális fiókvédelmek kezelése"
+      ],
       "Manage folders": [
         "Mappák kezelése"
+      ],
+      "Manage groups": [
+        "Csoportok kezelése"
       ],
       "Manage labels": [
         "Címkék kezelése"
@@ -549,6 +577,9 @@
       ],
       "Manage share": [
         "Megosztás kezelése"
+      ],
+      "Manage users/addresses": [
+        "Felhasználók/címek kezelése"
       ],
       "Mark as favorite": [
         "Megjelölés kedvencként"
@@ -700,6 +731,9 @@
       "Remove bonuses": [
         "Kedvezmények törlése"
       ],
+      "Remove button": [
+        "Gomb eltávolítása"
+      ],
       "Remove device": [
         "Eszköz eltávolítása"
       ],
@@ -838,8 +872,20 @@
       "Set as cover": [
         "Beállítás borítóképként"
       ],
+      "Set recovery methods": [
+        "Helyreállítási módszerek beállítása"
+      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Set up 2FA": [
+        "Kétlépcsős hitelesítés beállítása"
+      ],
+      "Set up a custom domain": [
+        "Saját domain név beállítása"
+      ],
+      "Set up email forwarding": [
+        "E-mail továbbítás beállítása"
       ],
       "Settings": [
         "Beállítások"
@@ -858,6 +904,9 @@
       ],
       "Share via link": [
         "Megosztás hivatkozással"
+      ],
+      "Share your calendar with your team": [
+        "A naptár megosztása a csapatával"
       ],
       "Sharing options": [
         "Megosztási beállítások"
@@ -943,6 +992,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
+      ],
       "Undo": [
         "Visszavonás"
       ],
@@ -973,6 +1025,9 @@
       "Upload": [
         "Feltöltés"
       ],
+      "Upload and share files": [
+        "Fájlok feltöltése és megosztása"
+      ],
       "Upload anyway": [
         "Feltöltés mindenképpen"
       ],
@@ -996,6 +1051,12 @@
       ],
       "Use ${ label } theme": [
         "${ label } téma használata"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "A ${ PASS_APP_NAME } for Business használata"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatvédelem biztosításához"
       ],
       "Use a different card": [
         "Másik bankkártya használata"
@@ -2873,11 +2934,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A tartalomkeresés nem engedélyezhető. Kérjük, indítsa újra az alkalmazást, vagy törölje az adatokat."
       ],
+      "Could not add to favorites": [
+        "Nem sikerült a kedvencekhez adni"
+      ],
       "Could not open created vault": [
         "A létrehozott tároló megnyitása nem sikerült"
       ],
       "Could not open updated vault": [
         "A frissített tároló megnyitása nem sikerült"
+      ],
+      "Could not remove from favorites": [
+        "Nem sikerült eltávolítani a kedvencekből"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
@@ -5188,6 +5255,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
       ],
+      "Please wait while we update your data this may take a few seconds.": [
+        "Kérjük, várjon, amíg frissítjük az adatait, ez néhány másodpercet vehet igénybe."
+      ],
       "Preparing link to file": [
         "A fájl hivatkozásának előkészítése"
       ],
@@ -5373,9 +5443,6 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Néhány fájlja már nem érhető el. Állítsa vissza a fájlok elérését. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Előfordulhat, hogy az albumban lévő egyes fényképek nem fognak az idővonalára kerülni. Az album törlése véglegesen törli ezeket a fényképeket."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Egyes weboldalak és videómegosztó szolgáltatások földrajzi régiónként blokkolják a tartalmakat. A VPN segítségével megkerülheti ezeket a korlátozásokat, és szabadon hozzáférhet az internethez."
@@ -5693,6 +5760,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Így tovább, most 5 GB-ra növelte a tárhelyét!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Műszaki problémák merültek fel. Az albumokkal kapcsolatos műveletek átmenetileg nem érhetők el."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Műszaki problémák merültek fel. Az új fényképek feltöltése ideiglenesen nem lehetséges."
@@ -6746,8 +6816,17 @@
       "Drafts": [
         "Piszkozatok"
       ],
+      "Enforcing 2FA for organizations": [
+        "Kétlépcsős hitelesítés megkövetelése a szervezetek számára"
+      ],
+      "How to add users": [
+        "Hogyan adhatok hozzá felhasználókat?"
+      ],
       "How to pay with Bitcoin?": [
         "Hogy lehet Bitcoinnal fizetni?"
+      ],
+      "How to set up a custom domain": [
+        "Hogyan állíthatok be saját domain nevet?"
       ],
       "if your data is leaked": [
         "ha az adatai kiszivárogtak"
@@ -6796,6 +6875,9 @@
       ],
       "Trash": [
         "Lomtár"
+      ],
+      "Types of recovery methods": [
+        "Helyreállítási módszerek típusai"
       ],
       "What’s this?": [
         "Mi ez?"
@@ -8150,22 +8232,6 @@
         "${ count } elem visszafejtése nem sikerült",
         "${ count } elem visszafejtése nem sikerült"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } fényképet nem sikerült hozzáadni a „${ albumName }” albumhoz.",
-        "${ nbFailures } fényképet nem sikerült hozzáadni a „${ albumName }” albumhoz."
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } fényképet nem sikerült eltávolítani a következőből: ${ albumLink.name }",
-        "${ nbFailures } fényképet nem sikerült eltávolítani a következőből: ${ albumLink.name }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } fotó hozzáadva a(z) „${ albumName }” albumhoz.",
-        "${ nbSuccesses } fotó hozzáadva a(z) „${ albumName }” albumhoz."
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } fotó eltávolítva innen: ${ albumLink.name }",
-        "${ nbSuccesses } fotó eltávolítva innen: ${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elem törölve",
         "${ numberOfItems } elem törölve"
@@ -8526,10 +8592,10 @@
       "Invite members": [
         "Tagok meghívása"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talán később"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talán később"
       ],
       "Select theme": [
@@ -10465,6 +10531,9 @@
       "Add to ${ groupName }": [
         "Hozzáadás a csoporthoz: ${ groupName }"
       ],
+      "Add user": [
+        "Felhasználó hozzáadása"
+      ],
       "Addresses": [
         "Címek"
       ],
@@ -10541,6 +10610,9 @@
       "Clearing data": [
         "Adatok törlése"
       ],
+      "Collaborate on documents": [
+        "Együttműködés dokumentumokon"
+      ],
       "Completed": [
         "Kész"
       ],
@@ -10555,6 +10627,9 @@
       ],
       "Confirmation required": [
         "Megerősítés szükséges"
+      ],
+      "Connect to video conferencing": [
+        "Kapcsolódás videokonferenciához"
       ],
       "Contact Details": [
         "Névjegy részletei"
@@ -10654,6 +10729,9 @@
       "Download ${ date }": [
         "${ date } letöltése"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
       "Download the app": [
         "Töltse le az alkalmazást"
       ],
@@ -10704,6 +10782,9 @@
       ],
       "Enable drive search": [
         "A felhőtárhelyen való keresés engedélyezése"
+      ],
+      "Enhance security with 2FA": [
+        "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
       ],
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
@@ -10772,6 +10853,9 @@
       ],
       "Import contacts": [
         "Névjegyek importálása"
+      ],
+      "Import emails, calendars, contacts": [
+        "E-mailek, naptárak, névjegyek importálása"
       ],
       "Import events": [
         "Események importálása"
@@ -10896,6 +10980,12 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
+      "Org setup": [
+        "Szervezet beállítása"
+      ],
+      "Organization setup": [
+        "Szervezet beállítása"
+      ],
       "Original size": [
         "Eredeti méret"
       ],
@@ -11005,14 +11095,23 @@
       "Select link expiration time": [
         "Hivatkozás lejárati idejének kiválasztása"
       ],
+      "Set recovery methods": [
+        "Helyreállítási módszerek beállítása"
+      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Set up email forwarding": [
+        "E-mail továbbítás beállítása"
       ],
       "Settings": [
         "Beállítások"
       ],
       "Share ${ name }": [
         "${ name } megosztása"
+      ],
+      "Share your calendar with your team": [
+        "Naptárának megosztása a csapatával"
       ],
       "Shared": [
         "Megosztott"
@@ -11028,6 +11127,12 @@
       ],
       "Sign out": [
         "Kijelentkezés"
+      ],
+      "Simplify email distribution": [
+        "Egyszerűsítse az e-mail terjesztést"
+      ],
+      "Simplify password management": [
+        "Egyszerűsítse a jelszókezelést"
       ],
       "Size": [
         "Méret"
@@ -11074,6 +11179,9 @@
       "Trash": [
         "Lomtár"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
+      ],
       "Type": [
         "Típus"
       ],
@@ -11083,8 +11191,14 @@
       "Untitled document ${ date }": [
         "Névtelen dokumentum: ${ date }"
       ],
+      "Updating your photos": [
+        "Fényképei frissítése"
+      ],
       "Upgrade complete!": [
         "A verzió frissítése befejeződött!"
+      ],
+      "Upload and share files": [
+        "Fájlok feltöltése és megosztása"
       ],
       "Uploaded": [
         "Feltöltve"
@@ -11094,6 +11208,9 @@
       ],
       "Uploading a large file or folder": [
         "Nagy fájl vagy mappa feltöltése"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"
       ],
       "Verification failed": [
         "Az ellenőrzés sikertelen"
