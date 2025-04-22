@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { electronicFormatIBAN } from 'ibantools';
+import { electronicFormatIBAN, isValidIBAN } from 'ibantools';
+import { c } from 'ttag';
 
 import type { DirectDebitBankAccount, DirectDebitCustomer, DirectDebitCustomerNameType } from '@proton/chargebee/lib';
 import { useLoading } from '@proton/hooks';
-import { SepaEmailNotProvidedError } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type AmountAndCurrency,
@@ -12,6 +12,8 @@ import {
     type ChargebeeFetchedPaymentToken,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
+    DisplayablePaymentError,
+    type ExtendedExtractIBANResult,
     type ForceEnableChargebee,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
@@ -19,12 +21,29 @@ import {
     type PaymentVerificatorV5,
     type V5PaymentToken,
     convertPaymentIntentData,
+    extractIBAN,
 } from '@proton/payments';
 import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/shared/lib/api/payments';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
+
+export class SepaEmailNotProvidedError extends DisplayablePaymentError {
+    constructor() {
+        super(c('Info').t`SEPA payments are not available at the moment. Please try again later.`);
+        this.name = 'SepaEmailNotProvidedError';
+    }
+}
+
+export class SepaFormInvalidError extends DisplayablePaymentError {
+    constructor() {
+        super(c('Info').t`Please fill in all required fields.`);
+        this.name = 'SepaFormInvalidError';
+    }
+}
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
@@ -58,6 +77,14 @@ export type ChargebeeDirectDebitProcessorHook = Omit<PaymentProcessorHook, keyof
     setAddressLine1: (addressLine1: string) => void;
     reset: () => void;
     getFetchedPaymentToken: () => ChargebeeFetchedPaymentToken | null;
+    errors: {
+        companyError?: string;
+        firstNameError?: string;
+        lastNameError?: string;
+        ibanError?: string;
+        addressError?: string;
+    };
+    ibanStatus: ExtendedExtractIBANResult;
 } & Overrides;
 
 type DirectDebitCustomerWithoutEmail = Omit<DirectDebitCustomer, 'email'>;
@@ -85,7 +112,50 @@ export const useSepaDirectDebit = (
 
     const processingToken = fetchingToken || verifyingToken;
 
+    const ibanStatus = extractIBAN(bankAccount.iban);
+
+    const submittedRef = useRef(false);
+    const validator = (validations: string[]) => validations.reduce((acc, x) => acc || x, '');
+
+    const getErrors = () => {
+        if (!submittedRef.current) {
+            return {};
+        }
+
+        const isCompany = customer.customerNameType === 'company';
+        const isIndividual = customer.customerNameType === 'individual';
+
+        return {
+            companyError: isCompany ? validator?.([requiredValidator(customer.company)]) : undefined,
+            firstNameError: isIndividual ? validator?.([requiredValidator(customer.firstName)]) : undefined,
+            lastNameError: isIndividual ? validator?.([requiredValidator(customer.lastName)]) : undefined,
+            ibanError: validator?.([
+                requiredValidator(bankAccount.iban),
+                isValidIBAN(bankAccount.iban) ? '' : c('Error').t`Invalid IBAN`,
+            ]),
+            addressError: ibanStatus.requiresAddress
+                ? validator?.([requiredValidator(customer.addressLine1)])
+                : undefined,
+        };
+    };
+
+    const validateBeforeSubmit = () => {
+        submittedRef.current = true;
+        const definedErrors = Object.values(getErrors()).filter(isTruthy);
+        if (definedErrors.length === 0) {
+            return;
+        }
+
+        throw new SepaFormInvalidError();
+    };
+
     const fetchPaymentToken = async () => {
+        try {
+            validateBeforeSubmit();
+        } catch (error) {
+            return;
+        }
+
         if (onBeforeSepaPayment) {
             const result = await onBeforeSepaPayment();
             if (!result) {
@@ -226,6 +296,8 @@ export const useSepaDirectDebit = (
         processPaymentToken,
         reset,
         getFetchedPaymentToken,
+        errors: getErrors(),
+        ibanStatus,
         meta: {
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
         },
