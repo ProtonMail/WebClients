@@ -13,7 +13,8 @@
         "CI_COMMIT_REF_NAME",
         "SENTRY_ORG",
         "SENTRY_URL",
-        "SENTRY_AUTH_TOKEN"
+        "SENTRY_AUTH_TOKEN",
+        "DOCS_SHEETS_KEY"
     ],
     "tasks": {
         "transit": {
