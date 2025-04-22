@@ -367,6 +367,9 @@
       "Make editor": [
         "Düzenleyici yap"
       ],
+      "Make manager": [
+        "Yönetici yap"
+      ],
       "Make viewer": [
         "Görüntüleyici yap"
       ],
@@ -400,10 +403,10 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
       "Multiple select": [
@@ -852,6 +855,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ek parolanızı yazın"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ikinci parolanızı yazın"
+      ],
       "Biometric authentication failed": [
         "Biyometrik doğrulama yapılamadı"
       ],
@@ -1066,6 +1072,9 @@
       ],
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
@@ -1407,6 +1416,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "${ PASS_APP_NAME } uygulamasına erişmek için her zaman ek parolanızı yazmanız gerekir."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "${ PASS_APP_NAME } uygulamasına erişmek için her zaman ikinci parolanızı yazmanız gerekir."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
@@ -1825,6 +1837,9 @@
       "Low Priority": [
         "Düşük Öncelik"
       ],
+      "Manager": [
+        "Yönetici"
+      ],
       "me": [
         "benim"
       ],
@@ -2013,6 +2028,30 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Bu ayarı düzenleyebilmek için lütfen PIN kodunuzu yazın."
+      ],
+      "Please confirm your second password": [
+        "Lütfen ikinci parolanızı onaylayın"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Biyometriyle otomatik kilitleme yapabilmek için lütfen i̇kinci parolanızı onaylayın."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Parolanızla otomatik kilitleme yapabilmek için lütfen ikinci parolanızı onaylayın."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Çevrim dışı kipini kapatmak için lütfen ikinci parolanızı onaylayın"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Çevrim dışı kipini kullanıma almak için lütfen ikinci parolanızı onaylayın"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ikinci parolanızı yazın"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Geçerli kilit kaydınızı silmek için lütfen ikinci parolanızı onaylayın."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Otomatik kilitleme süresini güncellemek için lütfen ikinci parolanızı onaylayın."
       ],
       "Please consider leaving a review.": [
         "Lütfen bir yorum yazmayı değerlendirin."
@@ -2269,6 +2308,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için ek parola kullanın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için ikinci parolanızı kullanın"
       ],
       "Unlock with biometrics": [
         "Kilidi biyometri ile aç"
@@ -2929,6 +2971,9 @@
       "Make all editors": [
         "Tümünü düzenleyici yap"
       ],
+      "Make all managers": [
+        "Tümünü yönetici yap"
+      ],
       "Make all viewers": [
         "Tümünü izleyici yap"
       ],
@@ -3482,6 +3527,9 @@
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
         "Açıldığında, dışa aktarma sırasında tüm dosyalarınız indirilir. Bu işlem, internet bağlantınızın hızına bağlı olarak biraz zaman alabilir."
       ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Verilerinizde ek dosyalar varsa, bunlar içe aktarılmaz."
+      ],
       "Include file attachments": [
         "Ek dosyalar katılsın"
       ],
@@ -3520,6 +3568,9 @@
       ],
       "Total imported files: ": [
         "Toplam içe aktarılan dosya sayısı: "
+      ],
+      "Upgrade to support file attachments": [
+        "Ek dosyaları desteklemek için tarifenizi yükseltin"
       ],
       "Upload files from your device.": [
         "Aygıtınızdan dosyalar yükleyin."
@@ -3939,6 +3990,9 @@
       ],
       "Enter your PIN": [
         "PIN kodunuzu yazın"
+      ],
+      "Enter your second password": [
+        "İkinci parolanızı yazın"
       ],
       "Excluded items": [
         "Katılmayan ögeler"
