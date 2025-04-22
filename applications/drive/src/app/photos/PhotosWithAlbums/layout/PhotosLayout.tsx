@@ -27,7 +27,7 @@ import {
     isDecryptedLink,
     useSharedWithMeActions,
 } from '../../../store';
-import { useLinksActions } from '../../../store/_links';
+import { useLinkActions, useLinksActions } from '../../../store/_links';
 import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
@@ -98,6 +98,7 @@ export const PhotosLayout = () => {
     );
 
     const { transferPhotoLinks } = useLinksActions();
+    const { copyLinkToVolume } = useLinkActions();
     const { selectedItems, clearSelection } = usePhotosSelection({
         photos,
         albumPhotos,
@@ -512,6 +513,20 @@ export const PhotosLayout = () => {
         }
     }, [currentPageType, albumLinkId, albumShareId, selectedItemsLinkIds, previewShareId]);
 
+    const onSavePhoto = useCallback(async () => {
+        if (!shareId || !volumeId || !linkId || selectedCount !== 1) {
+            return;
+        }
+        const abortSignal = new AbortController().signal;
+        const photoLinkId = selectedItems[0].linkId;
+        try {
+            await copyLinkToVolume(abortSignal, shareId, photoLinkId, volumeId, linkId);
+            createNotification({ text: c('Error').t`Photo saved to your Drive` });
+        } catch (e) {
+            createNotification({ text: c('Error').t`Failed to save photo to your Drive`, type: 'error' });
+            sendErrorReport(e);
+        }
+    }, [shareId, linkId, volumeId, selectedItems, selectedCount, copyLinkToVolume, createNotification]);
     /*
         Effects
     */
@@ -544,17 +559,12 @@ export const PhotosLayout = () => {
 
     return (
         <>
-            {isUploadDisabled && (
-                <TopBanner className="bg-warning">{c('Info')
-                    .t`We are experiencing technical issues. Uploading new photos is temporarily disabled.`}</TopBanner>
-            )}
-
             {driveAlbumsDisabled && (
                 <TopBanner className="bg-warning">{c('Info')
                     .t`We are experiencing technical issues. Any albums related actions are temporarily disabled.`}</TopBanner>
             )}
 
-            {currentPageType === AlbumsPageTypes.GALLERY && <PhotosRecoveryBanner />}
+            <PhotosRecoveryBanner />
 
             {hasPreview && (
                 <PortalPreview
@@ -614,6 +624,7 @@ export const PhotosLayout = () => {
                         currentPageType={currentPageType}
                         previewShareId={previewShareId}
                         uploadLinkId={uploadLinkId}
+                        rootLinkId={linkId}
                         selectedCount={selectedCount}
                         uploadDisabled={uploadDisabled}
                         canRemoveSelectedPhotos={canRemoveSelectedPhotos}
@@ -634,6 +645,7 @@ export const PhotosLayout = () => {
                         onLeaveAlbum={onLeaveAlbum}
                         onShowDetails={onShowDetails}
                         onRemoveAlbumPhotos={onRemoveAlbumPhotos}
+                        onSavePhoto={onSavePhoto}
                     />
                 }
             />
