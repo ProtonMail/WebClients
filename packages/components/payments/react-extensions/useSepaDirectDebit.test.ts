@@ -1,4 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import { act } from '@testing-library/react-hooks';
 
 import {
     type AmountAndCurrency,
@@ -6,13 +7,11 @@ import {
     type ChargebeeIframeHandles,
     PAYMENT_METHOD_TYPES,
     PLANS,
-    SepaEmailNotProvidedError,
 } from '@proton/payments';
 import { apiMock } from '@proton/testing/index';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';
-import { type Dependencies } from './useChargebeeCard';
-import { useSepaDirectDebit } from './useSepaDirectDebit';
+import { type Dependencies, SepaEmailNotProvidedError, useSepaDirectDebit } from './useSepaDirectDebit';
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -458,4 +457,119 @@ it('should throw an error when email is not provided', async () => {
 
     expect(result.current.fetchingToken).toBe(false);
     expect(result.current.getFetchedPaymentToken()).toEqual(null);
+});
+
+it('should report the errors reported by the validator - B2B plan', async () => {
+    const dependencies: Dependencies = {
+        api: apiMock,
+        events: {} as ChargebeeIframeEvents,
+        handles: getMockedIframeHandles(),
+        forceEnableChargebee: jest.fn(),
+        verifyPayment: jest.fn(),
+    };
+
+    const { result, rerender } = renderHook(() =>
+        useSepaDirectDebit(
+            {
+                amountAndCurrency: {
+                    Amount: 500,
+                    Currency: 'EUR',
+                },
+                onChargeable: jest.fn(),
+                onProcessPaymentToken: jest.fn(),
+                onProcessPaymentTokenFailed: jest.fn(),
+                selectedPlanName: PLANS.MAIL_PRO,
+            },
+            dependencies
+        )
+    );
+
+    await act(async () => {
+        await result.current.fetchPaymentToken();
+    });
+
+    rerender();
+
+    expect(result.current.errors.companyError).toBeDefined();
+    expect(result.current.errors.ibanError).toBeDefined();
+
+    expect(result.current.errors.firstNameError).toBeUndefined();
+    expect(result.current.errors.lastNameError).toBeUndefined();
+    expect(result.current.errors.addressError).toBeUndefined();
+});
+
+it('should report the errors reported by the validator - B2C plan', async () => {
+    const dependencies: Dependencies = {
+        api: apiMock,
+        events: {} as ChargebeeIframeEvents,
+        handles: getMockedIframeHandles(),
+        forceEnableChargebee: jest.fn(),
+        verifyPayment: jest.fn(),
+    };
+
+    const { result, rerender } = renderHook(() =>
+        useSepaDirectDebit(
+            {
+                amountAndCurrency: {
+                    Amount: 500,
+                    Currency: 'EUR',
+                },
+                onChargeable: jest.fn(),
+                onProcessPaymentToken: jest.fn(),
+                onProcessPaymentTokenFailed: jest.fn(),
+                selectedPlanName: PLANS.MAIL,
+            },
+            dependencies
+        )
+    );
+
+    await act(async () => {
+        await result.current.fetchPaymentToken();
+    });
+
+    rerender();
+
+    expect(result.current.errors.firstNameError).toBeDefined();
+    expect(result.current.errors.lastNameError).toBeDefined();
+    expect(result.current.errors.ibanError).toBeDefined();
+
+    expect(result.current.errors.companyError).toBeUndefined();
+    expect(result.current.errors.addressError).toBeUndefined();
+});
+
+it('should report the errors reported by the validator - no address provided', async () => {
+    const dependencies: Dependencies = {
+        api: apiMock,
+        events: {} as ChargebeeIframeEvents,
+        handles: getMockedIframeHandles(),
+        forceEnableChargebee: jest.fn(),
+        verifyPayment: jest.fn(),
+    };
+
+    const { result, rerender } = renderHook(() =>
+        useSepaDirectDebit(
+            {
+                amountAndCurrency: {
+                    Amount: 500,
+                    Currency: 'EUR',
+                },
+                onChargeable: jest.fn(),
+                onProcessPaymentToken: jest.fn(),
+                onProcessPaymentTokenFailed: jest.fn(),
+                selectedPlanName: PLANS.MAIL,
+            },
+            dependencies
+        )
+    );
+
+    expect(result.current.errors.addressError).toBeUndefined();
+
+    await act(async () => {
+        result.current.setBankAccount({ iban: 'CH9300762011623852957' });
+        await result.current.fetchPaymentToken();
+    });
+
+    rerender();
+
+    expect(result.current.errors.addressError).toBeDefined();
 });
