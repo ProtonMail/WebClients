@@ -1,70 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
-
-import { useSubscription } from '@proton/account/subscription/hooks';
-import {
-    LightLabellingFeatureModal,
-    getShouldOpenReferralModal,
-    useModalState,
-    useShowLightLabellingFeatureModal,
-} from '@proton/components';
-import { FeatureCode, useFeature } from '@proton/features';
-import { domIsBusy } from '@proton/shared/lib/busy';
-import { OPEN_OFFER_MODAL_EVENT, SECOND } from '@proton/shared/lib/constants';
+import { StartupModals, useLightLabellingFeatureModal } from '@proton/components';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-interface StartPayload {
-    time: number;
-}
-
-const getStartModalExpired = (initial: StartPayload, now: StartPayload) => {
-    return now.time - initial.time > 20 * SECOND;
+const useStartupModals = () => {
+    const lightLabellingFeatureModal = useLightLabellingFeatureModal();
+    return [lightLabellingFeatureModal];
 };
 
 const AccountStartupModals = () => {
-    const [subscription] = useSubscription();
-    const onceRef = useRef(false);
-    const [initial] = useState(() => {
-        return { time: Date.now() };
-    });
+    const modals = useStartupModals();
 
-    const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
-    const shouldOpenReferralModal = getShouldOpenReferralModal({
-        subscription,
-        feature: seenReferralModal.feature,
-    });
+    if (isElectronMail) {
+        return null;
+    }
 
-    const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
-    const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
-        useModalState();
-
-    useEffect(() => {
-        if (shouldOpenReferralModal.open) {
-            document.dispatchEvent(new CustomEvent(OPEN_OFFER_MODAL_EVENT));
-        }
-    }, [shouldOpenReferralModal.open]);
-
-    useEffect(() => {
-        if (
-            onceRef.current ||
-            isElectronMail ||
-            domIsBusy() ||
-            getStartModalExpired(initial, {
-                time: Date.now(),
-            })
-        ) {
-            return;
-        }
-
-        if (showLightLabellingFeatureModal) {
-            onceRef.current = true;
-            setLightLabellingFeatureModal(true);
-            return;
-        }
-    }, [showLightLabellingFeatureModal]);
-
-    return (
-        <>{renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}</>
-    );
+    return <StartupModals modals={modals} />;
 };
 
 export default AccountStartupModals;
