@@ -891,6 +891,9 @@
       "${ price } per domain": [
         "${ price } per domän"
       ],
+      "${ price } per seat": [
+        "${ price } per plats"
+      ],
       "${ price } per user": [
         "${ price } per användare"
       ],
@@ -2320,11 +2323,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
@@ -2454,6 +2452,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8249,6 +8252,11 @@
         "Inloggning lyckades inte slutföras."
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "Organisationsinställning och kontosäkerhet"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Alla alias"
@@ -9619,6 +9627,9 @@
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
+      ],
+      "Org setup": [
+        "Organisationsinställning"
       ],
       "Organization setup": [
         "Organisationsinställning"

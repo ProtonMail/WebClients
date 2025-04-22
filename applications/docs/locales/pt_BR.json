@@ -187,6 +187,9 @@
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Conectar-se à videoconferência.\n"
+      ],
       "Contact group": [
         "Grupo de contatos"
       ],
@@ -497,6 +500,9 @@
       ],
       "New message": [
         "Nova mensagem"
+      ],
+      "New sheet": [
+        "Nova planilha"
       ],
       "Next": [
         "Próximo"
@@ -2329,20 +2335,33 @@
         "Fatura vencida"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
-      ]
-    },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A A2F adiciona uma camada extra de segurança, prevenindo acesso não autorizado."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Adicione pastas e arquivos ao ${ DRIVE_APP_NAME } e convide os membros da equipe para visualizar ou editar."
+      ],
       "Also included": [
         "Também incluído"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Encaminhe automaticamente os e-mails recebidos para outro endereço de e-mail."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configure isso primeiro para ativar sua organização e personalizar seu endereço de e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "\"Conecte seu CRM, site, impressoras e outros dispositivos."
+      ],
+      "Create groups you can email with a single address.": [
+        "Crie grupos que podem ser contatados por meio de um único endereço de e-mail."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descriptografando contatos... Isso pode levar alguns minutos. Quando o processo for concluído, você poderá baixar o arquivo com todos seus contatos exportados."
@@ -2353,8 +2372,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Projetado para usuários que buscam proteção reforçada para suas contas."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Tenha acesso facilitado ao seu e-mail e calendário, tanto no computador quanto em dispositivos móveis."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronize facilmente arquivos com a nuvem a partir do seu computador e acesse-os no seu dispositivo móvel."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Promova a adoção da autenticação de dois fatores em sua organização para garantir uma segurança adicional."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Garanta o acesso seguro aos dados da organização, mesmo que sua equipe esteja trabalhando remotamente ou utilizando redes Wi-Fi públicas."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garanta a segurança de alto nível para sua conta com o programa ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma transição sem interrupções para o ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
@@ -2362,8 +2402,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenha infinitos aliases e 500 GB de armazenamento com ${ PLAN_NAMES[PLANS.BUNDLE] }"
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Permite que você adicione instantaneamente links de reunião aos convites dos seus eventos."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
@@ -2377,6 +2423,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para prevenir a perda de acesso à sua conta."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configure contas para todos os usuários e convide-os a ingressar no ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Facilite a sincronização e o agendamento com calendários compartilhados."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para assegurar a máxima proteção de sua conta, defina uma frase de recuperação."
       ],
@@ -2386,6 +2438,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar seus contatos do Google o Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Para começar, dê um nome à sua organização."
+      ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "Faça upgrade para o ${ BRAND_NAME } ${ planName } para continuar compartilhando arquivos com acesso de edição"
       ],
@@ -2394,6 +2449,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Com os grupos de contatos, você pode enviar e-mails para todos os membros do grupo com um clique."
@@ -2412,6 +2470,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4640,6 +4703,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Apenas as pessoas com o link e a senha podem acessar esta pasta."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Abra o guia para ver as ações recomendadas e os links úteis."
+      ],
       "Opening...": [
         "Abrindo..."
       ],
@@ -4936,6 +5002,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "É possível que esse documento não exista ou que você não tenha permissão para visualizá-lo. Você pode tentar recarregar a página para ver se o problema persiste ou entre em contato com o proprietário para ter acesso."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Este é um nome ou apelido para sua organização que seus usuários verão. Você pode alterá-lo a qualquer momento."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este é agora o seu ${ defaultEmailAddress } para enviar novas mensagens."
@@ -5972,6 +6041,9 @@
       "click here": [
         "clique aqui"
       ],
+      "Enforcing 2FA for organizations": [
+        "Requer A2F para a organização"
+      ],
       "How to add users": [
         "Como adicionar usuários"
       ],
@@ -6301,12 +6373,6 @@
       ],
       "Microsoft Excel (OpenXML)": [
         "Microsoft Excel (OpenXML)"
-      ],
-      "Microsoft PowerPoint": [
-        "Microsoft PowerPoint"
-      ],
-      "Microsoft PowerPoint (OpenXML)": [
-        "Microsoft PowerPoint (OpenXML)"
       ],
       "Microsoft Visio": [
         "Microsoft Visio"
@@ -7781,7 +7847,7 @@
         "Recentes"
       ],
       "Searching": [
-        "Buscando"
+        "Pesquisando"
       ],
       "Trashed": [
         "Lixeira"
@@ -8243,6 +8309,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "O início de sessão não foi concluído."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configuração da organização e segurança da conta."
       ]
     },
     "Security Center": {
@@ -9331,6 +9402,12 @@
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Conectar-se à videoconferência"
+      ],
+      "Connect your custom domain": [
+        "Conecte seu domínio personalizado"
+      ],
       "Contact Details": [
         "Detalhes do contato"
       ],
@@ -9482,6 +9559,9 @@
       ],
       "End-to-end encrypted": [
         "Criptografado de ponta a ponta"
+      ],
+      "Enhance security with 2FA": [
+        "Aumente a segurança com 2FA"
       ],
       "Enter 2FA code": [
         "Insira o código A2F"
@@ -9718,6 +9798,12 @@
       "Sign out": [
         "Encerrar sessão"
       ],
+      "Simplify email distribution": [
+        "Simplifique a distribuição dos e-mails"
+      ],
+      "Simplify password management": [
+        "Facilite o gerenciamento de senhas"
+      ],
       "Something went wrong": [
         "Algo deu errado"
       ],
@@ -9783,6 +9869,9 @@
       ],
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Do que uma VPN pode proteger você?"
