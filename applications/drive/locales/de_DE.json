@@ -5377,9 +5377,6 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Einige deiner Dateien sind nicht mehr zugänglich. Stelle den Zugriff auf deine Dateien wieder her. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Einige Fotos in diesem Album werden möglicherweise nicht in deiner Zeitleiste gespeichert. Wenn du dieses Album löschst, werden diese Fotos dauerhaft gelöscht."
-      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Einige Websites und Streaming-Dienste blockieren Inhalte je nach Region. Mit einem VPN kannst du diese Beschränkungen umgehen und frei auf das Internet zugreifen."
       ],
@@ -8210,22 +8207,6 @@
         "${ count } Element konnte nicht entschlüsselt werden",
         "${ count } Elemente konnten nicht entschlüsselt werden"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } Foto konnte nicht zu „${ albumName }“ hinzugefügt werden",
-        "${ nbFailures } Fotos konnten nicht zu „${ albumName }“ hinzugefügt werden"
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } Foto konnte nicht aus ${ albumLink.name } entfernt werden",
-        "${ nbFailures } Fotos konnten nicht aus ${ albumLink.name } entfernt werden"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } Foto zu \"${ albumName }\" hinzugefügt",
-        "${ nbSuccesses } Fotos zu \"${ albumName }\" hinzugefügt"
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } Foto aus ${ albumLink.name } entfernt",
-        "${ nbSuccesses } Fotos aus ${ albumLink.name } entfernt"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } Eintrag gelöscht",
         "${ numberOfItems } Einträge gelöscht"
@@ -8586,10 +8567,10 @@
       "Invite members": [
         "Mitglieder einladen"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Vielleicht später"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Vielleicht später"
       ],
       "Select theme": [

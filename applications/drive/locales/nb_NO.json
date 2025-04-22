@@ -45,6 +45,10 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Legg til ${ photoCount } bilde i et nytt album",
+        "Legg til ${ photoCount } bilder i et nytt album"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -182,6 +186,9 @@
       "Close transfers": [
         "Lukk overføringer"
       ],
+      "Collaborate on documents": [
+        "Samarbeid på dokumenter"
+      ],
       "Collapse": [
         "Skjul"
       ],
@@ -199,6 +206,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Koble til apper og enheter"
+      ],
+      "Connect to video conferencing": [
+        "Koble til videokonferanser"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -340,6 +353,9 @@
       "Download": [
         "Last ned"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Last ned ${ DRIVE_APP_NAME }-apper"
+      ],
       "Download (${ count })": [
         "Last ned (${ count })"
       ],
@@ -430,6 +446,9 @@
       "Get Started": [
         "Kom i gang"
       ],
+      "Get the apps": [
+        "Skaff deg appene"
+      ],
       "Get verification code": [
         "Få verifiseringskode"
       ],
@@ -490,6 +509,9 @@
       "Import emails": [
         "Importer e-poster"
       ],
+      "Import emails, calendars, contacts": [
+        "Importer e-poster, kalendere, kontakter"
+      ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
       ],
@@ -538,8 +560,14 @@
       "Loading verification": [
         "Laster verifisering"
       ],
+      "Manage advanced account protections": [
+        "Administrer avansert kontobeskyttelse"
+      ],
       "Manage folders": [
         "Behandle mapper"
+      ],
+      "Manage groups": [
+        "Administrer grupper"
       ],
       "Manage labels": [
         "Behandle etiketter"
@@ -549,6 +577,9 @@
       ],
       "Manage share": [
         "Administrer deling"
+      ],
+      "Manage users/addresses": [
+        "Administrer brukere/adresser"
       ],
       "Mark as favorite": [
         "Merk som favoritt"
@@ -700,6 +731,9 @@
       "Remove bonuses": [
         "Fjern bonuser"
       ],
+      "Remove button": [
+        "Fjern knapp"
+      ],
       "Remove device": [
         "Fjern enhet"
       ],
@@ -838,8 +872,20 @@
       "Set as cover": [
         "Angi som omslag"
       ],
+      "Set recovery methods": [
+        "Angi gjenopprettingsmetoder"
+      ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
+      ],
+      "Set up 2FA": [
+        "Konfigurer 2FA"
+      ],
+      "Set up a custom domain": [
+        "Konfigurer et egendefinert domene"
+      ],
+      "Set up email forwarding": [
+        "Konfigurer videresending av e-post"
       ],
       "Settings": [
         "Innstillinger"
@@ -858,6 +904,9 @@
       ],
       "Share via link": [
         "Del via kobling"
+      ],
+      "Share your calendar with your team": [
+        "Del kalenderen din med teamet ditt"
       ],
       "Sharing options": [
         "Delingsalternativer"
@@ -943,6 +992,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Angre"
       ],
@@ -973,6 +1025,9 @@
       "Upload": [
         "Last opp"
       ],
+      "Upload and share files": [
+        "Last opp og del filer"
+      ],
       "Upload anyway": [
         "Last opp uansett"
       ],
@@ -996,6 +1051,12 @@
       ],
       "Use ${ label } theme": [
         "Bruk ${ label }-temaet"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Bruk ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Bruk ${ VPN_SHORT_APP_NAME } for personvern"
       ],
       "Use a different card": [
         "Bruk et annet kort"
@@ -2530,14 +2591,32 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert, kryptert miljø."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
+      ],
       "Also included": [
         "Også inkludert"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Videresend automatisk innkommende e-post til en annen e-postadresse."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Konfigurer dette først for å aktivere organisasjonen din og tilpasse e-postadressen din."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Koble til CRM-en, nettstedet, skriverne dine og mer."
+      ],
+      "Create groups you can email with a single address.": [
+        "Opprett grupper du kan sende e-post til med én enkelt adresse."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
@@ -2548,8 +2627,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Designet for brukere som ønsker økt beskyttelse for kontoene sine."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Få enkel tilgang til e-posten og kalenderen din på datamaskin og mobil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synkroniser filer enkelt til skyen fra datamaskinen din, og få tilgang til dem fra mobilenheten din."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Oppmuntre bruken av tofaktorautentisering i organisasjonen din for ekstra sikkerhet."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Sørg for sikker tilgang til organisasjonsdata, selv om teamet ditt er eksternt eller bruker offentlig WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Sørg for førsteklasses sikkerhet for din konto med ${ PROTON_SENTINEL_NAME }-programmet."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Sørg for at du fortsatt har tilgang til kontoen og dataene dine selv om du mister ${ BRAND_NAME }-passordet ditt."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -2557,8 +2657,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrensede aliaser og 500 GB lagringsplass med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Hjelp teamet ditt med å lagre passord til sensitiv forretnings- og klientinformasjon på en sikker måte."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Lar deg umiddelbart legge til møtekoblinger i hendelsesinvitasjonene dine."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slår sammen kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
@@ -2572,6 +2678,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Angi en gjenopprettingsmetode for å forhindre at du mister tilgang til kontoen din."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Konfigurer kontoer for alle brukere og inviter dem til å bli med i ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Forenkle synkronisering og planlegging med delte kalendere."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
@@ -2581,6 +2693,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "For å starte, gi organisasjonen din et navn."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Oppgrader til ${ planName } for å fortsette å dele filer med redigeringstilgang"
       ],
@@ -2589,6 +2704,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
@@ -2717,6 +2835,11 @@
         "Prioritert brukerstøtte"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTAT: \n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "Beskrivelse:\n${ eventDescription }"
@@ -2728,6 +2851,12 @@
       ],
       "All events in this series were updated.": [
         "Alle hendelsene i denne serien ble oppdatert."
+      ],
+      "Here's what changed:": [
+        "Her er hva som er endret:"
+      ],
+      "NOTE:": [
+        "NOTAT:"
       ],
       "This event occurrence was canceled.": [
         "Denne hendelsesforekomsten ble kansellert."
@@ -3777,6 +3906,10 @@
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "Legg til ${ photoCount } bilde til",
+        "Legg til ${ photoCount } bilder til"
+      ],
       "Add to shared album": [
         "Legg til i delt album"
       ],
@@ -3785,6 +3918,10 @@
       ],
       "Recent": [
         "Nylige"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Del ${ photoCount } bilde via",
+        "Del ${ photoCount } bilder via"
       ]
     },
     "Hint": {
@@ -5084,6 +5221,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Kun personer med koblingen og passordet har tilgang til denne mappen."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
+      ],
       "or discover other features:": [
         "eller oppdag andre funksjoner:"
       ],
@@ -5332,6 +5472,9 @@
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
+      "Set up your organization": [
+        "Konfigurer organisasjonen din"
+      ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
@@ -5386,8 +5529,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene dine. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Noen bilder i dette albumet lagres ikke på tidslinjen din. Hvis du sletter dette albumet, slettes disse bildene permanent."
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Noen bilder i dette albumet er ikke lagret på tidslinjen din. Hvis du sletter dette albumet, slettes disse bildene permanent."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
@@ -5491,6 +5634,9 @@
       ],
       "This folder is empty": [
         "Denne mappen er tom"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dette er et navn eller kallenavn for organisasjonen din som brukerne dine vil se. Du kan endre det når som helst."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
@@ -5705,6 +5851,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Flott levert, du har nettopp økt lagringsplassen til 5 GB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Vi opplever tekniske problem. Alle albumrelaterte handlinger er midlertidig deaktivert."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Vi opplever tekniske problemer. Opplasting av nye bilder er midlertidig deaktivert."
@@ -6758,8 +6907,53 @@
       "Drafts": [
         "Utkast"
       ],
+      "Enforcing 2FA for organizations": [
+        "Håndheve 2FA for organisasjoner"
+      ],
+      "How to add users": [
+        "Hvordan legge til brukere"
+      ],
+      "How to add Zoom links": [
+        "Hvordan legge til Zoom-koblinger"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Hvordan samarbeide i ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Hvordan aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Slik migrerer du til ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Hvordan konfigurere ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Hvordan konfigurere et egendefinert domene"
+      ],
+      "How to set up SMTP": [
+        "Hvordan konfigurere SMTP"
+      ],
+      "How to share a calendar": [
+        "Hvordan dele en kalender"
+      ],
+      "How to share via email": [
+        "Hvordan dele via e-post"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Hvordan bruke ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Hvordan bruke ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Hvordan bruke postvideresending"
+      ],
+      "How to use Groups": [
+        "Hvordan bruke grupper"
       ],
       "if your data is leaked": [
         "hvis dataene dine er lekket"
@@ -6808,6 +7002,9 @@
       ],
       "Trash": [
         "Papirkurv"
+      ],
+      "Types of recovery methods": [
+        "Typer av gjenopprettingsmetoder"
       ],
       "What’s this?": [
         "Hva er det der?"
@@ -8219,22 +8416,6 @@
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } bilde ble ikke lagt til i \"${ albumName }\"",
-        "${ nbFailures } bilder ble ikke lagt til i \"${ albumName }\""
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } bilde ble ikke fjernet fra ${ albumLink.name }",
-        "${ nbFailures } bilder ble ikke fjernet fra ${ albumLink.name }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } bilde ble lagt til i \"${ albumName }\"",
-        "${ nbSuccesses } bilder ble lagt til i \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } bilde ble fjernet fra ${ albumLink.name }",
-        "${ nbSuccesses } bilder ble fjernet fra ${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
@@ -8453,11 +8634,23 @@
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer blir slettet om 72 timer"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Bildene dine er lagt til i \"${ albumName }\""
+      ],
       "Your settings failed to be saved": [
         "Innstillingene dine ble ikke lagret"
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "Noen bilder kunne ikke legges til i \"${ albumName }\""
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Noen bilder kunne ikke fjernes fra ${ albumLink.name }"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Bildene dine er fjernet fra ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8595,10 +8788,10 @@
       "Invite members": [
         "Inviter medlemmer"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanskje senere"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanskje senere"
       ],
       "Select theme": [
@@ -9044,6 +9237,9 @@
       "New name": [
         "Nytt navn"
       ],
+      "Organization name": [
+        "Organisasjonsnavn"
+      ],
       "Password": [
         "Passord"
       ],
@@ -9076,6 +9272,9 @@
       ],
       "Start typing an email address": [
         "Begynn å skrive inn en e-postadresse"
+      ],
+      "Your organization name": [
+        "Organisasjonsnavnet ditt"
       ]
     },
     "Placeholder for contact group name": {
@@ -9164,6 +9363,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Påloggingen ble ikke fullført."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Konfigurasjon av organisasjon og kontosikkerhet"
       ]
     },
     "Security Center": {
@@ -10537,6 +10741,9 @@
       "Add to ${ groupName }": [
         "Legg til i ${ groupName }"
       ],
+      "Add user": [
+        "Legg til bruker"
+      ],
       "Addresses": [
         "Adresser"
       ],
@@ -10613,6 +10820,9 @@
       "Clearing data": [
         "Tømmer data"
       ],
+      "Collaborate on documents": [
+        "Samarbeid på dokumenter"
+      ],
       "Completed": [
         "Fullført"
       ],
@@ -10627,6 +10837,15 @@
       ],
       "Confirmation required": [
         "Bekreftelse kreves"
+      ],
+      "Connect apps and devices": [
+        "Koble til apper og enheter"
+      ],
+      "Connect to video conferencing": [
+        "Koble til videokonferanser"
+      ],
+      "Connect your custom domain": [
+        "Koble til ditt egendefinerte domene"
       ],
       "Contact Details": [
         "KontaktInformasjon"
@@ -10726,6 +10945,9 @@
       "Download ${ date }": [
         "Nedlasting ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Last ned ${ DRIVE_APP_NAME }-apper"
+      ],
       "Download the app": [
         "Last ned appen"
       ],
@@ -10774,8 +10996,14 @@
       "Enable 2FA": [
         "Aktiver 2FA"
       ],
+      "Enable advanced account protection": [
+        "Aktiver avansert kontobeskyttelse"
+      ],
       "Enable drive search": [
         "Aktiver søk i Drive"
+      ],
+      "Enhance security with 2FA": [
+        "Forbedre sikkerheten med 2FA"
       ],
       "Enter 2FA code": [
         "Angi 2FA-kode"
@@ -10844,6 +11072,9 @@
       ],
       "Import contacts": [
         "Importer kontakter"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importer e-poster, kalendere, kontakter"
       ],
       "Import events": [
         "Importer hendelser"
@@ -10968,6 +11199,12 @@
       "Open actions dropdown": [
         "Åpne rullegardinmeny for handlinger"
       ],
+      "Org setup": [
+        "Organisasjonskonfigurasjon"
+      ],
+      "Organization setup": [
+        "Organisasjonsoppsett"
+      ],
       "Original size": [
         "Opprinnelig størrelse"
       ],
@@ -11077,14 +11314,26 @@
       "Select link expiration time": [
         "Velg utløpstid for kobling"
       ],
+      "Set recovery methods": [
+        "Angi gjenopprettingsmetoder"
+      ],
       "Set recovery phrase": [
         "Angi gjenopprettingsfrase"
+      ],
+      "Set up email forwarding": [
+        "Sett opp videresending av e-post"
+      ],
+      "Set up your organization": [
+        "Konfigurer organisasjonen din"
       ],
       "Settings": [
         "Innstillinger"
       ],
       "Share ${ name }": [
         "Delt ressurs ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Del kalenderen din med teamet ditt"
       ],
       "Shared": [
         "Delt"
@@ -11100,6 +11349,12 @@
       ],
       "Sign out": [
         "Logg av"
+      ],
+      "Simplify email distribution": [
+        "Forenkle distribusjon av e-post"
+      ],
+      "Simplify password management": [
+        "Forenkle passordadministrasjon"
       ],
       "Size": [
         "Størrelse"
@@ -11146,6 +11401,9 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Type"
       ],
@@ -11161,6 +11419,9 @@
       "Upgrade complete!": [
         "Oppgradering fullført!"
       ],
+      "Upload and share files": [
+        "Last opp og del filer"
+      ],
       "Uploaded": [
         "Lastet opp"
       ],
@@ -11169,6 +11430,9 @@
       ],
       "Uploading a large file or folder": [
         "Laster opp en stor fil eller mappe"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Bruk ${ VPN_SHORT_APP_NAME } for personvern"
       ],
       "Verification failed": [
         "Bekreftelse mislyktes"
@@ -11193,6 +11457,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Velkommen til ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "Hva kan et VPN beskytte deg mot?"

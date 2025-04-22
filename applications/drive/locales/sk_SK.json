@@ -555,6 +555,9 @@
       "Manage folders": [
         "Spravovať priečinky"
       ],
+      "Manage groups": [
+        "Spravovať skupiny"
+      ],
       "Manage labels": [
         "Spravovať štítky"
       ],
@@ -854,6 +857,9 @@
       ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
+      ],
+      "Set up 2FA": [
+        "Nastaviť 2FA"
       ],
       "Settings": [
         "Nastavenia"
@@ -5267,6 +5273,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto priečinku."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
       "or discover other features:": [
         "alebo objavte ďalšie funkcie:"
       ],
@@ -5519,6 +5528,9 @@
       "Session timed out": [
         "Relácia vypršala"
       ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
       ],
@@ -5572,9 +5584,6 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Niektoré z vašich súborov už nie sú k dispozícii. Obnovte prístup k vašim súborom. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Niektoré fotografie v tomto albume sa nemusia uložiť na vašu časovú os. Vymazaním tohto albumu sa tieto fotografie natrvalo odstránia."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Niektoré webové lokality a streamovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
@@ -5680,6 +5689,9 @@
       ],
       "This folder is empty": [
         "Tento priečinok je prázdny"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
@@ -8443,30 +8455,6 @@
         "${ count } položiek sa nepodarilo dešifrovať",
         "${ count } položiek sa nepodarilo dešifrovať"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } fotografiu sa nepodarilo pridať do „${ albumName }“",
-        "${ nbFailures } fotografie sa nepodarilo pridať do „${ albumName }“",
-        "${ nbFailures } fotografií sa nepodarilo pridať do „${ albumName }“",
-        "${ nbFailures } fotografií sa nepodarilo pridať do „${ albumName }“"
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } fotografiu sa nepodarilo odstrániť z ${ albumLink.name }",
-        "${ nbFailures } fotografie sa nepodarilo odstrániť z ${ albumLink.name }",
-        "${ nbFailures } fotografií sa nepodarilo odstrániť z ${ albumLink.name }",
-        "${ nbFailures } fotografií sa nepodarilo odstrániť z ${ albumLink.name }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } fotografia pridaná do „${ albumName }“",
-        "${ nbSuccesses } fotografie pridané do „${ albumName }“",
-        "${ nbSuccesses } fotografií pridaných do „${ albumName }“",
-        "${ nbSuccesses } fotografií pridaných do „${ albumName }“"
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } fotografia odstránená z ${ albumLink.name }",
-        "${ nbSuccesses } fotografie odstránené z ${ albumLink.name }",
-        "${ nbSuccesses } fotografií odstránených z ${ albumLink.name }",
-        "${ nbSuccesses } fotografií odstránených z ${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka vymazaná",
         "${ numberOfItems } položky vymazané",
@@ -8861,10 +8849,10 @@
       "Invite members": [
         "Pozvať členov"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Možno neskôr"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Možno neskôr"
       ],
       "Select theme": [
@@ -10909,6 +10897,9 @@
       "Add to ${ groupName }": [
         "Pridať do ${ groupName }"
       ],
+      "Add user": [
+        "Pridať používateľa"
+      ],
       "Addresses": [
         "Adresy"
       ],
@@ -10987,6 +10978,9 @@
       "Clearing data": [
         "Vymazanie dát"
       ],
+      "Collaborate on documents": [
+        "Spolupráca na dokumentoch"
+      ],
       "Completed": [
         "Dokončené"
       ],
@@ -11001,6 +10995,15 @@
       ],
       "Confirmation required": [
         "Je potrebné potvrdenie"
+      ],
+      "Connect apps and devices": [
+        "Pripojenie aplikácií a zariadení"
+      ],
+      "Connect to video conferencing": [
+        "Pripojiť sa k videokonferencii"
+      ],
+      "Connect your custom domain": [
+        "Pripojte si vlastnú doménu"
       ],
       "Contact Details": [
         "Kontaktné údaje"
@@ -11104,6 +11107,9 @@
       "Download ${ date }": [
         "Stiahnuť ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Stiahnuť aplikáciu"
       ],
@@ -11154,6 +11160,9 @@
       ],
       "Enable drive search": [
         "Povoliť vyhľadávanie na disku"
+      ],
+      "Enhance security with 2FA": [
+        "Zvýšte zabezpečenie pomocou 2FA"
       ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"
@@ -11226,6 +11235,9 @@
       ],
       "Import contacts": [
         "Importovať kontakty"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovať emaily, kalendáre a kontakty"
       ],
       "Import events": [
         "Import udalostí"
@@ -11461,14 +11473,26 @@
       "Select link expiration time": [
         "Vyberte čas vypršania platnosti odkazu"
       ],
+      "Set recovery methods": [
+        "Nastaviť spôsoby obnovenia"
+      ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
+      ],
+      "Set up email forwarding": [
+        "Nastaviť preposielanie emailov"
+      ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
       ],
       "Settings": [
         "Nastavenia"
       ],
       "Share ${ name }": [
         "Zdieľa ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Zdieľajte svoj kalendár so svojím tímom"
       ],
       "Shared": [
         "Zdieľané"
@@ -11530,6 +11554,9 @@
       "Trash": [
         "Kôš"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Typ"
       ],
@@ -11545,6 +11572,9 @@
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
       ],
+      "Upload and share files": [
+        "Nahrávanie a zdieľanie súborov"
+      ],
       "Uploaded": [
         "Nahrané"
       ],
@@ -11553,6 +11583,9 @@
       ],
       "Uploading a large file or folder": [
         "Nahrávanie veľkého súboru alebo priečinka"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
       "Verification failed": [
         "Overovanie zlyhalo"
@@ -11577,6 +11610,9 @@
       ],
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
       "What can a VPN protect you from?": [
         "Pred čím vás môže VPN ochrániť?"
