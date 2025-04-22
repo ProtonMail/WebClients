@@ -1,7 +1,6 @@
 export enum VIDEO_CONF_SERVICES {
     ZOOM = 'zoom',
     GOOGLE_MEET = 'google-meet',
-    SKYPE = 'skype',
     SLACK = 'slack',
     TEAMS = 'teams',
 }
