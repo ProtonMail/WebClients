@@ -75,7 +75,7 @@ export {
     type EnsureTokenChargeableInputs,
     type EnsureTokenChargeableTranslations,
 } from './core/ensureTokenChargeable';
-export { DisplayablePaymentError, SepaEmailNotProvidedError } from './core/errors';
+export { DisplayablePaymentError } from './core/errors';
 export {
     NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     captureWrongPlanIDs,
@@ -188,7 +188,7 @@ export type {
     StrictPlan,
     SubscriptionPlan,
 } from './core/plan/interface';
-export { extractIBAN, formatPaymentMethod, formatPaymentMethods } from './core/sepa';
+export { extractIBAN, formatPaymentMethod, formatPaymentMethods, type ExtendedExtractIBANResult } from './core/sepa';
 export { BillingPlatform, External, Renew } from './core/subscription/constants';
 export {
     getScribeAddonNameByPlan,
