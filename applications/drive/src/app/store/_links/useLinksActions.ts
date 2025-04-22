@@ -605,7 +605,7 @@ export function useLinksActions({
                 return {
                     Name: encryptedName,
                     Hash,
-                    ContentHash: ContentHash,
+                    ContentHash: ContentHash || link.activeRevision?.photo?.contentHash, // we fallback to current ContentHash if available
                     NameSignatureEmail: address.Email,
                     NodePassphrase,
                     ...(!!link.nameSignatureEmail &&
