@@ -1370,10 +1370,10 @@
       "Upgrade": [
         "Modificare"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Modificare"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Modificare"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -7375,6 +7375,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
       ],
@@ -7578,6 +7581,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Această invitație este salvată într-un calendar dezactivat."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Acesta este conceput ca un ajutor de scris. Verificați textul sugerat pentru acuratețe. ${ learnMoreResult }"
@@ -8543,11 +8549,11 @@
       "Always move sender's emails": [
         "Mutare întotdeauna mesajele expeditorului"
       ],
-      "AND": [
-        "ȘI"
-      ],
       "And": [
         "Şi"
+      ],
+      "AND": [
+        "ȘI"
       ],
       "and": [
         "și"
@@ -8777,11 +8783,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "DACĂ"
-      ],
       "If": [
         "Dacă"
+      ],
+      "IF": [
+        "DACĂ"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -8894,14 +8900,14 @@
       "Optional": [
         "Opțional"
       ],
-      "OR": [
-        "SAU"
-      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
+      ],
+      "OR": [
+        "SAU"
       ],
       "Original link": [
         "Legătura originală"
@@ -9721,29 +9727,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Luați ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -9765,6 +9748,29 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Luați ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
