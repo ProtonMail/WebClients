@@ -122,7 +122,7 @@ interface Props {
     eventTargetAction: EventTargetAction | undefined;
     setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;
     shareCalendarInvitationRef: MutableRefObject<{ calendarID: string; invitationID: string } | undefined>;
-    startupModalState: { hasModal?: boolean; isOpen: boolean };
+    startupModalOpen?: boolean;
     getOpenedMailEvents: () => OpenedMailEvent[];
 }
 
@@ -144,7 +144,7 @@ const CalendarContainer = ({
     eventTargetAction,
     setEventTargetAction,
     shareCalendarInvitationRef,
-    startupModalState,
+    startupModalOpen,
     getOpenedMailEvents,
 }: Props) => {
     const history = useHistory();
@@ -210,7 +210,7 @@ const CalendarContainer = ({
 
     useEffect(() => {
         const run = async () => {
-            if (startupModalState.hasModal === undefined || startupModalState.isOpen) {
+            if (startupModalOpen === true || startupModalOpen === undefined) {
                 return;
             }
             const doNotShowAskTimezoneUpdateModal =
@@ -257,7 +257,7 @@ const CalendarContainer = ({
             }
         };
         void run();
-    }, [startupModalState]);
+    }, [startupModalOpen]);
 
     const utcNowDateInTimezone = useMemo(() => {
         return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(nowDate), tzid));

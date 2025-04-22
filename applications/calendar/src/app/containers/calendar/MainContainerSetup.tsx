@@ -90,9 +90,7 @@ const MainContainerSetup = ({
     // We have to do it here, so that we use the correct timezone in EventActionContainer and in CalendarContainer
     const tzid = drawerView ? getTimezone() : customTzid || defaultTzid;
 
-    const [startupModalState, setStartupModalState] = useState<{ hasModal?: boolean; isOpen: boolean }>({
-        isOpen: false,
-    });
+    const [startupModalOpen, setStartupModalOpen] = useState<boolean | undefined>(undefined);
 
     return (
         <ContactEmailsProvider>
@@ -100,7 +98,7 @@ const MainContainerSetup = ({
                 calendarIDs={allCalendarIDs}
                 hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
             >
-                <CalendarStartupModals setStartupModalState={setStartupModalState} />
+                <CalendarStartupModals setModalOpen={(state) => setStartupModalOpen(state)} />
                 <Switch>
                     <Route path={['/:appName/event', '/event']}>
                         <EventActionContainer
@@ -134,7 +132,7 @@ const MainContainerSetup = ({
                                 eventTargetAction={eventTargetAction}
                                 setEventTargetAction={setEventTargetAction}
                                 shareCalendarInvitationRef={shareCalendarInvitationRef}
-                                startupModalState={startupModalState}
+                                startupModalOpen={startupModalOpen}
                                 getOpenedMailEvents={getOpenedMailEvents}
                             />
                         </CalendarSearchProvider>
