@@ -10,6 +10,7 @@ interface ToolbarProps {
     currentPageType: AlbumsPageTypes;
     previewShareId: string;
     uploadLinkId: string;
+    rootLinkId?: string;
     selectedCount: number;
     uploadDisabled: boolean;
     canRemoveSelectedPhotos: boolean;
@@ -32,12 +33,14 @@ interface ToolbarProps {
     onLeaveAlbum: () => void;
     onShowDetails: () => void;
     onRemoveAlbumPhotos: () => Promise<void>;
+    onSavePhoto: () => Promise<void>;
 }
 
 export const Toolbar = ({
     currentPageType,
     previewShareId,
     uploadLinkId,
+    rootLinkId,
     selectedCount,
     uploadDisabled,
     canRemoveSelectedPhotos,
@@ -58,6 +61,7 @@ export const Toolbar = ({
     onLeaveAlbum,
     onShowDetails,
     onRemoveAlbumPhotos,
+    onSavePhoto,
 }: ToolbarProps) => {
     switch (currentPageType) {
         case AlbumsPageTypes.ALBUMS:
@@ -105,6 +109,8 @@ export const Toolbar = ({
                     onAddAlbumPhotos={onAddAlbumPhotos}
                     openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
                     openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
+                    onSavePhoto={onSavePhoto}
+                    rootLinkId={rootLinkId}
                 />
             );
     }
