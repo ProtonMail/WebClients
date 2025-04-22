@@ -352,6 +352,9 @@
       "Fit to window": [
         "Prispôsobiť oknu"
       ],
+      "Forgot password?": [
+        "Zabudnuté heslo?"
+      ],
       "Forgot recovery method?": [
         "Zabudli ste metódu obnovenia?"
       ],
@@ -441,6 +444,9 @@
       ],
       "Make admin": [
         "Urobiť správcom"
+      ],
+      "Manage groups": [
+        "Spravovať skupiny"
       ],
       "Manage subscription": [
         "Spravovať predplatné"
@@ -669,6 +675,9 @@
       ],
       "Set new password": [
         "Nastaviť nové heslo"
+      ],
+      "Set up 2FA": [
+        "Nastaviť 2FA"
       ],
       "Settings": [
         "Nastavenia"
@@ -4632,6 +4641,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadajte emailovú adresu alebo používateľské meno vášho ${ BRAND_NAME } účtu."
       ],
+      "Enter your own password (as organization admin).": [
+        "Zadajte vlastné heslo (ako správca organizácie)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Zadajte vašu emailovú adresu na obnovenie a my vám pošleme vaše používateľské meno alebo emailovú adresu."
       ],
@@ -5010,6 +5022,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
       "or ${ selectFileButton }": [
         "alebo ${ selectFileButton }"
       ],
@@ -5274,6 +5289,9 @@
       "Session timed out": [
         "Relácia vypršala"
       ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
+      ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
       ],
@@ -5444,6 +5462,9 @@
       ],
       "This file is too large to preview": [
         "Tento súbor je príliš veľký na zobrazenie náhľadu"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
@@ -6206,10 +6227,10 @@
       "Allow recovery by phone": [
         "Povoliť obnovenie telefónom"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6754,6 +6775,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Áno, chcem trvale zmazať tento účet a všetky údaje s ním spojené."
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (admin)"
       ],
       "ZIP code": [
         "PSČ"
@@ -7924,14 +7948,6 @@
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -7944,6 +7960,14 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -10141,6 +10165,9 @@
       "Share the confirmation code with your administrator": [
         "Zdieľať potvrdzovací kód s vašim správcom"
       ],
+      "Sign in": [
+        "Prihlásiť sa"
+      ],
       "Sign in to your organization": [
         "Prihláste sa do svojej organizácie"
       ],
@@ -10185,6 +10212,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Ak chcete pridať nových používateľov do svojej organizácie, budete ich musieť vytvoriť ručne."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Presmerujeme vás na poskytovateľa SSO tretej strany."
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
@@ -11267,6 +11297,9 @@
       "Add to spam list": [
         "Pridať do zoznamu spamov"
       ],
+      "Add user": [
+        "Pridať používateľa"
+      ],
       "Add user accounts": [
         "Spravovať používateľské účty"
       ],
@@ -11357,6 +11390,9 @@
       "Close": [
         "Zatvoriť"
       ],
+      "Collaborate on documents": [
+        "Spolupráca na dokumentoch"
+      ],
       "Confirm": [
         "Potvrdiť"
       ],
@@ -11372,11 +11408,20 @@
       "Confirm phone number": [
         "Potvrdenie telefónneho čísla"
       ],
+      "Connect apps and devices": [
+        "Pripojenie aplikácií a zariadení"
+      ],
       "Connect organization": [
         "Pripojiť organizáciu"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Pripojte ${ VPN_CONNECTIONS } zariadení naraz s ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Pripojiť sa k videokonferencii"
+      ],
+      "Connect your custom domain": [
+        "Pripojte si vlastnú doménu"
       ],
       "Contact us": [
         "Kontaktujte nás"
@@ -11495,6 +11540,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Prejsť na nižší plán ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
       ],
@@ -11552,6 +11600,12 @@
       "Enable for all users": [
         "Povoliť pre všetkých používateľov"
       ],
+      "Enhance security with 2FA": [
+        "Zvýšte zabezpečenie pomocou 2FA"
+      ],
+      "Enter 2FA code": [
+        "Zadajte 2FA kód"
+      ],
       "Enter endpoints into your identity provider": [
         "Zadajte koncové body do vášho poskytovateľa identity"
       ],
@@ -11560,6 +11614,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadajte údaje svojho ${ BRAND_NAME } účtu pre vstup do ${ app } beta programu."
+      ],
+      "Enter your password": [
+        "Zadajte Vaše heslo"
       ],
       "Error": [
         "Chyba"
@@ -11635,6 +11692,9 @@
       ],
       "Human verification": [
         "Overenie, že nie ste robot"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importovať emaily, kalendáre a kontakty"
       ],
       "Increase your privacy with more addresses": [
         "Zvýšte svoje súkromie pomocou viacerých adries"
@@ -11792,8 +11852,17 @@
       "Set organization name": [
         "Nastaviť názov organizácie"
       ],
+      "Set recovery methods": [
+        "Nastaviť spôsoby obnovenia"
+      ],
+      "Set up email forwarding": [
+        "Nastaviť preposielanie emailov"
+      ],
       "Set up two-factor authentication": [
         "Nastavenie dvojstupňového overenia"
+      ],
+      "Set up your organization": [
+        "Nastaviť svoju organizáciu"
       ],
       "Set your password": [
         "Nastavte si heslo"
@@ -11803,6 +11872,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Nastavenie dedikovaných serverov prechodom na Business plán"
+      ],
+      "Share your calendar with your team": [
+        "Zdieľajte svoj kalendár so svojím tímom"
       ],
       "Shared servers": [
         "Zdieľané servery"
@@ -11852,6 +11924,9 @@
       "There are no groups": [
         "Nie sú tu žiadne skupiny"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "TV prihlásenie"
       ],
@@ -11879,11 +11954,17 @@
       "Upgrade your privacy": [
         "Zvýšte svoje súkromie"
       ],
+      "Upload and share files": [
+        "Nahrávanie a zdieľanie súborov"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Nahrajte CSV súbor, aby ste mohli vytvoriť viacero účtov"
       ],
       "Upload your organization’s logo": [
         "Nahrajte logo vašej organizácie"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
       "User": [
         "Používateľ"
@@ -11911,6 +11992,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vašu novú adresu vám pošleme email s pokynmi na dokončenie zmeny."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
       "WireGuard configuration": [
         "Konfigurácia WireGuard"

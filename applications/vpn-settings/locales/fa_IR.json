@@ -188,6 +188,9 @@
       "Fit to window": [
         "متناسب کردن با پنجره"
       ],
+      "Forgot password?": [
+        "فراموشی گذرواژه?"
+      ],
       "Get a new encrypted email address": [
         "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
       ],
@@ -2403,6 +2406,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "آدرس ایمیل یا نام کاربری حساب ${ BRAND_NAME } خودرا وارد کنید."
       ],
+      "Enter your own password (as organization admin).": [
+        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "رایانشانی بازیابی خود را وارد کنید و ما نام کاربری‌ یا رایانشانی شما را برایتان ارسال خواهیم کرد."
       ],
@@ -3313,6 +3319,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "بلی، من می‌خواهم که برای همیشه این حساب و همه داده‌هایش را حذف کنم."
+      ],
+      "Your password (admin)": [
+        "گذرواژه شما (مدیر)"
       ]
     },
     "label": {
@@ -3887,14 +3896,6 @@
         "شرایط و ضوابط"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "دوره آزمایشی رایگان ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -3907,6 +3908,14 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "دوره آزمایشی رایگان ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
@@ -5055,6 +5064,9 @@
       ],
       "Email subscriptions": [
         "اشتراک‌های رایانامه"
+      ],
+      "Enter your password": [
+        "گذرواژه خود را وارد کنید"
       ],
       "Error": [
         "خطا"
