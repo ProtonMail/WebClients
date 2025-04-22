@@ -539,11 +539,26 @@ export function useLinkInner(
                             const privateKey = !encryptedLink.parentLinkId
                                 ? await getSharePrivateKey(abortSignal, shareId)
                                 : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId);
+
+                            // This is required for photos inside albums
+                            // It may change in the future
+                            const additionalKeys: PrivateKeyReference[] = [];
+                            if (encryptedLink.photoProperties?.albums.length) {
+                                for (const album of encryptedLink.photoProperties.albums) {
+                                    try {
+                                        const key = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
+                                        additionalKeys.push(key);
+                                    } catch (e) {
+                                        // ignore failures but still report them to Sentry
+                                        sendErrorReport(e);
+                                    }
+                                }
+                            }
                             const signatureEmail = encryptedLink.nameSignatureEmail || encryptedLink.signatureEmail;
                             const publicKey = signatureEmail ? await getVerificationKey(signatureEmail) : privateKey;
                             const { data, verificationStatus } = await decryptSigned({
                                 armoredMessage: encryptedLink.name,
-                                privateKey,
+                                privateKey: [privateKey].concat(additionalKeys),
                                 // nameSignatureEmail is missing for some old files.
                                 // Fallback to signatureEmail might result in failed
                                 // signature check, but no one reported it so far so
