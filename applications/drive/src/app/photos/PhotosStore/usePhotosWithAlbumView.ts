@@ -17,6 +17,7 @@ import type { PhotoGridItem, PhotoLink } from '../../store/_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from '../../store/_views/utils';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { useAlbumsPhotosStore } from '../../zustand/photos/albumsPhotos.store';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { usePhotosWithAlbums } from './PhotosWithAlbumsProvider';
 import { getTagFilteredPhotos } from './getTagFilteredPhotos';
@@ -57,6 +58,12 @@ export function updateByEvents(
 
 export const usePhotosWithAlbumsView = () => {
     let { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
+    const { setCurrentAlbumLinkId, albumPhotos } = useAlbumsPhotosStore(
+        useShallow((state) => ({
+            setCurrentAlbumLinkId: state.setCurrentAlbumLinkId,
+            albumPhotos: albumLinkId ? state.albumsPhotos[albumLinkId] || [] : [],
+        }))
+    );
     const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta, getCachedLinksWithoutMeta } = useLinksListing();
     const {
@@ -66,7 +73,6 @@ export const usePhotosWithAlbumsView = () => {
         isAlbumPhotosLoading,
         volumeId,
         photos,
-        albumPhotos,
         albums,
         loadPhotos,
         loadAlbums,
@@ -304,7 +310,14 @@ export const usePhotosWithAlbumsView = () => {
         }
         const abortController = new AbortController();
 
-        if (albumShareId && albumLinkId && currentPageType !== AlbumsPageTypes.ALBUMSADDPHOTOS) {
+        setCurrentAlbumLinkId(albumLinkId);
+
+        if (
+            albumShareId &&
+            albumLinkId &&
+            currentPageType &&
+            [AlbumsPageTypes.ALBUMSGALLERY, AlbumsPageTypes.ALBUMS].includes(currentPageType)
+        ) {
             setIsAlbumsLoading(true);
             void Promise.all([
                 loadSharedWithMeAlbums(abortController.signal),
@@ -459,7 +472,12 @@ export const usePhotosWithAlbumsView = () => {
             if (!albumLinkId) {
                 throw new Error('Failed to add a photo to an album');
             }
-            return addAlbumPhotos(abortSignal, albumShareId, albumLinkId, [linkId]);
+            return addAlbumPhotos(abortSignal, {
+                albumShareId,
+                albumLinkId,
+                linkIds: [linkId],
+                skipSuccessNotifications: true,
+            });
         },
         [albumLinkId, addAlbumPhotos]
     );
