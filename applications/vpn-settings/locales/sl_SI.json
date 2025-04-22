@@ -304,6 +304,9 @@
       "Fit to window": [
         "Prilagodi oknu"
       ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
       "Forgot recovery method?": [
         "Ste pozabili način obnovitve?"
       ],
@@ -3953,6 +3956,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Vnesi svoj e-poštni naslov ali uporabniško ime ${ BRAND_NAME } računa."
       ],
+      "Enter your own password (as organization admin).": [
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Vnesite svoj naslov za obnovitev računa in poslali vam bomo vaše uporabniško ime ali naslov e-pošte."
       ],
@@ -4371,7 +4377,7 @@
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
+        "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Registering your subscription…": [
         "Registriram vašo naročnino …"
@@ -4407,10 +4413,10 @@
         "Shranjevanje vašega gesla."
       ],
       "Scan QR code instead": [
-        "Namesto tega optično preberite kodo QR"
+        "Namesto tega skenirajte kodo QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Optično preberite to kodo s svojo napravo za dvojno preverjanje pristnosti in nastavite svoj račun. ${ switchButton }."
+        "Skenirajte ta kodo s svojo napravo za dvojno preverjanje pristnosti in nastavite svoj račun. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM integracija je onemogočena"
@@ -4482,7 +4488,7 @@
         "Shramba, ki jo uporablja ta uporabnik."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
+        "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every month.": [
         "Naročnina se samodejno podaljša vsak mesec."
@@ -5164,10 +5170,10 @@
       "Allow recovery by phone": [
         "Omogoči obnovitev po telefonu."
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
       "Amount": [
@@ -5652,6 +5658,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ta račun in vse njegove podatke."
+      ],
+      "Your password (admin)": [
+        "Vaše geslo (admin)"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -6743,14 +6752,6 @@
         "pravili in pogoji"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6763,6 +6764,14 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -8580,6 +8589,9 @@
       "Remove single sign-on": [
         "Odstrani enotno prijavo"
       ],
+      "Sign in": [
+        "Prijava"
+      ],
       "Single sign-on removed": [
         "​Enotna prijava je odstranjena"
       ],
@@ -9700,6 +9712,9 @@
       "Email subscriptions": [
         "E-poštne naročnine"
       ],
+      "Enter 2FA code": [
+        "Vnesite kodo 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Vnesite končne točke v ponudnika identitete"
       ],
@@ -9708,6 +9723,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vpišite podrobnosti vašega računa ${ BRAND_NAME } za vključitev v beta preizkuševalni program za ${ app }."
+      ],
+      "Enter your password": [
+        "Vnesite geslo"
       ],
       "Error": [
         "Napaka"
