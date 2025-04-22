@@ -142,6 +142,9 @@
       "Close this banner": [
         "ამ ბანერის დახურვა"
       ],
+      "Collaborate on documents": [
+        "იმუშავეთ ერთად დოკუმენტებზე"
+      ],
       "Compare all plans": [
         "ყველა სატარიფო გეგმის შედარება"
       ],
@@ -153,6 +156,12 @@
       ],
       "Confirm": [
         "დასტური"
+      ],
+      "Connect apps and devices": [
+        "აპებისა და მოწყობილობების დაკავშირება"
+      ],
+      "Connect to video conferencing": [
+        "დაკავსირება ვიდეოკონფერენციასთან"
       ],
       "Contact support": [
         "კონტაქტი მხარდაჭერის გუნდთან"
@@ -271,6 +280,9 @@
       "Download": [
         "გადმოწერა"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
+      ],
       "Download CSV sample": [
         "CSV მაგალითის გადმოწერა"
       ],
@@ -352,6 +364,9 @@
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
       ],
@@ -382,6 +397,9 @@
       "Get more servers": [
         "მეტი სერვერის მიღება"
       ],
+      "Get the apps": [
+        "აპების გადმოწერა"
+      ],
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
@@ -408,6 +426,9 @@
       ],
       "Hide plan features": [
         "ტარიფის თვისებების დამალვა"
+      ],
+      "Import emails, calendars, contacts": [
+        "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
       ],
       "Import new SAML metadata": [
         "ახალი SAML მეტამონაცემების შემოტანა"
@@ -442,8 +463,17 @@
       "Make admin": [
         "ადმინობის მინიჭება"
       ],
+      "Manage advanced account protections": [
+        "ანგარიშის დამატებითი დაცვის მართვა"
+      ],
+      "Manage groups": [
+        "ჯგუფების მართვა"
+      ],
       "Manage subscription": [
         "გამოწერის მართვა"
+      ],
+      "Manage users/addresses": [
+        "მომხმარებლების/ფსევდონიმების მართვა"
       ],
       "Mark as default": [
         "ნაგულისხმევად მონიშვნა"
@@ -537,6 +567,9 @@
       ],
       "Remove bonuses": [
         "ბონუსების წაშლა"
+      ],
+      "Remove button": [
+        "ღილაკის მოცილება"
       ],
       "Remove domain": [
         "დომენის წაშლა"
@@ -670,6 +703,18 @@
       "Set new password": [
         "ახალი პაროლის დაყენება"
       ],
+      "Set recovery methods": [
+        "აღდგენის მეთოდების დაყენება"
+      ],
+      "Set up 2FA": [
+        "2FA-ის მორგება"
+      ],
+      "Set up a custom domain": [
+        "მომხმარებლის დომენის მორგება"
+      ],
+      "Set up email forwarding": [
+        "ელფოსტის გადაგზავნის მორგება"
+      ],
       "Settings": [
         "მორგება"
       ],
@@ -678,6 +723,9 @@
       ],
       "Share via link": [
         "ბმულით გაზიარება"
+      ],
+      "Share your calendar with your team": [
+        "გაუზიარეთ თქვენი კალენდარი თქვენს გუნდს"
       ],
       "Sharing options": [
         "გაზიარების მორგება"
@@ -754,6 +802,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
+      ],
       "Unlock": [
         "განბლოკვა"
       ],
@@ -772,11 +823,20 @@
       "Upload": [
         "ატვირთვა"
       ],
+      "Upload and share files": [
+        "ფაილების ატვირთვა და გაზიარება"
+      ],
       "Upload logo": [
         "ლოგოს ატვირთვა"
       ],
       "Use ${ label } theme": [
         "${ label }-ის გამოყენება"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Business-ის გამოყენება"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
       ],
       "Use a different card": [
         "სხვა ბარათის გამოყენება"
@@ -2465,6 +2525,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
+      ],
+      "To start, give your organization a name.": [
+        "დასაწყებად, მიანიჭეთ თქვენს ორგანიზაიას სახელი."
       ]
     },
     "Disable address prompt": {
@@ -2681,6 +2744,9 @@
       ]
     },
     "edm": {
+      "Allow QR code sign‒in": [
+        "QR კოდით შესვლის დაშვება"
+      ],
       "Code from the other device": [
         "კოდი სხვა მოწყობილობიდან"
       ],
@@ -2695,6 +2761,12 @@
       ],
       "Scan QR code on your mobile device to sign in": [
         "შესასვლელად დაასკანერეთ QR კოდი თქვენს მობილურ მოწყობილობაზე"
+      ],
+      "Security tips": [
+        "უსაფრთხოების რჩევები"
+      ],
+      "Sign in on another device": [
+        "შესვლა სხვა მოწყობილობით"
       ],
       "Sign in with QR code": [
         "შესვლა QR კოდით"
@@ -4475,6 +4547,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "შეიყვანეთ ${ BRAND_NAME }-ის თქვენი ანგარიშის მისამართი ან მომხმარებლის სახელი."
       ],
+      "Enter your own password (as organization admin).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "შეიყვანეთ აღდგენის ელფოსტის მისამართი და ჩვენ მომხმარებლის სახელსა და ელფოსტის მისამართს გამოგიგზავნით."
       ],
@@ -5103,6 +5178,9 @@
       ],
       "Session timed out": [
         "სესიის დრო გავიდა"
+      ],
+      "Set up your organization": [
+        "მოირგეთ თქვენი ორგანიზაცია"
       ],
       "Setting up ${ feature }…": [
         "${ feature }-ის მორგება…"
@@ -5976,10 +6054,10 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6520,6 +6598,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
       ],
+      "Your password (admin)": [
+        "თქვენი პაროლი (admin)"
+      ],
       "ZIP code": [
         "საფოსტო კოდი"
       ]
@@ -6633,6 +6714,9 @@
       "Don't have access to your 2FA?": [
         "არ გაქვთ წვდომა თქვენს 2FA-სთან?"
       ],
+      "Enforcing 2FA for organizations": [
+        "2FA-ის მოთხოვნა ორგანიზაციებისთვის"
+      ],
       "Forgot email?": [
         "დაგავიწყდათ ელფოსტა?"
       ],
@@ -6651,8 +6735,47 @@
       "here": [
         "აქ"
       ],
+      "How to add users": [
+        "როგორ დავამატო მომხმარებლები"
+      ],
+      "How to add Zoom links": [
+        "როგორ დავამატო Zoom-ის ბმულები"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "როგორ ჩავრთო ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "როგორ გადავიდე ${ BRAND_NAME }-ზე"
+      ],
       "How to pay with Bitcoin?": [
         "როგორ გადავიხადო ბიტკოინით?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "როგორ მოვირგო ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "როგორ მოვირგო ჩემი დომენი"
+      ],
+      "How to set up SMTP": [
+        "როგორ მოვირგო SMTP"
+      ],
+      "How to share a calendar": [
+        "როგორ გავაზიარო კალენდარი"
+      ],
+      "How to share via email": [
+        "როგორ გავაზიარო ელფოსტით"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "როგორ გამოვიყენოთ ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "როგორ გამოვიყენო ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "როგორ გამოვიყენო ელფოსტის გადაგზავნა"
+      ],
+      "How to use Groups": [
+        "როგორ გამოვიყენო ჯგუფები"
       ],
       "Learn more": [
         "გაიგეთ მეტი"
@@ -6689,6 +6812,9 @@
       ],
       "Trouble signing in?": [
         "შესვლის პრობლემები გაქვთ?"
+      ],
+      "Types of recovery methods": [
+        "აღდგენის მეთოდის ტიპები"
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
@@ -7639,14 +7765,6 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -7659,6 +7777,14 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -8707,6 +8833,9 @@
       "Main street 12": [
         "ევას შესახვევი 13"
       ],
+      "Organization name": [
+        "ორგანიზაციის სახელი"
+      ],
       "Other": [
         "სხვა"
       ],
@@ -8754,6 +8883,9 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ],
+      "Your organization name": [
+        "თქვენი ორგანიზაციის სახელი"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -9766,6 +9898,9 @@
       "Share the confirmation code with your administrator": [
         "გაუზიარეთ დადასტურების კოდი თქვენს ადმინისტრატორს"
       ],
+      "Sign in": [
+        "შესვლა"
+      ],
       "Sign in to your organization": [
         "შედით თქვენს ორგანიზაციაში"
       ],
@@ -9804,6 +9939,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "თქვენს ორგანიზაციაშ დასამატებლად ახალი მომხმარებლების ხელით შექმნა მოგიწევთ."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ],
       "Your SSO configuration will be deleted.": [
         "თქვენი SSO-ის კონფიგურაცია წაიშლება."
@@ -10837,6 +10975,9 @@
       "Add to spam list": [
         "სპამის სიაში ჩამატება"
       ],
+      "Add user": [
+        "მომხმარებლის დამატება"
+      ],
       "Add user accounts": [
         "მომხმარებლის ანგარიშების დამატება"
       ],
@@ -10927,6 +11068,9 @@
       "Close": [
         "დახურვა"
       ],
+      "Collaborate on documents": [
+        "იმუშავეთ ერთად დოკუმენტებზე"
+      ],
       "Confirm": [
         "დასტური"
       ],
@@ -10942,11 +11086,20 @@
       "Confirm phone number": [
         "დაადასტურეთ ტელეფონის ნომერი"
       ],
+      "Connect apps and devices": [
+        "აპებისა და მოწყობილობების დაკავშირება"
+      ],
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "დაუკავშირდით ${ VPN_CONNECTIONS } მოწყობილობას ერთდროულად ${ vpnPlus }-ით. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "დაკავსირება ვიდეოკონფერენციასთან"
+      ],
+      "Connect your custom domain": [
+        "თქვენი დომენის დაკავსირება"
       ],
       "Contact us": [
         "დაგვიკავშირდით"
@@ -11061,6 +11214,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }-ის გადმოწერა"
       ],
@@ -11115,8 +11271,17 @@
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
       ],
+      "Enable advanced account protection": [
+        "ანგარიშის დამატებითი დაცვის ჩართვა"
+      ],
       "Enable for all users": [
         "ჩართვა ყველა მომხმარებლისთვის"
+      ],
+      "Enhance security with 2FA": [
+        "გააფართოვეთ უსაფრთხოება 2FA-ით"
+      ],
+      "Enter 2FA code": [
+        "შეიყვანეთ 2FA კოდი"
       ],
       "Enter endpoints into your identity provider": [
         "შეიყვანეთ ბოლოწერტილები თქვენი იდენტიფიკატორის მომწოდებელში"
@@ -11126,6 +11291,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
+      ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
       ],
       "Error": [
         "შეცდომა"
@@ -11200,6 +11368,9 @@
       "Human verification": [
         "ადამიანის შემოწმება"
       ],
+      "Import emails, calendars, contacts": [
+        "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
+      ],
       "Increase your privacy with more addresses": [
         "გაზარდეთ თქვენი კონფიდენციალობა მეტი მისამართით"
       ],
@@ -11242,6 +11413,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-ის კონფიგურაციის ფაილები"
       ],
+      "Org setup": [
+        "ორგ.-ის მორგება"
+      ],
       "Organization filters": [
         "ორგანიზაციის ფილტრები"
       ],
@@ -11250,6 +11424,9 @@
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
+      ],
+      "Organization setup": [
+        "ორგანიზაციის მორგება"
       ],
       "Origin": [
         "საიდან მოვიდა"
@@ -11356,8 +11533,17 @@
       "Set organization name": [
         "ორგანიზაციის სახელის დაყენება"
       ],
+      "Set recovery methods": [
+        "აღდგენის მეთოდების დაყენება"
+      ],
+      "Set up email forwarding": [
+        "ელფოსტის გადაგზავნის მორგება"
+      ],
       "Set up two-factor authentication": [
         "2FA-ის დაყენება"
+      ],
+      "Set up your organization": [
+        "მოირგეთ თქვენი ორგანიზაცია"
       ],
       "Set your password": [
         "დააყენეთ თქვენი პაროლი"
@@ -11367,6 +11553,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "იქონიეთ გამოყოფილი სერვერები ტარიფის Business-მდე აწევით"
+      ],
+      "Share your calendar with your team": [
+        "გაუზიარეთ თქვენი კალენდარი თქვენს გუნდს"
       ],
       "Shared servers": [
         "გაზიარებული სერვერები"
@@ -11382,6 +11571,12 @@
       ],
       "Signed in to member account": [
         "შეხვედით სხვის ანგარიშში"
+      ],
+      "Simplify email distribution": [
+        "ელფოსტის განაწილების გამარტივება"
+      ],
+      "Simplify password management": [
+        "პაროლების მართვის გამარტივება"
       ],
       "Single sign-on": [
         "SSO"
@@ -11441,11 +11636,17 @@
       "Upgrade your privacy": [
         "გააუმჯობესეთ თქვენი კონფიდენციალობა"
       ],
+      "Upload and share files": [
+        "ფაილების ატვირთვა და გაზიარება"
+      ],
       "Upload CSV file to create multiple accounts": [
         "ერთზე მეტი ანგარიშის შესასქმნელად CSV ფაილი ატვირთეთ"
       ],
       "Upload your organization’s logo": [
         "ატვირთეთ თქვენი ორგანიზაციის ლოგო"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
       ],
       "User": [
         "მომხმარებელი"
@@ -11473,6 +11674,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "ჩვენ გამოგიგზავნით ელფოსტას ახალ მისამართზე, ინსტრუქციებით, როგორ დაასრულოთ ცვლილება."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "მოგესალმებათ ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "WireGuard-ის მორგება"

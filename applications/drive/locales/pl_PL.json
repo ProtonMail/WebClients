@@ -49,7 +49,7 @@
         "Dodaj ${ photoCount } zdjęcie do nowego albumu",
         "Dodaj ${ photoCount } zdjęcia do nowego albumu",
         "Dodaj ${ photoCount } zdjęć do nowego albumu",
-        "Dodaj ${ photoCount } zdjęć do nowego albumu"
+        "Dodaj ${ photoCount } zdjęcia do nowego albumu"
       ],
       "Add account": [
         "Dodaj konto"
@@ -2707,7 +2707,7 @@
         "Ustaw metodę odzyskiwania, aby uniknąć utraty dostępu do konta."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
-        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do dołączenia do ${ BRAND_NAME }."
+        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Uprość synchronizację i planowanie za pomocą udostępnionych kalendarzy."
@@ -2865,7 +2865,7 @@
     },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
-        "NOTATKA:\n${ eventComment }"
+        "WIADOMOŚĆ:\n${ eventComment }"
       ]
     },
     "Email body for description (description part)": {
@@ -2884,7 +2884,7 @@
         "Zmiany:"
       ],
       "NOTE:": [
-        "NOTATKA:"
+        "WIADOMOŚĆ:"
       ],
       "This event occurrence was canceled.": [
         "Powtórzenie wydarzenia zostało anulowane."
@@ -5693,8 +5693,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Niektóre pliki nie są już dostępne. Przywróć dostęp do plików. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Niektóre zdjęcia z tego albumu mogą nie być zapisane na osi czasu. Usunięcie tego albumu spowoduje trwałe usunięcie tych zdjęć."
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Niektóre zdjęcia z tego albumu nie są zapisane na osi czasu. Usunięcie tego albumu spowoduje trwałe usunięcie tych zdjęć."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Niektóre strony internetowe i usługi streamingu blokują geograficznie treści. VPN pozwala ominąć te ograniczenia i uzyskać swobodny dostęp do Internetu."
@@ -6019,6 +6019,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Przestrzeń dyskowa została zwiększona do 5 GB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Mamy problemy techniczne. Akcje związane z albumami są tymczasowo wyłączone."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Mamy problemy techniczne. Przesyłanie nowych zdjęć jest tymczasowo wyłączone."
@@ -8671,30 +8674,6 @@
         "Odszyfrowanie ${ count } elementów nie powiodło się",
         "Odszyfrowanie ${ count } elementów nie powiodło się"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "Nie udało się dodać ${ nbFailures } zdjęcia do albumu \"${ albumName }\"",
-        "Nie udało się dodać ${ nbFailures } zdjęć do albumu \"${ albumName }\"",
-        "Nie udało się dodać ${ nbFailures } zdjęć do albumu \"${ albumName }\"",
-        "Nie udało się dodać ${ nbFailures } zdjęcia do albumu \"${ albumName }\""
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "Nie udało się usunąć ${ nbFailures } zdjęcia z albumu ${ albumLink.name }",
-        "Nie udało się usunąć ${ nbFailures } zdjęć z albumu ${ albumLink.name }",
-        "Nie udało się usunąć ${ nbFailures } zdjęć z albumu ${ albumLink.name }",
-        "Nie udało się usunąć ${ nbFailures } zdjęć z albumu ${ albumLink.name }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "Dodano ${ nbSuccesses } zdjęcie do albumu \"${ albumName }\"",
-        "Dodano ${ nbSuccesses } zdjęcia do albumu \"${ albumName }\"",
-        "Dodano ${ nbSuccesses } zdjęć do albumu \"${ albumName }\"",
-        "Dodano ${ nbSuccesses } zdjęć do albumu \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "Usunięto ${ nbSuccesses } zdjęcie z albumu ${ albumLink.name }",
-        "Usunięto ${ nbSuccesses } zdjęcia z albumu ${ albumLink.name }",
-        "Usunięto ${ nbSuccesses } zdjęć z albumu ${ albumLink.name }",
-        "Usunięto ${ nbSuccesses } zdjęcia z albumu ${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "Usunięto ${ numberOfItems } element",
         "Usunięto ${ numberOfItems } elementy",
@@ -9089,10 +9068,10 @@
       "Invite members": [
         "Zaproś użytkowników"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Może później"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Może później"
       ],
       "Select theme": [
@@ -10940,16 +10919,16 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Obejmuje nielimitowaną liczbę aliasów, 20 zabezpieczonych folderów, zintegrowane uwierzytelnianie dwustopniowe, automatyczne uzupełnianie danych karty kredytowej i nie tylko."
+        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, 20 sejfów, zintegrowaną aplikację uwierzytelniającą, autouzupełnianie kart płatniczych i wiele więcej."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Obsługuje 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingowych oraz z funkcją blokowania reklam i złośliwego oprogramowania i więcej."
+        "Zawiera 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostęp do globalnych usług streamingu, blokadę reklam, złośliwego oprogramowania i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny e-mail, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i nie tylko."
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Tab subscription modal": {
@@ -12166,7 +12145,7 @@
         "${ n } portfela"
       ],
       "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"

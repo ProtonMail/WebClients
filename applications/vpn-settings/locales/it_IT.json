@@ -142,6 +142,9 @@
       "Close this banner": [
         "Chiudi questo banner"
       ],
+      "Collaborate on documents": [
+        "Collabora sui documenti"
+      ],
       "Compare all plans": [
         "Confronta tutti i piani"
       ],
@@ -153,6 +156,12 @@
       ],
       "Confirm": [
         "Conferma"
+      ],
+      "Connect apps and devices": [
+        "Connetti app e dispositivi"
+      ],
+      "Connect to video conferencing": [
+        "Connettiti alla videoconferenza"
       ],
       "Contact support": [
         "Contatta l'assistenza"
@@ -271,6 +280,9 @@
       "Download": [
         "Scarica"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Scarica le app per ${ DRIVE_APP_NAME }"
+      ],
       "Download CSV sample": [
         "Scarica un campione CSV"
       ],
@@ -352,6 +364,9 @@
       "Fit to window": [
         "Adatta alla finestra"
       ],
+      "Forgot password?": [
+        "Hai dimenticato la password?"
+      ],
       "Forgot recovery method?": [
         "Hai dimenticato il metodo di recupero?"
       ],
@@ -382,6 +397,9 @@
       "Get more servers": [
         "Ottieni più server"
       ],
+      "Get the apps": [
+        "Ottieni le app"
+      ],
       "Get the deal": [
         "Approfitta dell'offerta"
       ],
@@ -408,6 +426,9 @@
       ],
       "Hide plan features": [
         "Nascondi le caratteristiche del piano"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importa email, calendari, contatti"
       ],
       "Import new SAML metadata": [
         "Importa nuovi metadati SAML"
@@ -442,8 +463,17 @@
       "Make admin": [
         "Rendi amministratore"
       ],
+      "Manage advanced account protections": [
+        "Gestisci le protezioni avanzate dell'account"
+      ],
+      "Manage groups": [
+        "Gestisci i gruppi"
+      ],
       "Manage subscription": [
         "Gestisci abbonamento"
+      ],
+      "Manage users/addresses": [
+        "Gestisci utenti/indirizzi"
       ],
       "Mark as default": [
         "Segna come predefinito"
@@ -537,6 +567,9 @@
       ],
       "Remove bonuses": [
         "Rimuovi bonus"
+      ],
+      "Remove button": [
+        "Rimuovi pulsante"
       ],
       "Remove domain": [
         "Rimuovi dominio"
@@ -670,6 +703,18 @@
       "Set new password": [
         "Imposta una nuova password"
       ],
+      "Set recovery methods": [
+        "Imposta i metodi di recupero"
+      ],
+      "Set up 2FA": [
+        "Configura 2FA"
+      ],
+      "Set up a custom domain": [
+        "Configura un dominio personalizzato"
+      ],
+      "Set up email forwarding": [
+        "Configura l'inoltro delle email"
+      ],
       "Settings": [
         "Impostazioni"
       ],
@@ -678,6 +723,9 @@
       ],
       "Share via link": [
         "Condividi con link"
+      ],
+      "Share your calendar with your team": [
+        "Condividi il tuo calendario con il tuo team"
       ],
       "Sharing options": [
         "Opzioni di condivisione"
@@ -754,6 +802,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock": [
         "Sblocca"
       ],
@@ -772,11 +823,20 @@
       "Upload": [
         "Carica"
       ],
+      "Upload and share files": [
+        "Carica e condividi file"
+      ],
       "Upload logo": [
         "Carica logo"
       ],
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Usa ${ PASS_APP_NAME } per Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
       ],
       "Use a different card": [
         "Usa una carta differente"
@@ -969,7 +1029,7 @@
         "Chiudi"
       ],
       "Get the deal": [
-        "Scegli"
+        "Approfitta dell'offerta"
       ],
       "Save even more with a 12-month plan": [
         "Risparmia ancora di più con un piano di 12 mesi"
@@ -986,12 +1046,12 @@
         "6 utenti"
       ],
       "Premium Password Manager": [
-        "Password manager premium"
+        "Gestore di password premium"
       ]
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Per il Black Friday hai una VPN svizzera ad alta velocità a prezzo scontato"
+        "Risparmia con le offerte del Black Friday su una VPN svizzera ad alta velocità"
       ],
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
         "Risparmia con le offerte della Cyber Week su una VPN svizzera ad alta velocità"
@@ -1000,7 +1060,7 @@
         "Risparmia con le offerte della Fine dell'Anno su una VPN svizzera ad alta velocità"
       ],
       "Select your Black Friday offer": [
-        "Seleziona l'offerta del Black Friday"
+        "Seleziona la tua offerta del Black Friday"
       ],
       "Select your Cyber Week offer": [
         "Seleziona la tua offerta della Cyber Week"
@@ -1011,7 +1071,7 @@
     },
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
-        "Siamo spiacenti, questa offerta non è disponibile con il suo piano attuale."
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
       ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Siamo spiacenti, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto di ${ discountPercentage } su ${ plan.Title } se ti abboni per ${ cycle } mese.",
@@ -1020,7 +1080,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
-        "Garanzia 30 giorni soddisfatti o rimborsati"
+        "Garanzia di rimborso entro 30 giorni"
       ]
     },
     "bf2023: Title": {
@@ -1030,7 +1090,7 @@
     },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione dei calendari e molto altro."
       ]
     },
     "BF2024: Deal details": {
@@ -2454,14 +2514,56 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Aggiungi cartelle e file a ${ DRIVE_APP_NAME } e invita i membri del team a visualizzare o modificare."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Inoltra automaticamente le email in arrivo a un altro indirizzo email."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configura prima questa opzione per attivare la tua organizzazione e personalizzare il tuo indirizzo email."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Connetti il tuo CRM, sito web, stampanti e altro."
+      ],
+      "Create groups you can email with a single address.": [
+        "Crea gruppi a cui puoi inviare email con un singolo indirizzo."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crea delle politiche per decidere chi può connettersi ai server condivisi in ciascun paese."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accedi facilmente al tuo indirizzo email e calendario su computer e dispositivo mobile."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronizza facilmente i file sul cloud dal tuo desktop e accedi dal tuo dispositivo mobile."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Incoraggia l'uso dell'autenticazione a due fattori nella tua organizzazione per una maggiore sicurezza."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Garantisci un accesso sicuro ai dati dell'organizzazione, anche se il tuo team è da remoto o utilizza una rete WiFi pubblica."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Garantisci la massima sicurezza per il tuo account con il programma ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Tutti nella tua organizzazione possono connettersi ai server condivisi in tutti i paesi."
       ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Aiuta il tuo team ad archiviare in modo sicuro le password relative a informazioni aziendali e dei clienti sensibili."
       ],
       "If disabled, only admins will have access.": [
         "Se disabilitato, solo gli amministratori avranno accesso."
@@ -2469,11 +2571,26 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantieni separate le diverse parti della tua vita e organizza la tua casella di posta con indirizzi aggiuntivi."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Ti consente di aggiungere immediatamente i link per le riunioni ai tuoi inviti a un evento."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nessuno nella tua organizzazione può connettersi ai server condivisi."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configura gli account per tutti gli user e invitali a partecipare a ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Semplifica la sincronizzazione e la pianificazione con i calendari condivisi."
+      ],
+      "To start, give your organization a name.": [
+        "Per iniziare, dai un nome alla tua organizzazione."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Usa questa guida per fare in modo che la tua organizzazione tragga rapidamente vantaggio dalla crittografia e dall'ecosistema di privacy leader del settore di ${ BRAND_NAME }."
       ]
     },
     "Disable address prompt": {
@@ -4530,6 +4647,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Inserisci l'indirizzo email o il nome utente del tuo account ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Inserisci il tuo indirizzo email di recupero e ti invieremo il tuo nome utente o indirizzo email."
       ],
@@ -4907,6 +5027,9 @@
       ],
       "Open source": [
         "Open source"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Apri la guida per le azioni consigliate e i link utili."
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -6063,10 +6186,10 @@
       "Allow recovery by phone": [
         "Consenti il recupero via telefono"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio autorizzato"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio autorizzato"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6612,6 +6735,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sì, voglio eliminare definitivamente questo account e tutti i suoi dati."
+      ],
+      "Your password (admin)": [
+        "La tua password (admin)"
       ],
       "ZIP code": [
         "Codice postale"
@@ -7780,17 +7906,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7803,6 +7918,17 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -8882,6 +9008,9 @@
       "Main street 12": [
         "Via Mario Greppi 12"
       ],
+      "Organization name": [
+        "Nome dell'organizzazione"
+      ],
       "Other": [
         "Altro"
       ],
@@ -8929,6 +9058,9 @@
       ],
       "VAT number": [
         "Numero partita IVA"
+      ],
+      "Your organization name": [
+        "Il nome della tua organizzazione"
       ],
       "yourdomain.com": [
         "tuodominio.com"
@@ -9231,6 +9363,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL del connettore SCIM a cui l'agente di provisioning IdP inoltra i dati SCIM"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configurazione dell'organizzazione e sicurezza dell'account"
       ]
     },
     "Security Center - Info": {
@@ -9941,6 +10078,9 @@
       "Share the confirmation code with your administrator": [
         "Condividi il codice di conferma con il tuo amministratore"
       ],
+      "Sign in": [
+        "Accedi"
+      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
       ],
@@ -9985,6 +10125,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Dovrai creare manualmente nuovi utenti per aggiungerli alla tua organizzazione."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ],
       "Your SSO configuration will be deleted.": [
         "La tua configurazione SSO verrà eliminata."
@@ -10834,16 +10977,16 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Sono inclusi alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica con i dati delle carte di credito e altro ancora."
+        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Include alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica dei dati delle carte di credito, e molto altro."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la cronologia delle versioni, la condivisione di file crittografati e molto altro."
       ]
     },
     "Tab in domain modal": {
@@ -11021,6 +11164,9 @@
       "Add to spam list": [
         "Aggiungi alla lista spam"
       ],
+      "Add user": [
+        "Aggiungi utente"
+      ],
       "Add user accounts": [
         "Aggiungi account utente"
       ],
@@ -11111,6 +11257,9 @@
       "Close": [
         "Chiudi"
       ],
+      "Collaborate on documents": [
+        "Collabora sui documenti"
+      ],
       "Confirm": [
         "Conferma"
       ],
@@ -11126,11 +11275,20 @@
       "Confirm phone number": [
         "Conferma il numero di telefono"
       ],
+      "Connect apps and devices": [
+        "Connetti app e dispositivi"
+      ],
       "Connect organization": [
         "Connetti l'organizzazione"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Connettiti a ${ VPN_CONNECTIONS } dispositivi contemporaneamente con ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Connettiti alla videoconferenza"
+      ],
+      "Connect your custom domain": [
+        "Connetti il tuo dominio personalizzato"
       ],
       "Contact us": [
         "Contattaci"
@@ -11245,6 +11403,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Vuoi effettuare il downgrade a ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Scarica le app di ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Scarica ${ VPN_APP_NAME }"
       ],
@@ -11299,8 +11460,17 @@
       "Email subscriptions": [
         "Newsletter"
       ],
+      "Enable advanced account protection": [
+        "Attiva la protezione avanzata dell'account"
+      ],
       "Enable for all users": [
         "Abilita per tutti gli utenti"
+      ],
+      "Enhance security with 2FA": [
+        "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
+      ],
+      "Enter 2FA code": [
+        "Inserisci il codice di autenticazione a due fattori"
       ],
       "Enter endpoints into your identity provider": [
         "Inserisci gli endpoint nel tuo fornitore di identità"
@@ -11310,6 +11480,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Inserisci i dettagli del tuo account ${ BRAND_NAME } per partecipare al programma beta di ${ app }"
+      ],
+      "Enter your password": [
+        "Inserisci la tua password"
       ],
       "Error": [
         "Errore"
@@ -11384,6 +11557,9 @@
       "Human verification": [
         "Verifica umana"
       ],
+      "Import emails, calendars, contacts": [
+        "Importa email, calendari, contatti"
+      ],
       "Increase your privacy with more addresses": [
         "Aumenta la tua privacy con più indirizzi"
       ],
@@ -11426,6 +11602,9 @@
       "OpenVPN configuration files": [
         "File di configurazione di OpenVPN"
       ],
+      "Org setup": [
+        "Configurazione dell'organizzazione"
+      ],
       "Organization filters": [
         "Filtri organizzazione"
       ],
@@ -11434,6 +11613,9 @@
       ],
       "Organization name": [
         "Nome dell'organizzazione"
+      ],
+      "Organization setup": [
+        "Configurazione dell'organizzazione"
       ],
       "Origin": [
         "Origine"
@@ -11540,8 +11722,17 @@
       "Set organization name": [
         "Imposta il nome dell'organizzazione"
       ],
+      "Set recovery methods": [
+        "Imposta i metodi di ripristino"
+      ],
+      "Set up email forwarding": [
+        "Configura l'inoltro delle email"
+      ],
       "Set up two-factor authentication": [
         "Abilita l'autenticazione a due fattori"
+      ],
+      "Set up your organization": [
+        "Configura la tua organizzazione"
       ],
       "Set your password": [
         "Scegli la tua password"
@@ -11551,6 +11742,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Configura server dedicati effettuando l'upgrade a Business"
+      ],
+      "Share your calendar with your team": [
+        "Condividi il tuo calendario con il tuo team"
       ],
       "Shared servers": [
         "Server condivisi"
@@ -11566,6 +11760,12 @@
       ],
       "Signed in to member account": [
         "Accesso all'account membro"
+      ],
+      "Simplify email distribution": [
+        "Semplifica la distribuzione di email"
+      ],
+      "Simplify password management": [
+        "Semplifica la gestione delle password"
       ],
       "Single sign-on": [
         "Single sign-on"
@@ -11598,6 +11798,9 @@
       "There are no groups": [
         "Non ci sono gruppi"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "Accesso TV"
       ],
@@ -11625,11 +11828,17 @@
       "Upgrade your privacy": [
         "Migliora la tua privacy"
       ],
+      "Upload and share files": [
+        "Carica e condividi file"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Carica il file CSV per creare più account"
       ],
       "Upload your organization’s logo": [
         "Carica il logo della tua organizzazione"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
       ],
       "User": [
         "Utente"
@@ -11657,6 +11866,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Invieremo un'email al tuo nuovo indirizzo con le istruzioni su come completare il cambio."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Benvenuto in ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Configurazione di WireGuard"

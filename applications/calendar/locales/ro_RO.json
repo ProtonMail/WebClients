@@ -749,10 +749,10 @@
       "Upgrade": [
         "Modificare"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Modificare"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Modificare"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5268,6 +5268,9 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
       ],
@@ -5380,6 +5383,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Acest eveniment a fost actualizat. Organizatorul nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți acest eveniment?"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
@@ -6896,26 +6902,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -6937,6 +6923,26 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {

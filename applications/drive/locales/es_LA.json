@@ -1221,7 +1221,7 @@
     },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 1 dominio de correo personalizado, 10 direcciones de correo, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
     "BF2024: Deal details": {
@@ -5529,8 +5529,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Algunos de los archivos ya no son accesibles. Restaure el acceso a los archivos. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Puede que algunas fotos de este álbum no estén guardadas en su cronología. Si elimina este álbum, esas fotos se eliminarán permanentemente."
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Algunas fotos de este álbum no se han guardado en tu cronología. Si eliminas este álbum, esas fotos se eliminarán permanentemente."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Algunos sitios web y servicios de streaming bloquean los contenidos por región. Una VPN te permite evitar estas restricciones y acceder a internet."
@@ -5851,6 +5851,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "¡Bien hecho, ha incrementado el almacenamiento a 5 GB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Estamos experimentando problemas técnicos. Todas las acciones relacionadas con los álbumes están desactivadas temporalmente."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Estamos experimentando problemas técnicos. La carga de fotos nuevas no está disponible temporalmente."
@@ -8419,22 +8422,6 @@
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "No se pudo agregar ${ nbFailures } foto a «${ albumName }».",
-        "No se pudieron agregar ${ nbFailures } fotos a «${ albumName }»."
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "No se pudo eliminar ${ nbFailures } foto de ${ albumLink.name }.",
-        "No se pudieron eliminar ${ nbFailures } fotos de ${ albumLink.name }."
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "Se agregó ${ nbSuccesses } foto a «${ albumName }».",
-        "Se agregaron ${ nbSuccesses } fotos a «${ albumName }»."
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } foto eliminada de ${ albumLink.name }",
-        "${ nbSuccesses } fotos eliminadas de ${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminado",
         "${ numberOfItems } elementos eliminados"
@@ -8653,11 +8640,23 @@
       "Your old files will be deleted in 72 hours": [
         "Los archivos antiguos serán eliminados en 72 horas"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Sus fotos se han agregado a «${ albumName }»."
+      ],
       "Your settings failed to be saved": [
         "Error al guardar sus ajustes"
       ],
       "Your settings have been changed successfully": [
         "Los ajustes se han cambiado."
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "No se pudieron agregar algunas fotos a «${ albumName }»."
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "No se pudieron eliminar algunas fotos de ${ albumLink.name }."
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Se eliminaron sus fotos de ${ albumLink.name }."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8795,10 +8794,10 @@
       "Invite members": [
         "Invitar a miembros"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Quizás más tarde"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Quizás más tarde"
       ],
       "Select theme": [
@@ -10565,7 +10564,7 @@
         "Cree datos de inicio de sesión seguros para todos los dispositivos. Se incluyen alias ilimitados, 20 bóvedas, 2FA integrada, función de completado automático de tarjetas de crédito y más."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Incluye 2950 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
+        "Incluye más de 2950 servidores en más de 65 países, conecte hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware, bloqueador de anuncios y más."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."

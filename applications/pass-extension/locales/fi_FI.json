@@ -152,10 +152,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create alias": [
@@ -745,6 +745,9 @@
       ],
       "Alias options could not be resolved": [
         "Aliasvaihtoehtoja ei voitu selvittää"
+      ],
+      "An error occured during the import process": [
+        "Virhe tuontiprosessissa"
       ],
       "Authentication error": [
         "Tunnistautumisvirhe"
@@ -1738,10 +1741,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -1886,6 +1885,12 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Muokkaa asetusta vahvistamalla PIN-koodisi."
+      ],
+      "Please confirm your second password": [
+        "Vahvista toinen salasanasi"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Vahvista toinen salasanasi viedäksesi ${ PASS_APP_NAME }-tietosi"
       ],
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
@@ -2081,6 +2086,9 @@
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Tätä toimintoa ei voi kumota. Kaikki verkkotunnusta ${ domainTextBold } käyttävät aliakset poistetaan. Huomaa, että poistettuja aliaksia ei voi palauttaa."
+      ],
+      "This option is currently not available on your browser.": [
+        "Tämä valinta ei ole tällä hetkellä käytettävissä selaimellasi."
       ],
       "This option is currently not available on your device.": [
         "Tämä valinta ei ole tällä hetkellä käytettävissä laitteellasi."
@@ -3254,11 +3262,17 @@
       "Restore": [
         "Palauta"
       ],
+      "The file you are trying to import is empty": [
+        "Tiedosto, jota yrität tuoda, on tyhjä"
+      ],
       "Total files: ": [
         "Tiedostoja yhteensä: "
       ],
       "Upload files from your device.": [
         "Lähetä tiedostoja laitteeltasi."
+      ],
+      "You may close this window after saving the file.": [
+        "Voit sulkea tämän ikkunan tiedoston tallentamisen jälkeen."
       ]
     },
     "Placeholder": {
@@ -3643,6 +3657,9 @@
       ],
       "Enter your PIN": [
         "Syötä PIN-koodi"
+      ],
+      "Enter your second password": [
+        "Syötä toinen salasanasi"
       ],
       "Fill & copy password": [
         "Täytä ja kopioi salasana"

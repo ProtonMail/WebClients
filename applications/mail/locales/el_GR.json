@@ -1414,11 +1414,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
       "Upgrade Now": [
         "Αναβαθμίστε Τώρα"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
@@ -8536,11 +8536,11 @@
       "Always move sender's emails": [
         "Μετακινείτε πάντα τα μηνύματα ηλεκτρονικού ταχυδρομείου του αποστολέα"
       ],
-      "AND": [
-        "ΚΑΙ"
-      ],
       "And": [
         "Και"
+      ],
+      "AND": [
+        "ΚΑΙ"
       ],
       "and": [
         "και"
@@ -8770,11 +8770,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ΑΝ"
-      ],
       "If": [
         "Αν"
+      ],
+      "IF": [
+        "ΑΝ"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -8887,14 +8887,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
-      "OR": [
-        "'Η"
-      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
+      ],
+      "OR": [
+        "'Η"
       ],
       "Original link": [
         "Αρχικός σύνδεσμος"
@@ -9754,29 +9754,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Αποκτήστε ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -9798,6 +9775,29 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Αποκτήστε ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {

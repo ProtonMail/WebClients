@@ -45,6 +45,12 @@
       "Add": [
         "Дадаць"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Дадаць ${ photoCount } фатаграфію ў новы альбом",
+        "Дадаць ${ photoCount } фатаграфіі ў новы альбом",
+        "Дадаць ${ photoCount } фатаграфій у новы альбом",
+        "Дадаць ${ photoCount } фатаграфій у новы альбом"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -2613,14 +2619,32 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
+      ],
       "Also included": [
         "Таксама ўключана"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
+      ],
+      "Create groups you can email with a single address.": [
+        "Стварайце групы, на якія можна адпраўляць электронныя лісты, выкарыстоўваючы адзін адрас."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
@@ -2631,8 +2655,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Распрацаваны для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Лёгка сінхранізуйце файлы ў воблака з вашага камп’ютара і атрымлівайце доступ да іх са сваёй мабільнай прылады."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Забяспечце бяспечны доступ да даных арганізацыі, нават калі ваша каманда працуе аддалена або выкарыстоўвае публічны Wi-Fi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Забяспечце першакласную бяспеку для свайго ўліковага запісу з дапамогай праграмы ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Пераканайцеся, што ў вас усё яшчэ ёсць доступ да вашага ўліковага запісу і даных, нават калі вы страціце свой пароль ад ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -2640,8 +2685,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
@@ -2655,6 +2706,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту доступу да вашага ўліковага запісу."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Наладзьце ўліковыя запісы для ўсіх карыстальнікаў і запрасіце іх далучыцца да ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
       ],
@@ -2664,6 +2721,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
+      "To start, give your organization a name.": [
+        "Спачатку дайце назву сваёй арганізацыі."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Палепшыце да ${ planName }, каб працягваць абагульваць файлы з доступам да рэдагавання"
       ],
@@ -2672,6 +2732,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Вы можаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
@@ -2800,6 +2863,11 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "НАТАТКА:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "АПІСАННЕ:\n${ eventDescription }"
@@ -2811,6 +2879,12 @@
       ],
       "All events in this series were updated.": [
         "Усе падзеі ў гэтай серыі былі абноўлены."
+      ],
+      "Here's what changed:": [
+        "Змены, якія адбыліся:"
+      ],
+      "NOTE:": [
+        "НАТАТКА:"
       ],
       "This event occurrence was canceled.": [
         "Паўтарэнне гэтай падзеі было скасавана."
@@ -3892,6 +3966,12 @@
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "Дадаць ${ photoCount } фатаграфію ў",
+        "Дадаць ${ photoCount } фатаграфіі ў",
+        "Дадаць ${ photoCount } фатаграфій у",
+        "Дадаць ${ photoCount } фатаграфій у"
+      ],
       "Add to shared album": [
         "Дадаць у абагулены альбом"
       ],
@@ -3900,6 +3980,12 @@
       ],
       "Recent": [
         "Нядаўнія"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Абагуліць ${ photoCount } фатаграфію праз",
+        "Абагуліць ${ photoCount } фатаграфіі праз",
+        "Абагуліць ${ photoCount } фатаграфій праз",
+        "Абагуліць ${ photoCount } фатаграфій праз"
       ]
     },
     "Hint": {
@@ -5607,8 +5693,8 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да вашых файлаў. ${ StartRecoveryButton }"
       ],
-      "Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Некаторыя фатаграфіі ў гэтым альбоме могуць быць не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незаваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
@@ -5933,6 +6019,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Так трымаць! Мы толькі што павялічылі ваша сховішча да 5 ГБ!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "У нас узніклі тэхнічныя праблемы. Усе дзеянні, якія звязаны з альбамамі, часова адключаны."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "У нас узніклі тэхнічныя праблемы. Запампоўванне новых фатаграфій часова адключана."
@@ -8579,30 +8668,6 @@
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементаў"
       ],
-      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
-        "${ nbFailures } фатаграфію не ўдалося дадаць у \"${ albumName }\"",
-        "${ nbFailures } фатаграфіі не ўдалося дадаць у \"${ albumName }\"",
-        "${ nbFailures } фатаграфій не ўдалося дадаць у \"${ albumName }\"",
-        "${ nbFailures } фатаграфій не ўдалося дадаць у \"${ albumName }\""
-      ],
-      "${ nbFailures } photo failed to be removed from ${ albumLink.name }": [
-        "${ nbFailures } фатаграфію не ўдалося дадаць у \"${ albumLink.name }",
-        "${ nbFailures } фатаграфіі не ўдалося дадаць у \"${ albumLink.name }",
-        "${ nbFailures } фатаграфій не ўдалося дадаць у \"${ albumLink.name }",
-        "${ nbFailures } фатаграфіі не ўдалося дадаць у \"${ albumLink.name }"
-      ],
-      "${ nbSuccesses } photo added to \"${ albumName }\"": [
-        "${ nbSuccesses } фатаграфія дададзена ў \"${ albumName }\"",
-        "${ nbSuccesses } фатаграфіі дададзены ў \"${ albumName }\"",
-        "${ nbSuccesses } фатаграфій дададзены ў \"${ albumName }\"",
-        "${ nbSuccesses } фатаграфій дададзены ў \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo removed from ${ albumLink.name }": [
-        "${ nbSuccesses } фатаграфія выдалена з \"${ albumLink.name }",
-        "${ nbSuccesses } фатаграфіі выдалены з \"${ albumLink.name }",
-        "${ nbSuccesses } фатаграфій выдалены з \"${ albumLink.name }",
-        "${ nbSuccesses } фатаграфій выдалены з \"${ albumLink.name }"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
         "${ numberOfItems } элементы выдалены",
@@ -8855,11 +8920,23 @@
       "Your old files will be deleted in 72 hours": [
         "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Вашы фатаграфіі былі дададзены ў \"${ albumName }\""
+      ],
       "Your settings failed to be saved": [
         "Не ўдалося захаваць вашы налады"
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "Некаторыя фатаграфіі немагчыма дадаць у \"${ albumName }\""
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Некаторыя фатаграфіі немагчыма выдаліць з ${ albumLink.name }"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Вашы фатаграфіі былі выдалены з ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8997,10 +9074,10 @@
       "Invite members": [
         "Запрасіць удзельнікаў"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Магчыма пазней"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Магчыма пазней"
       ],
       "Select theme": [
@@ -9456,6 +9533,9 @@
       "New name": [
         "Новая назва"
       ],
+      "Organization name": [
+        "Назва арганізацыі"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -9488,6 +9568,9 @@
       ],
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
+      ],
+      "Your organization name": [
+        "Ваша назва арганізацыі"
       ]
     },
     "Placeholder for contact group name": {
@@ -9582,6 +9665,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Рэгістрацыя завяршылася з памылкай."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Наладжванне арганізацыі і бяспека ўліковага запісу"
       ]
     },
     "Security Center": {
@@ -11126,6 +11214,9 @@
       "Clearing data": [
         "Ачыстка даных"
       ],
+      "Collaborate on documents": [
+        "Сумесная праца над дакументамі"
+      ],
       "Completed": [
         "Завершаныя"
       ],
@@ -11143,6 +11234,9 @@
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
+      ],
+      "Connect to video conferencing": [
+        "Падключыцца да відэаканферэнцыі"
       ],
       "Connect your custom domain": [
         "Падключэнне свайго карыстальніцкага дамена"
@@ -11248,6 +11342,9 @@
       ],
       "Download ${ date }": [
         "Спампаваць ${ date }"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Спампаваць праграму"
@@ -11504,6 +11601,12 @@
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
+      "Org setup": [
+        "Наладка арганізацыі"
+      ],
+      "Organization setup": [
+        "Наладка арганізацыі"
+      ],
       "Original size": [
         "Арыгінальны памер"
       ],
@@ -11633,6 +11736,9 @@
       "Share ${ name }": [
         "Абагуліць ${ name }"
       ],
+      "Share your calendar with your team": [
+        "Абагуліць каляндар са сваёй камандай"
+      ],
       "Shared": [
         "Абагулены"
       ],
@@ -11650,6 +11756,9 @@
       ],
       "Simplify email distribution": [
         "Спрашчэнне распаўсюджвання электроннай пошты"
+      ],
+      "Simplify password management": [
+        "Спрасціць кіраванне паролямі"
       ],
       "Size": [
         "Памер"
@@ -11714,6 +11823,9 @@
       "Upgrade complete!": [
         "Абнаўленне завершана!"
       ],
+      "Upload and share files": [
+        "Запампаваць і абагуліць файлы"
+      ],
       "Uploaded": [
         "Запампавана"
       ],
@@ -11722,6 +11834,9 @@
       ],
       "Uploading a large file or folder": [
         "Запампоўванне вялікага файла або папкі"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
       "Verification failed": [
         "Збой праверкі"

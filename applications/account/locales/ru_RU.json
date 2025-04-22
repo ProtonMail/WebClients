@@ -1539,7 +1539,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Почтовый ящик пользователя ${ nameToDisplay }"
+        "${ nameToDisplay } - входящие"
       ],
       "5 trackers removed": [
         "Удалено 5 трекеров"
@@ -4303,11 +4303,11 @@
       "Forward to": [
         "Переслать на"
       ],
-      "or": [
-        "или"
-      ],
       "Or": [
         "Или"
+      ],
+      "or": [
+        "или"
       ],
       "With attachment": [
         "С вложением"
@@ -6103,10 +6103,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Автоматически пересылать"
+        "Автоматическая пересылка"
       ],
       "Gmail messages to your inbox": [
-        "Сообщения Gmail в ваш почтовый ящик"
+        "сообщений из Gmail в ваши входящие"
       ],
       "Sign in with Google": [
         "Войти с Google"
@@ -10524,11 +10524,11 @@
       "Allow sharing outside the organization": [
         "Разрешить совместное использование вне организации"
       ],
-      "Allowed domain": [
-        "Разрешённый домен"
-      ],
       "Allowed Domain": [
         "Разрешённый Домен"
+      ],
+      "Allowed domain": [
+        "Разрешённый домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -10539,10 +10539,10 @@
       "Amount due": [
         "К оплате"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -10968,11 +10968,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -11175,14 +11175,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Organization name": [
         "Название организации"

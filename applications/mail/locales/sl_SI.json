@@ -1308,10 +1308,10 @@
       "Upgrade": [
         "Nadgradi"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadgradi zdaj"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadgradi zdaj"
       ],
       "Upload picture": [
@@ -7220,7 +7220,7 @@
         "Zadeva: "
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
+        "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every month.": [
         "Naročnina se samodejno podaljša vsak mesec."
@@ -7799,7 +7799,7 @@
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Imeti morate plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
+        "Imeti morate kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
       ],
       "You selected **${ count } conversation** from this folder": [
         "Izbrali ste **${ count } pogovor** iz te mape",
@@ -8271,11 +8271,11 @@
       "Always move sender's emails": [
         "Vedno premakni pošiljateljeva sporočila"
       ],
-      "AND": [
-        "IN"
-      ],
       "And": [
         "In"
+      ],
+      "AND": [
+        "IN"
       ],
       "and": [
         "in"
@@ -8499,11 +8499,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ČE"
-      ],
       "If": [
         "Če"
+      ],
+      "IF": [
+        "ČE"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -8610,14 +8610,14 @@
       "Optional": [
         "Neobvezno"
       ],
-      "OR": [
-        "ALI"
-      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
+      ],
+      "OR": [
+        "ALI"
       ],
       "Original link": [
         "Izvorna povezava"
@@ -9433,23 +9433,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -9471,6 +9454,23 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
