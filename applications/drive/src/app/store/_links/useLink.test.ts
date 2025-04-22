@@ -188,7 +188,7 @@ describe('useLink', () => {
         expect(
             // @ts-ignore
             decryptSigned.mock.calls.map(([{ privateKey, armoredMessage }]) => [privateKey, armoredMessage])
-        ).toMatchObject([['privateKey:nodeKey parent', 'name link']]);
+        ).toMatchObject([[['privateKey:nodeKey parent'], 'name link']]);
     });
 
     describe('root name', () => {
