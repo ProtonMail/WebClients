@@ -15,13 +15,6 @@ jest.mock('./ChargebeeIframe', () => ({
 // Mock useFormErrors hook
 const mockValidator = jest.fn();
 const mockOnFormSubmit = jest.fn();
-jest.mock('../../components/v2/useFormErrors', () => ({
-    __esModule: true,
-    default: jest.fn(() => ({
-        validator: mockValidator,
-        onFormSubmit: mockOnFormSubmit,
-    })),
-}));
 
 const TestComponent = () => {
     const directDebit = useSepaDirectDebit(
@@ -57,18 +50,15 @@ const TestComponent = () => {
         }
     );
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        await directDebit.fetchPaymentToken();
         mockOnFormSubmit();
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <SepaDirectDebit
-                directDebit={directDebit}
-                formErrors={{ validator: mockValidator, onFormSubmit: mockOnFormSubmit, reset: jest.fn() }}
-                iframeHandles={{} as any}
-            />
+            <SepaDirectDebit directDebit={directDebit} iframeHandles={{} as any} />
             <button type="submit">Submit</button>
         </form>
     );
@@ -171,13 +161,15 @@ describe('SepaDirectDebit', () => {
             (validations: string[]) => validations.find((validation) => !!validation) || ''
         );
 
-        render(<TestComponent />);
+        const { rerender } = render(<TestComponent />);
 
         const ibanInput = screen.getByLabelText('IBAN');
         fireEvent.change(ibanInput, { target: { value: 'INVALID_IBAN' } });
 
         // Submit the form
         fireEvent.click(screen.getByText('Submit'));
+
+        rerender(<TestComponent />);
 
         await waitFor(() => {
             expect(screen.getByText('Invalid IBAN')).toBeInTheDocument();
@@ -189,7 +181,7 @@ describe('SepaDirectDebit', () => {
             (validations: string[]) => validations.find((validation) => !!validation) || ''
         );
 
-        render(<TestComponent />);
+        const { rerender } = render(<TestComponent />);
 
         const ibanInput = screen.getByLabelText('IBAN');
         fireEvent.change(ibanInput, { target: { value: 'GB82WEST12345698765432' } });
@@ -200,6 +192,8 @@ describe('SepaDirectDebit', () => {
 
         // Submit the form without filling the address
         fireEvent.click(screen.getByText('Submit'));
+
+        rerender(<TestComponent />);
 
         await waitFor(() => {
             // Use data-testid to find the specific error message for the address field
