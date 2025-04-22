@@ -163,6 +163,9 @@
       "Close this banner": [
         "Fermer cette bannière"
       ],
+      "Collaborate on documents": [
+        "Collaborer sur des documents"
+      ],
       "Collapse": [
         "Réduire"
       ],
@@ -180,6 +183,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmer l'ouverture du lien ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Connecter les applications et les appareils"
+      ],
+      "Connect to video conferencing": [
+        "Se connecter à la vidéoconférence"
       ],
       "Contact group": [
         "Groupe de contacts"
@@ -288,6 +297,9 @@
       "Download": [
         "Télécharger"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Télécharger l'application ${ DRIVE_APP_NAME }"
+      ],
       "Download anyway": [
         "Télécharger quand même"
       ],
@@ -345,6 +357,9 @@
       "Get in touch": [
         "Nous contacter"
       ],
+      "Get the apps": [
+        "Téléchargez les applications"
+      ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
@@ -393,6 +408,9 @@
       "Import emails": [
         "Importer des messages"
       ],
+      "Import emails, calendars, contacts": [
+        "Importer des messages, calendriers et contacts"
+      ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
       ],
@@ -426,11 +444,20 @@
       "Make a copy": [
         "Faire une copie"
       ],
+      "Manage advanced account protections": [
+        "Gérer les protections avancées du compte"
+      ],
       "Manage folders": [
         "Gérer les dossiers"
       ],
+      "Manage groups": [
+        "Gérer les groupes"
+      ],
       "Manage labels": [
         "Gérer les labels"
+      ],
+      "Manage users/addresses": [
+        "Gérer les utilisateurs/adresses"
       ],
       "Mark as resolved": [
         "Marquer comme résolu"
@@ -473,6 +500,9 @@
       ],
       "New message": [
         "Nouveau message"
+      ],
+      "New sheet": [
+        "Nouvelle feuille"
       ],
       "Next": [
         "Suivant"
@@ -561,6 +591,9 @@
       "Remove bonuses": [
         "Retirer les bonus"
       ],
+      "Remove button": [
+        "Bouton retirer"
+      ],
       "Remove gift code": [
         "Retirer le code-cadeau"
       ],
@@ -645,14 +678,29 @@
       "Select country": [
         "Sélectionnez un pays"
       ],
+      "Set recovery methods": [
+        "Définir les méthodes de récupération"
+      ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
+      ],
+      "Set up 2FA": [
+        "Configurer l'A2F"
+      ],
+      "Set up a custom domain": [
+        "Configurer un domaine personnalisé"
+      ],
+      "Set up email forwarding": [
+        "Configurer le transfert automatique des messages"
       ],
       "Settings": [
         "Paramètres"
       ],
       "Share": [
         "Partager"
+      ],
+      "Share your calendar with your team": [
+        "Partagez votre calendrier avec votre équipe"
       ],
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
@@ -714,6 +762,9 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activer ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Annuler"
       ],
@@ -741,6 +792,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Je passe à ${ BRAND_NAME } Unlimited"
       ],
+      "Upload and share files": [
+        "Importer et partager des fichiers"
+      ],
       "Upload anyway": [
         "Importer quand même"
       ],
@@ -749,6 +803,12 @@
       ],
       "Use ${ label } theme": [
         "Utiliser le thème ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utiliser ${ PASS_APP_NAME } pour Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
       ],
       "Use a different card": [
         "Utiliser une autre carte"
@@ -2275,20 +2335,33 @@
         "Facture impayée"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
-      ]
-    },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } dans ${ DRIVE_APP_NAME } vous permet de travailler avec d'autres personnes dans un environnement chiffré et sécurisé."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Ajoutez des dossiers et des fichiers à ${ DRIVE_APP_NAME } et invitez les membres de l’équipe à les consulter ou à les modifier."
+      ],
       "Also included": [
         "Également inclus"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Transférez automatiquement les messages entrants vers une autre adresse e-mail."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configurez d'abord cette option pour activer votre organisation et personnaliser votre adresse e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Connectez votre CRM, votre site internet, vos imprimantes et bien plus encore."
+      ],
+      "Create groups you can email with a single address.": [
+        "Créez des groupes auxquels vous pouvez envoyer des messages avec une seule adresse."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
@@ -2299,8 +2372,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Conçu pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accédez facilement à votre adresse e-mail et à votre calendrier sur ordinateur et appareil mobile."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synchronisez facilement les fichiers sur le cloud depuis votre ordinateur et accédez-y depuis votre appareil mobile."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Encouragez l'utilisation de l'authentification à deux facteurs dans votre organisation pour une sécurité accrue."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Assurez un accès sécurisé aux données de l’organisation, même si votre équipe est à distance ou utilise le wifi public."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Assurez une sécurité de premier ordre pour votre compte avec le programme ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Assurez-vous de pouvoir toujours accéder à votre compte et à vos données même si vous perdez votre mot de passe ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pour une transition en douceur vers ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -2308,8 +2402,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenez un nombre illimité d'alias et 500 Go d'espace de stockage avec l'offre groupée ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Aidez votre équipe à stocker en toute sécurité les mots de passe relatifs aux informations sensibles de l’entreprise et des clients."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Vous permet d’ajouter instantanément des liens de réunion aux invitations de vos événements."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
@@ -2323,6 +2423,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Définissez une méthode de récupération pour éviter de perdre l'accès à votre compte."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configurez les comptes pour tous les utilisateurs et invitez-les à rejoindre ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplifiez la synchronisation et la planification grâce aux calendriers partagés."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
@@ -2332,6 +2438,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Pour commencer, donnez un nom à votre organisation."
+      ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "Passez à l'abonnement ${ BRAND_NAME } ${ planName } pour continuer à partager des fichiers avec droits d'écriture."
       ],
@@ -2340,6 +2449,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Grâce aux groupes de contacts, vous pouvez envoyer des e-mails à toutes les personnes du groupe en un seul clic."
@@ -2358,6 +2470,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4586,6 +4703,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Ouvrez le guide pour les actions recommandées et les liens utiles."
+      ],
       "Opening...": [
         "Ouverture..."
       ],
@@ -4747,6 +4867,9 @@
       "Session timed out": [
         "La session a expiré."
       ],
+      "Set up your organization": [
+        "Configurez votre organisation"
+      ],
       "Setting up ${ feature }…": [
         "Configuration de ${ feature }…"
       ],
@@ -4879,6 +5002,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "Il se peut que ce document n'existe pas ou que vous ne soyez pas autorisé à le consulter. Vous pouvez essayer de recharger la page pour voir si le problème persiste ou contacter le propriétaire pour en obtenir l'accès."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Il s’agit d’un nom ou d’un surnom pour votre organisation que vos utilisateurs verront. Vous pouvez le modifier à tout moment."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
@@ -5915,8 +6041,53 @@
       "click here": [
         "cliquez ici"
       ],
+      "Enforcing 2FA for organizations": [
+        "Application de l’A2F pour les organisations"
+      ],
+      "How to add users": [
+        "Comment ajouter des utilisateurs ?"
+      ],
+      "How to add Zoom links": [
+        "Comment ajouter des liens Zoom ?"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Comment collaborer dans ${ DOCS_SHORT_APP_NAME } ?"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Comment activer ${ PROTON_SENTINEL_NAME } ?"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Comment migrer vers ${ BRAND_NAME } ?"
+      ],
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Comment configurer ${ VPN_APP_NAME } ?"
+      ],
+      "How to set up a custom domain": [
+        "Comment configurer un domaine personnalisé ?"
+      ],
+      "How to set up SMTP": [
+        "Comment configurer le SMTP ?"
+      ],
+      "How to share a calendar": [
+        "Comment partager un calendrier ?"
+      ],
+      "How to share via email": [
+        "Comment partager par adresse e-mail ?"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Comment utiliser ${ DARK_WEB_MONITORING_NAME } ?"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Comment utiliser ${ PASS_APP_NAME } for Business ?"
+      ],
+      "How to use email forwarding": [
+        "Comment utiliser le transfert automatique des messages ?"
+      ],
+      "How to use Groups": [
+        "Comment utiliser les groupes ?"
       ],
       "if your data is leaked": [
         "si vos données sont divulguées"
@@ -5935,6 +6106,9 @@
       ],
       "settings": [
         "paramètres"
+      ],
+      "Types of recovery methods": [
+        "Types de méthodes de récupération"
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
@@ -7486,6 +7660,9 @@
       "Public link update access failed ": [
         "L'accès à la mise à jour du lien public n'a pas abouti "
       ],
+      "Recent documents updated": [
+        "Les documents récents ont été mis à jour."
+      ],
       "Root folder failed to be loaded": [
         "Le dossier racine n'a pas pu être chargé."
       ],
@@ -7963,6 +8140,9 @@
       "Name or email address": [
         "Nom ou adresse e-mail"
       ],
+      "Organization name": [
+        "Nom de l'organisation"
+      ],
       "Password": [
         "Mot de passe"
       ],
@@ -7995,6 +8175,9 @@
       ],
       "Start typing an email address": [
         "Commencez à saisir une adresse e-mail."
+      ],
+      "Your organization name": [
+        "Nom de votre organisation"
       ]
     },
     "Placeholder for contact group name": {
@@ -8121,6 +8304,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "La connexion n'a pas abouti."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Configuration de l'organisation et sécurité du compte"
       ]
     },
     "Security Center": {
@@ -9146,6 +9334,9 @@
       "Add to ${ groupName }": [
         "Ajouter à ${ groupName }"
       ],
+      "Add user": [
+        "Ajouter un utilisateur"
+      ],
       "Addresses": [
         "Adresses"
       ],
@@ -9194,11 +9385,23 @@
       "Clearing data": [
         "Effacement des données"
       ],
+      "Collaborate on documents": [
+        "Collaborer sur des documents"
+      ],
       "Confirm downgrade": [
         "Confirmer le passage à un abonnement inférieur"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmer la perte des bonus ${ BRAND_NAME }"
+      ],
+      "Connect apps and devices": [
+        "Connecter les applications et les appareils"
+      ],
+      "Connect to video conferencing": [
+        "Se connecter à la vidéoconférence"
+      ],
+      "Connect your custom domain": [
+        "Connectez votre domaine personnalisé"
       ],
       "Contact Details": [
         "Informations du contact"
@@ -9301,6 +9504,9 @@
       "Download ${ date }": [
         "Télécharger ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Télécharger les applications ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Télécharger l'application"
       ],
@@ -9343,8 +9549,14 @@
       "Enable 2FA": [
         "Activer l'authentification à deux facteurs (A2F)"
       ],
+      "Enable advanced account protection": [
+        "Activer la protection avancée du compte"
+      ],
       "End-to-end encrypted": [
         "Chiffré de bout en bout"
+      ],
+      "Enhance security with 2FA": [
+        "Améliorez la sécurité avec l’A2F"
       ],
       "Enter 2FA code": [
         "Entrez le code A2F"
@@ -9397,6 +9609,9 @@
       ],
       "Import contacts": [
         "Importer les contacts"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importer des messages, calendriers et contacts"
       ],
       "Import events": [
         "Importer des événements"
@@ -9469,6 +9684,12 @@
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
+      ],
+      "Org setup": [
+        "Configuration de l’organisation"
+      ],
+      "Organization setup": [
+        "Configuration de l'organisation"
       ],
       "Other information": [
         "Autres informations"
@@ -9545,8 +9766,17 @@
       "Select link expiration time": [
         "Sélectionner le délai d'expiration du lien"
       ],
+      "Set recovery methods": [
+        "Définir les méthodes de récupération"
+      ],
       "Set recovery phrase": [
         "Définir une phrase de récupération"
+      ],
+      "Set up email forwarding": [
+        "Configurer le transfert automatique des messages"
+      ],
+      "Set up your organization": [
+        "Configurez votre organisation"
       ],
       "Settings": [
         "Paramètres"
@@ -9554,11 +9784,20 @@
       "Share ${ name }": [
         "Partager ${ name }"
       ],
+      "Share your calendar with your team": [
+        "Partagez votre calendrier avec votre équipe"
+      ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
       "Sign out": [
         "Se déconnecter"
+      ],
+      "Simplify email distribution": [
+        "Simplifiez la distribution des messages"
+      ],
+      "Simplify password management": [
+        "Simplifiez la gestion des mots de passe"
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
@@ -9587,6 +9826,9 @@
       "This document is password protected": [
         "Ce document est protégé par mot de passe."
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activer ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Débloquer les groupes des contacts"
       ],
@@ -9596,8 +9838,14 @@
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."
       ],
+      "Upload and share files": [
+        "Importer et partager des fichiers"
+      ],
       "Uploading a large file or folder": [
         "Chargement d'un fichier ou d'un dossier volumineux"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
       ],
       "Verification failed": [
         "La vérification n'a pas abouti."
@@ -9616,6 +9864,9 @@
       ],
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Bienvenue dans ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "De quoi un VPN peut-il vous protéger ?"
@@ -9856,7 +10107,7 @@
         "${ n } portefeuilles"
       ],
       "A safer way to hold your Bitcoin": [
-        "Une manière plus sûre de détenir votre Bitcoin"
+        "Un moyen plus sûr de conserver vos bitcoins"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
