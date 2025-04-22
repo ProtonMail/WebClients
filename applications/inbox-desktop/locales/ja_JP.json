@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } について"
+      ],
       "Actual Size": [
         "実際のサイズ"
       ],
@@ -14,11 +17,53 @@
       "Clear application data": [
         "アプリケーションデータの削除"
       ],
+      "Close Window": [
+        "ウインドウを閉じる"
+      ],
+      "Copy": [
+        "コピー"
+      ],
+      "Cut": [
+        "切り取り"
+      ],
+      "Delete": [
+        "削除"
+      ],
       "Force Reload": [
         "強制再読み込み"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }を非表示"
+      ],
+      "Hide Others": [
+        "他を非表示"
+      ],
+      "Minimize": [
+        "最小化"
+      ],
+      "Paste": [
+        "貼り付け"
+      ],
+      "Paste and Match Style": [
+        "書式を統一して貼り付け"
+      ],
+      "Quit": [
+        "終了"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "${ MAIL_APP_NAME }l を終了"
+      ],
+      "Redo": [
+        "やり直す"
+      ],
       "Reload": [
         "再読み込み"
+      ],
+      "Select All": [
+        "すべて選択"
+      ],
+      "Show All": [
+        "すべて表示"
       ],
       "Show logs": [
         "ログを表示"
@@ -26,11 +71,37 @@
       "Speech": [
         "読み上げ"
       ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "ログイン時に${ MAIL_APP_NAME }を起動"
+      ],
+      "Start Speaking": [
+        "読み上げを開始"
+      ],
+      "Stop Speaking": [
+        "読み上げを停止"
+      ],
+      "Toggle Full Screen": [
+        "フルスクリーンに切り替え"
+      ],
+      "Undo": [
+        "戻す"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }をアンインストール"
+      ],
+      "Zoom": [
+        "Zoom"
+      ],
       "Zoom In": [
         "拡大"
       ],
       "Zoom Out": [
         "縮小"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "サービス"
       ]
     },
     "Context menu": {
@@ -42,11 +113,44 @@
       ],
       "Emoji and Symbols": [
         "絵文字と記号"
+      ],
+      "Save image as…": [
+        "画像に名前を付けて保存…"
+      ],
+      "Speech": [
+        "読み上げ"
+      ],
+      "Start Speaking": [
+        "読み上げを開始"
+      ],
+      "Stop Speaking": [
+        "読み上げを停止"
       ]
     },
     "Context Menu": {
       "Copy": [
         "コピー"
+      ],
+      "Cut": [
+        "切り取り"
+      ],
+      "Look Up “${ text }”": [
+        "「${ text }」を検索"
+      ],
+      "Paste": [
+        "貼り付け"
+      ],
+      "Paste and Match Style": [
+        "書式を統一して貼り付け"
+      ],
+      "Redo": [
+        "やり直す"
+      ],
+      "Select All": [
+        "すべて選択"
+      ],
+      "Undo": [
+        "取り消し"
       ]
     },
     "Error dialog": {
