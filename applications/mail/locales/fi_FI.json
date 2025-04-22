@@ -244,6 +244,9 @@
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
+      ],
       "Collapse navigation bar": [
         "Supista navigointipalkki"
       ],
@@ -261,6 +264,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Vahvista linkin ${ linkToShow } avaus"
+      ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
       ],
       "Contact group": [
         "Yhteystietoryhmä"
@@ -405,6 +411,9 @@
       "Download ${ attachmentName }": [
         "Lataa ${ attachmentName }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download now": [
         "Lataa nyt"
       ],
@@ -548,6 +557,9 @@
       ],
       "Get the app": [
         "Hanki sovellus"
+      ],
+      "Get the apps": [
+        "Hanki sovellukset"
       ],
       "Get the browser extension": [
         "Hanki selainlaajennus"
@@ -739,11 +751,17 @@
       "Manage folders": [
         "Hallitse kansioita"
       ],
+      "Manage groups": [
+        "Hallitse ryhmiä"
+      ],
       "Manage labels": [
         "Hallitse tunnisteita"
       ],
       "Manage Snooze": [
         "Hallitse torkutusta"
+      ],
+      "Manage users/addresses": [
+        "Hallitse käyttäjiä/osoitteita"
       ],
       "Mark as read": [
         "Merkitse luetuksi"
@@ -1159,8 +1177,17 @@
       "Set expiration time": [
         "Aseta tuhoutumisaika"
       ],
+      "Set recovery methods": [
+        "Aseta palautustavat"
+      ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
+      ],
+      "Set up 2FA": [
+        "Määritä 2FA"
+      ],
+      "Set up a custom domain": [
+        "Määritä oma verkkotunnus"
       ],
       "Settings": [
         "Asetukset"
@@ -1360,14 +1387,17 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Päivitä tilaus nyt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Päivitä ${ BRAND_NAME } Unlimitediin"
+      ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -3718,6 +3748,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Aloita antamalla organisaatiollesi nimi."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi jäljittää sijaintiasi ja valvoa verkkotoimintaasi."
@@ -7222,6 +7255,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksi. ${ MAIL_APP_NAME } avautuu automaattisesti sähköpostilinkkiä klikatessasi."
       ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
+      ],
       "Setting up ${ feature }…": [
         "Määritetään ${ feature }…"
       ],
@@ -8351,11 +8387,11 @@
       "Always move sender's emails": [
         "Siirrä lähettäjän viestit aina"
       ],
-      "AND": [
-        "JA"
-      ],
       "And": [
         "Ja"
+      ],
+      "AND": [
+        "JA"
       ],
       "and": [
         "ja"
@@ -8585,11 +8621,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JOS"
-      ],
       "If": [
         "Jos"
+      ],
+      "IF": [
+        "JOS"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -8699,14 +8735,14 @@
       "Optional": [
         "Valinnainen"
       ],
-      "OR": [
-        "TAI"
-      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
+      ],
+      "OR": [
+        "TAI"
       ],
       "Original link": [
         "Alkuperäinen linkki"
@@ -9029,8 +9065,23 @@
       "Folders": [
         "Kansiot"
       ],
+      "How to add users": [
+        "Miten käyttäjiä lisätään"
+      ],
+      "How to add Zoom links": [
+        "Miten Zoom-linkkejä lisätään"
+      ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
+      ],
+      "How to set up SMTP": [
+        "Miten SMTP määritetään"
+      ],
+      "How to share a calendar": [
+        "Miten jaat kalenterin"
+      ],
+      "How to use Groups": [
+        "Miten ryhmiä käytetään"
       ],
       "Inbox": [
         "Saapuneet"
@@ -9512,29 +9563,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Hanki ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -9556,6 +9584,29 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Hanki ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -11082,6 +11133,9 @@
       ],
       "Name or email address": [
         "Nimi tai sähköpostiosoite"
+      ],
+      "Organization name": [
+        "Organisaation nimi"
       ],
       "Password": [
         "Salasana"
@@ -13095,6 +13149,9 @@
       "Add to ${ groupName }": [
         "Lisää ryhmään ${ groupName }"
       ],
+      "Add user": [
+        "Lisää käyttäjä"
+      ],
       "Addresses": [
         "Osoitteet"
       ],
@@ -13176,6 +13233,9 @@
       "Clearing data": [
         "Tyhjennetään tietoja"
       ],
+      "Collaborate on documents": [
+        "Yhteiskäytä dokumentteja"
+      ],
       "Confirm downgrade": [
         "Vahvista alennus"
       ],
@@ -13184,6 +13244,12 @@
       ],
       "Confirm recipient address?": [
         "Vahvistetaanko vastaanottajan osoite?"
+      ],
+      "Connect apps and devices": [
+        "Yhdistä sovelluksia ja laitteita"
+      ],
+      "Connect your custom domain": [
+        "Yhdistä oma verkkotunnuksesi"
       ],
       "Contact Details": [
         "Yhteystiedon sisältö"
@@ -13307,6 +13373,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Alennetaanko tilaukseen ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
       "Download the app": [
         "Lataa sovellus"
       ],
@@ -13345,6 +13414,9 @@
       ],
       "Enable message content search": [
         "Käytä viestien sisältöhakua"
+      ],
+      "Enhance security with 2FA": [
+        "Paranna tietoturvaa 2FA:lla"
       ],
       "Enter 2FA code": [
         "Syötä vahvistuskoodi"
@@ -13599,6 +13671,12 @@
       "Open actions dropdown": [
         "Avaa toimintovalikko"
       ],
+      "Org setup": [
+        "Organisaation määritys"
+      ],
+      "Organization setup": [
+        "Organisaation määritys"
+      ],
       "Other features included in your plan": [
         "Muut tilaukseesi sisältyvät ominaisuudet"
       ],
@@ -13740,6 +13818,9 @@
       "Sending original message": [
         "Alkuperäinen viesti lähetetään"
       ],
+      "Set recovery methods": [
+        "Määritä palautustavat"
+      ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
@@ -13748,6 +13829,9 @@
       ],
       "Set up your family account": [
         "Määritä perhetilisi"
+      ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
       ],
       "Set your own schedule": [
         "Aseta ajoitus itse"
@@ -13824,6 +13908,9 @@
       ],
       "Upgrade complete!": [
         "Päivitys valmis!"
+      ],
+      "Upload and share files": [
+        "Lähetä ja jaa tiedostoja"
       ],
       "Verification error": [
         "Vahvistusvirhe"
