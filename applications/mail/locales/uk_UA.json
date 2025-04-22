@@ -1314,11 +1314,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade now": [
-        "Покращити"
-      ],
       "Upgrade Now": [
         "Передплатити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Оновити до ${ BRAND_NAME } Необмежено"
@@ -8272,11 +8272,11 @@
       "Always move sender's emails": [
         "Завжди переміщувати е-пошту відправника"
       ],
-      "AND": [
-        "ТА"
-      ],
       "And": [
         "Та"
+      ],
+      "AND": [
+        "ТА"
       ],
       "and": [
         "та"
@@ -8500,11 +8500,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЯКЩО"
-      ],
       "If": [
         "Якщо"
+      ],
+      "IF": [
+        "ЯКЩО"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -8614,14 +8614,14 @@
       "Optional": [
         "Необов'язково"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Original link": [
         "Оригінальне посилання"
@@ -9425,23 +9425,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Отримати ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -9463,6 +9446,23 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {

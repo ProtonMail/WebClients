@@ -244,6 +244,9 @@
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
+      "Collaborate on documents": [
+        "Belgeler üzerinde iş birliği yapın"
+      ],
       "Collapse navigation bar": [
         "Gezinme çubuğunu daralt"
       ],
@@ -261,6 +264,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "${ linkToShow } bağlantısını açmayı onaylayın"
+      ],
+      "Connect apps and devices": [
+        "Uygulamaları ve aygıtları bağlayın"
+      ],
+      "Connect to video conferencing": [
+        "Görüntülü görüşmeye bağlanın"
       ],
       "Contact group": [
         "Kişi grubu"
@@ -404,6 +413,9 @@
       ],
       "Download ${ attachmentName }": [
         "${ attachmentName } dosyasını indir"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
       "Download now": [
         "Şimdi indir"
@@ -549,6 +561,9 @@
       "Get the app": [
         "Uygulamayı edinin"
       ],
+      "Get the apps": [
+        "Uygulamaları edinin"
+      ],
       "Get the browser extension": [
         "Tarayıcı eklentisini edinin"
       ],
@@ -641,6 +656,9 @@
       ],
       "Import emails": [
         "E-postaları içe aktar"
+      ],
+      "Import emails, calendars, contacts": [
+        "E-postaları, takvimleri, kişileri içe aktarın"
       ],
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
@@ -736,14 +754,23 @@
       "Make it friendly": [
         "Samimileştir"
       ],
+      "Manage advanced account protections": [
+        "Gelişmiş hesap korumalarını yönetin"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
+      ],
+      "Manage groups": [
+        "Grupları yönetin"
       ],
       "Manage labels": [
         "Etiket yönetimi"
       ],
       "Manage Snooze": [
         "Ertelemeyi yönet"
+      ],
+      "Manage users/addresses": [
+        "Kullanıcıları/adresleri yönetin"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -994,6 +1021,9 @@
       "Remove bonuses": [
         "Hediyeleri kaldır"
       ],
+      "Remove button": [
+        "Düğmeyi kaldır"
+      ],
       "Remove encryption": [
         "Şifrelemeyi kaldır"
       ],
@@ -1162,8 +1192,20 @@
       "Set expiration time": [
         "Geçerlilik süresi ayarla"
       ],
+      "Set recovery methods": [
+        "Kurtarma yöntemlerini ayarlayın"
+      ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
+      ],
+      "Set up 2FA": [
+        "İki adımlı doğrulamayı ayarlayın"
+      ],
+      "Set up a custom domain": [
+        "Bir özel etki alanı ayarlayın"
+      ],
+      "Set up email forwarding": [
+        "E-posta iletmeyi ayarlayın"
       ],
       "Settings": [
         "Ayarlar"
@@ -1173,6 +1215,9 @@
       ],
       "Share via link": [
         "Bağlantı ile paylaş"
+      ],
+      "Share your calendar with your team": [
+        "Takviminizi ekibinizle paylaşın"
       ],
       "Sharing options": [
         "Paylaşım seçenekleri"
@@ -1324,6 +1369,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
+      ],
       "Unblock": [
         "Engellemeyi kaldır"
       ],
@@ -1369,14 +1417,17 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Şimdi yükselt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Şimdi yükselt"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesine yükseltin"
+      ],
+      "Upload and share files": [
+        "Dosyaları yükleyin ve paylaşın"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -1386,6 +1437,12 @@
       ],
       "Use ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını kullan"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Business kullanın"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
       ],
       "Use a different card": [
         "Başka bir kart kullanın"
@@ -3631,6 +3688,9 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME }, ${ DRIVE_APP_NAME } ile diğer kişilerle güvenli, şifrelenmiş bir ortamda birlikte çalışın."
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "Ayarlar bölümünden ${ manageBlockedAddressesSettingsLink }."
       ],
@@ -3639,6 +3699,9 @@
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "${ DRIVE_APP_NAME } üzerine klasörler ve dosyalar ekleyerek bunları görüntülemeleri veya düzenlemeleri için ekip arkadaşarınızı davet edin."
       ],
       "Also included": [
         "Ayrıca şunlar da bulunur"
@@ -3649,11 +3712,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Gelen e-postaları otomatik olarak başka bir e-posta adresine iletin."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Gelen iletilerinizi gelen kutunuza ulaşmadan önce otomatik olarak sıralayın."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "CRM uygulamanızı, sitenizi, yazıcılarınızı ve diğer şeyleri bağlayın."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Gelen kutunuzu düzenli tutmak için gerektiği kadar etiket veya klasör oluşturun."
+      ],
+      "Create groups you can email with a single address.": [
+        "Tek bir adresle e-posta gönderebileceğiniz gruplar oluşturun."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
@@ -3667,8 +3742,29 @@
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "E-postanızı hemen göndermek istemiyor musunuz? Uygun zamanda gönderin."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Bilgisayarınızdaki dosyaları bulutla kolayca eşitleyin ve mobil aygıtınızdan erişin."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Ek güvenlik için kuruluşunuzda iki adımlı doğrulamanın kullanılmasını sağlayın."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Ekibiniz uzaktan çalışıyor veya herkese açık Wi-Fi bağlantıları kullanıyor olsa bile, kuruluş verilerine güvenli erişim sağlayın."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "${ PROTON_SENTINEL_NAME } programı ile hesabınız için en üst düzeyde güvenlik sağlayın."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "${ BRAND_NAME } parolanızı kaybetseniz bile hesabınıza ve verilerinize erişebileceğinizden emin olun."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "${ BRAND_NAME } uygulamasına sorunsuz geçmek için verilerinizi Google, Outlook ve diğer hizmetlerden içe aktarın."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ BRAND_NAME } Duo tarifesine yükseltin."
@@ -3679,8 +3775,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Toplantı bağlantılarını etkinlik davetlerinize anında ekleyin."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -3710,6 +3812,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Hesabınıza erişimi kaybetmemek için bir kurtarma yöntemi belirleyin."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Tüm kullanıcı hesaplarını ayarlayın ve onları ${ BRAND_NAME } kullanmaya davet edin."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
+      ],
       "Starting from ${ price }": [
         "${ price } tutarından başlayan fiyatlarla"
       ],
@@ -3727,6 +3835,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Başlamak için, kuruluşunuzun adını yazın."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Reklam verenlerin ve diğer kişilerin konumunuzu ve çevrim içi etkinliğinizi izlemesini önlemek için e-posta izleyici korumasını açın."
@@ -3757,6 +3868,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Bu e-postada bilinen herhangi bir izleyici veya izleme adresi bulamadık."
@@ -3897,6 +4011,11 @@
         "Öncelikli destek"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "Not: ${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "AÇIKLAMA:\n${ eventDescription }"
@@ -3908,6 +4027,12 @@
       ],
       "All events in this series were updated.": [
         "Bu dizideki tüm etkinlikler güncellendi."
+      ],
+      "Here's what changed:": [
+        "Şu değişiklik yapıldı:"
+      ],
+      "NOTE:": [
+        "Not:"
       ],
       "This event occurrence was canceled.": [
         "Bu etkinlik kopyası iptal edildi."
@@ -6991,6 +7116,9 @@
       "Open shortcut cheat sheet": [
         "Kısayol rehberini aç"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
+      ],
       "or discover other features:": [
         "veya diğer özellikleri keşfedin:"
       ],
@@ -7264,6 +7392,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız olarak ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılır."
       ],
+      "Set up your organization": [
+        "Kuruluşunuzu ayarlayın"
+      ],
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
       ],
@@ -7464,6 +7595,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Bu davet, kullanımdan kaldırılmış bir takvime kaydedilmiş."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Bu bir yazma yardımcısı olarak tasarlanmıştır. Önerilen metnin doğruluğunu kontrol edin. ${ learnMoreResult }"
@@ -8405,11 +8539,11 @@
       "Always move sender's emails": [
         "Göndericinin e-postaları şuraya taşınsın"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -8639,11 +8773,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -8756,14 +8890,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Original link": [
         "Özgün bağlantı"
@@ -9083,11 +9217,56 @@
       "Enable your address to answer this invitation.": [
         "Bu daveti yanıtlamak için adresinizi kullanıma alın."
       ],
+      "Enforcing 2FA for organizations": [
+        "Kuruluşlar için iki adımlı doğrulamayı dayatmak"
+      ],
       "Folders": [
         "Klasörler"
       ],
+      "How to add users": [
+        "Kullanıcılar nasıl eklenir"
+      ],
+      "How to add Zoom links": [
+        "Zoom bağlantıları nasıl eklenir"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } üzerinde işbirliği nasıl yapılır"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME } ürünü nasıl kullanıma alınır"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "${ BRAND_NAME } hizmetine nasıl geçilir"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin ile nasıl ödeme yapabilirsiniz?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } nasıl ayarlanır"
+      ],
+      "How to set up a custom domain": [
+        "Bir özel etki alanı nasıl ayarlanır"
+      ],
+      "How to set up SMTP": [
+        "SMTP nasıl ayarlanır"
+      ],
+      "How to share a calendar": [
+        "Bir takvim nasıl paylaşılır"
+      ],
+      "How to share via email": [
+        "E-posta ile paylaşım nasıl yapılır"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } nasıl kullanılır"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "${ PASS_APP_NAME } for Business nasıl kullanılır"
+      ],
+      "How to use email forwarding": [
+        "E-posta iletme nasıl kullanılır"
+      ],
+      "How to use Groups": [
+        "Gruplar nasıl kullanılır"
       ],
       "if your data is leaked": [
         "Verileriniz sızarsa"
@@ -9178,6 +9357,9 @@
       ],
       "Trash": [
         "Çöp kutusu"
+      ],
+      "Types of recovery methods": [
+        "Kurtarma yöntemi türleri"
       ],
       "What’s this?": [
         "Bu nedir?"
@@ -9575,29 +9757,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } edinin"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -9619,6 +9778,29 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } edinin"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -11193,6 +11375,9 @@
       "Name or email address": [
         "Ad ya da e-posta adresi"
       ],
+      "Organization name": [
+        "Kuruluş adı"
+      ],
       "Password": [
         "Parola"
       ],
@@ -11273,6 +11458,9 @@
       ],
       "Type text or keyword": [
         "Metin ya da anahtar sözcük yazın"
+      ],
+      "Your organization name": [
+        "Kuruluşunuzun adı"
       ]
     },
     "Placeholder for contact group name": {
@@ -11442,6 +11630,11 @@
       ],
       "No unread messages found": [
         "Okunmamış bir ileti bulunamadı"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Kuruluş ayarları ve hesap güvenliği"
       ]
     },
     "Security Center": {
@@ -13205,6 +13398,9 @@
       "Add to ${ groupName }": [
         "${ groupName } grubuna ekle"
       ],
+      "Add user": [
+        "Kullanıcı ekleyin"
+      ],
       "Addresses": [
         "Adresler"
       ],
@@ -13286,6 +13482,9 @@
       "Clearing data": [
         "Veriler temizleniyor"
       ],
+      "Collaborate on documents": [
+        "Belgeler üzerinde işbirliği yapın"
+      ],
       "Confirm downgrade": [
         "Tarife düşürmeyi onayla"
       ],
@@ -13294,6 +13493,15 @@
       ],
       "Confirm recipient address?": [
         "Alıcı adresi onaylansın mı?"
+      ],
+      "Connect apps and devices": [
+        "Uygulamaları ve aygıtları bağlayın"
+      ],
+      "Connect to video conferencing": [
+        "Görüntülü konferansa bağlanın"
+      ],
+      "Connect your custom domain": [
+        "Özel etki alanınızı bağlayın"
       ],
       "Contact Details": [
         "Kişi bilgileri"
@@ -13417,6 +13625,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } tarifesine düşürülsün mü?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "${ DRIVE_APP_NAME } uygulamalarını indirin"
+      ],
       "Download the app": [
         "Uygulamayı indirin"
       ],
@@ -13453,8 +13664,14 @@
       "Enable 2FA": [
         "İki adımlı doğrulama kullanılsın"
       ],
+      "Enable advanced account protection": [
+        "Gelişmiş hesap korumasını açın"
+      ],
       "Enable message content search": [
         "İleti içeriğini arama özelliğini aç"
+      ],
+      "Enhance security with 2FA": [
+        "İki adımlı doğrulama ile güvenliği artırın"
       ],
       "Enter 2FA code": [
         "İki adımlı doğrulama kodunu yazın"
@@ -13534,6 +13751,9 @@
       ],
       "Import contacts": [
         "Kişileri içe aktar"
+      ],
+      "Import emails, calendars, contacts": [
+        "E-postaları, takvimleri, kişileri içe aktarın"
       ],
       "Import events": [
         "Etkinlikleri içe aktar"
@@ -13715,6 +13935,12 @@
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
+      "Org setup": [
+        "Kuruluş kurulumu"
+      ],
+      "Organization setup": [
+        "Kuruluş kurulumu"
+      ],
       "Other features included in your plan": [
         "Tarifenizdeki diğer özellikler"
       ],
@@ -13856,14 +14082,23 @@
       "Sending original message": [
         "Özgün ileti gönderiliyor"
       ],
+      "Set recovery methods": [
+        "Kurtarma yöntemlerini ayarlayın"
+      ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
       "Set up ${ protonDuoPlanName }": [
         "${ protonDuoPlanName } ayarlarını yapın"
       ],
+      "Set up email forwarding": [
+        "E-posta iletmeyi ayarlayın"
+      ],
       "Set up your family account": [
         "Aile hesabınızı ayarlayın"
+      ],
+      "Set up your organization": [
+        "Kuruluşunuzu ayarlayın"
       ],
       "Set your own schedule": [
         "Kendi zamanlamanızı yapın"
@@ -13871,11 +14106,20 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Share your calendar with your team": [
+        "Takviminizi ekibinizle paylaşın"
+      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "Simplify email distribution": [
+        "E-posta dağıtımını kolaylaştırın"
+      ],
+      "Simplify password management": [
+        "Parola yönetimini kolaylaştırın"
       ],
       "Snooze": [
         "Ertele"
@@ -13929,6 +14173,9 @@
       "Trust public key?": [
         "Herkese açık anahtara güvenilsin mi?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
+      ],
       "Unlock contacts groups": [
         "Kişi gruplarının kilidini açın"
       ],
@@ -13940,6 +14187,12 @@
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
+      ],
+      "Upload and share files": [
+        "Dosyaları yükleyin ve paylaşın"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
       ],
       "Verification error": [
         "Doğrulama sorunu"
@@ -13974,6 +14227,9 @@
       ],
       "Welcome ${ userName }": [
         "Hoş geldin, ${ userName }"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
       ],
       "What can a VPN protect you from?": [
         "Bir VPN sizi nelerden koruyabilir?"

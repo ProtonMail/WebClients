@@ -1425,10 +1425,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -3849,7 +3849,7 @@
         "Ustaw metodę odzyskiwania, aby uniknąć utraty dostępu do konta."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
-        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do dołączenia do ${ BRAND_NAME }."
+        "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Uprość synchronizację i planowanie za pomocą udostępnionych kalendarzy."
@@ -4051,7 +4051,7 @@
     },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
-        "NOTATKA:\n${ eventComment }"
+        "WIADOMOŚĆ:\n${ eventComment }"
       ]
     },
     "Email body for description (description part)": {
@@ -4070,7 +4070,7 @@
         "Zmiany:"
       ],
       "NOTE:": [
-        "NOTATKA:"
+        "WIADOMOŚĆ:"
       ],
       "This event occurrence was canceled.": [
         "Powtórzenie wydarzenia zostało anulowane."
@@ -8821,11 +8821,11 @@
       "Always move sender's emails": [
         "Zawsze przenieś wiadomości nadawców"
       ],
-      "AND": [
-        "ORAZ"
-      ],
       "And": [
         "oraz"
+      ],
+      "AND": [
+        "ORAZ"
       ],
       "and": [
         "i"
@@ -9055,11 +9055,11 @@
       "IBAN": [
         "Numer IBAN"
       ],
-      "IF": [
-        "JEŚLI"
-      ],
       "If": [
         "Jeśli"
+      ],
+      "IF": [
+        "JEŚLI"
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
@@ -9172,14 +9172,14 @@
       "Optional": [
         "Opcjonalnie"
       ],
-      "OR": [
-        "LUB"
-      ],
       "or": [
         "lub"
       ],
       "Or": [
         "lub"
+      ],
+      "OR": [
+        "LUB"
       ],
       "Original link": [
         "Oryginalny link"
@@ -10055,29 +10055,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Wybierz plan ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -10099,6 +10076,29 @@
       ],
       "Switch plan": [
         "Zmień plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Wybierz plan ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
