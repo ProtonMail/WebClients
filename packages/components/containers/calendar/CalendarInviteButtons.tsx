@@ -2,23 +2,17 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
-import { PLANS } from '@proton/payments';
-import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 
-import { sendCalendarInviteReport } from './CalendarInviteTelemetry';
 import { useCalendarERRTetric } from './metrics/useCalendarERRTMetric';
 
 interface Props {
@@ -50,11 +44,8 @@ const CalendarInviteButtons = ({
     disabled,
     className = '',
 }: Props) => {
-    const api = useApi();
     const { APP_NAME } = useConfig();
     const isCalendarApp = APP_NAME === APPS.PROTONCALENDAR;
-    const [subscription] = useSubscription();
-    const plan: PLANS = getPlan(subscription)?.Name || PLANS.FREE;
     const [loadingAccept, withLoadingAccept] = useLoading();
     const [loadingTentative, withLoadingTentative] = useLoading();
     const [loadingDecline, withLoadingDecline] = useLoading();
@@ -71,11 +62,6 @@ const CalendarInviteButtons = ({
     const onAccept = () => {
         const originalAnswer = selectedAnswer;
         setSelectedAnswer(ATTENDEE_RESPONE_TYPE.ACCEPTED);
-
-        void sendCalendarInviteReport(api, {
-            event: TelemetryCalendarEvents.answer_invite,
-            dimensions: { answer: 'yes', plan },
-        });
         startERRTMetric('accept');
         const promise = withLoadingAccept(accept())
             .then(() => {
@@ -89,11 +75,6 @@ const CalendarInviteButtons = ({
     const onTentative = () => {
         const originalAnswer = selectedAnswer;
         setSelectedAnswer(ATTENDEE_RESPONE_TYPE.TENTATIVE);
-
-        void sendCalendarInviteReport(api, {
-            event: TelemetryCalendarEvents.answer_invite,
-            dimensions: { answer: 'maybe', plan },
-        });
         startERRTMetric('tentative');
         const promise = withLoadingTentative(acceptTentatively())
             .then(() => {
@@ -107,11 +88,6 @@ const CalendarInviteButtons = ({
     const onDecline = () => {
         const originalAnswer = selectedAnswer;
         setSelectedAnswer(ATTENDEE_RESPONE_TYPE.DECLINED);
-
-        void sendCalendarInviteReport(api, {
-            event: TelemetryCalendarEvents.answer_invite,
-            dimensions: { answer: 'no', plan },
-        });
         startERRTMetric('decline');
         const promise = withLoadingDecline(decline())
             .then(() => {
