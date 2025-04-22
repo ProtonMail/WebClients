@@ -369,7 +369,7 @@ const MainContainer = () => {
         isAccessControlEnabled,
     });
 
-    if (!availableApps.includes(app)) {
+    if (!availableApps.includes(app) && appFromPathname /* wait for app in pathname to ensure replacement works */) {
         if (!availableApps.length) {
             return <NoAppsAvailable />;
         }
