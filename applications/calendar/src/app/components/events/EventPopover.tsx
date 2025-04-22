@@ -10,6 +10,7 @@ import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiv
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,
@@ -18,8 +19,6 @@ import {
     getIsUnknownCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
-import { getEncryptedRSVPComment } from '@proton/shared/lib/calendar/crypto/helpers';
-import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -34,7 +33,6 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import type {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
@@ -42,6 +40,7 @@ import type {
 } from '../../containers/calendar/interface';
 import { getCanDeleteEvent, getCanDuplicateEvent, getCanEditEvent, getCanReplyToEvent } from '../../helpers/event';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
+import { useSendCalendarInviteTelemetry } from '../../hooks/useSendCalendarInviteTelemetry';
 import type { InviteActions } from '../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
 import PopoverContainer from './PopoverContainer';
@@ -58,6 +57,7 @@ import {
     PopoverViewButton,
 } from './eventPopoverButtons/EventPopoverButtons';
 import getEventInformation from './getEventInformation';
+import { handleGetPartStatEncryptedComment } from './helpers/handleGetPartstatEncryptedComments';
 import useReadEvent from './useReadEvent';
 
 import './EventPopover.scss';
@@ -113,6 +113,7 @@ const EventPopover = ({
     const getCalendarKeys = useGetCalendarKeys();
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const [{ hasPaidMail }] = useUser();
+    const sendCalendarInviteTelemetry = useSendCalendarInviteTelemetry();
 
     const popoverContentRef = useRef<HTMLDivElement>(null);
 
@@ -197,46 +198,19 @@ const EventPopover = ({
     ) => {
         // Get the addressID of the author of the note
         const selfAddressID = targetEvent.data.eventReadResult?.result?.[0].selfAddressData.selfAddress?.ID;
+        const targetEventData = targetEvent.data.eventData;
 
-        // Encrypt comment if provided
-        let comment, commentClearText;
+        const { comment, commentClearText } = await handleGetPartStatEncryptedComment({
+            selfAddressID,
+            targetEventData,
+            getAddressKeys,
+            getCalendarKeys,
+            partstatData,
+            save,
+        });
 
-        // Encryptip comment if
-        // action is "save"
-        // and comment is present in the action payload
-        // and event already exists
-        // and attendee has an address ID
-        if (
-            save &&
-            partstatData.Comment &&
-            targetEvent.data.eventData &&
-            getIsCalendarEvent(targetEvent.data.eventData) &&
-            selfAddressID
-        ) {
-            // Get events keypackets
-            const sessionKey = await getSharedSessionKey({
-                calendarEvent: targetEvent.data.eventData,
-                getAddressKeys,
-                getCalendarKeys,
-            });
-
-            // Get authos primary key
-            const [commentAuthorPrimaryKey] = await getAddressKeys(selfAddressID);
-
-            // Encrypt comment
-            comment = await getEncryptedRSVPComment({
-                authorPrivateKey: commentAuthorPrimaryKey.privateKey,
-                comment: partstatData.Comment,
-                sessionKey,
-                eventUID: targetEvent.data.eventData.UID,
-            });
-
-            commentClearText = partstatData.Comment;
-        }
-
-        // Then await the parent component callback
-        // Here it eighter update model
-        // or update modal and save the event
+        // Await the parent component callback
+        // It updates model with or without saving the event
         await onChangePartstat(
             {
                 type,
@@ -250,6 +224,18 @@ const EventPopover = ({
             },
             save
         );
+
+        // As updating a recurring event can be cancelled it's
+        // better to send Telemetry after parent callback call
+        if (save) {
+            void sendCalendarInviteTelemetry({
+                event: TelemetryCalendarEvents.answer_invite,
+                dimensions: {
+                    answer: partstatData.Status,
+                    hasComment: !!partstatData.Comment,
+                },
+            });
+        }
     };
 
     const dateHeader = useMemo(
