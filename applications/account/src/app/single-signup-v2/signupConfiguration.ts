@@ -101,7 +101,9 @@ export const getSignupConfiguration = ({
     }
 
     if (getIsLumoApp(toApp)) {
-        return getLumoConfiguration();
+        return getLumoConfiguration({
+            defaultPlan: signupParameters.defaultPlan,
+        });
     }
 
     return getGenericConfiguration({
