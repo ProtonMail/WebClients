@@ -451,7 +451,7 @@ export const PhotosLayout = () => {
             }
             try {
                 const abortSignal = new AbortController().signal;
-                await addAlbumPhotos(abortSignal, { albumShareId: shareId, albumLinkId, linkIds });
+                await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
                 navigateToAlbum(shareId, albumLinkId, { openShare: isAddModalShared });
             } catch (e) {
                 if (e instanceof Error && e.message) {
@@ -471,7 +471,7 @@ export const PhotosLayout = () => {
             try {
                 const abortSignal = new AbortController().signal;
                 const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
-                await addAlbumPhotos(abortSignal, { albumShareId: shareId, albumLinkId, linkIds });
+                await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
                 navigateToAlbum(shareId, albumLinkId, { openShare: isAddModalShared });
             } catch (e) {
                 if (e instanceof Error && e.message) {
@@ -504,11 +504,7 @@ export const PhotosLayout = () => {
             if (!albumShareId || !albumLinkId) {
                 return;
             }
-            await addAlbumPhotos(new AbortController().signal, {
-                albumShareId,
-                albumLinkId,
-                linkIds: selectedItemsLinkIds,
-            });
+            await addAlbumPhotos(new AbortController().signal, albumShareId, albumLinkId, selectedItemsLinkIds);
             navigateToAlbum(albumShareId, albumLinkId);
         } else {
             if (albumLinkId && previewShareId) {
