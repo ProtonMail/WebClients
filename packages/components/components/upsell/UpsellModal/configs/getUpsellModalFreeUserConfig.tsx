@@ -7,7 +7,7 @@ import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getUpsellPlanMonthlyPrice } from '../helpers/getUpsellPlanMonthlyPrice';
 import type { UpsellModalConfigCase } from '../interface';
 
-const ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE = 100;
+export const ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE = 100;
 
 export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props) => {
     const { currency, paymentsApi, plans } = props;
@@ -18,7 +18,7 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
     // Free users got 1$ promo displayed
     const coupon = COUPON_CODES.TRYMAILPLUS0724;
 
-    const monthlyPrice = isMainCurrency(currency)
+    const couponMonthlyPrice = isMainCurrency(currency)
         ? ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE
         : await getUpsellPlanMonthlyPrice({
               currency,
@@ -29,6 +29,15 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
               coupon,
           });
 
+    const offerMonthlyPrice = await getUpsellPlanMonthlyPrice({
+        currency,
+        cycle,
+        paymentsApi,
+        planIDs,
+        plans,
+        coupon,
+    });
+
     const footerText = (() => {
         const priceLine = (
             <Price
@@ -37,13 +46,13 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
                 suffix={c('specialoffer: Offers').t`/month`}
                 isDisplayedInSentence
             >
-                {monthlyPrice}
+                {offerMonthlyPrice}
             </Price>
         );
 
         const priceCoupon = (
             <Price currency={currency} key="monthly-amount">
-                {monthlyPrice}
+                {couponMonthlyPrice}
             </Price>
         );
 
@@ -60,7 +69,7 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
 
         const priceCoupon = (
             <Price currency={currency} key="monthlyAmount">
-                {monthlyPrice}
+                {couponMonthlyPrice}
             </Price>
         );
 
