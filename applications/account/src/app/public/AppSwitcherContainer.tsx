@@ -11,6 +11,7 @@ import {
     SimpleDropdown,
 } from '@proton/components';
 import Logo from '@proton/components/components/logo/Logo';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
@@ -36,7 +37,6 @@ export type AppSwitcherState = {
     error?: {
         type: 'unsupported-app';
         app: APP_NAMES;
-        message: string;
     };
 };
 
@@ -66,12 +66,19 @@ const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organizati
         <div className="flex flex-row items-center gap-2 px-3 py-2 border rounded border-weak mb-6 mt-6">
             <div className="shrink-0">
                 <Disabled>
-                    <Logo appName={app} size={15} variant="glyph-only" />
+                    <Logo
+                        appName={app}
+                        size={15}
+                        variant="glyph-only"
+                        fallback={<ProtonLogo variant="glyph-only" size={15} />}
+                    />
                 </Disabled>
             </div>
             <div className="flex-1">
                 {getBoldFormattedText(
-                    c('Info').t`**${appName}** is not supported in your organization **${organizationName}**.`
+                    organization
+                        ? c('Info').t`**${appName}** is not supported in your organization **${organizationName}**.`
+                        : c('Info').t`**${appName}** is not supported**.`
                 )}
             </div>
         </div>

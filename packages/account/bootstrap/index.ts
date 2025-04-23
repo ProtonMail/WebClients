@@ -1,5 +1,4 @@
-import { createBrowserHistory } from 'history';
-import type { History } from 'history';
+import { type History, createBrowserHistory } from 'history';
 
 import type { EventLoop } from '@proton/account/eventLoop';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
@@ -10,8 +9,6 @@ import metrics from '@proton/metrics';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { appLink } from '@proton/shared/lib/apps/appLink';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -37,7 +34,7 @@ import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnU
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { storeAppVersion } from '@proton/shared/lib/desktop/version';
 import { resumeSessionDrawerApp } from '@proton/shared/lib/drawer/session';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -53,7 +50,6 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import { createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import { EVENTS, UnleashClient } from '@proton/unleash';
@@ -397,61 +393,13 @@ const initEarlyAccess = ({
     }
 };
 
-export const maybeRedirect = async ({
-    appName,
-    authentication,
-    user,
-    history,
-}: {
-    appName: APP_NAMES;
-    authentication: AuthenticationStore;
-    user: User;
-    history: History;
-}) => {
-    if (getRequiresAddressSetup(appName, user)) {
-        appLink({
-            to: `${SETUP_ADDRESS_PATH}?to=${appName}`,
-            toApp: APPS.PROTONACCOUNT,
-            app: appName,
-            history,
-            authentication,
-        });
-        // Promise that never resolves to show the loading page while the redirect is happening
-        await new Promise(noop);
+export const postLoad = async (
+    args: Parameters<typeof initEarlyAccess>[0] & {
+        history: History;
+        authentication: AuthenticationStore;
     }
-
-    const availableApps = getAvailableApps({
-        user,
-        context: 'app',
-        // In app bootstrap, the lumo available feature flag can always be true because
-        // 1) in the lumo app, access isn't handled to it by this function
-        // 2) in other apps, lumo is ignored.
-        isLumoAvailable: true,
-        // In app bootstrap, the docs available feature flag can always be true because
-        // 1) in the docs app, access isn't handled to it by this function
-        // 2) in other apps, docs is ignored.
-        isDocsHomepageAvailable: true,
-        // Organization access control doesn't matter in bootstrap context because it's prevented in the fork stage.
-        // It would also require to load the organization object at app startup which we currently don't.
-        isAccessControlEnabled: false,
-    });
-
-    if (appName !== APPS.PROTONACCOUNT && !availableApps.includes(appName)) {
-        appLink({
-            to: `/?reason=app-disabled&app=${appName}`,
-            toApp: APPS.PROTONACCOUNT,
-            app: appName,
-            history,
-            authentication,
-        });
-        // Promise that never resolves to show the loading page while the redirect is happening
-        await new Promise(noop);
-    }
-};
-
-export const postLoad = async (args: Parameters<typeof initEarlyAccess>[0] & Parameters<typeof maybeRedirect>[0]) => {
+) => {
     await initEarlyAccess(args);
-    await maybeRedirect(args);
 };
 
 export const wrap = async <T>(
