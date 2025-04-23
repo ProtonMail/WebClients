@@ -86,12 +86,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     },
 
     getBiometricsKey: async (store: AuthStore) => {
-        try {
-            const { storageKey, version } = inferBiometricsStorageKey(store);
-            return (await window.ctxBridge?.getSecret(storageKey, version)) ?? null;
-        } catch {
-            return null;
-        }
+        const { storageKey, version } = inferBiometricsStorageKey(store);
+        return (await window.ctxBridge?.getSecret(storageKey, version)) ?? null;
     },
 
     generateBiometricsKey: async () => {
