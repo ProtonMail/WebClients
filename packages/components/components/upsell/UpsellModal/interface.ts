@@ -1,16 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import type {
-    COUPON_CODES,
-    CYCLE,
-    Currency,
-    PaymentMethodStatusExtended,
-    PaymentsApi,
-    Plan,
-    PlanIDs,
-    Subscription,
-} from '@proton/payments/index';
+import type { COUPON_CODES, CYCLE, Currency, PaymentsApi, Plan, PlanIDs, Subscription } from '@proton/payments/index';
 import type { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type useGetFlag from '@proton/unleash/useGetFlag';
@@ -34,7 +25,6 @@ export interface UpsellModalConfig {
 export interface UpsellModalConfigParams {
     dispatch: ReturnType<typeof useDispatch>;
     paymentsApi: PaymentsApi;
-    status: PaymentMethodStatusExtended;
     getFlag: ReturnType<typeof useGetFlag>;
     plans: Plan[];
     subscription: Subscription;
