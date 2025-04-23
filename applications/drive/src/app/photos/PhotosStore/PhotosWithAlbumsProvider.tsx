@@ -86,6 +86,7 @@ export const PhotosWithAlbumsContext = createContext<{
     addPhotoAsCover: (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => void;
     loadAlbumPhotos: (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string) => Promise<void>;
     loadAlbums: (abortSignal: AbortSignal) => Promise<void>;
+    removeAlbumsFromCache: (albumLinkIdsToRemove: Set<string>) => void;
     loadSharedWithMeAlbums: (abortSignal: AbortSignal) => Promise<void>;
     removePhotosFromCache: (linkIds: string[]) => void;
     updateAlbumsFromCache: (linkIds: string[]) => void;
@@ -191,7 +192,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
-    }, [volumeId, driveEventManager.volumes]);
+    }, [volumeId]);
 
     const loadPhotos = useCallback(
         async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
@@ -302,6 +303,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [request, currentAlbumLinkId, volumeId, shareId, getShare]
     );
 
+    // TODO: this is not working - not called in the right place + not cleaning properly as it should
     const cleanupObsoleteAlbums = (newAlbumsLinkIds: Set<string>) => {
         if (newAlbumsLinkIds.size) {
             setAlbums((prevAlbums) => {
@@ -314,6 +316,16 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 return newAlbums;
             });
         }
+    };
+
+    const removeAlbumsFromCache = (albumLinkIdsToRemove: Set<string>) => {
+        setAlbums((prevAlbums) => {
+            const newAlbums = new Map(prevAlbums);
+            albumLinkIdsToRemove.forEach((albumLinkId) => {
+                newAlbums.delete(albumLinkId);
+            });
+            return newAlbums;
+        });
     };
 
     const loadAlbums = useCallback(
@@ -877,6 +889,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 loadAlbums,
                 loadSharedWithMeAlbums,
                 loadPhotos,
+                removeAlbumsFromCache,
                 updatePhotoFavoriteFromCache,
                 removePhotosFromCache,
                 updateAlbumsFromCache,
