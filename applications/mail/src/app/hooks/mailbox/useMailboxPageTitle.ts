@@ -34,6 +34,7 @@ export const useMailboxPageTitle = (labelID: string) => {
         const labelName = getLabelName(labelID, labels, folders);
         const mainTitle = `${labelName} | ${user.Email} | ${MAIL_APP_NAME}`;
 
-        document.title = mailSettings.UnreadFavicon ? `${unreadString}${mainTitle}` : mainTitle;
+        // We show the unread count in the title if not present in the favicon
+        document.title = mailSettings.UnreadFavicon ? mainTitle : `${unreadString}${mainTitle}`;
     }, [labelID, mailSettings, user.Email, labels, folders, conversationCounts, messageCounts]);
 };
