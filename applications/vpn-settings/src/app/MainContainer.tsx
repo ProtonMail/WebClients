@@ -98,7 +98,6 @@ const MainContainer: FunctionComponent = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const isAccessControlEnabled = useFlag('AccessControl');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
@@ -124,7 +123,6 @@ const MainContainer: FunctionComponent = () => {
         groups,
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
-        isAccessControlEnabled,
     });
 
     const canEnableChat = useCanEnableChat(user);
