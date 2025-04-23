@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { memberThunk } from '@proton/account/member';
 import { organizationThunk } from '@proton/account/organization';
 import { getAssistantUpsellConfigPlanAndCycle } from '@proton/components/hooks/assistant/assistantUpsellConfig';
-import { CYCLE, PLANS, SelectedPlan } from '@proton/payments/index';
+import { CYCLE, PLANS, SelectedPlan } from '@proton/payments';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 import { getIsB2CUserAbleToRunScribe } from '../../modals/ComposerAssistantUpsellModal.helpers';
@@ -25,7 +25,7 @@ export const getUpsellModalComposerAssistantConfig: UpsellModalConfigCase = asyn
     const isOrgUser = isOrganization(organization) && !isSuperAdmin(member ? [member] : []);
     const submitText = c('Action').t`Get the writing assistant`;
 
-    /** B2C user are upselled to DUO plan */
+    /** B2C user is upsell to DUO plan */
     if (isB2CUser) {
         const planIDs = { [PLANS.DUO]: 1 };
         const cycle = CYCLE.YEARLY;
