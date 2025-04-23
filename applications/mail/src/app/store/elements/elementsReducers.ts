@@ -3,7 +3,6 @@ import type { Draft } from 'immer';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
@@ -44,10 +43,6 @@ export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStat
 
 export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<number>) => {
     state.page = action.payload;
-};
-
-export const setPageSize = (state: Draft<ElementsState>, action: PayloadAction<MAIL_PAGE_SIZE>) => {
-    state.pageSize = action.payload;
 };
 
 export const resetByPassFilter = (state: Draft<ElementsState>) => {
@@ -201,7 +196,7 @@ export const eventUpdatesFulfilled = (
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
     const total = action.payload.elements.length;
-    const pagesArray = range(0, Math.ceil(total / state.pageSize));
+    const pagesArray = range(0, Math.ceil(total / action.payload.pageSize));
     // If the resulting array is empty because no results have been found,
     // cache the page 0, so that we do not trigger additional searches.
     const pages = pagesArray.length === 0 ? [0] : pagesArray;
