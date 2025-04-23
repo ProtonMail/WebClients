@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import './SkeletonLoader.scss';
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
+export interface Props extends ComponentPropsWithoutRef<'div'> {
     width?: string | number;
     height?: string | number;
     className?: string;
@@ -17,7 +17,13 @@ const SkeletonLoader = ({ width, height, className, style, index, ...rest }: Pro
         <div
             aria-hidden="true"
             data-testid="skeleton-loader"
-            className={clsx('skeleton-loader', !!width && 'w-custom', !!height && 'h-custom', className)}
+            className={clsx(
+                'skeleton-loader',
+                !!width && 'w-custom',
+                !!height && 'h-custom',
+                !!rest.children && 'skeleton-loader--with-children',
+                className
+            )}
             style={{
                 '--w-custom': width,
                 '--h-custom': height,

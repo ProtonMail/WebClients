@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
@@ -15,7 +15,11 @@ import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from './UpsellMultiBox';
 import { useSubscriptionPriceComparison } from './helper';
 
-const UnlimitedBannerPlain = ({ app, subscription }: UpsellSectionBaseProps) => {
+interface Props extends UpsellSectionBaseProps {
+    subscription: Subscription;
+}
+
+const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 

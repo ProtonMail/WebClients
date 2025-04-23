@@ -14,7 +14,7 @@ import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApi from '@proton/components/hooks/useApi';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
-import { PLANS } from '@proton/payments/index';
+import { PLANS, getPlan } from '@proton/payments';
 import {
     type ConnectionInformationResult,
     getConnectionInformation,
@@ -23,7 +23,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { SentryMailInitiatives } from '@proton/shared/lib/helpers/sentry';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
 
 import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 

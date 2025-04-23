@@ -1,5 +1,5 @@
 import { PLANS, type Subscription } from '@proton/payments';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
+import { isTrial } from '@proton/payments';
 
 interface Props {
     subscription?: Subscription;

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
@@ -15,7 +15,11 @@ import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from './UpsellMultiBox';
 import { useSubscriptionPriceComparison } from './helper';
 
-const ExploreGroupPlansBanner = ({ subscription, app }: UpsellSectionBaseProps) => {
+interface Props extends UpsellSectionBaseProps {
+    subscription: Subscription;
+}
+
+const ExploreGroupPlansBanner = ({ subscription, app }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(subscription, PLANS.FAMILY);
     const telemetryFlow = useDashboardPaymentFlow(app);

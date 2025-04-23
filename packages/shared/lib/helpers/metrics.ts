@@ -1,6 +1,6 @@
 import { type Subscription, isFreeSubscription } from '@proton/payments';
+import { getIsB2BAudienceFromSubscription, getPlanName } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getIsB2BAudienceFromSubscription, getPlanName } from '@proton/shared/lib/helpers/subscription';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { metrics } from '../api/metrics';

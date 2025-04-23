@@ -5,19 +5,18 @@ import {
     type AmountAndCurrency,
     type BillingAddress,
     type ChargeablePaymentParameters,
+    type CreateBitcoinTokenData,
+    MAX_BITCOIN_AMOUNT,
+    MIN_BITCOIN_AMOUNT,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
-    type TokenPaymentMethod,
-    isTokenPaymentMethod,
-} from '@proton/payments';
-import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/payments';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    type CreateBitcoinTokenData,
     type PaymentsVersion,
+    type TokenPaymentMethod,
     createToken,
     getTokenStatus,
-} from '@proton/shared/lib/api/payments';
+    isTokenPaymentMethod,
+} from '@proton/payments';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { type Api } from '@proton/shared/lib/interfaces';
 

@@ -15,16 +15,18 @@ import {
     type PlansMap,
     type Subscription,
     getCheckoutModifiers,
+    getPlanNameFromIDs,
+    isLifetimePlan,
+    isLifetimePlanSelected,
 } from '@proton/payments';
+import { getPlanName, getPlanTitle } from '@proton/payments';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import {
     type RequiredCheckResponse,
     type SubscriptionCheckoutData,
     getCheckout,
 } from '@proton/shared/lib/helpers/checkout';
-import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
 import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
-import { getPlanName, getPlanTitle, isLifetimePlan } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 import type { Coupon } from '@proton/shared/lib/interfaces';
 

@@ -21,6 +21,7 @@ export interface Props {
     currencyClassName?: string;
     amountClassName?: string;
     wrapperClassName?: string;
+    suffixNextLine?: boolean;
 }
 
 const Price = ({
@@ -37,6 +38,7 @@ const Price = ({
     suffixClassName,
     currencyClassName,
     amountClassName,
+    suffixNextLine = false,
 }: Props) => {
     const value = typeof amount === 'string' ? amount : humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
@@ -81,17 +83,34 @@ const Price = ({
         );
     })();
 
+    // -$2/month, -CHF 2/month, -BRL 2/month, -2 €/month
+    if (!suffixNextLine) {
+        return (
+            <span
+                className={clsx(['price', wrapperClassName, large && 'price--large', className])}
+                data-currency={currency}
+            >
+                {prefixElement}
+                {signElement}
+                {currencyAndValueElement}
+                {suffixElement}
+            </span>
+        );
+    }
+
     return (
-        <span
-            className={clsx(['price', wrapperClassName, large && 'price--large', className])}
-            data-currency={currency}
-        >
-            {prefixElement}
-            {signElement}
-            {currencyAndValueElement}
+        <div className="flex flex-column">
+            <span
+                className={clsx(['price', wrapperClassName, large && 'price--large', className])}
+                data-currency={currency}
+            >
+                {prefixElement}
+                {signElement}
+                {currencyAndValueElement}
+            </span>
             {suffixElement}
-        </span>
-    ); // -$2/month, -CHF 2/month, -BRL 2/month, -2 €/month
+        </div>
+    );
 };
 
 export default Price;

@@ -12,6 +12,7 @@ import {
     type ChargebeeFetchedPaymentToken,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
+    type CreatePaymentIntentDirectDebitData,
     DisplayablePaymentError,
     type ExtendedExtractIBANResult,
     type ForceEnableChargebee,
@@ -22,10 +23,10 @@ import {
     type V5PaymentToken,
     convertPaymentIntentData,
     extractIBAN,
+    fetchPaymentIntentV5,
+    getIsB2BAudienceFromPlan,
 } from '@proton/payments';
-import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 

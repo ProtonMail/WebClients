@@ -5,7 +5,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Time from '@proton/components/components/time/Time';
 import { type Subscription } from '@proton/payments';
-import { getPlanTitle, getRenewalTime } from '@proton/shared/lib/helpers/subscription';
+import { getPlanTitle, getRenewalTime } from '@proton/payments';
 
 import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
 import type { CancelSubscriptionResult } from './types';

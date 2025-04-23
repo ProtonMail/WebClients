@@ -6,8 +6,8 @@ import noop from '@proton/utils/noop';
 interface Props {
     children: ReactNode;
     className?: string;
-    onSubmit: (event: FormEvent<HTMLFormElement>) => void;
-    onReset: (event: FormEvent<HTMLFormElement>) => void;
+    onSubmit?: (event: FormEvent<HTMLFormElement>) => void;
+    onReset?: (event: FormEvent<HTMLFormElement>) => void;
     autoComplete?: string;
     noValidate?: boolean;
 }

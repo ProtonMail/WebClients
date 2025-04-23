@@ -13,6 +13,9 @@ import {
     type Subscription,
     type SubscriptionPlan,
     formatPaymentMethods,
+    getSubscription,
+    isLifetimePlanSelected,
+    queryPaymentMethods,
 } from '@proton/payments';
 import type {
     BillingAddress,
@@ -31,31 +34,24 @@ import {
     type PlanIDs,
     isStringPLAN,
 } from '@proton/payments';
-import { partnerWhitelist } from '@proton/shared/lib/api/partner';
-import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
-import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import {
-    getPlanFromPlanIDs,
-    getPricingFromPlanIDs,
-    hasPlanIDs,
-    isLifetimePlanSelected,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
 import {
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import { FREE_PLAN, getFreeCheckResult } from '@proton/payments';
+import { partnerWhitelist } from '@proton/shared/lib/api/partner';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import type { Api, Organization, SubscriptionCheckResponse, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getOrganization } from '@proton/shared/lib/organization/api';
-import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import {
     canPay as getCanPay,
     isAdmin as getIsAdmin,

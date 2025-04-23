@@ -2,8 +2,7 @@ import { type ReactNode } from 'react';
 
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import { PLANS, type Subscription } from '@proton/payments';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { type FreeSubscription, PLANS, type Subscription } from '@proton/payments';
 import {
     getHasConsumerVpnPlan,
     hasBundle,
@@ -13,7 +12,8 @@ import {
     hasMail,
     hasPassFamily,
     hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import CustomLogo from './CustomLogo';
@@ -39,7 +39,7 @@ export const PlanIcon = ({
     planName,
 }: {
     app?: APP_NAMES;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     planName?: PLANS;
 }) => {
     if (getHasConsumerVpnPlan(subscription) || planName === PLANS.VPN || planName === PLANS.VPN2024) {

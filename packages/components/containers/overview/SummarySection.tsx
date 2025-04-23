@@ -4,10 +4,9 @@ import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import useConfig from '@proton/components/hooks/useConfig';
-import { PLAN_SERVICES, type Subscription, type SubscriptionPlan } from '@proton/payments';
+import { PLAN_SERVICES, type Subscription, type SubscriptionPlan, getPlan } from '@proton/payments';
 import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { Organization, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 

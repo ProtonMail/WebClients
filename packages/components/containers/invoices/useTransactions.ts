@@ -4,8 +4,8 @@ import {
     type TransactionResponse,
     displayTransactionState,
     displayTransactionType,
+    queryTransactions,
 } from '@proton/payments';
-import { queryTransactions } from '@proton/shared/lib/api/payments';
 
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';

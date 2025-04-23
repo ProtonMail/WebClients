@@ -44,6 +44,14 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import {
+    getHasDriveB2BPlan,
+    getHasExternalMemberCapableB2BPlan,
+    getHasPassB2BPlan,
+    hasDuo,
+    hasPassBusiness,
+    hasVisionary,
+} from '@proton/payments';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -54,14 +62,6 @@ import { MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import {
-    getHasDriveB2BPlan,
-    getHasExternalMemberCapableB2BPlan,
-    getHasPassB2BPlan,
-    hasDuo,
-    hasPassBusiness,
-    hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';

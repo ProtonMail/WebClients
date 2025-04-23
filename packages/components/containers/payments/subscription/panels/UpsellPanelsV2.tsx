@@ -5,35 +5,42 @@ import { type ThemeColorUnion } from '@proton/colors/types';
 import Price from '@proton/components/components/price/Price';
 import Time from '@proton/components/components/time/Time';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import type { CYCLE, FullPlansMap } from '@proton/payments';
+import type { CYCLE, FreeSubscription, FullPlansMap } from '@proton/payments';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
+import { hasBundle } from '@proton/payments';
+import { OfferPrice } from '@proton/payments/ui';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
-import { hasBundle } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type Upsell } from '../helpers';
 import UpsellPanelV2 from './UpsellPanelV2';
 
-interface Props {
-    upsells: Upsell[];
-    subscription: Subscription;
-}
-
-const getPriceElement = (upsell: Upsell, highlightPrice: boolean | undefined, plansMap: FullPlansMap) => {
+const getPriceElement = (upsell: Upsell, highlightPrice: boolean | undefined) => {
     if (!upsell.price) {
         return null;
     }
 
     const priceColorClassName = highlightPrice ? 'text-5xl color-primary' : 'text-5xl color-norm';
 
-    let { value, currency } = upsell.price;
+    const { value, currency } = upsell.price;
 
     if (upsell.plan && upsell.customCycle) {
-        const pricing = getPricingFromPlanIDs({ [upsell.plan]: 1 }, plansMap);
-        const totals = getTotalFromPricing(pricing, upsell.customCycle);
-
-        value = totals.totalPerMonth;
+        return (
+            <OfferPrice
+                planToCheck={{ planIDs: { [upsell.plan]: 1 }, cycle: upsell.customCycle, currency }}
+                suffix={c('new_plans: Plan frequency').t`/month`}
+                wrapperClassName="text-semibold"
+                currencyClassName={priceColorClassName}
+                amountClassName={priceColorClassName}
+                suffixClassName="color-norm"
+                autosizeSkeletonLoader={false}
+                skeletonLoaderProps={{
+                    width: '10em',
+                    height: '2.70em',
+                }}
+            />
+        );
     }
 
     return (
@@ -82,6 +89,11 @@ const getDefaultCta = (upsell: Upsell) => {
     };
 };
 
+interface Props {
+    upsells: Upsell[];
+    subscription?: Subscription | FreeSubscription;
+}
+
 const UpsellPanelsV2 = ({ upsells, subscription }: Props) => {
     const { plansMap } = usePreferredPlansMap();
 
@@ -103,7 +115,7 @@ const UpsellPanelsV2 = ({ upsells, subscription }: Props) => {
 
                 return (
                     <UpsellPanelV2
-                        key={`upsell-${upsell.plan}`}
+                        key={`upsell-${upsell.plan}-${upsell.customCycle}`}
                         title={upsell.title}
                         features={upsell.features}
                         isRecommended={upsell.isRecommended}
@@ -127,7 +139,7 @@ const UpsellPanelsV2 = ({ upsells, subscription }: Props) => {
                         ) : (
                             <div className="">
                                 {upsell.description}
-                                {getPriceElement(upsell, upsell.highlightPrice, plansMap)}
+                                {getPriceElement(upsell, upsell.highlightPrice)}
                             </div>
                         )}
                     </UpsellPanelV2>

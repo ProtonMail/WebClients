@@ -1,6 +1,6 @@
-import { type PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ChargebeeEnabled, type ChargebeeUserExists, type User } from '@proton/shared/lib/interfaces';
 
+import { type PaymentsVersion } from './api';
 import { PAYMENT_METHOD_TYPES } from './constants';
 import { MethodStorage } from './constants';
 import { type SavedPaymentMethod, type TokenPaymentMethod, type V5PaymentToken } from './interface';

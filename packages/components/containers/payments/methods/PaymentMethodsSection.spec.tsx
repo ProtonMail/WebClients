@@ -4,7 +4,7 @@ import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { FREE_SUBSCRIPTION, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { applyHOCs, defaultProtonConfig, withConfig, withEventManager } from '@proton/testing';
+import { applyHOCs, defaultProtonConfig, withConfig, withEventManager, withReduxStore } from '@proton/testing';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import useModals from '../../../hooks/__mocks__/useModals';
@@ -23,7 +23,8 @@ const PaymentMethodsSectionContext = applyHOCs(
     withConfig({
         ...defaultProtonConfig,
         APP_NAME: 'proton-vpn-settings',
-    })
+    }),
+    withReduxStore()
 )(PaymentMethodsSection);
 
 describe('PaymentMethodsSection', () => {

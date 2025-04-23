@@ -1,5 +1,4 @@
 import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import { UNPAID_STATE } from '@proton/payments';
 import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
@@ -11,7 +10,7 @@ import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { joinPaths } from '@proton/shared/lib/helpers/url';
-import type { Api } from '@proton/shared/lib/interfaces';
+import { type Api, UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 

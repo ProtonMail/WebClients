@@ -1,5 +1,6 @@
 import { getFeatures, getSections } from '@proton/components/components/onboarding/b2b/helpers';
 import type { B2BFeaturesSection } from '@proton/components/components/onboarding/b2b/interface';
+import { getPlan } from '@proton/payments';
 import { PLANS } from '@proton/payments/core/constants';
 import {
     APPS,
@@ -9,12 +10,11 @@ import {
     PASS_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { getSubscriptionMock } from '@proton/testing/data';
 
-jest.mock('@proton/shared/lib/helpers/subscription', () => ({
+jest.mock('@proton/payments', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/shared/lib/helpers/subscription'),
+    ...jest.requireActual('@proton/payments'),
     getPlan: jest.fn(),
 }));
 

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useModalState, useModalStateWithData } from '@proton/components';
-import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasVisionary } from '@proton/payments';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
