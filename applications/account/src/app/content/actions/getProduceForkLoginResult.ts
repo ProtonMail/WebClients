@@ -1,7 +1,8 @@
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
-import { getClientID, isExtension } from '@proton/shared/lib/apps/helper';
+import { getAvailableApps } from '@proton/shared/lib/apps/apps';
+import { getClientID, getProduct, isExtension } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import {
     produceExtensionFork,
@@ -11,25 +12,41 @@ import {
 } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import type { Paths } from '../helper';
+import { getProductDisabledLoginResult } from './getProductDisabledResult';
+import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
 import type { LoginResult } from './interface';
 
-export class ProductDisallowedError extends Error {
-    constructor(message?: string) {
-        super(message);
-        this.name = 'ProductDisallowedError';
-    }
-}
+/**
+ * Checks if the app is available to this user. It only does it based on the user's access control. Not based on the organization's access control
+ * because we don't have the organization, and it's anyway done by the API later.
+ */
+const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
+    // Convert the app into a product, because the app may be an app, extension, or desktop app etc. and available products are only apps.
+    const product = getProduct(app);
+    return getAvailableApps({
+        user: session.data.User,
+        context: 'app',
+        // Access control can be disabled when forking a session from Account FE because the API drives it
+        isAccessControlEnabled: false,
+        // The *lumo available* and *docs homepage* feature flag can always be true because we don't limit
+        // access to them from the Account FE when forking a session
+        isLumoAvailable: true,
+        isDocsHomepageAvailable: true,
+    }).some((availableApp) => product === getProduct(availableApp));
+};
 
 export const getProduceForkLoginResult = async ({
     api,
     data,
     session,
+    paths,
 }: {
     api: Api;
     data: ProduceForkData;
@@ -42,7 +59,15 @@ export const getProduceForkLoginResult = async ({
 
         // OAuth session are only allowed for the VPN browser extension at the moment. Throw a disallowed product error if a fork is attempted.
         if (session.data.persistedSession.source === SessionSource.Oauth && app !== APPS.PROTONVPNBROWSEREXTENSION) {
-            throw new ProductDisallowedError();
+            return getProductDisabledLoginResult({ api, app, paths, session });
+        }
+
+        if (getRequiresAddressSetup(app, session.data.User)) {
+            return getSetupAddressLoginResult({ session, app });
+        }
+
+        if (!getIsAppAvailable(app, session)) {
+            return getProductDisabledLoginResult({ api, app, paths, session });
         }
 
         if (isExtension(app)) {
