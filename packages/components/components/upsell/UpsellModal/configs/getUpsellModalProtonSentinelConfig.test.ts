@@ -1,7 +1,7 @@
 import { CYCLE, type Currency, PLANS, PLAN_TYPES, type PaymentsApi, type Plan } from '@proton/payments';
 
 import type { UpsellModalConfigParams } from '../interface';
-import { getUpsellModalDefaultConfig } from './getUpsellModalDefaultConfig';
+import { getUpsellModalProtonSentinelConfig } from './getUpsellModalProtonSentinelConfig';
 
 jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
     SelectedPlan: { createFromSubscription: jest.fn() },
@@ -21,7 +21,7 @@ async function setupTest(currency: Currency) {
         AmountDue: MOCK_YEARLY_PRICE_BRL,
     });
 
-    const config = await getUpsellModalDefaultConfig({
+    const config = await getUpsellModalProtonSentinelConfig({
         currency,
         paymentsApi: paymentsApiMock,
         plans: [
@@ -45,7 +45,7 @@ async function setupTest(currency: Currency) {
     };
 }
 
-describe('getUpsellModalDefaultConfig', () => {
+describe('getUpsellModalProtonSentinelConfig', () => {
     beforeEach(() => {
         jest.clearAllMocks();
     });

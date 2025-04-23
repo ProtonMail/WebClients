@@ -124,11 +124,10 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
             expect(config).toHaveProperty('submitText', `Get the writing assistant`);
 
-            expect(config.footerText).not.toBeNull();
-            // @ts-expect-error - footerText is an array because of ttag
-            expect(config.footerText[1].props.currency).toBe('USD');
-            // @ts-expect-error - footerText is an array because of ttag
-            expect(config.footerText[1].props.children).toBe(PROTON_DUO_YEARLY_PRICE / 12);
+            const footerText = config.footerText as any;
+            expect(footerText).not.toBeNull();
+            expect(footerText[1].props.currency).toBe('USD');
+            expect(footerText[1].props.children).toBe(PROTON_DUO_YEARLY_PRICE / 12);
         });
 
         it('When non main currency it should return correct config', async () => {
@@ -145,11 +144,11 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             expect(config).toHaveProperty('planIDs', { [PLANS.DUO]: 1 });
             expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
             expect(config).toHaveProperty('submitText', `Get the writing assistant`);
-            expect(config.footerText).not.toBeNull();
-            // @ts-expect-error - footerText is an array because of ttag
-            expect(config.footerText[1].props.currency).toBe('BRL');
-            // @ts-expect-error - footerText is an array because of ttag
-            expect(config.footerText[1].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT / 12);
+
+            const footerText = config.footerText as any;
+            expect(footerText).not.toBeNull();
+            expect(footerText[1].props.currency).toBe('BRL');
+            expect(footerText[1].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT / 12);
         });
     });
 
