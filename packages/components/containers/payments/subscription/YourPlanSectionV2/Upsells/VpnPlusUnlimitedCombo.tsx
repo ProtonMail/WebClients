@@ -29,13 +29,13 @@ import {
     PLAN_NAMES,
     type PlansMap,
     getPlanByName,
+    getPricePerCycle,
     getSubscriptionPlanTitleAndName,
 } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
-import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';

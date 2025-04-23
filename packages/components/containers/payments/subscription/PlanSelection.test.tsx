@@ -1,23 +1,21 @@
 import { renderHook } from '@testing-library/react';
 
 import {
-    ADDON_NAMES,
     CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
     FREE_SUBSCRIPTION,
     PLANS,
-    type Plan,
     type Subscription,
     getPlanByName,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
-import { PLANS_MAP, getLongTestPlans, getTestPlans } from '@proton/testing/data';
+import { getLongTestPlans, getTestPlans } from '@proton/testing/data';
 import { useFlag } from '@proton/unleash';
 
-import { type AccessiblePlansHookProps, getMaximumCycle, getPrice, useAccessiblePlans } from './PlanSelection';
+import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
 
 jest.mock('@proton/components/hooks/useConfig', () => ({
     __esModule: true,
@@ -25,41 +23,6 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
         APP_NAME: 'proton-account',
     }),
 }));
-
-describe('getPrice', () => {
-    it('should return null if the current plan does not have pricing for the selected cycle', () => {
-        const plan = PLANS_MAP[PLANS.VPN_PRO] as Plan;
-        expect(getPrice(plan, CYCLE.THIRTY, PLANS_MAP)).toBeNull();
-    });
-
-    it('should return cycle price for the current plan', () => {
-        const plan = PLANS_MAP[PLANS.FAMILY] as Plan;
-        expect(getPrice(plan, CYCLE.TWO_YEARS, PLANS_MAP)).toBe(plan.Pricing[CYCLE.TWO_YEARS]);
-    });
-
-    it.each([
-        [PLANS.VPN_PRO, ADDON_NAMES.MEMBER_VPN_PRO],
-        [PLANS.VPN_BUSINESS, ADDON_NAMES.MEMBER_VPN_BUSINESS],
-        [PLANS.PASS_PRO, ADDON_NAMES.MEMBER_PASS_PRO],
-        [PLANS.PASS_BUSINESS, ADDON_NAMES.MEMBER_PASS_BUSINESS],
-    ])('should return member addon cycle price for the selected plans: %s', (planName, addonName) => {
-        const plan = PLANS_MAP[planName] as Plan;
-        const addon = PLANS_MAP[addonName] as Plan;
-
-        expect(getPrice(plan, CYCLE.TWO_YEARS, PLANS_MAP)).toBe(addon.Pricing[CYCLE.TWO_YEARS]);
-    });
-
-    it('should return the plan pricing if the addon is not available', () => {
-        const plan = PLANS_MAP[PLANS.VPN_PRO] as Plan;
-
-        const plansMap = {
-            ...PLANS_MAP,
-            [ADDON_NAMES.MEMBER_VPN_PRO]: undefined,
-        };
-
-        expect(getPrice(plan, CYCLE.TWO_YEARS, plansMap)).toBe(plan.Pricing[CYCLE.TWO_YEARS]);
-    });
-});
 
 const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
 

@@ -2,8 +2,7 @@ import { type ReactNode } from 'react';
 
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
-import { type CYCLE, type Currency, type PlanIDs } from '@proton/payments';
-import { isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
+import { type CYCLE, type Currency, type PlanIDs, isLifetimePlanSelected } from '@proton/payments';
 
 import { getMonthFreeText } from '../../../offers/helpers/offerCopies';
 import PlanDiscount from '../helpers/PlanDiscount';

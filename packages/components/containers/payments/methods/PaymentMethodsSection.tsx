@@ -21,9 +21,9 @@ import {
     isOnSessionMigration,
     isSplittedUser,
 } from '@proton/payments';
+import { isManagedExternally } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 

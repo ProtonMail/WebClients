@@ -21,11 +21,20 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons';
-import { CYCLE, type FreePlanDefault, PLANS, PLAN_NAMES, type PlansMap, getPlanByName } from '@proton/payments';
+import {
+    CYCLE,
+    type FreePlanDefault,
+    PLANS,
+    PLAN_NAMES,
+    type PlansMap,
+    type Subscription,
+    getPlanByName,
+    getPricePerCycle,
+} from '@proton/payments';
+import { getHasConsumerVpnPlan } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { getHasConsumerVpnPlan, getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';
@@ -40,7 +49,7 @@ import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
-import type { UpsellSectionProps } from '../YourPlanUpsellsSectionV2';
+import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
 import { getBillingCycleText, getDashboardUpsellTitle } from '../helpers';
 import driveImage from '../images/drive.jpg';
 import mailImage from '../images/mail.jpg';
@@ -205,53 +214,22 @@ const UnlimitedProductCards = ({ plansMap, freePlan }: { plansMap: PlansMap; fre
     );
 };
 
-interface Props extends UpsellSectionProps {
-    showProductCards?: boolean;
-    showUpsellPanels: boolean;
-    showDiscoverButton?: boolean;
-    showUpsellHeader?: boolean;
-    gridSectionHeaderCopy?: string;
-}
-
-const UnlimitedBannerGradient = ({
-    showProductCards = false,
-    showUpsellPanels = false,
-    showDiscoverButton = true,
-    showUpsellHeader = false,
-    gridSectionHeaderCopy,
+export const useUnlimitedBannerGradientUpsells = ({
     subscription,
+    serversCount,
     app,
     plansMap,
-    serversCount,
     freePlan,
-    user,
     show24MonthPlan,
-    ...rest
-}: Props) => {
+    user,
+}: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const [plansResult] = usePlans();
     const telemetryFlow = useDashboardPaymentFlow(app);
-
-    const plan = PLANS.BUNDLE;
-    const planName = PLAN_NAMES[plan];
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            telemetryFlow,
-        });
-    };
-
-    const handleCTAClick = (cycle: CYCLE, step: SUBSCRIPTION_STEPS) => {
-        openSubscriptionModal({
-            cycle: cycle,
-            plan,
-            step: step,
-            disablePlanSelection: true,
-            metrics: {
-                source: 'upsells',
-            },
             telemetryFlow,
         });
     };
@@ -264,7 +242,6 @@ const UnlimitedBannerGradient = ({
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
-        ...rest,
     };
 
     const upsells = [
@@ -290,6 +267,51 @@ const UnlimitedBannerGradient = ({
                 isRecommended: true,
             }),
     ].filter(isTruthy);
+
+    return { upsells, serversCount, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+};
+
+interface Props extends UpsellsHook {
+    showProductCards?: boolean;
+    showUpsellPanels: boolean;
+    showDiscoverButton?: boolean;
+    showUpsellHeader?: boolean;
+    gridSectionHeaderCopy?: string;
+    subscription: Subscription;
+}
+
+const UnlimitedBannerGradient = ({
+    showProductCards = false,
+    showUpsellPanels = false,
+    showDiscoverButton = true,
+    showUpsellHeader = false,
+    gridSectionHeaderCopy,
+    subscription,
+    telemetryFlow,
+    upsells,
+    handleExplorePlans,
+    plansMap,
+    freePlan,
+    user,
+}: Props) => {
+    const [openSubscriptionModal] = useSubscriptionModal();
+    const [plansResult] = usePlans();
+
+    const plan = PLANS.BUNDLE;
+    const planName = PLAN_NAMES[plan];
+
+    const handleCTAClick = (cycle: CYCLE, step: SUBSCRIPTION_STEPS) => {
+        openSubscriptionModal({
+            cycle: cycle,
+            plan,
+            step: step,
+            disablePlanSelection: true,
+            metrics: {
+                source: 'upsells',
+            },
+            telemetryFlow,
+        });
+    };
 
     const headerUpsellCycle = subscription?.Cycle || CYCLE.MONTHLY;
 

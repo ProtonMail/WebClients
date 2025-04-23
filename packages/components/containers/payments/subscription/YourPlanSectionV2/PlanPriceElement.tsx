@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { CYCLE, type Subscription } from '@proton/payments';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import { CYCLE, type FreeSubscription, type Subscription } from '@proton/payments';
+import { isManagedExternally } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    subscription: Subscription;
+    subscription?: Subscription | FreeSubscription;
     user: UserModel;
 }
 const PlanPriceElement = ({ subscription, user }: Props) => {

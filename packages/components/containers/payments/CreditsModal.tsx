@@ -31,12 +31,12 @@ import {
     PAYMENT_METHOD_TYPES,
     type PaymentMethodStatusExtended,
     type PlainPaymentMethodType,
+    getPaymentsVersion,
     isFreeSubscription,
 } from '@proton/payments';
-import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { getHasSomeVpnPlan } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';

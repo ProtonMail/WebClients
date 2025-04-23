@@ -1,8 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
-import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
-import type { CardModel, SavedPaymentMethod, SavedPaymentMethodInternal } from '@proton/payments';
+import type { SavedPaymentMethod, SavedPaymentMethodInternal } from '@proton/payments';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing';
@@ -16,24 +15,6 @@ jest.mock('../../hooks/useApi', () => {
         default: () => apiMock,
     };
 });
-
-const defaultCard: CardModel = {
-    number: '',
-    month: '',
-    year: '',
-    cvc: '',
-    zip: '',
-    country: 'US',
-};
-
-const cardFieldStatus: CardFieldStatus = {
-    number: false,
-    month: false,
-    year: false,
-    cvc: false,
-    zip: false,
-    country: false,
-};
 
 let paymentMethods: SavedPaymentMethod[];
 let options;
@@ -151,12 +132,8 @@ describe('Payment', () => {
                 onMethod={() => {}}
                 method={method}
                 amount={1000}
-                card={defaultCard}
-                cardErrors={{}}
-                onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
-                cardFieldStatus={cardFieldStatus}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -183,49 +160,6 @@ describe('Payment', () => {
         );
     });
 
-    it('should render <Alert3DS> if the payment method is card', async () => {
-        let { container } = render(
-            <PaymentContext
-                type="subscription"
-                onMethod={() => {}}
-                method={PAYMENT_METHOD_TYPES.CARD}
-                amount={1000}
-                card={defaultCard}
-                cardErrors={{}}
-                onCard={() => {}}
-                paypal={{}}
-                paypalCredit={{}}
-                cardFieldStatus={cardFieldStatus}
-                isAuthenticated={true}
-                lastUsedMethod={lastUsedMethod}
-                allMethods={allMethods}
-                savedMethodInternal={undefined}
-                loading={false}
-                currency="USD"
-                iframeHandles={null as any}
-                chargebeeCard={null as any}
-                chargebeePaypal={null as any}
-                bitcoinInhouse={null as any}
-                bitcoinChargebee={null as any}
-                hasSomeVpnPlan={false}
-                paymentComponentLoaded={jest.fn()}
-                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
-                user={undefined}
-                paymentStatus={undefined}
-                directDebit={
-                    {
-                        customer: {} as any,
-                        bankAccount: {} as any,
-                    } as any
-                }
-            />
-        );
-
-        await waitFor(() => {
-            expect(container).toHaveTextContent('We use 3-D Secure to protect your payments');
-        });
-    });
-
     it('should not render <Alert3DS> if flow type is "signup"', async () => {
         let { container } = render(
             <PaymentContext
@@ -233,12 +167,8 @@ describe('Payment', () => {
                 type="signup"
                 method={PAYMENT_METHOD_TYPES.CARD}
                 amount={1000}
-                card={defaultCard}
-                cardErrors={{}}
-                onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
-                cardFieldStatus={cardFieldStatus}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -312,12 +242,8 @@ describe('Payment', () => {
                 type="subscription"
                 method="my-custom-method-123"
                 amount={1000}
-                card={defaultCard}
-                cardErrors={{}}
-                onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
-                cardFieldStatus={cardFieldStatus}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -386,12 +312,8 @@ describe('Payment', () => {
                 type="subscription"
                 method="my-custom-method-123"
                 amount={1000}
-                card={defaultCard}
-                cardErrors={{}}
-                onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
-                cardFieldStatus={cardFieldStatus}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}

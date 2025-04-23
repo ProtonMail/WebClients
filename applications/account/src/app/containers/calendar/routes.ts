@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
+import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 

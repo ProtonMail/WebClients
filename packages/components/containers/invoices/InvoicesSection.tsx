@@ -13,9 +13,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { INVOICE_OWNER, INVOICE_STATE } from '@proton/payments';
-import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { InvoiceDocument } from '@proton/shared/lib/api/payments';
+import { INVOICE_OWNER, INVOICE_STATE, InvoiceDocument, type PaymentsVersion } from '@proton/payments';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';

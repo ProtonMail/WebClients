@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
@@ -8,28 +10,39 @@ import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscription
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import type { FullPlansMap } from '@proton/payments';
+import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import useLoading from '@proton/hooks/useLoading';
+import type { FreeSubscription, FullPlansMap } from '@proton/payments';
 import { CYCLE, type FreePlanDefault, type Subscription } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments';
+import { hasBundle, hasDeprecatedVPN, hasDuo, hasFamily, hasVPN2024 } from '@proton/payments';
+import { PaymentsContextProvider } from '@proton/payments/ui';
+import { usePaymentsPreloaded } from '@proton/payments/ui/context/PaymentContext';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { hasBundle, hasDeprecatedVPN, hasDuo, hasFamily, hasVPN2024 } from '@proton/shared/lib/helpers/subscription';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import useVariant from '@proton/unleash/useVariant';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
-import DuoBannerExtendSubscription from './Upsells/DuoBannerExtendSubscription';
+import { type Upsell } from '../helpers';
+import DuoBannerExtendSubscription, { useDuoBannerExtendSubscription } from './Upsells/DuoBannerExtendSubscription';
 import ExploreGroupPlansBanner from './Upsells/ExploreGroupPlansBanner';
 import FamilyBanner from './Upsells/FamilyBanner';
-import FamilyBannerExtendSubscription from './Upsells/FamilyBannerExtendSubscription';
-import UnlimitedBannerExtendSubscription from './Upsells/UnlimitedBannerExtendSubscription';
-import UnlimitedBannerGradient from './Upsells/UnlimitedBannerGradient';
+import FamilyBannerExtendSubscription, {
+    useFamilyBannerExtendSubscription,
+} from './Upsells/FamilyBannerExtendSubscription';
+import UnlimitedBannerExtendSubscription, {
+    useUnlimitedBannerExtendSubscription,
+} from './Upsells/UnlimitedBannerExtendSubscription';
+import UnlimitedBannerGradient, { useUnlimitedBannerGradientUpsells } from './Upsells/UnlimitedBannerGradient';
 import UnlimitedBannerPlain from './Upsells/UnlimitedBannerPlain';
-import VpnPlusExtendSubscription from './Upsells/VpnPlusExtendSubscription';
-import VpnPlusFromFree from './Upsells/VpnPlusFromFree';
+import VpnPlusExtendSubscription, { useVpnPlusExtendSubscription } from './Upsells/VpnPlusExtendSubscription';
+import VpnPlusFromFree, { useVpnPlusFromFreeUpsells } from './Upsells/VpnPlusFromFree';
 
 export interface UpsellSectionBaseProps {
     app: APP_NAMES;
-    subscription: Subscription;
+    subscription?: Subscription | FreeSubscription;
 }
 export interface UpsellSectionProps extends UpsellSectionBaseProps {
     user: UserModel;
@@ -40,7 +53,7 @@ export interface UpsellSectionProps extends UpsellSectionBaseProps {
 }
 
 interface GetUpsellSectionProps {
-    subscription: Subscription;
+    subscription?: Subscription | FreeSubscription;
     app: APP_NAMES;
     user: UserModel;
     serversCount: VPNServersCountData;
@@ -50,7 +63,17 @@ interface GetUpsellSectionProps {
     variant: { name?: VPNDashboardVariant | 'disabled' | undefined };
 }
 
-const getUpsellSection = ({
+export type UpsellsHook = {
+    upsells: Upsell[];
+    handleExplorePlans: () => void;
+    serversCount: VPNServersCountData;
+    telemetryFlow: TelemetryPaymentFlow;
+    plansMap: FullPlansMap;
+    freePlan: FreePlanDefault;
+    user: UserModel;
+};
+
+const useUpsellSection = ({
     subscription,
     app,
     user,
@@ -68,147 +91,158 @@ const getUpsellSection = ({
 
     const userCanHave24MonthPlan = user.isFree && user.canPay && !user.isDelinquent && !subscriptionEnd;
 
-    if (hasMailFree || hasPassFree || hasVPNFree || hasDriveFree) {
-        return (
-            <>
-                <VpnPlusFromFree
-                    user={user}
-                    subscription={subscription}
-                    serversCount={serversCount}
-                    app={app}
-                    plansMap={plansMap}
-                    freePlan={freePlan}
-                    show24MonthPlan={userCanHave24MonthPlan}
-                />
+    const upsellParams = {
+        subscription,
+        serversCount,
+        app,
+        plansMap,
+        freePlan,
+        show24MonthPlan: userCanHave24MonthPlan,
+        user,
+    };
+
+    const vpnPlusFromFreeUpsells = useVpnPlusFromFreeUpsells(upsellParams);
+    const unlimitedBannerGradientUpsells = useUnlimitedBannerGradientUpsells(upsellParams);
+    const vpnPlusExtendSubscriptionUpsells = useVpnPlusExtendSubscription(upsellParams);
+    const unlimitedBannerExtendSubscriptionUpsells = useUnlimitedBannerExtendSubscription(upsellParams);
+    const duoBannerExtendSubscriptionUpsells = useDuoBannerExtendSubscription(upsellParams);
+    const familyBannerExtendSubscriptionUpsells = useFamilyBannerExtendSubscription(upsellParams);
+
+    const upsellSections = [
+        {
+            enabled: hasMailFree || hasPassFree || hasVPNFree || hasDriveFree,
+            upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
+            element: (
+                <>
+                    <VpnPlusFromFree subscription={subscription as Subscription} {...vpnPlusFromFreeUpsells} />
+                    <UnlimitedBannerGradient
+                        showProductCards={false}
+                        showUpsellPanels={false}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                </>
+            ),
+        },
+        {
+            enabled:
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription?.Cycle === CYCLE.YEARLY,
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
                 <UnlimitedBannerGradient
-                    user={user}
-                    subscription={subscription}
-                    serversCount={serversCount}
-                    app={app}
-                    showProductCards={false}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
+        },
+        {
+            enabled:
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription?.Cycle === CYCLE.TWO_YEARS,
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    showProductCards={true}
                     showUpsellPanels={false}
-                    plansMap={plansMap}
-                    freePlan={freePlan}
-                    show24MonthPlan={userCanHave24MonthPlan}
+                    showDiscoverButton={false}
+                    showUpsellHeader={true}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
                 />
-            </>
-        );
-    }
-
-    if ((hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription.Cycle === CYCLE.YEARLY) {
-        return (
-            <UnlimitedBannerGradient
-                user={user}
-                subscription={subscription}
-                serversCount={serversCount}
-                app={app}
-                showProductCards={true}
-                showUpsellPanels={true}
-                plansMap={plansMap}
-                freePlan={freePlan}
-                show24MonthPlan={userCanHave24MonthPlan}
-                gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-            />
-        );
-    }
-
-    if ((hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription.Cycle === CYCLE.TWO_YEARS) {
-        return (
-            <UnlimitedBannerGradient
-                user={user}
-                subscription={subscription}
-                serversCount={serversCount}
-                app={app}
-                showProductCards={true}
-                showUpsellPanels={false}
-                showDiscoverButton={false}
-                showUpsellHeader={true}
-                plansMap={plansMap}
-                freePlan={freePlan}
-                show24MonthPlan={userCanHave24MonthPlan}
-            />
-        );
-    }
-
-    // Catch all cycles except yearly or two years
-    if (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) {
-        return (
-            <>
-                <VpnPlusExtendSubscription
-                    user={user}
-                    subscription={subscription}
-                    serversCount={serversCount}
-                    app={app}
-                    plansMap={plansMap}
-                    freePlan={freePlan}
-                    show24MonthPlan={userCanHave24MonthPlan}
+            ),
+        },
+        {
+            enabled: hasDeprecatedVPN(subscription) || hasVPN2024(subscription),
+            upsells: vpnPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <VpnPlusExtendSubscription
+                        subscription={subscription as Subscription}
+                        {...vpnPlusExtendSubscriptionUpsells}
+                    />
+                    <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
+                </>
+            ),
+        },
+        {
+            enabled: hasBundle(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            upsells: unlimitedBannerExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerExtendSubscription
+                    subscription={subscription as Subscription}
+                    showUpsellPanels={true}
+                    {...unlimitedBannerExtendSubscriptionUpsells}
                 />
-                <UnlimitedBannerPlain app={app} subscription={subscription} />
-            </>
-        );
+            ),
+        },
+        {
+            enabled: hasBundle(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            element: <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />,
+        },
+        {
+            enabled: hasDuo(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            upsells: duoBannerExtendSubscriptionUpsells.upsells,
+            element: (
+                <DuoBannerExtendSubscription
+                    subscription={subscription as Subscription}
+                    showUpsellPanels={true}
+                    {...duoBannerExtendSubscriptionUpsells}
+                />
+            ),
+        },
+        {
+            enabled: hasDuo(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            element: <FamilyBanner app={app} subscription={subscription as Subscription} />,
+        },
+        {
+            enabled: hasFamily(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            upsells: familyBannerExtendSubscriptionUpsells.upsells,
+            element: (
+                <FamilyBannerExtendSubscription
+                    subscription={subscription as Subscription}
+                    showUpsellPanels={true}
+                    {...familyBannerExtendSubscriptionUpsells}
+                />
+            ),
+        },
+    ];
+
+    const [loading, withLoading] = useLoading(true);
+    const payments = usePaymentsPreloaded();
+
+    const upsellSection = upsellSections.find((upsell) => upsell.enabled) ?? null;
+    const key = upsellSection?.upsells?.map((upsell) => upsell.planKey).join('-') ?? '';
+    useEffect(() => {
+        if (!payments.hasEssentialData) {
+            return;
+        }
+
+        const promises =
+            upsellSection?.upsells?.map((upsell) => upsell?.initializeOfferPrice?.(payments)).filter(isTruthy) ?? [];
+
+        withLoading(Promise.all(promises)).catch(noop);
+    }, [key, payments.hasEssentialData]);
+
+    if (!subscription) {
+        return {
+            upsellSection: null,
+            loading: true,
+        };
     }
 
-    if (hasBundle(subscription) && subscription.Cycle === CYCLE.MONTHLY) {
-        return (
-            <UnlimitedBannerExtendSubscription
-                user={user}
-                subscription={subscription}
-                serversCount={serversCount}
-                app={app}
-                showUpsellPanels={true}
-                plansMap={plansMap}
-                freePlan={freePlan}
-                show24MonthPlan={userCanHave24MonthPlan}
-            />
-        );
-    }
-
-    if (hasBundle(subscription) && subscription.Cycle !== CYCLE.MONTHLY) {
-        return <ExploreGroupPlansBanner app={app} subscription={subscription} />;
-    }
-
-    if (hasDuo(subscription) && subscription.Cycle === CYCLE.MONTHLY) {
-        return (
-            <DuoBannerExtendSubscription
-                user={user}
-                subscription={subscription}
-                serversCount={serversCount}
-                app={app}
-                showUpsellPanels={true}
-                plansMap={plansMap}
-                freePlan={freePlan}
-                show24MonthPlan={userCanHave24MonthPlan}
-            />
-        );
-    }
-
-    if (hasDuo(subscription) && subscription.Cycle !== CYCLE.MONTHLY) {
-        return <FamilyBanner app={app} subscription={subscription} />;
-    }
-
-    if (hasFamily(subscription) && subscription.Cycle === CYCLE.MONTHLY) {
-        return (
-            <FamilyBannerExtendSubscription
-                user={user}
-                subscription={subscription}
-                serversCount={serversCount}
-                app={app}
-                showUpsellPanels={true}
-                plansMap={plansMap}
-                freePlan={freePlan}
-                show24MonthPlan={userCanHave24MonthPlan}
-            />
-        );
-    }
-
-    return null;
+    return {
+        upsellSection: upsellSection?.element,
+        loading,
+    };
 };
 
 interface YourPlanSectionV2Props {
     app: APP_NAMES;
 }
 
-const YourPlanUpsellsSectionV2 = ({ app }: YourPlanSectionV2Props) => {
+const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
@@ -221,14 +255,7 @@ const YourPlanUpsellsSectionV2 = ({ app }: YourPlanSectionV2Props) => {
 
     useLoad();
 
-    const loading =
-        loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading || loadingSubscriptionEnd;
-
-    if (!subscription || !plans || loading) {
-        return <Loader />;
-    }
-
-    return getUpsellSection({
+    const { upsellSection, loading: upsellLoading } = useUpsellSection({
         app,
         subscription,
         user,
@@ -238,5 +265,28 @@ const YourPlanUpsellsSectionV2 = ({ app }: YourPlanSectionV2Props) => {
         subscriptionEnd,
         variant,
     });
+
+    const loading =
+        loadingSubscription ||
+        loadingPlans ||
+        serversCountLoading ||
+        plansMapLoading ||
+        loadingSubscriptionEnd ||
+        upsellLoading;
+
+    if (!subscription || !plans || loading) {
+        return <Loader />;
+    }
+
+    return upsellSection;
 };
+
+export const YourPlanUpsellsSectionV2 = (props: YourPlanSectionV2Props) => {
+    return (
+        <PaymentsContextProvider>
+            <YourPlanUpsellsSectionV2Inner {...props} />
+        </PaymentsContextProvider>
+    );
+};
+
 export default YourPlanUpsellsSectionV2;

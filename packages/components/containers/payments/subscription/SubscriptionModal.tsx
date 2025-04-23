@@ -14,12 +14,13 @@ import { usePaidUsersNudgeTelemetry } from '@proton/components/components/topnav
 import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import { COUPON_CODES, PLANS, fixPlanIDs, fixPlanName } from '@proton/payments';
+import { FREE_PLAN, getHas2024OfferCoupon } from '@proton/payments';
+import { isManagedExternally } from '@proton/payments';
+import { PaymentsContextProvider } from '@proton/payments/ui';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { getHas2024OfferCoupon, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
@@ -166,70 +167,75 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         }
 
         return (
-            <SubscriptionContainer
-                parent="subscription-modal"
-                app={app}
-                subscription={subscription}
-                plans={plans}
-                freePlan={freePlan}
-                organization={organization}
-                onSubscribed={handleSubscribed}
-                onUnsubscribed={handleUnsubscribed}
-                onCancel={handleClose}
-                mode={mode}
-                currency={currency}
-                paymentsStatus={status}
-                upsellRef={upsellRef}
-                // Post subscription has advantage over config
-                disableThanksStep={postSubscriptionProps.disableThanksStep ?? rest.disableThanksStep}
-                {...rest}
-                render={({ onSubmit, title, content, footer, step, planIDs }) => {
-                    const isUpgradeOrThanks = [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
-                    const isCheckout = step === SUBSCRIPTION_STEPS.CHECKOUT;
-                    const isPlanSelection = step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
-
-                    const modal = (
-                        <ModalTwo
-                            blurBackdrop={blurBackdrop}
-                            className={clsx([
-                                subscriptionModalClassName,
-                                isPlanSelection && 'subscription-modal--fixed-height subscription-modal--large-width',
-                                isCheckout && 'subscription-modal--fixed-height subscription-modal--medium-width',
-                                isUpgradeOrThanks && 'modal-two--twocolors',
-                            ])}
-                            rootClassName={rootClassName}
-                            data-testid="plansModal"
-                            {...modalState}
-                            onClose={handleClose}
-                            disableCloseOnEscape={disableCloseOnEscape}
-                            fullscreen={fullscreen}
-                            as="form"
-                            size={isUpgradeOrThanks ? undefined : 'large'}
-                            onSubmit={onSubmit}
-                        >
-                            <ModalTwoHeader title={title} hasClose={hasClose} />
-                            {isUpgradeOrThanks ? content : <ModalTwoContent>{content}</ModalTwoContent>}
-                            {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
-                        </ModalTwo>
-                    );
-
-                    if (isOverridablableStep(step)) {
-                        return (
-                            postSubscriptionProps.renderCustomStepModal({
-                                modalProps: {
-                                    ...modalState,
-                                    onClose: handleSubscribed,
-                                },
-                                planIDs,
-                                step,
-                                upsellRef,
-                            }) || modal
+            <PaymentsContextProvider>
+                <SubscriptionContainer
+                    parent="subscription-modal"
+                    app={app}
+                    subscription={subscription}
+                    plans={plans}
+                    freePlan={freePlan}
+                    organization={organization}
+                    onSubscribed={handleSubscribed}
+                    onUnsubscribed={handleUnsubscribed}
+                    onCancel={handleClose}
+                    mode={mode}
+                    currency={currency}
+                    paymentsStatus={status}
+                    upsellRef={upsellRef}
+                    // Post subscription has advantage over config
+                    disableThanksStep={postSubscriptionProps.disableThanksStep ?? rest.disableThanksStep}
+                    {...rest}
+                    render={({ onSubmit, title, content, footer, step, planIDs }) => {
+                        const isUpgradeOrThanks = [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(
+                            step
                         );
-                    }
+                        const isCheckout = step === SUBSCRIPTION_STEPS.CHECKOUT;
+                        const isPlanSelection = step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
 
-                    return modal;
-                }}
-            />
+                        const modal = (
+                            <ModalTwo
+                                blurBackdrop={blurBackdrop}
+                                className={clsx([
+                                    subscriptionModalClassName,
+                                    isPlanSelection &&
+                                        'subscription-modal--fixed-height subscription-modal--large-width',
+                                    isCheckout && 'subscription-modal--fixed-height subscription-modal--medium-width',
+                                    isUpgradeOrThanks && 'modal-two--twocolors',
+                                ])}
+                                rootClassName={rootClassName}
+                                data-testid="plansModal"
+                                {...modalState}
+                                onClose={handleClose}
+                                disableCloseOnEscape={disableCloseOnEscape}
+                                fullscreen={fullscreen}
+                                as="form"
+                                size={isUpgradeOrThanks ? undefined : 'large'}
+                                onSubmit={onSubmit}
+                            >
+                                <ModalTwoHeader title={title} hasClose={hasClose} />
+                                {isUpgradeOrThanks ? content : <ModalTwoContent>{content}</ModalTwoContent>}
+                                {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
+                            </ModalTwo>
+                        );
+
+                        if (isOverridablableStep(step)) {
+                            return (
+                                postSubscriptionProps.renderCustomStepModal({
+                                    modalProps: {
+                                        ...modalState,
+                                        onClose: handleSubscribed,
+                                    },
+                                    planIDs,
+                                    step,
+                                    upsellRef,
+                                }) || modal
+                            );
+                        }
+
+                        return modal;
+                    }}
+                />
+            </PaymentsContextProvider>
         );
     }
 );

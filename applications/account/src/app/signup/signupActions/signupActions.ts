@@ -6,7 +6,16 @@ import type { VerificationModel } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { V5PaymentToken } from '@proton/payments';
-import { COUPON_CODES, isTokenPayment, isWrappedPaymentsVersion } from '@proton/payments';
+import {
+    COUPON_CODES,
+    type PaymentsVersion,
+    isTokenPayment,
+    isWrappedPaymentsVersion,
+    setPaymentMethodV4,
+    setPaymentMethodV5,
+    subscribe,
+} from '@proton/payments';
+import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/payments';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -14,8 +23,6 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
-import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
@@ -33,7 +40,6 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/err
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import {

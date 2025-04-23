@@ -1,3 +1,7 @@
+import isTruthy from '@proton/utils/isTruthy';
+
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
+import type { Currency, FreeSubscription, MaxKeys, PlanIDs } from '../interface';
 import {
     type AddonGuard,
     getAddonType,
@@ -8,15 +12,11 @@ import {
     isLumoAddon,
     isMemberAddon,
     isScribeAddon,
-} from '@proton/shared/lib/helpers/addons';
-import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getIsB2BAudienceFromPlan, getMaxValue, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import isTruthy from '@proton/utils/isTruthy';
-
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
-import type { Currency, FreeSubscription, MaxKeys, PlanIDs } from '../interface';
+} from '../plan/addons';
+import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '../plan/helpers';
 import { type Plan, type PlansMap } from '../plan/interface';
+import { FREE_PLAN } from './freePlans';
+import { getMaxValue, getPlanIDs } from './helpers';
 import { getLumoAddonNameByPlan, getScribeAddonNameByPlan } from './helpers';
 import { type Subscription } from './interface';
 import { getPlansMap } from './plans-map-wrapper';

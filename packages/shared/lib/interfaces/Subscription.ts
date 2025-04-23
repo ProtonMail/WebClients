@@ -1,6 +1,5 @@
-import type { Currency, Cycle } from '@proton/payments';
+import type { Currency, Cycle, ProrationMode } from '@proton/payments';
 
-import type { ProrationMode } from '../api/payments';
 import type { Nullable } from './utils';
 
 export interface Tax {

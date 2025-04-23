@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { hasCancellablePlan } from '@proton/payments';
 import { APPS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 
 import type {
     ConfirmationModal,

@@ -7,12 +7,13 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
+import { FREE_PLAN } from '@proton/payments';
+import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { useSubscriptionModal } from './SubscriptionModalProvider';
-import { resolveUpsellsToDisplay } from './helpers';
+import { useUpsellsToDisplay } from './helpers';
 import { UpsellPanels } from './panels';
 
 import './YourPlanSection.scss';
@@ -21,7 +22,7 @@ interface Props {
     app: APP_NAMES;
 }
 
-const UpgradeVpnSection = ({ app }: Props) => {
+const UpgradeVpnSectionInner = ({ app }: Props) => {
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
@@ -33,13 +34,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
 
     useLoad();
 
-    const loading = loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading;
-
-    if (!subscription || loading) {
-        return <Loader />;
-    }
-
-    const upsells = resolveUpsellsToDisplay({
+    const { upsells, loading: upsellsLoading } = useUpsellsToDisplay({
         app,
         subscription,
         plansMap,
@@ -51,12 +46,26 @@ const UpgradeVpnSection = ({ app }: Props) => {
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
+    const loading = loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading || upsellsLoading;
+
+    if (!subscription || loading) {
+        return <Loader />;
+    }
+
     return (
         <SettingsSectionWide>
             <div className="grid-column-2 your-plan-section-container gap-8 pt-4" data-testid="vpn-upsell-panels">
                 <UpsellPanels upsells={upsells} subscription={subscription} />
             </div>
         </SettingsSectionWide>
+    );
+};
+
+const UpgradeVpnSection = (props: Props) => {
+    return (
+        <PaymentsContextProvider>
+            <UpgradeVpnSectionInner {...props} />
+        </PaymentsContextProvider>
     );
 };
 

@@ -6,14 +6,10 @@ import InclusiveVatText from '@proton/components/containers/payments/InclusiveVa
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { Info, Price } from '@proton/components/index';
 import { type Plan } from '@proton/payments';
+import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
 import { COUPON_CODES } from '@proton/payments/index';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import {
-    getHas2024OfferCoupon,
-    getIsB2BAudienceFromPlan,
-    isTaxInclusive,
-} from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

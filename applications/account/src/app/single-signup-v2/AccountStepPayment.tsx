@@ -18,15 +18,15 @@ import {
     PAYMENT_METHOD_TYPES,
     type Plan,
     getBillingAddressStatus,
+    getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/payments';
 import { type OnBillingAddressChange } from '@proton/payments/ui';
-import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';

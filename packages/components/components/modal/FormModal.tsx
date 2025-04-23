@@ -1,14 +1,38 @@
-import PropTypes from 'prop-types';
+import { type ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import noop from '@proton/utils/noop';
 
 import ContentModal from './Content';
-import DialogModal from './Dialog';
+import DialogModal, { type Props as DialogModalProps } from './Dialog';
 import FooterModal from './Footer';
 import HeaderModal from './Header';
 import InnerModal from './Inner';
+
+type Props = DialogModalProps & {
+    modalTitleID?: string;
+    onClose?: () => void;
+    onSubmit?: () => void;
+    title?: ReactNode;
+    close?: ReactNode;
+    submit?: ReactNode;
+    loading?: boolean;
+    children: ReactNode;
+    footer?: ReactNode;
+    innerRef?: any;
+    hasSubmit?: boolean;
+    hasClose?: boolean;
+    displayTitle?: boolean;
+    noTitleEllipsis?: boolean;
+    noValidate?: boolean;
+    mode?: string;
+    submitProps?: any;
+    closeProps?: any;
+    disableCloseOnLocation?: boolean;
+    disableCloseOnOnEscape?: boolean;
+};
 
 /**
  * @deprecated Please use ModalTwo instead
@@ -38,7 +62,7 @@ const Modal = ({
     submitProps,
     closeProps,
     ...rest
-}) => {
+}: Props) => {
     const isAlertMode = mode === 'alert';
 
     const getFooter = () => {
@@ -114,6 +138,7 @@ const Modal = ({
             {...(isAlertMode ? { small: false, tiny: true } : {})}
         >
             <HeaderModal
+                // @ts-ignore
                 hasClose={hasClose}
                 displayTitle={displayTitle}
                 noEllipsis={noTitleEllipsis}
@@ -133,27 +158,6 @@ const Modal = ({
             </ContentModal>
         </DialogModal>
     );
-};
-
-Modal.propTypes = {
-    ...DialogModal.propTypes,
-    modalTitleID: PropTypes.string,
-    onClose: PropTypes.func.isRequired,
-    onSubmit: PropTypes.func,
-    title: PropTypes.node,
-    children: PropTypes.node.isRequired,
-    innerRef: PropTypes.object,
-    loading: PropTypes.bool,
-    submit: PropTypes.node,
-    close: PropTypes.node,
-    noValidate: PropTypes.bool,
-    mode: PropTypes.string,
-    small: PropTypes.bool,
-    background: PropTypes.bool,
-    hasSubmit: PropTypes.bool,
-    hasClose: PropTypes.bool,
-    disableCloseOnLocation: PropTypes.bool,
-    disableCloseOnOnEscape: PropTypes.bool,
 };
 
 export default Modal;

@@ -7,7 +7,7 @@ import {
     type Subscription,
     isFreeSubscription,
 } from '@proton/payments';
-import { getPlanName } from '@proton/shared/lib/helpers/subscription';
+import { getPlanName } from '@proton/payments';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 

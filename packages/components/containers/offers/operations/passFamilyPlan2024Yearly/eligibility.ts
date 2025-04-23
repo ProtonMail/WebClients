@@ -1,7 +1,7 @@
 import { PLANS, type Subscription } from '@proton/payments';
+import { isManagedExternally } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {

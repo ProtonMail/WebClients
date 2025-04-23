@@ -23,8 +23,8 @@ import {
     useToggle,
 } from '@proton/components';
 import { PLANS } from '@proton/payments';
+import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
-import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import clsx from '@proton/utils/clsx';
 
 import { APP_NAME } from '../../../config';

@@ -1,13 +1,8 @@
-import {
-    ADDON_NAMES,
-    ADDON_PREFIXES,
-    type Addon,
-    type FreeSubscription,
-    PLANS,
-    type PlanIDs,
-    type Subscription,
-    isFreeSubscription,
-} from '@proton/payments';
+import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
+import { type FreeSubscription, type PlanIDs } from '../interface';
+import { type Subscription } from '../subscription/interface';
+import { isFreeSubscription } from '../type-guards';
+import { type Addon } from './interface';
 
 type AddonOrName = Addon | ADDON_NAMES | PLANS;
 

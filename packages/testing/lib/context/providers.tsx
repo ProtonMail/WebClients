@@ -14,6 +14,8 @@ import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { PaymentSwitcherContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { type Plan } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments';
+import { PaymentsContextProvider } from '@proton/payments/ui';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type {
@@ -23,7 +25,6 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { buildUser } from '@proton/testing/builders';
 
@@ -37,57 +38,57 @@ import { type RootState, setupStore } from './store';
 export const withNotifications =
     () =>
     <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <NotificationsProvider>
-                <Component {...props} />
-            </NotificationsProvider>
-        );
-    };
+        function NotificationsProviderHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <NotificationsProvider>
+                    <Component {...props} />
+                </NotificationsProvider>
+            );
+        };
 
 export const withDeprecatedModals =
     (value = mockModals) =>
     <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <ModalsContext.Provider value={value}>
-                <Component {...props} />
-            </ModalsContext.Provider>
-        );
-    };
+        function DeprecatedModalsProviderHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <ModalsContext.Provider value={value}>
+                    <Component {...props} />
+                </ModalsContext.Provider>
+            );
+        };
 
 export const withCache =
     (cache = mockCache) =>
     <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <CacheProvider cache={cache}>
-                <Component {...props} />
-            </CacheProvider>
-        );
-    };
+        function CacheProviderHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <CacheProvider cache={cache}>
+                    <Component {...props} />
+                </CacheProvider>
+            );
+        };
 
 export const withApi =
     (api = apiMock) =>
     <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <ApiContext.Provider value={api}>
-                <Component {...props} />
-            </ApiContext.Provider>
-        );
-    };
+        function ApiProviderHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <ApiContext.Provider value={api}>
+                    <Component {...props} />
+                </ApiContext.Provider>
+            );
+        };
 
 export const withEventManager =
     (eventManager = mockEventManager) =>
     <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <EventManagerContext.Provider value={eventManager}>
-                <Component {...props} />
-            </EventManagerContext.Provider>
-        );
-    };
+        function EventManagerProviderHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <EventManagerContext.Provider value={eventManager}>
+                    <Component {...props} />
+                </EventManagerContext.Provider>
+            );
+        };
 
 export const defaultProtonConfig: ProtonConfig = {
     CLIENT_TYPE: CLIENT_TYPES.MAIL,
@@ -106,29 +107,29 @@ export const defaultProtonConfig: ProtonConfig = {
 export const withConfig =
     (config: ProtonConfig = defaultProtonConfig) =>
     <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <ConfigProvider config={config}>
-                <Component {...props} />
-            </ConfigProvider>
-        );
-    };
+        function ConfigProviderHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <ConfigProvider config={config}>
+                    <Component {...props} />
+                </ConfigProvider>
+            );
+        };
 
 export const withAuthentication =
     (store: AuthenticationProviderProps['store'] = { UID: 'uid-123' } as any) =>
     <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <AuthenticationProvider store={store}>
-                <Component {...props} />
-            </AuthenticationProvider>
-        );
-    };
+        function AuthenticationProviderHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <AuthenticationProvider store={store}>
+                    <Component {...props} />
+                </AuthenticationProvider>
+            );
+        };
 
-export const withPaymentContext =
+export const withPaymentSwitcherContext =
     (enableChargebee: ChargebeeEnabled = ChargebeeEnabled.INHOUSE_FORCED) =>
     <T extends {}>(Component: ComponentType<T>) =>
-        function PaymentContextHoc(props: T & JSX.IntrinsicAttributes) {
+        function PaymentSwitcherContextHOC(props: T & JSX.IntrinsicAttributes) {
             return (
                 <PaymentSwitcherContext.Provider
                     value={{
@@ -141,6 +142,17 @@ export const withPaymentContext =
                 >
                     <Component {...props} />
                 </PaymentSwitcherContext.Provider>
+            );
+        };
+
+export const withPaymentContext =
+    () =>
+    <T extends {}>(Component: ComponentType<T>) =>
+        function PaymentContextHOC(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <PaymentsContextProvider>
+                    <Component {...props} />
+                </PaymentsContextProvider>
             );
         };
 
@@ -165,7 +177,16 @@ export const getPreloadedState = (
     categories: getModelState([]),
     contactEmails: getModelState([]),
     subscription: getSubscriptionState(),
-    paymentStatus: getPaymentStatusState(),
+    paymentStatus: getPaymentStatusState({
+        CountryCode: 'CH',
+        VendorStates: {
+            Card: true,
+            Paypal: true,
+            Apple: true,
+            Cash: true,
+            Bitcoin: true,
+        },
+    }),
     organization: getOrganizationState(),
     organizationKey: getModelState({} as CachedOrganizationKey),
     userInvitations: getModelState([]),

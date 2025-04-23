@@ -1,9 +1,8 @@
-import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 
+import { queryPaymentMethods } from './api';
 import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
 import {
@@ -29,8 +28,10 @@ import type {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
 } from './interface';
+import { getIsB2BAudienceFromPlan } from './plan/helpers';
 import { formatPaymentMethods } from './sepa';
 import { type BillingPlatform } from './subscription/constants';
+import { getHas2024OfferCoupon } from './subscription/helpers';
 import { type Subscription } from './subscription/interface';
 import { isFreeSubscription } from './type-guards';
 import { isOnSessionMigration, isSplittedUser } from './utils';
