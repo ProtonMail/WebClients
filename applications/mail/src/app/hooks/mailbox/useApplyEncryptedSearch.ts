@@ -27,7 +27,7 @@ import {
 } from '../../store/elements/elementsSelectors';
 import type { MailState } from '../../store/store';
 
-interface EncryptedSearchParams {
+export interface EncryptedSearchParams {
     conversationMode: boolean;
     labelID: string;
     page: number;
