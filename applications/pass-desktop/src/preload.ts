@@ -3,30 +3,37 @@ import { contextBridge, ipcRenderer } from 'electron';
 import type { ContextBridgeApi } from '@proton/pass/types';
 import { disableMouseNavigation } from '@proton/shared/lib/desktop/disableMouseNavigation';
 
+// Parses setupIpcHandler responses into values or errors
+const invoke = (method: string, ...args: any[]) =>
+    ipcRenderer.invoke(method, ...args).then((r) => {
+        if (r?.error) throw new Error(r.error.message);
+        return r?.result;
+    });
+
 const contextBridgeApi: ContextBridgeApi = {
     /* clipboard */
-    writeToClipboard: (text) => ipcRenderer.invoke('clipboard:writeText', text),
-    setClipboardConfig: (config) => ipcRenderer.invoke('clipboard:setConfig', config),
-    getClipboardConfig: () => ipcRenderer.invoke('clipboard:getConfig'),
+    writeToClipboard: (text) => invoke('clipboard:writeText', text),
+    setClipboardConfig: (config) => invoke('clipboard:setConfig', config),
+    getClipboardConfig: () => invoke('clipboard:getConfig'),
 
     /* theming */
-    getTheme: () => ipcRenderer.invoke('theming:getTheme'),
-    setTheme: (theme) => ipcRenderer.invoke('theming:setTheme', theme),
+    getTheme: () => invoke('theming:getTheme'),
+    setTheme: (theme) => invoke('theming:setTheme', theme),
 
     /* routing */
-    navigate: (href) => ipcRenderer.invoke('router:navigate', href),
+    navigate: (href) => invoke('router:navigate', href),
 
     /* secrets */
-    canCheckPresence: () => ipcRenderer.invoke('biometrics:canCheckPresence'),
-    checkPresence: (reason) => ipcRenderer.invoke('biometrics:checkPresence', reason),
-    getDecryptionKey: (challenge) => ipcRenderer.invoke('biometrics:getDecryptionKey', challenge),
-    getSecret: (key, version) => ipcRenderer.invoke('biometrics:getSecret', key, version),
-    setSecret: (key, data) => ipcRenderer.invoke('biometrics:setSecret', key, data),
-    deleteSecret: (key) => ipcRenderer.invoke('biometrics:deleteSecret', key),
+    canCheckPresence: () => invoke('biometrics:canCheckPresence'),
+    checkPresence: (reason) => invoke('biometrics:checkPresence', reason),
+    getDecryptionKey: (challenge) => invoke('biometrics:getDecryptionKey', challenge),
+    getSecret: (key, version) => invoke('biometrics:getSecret', key, version),
+    setSecret: (key, data) => invoke('biometrics:setSecret', key, data),
+    deleteSecret: (key) => invoke('biometrics:deleteSecret', key),
 
     /* install info */
-    getInstallInfo: () => ipcRenderer.invoke('installInfo:getInfo'),
-    setInstallSourceReported: () => ipcRenderer.invoke('installInfo:setInstallSourceReported'),
+    getInstallInfo: () => invoke('installInfo:getInfo'),
+    setInstallSourceReported: () => invoke('installInfo:setInstallSourceReported'),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);
