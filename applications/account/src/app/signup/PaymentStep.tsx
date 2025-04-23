@@ -35,16 +35,16 @@ import {
     type Plan,
     type PlanIDs,
     getBillingAddressStatus,
+    getPaymentsVersion,
+    getPlanNameFromIDs,
     getPlansMap,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
-import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
-import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';

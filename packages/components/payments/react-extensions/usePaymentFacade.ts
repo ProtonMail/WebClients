@@ -14,6 +14,7 @@ import type {
     PaymentMethodType,
     PaymentVerificator,
     PaymentVerificatorV5,
+    PaymentsVersion,
     PlainPaymentMethodType,
     SavedPaymentMethod,
 } from '@proton/payments';
@@ -26,13 +27,15 @@ import {
     type PLANS,
     type PlanIDs,
     type Subscription,
+    buyCredit,
     canUseChargebee,
     isExistingPaymentMethod,
     isOnSessionMigration,
     isSplittedUser,
+    payInvoice,
+    setPaymentMethodV5,
+    subscribe,
 } from '@proton/payments';
-import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 

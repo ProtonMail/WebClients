@@ -33,7 +33,14 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     }
 
     const upgradeButton = (
-        <Button size="small" shape="underline" color="norm" onClick={handleExplorePlans} data-testid="cta:upgrade-plan">
+        <Button
+            size="small"
+            shape="underline"
+            color="norm"
+            onClick={handleExplorePlans}
+            data-testid="cta:upgrade-plan"
+            key="upgrade-button"
+        >
             {c('specialoffer: Link').t`Upgrade`}
         </Button>
     );

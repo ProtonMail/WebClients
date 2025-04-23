@@ -1,4 +1,4 @@
-import type { ReactNode, Ref } from 'react';
+import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 
 import { c } from 'ttag';
@@ -11,14 +11,12 @@ import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payme
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
-import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import {
     BILLING_ADDRESS_VALID,
     type BillingAddressStatus,
-    type CardModel,
     type Currency,
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
@@ -29,7 +27,6 @@ import {
     type SavedPaymentMethodInternal,
     canUseChargebee,
 } from '@proton/payments';
-import { CreditCard } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
@@ -59,14 +56,9 @@ export interface Props {
     onMethod: (value: PaymentMethodType | undefined) => void;
     paypal: any;
     paypalCredit: any;
-    card: CardModel;
-    onCard: (key: keyof CardModel, value: string) => void;
-    cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
     paymentStatus: PaymentMethodStatusExtended | undefined;
-    creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
-    cardFieldStatus: CardFieldStatus;
     paypalPrefetchToken?: boolean;
     isAuthenticated?: boolean;
     hideFirstLabel?: boolean;
@@ -110,12 +102,7 @@ export const PaymentsNoApi = ({
     paypalCredit,
     method,
     onMethod,
-    card,
-    onCard,
-    cardErrors,
-    cardFieldStatus,
     noMaxWidth = false,
-    creditCardTopRef,
     disabled,
     paypalPrefetchToken,
     lastUsedMethod,
@@ -259,18 +246,6 @@ export const PaymentsNoApi = ({
                     />
                 </div>
                 <div className="mt-4">
-                    {method === PAYMENT_METHOD_TYPES.CARD && (
-                        <>
-                            <div ref={creditCardTopRef} />
-                            <CreditCard
-                                card={card}
-                                errors={cardErrors}
-                                setCardProperty={onCard}
-                                fieldsStatus={cardFieldStatus}
-                            />
-                            {showAlert3ds && <Alert3DS />}
-                        </>
-                    )}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
                         <>
                             <ChargebeeCreditCardWrapper

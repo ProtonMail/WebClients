@@ -4,9 +4,9 @@ import { Button, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms
 import Info from '@proton/components/components/link/Info';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
+import { getHasConsumerVpnPlan } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
@@ -19,7 +19,7 @@ import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
-import type { UpsellSectionProps } from '../YourPlanUpsellsSectionV2';
+import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
 import { getDashboardUpsellTitle } from '../helpers';
 import countriesIcon from '../icons/countries.svg';
 import doubleIcon from '../icons/double.svg';
@@ -101,27 +101,17 @@ const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlan
     });
 };
 
-const VpnPlusFromFree = ({
-    subscription,
+export const useVpnPlusFromFreeUpsells = ({
+    show24MonthPlan,
     app,
+    subscription,
     plansMap,
     serversCount,
     freePlan,
     user,
-    show24MonthPlan,
-    ...rest
-}: UpsellSectionProps) => {
-    const plan = PLANS.VPN2024;
+}: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
-
-    const handleExplorePlans = () => {
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
-            telemetryFlow,
-        });
-    };
 
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
@@ -131,7 +121,14 @@ const VpnPlusFromFree = ({
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
-        ...rest,
+    };
+
+    const handleExplorePlans = () => {
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            metrics: { source: 'upsells' },
+            telemetryFlow,
+        });
     };
 
     const upsells = [
@@ -157,6 +154,16 @@ const VpnPlusFromFree = ({
                 isRecommended: true,
             }),
     ].filter(isTruthy);
+
+    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+};
+
+interface Props extends UpsellsHook {
+    subscription: Subscription;
+}
+
+const VpnPlusFromFree = ({ subscription, serversCount, upsells, handleExplorePlans }: Props) => {
+    const plan = PLANS.VPN2024;
 
     return (
         <DashboardGrid>

@@ -4,8 +4,8 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
+import { hasVisionary } from '@proton/payments';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
-import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
 import type OnboardingModal from './OnboardingModal';

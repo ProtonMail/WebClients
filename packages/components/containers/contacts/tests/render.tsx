@@ -9,6 +9,7 @@ import { getModelState } from '@proton/account/test';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import type { CryptoApiInterface } from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/crypto';
+import { FREE_PLAN } from '@proton/payments';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
@@ -22,7 +23,6 @@ import type {
     UserModel,
     UserSettings,
 } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock } from '@proton/testing/lib/api';
 import { mockCache } from '@proton/testing/lib/cache';
 import {

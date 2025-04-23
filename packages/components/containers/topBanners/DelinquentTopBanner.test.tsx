@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { UNPAID_STATE } from '@proton/payments';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { renderWithProviders } from '@proton/testing';
 

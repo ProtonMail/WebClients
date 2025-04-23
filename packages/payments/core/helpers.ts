@@ -1,4 +1,3 @@
-import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { ChargebeeEnabled, type User, type UserModel } from '@proton/shared/lib/interfaces';
 import { type FeatureFlag } from '@proton/unleash';
@@ -16,6 +15,7 @@ import type {
     PlanIDs,
 } from './interface';
 import { type FreeSubscription } from './interface';
+import { getPlanNameFromIDs } from './plan/helpers';
 import { type Plan } from './plan/interface';
 import { type Subscription } from './subscription/interface';
 import { isPaymentMethodStatusExtended, isStringPLAN } from './type-guards';

@@ -4,9 +4,6 @@ import type { SectionConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { type Subscription } from '@proton/payments';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
-import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     appSupportsSSO,
     getHasExternalMemberCapableB2BPlan,
@@ -17,7 +14,10 @@ import {
     hasVpnBusiness,
     planSupportsSSO,
     upsellPlanSSO,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
+import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import type { Group, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';

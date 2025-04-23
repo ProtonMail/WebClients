@@ -49,11 +49,12 @@ import {
     type PlanIDs,
     type StrictPlan,
     getBillingAddressStatus,
+    getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
@@ -67,7 +68,6 @@ import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helper
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';

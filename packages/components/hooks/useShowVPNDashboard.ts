@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { hasB2BPlan } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import { useFlag, useVariant } from '@proton/unleash';
 

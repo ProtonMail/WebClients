@@ -1,6 +1,11 @@
 import type { PayPalDetails, PaymentMethodStatus, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
-import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments';
-import { createTokenV4, queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import {
+    Autopay,
+    PAYMENT_METHOD_TYPES,
+    PAYMENT_TOKEN_STATUS,
+    queryPaymentMethods,
+    createTokenV4,
+} from '@proton/payments';
 import lastItem from '@proton/utils/lastItem';
 
 import { addApiMock, addApiResolver } from '../api';

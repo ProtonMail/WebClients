@@ -25,7 +25,14 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { FullPlansMap, PaymentMethodFlows } from '@proton/payments';
-import { type Currency, DEFAULT_CYCLE, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
+import {
+    type Currency,
+    DEFAULT_CYCLE,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    getPlansMap,
+    getPlanNameFromIDs,
+} from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -42,7 +49,7 @@ import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/helpers/url';

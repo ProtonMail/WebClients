@@ -95,14 +95,6 @@ export enum TransactionType {
     ADJUSTMENT_CREDIT = 13,
 }
 
-export enum UNPAID_STATE {
-    NOT_UNPAID = 0,
-    AVAILABLE = 1,
-    OVERDUE = 2,
-    DELINQUENT = 3,
-    NO_RECEIVE = 4,
-}
-
 export enum ADDON_PREFIXES {
     MEMBER = '1member',
     DOMAIN = '1domain',
@@ -372,6 +364,8 @@ export const FREE_SUBSCRIPTION = {
     CouponCode: undefined,
     Cycle: undefined,
     UpcomingSubscription: undefined,
+    PeriodEnd: undefined,
+    Amount: undefined,
 };
 
 export enum CYCLE {
