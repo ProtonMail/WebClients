@@ -11,7 +11,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import { type MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -30,7 +30,6 @@ import {
     removeExpired,
     reset,
     resetByPassFilter,
-    setPageSize,
     setParams,
     updatePage,
 } from '../../store/elements/elementsActions';
@@ -257,10 +256,6 @@ export const useElements: UseElements = ({
             })
         );
     }, [mailSettings.PageSize, mailSettings.ViewMode]);
-
-    useEffect(() => {
-        dispatch(setPageSize(MAIL_PAGE_SIZE.FIFTY));
-    }, []);
 
     // If sort or filter is being updated, we can reset bypass filter value from the state, otherwise it could create
     // false placeholders when switching filters.
