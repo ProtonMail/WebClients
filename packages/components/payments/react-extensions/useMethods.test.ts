@@ -2,8 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
 import type { PaymentMethodStatusExtended, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
-import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES, queryPaymentMethods } from '@proton/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock } from '@proton/testing';

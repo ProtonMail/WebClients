@@ -14,6 +14,7 @@ import { useFolders, useLabels } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
+import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import {
     ADDRESS_TYPE,
     BRAND_NAME,
@@ -25,7 +26,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { isDesktopInboxUser, isDriveUser, isPassUser, isVPNUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash';

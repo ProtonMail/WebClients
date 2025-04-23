@@ -13,8 +13,7 @@ import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/Ch
 import { ensureTokenChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import type { PaymentTokenResult } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/payments';
+import { PAYMENT_METHOD_TYPES, setPaymentMethodV4, createTokenV4 } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;

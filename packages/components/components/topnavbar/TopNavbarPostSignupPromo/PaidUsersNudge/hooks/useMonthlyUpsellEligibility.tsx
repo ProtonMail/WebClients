@@ -5,9 +5,9 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { type FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, type PLANS } from '@proton/payments';
+import { isManagedExternally } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import useFlag from '@proton/unleash/useFlag';
 

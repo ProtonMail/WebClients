@@ -2,15 +2,14 @@ import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import type { BillingAddress, PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
-import { type Cycle, DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
+import { type CheckSubscriptionData, type Cycle, DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import { PLANS, type PlanIDs } from '@proton/payments';
 import { type Currency } from '@proton/payments';
-import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
+import { getFreeCheckResult } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 export async function getSubscriptionPrices(
     paymentsApi: PaymentsApi,

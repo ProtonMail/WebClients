@@ -6,11 +6,11 @@ import { Banner, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import useConfig from '@proton/components/hooks/useConfig';
+import { hasDeprecatedVPN } from '@proton/payments';
+import { hasVPN2024 } from '@proton/payments';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasDeprecatedVPN } from '@proton/shared/lib/helpers/subscription';
-import { hasVPN2024 } from '@proton/shared/lib/helpers/subscription';
 
 import { subscriptionExpires } from '../payments/subscription/helpers';
 

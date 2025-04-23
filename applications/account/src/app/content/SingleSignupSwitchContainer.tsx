@@ -3,12 +3,12 @@ import { useLocation } from 'react-router-dom';
 import type { OnLoginCallback } from '@proton/components';
 import { UnAuthenticated } from '@proton/components';
 import { PLANS } from '@proton/payments';
+import { getHas2024OfferCoupon } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { passApps } from '@proton/shared/lib/authentication/apps';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 
 import SignupContainer from '../signup/SignupContainer';
 import { getSignupMeta } from '../signup/signupPagesJson';

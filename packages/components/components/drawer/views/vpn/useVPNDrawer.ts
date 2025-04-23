@@ -1,9 +1,9 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useConfig from '@proton/components/hooks/useConfig';
+import { getIsB2BAudienceFromSubscription } from '@proton/payments';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
-import { getIsB2BAudienceFromSubscription } from '@proton/shared/lib/helpers/subscription';
 import useFlag from '@proton/unleash/useFlag';
 
 // This hook returns if the VPN dashboard is available in the drawer or not

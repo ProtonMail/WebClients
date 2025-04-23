@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import { PLANS, type Subscription } from '@proton/payments';
+import { PLANS, type Subscription, getHasMailB2BPlan, hasVisionary } from '@proton/payments';
 
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
-import { getHasMailB2BPlan, hasVisionary } from '../helpers/subscription';
 import type { User, UserModel } from '../interfaces';
 
 export const getHasStorageSplit = (user: User) => {

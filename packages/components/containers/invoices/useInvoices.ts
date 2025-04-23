@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
+import { type InvoiceDocument, queryInvoices, type PaymentsVersion } from "@proton/payments";
 
+import { useEffect } from 'react';
 import type { INVOICE_OWNER, Invoice, InvoiceResponse } from '@proton/payments';
-import type { InvoiceDocument, PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { queryInvoices } from '@proton/shared/lib/api/payments';
 
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';

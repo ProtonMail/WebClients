@@ -1,10 +1,13 @@
+import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import {
     ADDON_NAMES,
     CYCLE,
+    type CheckSubscriptionData,
     type Currency,
     DEFAULT_CYCLE,
+    INCLUDED_IP_PRICING,
     type MaxKeys,
     PLANS,
     PLAN_NAMES,
@@ -15,21 +18,16 @@ import {
     type Pricing,
     type Subscription,
     VPN_PASS_PROMOTION_COUPONS,
+    getIsB2BAudienceFromPlan,
+    getPlanNameFromIDs,
+    getPricePerCycle,
 } from '@proton/payments';
+import { customCycles, getAddonMultiplier, getMembersFromPlanIDs, getPricingPerMember } from '@proton/payments';
+import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '@proton/payments/core/plan/addons';
 
 import { LUMO_APP_NAME } from '../constants';
 import { type SubscriptionCheckResponse, SubscriptionMode } from '../interfaces';
-import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
-import { getPlanFromPlanIDs, getPlanNameFromIDs } from './planIDs';
-import {
-    INCLUDED_IP_PRICING,
-    customCycles,
-    getAddonMultiplier,
-    getIsB2BAudienceFromPlan,
-    getMembersFromPlanIDs,
-    getPricePerCycle,
-    getPricingPerMember,
-} from './subscription';
+import { getPlanFromPlanIDs } from './planIDs';
 
 export const getUserTitle = (users: number) => {
     return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);
@@ -133,6 +131,10 @@ export type RequiredCheckResponse = Pick<
     | 'BaseRenewAmount'
     | 'RenewCycle'
 >;
+
+export type EnrichedCheckResponse = SubscriptionCheckResponse & {
+    requestData: CheckSubscriptionData;
+};
 
 export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
@@ -253,6 +255,7 @@ export const getCheckout = ({
 
     const couponDiscountPerMonth = couponDiscount / cycle;
     const withDiscountMembersPerMonth = membersPerMonth - couponDiscountPerMonth;
+    const withDiscountOneMemberPerMonth = withDiscountMembersPerMonth / usersAndAddons.users;
 
     return {
         couponDiscount: checkResult.CouponDiscount,
@@ -270,6 +273,7 @@ export const getCheckout = ({
         discountPercent,
         currency: checkResult.Currency,
         withDiscountMembersPerMonth,
+        withDiscountOneMemberPerMonth,
     };
 };
 
@@ -298,7 +302,7 @@ export const getOptimisticCheckResult = ({
     planIDs: PlanIDs | undefined;
     plansMap: PlansMap;
     currency: Currency;
-}): RequiredCheckResponse => {
+}): EnrichedCheckResponse => {
     const { amount } = Object.entries(planIDs || {}).reduce(
         (acc, [planName, quantity]) => {
             const plan = plansMap?.[planName as keyof typeof plansMap];
@@ -326,6 +330,12 @@ export const getOptimisticCheckResult = ({
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
         RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+        requestData: {
+            Cycle: cycle,
+            Currency: currency,
+            Plans: planIDs || {},
+        },
     };
 };
 

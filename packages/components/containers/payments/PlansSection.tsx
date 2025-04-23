@@ -20,24 +20,21 @@ import {
     type Currency,
     type Cycle,
     DEFAULT_CYCLE,
+    FREE_PLAN,
     FREE_SUBSCRIPTION,
     type PlanIDs,
+    getIsB2BAudienceFromPlan,
     getPlansMap,
     isStringPLAN,
 } from '@proton/payments';
+import { getPlanIDs, getValidAudience, getValidCycle } from '@proton/payments';
+import { PaymentsContextProvider } from '@proton/payments/ui';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import {
-    getIsB2BAudienceFromPlan,
-    getPlanIDs,
-    getValidAudience,
-    getValidCycle,
-} from '@proton/shared/lib/helpers/subscription';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
@@ -60,7 +57,11 @@ const getSearchParams = (search: string) => {
     };
 };
 
-const PlansSection = ({ app }: { app: APP_NAMES }) => {
+type Props = {
+    app: APP_NAMES;
+};
+
+const PlansSectionInner = ({ app }: Props) => {
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
@@ -189,6 +190,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 selectedProductPlans={selectedProductPlans}
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
+                paymentsApi={paymentsApi}
             />
             {app !== APPS.PROTONWALLET && (
                 <Button
@@ -215,6 +217,14 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 </Button>
             )}
         </>
+    );
+};
+
+const PlansSection = (props: Props) => {
+    return (
+        <PaymentsContextProvider>
+            <PlansSectionInner {...props} />
+        </PaymentsContextProvider>
     );
 };
 

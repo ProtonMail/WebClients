@@ -11,6 +11,12 @@
 	&::before {
 		content: '\00a0';
 	}
+
+	&--with-children {
+		&::before {
+			content: none;
+		}
+	}
 }
 
 @keyframes anime-skeleton-loader {

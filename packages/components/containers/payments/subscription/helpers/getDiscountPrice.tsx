@@ -1,15 +1,9 @@
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { type Currency } from '@proton/payments';
 
 export const getDiscountPrice = (discount: number, currency: Currency) => {
-    return discount ? (
-        <>
-            {c('Subscription saving').t`Save`}
-            <Price className="ml-1" currency={currency}>
-                {discount}
-            </Price>
-        </>
-    ) : null;
+    const priceString = getSimplePriceString(currency, discount);
+    return discount ? c('Subscription saving').t`Save ${priceString}` : null;
 };

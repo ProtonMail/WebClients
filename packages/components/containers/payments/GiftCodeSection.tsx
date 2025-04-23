@@ -14,8 +14,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { onSessionMigrationPaymentsVersion } from '@proton/payments';
-import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
+import { onSessionMigrationPaymentsVersion, buyCredit, validateCredit } from '@proton/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 const GiftCodeSection = () => {

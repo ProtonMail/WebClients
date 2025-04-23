@@ -8,9 +8,9 @@ import { userThunk } from '@proton/account/user';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import useToggle from '@proton/components/hooks/useToggle';
 import { PLANS } from '@proton/payments';
+import { isTrial } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';

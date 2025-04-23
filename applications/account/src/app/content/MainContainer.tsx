@@ -45,13 +45,13 @@ import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscriptio
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { FeatureCode, useFeatures } from '@proton/features';
+import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
