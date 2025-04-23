@@ -127,9 +127,9 @@ export const PhotosLayout = () => {
 
     const previewIndex = useMemo(
         () =>
-            currentPageType === AlbumsPageTypes.GALLERY
-                ? photoLinkIds.findIndex((item) => item === previewLinkId)
-                : albumPhotosLinkIds.findIndex((item) => item === previewLinkId),
+            currentPageType === AlbumsPageTypes.ALBUMSGALLERY
+                ? albumPhotosLinkIds.findIndex((item) => item === previewLinkId)
+                : photoLinkIds.findIndex((item) => item === previewLinkId),
         [currentPageType, photoLinkIds, albumPhotosLinkIds, previewLinkId]
     );
 
@@ -182,7 +182,8 @@ export const PhotosLayout = () => {
         return isUploadDisabled || !album?.permissions.isEditor;
     }, [isUploadDisabled, currentPageType, album]);
 
-    const photoCount = album ? album.photoCount : photoLinkIds.length;
+    const photoCount =
+        currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album ? album.photoCount : photoLinkIds.length;
     const hasPreview = !!previewItem && currentPageType !== AlbumsPageTypes.ALBUMS;
     const previewShareId = albumShareId || shareId;
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
@@ -193,7 +194,7 @@ export const PhotosLayout = () => {
     const setPreviewIndex = useCallback(
         (index: number) =>
             setPreviewLinkId(
-                currentPageType === AlbumsPageTypes.GALLERY ? photoLinkIds[index] : albumPhotosLinkIds[index]
+                currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosLinkIds[index] : photoLinkIds[index]
             ),
         [setPreviewLinkId, currentPageType, photoLinkIds, albumPhotosLinkIds]
     );
@@ -595,9 +596,10 @@ export const PhotosLayout = () => {
                     onDetails={onShowDetails}
                     onSelectCover={
                         !driveAlbumsDisabled &&
-                        (currentPageType === AlbumsPageTypes.GALLERY || album?.cover?.linkId === previewItem.linkId)
-                            ? undefined
-                            : onSelectCoverPreview
+                        currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
+                        album?.cover?.linkId !== previewItem.linkId
+                            ? onSelectCoverPreview
+                            : undefined
                     }
                     navigationControls={
                         <NavigationControl
