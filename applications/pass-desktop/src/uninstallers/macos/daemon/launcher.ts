@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import { app } from 'electron';
-import { copyFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import os from 'os';
 import path from 'path';
@@ -32,8 +32,6 @@ const getPlistContent = (scriptPath: string) => {
                 <integer>30</integer>
                 <key>RunAtLoad</key>
                 <true/>
-                <key>KeepAlive</key>
-                <true/>
             </dict>
             </plist>`;
 };
@@ -48,8 +46,6 @@ export const installDaemon = () => {
                 if (error || !stdout.trim()) exec(`launchctl load "${plistPath}"`);
             });
         }
-
-        if (!existsSync(launchAgentDir)) mkdirSync(launchAgentDir, { recursive: true });
 
         const uninstallScriptPath = resolve(process.resourcesPath, 'cleanup.sh');
         const scriptPath = resolve(app.getPath('temp'), 'proton-pass-cleanup.sh');
