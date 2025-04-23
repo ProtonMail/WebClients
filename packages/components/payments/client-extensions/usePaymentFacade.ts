@@ -14,6 +14,7 @@ import type {
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
+    PaymentsVersion,
     PlainPaymentMethodType,
     PlanIDs,
     SavedPaymentMethod,
@@ -25,10 +26,9 @@ import {
     type Subscription,
     canUseChargebee,
 } from '@proton/payments';
-import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { isTaxInclusive } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import { isTaxInclusive } from '@proton/shared/lib/helpers/subscription';
 import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -50,6 +50,27 @@ import {
     useChargebeePaypalHandles,
 } from './validators/validators';
 
+/**
+ * The main callback that will be called when the payment is ready to be charged
+ * after the payment token is fetched and verified with 3DS or other confirmation from the user.
+ * @param operations - provides a common set of actions that can be performed with the verified payment token.
+ * For example, the verified (that is, chargeable) payment token can be used to create a subscription or buy
+ * credits.
+ * @param data - provides the raw payment token, the payment source (or processor type) and operation context
+ * like Plan or Cycle for subscription.
+ */
+export type OnChargeable = (
+    operations: Operations,
+    data: {
+        chargeablePaymentParameters: ChargeablePaymentParameters;
+        source: PaymentMethodType;
+        sourceType: PlainPaymentMethodType;
+        context: OperationsData;
+        paymentsVersion: PaymentsVersion;
+        paymentProcessorType: PaymentProcessorType;
+    }
+) => Promise<unknown>;
+
 type PaymentFacadeProps = {
     amount: number;
     currency: Currency;
@@ -62,23 +83,8 @@ type PaymentFacadeProps = {
     /**
      * The main callback that will be called when the payment is ready to be charged
      * after the payment token is fetched and verified with 3DS or other confirmation from the user.
-     * @param operations - provides a common set of actions that can be performed with the verified payment token.
-     * For example, the verified (that is, chargeable) payment token can be used to create a subscription or buy
-     * credits.
-     * @param data - provides the raw payment token, the payment source (or processor type) and operation context
-     * like Plan or Cycle for subscription.
      */
-    onChargeable: (
-        operations: Operations,
-        data: {
-            chargeablePaymentParameters: ChargeablePaymentParameters;
-            source: PaymentMethodType;
-            sourceType: PlainPaymentMethodType;
-            context: OperationsData;
-            paymentsVersion: PaymentsVersion;
-            paymentProcessorType: PaymentProcessorType;
-        }
-    ) => Promise<unknown>;
+    onChargeable: OnChargeable;
     /**
      * The callback that will be called when the payment method is changed by the user.
      */

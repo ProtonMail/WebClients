@@ -1,5 +1,10 @@
-import { type CheckWithAutomaticOptions, type Currency, type RequestOptions, isMainCurrency } from '@proton/payments';
-import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
+import {
+    type CheckWithAutomaticOptions,
+    type Currency,
+    type RequestOptions,
+    isMainCurrency,
+    type CheckSubscriptionData,
+} from '@proton/payments';
 
 import { usePaymentsApi } from '../payments/react-extensions/usePaymentsApi';
 

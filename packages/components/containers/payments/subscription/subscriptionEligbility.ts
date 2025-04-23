@@ -6,14 +6,12 @@ import {
     type Plan,
     type PlansMap,
     type Subscription,
+    getHas2024OfferCoupon,
+    getPlan,
     isFreeSubscription,
     isPlanEnabled,
 } from '@proton/payments';
-import {
-    getHas2024OfferCoupon,
-    getIsB2BAudienceFromSubscription,
-    getPlan,
-} from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromSubscription } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';

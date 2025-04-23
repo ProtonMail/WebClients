@@ -1,7 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { type Cycle, type PlanIDs } from '@proton/payments';
-import { isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
+import { type Cycle, type PlanIDs, isLifetimePlanSelected } from '@proton/payments';
 
 export const getTotalBillingText = (cycle: Cycle, planIDs: PlanIDs) => {
     if (isLifetimePlanSelected(planIDs)) {

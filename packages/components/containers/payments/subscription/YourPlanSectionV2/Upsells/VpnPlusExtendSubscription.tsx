@@ -5,9 +5,9 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
+import { getHasConsumerVpnPlan } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
@@ -19,7 +19,7 @@ import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import PlanPriceElement from '../PlanPriceElement';
-import type { UpsellSectionProps } from '../YourPlanUpsellsSectionV2';
+import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
 import { getDashboardUpsellTitle } from '../helpers';
 import UpsellMultiBox from './UpsellMultiBox';
 import { useSubscriptionPriceComparison } from './helper';
@@ -51,7 +51,7 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlan
     });
 };
 
-const VpnPlusExtendSubscription = ({
+export const useVpnPlusExtendSubscription = ({
     subscription,
     app,
     plansMap,
@@ -59,15 +59,9 @@ const VpnPlusExtendSubscription = ({
     freePlan,
     user,
     show24MonthPlan,
-    ...rest
-}: UpsellSectionProps) => {
+}: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
-
-    const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
-
-    const plan = PLANS.VPN2024;
-    const planName = PLAN_NAMES[plan];
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
@@ -85,7 +79,6 @@ const VpnPlusExtendSubscription = ({
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
-        ...rest,
     };
 
     const upsells = [
@@ -108,7 +101,20 @@ const VpnPlusExtendSubscription = ({
             }),
     ].filter(isTruthy);
 
-    const priceString = subscription && getSimplePriceString(subscription.Currency, totalSavings);
+    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+};
+
+interface Props extends UpsellsHook {
+    subscription: Subscription;
+}
+
+const VpnPlusExtendSubscription = ({ subscription, user, handleExplorePlans, upsells }: Props) => {
+    const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
+
+    const plan = PLANS.VPN2024;
+    const planName = PLAN_NAMES[plan];
+
+    const priceString = getSimplePriceString(subscription.Currency, totalSavings);
 
     return (
         <DashboardGrid>

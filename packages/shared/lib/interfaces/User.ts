@@ -1,4 +1,4 @@
-import type { Currency, UNPAID_STATE } from '@proton/payments';
+import type { Currency } from '@proton/payments';
 
 import type { USER_ROLES } from '../constants';
 import type { Key } from './Key';
@@ -45,6 +45,14 @@ export enum UserLockedFlags {
     STORAGE_EXCEEDED = BASE_STORAGE_EXCEEDED | DRIVE_STORAGE_EXCEEDED,
     ORG_ISSUE_FOR_PRIMARY_ADMIN = 4,
     ORG_ISSUE_FOR_MEMBER = 8,
+}
+
+export enum UNPAID_STATE {
+    NOT_UNPAID = 0,
+    AVAILABLE = 1,
+    OVERDUE = 2,
+    DELINQUENT = 3,
+    NO_RECEIVE = 4,
 }
 
 export interface User {

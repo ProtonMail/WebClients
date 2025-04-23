@@ -5,6 +5,9 @@ import type {
     MessageBusResponse,
     PaymentIntent,
 } from '@proton/chargebee/lib';
+import { captureMessage, isProduction } from '@proton/shared/lib/helpers/sentry';
+import type { Api } from '@proton/shared/lib/interfaces';
+
 import {
     type BackendPaymentIntent,
     type CreatePaymentIntentData,
@@ -13,10 +16,7 @@ import {
     createTokenV4,
     fetchPaymentIntentForExistingV5,
     fetchPaymentIntentV5,
-} from '@proton/shared/lib/api/payments';
-import { captureMessage, isProduction } from '@proton/shared/lib/helpers/sentry';
-import type { Api } from '@proton/shared/lib/interfaces';
-
+} from './api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 import type {
     AmountAndCurrency,

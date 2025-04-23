@@ -14,10 +14,10 @@ import Price from '@proton/components/components/price/Price';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { BillingPlatform, isFreeSubscription, isSplittedUser } from '@proton/payments';
+import { isManagedExternally } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { openLinkInBrowser } from '../desktop/openExternalLink';

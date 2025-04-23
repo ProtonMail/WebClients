@@ -6,11 +6,13 @@ import {
     type Currency,
     DEFAULT_CURRENCY,
     type FreePlanDefault,
+    NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     type Plan,
     getAvailableCurrencies,
+    getFreePlan,
     isRegionalCurrency,
+    queryPlans,
 } from '@proton/payments';
-import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,
@@ -19,7 +21,6 @@ import {
     getFetchedEphemeral,
     previousSelector,
 } from '@proton/redux-utilities';
-import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 

@@ -35,6 +35,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
@@ -54,7 +55,6 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';

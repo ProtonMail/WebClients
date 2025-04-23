@@ -13,8 +13,8 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
+import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

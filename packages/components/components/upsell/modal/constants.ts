@@ -4,10 +4,9 @@ import { c } from 'ttag';
 import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
-import { PLANS, type Plan } from '@proton/payments';
+import { FREE_PLAN, PLANS, type Plan } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { getNCalendarsText } from '../../../containers/payments/features/calendar';
 import type { UpsellFeature, UpsellFeatureGetter } from './interface';

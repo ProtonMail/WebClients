@@ -32,8 +32,8 @@ import {
     fixPlanName,
     getPlansMap,
 } from '@proton/payments';
+import { getPlanName, getValidCycle } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 

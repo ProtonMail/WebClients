@@ -1,7 +1,7 @@
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { PLANS_MAP } from '@proton/testing/data';
 
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '../constants';
+import { FREE_PLAN } from './freePlans';
 import { type Subscription } from './interface';
 import { SelectedPlan } from './selected-plan';
 

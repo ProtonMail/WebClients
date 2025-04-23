@@ -19,14 +19,14 @@ import {
     type SubscriptionPlan,
 } from '@proton/payments';
 import { type Currency } from '@proton/payments';
+import { getPlanIDs, getPlanOffer } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
-import { getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
 import ArrowImage from './ArrowImage';

@@ -1,5 +1,4 @@
-import { type Plan } from '@proton/payments';
-import { queryPlans } from '@proton/shared/lib/api/payments';
+import { type Plan, queryPlans } from '@proton/payments';
 import { addApiMock } from '@proton/testing';
 import { getLongTestPlans } from '@proton/testing/data';
 

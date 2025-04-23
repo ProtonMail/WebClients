@@ -47,7 +47,13 @@ export const VpnGetMoreSection = () => {
         },
         {
             title: () => c('Blog').t`Watch your favorite movies and TV shows`,
-            label: <Label prefix={<VpnLogo variant="glyph-only" size={5} />} text={PLAN_NAMES[PLANS.VPN]} />,
+            label: (
+                <Label
+                    key="watch-shows-label"
+                    prefix={<VpnLogo variant="glyph-only" size={5} />}
+                    text={PLAN_NAMES[PLANS.VPN]}
+                />
+            ),
             description: () =>
                 hasPaidVpn(user)
                     ? getBoldFormattedText(c('Blog').t`**Streaming** is included in your subscription.`)
@@ -57,7 +63,13 @@ export const VpnGetMoreSection = () => {
         },
         {
             title: () => c('Blog').t`Working with sensitive data?`,
-            label: <Label prefix={<VpnLogo variant="glyph-only" size={5} />} text={PLAN_NAMES[PLANS.VPN_BUSINESS]} />,
+            label: (
+                <Label
+                    key="sensitive-data-label"
+                    prefix={<VpnLogo variant="glyph-only" size={5} />}
+                    text={PLAN_NAMES[PLANS.VPN_BUSINESS]}
+                />
+            ),
             description: () =>
                 c('Blog').t`Protect your company from data breaches and make remote work safer with an enterprise VPN.`,
             image: sensitiveData,
@@ -65,7 +77,7 @@ export const VpnGetMoreSection = () => {
         },
         {
             title: () => c('Blog').t`Protect your whole household with 1 device`,
-            label: <Label text={c('Label').t`Advanced`} />,
+            label: <Label key="advanced-label" text={c('Label').t`Advanced`} />,
             description: () => c('Blog').t`Learn how to enable ${VPN_APP_NAME} on your router.`,
             image: household,
             link: 'https://protonvpn.com/support/installing-protonvpn-on-a-router?srsltid=AfmBOop2RjZzvRqhNW0eEQaVNEr1LMgRGdbHuLcvuZ1owoKhK-1iEGqS',
@@ -78,6 +90,9 @@ export const VpnGetMoreSection = () => {
                 <div className="flex flex-column items-center lg:justify-space-between lg:h-full gap-2">
                     {sections.map((section) => {
                         const Element = section.link ? 'a' : 'div';
+
+                        const key = section.title();
+
                         return (
                             <Element
                                 {...(section.link && {
@@ -85,7 +100,7 @@ export const VpnGetMoreSection = () => {
                                     rel: 'noopener noreferrer',
                                     href: section.link,
                                 })}
-                                key={section.title()}
+                                key={key}
                                 className={clsx(
                                     'flex flex-nowrap items-center p-2 gap-4 w-full relative rounded-lg text-no-decoration',
                                     section.link && 'interactive-pseudo-protrude'
@@ -95,15 +110,18 @@ export const VpnGetMoreSection = () => {
                                 <figure
                                     className="w-custom rounded overflow-hidden ratio-square"
                                     style={{ '--w-custom': '4.5rem' }}
+                                    key={`fig-${key}`}
                                 >
                                     <img src={section.image} alt="" className="w-full" />
                                 </figure>
-                                <div className="w-full flex flex-column gap-1">
+                                <div className="w-full flex flex-column gap-1" key={`section-label-${key}`}>
                                     {section.label}
                                     <h3 className="text-lg text-semibold m-0">{section.title()}</h3>
                                     <p className="m-0 text-ellipsis-two-lines color-weak">{section.description()}</p>
                                 </div>
-                                {section.link && <IcChevronRight className="shrink-0 color-hint" size={6} />}
+                                {section.link && (
+                                    <IcChevronRight key={`icon-${key}`} className="shrink-0 color-hint" size={6} />
+                                )}
                             </Element>
                         );
                     })}

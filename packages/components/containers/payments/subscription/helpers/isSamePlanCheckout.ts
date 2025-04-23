@@ -1,6 +1,5 @@
-import { type FreeSubscription, type PlanIDs, type Subscription } from '@proton/payments';
-import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getPlanName } from '@proton/shared/lib/helpers/subscription';
+import { type FreeSubscription, type PlanIDs, type Subscription, getPlanNameFromIDs } from '@proton/payments';
+import { getPlanName } from '@proton/payments';
 
 export function isSamePlanCheckout(
     subscription: Subscription | FreeSubscription | undefined,

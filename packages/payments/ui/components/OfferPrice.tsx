@@ -1,0 +1,97 @@
+import { type ReactElement, useEffect, useState } from 'react';
+
+import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
+import SkeletonLoader, {
+    type Props as SkeletonLoaderProps,
+} from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import noop from '@proton/utils/noop';
+
+import { getPlanNameFromIDs } from '../../core/plan/helpers';
+import { getPriceStartsFromPerMonth } from '../../core/price-helpers';
+import { type PlanToCheck, getPlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';
+
+export type Props = {
+    planToCheck: PlanToCheck;
+    autosizeSkeletonLoader?: boolean;
+    skeletonLoaderProps?: SkeletonLoaderProps;
+    loader?: ReactElement;
+} & Omit<PriceProps, 'children' | 'currency'>;
+
+export const OfferPrice = ({
+    planToCheck: planToCheckParam,
+    autosizeSkeletonLoader = true,
+    skeletonLoaderProps,
+    loader,
+    ...rest
+}: Props) => {
+    const payments = usePaymentsPreloaded();
+
+    const planToCheck = getPlanToCheck(planToCheckParam);
+
+    const price = payments.getPrice(planToCheck);
+
+    const [priceLoading, setPriceLoading] = useState(
+        !!planToCheck.groupId && !payments.isGroupChecked(planToCheck.groupId)
+    );
+
+    const planName = getPlanNameFromIDs(planToCheck.planIDs);
+    useEffect(
+        function checkPrice() {
+            async function run() {
+                if (price || !planToCheck.coupon) {
+                    setPriceLoading(false);
+                    return;
+                }
+
+                setPriceLoading(true);
+                try {
+                    await payments.checkMultiplePlans([planToCheck]);
+                } finally {
+                    setPriceLoading(false);
+                }
+            }
+
+            if (payments.hasEssentialData) {
+                run().catch(noop);
+            }
+        },
+        [price, planName, planToCheck.currency, planToCheck.cycle, planToCheck.coupon, payments.hasEssentialData]
+    );
+
+    const value: number = (() => {
+        if (price) {
+            return price.uiData.withDiscountOneMemberPerMonth;
+        }
+
+        if (!planName) {
+            return 0;
+        }
+
+        const plan = payments.plansMap[planName];
+        if (!plan) {
+            return 0;
+        }
+
+        return getPriceStartsFromPerMonth(plan, planToCheck.cycle, payments.plansMap) ?? 0;
+    })();
+
+    const groupLoading = planToCheck.groupId ? payments.isGroupLoading(planToCheck.groupId) : false;
+
+    const loading = priceLoading || groupLoading;
+
+    const priceElement = (
+        <Price {...rest} currency={planToCheck.currency}>
+            {value}
+        </Price>
+    );
+
+    if (loading) {
+        const skeletonLoaderChildren = autosizeSkeletonLoader ? (
+            <div className="opacity-0">{priceElement}</div>
+        ) : undefined;
+        const defaultLoader = <SkeletonLoader {...skeletonLoaderProps}>{skeletonLoaderChildren}</SkeletonLoader>;
+        return loader ?? defaultLoader;
+    }
+
+    return priceElement;
+};

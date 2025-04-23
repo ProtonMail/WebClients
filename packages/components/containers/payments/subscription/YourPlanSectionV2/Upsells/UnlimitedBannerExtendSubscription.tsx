@@ -5,9 +5,9 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
+import { getHasConsumerVpnPlan } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -20,7 +20,7 @@ import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import PlanPriceElement from '../PlanPriceElement';
-import type { UpsellSectionProps } from '../YourPlanUpsellsSectionV2';
+import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
 import { getDashboardUpsellTitle } from '../helpers';
 import UpsellMultiBox from './UpsellMultiBox';
 import { useSubscriptionPriceComparison } from './helper';
@@ -52,12 +52,7 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
     });
 };
 
-interface Props extends UpsellSectionProps {
-    showUpsellPanels: boolean;
-}
-
-const UnlimitedBannerExtendSubscription = ({
-    showUpsellPanels = true,
+export const useUnlimitedBannerExtendSubscription = ({
     subscription,
     app,
     plansMap,
@@ -65,12 +60,7 @@ const UnlimitedBannerExtendSubscription = ({
     freePlan,
     user,
     show24MonthPlan,
-    ...rest
-}: Props) => {
-    const plan = PLANS.BUNDLE;
-    const planName = PLAN_NAMES[plan];
-
-    const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
+}: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
@@ -91,7 +81,6 @@ const UnlimitedBannerExtendSubscription = ({
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
-        ...rest,
     };
 
     const upsells = [
@@ -114,7 +103,27 @@ const UnlimitedBannerExtendSubscription = ({
             }),
     ].filter(isTruthy);
 
-    const priceString = subscription && getSimplePriceString(subscription.Currency, totalSavings);
+    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+};
+
+interface Props extends UpsellsHook {
+    showUpsellPanels: boolean;
+    subscription: Subscription;
+}
+
+const UnlimitedBannerExtendSubscription = ({
+    showUpsellPanels = true,
+    subscription,
+    user,
+    handleExplorePlans,
+    upsells,
+}: Props) => {
+    const plan = PLANS.BUNDLE;
+    const planName = PLAN_NAMES[plan];
+
+    const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
+
+    const priceString = getSimplePriceString(subscription.Currency, totalSavings);
 
     return (
         <DashboardGrid>

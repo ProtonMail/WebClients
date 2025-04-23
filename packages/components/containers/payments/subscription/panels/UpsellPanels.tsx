@@ -4,8 +4,9 @@ import type { ButtonLikeShape } from '@proton/atoms';
 import Price from '@proton/components/components/price/Price';
 import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
+import { hasBundle } from '@proton/payments';
+import { OfferPrice } from '@proton/payments/ui/components/OfferPrice';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { hasBundle } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { Upsell } from '../helpers';
@@ -36,6 +37,21 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                     }
 
                     const { value, currency } = upsell.price;
+
+                    if (upsell.plan && upsell.cycle) {
+                        return (
+                            <OfferPrice
+                                planToCheck={{
+                                    currency,
+                                    planIDs: {
+                                        [upsell.plan]: 1,
+                                    },
+                                    cycle: upsell.cycle,
+                                }}
+                                suffix={c('new_plans: Plan frequency').t`/month`}
+                            />
+                        );
+                    }
 
                     return (
                         <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>

@@ -1,6 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
-
-import PropTypes from 'prop-types';
+import { type ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { dialogRootClassName } from '@proton/shared/lib/busy';
@@ -24,6 +22,21 @@ const ANIMATIONS = {
     MODAL_OUT: 'anime-modal-out',
 };
 
+export type Props = {
+    onClose?: () => void;
+    onEnter?: () => void;
+    onExit?: () => void;
+    intermediate?: boolean;
+    small?: boolean;
+    tiny?: boolean;
+    isClosing?: boolean;
+    modalTitleID?: string;
+    children: ReactNode;
+    className?: string;
+    disableCloseOnOnEscape?: boolean;
+    open?: any;
+};
+
 /**
  * @deprecated Please use ModalTwo instead
  * @type any
@@ -42,7 +55,7 @@ const Dialog = ({
     disableCloseOnOnEscape,
     open, // To prevent it being passed in rest
     ...rest
-}) => {
+}: Props) => {
     const rootRef = useRef(null);
     const hasCalledExit = useRef(false);
     const hasCalledClose = useRef(false);
@@ -112,19 +125,6 @@ const Dialog = ({
             </div>
         </Portal>
     );
-};
-
-Dialog.propTypes = {
-    onEnter: PropTypes.func,
-    open: PropTypes.bool,
-    onExit: PropTypes.func.isRequired,
-    onClose: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired,
-    modalTitleID: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    small: PropTypes.bool,
-    isClosing: PropTypes.bool,
-    disableCloseOnOnEscape: PropTypes.bool,
 };
 
 export default Dialog;

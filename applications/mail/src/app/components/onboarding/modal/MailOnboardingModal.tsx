@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/index';
 
