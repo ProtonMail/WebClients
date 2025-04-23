@@ -57,18 +57,19 @@ export const VolumeLinkContainer: FC = () => {
     }, [invitationId, volumeId, linkId]);
 
     useEffect(() => {
-        if (!externalInvitationId || !linkId) {
+        if (!externalInvitationId || !linkId || !volumeId) {
             return;
         }
         const abortController = new AbortController();
         void handleConvertExternalInvitation(abortController.signal, {
+            volumeId,
             externalInvitationId,
             linkId,
         }).finally(() => {
             navigateToSharedByMe();
         });
         // No cleanup/abort function, allowing the action to continue in the background
-    }, [externalInvitationId]);
+    }, [externalInvitationId, volumeId]);
     // This is a temporary solution until we have proper view to accept/decline screens
     return <Loader size="medium" className="absolute inset-center" />;
 };

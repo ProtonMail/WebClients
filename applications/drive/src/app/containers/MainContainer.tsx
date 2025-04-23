@@ -147,9 +147,12 @@ const InitContainer = () => {
     }, [defaultShareRoot.volumeId]);
 
     useEffect(() => {
-        driveEventManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
+        const callbackId = driveEventManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
             convertExternalInvitationsFromEvents(events, processedEventCounter)
         );
+        return () => {
+            driveEventManager.eventHandlers.unregister(callbackId);
+        };
     }, []);
 
     if (loading) {
