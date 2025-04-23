@@ -1,6 +1,5 @@
 import { fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button, UserAvatar } from '@proton/atoms';
@@ -9,7 +8,6 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import useFlag from '@proton/unleash/useFlag';
 
 import { type OnFileSkippedSuccessCallbackData, type OnFileUploadSuccessCallbackData } from '../../../store';
-import { useAlbumsPhotosStore } from '../../../zustand/photos/albumsPhotos.store';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
@@ -22,6 +20,7 @@ interface AlbumCoverHeaderProps {
     shareId: string;
     linkId: string;
     uploadLinkId: string;
+    photoCount: number;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onAddAlbumPhotos: () => void;
@@ -32,6 +31,7 @@ export const AlbumCoverHeader = ({
     shareId,
     linkId,
     uploadLinkId,
+    photoCount,
     onFileUpload,
     onFileSkipped,
     onShare,
@@ -44,11 +44,6 @@ export const AlbumCoverHeader = ({
     const [user] = useUser();
     const displayName = user.DisplayName || user.Name;
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
-    const { photosCount } = useAlbumsPhotosStore(
-        useShallow((state) => ({
-            photosCount: state.albumsPhotosCount[album.linkId] || 0,
-        }))
-    );
 
     return (
         <div
@@ -84,7 +79,7 @@ export const AlbumCoverHeader = ({
                 <p className="color-weak mb-2 mt-1">
                     {formattedDate}
                     <span className="ml-1">
-                        ⋅ {c('Info').ngettext(msgid`${photosCount} item`, `${photosCount} items`, photosCount)}
+                        ⋅ {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
                     </span>
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
@@ -112,7 +107,7 @@ export const AlbumCoverHeader = ({
                         </Button>
                     )}
 
-                    {photosCount === 0 && !driveAlbumsDisabled && (
+                    {photoCount === 0 && !driveAlbumsDisabled && (
                         <>
                             {album.permissions.isAdmin && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}
                             {!album.permissions.isAdmin && album.permissions.isEditor && (
