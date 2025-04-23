@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import { useApi, useAuthentication, useProgressiveRollout } from '@proton/components';
+import { useApi, useAuthentication } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -29,6 +29,7 @@ import { loadMessage } from '../../helpers/message/messageRead';
 import type { Preparation } from '../../helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import type {
     LoadEmbeddedParams,
@@ -52,7 +53,6 @@ import { useBase64Cache } from '../useBase64Cache';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useKeyVerification } from './useKeyVerification';
 import { useGetMessage } from './useMessage';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 export const useInitializeMessage = () => {
     const api = useApi();
@@ -69,7 +69,6 @@ export const useInitializeMessage = () => {
     const { feature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
 
     const isNumAttachmentsWithoutEmbedded = feature?.Value;
-    const canCleanUTMTrackers = useProgressiveRollout(FeatureCode.CleanUTMTrackers);
 
     const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
@@ -193,7 +192,6 @@ export const useInitializeMessage = () => {
                       decryption.decryptedBody,
                       isDraft(message.data),
                       mailSettings,
-                      canCleanUTMTrackers,
                       handleCleanUTMTrackers
                   )
                 : await prepareHtml(
@@ -208,8 +206,7 @@ export const useInitializeMessage = () => {
                       handleLoadRemoteImagesProxy,
                       handleLoadFakeImagesProxy,
                       handleLoadRemoteImagesDirect,
-                      handleCleanUTMTrackers,
-                      canCleanUTMTrackers
+                      handleCleanUTMTrackers
                   );
 
             if (!isPlainText({ MIMEType })) {

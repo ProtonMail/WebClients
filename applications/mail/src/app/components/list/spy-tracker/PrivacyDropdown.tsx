@@ -72,7 +72,6 @@ const PrivacyDropdown = ({ message }: Props) => {
         utmTrackerText,
         hasUTMTrackers,
         hasTrackers,
-        canCleanUTMTrackers,
     } = useMessageTrackers(message);
 
     const { show: showSpotlight, onDisplayed } = useSpotlightOnFeature(FeatureCode.PrivacyDropdownOpened, hasTrackers);
@@ -207,7 +206,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                                     </>
                                 )}
 
-                                {canCleanUTMTrackers && hasUTMTrackers && (
+                                {hasUTMTrackers && (
                                     <>
                                         <button
                                             onClick={handleShowUTMTrackersDetails}
