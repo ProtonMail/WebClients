@@ -1,5 +1,6 @@
-import type { FileStorage } from '@proton/pass/lib/file-storage/types';
-import type { AnyStorage, StorageData } from '@proton/pass/types';
+import type { FileBuffer } from '@proton/pass/lib/file-storage/types';
+import { type FileStorage } from '@proton/pass/lib/file-storage/types';
+import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -9,19 +10,24 @@ export class FileStorageGarbageCollector {
 
     private fs: FileStorage;
 
-    private storage: AnyStorage<StorageData>;
+    /** When provided, maintains a persistent record of files marked for deletion,
+     * allowing the garbage collection process to resume and complete deletions
+     * even if the application was terminated before cleanup finished */
+    private storage: Maybe<AnyStorage<StorageData>>;
 
     private pendingDeletions: Map<string, NodeJS.Timeout>;
 
-    constructor(fs: FileStorage, storage: AnyStorage<StorageData>) {
+    constructor(fs: FileStorage, storage?: AnyStorage<StorageData>) {
         logger.info(`[fs::${fs.type}] Attaching garbage collector`);
 
         this.fs = fs;
-        this.storage = storage;
         this.pendingDeletions = new Map();
+        if (storage) this.storage = storage;
     }
 
     private async getLocalQueue(): Promise<Set<string>> {
+        if (!this.storage) return new Set();
+
         const data = await this.storage.getItem(FileStorageGarbageCollector.STORAGE_KEY);
         const pending: string[] = safeCall(() => (data ? JSON.parse(data) : []))() ?? [];
 
@@ -29,18 +35,7 @@ export class FileStorageGarbageCollector {
     }
 
     private async setLocalQueue(pending: string[]): Promise<void> {
-        await this.storage.setItem(FileStorageGarbageCollector.STORAGE_KEY, JSON.stringify(pending));
-    }
-
-    async clearLocalQueue() {
-        const pending = await this.getLocalQueue();
-
-        if (pending.size > 0) {
-            logger.info(`[fs::${this.fs.type}] Clearing ${pending.size} files in queue`);
-            for (const filename of pending) await this.fs.deleteFile(filename).catch(noop);
-        }
-
-        await this.setLocalQueue([]);
+        await this.storage?.setItem(FileStorageGarbageCollector.STORAGE_KEY, JSON.stringify(pending));
     }
 
     private async pushToLocalQueue(filename: string) {
@@ -60,7 +55,7 @@ export class FileStorageGarbageCollector {
     /** Creates a TransformStream that extends the lifetime of a file being written.
      * Each chunk processed will reset the file's deletion timer by calling `push()`.
      * This prevents premature deletion of files during streaming operations */
-    stream(filename: string) {
+    stream(filename: string): TransformStream<FileBuffer, FileBuffer> {
         const gc = this;
         return new TransformStream({
             transform(chunk, controller) {
@@ -70,7 +65,7 @@ export class FileStorageGarbageCollector {
         });
     }
 
-    push(filename: string, options?: { enqueueForDeletion?: boolean; timeout?: number }) {
+    push(filename: string, options?: { enqueueForDeletion?: boolean; timeout?: number }): void {
         const pending = this.pendingDeletions.get(filename);
         if (pending) clearTimeout(pending);
 
@@ -87,7 +82,7 @@ export class FileStorageGarbageCollector {
         }
     }
 
-    pop(filename: string) {
+    pop(filename: string): void {
         const pending = this.pendingDeletions.get(filename);
 
         if (pending) {
@@ -98,7 +93,11 @@ export class FileStorageGarbageCollector {
         }
     }
 
-    async clear() {
+    queued(): string[] {
+        return Array.from(this.pendingDeletions.keys());
+    }
+
+    async clear(): Promise<void> {
         for (const [filename, timeout] of this.pendingDeletions) {
             clearTimeout(timeout);
             await this.fs.deleteFile(filename).catch(noop);
@@ -107,7 +106,14 @@ export class FileStorageGarbageCollector {
         this.pendingDeletions.clear();
     }
 
-    queued(): string[] {
-        return Array.from(this.pendingDeletions.keys());
+    async clearQueue(): Promise<void> {
+        const pending = await this.getLocalQueue();
+
+        if (pending.size > 0) {
+            logger.info(`[fs::${this.fs.type}] Clearing ${pending.size} files in queue`);
+            for (const filename of pending) await this.fs.deleteFile(filename).catch(noop);
+        }
+
+        await this.setLocalQueue([]);
     }
 }

@@ -10,8 +10,8 @@ export class FileStorageOPFS implements FileStorage {
 
     type: string = 'OPFS';
 
-    attachGarbageCollector(storage: AnyStorage<StorageData>) {
-        this.gc = new FileStorageGarbageCollector(this, storage);
+    attachGarbageCollector(storage?: AnyStorage<StorageData>) {
+        if (!this.gc) this.gc = new FileStorageGarbageCollector(this, storage);
     }
 
     async readFile(filename: string) {
@@ -64,7 +64,7 @@ export class FileStorageOPFS implements FileStorage {
 
     async clearAll() {
         try {
-            await this.gc?.clearLocalQueue();
+            await this.gc?.clearQueue();
             const root = await navigator.storage.getDirectory();
 
             for await (const entry of root.values()) {

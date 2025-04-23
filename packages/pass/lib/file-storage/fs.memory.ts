@@ -1,5 +1,5 @@
 import { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
-import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 
 import type { FileBuffer, FileStorage } from './types';
@@ -23,9 +23,13 @@ export class FileStorageMemory implements FileStorage {
 
     files: MemoryStore = new Map();
 
-    attachGarbageCollector(storage: AnyStorage<StorageData>) {
-        this.gc = new FileStorageGarbageCollector(this, storage);
+    constructor() {
+        /** `FileStorageMemory` should always attach a
+         * garbage collector to avoid any memory-leaks */
+        this.gc = new FileStorageGarbageCollector(this);
     }
+
+    attachGarbageCollector() {}
 
     async readFile(filename: string, type?: string) {
         try {
@@ -74,7 +78,7 @@ export class FileStorageMemory implements FileStorage {
     async clearAll() {
         try {
             this.files.clear();
-            await this.gc?.clearLocalQueue();
+            await this.gc?.clearQueue();
             logger.debug(`[fs::Memory] Storage cleared`);
         } catch {}
     }
