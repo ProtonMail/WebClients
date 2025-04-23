@@ -103,7 +103,11 @@ export const IDBReadableStream = (db: IDBPDatabase<PassFileDB>, filename: string
 
 /** Creates a WritableStream that stores each chunk in IndexedDB.
  * Maintains metadata tracking and handles resource cleanup. */
-export const IDBWritableStream = (db: IDBPDatabase<PassFileDB>, filename: string, gc?: FileStorageGarbageCollector) => {
+export const IDBWritableStream = (
+    db: IDBPDatabase<PassFileDB>,
+    filename: string,
+    gc?: FileStorageGarbageCollector
+): WritableStream<FileBuffer> => {
     let chunkIndex = 0;
 
     return new WritableStream({
@@ -132,15 +136,15 @@ export class FileStorageIDB implements FileStorage {
 
     type: string = 'IDB';
 
-    attachGarbageCollector(storage: AnyStorage<StorageData>) {
-        this.gc = new FileStorageGarbageCollector(this, storage);
+    attachGarbageCollector(storage?: AnyStorage<StorageData>) {
+        if (!this.gc) this.gc = new FileStorageGarbageCollector(this, storage);
     }
 
     async readFile(filename: string, type?: string) {
         try {
             const db = await openPassFileDB();
             const blobs: FileBuffer[] = [];
-            const writableStream = new WritableStream({
+            const writableStream = new WritableStream<FileBuffer>({
                 write(chunk) {
                     blobs.push(chunk);
                 },
@@ -196,7 +200,7 @@ export class FileStorageIDB implements FileStorage {
 
     async clearAll() {
         try {
-            await this.gc?.clearLocalQueue();
+            await this.gc?.clearQueue();
             await deleteDB(FILE_DB_NAME);
         } catch {}
     }

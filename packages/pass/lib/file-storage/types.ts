@@ -15,5 +15,5 @@ export interface FileStorage {
     deleteFile: (filename: string) => Promise<void>;
     clearAll: () => Promise<void>;
 
-    attachGarbageCollector: (storage: AnyStorage<StorageData>) => void;
+    attachGarbageCollector: (storage?: AnyStorage<StorageData>) => void;
 }
