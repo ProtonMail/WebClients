@@ -9,9 +9,9 @@ import {
     type Subscription,
     isFreeSubscription,
 } from '@proton/payments';
+import { getNormalCycleFromCustomCycle } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 
 import { getAllowedCycles, isSupportedCycle } from './getAllowedCycles';
 import { isSamePlanCheckout } from './isSamePlanCheckout';

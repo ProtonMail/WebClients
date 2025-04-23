@@ -9,8 +9,8 @@ import type { Props as PriceProps } from '@proton/components/components/price/Pr
 import Price from '@proton/components/components/price/Price';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments';
+import { hasPassLaunchOffer } from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { hasPassLaunchOffer } from '@proton/shared/lib/helpers/subscription';
 
 import OfferDisableButton from '../../components/shared/OfferDisableButton';
 import OfferLoader from '../../components/shared/OfferLoader';

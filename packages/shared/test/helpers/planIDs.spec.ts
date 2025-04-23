@@ -1,12 +1,19 @@
-import { ADDON_NAMES, CYCLE, PLANS, type PlanIDs, type PlansMap, SelectedPlan } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    CYCLE,
+    PLANS,
+    type PlanIDs,
+    type PlansMap,
+    SelectedPlan,
+    getPlanNameFromIDs,
+} from '@proton/payments';
+import { type AggregatedPricing } from '@proton/payments';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { type AggregatedPricing } from '@proton/shared/lib/helpers/subscription';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';
 
 import {
     clearPlanIDs,
     getPlanFromIDs,
-    getPlanNameFromIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
     hasPlanIDs,
@@ -882,14 +889,14 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.VPN_BUSINESS]);
 
         // VPN Business has 2 members and 1 IP by default.
-        // monthly: each user currently costs 11.90 and IP 49.99.
+        // monthly: each user currently costs 11.99 and IP 49.99.
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
         const expected: AggregatedPricing = {
-            defaultMonthlyPrice: 7379,
-            defaultMonthlyPriceWithoutAddons: 7379,
+            defaultMonthlyPrice: 7397,
+            defaultMonthlyPriceWithoutAddons: 7397,
             all: {
-                '1': 7379,
+                '1': 7397,
                 '3': 0,
                 '6': 0,
                 '12': 71964,
@@ -900,7 +907,7 @@ describe('getPricingFromPlanIDs', () => {
             },
             membersNumber: 2,
             members: {
-                '1': 2380,
+                '1': 2398,
                 '3': 0,
                 '6': 0,
                 '12': 23976,
@@ -910,7 +917,7 @@ describe('getPricingFromPlanIDs', () => {
                 '30': 0,
             },
             plans: {
-                '1': 7379,
+                '1': 7397,
                 '3': 0,
                 '6': 0,
                 '12': 71964,
@@ -940,14 +947,14 @@ describe('getPricingFromPlanIDs', () => {
         ]);
 
         // VPN Business has 2 members and 1 IP by default.
-        // monthly: each user currently costs 11.90 and IP 49.99.
+        // monthly: each user currently costs 11.99 and IP 49.99.
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
         const expected: AggregatedPricing = {
-            defaultMonthlyPrice: 30706,
-            defaultMonthlyPriceWithoutAddons: 7379,
+            defaultMonthlyPrice: 30787,
+            defaultMonthlyPriceWithoutAddons: 7397,
             all: {
-                '1': 30706,
+                '1': 30787,
                 '3': 0,
                 '6': 0,
                 '12': 299844,
@@ -959,7 +966,7 @@ describe('getPricingFromPlanIDs', () => {
             // Pricing for 9 members
             membersNumber: 9,
             members: {
-                '1': 10710,
+                '1': 10791,
                 '3': 0,
                 '6': 0,
                 '12': 107892,
@@ -969,7 +976,7 @@ describe('getPricingFromPlanIDs', () => {
                 '30': 0,
             },
             plans: {
-                '1': 7379,
+                '1': 7397,
                 '3': 0,
                 '6': 0,
                 '12': 71964,
@@ -1452,6 +1459,143 @@ describe('getTotalFromPricing', () => {
             totalNoDiscountPerMonth: 1198,
             perUserPerMonth: 524.25,
             viewPricePerMonth: 524.25,
+        });
+    });
+
+    it('should find the discount for monthly when a coupon is applied', () => {
+        const pricing = {
+            defaultMonthlyPrice: 999,
+            defaultMonthlyPriceWithoutAddons: 999,
+            all: {
+                '1': 999,
+                '3': 2397,
+                '6': 4194,
+                '12': 7995,
+                '15': 14985,
+                '18': 8982,
+                '24': 11976,
+                '30': 29970,
+            },
+            members: {
+                '1': 999,
+                '3': 2397,
+                '6': 4194,
+                '12': 7995,
+                '15': 14985,
+                '18': 8982,
+                '24': 11976,
+                '30': 29970,
+            },
+            plans: {
+                '1': 999,
+                '3': 2397,
+                '6': 4194,
+                '12': 7995,
+                '15': 14985,
+                '18': 8982,
+                '24': 11976,
+                '30': 29970,
+            },
+            membersNumber: 1,
+        };
+        const cycle = CYCLE.MONTHLY;
+        const mode = 'all';
+        const additionalCheckResults: SubscriptionCheckResponse[] = [
+            {
+                Amount: 11976,
+                Currency: 'CHF',
+                AmountDue: 8982,
+                Proration: 0,
+                CouponDiscount: -2994,
+                Gift: 0,
+                Credit: 0,
+                UnusedCredit: 0,
+                Coupon: {
+                    Code: 'TEST25',
+                    Description: '25% discount',
+                    MaximumRedemptionsPerUser: null,
+                },
+                Cycle: 24,
+                SubscriptionMode: 0,
+                TaxInclusive: 1,
+                Taxes: [
+                    {
+                        Name: 'Mehrwertsteuer (MWST)',
+                        Rate: 8.1,
+                        Amount: 673,
+                    },
+                ],
+                BaseRenewAmount: 7995,
+                RenewCycle: 12,
+                PeriodEnd: 0,
+            },
+            {
+                Amount: 999,
+                Currency: 'CHF',
+                AmountDue: 749,
+                Proration: 0,
+                CouponDiscount: -250,
+                Gift: 0,
+                Credit: 0,
+                UnusedCredit: 0,
+                Coupon: {
+                    Code: 'TEST25',
+                    Description: '25% discount',
+                    MaximumRedemptionsPerUser: null,
+                },
+                Cycle: 1,
+                SubscriptionMode: 0,
+                TaxInclusive: 1,
+                Taxes: [
+                    {
+                        Name: 'Mehrwertsteuer (MWST)',
+                        Rate: 8.1,
+                        Amount: 56,
+                    },
+                ],
+                BaseRenewAmount: null,
+                RenewCycle: null,
+                PeriodEnd: 0,
+            },
+            {
+                Amount: 7995,
+                Currency: 'CHF',
+                AmountDue: 5996,
+                Proration: 0,
+                CouponDiscount: -1999,
+                Gift: 0,
+                Credit: 0,
+                UnusedCredit: 0,
+                Coupon: {
+                    Code: 'TEST25',
+                    Description: '25% discount',
+                    MaximumRedemptionsPerUser: null,
+                },
+                Cycle: 12,
+                SubscriptionMode: 0,
+                TaxInclusive: 1,
+                Taxes: [
+                    {
+                        Name: 'Mehrwertsteuer (MWST)',
+                        Rate: 8.1,
+                        Amount: 449,
+                    },
+                ],
+                BaseRenewAmount: null,
+                RenewCycle: null,
+                PeriodEnd: 0,
+            },
+        ];
+        const selectedPlan = new SelectedPlan({ [PLANS.VPN2024]: 1 }, PLANS_MAP, cycle, 'CHF');
+
+        expect(getTotalFromPricing(pricing, cycle, mode, additionalCheckResults, selectedPlan)).toEqual({
+            discount: 250,
+            discountPercentage: 25,
+            discountedTotal: 749,
+            totalPerMonth: 749,
+            totalNoDiscountPerMonth: 999,
+            perUserPerMonth: 749,
+            viewPricePerMonth: 749,
         });
     });
 });

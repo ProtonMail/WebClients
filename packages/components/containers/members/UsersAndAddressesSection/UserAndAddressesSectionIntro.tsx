@@ -7,8 +7,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/payments';
 import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
-import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 const UserAndAddressesSectionIntro = () => {

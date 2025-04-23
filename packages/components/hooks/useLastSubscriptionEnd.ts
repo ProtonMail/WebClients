@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { getLastCancelledSubscription } from "@proton/payments";
 
+import { useEffect, useState } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { LatestSubscription } from '@proton/payments';
-import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 
 import useApi from './useApi';
 

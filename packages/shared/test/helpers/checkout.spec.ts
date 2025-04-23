@@ -138,6 +138,7 @@ describe('should get checkout result', () => {
             membersPerMonth: 999,
             currency: 'USD',
             withDiscountMembersPerMonth: 999,
+            withDiscountOneMemberPerMonth: 999,
         });
     });
 
@@ -197,6 +198,7 @@ describe('should get checkout result', () => {
             membersPerMonth: 1199,
             currency: 'USD',
             withDiscountMembersPerMonth: 1199,
+            withDiscountOneMemberPerMonth: 1199,
         });
     });
 
@@ -254,6 +256,7 @@ describe('should get checkout result', () => {
             membersPerMonth: 799,
             currency: 'USD',
             withDiscountMembersPerMonth: 799,
+            withDiscountOneMemberPerMonth: 799,
         });
     });
 
@@ -298,6 +301,7 @@ describe('should get checkout result', () => {
             membersPerMonth: 1999,
             currency: 'USD',
             withDiscountMembersPerMonth: 1800,
+            withDiscountOneMemberPerMonth: 1800,
         });
     });
 
@@ -343,10 +347,12 @@ describe('should get checkout result', () => {
             membersPerMonth: 999,
             currency: 'USD',
             withDiscountMembersPerMonth: 399.2,
+            withDiscountOneMemberPerMonth: 399.2,
         };
 
         // Use toBeCloseTo for the floating point value
         expect(result.withDiscountMembersPerMonth).toBeCloseTo(expected.withDiscountMembersPerMonth, 1);
+        expect(result.withDiscountOneMemberPerMonth).toBeCloseTo(expected.withDiscountOneMemberPerMonth, 1);
 
         // For the rest of the object, we can delete the problematic property and compare the rest
         // Create copies with optional properties that can be deleted
@@ -354,7 +360,9 @@ describe('should get checkout result', () => {
         const expectedCopy: Record<string, any> = { ...expected };
 
         resultCopy.withDiscountMembersPerMonth = undefined;
+        resultCopy.withDiscountOneMemberPerMonth = undefined;
         expectedCopy.withDiscountMembersPerMonth = undefined;
+        expectedCopy.withDiscountOneMemberPerMonth = undefined;
         expect(resultCopy).toEqual(expectedCopy);
     });
 
@@ -414,6 +422,7 @@ describe('should get checkout result', () => {
             membersPerMonth: 2997,
             currency: 'USD',
             withDiscountMembersPerMonth: 2997,
+            withDiscountOneMemberPerMonth: 999,
         });
     });
 
@@ -465,10 +474,11 @@ describe('should get checkout result', () => {
             membersPerMonth: twoYearPrice3Members / 24,
             currency: 'USD',
             withDiscountMembersPerMonth: twoYearPrice3Members / 24,
+            withDiscountOneMemberPerMonth: 599,
         });
     });
 
-    xit('should calculate VPN Business with addons', () => {
+    it('should calculate VPN Business with addons', () => {
         const twoYearPrice3Members =
             (vpnBusinessPlan.Pricing?.[CYCLE.TWO_YEARS] || 0) + (vpnBusinessMember.Pricing?.[CYCLE.TWO_YEARS] || 0) * 2;
 
@@ -504,9 +514,9 @@ describe('should get checkout result', () => {
                 [PLANS.VPN_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
             },
-            planTitle: 'VPN Business',
+            planTitle: 'VPN Professional',
             planName: PLANS.VPN_BUSINESS,
-            usersTitle: '3 users',
+            usersTitle: '4 users',
             addons: [
                 {
                     name: ADDON_NAMES.IP_VPN_BUSINESS,
@@ -518,12 +528,13 @@ describe('should get checkout result', () => {
             withDiscountPerCycle: twoYearPrice3Members,
             withDiscountPerMonth: twoYearPrice3Members / 24,
             withoutDiscountPerCycle: twoYearPrice3Members,
-            withoutDiscountPerMonth: 1800,
+            withoutDiscountPerMonth: 9795,
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
-            discountPercent: 17,
-            membersPerMonth: twoYearPrice3Members / 24,
+            discountPercent: 27,
+            membersPerMonth: 3596,
             currency: 'USD',
-            withDiscountMembersPerMonth: twoYearPrice3Members / 24,
+            withDiscountMembersPerMonth: 3596,
+            withDiscountOneMemberPerMonth: 899,
         });
     });
 
@@ -570,6 +581,7 @@ describe('should get checkout result', () => {
             membersPerMonth: 1999,
             currency: 'USD',
             withDiscountMembersPerMonth: 0,
+            withDiscountOneMemberPerMonth: 0,
         });
     });
 });
@@ -700,7 +712,7 @@ describe('getUsersAndAddons()', () => {
             users: 2,
             viewUsers: 2,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1190,
+                [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },
@@ -737,7 +749,7 @@ describe('getUsersAndAddons()', () => {
             users: 6,
             viewUsers: 6,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1190,
+                [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },
@@ -774,7 +786,7 @@ describe('getUsersAndAddons()', () => {
             users: 2,
             viewUsers: 2,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1190,
+                [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },
@@ -812,7 +824,7 @@ describe('getUsersAndAddons()', () => {
             users: 6,
             viewUsers: 6,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1190,
+                [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },

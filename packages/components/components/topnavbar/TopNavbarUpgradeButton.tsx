@@ -13,10 +13,10 @@ import { useRedirectToAccountApp } from '@proton/components/containers/desktop/u
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
+import { isTrial } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import PromotionButton from '../button/PromotionButton/PromotionButton';

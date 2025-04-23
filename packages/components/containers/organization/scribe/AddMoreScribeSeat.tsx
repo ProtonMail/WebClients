@@ -4,8 +4,8 @@ import { useMembers } from '@proton/account/members/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms';
+import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/payments';
 import { BRAND_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
-import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/shared/lib/helpers/subscription';
 
 import SettingsParagraph from '../../account/SettingsParagraph';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';

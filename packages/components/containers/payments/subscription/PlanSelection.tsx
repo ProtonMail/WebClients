@@ -19,43 +19,41 @@ import Tabs from '@proton/components/components/tabs/Tabs';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import {
-    ADDON_NAMES,
     CYCLE,
     type Currency,
     type Cycle,
+    FREE_PLAN,
     type FreePlanDefault,
     type FreeSubscription,
     PLANS,
     type PaymentMethodStatusExtended,
+    type PaymentsApi,
     type Plan,
     type PlanIDs,
-    type PlansMap,
     Renew,
     type Subscription,
     type SubscriptionPlan,
+    getIpPricePerMonth,
+    getIsB2BAudienceFromPlan,
     isFreeSubscription as getIsFreeSubscription,
+    getPlan,
     getPlansMap,
     isRegionalCurrency,
     mainCurrencies,
 } from '@proton/payments';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS } from '@proton/shared/lib/constants';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getCanSubscriptionAccessDuoPlan,
-    getIpPricePerMonth,
-    getIsB2BAudienceFromPlan,
     getMaximumCycleForApp,
-    getPlan,
-    getPricePerCycle,
     hasMaximumCycle,
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
-    isLifetimePlan,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import { OfferPrice } from '@proton/payments/ui';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { APPS } from '@proton/shared/lib/constants';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -67,11 +65,16 @@ import { getAllFeatures } from '../features';
 import type { ShortPlanLike } from '../features/interface';
 import { isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
-import PlanCard from './PlanCard';
+import PlanCard, { type HocPrice } from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import { getBundleProPlanToUse, getVPNPlanToUse, notHigherThanAvailableOnBackend } from './helpers/payment';
+import {
+    getAutoCoupon,
+    getBundleProPlanToUse,
+    getVPNPlanToUse,
+    notHigherThanAvailableOnBackend,
+} from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -112,45 +115,9 @@ interface Props {
     organization?: Organization;
     filter?: Audience[];
     paymentsStatus: PaymentMethodStatusExtended;
+    paymentsApi: PaymentsApi;
+    coupon?: string;
 }
-
-export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null => {
-    if (isLifetimePlan(plan.Name)) {
-        return getPricePerCycle(plan, CYCLE.YEARLY) ?? getPricePerCycle(plan, CYCLE.MONTHLY) ?? null;
-    }
-
-    const price = getPricePerCycle(plan, cycle);
-    if (price === undefined) {
-        return null;
-    }
-
-    const plansThatMustUseAddonPricing = {
-        [PLANS.VPN_PRO]: ADDON_NAMES.MEMBER_VPN_PRO,
-        [PLANS.VPN_BUSINESS]: ADDON_NAMES.MEMBER_VPN_BUSINESS,
-        [PLANS.PASS_PRO]: ADDON_NAMES.MEMBER_PASS_PRO,
-        [PLANS.PASS_BUSINESS]: ADDON_NAMES.MEMBER_PASS_BUSINESS,
-    };
-    type PlanWithAddon = keyof typeof plansThatMustUseAddonPricing;
-
-    // If the current plan is one of those that must use addon pricing,
-    // then we find the matching addon object and return its price
-    for (const planWithAddon of Object.keys(plansThatMustUseAddonPricing) as PlanWithAddon[]) {
-        if (plan.Name !== planWithAddon) {
-            continue;
-        }
-
-        const addonName = plansThatMustUseAddonPricing[planWithAddon];
-        const memberAddon = plansMap[addonName];
-        const memberPrice = memberAddon ? getPricePerCycle(memberAddon, cycle) : undefined;
-        if (memberPrice === undefined) {
-            continue;
-        }
-
-        return memberPrice;
-    }
-
-    return price;
-};
 
 const getCycleSelectorOptions = () => {
     const oneMonth = { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY };
@@ -414,6 +381,7 @@ const PlanSelection = (props: Props) => {
         selectedProductPlans,
         onChangeSelectedProductPlans,
         filter,
+        coupon,
     } = props;
 
     // strict plans map doens't have plan fallback if currency is missing. If there is no plan for specified currency,
@@ -500,7 +468,7 @@ const PlanSelection = (props: Props) => {
     const b2bRecommendedPlans = [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024];
     const hasRecommended = new Set<Audience>();
 
-    const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[]) => {
+    const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[], plansInAudience: Plan[]) => {
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const shouldNotRenderCurrentPlan = isCurrentPlan && alreadyHasMaxCycle;
@@ -547,10 +515,26 @@ const PlanSelection = (props: Props) => {
             ? selectedProductPlans[audience]
             : plansList[0]?.planName;
 
-        const price = getPrice(plan, cycle, plansMap);
-        if (price === null) {
-            return null;
-        }
+        const hasPlanWithCoupon = plansInAudience.some(
+            (plan) => !!getAutoCoupon({ planIDs: { [plan.Name]: 1 }, cycle, coupon })
+        );
+        const groupId = hasPlanWithCoupon ? `plan-selection-audience-${audience}` : undefined;
+
+        const priceElement: HocPrice = (props) => (
+            <OfferPrice
+                key={`${plan.Name}-${plan.Currency}-${cycle}-${plan.ID}-${audience}`}
+                planToCheck={{
+                    planIDs: {
+                        [plan.Name]: 1,
+                    },
+                    cycle,
+                    currency: plan.Currency,
+                    coupon,
+                    groupId,
+                }}
+                {...props}
+            />
+        );
 
         const featuresElement =
             mode === 'settings' || mode === 'upsell-modal' || (audience === Audience.B2B && isVpnSettingsApp) ? (
@@ -586,15 +570,13 @@ const PlanSelection = (props: Props) => {
                     )
                 }
                 recommended={isRecommended}
-                currency={plan.Currency}
                 disabled={
                     loading ||
                     (isFree && !isSignupMode && isCurrentPlan) ||
                     (plan.ID === PLANS.FREE && !isFreeSubscription && subscription?.Renew === Renew.Disabled)
                 }
-                cycle={cycle}
                 key={plan.ID}
-                price={price}
+                price={priceElement}
                 features={featuresElement}
                 onSelect={(planName) => {
                     // Mail plus users selecting free plan are redirected to the cancellation reminder flow
@@ -633,8 +615,6 @@ const PlanSelection = (props: Props) => {
                 planName={plan.plan as any}
                 planTitle={plan.title}
                 recommended={false}
-                currency={currency}
-                cycle={restrictedCycle}
                 key={plan.plan}
                 price={
                     // translator: displayed instead of price for VPN Enterprise plan. User should contact Sales first.
@@ -658,7 +638,7 @@ const PlanSelection = (props: Props) => {
                             style={{ '--plan-selection-number': 3 }}
                             data-testid="lifetime-plan-cycle"
                         >
-                            {renderPlanCard(passLifetimePlan, Audience.B2C, [])}
+                            {renderPlanCard(passLifetimePlan, Audience.B2C, [], IndividualPlans)}
                         </div>
                     ) : (
                         <div
@@ -669,7 +649,9 @@ const PlanSelection = (props: Props) => {
                             style={{ '--plan-selection-number': IndividualPlans.length }}
                             data-testid="b2c-plan"
                         >
-                            {IndividualPlans.map((plan) => renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans))}
+                            {IndividualPlans.map((plan) =>
+                                renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans, IndividualPlans)
+                            )}
                         </div>
                     )}
                 </>
@@ -686,7 +668,9 @@ const PlanSelection = (props: Props) => {
                     )}
                     style={{ '--plan-selection-number': FamilyPlans.length }}
                 >
-                    {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY, familyRecommendedPlans))}
+                    {FamilyPlans.map((plan) =>
+                        renderPlanCard(plan, Audience.FAMILY, familyRecommendedPlans, FamilyPlans)
+                    )}
                 </div>
             ),
             audience: Audience.FAMILY,
@@ -706,7 +690,12 @@ const PlanSelection = (props: Props) => {
                         if (isShortPlanLike(plan)) {
                             return renderShortPlanCard(plan);
                         } else {
-                            return renderPlanCard(plan, Audience.B2B, b2bRecommendedPlans);
+                            return renderPlanCard(
+                                plan,
+                                Audience.B2B,
+                                b2bRecommendedPlans,
+                                B2BPlans.filter((it): it is Plan => !isShortPlanLike(it))
+                            );
                         }
                     })}
                 </div>

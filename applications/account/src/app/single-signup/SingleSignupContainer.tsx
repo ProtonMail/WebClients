@@ -25,9 +25,12 @@ import {
     type Currency,
     PLANS,
     type Plan,
+    getPlanNameFromIDs,
     getPlansMap,
     isMainCurrency,
 } from '@proton/payments';
+import { getHas2024OfferCoupon, getIsVpnB2BPlan } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -36,11 +39,9 @@ import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getHas2024OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import isTruthy from '@proton/utils/isTruthy';

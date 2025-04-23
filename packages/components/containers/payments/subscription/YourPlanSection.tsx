@@ -12,20 +12,16 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
+import { FREE_PLAN } from '@proton/payments';
+import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumo, isTrial } from '@proton/payments';
+import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-import {
-    getCanSubscriptionAccessDuoPlan,
-    getHasVpnB2BPlan,
-    hasLumo,
-    isTrial,
-} from '@proton/shared/lib/helpers/subscription';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
 import { useSubscriptionModal } from './SubscriptionModalProvider';
-import { resolveUpsellsToDisplay } from './helpers';
+import { useUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
 
@@ -35,7 +31,7 @@ interface Props {
     app: APP_NAMES;
 }
 
-const YourPlanSection = ({ app }: Props) => {
+const YourPlanSectionInner = ({ app }: Props) => {
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
@@ -52,14 +48,7 @@ const YourPlanSection = ({ app }: Props) => {
     const telemetryFlow = useDashboardPaymentFlow(app);
     useLoad();
 
-    const loading =
-        loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading || plansMapLoading;
-
-    if (!subscription || !plans || loading) {
-        return <Loader />;
-    }
-
-    const upsells = resolveUpsellsToDisplay({
+    const { upsells, loading: upsellsLoading } = useUpsellsToDisplay({
         app,
         subscription,
         plansMap,
@@ -71,6 +60,18 @@ const YourPlanSection = ({ app }: Props) => {
         telemetryFlow,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
+
+    const loading =
+        loadingSubscription ||
+        loadingOrganization ||
+        loadingPlans ||
+        serversCountLoading ||
+        plansMapLoading ||
+        upsellsLoading;
+
+    if (!subscription || !plans || loading) {
+        return <Loader />;
+    }
 
     const isVpnB2b = getHasVpnB2BPlan(subscription);
     const isWalletEA = app === APPS.PROTONWALLET;
@@ -123,4 +124,13 @@ const YourPlanSection = ({ app }: Props) => {
         </SettingsSection>
     );
 };
+
+const YourPlanSection = (props: Props) => {
+    return (
+        <PaymentsContextProvider>
+            <YourPlanSectionInner {...props} />
+        </PaymentsContextProvider>
+    );
+};
+
 export default YourPlanSection;

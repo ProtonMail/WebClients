@@ -5,7 +5,6 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { CYCLE, type Subscription, getSubscriptionPlanTitleAndName } from '@proton/payments';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
@@ -13,7 +12,8 @@ import {
     hasMaximumCycle,
     hasVPNPassBundle,
     isManagedExternally,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import useFlag from '@proton/unleash/useFlag';

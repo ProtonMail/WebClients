@@ -1,22 +1,23 @@
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Icon from '@proton/components/components/icon/Icon';
-import Price from '@proton/components/components/price/Price';
-import { type Currency, type Cycle, PLANS } from '@proton/payments';
-import { isLifetimePlan } from '@proton/shared/lib/helpers/subscription';
+import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
+import { PLANS } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
+import isFunction from '@proton/utils/isFunction';
+
+export type HocPriceProps = Omit<PriceProps, 'children'>;
+export type HocPrice = (props: HocPriceProps) => ReactElement;
 
 interface Base {
     planName: PLANS;
     planTitle: ReactNode;
-    price: number | string;
+    price: string | ReactElement | HocPrice;
     info: string;
     features: ReactNode;
-    currency: Currency;
-    cycle: Cycle;
     isCurrentPlan?: boolean;
     recommended?: boolean;
     actionLabel?: ReactNode;
@@ -66,8 +67,6 @@ const PlanCard = ({
     enableActionLabelSpacing,
     onSelect,
     features,
-    currency,
-    cycle,
     disabled,
     isCurrentPlan,
     recommended,
@@ -118,22 +117,32 @@ const PlanCard = ({
                 </div>
                 <p className="text-lg plan-selection-info text-left color-weak mb-4">{info}</p>
                 <div className="mb-4 flex flex-wrap items-baseline plan-selection-price">
-                    {typeof price === 'number' ? (
-                        <>
-                            <span className="mr-2">
-                                <Price large currency={currency}>
-                                    {isLifetimePlan(planName) ? price : price / cycle}
-                                </Price>
-                            </span>
-                            <span className="color-weak plan-selection-suffix text-left">{getCycleUnit(planName)}</span>
-                        </>
-                    ) : (
-                        <span className="mb-5">
-                            <Price large className="mb-0.5">
-                                {price}
-                            </Price>
-                        </span>
-                    )}
+                    {(() => {
+                        const commonPriceProps: HocPriceProps = {
+                            large: true,
+                        };
+
+                        if (isFunction(price)) {
+                            return price({
+                                ...commonPriceProps,
+                                suffix: getCycleUnit(planName),
+                                suffixClassName: 'color-weak plan-selection-suffix text-left',
+                                suffixNextLine: true,
+                            });
+                        }
+
+                        if (typeof price === 'string') {
+                            return (
+                                <span className="mb-5">
+                                    <Price {...commonPriceProps} className="mb-0.5">
+                                        {price}
+                                    </Price>
+                                </span>
+                            );
+                        }
+
+                        return price;
+                    })()}
                 </div>
 
                 {actionButton}

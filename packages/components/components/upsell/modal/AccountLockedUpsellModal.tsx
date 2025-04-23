@@ -13,14 +13,13 @@ import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { getPrice } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import type { Currency } from '@proton/payments';
-import { CYCLE, PLANS, type Plan, getPlansMap } from '@proton/payments';
+import { CYCLE, PLANS, type Plan, getPlansMap, getPriceStartsFrom } from '@proton/payments';
+import { getCanSubscriptionAccessDuoPlan } from '@proton/payments';
 import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getCanSubscriptionAccessDuoPlan } from '@proton/shared/lib/helpers/subscription';
 import { UPSELL_MODALS_TYPE, getUpsellRef, sendRequestUpsellModalReport } from '@proton/shared/lib/helpers/upsell';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -144,7 +143,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
             if (!plan) {
                 return null;
             }
-            const price = getPrice(plan, cycle, plansMap);
+            const price = getPriceStartsFrom(plan, cycle, plansMap);
             if (!price) {
                 return null;
             }

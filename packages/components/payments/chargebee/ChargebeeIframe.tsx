@@ -40,12 +40,10 @@ import {
     type ChargebeeIframeHandles,
     type InitializeCreditCardOptions,
     type RemoveEventListener,
-} from '@proton/payments';
-import {
+    getPaymentsVersion,
     type GetChargebeeConfigurationResponse,
     getChargebeeConfiguration,
-    getPaymentsVersion,
-} from '@proton/shared/lib/api/payments';
+} from '@proton/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';

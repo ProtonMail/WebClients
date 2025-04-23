@@ -38,6 +38,8 @@ import {
     getPlansMap,
     isRegionalCurrency,
 } from '@proton/payments';
+import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -49,11 +51,9 @@ import {
     getTotalFromPricing,
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
-import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { useFlag } from '@proton/unleash';

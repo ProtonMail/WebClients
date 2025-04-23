@@ -1,4 +1,4 @@
-import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import type { PaymentsVersion } from '@proton/payments';
 import type { User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import type { ThemeInformation, ThemeTypes } from '@proton/shared/lib/themes/themes';

@@ -1169,12 +1169,12 @@ const plans: Plan[] = deepFreeze([
         Features: 0,
         State: 1,
         Pricing: {
-            '1': 7379,
+            '1': 7397,
             '12': 71964,
             '24': 129528,
         },
         DefaultPricing: {
-            '1': 7379,
+            '1': 7397,
             '12': 71964,
             '24': 129528,
         },
@@ -2232,12 +2232,12 @@ const plans: Plan[] = deepFreeze([
         Features: 0,
         State: 1,
         Pricing: {
-            '1': 1190,
+            '1': 1199,
             '12': 11988,
             '24': 21576,
         },
         DefaultPricing: {
-            '1': 1190,
+            '1': 1199,
             '12': 11988,
             '24': 21576,
         },

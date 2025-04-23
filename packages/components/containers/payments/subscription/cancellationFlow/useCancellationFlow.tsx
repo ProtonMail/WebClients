@@ -11,7 +11,7 @@ import {
     hasMailBusiness,
     hasMailPro,
     hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
 import { useFlag } from '@proton/unleash';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';

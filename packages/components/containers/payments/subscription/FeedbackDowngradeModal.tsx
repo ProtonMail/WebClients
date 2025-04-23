@@ -1,8 +1,9 @@
+import { type FeedbackDowngradeData } from "@proton/payments";
 import type { ReactNode } from 'react';
+
 import { Fragment, useState } from 'react';
 
 import { c } from 'ttag';
-
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -17,7 +18,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
-import { type FeedbackDowngradeData } from '@proton/shared/lib/api/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

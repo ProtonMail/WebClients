@@ -29,6 +29,7 @@ import type {
     PlainPaymentMethodType,
 } from '@proton/payments';
 import {
+    type CheckSubscriptionData,
     type Currency,
     type Cycle,
     DEFAULT_CURRENCY,
@@ -38,45 +39,50 @@ import {
     PLANS,
     type Plan,
     type PlanIDs,
+    ProrationMode,
     type Subscription,
     captureWrongPlanIDs,
     captureWrongPlanName,
     getBillingAddressStatus,
     getCheckoutModifiers,
+    getFreeCheckResult,
+    getHas2024OfferCoupon,
+    getIsB2BAudienceFromPlan,
+    getPaymentsVersion,
+    getPlanNameFromIDs,
     getPlansMap,
     isFreeSubscription,
     isOnSessionMigration,
 } from '@proton/payments';
-import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
-import { ProrationMode, getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import { APPS } from '@proton/shared/lib/constants';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
-import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import type { AddonGuard } from '@proton/payments';
 import {
-    getPlanCurrencyFromPlanIDs,
-    getPlanFromPlanIDs,
-    getPlanNameFromIDs,
-    hasPlanIDs,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import {
-    getHas2024OfferCoupon,
     getHasSomeVpnPlan,
-    getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsVpnPlan,
     getMaximumCycleForApp,
     getPlanIDs,
     hasDeprecatedVPN,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import { isSubscriptionUnchanged } from '@proton/payments';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
+import { APPS } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import {
+    type EnrichedCheckResponse,
+    getIsCustomCycle,
+    getOptimisticCheckResult,
+} from '@proton/shared/lib/helpers/checkout';
+import {
+    getPlanCurrencyFromPlanIDs,
+    getPlanFromPlanIDs,
+    hasPlanIDs,
+    switchPlan,
+} from '@proton/shared/lib/helpers/planIDs';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -92,7 +98,6 @@ import type {
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import GenericError from '../../error/GenericError';
-import { isSubscriptionUnchanged } from '../../payments/helper';
 import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
@@ -129,7 +134,7 @@ export interface Model {
     planIDs: PlanIDs;
     currency: Currency;
     cycle: Cycle;
-    coupon?: string | null;
+    coupon?: string;
     gift?: string;
     initialCheckComplete: boolean;
     taxBillingAddress: BillingAddress;
@@ -262,7 +267,7 @@ const SubscriptionContainer = ({
     const getCalendars = useGetCalendars();
     const { APP_NAME } = useConfig();
 
-    const [loading, withLoading] = useLoading();
+    const [subscribing, withSubscribing] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
@@ -319,8 +324,6 @@ const SubscriptionContainer = ({
         return maybePlanIDs || subscriptionPlanIDs;
     }, [subscription, plansMap, organization, plans, maybePlanIDs]);
 
-    const coupon = maybeCoupon || subscription.CouponCode || undefined;
-
     const [model, setModel] = useState<Model>(() => {
         const step = getInitialCheckoutStep(planIDs, maybeStep);
 
@@ -343,7 +346,7 @@ const SubscriptionContainer = ({
             step,
             cycle,
             currency,
-            coupon,
+            coupon: maybeCoupon || subscription.CouponCode || undefined,
             planIDs,
             initialCheckComplete: false,
             taxBillingAddress: {
@@ -537,7 +540,7 @@ const SubscriptionContainer = ({
                 paymentProcessorType,
             };
 
-            const promise = withLoading(handleSubscribe(operations, context));
+            const promise = withSubscribing(handleSubscribe(operations, context));
             if (
                 sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
                 sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
@@ -559,9 +562,7 @@ const SubscriptionContainer = ({
             if (checkResult.ProrationMode === ProrationMode.Exact) {
                 const currentAmountDue = checkResult.AmountDue;
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                const checkPromise = check();
-                void withLoadingCheck(checkPromise);
-                const newCheckResult = await checkPromise;
+                const newCheckResult = await check();
                 if (newCheckResult?.AmountDue !== currentAmountDue) {
                     createNotification({
                         text: c('Error').t`The amount due has changed. Please try again.`,
@@ -575,6 +576,11 @@ const SubscriptionContainer = ({
             return true;
         },
     });
+
+    // even though this value tighly connected to paymentFacade.initialized, we still used it to *delay* the moment
+    // when the loading state is hidden from the user. This is needed to avoid flickering between the moment when
+    // paymentFacade.initialized === true but the first check() hasn't started yet.
+    const [initialLoading, setInitialLoading] = useState(!paymentFacade.initialized);
 
     const isFreePlanSelected = !hasPlanIDs(model.planIDs);
     const disableCycleSelector = isFreePlanSelected || maybeDisableCycleSelector || getIsCustomCycle(model.cycle);
@@ -596,7 +602,7 @@ const SubscriptionContainer = ({
         newModel: Model,
         checkPayload: CheckSubscriptionData,
         options: CheckWithAutomaticOptions | undefined,
-        checkResult: SubscriptionCheckResponse,
+        checkResult: EnrichedCheckResponse,
         signal: AbortSignal
     ) => {
         setAdditionalCheckResults([]);
@@ -604,7 +610,7 @@ const SubscriptionContainer = ({
         const codes = checkPayload.Codes;
 
         const noCodes = !codes || codes.length === 0;
-        if (noCodes || disableCycleSelector) {
+        if (noCodes) {
             return;
         }
 
@@ -694,107 +700,118 @@ const SubscriptionContainer = ({
             return;
         }
 
-        try {
-            abortControllerRef.current?.abort();
-            abortControllerRef.current = new AbortController();
-
-            const coupon = getAutoCoupon({ coupon: newModel.coupon, planIDs: newModel.planIDs, cycle: newModel.cycle });
-
-            let options: CheckWithAutomaticOptions | undefined;
-            if (
-                // the first check handle the onMethod callback because the
-                // component is not rerendered and didn't update paymentFacade by that time yet.
-                // the second check handles the case when the component was already rerendered
-                (selectedMethod === PAYMENT_METHOD_TYPES.BITCOIN ||
-                    paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN) &&
-                isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
-            ) {
-                options = {
-                    forcedVersion: 'v4',
-                    reason: 'bitcoin-on-session',
-                };
-            }
-
-            // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
-            // if user re-enters the same coupon code as in the currently active subscription.
-            // We must do it because of backend limitations. The backend won't recognize the currently active
-            // subscription coupon if there is any other valid coupon in the request payload.
-            const codesArgument =
-                !!subscriptionCouponCode && newModel.gift === subscriptionCouponCode
-                    ? { coupon: subscriptionCouponCode }
-                    : { gift: newModel.gift, coupon };
-
-            const Codes = getCodes(codesArgument);
-
-            const checkPayload: CheckSubscriptionData = {
-                Codes,
-                Plans: newModel.planIDs,
-                Currency: newModel.currency,
-                Cycle: newModel.cycle,
-                BillingAddress: {
-                    CountryCode: newModel.taxBillingAddress.CountryCode,
-                    State: newModel.taxBillingAddress.State,
-                },
-                ProrationMode: [selectedMethod, paymentFacade.selectedMethodType].includes(
-                    PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-                )
-                    ? ProrationMode.Exact
-                    : undefined,
-            };
-
-            const checkResult = await paymentsApi.checkWithAutomaticVersion(
-                checkPayload,
-                { signal: abortControllerRef.current.signal },
-                options
-            );
-
+        const run = async () => {
             try {
-                await runAdditionalChecks(
-                    newModel,
+                abortControllerRef.current?.abort();
+                abortControllerRef.current = new AbortController();
+
+                const coupon = getAutoCoupon({
+                    coupon: newModel.coupon,
+                    planIDs: newModel.planIDs,
+                    cycle: newModel.cycle,
+                });
+
+                let options: CheckWithAutomaticOptions | undefined;
+                if (
+                    // the first check handle the onMethod callback because the
+                    // component is not rerendered and didn't update paymentFacade by that time yet.
+                    // the second check handles the case when the component was already rerendered
+                    (selectedMethod === PAYMENT_METHOD_TYPES.BITCOIN ||
+                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN) &&
+                    isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
+                ) {
+                    options = {
+                        forcedVersion: 'v4',
+                        reason: 'bitcoin-on-session',
+                    };
+                }
+
+                // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
+                // if user re-enters the same coupon code as in the currently active subscription.
+                // We must do it because of backend limitations. The backend won't recognize the currently active
+                // subscription coupon if there is any other valid coupon in the request payload.
+                const codesArgument =
+                    !!subscriptionCouponCode && newModel.gift === subscriptionCouponCode
+                        ? { coupon: subscriptionCouponCode }
+                        : { gift: newModel.gift, coupon };
+
+                const Codes = getCodes(codesArgument);
+
+                const checkPayload: CheckSubscriptionData = {
+                    Codes,
+                    Plans: newModel.planIDs,
+                    Currency: newModel.currency,
+                    Cycle: newModel.cycle,
+                    BillingAddress: {
+                        CountryCode: newModel.taxBillingAddress.CountryCode,
+                        State: newModel.taxBillingAddress.State,
+                    },
+                    ProrationMode: [selectedMethod, paymentFacade.selectedMethodType].includes(
+                        PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+                    )
+                        ? ProrationMode.Exact
+                        : undefined,
+                };
+
+                const checkResult = await paymentsApi.checkWithAutomaticVersion(
                     checkPayload,
-                    options,
-                    checkResult,
-                    abortControllerRef.current.signal
+                    { signal: abortControllerRef.current.signal },
+                    options
                 );
-            } catch (error) {
-                // eslint-disable-next-line no-console
-                console.warn(error);
-                // eslint-disable-next-line no-console
-                console.warn('Additional Check calls failed');
+
+                try {
+                    await runAdditionalChecks(
+                        newModel,
+                        checkPayload,
+                        options,
+                        checkResult,
+                        abortControllerRef.current.signal
+                    );
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.warn(error);
+                    // eslint-disable-next-line no-console
+                    console.warn('Additional Check calls failed');
+                }
+
+                const { Gift = 0 } = checkResult;
+                const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
+
+                if (wantToApplyNewGiftCode && newModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
+                    createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
+                    giftCodeRef.current?.focus();
+                }
+
+                if (Code) {
+                    latestValidCouponCodeRef.current = Code;
+                }
+                copyNewModel.coupon = Code || subscriptionCouponCode || latestValidCouponCodeRef.current;
+
+                if (!Gift) {
+                    delete copyNewModel.gift;
+                }
+
+                setCheckResult(checkResult);
+                setModel(copyNewModel);
+                onCheck?.({ model, newModel, type: 'success', result: checkResult });
+            } catch (error: any) {
+                if (error?.name === 'AbortError') {
+                    return;
+                }
+
+                if (error.name === 'OfflineError') {
+                    setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
+                }
+                onCheck?.({ model, newModel, type: 'error', error });
             }
 
-            const { Gift = 0 } = checkResult;
-            const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
+            return checkResult;
+        };
 
-            if (wantToApplyNewGiftCode && newModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
-                createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
-                giftCodeRef.current?.focus();
-            }
+        const checkPromise = run();
+        void withLoadingCheck(checkPromise);
 
-            if (Code) {
-                latestValidCouponCodeRef.current = Code;
-            }
-            copyNewModel.coupon = Code || subscriptionCouponCode || latestValidCouponCodeRef.current;
-
-            if (!Gift) {
-                delete copyNewModel.gift;
-            }
-
-            setCheckResult(checkResult);
-            setModel(copyNewModel);
-            onCheck?.({ model, newModel, type: 'success', result: checkResult });
-        } catch (error: any) {
-            if (error?.name === 'AbortError') {
-                return;
-            }
-
-            if (error.name === 'OfflineError') {
-                setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
-            }
-            onCheck?.({ model, newModel, type: 'error', error });
-        }
-
-        return checkResult;
+        return checkPromise;
     };
 
     useEffect(() => {
@@ -815,8 +832,10 @@ const SubscriptionContainer = ({
             return;
         }
 
+        setInitialLoading(false);
+
         // Trigger once to initialise the check values
-        void withLoadingCheck(check());
+        void check();
         if (parent === 'subscription-modal') {
             // Send telemetry event: initialization
             void reportSubscriptionModalInitialization({
@@ -840,7 +859,7 @@ const SubscriptionContainer = ({
     }, [model.step, customTopRef?.current, topRef?.current]);
 
     const process = async (processor?: PaymentProcessorHook) =>
-        withLoading(async () => {
+        withSubscribing(async () => {
             if (!processor) {
                 return;
             }
@@ -892,7 +911,6 @@ const SubscriptionContainer = ({
             return;
         }
         const checkPromise = check({ ...model, cycle });
-        void withLoadingCheck(checkPromise);
         void withBlockAccountSizeSelector(checkPromise);
     };
 
@@ -920,11 +938,11 @@ const SubscriptionContainer = ({
 
         const planCurrency = getPlanCurrencyFromPlanIDs(getPlansMap(plans, currency), model.planIDs) ?? currency;
 
-        void withLoadingCheck(check({ ...model, currency: planCurrency }, false, context?.paymentMethodType));
+        void check({ ...model, currency: planCurrency }, false, context?.paymentMethodType);
     };
 
     const handleBillingAddressChange = (billingAddress: BillingAddress) => {
-        void withLoadingCheck(check({ ...model, taxBillingAddress: billingAddress }));
+        void check({ ...model, taxBillingAddress: billingAddress });
     };
 
     const backStep = BACK[model.step];
@@ -963,7 +981,7 @@ const SubscriptionContainer = ({
                 paypal={paymentFacade.paypal}
                 step={model.step}
                 loading={
-                    loading ||
+                    subscribing ||
                     paymentFacade.bitcoinInhouse.bitcoinLoading ||
                     paymentFacade.bitcoinChargebee.bitcoinLoading
                 }
@@ -1025,7 +1043,6 @@ const SubscriptionContainer = ({
             const newModel = { ...model, planIDs };
             setModel(newModel);
             const checkPromise = check(newModel);
-            void withLoadingCheck(checkPromise);
             void withBlockCycleSelector(checkPromise);
             checkPromise.catch(noop).finally(() => {
                 // Only if it's the latest call is it reset
@@ -1064,15 +1081,13 @@ const SubscriptionContainer = ({
                     hasFreePlan={showFreePlan}
                     subscription={subscription}
                     onChangePlanIDs={(planIDs, cycle, currency) =>
-                        withLoadingCheck(
-                            check({
-                                ...model,
-                                planIDs,
-                                cycle,
-                                currency,
-                                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                            })
-                        )
+                        check({
+                            ...model,
+                            planIDs,
+                            cycle,
+                            currency,
+                            step: SUBSCRIPTION_STEPS.CHECKOUT,
+                        })
                     }
                     onChangeCycle={handleChangeCycle}
                     onChangeCurrency={handleChangeCurrency}
@@ -1082,6 +1097,8 @@ const SubscriptionContainer = ({
                     onChangeSelectedProductPlans={setSelectedProductPlans}
                     organization={organization}
                     paymentsStatus={paymentsStatus}
+                    paymentsApi={paymentsApi}
+                    coupon={maybeCoupon ?? undefined}
                 />
             )}
 
@@ -1126,7 +1143,7 @@ const SubscriptionContainer = ({
                                                     checkResult={checkResult}
                                                     plansMap={plansMap}
                                                     planIDs={model.planIDs}
-                                                    loading={loadingCheck}
+                                                    loading={loadingCheck || initialLoading}
                                                     couponConfig={couponConfig}
                                                 />
                                             ) : (
@@ -1139,7 +1156,7 @@ const SubscriptionContainer = ({
                                                     onChangeCycle={handleChangeCycle}
                                                     faded={blockCycleSelector}
                                                     additionalCheckResults={additionalCheckResults}
-                                                    loading={loadingCheck}
+                                                    loading={loadingCheck || initialLoading}
                                                     allowedCycles={computeAllowedCycles(model.planIDs)}
                                                 />
                                             )}
@@ -1163,7 +1180,7 @@ const SubscriptionContainer = ({
                                             value === PAYMENT_METHOD_TYPES.BITCOIN &&
                                             isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
                                         ) {
-                                            void withLoadingCheck(check(model, false, value));
+                                            void check(model, false, value);
                                         }
                                     }}
                                 />
@@ -1189,7 +1206,7 @@ const SubscriptionContainer = ({
                                 vpnServers={vpnServers}
                                 gift={gift}
                                 submit={subscriptionCheckoutSubmit}
-                                loading={loadingCheck}
+                                loading={loadingCheck || initialLoading}
                                 currency={model.currency}
                                 cycle={model.cycle}
                                 planIDs={model.planIDs}

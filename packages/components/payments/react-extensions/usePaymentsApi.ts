@@ -3,11 +3,12 @@ import { useRef, useState } from 'react';
 import { addMonths } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import { isSubscriptionUnchanged } from '@proton/payments';
 import {
+    type CheckSubscriptionData,
     type CheckWithAutomaticOptions,
     DEFAULT_TAX_BILLING_ADDRESS,
     type FullBillingAddress,
@@ -20,26 +21,19 @@ import {
     type RequestOptions,
     captureWrongPlanIDs,
     extendStatus,
+    getLifetimeProductType,
+    getPaymentsVersion,
     isCheckWithAutomaticOptions,
+    isLifetimePlanSelected,
     isPaymentMethodStatusExtended,
     queryPaymentMethodStatus,
 } from '@proton/payments';
-import {
-    type CheckSubscriptionData,
-    type PaymentsVersion,
-    getLifetimeProductType,
-    getPaymentsVersion,
-} from '@proton/shared/lib/api/payments';
+import { type PaymentsVersion } from '@proton/payments';
+import { getPlanName } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
+import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getPlanName } from '@proton/shared/lib/helpers/subscription';
-import {
-    type Api,
-    ChargebeeEnabled,
-    type SubscriptionCheckResponse,
-    SubscriptionMode,
-} from '@proton/shared/lib/interfaces';
+import { type Api, ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
@@ -150,7 +144,7 @@ export const useReportRoutingError = () => {
 };
 
 export const useMultiCheckCache = () => {
-    const cacheRef = useRef<Record<string, SubscriptionCheckResponse>>({});
+    const cacheRef = useRef<Record<string, EnrichedCheckResponse>>({});
 
     const hash = (data: CheckSubscriptionData, options?: CheckWithAutomaticOptions) => {
         const plans = Object.entries(data.Plans)
@@ -174,7 +168,7 @@ export const useMultiCheckCache = () => {
     const get = (
         data: CheckSubscriptionData,
         options?: CheckWithAutomaticOptions
-    ): SubscriptionCheckResponse | undefined => {
+    ): EnrichedCheckResponse | undefined => {
         const id = hash(data, options);
         return cacheRef.current[id];
     };
@@ -182,7 +176,7 @@ export const useMultiCheckCache = () => {
     const set = (
         data: CheckSubscriptionData,
         options: CheckWithAutomaticOptions | undefined,
-        value: SubscriptionCheckResponse
+        value: EnrichedCheckResponse
     ) => {
         const id = hash(data, options);
         cacheRef.current[id] = value;
@@ -196,7 +190,7 @@ export const useMultiCheckCache = () => {
 
 export const usePaymentsApi = (
     apiOverride?: Api,
-    checkV5Fallback?: (data: CheckSubscriptionData) => SubscriptionCheckResponse | null
+    checkV5Fallback?: (data: CheckSubscriptionData) => EnrichedCheckResponse | null
 ): {
     paymentsApi: PaymentsApi;
     getPaymentsApi: (api: Api, chargebeeEnabled?: ChargebeeEnabled) => PaymentsApi;
@@ -270,12 +264,17 @@ export const usePaymentsApi = (
             data: CheckSubscriptionData,
             requestOptions: RequestOptions = {},
             additionalContext?: any
-        ): Promise<SubscriptionCheckResponse> => {
+        ): Promise<EnrichedCheckResponse> => {
             try {
-                return await api({
+                const result = await api({
                     ...checkSubscription(data, 'v4'),
                     ...requestOptions,
                 });
+
+                return {
+                    ...result,
+                    requestData: data,
+                };
             } catch (error) {
                 reportRoutingError(error, additionalContext);
                 throw error;
@@ -286,7 +285,7 @@ export const usePaymentsApi = (
             data: CheckSubscriptionData,
             requestOptions: RequestOptions = {},
             additionalContext?: any
-        ): Promise<SubscriptionCheckResponse> => {
+        ): Promise<EnrichedCheckResponse> => {
             // Patch for coupons compatibility v4 vs v5
             if (!data.Codes || data.Codes.length === 0) {
                 data.Codes = data.CouponCode ? [data.CouponCode] : [];
@@ -306,10 +305,16 @@ export const usePaymentsApi = (
                     result.ProrationMode = data.ProrationMode;
                 }
 
-                return result;
+                return {
+                    ...result,
+                    requestData: data,
+                };
             } catch (error) {
                 if (fallback) {
-                    return fallback;
+                    return {
+                        ...fallback,
+                        requestData: data,
+                    };
                 }
 
                 reportRoutingError(error, additionalContext);
@@ -321,7 +326,7 @@ export const usePaymentsApi = (
             data: CheckSubscriptionData,
             requestOptions: RequestOptions = {},
             options?: CheckWithAutomaticOptions
-        ): Promise<SubscriptionCheckResponse> => {
+        ): Promise<EnrichedCheckResponse> => {
             captureWrongPlanIDs(data.Plans, { source: 'checkWithAutomaticVersion' });
 
             if (isLifetimePlanSelected(data.Plans)) {
@@ -360,7 +365,7 @@ export const usePaymentsApi = (
         const multiCheck = (
             multiCheckData: MultiCheckSubscriptionData[],
             { cached, ...requestOptions }: MultiCheckOptions = {}
-        ): Promise<SubscriptionCheckResponse[]> => {
+        ): Promise<EnrichedCheckResponse[]> => {
             const requestData: {
                 data: CheckSubscriptionData;
                 options: CheckWithAutomaticOptions | undefined;
@@ -402,10 +407,15 @@ export const usePaymentsApi = (
             );
         };
 
+        const cachedCheck = async (data: MultiCheckSubscriptionData): Promise<EnrichedCheckResponse> => {
+            const result = await multiCheck([data], { cached: true });
+            return result[0];
+        };
+
         const cacheMultiCheck = (
             data: CheckSubscriptionData,
             options: CheckWithAutomaticOptions | undefined,
-            result: SubscriptionCheckResponse
+            result: EnrichedCheckResponse
         ) => {
             multiCheckCache.set(data, options, result);
         };
@@ -436,6 +446,10 @@ export const usePaymentsApi = (
             return formatFullBillingAddress(response);
         };
 
+        const getCachedCheck = (data: CheckSubscriptionData) => {
+            return multiCheckCache.get(data, undefined);
+        };
+
         return {
             checkWithAutomaticVersion,
             multiCheck,
@@ -445,6 +459,8 @@ export const usePaymentsApi = (
             updateFullBillingAddress,
             updateInvoiceBillingAddress,
             getInvoiceBillingAddress,
+            cachedCheck,
+            getCachedCheck,
         };
     };
 
@@ -467,7 +483,7 @@ export const usePaymentsApiWithCheckFallback = () => {
     const [subscription] = useSubscription();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
-    const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionCheckResponse | null => {
+    const checkV5Fallback = (data: CheckSubscriptionData): EnrichedCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
 
         const samePlan = isSubscriptionUnchanged(subscription, Plans, Cycle);
@@ -482,7 +498,7 @@ export const usePaymentsApiWithCheckFallback = () => {
 
         const amount = plansMap[planName]?.Pricing?.[Cycle] ?? 0;
 
-        const result: SubscriptionCheckResponse & { __fallback: true } = {
+        const result: EnrichedCheckResponse & { __fallback: true } = {
             Cycle,
             Currency,
             Amount: amount,
@@ -493,6 +509,7 @@ export const usePaymentsApiWithCheckFallback = () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             __fallback: true,
+            requestData: data,
         };
 
         return result;
