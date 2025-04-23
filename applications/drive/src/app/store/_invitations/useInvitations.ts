@@ -45,7 +45,6 @@ import { useLink } from '../_links';
 import {
     type ShareInvitationDetails,
     type ShareInvitationEmailDetails,
-    useDefaultShare,
     useDriveSharingFlags,
     useShare,
 } from '../_shares';
@@ -64,7 +63,6 @@ export const useInvitations = () => {
     const { isSharingExternalInviteDisabled } = useDriveSharingFlags();
     const { getShareCreatorKeys, getShareSessionKey } = useShare();
     const { getLink, getLinkPrivateKey } = useLink();
-    const { getDefaultShare } = useDefaultShare();
     const invitationsState = useInvitationsState();
 
     const decryptInvitationLinkName = async (
@@ -393,9 +391,13 @@ export const useInvitations = () => {
         abortSignal: AbortSignal,
         {
             linkId,
+            contextShareId,
+            volumeId,
             externalInvitationId,
         }: {
             linkId: string;
+            contextShareId: string;
+            volumeId: string;
             externalInvitationId: string;
         }
     ) => {
@@ -406,7 +408,6 @@ export const useInvitations = () => {
             error.name = EXTERNAL_INVITATIONS_ERROR_NAMES.DISABLED;
             throw error;
         }
-        const { shareId: contextShareId, volumeId } = await getDefaultShare();
 
         // TODO: Using default share will not work for invitations to items
         // from other shares (Photos / Devices).

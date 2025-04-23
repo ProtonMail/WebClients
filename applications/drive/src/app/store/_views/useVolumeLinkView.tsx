@@ -5,6 +5,7 @@ import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { sendErrorReport } from '../../utils/errorHandling';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useInvitationsActions } from '../_actions';
 import { useDebouncedRequest } from '../_api';
 import { EXTERNAL_INVITATIONS_ERROR_NAMES, useInvitations } from '../_invitations';
@@ -110,13 +111,26 @@ export const useVolumeLinkView = () => {
         abortSignal: AbortSignal,
         {
             externalInvitationId,
+            volumeId,
             linkId,
         }: {
             externalInvitationId: string;
+            volumeId: string;
             linkId: string;
         }
     ) => {
+        const link = await getContextShareLinkDetails(abortSignal, { volumeId, linkId });
+        if (!link.shareId) {
+            throw new EnrichedError('No share found for given invitation', {
+                tags: {
+                    volumeId,
+                    linkId,
+                },
+            });
+        }
         return convertExternalInvitation(abortSignal, {
+            contextShareId: link.shareId,
+            volumeId,
             externalInvitationId,
             linkId,
         })
