@@ -120,7 +120,13 @@ function useAlbumsActions() {
             )
         );
 
-        await events.pollEvents.volumes(volumeId);
+        // Usually, every event requires polling for events to be triggered
+        // to update local cache. We can avoid this for albums as it is always
+        // redirected to the album page after creation and added to the cache
+        // manually.
+        // If creation is ever used differently, following line needs to be
+        // uncommented.
+        //await events.pollEvents.volumes(volumeId);
 
         return Album.Link.LinkID;
     };
