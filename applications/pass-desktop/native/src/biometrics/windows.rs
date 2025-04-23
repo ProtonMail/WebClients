@@ -78,7 +78,7 @@ impl super::BiometricsTrait for Biometrics {
         Ok([key_b64, iv_b64])
     }
 
-    fn check_presence(handle: Vec<u8>, reason: String) -> Result<bool> {
+    fn check_presence(handle: Vec<u8>, reason: String) -> Result<()> {
         let h = isize::from_le_bytes(handle.clone().try_into().unwrap());
         let window = HWND(h);
 
@@ -88,8 +88,14 @@ impl super::BiometricsTrait for Biometrics {
         let result = operation.get()?;
 
         match result {
-            UserConsentVerificationResult::Verified => Ok(true),
-            _ => Ok(false),
+            UserConsentVerificationResult::Verified => Ok(),
+            UserConsentVerificationResult::DeviceBusy => Err("Authentication device is busy."),
+            UserConsentVerificationResult::DeviceNotPresent => Err("No authentication device found."),
+            UserConsentVerificationResult::DisabledByPolicy => Err("Authentication device is disabled by policy."),
+            UserConsentVerificationResult::NotConfiguredForUser => Err("No authentication device configured."),
+            UserConsentVerificationResult::Canceled => Err("Authentication cancelled."),
+            UserConsentVerificationResult::RetriesExhausted => Err("There have been too many failed attempts."),
+            _ => Err("Biometric authentication failed."),
         }
     }
 
