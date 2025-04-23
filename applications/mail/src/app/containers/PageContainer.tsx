@@ -4,26 +4,19 @@ import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { Breakpoints } from '@proton/components';
-import { MailShortcutsModal, useModalState, useOpenDrawerOnLoad } from '@proton/components';
+import { MailShortcutsModal, useModalState } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { HUMAN_TO_LABEL_IDS } from '@proton/shared/lib/mail/constants';
 
 import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
-import useComposerEvent from 'proton-mail/hooks/useComposerEvent';
 import useMailModel from 'proton-mail/hooks/useMailModel';
-import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
+import { useAppShellSideEffects } from 'proton-mail/router/sideEffects/useAppShellSideEffects';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
 import type { MailUrlParams } from '../helpers/mailboxUrl';
-import { useContactsListener } from '../hooks/contact/useContactsListener';
-import { useConversationsEvent } from '../hooks/events/useConversationsEvents';
-import { useMessagesEvents } from '../hooks/events/useMessagesEvents';
-import useIncomingDefaultsEvents from '../hooks/incomingDefaults/useIncomingDefaultsEvents';
-import useIncomingDefaultsLoad from '../hooks/incomingDefaults/useIncomingDefaultsLoad';
-import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import MailStartupModals from './MailStartupModals';
 import MailboxContainer from './mailbox/MailboxContainer';
@@ -38,25 +31,10 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     const mailSettings = useMailModel('MailSettings');
     const [mailShortcutsProps, setMailShortcutsModalOpen, renderMailShortcutsModal] = useModalState();
 
-    useOpenDrawerOnLoad();
-
-    useContactsListener();
-    useConversationsEvent();
-    useMessagesEvents();
-
-    useMailPTTMetric();
-
     /**
-     * Incoming defaults
-     * - cache loading
-     * - events subscription
+     * Temporary: Page container side effects
      */
-    useIncomingDefaultsLoad();
-    useIncomingDefaultsEvents();
-
-    useComposerEvent();
-
-    usePageHotkeys({ onOpenShortcutsModal: () => setMailShortcutsModalOpen(true) });
+    useAppShellSideEffects({ openShortcutsModal: (value: boolean) => setMailShortcutsModalOpen(value) });
 
     if (!labelID) {
         return <Redirect to="/inbox" />;
