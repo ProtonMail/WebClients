@@ -15,11 +15,9 @@ import {
 import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
-import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
-import { getOrganization } from '../../public/organization';
-import { ProductDisallowedError, getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
+import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
+import { getProductDisabledLoginResult } from '../actions/getProductDisabledResult';
 import type { LoginResult } from '../actions/interface';
 import type { Paths } from '../helper';
 
@@ -77,30 +75,15 @@ export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths 
 
             return { type: 'login', payload: loginResult };
         } catch (e: any) {
-            const { code, message } = getApiError(e);
+            const { code } = getApiError(e);
             if (
                 [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
                     (errorCode) => errorCode === code
-                ) ||
-                e instanceof ProductDisallowedError
+                )
             ) {
-                const organization = await getOrganization({ session, api }).catch(noop);
-                const appSwitcherState: AppSwitcherState = {
-                    session: { ...session, data: { ...session.data, Organization: organization } },
-                    error: {
-                        type: 'unsupported-app',
-                        app: forkParameters.app,
-                        message,
-                    },
-                };
-
                 return {
                     type: 'login',
-                    payload: {
-                        type: 'app-switcher',
-                        location: { pathname: paths.appSwitcher },
-                        payload: appSwitcherState,
-                    },
+                    payload: await getProductDisabledLoginResult({ app: forkParameters.app, session, paths, api }),
                 };
             }
             throw e;
