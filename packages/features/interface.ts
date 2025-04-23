@@ -40,7 +40,6 @@ export enum FeatureCode {
     CalendarEventColorSpotlight = 'CalendarEventColorSpotlight',
     CalendarVideoConferenceSpotlight = 'CalendarVideoConferenceSpotlight',
     CalendarRsvpNoteSpotlight = 'CalendarRsvpNoteSpotlight',
-    CleanUTMTrackers = 'CleanUTMTrackers',
     ComposerAssistantSpotlight = 'ComposerAssistantSpotlight',
     ComposerAssistantInitialSetup = 'ComposerAssistantInitialSetup',
     ComposerAssistantTrialStartDate = 'ComposerAssistantTrialStartDate',
