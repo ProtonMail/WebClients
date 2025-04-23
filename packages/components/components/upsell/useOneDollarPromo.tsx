@@ -6,9 +6,16 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, getPlanByName, isMainCurrency } from '@proton/payments';
+import {
+    COUPON_CODES,
+    CYCLE,
+    PLANS,
+    PLAN_NAMES,
+    getPlanByName,
+    getPricePerCycle,
+    isMainCurrency,
+} from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import { PriceCoupon, PriceLine } from './OneDollarPromoComponents';

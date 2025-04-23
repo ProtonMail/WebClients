@@ -27,14 +27,16 @@ import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons';
 import {
     CYCLE,
+    FREE_PLAN,
     type FreePlanDefault,
     PLANS,
     PLAN_NAMES,
     type Plan,
     getPlanByName,
     getPlansMap,
+    getPricePerCycle,
+    getSubscriptionPlanTitleAndName,
 } from '@proton/payments';
-import { getSubscriptionPlanTitleAndName } from '@proton/payments';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -46,9 +48,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
 import ProductLink from '../../app/ProductLink';

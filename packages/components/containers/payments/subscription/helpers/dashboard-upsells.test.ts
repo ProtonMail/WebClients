@@ -1,6 +1,5 @@
-import { COUPON_CODES, CYCLE, PLANS, PLAN_TYPES, type Subscription, getPlansMap } from '@proton/payments';
+import { COUPON_CODES, CYCLE, FREE_PLAN, PLANS, PLAN_TYPES, type Subscription, getPlansMap } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { buildUser } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';
 
@@ -287,7 +286,7 @@ describe('resolveUpsellsToDisplay', () => {
 
     describe('Unlimited', () => {
         it('should return Family upsell', () => {
-            const [upsell] = resolveUpsellsToDisplay({
+            const upsells = resolveUpsellsToDisplay({
                 ...base,
                 isFree: false,
                 hasPaidMail: true,
@@ -301,6 +300,7 @@ describe('resolveUpsellsToDisplay', () => {
                 } as Subscription,
             });
 
+            const upsell = upsells[0];
             expect(upsell).toMatchObject(familyUpsell);
 
             upsell.onUpgrade();
@@ -365,7 +365,7 @@ describe('resolveUpsellsToDisplay', () => {
 
     describe('Duo', () => {
         it('should return Family upsell', () => {
-            const [upsell] = resolveUpsellsToDisplay({
+            const upsells = resolveUpsellsToDisplay({
                 ...base,
                 isFree: false,
                 hasPaidMail: true,
@@ -379,6 +379,7 @@ describe('resolveUpsellsToDisplay', () => {
                 } as Subscription,
             });
 
+            const upsell = upsells[0];
             expect(upsell).toMatchObject(familyUpsell);
 
             upsell.onUpgrade();
@@ -443,7 +444,7 @@ describe('resolveUpsellsToDisplay', () => {
 
     describe('Essentials', () => {
         it('should return Mail Business upsell', () => {
-            const [upsell] = resolveUpsellsToDisplay({
+            const upsells = resolveUpsellsToDisplay({
                 ...base,
                 isFree: false,
                 hasPaidMail: true,
@@ -457,6 +458,7 @@ describe('resolveUpsellsToDisplay', () => {
                 } as Subscription,
             });
 
+            const upsell = upsells[0];
             expect(upsell).toMatchObject(mailProfessionalUpsell);
 
             upsell.onUpgrade();
@@ -475,12 +477,13 @@ describe('resolveUpsellsToDisplay', () => {
 
     describe('Free Drive', () => {
         it('should return Drive upsell', () => {
-            const [upsell] = resolveUpsellsToDisplay({
+            const upsells = resolveUpsellsToDisplay({
                 ...base,
                 app: APPS.PROTONDRIVE,
                 isFree: true,
             });
 
+            const upsell = upsells[0];
             expect(upsell).toMatchObject(drivePlusUpsell);
 
             upsell.onUpgrade();
@@ -500,12 +503,13 @@ describe('resolveUpsellsToDisplay', () => {
 
     describe('Free Pass', () => {
         it('should return Pass upsell', () => {
-            const [upsell] = resolveUpsellsToDisplay({
+            const upsells = resolveUpsellsToDisplay({
                 ...base,
                 app: APPS.PROTONPASS,
                 isFree: true,
             });
 
+            const upsell = upsells[0];
             expect(upsell).toMatchObject(passPlusUpsell);
 
             upsell.onUpgrade();
@@ -539,7 +543,8 @@ describe('resolveUpsellsToDisplay', () => {
                 isFree: false,
             });
 
-            const [upsell1, upsell2] = upsells;
+            const upsell1 = upsells[0];
+            const upsell2 = upsells[1];
 
             expect(upsell1).toMatchObject(vpnBusinessUpsell);
 
@@ -568,7 +573,7 @@ describe('resolveUpsellsToDisplay', () => {
 
     describe('VPN Business', () => {
         it('should return VPN Enterprise and bundle pro upsells', () => {
-            const [upsell1, upsell2] = resolveUpsellsToDisplay({
+            const upsells = resolveUpsellsToDisplay({
                 ...base,
                 subscription: {
                     Plans: [
@@ -582,6 +587,7 @@ describe('resolveUpsellsToDisplay', () => {
                 isFree: false,
             });
 
+            const upsell1 = upsells[0];
             expect(upsell1).toMatchObject(vpnEnterpriseUpsell);
             expect(upsell1.ignoreDefaultCta).toEqual(true);
             expect(upsell1.otherCtas).toHaveLength(1);
@@ -589,6 +595,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsell1.onUpgrade();
             expect(mockedOpenSubscriptionModal).not.toHaveBeenCalled();
 
+            const upsell2 = upsells[1];
             expect(upsell2).toMatchObject(bundle2024Upsell);
             expect(upsell2.otherCtas).toHaveLength(0);
 

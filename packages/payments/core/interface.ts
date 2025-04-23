@@ -16,9 +16,10 @@ import type {
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
-import type { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 
+import type { PaymentsVersion } from './api';
+import { type CheckSubscriptionData } from './api';
 import { type FullBillingAddress } from './billing-address';
 import type {
     ADDON_NAMES,
@@ -325,17 +326,16 @@ export interface PaymentsApi {
         data: CheckSubscriptionData,
         requestOptions?: RequestOptions,
         options?: CheckWithAutomaticOptions
-    ) => Promise<SubscriptionCheckResponse>;
+    ) => Promise<EnrichedCheckResponse>;
 
-    multiCheck: (
-        data: MultiCheckSubscriptionData[],
-        options?: MultiCheckOptions
-    ) => Promise<SubscriptionCheckResponse[]>;
+    multiCheck: (data: MultiCheckSubscriptionData[], options?: MultiCheckOptions) => Promise<EnrichedCheckResponse[]>;
+
+    cachedCheck: (data: CheckSubscriptionData) => Promise<EnrichedCheckResponse>;
 
     cacheMultiCheck: (
         data: CheckSubscriptionData,
         options: CheckWithAutomaticOptions | undefined,
-        result: SubscriptionCheckResponse
+        result: EnrichedCheckResponse
     ) => void;
 
     statusExtendedAutomatic: () => Promise<PaymentMethodStatusExtended>;
@@ -344,6 +344,7 @@ export interface PaymentsApi {
     updateFullBillingAddress: (fullBillingAddress: FullBillingAddress) => Promise<void>;
     updateInvoiceBillingAddress: (invoiceId: string, fullBillingAddress: FullBillingAddress) => Promise<void>;
     getInvoiceBillingAddress: (invoiceId: string) => Promise<FullBillingAddress>;
+    getCachedCheck: (data: CheckSubscriptionData) => EnrichedCheckResponse | undefined;
 }
 
 export type ChargebeeKillSwitchData = {

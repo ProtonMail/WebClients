@@ -6,14 +6,22 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
-import { type Currency, PAYMENT_METHOD_TYPES, PLANS, type Plan, getPlansMap } from '@proton/payments';
-import { type CheckSubscriptionData, createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
+import {
+    type Currency,
+    FREE_PLAN,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    type Plan,
+    getPlansMap,
+    type CheckSubscriptionData,
+    subscribe,
+    createTokenV4,
+} from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { renderWithProviders } from '@proton/testing';
+import { renderWithProviders, withPaymentContext } from '@proton/testing';
 import { addApiMock, apiMock, applyHOCs, withDeprecatedModals, withReduxStore } from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
 import { getLongTestPlans } from '@proton/testing/data';
@@ -39,7 +47,8 @@ const ContextSubscriptionContainer = applyHOCs(
     withReduxStore({
         user: buildUser({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
     }),
-    withDeprecatedModals()
+    withDeprecatedModals(),
+    withPaymentContext()
 )(SubscriptionContainer);
 
 function mockCheckResult(checkData: Partial<SubscriptionCheckResponse> = {}) {

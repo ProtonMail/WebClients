@@ -6,33 +6,31 @@ import { c, msgid } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import {
     ADDON_NAMES,
+    type AddonGuard,
     AddonKey,
     AddonLimit,
     type Currency,
     type Cycle,
     type FreeSubscription,
+    MAX_MEMBER_PASS_PRO_ADDON,
+    MIN_MEMBER_PASS_B2B_ADDON,
     type Plan,
     type PlanIDs,
     Renew,
     SelectedPlan,
     type Subscription,
-    isFreeSubscription,
-} from '@proton/payments';
-import { MAX_MEMBER_PASS_PRO_ADDON, MIN_MEMBER_PASS_B2B_ADDON } from '@proton/payments/core/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
-import {
+    type SupportedAddons,
     getSupportedAddons,
     isDomainAddon,
     isDriveOrgSizeAddon,
+    isFreeSubscription,
     isIpAddon,
     isLumoAddon,
     isMemberAddon,
     isOrgSizeAddon,
     isPassOrgSizeAddon,
     isScribeAddon,
-} from '@proton/shared/lib/helpers/addons';
-import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
+} from '@proton/payments';
 import {
     getAddonMultiplier,
     getHasPassB2BPlan,
@@ -41,7 +39,9 @@ import {
     hasBundlePro,
     hasBundlePro2024,
     hasVpnBusiness,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';

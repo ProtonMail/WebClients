@@ -13,28 +13,30 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import {
+    FREE_PLAN,
+    type FeedbackDowngradeData,
     type PLANS,
+    type PaymentsVersion,
     Renew,
     type Subscription,
+    changeRenewState,
+    deleteSubscription,
+    getPlan,
     isFreeSubscription,
     isSplittedUser,
     onSessionMigrationPaymentsVersion,
 } from '@proton/payments';
-import type { FeedbackDowngradeData, PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import { APPS } from '@proton/shared/lib/constants';
-import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import {
-    getPlan,
     getPlanName,
     hasCancellablePlan,
     hasMigrationDiscount,
     hasPassLaunchOffer,
     isManagedExternally,
-} from '@proton/shared/lib/helpers/subscription';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+} from '@proton/payments';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
+import { APPS } from '@proton/shared/lib/constants';
+import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 

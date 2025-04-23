@@ -3,15 +3,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { type Subscription } from '@proton/payments';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsCustomCycle,
     hasMaximumCycle,
     hasVPNPassBundle,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 

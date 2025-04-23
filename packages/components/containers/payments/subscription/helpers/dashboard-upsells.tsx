@@ -1,9 +1,10 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
 import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import useLoading from '@proton/hooks/useLoading';
 import {
     CYCLE,
     type Currency,
@@ -13,23 +14,11 @@ import {
     PLANS,
     type Plan,
     type Subscription,
-} from '@proton/payments';
-import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import {
-    APPS,
-    BRAND_NAME,
-    DASHBOARD_UPSELL_PATHS,
-    DUO_MAX_USERS,
-    FAMILY_MAX_USERS,
-    FREE_VPN_CONNECTIONS,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-import {
-    getHasConsumerVpnPlan,
     getIsB2BAudienceFromPlan,
     getPricePerCycle,
+} from '@proton/payments';
+import {
+    getHasConsumerVpnPlan,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
@@ -46,7 +35,20 @@ import {
     hasVpnPro,
     hasWallet,
     isTrial,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import { type PreloadedPaymentsContextType, getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    BRAND_NAME,
+    DASHBOARD_UPSELL_PATHS,
+    DUO_MAX_USERS,
+    FAMILY_MAX_USERS,
+    FREE_VPN_CONNECTIONS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -162,6 +164,8 @@ export interface Upsell {
      */
     ignoreDefaultCta?: boolean;
     customCycle?: CYCLE;
+    cycle?: CYCLE;
+    initializeOfferPrice?: (paymentsContext: PreloadedPaymentsContextType) => Promise<unknown>;
 }
 
 export type MaybeUpsell = Upsell | null;
@@ -241,6 +245,15 @@ export const getUpsell = ({
 
     const cycle = allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
 
+    const initializeOfferPrice = async (paymentsContext: PreloadedPaymentsContextType) => {
+        const planToCheck = getPlanToCheck({ planIDs: { [plan]: 1 }, cycle, currency });
+        if (!planToCheck.coupon) {
+            return;
+        }
+
+        return paymentsContext.checkMultiplePlans([planToCheck]);
+    };
+
     return {
         app,
         plan,
@@ -253,8 +266,10 @@ export const getUpsell = ({
         otherCtas: [],
         currency,
         customCycle,
+        cycle,
         ...upsellFields,
         onUpgrade: () => upsellFields.onUpgrade?.(cycle),
+        initializeOfferPrice,
     };
 };
 
@@ -340,6 +355,7 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlan
                 },
                 telemetryFlow: rest.telemetryFlow,
             }),
+        customCycle: CYCLE.TWO_YEARS,
         ...rest,
     });
 };
@@ -702,19 +718,7 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
     );
 };
 
-export const resolveUpsellsToDisplay = ({
-    app,
-    subscription,
-    plansMap,
-    serversCount,
-    freePlan,
-    canPay,
-    isFree,
-    canAccessDuoPlan,
-    user,
-    telemetryFlow,
-    ...rest
-}: {
+type ResolveUpsellsToDisplayProps = {
     app: APP_NAMES;
     subscription?: Subscription;
     plansMap: FullPlansMap;
@@ -727,7 +731,21 @@ export const resolveUpsellsToDisplay = ({
     canAccessDuoPlan?: boolean;
     user: UserModel;
     telemetryFlow: TelemetryPaymentFlow;
-}): Upsell[] => {
+};
+
+export const resolveUpsellsToDisplay = ({
+    app,
+    subscription,
+    plansMap,
+    serversCount,
+    freePlan,
+    canPay,
+    isFree,
+    canAccessDuoPlan,
+    user,
+    telemetryFlow,
+    ...rest
+}: ResolveUpsellsToDisplayProps) => {
     const resolve = () => {
         if (!canPay || !subscription) {
             return [];
@@ -821,4 +839,30 @@ export const resolveUpsellsToDisplay = ({
     };
 
     return resolve().filter((maybeUpsell): maybeUpsell is Upsell => isTruthy(maybeUpsell));
+};
+
+export const useUpsellsToDisplay = (
+    props: ResolveUpsellsToDisplayProps
+): {
+    upsells: Upsell[];
+    loading: boolean;
+} => {
+    const payments = usePaymentsPreloaded();
+    const [loading, withLoading] = useLoading(true);
+
+    const upsells = resolveUpsellsToDisplay(props);
+    const key = upsells.map((upsell) => upsell.planKey).join('-');
+    useEffect(() => {
+        if (!payments.hasEssentialData) {
+            return;
+        }
+
+        const promises = upsells.map((upsell) => upsell?.initializeOfferPrice?.(payments)).filter(isTruthy);
+        withLoading(Promise.all(promises)).catch(noop);
+    }, [key, payments.hasEssentialData]);
+
+    return {
+        upsells,
+        loading: loading,
+    };
 };

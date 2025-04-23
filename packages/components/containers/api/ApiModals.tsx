@@ -1,6 +1,5 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 
-import { UNPAID_STATE } from '@proton/payments';
 import type {
     ApiListenerCallback,
     ApiMissingScopeEvent,
@@ -8,6 +7,7 @@ import type {
     ApiWithListener,
 } from '@proton/shared/lib/api/createApi';
 import { queryUnlock } from '@proton/shared/lib/api/user';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 

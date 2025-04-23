@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { UNPAID_STATE } from '@proton/payments';
 import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
 
 import TopBanner from './TopBanner';
 

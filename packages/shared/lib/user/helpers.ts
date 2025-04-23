@@ -1,11 +1,10 @@
 import { addMinutes, fromUnixTime } from 'date-fns';
 
-import { UNPAID_STATE } from '@proton/payments';
-
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
 import type { User, UserInfo } from '../interfaces';
+import { UNPAID_STATE } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 

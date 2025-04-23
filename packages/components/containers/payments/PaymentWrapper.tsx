@@ -22,7 +22,6 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
 };
 
 const PaymentWrapper = ({
-    card,
     flow,
     methods,
     amount,
@@ -62,13 +61,10 @@ const PaymentWrapper = ({
             method={methods.selectedMethod?.value}
             amount={amount}
             currency={currency}
-            card={card.card}
             onMethod={(value) => {
                 methods.selectMethod(value);
                 onMethod?.(value);
             }}
-            onCard={card.setCardProperty}
-            cardErrors={card.errors}
             paypal={paypal}
             paypalCredit={paypalCredit}
             lastUsedMethod={methods.lastUsedMethod}
@@ -81,7 +77,6 @@ const PaymentWrapper = ({
             onPaypalCreditClick={onPaypalCreditClick}
             triggersDisabled={triggersDisabled}
             hideFirstLabel={hideFirstLabel}
-            cardFieldStatus={card.fieldsStatus}
             hideSavedMethodsDetails={hideSavedMethodsDetails}
             disabled={disabled}
             defaultMethod={defaultMethod}
