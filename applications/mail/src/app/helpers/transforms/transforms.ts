@@ -41,16 +41,13 @@ export const prepareHtml = async (
     onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
     onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
-    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void,
-    canCleanUTMTrackersFeature: boolean
+    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void
 ): Promise<Preparation> => {
     const document = transformEscape(message.decryption?.decryptedBody, base64Cache);
 
-    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings.ImageProxy || false);
-
     transformBase(document);
 
-    transformLinks(document, onCleanUTMTrackers, canCleanUTMTrackers);
+    transformLinks(document, onCleanUTMTrackers, !!mailSettings.ImageProxy);
 
     transformAnchors(document);
 
@@ -91,12 +88,11 @@ export const preparePlainText = async (
     body: string,
     isDraft: boolean,
     mailSettings: MailSettings = DEFAULT_MAILSETTINGS,
-    canCleanUTMTrackersFeature?: boolean,
     onCleanUTMTrackers?: (utmTrackers: MessageUTMTracker[]) => void
 ): Promise<Preparation> => {
-    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings.ImageProxy || false);
-
-    const plainText = isDraft ? body : transformLinkify({ content: body, canCleanUTMTrackers, onCleanUTMTrackers });
+    const plainText = isDraft
+        ? body
+        : transformLinkify({ content: body, canCleanUTMTrackers: !!mailSettings.ImageProxy, onCleanUTMTrackers });
 
     return { plainText };
 };

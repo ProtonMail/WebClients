@@ -18,13 +18,8 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
     const anchorRef = useRef(null);
     const sent = isSent(message.data);
 
-    const {
-        numberOfImageTrackers,
-        numberOfUTMTrackers,
-        needsMoreProtection,
-        imageTrackersLoaded,
-        canCleanUTMTrackers,
-    } = useMessageTrackers(message);
+    const { numberOfImageTrackers, numberOfUTMTrackers, needsMoreProtection, imageTrackersLoaded } =
+        useMessageTrackers(message);
 
     const trackerText = needsMoreProtection ? (
         <span>{c('Info').t`Email tracker protection is disabled`}</span>
@@ -34,12 +29,10 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
                 <span className="text-left">{c('Info').t`Trackers blocked:`}</span>
                 <span className="pl-4 text-tabular-nums">{numberOfImageTrackers}</span>
             </div>
-            {canCleanUTMTrackers && (
-                <div className="flex flex-nowrap justify-space-between">
-                    <span className="text-left">{c('Info').t`Links cleaned:`}</span>
-                    <span className="pl-4 text-tabular-nums">{numberOfUTMTrackers}</span>
-                </div>
-            )}
+            <div className="flex flex-nowrap justify-space-between">
+                <span className="text-left">{c('Info').t`Links cleaned:`}</span>
+                <span className="pl-4 text-tabular-nums">{numberOfUTMTrackers}</span>
+            </div>
         </>
     );
 
