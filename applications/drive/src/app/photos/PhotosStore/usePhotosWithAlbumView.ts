@@ -73,6 +73,7 @@ export const usePhotosWithAlbumsView = () => {
         loadSharedWithMeAlbums,
         addAlbumPhotos,
         loadAlbumPhotos,
+        removeAlbumsFromCache,
         removePhotosFromCache,
         updateAlbumsFromCache,
         addPhotoAsCover,
@@ -99,6 +100,49 @@ export const usePhotosWithAlbumsView = () => {
     const cache = useMemo(() => {
         return shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
     }, [shareId, linkId, abortSignal, getCachedChildren]);
+
+    const isAlbumsReloadNeeded = useRef(false);
+    if (shareId && linkId && !isAlbumsReloadNeeded.current && !isAlbumsLoading) {
+        // Last parameter is to return only folders.
+        // Drive codebase doesn't understand well concept of photo or album.
+        // But isFile on Link object is always false for albums, because
+        // it is true specifically if the node is type of file, which album
+        // isn't.
+        // share and link ids are photo share and phoro root link ids.
+        // Thus, we are getting all cached folders (albums) in the photo share.
+        // Albums are not nested, thus this simple logic works.
+        const cachedFolders = getCachedChildren(abortSignal, shareId, linkId, true);
+
+        // If there are some albums that are being decrypted, we skip the
+        // operation and wait for next render, to avoid race-condition to
+        // access cache and cause double decryption.
+        if (!cachedFolders.isDecrypting) {
+            const cachedFolderIds = new Set(cachedFolders.links.map(({ linkId }) => linkId));
+            const albumIds = new Set(albums.keys());
+
+            // If there are more albums in the cache than in the loaded
+            // albums set, that means some other client has created albums
+            // and it was added by events. Now we need to re-load albums
+            // to display them in the UI.
+            // Easier would be to just re-load one album, or use the cached
+            // folders, but that doesn't include cover etc. and there is no
+            // way to fetch only one album.
+            // Not perfect, but this is not happening often, thus good enough
+            // for now.
+            const extraCachedFolderIds = cachedFolderIds.difference(albumIds);
+            if (extraCachedFolderIds.size > 0) {
+                isAlbumsReloadNeeded.current = true;
+                void loadAlbums(new AbortController().signal).finally(() => {
+                    isAlbumsReloadNeeded.current = false;
+                });
+            }
+
+            const deletedFolderIds = albumIds.difference(cachedFolderIds);
+            if (deletedFolderIds.size > 0) {
+                removeAlbumsFromCache(deletedFolderIds);
+            }
+        }
+    }
 
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
     const cachedAlbums =
