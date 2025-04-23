@@ -114,6 +114,7 @@ export const AddAlbumPhotosModal = ({
         setActiveAlbumId(linkId);
         await onAddAlbumPhotos(linkId, photosLinkIds);
         setActiveAlbumId(undefined);
+        openModal(false);
     };
 
     return (
