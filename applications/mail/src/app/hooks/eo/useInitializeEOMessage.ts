@@ -119,8 +119,7 @@ export const useInitializeEOMessage = () => {
                       noop,
                       noop,
                       handleEOLoadRemoteImages,
-                      noop,
-                      false
+                      noop
                   );
 
             if (!isPlainText({ MIMEType })) {
