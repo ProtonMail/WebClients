@@ -13,6 +13,7 @@ import {
     useNotifications,
 } from '@proton/components';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -85,6 +86,7 @@ export const PhotosLayout = () => {
         userAddressEmail,
         isAlbumsLoading,
         isPhotosLoading,
+        handleSelectTag,
     } = photosView;
 
     const { currentPageType, previewLinkId, setPageType, setPreviewLinkId, setLayoutModals } = usePhotoLayoutStore(
@@ -539,8 +541,11 @@ export const PhotosLayout = () => {
     }, [setLayoutModals, showLinkSharingModal, showDeleteAlbumModal, createAlbumModal]);
 
     useEffect(() => {
+        const abortController = new AbortController();
         // Clear selection upon navigation
         clearSelection();
+        // Clear tag selection
+        void handleSelectTag(abortController.signal, [PhotoTag.All]);
         // Set correct page type
         if (pathname.includes('albums') && !pathname.includes('album/')) {
             setPageType(AlbumsPageTypes.ALBUMS);
@@ -551,7 +556,11 @@ export const PhotosLayout = () => {
         } else {
             setPageType(AlbumsPageTypes.GALLERY);
         }
-    }, [pathname, setPageType, clearSelection]);
+
+        return () => {
+            abortController.abort();
+        };
+    }, [pathname, setPageType, clearSelection, handleSelectTag]);
 
     if (!previewShareId || !uploadLinkId || !currentPageType) {
         return <Loader />;
