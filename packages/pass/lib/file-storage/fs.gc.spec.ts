@@ -101,8 +101,7 @@ describe('FileStorageGarbageCollector', () => {
 
     test('should clear local queue and delete all queued files', async () => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(['file1.txt', 'file2.txt']));
-
-        await gc.clearLocalQueue();
+        await gc.clearQueue();
 
         expect(fs.deleteFile).toHaveBeenCalledWith('file1.txt');
         expect(fs.deleteFile).toHaveBeenCalledWith('file2.txt');
@@ -131,7 +130,7 @@ describe('FileStorageGarbageCollector', () => {
 
     test('should handle corrupt data in local queue', async () => {
         localStorage.setItem(STORAGE_KEY, 'invalid-json');
-        await gc.clearLocalQueue();
+        await gc.clearQueue();
         expect(setItem).toHaveBeenCalledWith(STORAGE_KEY, JSON.stringify([]));
     });
 });
