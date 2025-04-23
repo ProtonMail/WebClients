@@ -62,11 +62,6 @@ export interface ElementsState {
     page: number;
 
     /**
-     * Current page size
-     */
-    pageSize: MAIL_PAGE_SIZE;
-
-    /**
      * List of pages number currently in the cache, per "context filter"
      */
     pages: SimpleMap<number[]>;
@@ -142,6 +137,7 @@ export interface ESResults {
     page: number;
     elements: Element[];
     params: ElementsStateParams;
+    pageSize: MAIL_PAGE_SIZE;
 }
 
 export interface OptimisticUpdates {
