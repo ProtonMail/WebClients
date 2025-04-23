@@ -1,14 +1,19 @@
+import { FileStorageGarbageCollector } from './fs.gc';
 import { FileStorageMemory, MemoryWritableStream } from './fs.memory';
 import { createMockBlob, createMockReadableStream } from './testing';
 
 describe('FileStorageMemory', () => {
-    const fs = new FileStorageMemory();
-
     jest.useFakeTimers();
 
+    let fs: FileStorageMemory;
+
     beforeEach(() => {
-        jest.clearAllMocks();
+        fs = new FileStorageMemory();
         void fs.clearAll();
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
     });
 
     describe('`MemoryWritableStream`', () => {
@@ -138,6 +143,31 @@ describe('FileStorageMemory', () => {
 
             expect(await fs.readFile('file1')).toBeUndefined();
             expect(await fs.readFile('file2')).toBeUndefined();
+        });
+    });
+
+    describe('Garbage collector', () => {
+        test('should automatically initialize garbage collector on creation', () => {
+            expect(fs.gc).toBeInstanceOf(FileStorageGarbageCollector);
+        });
+
+        test('should ignore `attachGarbageCollector` calls', () => {
+            const gc = fs.gc;
+            fs.attachGarbageCollector();
+            expect(fs.gc).toBe(gc);
+        });
+
+        test('should use garbage collector for file lifecycle management', async () => {
+            const { signal } = new AbortController();
+            const gc = fs.gc as FileStorageGarbageCollector;
+            const push = jest.spyOn(gc, 'push');
+            const pop = jest.spyOn(gc, 'pop');
+
+            await fs.writeFile('gc-test.txt', createMockBlob(10), signal);
+            expect(push).toHaveBeenCalledWith('gc-test.txt', { enqueueForDeletion: false });
+
+            await fs.deleteFile('gc-test.txt');
+            expect(pop).toHaveBeenCalledWith('gc-test.txt');
         });
     });
 });
