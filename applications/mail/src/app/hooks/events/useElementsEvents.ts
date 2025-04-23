@@ -26,7 +26,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
 
     // Listen to event manager and update the cache
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {
-        const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
+        const Elements: ElementEvent[] = [...Conversations, ...Messages];
 
         // If it's an encrypted search, its event manager will deal with the change
         if (isES) {
@@ -49,9 +49,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
         } = Elements.reduce<Pick<EventUpdates, 'toCreate' | 'toUpdate' | 'toDelete'>>(
             ({ toCreate, toUpdate, toDelete }, event) => {
                 const { ID, Action } = event;
-                const Element = conversationMode
-                    ? (event as ConversationEvent).Conversation
-                    : (event as MessageEvent).Message;
+                const Element = (event as ConversationEvent)?.Conversation || (event as MessageEvent)?.Message;
 
                 if (Action === EVENT_ACTIONS.CREATE) {
                     toCreate.push(Element as Element);
