@@ -1,6 +1,5 @@
 import { useOrganization } from '@proton/account/organization/hooks';
-
-import { deserializeAllowedProducts } from './allowedProductsSerialization';
+import { deserializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
 
 /**
  * Returns a set of the allowed applications configured by the org admin in the AccessControl page
@@ -8,7 +7,7 @@ import { deserializeAllowedProducts } from './allowedProductsSerialization';
 const useAllowedProducts = () => {
     const [organization, loadingOrganization] = useOrganization();
 
-    const allowedProducts = deserializeAllowedProducts(organization?.Settings?.AllowedProducts || ['All']);
+    const allowedProducts = deserializeAllowedProducts(organization?.Settings?.AllowedProducts);
 
     const loading = loadingOrganization;
 
