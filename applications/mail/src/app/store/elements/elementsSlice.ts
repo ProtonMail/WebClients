@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
@@ -28,7 +28,6 @@ import {
     reset,
     resetByPassFilter,
     retry,
-    setPageSize,
     setParams,
     showSerializedElements as showSerializedElementsAction,
     updatePage,
@@ -58,7 +57,6 @@ import {
     reset as resetReducer,
     retry as retryReducer,
     selectAllFulfilled,
-    setPageSize as setPageSizeReducer,
     setParams as setParamsReducer,
     showSerializedElements as showSerializedElementsReducer,
     updatePage as updatePageReducer,
@@ -67,7 +65,6 @@ import type { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInf
 
 export const newElementsState = ({
     page = 0,
-    pageSize = DEFAULT_MAIL_PAGE_SIZE,
     params = {},
     retry = { payload: null, count: 0, error: undefined },
     beforeFirstLoad = true,
@@ -92,7 +89,6 @@ export const newElementsState = ({
         pendingActions: 0,
         params: { ...defaultParams, ...params },
         page,
-        pageSize,
         total: {},
         elements: {},
         pages: {},
@@ -119,7 +115,6 @@ const elementsSlice = createSlice({
 
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
-        builder.addCase(setPageSize, setPageSizeReducer);
         builder.addCase(resetByPassFilter, resetByPassFilterReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
