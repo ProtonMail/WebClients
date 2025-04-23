@@ -25,7 +25,7 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const { feature: preloadedConversations } = useFeature<number>(FeatureCode.NumberOfPreloadedConversations);
     const { feature: electronPreloadAmount } = useFeature<number>(FeatureCode.ElectronConvPreloadAmount);
 
-    // We ensure that there is a value and that it does't impacts API calls
+    // We ensure that there is a value and that it doesn't impacts API calls
     const defaultPreload = preloadedConversations?.Value || 0;
     const electronPreload = electronPreloadAmount?.Value || 0;
 
@@ -48,7 +48,7 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
                             const resultAction = await dispatch(
                                 load({ silentFetch: true, conversationID: ID, messageID: undefined })
                             );
-                            const conversationResult = await unwrapResult(resultAction);
+                            const conversationResult = unwrapResult(resultAction);
                             const { Messages } = conversationResult;
                             const messageToExpand = findMessageToExpand(labelID, Messages);
 
