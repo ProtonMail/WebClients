@@ -181,10 +181,10 @@ export const newRetry = (retry: RetryData, payload: unknown, error: Error | unde
     return { payload, count, error };
 };
 
-export const queryElement = async (api: Api, conversationMode: boolean, elementID: string): Promise<Element> => {
-    const query = conversationMode ? getConversation : getMessage;
+export const queryElement = async (api: Api, messageMode: boolean, elementID: string): Promise<Element> => {
+    const query = messageMode ? getMessage : getConversation;
     const result: any = await api({ ...query(elementID), silence: true });
-    return conversationMode ? result.Conversation : result.Message;
+    return messageMode ? result.Message : result.Conversation;
 };
 
 export const refreshTaskRunningTimeout = (
