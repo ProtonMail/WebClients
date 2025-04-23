@@ -20,6 +20,7 @@ import { getOrganization } from '../../public/organization';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
+import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
 import type { LoginResult } from './interface';
 
 const getDefaultPath = (toApp: APP_NAMES) => {
@@ -203,18 +204,7 @@ export const getLoginResult = async ({
     ) {
         const blob =
             loginPassword && clientKey ? await getEncryptedSetupBlob(clientKey, loginPassword).catch(noop) : undefined;
-        const params = new URLSearchParams();
-        params.set('to', toApp);
-        params.set('from', 'switch');
-        const path = `${SETUP_ADDRESS_PATH}?${params.toString()}#${blob || ''}`;
-        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.localID));
-        return {
-            type: 'done',
-            payload: {
-                session,
-                url,
-            },
-        };
+        return getSetupAddressLoginResult({ app: toApp, session, blob });
     }
 
     // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
