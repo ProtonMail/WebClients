@@ -13,6 +13,7 @@ import MailHeader from 'proton-mail/components/header/MailHeader';
 import { ROUTE_LABEL } from 'proton-mail/constants';
 import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
+import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
 import { useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
 import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
@@ -46,6 +47,7 @@ export const RouterMailboxContainer = () => {
     useMailboxPageTitle(labelID);
     useMailboxFavicon(labelID);
     useInboxDesktopBadgeCount();
+    useNewEmailNotification(() => actions.handleCheckAll(false));
 
     const breakpoints = useActiveBreakpoint();
     const { columnMode } = useMailboxLayoutProvider();
