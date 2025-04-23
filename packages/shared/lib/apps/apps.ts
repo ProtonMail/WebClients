@@ -1,5 +1,5 @@
 import { APPS, type APP_NAMES, USER_ROLES } from '../constants';
-import { isElectronApp } from '../helpers/desktop';
+import { isElectronMail } from '../helpers/desktop';
 import type { OrganizationWithSettings, User } from '../interfaces';
 import { getIsGlobalSSOAccount, getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 import {
@@ -74,7 +74,7 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
         ]);
     }
 
-    if (isElectronApp) {
+    if (isElectronMail) {
         return new Set([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
     }
 
