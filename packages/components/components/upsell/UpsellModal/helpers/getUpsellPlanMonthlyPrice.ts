@@ -7,7 +7,7 @@ import {
     type PlanIDs,
     getPlanByName,
     isMainCurrency,
-} from '@proton/payments/index';
+} from '@proton/payments';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 
 export const getUpsellPlanMonthlyPrice = async ({
