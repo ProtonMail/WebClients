@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import type { COUPON_CODES, CYCLE, Currency, PaymentsApi, Plan, PlanIDs, Subscription } from '@proton/payments/index';
+import type { COUPON_CODES, CYCLE, Currency, PaymentsApi, Plan, PlanIDs, Subscription } from '@proton/payments';
 import type { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type useGetFlag from '@proton/unleash/useGetFlag';

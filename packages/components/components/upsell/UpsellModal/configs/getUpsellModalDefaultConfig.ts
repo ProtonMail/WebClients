@@ -1,5 +1,4 @@
-import type { PlanIDs } from '@proton/payments/index';
-import { CYCLE, PLANS } from '@proton/payments/index';
+import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
 
 import { getUpsellModalFooterText } from '../helpers/getUpsellModalFooterText';
 import { getUpsellModalSubmitText } from '../helpers/getUpsellModalSubmitText';
