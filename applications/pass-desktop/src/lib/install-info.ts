@@ -1,7 +1,6 @@
-import { ipcMain } from 'electron';
-
 import { store } from '../store';
 import logger from '../utils/logger';
+import { setupIpcHandler } from './ipc';
 
 export type StoreInstallProperties = {
     source: string | null;
@@ -41,6 +40,6 @@ export function setInstallSourceReported() {
 
 export function setupIpcHandlers() {
     const installSource = getInstallSource();
-    ipcMain.handle('installInfo:getInfo', () => Promise.resolve({ installSource }));
-    ipcMain.handle('installInfo:setInstallSourceReported', () => setInstallSourceReported());
+    setupIpcHandler('installInfo:getInfo', () => Promise.resolve({ installSource }));
+    setupIpcHandler('installInfo:setInstallSourceReported', () => setInstallSourceReported());
 }
