@@ -1,5 +1,5 @@
 import { getExtensionLocalStorage, getExtensionSessionStorage } from '@proton/pass/lib/extension/storage';
-import { fileStorage, fileStorageReady } from '@proton/pass/lib/file-storage/fs';
+import { fileStorageReady } from '@proton/pass/lib/file-storage/fs';
 import type { ExtensionStorage, LocalStoreData, SessionStoreData } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -57,10 +57,10 @@ export const createStorageService = () => {
         clear: () => sessionStorage.clear().catch(noop),
     };
 
-    void fileStorageReady.then(() => {
+    void fileStorageReady.then((instance) => {
         /** Clear file storage on service creation */
-        fileStorage.attachGarbageCollector(local);
-        return fileStorage.clearAll();
+        instance.attachGarbageCollector(local);
+        return instance.clearAll();
     });
 
     return { local, session, getState: () => state };
