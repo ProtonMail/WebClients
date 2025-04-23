@@ -33,8 +33,6 @@ const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
     return getAvailableApps({
         user: session.data.User,
         context: 'app',
-        // Access control can be disabled when forking a session from Account FE because the API drives it
-        isAccessControlEnabled: false,
         // The *lumo available* and *docs homepage* feature flag can always be true because we don't limit
         // access to them from the Account FE when forking a session
         isLumoAvailable: true,

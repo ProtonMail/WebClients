@@ -80,7 +80,6 @@ const getAllowedProducts = (products: OrganizationSettingsAllowedProduct[]) => {
 
 const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     user: getProtonUser(),
-    isAccessControlEnabled: true,
     isDocsHomepageAvailable: true,
     isLumoAvailable: true,
     context: 'app',
@@ -157,12 +156,11 @@ describe('available apps', () => {
         });
 
         describe('Allowed products', () => {
-            it('should filter apps with only mail allowed and access control disabled', () => {
+            it('should return all apps without any organization', () => {
                 assertEquals(
                     getAvailableApps({
                         ...defaultOptions,
-                        isAccessControlEnabled: false,
-                        organization: getAllowedProducts([Product.Mail]),
+                        organization: undefined,
                     }),
                     allApps
                 );

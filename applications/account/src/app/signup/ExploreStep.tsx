@@ -28,7 +28,6 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isAccessControlEnabled = useFlag('AccessControl');
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -51,7 +50,6 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
                         organization,
                         isLumoAvailable,
                         isDocsHomepageAvailable,
-                        isAccessControlEnabled,
                     })}
                     onExplore={onExplore}
                 />
