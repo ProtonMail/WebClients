@@ -50,7 +50,6 @@ enum AccountFlag {
     NewCancellationFlow = 'NewCancellationFlow',
     B2BLogsPass = 'B2BLogsPass',
     B2BLogsVPN = 'B2BLogsVPN',
-    AccessControl = 'AccessControl',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',

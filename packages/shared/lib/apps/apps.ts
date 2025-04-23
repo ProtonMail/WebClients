@@ -39,16 +39,11 @@ const allAppsSet: Set<APP_NAMES> = new Set(allApps);
 interface GetOrganizationAllowedProductsArguments {
     user?: User;
     organization?: { Settings: { AllowedProducts: OrganizationWithSettings['Settings']['AllowedProducts'] } };
-    isAccessControlEnabled: boolean;
 }
 
-const getAvailableAppsByOrganization = ({
-    user,
-    organization,
-    isAccessControlEnabled,
-}: GetOrganizationAllowedProductsArguments): AppSet => {
+const getAvailableAppsByOrganization = ({ user, organization }: GetOrganizationAllowedProductsArguments): AppSet => {
     // Admins can always access all
-    if (!isAccessControlEnabled || !user || !organization || (user && user.Role === USER_ROLES.ADMIN_ROLE)) {
+    if (!user || !organization || (user && user.Role === USER_ROLES.ADMIN_ROLE)) {
         return allAppsSet;
     }
     const allowedProducts = deserializeAllowedProducts(organization.Settings?.AllowedProducts);
