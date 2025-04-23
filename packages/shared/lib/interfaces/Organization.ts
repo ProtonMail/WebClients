@@ -60,7 +60,7 @@ export interface OrganizationIdentityOutput {
 
 export type OrganizationSettingsAllowedProduct = Extract<
     Product,
-    'Mail' | 'VPN' | 'Pass' | 'Calendar' | 'Drive' | 'Wallet'
+    'Mail' | 'Calendar' | 'VPN' | 'Pass' | 'Drive' | 'Wallet'
 >;
 
 export type SerializedOrganizationSettingsAllowedProduct = OrganizationSettingsAllowedProduct | 'All';

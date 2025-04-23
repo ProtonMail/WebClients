@@ -25,9 +25,9 @@ import {
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces';
+import { serializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
 
 import MailCalendarIcon from './MailCalendarIcon';
-import { serializeAllowedProducts } from './allowedProductsSerialization';
 import useAllowedProducts from './useAllowedProducts';
 
 const getUpdatedProducts = ({

@@ -1,5 +1,4 @@
-import { createBrowserHistory } from 'history';
-import type { History } from 'history';
+import { type History, createBrowserHistory } from 'history';
 
 import type { EventLoop } from '@proton/account/eventLoop';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
@@ -10,8 +9,6 @@ import metrics from '@proton/metrics';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { appLink } from '@proton/shared/lib/apps/appLink';
-import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -37,7 +34,7 @@ import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnU
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { storeAppVersion } from '@proton/shared/lib/desktop/version';
 import { resumeSessionDrawerApp } from '@proton/shared/lib/drawer/session';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -53,11 +50,6 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import {
-    getIsPublicUserWithoutProtonAddress,
-    getIsSSOVPNOnlyAccount,
-    getRequiresAddressSetup,
-} from '@proton/shared/lib/keys';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import { createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import { EVENTS, UnleashClient } from '@proton/unleash';
@@ -401,45 +393,13 @@ const initEarlyAccess = ({
     }
 };
 
-export const maybeRedirect = async ({
-    appName,
-    authentication,
-    user,
-    history,
-}: {
-    appName: APP_NAMES;
-    authentication: AuthenticationStore;
-    user: User;
-    history: History;
-}) => {
-    if (getRequiresAddressSetup(appName, user)) {
-        appLink({
-            to: `${SETUP_ADDRESS_PATH}?to=${appName}`,
-            toApp: APPS.PROTONACCOUNT,
-            app: appName,
-            history,
-            authentication,
-        });
-        await new Promise(noop);
+export const postLoad = async (
+    args: Parameters<typeof initEarlyAccess>[0] & {
+        history: History;
+        authentication: AuthenticationStore;
     }
-
-    if (getIsSSOVPNOnlyAccount(user) && ![APPS.PROTONACCOUNT, ...getSSOVPNOnlyAccountApps()].includes(appName as any)) {
-        appLink({ to: '/vpn', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
-        await new Promise(noop);
-    }
-
-    if (
-        getIsPublicUserWithoutProtonAddress(user) &&
-        ![APPS.PROTONACCOUNT, ...getPublicUserProtonAddressApps('app')].includes(appName as any)
-    ) {
-        appLink({ to: '/pass', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
-        await new Promise(noop);
-    }
-};
-
-export const postLoad = async (args: Parameters<typeof initEarlyAccess>[0] & Parameters<typeof maybeRedirect>[0]) => {
+) => {
     await initEarlyAccess(args);
-    await maybeRedirect(args);
 };
 
 export const wrap = async <T>(
