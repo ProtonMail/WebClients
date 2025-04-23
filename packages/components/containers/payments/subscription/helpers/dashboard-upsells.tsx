@@ -282,6 +282,9 @@ const getMailPlusUpsell = ({
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const mailPlusPlan = plansMap[PLANS.MAIL];
+    if (!mailPlusPlan) {
+        return null;
+    }
 
     const features: MaybeUpsellFeature[] = [
         getStorageFeature(mailPlusPlan?.MaxSpace ?? 15, { freePlan }),
@@ -453,6 +456,9 @@ const getBundleUpsell = ({
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const bundlePlan = plansMap[PLANS.BUNDLE];
+    if (!bundlePlan) {
+        return null;
+    }
 
     const features: MaybeUpsellFeature[] = [
         getStorageFeature(bundlePlan?.MaxSpace ?? 500, { freePlan }),
@@ -588,6 +594,10 @@ const getFamilyUpsell = ({
 
 const getMailBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     const mailBusinessPlan = plansMap[PLANS.MAIL_BUSINESS];
+    if (!mailBusinessPlan) {
+        return null;
+    }
+
     const mailBusinessStorage = humanSize({ bytes: mailBusinessPlan?.MaxSpace ?? 50, fraction: 0 });
 
     const features: UpsellFeature[] = [
@@ -624,7 +634,12 @@ const getBundleProUpsell = ({
     hasDriveBusinessPlan = false,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
-    const bundleProPlan = plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO];
+    const plan = PLANS.BUNDLE_PRO_2024;
+    const bundleProPlan = plansMap[plan];
+    if (!bundleProPlan) {
+        return null;
+    }
+
     const storageBytes = bundleProPlan?.MaxSpace ?? 1099511627776;
     const businessStorage = humanSize({ bytes: storageBytes, fraction: 0, unitOptions: { max: 'TB' } });
 
@@ -640,8 +655,6 @@ const getBundleProUpsell = ({
         getSentinel(true),
         getPhoneSupport(),
     ];
-
-    const plan: PLANS = bundleProPlan.Name as PLANS;
 
     return getUpsell({
         plan,
