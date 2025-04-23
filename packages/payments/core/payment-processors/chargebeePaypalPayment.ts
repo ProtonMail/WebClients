@@ -1,8 +1,8 @@
 import { type PaymentIntent, chargebeeValidationErrorName, isMessageBusResponseFailure } from '@proton/chargebee/lib';
-import { getTokenStatusV5 } from '@proton/shared/lib/api/payments';
 import { type Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { getTokenStatusV5 } from '../api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import { type PaymentVerificatorV5, createPaymentTokenV5Paypal } from '../createPaymentToken';
 import type {

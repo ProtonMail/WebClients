@@ -33,6 +33,8 @@ import {
     type PaymentMethodStatusExtended,
     fixPlanName,
 } from '@proton/payments';
+import { getHas2024OfferCoupon, getPlan, getUpgradedPlan, getValidCycle, isManagedExternally } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -46,15 +48,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import {
-    getHas2024OfferCoupon,
-    getPlan,
-    getUpgradedPlan,
-    getValidCycle,
-    isManagedExternally,
-} from '@proton/shared/lib/helpers/subscription';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 

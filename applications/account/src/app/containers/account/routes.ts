@@ -5,6 +5,13 @@ import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { DEFAULT_CURRENCY } from '@proton/payments';
 import { Renew, type Subscription } from '@proton/payments';
+import {
+    getHasExternalMemberCapableB2BPlan,
+    getHasVpnB2BPlan,
+    getIsConsumerPassPlan,
+    hasCancellablePlan,
+    isCancellableOnlyViaSupport,
+} from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -15,13 +22,6 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import {
-    getHasExternalMemberCapableB2BPlan,
-    getHasVpnB2BPlan,
-    getIsConsumerPassPlan,
-    hasCancellablePlan,
-    isCancellableOnlyViaSupport,
-} from '@proton/shared/lib/helpers/subscription';
 import type {
     Address,
     GroupMembershipReturn,

@@ -3,17 +3,19 @@ import {
     CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
-    PLANS,
+    type PLANS,
     PLAN_TYPES,
     type Plan,
     type PlanIDs,
     type PlansMap,
     SelectedPlan,
     type StrictPlan,
+    getPlanNameFromIDs,
+    getPricePerCycle,
+    getPricePerMember,
 } from '@proton/payments';
-
-import type { Organization, SubscriptionCheckResponse, User } from '../interfaces';
-import { ChargebeeEnabled } from '../interfaces';
+import type { AggregatedPricing, PricingForCycles } from '@proton/payments';
+import { allCycles, getMaxValue, getPlanMembers } from '@proton/payments';
 import {
     getSupportedAddons,
     getSupportedB2BAddons,
@@ -22,16 +24,10 @@ import {
     isLumoAddon,
     isMemberAddon,
     isScribeAddon,
-} from './addons';
-import type { AggregatedPricing, PricingForCycles } from './subscription';
-import {
-    allCycles,
-    getMaxValue,
-    getPlanMembers,
-    getPricePerCycle,
-    getPricePerMember,
-    isLifetimePlan,
-} from './subscription';
+} from '@proton/payments/core/plan/addons';
+
+import type { Organization, SubscriptionCheckResponse, User } from '../interfaces';
+import { ChargebeeEnabled } from '../interfaces';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 
@@ -278,26 +274,6 @@ export const getPlanCurrencyFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs 
     return plan?.Currency;
 };
 
-/**
- * Get the plan name from the planIDs object. Useful when you have object like { [PLANS.MAIL]: 1 }.
- *
- * Examples:
- * - { [PLANS.MAIL]: 1 } -> PLANS.MAIL
- * - { [PLANS.MAIL]: 1, [PLANS.BUNDLE]: 1 } -> PLANS.MAIL
- * - { [PLANS.MAIL]: 0, [PLANS.BUNDLE]: 1 } -> PLANS.BUNDLE
- *
- * @param planIDs - The planIDs object.
- * @returns The plan name.
- */
-export function getPlanNameFromIDs(planIDs: PlanIDs): PLANS | undefined {
-    return Object.values(PLANS).find((key) => {
-        // If the planIDs object has non-zero value for the plan, then it exists.
-        // There can be at most 1 plan, and others are addons.
-        const planNumber = planIDs[key as PLANS] ?? 0;
-        return planNumber > 0;
-    });
-}
-
 export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {
     const planName = getPlanNameFromIDs(planIDs);
     return planName ? plansMap[planName] : undefined;
@@ -418,17 +394,14 @@ export const getTotalFromPricing = (
 
     const total = checkedPrices[cycle]?.Amount ?? pricing[mode][cycle];
 
-    let couponDiscount = checkedPrices[cycle]?.CouponDiscount ?? 0;
-    if (couponDiscount < 0) {
-        couponDiscount = -couponDiscount;
-    }
+    const couponDiscount = Math.abs(checkedPrices[cycle]?.CouponDiscount ?? 0);
 
     const discountedTotal = total - couponDiscount;
     const totalPerMonth = discountedTotal / cycle;
 
     const price = mode === 'all' ? defaultMonthlyPrice : defaultMonthlyPriceWithoutAddons;
     const totalNoDiscount = price * cycle;
-    const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - discountedTotal;
+    const discount = cycle === CYCLE.MONTHLY ? couponDiscount : totalNoDiscount - discountedTotal;
 
     const membersPricePerMonthWithoutDiscount = Math.floor(pricing.members[cycle] / cycle);
     const memberShare = membersPricePerMonthWithoutDiscount / (total / cycle);
@@ -486,9 +459,4 @@ export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanI
     }
 
     return increasedPlanIDs;
-}
-
-export function isLifetimePlanSelected(planIDs: PlanIDs): boolean {
-    const planName = getPlanNameFromIDs(planIDs);
-    return isLifetimePlan(planName);
 }

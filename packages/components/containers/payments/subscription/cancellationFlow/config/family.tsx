@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { hasCancellablePlan } from '@proton/payments';
 import {
     CALENDAR_APP_NAME,
     DRIVE_SHORT_APP_NAME,
@@ -9,7 +10,6 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 
 import type {
     ConfirmationModal,

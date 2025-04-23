@@ -25,8 +25,8 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { planSupportsSSO } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { planSupportsSSO } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import { IDP_TYPE } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';

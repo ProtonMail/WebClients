@@ -30,8 +30,11 @@ import {
     DEFAULT_CYCLE,
     PLANS,
     type PlanIDs,
+    getPlanNameFromIDs,
     getPlansMap,
 } from '@proton/payments';
+import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getFreeCheckResult } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -41,12 +44,10 @@ import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, MAIL_APP_NAME, REFERRER_CODE_MAIL_TRIAL, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';

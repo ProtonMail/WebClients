@@ -1,11 +1,10 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS } from '@proton/payments';
+import { PLANS, getPlan } from '@proton/payments';
 import type { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
 
 type Options = {
     event: TelemetryCalendarEvents.answer_invite;

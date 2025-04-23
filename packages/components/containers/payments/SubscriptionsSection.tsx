@@ -21,10 +21,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useLoading } from '@proton/hooks';
-import { PLANS, Renew, onSessionMigrationPaymentsVersion } from '@proton/payments';
-import { changeRenewState } from '@proton/shared/lib/api/payments';
-import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
+import { PLANS, Renew, changeRenewState, onSessionMigrationPaymentsVersion } from '@proton/payments';
 import {
     getHas2023OfferCoupon,
     getIsUpcomingSubscriptionUnpaid,
@@ -33,7 +30,9 @@ import {
     getPlanTitle,
     getRenewalTime,
     isManagedExternally,
-} from '@proton/shared/lib/helpers/subscription';
+} from '@proton/payments';
+import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

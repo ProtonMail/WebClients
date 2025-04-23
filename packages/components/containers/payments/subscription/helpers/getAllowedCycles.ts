@@ -11,9 +11,9 @@ import {
     isMainCurrency,
     isRegionalCurrency,
 } from '@proton/payments';
+import { isRegularCycle, isTrial } from '@proton/payments';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import { isRegularCycle, isTrial } from '@proton/shared/lib/helpers/subscription';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';

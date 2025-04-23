@@ -10,6 +10,7 @@ import type {
     B2BOnboardingFeature,
 } from '@proton/components/components/onboarding/b2b/interface';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
+import { getPlan } from '@proton/payments';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import {
     APPS,
@@ -26,7 +27,6 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { DRIVE_DOWNLOAD_URL } from '@proton/shared/lib/drive/constants';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import twoFAImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-2fa.svg';
 import appsImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-apps.svg';

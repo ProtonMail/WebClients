@@ -24,6 +24,7 @@ import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicA
 import useApi from '@proton/components/hooks/useApi';
 import { initMainHost } from '@proton/cross-storage/lib';
 import useInstance from '@proton/hooks/useInstance';
+import { getHas2024OfferCoupon } from '@proton/payments';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -43,7 +44,6 @@ import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';

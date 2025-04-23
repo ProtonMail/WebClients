@@ -11,6 +11,7 @@ import SubscriptionModalProvider, {
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { getPlanIDs, getPlanTitle, isTrial, isTrialExpired, willTrialExpire } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -19,13 +20,6 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import {
-    getPlanIDs,
-    getPlanTitle,
-    isTrial,
-    isTrialExpired,
-    willTrialExpire,
-} from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

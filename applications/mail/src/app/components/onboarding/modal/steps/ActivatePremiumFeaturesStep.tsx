@@ -18,17 +18,12 @@ import {
 } from '@proton/components';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { PLANS } from '@proton/payments';
+import { getIsB2BAudienceFromPlan, getIsB2BAudienceFromSubscription, hasVisionary, isTrial } from '@proton/payments';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import {
-    getIsB2BAudienceFromPlan,
-    getIsB2BAudienceFromSubscription,
-    hasVisionary,
-    isTrial,
-} from '@proton/shared/lib/helpers/subscription';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import aliasesIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_aliases.svg';

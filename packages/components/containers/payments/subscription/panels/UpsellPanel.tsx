@@ -62,7 +62,6 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
                 </label>
             )}
             {children}
-
             {viewportWidth['<=small'] && (
                 <div className="w-full text-center my-6 flex">
                     <InlineLinkButton className="mx-auto" onClick={() => toggleExpand()}>
@@ -80,7 +79,6 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
                     </InlineLinkButton>
                 </div>
             )}
-
             {(!viewportWidth['<=small'] || isExpanded) && (
                 <StripedList alternate="odd">
                     {features.map(({ icon = 'checkmark', text, tooltip, included = true, status = 'available' }) => {
@@ -103,7 +101,6 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
                     })}
                 </StripedList>
             )}
-
             <div className="flex column gap-4">
                 {ctas.map((cta) => {
                     if (isUpsellCta(cta)) {

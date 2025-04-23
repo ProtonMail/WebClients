@@ -22,19 +22,15 @@ import {
     type Plan,
     type PlanIDs,
     type Subscription,
+    isLifetimePlanSelected,
 } from '@proton/payments';
+import { getPlanIDs } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import {
-    getPlanFromPlanIDs,
-    hasPlanIDs,
-    isLifetimePlanSelected,
-    planIDsPositiveDifference,
-} from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 

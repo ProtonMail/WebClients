@@ -1,10 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { addMonths } from 'date-fns';
 
-import { PLANS } from '@proton/payments';
-import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
+import { PLANS, type CheckSubscriptionData } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
@@ -13,7 +12,7 @@ import {
     hookWrapper,
     withApi,
     withConfig,
-    withPaymentContext,
+    withPaymentSwitcherContext,
 } from '@proton/testing';
 
 import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
@@ -31,7 +30,7 @@ jest.mock('@proton/account/plans/hooks', () => ({
 }));
 
 const getWrapper = (chargebeeEnabled?: ChargebeeEnabled) =>
-    hookWrapper(withApi(), withConfig(), withPaymentContext(chargebeeEnabled));
+    hookWrapper(withApi(), withConfig(), withPaymentSwitcherContext(chargebeeEnabled));
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -210,7 +209,9 @@ describe('usePaymentsApi', () => {
         apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
         mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
 
-        const fallbackValue: SubscriptionCheckResponse = {
+        const requestData = getCheckSubscriptionData();
+
+        const fallbackValue: EnrichedCheckResponse = {
             Amount: 999,
             AmountDue: 999,
             Coupon: null,
@@ -220,19 +221,19 @@ describe('usePaymentsApi', () => {
             SubscriptionMode: SubscriptionMode.Regular,
             BaseRenewAmount: null,
             RenewCycle: null,
+            requestData,
         };
 
         const { result } = renderHook(() => usePaymentsApi(undefined, () => fallbackValue), {
             wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
-        const data = getCheckSubscriptionData();
-        const resultPromise = result.current.paymentsApi.checkWithAutomaticVersion(data);
+        const resultPromise = result.current.paymentsApi.checkWithAutomaticVersion(requestData);
 
         expect(apiMock).toHaveBeenCalledWith({
             url: `payments/v5/subscription/check`,
             method: 'post',
-            data,
+            data: requestData,
             // silence is true because we are using fallback value
             silence: true,
         });
@@ -283,7 +284,7 @@ describe('usePaymentsApi', () => {
                     ...defaultProtonConfig,
                     APP_NAME: appName,
                 }),
-                withPaymentContext(ChargebeeEnabled.CHARGEBEE_ALLOWED)
+                withPaymentSwitcherContext(ChargebeeEnabled.CHARGEBEE_ALLOWED)
             ),
         });
 

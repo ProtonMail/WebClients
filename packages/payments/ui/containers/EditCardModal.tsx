@@ -19,22 +19,16 @@ import { ChargebeeCreditCardWrapper } from '@proton/components/payments/chargebe
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
-import {
-    getPaymentsVersion,
-    setPaymentMethodV4,
-    setPaymentMethodV5,
-    updatePaymentMethod,
-} from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import { getPaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, updatePaymentMethod } from '../../core/api';
 import type { CardModel } from '../../core/cardDetails';
 import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
 import { paymentMethodPaymentsVersion, v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
-import { CreditCard } from '../components/CreditCard/CreditCard';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card?: CardModel;
@@ -151,13 +145,11 @@ const EditCardModal = ({
         }
     }, [loading]);
 
-    const isInhouseCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD;
     const isChargebeeCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
-    const formFullyLoaded = isInhouseCard || (isChargebeeCard && chargebeeFormInitialized);
+    const formFullyLoaded = isChargebeeCard && chargebeeFormInitialized;
 
     const content = (
         <>
-            {isInhouseCard && <CreditCard {...paymentFacade.card} loading={processing} />}
             {isChargebeeCard && (
                 <ChargebeeCreditCardWrapper
                     onInitialized={() => setChargebeeFormInitialized(true)}

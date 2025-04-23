@@ -1,7 +1,8 @@
-import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
+import { queryPaymentMethods } from './api';
 import {
     Autopay,
     FREE_SUBSCRIPTION,
@@ -10,7 +11,6 @@ import {
     MethodStorage,
     PAYMENT_METHOD_TYPES,
     PLANS,
-    UNPAID_STATE,
     signupFlows,
 } from './constants';
 import {

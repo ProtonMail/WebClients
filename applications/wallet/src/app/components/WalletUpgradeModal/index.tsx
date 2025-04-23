@@ -5,14 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt, SUBSCRIPTION_STEPS, Tooltip, useSubscriptionModal } from '@proton/components';
 import { PLANS } from '@proton/payments';
-import {
-    hasBundle,
-    hasBundlePro,
-    hasBundlePro2024,
-    hasDuo,
-    hasFamily,
-    hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
+import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
 import walletAtSignDark from '@proton/styles/assets/img/wallet/wallet-at-sign-dark.png';
 import walletAtSign from '@proton/styles/assets/img/wallet/wallet-at-sign.png';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';

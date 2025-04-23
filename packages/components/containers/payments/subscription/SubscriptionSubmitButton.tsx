@@ -15,9 +15,9 @@ import {
     type Subscription,
     isChargebeePaymentMethod,
 } from '@proton/payments';
+import { isTrial } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
