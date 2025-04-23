@@ -98,7 +98,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isAccessControlEnabled = useFlag('AccessControl');
 
     const subscribed = User.Subscribed;
 
@@ -144,7 +143,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             organization: Organization,
                             isLumoAvailable,
                             isDocsHomepageAvailable,
-                            isAccessControlEnabled,
                             oauth: persistedSession.source === SessionSource.Oauth,
                         })}
                         onExplore={async (app) => {

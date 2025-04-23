@@ -158,7 +158,6 @@ const MainContainer = () => {
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const canDisplayPassReports = useFlag('PassB2BReports');
-    const isAccessControlEnabled = useFlag('AccessControl');
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
 
@@ -213,7 +212,6 @@ const MainContainer = () => {
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isCalendarHotkeysEnabled,
-        isAccessControlEnabled,
         isQRCodeSignInEnabled,
     });
 
@@ -366,7 +364,6 @@ const MainContainer = () => {
         organization,
         isLumoAvailable,
         isDocsHomepageAvailable,
-        isAccessControlEnabled,
     });
 
     if (!availableApps.includes(app) && appFromPathname /* wait for app in pathname to ensure replacement works */) {
