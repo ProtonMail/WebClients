@@ -13,11 +13,7 @@ try {
     const baseCommand = 'yarn install'
     exec(
       existsSync(envFile) ? `env $(cat ${envFile} | xargs) ${baseCommand}` : baseCommand,
-      (error, stdout, stderr) => {
-        // eslint-disable-next-line no-console
-        console.log(stdout)
-        console.error(stderr)
-      },
+      (error, stdout, stderr) => {},
     )
   }
 } catch {}
