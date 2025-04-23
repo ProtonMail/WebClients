@@ -149,7 +149,6 @@ const successOrWarning = (email: string, sklAudits: SKLAuditResult[], signatureW
  * they were signed with a time in the future.
  * In this case we resign them.
  * NB: only SKL with v4 keys were generated in the future
-
  */
 const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: PrivateKeyReferenceV4, api: Api) => {
     const { Email, ID, SignedKeyList } = address;
@@ -331,6 +330,8 @@ const auditAddressImplementation = async ({
             signatureWasInTheFuture = true;
         }
     } else {
+        // here we're still doing a self-audit but get a new SKL that's not in an epoch yet,
+        // so we have to store it to localStorage and try again later.
         const verificationTimestamp = await verifySKLSignature({
             verificationKeys: addressVerificationKeys,
             signedKeyListData: inputSKL.Data,
