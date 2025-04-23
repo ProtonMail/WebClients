@@ -1,6 +1,6 @@
-import { ipcMain } from 'electron';
 import { platform } from 'os';
 
+import { setupIpcHandler } from '../ipc';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
 const factory: BiometricsFactory = (getWindow) => {
@@ -22,12 +22,12 @@ const factory: BiometricsFactory = (getWindow) => {
         }
     })();
 
-    ipcMain.handle('biometrics:canCheckPresence', platformImplementation.canCheckPresence);
-    ipcMain.handle('biometrics:checkPresence', platformImplementation.checkPresence);
-    ipcMain.handle('biometrics:getDecryptionKey', platformImplementation.getDecryptionKey);
-    ipcMain.handle('biometrics:getSecret', platformImplementation.getSecret);
-    ipcMain.handle('biometrics:setSecret', platformImplementation.setSecret);
-    ipcMain.handle('biometrics:deleteSecret', platformImplementation.deleteSecret);
+    setupIpcHandler('biometrics:canCheckPresence', platformImplementation.canCheckPresence);
+    setupIpcHandler('biometrics:checkPresence', platformImplementation.checkPresence);
+    setupIpcHandler('biometrics:getDecryptionKey', platformImplementation.getDecryptionKey);
+    setupIpcHandler('biometrics:getSecret', platformImplementation.getSecret);
+    setupIpcHandler('biometrics:setSecret', platformImplementation.setSecret);
+    setupIpcHandler('biometrics:deleteSecret', platformImplementation.deleteSecret);
 
     return platformImplementation;
 };
