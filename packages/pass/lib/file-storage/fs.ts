@@ -8,7 +8,7 @@ import { FileStorageIDB, openPassFileDB } from './fs.idb';
 import { FileStorageOPFS } from './fs.opfs';
 import type { FileStorage } from './types';
 
-export const fileStorageReady = awaiter<boolean>();
+export const fileStorageReady = awaiter<FileStorage>();
 
 /** isSafari() works on web app but not on extension
  * background script, so we have to use BUILD_TARGET */
@@ -71,6 +71,6 @@ if (ENV !== 'test') {
     onStorageFallback(
         fileStorage,
         (instance) => (fileStorage = instance),
-        () => fileStorageReady.resolve(true)
+        () => fileStorageReady.resolve(fileStorage)
     ).catch(noop);
 }
