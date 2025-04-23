@@ -64,6 +64,7 @@ import {
     hasDeprecatedVPN,
 } from '@proton/payments';
 import { isSubscriptionUnchanged } from '@proton/payments';
+import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -199,7 +200,7 @@ export interface SubscriptionContainerProps {
     paymentsStatus: PaymentMethodStatusExtended;
 }
 
-const SubscriptionContainer = ({
+const SubscriptionContainerInner = ({
     topRef: customTopRef,
     upsellRef,
     app,
@@ -1280,6 +1281,14 @@ const SubscriptionContainer = ({
                 planIDs: model.planIDs,
             })}
         </>
+    );
+};
+
+const SubscriptionContainer = (props: SubscriptionContainerProps) => {
+    return (
+        <PaymentsContextProvider>
+            <SubscriptionContainerInner {...props} />
+        </PaymentsContextProvider>
     );
 };
 
