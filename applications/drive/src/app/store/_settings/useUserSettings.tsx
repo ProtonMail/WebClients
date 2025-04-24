@@ -5,7 +5,7 @@ import { useApi, useDrivePlan } from '@proton/components';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+import { type PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type {
     LayoutSetting,
     RevisionRetentionDaysSetting,
@@ -106,16 +106,7 @@ export function UserSettingsProvider({
         sort,
         layout: userSettings.Layout,
         revisionRetentionDays: userSettings.RevisionRetentionDays,
-        photoTags: userSettings.PhotoTags.filter((tag) =>
-            [
-                PhotoTag.Favorites,
-                PhotoTag.Videos,
-                PhotoTag.LivePhotos,
-                PhotoTag.MotionPhotos,
-                PhotoTag.Bursts,
-                PhotoTag.Raw,
-            ].includes(tag)
-        ), // Temp solution until we support all tags
+        photoTags: userSettings.PhotoTags,
         photosEnabled: isPhotosEnabled,
         photosWithAlbumsEnabled: isPhotosWithAlbumsEnabled,
         changeSort,
