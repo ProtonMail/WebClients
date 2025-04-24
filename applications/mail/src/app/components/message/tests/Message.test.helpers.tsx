@@ -5,7 +5,6 @@ import loudRejection from 'loud-rejection';
 
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
 import type { MailStore } from 'proton-mail/store/store';
@@ -38,7 +37,6 @@ export const defaultProps: MessageViewProps = {
     message: { ID: messageID, AddressID: addressID } as Message,
     mailSettings: {} as MailSettings,
     onBack: jest.fn(),
-    breakpoints: mockDefaultBreakpoints,
     onFocus: noop,
     isComposerOpened: false,
 };
