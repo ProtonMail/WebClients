@@ -1099,11 +1099,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade Now": [
-        "Sgerrzet amiḍan tura"
-      ],
       "Upgrade now": [
         "Sali aswir tura"
+      ],
+      "Upgrade Now": [
+        "Sgerrzet amiḍan tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -5025,9 +5025,6 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Iznan s wudem awurman i yellan deg tqecwalt neɣ deg uspam i wugar n 30 wussan, ad ttwakksen s wudem awurman."
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
       ],
@@ -5936,11 +5933,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "And": [
-        "Akked"
-      ],
       "AND": [
         "AKKED"
+      ],
+      "And": [
+        "Akked"
       ],
       "and": [
         "akked"
@@ -5965,9 +5962,6 @@
       ],
       "Beta Access": [
         "Anekcum Biṭa"
-      ],
-      "Billing address": [
-        "Tansa n tfaṭurt"
       ],
       "Billing cycle": [
         "Tawala n ufter"
@@ -6104,9 +6098,6 @@
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Ad ifakk deg (${ patternExpiration })"
-      ],
       "Expires": [
         "Ad ifat di"
       ],
@@ -6143,11 +6134,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Ma"
-      ],
       "IF": [
         "MA"
+      ],
+      "If": [
+        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6251,14 +6242,14 @@
       "Optional": [
         "Afrayan"
       ],
+      "OR": [
+        "NEƔ"
+      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
-      ],
-      "OR": [
-        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6319,9 +6310,6 @@
       ],
       "Search in": [
         "Anadi deg"
-      ],
-      "Security code (${ codeName })": [
-        "Tangalt n tɣellist (${ codeName })"
       ],
       "Send auto-reply": [
         "Azen tiririt tawurmant"
@@ -6932,6 +6920,17 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6950,17 +6949,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8165,11 +8153,6 @@
       ],
       "Keep auto-pay": [
         "Eǧǧ lexlaṣ awurman"
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Sekles"
       ]
     },
     "Success": {
