@@ -65,7 +65,7 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
       sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} />}
       drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
     >
-      <PrivateMainArea className="!border-t-0 ps-1 [&>div]:[block-size:100%]" hasToolbar>
+      <PrivateMainArea className="!border-t-0 small:ps-1 [&>div]:[block-size:100%]" hasToolbar>
         {children}
       </PrivateMainArea>
     </PrivateAppContainer>
@@ -88,7 +88,7 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
   return (
     <div className="homepage-header shrink-0 items-center justify-center small:pe-8">
       <PrivateHeader
-        className={clsx('flex items-center !pe-0 !ps-2 small:!px-0', USER_DROPDOWN_OVERRIDES)}
+        className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
         app={APPS.PROTONDRIVE}
         userDropdown={<UserDropdown app={APPS.PROTONDOCS} />}
         title={c('Title').t`Docs`}
@@ -97,9 +97,13 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
         isSmallViewport={viewportWidth['<=small']}
         actionArea={
           <>
-            <MobileSearch className="small:!hidden" value={searchValue} onChange={(value) => setSearch(value, true)} />
+            <MobileSearch
+              className="mobile-search-hack small:!hidden"
+              value={searchValue}
+              onChange={(value) => setSearch(value, true)}
+            />
             <Search
-              className="!hidden ps-1 small:!block"
+              className="!hidden ps-1 small:!flex"
               value={searchValue}
               onChange={(value) => setSearch(value, true)}
             />
@@ -128,7 +132,7 @@ function Search({ value, onChange, className }: SearchProps) {
   return (
     <div className={className}>
       <Input
-        className="border-weak max-w-[30.625rem] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
+        className="border-weak w-[clamp(21.25rem,100vw*.35-1.25rem,32.5rem)] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
         inputClassName="h-[32px] small:h-auto"
         onKeyDown={(event) => {
           if (event.key === 'Escape') {
@@ -161,7 +165,7 @@ function MobileSearch({ value, onChange, className }: SearchProps) {
   const [isActive, setActive] = useState(false)
   const isInput = (value && value.length > 0) || isActive
   return (
-    <div className={clsx('flex items-center gap-2', className)}>
+    <div className={clsx('flex grow items-center gap-2', className)}>
       {isInput ? (
         <Input
           ref={(element) => {
@@ -176,7 +180,7 @@ function MobileSearch({ value, onChange, className }: SearchProps) {
               onChange(undefined)
             }
           }}
-          className="border-weak w-full focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
+          className="border-weak w-full max-w-[21.25rem] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
           inputClassName="h-[32px] small:h-auto"
           prefix={
             <span>
