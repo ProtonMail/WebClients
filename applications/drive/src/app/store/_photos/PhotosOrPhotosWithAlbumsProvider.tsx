@@ -57,7 +57,7 @@ export const PhotosOrPhotosWithAlbumsProvider = ({ children }: { children: React
         }
     }, [photosEnabled, photosWithAlbumsEnabled]);
 
-    if (photosEnabled && photosWithAlbumsEnabled) {
+    if (photosEnabled && (photosWithAlbumsEnabled || showPhotosWithAlbums === true)) {
         return <PhotosWithAlbumsProvider>{children}</PhotosWithAlbumsProvider>;
     }
     if (photosEnabled && !photosWithAlbumsEnabled && showPhotosWithAlbums === undefined) {
