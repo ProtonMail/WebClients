@@ -23,7 +23,7 @@ import type { DriveEvents } from '../_events';
 import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
-import { hasCustomPassword, hasGeneratedPasswordIncluded, ShareType } from '../_shares';
+import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type {
     Share,
     ShareExternalInvitation,
@@ -213,6 +213,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         isDefault: share.Type === ShareType.default,
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
         type: share.Type,
+        linkType: share.LinkType,
         state: share.State,
         createTime: share.CreateTime,
     };
