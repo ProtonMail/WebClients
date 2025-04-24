@@ -28,10 +28,9 @@ export const deriveAliasPrefix = (name: string) => {
     return prefix.replace(/\.*$/, '').replace(/^\.+/, '');
 };
 
-export const validateAliasPrefix = (prefix: string = ''): Maybe<string> => {
+export const validateAliasPrefix = async (prefix: string = ''): Promise<Maybe<string>> => {
     try {
-        PassUI.validate_alias_prefix(prefix);
-        return;
+        await PassUI.validate_alias_prefix(prefix);
     } catch (err) {
         switch (err instanceof Error && err.message) {
             case 'PrefixEmpty':
@@ -53,14 +52,14 @@ export const validateAliasPrefix = (prefix: string = ''): Maybe<string> => {
     }
 };
 
-export const validateAliasForm = ({
+export const validateAliasForm = async ({
     aliasPrefix,
     mailboxes,
     aliasSuffix,
-}: AliasFormValues): FormikErrors<AliasFormValues> => {
+}: AliasFormValues): Promise<FormikErrors<AliasFormValues>> => {
     const errors: FormikErrors<AliasFormValues> = {};
 
-    const aliasPrefixError = validateAliasPrefix(aliasPrefix);
+    const aliasPrefixError = await validateAliasPrefix(aliasPrefix);
     if (aliasPrefixError) errors.aliasPrefix = aliasPrefixError;
 
     if (!aliasSuffix) errors.aliasSuffix = c('Warning').t`Missing alias suffix`;
@@ -69,9 +68,9 @@ export const validateAliasForm = ({
     return errors;
 };
 
-export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<NewAliasFormValues> => ({
+export const validateNewAliasForm = async (values: NewAliasFormValues): Promise<FormikErrors<NewAliasFormValues>> => ({
     ...validateItemErrors(values),
-    ...validateAliasForm(values),
+    ...(await validateAliasForm(values)),
 });
 
 export const validateAliasContactSenderName = ({ name }: AliasContactValues): FormikErrors<AliasContactValues> => {
