@@ -103,6 +103,7 @@ export const PhotosWithAlbumsContext = createContext<{
     removeTagsFromPhoto: (abortSignal: AbortSignal, linkId: string, tags: PhotoTag[]) => Promise<void>;
     migrationStatus: 'unknown' | 'migrating' | 'migrated' | 'no-share';
     startPhotosMigration: () => void;
+    clearAlbumPhotos: () => void;
 } | null>(null);
 
 export enum MIGRATION_STATUS {
@@ -871,6 +872,10 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [shareId, photos, albumPhotos, updatePhotoLinkTags]
     );
 
+    const clearAlbumPhotos = useCallback(() => {
+        setAlbumPhotos([]);
+    }, []);
+
     return (
         <PhotosWithAlbumsContext.Provider
             value={{
@@ -901,6 +906,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 userAddressEmail,
                 migrationStatus,
                 startPhotosMigration,
+                clearAlbumPhotos,
             }}
         >
             {children}
