@@ -161,7 +161,7 @@
         "Conectar aplicaciones y dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar a la videoconferencia"
+        "Conectarte a la videoconferencia"
       ],
       "Contact support": [
         "Contactar con soporte"
@@ -363,9 +363,6 @@
       ],
       "Fit to window": [
         "Ajustar a la ventana"
-      ],
-      "Forgot password?": [
-        "¿Contraseña olvidada?"
       ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
@@ -4647,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduce tu dirección de correo electrónico o usuario de ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Introduce tu propia contraseña (como administrador de la organización)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduce tu dirección de correo electrónico de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
       ],
@@ -4956,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -5130,6 +5121,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
+      ],
+      "Please fill in all required fields.": [
+        "Rellena todos los campos obligatorios."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
@@ -6183,10 +6177,10 @@
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6218,9 +6212,6 @@
       ],
       "Backup password": [
         "Contraseña de respaldo"
-      ],
-      "Billing address": [
-        "Dirección de facturación"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -6383,9 +6374,6 @@
       ],
       "Event": [
         "Evento"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -6618,9 +6606,6 @@
       "Second password": [
         "Segunda contraseña"
       ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
         "Mostrar ${ n } administradores"
@@ -6729,9 +6714,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
-      ],
-      "Your password (admin)": [
-        "Tu contraseña (admin)"
       ],
       "ZIP code": [
         "Código postal"
@@ -7900,6 +7882,14 @@
         "Desbloquea todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancela en cualquier momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7912,14 +7902,6 @@
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -10048,9 +10030,6 @@
       "Share the confirmation code with your administrator": [
         "Comparte el código de confirmación con tu administrador."
       ],
-      "Sign in": [
-        "Iniciar sesión"
-      ],
       "Sign in to your organization": [
         "Iniciar sesión en tu organización"
       ],
@@ -10095,9 +10074,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrás que crear los nuevos usuarios manualmente para añadirlos a tu organización."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se te redirigirá a tu proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará tu configuración de SSO."
@@ -10720,8 +10696,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorra un ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11439,9 +11415,6 @@
       "Enhance security with 2FA": [
         "Mejora la seguridad con 2FA"
       ],
-      "Enter 2FA code": [
-        "Ingresa el código 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Entra los puntos finales en tu proveedor de identidad."
       ],
@@ -11450,9 +11423,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduce los detalles de tu cuenta de ${ BRAND_NAME } para unirte al programa Beta de ${ app }"
-      ],
-      "Enter your password": [
-        "Introduce tu contraseña."
       ],
       "Error": [
         "Error"

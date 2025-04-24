@@ -364,9 +364,6 @@
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
-      "Forgot password?": [
-        "დაგავიწყდათ პაროლი?"
-      ],
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
       ],
@@ -2505,6 +2502,12 @@
       ]
     },
     "Description": {
+      "Connect your CRM, website, printers, and more.": [
+        "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
+      ],
+      "Create groups you can email with a single address.": [
+        "შექმენით ჯგუფები, რომლებისთვისაც ელფოსტის მიწერა ერთი მისამართით შეგეძლებათ."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
       ],
@@ -2525,6 +2528,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
       ],
       "To start, give your organization a name.": [
         "დასაწყებად, მიანიჭეთ თქვენს ორგანიზაიას სახელი."
@@ -4547,9 +4553,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "შეიყვანეთ ${ BRAND_NAME }-ის თქვენი ანგარიშის მისამართი ან მომხმარებლის სახელი."
       ],
-      "Enter your own password (as organization admin).": [
-        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "შეიყვანეთ აღდგენის ელფოსტის მისამართი და ჩვენ მომხმარებლის სახელსა და ელფოსტის მისამართს გამოგიგზავნით."
       ],
@@ -4853,9 +4856,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
       ],
-      "MM/YY": [
-        "თთ/წწ"
-      ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
@@ -4924,6 +4924,9 @@
       ],
       "Open source": [
         "ღია კოდი"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
       ],
       "or ${ selectFileButton }": [
         "ან ${ selectFileButton }"
@@ -6054,10 +6057,10 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6089,9 +6092,6 @@
       ],
       "Backup password": [
         "მარქაფი პაროლი"
-      ],
-      "Billing address": [
-        "ინვოისის გასაგზავნი მისამართი"
       ],
       "Billing cycle": [
         "გადახდის პერიოდი"
@@ -6254,9 +6254,6 @@
       ],
       "Event": [
         "მოვლენა"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "ვადა (${ patternExpiration })"
       ],
       "Expires": [
         "ვადა"
@@ -6486,9 +6483,6 @@
       "Second password": [
         "მეორე პაროლი"
       ],
-      "Security code (${ codeName })": [
-        "უსაფრთხოების კოდი (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "${ n } ადმინისტრატორის ჩვენება",
         "${ n } ადმინისტრატორის ჩვენება"
@@ -6597,9 +6591,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
-      ],
-      "Your password (admin)": [
-        "თქვენი პაროლი (admin)"
       ],
       "ZIP code": [
         "საფოსტო კოდი"
@@ -6740,6 +6731,9 @@
       ],
       "How to add Zoom links": [
         "როგორ დავამატო Zoom-ის ბმულები"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "როგორ ხდება კოლაბორაცია ${ DOCS_SHORT_APP_NAME }-ში"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "როგორ ჩავრთო ${ PROTON_SENTINEL_NAME }"
@@ -7765,6 +7759,14 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -7777,14 +7779,6 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -9190,6 +9184,11 @@
         "SCIM კონექტორის URL, რომელზეც IdP გაშლის აგენტი SCIM მონაცემებს გააგზავნის"
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "ორგ.-ის მორგებ და ანგარისის უსაფრთხოება"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
@@ -9898,9 +9897,6 @@
       "Share the confirmation code with your administrator": [
         "გაუზიარეთ დადასტურების კოდი თქვენს ადმინისტრატორს"
       ],
-      "Sign in": [
-        "შესვლა"
-      ],
       "Sign in to your organization": [
         "შედით თქვენს ორგანიზაციაში"
       ],
@@ -9939,9 +9935,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "თქვენს ორგანიზაციაშ დასამატებლად ახალი მომხმარებლების ხელით შექმნა მოგიწევთ."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ],
       "Your SSO configuration will be deleted.": [
         "თქვენი SSO-ის კონფიგურაცია წაიშლება."
@@ -10558,11 +10551,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "დაზოგვა"
       ]
     },
     "Subscription status": {
@@ -11280,9 +11268,6 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
-      "Enter 2FA code": [
-        "შეიყვანეთ 2FA კოდი"
-      ],
       "Enter endpoints into your identity provider": [
         "შეიყვანეთ ბოლოწერტილები თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
@@ -11291,9 +11276,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
-      ],
-      "Enter your password": [
-        "შეიყვანეთ თქვენი პაროლი"
       ],
       "Error": [
         "შეცდომა"
@@ -11608,6 +11590,9 @@
       ],
       "There are no groups": [
         "ჯგუფები არ არსებობს"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
       "TV sign in": [
         "TV-ში შესვლა"

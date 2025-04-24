@@ -343,9 +343,6 @@
       "Fit to window": [
         "विंडो में फिट करें"
       ],
-      "Forgot password?": [
-        "पासवर्ड भूल गए?"
-      ],
       "Forgot recovery method?": [
         "रिकवरी विधि भूल गए?"
       ],
@@ -4364,9 +4361,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "अपने ${ BRAND_NAME } खाते का ईमेल पता या यूज़रनेम डालें।"
       ],
-      "Enter your own password (as organization admin).": [
-        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
       ],
@@ -4663,9 +4657,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "आपके सभी ईमेल पतों पर भेजे गए संदेश आपके इंबॉक्स में जाएंगे।"
-      ],
-      "MM/YY": [
-        "महीना/साल"
       ],
       "Monitor accounts": [
         "खातों पर नज़र रखें"
@@ -5827,10 +5818,10 @@
       "Allow recovery by phone": [
         "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -5862,9 +5853,6 @@
       ],
       "Backup password": [
         "बैकअप पासवर्ड"
-      ],
-      "Billing address": [
-        "बिलिंग पता"
       ],
       "Billing cycle": [
         "बिल चक्र"
@@ -6024,9 +6012,6 @@
       ],
       "Event": [
         "इवेंट"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "समाप्ति (${ patternExpiration })"
       ],
       "Expires": [
         "समय खत्म"
@@ -6259,9 +6244,6 @@
       "Second password": [
         "दूसरा पासवर्ड"
       ],
-      "Security code (${ codeName })": [
-        "सुरक्षा कोड (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "${ n } एडमिनिस्ट्रेटर दिखाएं",
         "${ n } एडमिनिस्ट्रेटरों को दिखाएं"
@@ -6370,9 +6352,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "हां, मैं इस खाते और इसके सभी डेटा को स्थायी रूप से हटाना चाहता हूं।"
-      ],
-      "Your password (admin)": [
-        "आपका पासवर्ड (व्यवस्थापक)"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -7478,6 +7457,14 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -7490,14 +7477,6 @@
       ],
       "Switch plans?": [
         "प्लान बदले?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -9569,9 +9548,6 @@
       "Share the confirmation code with your administrator": [
         "पुष्टीकरण कोड अपने एडमिनिस्ट्रेटर के साथ साझा करें"
       ],
-      "Sign in": [
-        "साइनइन करें"
-      ],
       "Sign in to your organization": [
         "अपने संगठन में साइन इन करें"
       ],
@@ -9616,9 +9592,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "आपको उन्हें अपने संगठन में जोड़ने के लिए नए उपयोगकर्ता मैन्युअल रूप से बनाना होगा।"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "आपको आपके तीसरें-पार्टी SSO प्रदाता पर रीडायरेक्ट कर दिया जाएगा।"
       ],
       "Your SSO configuration will be deleted.": [
         "आपकी SSO संरचना हटा दी जाएगी।"
@@ -10234,11 +10207,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "हमारा सिस्टम अब इस भुगतान विधि का उपयोग करके आपको स्वतः चार्ज नहीं करेगा, लेकिन आपकी सदस्यता बिलिंग चक्र के अंत में अभी भी नवीनीकृत होगी। यदि आप अपनी सदस्यता को डाउनग्रेड या बदलना चाहते हैं, तो आपको बिलिंग अवधि समाप्त होने से पहले खुद ऐसा करना होगा। हम आपको स्वचालित रूप से डाउनग्रेड नहीं कर सकते क्योंकि यदि आप Free योजना की स्टोरेज सीमा से अधिक या अन्य भुगतान की गई सुविधाओं का उपयोग कर रहे हैं, तो हम आपके लिए फ़ाइलें, ईमेल, या अन्य डेटा स्वचालित रूप से हटा नहीं सकते। यदि आप स्वचालित भुगतान अक्षम करते हैं, तो खाते को निलंबित होने से रोकने के लिए नियत तारीख से पहले अपनी अगली सदस्यता रसीद का भुगतान करना याद रखें।"
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "सेव करें"
       ]
     },
     "Subscription status": {
@@ -10920,9 +10888,6 @@
       "Enable for all users": [
         "सभी उपयोगकर्ताओं के लिए सक्षम करें"
       ],
-      "Enter 2FA code": [
-        "2-एफए कोड डालें"
-      ],
       "Enter endpoints into your identity provider": [
         "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
       ],
@@ -10931,9 +10896,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } बीटा कार्यक्रम में शामिल होने के लिए अपनी ${ BRAND_NAME } खाता जानकारी दर्ज करें"
-      ],
-      "Enter your password": [
-        "आपका पासवर्ड डालें"
       ],
       "Error": [
         "गड़बड़"
