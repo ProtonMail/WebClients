@@ -364,9 +364,6 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
-      "Forgot password?": [
-        "¿Contraseña olvidada?"
-      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -833,7 +830,7 @@
         "Usar tema ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Usar ${ PASS_APP_NAME } para Business"
+        "Usar ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
@@ -2545,7 +2542,7 @@
         "Para mayor seguridad, promueva el uso de la autenticación de dos factores en su organización."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
-        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un WiFi público."
+        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un Wi-Fi público."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Garantice la seguridad de primer nivel para su cuenta con el programa ${ PROTON_SENTINEL_NAME }."
@@ -4647,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ingrese la dirección de correo o usuario de ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Ingrese su propia contraseña (como administrador de la organización)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ingrese la dirección de correo electrónico de recuperación y le enviaremos el nombre de usuario o dirección de correo."
       ],
@@ -4956,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -5130,6 +5121,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Ingrese la frase de recuperación de 12 palabras asociada con la cuenta."
+      ],
+      "Please fill in all required fields.": [
+        "Complete todos los campos obligatorios."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } crédito restante.",
@@ -6183,10 +6177,10 @@
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6218,9 +6212,6 @@
       ],
       "Backup password": [
         "Contraseña de respaldo"
-      ],
-      "Billing address": [
-        "Dirección de facturación"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -6383,9 +6374,6 @@
       ],
       "Event": [
         "Evento"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -6618,9 +6606,6 @@
       "Second password": [
         "Segunda contraseña"
       ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
         "Mostrar ${ n } administradores"
@@ -6729,9 +6714,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos los datos."
-      ],
-      "Your password (admin)": [
-        "La contraseña (admin)"
       ],
       "ZIP code": [
         "Código postal"
@@ -6847,7 +6829,7 @@
         "¿No tiene acceso a su 2FA?"
       ],
       "Enforcing 2FA for organizations": [
-        "Forzar de 2FA para organizaciones"
+        "Implementar 2FA para organizaciones"
       ],
       "Forgot email?": [
         "¿Olvidó su correo electrónico?"
@@ -6904,7 +6886,7 @@
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Cómo usar ${ PASS_APP_NAME } para Business"
+        "Cómo usar ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
         "Cómo usar el reenvío de correo"
@@ -7900,6 +7882,14 @@
         "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancele en cualquier momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7912,14 +7902,6 @@
       ],
       "Switch plans?": [
         "¿Quiere cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -10048,9 +10030,6 @@
       "Share the confirmation code with your administrator": [
         "Comparta el código de confirmación con su administrador"
       ],
-      "Sign in": [
-        "Iniciar sesión"
-      ],
       "Sign in to your organization": [
         "Iniciar sesión en la organización"
       ],
@@ -10095,9 +10074,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrá que crear los nuevos usuarios manualmente para agregarlos a su organización."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se le redirigirá a su proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
@@ -10720,8 +10696,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorre ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11439,9 +11415,6 @@
       "Enhance security with 2FA": [
         "Mejore la seguridad con 2FA"
       ],
-      "Enter 2FA code": [
-        "Ingrese el código 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Ingrese puntos finales en el proveedor de identidad"
       ],
@@ -11450,9 +11423,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ingrese los detalles de la cuenta de ${ BRAND_NAME } para unirse al programa Beta de ${ app }"
-      ],
-      "Enter your password": [
-        "Ingrese la contraseña"
       ],
       "Error": [
         "Error"
@@ -11838,7 +11808,7 @@
         "Enviaremos un correo a la dirección nueva con instrucciones para completar el cambio."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Le damos la bienvenida a ${ BRAND_NAME } para Business"
+        "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Configuración de WireGuard"

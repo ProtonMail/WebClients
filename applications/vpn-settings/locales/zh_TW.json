@@ -325,9 +325,6 @@
       "Fit to window": [
         "貼齊視窗邊沿"
       ],
-      "Forgot password?": [
-        "忘記密碼?"
-      ],
       "Forgot recovery method?": [
         "忘記復原方法?"
       ],
@@ -3967,9 +3964,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
       ],
-      "Enter your own password (as organization admin).": [
-        "輸入您的個人密碼 (組織機構管理員身份)。"
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
       ],
@@ -4263,9 +4257,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
-      ],
-      "MM/YY": [
-        "月月/年年"
       ],
       "Monitor accounts": [
         "監控帳號"
@@ -5362,11 +5353,11 @@
       "Allow recovery by phone": [
         "允許透過電話復原"
       ],
-      "Allowed Domain": [
-        "網域白名單"
-      ],
       "Allowed domain": [
         "已允許網域"
+      ],
+      "Allowed Domain": [
+        "網域白名單"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -5391,9 +5382,6 @@
       ],
       "Backup password": [
         "備份密碼"
-      ],
-      "Billing address": [
-        "帳單位址"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -5550,9 +5538,6 @@
       ],
       "Event": [
         "行程"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "到期日(${ patternExpiration })"
       ],
       "Expires": [
         "有效期限"
@@ -5770,9 +5755,6 @@
       "Second password": [
         "第二密碼"
       ],
-      "Security code (${ codeName })": [
-        "安全驗證代碼(${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "顯示 ${ n } 管理員"
       ],
@@ -5868,9 +5850,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
-      ],
-      "Your password (admin)": [
-        "您的密碼（管理員）"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -6898,6 +6877,14 @@
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -6910,14 +6897,6 @@
       ],
       "Switch plans?": [
         "切換方案？"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -8616,9 +8595,6 @@
       "Share the confirmation code with your administrator": [
         "與您的管理員分享確認碼"
       ],
-      "Sign in": [
-        "登入"
-      ],
       "Sign in to your organization": [
         "登入您的組織"
       ],
@@ -8648,9 +8624,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您將需要手動建立新使用者以便重新加入至您的組織中。"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "您將被重新導向至您的第三方單一登入提供者。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的單一登入配置將被刪除。"
@@ -9218,11 +9191,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "省下"
       ]
     },
     "Subscription status": {
@@ -9887,9 +9855,6 @@
       "Enable for all users": [
         "為所有使用者啟用"
       ],
-      "Enter 2FA code": [
-        "輸入雙重驗證碼"
-      ],
       "Enter endpoints into your identity provider": [
         "請前往您的身分提供者輸入端點"
       ],
@@ -9898,9 +9863,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
-      ],
-      "Enter your password": [
-        "請輸入您的密碼"
       ],
       "Error": [
         "錯誤"

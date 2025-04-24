@@ -364,9 +364,6 @@
       "Fit to window": [
         "Přizpůsobit oknu"
       ],
-      "Forgot password?": [
-        "Zapomenuté heslo?"
-      ],
       "Forgot recovery method?": [
         "Zapomněli jste metodu obnovení?"
       ],
@@ -710,7 +707,7 @@
         "Nastavit 2FA"
       ],
       "Set up a custom domain": [
-        "Nastavte vlastní doménu"
+        "Nastavit vlastní doménu"
       ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
@@ -4749,9 +4746,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadejte svou e-mailovou adresu nebo uživatelské jméno účtu ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Zadejte vlastní heslo (jako správce organizace)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Zadejte vaši obnovovací e-mailovou adresu a my Vám pošleme Vaše uživatelské jméno nebo e-mailovou adresu."
       ],
@@ -5058,9 +5052,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Sledování účtů"
       ],
@@ -5243,6 +5234,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
+      ],
+      "Please fill in all required fields.": [
+        "Vyplňte prosím všechna povinná pole."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane kredit ve výši ${ creditsRemaining }.",
@@ -6338,10 +6332,10 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6373,9 +6367,6 @@
       ],
       "Backup password": [
         "Záložní heslo"
-      ],
-      "Billing address": [
-        "Fakturační adresa"
       ],
       "Billing cycle": [
         "Fakturační období"
@@ -6538,9 +6529,6 @@
       ],
       "Event": [
         "Událost"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Vypršení (${ patternExpiration })"
       ],
       "Expires": [
         "Vyprší"
@@ -6773,9 +6761,6 @@
       "Second password": [
         "Druhé heslo"
       ],
-      "Security code (${ codeName })": [
-        "Kód zabezpečení (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Zobrazit ${ n } správce",
         "Zobrazit ${ n } správce",
@@ -6889,9 +6874,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
-      ],
-      "Your password (admin)": [
-        "Vaše heslo (admin)"
       ],
       "ZIP code": [
         "PSČ"
@@ -8110,6 +8092,14 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -8122,14 +8112,6 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -10359,9 +10341,6 @@
       "Share the confirmation code with your administrator": [
         "Sdílejte potvrzovací kód s vaším správcem"
       ],
-      "Sign in": [
-        "Přihlásit se"
-      ],
       "Sign in to your organization": [
         "Přihlaste se ke své organizaci"
       ],
@@ -10406,9 +10385,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Nové uživatele budete muset vytvořit ručně a přidat je do organizace."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavení SSO bude smazáno."
@@ -11075,8 +11051,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ušetříte"
+      "Save ${ priceString }": [
+        "Ušetřete ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11800,9 +11776,6 @@
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
       ],
-      "Enter 2FA code": [
-        "Zadejte kód 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Zadejte endpointy do vašeho poskytovatele indetity"
       ],
@@ -11811,9 +11784,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
-      ],
-      "Enter your password": [
-        "Zadejte Vaše heslo"
       ],
       "Error": [
         "Chyba"
