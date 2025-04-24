@@ -749,10 +749,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -4937,9 +4937,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monitor accounts": [
         "계정 모니터링"
       ],
@@ -5802,9 +5799,6 @@
       "Beta Access": [
         "베타 참여"
       ],
-      "Billing address": [
-        "청구지 주소"
-      ],
       "Billing cycle": [
         "결제 주기"
       ],
@@ -5942,9 +5936,6 @@
       ],
       "Every": [
         "전체"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "만료일 (${ patternExpiration })"
       ],
       "Expires": [
         "만료"
@@ -6122,9 +6113,6 @@
       ],
       "Secondary time zone": [
         "보조 시간대"
-      ],
-      "Security code (${ codeName })": [
-        "보안 코드 (${ codeName })"
       ],
       "Show others when I'm busy": [
         "다른 사용자에게 바쁨으로 표시"
@@ -6728,6 +6716,26 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6749,26 +6757,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -9482,11 +9470,6 @@
         "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "절약되는 가격:"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
@@ -10934,9 +10917,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Zoom 회의 참여"
-      ],
       "Meeting ID:": [
         "회의 ID:"
       ],

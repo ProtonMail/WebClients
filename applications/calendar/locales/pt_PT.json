@@ -174,6 +174,9 @@
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
+      ],
       "Contact group": [
         "Grupo de contactos"
       ],
@@ -593,6 +596,9 @@
       "Remove bonuses": [
         "Remover bónus"
       ],
+      "Remove button": [
+        "Remover o botão"
+      ],
       "Remove gift code": [
         "Remover código de oferta"
       ],
@@ -791,11 +797,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade Now": [
-        "Atualizar agora"
-      ],
       "Upgrade now": [
         "Actualizar agora"
+      ],
+      "Upgrade Now": [
+        "Atualizar agora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Atualize para o plano ${ BRAND_NAME } Unlimited"
@@ -5124,9 +5130,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para a sua caixa de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitor de contas"
       ],
@@ -5222,6 +5225,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique o seu pagamento no separador de verificação."
+      ],
+      "Please fill in all required fields.": [
+        "Preencha todos os campos obrigatórios."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Note que os endereços atribuídos a estes grupos NÃO serão eliminados."
@@ -6011,9 +6017,6 @@
       "Beta Access": [
         "Acesso Beta"
       ],
-      "Billing address": [
-        "Endereço de faturação"
-      ],
       "Billing cycle": [
         "Ciclo de faturação"
       ],
@@ -6151,9 +6154,6 @@
       ],
       "Every": [
         "A cada"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiração (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -6336,9 +6336,6 @@
       "Secondary time zone": [
         "Fuso horário secundário"
       ],
-      "Security code (${ codeName })": [
-        "Código de segurança (${ codeName })"
-      ],
       "Show others when I'm busy": [
         "Mostrar aos outros quando estou ocupado"
       ],
@@ -6503,6 +6500,9 @@
       ],
       "Drafts": [
         "Rascunhos"
+      ],
+      "Enforcing 2FA for organizations": [
+        "Aplicação da A2F para as organizações"
       ],
       "How to add users": [
         "Como adicionar utilizadores"
@@ -6982,6 +6982,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -7003,26 +7023,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9095,6 +9095,11 @@
         "Assinar"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Participar na conversa rápida do Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Mais rápido na aplicação"
@@ -9853,11 +9858,6 @@
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Poupe"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacto parece idêntico.",
@@ -10139,6 +10139,11 @@
         "Campo vCard"
       ]
     },
+    "Teams": {
+      "Join Teams meeting": [
+        "Participar na reunião do Teams"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -10294,6 +10299,9 @@
       ],
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
+      ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
       ],
       "Connect your custom domain": [
         "Ligue o seu domínio personalizado"
@@ -11407,6 +11415,11 @@
         "Anualmente, ${ untilString }"
       ]
     },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Participar na reunião Zoom"
+      ]
+    },
     "Zoom integration": {
       "Add Zoom meeting": [
         "Adicionar uma reunião Zoom"
@@ -11419,9 +11432,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Participar na reunião Zoom"
-      ],
       "Meeting ID:": [
         "ID da reunião:"
       ],

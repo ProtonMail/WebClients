@@ -797,11 +797,11 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
-      "Upgrade Now": [
-        "Fazer upgrade agora"
-      ],
       "Upgrade now": [
         "Atualizar agora"
+      ],
+      "Upgrade Now": [
+        "Fazer upgrade agora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Faça upgrade para ${ BRAND_NAME } Unlimited"
@@ -5130,9 +5130,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para sua caixa de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitor de contas"
       ],
@@ -5228,6 +5225,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
+      ],
+      "Please fill in all required fields.": [
+        "Preencha todos os campos obrigatórios."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Observe que os endereços atribuídos a esses grupos NÃO serão excluídos."
@@ -6020,9 +6020,6 @@
       "Beta Access": [
         "Acesso beta"
       ],
-      "Billing address": [
-        "Endereço de cobrança"
-      ],
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
@@ -6160,9 +6157,6 @@
       ],
       "Every": [
         "A cada"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiração (${ patternExpiration })"
       ],
       "Expires": [
         "Data de validade"
@@ -6344,9 +6338,6 @@
       ],
       "Secondary time zone": [
         "Fuso horário secundário"
-      ],
-      "Security code (${ codeName })": [
-        "Código de segurança (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Mostrar aos outros quando estou ocupado"
@@ -6994,6 +6985,26 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -7015,26 +7026,6 @@
       ],
       "Switch plan": [
         "Mudar de plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Faça upgrade para ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9118,6 +9109,11 @@
         "Assinar"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Participar da reunião do Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Mais rápido no aplicativo"
@@ -9877,8 +9873,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Economize"
+      "Save ${ priceString }": [
+        "Economize ${ priceString }"
       ]
     },
     "Success": {
@@ -10160,6 +10156,11 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Participar da reunião do Teams"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11433,6 +11434,11 @@
         "Anualmente, ${ untilString }"
       ]
     },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Participe da reunião do Zoom"
+      ]
+    },
     "Zoom integration": {
       "Add Zoom meeting": [
         "Adicionar uma reunião do Zoom"
@@ -11445,9 +11451,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Participe da reunião do Zoom"
-      ],
       "Meeting ID:": [
         "ID da reunião:"
       ],
