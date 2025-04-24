@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -39,6 +39,7 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
+import noop from '@proton/utils/noop';
 
 const FORM_ID = 'edit-login';
 
@@ -51,34 +52,36 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
     const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
-    const { email, username } = getSanitizedUserIdentifiers(content);
 
     /** On initial mount: expand username field by default IIF:
      * - user has enabled the `showUsernameField` setting
      * - both username & field are populated */
-    const initialValues: LoginItemFormValues = {
-        aliasPrefix: '',
-        aliasSuffix: undefined,
-        extraFields,
-        files: filesFormInitializer(),
-        itemEmail: email,
-        itemUsername: username,
-        mailboxes: [],
-        name: metadata.name,
-        note: metadata.note,
-        passkeys: content.passkeys ?? [],
-        password: content.password,
-        shareId,
-        totpUri: getSecretOrUri(content.totpUri),
-        url: '',
-        urls: content.urls.map(createNewUrl),
-        withAlias: false,
-        withUsername: showUsernameField || Boolean(username && email),
-    };
+    const initialValues: LoginItemFormValues = useMemo(
+        () => ({
+            aliasPrefix: '',
+            aliasSuffix: undefined,
+            extraFields,
+            files: filesFormInitializer(),
+            itemEmail: content.itemEmail,
+            itemUsername: content.itemUsername,
+            mailboxes: [],
+            name: metadata.name,
+            note: metadata.note,
+            passkeys: content.passkeys ?? [],
+            password: content.password,
+            shareId,
+            totpUri: getSecretOrUri(content.totpUri),
+            url: '',
+            urls: content.urls.map(createNewUrl),
+            withAlias: false,
+            withUsername: showUsernameField,
+        }),
+        []
+    );
 
     const form = useFormik<LoginItemFormValues>({
         initialValues,
-        onSubmit: ({
+        onSubmit: async ({
             name,
             files,
             itemEmail,
@@ -127,7 +130,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                 );
             }
 
-            const { email, username } = getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+            const { email, username } = await getSanitizedUserIdentifiers({ itemEmail, itemUsername });
 
             onSubmit({
                 ...uneditable,
@@ -176,7 +179,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
 
     const { aliasOptions } = useAliasForLoginModal(form);
 
-    useItemDraft<LoginItemFormValues>(form, {
+    const draft = useItemDraft<LoginItemFormValues>(form, {
         mode: 'edit',
         itemId: itemId,
         shareId: form.values.shareId,
@@ -185,6 +188,23 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
         sanitizeHydration: sanitizeLoginAliasHydration(aliasOptions.value),
         onHydrated: (draft) => draft?.withAlias && aliasOptions.request(),
     });
+
+    useEffect(() => {
+        if (!draft) {
+            getSanitizedUserIdentifiers(content)
+                .then(({ username, email }) => {
+                    form.resetForm({
+                        values: {
+                            ...form.values,
+                            itemUsername: username,
+                            itemEmail: email,
+                            withUsername: form.values.withUsername || Boolean(username && email),
+                        },
+                    });
+                })
+                .catch(noop);
+        }
+    }, []);
 
     return (
         <>

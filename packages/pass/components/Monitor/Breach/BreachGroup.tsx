@@ -29,7 +29,7 @@ export const BreachGroup: FC<Props> = ({ match }) => {
     const { onTelemetry } = usePassCore();
     const customDomains = useSelector(selectHasCustomDomains);
     const type = validateType(match?.params.type) ? match.params.type : null;
-    const { title, data, loading } = useBreachesTable(type ?? FALLBACK);
+    const table = useBreachesTable(type ?? FALLBACK);
 
     useEffect(() => {
         if (!type) history.replace(getLocalPath(`monitor/dark-web/${FALLBACK}`));
@@ -47,10 +47,11 @@ export const BreachGroup: FC<Props> = ({ match }) => {
     }, []);
 
     return (
-        type && (
+        type &&
+        table && (
             <>
                 <SubHeader
-                    title={title}
+                    title={table.title}
                     className="mb-3"
                     actions={
                         <>
@@ -63,7 +64,7 @@ export const BreachGroup: FC<Props> = ({ match }) => {
                     <Card rounded background={false} className="mb-3 color-weak">{c('Info')
                         .t`Aliases with custom domains are not monitored, please add them as a custom email for monitoring.`}</Card>
                 )}
-                <BreachGroupList data={data} loading={loading} />
+                <BreachGroupList data={table.data} loading={table.loading} />
             </>
         )
     );

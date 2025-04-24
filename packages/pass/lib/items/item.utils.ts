@@ -186,12 +186,15 @@ export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): Identit
     fullName: item.data.content.fullName,
 });
 
-export const getSanitizedUserIdentifiers = ({
+export const getSanitizedUserIdentifiers = async ({
     itemEmail,
     itemUsername,
-}: Pick<DeobfuscatedItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
-    const validEmail = PassUI.is_email_valid(itemEmail);
-    const emailUsername = PassUI.is_email_valid(itemUsername);
+}: Pick<DeobfuscatedItem<'login'>['content'], 'itemEmail' | 'itemUsername'>): Promise<{
+    email: string;
+    username: string;
+}> => {
+    const validEmail = await PassUI.is_email_valid(itemEmail);
+    const emailUsername = await PassUI.is_email_valid(itemUsername);
 
     if (itemUsername) {
         /* `itemEmail` is empty and `itemUsername` is a valid email: Move username to email field */

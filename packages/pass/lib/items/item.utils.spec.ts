@@ -504,8 +504,8 @@ describe('Item utils', () => {
                 { email: 'valid@proton.me', username: '' },
             ],
             ['empty email, empty username', { itemEmail: '', itemUsername: '' }, { email: '', username: '' }],
-        ])('should handle %s correctly', (_, input, expected) => {
-            const result = getSanitizedUserIdentifiers(input);
+        ])('should handle %s correctly', async (_, input, expected) => {
+            const result = await getSanitizedUserIdentifiers(input);
             expect(result).toEqual(expected);
         });
     });
