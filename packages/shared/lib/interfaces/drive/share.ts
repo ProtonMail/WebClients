@@ -41,6 +41,10 @@ export interface ShareMetaShort {
     PossibleKeyPackets?: { KeyPacket: string }[];
     State: number;
     CreateTime: number;
+    // LinkType is deprecated.
+    // We use it to quickly identify the type of share.
+    // (Share) Type can be 2 (standard), but only LinkType can tell if its album (LinkType 3) or not.
+    LinkType: number;
 }
 
 export interface ShareMeta extends ShareMetaShort {
