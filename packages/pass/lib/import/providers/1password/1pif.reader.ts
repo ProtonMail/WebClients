@@ -11,8 +11,7 @@ import {
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import {
@@ -27,15 +26,15 @@ import { OnePassLoginDesignation } from './1pux.types';
 
 const ENTRY_SEPARATOR_1PIF = '***';
 
-export const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> => {
+export const processLoginItem = async (item: OnePassLegacyItem): Promise<ItemImportIntent<'login'>> => {
     const fields = item.secureContents.fields;
 
     return importLoginItem({
         name: item.title,
         note: item.secureContents?.notesPlain,
-        ...getEmailOrUsername(
+        ...(await getEmailOrUsername(
             fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
-        ),
+        )),
         password: fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value,
         urls: extract1PasswordLegacyURLs(item),
         extraFields: extract1PasswordLegacyExtraFields(item),
@@ -103,17 +102,20 @@ export const read1Password1PifData = async (
         const data = await file.text();
         if (!data) throw new Error('Unprocessable content');
 
+        const parsed = parse1PifData(data);
         const ignored: string[] = [];
-        const items: ItemImportIntent[] = parse1PifData(data)
-            .map((item) => {
-                const type = item?.typeName ?? c('Label').t`Unknown`;
-                const title = item?.title ?? '';
-                const files = attachments?.get(item.uuid) ?? [];
+        const items: ItemImportIntent[] = [];
 
-                try {
+        for (const item of parsed) {
+            const type = item?.typeName ?? c('Label').t`Unknown`;
+            const title = item?.title ?? '';
+            const files = attachments?.get(item.uuid) ?? [];
+
+            try {
+                const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
                     switch (item.typeName) {
                         case OnePassLegacyItemType.LOGIN:
-                            return attachFilesToItem(processLoginItem(item), files);
+                            return attachFilesToItem(await processLoginItem(item), files);
                         case OnePassLegacyItemType.NOTE:
                             return attachFilesToItem(processNoteItem(item), files);
                         case OnePassLegacyItemType.PASSWORD:
@@ -122,15 +124,16 @@ export const read1Password1PifData = async (
                             return attachFilesToItem(processCreditCardItem(item), files);
                         case OnePassLegacyItemType.IDENTITY:
                             return attachFilesToItem(processIdentityItem(item), files);
-                        default:
-                            ignored.push(`[${type}] ${title}`);
                     }
-                } catch (err) {
-                    ignored.push(`[${type}] ${title}`);
-                    logger.warn('[Importer::1Password::1pif]', err);
-                }
-            })
-            .filter(truthy);
+                })();
+
+                if (!value) ignored.push(`[${type}] ${title}`);
+                else items.push(value);
+            } catch (err) {
+                ignored.push(`[${type}] ${title}`);
+                logger.warn('[Importer::1Password::1pif]', err);
+            }
+        }
 
         const vaults: ImportVault[] = [
             {
