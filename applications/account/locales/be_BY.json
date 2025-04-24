@@ -3891,7 +3891,7 @@
         "Даступна з ${ MAIL_APP_NAME } Plus"
       ],
       "Configure this first to activate your organization and customize your email address.": [
-        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+        "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
@@ -4404,7 +4404,7 @@
         "Адсканіруйце QR-код на сваёй мабільнай прыладзе для ўваходу"
       ],
       "Scan the code to sign in": [
-        "Адсканіруйце код для ўваходу"
+        "Сканіруйце код для ўваходу"
       ],
       "Security tips": [
         "Парады па бяспецы"
@@ -4755,11 +4755,11 @@
       "Forward to": [
         "Перасылаць на"
       ],
-      "Or": [
-        "Або"
-      ],
       "or": [
         "або"
+      ],
+      "Or": [
+        "Або"
       ],
       "With attachment": [
         "З далучэннем"
@@ -7580,6 +7580,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** не падтрымліваецца ў вашай арганізацыі **${ organizationName }**."
       ],
+      "**${ appName }** is not supported**.": [
+        "**${ appName }** не падтрымліваецца**."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8921,9 +8924,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
       ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
@@ -9199,6 +9199,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
+      ],
+      "Please fill in all required fields.": [
+        "Запоўніце ўсе абавязковыя палі."
       ],
       "Please fill out this field.": [
         "Запоўніце гэта поле."
@@ -11254,10 +11257,10 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11269,10 +11272,10 @@
       "Amount due": [
         "Да аплаты"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
       "and": [
@@ -11340,9 +11343,6 @@
       ],
       "Beta": [
         "Бэта"
-      ],
-      "Billing address": [
-        "Адрас для аплаты"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -11644,9 +11644,6 @@
       "Exclude Spam/Trash from All mail": [
         "Выключыць папкі Спам і Сметніца з папкі Уся пошта"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Тэрмін дзеяння (${ patternExpiration })"
-      ],
       "Expires": [
         "Дзейнічае да"
       ],
@@ -11701,11 +11698,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Калі"
-      ],
       "IF": [
         "КАЛІ"
+      ],
+      "If": [
+        "Калі"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -11908,14 +11905,14 @@
       "Optional": [
         "Неабавязкова"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -12045,9 +12042,6 @@
       ],
       "Second password": [
         "Другі пароль"
-      ],
-      "Security code (${ codeName })": [
-        "Код бяспекі (${ codeName })"
       ],
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"
@@ -18440,8 +18434,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Захаваць"
+      "Save ${ priceString }": [
+        "Эканомія ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -20119,7 +20113,7 @@
         "Наладзіць спосаб аднаўлення"
       ],
       "Set up email forwarding": [
-        "Наладжванне перысылкі лістоў"
+        "Наладжванне перасылкі лістоў"
       ],
       "Set up forwarding": [
         "Наладзіць перасылку"

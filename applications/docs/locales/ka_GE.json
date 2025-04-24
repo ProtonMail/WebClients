@@ -2332,6 +2332,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2341,6 +2346,12 @@
       ],
       "Also included": [
         "ასევე შეიცავს"
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
+      ],
+      "Create groups you can email with a single address.": [
+        "შექმენით ჯგუფები, რომლებისთვისაც ელფოსტის მიწერა ერთი მისამართით შეგეძლებათ."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
@@ -2374,6 +2385,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "იმისათვის, რომ გქონდეთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის, დააყენეთ აღდგენის ფრაზა."
@@ -2413,11 +2427,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4547,9 +4556,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
       ],
-      "MM/YY": [
-        "თთ/წწ"
-      ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
@@ -4612,6 +4618,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "ამ საქაღლდესთნ წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
       ],
       "Opening...": [
         "გახსნა..."
@@ -5428,9 +5437,6 @@
       "Beta Access": [
         "წვდომა ბეტა ვერსიებზე"
       ],
-      "Billing address": [
-        "ინვოისის გასაგზავნი მისამართი"
-      ],
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
@@ -5559,9 +5565,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "ამ ბმულის წაშლა და წვდომის მქონეების მოცილება"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "ვადა (${ patternExpiration })"
       ],
       "Expires": [
         "ვადა"
@@ -5746,9 +5749,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, ჟენევა"
       ],
-      "Security code (${ codeName })": [
-        "უსაფრთხოების კოდი (${ codeName })"
-      ],
       "Set expiration date": [
         "ვადის დაყენება"
       ],
@@ -5908,6 +5908,9 @@
       ],
       "How to add Zoom links": [
         "როგორ დავამატო Zoom-ის ბმულები"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "როგორ ხდება კოლაბორაცია ${ DOCS_SHORT_APP_NAME }-ში"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "როგორ ჩავრთო ${ PROTON_SENTINEL_NAME }"
@@ -8095,6 +8098,11 @@
         "შესვლა წარმატებით არ დასრულდა."
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "ორგ.-ის მორგებ და ანგარისის უსაფრთხოება"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "ყველა ფსევდონიმი"
@@ -8873,11 +8881,6 @@
         "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "დაზოგვა"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } ერთნაირია.",
@@ -9609,6 +9612,9 @@
       ],
       "This document is password protected": [
         "ეს დოკუმენტი პაროლითაა დაცული"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
       "Unlock contacts groups": [
         "განბლოკეთ კონტაქტის ჯგუფები"

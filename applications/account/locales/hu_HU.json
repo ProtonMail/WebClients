@@ -4652,11 +4652,11 @@
       "Forward to": [
         "Továbbítási cím"
       ],
-      "Or": [
-        "Vagy"
-      ],
       "or": [
         "vagy"
+      ],
+      "Or": [
+        "Vagy"
       ],
       "With attachment": [
         "Mellékletet tartalmaz"
@@ -8682,9 +8682,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Az üzenetek bármelyik e-mail címre érkezhetnek, ugyanabban a postafiókban leszek olvashatók."
       ],
-      "MM/YY": [
-        "HH/ÉÉ"
-      ],
       "Monitor accounts": [
         "Fiókok megfigyelése"
       ],
@@ -10941,10 +10938,10 @@
       "Allow sharing outside the organization": [
         "A szervezeten kívüli megosztás engedélyezése"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10956,11 +10953,11 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -11027,9 +11024,6 @@
       ],
       "Beta": [
         "Béta"
-      ],
-      "Billing address": [
-        "Számlázási cím"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -11331,9 +11325,6 @@
       "Exclude Spam/Trash from All mail": [
         "Levélszemét/Lomtár kizárása az Összes levél-ből"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Lejárta (${ patternExpiration })"
-      ],
       "Expires": [
         "Lejárat"
       ],
@@ -11388,11 +11379,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -11595,14 +11586,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -11732,9 +11723,6 @@
       ],
       "Second password": [
         "Második jelszó"
-      ],
-      "Security code (${ codeName })": [
-        "Biztonsági kód (${ codeName })"
       ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
@@ -17866,11 +17854,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Rendszerünk nem tud automatikusan levonni ezzel a fizetési móddal, de az előfizetése továbbra is megújul a számlázási ciklus végén. Ha kisebb csomagra szeretne váltani vagy módosítani szeretné előfizetését, azt továbbra is magának kell megtennie a számlázási időszak vége előtt. Ez nem lehetséges automatikusan, mert ha túllépte az ingyenes csomagban elérhető tárhelyet, vagy más fizetős funkciókat használ, nem törölhetünk automatikusan fájlokat, e-maileket vagy más adatokat ön helyett. Ha letiltja az automatikus fizetést, ne felejtse el a következő számlát az esedékesség napja előtt befizetni, hogy elkerülje a fiók felfüggesztését."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Megtakarítás"
       ]
     },
     "Subscription status": {

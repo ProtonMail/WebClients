@@ -298,7 +298,7 @@
         "Télécharger"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Télécharger l'application ${ DRIVE_APP_NAME }"
+        "Télécharger les applications ${ DRIVE_APP_NAME }"
       ],
       "Download anyway": [
         "Télécharger quand même"
@@ -592,7 +592,7 @@
         "Retirer les bonus"
       ],
       "Remove button": [
-        "Bouton retirer"
+        "Retirer le bouton"
       ],
       "Remove gift code": [
         "Retirer le code-cadeau"
@@ -2335,6 +2335,11 @@
         "Facture impayée"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } dans ${ DRIVE_APP_NAME } vous permet de travailler avec d'autres personnes dans un environnement chiffré et sécurisé."
@@ -2470,11 +2475,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4634,9 +4634,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Surveiller les comptes"
       ],
@@ -4753,6 +4750,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Veuillez exporter une copie de vos modifications en cours depuis le menu principal et rechargez la page."
+      ],
+      "Please fill in all required fields.": [
+        "Veuillez remplir tous les champs obligatoires."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -5569,9 +5569,6 @@
       "Beta Access": [
         "Accès à la version bêta"
       ],
-      "Billing address": [
-        "Adresse de facturation"
-      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -5700,9 +5697,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Effacer ce lien et retirer toutes les personnes ayant accès"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiration (${ patternExpiration })"
       ],
       "Expires": [
         "Expire le"
@@ -5886,9 +5880,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Code de sécurité (${ codeName })"
       ],
       "Set expiration date": [
         "Définir la date d'expiration"
@@ -9090,8 +9081,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Économisez"
+      "Save ${ priceString }": [
+        "Économisez ${ priceString }"
       ]
     },
     "Success": {

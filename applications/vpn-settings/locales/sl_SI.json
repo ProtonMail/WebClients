@@ -304,9 +304,6 @@
       "Fit to window": [
         "Prilagodi oknu"
       ],
-      "Forgot password?": [
-        "Pozabljeno geslo?"
-      ],
       "Forgot recovery method?": [
         "Ste pozabili način obnovitve?"
       ],
@@ -3956,9 +3953,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Vnesi svoj e-poštni naslov ali uporabniško ime ${ BRAND_NAME } računa."
       ],
-      "Enter your own password (as organization admin).": [
-        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Vnesite svoj naslov za obnovitev računa in poslali vam bomo vaše uporabniško ime ali naslov e-pošte."
       ],
@@ -4174,9 +4168,6 @@
       ],
       "Member": [
         "Član"
-      ],
-      "MM/YY": [
-        "MM/LL"
       ],
       "Monitor accounts": [
         "Nadzor računov"
@@ -5170,10 +5161,10 @@
       "Allow recovery by phone": [
         "Omogoči obnovitev po telefonu."
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dovoljena domena"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dovoljena domena"
       ],
       "Amount": [
@@ -5196,9 +5187,6 @@
       ],
       "Backup password": [
         "Varnostna kopija gesla"
-      ],
-      "Billing address": [
-        "Naslov za izstavitev računa"
       ],
       "Billing cycle": [
         "Cikel obračunavanja"
@@ -5352,9 +5340,6 @@
       ],
       "Event": [
         "Dogodek"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Potek (${ patternExpiration })."
       ],
       "Expires": [
         "Poteče"
@@ -5566,9 +5551,6 @@
       "Second password": [
         "Drugo geslo"
       ],
-      "Security code (${ codeName })": [
-        "Varnostna koda (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Prikaži ${ n } skrbnika",
         "Prikaži ${ n } skrbnika",
@@ -5658,9 +5640,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ta račun in vse njegove podatke."
-      ],
-      "Your password (admin)": [
-        "Vaše geslo (admin)"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -6752,6 +6731,14 @@
         "pravili in pogoji"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6764,14 +6751,6 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -8589,9 +8568,6 @@
       "Remove single sign-on": [
         "Odstrani enotno prijavo"
       ],
-      "Sign in": [
-        "Prijava"
-      ],
       "Single sign-on removed": [
         "​Enotna prijava je odstranjena"
       ],
@@ -9121,11 +9097,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Naš sistem vas ne bo več samodejno obremenjeval s tem načinom plačila, vendar se bo vaša naročnina še vedno podaljšala na koncu obračunskega cikla. Če želite zmanjšati ali spremeniti svojo naročnino, morate to še vedno storiti sami pred koncem obračunskega obdobja. Samodejno ne moremo zmanjšati vaše naročnine, ker če presežete kvoto brezplačnega shranjevanja ali uporabljate druge plačljive funkcije, ne moremo samodejno izbrisati datotek, e-pošte ali drugih podatkov za vas. Če onemogočite samodejno plačilo, ne pozabite plačati naslednjega računa za naročnino pred rokom zapadlosti, da preprečite suspenz računa."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Shrani"
       ]
     },
     "Subscription status": {
@@ -9712,9 +9683,6 @@
       "Email subscriptions": [
         "E-poštne naročnine"
       ],
-      "Enter 2FA code": [
-        "Vnesite kodo 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Vnesite končne točke v ponudnika identitete"
       ],
@@ -9723,9 +9691,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vpišite podrobnosti vašega računa ${ BRAND_NAME } za vključitev v beta preizkuševalni program za ${ app }."
-      ],
-      "Enter your password": [
-        "Vnesite geslo"
       ],
       "Error": [
         "Napaka"

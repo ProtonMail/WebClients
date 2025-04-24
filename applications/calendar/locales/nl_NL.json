@@ -797,11 +797,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade Now": [
-        "Upgrade Nu"
-      ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade Now": [
+        "Upgrade Nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
@@ -5130,9 +5130,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
-      "MM/YY": [
-        "MM/JJ"
-      ],
       "Monitor accounts": [
         "Accounts monitoren"
       ],
@@ -5228,6 +5225,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
+      ],
+      "Please fill in all required fields.": [
+        "Vul alle verplichte velden in."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
@@ -6017,9 +6017,6 @@
       "Beta Access": [
         "Bèta toegang"
       ],
-      "Billing address": [
-        "Facturatie adres"
-      ],
       "Billing cycle": [
         "Facturatieperiode"
       ],
@@ -6157,9 +6154,6 @@
       ],
       "Every": [
         "Elke"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Verloopdatum (${ patternExpiration })"
       ],
       "Expires": [
         "Verloopt"
@@ -6341,9 +6335,6 @@
       ],
       "Secondary time zone": [
         "Secundaire tijdzone"
-      ],
-      "Security code (${ codeName })": [
-        "Beveiligingscode (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Laat anderen zien wanneer ik bezet ben"
@@ -6991,6 +6982,26 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7012,26 +7023,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9862,11 +9853,6 @@
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Bespaar"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contact ziet er identiek uit.",
@@ -11431,9 +11417,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Deelnemen aan Zoom vergadering"
-      ],
       "Meeting ID:": [
         "Meeting ID:"
       ],

@@ -4295,10 +4295,6 @@
         "${ pausedCount } felfüggesztve",
         "${ pausedCount } felfüggesztve"
       ],
-      "${ photoCount } item": [
-        "${ photoCount } elem",
-        "${ photoCount } elem"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
       ],
@@ -5052,9 +5048,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Az üzenetek bármelyik e-mail címre érkezhetnek, ugyanabban a postafiókban leszek olvashatók."
       ],
-      "MM/YY": [
-        "HH/ÉÉ"
-      ],
       "Monitor accounts": [
         "Fiókok megfigyelése"
       ],
@@ -5254,9 +5247,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Kérjük, várjon, amíg frissítjük az adatait, ez néhány másodpercet vehet igénybe."
       ],
       "Preparing link to file": [
         "A fájl hivatkozásának előkészítése"
@@ -6218,9 +6208,6 @@
       "Beta Access": [
         "Béta hozzáférés"
       ],
-      "Billing address": [
-        "Számlázási cím"
-      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
@@ -6377,9 +6364,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Törölje ezt a hivatkozást, és távolítsa el a hozzáféréssel rendelkezőket"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Lejárta (${ patternExpiration })"
       ],
       "Expired": [
         "Lejárt"
@@ -6590,9 +6574,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Biztonsági kód (${ codeName })"
       ],
       "Select type of abuse": [
         "Válassza ki a visszaélés fajtáját"
@@ -8592,10 +8573,10 @@
       "Invite members": [
         "Tagok meghívása"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talán később"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talán később"
       ],
       "Select theme": [
@@ -10191,11 +10172,6 @@
         "Rendszerünk nem tud automatikusan levonni ezzel a fizetési móddal, de az előfizetése továbbra is megújul a számlázási ciklus végén. Ha kisebb csomagra szeretne váltani vagy módosítani szeretné előfizetését, azt továbbra is magának kell megtennie a számlázási időszak vége előtt. Ez nem lehetséges automatikusan, mert ha túllépte az ingyenes csomagban elérhető tárhelyet, vagy más fizetős funkciókat használ, nem törölhetünk automatikusan fájlokat, e-maileket vagy más adatokat ön helyett. Ha letiltja az automatikus fizetést, ne felejtse el a következő számlát az esedékesség napja előtt befizetni, hogy elkerülje a fiók felfüggesztését."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Megtakarítás"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Az Önnel megosztott albumok itt fognak megjelenni"
@@ -11190,9 +11166,6 @@
       ],
       "Untitled document ${ date }": [
         "Névtelen dokumentum: ${ date }"
-      ],
-      "Updating your photos": [
-        "Fényképei frissítése"
       ],
       "Upgrade complete!": [
         "A verzió frissítése befejeződött!"

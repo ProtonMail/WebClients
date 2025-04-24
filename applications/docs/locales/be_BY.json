@@ -2359,6 +2359,11 @@
         "Пратэрмінаваны рахунак"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
@@ -2379,7 +2384,7 @@
         "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
       ],
       "Configure this first to activate your organization and customize your email address.": [
-        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+        "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
@@ -2494,11 +2499,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4754,9 +4754,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
       ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
@@ -4873,6 +4870,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Экспартуйце копію сваіх бягучых змяненняў з галоўнага меню і перазагрузіце старонку."
+      ],
+      "Please fill in all required fields.": [
+        "Запоўніце ўсе абавязковыя палі."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
@@ -5706,9 +5706,6 @@
       "Beta Access": [
         "Бэта-доступ"
       ],
-      "Billing address": [
-        "Адрас для аплаты"
-      ],
       "Billing cycle": [
         "Перыяд аплаты"
       ],
@@ -5837,9 +5834,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Сцерці гэту спасылку і выдаліць доступ для ўсіх"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Тэрмін дзеяння (${ patternExpiration })"
       ],
       "Expires": [
         "Дзейнічае да"
@@ -6023,9 +6017,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
-      ],
-      "Security code (${ codeName })": [
-        "Код бяспекі (${ codeName })"
       ],
       "Set expiration date": [
         "Задаць тэрмін дзеяння"
@@ -9383,8 +9374,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Захаваць"
+      "Save ${ priceString }": [
+        "Эканомія ${ priceString }"
       ]
     },
     "Success": {
@@ -10094,7 +10085,7 @@
         "Задаць фразу аднаўлення"
       ],
       "Set up email forwarding": [
-        "Наладжванне перысылкі лістоў"
+        "Наладжванне перасылкі лістоў"
       ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"

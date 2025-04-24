@@ -364,9 +364,6 @@
       "Fit to window": [
         "Ablakhoz illesztés"
       ],
-      "Forgot password?": [
-        "Elfelejtette a jelszavát?"
-      ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
       ],
@@ -4587,9 +4584,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
       ],
-      "Enter your own password (as organization admin).": [
-        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
       ],
@@ -4895,9 +4889,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Az üzenetek bármelyik e-mail címre érkezhetnek, ugyanabban a postafiókban leszek olvashatók."
-      ],
-      "MM/YY": [
-        "HH/ÉÉ"
       ],
       "Monitor accounts": [
         "Fiókok megfigyelése"
@@ -6114,10 +6105,10 @@
       "Allow recovery by phone": [
         "Helyreállítás engedélyezése telefonszámmal"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6149,9 +6140,6 @@
       ],
       "Backup password": [
         "Biztonsági jelszó"
-      ],
-      "Billing address": [
-        "Számlázási cím"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -6314,9 +6302,6 @@
       ],
       "Event": [
         "Esemény"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Lejárta (${ patternExpiration })"
       ],
       "Expires": [
         "Lejárat"
@@ -6549,9 +6534,6 @@
       "Second password": [
         "Második jelszó"
       ],
-      "Security code (${ codeName })": [
-        "Biztonsági kód (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "${ n } rendszergazda mutatása",
         "${ n } rendszergazda mutatása"
@@ -6660,9 +6642,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
-      ],
-      "Your password (admin)": [
-        "Jelszó (adminisztrátor)"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -7795,6 +7774,14 @@
         "Oldja fel az összes ${ BRAND_NAME } prémium terméket és funkciót mindössze ${ priceLine }-ért. Bármikor lemondható."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -7807,14 +7794,6 @@
       ],
       "Switch plans?": [
         "Csomag váltása?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -9932,9 +9911,6 @@
       "Share the confirmation code with your administrator": [
         "Ossza meg az ellenőrző kódot az adminisztrátorral."
       ],
-      "Sign in": [
-        "Bejelentkezés"
-      ],
       "Sign in to your organization": [
         "Jelentkezzen be a szervezetébe"
       ],
@@ -10598,11 +10574,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Rendszerünk nem tud automatikusan levonni ezzel a fizetési móddal, de az előfizetése továbbra is megújul a számlázási ciklus végén. Ha kisebb csomagra szeretne váltani vagy módosítani szeretné előfizetését, azt továbbra is magának kell megtennie a számlázási időszak vége előtt. Ez nem lehetséges automatikusan, mert ha túllépte az ingyenes csomagban elérhető tárhelyet, vagy más fizetős funkciókat használ, nem törölhetünk automatikusan fájlokat, e-maileket vagy más adatokat ön helyett. Ha letiltja az automatikus fizetést, ne felejtse el a következő számlát az esedékesség napja előtt befizetni, hogy elkerülje a fiók felfüggesztését."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Megtakarítás"
       ]
     },
     "Subscription status": {
@@ -11308,9 +11279,6 @@
       "Enhance security with 2FA": [
         "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
       ],
-      "Enter 2FA code": [
-        "Írja be a kétlépcsős hitelesítési kódot"
-      ],
       "Enter endpoints into your identity provider": [
         "Adja meg a végpontokat a személyazonosság-szolgáltatójának"
       ],
@@ -11319,9 +11287,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"

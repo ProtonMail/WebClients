@@ -281,7 +281,7 @@
         "Last ned"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download CSV sample": [
         "Last ned CSV-eksempel"
@@ -363,9 +363,6 @@
       ],
       "Fit to window": [
         "Tilpass til vindu"
-      ],
-      "Forgot password?": [
-        "Glemt passord?"
       ],
       "Forgot recovery method?": [
         "Glemt gjenopprettingsmetode?"
@@ -2515,7 +2512,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert, kryptert miljø."
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
@@ -4647,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Skriv inn din ${ BRAND_NAME }-konto e-postadresse eller brukernavn."
       ],
-      "Enter your own password (as organization admin).": [
-        "Skriv inn ditt eget passord (som organisasjonsadministrator)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Angi din gjenopprettings-e-postadresse og vi vil sende deg ditt brukernavn eller e-postadresse."
       ],
@@ -4956,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
@@ -5133,6 +5124,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll ut alle obligatoriske felt."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditt igjen.",
@@ -6186,10 +6180,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6221,9 +6215,6 @@
       ],
       "Backup password": [
         "Reservepassord"
-      ],
-      "Billing address": [
-        "Fakturaadresse"
       ],
       "Billing cycle": [
         "Faktureringssyklus"
@@ -6386,9 +6377,6 @@
       ],
       "Event": [
         "Hendelse"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Utløpstid (${ patternExpiration })"
       ],
       "Expires": [
         "Utløper"
@@ -6621,9 +6609,6 @@
       "Second password": [
         "Andre passord"
       ],
-      "Security code (${ codeName })": [
-        "Sikkerhetskode (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Vis ${ n } administrator",
         "Vis ${ n } administratorer"
@@ -6735,9 +6720,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker å slette denne kontoen og all dataen dens permanent."
-      ],
-      "Your password (admin)": [
-        "Ditt passord (admin)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -6853,7 +6835,7 @@
         "Har du ikke tilgang til din 2FA?"
       ],
       "Enforcing 2FA for organizations": [
-        "Håndheve 2FA for organisasjoner"
+        "Anvendelse av A2F for organisasjoner"
       ],
       "Forgot email?": [
         "Glemt e-post?"
@@ -6886,7 +6868,7 @@
         "Hvordan aktivere ${ PROTON_SENTINEL_NAME }"
       ],
       "How to migrate to ${ BRAND_NAME }": [
-        "Slik migrerer du til ${ BRAND_NAME }"
+        "Hvordan migrere til ${ BRAND_NAME }"
       ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
@@ -6913,7 +6895,7 @@
         "Hvordan bruke ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Hvordan bruke postvideresending"
+        "Hvordan bruke videresending av e-post"
       ],
       "How to use Groups": [
         "Hvordan bruke grupper"
@@ -7906,6 +7888,14 @@
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -7918,14 +7908,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -10075,9 +10057,6 @@
       "Share the confirmation code with your administrator": [
         "Del bekreftelseskoden med administratoren din"
       ],
-      "Sign in": [
-        "Logg på"
-      ],
       "Sign in to your organization": [
         "Logg på organisasjonen"
       ],
@@ -10122,9 +10101,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du må opprette nye brukere manuelt for å legge dem til i organisasjonen din."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-konfigurasjonen din vil bli slettet."
@@ -10744,11 +10720,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Spar"
       ]
     },
     "Subscription status": {
@@ -11398,7 +11369,7 @@
         "Nedgradere til ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Last ned ${ VPN_APP_NAME }"
@@ -11463,9 +11434,6 @@
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
-      "Enter 2FA code": [
-        "Angi 2FA-kode"
-      ],
       "Enter endpoints into your identity provider": [
         "Angi endepunkter i identitetsleverandøren"
       ],
@@ -11474,9 +11442,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Angi din ${ BRAND_NAME }-kontoinformasjon for å bli med i ${ app }-testprogrammet"
-      ],
-      "Enter your password": [
-        "Skriv inn passord"
       ],
       "Error": [
         "Feil"
@@ -11720,7 +11685,7 @@
         "Angi gjenopprettingsmetoder"
       ],
       "Set up email forwarding": [
-        "Sett opp videresending av e-post"
+        "Konfigurer videresending av e-post"
       ],
       "Set up two-factor authentication": [
         "Konfigurer tofaktorautentisering"

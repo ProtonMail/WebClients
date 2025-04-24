@@ -364,9 +364,6 @@
       "Fit to window": [
         "Па памеры акна"
       ],
-      "Forgot password?": [
-        "Забылі пароль?"
-      ],
       "Forgot recovery method?": [
         "Забылі спосаб аднаўлення?"
       ],
@@ -2546,7 +2543,7 @@
         "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
       ],
       "Configure this first to activate your organization and customize your email address.": [
-        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+        "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
@@ -4749,9 +4746,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Увядзіце ваш уліковы запіс электроннай пошты ${ BRAND_NAME } або імя карыстальніка."
       ],
-      "Enter your own password (as organization admin).": [
-        "Увядзіце свой пароль (адміністратара арганізацыі)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
       ],
@@ -5058,9 +5052,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
       ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
@@ -5240,6 +5231,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
+      ],
+      "Please fill in all required fields.": [
+        "Запоўніце ўсе абавязковыя палі."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыт.",
@@ -6335,10 +6329,10 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6370,9 +6364,6 @@
       ],
       "Backup password": [
         "Рэзервовы пароль"
-      ],
-      "Billing address": [
-        "Адрас для аплаты"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -6535,9 +6526,6 @@
       ],
       "Event": [
         "Падзея"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Тэрмін дзеяння (${ patternExpiration })"
       ],
       "Expires": [
         "Дзейнічае да"
@@ -6770,9 +6758,6 @@
       "Second password": [
         "Другі пароль"
       ],
-      "Security code (${ codeName })": [
-        "Код бяспекі (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Паказаць ${ n } адміністратара",
         "Паказаць ${ n } адміністратары",
@@ -6883,9 +6868,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
-      ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
       ],
       "ZIP code": [
         "Паштовы індэкс"
@@ -8104,6 +8086,14 @@
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -8116,14 +8106,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -10332,9 +10314,6 @@
       "Share the confirmation code with your administrator": [
         "Абагуліць код пацвярджэння з вашым адміністратарам"
       ],
-      "Sign in": [
-        "Уваход"
-      ],
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
@@ -10379,9 +10358,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
@@ -11048,8 +11024,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Захаваць"
+      "Save ${ priceString }": [
+        "Эканомія ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11773,9 +11749,6 @@
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
-      "Enter 2FA code": [
-        "Увядзіце код 2ФА"
-      ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
       ],
@@ -11784,9 +11757,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
-      ],
-      "Enter your password": [
-        "Увядзіце пароль"
       ],
       "Error": [
         "Памылка"
@@ -12032,7 +12002,7 @@
         "Прызначэнне спосабаў аднаўлення"
       ],
       "Set up email forwarding": [
-        "Наладжванне перысылкі лістоў"
+        "Наладжванне перасылкі лістоў"
       ],
       "Set up two-factor authentication": [
         "Наладзіць двухфактарную аўтэнтыфікацыю"

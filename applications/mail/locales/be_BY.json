@@ -1422,11 +1422,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade Now": [
-        "Палепшыць"
-      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade Now": [
+        "Палепшыць"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Палепшыць да ${ BRAND_NAME } Unlimited"
@@ -3750,7 +3750,7 @@
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
       "Configure this first to activate your organization and customize your email address.": [
-        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+        "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
@@ -7242,9 +7242,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
       ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
@@ -7385,6 +7382,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Прайдзіце аўтэнтыфікацыю свайго плацяжу на ўкладцы праверкі."
+      ],
+      "Please fill in all required fields.": [
+        "Запоўніце ўсе абавязковыя палі."
       ],
       "Please fill out this field.": [
         "Запоўніце гэта поле."
@@ -8818,10 +8818,10 @@
       "Always move sender's emails": [
         "Заўсёды перамяшчаць лісты адпраўніка"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
       "and": [
@@ -8850,9 +8850,6 @@
       ],
       "Beta Access": [
         "Бэта-доступ"
-      ],
-      "Billing address": [
-        "Адрас для аплаты"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -9010,9 +9007,6 @@
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Тэрмін дзеяння (${ patternExpiration })"
-      ],
       "Expires": [
         "Дзейнічае да"
       ],
@@ -9052,11 +9046,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Калі"
-      ],
       "IF": [
         "КАЛІ"
+      ],
+      "If": [
+        "Калі"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -9169,14 +9163,14 @@
       "Optional": [
         "Неабавязкова"
       ],
+      "OR": [
+        "АБО"
+      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
-      ],
-      "OR": [
-        "АБО"
       ],
       "Original link": [
         "Арыгінальная спасылка"
@@ -9243,9 +9237,6 @@
       ],
       "Search in": [
         "Шукаць у"
-      ],
-      "Security code (${ codeName })": [
-        "Код бяспекі (${ codeName })"
       ],
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"
@@ -10052,29 +10043,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
@@ -10096,6 +10064,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Downgrade account": [
+        "Панізіць уліковы запіс"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Пакінуць ${ plan }"
+      ],
+      "Keep account": [
+        "Пакінуць уліковы запіс"
+      ],
+      "Switch plan": [
+        "Змяніць тарыфны план"
       ]
     },
     "new_plans: feature": {
@@ -12431,6 +12422,11 @@
         "Бачнае імя"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Далучыцца да Slack Huddle"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Хутчэй у праграме"
@@ -13297,8 +13293,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Захаваць"
+      "Save ${ priceString }": [
+        "Эканомія ${ priceString }"
       ]
     },
     "Success": {
@@ -13756,6 +13752,11 @@
       ],
       "vCard field": [
         "Поле vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Далучыцца да сустрэчы ў Teams"
       ]
     },
     "Time": {
@@ -14611,7 +14612,7 @@
         "Наладжванне ${ protonDuoPlanName }"
       ],
       "Set up email forwarding": [
-        "Наладжванне перысылкі лістоў"
+        "Наладжванне перасылкі лістоў"
       ],
       "Set up your family account": [
         "Наладзіць сямейны ўліковы запіс"
@@ -15505,10 +15506,12 @@
         "Штогод, ${ untilString }"
       ]
     },
-    "Zoom Meeting": {
+    "Zoom": {
       "Join Zoom meeting": [
         "Далучыцца да сустрэчы ў Zoom"
-      ],
+      ]
+    },
+    "Zoom Meeting": {
       "Meeting ID:": [
         "Ідэнт. сустрэчы:"
       ],

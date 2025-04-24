@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Reenvia a"
       ],
-      "Or": [
-        "O"
-      ],
       "or": [
         "o"
+      ],
+      "Or": [
+        "O"
       ],
       "With attachment": [
         "Amb adjunt"
@@ -7442,6 +7442,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** no s'admet a la vostra organització **${ organizationName }**."
       ],
+      "**${ appName }** is not supported**.": [
+        "**${ appName }** no és compatible**."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obteniu una adreça de ${ BRAND_NAME }** per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8753,9 +8756,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
@@ -9021,6 +9021,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduïu la frase de recuperació de 12 paraules associada amb el vostre compte."
+      ],
+      "Please fill in all required fields.": [
+        "Ompliu tots els camps obligatoris."
       ],
       "Please fill out this field.": [
         "Empleneu aquest camp."
@@ -11024,10 +11027,10 @@
       "Allow sharing outside the organization": [
         "Permet la compartició fora de l'organització"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11039,10 +11042,10 @@
       "Amount due": [
         "Import a deure"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -11110,9 +11113,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billing address": [
-        "Adreça de facturació"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -11414,9 +11414,6 @@
       "Exclude Spam/Trash from All mail": [
         "Exclou Correu brossa / Paperera de Tot el correu"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Caducitat (${ patternExpiration })"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -11471,11 +11468,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -11678,13 +11675,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Organization name": [
@@ -11815,9 +11812,6 @@
       ],
       "Second password": [
         "Segona contrasenya"
-      ],
-      "Security code (${ codeName })": [
-        "Codi de seguretat (${ codeName })"
       ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
@@ -18005,8 +17999,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Desa"
+      "Save ${ priceString }": [
+        "Estalvieu el ${ priceString }"
       ]
     },
     "Subscription status": {
