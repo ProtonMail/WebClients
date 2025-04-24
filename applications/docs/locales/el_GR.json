@@ -2332,6 +2332,11 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
@@ -2467,11 +2472,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4631,9 +4631,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
       ],
-      "MM/YY": [
-        "ΜΜ/ΧΧ"
-      ],
       "Monitor accounts": [
         "Παρακολούθηση λογαριασμών"
       ],
@@ -4750,6 +4747,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Παρακαλούμε εξαγάγετε ένα αντίγραφο των τρεχουσών αλλαγών σας από το κύριο μενού και φορτώστε ξανά τη σελίδα."
+      ],
+      "Please fill in all required fields.": [
+        "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
@@ -5563,9 +5563,6 @@
       "Beta Access": [
         "Πρόσβαση Beta"
       ],
-      "Billing address": [
-        "Διεύθυνση χρέωσης"
-      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -5694,9 +5691,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Διαγραφή αυτού του συνδέσμου και κατάργηση όλων των ατόμων με πρόσβαση"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Λήξη (${ patternExpiration })"
       ],
       "Expires": [
         "Λήγει"
@@ -5880,9 +5874,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
-      ],
-      "Security code (${ codeName })": [
-        "Κωδικός ασφαλείας (${ codeName })"
       ],
       "Set expiration date": [
         "Ορισμός ημερομηνίας λήξης"
@@ -9027,8 +9018,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Αποθήκευση"
+      "Save ${ priceString }": [
+        "Εξοικονομίστε ${ priceString }"
       ]
     },
     "Success": {

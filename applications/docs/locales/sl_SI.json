@@ -2230,6 +2230,11 @@
         "Zapadel račun"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } varuje vaš račun z namenskim stalnim nadzorom sumljivih dejavnosti, vključno z obveščanjem varnostnih strokovnjakov."
@@ -2299,11 +2304,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4471,9 +4471,6 @@
       "Merged": [
         "Združeno"
       ],
-      "MM/YY": [
-        "MM/LL"
-      ],
       "Monitor accounts": [
         "Nadzor računov"
       ],
@@ -5322,9 +5319,6 @@
       "Beta Access": [
         "Dostop beta"
       ],
-      "Billing address": [
-        "Naslov za izstavitev računa"
-      ],
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
@@ -5453,9 +5447,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Izbrišite povezavo in odstrani vse z dostopom"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Potek (${ patternExpiration })."
       ],
       "Expires": [
         "Poteče"
@@ -5633,9 +5624,6 @@
       ],
       "Reveal password": [
         "Razkrij geslo"
-      ],
-      "Security code (${ codeName })": [
-        "Varnostna koda (${ codeName })"
       ],
       "Set expiration date": [
         "Nastavite datum poteka"
@@ -8607,11 +8595,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Naš sistem vas ne bo več samodejno obremenjeval s tem načinom plačila, vendar se bo vaša naročnina še vedno podaljšala na koncu obračunskega cikla. Če želite zmanjšati ali spremeniti svojo naročnino, morate to še vedno storiti sami pred koncem obračunskega obdobja. Samodejno ne moremo zmanjšati vaše naročnine, ker če presežete kvoto brezplačnega shranjevanja ali uporabljate druge plačljive funkcije, ne moremo samodejno izbrisati datotek, e-pošte ali drugih podatkov za vas. Če onemogočite samodejno plačilo, ne pozabite plačati naslednjega računa za naročnino pred rokom zapadlosti, da preprečite suspenz računa."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Shrani"
       ]
     },
     "Success": {

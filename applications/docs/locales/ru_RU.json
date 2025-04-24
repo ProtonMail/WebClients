@@ -2197,6 +2197,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2272,11 +2277,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4420,9 +4420,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
       ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
       "Monitor accounts": [
         "Отслеживать аккаунты"
       ],
@@ -5210,9 +5207,6 @@
       "Beta Access": [
         "Бета доступ"
       ],
-      "Billing address": [
-        "Адрес для выставления счета"
-      ],
       "Billing cycle": [
         "Платежный цикл"
       ],
@@ -5338,9 +5332,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Стереть эту ссылку и удалить всех, кто имеет к ней доступ"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Срок действия (${ patternExpiration })"
       ],
       "Expires": [
         "Срок действия"
@@ -5518,9 +5509,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Код безопасности (${ codeName })"
       ],
       "Set expiration date": [
         "Задать срок действия"
@@ -8614,11 +8602,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Сэкономьте"
       ]
     },
     "Success": {

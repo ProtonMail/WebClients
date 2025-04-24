@@ -2335,6 +2335,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } al ${ DRIVE_APP_NAME } us permet treballar amb altres persones en un entorn segur i xifrat."
@@ -2470,11 +2475,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4634,9 +4634,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
@@ -4753,6 +4750,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Si us plau, exporteu una còpia dels canvis actuals des del menú principal i torneu a carregar la pàgina."
+      ],
+      "Please fill in all required fields.": [
+        "Ompliu tots els camps obligatoris."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
@@ -5569,9 +5569,6 @@
       "Beta Access": [
         "Accés beta"
       ],
-      "Billing address": [
-        "Adreça de facturació"
-      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -5700,9 +5697,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Esborreu aquest enllaç i elimineu a tothom amb accés"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Caducitat (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -5886,9 +5880,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
-      ],
-      "Security code (${ codeName })": [
-        "Codi de seguretat (${ codeName })"
       ],
       "Set expiration date": [
         "Definir data d'expiració"
@@ -9090,8 +9081,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Desa"
+      "Save ${ priceString }": [
+        "Estalvieu el ${ priceString }"
       ]
     },
     "Success": {

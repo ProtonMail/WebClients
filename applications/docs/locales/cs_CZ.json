@@ -691,7 +691,7 @@
         "Nastavit 2FA"
       ],
       "Set up a custom domain": [
-        "Nastavte vlastní doménu"
+        "Nastavit vlastní doménu"
       ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
@@ -2356,6 +2356,11 @@
         "Faktura po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
@@ -2491,11 +2496,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4751,9 +4751,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Sledování účtů"
       ],
@@ -4870,6 +4867,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Vyexportujte prosím kopii vašich aktuálních změn z hlavní nabídky a znovu načtěte stránku."
+      ],
+      "Please fill in all required fields.": [
+        "Vyplňte prosím všechna povinná pole."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU smazány."
@@ -5703,9 +5703,6 @@
       "Beta Access": [
         "Beta přístup"
       ],
-      "Billing address": [
-        "Fakturační adresa"
-      ],
       "Billing cycle": [
         "Fakturační období"
       ],
@@ -5834,9 +5831,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Smazat tento odkaz a odebrat všechny s přístupem"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Vypršení (${ patternExpiration })"
       ],
       "Expires": [
         "Vyprší"
@@ -6020,9 +6014,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
-      ],
-      "Security code (${ codeName })": [
-        "Kód zabezpečení (${ codeName })"
       ],
       "Set expiration date": [
         "Nastavit datum pro vypršení platnosti"
@@ -9329,8 +9320,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ušetříte"
+      "Save ${ priceString }": [
+        "Ušetřete ${ priceString }"
       ]
     },
     "Success": {
