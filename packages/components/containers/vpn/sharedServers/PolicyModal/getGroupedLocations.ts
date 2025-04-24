@@ -13,17 +13,7 @@ export function getGroupedLocations(
     locations: SharedServerLocation[],
     countryOptions: CountryOptions
 ): GroupedLocations[] {
-    const uniqueCountries = new Set();
-    const filteredLocations = locations.filter((location) => {
-        if (uniqueCountries.has(location.Country)) {
-            return false;
-        }
-        uniqueCountries.add(location.Country);
-
-        return true;
-    });
-
-    const locationsWithLocalized = filteredLocations.map((location) => {
+    const locationsWithLocalized = locations.map((location) => {
         const localized = getLocalizedCountryByAbbr(location.Country, countryOptions) || location.Country;
         return {
             ...location,
