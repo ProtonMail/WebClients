@@ -313,9 +313,6 @@
       "Fit to window": [
         "Припасувати до вікна"
       ],
-      "Forgot password?": [
-        "Забули пароль?"
-      ],
       "Forgot recovery method?": [
         "Забули спосіб відновлення?"
       ],
@@ -4069,9 +4066,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Уведіть свою адресу е-пошти ${ BRAND_NAME } або ім'я користувача."
       ],
-      "Enter your own password (as organization admin).": [
-        "Введіть власний пароль (як адміністратор організації)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введіть свою адресу резервної електронної пошти і ми надішлемо ваше ім'я користувача або адресу електронної пошти."
       ],
@@ -4365,9 +4359,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Повідомлення на всі ваші адреси електронної пошти потраплятимуть у вашу поштову скриньку."
-      ],
-      "MM/YY": [
-        "ММ/РР"
       ],
       "Monitor accounts": [
         "Моніторинг облікових записів"
@@ -5498,10 +5489,10 @@
       "Allow recovery by phone": [
         "Дозволити відновлення за телефоном"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -5527,9 +5518,6 @@
       ],
       "Backup password": [
         "Резервний пароль"
-      ],
-      "Billing address": [
-        "Платіжна адреса"
       ],
       "Billing cycle": [
         "Платіжний цикл"
@@ -5686,9 +5674,6 @@
       ],
       "Event": [
         "Подія"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Термін дії (${ patternExpiration })"
       ],
       "Expires": [
         "Термін дії"
@@ -5906,9 +5891,6 @@
       "Second password": [
         "Другий пароль"
       ],
-      "Security code (${ codeName })": [
-        "Код безпеки (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Показати ${ n } адміністратора",
         "Показати ${ n } адміністраторів",
@@ -5998,9 +5980,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хочу остаточно видалити цей обліковий запис та всі пов'язані дані."
-      ],
-      "Your password (admin)": [
-        "Новий пароль (адмін)"
       ]
     },
     "label": {
@@ -7103,6 +7082,14 @@
         "умови та положення"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -7115,14 +7102,6 @@
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -9101,9 +9080,6 @@
       "Share the confirmation code with your administrator": [
         "Поділитися кодом підтвердження з адміністратором"
       ],
-      "Sign in": [
-        "Увійти"
-      ],
       "Sign in to your organization": [
         "Увійти до своєї організації"
       ],
@@ -9139,9 +9115,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам доведеться створювати нових користувачів вручну, щоб додати їх до вашої організації."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вас буде перенаправлено до вашого стороннього провайдера SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша конфігурація SSO буде видалена."
@@ -9804,11 +9777,6 @@
         "Наша система більше не стягуватиме плату з використанням цього способу оплати, але вашу передплату все одно потрібно поновити в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Ми не можемо автоматично перевести вас на тарифний план нижчого рівня, оскільки ви перевищили обмеження безплатного сховища або використовуєте інші платні функції, і ми не можемо автоматично видаляти ваші файли, електронні листи та інші дані. Якщо ви вимкнете автоматичний платіж, обов'язково сплатіть достатню суму для продовження передплати до завершення платіжного періоду, щоб уникнути вимкнення облікового запису."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Зберегти"
-      ]
-    },
     "Subscription status": {
       "Active": [
         "Активний"
@@ -10455,9 +10423,6 @@
       "Enable for all users": [
         "Увімкнути для всіх користувачів"
       ],
-      "Enter 2FA code": [
-        "Введіть код 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Введіть кінцеві точки у вашого провайдера ідентифікації"
       ],
@@ -10466,9 +10431,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до програми бета-тестування ${ app }"
-      ],
-      "Enter your password": [
-        "Введіть свій пароль"
       ],
       "Error": [
         "Помилка"

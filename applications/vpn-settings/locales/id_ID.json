@@ -361,9 +361,6 @@
       "Fit to window": [
         "Sesuaikan dengan jendela"
       ],
-      "Forgot password?": [
-        "Lupa kata sandi?"
-      ],
       "Forgot recovery method?": [
         "Lupa metode pemulihan?"
       ],
@@ -4512,9 +4509,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Masukkan alamat email atau nama pengguna akun ${ BRAND_NAME } Anda."
       ],
-      "Enter your own password (as organization admin).": [
-        "Masukkan kata sandi Anda (selaku admin organisasi)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Masukkan alamat email pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
@@ -4820,9 +4814,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
-      ],
-      "MM/YY": [
-        "BB/TT"
       ],
       "Monitor accounts": [
         "Monitor akun"
@@ -6023,11 +6014,11 @@
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
       ],
-      "Allowed Domain": [
-        "Domain yang Diizinkan"
-      ],
       "Allowed domain": [
         "Domain yang diizinkan"
+      ],
+      "Allowed Domain": [
+        "Domain yang Diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -6058,9 +6049,6 @@
       ],
       "Backup password": [
         "Kata sandi cadangan"
-      ],
-      "Billing address": [
-        "Alamat tagihan"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -6223,9 +6211,6 @@
       ],
       "Event": [
         "Peristiwa"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Kedaluwarsa (${ patternExpiration })"
       ],
       "Expires": [
         "Kedaluwarsa"
@@ -6458,9 +6443,6 @@
       "Second password": [
         "Kata sandi kedua"
       ],
-      "Security code (${ codeName })": [
-        "Kode keamanan (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Tampilkan ${ n } administrator"
       ],
@@ -6568,9 +6550,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
-      ],
-      "Your password (admin)": [
-        "Kata sandi Anda (admin)"
       ],
       "ZIP code": [
         "Kode pos"
@@ -7669,6 +7648,14 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -7681,14 +7668,6 @@
       ],
       "Switch plans?": [
         "Ubah paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -9766,9 +9745,6 @@
       "Share the confirmation code with your administrator": [
         "Bagikan kode konfirmasi ini dengan administrator Anda"
       ],
-      "Sign in": [
-        "Masuk"
-      ],
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
       ],
@@ -9813,9 +9789,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Anda akan perlu untuk membuat pengguna baru secara manual untuk menambahkan pengguna ini ke organisasi Anda."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ],
       "Your SSO configuration will be deleted.": [
         "Konfigurasi SSO Anda akan dihapus."
@@ -10413,11 +10386,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Hemat"
       ]
     },
     "Subscription status": {
@@ -11126,9 +11094,6 @@
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
       ],
-      "Enter 2FA code": [
-        "Masukkan kode 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Masukkan endpoint ke penyedia identitas Anda"
       ],
@@ -11137,9 +11102,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
-      ],
-      "Enter your password": [
-        "Masukkan kata sandi Anda"
       ],
       "Error": [
         "Kesalahan"

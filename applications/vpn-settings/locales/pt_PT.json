@@ -160,6 +160,9 @@
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
+      ],
       "Contact support": [
         "Contactar o suporte"
       ],
@@ -361,9 +364,6 @@
       "Fit to window": [
         "Ajustar na janela"
       ],
-      "Forgot password?": [
-        "Esqueceu-se da palavra-passe?"
-      ],
       "Forgot recovery method?": [
         "Esqueceu-se do método de recuperação?"
       ],
@@ -564,6 +564,9 @@
       ],
       "Remove bonuses": [
         "Remover bónus"
+      ],
+      "Remove button": [
+        "Remover o botão"
       ],
       "Remove domain": [
         "Remover o domínio"
@@ -4641,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduza o seu endereço de e-mail ou nome de utilizador da conta ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Introduza a sua palavra-passe (como administrador da organização)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduza o seu e-mail de recuperação e receberá o seu nome de utilizador ou endereço de e-mail."
       ],
@@ -4950,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para a sua caixa de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitor de contas"
       ],
@@ -5127,6 +5124,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduza a frase de recuperação de 12 palavras associada à sua conta."
+      ],
+      "Please fill in all required fields.": [
+        "Preencha todos os campos obrigatórios."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } crédito restante.",
@@ -6180,10 +6180,10 @@
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6215,9 +6215,6 @@
       ],
       "Backup password": [
         "Palavra-passe de backup"
-      ],
-      "Billing address": [
-        "Endereço de faturação"
       ],
       "Billing cycle": [
         "Ciclo de faturação"
@@ -6380,9 +6377,6 @@
       ],
       "Event": [
         "Evento"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiração (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -6615,9 +6609,6 @@
       "Second password": [
         "Segunda palavra-passe"
       ],
-      "Security code (${ codeName })": [
-        "Código de segurança (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
         "Mostrar ${ n } administradores"
@@ -6726,9 +6717,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, quero eliminar permanentemente esta conta e todos os seus dados."
-      ],
-      "Your password (admin)": [
-        "A sua palavra-passe (admin)"
       ],
       "ZIP code": [
         "Código postal"
@@ -6842,6 +6830,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Não tem acesso à sua autenticação A2F?"
+      ],
+      "Enforcing 2FA for organizations": [
+        "Aplicação da A2F para as organizações"
       ],
       "Forgot email?": [
         "Esqueceu o seu e-mail?"
@@ -7894,6 +7885,14 @@
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -7906,14 +7905,6 @@
       ],
       "Switch plans?": [
         "Alterar o plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -10051,9 +10042,6 @@
       "Share the confirmation code with your administrator": [
         "Partilhe o código de confirmação com o seu administrador"
       ],
-      "Sign in": [
-        "Iniciar sessão"
-      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização"
       ],
@@ -10098,9 +10086,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Precisará criar utilizadores manualmente para adicioná-los à sua organização."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Será redirecionado para o seu fornecedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "A sua configuração SSO será eliminada."
@@ -10722,11 +10707,6 @@
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Poupe"
-      ]
-    },
     "Subscription status": {
       "Active": [
         "Ativo"
@@ -11254,6 +11234,9 @@
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo, com o ${ vpnPlus }. ${ upgradeButton }"
       ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
+      ],
       "Connect your custom domain": [
         "Ligue o seu domínio personalizado"
       ],
@@ -11436,9 +11419,6 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com a A2F"
       ],
-      "Enter 2FA code": [
-        "Introduza o código 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduza os endpoints no seu fornecedor de identidade"
       ],
@@ -11447,9 +11427,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduza os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
-      ],
-      "Enter your password": [
-        "Introduza a sua palavra-passe"
       ],
       "Error": [
         "Erro"
