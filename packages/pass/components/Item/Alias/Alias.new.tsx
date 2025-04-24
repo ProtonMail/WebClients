@@ -24,8 +24,9 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
+import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
+import { reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
