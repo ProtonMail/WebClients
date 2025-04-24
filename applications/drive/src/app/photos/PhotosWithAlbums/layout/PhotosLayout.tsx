@@ -514,7 +514,22 @@ export const PhotosLayout = () => {
                 navigateToAlbum(previewShareId, albumLinkId, { addPhotos: true });
             }
         }
-    }, [currentPageType, albumLinkId, albumShareId, selectedItemsLinkIds, previewShareId]);
+    }, [
+        currentPageType,
+        albumShareId,
+        albumLinkId,
+        addAlbumPhotos,
+        selectedItemsLinkIds,
+        navigateToAlbum,
+        previewShareId,
+    ]);
+
+    const handleRedirectToAlbum = useCallback(() => {
+        if (!albumShareId || !albumLinkId) {
+            return;
+        }
+        navigateToAlbum(albumShareId, albumLinkId);
+    }, [albumLinkId, albumShareId, navigateToAlbum]);
 
     const onSavePhoto = useCallback(async () => {
         if (!shareId || !volumeId || !linkId || selectedCount !== 1) {
@@ -657,6 +672,7 @@ export const PhotosLayout = () => {
                         onShowDetails={onShowDetails}
                         onRemoveAlbumPhotos={onRemoveAlbumPhotos}
                         onSavePhoto={onSavePhoto}
+                        onStartUpload={handleRedirectToAlbum}
                     />
                 }
             />

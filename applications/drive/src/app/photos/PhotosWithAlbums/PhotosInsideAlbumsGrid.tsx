@@ -217,7 +217,7 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
     return (
         <div
             ref={containerRef}
-            className="flex flex-column flex-nowrap gap-4 mx-2 p-4 overflow-auto outline-none--at-all"
+            className="flex flex-column flex-nowrap gap-4 p-4 overflow-auto outline-none--at-all"
             onScroll={handleScroll}
         >
             {children}

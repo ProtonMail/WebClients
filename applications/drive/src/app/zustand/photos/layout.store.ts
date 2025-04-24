@@ -9,6 +9,8 @@ export enum AlbumsPageTypes {
     GALLERY = 'GALLERY',
     ALBUMS = 'ALBUMS',
     ALBUMSGALLERY = 'ALBUMSGALLERY',
+    // This view will be the GALLERY view without the GALLERY UI but with album pathname.
+    // It allows easily to have all photos in order to add them to the album
     ALBUMSADDPHOTOS = 'ALBUMSADDPHOTOS',
 }
 interface Modals {
