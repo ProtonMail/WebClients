@@ -213,7 +213,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 className="flex flex-column flex-nowrap flex-1"
             >
                 {isAlbumPhotosEmpty ? (
-                    <div className="flex flex-column flex-nowrap mx-2 p-4 w-full h-full">
+                    <div className="flex flex-column flex-nowrap p-4 w-full h-full">
                         <AlbumCoverHeader
                             shareId={albumShareId}
                             uploadLinkId={uploadLinkId}
