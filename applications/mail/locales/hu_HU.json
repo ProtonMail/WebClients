@@ -1414,10 +1414,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -6949,9 +6949,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Az üzenetek bármelyik e-mail címre érkezhetnek, ugyanabban a postafiókban leszek olvashatók."
       ],
-      "MM/YY": [
-        "HH/ÉÉ"
-      ],
       "Monitor accounts": [
         "Fiókok megfigyelése"
       ],
@@ -8450,11 +8447,11 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze mappába"
       ],
-      "And": [
-        "És"
-      ],
       "AND": [
         "ÉS"
+      ],
+      "And": [
+        "És"
       ],
       "and": [
         "és"
@@ -8482,9 +8479,6 @@
       ],
       "Beta Access": [
         "Béta hozzáférés"
-      ],
-      "Billing address": [
-        "Számlázási cím"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -8642,9 +8636,6 @@
       "Encrypt emails": [
         "Üzenetek titkosítása"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Lejárta (${ patternExpiration })"
-      ],
       "Expires": [
         "Lejárat"
       ],
@@ -8684,11 +8675,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "If": [
-        "Ha"
-      ],
       "IF": [
         "HA"
+      ],
+      "If": [
+        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -8801,14 +8792,14 @@
       "Optional": [
         "Választható"
       ],
+      "OR": [
+        "VAGY"
+      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
-      ],
-      "OR": [
-        "VAGY"
       ],
       "Original link": [
         "Eredeti hivatkozás"
@@ -8875,9 +8866,6 @@
       ],
       "Search in": [
         "Keresés:"
-      ],
-      "Security code (${ codeName })": [
-        "Biztonsági kód (${ codeName })"
       ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
@@ -9632,29 +9620,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Fiók törlése"
-      ],
-      "Downgrade account": [
-        "Váltás kisebb csomagra"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Legyen ${ BRAND_NAME }os ingyen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } megszerzése"
-      ],
-      "Keep ${ plan }": [
-        "Maradjon ${ plan }"
-      ],
-      "Keep account": [
-        "Maradjon a fiók"
-      ],
-      "Switch plan": [
-        "Csomag váltása"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }"
@@ -9676,6 +9641,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Váltás ${ planName } csomagra"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Fiók törlése"
+      ],
+      "Downgrade account": [
+        "Váltás kisebb csomagra"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Legyen ${ BRAND_NAME }os ingyen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } megszerzése"
+      ],
+      "Keep ${ plan }": [
+        "Maradjon ${ plan }"
+      ],
+      "Keep account": [
+        "Maradjon a fiók"
+      ],
+      "Switch plan": [
+        "Csomag váltása"
       ]
     },
     "new_plans: feature": {
@@ -12720,11 +12708,6 @@
         "Rendszerünk nem tud automatikusan levonni ezzel a fizetési móddal, de az előfizetése továbbra is megújul a számlázási ciklus végén. Ha kisebb csomagra szeretne váltani vagy módosítani szeretné előfizetését, azt továbbra is magának kell megtennie a számlázási időszak vége előtt. Ez nem lehetséges automatikusan, mert ha túllépte az ingyenes csomagban elérhető tárhelyet, vagy más fizetős funkciókat használ, nem törölhetünk automatikusan fájlokat, e-maileket vagy más adatokat ön helyett. Ha letiltja az automatikus fizetést, ne felejtse el a következő számlát az esedékesség napja előtt befizetni, hogy elkerülje a fiók felfüggesztését."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Megtakarítás"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } beszélgetés törölve",
@@ -14730,9 +14713,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Csatlakozás Zoom találkozóhoz"
-      ],
       "Meeting ID:": [
         "Találkozó azonosító:"
       ],
