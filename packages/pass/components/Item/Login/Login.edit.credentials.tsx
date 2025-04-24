@@ -36,11 +36,11 @@ export const LoginEditCredentials: FC<Props> = ({ form }) => {
 
     /** When enabling the username field set the `itemEmail` as
      * the `itemUsername` only if it's a non-valid email */
-    const handleAddUsernameClick = () =>
+    const handleAddUsernameClick = async () =>
         form.setValues(
             withMerge<LoginItemFormValues>({
                 withUsername: true,
-                ...(!PassUI.is_email_valid(itemEmail)
+                ...(!(await PassUI.is_email_valid(itemEmail))
                     ? {
                           itemEmail: '',
                           itemUsername: itemEmail,

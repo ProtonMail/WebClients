@@ -23,12 +23,12 @@ type ValidateLoginForm = {
     shouldValidateEmail?: boolean;
 };
 
-export const validateLoginForm = ({ values }: ValidateLoginForm): FormikErrors<LoginItemFormValues> => {
+export const validateLoginForm = async ({ values }: ValidateLoginForm): Promise<FormikErrors<LoginItemFormValues>> => {
     const errors: FormikErrors<LoginItemFormValues> = validateItemErrors(values);
     const urlError = validateUrl(values);
     const urlsErrors = validateUrls(values);
     const totpUriErrors = validateTotpUri(values);
-    const aliasErrors = values.withAlias && validateAliasForm(values);
+    const aliasErrors = values.withAlias && (await validateAliasForm(values));
     const extraFieldsErrors = validateExtraFields(values);
 
     return {

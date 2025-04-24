@@ -52,30 +52,36 @@ export const Breaches: FC = () => {
             </div>
 
             <div className="flex flex-columns gap-6">
-                <BreachGroupList
-                    data={proton.data}
-                    displayLimit={5}
-                    title={`${proton.title} (${proton.data.length})`}
-                    loading={proton.loading}
-                    seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.PROTON}`)}
-                />
+                {proton && (
+                    <BreachGroupList
+                        data={proton.data}
+                        displayLimit={5}
+                        title={`${proton.title} (${proton.data.length})`}
+                        loading={proton.loading}
+                        seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.PROTON}`)}
+                    />
+                )}
 
-                <BreachGroupList
-                    data={alias.data}
-                    displayLimit={5}
-                    title={`${alias.title} (${alias.data.length})`}
-                    loading={alias.loading}
-                    seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.ALIAS}`)}
-                />
+                {alias && (
+                    <BreachGroupList
+                        data={alias.data}
+                        displayLimit={5}
+                        title={`${alias.title} (${alias.data.length})`}
+                        loading={alias.loading}
+                        seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.ALIAS}`)}
+                    />
+                )}
 
-                <BreachGroupList
-                    data={custom.data}
-                    displayLimit={5}
-                    title={`${custom.title} (${breaches.data.custom.length})`}
-                    loading={custom.loading}
-                    seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.CUSTOM}`)}
-                    actions={<CustomAddressAddButton />}
-                />
+                {custom && (
+                    <BreachGroupList
+                        data={custom.data}
+                        displayLimit={5}
+                        title={`${custom.title} (${breaches.data.custom.length})`}
+                        loading={custom.loading}
+                        seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.CUSTOM}`)}
+                        actions={<CustomAddressAddButton />}
+                    />
+                )}
             </div>
         </>
     );
