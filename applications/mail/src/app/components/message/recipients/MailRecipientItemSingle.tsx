@@ -37,7 +37,6 @@ interface Props {
     globalIcon?: StatusIcon;
     signingPublicKey?: PublicKeyReference;
     attachedPublicKey?: PublicKeyReference;
-    isSmallViewport?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
     hideAddress?: boolean;
@@ -56,7 +55,6 @@ const MailRecipientItemSingle = ({
     globalIcon,
     signingPublicKey,
     attachedPublicKey,
-    isSmallViewport,
     showDropdown,
     isOutside,
     hideAddress,
@@ -233,7 +231,6 @@ const MailRecipientItemSingle = ({
                 recipient={recipient}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
-                isSmallViewport={isSmallViewport}
                 showDropdown={showDropdown}
                 actualLabel={label}
                 customDropdownActions={customDropdownActions}

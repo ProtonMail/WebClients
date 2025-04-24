@@ -3,7 +3,7 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ProtonBadgeType, useHotkeys } from '@proton/components';
+import { ProtonBadgeType, useActiveBreakpoint, useHotkeys } from '@proton/components';
 import { highlightNode } from '@proton/encrypted-search';
 import { useCombinedRefs } from '@proton/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
@@ -25,7 +25,6 @@ interface Props {
     ariaLabelTitle?: string;
     icon?: ReactNode;
     isLoading?: boolean;
-    isSmallViewport?: boolean;
     dropdownContent?: ReactNode;
     dropdrownAnchorRef: RefObject<HTMLButtonElement>;
     dropdownToggle?: () => void;
@@ -54,7 +53,6 @@ const RecipientItemLayout = ({
     ariaLabelTitle,
     icon,
     isLoading = false,
-    isSmallViewport,
     dropdownContent,
     dropdrownAnchorRef,
     dropdownToggle,
@@ -76,6 +74,9 @@ const RecipientItemLayout = ({
     const highlightData = shouldHighlight();
 
     const rootRef = useRef<HTMLSpanElement>(null);
+
+    const breakPoints = useActiveBreakpoint();
+    const isSmallViewport = breakPoints.viewportWidth['<=small'];
 
     // We don't want to highlight the display name in normal search.
     // However, if recipient has no display name by default, we use the address as display name.
