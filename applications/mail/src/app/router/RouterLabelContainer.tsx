@@ -88,9 +88,6 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
     const showPlaceholder =
         !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
 
-    const elementParams = useGetElementParams({ params, navigation });
-    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort.desc, sort.sort, elementParams.search]);
-
     const { commanderList } = useMailCommander();
 
     const { focusID, setFocusID, focusLastID, focusFirstID, focusNextID, focusPreviousID } = useMailboxFocus({
@@ -170,6 +167,12 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
         },
         [setFocusID]
     );
+
+    /**
+     * Router label side effects
+     */
+    const elementParams = useGetElementParams({ params, navigation });
+    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort.desc, sort.sort, elementParams.search]);
 
     return (
         <div ref={elementRef} tabIndex={-1} className="flex flex-1 flex-nowrap outline-none" data-testid="mailbox">
