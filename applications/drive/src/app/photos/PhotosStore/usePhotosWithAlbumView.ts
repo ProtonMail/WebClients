@@ -83,6 +83,7 @@ export const usePhotosWithAlbumsView = () => {
         userAddressEmail,
         updatePhotoFavoriteFromCache,
         removeTagsFromPhoto,
+        clearAlbumPhotos,
     } = usePhotosWithAlbums();
 
     const [selectedTags, setSelectedTags] = useState([PhotoTag.All]);
@@ -171,6 +172,11 @@ export const usePhotosWithAlbumsView = () => {
         (cacheAlbumPhotos?.links || []).concat(cachedOwnerAlbumPhotosLinks)
     );
 
+    useEffect(() => {
+        if (currentPageType === AlbumsPageTypes.GALLERY || currentPageType === AlbumsPageTypes.ALBUMS) {
+            clearAlbumPhotos();
+        }
+    }, [currentPageType]);
     // This will be flattened to contain categories and links
     // The isPhotosEmpty needs to be decorelate from the photosViewData as it is connected to tag filtering
     // isPhotosEmpty is based on the full unfiltered photos list
