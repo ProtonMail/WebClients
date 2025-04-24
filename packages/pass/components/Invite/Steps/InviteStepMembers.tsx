@@ -52,9 +52,9 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
             id: uniqueId(),
         });
 
-        const onEmailFieldBlur = (maybeEmail: string) => {
+        const onEmailFieldBlur = async (maybeEmail: string) => {
             const value = maybeEmail.trim();
-            if (PassUI.is_email_valid(value) && emailField) {
+            if ((await PassUI.is_email_valid(value)) && emailField) {
                 emailField.value = '';
                 onUpdate(members.concat([createMember(value)]));
             }
