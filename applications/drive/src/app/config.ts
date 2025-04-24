@@ -39,7 +39,7 @@ const get = <K extends keyof ConfigData>(key: K): ConfigData[K] => {
 // Default values are for unit test usage only
 export const CLIENT_TYPE: number = get('CLIENT_TYPE') || 1;
 export const CLIENT_SECRET: string = get('CLIENT_SECRET') || "";
-export const APP_VERSION: string = get('APP_VERSION') || '5.0.0+abcdefg';
+export const APP_VERSION: string = get('APP_VERSION') || '5.2.0+abcdefgh';
 export const COMMIT: string = get('COMMIT') || "ca5ba1f4062ebb502edeffd4e7dd1095560e6622";
 export const BRANCH: string = get('BRANCH');
 export const DATE_VERSION: string = get('DATE_VERSION');

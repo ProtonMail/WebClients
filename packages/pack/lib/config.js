@@ -31,7 +31,9 @@ const getGitCommitHash = () => {
 
 const getGitTagVersion = (applicationName) => {
     try {
-        const { stdout = '' } = execa.sync(`git describe --abbrev=0 --match=${applicationName}*`, { shell: true });
+        const { stdout = '' } = execa.sync(`git tag --sort=-v:refname | grep ${applicationName} | head -n 1`, {
+            shell: true,
+        });
         return stdout.trim();
     } catch (e) {
         return '';
