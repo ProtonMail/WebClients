@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { Scroll } from '@proton/atoms';
-import type { Breakpoints } from '@proton/components';
 import { useHotkeys } from '@proton/components';
 import { useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -24,7 +23,6 @@ interface Props {
     messageID: string;
     mailSettings: MailSettings;
     onBack: () => void;
-    breakpoints: Breakpoints;
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
@@ -36,7 +34,6 @@ const MessageOnlyView = ({
     messageID,
     mailSettings,
     onBack,
-    breakpoints,
     onMessageReady,
     columnLayout,
     isComposerOpened,
@@ -146,7 +143,6 @@ const MessageOnlyView = ({
                     labels={labels}
                     mailSettings={mailSettings}
                     onBack={onBack}
-                    breakpoints={breakpoints}
                     onMessageReady={handleMessageReadyCallback}
                     columnLayout={columnLayout}
                     isComposerOpened={isComposerOpened}

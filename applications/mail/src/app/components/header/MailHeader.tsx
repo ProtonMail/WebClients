@@ -2,8 +2,7 @@ import type { ReactNode } from 'react';
 import { memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import type { Breakpoints } from '@proton/components';
-import { FloatingButton, Icon, PrivateHeader, UserDropdown } from '@proton/components';
+import { FloatingButton, Icon, PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import { getLabelName } from '@proton/mail/labels/helpers';
 import { APPS } from '@proton/shared/lib/constants';
@@ -23,12 +22,11 @@ interface Props {
     labelID: string;
     elementID: string | undefined;
     selectedIDs: string[];
-    breakpoints: Breakpoints;
     toolbar?: ReactNode | undefined;
     settingsButton?: ReactNode;
 }
 
-const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar, settingsButton }: Props) => {
+const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsButton }: Props) => {
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -36,6 +34,8 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
     const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleSidebarExpand()), []);
+
+    const breakpoints = useActiveBreakpoint();
 
     const onCompose = useOnCompose();
 
@@ -64,22 +64,10 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                     (breakpoints.viewportWidth.large && elementID) ? (
                         <div className="flex-1 flex flex-nowrap justify-space-between">
                             {toolbar}
-                            {!elementID && (
-                                <MailSearch
-                                    breakpoints={breakpoints}
-                                    labelID={labelID}
-                                    location={location}
-                                    columnMode={isColumn}
-                                />
-                            )}
+                            {!elementID && <MailSearch labelID={labelID} location={location} columnMode={isColumn} />}
                         </div>
                     ) : displaySearch ? (
-                        <MailSearch
-                            breakpoints={breakpoints}
-                            labelID={labelID}
-                            location={location}
-                            columnMode={isColumn}
-                        />
+                        <MailSearch labelID={labelID} location={location} columnMode={isColumn} />
                     ) : (
                         <>{toolbar}</>
                     )

@@ -2,7 +2,6 @@ import type { RefObject } from 'react';
 import { memo, useEffect, useRef } from 'react';
 
 import { Scroll } from '@proton/atoms';
-import type { Breakpoints } from '@proton/components';
 import { useToggle } from '@proton/components';
 import { useLabels } from '@proton/mail';
 import { isEditing } from '@proton/shared/lib/busy';
@@ -43,7 +42,6 @@ interface Props {
     messageID?: string;
     mailSettings: MailSettings;
     onBack: () => void;
-    breakpoints: Breakpoints;
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
@@ -59,7 +57,6 @@ const ConversationView = ({
     messageID,
     mailSettings,
     onBack,
-    breakpoints,
     onMessageReady,
     columnLayout,
     isComposerOpened,
@@ -206,7 +203,6 @@ const ConversationView = ({
                             conversationIndex={index}
                             conversationID={conversationID}
                             onBack={onBack}
-                            breakpoints={breakpoints}
                             onFocus={handleFocus}
                             onBlur={handleBlur}
                             hasFocus={index === focusIndex}

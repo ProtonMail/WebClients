@@ -3,8 +3,7 @@ import { memo, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { Breakpoints } from '@proton/components';
-import { useBeforeUnload, useDrawerWidth } from '@proton/components';
+import { useActiveBreakpoint, useBeforeUnload, useDrawerWidth } from '@proton/components';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -20,17 +19,17 @@ import { ComposeProvider } from './ComposeProvider';
 import '../components/composer/composer.scss';
 
 interface Props {
-    breakpoints: Breakpoints;
     children: ReactNode;
 }
 
-const ComposerContainer = ({ breakpoints, children }: Props) => {
+const ComposerContainer = ({ children }: Props) => {
     const dispatch = useMailDispatch();
     const composerIDs = useMailSelector(selectOpenedComposersIds);
     const [focusedComposerID, setFocusedComposerID] = useState<string>();
     const drawerOffset = useDrawerWidth();
     const returnFocusToElementRef = useRef<HTMLElement | null>(null);
     const isComposerOpened = composerIDs.length > 0;
+    const breakpoints = useActiveBreakpoint();
 
     useClickMailContent(() => setFocusedComposerID(undefined));
 
@@ -85,7 +84,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                             composerID={composerID}
                             count={composerIDs.length}
                             focus={composerID === focusedComposerID}
-                            breakpoints={breakpoints}
                             onFocus={handleFocus(composerID)}
                             onClose={handleClose(composerID)}
                             drawerOffset={drawerOffset}
