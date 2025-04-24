@@ -1210,7 +1210,7 @@
         "Nastavit 2FA"
       ],
       "Set up a custom domain": [
-        "Nastavte vlastní doménu"
+        "Nastavit vlastní doménu"
       ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
@@ -1422,10 +1422,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -7242,9 +7242,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Sledování účtů"
       ],
@@ -7385,6 +7382,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Na kartě ověření ověřte svou platbu."
+      ],
+      "Please fill in all required fields.": [
+        "Vyplňte prosím všechna povinná pole."
       ],
       "Please fill out this field.": [
         "Prosíme vyplňte toto pole."
@@ -8818,10 +8818,10 @@
       "Always move sender's emails": [
         "Vždy přesunout e-maily odesílatele"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -8850,9 +8850,6 @@
       ],
       "Beta Access": [
         "Beta přístup"
-      ],
-      "Billing address": [
-        "Fakturační adresa"
       ],
       "Billing cycle": [
         "Fakturační období"
@@ -9010,9 +9007,6 @@
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Vypršení (${ patternExpiration })"
-      ],
       "Expires": [
         "Vyprší"
       ],
@@ -9052,11 +9046,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Pokud"
-      ],
       "IF": [
         "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -9169,14 +9163,14 @@
       "Optional": [
         "Volitelné"
       ],
+      "OR": [
+        "NEBO"
+      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
-      ],
-      "OR": [
-        "NEBO"
       ],
       "Original link": [
         "Původní odkaz"
@@ -9243,9 +9237,6 @@
       ],
       "Search in": [
         "Hledat v"
-      ],
-      "Security code (${ codeName })": [
-        "Kód zabezpečení (${ codeName })"
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -10052,29 +10043,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -10096,6 +10064,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
       ]
     },
     "new_plans: feature": {
@@ -12431,6 +12422,11 @@
         "Zobrazované jméno"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Připojit se k Slack Huddles"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Rychlejší pomocí aplikace"
@@ -13297,8 +13293,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ušetříte"
+      "Save ${ priceString }": [
+        "Ušetřete ${ priceString }"
       ]
     },
     "Success": {
@@ -13756,6 +13752,11 @@
       ],
       "vCard field": [
         "vCard položka"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Připojit se ke schůzce v Teams"
       ]
     },
     "Time": {
@@ -15505,10 +15506,12 @@
         "Ročně, ${ untilString }"
       ]
     },
-    "Zoom Meeting": {
+    "Zoom": {
       "Join Zoom meeting": [
-        "Připojit se ke schůzce Zoom"
-      ],
+        "Připojit se ke schůzce na Zoomu"
+      ]
+    },
+    "Zoom Meeting": {
       "Meeting ID:": [
         "ID schůzky:"
       ],

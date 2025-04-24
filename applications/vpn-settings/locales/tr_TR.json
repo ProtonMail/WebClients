@@ -364,9 +364,6 @@
       "Fit to window": [
         "Pencereye sığdır"
       ],
-      "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
-      ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
       ],
@@ -4647,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
       ],
-      "Enter your own password (as organization admin).": [
-        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
@@ -4956,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
       ],
-      "MM/YY": [
-        "AA/YY"
-      ],
       "Monitor accounts": [
         "Hesapları izle"
       ],
@@ -5130,6 +5121,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
+      ],
+      "Please fill in all required fields.": [
+        "Lütfen gerekli tüm alanları doldurun."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın.",
@@ -6183,10 +6177,10 @@
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6218,9 +6212,6 @@
       ],
       "Backup password": [
         "Yedek parola"
-      ],
-      "Billing address": [
-        "Fatura adresi"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -6383,9 +6374,6 @@
       ],
       "Event": [
         "Etkinlik"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Geçerlilik süresi (${ patternExpiration })"
       ],
       "Expires": [
         "Geçerlilik sonu"
@@ -6618,9 +6606,6 @@
       "Second password": [
         "İkinci parola"
       ],
-      "Security code (${ codeName })": [
-        "Güvenlik kodu (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
         "${ n } yöneticiyi görüntüle"
@@ -6729,9 +6714,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
-      ],
-      "Your password (admin)": [
-        "Parolanız (yönetici)"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -7900,6 +7882,14 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -7912,14 +7902,6 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -10048,9 +10030,6 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
-      "Sign in": [
-        "Oturum aç"
-      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -10095,9 +10074,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
@@ -10717,11 +10693,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Kazancınız"
       ]
     },
     "Subscription status": {
@@ -11439,9 +11410,6 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
-      "Enter 2FA code": [
-        "İki adımlı doğrulama kodunu yazın"
-      ],
       "Enter endpoints into your identity provider": [
         "Kimlik hizmeti sağlayıcınızın uç noktalarını ekleyin"
       ],
@@ -11450,9 +11418,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
-      ],
-      "Enter your password": [
-        "Parolanızı yazın"
       ],
       "Error": [
         "Hata"

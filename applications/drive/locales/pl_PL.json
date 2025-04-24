@@ -3093,6 +3093,9 @@
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
       ],
+      "Failed to save photo to your Drive": [
+        "Nie udało się zapisać zdjęcia na dysku"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
       ],
@@ -3230,6 +3233,9 @@
       ],
       "Payment process not supported": [
         "Przetwarzanie płatności nie jest obsługiwane"
+      ],
+      "Photo saved to your Drive": [
+        "Zdjęcie zostało zapisane na dysku"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Przesyłanie zdjęć jest tymczasowo wyłączone. Spróbuj ponownie później"
@@ -4490,12 +4496,6 @@
         "Transfer ${ pausedCount } plików został wstrzymany",
         "Transfer ${ pausedCount } plików został wstrzymany"
       ],
-      "${ photoCount } item": [
-        "${ photoCount } element",
-        "${ photoCount } elementy",
-        "${ photoCount } elementów",
-        "${ photoCount } elementów"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -5291,9 +5291,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Monitoring kont"
       ],
@@ -5500,9 +5497,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Poczekaj na sprawdzenie kontaktów, które zawierają zaszyfrowane dane za pomocą nieaktywnego klucza."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Poczekaj na aktualizację danych. Proces może potrwać kilka sekund."
       ],
       "Preparing link to file": [
         "Przygotowywanie linku"
@@ -6501,9 +6495,6 @@
       "Beta Access": [
         "Dostęp beta"
       ],
-      "Billing address": [
-        "Adres rozliczeniowy"
-      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -6662,9 +6653,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Usuń link i dostęp wszystkim"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Data wygaśnięcia (${ patternExpiration })"
       ],
       "Expired": [
         "Wygasł"
@@ -6875,9 +6863,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Kod zabezpieczający (${ codeName })"
       ],
       "Select type of abuse": [
         "Wybierz typ nadużycia"
@@ -9068,10 +9053,10 @@
       "Invite members": [
         "Zaproś użytkowników"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Może później"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Może później"
       ],
       "Select theme": [
@@ -10757,11 +10742,6 @@
         "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Zaoszczędź"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Albumy udostępnione Ci pojawią się tutaj"
@@ -11810,9 +11790,6 @@
       ],
       "Untitled document ${ date }": [
         "Dokument bez nazwy ${ date }"
-      ],
-      "Updating your photos": [
-        "Aktualizowanie zdjęć"
       ],
       "Upgrade complete!": [
         "Ulepszenie zakończone!"

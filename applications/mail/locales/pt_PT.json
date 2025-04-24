@@ -268,6 +268,9 @@
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
+      ],
       "Contact group": [
         "Grupo de contactos"
       ],
@@ -1018,6 +1021,9 @@
       "Remove bonuses": [
         "Remover bónus"
       ],
+      "Remove button": [
+        "Remover o botão"
+      ],
       "Remove encryption": [
         "Remover a encriptação"
       ],
@@ -1408,11 +1414,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade Now": [
-        "Atualizar agora"
-      ],
       "Upgrade now": [
         "Actualizar agora"
+      ],
+      "Upgrade Now": [
+        "Atualizar agora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Atualize para o plano ${ BRAND_NAME } Unlimited"
@@ -7014,9 +7020,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para a sua caixa de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitor de contas"
       ],
@@ -7157,6 +7160,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique o seu pagamento no separador de verificação."
+      ],
+      "Please fill in all required fields.": [
+        "Preencha todos os campos obrigatórios."
       ],
       "Please fill out this field.": [
         "Preencha este campo."
@@ -8530,10 +8536,10 @@
       "Always move sender's emails": [
         "Mover sempre os e-mails do remetente"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -8562,9 +8568,6 @@
       ],
       "Beta Access": [
         "Acesso Beta"
-      ],
-      "Billing address": [
-        "Endereço de faturação"
       ],
       "Billing cycle": [
         "Ciclo de faturação"
@@ -8722,9 +8725,6 @@
       "Encrypt emails": [
         "Encriptar os e-mails"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expiração (${ patternExpiration })"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -8764,11 +8764,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -8881,14 +8881,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Original link": [
         "Ligação original"
@@ -8955,9 +8955,6 @@
       ],
       "Search in": [
         "Pesquisar em"
-      ],
-      "Security code (${ codeName })": [
-        "Código de segurança (${ codeName })"
       ],
       "Send auto-reply": [
         "Enviar resposta automática"
@@ -9207,6 +9204,9 @@
       ],
       "Enable your address to answer this invitation.": [
         "Ative o seu endereço para responder a este convite."
+      ],
+      "Enforcing 2FA for organizations": [
+        "Aplicação da A2F para as organizações"
       ],
       "Folders": [
         "Pastas"
@@ -9745,29 +9745,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Apagar conta"
-      ],
-      "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter o ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conservar ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar a conta"
-      ],
-      "Switch plan": [
-        "Alterar o plano"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Mudar para ${ downgradedPlanName }"
@@ -9789,6 +9766,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Apagar conta"
+      ],
+      "Downgrade account": [
+        "Mudar para uma conta com menos funcionalidades"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter o ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Conservar ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar a conta"
+      ],
+      "Switch plan": [
+        "Alterar o plano"
       ]
     },
     "new_plans: feature": {
@@ -12020,6 +12020,11 @@
         "Nome a mostrar"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Participar na conversa rápida do Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Mais rápido na aplicação"
@@ -12847,11 +12852,6 @@
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Poupe"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } conversa eliminada",
@@ -13257,6 +13257,11 @@
         "Campo vCard"
       ]
     },
+    "Teams": {
+      "Join Teams meeting": [
+        "Participar na reunião do Teams"
+      ]
+    },
     "Time": {
       "Yesterday": [
         "Ontem"
@@ -13484,6 +13489,9 @@
       ],
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
+      ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
       ],
       "Connect your custom domain": [
         "Ligue o seu domínio personalizado"
@@ -14868,10 +14876,12 @@
         "Anualmente, ${ untilString }"
       ]
     },
-    "Zoom Meeting": {
+    "Zoom": {
       "Join Zoom meeting": [
         "Participar na reunião Zoom"
-      ],
+      ]
+    },
+    "Zoom Meeting": {
       "Meeting ID:": [
         "ID da reunião:"
       ],

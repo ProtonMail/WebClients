@@ -352,9 +352,6 @@
       "Fit to window": [
         "창에 맞게"
       ],
-      "Forgot password?": [
-        "비밀번호를 잊으셨나요?"
-      ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
       ],
@@ -4479,9 +4476,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하세요."
       ],
-      "Enter your own password (as organization admin).": [
-        "자신의 비밀번호 입력 (조직 관리자와 같음)"
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "복구 이메일 주소를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
       ],
@@ -4787,9 +4781,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
-      ],
-      "MM/YY": [
-        "MM/YY"
       ],
       "Monitor accounts": [
         "계정 모니터링"
@@ -5984,10 +5975,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6019,9 +6010,6 @@
       ],
       "Backup password": [
         "백업 비밀번호"
-      ],
-      "Billing address": [
-        "청구지 주소"
       ],
       "Billing cycle": [
         "결제 주기"
@@ -6184,9 +6172,6 @@
       ],
       "Event": [
         "이벤트"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "만료일 (${ patternExpiration })"
       ],
       "Expires": [
         "만료"
@@ -6419,9 +6404,6 @@
       "Second password": [
         "2차 비밀번호"
       ],
-      "Security code (${ codeName })": [
-        "보안 코드 (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "${ n }명 관리자 보기"
       ],
@@ -6532,9 +6514,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
-      ],
-      "Your password (admin)": [
-        "사용자의 비밀번호 (관리자)"
       ],
       "ZIP code": [
         "우편번호"
@@ -7639,6 +7618,14 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -7651,14 +7638,6 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -9757,9 +9736,6 @@
       "Share the confirmation code with your administrator": [
         "관리자에게 확인 코드를 공유하세요"
       ],
-      "Sign in": [
-        "로그인"
-      ],
       "Sign in to your organization": [
         "조직에 로그인"
       ],
@@ -9804,9 +9780,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "새 사용자를 회원님의 조직에 추가하려면 직접 생성해야 합니다."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO 구성 또한 삭제됩니다."
@@ -10404,11 +10377,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "절약되는 가격:"
       ]
     },
     "Subscription status": {
@@ -11102,9 +11070,6 @@
       "Enable for all users": [
         "모든 사용자에게 활성화"
       ],
-      "Enter 2FA code": [
-        "2단계 인증 코드 입력"
-      ],
       "Enter endpoints into your identity provider": [
         "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
       ],
@@ -11113,9 +11078,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
-      ],
-      "Enter your password": [
-        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"

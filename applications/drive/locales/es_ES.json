@@ -211,7 +211,7 @@
         "Conectar aplicaciones y dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar a la videoconferencia"
+        "Conectarte a la videoconferencia"
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
       ],
+      "Failed to save photo to your Drive": [
+        "No se pudo guardar la foto en tu Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no se puede cargar debido al error \"${ error }\"."
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
+      ],
+      "Photo saved to your Drive": [
+        "Foto guardada en tu Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "La carga de fotos está temporalmente desactivada. Inténtalo de nuevo más tarde."
@@ -5131,9 +5137,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -5287,6 +5290,9 @@
       "Please enter the password to decrypt and view content.": [
         "Introduce la contraseña para descifrar y visualizar el contenido."
       ],
+      "Please fill in all required fields.": [
+        "Rellena todos los campos obligatorios."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
       ],
@@ -5336,9 +5342,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espera mientras buscamos contactos que contengan datos cifrados con la clave inactiva."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Espera mientras actualizamos tus datos. Esto puede tardar unos segundos."
       ],
       "Preparing link to file": [
         "Preparando enlace al archivo"
@@ -5477,6 +5480,9 @@
       ],
       "Setting up ${ feature }…": [
         "Configurando ${ feature }…"
+      ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Configurando álbumes y filtros. Esto puede tardar unos minutos."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
@@ -6315,9 +6321,6 @@
       "Beta Access": [
         "Acceso beta"
       ],
-      "Billing address": [
-        "Dirección de facturación"
-      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -6474,9 +6477,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Eliminar este enlace y quitar a todos con acceso"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
       ],
       "Expired": [
         "Expirado"
@@ -6687,9 +6687,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
-      ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
       ],
       "Select type of abuse": [
         "Selecciona el tipo de abuso."
@@ -8794,10 +8791,10 @@
       "Invite members": [
         "Invita a miembros"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Quizás más tarde"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Quizás más tarde"
       ],
       "Select theme": [
@@ -10408,8 +10405,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorra un ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11419,11 +11416,11 @@
       "Untitled document ${ date }": [
         "Documento sin título ${ date }"
       ],
-      "Updating your photos": [
-        "Actualizando tus fotos"
-      ],
       "Upgrade complete!": [
         "Se ha mejorado tu plan."
+      ],
+      "Upgrading your Photos experience": [
+        "Mejorando tu experiencia con Fotos"
       ],
       "Upload and share files": [
         "Cargar y compartir archivos"

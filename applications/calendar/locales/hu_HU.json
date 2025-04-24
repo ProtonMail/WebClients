@@ -797,10 +797,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5059,9 +5059,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Az üzenetek bármelyik e-mail címre érkezhetnek, ugyanabban a postafiókban leszek olvashatók."
       ],
-      "MM/YY": [
-        "HH/ÉÉ"
-      ],
       "Monitor accounts": [
         "Fiókok megfigyelése"
       ],
@@ -5937,9 +5934,6 @@
       "Beta Access": [
         "Béta hozzáférés"
       ],
-      "Billing address": [
-        "Számlázási cím"
-      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
@@ -6077,9 +6071,6 @@
       ],
       "Every": [
         "Minden"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Lejárta (${ patternExpiration })"
       ],
       "Expires": [
         "Lejárat"
@@ -6261,9 +6252,6 @@
       ],
       "Secondary time zone": [
         "Másodlagos időzóna"
-      ],
-      "Security code (${ codeName })": [
-        "Biztonsági kód (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Mutassa meg másoknak, ha elfoglalt vagyok"
@@ -6875,6 +6863,26 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kezdje el a használatot ${ priceCoupon } áron"
+      ],
+      "Starting from ${ pricing }": [
+        "Kezdőár: ${ pricing }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6896,26 +6904,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
       ]
     },
     "new_plans: feature": {
@@ -9732,11 +9720,6 @@
         "Rendszerünk nem tud automatikusan levonni ezzel a fizetési móddal, de az előfizetése továbbra is megújul a számlázási ciklus végén. Ha kisebb csomagra szeretne váltani vagy módosítani szeretné előfizetését, azt továbbra is magának kell megtennie a számlázási időszak vége előtt. Ez nem lehetséges automatikusan, mert ha túllépte az ingyenes csomagban elérhető tárhelyet, vagy más fizetős funkciókat használ, nem törölhetünk automatikusan fájlokat, e-maileket vagy más adatokat ön helyett. Ha letiltja az automatikus fizetést, ne felejtse el a következő számlát az esedékesség napja előtt befizetni, hogy elkerülje a fiók felfüggesztését."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Megtakarítás"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } névjegy azonosnak tűnik.",
@@ -11286,9 +11269,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Csatlakozás Zoom találkozóhoz"
-      ],
       "Meeting ID:": [
         "Találkozó azonosító:"
       ],

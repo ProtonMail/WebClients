@@ -4564,10 +4564,10 @@
       "Forward to": [
         "다음으로 전달:"
       ],
-      "Or": [
+      "or": [
         "또는"
       ],
-      "or": [
+      "Or": [
         "또는"
       ],
       "With attachment": [
@@ -8526,9 +8526,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monitor accounts": [
         "계정 모니터링"
       ],
@@ -10757,10 +10754,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10772,11 +10769,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "And": [
-        "그리고"
-      ],
       "AND": [
         "및"
+      ],
+      "And": [
+        "그리고"
       ],
       "and": [
         "그리고"
@@ -10843,9 +10840,6 @@
       ],
       "Beta": [
         "베타"
-      ],
-      "Billing address": [
-        "청구지 주소"
       ],
       "Billing cycle": [
         "결제 주기"
@@ -11147,9 +11141,6 @@
       "Exclude Spam/Trash from All mail": [
         "모든 메일에서 스팸 및 휴지통 제외"
       ],
-      "Expiration (${ patternExpiration })": [
-        "만료일 (${ patternExpiration })"
-      ],
       "Expires": [
         "만료"
       ],
@@ -11204,10 +11195,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
       "Import all messages": [
@@ -11411,13 +11402,13 @@
       "Optional": [
         "선택 사항"
       ],
+      "OR": [
+        "또는"
+      ],
       "or": [
         "또는"
       ],
       "Or": [
-        "또는"
-      ],
-      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -11548,9 +11539,6 @@
       ],
       "Second password": [
         "2차 비밀번호"
-      ],
-      "Security code (${ codeName })": [
-        "보안 코드 (${ codeName })"
       ],
       "Send auto-reply": [
         "자동 회신 보내기"
@@ -17599,11 +17587,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "절약되는 가격:"
       ]
     },
     "Subscription status": {

@@ -485,7 +485,7 @@
         "Last ned"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download CSV sample": [
         "Last ned CSV-eksempel"
@@ -3829,7 +3829,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert, kryptert miljø."
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
       ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME } er ikke din standard e-postapplikasjon."
@@ -4354,7 +4354,7 @@
         "Generer QR-kode"
       ],
       "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
-        "Skaff deg en annen enhet som er logget på din ${ BRAND_NAME }-konto"
+        "Hent en annen enhet som er logget på din ${ BRAND_NAME }-konto"
       ],
       "How to sign in using another device": [
         "Hvordan logge på med en annen enhet"
@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Videresend til"
       ],
-      "Or": [
-        "Eller"
-      ],
       "or": [
         "eller"
+      ],
+      "Or": [
+        "Eller"
       ],
       "With attachment": [
         "Med vedlegg"
@@ -8753,9 +8753,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
@@ -9024,6 +9021,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll ut alle obligatoriske felt."
       ],
       "Please fill out this field.": [
         "Fyll ut dette feltet."
@@ -11027,10 +11027,10 @@
       "Allow sharing outside the organization": [
         "Tillat deling utenfor organisasjonen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11042,11 +11042,11 @@
       "Amount due": [
         "Skyldig beløp"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -11113,9 +11113,6 @@
       ],
       "Beta": [
         "Testversjon"
-      ],
-      "Billing address": [
-        "Fakturaadresse"
       ],
       "Billing cycle": [
         "Faktureringssyklus"
@@ -11417,9 +11414,6 @@
       "Exclude Spam/Trash from All mail": [
         "Ekskluder Søppelpost/Søppel fra All e-post"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Utløpstid (${ patternExpiration })"
-      ],
       "Expires": [
         "Utløper"
       ],
@@ -11474,11 +11468,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -11681,14 +11675,14 @@
       "Optional": [
         "Valgfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -11818,9 +11812,6 @@
       ],
       "Second password": [
         "Andre passord"
-      ],
-      "Security code (${ codeName })": [
-        "Sikkerhetskode (${ codeName })"
       ],
       "Send auto-reply": [
         "Send autosvar"
@@ -12265,7 +12256,7 @@
         "Kryptering og nøkler"
       ],
       "Enforcing 2FA for organizations": [
-        "Håndheve 2FA for organisasjoner"
+        "Anvendelse av A2F for organisasjoner"
       ],
       "Forgot email?": [
         "Glemt e-post?"
@@ -12310,7 +12301,7 @@
         "Hvordan aktivere ${ PROTON_SENTINEL_NAME }"
       ],
       "How to migrate to ${ BRAND_NAME }": [
-        "Slik migrerer du til ${ BRAND_NAME }"
+        "Hvordan migrere til ${ BRAND_NAME }"
       ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
@@ -12340,7 +12331,7 @@
         "Hvordan bruke ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Hvordan bruke postvideresending"
+        "Hvordan bruke videresending av e-post"
       ],
       "How to use Groups": [
         "Hvordan bruke grupper"
@@ -18028,11 +18019,6 @@
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Spar"
-      ]
-    },
     "Subscription status": {
       "Active": [
         "Aktiv"
@@ -19018,7 +19004,7 @@
         "Nedgradere til ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Last ned ${ VPN_APP_NAME }"
@@ -19683,7 +19669,7 @@
         "Angi en gjenopprettingsmetode"
       ],
       "Set up email forwarding": [
-        "Sett opp videresending av e-post"
+        "Konfigurer videresending av e-post"
       ],
       "Set up forwarding": [
         "Sett opp videresending"

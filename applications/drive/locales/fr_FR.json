@@ -354,7 +354,7 @@
         "Télécharger"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Télécharger l'application ${ DRIVE_APP_NAME }"
+        "Télécharger les applications ${ DRIVE_APP_NAME }"
       ],
       "Download (${ count })": [
         "Télécharger (${ count })"
@@ -732,7 +732,7 @@
         "Retirer les bonus"
       ],
       "Remove button": [
-        "Bouton retirer"
+        "Retirer le bouton"
       ],
       "Remove device": [
         "Retirer l'appareil"
@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
       ],
+      "Failed to save photo to your Drive": [
+        "L'enregistrement de la photo dans votre Drive n'a pas abouti."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
+      ],
+      "Photo saved to your Drive": [
+        "La photo a été enregistrée dans votre Drive."
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Le chargement de photos est temporairement désactivé. Réessayez plus tard."
@@ -5131,9 +5137,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Surveiller les comptes"
       ],
@@ -5287,6 +5290,9 @@
       "Please enter the password to decrypt and view content.": [
         "Saisissez le mot de passe pour déchiffrer et voir le contenu."
       ],
+      "Please fill in all required fields.": [
+        "Veuillez remplir tous les champs obligatoires."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
@@ -5336,9 +5342,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Veuillez patienter pendant que nous mettons à jour vos données. Cela peut prendre quelques secondes."
       ],
       "Preparing link to file": [
         "Préparation du lien vers le fichier"
@@ -6315,9 +6318,6 @@
       "Beta Access": [
         "Accès à la version bêta"
       ],
-      "Billing address": [
-        "Adresse de facturation"
-      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -6474,9 +6474,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Effacer ce lien et retirer toutes les personnes ayant accès"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiration (${ patternExpiration })"
       ],
       "Expired": [
         "Expiré"
@@ -6687,9 +6684,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Code de sécurité (${ codeName })"
       ],
       "Select type of abuse": [
         "Sélectionnez un type d'abus"
@@ -8794,10 +8788,10 @@
       "Invite members": [
         "Invitez des membres"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Peut-être plus tard"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Peut-être plus tard"
       ],
       "Select theme": [
@@ -10408,8 +10402,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Économisez"
+      "Save ${ priceString }": [
+        "Économisez ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11418,9 +11412,6 @@
       ],
       "Untitled document ${ date }": [
         "Document sans titre ${ date }"
-      ],
-      "Updating your photos": [
-        "Mise à jour de vos photos"
       ],
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."

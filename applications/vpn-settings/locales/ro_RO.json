@@ -142,6 +142,9 @@
       "Close this banner": [
         "Închidere norificare"
       ],
+      "Collaborate on documents": [
+        "Colaborați la documente"
+      ],
       "Compare all plans": [
         "Comparare planuri"
       ],
@@ -153,6 +156,12 @@
       ],
       "Confirm": [
         "Confirmare"
+      ],
+      "Connect apps and devices": [
+        "Conectați aplicații și dispozitive"
+      ],
+      "Connect to video conferencing": [
+        "Conectați-vă la conferințe video"
       ],
       "Contact support": [
         "Contactați asistența"
@@ -271,6 +280,9 @@
       "Download": [
         "Descărcare"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
       "Download CSV sample": [
         "Descărcare exemplu de CSV"
       ],
@@ -352,9 +364,6 @@
       "Fit to window": [
         "Potrivire la fereastră"
       ],
-      "Forgot password?": [
-        "Ați uitat parola?"
-      ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
       ],
@@ -385,6 +394,9 @@
       "Get more servers": [
         "Obțineți mai multe servere"
       ],
+      "Get the apps": [
+        "Luați aplicațiile"
+      ],
       "Get the deal": [
         "Obțineți oferta"
       ],
@@ -411,6 +423,9 @@
       ],
       "Hide plan features": [
         "Ascundere caracteristici plan"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importați e-mailuri, calendare, contacte"
       ],
       "Import new SAML metadata": [
         "Importare metadate SAML noi"
@@ -445,8 +460,17 @@
       "Make admin": [
         "Stabilire administrator"
       ],
+      "Manage advanced account protections": [
+        "Gestionați protecții avansate cont"
+      ],
+      "Manage groups": [
+        "Gestionare grupuri"
+      ],
       "Manage subscription": [
         "Gestionare abonament"
+      ],
+      "Manage users/addresses": [
+        "Gestionare utilizatori/adrese"
       ],
       "Mark as default": [
         "Setare ca implicită"
@@ -673,6 +697,18 @@
       "Set new password": [
         "Setare parolă nouă"
       ],
+      "Set recovery methods": [
+        "Setați metode de recuperare"
+      ],
+      "Set up 2FA": [
+        "Configurare A2F"
+      ],
+      "Set up a custom domain": [
+        "Configurați un domeniu personal"
+      ],
+      "Set up email forwarding": [
+        "Setare redirecționare mesaje"
+      ],
       "Settings": [
         "Setări"
       ],
@@ -681,6 +717,9 @@
       ],
       "Share via link": [
         "Partajare prin legătură web"
+      ],
+      "Share your calendar with your team": [
+        "Partajați-vă calendarul cu echipa proprie"
       ],
       "Sharing options": [
         "Opțiuni de partajare"
@@ -757,6 +796,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activați ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock": [
         "Deblocare"
       ],
@@ -774,6 +816,9 @@
       ],
       "Upload": [
         "Încărcare"
+      ],
+      "Upload and share files": [
+        "Încărcați și partajați fișiere"
       ],
       "Upload logo": [
         "Încărcare logo"
@@ -4563,9 +4608,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Introduceți parola (ca administrator al organizației)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
@@ -4872,9 +4914,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Mesajele adresate tuturor adreselor de e-mail personale vor fi livrate în contul de e-mail."
       ],
-      "MM/YY": [
-        "LL/AA"
-      ],
       "Monitor accounts": [
         "Monitorizare conturi"
       ],
@@ -4943,6 +4982,9 @@
       ],
       "Open source": [
         "Cod sursă public"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
       ],
       "or ${ selectFileButton }": [
         "sau ${ selectFileButton }"
@@ -5050,6 +5092,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
+      ],
+      "Please fill in all required fields.": [
+        "Completați toate câmpurile obligatorii."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "După apăsarea pe butonul de confirmare, în cont va mai rămâne ${ creditsRemaining } credit.",
@@ -6124,10 +6169,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6159,9 +6204,6 @@
       ],
       "Backup password": [
         "Parola de rezervă"
-      ],
-      "Billing address": [
-        "Adresă de facturare"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -6324,9 +6366,6 @@
       ],
       "Event": [
         "Eveniment"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expirare (${ patternExpiration })"
       ],
       "Expires": [
         "Expirare"
@@ -6559,9 +6598,6 @@
       "Second password": [
         "Parola secundară"
       ],
-      "Security code (${ codeName })": [
-        "Cod de securitate (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Afișare ${ n } administrator",
         "Afișare ${ n } administratori",
@@ -6674,9 +6710,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
-      ],
-      "Your password (admin)": [
-        "Parola dvs. (administrator)"
       ],
       "ZIP code": [
         "Cod poștal"
@@ -6791,6 +6824,9 @@
       "Don't have access to your 2FA?": [
         "Nu aveți acces la A2F?"
       ],
+      "Enforcing 2FA for organizations": [
+        "Impunere A2F pentru organizații"
+      ],
       "Forgot email?": [
         "V-ați uitat adresa de e-mail?"
       ],
@@ -6809,8 +6845,50 @@
       "here": [
         "aici"
       ],
+      "How to add users": [
+        "Cum să adăugați utilizatori"
+      ],
+      "How to add Zoom links": [
+        "Cum să adăugați legături web Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Cum să colaborați în ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Cum se activează ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Cum să migrați la ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Cum să configurați ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Cum să configurați un domeniu personal"
+      ],
+      "How to set up SMTP": [
+        "Cum să configurați SMTP"
+      ],
+      "How to share a calendar": [
+        "Cum să partajați un calendar"
+      ],
+      "How to share via email": [
+        "Cum să partajați prin e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Cum se folosește ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Cum să utilizați ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Cum se utilizează redirecționarea mesajelor"
+      ],
+      "How to use Groups": [
+        "Cum să utilizați grupurile"
       ],
       "Learn more": [
         "Detalii"
@@ -6847,6 +6925,9 @@
       ],
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
+      ],
+      "Types of recovery methods": [
+        "Tipuri de metode de recuperare"
       ],
       "Upgrade your plan": [
         "Treceți la alt plan"
@@ -7822,6 +7903,14 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -7834,14 +7923,6 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -10020,9 +10101,6 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
-      "Sign in": [
-        "Conectare"
-      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -10067,9 +10145,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
@@ -10711,11 +10786,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Salvare"
       ]
     },
     "Subscription status": {
@@ -11412,9 +11482,6 @@
       "Enable for all users": [
         "Activare pentru toți utilizatorii"
       ],
-      "Enter 2FA code": [
-        "Introduceți codul de A2F"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
       ],
@@ -11423,9 +11490,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
-      ],
-      "Enter your password": [
-        "Introduceţi parola"
       ],
       "Error": [
         "Eroare"

@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
+      "Failed to save photo to your Drive": [
+        "No s'ha pogut desar la foto al vostre Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El fitxer «${ item.name }» no s'ha pogut pujar a causa de l'error «${ error }»"
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Procés de pagament no soportat"
+      ],
+      "Photo saved to your Drive": [
+        "La foto s'ha desat al vostre Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "La càrrega de fotos està temporalment desactivada. Torneu a provar més tard."
@@ -5131,9 +5137,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
@@ -5287,6 +5290,9 @@
       "Please enter the password to decrypt and view content.": [
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
       ],
+      "Please fill in all required fields.": [
+        "Ompliu tots els camps obligatoris."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
       ],
@@ -5336,9 +5342,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Espereu mentre actualitzem les vostres dades. Podria trigar uns segons."
       ],
       "Preparing link to file": [
         "S'està preparant l'enllaç al fitxer"
@@ -5477,6 +5480,9 @@
       ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
+      ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "S'estan configurant els àlbums i filtres. Això pot trigar uns minuts."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
@@ -6315,9 +6321,6 @@
       "Beta Access": [
         "Accés beta"
       ],
-      "Billing address": [
-        "Adreça de facturació"
-      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -6474,9 +6477,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Esborreu aquest enllaç i elimineu a tothom amb accés"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Caducitat (${ patternExpiration })"
       ],
       "Expired": [
         "Caducat"
@@ -6687,9 +6687,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
-      ],
-      "Security code (${ codeName })": [
-        "Codi de seguretat (${ codeName })"
       ],
       "Select type of abuse": [
         "Seleccioneu el tipus d'abús"
@@ -8794,11 +8791,11 @@
       "Invite members": [
         "Convideu els membres."
       ],
-      "Maybe Later": [
-        "Potser més tard"
-      ],
       "Maybe later": [
         "Potser després"
+      ],
+      "Maybe Later": [
+        "Potser més tard"
       ],
       "Select theme": [
         "Selecciona el tema"
@@ -10408,8 +10405,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Desa"
+      "Save ${ priceString }": [
+        "Estalvieu el ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11419,11 +11416,11 @@
       "Untitled document ${ date }": [
         "Document sense títol ${ date }"
       ],
-      "Updating your photos": [
-        "S'estan actualitzant les vostres fotos."
-      ],
       "Upgrade complete!": [
         "S'ha millorat el pla."
+      ],
+      "Upgrading your Photos experience": [
+        "S'està millorant la vostra experiència amb Fotos"
       ],
       "Upload and share files": [
         "Carregueu i compartiu fitxers"
