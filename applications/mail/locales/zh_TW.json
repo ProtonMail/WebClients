@@ -1338,11 +1338,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade Now": [
-        "請升級"
-      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade Now": [
+        "請升級"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "升級至${ BRAND_NAME }無限版"
@@ -6655,9 +6655,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
       ],
-      "MM/YY": [
-        "月月/年年"
-      ],
       "Monitor accounts": [
         "監控帳號"
       ],
@@ -8045,10 +8042,10 @@
       "Always move sender's emails": [
         "總是移動寄件者的電子郵件"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -8077,9 +8074,6 @@
       ],
       "Beta Access": [
         "測試版體驗"
-      ],
-      "Billing address": [
-        "帳單位址"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -8234,9 +8228,6 @@
       "Encrypt emails": [
         "加密電郵"
       ],
-      "Expiration (${ patternExpiration })": [
-        "到期日(${ patternExpiration })"
-      ],
       "Expires": [
         "有效期限"
       ],
@@ -8276,10 +8267,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
       "Import all messages": [
@@ -8390,13 +8381,13 @@
       "Optional": [
         "自由列席"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Original link": [
@@ -8464,9 +8455,6 @@
       ],
       "Search in": [
         "搜尋於"
-      ],
-      "Security code (${ codeName })": [
-        "安全驗證代碼(${ codeName })"
       ],
       "Send auto-reply": [
         "發送自動回覆"
@@ -9186,29 +9174,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
@@ -9230,6 +9195,29 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
       ]
     },
     "new_plans: feature": {
@@ -12090,11 +12078,6 @@
         "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "省下"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } 則往來對話已刪除"
@@ -13908,9 +13891,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "加入Zoom會議"
-      ],
       "Meeting ID:": [
         "會議識別碼:"
       ],

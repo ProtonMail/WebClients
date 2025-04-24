@@ -1308,10 +1308,10 @@
       "Upgrade": [
         "Nadgradi"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadgradi zdaj"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadgradi zdaj"
       ],
       "Upload picture": [
@@ -6802,9 +6802,6 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Sporočila, ki so v smetnjaku ali v neželeni pošti več kot 30 dni, se samodejno izbrišejo."
       ],
-      "MM/YY": [
-        "MM/LL"
-      ],
       "Monitor accounts": [
         "Nadzor računov"
       ],
@@ -8271,11 +8268,11 @@
       "Always move sender's emails": [
         "Vedno premakni pošiljateljeva sporočila"
       ],
-      "And": [
-        "In"
-      ],
       "AND": [
         "IN"
+      ],
+      "And": [
+        "In"
       ],
       "and": [
         "in"
@@ -8303,9 +8300,6 @@
       ],
       "Beta Access": [
         "Dostop beta"
-      ],
-      "Billing address": [
-        "Naslov za izstavitev računa"
       ],
       "Billing cycle": [
         "Cikel obračunavanja"
@@ -8457,9 +8451,6 @@
       "Encrypt emails": [
         "Šifriraj sporočila"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Potek (${ patternExpiration })."
-      ],
       "Expires": [
         "Poteče"
       ],
@@ -8499,11 +8490,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Če"
-      ],
       "IF": [
         "ČE"
+      ],
+      "If": [
+        "Če"
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
@@ -8610,14 +8601,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "OR": [
+        "ALI"
+      ],
       "or": [
         "ali"
       ],
       "Or": [
         "Ali"
-      ],
-      "OR": [
-        "ALI"
       ],
       "Original link": [
         "Izvorna povezava"
@@ -8681,9 +8672,6 @@
       ],
       "Search in": [
         "Išči v"
-      ],
-      "Security code (${ codeName })": [
-        "Varnostna koda (${ codeName })"
       ],
       "Send auto-reply": [
         "Pošlji samodejni odgovor"
@@ -9433,6 +9421,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -9454,23 +9459,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -12272,11 +12260,6 @@
         "Naš sistem vas ne bo več samodejno obremenjeval s tem načinom plačila, vendar se bo vaša naročnina še vedno podaljšala na koncu obračunskega cikla. Če želite zmanjšati ali spremeniti svojo naročnino, morate to še vedno storiti sami pred koncem obračunskega obdobja. Samodejno ne moremo zmanjšati vaše naročnine, ker če presežete kvoto brezplačnega shranjevanja ali uporabljate druge plačljive funkcije, ne moremo samodejno izbrisati datotek, e-pošte ali drugih podatkov za vas. Če onemogočite samodejno plačilo, ne pozabite plačati naslednjega računa za naročnino pred rokom zapadlosti, da preprečite suspenz računa."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Shrani"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } pogovor izbrisan",
@@ -14365,9 +14348,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Pridružite se sestanku Zoom"
-      ],
       "Meeting ID:": [
         "ID sestanka:"
       ]

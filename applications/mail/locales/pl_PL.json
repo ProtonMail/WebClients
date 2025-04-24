@@ -1425,10 +1425,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -7245,9 +7245,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Monitoring kont"
       ],
@@ -8821,11 +8818,11 @@
       "Always move sender's emails": [
         "Zawsze przenieś wiadomości nadawców"
       ],
-      "And": [
-        "oraz"
-      ],
       "AND": [
         "ORAZ"
+      ],
+      "And": [
+        "oraz"
       ],
       "and": [
         "i"
@@ -8853,9 +8850,6 @@
       ],
       "Beta Access": [
         "Dostęp beta"
-      ],
-      "Billing address": [
-        "Adres rozliczeniowy"
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
@@ -9013,9 +9007,6 @@
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Data wygaśnięcia (${ patternExpiration })"
-      ],
       "Expires": [
         "Wygasa"
       ],
@@ -9055,11 +9046,11 @@
       "IBAN": [
         "Numer IBAN"
       ],
-      "If": [
-        "Jeśli"
-      ],
       "IF": [
         "JEŚLI"
+      ],
+      "If": [
+        "Jeśli"
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
@@ -9172,14 +9163,14 @@
       "Optional": [
         "Opcjonalnie"
       ],
+      "OR": [
+        "LUB"
+      ],
       "or": [
         "lub"
       ],
       "Or": [
         "lub"
-      ],
-      "OR": [
-        "LUB"
       ],
       "Original link": [
         "Oryginalny link"
@@ -9246,9 +9237,6 @@
       ],
       "Search in": [
         "Przeszukaj"
-      ],
-      "Security code (${ codeName })": [
-        "Kod zabezpieczający (${ codeName })"
       ],
       "Send auto-reply": [
         "Wyślij automatyczną odpowiedź"
@@ -10055,29 +10043,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Usuń konto"
-      ],
-      "Downgrade account": [
-        "Obniż plan"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Uzyskaj ${ BRAND_NAME } za darmo"
-      ],
-      "Get ${ planName }": [
-        "Wybierz plan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Zachowaj plan ${ plan }"
-      ],
-      "Keep account": [
-        "Zachowaj konto"
-      ],
-      "Switch plan": [
-        "Zmień plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
@@ -10099,6 +10064,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Ulepsz do planu ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Usuń konto"
+      ],
+      "Downgrade account": [
+        "Obniż plan"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Uzyskaj ${ BRAND_NAME } za darmo"
+      ],
+      "Get ${ planName }": [
+        "Wybierz plan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Zachowaj plan ${ plan }"
+      ],
+      "Keep account": [
+        "Zachowaj konto"
+      ],
+      "Switch plan": [
+        "Zmień plan"
       ]
     },
     "new_plans: feature": {
@@ -13299,11 +13287,6 @@
         "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Zaoszczędź"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "Wątek został usunięty",
@@ -15503,9 +15486,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Dołącz do spotkania Zoom"
-      ],
       "Meeting ID:": [
         "Identyfikator spotkania:"
       ],

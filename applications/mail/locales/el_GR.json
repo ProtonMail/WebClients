@@ -1414,11 +1414,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
@@ -7020,9 +7020,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
       ],
-      "MM/YY": [
-        "ΜΜ/ΧΧ"
-      ],
       "Monitor accounts": [
         "Παρακολούθηση λογαριασμών"
       ],
@@ -7163,6 +7160,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Επαληθεύστε την πληρωμή σας στην καρτέλα επαλήθευσης."
+      ],
+      "Please fill in all required fields.": [
+        "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
       ],
       "Please fill out this field.": [
         "Παρακαλώ συμπληρώστε αυτό το πεδίο."
@@ -8536,11 +8536,11 @@
       "Always move sender's emails": [
         "Μετακινείτε πάντα τα μηνύματα ηλεκτρονικού ταχυδρομείου του αποστολέα"
       ],
-      "And": [
-        "Και"
-      ],
       "AND": [
         "ΚΑΙ"
+      ],
+      "And": [
+        "Και"
       ],
       "and": [
         "και"
@@ -8568,9 +8568,6 @@
       ],
       "Beta Access": [
         "Πρόσβαση Beta"
-      ],
-      "Billing address": [
-        "Διεύθυνση χρέωσης"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -8728,9 +8725,6 @@
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Λήξη (${ patternExpiration })"
-      ],
       "Expires": [
         "Λήγει"
       ],
@@ -8770,11 +8764,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Αν"
-      ],
       "IF": [
         "ΑΝ"
+      ],
+      "If": [
+        "Αν"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -8887,14 +8881,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
+      "OR": [
+        "'Η"
+      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
-      ],
-      "OR": [
-        "'Η"
       ],
       "Original link": [
         "Αρχικός σύνδεσμος"
@@ -8961,9 +8955,6 @@
       ],
       "Search in": [
         "Αναζήτηση σε"
-      ],
-      "Security code (${ codeName })": [
-        "Κωδικός ασφαλείας (${ codeName })"
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -9754,29 +9745,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Διαγραφή λογαριασμού"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Απόκτηση ${ BRAND_NAME } δωρεάν"
-      ],
-      "Get ${ planName }": [
-        "Απόκτηση ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Διατήρηση ${ plan }"
-      ],
-      "Keep account": [
-        "Διατήρηση λογαριασμού"
-      ],
-      "Switch plan": [
-        "Αλλαγή προγράμματος"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
@@ -9798,6 +9766,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Διαγραφή λογαριασμού"
+      ],
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Απόκτηση ${ BRAND_NAME } δωρεάν"
+      ],
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Διατήρηση ${ plan }"
+      ],
+      "Keep account": [
+        "Διατήρηση λογαριασμού"
+      ],
+      "Switch plan": [
+        "Αλλαγή προγράμματος"
       ]
     },
     "new_plans: feature": {
@@ -12029,6 +12020,11 @@
         "Εμφανιζόμενο Όνομα"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Συμμετοχή σε ομαδική συνομιλία στο Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Πιο γρήγορα στην εφαρμογή"
@@ -12857,8 +12853,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Αποθήκευση"
+      "Save ${ priceString }": [
+        "Εξοικονομίστε ${ priceString }"
       ]
     },
     "Success": {
@@ -13264,6 +13260,11 @@
       ],
       "vCard field": [
         "πεδίο vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Συνδεθείτε στη σύσκεψη Teams"
       ]
     },
     "Time": {
@@ -14885,10 +14886,12 @@
         "Ετησίως, ${ untilString }"
       ]
     },
-    "Zoom Meeting": {
+    "Zoom": {
       "Join Zoom meeting": [
         "Συνδεθείτε στη σύσκεψη Zoom"
-      ],
+      ]
+    },
+    "Zoom Meeting": {
       "Meeting ID:": [
         "ID συνάντησης:"
       ],
