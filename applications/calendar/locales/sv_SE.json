@@ -794,10 +794,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -814,6 +814,9 @@
       ],
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Använd ${ PASS_APP_NAME } för Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
@@ -2763,6 +2766,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Designad för användare som söker utökat skydd för sina konton."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
@@ -5110,9 +5116,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Övervaka konton"
       ],
@@ -5208,6 +5211,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentisera din betalning på verifieringsfliken."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll i alla obligatoriska fält."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Observera att adresser tilldelade till dessa grupper INTE kommer att tas bort."
@@ -5988,9 +5994,6 @@
       "Beta Access": [
         "Betaåtkomst"
       ],
-      "Billing address": [
-        "Faktureringsadress"
-      ],
       "Billing cycle": [
         "Faktureringsperiod"
       ],
@@ -6128,9 +6131,6 @@
       ],
       "Every": [
         "Varje"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Löper ut (${ patternExpiration })"
       ],
       "Expires": [
         "Löper ut"
@@ -6312,9 +6312,6 @@
       ],
       "Secondary time zone": [
         "Sekundär tidszon"
-      ],
-      "Security code (${ codeName })": [
-        "Säkerhetskod (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Visa andra när jag är upptagen"
@@ -6959,6 +6956,26 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -6980,26 +6997,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9824,8 +9821,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Spara"
+      "Save ${ priceString }": [
+        "Spara ${ priceString }"
       ]
     },
     "Success": {
@@ -11389,9 +11386,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Gå med i Zoom-möte"
-      ],
       "Meeting ID:": [
         "Mötes-ID:"
       ],
