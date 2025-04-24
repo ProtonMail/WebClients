@@ -13,8 +13,8 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
