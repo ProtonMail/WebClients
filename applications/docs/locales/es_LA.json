@@ -502,7 +502,7 @@
         "Mensaje nuevo"
       ],
       "New sheet": [
-        "Nueva hoja"
+        "Hoja nueva"
       ],
       "Next": [
         "Siguiente"
@@ -805,7 +805,7 @@
         "Usar tema ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Usar ${ PASS_APP_NAME } para Business"
+        "Usar ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
@@ -2335,6 +2335,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } le permite trabajar juntos en un entorno seguro y cifrado."
@@ -2385,7 +2390,7 @@
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
-        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un WiFi público."
+        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un Wi-Fi público."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Garantice la seguridad de primer nivel para su cuenta con el programa ${ PROTON_SENTINEL_NAME }."
@@ -2470,11 +2475,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4634,9 +4634,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -4753,6 +4750,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporte una copia de sus cambios actuales desde el menú principal y vuelva a cargar la página."
+      ],
+      "Please fill in all required fields.": [
+        "Complete todos los campos obligatorios."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tome en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -5569,9 +5569,6 @@
       "Beta Access": [
         "Acceso beta"
       ],
-      "Billing address": [
-        "Dirección de facturación"
-      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -5700,9 +5697,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Eliminar este enlace y quitar a todos con acceso"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -5887,9 +5881,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
-      ],
       "Set expiration date": [
         "Fijar fecha de expiración"
       ],
@@ -6042,7 +6033,7 @@
         "haga clic aquí"
       ],
       "Enforcing 2FA for organizations": [
-        "Forzar de 2FA para organizaciones"
+        "Implementar 2FA para organizaciones"
       ],
       "How to add users": [
         "Cómo agregar usuarios"
@@ -6081,7 +6072,7 @@
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Cómo usar ${ PASS_APP_NAME } para Business"
+        "Cómo usar ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
         "Cómo usar el reenvío de correo"
@@ -9090,8 +9081,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorre ${ priceString }"
       ]
     },
     "Success": {
@@ -9866,7 +9857,7 @@
         "Advertencia: presunto sitio web falso"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Le damos la bienvenida a ${ BRAND_NAME } para Business"
+        "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "¿De qué le puede proteger una VPN?"

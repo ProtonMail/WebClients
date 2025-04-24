@@ -2332,6 +2332,11 @@
         "Fattura scaduta"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
@@ -2467,11 +2472,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4631,9 +4631,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitora gli account"
       ],
@@ -4750,6 +4747,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Esporta una copia delle modifiche attuali dal menu principale e ricarica la pagina."
+      ],
+      "Please fill in all required fields.": [
+        "Compila tutti i campi obbligatori."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tieni presente che gli indirizzi assegnati a questi gruppi NON verranno eliminati."
@@ -5566,9 +5566,6 @@
       "Beta Access": [
         "Accesso beta"
       ],
-      "Billing address": [
-        "Indirizzo di fatturazione"
-      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -5697,9 +5694,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Elimina questo link e rimuovi chiunque abbia l'accesso"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Scadenza (${ patternExpiration })"
       ],
       "Expires": [
         "Scadenza"
@@ -5883,9 +5877,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Codice di sicurezza (${ codeName })"
       ],
       "Set expiration date": [
         "Imposta data di scadenza"
@@ -9083,8 +9074,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Risparmia"
+      "Save ${ priceString }": [
+        "Risparmia ${ priceString }"
       ]
     },
     "Success": {
