@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import type { Breakpoints } from '@proton/components';
-import { Icon, ToolbarButton } from '@proton/components';
+import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useLabels } from '@proton/mail';
 import { isCustomLabel, labelIncludes } from '@proton/mail/labels/helpers';
@@ -18,11 +17,11 @@ const { DRAFTS, ALL_DRAFTS, ALL_MAIL, ALMOST_ALL_MAIL, INBOX, SENT, ALL_SENT, AR
 
 interface Props {
     labelID: string;
-    breakpoints: Breakpoints;
     elementIDs: string[];
 }
 
-const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
+const EmptyButton = ({ labelID = '', elementIDs }: Props) => {
+    const breakpoints = useActiveBreakpoint();
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();

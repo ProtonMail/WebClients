@@ -8,7 +8,6 @@ import {
     KeyTransparencyManager,
     ModalsChildren,
     SubscriptionModalProvider,
-    useActiveBreakpoint,
     useConfig,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
@@ -31,7 +30,6 @@ import MailAppShell from './router/MailAppShell';
 import { extraThunkArguments } from './store/thunk';
 
 const MainContainer: FunctionComponent = () => {
-    const breakpoints = useActiveBreakpoint();
     const { APP_NAME } = useConfig();
     const mailContentRef = useRef<HTMLDivElement>(null);
     const { getFeature } = useFeatures([
@@ -104,7 +102,7 @@ const MainContainer: FunctionComponent = () => {
                         <MailContentRefProvider mailContentRef={mailContentRef}>
                             <ChecklistsProvider>
                                 <SubscriptionModalProvider app={APP_NAME}>
-                                    <ComposerContainer breakpoints={breakpoints}>
+                                    <ComposerContainer>
                                         <CheckAllRefProvider>
                                             <ModalsChildren />
                                             <ApiModalsHVUpsell api={extraThunkArguments.api} />
@@ -117,12 +115,7 @@ const MainContainer: FunctionComponent = () => {
                                                 ) : (
                                                     <Route
                                                         path={MAIN_ROUTE_PATH}
-                                                        render={() => (
-                                                            <PageContainer
-                                                                ref={mailContentRef}
-                                                                breakpoints={breakpoints}
-                                                            />
-                                                        )}
+                                                        render={() => <PageContainer ref={mailContentRef} />}
                                                     />
                                                 )}
                                             </Switch>

@@ -6,7 +6,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -83,7 +82,6 @@ const setup = async (
             conversationMode={true}
             showIcon={true}
             senders={<>Sender</>}
-            breakpoints={mockDefaultBreakpoints}
             unread={false}
             onBack={jest.fn()}
             isSelected={false}

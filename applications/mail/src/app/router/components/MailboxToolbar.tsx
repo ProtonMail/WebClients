@@ -1,4 +1,3 @@
-import { useActiveBreakpoint } from '@proton/components';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 
 import Toolbar from 'proton-mail/components/toolbar/Toolbar';
@@ -33,7 +32,6 @@ export const MailboxToolbar = ({ inHeader = false, params, navigation, elementsD
 
     const { labelDropdownToggleRef, moveDropdownToggleRef, columnMode } = useMailboxLayoutProvider();
 
-    const breakpoints = useActiveBreakpoint();
     const [mailSettings] = useMailSettings();
 
     return (
@@ -46,7 +44,6 @@ export const MailboxToolbar = ({ inHeader = false, params, navigation, elementsD
             elementIDs={elementIDs}
             columnMode={columnMode}
             conversationMode={conversationMode}
-            breakpoints={breakpoints}
             onCheck={handleCheck}
             page={page}
             total={total}
