@@ -115,7 +115,6 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
             )}
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
-                    isSmallViewport={breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium}
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esIndexingProgressState={esIndexingProgressState}

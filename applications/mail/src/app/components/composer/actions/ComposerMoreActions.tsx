@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import type { EditorMetadata } from '@proton/components';
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenuButton, Icon, useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch } from '../../../store/hooks';
@@ -24,7 +24,6 @@ interface Props {
     editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     editorMetadata: EditorMetadata;
     onChange: MessageChange;
-    isSmallViewport: boolean;
     isPassword: boolean;
     onPassword: () => void;
     onRemoveOutsideEncryption: () => void;
@@ -40,13 +39,16 @@ const ComposerMoreActions = ({
     editorActionsRef,
     editorMetadata,
     onChange,
-    isSmallViewport,
     isPassword,
     onPassword,
     onRemoveOutsideEncryption,
     onDelete,
 }: Props) => {
     const dispatch = useMailDispatch();
+
+    const breakpoints = useActiveBreakpoint();
+    const isSmallViewport = breakpoints.viewportWidth['<=small'];
+
     const titleMoreOptions = c('Title').t`More options`;
 
     const toolbarExtension = useMemo(
