@@ -1414,11 +1414,11 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
-      "Upgrade Now": [
-        "ახლა გაუმჯობესება"
-      ],
       "Upgrade now": [
         "ტარიფის განახლება"
+      ],
+      "Upgrade Now": [
+        "ახლა გაუმჯობესება"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
@@ -3706,8 +3706,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
+      "Connect your CRM, website, printers, and more.": [
+        "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "შექმენით იმდენი ჭდე და საქაღალდე, რამდენიც საჭიროა და იქონიეთ თქვენი საფოსტო ყუთი სუფთად."
+      ],
+      "Create groups you can email with a single address.": [
+        "შექმენით ჯგუფები, რომლებისთვისაც ელფოსტის მიწერა ერთი მისამართით შეგეძლებათ."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
@@ -3763,6 +3769,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
       ],
       "Starting from ${ price }": [
         "${ price }-დან"
@@ -6936,9 +6945,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
       ],
-      "MM/YY": [
-        "თთ/წწ"
-      ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
@@ -7025,6 +7031,9 @@
       ],
       "Open shortcut cheat sheet": [
         "მალსახმობების ჩამონათვლის გახსნა"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
       ],
       "or discover other features:": [
         "ან აღმოაჩინეთ სხვა ფუნქციები:"
@@ -8416,10 +8425,10 @@
       "Always move sender's emails": [
         "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -8448,9 +8457,6 @@
       ],
       "Beta Access": [
         "წვდომა ბეტა ვერსიებზე"
-      ],
-      "Billing address": [
-        "ინვოისის გასაგზავნი მისამართი"
       ],
       "Billing cycle": [
         "გადახდის პერიოდი"
@@ -8608,9 +8614,6 @@
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
-      "Expiration (${ patternExpiration })": [
-        "ვადა (${ patternExpiration })"
-      ],
       "Expires": [
         "ვადა"
       ],
@@ -8650,10 +8653,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -8767,13 +8770,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Original link": [
@@ -8841,9 +8844,6 @@
       ],
       "Search in": [
         "რაში მოვძებნო"
-      ],
-      "Security code (${ codeName })": [
-        "უსაფრთხოების კოდი (${ codeName })"
       ],
       "Send auto-reply": [
         "პასუხის ავტომატურად გაცემა"
@@ -9105,6 +9105,9 @@
       ],
       "How to add Zoom links": [
         "როგორ დავამატო Zoom-ის ბმულები"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "როგორ ხდება კოლაბორაცია ${ DOCS_SHORT_APP_NAME }-ში"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "როგორ ჩავრთო ${ PROTON_SENTINEL_NAME }"
@@ -9631,29 +9634,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -9675,6 +9655,29 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -11493,6 +11496,11 @@
         "წაუკითხავი შეტყობინებები ნაპოვნი არაა"
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "ორგ.-ის მორგებ და ანგარისის უსაფრთხოება"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "ყველა ფსევდონიმი"
@@ -12710,11 +12718,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "დაზოგვა"
       ]
     },
     "Success": {
@@ -14026,6 +14029,9 @@
       "Trust public key?": [
         "ენდობით ამ საჯარო გასაღებს?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
+      ],
       "Unlock contacts groups": [
         "განბლოკეთ კონტაქტის ჯგუფები"
       ],
@@ -14739,9 +14745,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Zoom-ის შეხვედრასთან მიერთება"
-      ],
       "Meeting ID:": [
         "შეხვედრის ID:"
       ],

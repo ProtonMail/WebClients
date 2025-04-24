@@ -1417,11 +1417,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade Now": [
-        "Mejorar ahora"
-      ],
       "Upgrade now": [
         "Actualizar ahora"
+      ],
+      "Upgrade Now": [
+        "Mejorar ahora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Mejore a ${ BRAND_NAME } Unlimited"
@@ -1439,7 +1439,7 @@
         "Use ${ PASS_APP_NAME }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Usar ${ PASS_APP_NAME } para Business"
+        "Usar ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
@@ -3755,7 +3755,7 @@
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
-        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un WiFi público."
+        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un Wi-Fi público."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Garantice la seguridad de primer nivel para su cuenta con el programa ${ PROTON_SENTINEL_NAME }."
@@ -7023,9 +7023,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -7166,6 +7163,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique el pago en la pestaña de verificación."
+      ],
+      "Please fill in all required fields.": [
+        "Complete todos los campos obligatorios."
       ],
       "Please fill out this field.": [
         "Complete este campo."
@@ -8542,10 +8542,10 @@
       "Always move sender's emails": [
         "Mover siempre los correos de remitentes"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
       "and": [
@@ -8574,9 +8574,6 @@
       ],
       "Beta Access": [
         "Acceso beta"
-      ],
-      "Billing address": [
-        "Dirección de facturación"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -8734,9 +8731,6 @@
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -8776,11 +8770,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -8893,13 +8887,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -8967,9 +8961,6 @@
       ],
       "Search in": [
         "Buscar en"
-      ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
       ],
       "Send auto-reply": [
         "Enviar respuesta automática"
@@ -9221,7 +9212,7 @@
         "Active la dirección para responder a esta invitación."
       ],
       "Enforcing 2FA for organizations": [
-        "Forzar de 2FA para organizaciones"
+        "Implementar 2FA para organizaciones"
       ],
       "Folders": [
         "Carpetas"
@@ -9263,7 +9254,7 @@
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Cómo usar ${ PASS_APP_NAME } para Business"
+        "Cómo usar ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
         "Cómo usar el reenvío de correo"
@@ -9760,29 +9751,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Eliminar cuenta"
-      ],
-      "Downgrade account": [
-        "Pasar a un plan inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtener ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Obtener ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Seguir en ${ plan }"
-      ],
-      "Keep account": [
-        "Conservar cuenta"
-      ],
-      "Switch plan": [
-        "Cambiar plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Bajar a ${ downgradedPlanName }"
@@ -9804,6 +9772,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Mejorar a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Eliminar cuenta"
+      ],
+      "Downgrade account": [
+        "Pasar a un plan inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtener ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Seguir en ${ plan }"
+      ],
+      "Keep account": [
+        "Conservar cuenta"
+      ],
+      "Switch plan": [
+        "Cambiar plan"
       ]
     },
     "new_plans: feature": {
@@ -12041,6 +12032,11 @@
         "Nombre a mostrar"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Unirse a la reunión de Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Más rápido en la aplicación"
@@ -12869,8 +12865,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorre ${ priceString }"
       ]
     },
     "Success": {
@@ -13276,6 +13272,11 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Unirte a la reunión de Teams"
       ]
     },
     "Time": {
@@ -14238,7 +14239,7 @@
         "Bienvenido, ${ userName }"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Le damos la bienvenida a ${ BRAND_NAME } para Business"
+        "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "¿De qué le puede proteger una VPN?"
@@ -14897,10 +14898,12 @@
         "Cada año hasta ${ untilString }"
       ]
     },
-    "Zoom Meeting": {
+    "Zoom": {
       "Join Zoom meeting": [
         "Unirse a la reunión de Zoom"
-      ],
+      ]
+    },
+    "Zoom Meeting": {
       "Meeting ID:": [
         "Identificador de la reunión:"
       ],
