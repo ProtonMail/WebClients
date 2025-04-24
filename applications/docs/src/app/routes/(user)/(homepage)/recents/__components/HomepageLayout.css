@@ -19,3 +19,11 @@
 .button-promotion:focus-visible {
   --upgrade-background-color: #f1f1f1 !important;
 }
+
+/** Hack to prevent too much spacing when other blocks (with their own left padding)
+show up after the targeted one, e.g. the upsell section, but still have a right padding
+when missing. */
+
+div:has(> .mobile-search-hack):last-child {
+  padding-right: 0.5rem;
+}

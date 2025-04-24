@@ -4,7 +4,7 @@ import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../../__utils/document-actions'
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import { c } from 'ttag'
-import { useHomepageView } from '../../../../__utils/homepage-view'
+import { useState } from 'react'
 
 export type MoveToTrashButtonProps = {
   currentDocument: RecentDocumentsItem
@@ -12,17 +12,28 @@ export type MoveToTrashButtonProps = {
 }
 
 export function MoveToTrashButton({ currentDocument, close }: MoveToTrashButtonProps) {
-  const { updateRecentDocuments } = useHomepageView()
   const documentActions = useDocumentActions()
+  const [isLoading, setLoading] = useState(false)
   return (
     <ContextMenuButton
-      name={c('Action').t`Move to trash`}
-      icon={<Icon name="trash" className="mr-2" />}
+      name={!isLoading ? c('Action').t`Move to trash` : c('Action').t`Trashing...`}
+      icon={
+        !isLoading ? (
+          <Icon name="trash" className="mr-2" />
+        ) : (
+          <Icon name="arrow-rotate-right" className="mr-2 animate-spin" />
+        )
+      }
       action={async () => {
+        if (isLoading) {
+          return
+        }
+        setLoading(true)
         await documentActions.trash(currentDocument)
-        void updateRecentDocuments()
+        setLoading(false)
+        close()
       }}
-      close={close}
+      close={() => {}}
     />
   )
 }
