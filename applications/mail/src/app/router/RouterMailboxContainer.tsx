@@ -5,7 +5,6 @@ import {
     DrawerVisibilityButton,
     InboxQuickSettingsAppButton,
     PrivateMainArea,
-    useActiveBreakpoint,
 } from '@proton/components';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
@@ -38,7 +37,6 @@ export const RouterMailboxContainer = () => {
     const { elements, loading, placeholderCount } = elementsData;
     const { selectedIDs } = actions;
 
-    const breakpoints = useActiveBreakpoint();
     const { columnMode } = useMailboxLayoutProvider();
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
@@ -69,7 +67,6 @@ export const RouterMailboxContainer = () => {
             elementID={elementID}
         >
             <MailHeader
-                breakpoints={breakpoints}
                 elementID={elementID}
                 selectedIDs={selectedIDs}
                 labelID={labelID}

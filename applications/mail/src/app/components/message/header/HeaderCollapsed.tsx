@@ -2,7 +2,7 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { Breakpoints } from '@proton/components';
+import { useActiveBreakpoint } from '@proton/components';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import {
@@ -35,7 +35,6 @@ interface Props {
     isSentMessage: boolean;
     isUnreadMessage: boolean;
     onExpand: () => void;
-    breakpoints: Breakpoints;
     conversationIndex?: number;
 }
 
@@ -47,7 +46,6 @@ const HeaderCollapsed = ({
     isSentMessage,
     isUnreadMessage,
     onExpand,
-    breakpoints,
     conversationIndex = 0,
 }: Props) => {
     const handleClick = (event: MouseEvent) => {
@@ -58,6 +56,8 @@ const HeaderCollapsed = ({
 
         onExpand();
     };
+
+    const breakpoints = useActiveBreakpoint();
 
     const isDraftMessage = isDraft(message.data) && !message.draftFlags?.sending;
     const isOutboxMessage = message.draftFlags?.sending;

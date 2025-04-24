@@ -2,8 +2,7 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { Breakpoints } from '@proton/components';
-import { Icon, useToggle } from '@proton/components';
+import { Icon, useActiveBreakpoint, useToggle } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
@@ -26,7 +25,6 @@ interface Props {
     messageLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
-    breakpoints: Breakpoints;
     parentMessageRef: React.RefObject<HTMLElement>;
 }
 
@@ -36,12 +34,11 @@ const EOHeaderExpanded = ({
     messageLoaded,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
-    breakpoints,
     parentMessageRef,
 }: Props) => {
     const { state: showDetails, toggle: toggleDetails } = useToggle();
 
-    const { viewportWidth } = breakpoints;
+    const breakpoints = useActiveBreakpoint();
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients);
 
@@ -89,7 +86,7 @@ const EOHeaderExpanded = ({
                                     className="ml-2"
                                 />
                             </span>
-                            {!viewportWidth['<=small'] && (
+                            {!breakpoints.viewportWidth['<=small'] && (
                                 <ItemDate className="ml-2" element={message.data} labelID={labelID} useTooltip />
                             )}
                         </>
@@ -117,7 +114,7 @@ const EOHeaderExpanded = ({
                 </div>
             )}
 
-            {!showDetails && viewportWidth['<=small'] && (
+            {!showDetails && breakpoints.viewportWidth['<=small'] && (
                 <div className="flex justify-space-between items-center border-top mx-0 sm:mx-8 pt-2 mb-2">
                     {messageLoaded ? (
                         <>

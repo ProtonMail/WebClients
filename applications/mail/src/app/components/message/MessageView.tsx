@@ -1,7 +1,6 @@
 import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
-import type { Breakpoints } from '@proton/components';
 import { useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -48,7 +47,6 @@ interface Props {
     conversationIndex?: number;
     conversationID?: string;
     onBack: () => void;
-    breakpoints: Breakpoints;
     hasFocus?: boolean;
     onFocus?: (messageId: number) => void;
     onBlur?: (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => void;
@@ -77,7 +75,6 @@ const MessageView = (
         conversationIndex = 0,
         conversationID,
         onBack,
-        breakpoints,
         hasFocus,
         onFocus = noop,
         onBlur = noop,
@@ -464,7 +461,6 @@ const MessageView = (
                     isSentMessage={sent}
                     isUnreadMessage={unread}
                     onExpand={handleToggle(true)}
-                    breakpoints={breakpoints}
                     conversationIndex={conversationIndex}
                 />
             )}
