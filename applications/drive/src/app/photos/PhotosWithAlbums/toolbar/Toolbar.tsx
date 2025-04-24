@@ -33,8 +33,8 @@ interface ToolbarProps {
     onLeaveAlbum: () => void;
     onShowDetails: () => void;
     onRemoveAlbumPhotos: () => Promise<void>;
-    onSavePhoto: () => Promise<void>;
     onStartUpload: () => void;
+    onSavePhoto?: () => Promise<void>;
 }
 
 export const Toolbar = ({
