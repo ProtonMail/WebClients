@@ -188,7 +188,7 @@
         "Conectar aplicaciones y dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar a la videoconferencia"
+        "Conectarte a la videoconferencia"
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -2335,6 +2335,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } te permite trabajar con otros en un entorno seguro y cifrado."
@@ -2470,11 +2475,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4634,9 +4634,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -4753,6 +4750,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporta una copia de los cambios actuales desde el menú principal y vuelve a cargar la página."
+      ],
+      "Please fill in all required fields.": [
+        "Rellena todos los campos obligatorios."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -5569,9 +5569,6 @@
       "Beta Access": [
         "Acceso beta"
       ],
-      "Billing address": [
-        "Dirección de facturación"
-      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -5700,9 +5697,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Eliminar este enlace y quitar a todos con acceso"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -5886,9 +5880,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
-      ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
       ],
       "Set expiration date": [
         "Establecer fecha de expiración"
@@ -9090,8 +9081,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorra un ${ priceString }"
       ]
     },
     "Success": {
