@@ -364,9 +364,6 @@
       "Fit to window": [
         "Adatta alla finestra"
       ],
-      "Forgot password?": [
-        "Hai dimenticato la password?"
-      ],
       "Forgot recovery method?": [
         "Hai dimenticato il metodo di recupero?"
       ],
@@ -4647,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Inserisci l'indirizzo email o il nome utente del tuo account ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Inserisci la tua password (come amministratore dell'organizzazione)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Inserisci il tuo indirizzo email di recupero e ti invieremo il tuo nome utente o indirizzo email."
       ],
@@ -4956,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitora gli account"
       ],
@@ -5133,6 +5124,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
+      ],
+      "Please fill in all required fields.": [
+        "Compila tutti i campi obbligatori."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } credito rimanente.",
@@ -6186,10 +6180,10 @@
       "Allow recovery by phone": [
         "Consenti il recupero via telefono"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio autorizzato"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio autorizzato"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6221,9 +6215,6 @@
       ],
       "Backup password": [
         "Password di backup"
-      ],
-      "Billing address": [
-        "Indirizzo di fatturazione"
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
@@ -6386,9 +6377,6 @@
       ],
       "Event": [
         "Evento"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Scadenza (${ patternExpiration })"
       ],
       "Expires": [
         "Scadenza"
@@ -6621,9 +6609,6 @@
       "Second password": [
         "Seconda password"
       ],
-      "Security code (${ codeName })": [
-        "Codice di sicurezza (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Mostra ${ n } amministratore",
         "Mostra ${ n } amministratori"
@@ -6735,9 +6720,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sì, voglio eliminare definitivamente questo account e tutti i suoi dati."
-      ],
-      "Your password (admin)": [
-        "La tua password (admin)"
       ],
       "ZIP code": [
         "Codice postale"
@@ -7906,6 +7888,17 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7918,17 +7911,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -10078,9 +10060,6 @@
       "Share the confirmation code with your administrator": [
         "Condividi il codice di conferma con il tuo amministratore"
       ],
-      "Sign in": [
-        "Accedi"
-      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
       ],
@@ -10125,9 +10104,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Dovrai creare manualmente nuovi utenti per aggiungerli alla tua organizzazione."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ],
       "Your SSO configuration will be deleted.": [
         "La tua configurazione SSO verrà eliminata."
@@ -10750,8 +10726,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Risparmia"
+      "Save ${ priceString }": [
+        "Risparmia ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11469,9 +11445,6 @@
       "Enhance security with 2FA": [
         "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
       ],
-      "Enter 2FA code": [
-        "Inserisci il codice di autenticazione a due fattori"
-      ],
       "Enter endpoints into your identity provider": [
         "Inserisci gli endpoint nel tuo fornitore di identità"
       ],
@@ -11480,9 +11453,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Inserisci i dettagli del tuo account ${ BRAND_NAME } per partecipare al programma beta di ${ app }"
-      ],
-      "Enter your password": [
-        "Inserisci la tua password"
       ],
       "Error": [
         "Errore"

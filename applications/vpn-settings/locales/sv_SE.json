@@ -361,9 +361,6 @@
       "Fit to window": [
         "Passa till fönster"
       ],
-      "Forgot password?": [
-        "Glömt lösenord?"
-      ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
       ],
@@ -828,6 +825,9 @@
       ],
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Använd ${ PASS_APP_NAME } för Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
@@ -2528,6 +2528,9 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
@@ -4626,9 +4629,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
       ],
-      "Enter your own password (as organization admin).": [
-        "Ange ditt eget lösenord (som organisationsadministratör)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
       ],
@@ -4935,9 +4935,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Övervaka konton"
       ],
@@ -5109,6 +5106,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Ange återställningsfrasen på 12 ord som är associerat med ditt konto."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll i alla obligatoriska fält."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } kredit kvar.",
@@ -6140,10 +6140,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6175,9 +6175,6 @@
       ],
       "Backup password": [
         "Reservlösenord"
-      ],
-      "Billing address": [
-        "Faktureringsadress"
       ],
       "Billing cycle": [
         "Faktureringsperiod"
@@ -6340,9 +6337,6 @@
       ],
       "Event": [
         "Händelse"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Löper ut (${ patternExpiration })"
       ],
       "Expires": [
         "Löper ut"
@@ -6575,9 +6569,6 @@
       "Second password": [
         "Andra lösenord"
       ],
-      "Security code (${ codeName })": [
-        "Säkerhetskod (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Visa ${ n } administratör",
         "Visa ${ n } administratörer"
@@ -6689,9 +6680,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
-      ],
-      "Your password (admin)": [
-        "Ditt lösenord (admin)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -7854,6 +7842,17 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7866,17 +7865,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -10010,9 +9998,6 @@
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
       ],
-      "Sign in": [
-        "Logga in"
-      ],
       "Sign in to your organization": [
         "Logga in på din organisation"
       ],
@@ -10054,9 +10039,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
@@ -10679,8 +10661,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Spara"
+      "Save ${ priceString }": [
+        "Spara ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11395,9 +11377,6 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
-      "Enter 2FA code": [
-        "Ange 2FA-kod"
-      ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter hos din identitetsleverantör"
       ],
@@ -11406,9 +11385,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
-      ],
-      "Enter your password": [
-        "Ange ditt lösenord"
       ],
       "Error": [
         "Fel"
