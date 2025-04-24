@@ -1,7 +1,6 @@
 import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
 import { memo, useMemo, useRef } from 'react';
 
-import type { Breakpoints } from '@proton/components';
 import { ItemCheckbox } from '@proton/components';
 import { isCustomLabel } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -48,7 +47,6 @@ interface Props {
     onBack: () => void;
     dragged: boolean;
     index: number;
-    breakpoints: Breakpoints;
     onFocus: (elementID: string) => void;
     showAttachmentThumbnails?: boolean;
     userSettings: UserSettings;
@@ -73,7 +71,6 @@ const Item = ({
     onBack,
     dragged,
     index,
-    breakpoints,
     onFocus,
     mailSettings,
     userSettings,
@@ -201,7 +198,6 @@ const Item = ({
                     showIcon={showIcon}
                     senders={senderItem}
                     unread={unread}
-                    breakpoints={breakpoints}
                     onBack={onBack}
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}

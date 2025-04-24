@@ -3,7 +3,6 @@ import { forwardRef, memo } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import type { Breakpoints } from '@proton/components';
 import { MailShortcutsModal, useModalState } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
@@ -23,10 +22,9 @@ import MailboxContainer from './mailbox/MailboxContainer';
 
 interface Props {
     params: MailUrlParams;
-    breakpoints: Breakpoints;
 }
 
-const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints }: Props, ref: Ref<HTMLDivElement>) => {
+const PageContainer = ({ params: { elementID, labelID, messageID } }: Props, ref: Ref<HTMLDivElement>) => {
     const [userSettings] = useUserSettings();
     const mailSettings = useMailModel('MailSettings');
     const [mailShortcutsProps, setMailShortcutsModalOpen, renderMailShortcutsModal] = useModalState();
@@ -48,7 +46,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
                     labelID={labelID}
                     mailSettings={mailSettings}
                     userSettings={userSettings as UserSettings}
-                    breakpoints={breakpoints}
                     elementID={elementID}
                     messageID={messageID}
                 />
@@ -61,11 +58,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
 
 const MemoPageContainer = memo(forwardRef(PageContainer));
 
-interface PageParamsParserProps {
-    breakpoints: Breakpoints;
-}
-
-const PageParamsParser = (props: PageParamsParserProps, ref: Ref<HTMLDivElement>) => {
+const PageParamsParser = (_p: any, ref: Ref<HTMLDivElement>) => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const match = useRouteMatch<MailUrlParams>();
@@ -77,6 +70,6 @@ const PageParamsParser = (props: PageParamsParserProps, ref: Ref<HTMLDivElement>
         return { elementID, labelID, messageID };
     }, [match]);
 
-    return <MemoPageContainer ref={ref} {...props} params={params} />;
+    return <MemoPageContainer ref={ref} params={params} />;
 };
 export default forwardRef(PageParamsParser);
