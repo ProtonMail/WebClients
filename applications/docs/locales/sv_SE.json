@@ -795,6 +795,9 @@
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
       ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Använd ${ PASS_APP_NAME } för Business"
+      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
@@ -2323,6 +2326,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
@@ -2359,6 +2367,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Designad för användare som söker utökat skydd för sina konton."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
@@ -2452,11 +2463,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4608,9 +4614,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Övervaka konton"
       ],
@@ -4727,6 +4730,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exportera en kopia av dina nuvarande ändringar från huvudmenyn och ladda om sidan."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll i alla obligatoriska fält."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Observera att adresser tilldelade till dessa grupper INTE kommer att tas bort."
@@ -5528,9 +5534,6 @@
       "Beta Access": [
         "Betaåtkomst"
       ],
-      "Billing address": [
-        "Faktureringsadress"
-      ],
       "Billing cycle": [
         "Faktureringsperiod"
       ],
@@ -5659,9 +5662,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Radera denna länk och ta bort alla med åtkomst"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Löper ut (${ patternExpiration })"
       ],
       "Expires": [
         "Löper ut"
@@ -5845,9 +5845,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Säkerhetskod (${ codeName })"
       ],
       "Set expiration date": [
         "Ange utgångsdatum"
@@ -9036,8 +9033,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Spara"
+      "Save ${ priceString }": [
+        "Spara ${ priceString }"
       ]
     },
     "Success": {

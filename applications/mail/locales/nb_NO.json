@@ -415,7 +415,7 @@
         "Last ned ${ attachmentName }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download now": [
         "Last ned nå"
@@ -1414,10 +1414,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -3686,7 +3686,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert, kryptert miljø."
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
       ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } i innstillinger."
@@ -7020,9 +7020,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
@@ -7163,6 +7160,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentiser betalingen din i verifiseringsfanen."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll ut alle obligatoriske felt."
       ],
       "Please fill out this field.": [
         "Fyll ut dette feltet."
@@ -8536,11 +8536,11 @@
       "Always move sender's emails": [
         "Alltid flytt avsenderens e-poster"
       ],
-      "And": [
-        "Og"
-      ],
       "AND": [
         "OG"
+      ],
+      "And": [
+        "Og"
       ],
       "and": [
         "og"
@@ -8568,9 +8568,6 @@
       ],
       "Beta Access": [
         "Beta-tilgang"
-      ],
-      "Billing address": [
-        "Fakturaadresse"
       ],
       "Billing cycle": [
         "Faktureringssyklus"
@@ -8728,9 +8725,6 @@
       "Encrypt emails": [
         "Krypter e-poster"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Utløpstid (${ patternExpiration })"
-      ],
       "Expires": [
         "Utløper"
       ],
@@ -8770,11 +8764,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Hvis"
-      ],
       "IF": [
         "HVIS"
+      ],
+      "If": [
+        "Hvis"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -8887,14 +8881,14 @@
       "Optional": [
         "Valgfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Opprinnelig kobling"
@@ -8961,9 +8955,6 @@
       ],
       "Search in": [
         "Søk i"
-      ],
-      "Security code (${ codeName })": [
-        "Sikkerhetskode (${ codeName })"
       ],
       "Send auto-reply": [
         "Send autosvar"
@@ -9215,7 +9206,7 @@
         "Aktiver adressen din for å svare på denne invitasjonen."
       ],
       "Enforcing 2FA for organizations": [
-        "Håndheve 2FA for organisasjoner"
+        "Anvendelse av A2F for organisasjoner"
       ],
       "Folders": [
         "Mapper"
@@ -9233,7 +9224,7 @@
         "Hvordan aktivere ${ PROTON_SENTINEL_NAME }"
       ],
       "How to migrate to ${ BRAND_NAME }": [
-        "Slik migrerer du til ${ BRAND_NAME }"
+        "Hvordan migrere til ${ BRAND_NAME }"
       ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
@@ -9260,7 +9251,7 @@
         "Hvordan bruke ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Hvordan bruke postvideresending"
+        "Hvordan bruke videresending av e-post"
       ],
       "How to use Groups": [
         "Hvordan bruke grupper"
@@ -9754,29 +9745,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -9798,6 +9766,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -12856,11 +12847,6 @@
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Spar"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } samtale slettet",
@@ -13623,7 +13609,7 @@
         "Nedgradere til ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download the app": [
         "Last ned appen"
@@ -14089,7 +14075,7 @@
         "Konfigurer ${ protonDuoPlanName }"
       ],
       "Set up email forwarding": [
-        "Sett opp videresending av e-post"
+        "Konfigurer videresending av e-post"
       ],
       "Set up your family account": [
         "Konfigurer familiekontoen din"
@@ -14886,9 +14872,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Bli med på Zoom-møte"
-      ],
       "Meeting ID:": [
         "Møte-ID:"
       ],

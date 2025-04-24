@@ -794,10 +794,10 @@
       "Upgrade": [
         "アップグレード"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "今すぐアップグレード"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "今すぐアップグレード"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1128,6 +1128,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "無制限のログイン、クレジットカードやhide-my-emailエイリアスなど"
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用する"
@@ -4541,7 +4544,7 @@
         "${ updated } 連絡先が正常に更新されました。"
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } はあなたのIPアドレスをマスクしているため、ウェブサイトはあなたを特定できません。"
+        "${ VPN_APP_NAME } はあなたのIPアドレスをマスクするため、ウェブサイトに特定されることはありません。"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
@@ -4553,7 +4556,7 @@
         "**自動接続**: デバイスをオンにするとすぐにVPNに接続します。"
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**キルスイッチ**: VPNが予期しない状態になった場合、インターネットをブロックしてデータ漏洩を停止します。"
+        "**キルスイッチ**: VPNに予期せぬ問題が起きた場合、インターネット接続を切ってデータ漏洩を防ぎます。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -4577,7 +4580,7 @@
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "リモートで作業するには、セキュアな接続が不可欠です。VPN は、企業データをサイバー脅威から保護し、仕事をプライベートに保ちます。"
+        "リモートワークには、セキュアな接続が不可欠です。VPN は、企業のデータをサイバー脅威から保護し、仕事をプライベートに保ちます。"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
@@ -4589,7 +4592,7 @@
         "VPNはIPアドレスを隠し、ブラウジング活動を暗号化し、ウェブサイト、広告主、ISPが時間をかけて追跡するのを困難にします。"
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPNは、デバイスとインターネットの間の安全なトンネルです。 インターネットサービスプロバイダ(ISP)およびアクセスしたウェブサイトから現在地やアクティビティを非表示にします。"
+        "VPNは、デバイスとインターネットの間の安全なトンネルのようなものです。お客様の現在地やアクティビティをインターネットサービスプロバイダ（ISP）およびアクセスしたウェブサイトから隠します。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
@@ -4955,7 +4958,7 @@
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "In restrictive countries": [
-        "制限された国で"
+        "制限のある国"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
@@ -5053,9 +5056,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monitor accounts": [
         "アカウントモニター"
       ],
@@ -5063,7 +5063,7 @@
         "毎月 ${ onDayString }"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "ほとんどの公共WiFiネットワークは安全ですが、セキュリティが不足している場合、サイバー脅威にさらされます。VPNはトラフィックを暗号化し、保護を維持します。"
+        "ほとんどの公共のWiFiネットワークは安全ですが、セキュリティが不十分なものもあり、サイバー攻撃の危険にさらされる可能性があります。VPNはトラフィックを暗号化してあなたを保護します。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -5096,7 +5096,7 @@
         "有効な URL ではありません"
       ],
       "Not connected": [
-        "接続されていません"
+        "未接続"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -5108,7 +5108,7 @@
         "主催者が過去に更新した行事は削除されません。"
       ],
       "On public WiFi networks": [
-        "公共の WiFi ネットワークで"
+        "公共WiFiネットワーク上"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
@@ -5151,6 +5151,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "認証タブで決済を認証してください。"
+      ],
+      "Please fill in all required fields.": [
+        "必須項目をすべて入力してください。"
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "これらのグループに割り当てられたアドレスは削除されませんので、ご注意ください。"
@@ -5222,7 +5225,7 @@
         "イベントを保存中…"
       ],
       "Scan the QR code with your mobile device": [
-        "ご使用のモバイルデバイスでQRコードをスキャン"
+        "携帯のデバイスでQRコードをスキャンしてください"
       ],
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
@@ -5270,7 +5273,7 @@
         "一部のウェブサイトやストリーミングサービスは、地域ごとにコンテンツをブロックします。VPNを使用すると、これらの制限を回避し、インターネットに自由にアクセスできます。"
       ],
       "Start sharing it with contacts and use it for online services.": [
-        "連絡先との共有を始め、オンラインサービスのために使ってください。"
+        "連絡先と共有し、オンラインサービスでご利用ください。"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "次のVPN設定を有効にして、簡単に接続を維持します。"
@@ -5306,7 +5309,7 @@
         "一時的に利用できません。あとでお試しください。"
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
-        "ご登録ありがとうございます。安全なブラウジングが今すぐ開始されます。"
+        "ご登録ありがとうございます。安全なブラウジングをお楽しみください！"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
@@ -5360,7 +5363,7 @@
         "予定が更新されました。招待されたアドレスからメールを送信できないため、この予定の主催者に招待を拒否したことは通知されません。この予定を削除しますか？"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
-        "これは、組織の名称またはニックネームであり、ユーザーに表示されます。これはいつでも変更できます。"
+        "これは組織の名称またはニックネームであり、ユーザーに表示されます。いつでも変更できます。"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "これは新しいメッセージを送信するための${ defaultEmailAddress }です。"
@@ -5375,7 +5378,7 @@
         "これは、あなたのISPとあなたが訪問したウェブサイトがあなたの個人情報をあなたのオンライン活動に接続することができないことを意味します。"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "この唯一のコードは、ウェブサイトやISP(インターネットサービスプロバイダ)によって、位置情報や閲覧履歴をあなたのデバイスと結びつけるのに利用されます。"
+        "この固有のコードは、ウェブサイトやISP（インターネットサービスプロバイダ）によって、位置情報や閲覧副歴をあなたのデバイスと結びつけるのに利用されます。"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "これにより、現在ログインしているすべてのアカウントからサインアウトされます。"
@@ -5477,7 +5480,7 @@
         "週と月のビューはデスクトップにのみ適用されます。"
       ],
       "When working remotely": [
-        "リモートで作業する時"
+        "リモートワークの時"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPNに接続すると、暗号化技術を使用してIPアドレス(デバイスに割り当てられた固有のコード)を非表示にします。"
@@ -5681,7 +5684,7 @@
         "インターネットサービスプロバイダーは、データを監視して販売したり、アクセスできるウェブサイトを制限したりすることもできます。"
       ],
       "Your IP": [
-        "あなたのIP"
+        "IPアドレス"
       ],
       "Your IP address is visible and can be used to track your online activity.": [
         "IPアドレスは表示されており、オンラインアクティビティを追跡するために使用できます。"
@@ -5714,7 +5717,7 @@
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます"
+        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます。"
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
@@ -5927,9 +5930,6 @@
       "Beta Access": [
         "ベータ版アクセス"
       ],
-      "Billing address": [
-        "ご請求先住所"
-      ],
       "Billing cycle": [
         "支払い間隔"
       ],
@@ -6067,9 +6067,6 @@
       ],
       "Every": [
         "毎"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "有効期限 (${ patternExpiration })"
       ],
       "Expires": [
         "有効期限"
@@ -6250,9 +6247,6 @@
       ],
       "Secondary time zone": [
         "第二のタイムゾーン"
-      ],
-      "Security code (${ codeName })": [
-        "セキュリティコード (${ codeName })"
       ],
       "Show others when I'm busy": [
         "自分が埋まっている場合に他の候補を表示する"
@@ -6892,6 +6886,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -6913,26 +6927,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -9673,11 +9667,6 @@
         "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、メール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "割引率:"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 連絡先は同じようです"
@@ -11182,9 +11171,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Zoom会議に参加"
-      ],
       "Meeting ID:": [
         "ミーティング ID:"
       ],

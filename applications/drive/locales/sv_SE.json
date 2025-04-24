@@ -1049,6 +1049,9 @@
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
       ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Använd ${ PASS_APP_NAME } för Business"
+      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
@@ -2621,6 +2624,9 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Designad för användare som söker utökat skydd för sina konton."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
+      ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
       ],
@@ -3041,6 +3047,9 @@
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
       ],
+      "Failed to save photo to your Drive": [
+        "Misslyckades att spara foto till din Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen “${ item.name }“ kan inte laddas upp på grund felet “${ error }“"
       ],
@@ -3172,6 +3181,9 @@
       ],
       "Payment process not supported": [
         "Betalningsprocessen stöds inte"
+      ],
+      "Photo saved to your Drive": [
+        "Foto sparat till din Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Fotouppladdning är tillfälligt inaktiverad. Försök igen senare"
@@ -5111,9 +5123,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Övervaka konton"
       ],
@@ -5267,6 +5276,9 @@
       "Please enter the password to decrypt and view content.": [
         "Ange lösenordet för att dekryptera och visa innehåll."
       ],
+      "Please fill in all required fields.": [
+        "Fyll i alla obligatoriska fält."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Observera att adresser tilldelade till dessa grupper INTE kommer att tas bort."
       ],
@@ -5316,9 +5328,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Vänta medan vi uppdaterar dina data. Det kan ta några sekunder."
       ],
       "Preparing link to file": [
         "Förbereder länk till fil"
@@ -5457,6 +5466,9 @@
       ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
+      ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Ställer in album och filter. Detta kan ta några minuter."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
@@ -6280,9 +6292,6 @@
       "Beta Access": [
         "Betaåtkomst"
       ],
-      "Billing address": [
-        "Faktureringsadress"
-      ],
       "Billing cycle": [
         "Faktureringsperiod"
       ],
@@ -6439,9 +6448,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Radera denna länk och ta bort alla med åtkomst"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Löper ut (${ patternExpiration })"
       ],
       "Expired": [
         "Löpt ut"
@@ -6652,9 +6658,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Säkerhetskod (${ codeName })"
       ],
       "Select type of abuse": [
         "Välj typ av missbruk"
@@ -8761,10 +8764,10 @@
       "Invite members": [
         "Bjud in medlemmar"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanske senare"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanske senare"
       ],
       "Select theme": [
@@ -10363,8 +10366,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Spara"
+      "Save ${ priceString }": [
+        "Spara ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11365,11 +11368,11 @@
       "Untitled document ${ date }": [
         "Dokument utan rubrik ${ date }"
       ],
-      "Updating your photos": [
-        "Uppdaterar dina foton"
-      ],
       "Upgrade complete!": [
         "Uppgradering slutförd!"
+      ],
+      "Upgrading your Photos experience": [
+        "Uppgradera din fotoupplevelse"
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"

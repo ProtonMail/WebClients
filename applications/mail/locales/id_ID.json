@@ -1389,11 +1389,11 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade Now": [
-        "Tingkatkan Sekarang"
-      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Tingkatkan ke ${ BRAND_NAME } Unlimited"
@@ -6814,9 +6814,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
       ],
-      "MM/YY": [
-        "BB/TT"
-      ],
       "Monitor accounts": [
         "Monitor akun"
       ],
@@ -8300,11 +8297,11 @@
       "Always move sender's emails": [
         "Selalu pindahkan email pengirim"
       ],
-      "And": [
-        "Dan"
-      ],
       "AND": [
         "DAN"
+      ],
+      "And": [
+        "Dan"
       ],
       "and": [
         "dan"
@@ -8332,9 +8329,6 @@
       ],
       "Beta Access": [
         "Akses Beta"
-      ],
-      "Billing address": [
-        "Alamat tagihan"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -8492,9 +8486,6 @@
       "Encrypt emails": [
         "Enkripsi email"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Kedaluwarsa (${ patternExpiration })"
-      ],
       "Expires": [
         "Kedaluwarsa"
       ],
@@ -8534,11 +8525,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jika"
-      ],
       "IF": [
         "JIKA"
+      ],
+      "If": [
+        "Jika"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -8651,14 +8642,14 @@
       "Optional": [
         "Opsional"
       ],
+      "OR": [
+        "ATAU"
+      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
-      ],
-      "OR": [
-        "ATAU"
       ],
       "Original link": [
         "Tautan asli"
@@ -8725,9 +8716,6 @@
       ],
       "Search in": [
         "Cari di"
-      ],
-      "Security code (${ codeName })": [
-        "Kode keamanan (${ codeName })"
       ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
@@ -9468,29 +9456,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Hapus akun"
-      ],
-      "Downgrade account": [
-        "Turunkan jenis akun"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
-      ],
-      "Get ${ planName }": [
-        "Dapatkan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Pertahankan ${ plan }"
-      ],
-      "Keep account": [
-        "Pertahankan akun"
-      ],
-      "Switch plan": [
-        "Ganti paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
@@ -9512,6 +9477,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Tingkatkan ke ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Hapus akun"
+      ],
+      "Downgrade account": [
+        "Turunkan jenis akun"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Pertahankan ${ plan }"
+      ],
+      "Keep account": [
+        "Pertahankan akun"
+      ],
+      "Switch plan": [
+        "Ganti paket"
       ]
     },
     "new_plans: feature": {
@@ -12488,11 +12476,6 @@
         "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Hemat"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } percakapan dihapus"
@@ -14407,9 +14390,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Gabung ke pertemuan Zoom"
-      ],
       "Meeting ID:": [
         "ID Rapat:"
       ],

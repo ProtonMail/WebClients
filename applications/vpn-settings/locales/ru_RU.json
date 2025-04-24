@@ -331,9 +331,6 @@
       "Fit to window": [
         "Вписать в окно"
       ],
-      "Forgot password?": [
-        "Забыли пароль?"
-      ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
       ],
@@ -4235,9 +4232,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Введите собственный пароль (как администратор организации)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты, и мы отправим вам ваше имя пользователя или адрес электронной почты."
       ],
@@ -4534,9 +4528,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
-      ],
-      "MM/YY": [
-        "ММ/ГГ"
       ],
       "Monitor accounts": [
         "Отслеживать аккаунты"
@@ -5731,11 +5722,11 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allowed Domain": [
-        "Разрешённый Домен"
-      ],
       "Allowed domain": [
         "Разрешённый домен"
+      ],
+      "Allowed Domain": [
+        "Разрешённый Домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -5766,9 +5757,6 @@
       ],
       "Backup password": [
         "Пароль резервной копии"
-      ],
-      "Billing address": [
-        "Адрес для выставления счета"
       ],
       "Billing cycle": [
         "Платежный цикл"
@@ -5928,9 +5916,6 @@
       ],
       "Event": [
         "Событие"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Срок действия (${ patternExpiration })"
       ],
       "Expires": [
         "Срок действия"
@@ -6163,9 +6148,6 @@
       "Second password": [
         "Второй пароль"
       ],
-      "Security code (${ codeName })": [
-        "Код безопасности (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Показать ${ n } администратора",
         "Показать ${ n } администраторов",
@@ -6276,9 +6258,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить этот аккаунт и все его данные."
-      ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
       ],
       "ZIP code": [
         "Почтовый индекс"
@@ -7434,6 +7413,14 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7446,14 +7433,6 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -9566,9 +9545,6 @@
       "Share the confirmation code with your administrator": [
         "Сообщите код подтверждения своему администратору"
       ],
-      "Sign in": [
-        "Войти"
-      ],
       "Sign in to your organization": [
         "Войдите в свою организацию"
       ],
@@ -9613,9 +9589,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вы должны будете создать новых пользователей вручную, чтобы добавить их в вашу организацию."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша конфигурация SSO будет удалена."
@@ -10273,11 +10246,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Сэкономьте"
       ]
     },
     "Subscription status": {
@@ -10959,9 +10927,6 @@
       "Enable for all users": [
         "Включить для всех пользователей"
       ],
-      "Enter 2FA code": [
-        "Введите код двухфакторной аутентификации"
-      ],
       "Enter endpoints into your identity provider": [
         "Введите конечные точки в провайдер личных данных"
       ],
@@ -10970,9 +10935,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
       ],
       "Error": [
         "Ошибка"

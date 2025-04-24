@@ -614,11 +614,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade Now": [
-        "Sgerrzet amiḍan tura"
-      ],
       "Upgrade now": [
         "Sali aswir tura"
+      ],
+      "Upgrade Now": [
+        "Sgerrzet amiḍan tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -3736,9 +3736,6 @@
       "Merged": [
         "Ttusmezdin"
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
       ],
@@ -4207,9 +4204,6 @@
       "Beta Access": [
         "Anekcum Biṭa"
       ],
-      "Billing address": [
-        "Tansa n tfaṭurt"
-      ],
       "Billing cycle": [
         "Tawala n ufter"
       ],
@@ -4335,9 +4329,6 @@
       ],
       "Event title": [
         "Azwel n uneḍru"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Ad ifakk deg (${ patternExpiration })"
       ],
       "Expires": [
         "Ad ifat di"
@@ -4504,9 +4495,6 @@
       ],
       "Secondary time zone": [
         "Izḍi usrid wis sin"
-      ],
-      "Security code (${ codeName })": [
-        "Tangalt n tɣellist (${ codeName })"
       ],
       "Show week numbers": [
         "Sken-d imḍanen n dduṛt"
@@ -4984,6 +4972,17 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -5002,17 +5001,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -6125,11 +6113,6 @@
       ],
       "Keep auto-pay": [
         "Eǧǧ lexlaṣ awurman"
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Sekles"
       ]
     },
     "Success": {

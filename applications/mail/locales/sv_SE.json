@@ -1411,10 +1411,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1431,6 +1431,9 @@
       ],
       "Use ${ PASS_APP_NAME }": [
         "Använd ${ PASS_APP_NAME }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Använd ${ PASS_APP_NAME } för Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
@@ -3732,6 +3735,9 @@
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Vill du inte skicka din e-post just nu? Schemalägg det för exakt rätt tid."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
@@ -7000,9 +7006,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Övervaka konton"
       ],
@@ -7143,6 +7146,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentisera din betalning på verifieringsfliken."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll i alla obligatoriska fält."
       ],
       "Please fill out this field.": [
         "Fyll i detta fält."
@@ -8507,11 +8513,11 @@
       "Always move sender's emails": [
         "Flytta alltid avsändarens e-postmeddelanden"
       ],
-      "And": [
-        "Och"
-      ],
       "AND": [
         "OCH"
+      ],
+      "And": [
+        "Och"
       ],
       "and": [
         "och"
@@ -8539,9 +8545,6 @@
       ],
       "Beta Access": [
         "Betaåtkomst"
-      ],
-      "Billing address": [
-        "Faktureringsadress"
       ],
       "Billing cycle": [
         "Faktureringsperiod"
@@ -8699,9 +8702,6 @@
       "Encrypt emails": [
         "Kryptera e-post"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Löper ut (${ patternExpiration })"
-      ],
       "Expires": [
         "Löper ut"
       ],
@@ -8741,11 +8741,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Om"
-      ],
       "IF": [
         "OM"
+      ],
+      "If": [
+        "Om"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -8858,14 +8858,14 @@
       "Optional": [
         "Valfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Original link": [
         "Originallänk"
@@ -8932,9 +8932,6 @@
       ],
       "Search in": [
         "Sök i"
-      ],
-      "Security code (${ codeName })": [
-        "Säkerhetskod (${ codeName })"
       ],
       "Send auto-reply": [
         "Skicka autosvar"
@@ -9722,29 +9719,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ta bort konto"
-      ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Skaffa ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behåll ${ plan }"
-      ],
-      "Keep account": [
-        "Behåll konto"
-      ],
-      "Switch plan": [
-        "Byt paket"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
@@ -9766,6 +9740,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ta bort konto"
+      ],
+      "Downgrade account": [
+        "Nedgradera konto"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Skaffa ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behåll ${ plan }"
+      ],
+      "Keep account": [
+        "Behåll konto"
+      ],
+      "Switch plan": [
+        "Byt paket"
       ]
     },
     "new_plans: feature": {
@@ -12818,8 +12815,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Spara"
+      "Save ${ priceString }": [
+        "Spara ${ priceString }"
       ]
     },
     "Success": {
@@ -14844,9 +14841,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Gå med i Zoom-möte"
-      ],
       "Meeting ID:": [
         "Mötes-ID:"
       ],

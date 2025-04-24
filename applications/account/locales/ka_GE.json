@@ -3843,11 +3843,17 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ."
       ],
+      "Connect your CRM, website, printers, and more.": [
+        "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "შექმენით Zoom-ის შეხვედრა და დაამატეთ შესვლის დეტალები თქვენს მოვლენას ერთი წკაპით."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "შექმენით იმდენი ჭდე და საქაღალდე, რამდენიც საჭიროა და იქონიეთ თქვენი საფოსტო ყუთი სუფთად."
+      ],
+      "Create groups you can email with a single address.": [
+        "შექმენით ჯგუფები, რომლებისთვისაც ელფოსტის მიწერა ერთი მისამართით შეგეძლებათ."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
@@ -3899,6 +3905,9 @@
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "მოირგეთ ავტომატური გადაგაზვნა, რომ გადაამისამართოთ შემომავალი ელფოსტები სხვა ელფოსტის მისამართზე."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე ან ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს არ შეიცავს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
@@ -4270,6 +4279,9 @@
       "Generate QR code": [
         "QR კოდის გენერაცია"
       ],
+      "How to sign in using another device": [
+        "როგორ შევიდე სხვა მოწყობილობის გამოყენებით"
+      ],
       "QR code expired": [
         "QR კოდი ვადაგასულია"
       ],
@@ -4287,6 +4299,9 @@
       ],
       "Security tips": [
         "უსაფრთხოების რჩევები"
+      ],
+      "Select **Sign in on another device → Scan QR code**": [
+        "აირჩიეთ **შესვლა სხვა მოწყობილობიდან -> QR კოდის სკანირება**"
       ],
       "Sign in on another device": [
         "შესვლა სხვა მოწყობილობით"
@@ -4622,10 +4637,10 @@
       "Forward to": [
         "გადაგზავნა"
       ],
-      "Or": [
+      "or": [
         "ან"
       ],
-      "or": [
+      "Or": [
         "ან"
       ],
       "With attachment": [
@@ -8620,9 +8635,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
       ],
-      "MM/YY": [
-        "თთ/წწ"
-      ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
@@ -8748,6 +8760,9 @@
       ],
       "Open source": [
         "ღია კოდი"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
       ],
       "or ${ selectFileButton }": [
         "ან ${ selectFileButton }"
@@ -10856,10 +10871,10 @@
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10871,10 +10886,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
       "and": [
@@ -10942,9 +10957,6 @@
       ],
       "Beta": [
         "ბეტა"
-      ],
-      "Billing address": [
-        "ინვოისის გასაგზავნი მისამართი"
       ],
       "Billing cycle": [
         "გადახდის პერიოდი"
@@ -11246,9 +11258,6 @@
       "Exclude Spam/Trash from All mail": [
         "ყველა ფოსტიდან სპამის/სანაგვე ყუთის გამორიცხვა"
       ],
-      "Expiration (${ patternExpiration })": [
-        "ვადა (${ patternExpiration })"
-      ],
       "Expires": [
         "ვადა"
       ],
@@ -11300,10 +11309,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
       "Import all messages": [
@@ -11507,13 +11516,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "OR": [
+        "ან"
+      ],
       "or": [
         "ან"
       ],
       "Or": [
-        "ან"
-      ],
-      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -11644,9 +11653,6 @@
       ],
       "Second password": [
         "მეორე პაროლი"
-      ],
-      "Security code (${ codeName })": [
-        "უსაფრთხოების კოდი (${ codeName })"
       ],
       "Send auto-reply": [
         "პასუხის ავტომატურად გაცემა"
@@ -12125,6 +12131,9 @@
       ],
       "How to add Zoom links": [
         "როგორ დავამატო Zoom-ის ბმულები"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "როგორ ხდება კოლაბორაცია ${ DOCS_SHORT_APP_NAME }-ში"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "როგორ ჩავრთო ${ PROTON_SENTINEL_NAME }"
@@ -16072,6 +16081,11 @@
         "SCIM კონექტორის URL, რომელზეც IdP გაშლის აგენტი SCIM მონაცემებს გააგზავნის"
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "ორგ.-ის მორგებ და ანგარისის უსაფრთხოება"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
@@ -17795,11 +17809,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "დაზოგვა"
       ]
     },
     "Subscription status": {
@@ -19595,6 +19604,9 @@
       ],
       "Track your referrals": [
         "ადევნეთ თვალყური თქვენს მიმართვებს"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
       "TV sign in": [
         "TV-ში შესვლა"

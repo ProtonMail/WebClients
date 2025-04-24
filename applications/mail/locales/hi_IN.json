@@ -1348,10 +1348,10 @@
       "Upgrade": [
         "अपग्रेड करें"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "अभी अपग्रेड करें"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -6772,9 +6772,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "आपके सभी ईमेल पतों पर भेजे गए संदेश आपके इंबॉक्स में जाएंगे।"
       ],
-      "MM/YY": [
-        "महीना/साल"
-      ],
       "Monitor accounts": [
         "खातों पर नज़र रखें"
       ],
@@ -8189,10 +8186,10 @@
       "Always move sender's emails": [
         "भेजनेवाले के ईमेल हमेशा ले जाएं"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
       "and": [
@@ -8221,9 +8218,6 @@
       ],
       "Beta Access": [
         "बीटा एक्सेस"
-      ],
-      "Billing address": [
-        "बिलिंग पता"
       ],
       "Billing cycle": [
         "बिल चक्र"
@@ -8378,9 +8372,6 @@
       "Encrypt emails": [
         "ईमेल एन्क्रिप्ट करें"
       ],
-      "Expiration (${ patternExpiration })": [
-        "समाप्ति (${ patternExpiration })"
-      ],
       "Expires": [
         "समय खत्म"
       ],
@@ -8420,10 +8411,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
       "Import all messages": [
@@ -8534,13 +8525,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
+      "OR": [
+        "या"
+      ],
       "or": [
         "या"
       ],
       "Or": [
-        "या"
-      ],
-      "OR": [
         "या"
       ],
       "Original link": [
@@ -8608,9 +8599,6 @@
       ],
       "Search in": [
         "की खोज में"
-      ],
-      "Security code (${ codeName })": [
-        "सुरक्षा कोड (${ codeName })"
       ],
       "Send auto-reply": [
         "ऑटो-रिप्लाई भेजें"
@@ -9338,29 +9326,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -9382,6 +9347,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -12367,11 +12355,6 @@
         "हमारा सिस्टम अब इस भुगतान विधि का उपयोग करके आपको स्वतः चार्ज नहीं करेगा, लेकिन आपकी सदस्यता बिलिंग चक्र के अंत में अभी भी नवीनीकृत होगी। यदि आप अपनी सदस्यता को डाउनग्रेड या बदलना चाहते हैं, तो आपको बिलिंग अवधि समाप्त होने से पहले खुद ऐसा करना होगा। हम आपको स्वचालित रूप से डाउनग्रेड नहीं कर सकते क्योंकि यदि आप Free योजना की स्टोरेज सीमा से अधिक या अन्य भुगतान की गई सुविधाओं का उपयोग कर रहे हैं, तो हम आपके लिए फ़ाइलें, ईमेल, या अन्य डेटा स्वचालित रूप से हटा नहीं सकते। यदि आप स्वचालित भुगतान अक्षम करते हैं, तो खाते को निलंबित होने से रोकने के लिए नियत तारीख से पहले अपनी अगली सदस्यता रसीद का भुगतान करना याद रखें।"
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "सेव करें"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } बातचीत हटाई गई",
@@ -14277,9 +14260,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "ज़ूम मीटिंग में शामिल हों"
-      ],
       "Meeting ID:": [
         "मीटिंग आईडी:"
       ],

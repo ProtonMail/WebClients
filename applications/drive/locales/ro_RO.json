@@ -184,6 +184,9 @@
       "Close transfers": [
         "Închidere transferuri"
       ],
+      "Collaborate on documents": [
+        "Colaborați la documente"
+      ],
       "Collapse": [
         "Restrângere"
       ],
@@ -201,6 +204,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii web ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Conectați aplicații și dispozitive"
+      ],
+      "Connect to video conferencing": [
+        "Conectați-vă la conferințe video"
       ],
       "Contact group": [
         "Grup contacte"
@@ -344,6 +353,9 @@
       "Download": [
         "Descărcare"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
       "Download (${ count })": [
         "Descărcare (${ count })"
       ],
@@ -434,6 +446,9 @@
       "Get Started": [
         "Începeți"
       ],
+      "Get the apps": [
+        "Luați aplicațiile"
+      ],
       "Get verification code": [
         "Obținere cod de verificare"
       ],
@@ -494,6 +509,9 @@
       "Import emails": [
         "Importare mesaje"
       ],
+      "Import emails, calendars, contacts": [
+        "Importați e-mailuri, calendare, contacte"
+      ],
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
       ],
@@ -542,8 +560,14 @@
       "Loading verification": [
         "În curs de verificare"
       ],
+      "Manage advanced account protections": [
+        "Gestionați protecții avansate cont"
+      ],
       "Manage folders": [
         "Gestionare foldere"
+      ],
+      "Manage groups": [
+        "Gestionare grupuri"
       ],
       "Manage labels": [
         "Gestionare etichete"
@@ -553,6 +577,9 @@
       ],
       "Manage share": [
         "Gestionare partajări"
+      ],
+      "Manage users/addresses": [
+        "Gestionare utilizatori/adrese"
       ],
       "Mark as favorite": [
         "Marcare ca favorită"
@@ -842,8 +869,20 @@
       "Set as cover": [
         "Stabilire ca și copertă"
       ],
+      "Set recovery methods": [
+        "Setați metode de recuperare"
+      ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Set up 2FA": [
+        "Configurare A2F"
+      ],
+      "Set up a custom domain": [
+        "Configurați un domeniu personal"
+      ],
+      "Set up email forwarding": [
+        "Setare redirecționare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -862,6 +901,9 @@
       ],
       "Share via link": [
         "Partajare prin legătură web"
+      ],
+      "Share your calendar with your team": [
+        "Partajați-vă calendarul cu echipa proprie"
       ],
       "Sharing options": [
         "Opțiuni de partajare"
@@ -947,6 +989,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activați ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Anulare"
       ],
@@ -976,6 +1021,9 @@
       ],
       "Upload": [
         "Încărcare"
+      ],
+      "Upload and share files": [
+        "Încărcați și partajați fișiere"
       ],
       "Upload anyway": [
         "Încărcare așa"
@@ -4292,11 +4340,6 @@
         "${ pausedCount } suspendate",
         "${ pausedCount } suspendate"
       ],
-      "${ photoCount } item": [
-        "Articole: ${ photoCount }",
-        "Articole: ${ photoCount }",
-        "Articole: ${ photoCount }"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
@@ -5071,9 +5114,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Mesajele adresate tuturor adreselor de e-mail personale vor fi livrate în contul de e-mail."
       ],
-      "MM/YY": [
-        "LL/AA"
-      ],
       "Monitor accounts": [
         "Monitorizare conturi"
       ],
@@ -5161,6 +5201,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Numai persoanele care au legătura și parola pot accesa acest folder."
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
+      ],
       "or discover other features:": [
         "sau descoperiți alte funcții:"
       ],
@@ -5224,6 +5267,9 @@
       "Please enter the password to decrypt and view content.": [
         "Introduceți parola pentru a decripta și vizualiza conținutul."
       ],
+      "Please fill in all required fields.": [
+        "Completați toate câmpurile obligatorii."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Rețineți că adresele atribuite acestor grupuri NU vor fi șterse."
       ],
@@ -5275,9 +5321,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Așteptați până se actualizează datele. Acest lucru poate dura câteva secunde."
       ],
       "Preparing link to file": [
         "Se pregătește legătura către fișier."
@@ -6256,9 +6299,6 @@
       "Beta Access": [
         "Acces la Beta"
       ],
-      "Billing address": [
-        "Adresă de facturare"
-      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -6416,9 +6456,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Ștergere legătură și eliminare toate persoanele cu acces"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expirare (${ patternExpiration })"
       ],
       "Expired": [
         "Expirat"
@@ -6629,9 +6666,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Cod de securitate (${ codeName })"
       ],
       "Select type of abuse": [
         "Selectați tipul de abuz"
@@ -6855,8 +6889,53 @@
       "Drafts": [
         "Ciorne"
       ],
+      "Enforcing 2FA for organizations": [
+        "Impunere A2F pentru organizații"
+      ],
+      "How to add users": [
+        "Cum să adăugați utilizatori"
+      ],
+      "How to add Zoom links": [
+        "Cum să adăugați legături web Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Cum să colaborați în ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Cum se activează ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Cum să migrați la ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Cum să configurați ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Cum să configurați un domeniu personal"
+      ],
+      "How to set up SMTP": [
+        "Cum să configurați SMTP"
+      ],
+      "How to share a calendar": [
+        "Cum să partajați un calendar"
+      ],
+      "How to share via email": [
+        "Cum să partajați prin e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Cum se folosește ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Cum să utilizați ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Cum se utilizează redirecționarea mesajelor"
+      ],
+      "How to use Groups": [
+        "Cum să utilizați grupurile"
       ],
       "if your data is leaked": [
         "dacă datele v-au fost divulgate"
@@ -6905,6 +6984,9 @@
       ],
       "Trash": [
         "Gunoi"
+      ],
+      "Types of recovery methods": [
+        "Tipuri de metode de recuperare"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -8668,10 +8750,10 @@
       "Invite members": [
         "Invitați membri"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Poate mai târziu"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Poate mai târziu"
       ],
       "Select theme": [
@@ -10308,11 +10390,6 @@
         "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Salvare"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Albumele care vi s-au partajat vor apărea aici"
@@ -11286,9 +11363,6 @@
       ],
       "Untitled document ${ date }": [
         "Document nedenumit ${ date }"
-      ],
-      "Updating your photos": [
-        "Se actualizează fotografiile"
       ],
       "Upgrade complete!": [
         "Modificare finalizată!"

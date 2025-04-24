@@ -281,7 +281,7 @@
         "Télécharger"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Télécharger l'application ${ DRIVE_APP_NAME }"
+        "Télécharger les applications ${ DRIVE_APP_NAME }"
       ],
       "Download CSV sample": [
         "Télécharger un modèle CSV"
@@ -363,9 +363,6 @@
       ],
       "Fit to window": [
         "Ajuster à la fenêtre"
-      ],
-      "Forgot password?": [
-        "Mot de passe oublié ?"
       ],
       "Forgot recovery method?": [
         "Méthode de récupération oubliée ?"
@@ -569,7 +566,7 @@
         "Retirer les bonus"
       ],
       "Remove button": [
-        "Bouton retirer"
+        "Retirer le bouton"
       ],
       "Remove domain": [
         "Retirer le domaine"
@@ -4647,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Saisissez l'adresse e-mail de votre compte ${ BRAND_NAME } ou votre nom d'utilisateur."
       ],
-      "Enter your own password (as organization admin).": [
-        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Saisissez votre adresse e-mail de récupération et nous vous enverrons votre nom d'utilisateur ou votre adresse e-mail."
       ],
@@ -4956,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Surveiller les comptes"
       ],
@@ -5130,6 +5121,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Saisissez la phrase de récupération de 12 mots associée à votre compte."
+      ],
+      "Please fill in all required fields.": [
+        "Veuillez remplir tous les champs obligatoires."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
@@ -6183,10 +6177,10 @@
       "Allow recovery by phone": [
         "Autoriser la récupération par téléphone"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6218,9 +6212,6 @@
       ],
       "Backup password": [
         "Mot de passe de secours"
-      ],
-      "Billing address": [
-        "Adresse de facturation"
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -6383,9 +6374,6 @@
       ],
       "Event": [
         "Événement"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiration (${ patternExpiration })"
       ],
       "Expires": [
         "Expire le"
@@ -6618,9 +6606,6 @@
       "Second password": [
         "Second mot de passe"
       ],
-      "Security code (${ codeName })": [
-        "Code de sécurité (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Afficher ${ n } administrateur",
         "Afficher ${ n } administrateurs"
@@ -6729,9 +6714,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oui, je veux supprimer définitivement ce compte et toutes ses données."
-      ],
-      "Your password (admin)": [
-        "Votre mot de passe (admin)"
       ],
       "ZIP code": [
         "Code postal"
@@ -7900,6 +7882,14 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -7912,14 +7902,6 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -10048,9 +10030,6 @@
       "Share the confirmation code with your administrator": [
         "Partagez le code de confirmation avec votre administrateur."
       ],
-      "Sign in": [
-        "Se connecter"
-      ],
       "Sign in to your organization": [
         "Connectez-vous à votre organisation."
       ],
@@ -10095,9 +10074,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Vous devrez créer manuellement les nouveaux utilisateurs pour les ajouter à votre organisation."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ],
       "Your SSO configuration will be deleted.": [
         "La configuration de votre authentification unique (SSO) sera supprimée."
@@ -10720,8 +10696,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Économisez"
+      "Save ${ priceString }": [
+        "Économisez ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11439,9 +11415,6 @@
       "Enhance security with 2FA": [
         "Améliorez la sécurité avec l’A2F"
       ],
-      "Enter 2FA code": [
-        "Entrez le code A2F"
-      ],
       "Enter endpoints into your identity provider": [
         "Saisissez les points de terminaison dans votre fournisseur d'identité."
       ],
@@ -11450,9 +11423,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Saisissez les informations de votre compte ${ BRAND_NAME } pour rejoindre le programme bêta de ${ app }."
-      ],
-      "Enter your password": [
-        "Saisissez votre mot de passe."
       ],
       "Error": [
         "Erreur"

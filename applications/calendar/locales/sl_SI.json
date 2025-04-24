@@ -734,10 +734,10 @@
       "Upgrade": [
         "Nadgradi"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadgradi zdaj"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadgradi zdaj"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
@@ -4965,9 +4965,6 @@
       "Merged": [
         "Združeno"
       ],
-      "MM/YY": [
-        "MM/LL"
-      ],
       "Monitor accounts": [
         "Nadzor računov"
       ],
@@ -5786,9 +5783,6 @@
       "Beta Access": [
         "Dostop beta"
       ],
-      "Billing address": [
-        "Naslov za izstavitev računa"
-      ],
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
@@ -5920,9 +5914,6 @@
       ],
       "Event title": [
         "Naslov dogodka"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Potek (${ patternExpiration })."
       ],
       "Expires": [
         "Poteče"
@@ -6091,9 +6082,6 @@
       ],
       "Secondary time zone": [
         "Sekundarni časovni pas"
-      ],
-      "Security code (${ codeName })": [
-        "Varnostna koda (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Pokaži drugim, ko sem zaseden"
@@ -6700,6 +6688,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6721,23 +6726,6 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ planName }": [
-        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: feature": {
@@ -9405,11 +9393,6 @@
         "Naš sistem vas ne bo več samodejno obremenjeval s tem načinom plačila, vendar se bo vaša naročnina še vedno podaljšala na koncu obračunskega cikla. Če želite zmanjšati ali spremeniti svojo naročnino, morate to še vedno storiti sami pred koncem obračunskega obdobja. Samodejno ne moremo zmanjšati vaše naročnine, ker če presežete kvoto brezplačnega shranjevanja ali uporabljate druge plačljive funkcije, ne moremo samodejno izbrisati datotek, e-pošte ali drugih podatkov za vas. Če onemogočite samodejno plačilo, ne pozabite plačati naslednjega računa za naročnino pred rokom zapadlosti, da preprečite suspenz računa."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Shrani"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } stik je videti identičen.",
@@ -10964,9 +10947,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Pridružite se sestanku Zoom"
-      ],
       "Meeting ID:": [
         "ID sestanka:"
       ]
