@@ -1918,6 +1918,9 @@
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "無制限のログイン、クレジットカードやhide-my-emailエイリアスなど"
+      ],
       "Use your own email domain": [
         "独自のメールドメインを使用する"
       ],
@@ -4704,10 +4707,10 @@
       "Forward to": [
         "転送先"
       ],
-      "Or": [
+      "or": [
         "または"
       ],
-      "or": [
+      "Or": [
         "または"
       ],
       "With attachment": [
@@ -8208,7 +8211,7 @@
         "10 年間のバージョン履歴については、営業チームまでお問い合わせください。"
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "メールと最適化されたモバイル体験へいつでもアクセスするためには、 ${ androidAppLink } または ${ iosAppLink } アプリをダウンロードしてください。"
+        "メールと最適化されたモバイル体験へいつでもアクセスできるよう、 ${ androidAppLink } または ${ iosAppLink } をダウンロードしましょう。"
       ],
       "for choosing ${ product }": [
         "${ product } を選択した場合"
@@ -8666,9 +8669,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monitor accounts": [
         "アカウントモニター"
       ],
@@ -8929,6 +8929,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "アカウントに関連付けられた 12 語の回復用フレーズ入力してください。"
+      ],
+      "Please fill in all required fields.": [
+        "必須項目をすべて入力してください。"
       ],
       "Please fill out this field.": [
         "このフィールドに入力してください。"
@@ -9258,7 +9261,7 @@
         "SPF は、ドメインへのメールの送信を許可されているユーザーを明確にします。 DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の TXT レコードを必ず追加してください。"
       ],
       "Start sharing it with contacts and use it for online services.": [
-        "連絡先との共有を始め、オンラインサービスのために使ってください。"
+        "連絡先と共有し、オンラインサービスでご利用ください。"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "より短く、覚えやすいメールアドレスを使い始めましょう。"
@@ -9345,7 +9348,7 @@
         "${ BRAND_NAME } を選択していただきありがとうございます。"
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
-        "ご登録ありがとうございます。安全なブラウジングが今すぐ開始されます。"
+        "ご登録ありがとうございます。安全なブラウジングをお楽しみください！"
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "プライバシーと自由が最優先される、より良いインターネットを構築するという私たちの使命をサポートしていただきありがとうございます。"
@@ -9456,7 +9459,7 @@
         "これは設定するように促された 12 語の語句です。"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
-        "これは、組織の名称またはニックネームであり、ユーザーに表示されます。これはいつでも変更できます。"
+        "これは組織の名称またはニックネームであり、ユーザーに表示されます。いつでも変更できます。"
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "これは以前保存した回復用ファイルまたは暗号鍵です。"
@@ -10278,7 +10281,7 @@
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます"
+        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます。"
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "サポート チケットは終了しました。 ${ BRAND_NAME } サポートにお問い合わせいただきありがとうございます。"
@@ -10906,10 +10909,10 @@
       "Allow sharing outside the organization": [
         "組織外の共有を許可"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10921,11 +10924,11 @@
       "Amount due": [
         "支払い総額"
       ],
-      "And": [
-        "と"
-      ],
       "AND": [
         "かつ"
+      ],
+      "And": [
+        "と"
       ],
       "and": [
         "と"
@@ -10992,9 +10995,6 @@
       ],
       "Beta": [
         "ベータ"
-      ],
-      "Billing address": [
-        "ご請求先住所"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -11296,9 +11296,6 @@
       "Exclude Spam/Trash from All mail": [
         "すべてのメールからスパム/ゴミを除外する"
       ],
-      "Expiration (${ patternExpiration })": [
-        "有効期限 (${ patternExpiration })"
-      ],
       "Expires": [
         "有効期限"
       ],
@@ -11353,10 +11350,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
       "Import all messages": [
@@ -11560,13 +11557,13 @@
       "Optional": [
         "任意"
       ],
+      "OR": [
+        "または"
+      ],
       "or": [
         "または"
       ],
       "Or": [
-        "または"
-      ],
-      "OR": [
         "または"
       ],
       "Organization name": [
@@ -11697,9 +11694,6 @@
       ],
       "Second password": [
         "セカンドパスワード"
-      ],
-      "Security code (${ codeName })": [
-        "セキュリティコード (${ codeName })"
       ],
       "Send auto-reply": [
         "自動返信を送信"
@@ -17777,11 +17771,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、メール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "割引率:"
       ]
     },
     "Subscription status": {

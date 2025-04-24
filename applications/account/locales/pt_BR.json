@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Encaminhar para"
       ],
-      "Or": [
-        "Ou"
-      ],
       "or": [
         "ou"
+      ],
+      "Or": [
+        "Ou"
       ],
       "With attachment": [
         "Com anexo"
@@ -7445,6 +7445,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** não é suportado na sua organização **${ organizationName }**."
       ],
+      "**${ appName }** is not supported**.": [
+        "**${ appName }** não é suportado**."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenha um endereço da ${ BRAND_NAME }** para usar todos os serviços da ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8756,9 +8759,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para sua caixa de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitor de contas"
       ],
@@ -9027,6 +9027,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
+      ],
+      "Please fill in all required fields.": [
+        "Preencha todos os campos obrigatórios."
       ],
       "Please fill out this field.": [
         "Preencha este campo."
@@ -11030,10 +11033,10 @@
       "Allow sharing outside the organization": [
         "Ativar compartilhamento fora da organização"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11045,10 +11048,10 @@
       "Amount due": [
         "Valor a pagar"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -11116,9 +11119,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billing address": [
-        "Endereço de cobrança"
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
@@ -11420,9 +11420,6 @@
       "Exclude Spam/Trash from All mail": [
         "Excluir Spam/Lixeira de Todos os e-mails"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expiração (${ patternExpiration })"
-      ],
       "Expires": [
         "Data de validade"
       ],
@@ -11477,11 +11474,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -11684,14 +11681,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nome da organização"
@@ -11821,9 +11818,6 @@
       ],
       "Second password": [
         "Segunda senha"
-      ],
-      "Security code (${ codeName })": [
-        "Código de segurança (${ codeName })"
       ],
       "Send auto-reply": [
         "Enviar resposta automática"
@@ -14070,7 +14064,7 @@
         "${ allCategoryTitlesExceptTheLastOne } e ${ lastCategoryTitle }"
       ],
       "${ app } and ${ additionalApp } product updates": [
-        "Atualizações de produto para ${ app } e ${ additionalApp }"
+        "Atualizações de produto do ${ app } e ${ additionalApp }"
       ],
       "${ app } product updates": [
         "Atualizações de produto do ${ app }"
@@ -18032,8 +18026,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Economize"
+      "Save ${ priceString }": [
+        "Economize ${ priceString }"
       ]
     },
     "Subscription status": {
