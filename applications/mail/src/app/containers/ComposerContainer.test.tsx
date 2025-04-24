@@ -6,7 +6,6 @@ import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { MESSAGE_ACTIONS } from '../constants';
 import { formatFullDate } from '../helpers/date';
@@ -63,7 +62,7 @@ with a link -> https://protonmail.com/`;
         };
 
         const { unmount } = await render(
-            <ComposerContainer breakpoints={mockDefaultBreakpoints}>
+            <ComposerContainer>
                 <Inside />
             </ComposerContainer>,
             {
@@ -142,7 +141,7 @@ with a link -> https://protonmail.com/`;
         };
 
         const { unmount } = await render(
-            <ComposerContainer breakpoints={mockDefaultBreakpoints}>
+            <ComposerContainer>
                 <Inside />
             </ComposerContainer>,
             {

@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { Breakpoints } from '@proton/components';
+import { useActiveBreakpoint } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -41,7 +41,6 @@ interface Props {
     conversationMode: boolean;
     showIcon: boolean;
     senders?: ReactNode;
-    breakpoints: Breakpoints;
     unread: boolean;
     onBack?: () => void;
     isSelected: boolean;
@@ -57,7 +56,6 @@ const ItemColumnLayout = ({
     element,
     conversationMode,
     showIcon,
-    breakpoints,
     unread,
     onBack = () => {},
     isSelected,
@@ -71,6 +69,8 @@ const ItemColumnLayout = ({
     const { contentIndexingDone } = esStatus;
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+
+    const breakpoints = useActiveBreakpoint();
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 
