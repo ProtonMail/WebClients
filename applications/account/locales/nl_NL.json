@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Doorsturen naar"
       ],
-      "Or": [
-        "Of"
-      ],
       "or": [
         "of"
+      ],
+      "Or": [
+        "Of"
       ],
       "With attachment": [
         "Met bijlage"
@@ -8753,9 +8753,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
-      "MM/YY": [
-        "MM/JJ"
-      ],
       "Monitor accounts": [
         "Accounts monitoren"
       ],
@@ -9021,6 +9018,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Voer de herstelzin van 12 woorden in die bij uw account hoort."
+      ],
+      "Please fill in all required fields.": [
+        "Vul alle verplichte velden in."
       ],
       "Please fill out this field.": [
         "Gelieve dit veld in te vullen."
@@ -11024,11 +11024,11 @@
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
-      "Allowed Domain": [
-        "Toegestaan domein"
-      ],
       "Allowed domain": [
         "Domein toegestaan"
+      ],
+      "Allowed Domain": [
+        "Toegestaan domein"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -11039,11 +11039,11 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "And": [
-        "En"
-      ],
       "AND": [
         "EN"
+      ],
+      "And": [
+        "En"
       ],
       "and": [
         "en"
@@ -11110,9 +11110,6 @@
       ],
       "Beta": [
         "Bèta"
-      ],
-      "Billing address": [
-        "Facturatie adres"
       ],
       "Billing cycle": [
         "Facturatieperiode"
@@ -11414,9 +11411,6 @@
       "Exclude Spam/Trash from All mail": [
         "Sluit Spam/Ongewenst uit van Alle e-mails"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Verloopdatum (${ patternExpiration })"
-      ],
       "Expires": [
         "Verloopt"
       ],
@@ -11471,11 +11465,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Als"
-      ],
       "IF": [
         "ALS"
+      ],
+      "If": [
+        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -11678,14 +11672,14 @@
       "Optional": [
         "Optioneel"
       ],
+      "OR": [
+        "OF"
+      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
-      ],
-      "OR": [
-        "OF"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -11815,9 +11809,6 @@
       ],
       "Second password": [
         "Tweede wachtwoord"
-      ],
-      "Security code (${ codeName })": [
-        "Beveiligingscode (${ codeName })"
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
@@ -17999,11 +17990,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Bespaar"
       ]
     },
     "Subscription status": {

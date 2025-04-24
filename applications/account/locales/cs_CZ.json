@@ -1187,7 +1187,7 @@
         "Nastavit 2FA"
       ],
       "Set up a custom domain": [
-        "Nastavte vlastní doménu"
+        "Nastavit vlastní doménu"
       ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
@@ -4755,11 +4755,11 @@
       "Forward to": [
         "Přeposlat na"
       ],
-      "Or": [
-        "Nebo"
-      ],
       "or": [
         "nebo"
+      ],
+      "Or": [
+        "Nebo"
       ],
       "With attachment": [
         "S přílohou"
@@ -7580,6 +7580,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Aplikace **${ appName }** není podporována ve vaší organizaci **${ organizationName }**."
       ],
+      "**${ appName }** is not supported**.": [
+        "Aplikace **${ appName }** není podporována**."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získejte adresu ${ BRAND_NAME }** pro používání všech služeb ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8921,9 +8924,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Sledování účtů"
       ],
@@ -9202,6 +9202,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
+      ],
+      "Please fill in all required fields.": [
+        "Vyplňte prosím všechna povinná pole."
       ],
       "Please fill out this field.": [
         "Prosíme vyplňte toto pole."
@@ -11257,10 +11260,10 @@
       "Allow sharing outside the organization": [
         "Povolit sdílení mimo organizaci"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11272,10 +11275,10 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -11343,9 +11346,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billing address": [
-        "Fakturační adresa"
       ],
       "Billing cycle": [
         "Fakturační období"
@@ -11647,9 +11647,6 @@
       "Exclude Spam/Trash from All mail": [
         "Vyloučit Spam/Koš z Všechna pošta"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Vypršení (${ patternExpiration })"
-      ],
       "Expires": [
         "Vyprší"
       ],
@@ -11704,11 +11701,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Pokud"
-      ],
       "IF": [
         "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -11911,14 +11908,14 @@
       "Optional": [
         "Volitelné"
       ],
+      "OR": [
+        "NEBO"
+      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
-      ],
-      "OR": [
-        "NEBO"
       ],
       "Organization name": [
         "Název organizace"
@@ -12048,9 +12045,6 @@
       ],
       "Second password": [
         "Druhé heslo"
-      ],
-      "Security code (${ codeName })": [
-        "Kód zabezpečení (${ codeName })"
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -18467,8 +18461,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ušetříte"
+      "Save ${ priceString }": [
+        "Ušetřete ${ priceString }"
       ]
     },
     "Subscription status": {

@@ -286,6 +286,9 @@
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
+      ],
       "Connected": [
         "Ligado"
       ],
@@ -969,6 +972,9 @@
       ],
       "Remove bonuses": [
         "Remover bónus"
+      ],
+      "Remove button": [
+        "Remover o botão"
       ],
       "Remove calendar": [
         "Remover um calendário"
@@ -4717,11 +4723,11 @@
       "Forward to": [
         "Reencaminhar para"
       ],
-      "Or": [
-        "Ou"
-      ],
       "or": [
         "ou"
+      ],
+      "Or": [
+        "Ou"
       ],
       "With attachment": [
         "Com anexo"
@@ -8747,9 +8753,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para a sua caixa de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitor de contas"
       ],
@@ -9018,6 +9021,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduza a frase de recuperação de 12 palavras associada à sua conta."
+      ],
+      "Please fill in all required fields.": [
+        "Preencha todos os campos obrigatórios."
       ],
       "Please fill out this field.": [
         "Preencha este campo."
@@ -11021,10 +11027,10 @@
       "Allow sharing outside the organization": [
         "Permitir a partilha fora da organização"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11036,10 +11042,10 @@
       "Amount due": [
         "Quantia devida"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -11107,9 +11113,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billing address": [
-        "Endereço de faturação"
       ],
       "Billing cycle": [
         "Ciclo de faturação"
@@ -11411,9 +11414,6 @@
       "Exclude Spam/Trash from All mail": [
         "Excluir Spam/Lixo de Todos os emails"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expiração (${ patternExpiration })"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -11468,11 +11468,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -11675,14 +11675,14 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nome da organização"
@@ -11812,9 +11812,6 @@
       ],
       "Second password": [
         "Segunda palavra-passe"
-      ],
-      "Security code (${ codeName })": [
-        "Código de segurança (${ codeName })"
       ],
       "Send auto-reply": [
         "Enviar resposta automática"
@@ -12254,6 +12251,9 @@
       ],
       "Encryption and keys": [
         "Encriptação e chaves"
+      ],
+      "Enforcing 2FA for organizations": [
+        "Aplicação da A2F para as organizações"
       ],
       "Forgot email?": [
         "Esqueceu o seu e-mail?"
@@ -18004,11 +18004,6 @@
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Poupe"
-      ]
-    },
     "Subscription status": {
       "Active": [
         "Ativo"
@@ -18789,6 +18784,9 @@
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo, com o ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
       ],
       "Connect your custom domain": [
         "Ligue o seu domínio personalizado"
