@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
+      "Failed to save photo to your Drive": [
+        "Fotoğraf Drive'ınıza kaydedilemedi"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
+      ],
+      "Photo saved to your Drive": [
+        "Fotoğraf Drive'ınıza kaydedildi"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Fotoğraf yükleme özelliği geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
@@ -4374,10 +4380,6 @@
         "${ pausedCount } duraklatıldı",
         "${ pausedCount } duraklatıldı"
       ],
-      "${ photoCount } item": [
-        "${ photoCount } öge",
-        "${ photoCount } öge"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
@@ -5131,9 +5133,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
       ],
-      "MM/YY": [
-        "AA/YY"
-      ],
       "Monitor accounts": [
         "Hesapları izle"
       ],
@@ -5287,6 +5286,9 @@
       "Please enter the password to decrypt and view content.": [
         "Lütfen şifreyi çözmek ve içeriği görüntülemek için parolayı yazın."
       ],
+      "Please fill in all required fields.": [
+        "Lütfen gerekli tüm alanları doldurun."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
       ],
@@ -5336,9 +5338,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Lütfen verileriniz güncellenirken bekleyin. Bu işlem birkaç saniye sürebilir."
       ],
       "Preparing link to file": [
         "Dosya bağlantısı hazırlanıyor"
@@ -6309,9 +6308,6 @@
       "Beta Access": [
         "Beta erişimi"
       ],
-      "Billing address": [
-        "Fatura adresi"
-      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -6468,9 +6464,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Bu bağlantıyı silin ve erişimi olan herkesi kaldırın."
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Geçerlilik süresi (${ patternExpiration })"
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -6681,9 +6674,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Güvenlik kodu (${ codeName })"
       ],
       "Select type of abuse": [
         "Kötüye kullanım türünü seçin"
@@ -8731,10 +8721,10 @@
       "Invite members": [
         "Üyeleri davet et"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Belki daha sonra"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Belki daha sonra"
       ],
       "Select theme": [
@@ -10344,11 +10334,6 @@
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Kazancınız"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Sizinle paylaşılan albümler burada görünecek"
@@ -11355,9 +11340,6 @@
       ],
       "Untitled document ${ date }": [
         "Adlandırılmamış belge ${ date }"
-      ],
-      "Updating your photos": [
-        "Fotoğraflarınız güncelleniyor"
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"

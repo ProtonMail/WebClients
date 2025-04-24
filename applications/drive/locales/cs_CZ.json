@@ -892,7 +892,7 @@
         "Nastavit 2FA"
       ],
       "Set up a custom domain": [
-        "Nastavte vlastní doménu"
+        "Nastavit vlastní doménu"
       ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
@@ -3093,6 +3093,9 @@
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
       ],
+      "Failed to save photo to your Drive": [
+        "Uložení fotky na váš Proton Drive selhalo"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Soubor „${ item.name }“ nelze nahrát kvůli chybě „${ error }“"
       ],
@@ -3230,6 +3233,9 @@
       ],
       "Payment process not supported": [
         "Platební proces není podporován"
+      ],
+      "Photo saved to your Drive": [
+        "Fotka uložena na váš Proton Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Nahrávání fotek je dočasně vypnuté. Zkuste to prosíme později."
@@ -5291,9 +5297,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Sledování účtů"
       ],
@@ -5447,6 +5450,9 @@
       "Please enter the password to decrypt and view content.": [
         "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
       ],
+      "Please fill in all required fields.": [
+        "Vyplňte prosím všechna povinná pole."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU smazány."
       ],
@@ -5500,9 +5506,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Počkejte prosím, než vaše data aktualizujeme, což může trvat několik sekund."
       ],
       "Preparing link to file": [
         "Příprava odkazu na soubor"
@@ -6501,9 +6504,6 @@
       "Beta Access": [
         "Beta přístup"
       ],
-      "Billing address": [
-        "Fakturační adresa"
-      ],
       "Billing cycle": [
         "Fakturační období"
       ],
@@ -6662,9 +6662,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Smazat tento odkaz a odebrat všechny s přístupem"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Vypršení (${ patternExpiration })"
       ],
       "Expired": [
         "Vypršelo"
@@ -6875,9 +6872,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
-      ],
-      "Security code (${ codeName })": [
-        "Kód zabezpečení (${ codeName })"
       ],
       "Select type of abuse": [
         "Vyberte typ zneužití"
@@ -9023,10 +9017,10 @@
       "Invite members": [
         "Pozvat členy"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Možná později"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Možná později"
       ],
       "Select theme": [
@@ -10713,8 +10707,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ušetříte"
+      "Save ${ priceString }": [
+        "Ušetřete ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11765,9 +11759,6 @@
       ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
-      ],
-      "Updating your photos": [
-        "Aktualizace vašich fotek"
       ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"
