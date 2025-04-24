@@ -2,7 +2,7 @@ module.exports = {
     preset: 'ts-jest',
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@proton/telemetry|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs)/)',
     ],
     testRegex: 'lib/.*\\.test\\.ts$',
     clearMocks: true,
