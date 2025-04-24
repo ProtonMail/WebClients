@@ -78,7 +78,7 @@ const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organizati
                 {getBoldFormattedText(
                     organization
                         ? c('Info').t`**${appName}** is not supported in your organization **${organizationName}**.`
-                        : c('Info').t`**${appName}** is not supported**.`
+                        : c('Info').t`**${appName}** is not supported.`
                 )}
             </div>
         </div>
