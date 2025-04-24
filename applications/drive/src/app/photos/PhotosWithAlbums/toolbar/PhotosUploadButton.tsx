@@ -18,6 +18,7 @@ interface PhotosUploadButtonProps {
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
+    onStartUpload?: () => void;
     type?: 'toolbar' | 'norm' | 'dropdown';
     isAddAlbumPhotosView?: boolean;
     isAlbumUpload?: boolean;
@@ -27,6 +28,7 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
     linkId,
     onFileUpload,
     onFileSkipped,
+    onStartUpload,
     type = 'toolbar',
     isAddAlbumPhotosView,
     isAlbumUpload,
@@ -52,6 +54,7 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                 ref={fileInput}
                 className="hidden"
                 onChange={(e) => {
+                    onStartUpload?.();
                     handleChange(e, onFileUpload, onFileSkipped);
                 }}
                 accept={PHOTOS_ACCEPTED_INPUT}
