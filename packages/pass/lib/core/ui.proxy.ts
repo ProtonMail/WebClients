@@ -3,47 +3,73 @@
  * module is not executed in workers or content-scripts */
 import type * as PassRustUI from '@protontech/pass-rust-core/ui';
 
+import type { PassUIMethod, PassUIParams, PassUIProxy } from '@proton/pass/lib/core/ui.types';
+import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
 import { isNativeJSError } from '@proton/pass/lib/core/utils';
 import type { Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-type PassUIProxy = typeof PassRustUI;
-let service: Maybe<PassUIProxy>;
+let service: Maybe<typeof PassRustUI>;
 
-const getPassUIModule = () =>
+export const preloadPassUI =
     BUILD_TARGET === 'safari'
-        ? /** Safari extensions do not allow executing WASM directly on extension pages.
-           * For all synchronous `@protontech/pass-rust-core/ui` operations, use asm.js. */
-          import(/* webpackChunkName: "pass-ui" */ '@protontech/pass-rust-core/ui/proton_pass_web.asm')
-        : import(/* webpackChunkName: "pass-ui" */ '@protontech/pass-rust-core/ui');
+        ? async () => Promise.resolve()
+        : async () => {
+              if (service !== undefined || typeof window === 'undefined') return;
 
-export const preloadPassUI = () => {
-    if (service !== undefined || typeof window === 'undefined') return;
+              return import(/* webpackChunkName: "pass-ui" */ '@protontech/pass-rust-core/ui')
+                  .then((value) => {
+                      service = value;
+                      logger.debug(`[PassUI] Module v${value.library_version()} loaded`);
+                  })
+                  .catch((err) => logger.warn('[PassCoreUI] Failed loading module', err));
+          };
 
-    return getPassUIModule()
-        .then((value) => {
-            service = value;
-            logger.debug(`[PassCoreUI] Module v${value.library_version()} loaded`);
-        })
-        .catch((err) => logger.warn('[PassCoreUI] Failed loading module', err));
-};
+const createPassUIWorkerProxy = () =>
+    new Proxy<PassUIProxy>({} as any, {
+        get(_, property) {
+            if (property === 'toJSON') return () => ({ __type: 'PassUIWorkerProxy' });
+            if (property === Symbol.toStringTag) return 'PassUIWorkerProxy';
 
-const PassUI = new Proxy<PassUIProxy>({} as any, {
-    get(_, property) {
-        /* In case the object gets serialized during error reporting */
-        if (property === 'toJSON') return () => ({ __type: 'PassUIProxy' });
-        if (property === Symbol.toStringTag) return 'PassUIProxy';
+            return (...args: any[]) => {
+                switch (property) {
+                    case 'mime_type_from_content':
+                        const content = (args as PassUIParams<'mime_type_from_content'>)[0];
+                        return PassUIWorkerService.transfer([content.buffer])('mime_type_from_content', content);
+                    default:
+                        return PassUIWorkerService.exec(
+                            property as PassUIMethod,
+                            ...(args as PassUIParams<PassUIMethod>)
+                        );
+                }
+            };
+        },
+    });
 
-        return (...args: any[]) => {
-            try {
-                if (!service) throw new Error('`PassCoreUI` module not initialized');
-                return (service[property as keyof PassUIProxy] as any)(...args);
-            } catch (err) {
-                if (isNativeJSError(err)) logger.warn(`[PassCoreUI] Failed executing ${property.toString()}`, err);
-                throw err;
-            }
-        };
-    },
-});
+const createPassUIProxy = () =>
+    new Proxy<PassUIProxy>({} as any, {
+        get(_, property) {
+            if (property === 'toJSON') return () => ({ __type: 'PassUIProxy' });
+            if (property === Symbol.toStringTag) return 'PassUIProxy';
+
+            return async (...args: any[]) => {
+                try {
+                    if (!service) throw new Error('`PassCoreUI` module not initialized');
+                    return (service[property as keyof PassUIProxy] as any)(...args);
+                } catch (err) {
+                    if (isNativeJSError(err)) {
+                        logger.warn(`[PassCoreUI] Failed executing ${property.toString()}`, err);
+                    }
+
+                    throw err;
+                }
+            };
+        },
+    });
+
+/** Safari WebKit enforces a CSP that restricts direct execution of WASM in extensions
+ * pages. As a workaround, we conditionally spawn PassUI in a web worker, while using
+ * the standard main-thread proxy implementation for other browsers */
+const PassUI = BUILD_TARGET === 'safari' ? createPassUIWorkerProxy() : createPassUIProxy();
 
 export default PassUI;
