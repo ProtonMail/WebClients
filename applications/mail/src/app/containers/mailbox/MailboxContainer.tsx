@@ -4,8 +4,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useCalendars } from '@proton/calendar/calendars/hooks';
 import type { Breakpoints, CommanderItemInterface } from '@proton/components';
 import {
     Commander,
@@ -14,7 +12,6 @@ import {
     ErrorBoundary,
     InboxQuickSettingsAppButton,
     PrivateMainArea,
-    useInboxDesktopBadgeCount,
     useItemsSelection,
     useModalState,
 } from '@proton/components';
@@ -33,10 +30,9 @@ import clsx from '@proton/utils/clsx';
 
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
-import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
-import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
+import { useMailboxContainerSideEffects } from 'proton-mail/router/sideEffects/useMailboxContainerSideEffects';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import ConversationView from '../../components/conversation/ConversationView';
@@ -63,14 +59,9 @@ import {
 import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import useNewEmailNotification from '../../hooks/mailbox/notifications/useNewEmailNotification';
-import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useMailboxFavicon } from '../../hooks/mailbox/useMailboxFavicon';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
-import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
-import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
@@ -141,12 +132,6 @@ const MailboxContainer = ({
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
     };
 
-    // Open a composer when the url contains a mailto query
-    useMailtoHash({ isSearch });
-
-    // Opens the email details when the url contains a elementID query
-    useInboxDesktopElementId({ isSearch });
-
     const handlePage = useCallback(
         (pageNumber: number) => {
             history.push(setPageInUrl(history.location, pageNumber));
@@ -176,7 +161,6 @@ const MailboxContainer = ({
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
 
     const { handleDelete: permanentDelete, deleteSelectionModal, deleteAllModal } = usePermanentDelete(labelID);
-    useApplyEncryptedSearch(elementsParams);
 
     const handleBack = useCallback(
         () => history.push(setParamsInLocation(history.location, { labelID })),
@@ -186,11 +170,6 @@ const MailboxContainer = ({
     const { startECRTMetric } = useMailECRTMetric();
 
     const onCompose = useOnCompose();
-
-    useMailboxPageTitle(labelID);
-    useMailboxFavicon(labelID);
-    useInboxDesktopBadgeCount();
-    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 
     const onCheck = (checked: boolean) => {
         // Reset select all state when interacting with checkboxes in the list
@@ -219,12 +198,6 @@ const MailboxContainer = ({
         resetDependencies: [columnMode ? elementID : undefined, inputLabelID, page, filter, sort, searchParameters],
         onCheck,
     });
-
-    useNewEmailNotification(() => handleCheckAll(false));
-
-    // Launch two calendar-specific API calls here to boost calendar widget performance
-    useCalendars();
-    useCalendarUserSettings();
 
     const elementsLength = loading ? placeholderCount : elements.length;
     const showList = columnMode || !elementID;
@@ -366,8 +339,6 @@ const MailboxContainer = ({
         },
         [selectedIDs, permanentDelete, selectAll]
     );
-
-    usePreLoadElements({ elements, labelID, loading });
 
     const {
         elementRef,
@@ -568,6 +539,12 @@ const MailboxContainer = ({
     );
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
+
+    /**
+     * Temporary: Mailbox container side effects
+     */
+    useMailboxContainerSideEffects({ labelID, isSearch, elementsParams, handleCheckAll, elements, loading });
+    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 
     return (
         <MailboxContainerContextProvider

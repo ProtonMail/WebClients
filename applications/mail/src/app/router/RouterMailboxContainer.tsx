@@ -6,17 +6,13 @@ import {
     InboxQuickSettingsAppButton,
     PrivateMainArea,
     useActiveBreakpoint,
-    useInboxDesktopBadgeCount,
 } from '@proton/components';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import { ROUTE_LABEL } from 'proton-mail/constants';
 import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
-import { useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
-import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
-import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/useMailboxPageTitle';
 import { paramsSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -26,26 +22,21 @@ import { MailboxToolbar } from './components/MailboxToolbar';
 import { useElementActions } from './hooks/useElementActions';
 import { useGetElementParams } from './hooks/useGetElementParams';
 import { useRouterNavigation } from './hooks/useRouterNavigation';
+import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContainerSideEffects';
 
 export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
     const params = useMailSelector(paramsSelector);
     const navigation = useRouterNavigation({ labelID: params.labelID });
-    const elementParams = useGetElementParams({ params, navigation });
-    const elementsData = useElements(elementParams);
+    const elementsParams = useGetElementParams({ params, navigation });
+    const elementsData = useElements(elementsParams);
     const actions = useElementActions({ params, navigation, elementsData });
-
-    useApplyEncryptedSearch(elementParams);
 
     const { messageContainerRef, mainAreaRef, resize } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
     const { elements, loading, placeholderCount } = elementsData;
     const { selectedIDs } = actions;
-
-    useMailboxPageTitle(labelID);
-    useMailboxFavicon(labelID);
-    useInboxDesktopBadgeCount();
 
     const breakpoints = useActiveBreakpoint();
     const { columnMode } = useMailboxLayoutProvider();
@@ -54,6 +45,18 @@ export const RouterMailboxContainer = () => {
     const canShowDrawer = drawerSidebarButtons.length > 0;
     const elementsLength = loading ? placeholderCount : elements.length;
     const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
+
+    /**
+     * Temporary: Router mailbox side effects
+     */
+    useMailboxContainerSideEffects({
+        isSearch: params.isSearching,
+        handleCheckAll: actions.handleCheckAll,
+        elementsParams,
+        elements,
+        loading,
+        labelID,
+    });
 
     if (!labelID) {
         return <Redirect to="/inbox" />;
