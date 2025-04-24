@@ -241,7 +241,7 @@ export const DS_STORE = '.DS_Store';
 export const PHOTOS_PAGE_SIZE = 500;
 
 // Accepted files for photos. This value must be used in input `accept` attribute
-export const PHOTOS_ACCEPTED_INPUT = `image/*,video/*,${SupportedMimeTypes.heic},${SupportedMimeTypes.heif}`;
+export const PHOTOS_ACCEPTED_INPUT = 'image/*,video/*';
 
 const HOURS_IN_MS = 60 * 60 * 1000;
 export const ACTIVE_PING_INTERVAL = 6 * HOURS_IN_MS;
