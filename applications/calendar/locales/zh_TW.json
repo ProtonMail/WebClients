@@ -728,11 +728,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade Now": [
-        "請升級"
-      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade Now": [
+        "請升級"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "升級至${ BRAND_NAME }無限版"
@@ -4811,9 +4811,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
       ],
-      "MM/YY": [
-        "月月/年年"
-      ],
       "Monitor accounts": [
         "監控帳號"
       ],
@@ -5598,9 +5595,6 @@
       "Beta Access": [
         "測試版體驗"
       ],
-      "Billing address": [
-        "帳單位址"
-      ],
       "Billing cycle": [
         "繳款單週期"
       ],
@@ -5735,9 +5729,6 @@
       ],
       "Every": [
         "每"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "到期日(${ patternExpiration })"
       ],
       "Expires": [
         "有效期限"
@@ -5912,9 +5903,6 @@
       ],
       "Secondary time zone": [
         "次要時區"
-      ],
-      "Security code (${ codeName })": [
-        "安全驗證代碼(${ codeName })"
       ],
       "Show others when I'm busy": [
         "向其他人顯示我正在忙"
@@ -6491,6 +6479,26 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6512,26 +6520,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9129,11 +9117,6 @@
         "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "省下"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 個聯絡人似乎相同。"
@@ -10516,9 +10499,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "加入Zoom會議"
-      ],
       "Meeting ID:": [
         "會議識別碼:"
       ],

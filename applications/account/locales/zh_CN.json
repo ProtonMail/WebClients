@@ -4707,10 +4707,10 @@
       "Forward to": [
         "转发到"
       ],
-      "Or": [
+      "or": [
         "或"
       ],
-      "or": [
+      "Or": [
         "或"
       ],
       "With attachment": [
@@ -8669,9 +8669,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
-      "MM/YY": [
-        "月/年"
-      ],
       "Monitor accounts": [
         "监控账户"
       ],
@@ -8932,6 +8929,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "请输入与您的账户关联的 12 字恢复密语。"
+      ],
+      "Please fill in all required fields.": [
+        "请填写所有必填项。"
       ],
       "Please fill out this field.": [
         "请填写此项。"
@@ -10909,10 +10909,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10924,10 +10924,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -10995,9 +10995,6 @@
       ],
       "Beta": [
         "测试版"
-      ],
-      "Billing address": [
-        "账单地址"
       ],
       "Billing cycle": [
         "计费周期"
@@ -11299,9 +11296,6 @@
       "Exclude Spam/Trash from All mail": [
         "所有邮件中不显示垃圾邮件和回收站中的邮件"
       ],
-      "Expiration (${ patternExpiration })": [
-        "到期 (${ patternExpiration })"
-      ],
       "Expires": [
         "有效期至"
       ],
@@ -11356,10 +11350,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
       "Import all messages": [
@@ -11563,13 +11557,13 @@
       "Optional": [
         "非必填"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11700,9 +11694,6 @@
       ],
       "Second password": [
         "副密码"
-      ],
-      "Security code (${ codeName })": [
-        "安全码 (${ codeName })"
       ],
       "Send auto-reply": [
         "自动回复"
@@ -17780,11 +17771,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "节省"
       ]
     },
     "Subscription status": {

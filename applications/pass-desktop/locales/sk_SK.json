@@ -862,7 +862,7 @@
         "Overenie zlyhalo. Potvrďte svoje dodatočné heslo, aby ste mohli pokračovať v exporte"
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
-        "Overenie zlyhalo. Potvrďte svoje druhé heslo, aby ste mohli pokračovať v exporte"
+        "Overenie zlyhalo. Potvrďte svoje druhé heslo, ak chcete pokračovať v exporte"
       ],
       "Biometric authentication failed": [
         "Biometrické overenie zlyhalo"
@@ -1476,7 +1476,7 @@
         "Alias bol úspešne deaktivovaný. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
       ],
       "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias bol úspešne povolený. Teraz môžete prijímať emaily odoslané na adresu ${ item.aliasEmail }"
+        "Alias bol úspešne povolený. Teraz budete prijímať emaily odoslané na adresu ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Synchronizácia aliasov medzi vašimi kontami ${ BRAND_NAME } a SimpleLogin je aktívna."
@@ -2169,7 +2169,7 @@
         "Odstraňujem bezpečný odkaz..."
       ],
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
-        "Resetovanie histórie natrvalo vymaže všetky predchádzajúce verzie položky a nie je možné vrátiť ich späť."
+        "Resetovanie histórie natrvalo vymaže všetky predchádzajúce verzie položky a nebude možné ich vrátiť späť."
       ],
       "Restoring items from trash": [
         "Obnovenie položiek z koša"
@@ -2478,7 +2478,7 @@
         "Túto kartu môžete zatvoriť."
       ],
       "You need a vault with edit permission before you can import items.": [
-        "Pred importom položiek potrebujete trezor s oprávnením na úpravu."
+        "Pred importom položiek potrebujete trezor s oprávnením k úpravám."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Po overení domény si budete môcť prispôsobiť nastavenia domény (aliasy doménových košov, predvolené zobrazované meno pre aliasy atď.)."
@@ -2600,7 +2600,7 @@
         "${ repliedCount } odpovedí"
       ],
       "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } bezpečný odkaz",
+        "${ secureLinksCount } bezpečný odkazpo",
         "${ secureLinksCount } bezpečné odkazy",
         "${ secureLinksCount } bezpečných odkazov",
         "${ secureLinksCount } bezpečných odkazov"
@@ -3597,7 +3597,7 @@
         "Vymazať všetky súbory"
       ],
       "Do you want to remove all the files?": [
-        "Chcete odstrániť všetky súbory?"
+        "Chcete odobrať všetky súbory?"
       ],
       "Download": [
         "Stiahnuť"
@@ -3639,10 +3639,10 @@
         "Otvoriť nové okno na nahranie súborov"
       ],
       "Please be patient while your files are being downloaded.": [
-        "Počas sťahovania súborov buďte trpezliví."
+        "Počas sťahovania súborov buďte prosím trpezliví."
       ],
       "Remove all files": [
-        "Odstrániť všetky súbory"
+        "Odobrať všetky súbory"
       ],
       "Rename": [
         "Premenovať"
@@ -3651,7 +3651,7 @@
         "Obnoviť"
       ],
       "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Niektoré súbory sú príliš veľké na odoslanie. Maximálna povolená veľkosť je (${ maxFileSizeInMB })"
+        "Niektoré súbory sú príliš veľké na nahratie. Maximálna povolená veľkosť je (${ maxFileSizeInMB })"
       ],
       "The exported file attachments will not be encrypted.": [
         "Exportované súbory príloh nebudú zašifrované."
@@ -4460,7 +4460,7 @@
         "Vyskytla sa chyba počas exportovania vašich dát"
       ],
       "An error occurred while importing your data.": [
-        "Vyskytla sa chyba počas importovania vašich dát."
+        "Počas importu vašich dát sa vyskytla chyba"
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Skutočne chcete presunúť ${ trashedItemsCount } položku do koša?",

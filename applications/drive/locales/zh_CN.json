@@ -3045,6 +3045,9 @@
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
       ],
+      "Failed to save photo to your Drive": [
+        "未能将照片保存至 Proton Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由于“${ error }”错误，文件“${ item.name }”无法上传"
       ],
@@ -3173,6 +3176,9 @@
       ],
       "Payment process not supported": [
         "不支持此支付流程"
+      ],
+      "Photo saved to your Drive": [
+        "照片已保存至 Proton Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "照片上传暂时被禁用。请稍后再试"
@@ -4316,9 +4322,6 @@
       "${ pausedCount } paused": [
         "${ pausedCount } 项已暂停"
       ],
-      "${ photoCount } item": [
-        "${ photoCount } 个项目"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
       ],
@@ -5051,9 +5054,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
-      "MM/YY": [
-        "月/年"
-      ],
       "Monitor accounts": [
         "监控账户"
       ],
@@ -5207,6 +5207,9 @@
       "Please enter the password to decrypt and view content.": [
         "请输入密码解锁并查看内容。"
       ],
+      "Please fill in all required fields.": [
+        "请填写所有必填项。"
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "请注意，分配给这些组的地址不会被删除。"
       ],
@@ -5254,9 +5257,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "请稍候，我们会更新您的数据，这可能需要几秒钟。"
       ],
       "Preparing link to file": [
         "正在准备文件链接"
@@ -6213,9 +6213,6 @@
       "Beta Access": [
         "测试版功能"
       ],
-      "Billing address": [
-        "账单地址"
-      ],
       "Billing cycle": [
         "计费周期"
       ],
@@ -6371,9 +6368,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "擦除此链接并删除所有有访问权限的人"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "到期 (${ patternExpiration })"
       ],
       "Expired": [
         "已失效"
@@ -6584,9 +6578,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "安全码 (${ codeName })"
       ],
       "Select type of abuse": [
         "选择滥用类型"
@@ -8585,10 +8576,10 @@
       "Invite members": [
         "邀请成员"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "以后再说"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "以后再说"
       ],
       "Select theme": [
@@ -10160,11 +10151,6 @@
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "节省"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "与您分享的相册将在此处显示"
@@ -11150,9 +11136,6 @@
       ],
       "Untitled document ${ date }": [
         "无标题文档 ${ date }"
-      ],
-      "Updating your photos": [
-        "正在更新您的照片"
       ],
       "Upgrade complete!": [
         "升级完成！"

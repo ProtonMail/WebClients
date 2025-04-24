@@ -624,6 +624,9 @@
       "Hide toolbar": [
         "ツールバーを非表示"
       ],
+      "hide-my-email aliases": [
+        "hide-my-email エイリアス"
+      ],
       "I like this response": [
         "この返信が好みです"
       ],
@@ -1407,10 +1410,10 @@
       "Upgrade": [
         "アップグレード"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "今すぐアップグレード"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "今すぐアップグレード"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1816,6 +1819,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "無制限のログイン、クレジットカードやhide-my-emailエイリアスなど"
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用する"
@@ -6055,7 +6061,7 @@
         "${ updated } 連絡先が正常に更新されました。"
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } はあなたのIPアドレスをマスクしているため、ウェブサイトはあなたを特定できません。"
+        "${ VPN_APP_NAME } はあなたのIPアドレスをマスクするため、ウェブサイトに特定されることはありません。"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
@@ -6079,7 +6085,7 @@
         "**自動接続**: デバイスをオンにするとすぐにVPNに接続します。"
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**キルスイッチ**: VPNが予期しない状態になった場合、インターネットをブロックしてデータ漏洩を停止します。"
+        "**キルスイッチ**: VPNに予期せぬ問題が起きた場合、インターネット接続を切ってデータ漏洩を防ぎます。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -6097,7 +6103,7 @@
         "メーリングリストの購読解除のリクエストがニュースレターの差出人に送信され、自動で処理されます"
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "リモートで作業するには、セキュアな接続が不可欠です。VPN は、企業データをサイバー脅威から保護し、仕事をプライベートに保ちます。"
+        "リモートワークには、セキュアな接続が不可欠です。VPN は、企業のデータをサイバー脅威から保護し、仕事をプライベートに保ちます。"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
@@ -6109,7 +6115,7 @@
         "VPNはIPアドレスを隠し、ブラウジング活動を暗号化し、ウェブサイト、広告主、ISPが時間をかけて追跡するのを困難にします。"
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPNは、デバイスとインターネットの間の安全なトンネルです。 インターネットサービスプロバイダ(ISP)およびアクセスしたウェブサイトから現在地やアクティビティを非表示にします。"
+        "VPNは、デバイスとインターネットの間の安全なトンネルのようなものです。お客様の現在地やアクティビティをインターネットサービスプロバイダ（ISP）およびアクセスしたウェブサイトから隠します。"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "最大 10 台のデバイスで 6,500 台以上の高速サーバーにアクセスし、ブラウジングデータを安全に保ちます。 ${ ios }、 ${ android }、 ${ appleTV }、 ${ desktop }で利用できます。"
@@ -6619,7 +6625,7 @@
         "追加情報や制限を解除するには、 ${ mailLink } にログインしてください。"
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "メールと最適化されたモバイル体験へいつでもアクセスするためには、 ${ androidAppLink } または ${ iosAppLink } アプリをダウンロードしてください。"
+        "メールと最適化されたモバイル体験へいつでもアクセスできるよう、 ${ androidAppLink } または ${ iosAppLink } をダウンロードしましょう。"
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } 以降のメッセージ"
@@ -6724,7 +6730,7 @@
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "In restrictive countries": [
-        "制限された国で"
+        "制限のある国"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
@@ -6903,9 +6909,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monitor accounts": [
         "アカウントモニター"
       ],
@@ -6919,7 +6922,7 @@
         "その他の修正操作"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "ほとんどの公共WiFiネットワークは安全ですが、セキュリティが不足している場合、サイバー脅威にさらされます。VPNはトラフィックを暗号化し、保護を維持します。"
+        "ほとんどの公共のWiFiネットワークは安全ですが、セキュリティが不十分なものもあり、サイバー攻撃の危険にさらされる可能性があります。VPNはトラフィックを暗号化してあなたを保護します。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -6979,7 +6982,7 @@
         "有効な URL ではありません"
       ],
       "Not connected": [
-        "接続されていません"
+        "未接続"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -6988,7 +6991,7 @@
         " / "
       ],
       "On public WiFi networks": [
-        "公共の WiFi ネットワークで"
+        "公共WiFiネットワーク上"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
@@ -7046,6 +7049,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "認証タブで決済を認証してください。"
+      ],
+      "Please fill in all required fields.": [
+        "必須項目をすべて入力してください。"
       ],
       "Please fill out this field.": [
         "このフィールドに入力してください。"
@@ -7195,7 +7201,7 @@
         "下書きを保存しています…"
       ],
       "Scan the QR code with your mobile device": [
-        "ご使用のモバイルデバイスでQRコードをスキャン"
+        "携帯のデバイスでQRコードをスキャンしてください"
       ],
       "Scheduled send of this message will be canceled.": [
         "このメッセージの送信予約はキャンセルされました。"
@@ -7318,7 +7324,7 @@
         "このメッセージは存在しないか有効期限切れです。"
       ],
       "Start sharing it with contacts and use it for online services.": [
-        "連絡先との共有を始め、オンラインサービスのために使ってください。"
+        "連絡先と共有し、オンラインサービスでご利用ください。"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "より短く、覚えやすいメールアドレスを使い始めましょう。"
@@ -7384,7 +7390,7 @@
         "表示用のテキスト"
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
-        "ご登録ありがとうございます。安全なブラウジングが今すぐ開始されます。"
+        "ご登録ありがとうございます。安全なブラウジングをお楽しみください！"
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "このページを離れると入力したデータの下書きは保存されません。"
@@ -7471,7 +7477,7 @@
         "招待は無効化されたカレンダーに保存されました。"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
-        "これは、組織の名称またはニックネームであり、ユーザーに表示されます。これはいつでも変更できます。"
+        "これは組織の名称またはニックネームであり、ユーザーに表示されます。いつでも変更できます。"
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "これは文書作成の補助として意図されています。正確性は提案されたテキストを確認してください。${ learnMoreResult }"
@@ -7555,7 +7561,7 @@
         "この差出人の公開鍵はまだ信頼されていません。"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "この唯一のコードは、ウェブサイトやISP(インターネットサービスプロバイダ)によって、位置情報や閲覧履歴をあなたのデバイスと結びつけるのに利用されます。"
+        "この固有のコードは、ウェブサイトやISP（インターネットサービスプロバイダ）によって、位置情報や閲覧副歴をあなたのデバイスと結びつけるのに利用されます。"
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "これは、メールの件名にパスワードリセットキーワードが含まれているため表示されました。"
@@ -7798,7 +7804,7 @@
         "メールアドレスを伝える際には、本来のメールアドレスではなく専用の使い捨て hide-my-email エイリアスを使用しましょう。"
       ],
       "When working remotely": [
-        "リモートで作業する時"
+        "リモートワークの時"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPNに接続すると、暗号化技術を使用してIPアドレス(デバイスに割り当てられた固有のコード)を非表示にします。"
@@ -8023,7 +8029,7 @@
         "インターネットサービスプロバイダーは、データを監視して販売したり、アクセスできるウェブサイトを制限したりすることもできます。"
       ],
       "Your IP": [
-        "あなたのIP"
+        "IPアドレス"
       ],
       "Your IP address is visible and can be used to track your online activity.": [
         "IPアドレスは表示されており、オンラインアクティビティを追跡するために使用できます。"
@@ -8068,7 +8074,7 @@
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます"
+        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます。"
       ]
     },
     "info": {
@@ -8389,11 +8395,11 @@
       "Always move sender's emails": [
         "この差出人のメールを常に移動"
       ],
-      "And": [
-        "と"
-      ],
       "AND": [
         "かつ"
+      ],
+      "And": [
+        "と"
       ],
       "and": [
         "と"
@@ -8421,9 +8427,6 @@
       ],
       "Beta Access": [
         "ベータ版アクセス"
-      ],
-      "Billing address": [
-        "ご請求先住所"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -8581,9 +8584,6 @@
       "Encrypt emails": [
         "メールを暗号化"
       ],
-      "Expiration (${ patternExpiration })": [
-        "有効期限 (${ patternExpiration })"
-      ],
       "Expires": [
         "有効期限"
       ],
@@ -8623,10 +8623,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
       "Import all messages": [
@@ -8740,13 +8740,13 @@
       "Optional": [
         "任意"
       ],
+      "OR": [
+        "または"
+      ],
       "or": [
         "または"
       ],
       "Or": [
-        "または"
-      ],
-      "OR": [
         "または"
       ],
       "Original link": [
@@ -8814,9 +8814,6 @@
       ],
       "Search in": [
         "検索対象"
-      ],
-      "Security code (${ codeName })": [
-        "セキュリティコード (${ codeName })"
       ],
       "Send auto-reply": [
         "自動返信を送信"
@@ -9599,29 +9596,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "無料で ${ BRAND_NAME } を入手"
-      ],
-      "Get ${ planName }": [
-        "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
@@ -9643,6 +9617,29 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "アカウントを削除"
+      ],
+      "Downgrade account": [
+        "アカウントをダウングレード"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "無料で ${ BRAND_NAME } を入手"
+      ],
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } を使い続ける"
+      ],
+      "Keep account": [
+        "アカウントを削除しない"
+      ],
+      "Switch plan": [
+        "プランを変更"
       ]
     },
     "new_plans: feature": {
@@ -12630,11 +12627,6 @@
         "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、メール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "割引率:"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } 件の会話が削除されました"
@@ -14565,9 +14557,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Zoom会議に参加"
-      ],
       "Meeting ID:": [
         "ミーティング ID:"
       ],

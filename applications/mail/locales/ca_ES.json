@@ -1414,10 +1414,10 @@
       "Upgrade": [
         "Millora"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Millora ara"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Millora ara"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -7020,9 +7020,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
@@ -7163,6 +7160,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentiqueu el vostre pagament a la pestanya de verificació."
+      ],
+      "Please fill in all required fields.": [
+        "Ompliu tots els camps obligatoris."
       ],
       "Please fill out this field.": [
         "Empleneu aquest camp."
@@ -8539,10 +8539,10 @@
       "Always move sender's emails": [
         "Mou sempre els correus electrònics del remitent"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
       "and": [
@@ -8571,9 +8571,6 @@
       ],
       "Beta Access": [
         "Accés beta"
-      ],
-      "Billing address": [
-        "Adreça de facturació"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -8731,9 +8728,6 @@
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Caducitat (${ patternExpiration })"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -8773,11 +8767,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -8890,13 +8884,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Original link": [
@@ -8964,9 +8958,6 @@
       ],
       "Search in": [
         "Cerca en"
-      ],
-      "Security code (${ codeName })": [
-        "Codi de seguretat (${ codeName })"
       ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
@@ -9757,29 +9748,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina el compte"
-      ],
-      "Downgrade account": [
-        "Passa a un pla inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtén ${ BRAND_NAME } gratuïtament"
-      ],
-      "Get ${ planName }": [
-        "Obteniu ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Segueix amb ${ plan }"
-      ],
-      "Keep account": [
-        "Conserva el compte"
-      ],
-      "Switch plan": [
-        "Canvia de pla"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
@@ -9801,6 +9769,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina el compte"
+      ],
+      "Downgrade account": [
+        "Passa a un pla inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtén ${ BRAND_NAME } gratuïtament"
+      ],
+      "Get ${ planName }": [
+        "Obteniu ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Segueix amb ${ plan }"
+      ],
+      "Keep account": [
+        "Conserva el compte"
+      ],
+      "Switch plan": [
+        "Canvia de pla"
       ]
     },
     "new_plans: feature": {
@@ -12038,6 +12029,11 @@
         "Nom a mostrar"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Uniu-vos a la reunió ràpida de Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Més ràpid a l'aplicació"
@@ -12866,8 +12862,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Desa"
+      "Save ${ priceString }": [
+        "Estalvieu el ${ priceString }"
       ]
     },
     "Success": {
@@ -13273,6 +13269,11 @@
       ],
       "vCard field": [
         "Camp vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Uniu-vos a la reunió de Teams"
       ]
     },
     "Time": {
@@ -14894,10 +14895,12 @@
         "Cada any, ${ untilString }"
       ]
     },
-    "Zoom Meeting": {
+    "Zoom": {
       "Join Zoom meeting": [
         "Uniu-vos a la reunió de Zoom"
-      ],
+      ]
+    },
+    "Zoom Meeting": {
       "Meeting ID:": [
         "Identificador de la reunió:"
       ],

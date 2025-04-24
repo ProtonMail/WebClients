@@ -485,7 +485,7 @@
         "Télécharger"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Télécharger l'application ${ DRIVE_APP_NAME }"
+        "Télécharger les applications ${ DRIVE_APP_NAME }"
       ],
       "Download CSV sample": [
         "Télécharger un modèle CSV"
@@ -974,7 +974,7 @@
         "Retirer les bonus"
       ],
       "Remove button": [
-        "Bouton retirer"
+        "Retirer le bouton"
       ],
       "Remove calendar": [
         "Retirer le calendrier"
@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Transférer vers"
       ],
-      "Or": [
-        "Ou"
-      ],
       "or": [
         "ou"
+      ],
+      "Or": [
+        "Ou"
       ],
       "With attachment": [
         "Avec pièce jointe"
@@ -8756,9 +8756,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Surveiller les comptes"
       ],
@@ -9024,6 +9021,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Saisissez la phrase de récupération de 12 mots associée à votre compte."
+      ],
+      "Please fill in all required fields.": [
+        "Veuillez remplir tous les champs obligatoires."
       ],
       "Please fill out this field.": [
         "Complétez ce champ."
@@ -11027,10 +11027,10 @@
       "Allow sharing outside the organization": [
         "Autoriser le partage en dehors de l'organisation"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11042,11 +11042,11 @@
       "Amount due": [
         "Montant à payer"
       ],
-      "And": [
-        "Et"
-      ],
       "AND": [
         "ET"
+      ],
+      "And": [
+        "Et"
       ],
       "and": [
         "et"
@@ -11113,9 +11113,6 @@
       ],
       "Beta": [
         "Version bêta"
-      ],
-      "Billing address": [
-        "Adresse de facturation"
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -11417,9 +11414,6 @@
       "Exclude Spam/Trash from All mail": [
         "Exclure du dossier Tous les messages ceux qui se trouvent dans les dossiers Indésirables/spam et Corbeille"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expiration (${ patternExpiration })"
-      ],
       "Expires": [
         "Expire le"
       ],
@@ -11474,11 +11468,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -11681,14 +11675,14 @@
       "Optional": [
         "Facultatif"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -11818,9 +11812,6 @@
       ],
       "Second password": [
         "Second mot de passe"
-      ],
-      "Security code (${ codeName })": [
-        "Code de sécurité (${ codeName })"
       ],
       "Send auto-reply": [
         "Envoyer une réponse automatique"
@@ -18008,8 +17999,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Économisez"
+      "Save ${ priceString }": [
+        "Économisez ${ priceString }"
       ]
     },
     "Subscription status": {

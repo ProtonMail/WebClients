@@ -364,9 +364,6 @@
       "Fit to window": [
         "Ajusta a la finestra"
       ],
-      "Forgot password?": [
-        "Heu oblidat la contrasenya?"
-      ],
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
       ],
@@ -4647,9 +4644,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduïu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduïu la vostra adreça de correu electrònic de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
       ],
@@ -4956,9 +4950,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
@@ -5130,6 +5121,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduïu la frase de recuperació de 12 paraules associada amb el vostre compte."
+      ],
+      "Please fill in all required fields.": [
+        "Ompliu tots els camps obligatoris."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ creditsRemaining } crèdit restant.",
@@ -6183,10 +6177,10 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6218,9 +6212,6 @@
       ],
       "Backup password": [
         "Contrasenya de recuperació"
-      ],
-      "Billing address": [
-        "Adreça de facturació"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -6383,9 +6374,6 @@
       ],
       "Event": [
         "Esdeveniment"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Caducitat (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -6618,9 +6606,6 @@
       "Second password": [
         "Segona contrasenya"
       ],
-      "Security code (${ codeName })": [
-        "Codi de seguretat (${ codeName })"
-      ],
       "Show ${ n } administrator": [
         "Mostra ${ n } administrador",
         "Mostra ${ n } administradors"
@@ -6729,9 +6714,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
-      ],
-      "Your password (admin)": [
-        "La seva contrasenya (admin)"
       ],
       "ZIP code": [
         "Codi postal"
@@ -7900,6 +7882,14 @@
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -7912,14 +7902,6 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -10048,9 +10030,6 @@
       "Share the confirmation code with your administrator": [
         "Compartiu el codi de confirmació amb l'administrador"
       ],
-      "Sign in": [
-        "Inicia la sessió"
-      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ],
@@ -10095,9 +10074,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Haureu de crear nous usuaris manualment per afegir-los a la vostra organització."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
@@ -10720,8 +10696,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Desa"
+      "Save ${ priceString }": [
+        "Estalvieu el ${ priceString }"
       ]
     },
     "Subscription status": {
@@ -11439,9 +11415,6 @@
       "Enhance security with 2FA": [
         "Millora la seguretat amb 2FA"
       ],
-      "Enter 2FA code": [
-        "Introduïu el codi 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
       ],
@@ -11450,9 +11423,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
-      ],
-      "Enter your password": [
-        "Introduïu la vostra contrasenya"
       ],
       "Error": [
         "Error"

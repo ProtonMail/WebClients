@@ -245,6 +245,9 @@
       "Close this banner": [
         "Închidere norificare"
       ],
+      "Collaborate on documents": [
+        "Colaborați la documente"
+      ],
       "Collapse navigation bar": [
         "Restrângere bară de navigare"
       ],
@@ -262,6 +265,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii web ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Conectați aplicații și dispozitive"
+      ],
+      "Connect to video conferencing": [
+        "Conectați-vă la conferințe video"
       ],
       "Contact group": [
         "Grup contacte"
@@ -408,6 +417,9 @@
       "Download ${ attachmentName }": [
         "Descărcare atașament ${ attachmentName }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
       "Download now": [
         "Descărcare"
       ],
@@ -552,6 +564,9 @@
       "Get the app": [
         "Luați aplicația"
       ],
+      "Get the apps": [
+        "Luați aplicațiile"
+      ],
       "Get the browser extension": [
         "Luați extensia pentru navigatorul web"
       ],
@@ -644,6 +659,9 @@
       ],
       "Import emails": [
         "Importare mesaje"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importați e-mailuri, calendare, contacte"
       ],
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
@@ -740,14 +758,23 @@
       "Make it friendly": [
         "Fă-l prietenos"
       ],
+      "Manage advanced account protections": [
+        "Gestionați protecții avansate cont"
+      ],
       "Manage folders": [
         "Gestionare foldere"
+      ],
+      "Manage groups": [
+        "Gestionare grupuri"
       ],
       "Manage labels": [
         "Gestionare etichete"
       ],
       "Manage Snooze": [
         "Gestionare amânări"
+      ],
+      "Manage users/addresses": [
+        "Gestionare utilizatori/adrese"
       ],
       "Mark as read": [
         "Marcare ca citit"
@@ -1166,8 +1193,20 @@
       "Set expiration time": [
         "Setați timpul de expirare"
       ],
+      "Set recovery methods": [
+        "Setați metode de recuperare"
+      ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Set up 2FA": [
+        "Configurare A2F"
+      ],
+      "Set up a custom domain": [
+        "Configurați un domeniu personal"
+      ],
+      "Set up email forwarding": [
+        "Setare redirecționare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -1177,6 +1216,9 @@
       ],
       "Share via link": [
         "Partajare prin legătură web"
+      ],
+      "Share your calendar with your team": [
+        "Partajați-vă calendarul cu echipa proprie"
       ],
       "Sharing options": [
         "Opțiuni de partajare"
@@ -1325,6 +1367,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activați ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unblock": [
         "Deblocare"
       ],
@@ -1370,14 +1415,17 @@
       "Upgrade": [
         "Modificare"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Modificare"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Modificare"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Treceți la ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload and share files": [
+        "Încărcați și partajați fișiere"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -7006,9 +7054,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Mesajele adresate tuturor adreselor de e-mail personale vor fi livrate în contul de e-mail."
       ],
-      "MM/YY": [
-        "LL/AA"
-      ],
       "Monitor accounts": [
         "Monitorizare conturi"
       ],
@@ -7099,6 +7144,9 @@
       "Open shortcut cheat sheet": [
         "Deschidere listă combinații de taste"
       ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
+      ],
       "or discover other features:": [
         "sau descoperiți alte funcții:"
       ],
@@ -7146,6 +7194,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentificați plata în fila de verificare."
+      ],
+      "Please fill in all required fields.": [
+        "Completați toate câmpurile obligatorii."
       ],
       "Please fill out this field.": [
         "Trebuie să completați acest câmp."
@@ -8549,11 +8600,11 @@
       "Always move sender's emails": [
         "Mutare întotdeauna mesajele expeditorului"
       ],
-      "And": [
-        "Şi"
-      ],
       "AND": [
         "ȘI"
+      ],
+      "And": [
+        "Şi"
       ],
       "and": [
         "și"
@@ -8581,9 +8632,6 @@
       ],
       "Beta Access": [
         "Acces la Beta"
-      ],
-      "Billing address": [
-        "Adresă de facturare"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -8741,9 +8789,6 @@
       "Encrypt emails": [
         "Criptare mesaje"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expirare (${ patternExpiration })"
-      ],
       "Expires": [
         "Expirare"
       ],
@@ -8783,11 +8828,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Dacă"
-      ],
       "IF": [
         "DACĂ"
+      ],
+      "If": [
+        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -8900,14 +8945,14 @@
       "Optional": [
         "Opțional"
       ],
+      "OR": [
+        "SAU"
+      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
-      ],
-      "OR": [
-        "SAU"
       ],
       "Original link": [
         "Legătura originală"
@@ -8974,9 +9019,6 @@
       ],
       "Search in": [
         "Căutare în"
-      ],
-      "Security code (${ codeName })": [
-        "Cod de securitate (${ codeName })"
       ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
@@ -9227,11 +9269,56 @@
       "Enable your address to answer this invitation.": [
         "Activați-vă adresa pentru a răspunde la această invitație."
       ],
+      "Enforcing 2FA for organizations": [
+        "Impunere A2F pentru organizații"
+      ],
       "Folders": [
         "Foldere"
       ],
+      "How to add users": [
+        "Cum să adăugați utilizatori"
+      ],
+      "How to add Zoom links": [
+        "Cum să adăugați legături web Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Cum să colaborați în ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Cum se activează ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Cum să migrați la ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Cum să configurați ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Cum să configurați un domeniu personal"
+      ],
+      "How to set up SMTP": [
+        "Cum să configurați SMTP"
+      ],
+      "How to share a calendar": [
+        "Cum să partajați un calendar"
+      ],
+      "How to share via email": [
+        "Cum să partajați prin e-mail"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Cum se folosește ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Cum să utilizați ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Cum se utilizează redirecționarea mesajelor"
+      ],
+      "How to use Groups": [
+        "Cum să utilizați grupurile"
       ],
       "if your data is leaked": [
         "dacă datele v-au fost divulgate"
@@ -9322,6 +9409,9 @@
       ],
       "Trash": [
         "Gunoi"
+      ],
+      "Types of recovery methods": [
+        "Tipuri de metode de recuperare"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -9727,29 +9817,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
@@ -9771,6 +9838,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Trecere la ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ștergere cont"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Păstrare ${ plan }"
+      ],
+      "Keep account": [
+        "Păstrare cont"
+      ],
+      "Switch plan": [
+        "Schimbare plan"
       ]
     },
     "new_plans: feature": {
@@ -12889,11 +12979,6 @@
         "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Salvare"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "S-a șters o conversație.",
@@ -14946,9 +15031,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Alăturați-vă conferinței Zoom"
-      ],
       "Meeting ID:": [
         "ID întâlnire:"
       ],

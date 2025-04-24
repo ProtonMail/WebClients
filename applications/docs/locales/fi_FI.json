@@ -2296,6 +2296,11 @@
         "Erääntynyt lasku"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2374,11 +2379,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4497,9 +4497,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
       ],
-      "MM/YY": [
-        "KK/VV"
-      ],
       "Monitor accounts": [
         "Valvo tilejä"
       ],
@@ -5366,9 +5363,6 @@
       "Beta Access": [
         "Käytä beetaversiota"
       ],
-      "Billing address": [
-        "Laskutusosoite"
-      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -5497,9 +5491,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Poista tämä linkki ja kaikki myönnetyt käyttöoikeudet"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Voimassaolon päättymisaika (${ patternExpiration })"
       ],
       "Expires": [
         "Erääntyy"
@@ -5683,9 +5674,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Turvakoodi (${ codeName })"
       ],
       "Set expiration date": [
         "Aseta erääntymisaika"
@@ -8727,11 +8715,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Tilaustasi ei voida alentaa automaattisesti, koska emme voi poistaa tiedostoja, viestejä tai muita tietoja puolestasi, jos olet ylittänyt ilmaistilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia. Jos poistat automaattiveloituksen käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin jäädyttämisen."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Säästä"
       ]
     },
     "Success": {

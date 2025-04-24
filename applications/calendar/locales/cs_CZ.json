@@ -690,7 +690,7 @@
         "Nastavit 2FA"
       ],
       "Set up a custom domain": [
-        "Nastavte vlastní doménu"
+        "Nastavit vlastní doménu"
       ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
@@ -803,10 +803,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5278,9 +5278,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Sledování účtů"
       ],
@@ -5376,6 +5373,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Na kartě ověření ověřte svou platbu."
+      ],
+      "Please fill in all required fields.": [
+        "Vyplňte prosím všechna povinná pole."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU smazány."
@@ -6191,9 +6191,6 @@
       "Beta Access": [
         "Beta přístup"
       ],
-      "Billing address": [
-        "Fakturační adresa"
-      ],
       "Billing cycle": [
         "Fakturační období"
       ],
@@ -6331,9 +6328,6 @@
       ],
       "Every": [
         "Každý"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Vypršení (${ patternExpiration })"
       ],
       "Expires": [
         "Vyprší"
@@ -6517,9 +6511,6 @@
       ],
       "Secondary time zone": [
         "Sekundární časové pásmo"
-      ],
-      "Security code (${ codeName })": [
-        "Kód zabezpečení (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Zobrazit ostatním kdy jsem zaneprázdněn"
@@ -7183,6 +7174,26 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7204,26 +7215,6 @@
       ],
       "Switch plan": [
         "Změnit tarif"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9438,6 +9429,11 @@
         "Podepsat"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Připojit se k Slack Huddles"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Rychlejší pomocí aplikace"
@@ -10235,8 +10231,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ušetříte"
+      "Save ${ priceString }": [
+        "Ušetřete ${ priceString }"
       ]
     },
     "Success": {
@@ -10524,6 +10520,11 @@
       ],
       "vCard field": [
         "vCard položka"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Připojit se ke schůzce v Teams"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11911,6 +11912,11 @@
         "Ročně, ${ untilString }"
       ]
     },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Připojit se ke schůzce na Zoomu"
+      ]
+    },
     "Zoom integration": {
       "Add Zoom meeting": [
         "Přidat schůzku na Zoomu"
@@ -11923,9 +11929,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Připojit se ke schůzce Zoom"
-      ],
       "Meeting ID:": [
         "ID schůzky:"
       ],

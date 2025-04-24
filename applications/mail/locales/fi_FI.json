@@ -1387,10 +1387,10 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Päivitä tilaus nyt"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -6892,9 +6892,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
       ],
-      "MM/YY": [
-        "KK/VV"
-      ],
       "Monitor accounts": [
         "Valvo tilejä"
       ],
@@ -8387,11 +8384,11 @@
       "Always move sender's emails": [
         "Siirrä lähettäjän viestit aina"
       ],
-      "And": [
-        "Ja"
-      ],
       "AND": [
         "JA"
+      ],
+      "And": [
+        "Ja"
       ],
       "and": [
         "ja"
@@ -8419,9 +8416,6 @@
       ],
       "Beta Access": [
         "Käytä beetaversiota"
-      ],
-      "Billing address": [
-        "Laskutusosoite"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -8579,9 +8573,6 @@
       "Encrypt emails": [
         "Salaa viestit"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Voimassaolon päättymisaika (${ patternExpiration })"
-      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -8621,11 +8612,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jos"
-      ],
       "IF": [
         "JOS"
+      ],
+      "If": [
+        "Jos"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -8735,14 +8726,14 @@
       "Optional": [
         "Valinnainen"
       ],
+      "OR": [
+        "TAI"
+      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
-      ],
-      "OR": [
-        "TAI"
       ],
       "Original link": [
         "Alkuperäinen linkki"
@@ -8809,9 +8800,6 @@
       ],
       "Search in": [
         "Etsi kohteesta"
-      ],
-      "Security code (${ codeName })": [
-        "Turvakoodi (${ codeName })"
       ],
       "Send auto-reply": [
         "Lähetä automaattivastaus"
@@ -9563,29 +9551,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Poista tili"
-      ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Hanki ${ BRAND_NAME } ilmaiseksi"
-      ],
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Säilytä ${ plan }"
-      ],
-      "Keep account": [
-        "Säilytä tili"
-      ],
-      "Switch plan": [
-        "Vaihda tilausta"
-      ]
-    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
@@ -9607,6 +9572,29 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Poista tili"
+      ],
+      "Downgrade account": [
+        "Alenna tili"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Hanki ${ BRAND_NAME } ilmaiseksi"
+      ],
+      "Get ${ planName }": [
+        "Hanki ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Säilytä ${ plan }"
+      ],
+      "Keep account": [
+        "Säilytä tili"
+      ],
+      "Switch plan": [
+        "Vaihda tilausta"
       ]
     },
     "new_plans: feature": {
@@ -12610,11 +12598,6 @@
         "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Tilaustasi ei voida alentaa automaattisesti, koska emme voi poistaa tiedostoja, viestejä tai muita tietoja puolestasi, jos olet ylittänyt ilmaistilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia. Jos poistat automaattiveloituksen käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin jäädyttämisen."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Säästä"
-      ]
-    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } keskustelu poistettiin",
@@ -14592,9 +14575,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Liity Zoomiin"
-      ],
       "Meeting ID:": [
         "Kokouksen ID:"
       ],

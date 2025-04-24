@@ -1372,6 +1372,9 @@
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
       ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Använd ${ PASS_APP_NAME } för Business"
+      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
@@ -3873,6 +3876,9 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
+      ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
       ],
@@ -4697,11 +4703,11 @@
       "Forward to": [
         "Vidarebefordra till"
       ],
-      "Or": [
-        "Eller"
-      ],
       "or": [
         "eller"
+      ],
+      "Or": [
+        "Eller"
       ],
       "With attachment": [
         "Med bilaga"
@@ -8703,9 +8709,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Övervaka konton"
       ],
@@ -8971,6 +8974,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Ange återställningsfrasen på 12 ord som är associerat med ditt konto."
+      ],
+      "Please fill in all required fields.": [
+        "Fyll i alla obligatoriska fält."
       ],
       "Please fill out this field.": [
         "Fyll i detta fält."
@@ -10949,10 +10955,10 @@
       "Allow sharing outside the organization": [
         "Tillåt delning utanför organisationen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10964,11 +10970,11 @@
       "Amount due": [
         "Att betala"
       ],
-      "And": [
-        "Och"
-      ],
       "AND": [
         "OCH"
+      ],
+      "And": [
+        "Och"
       ],
       "and": [
         "och"
@@ -11035,9 +11041,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billing address": [
-        "Faktureringsadress"
       ],
       "Billing cycle": [
         "Faktureringsperiod"
@@ -11339,9 +11342,6 @@
       "Exclude Spam/Trash from All mail": [
         "Exkludera skräppost/papperskorg från “All e-post“"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Löper ut (${ patternExpiration })"
-      ],
       "Expires": [
         "Löper ut"
       ],
@@ -11396,11 +11396,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Om"
-      ],
       "IF": [
         "OM"
+      ],
+      "If": [
+        "Om"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -11603,14 +11603,14 @@
       "Optional": [
         "Valfritt"
       ],
+      "OR": [
+        "ELLER"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
-      ],
-      "OR": [
-        "ELLER"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -11740,9 +11740,6 @@
       ],
       "Second password": [
         "Andra lösenord"
-      ],
-      "Security code (${ codeName })": [
-        "Säkerhetskod (${ codeName })"
       ],
       "Send auto-reply": [
         "Skicka autosvar"
@@ -17929,8 +17926,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Spara"
+      "Save ${ priceString }": [
+        "Spara ${ priceString }"
       ]
     },
     "Subscription status": {

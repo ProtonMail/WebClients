@@ -46,8 +46,8 @@
         "Agregar"
       ],
       "Add ${ photoCount } photo to a new album": [
-        "Añadir ${ photoCount } foto a un nuevo álbum",
-        "Añadir ${ photoCount } fotos a un nuevo álbum"
+        "Añadir ${ photoCount } foto a un álbum nuevo",
+        "Añadir ${ photoCount } fotos a un álbum nuevo"
       ],
       "Add account": [
         "Agregar una cuenta"
@@ -1053,7 +1053,7 @@
         "Usar tema ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Usar ${ PASS_APP_NAME } para Business"
+        "Usar ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
@@ -2640,7 +2640,7 @@
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
-        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un WiFi público."
+        "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un Wi-Fi público."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Garantice la seguridad de primer nivel para su cuenta con el programa ${ PROTON_SENTINEL_NAME }."
@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
       ],
+      "Failed to save photo to your Drive": [
+        "No se pudo guardar la foto en su Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no puede cargarse debido a un error de \"${ error }\""
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
+      ],
+      "Photo saved to your Drive": [
+        "Foto guardada en su Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "La carga de fotos está temporalmente desactivada. Intente de nuevo más tarde."
@@ -5131,9 +5137,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -5287,6 +5290,9 @@
       "Please enter the password to decrypt and view content.": [
         "Ingrese la contraseña para descifrar y visualizar el contenido."
       ],
+      "Please fill in all required fields.": [
+        "Complete todos los campos obligatorios."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tome en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
       ],
@@ -5336,9 +5342,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Espere mientras actualizamos sus datos, esto puede tardar unos segundos."
       ],
       "Preparing link to file": [
         "Preparando enlace al archivo"
@@ -5478,6 +5481,9 @@
       "Setting up ${ feature }…": [
         "Configurando ${ feature }"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Configurando álbumes y filtros. Esto puede tomar unos minutos."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
       ],
@@ -5530,7 +5536,7 @@
         "Algunos de los archivos ya no son accesibles. Restaure el acceso a los archivos. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Algunas fotos de este álbum no se han guardado en tu cronología. Si eliminas este álbum, esas fotos se eliminarán permanentemente."
+        "Algunas fotos de este álbum no se han guardado en su cronología. Si elimina este álbum, esas fotos se eliminarán permanentemente."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Algunos sitios web y servicios de streaming bloquean los contenidos por región. Una VPN te permite evitar estas restricciones y acceder a internet."
@@ -6315,9 +6321,6 @@
       "Beta Access": [
         "Acceso beta"
       ],
-      "Billing address": [
-        "Dirección de facturación"
-      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -6474,9 +6477,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Eliminar este enlace y quitar a todos con acceso"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
       ],
       "Expired": [
         "Expirado"
@@ -6687,9 +6687,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
-      ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
       ],
       "Select type of abuse": [
         "Seleccione el tipo de abuso"
@@ -6914,7 +6911,7 @@
         "Borradores"
       ],
       "Enforcing 2FA for organizations": [
-        "Forzar de 2FA para organizaciones"
+        "Implementar 2FA para organizaciones"
       ],
       "How to add users": [
         "Cómo agregar usuarios"
@@ -6953,7 +6950,7 @@
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Cómo usar ${ PASS_APP_NAME } para Business"
+        "Cómo usar ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
         "Cómo usar el reenvío de correo"
@@ -8794,10 +8791,10 @@
       "Invite members": [
         "Invitar a miembros"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Quizás más tarde"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Quizás más tarde"
       ],
       "Select theme": [
@@ -10408,8 +10405,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorre ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11419,11 +11416,11 @@
       "Untitled document ${ date }": [
         "Documento sin título ${ date }"
       ],
-      "Updating your photos": [
-        "Actualizando sus fotos"
-      ],
       "Upgrade complete!": [
         "Se ha mejorado su plan."
+      ],
+      "Upgrading your Photos experience": [
+        "Actualizando su experiencia de Fotos"
       ],
       "Upload and share files": [
         "Cargue y comparta archivos"
@@ -11465,7 +11462,7 @@
         "Advertencia: presunto sitio web falso"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Le damos la bienvenida a ${ BRAND_NAME } para Business"
+        "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "¿De qué le puede proteger una VPN?"
