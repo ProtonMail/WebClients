@@ -2332,6 +2332,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
@@ -2467,11 +2472,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4631,9 +4631,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
-      "MM/YY": [
-        "MM/JJ"
-      ],
       "Monitor accounts": [
         "Accounts monitoren"
       ],
@@ -4750,6 +4747,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporteer een kopie van de huidige wijzigingen vanuit het hoofdmenu en laad de pagina opnieuw."
+      ],
+      "Please fill in all required fields.": [
+        "Vul alle verplichte velden in."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
@@ -5563,9 +5563,6 @@
       "Beta Access": [
         "Bèta toegang"
       ],
-      "Billing address": [
-        "Facturatie adres"
-      ],
       "Billing cycle": [
         "Facturatieperiode"
       ],
@@ -5694,9 +5691,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Wis deze link en verwijder iedereen met toegang"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Verloopdatum (${ patternExpiration })"
       ],
       "Expires": [
         "Verloopt"
@@ -5880,9 +5874,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Beveiligingscode (${ codeName })"
       ],
       "Set expiration date": [
         "Vervaldatum instellen"
@@ -9024,11 +9015,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Bespaar"
       ]
     },
     "Success": {

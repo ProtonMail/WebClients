@@ -2344,6 +2344,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
@@ -2479,11 +2484,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4733,9 +4733,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Monitoring kont"
       ],
@@ -5682,9 +5679,6 @@
       "Beta Access": [
         "Dostęp beta"
       ],
-      "Billing address": [
-        "Adres rozliczeniowy"
-      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -5813,9 +5807,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Usuń link i dostęp wszystkim"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Data wygaśnięcia (${ patternExpiration })"
       ],
       "Expires": [
         "Wygasa"
@@ -5999,9 +5990,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Kod zabezpieczający (${ codeName })"
       ],
       "Set expiration date": [
         "Ustaw datę wygaśnięcia"
@@ -9362,11 +9350,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Zaoszczędź"
       ]
     },
     "Success": {

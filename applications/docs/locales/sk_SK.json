@@ -165,6 +165,9 @@
       "Close this banner": [
         "Zatvoriť tento banner"
       ],
+      "Collaborate on documents": [
+        "Spolupráca na dokumentoch"
+      ],
       "Collapse": [
         "Zbaliť"
       ],
@@ -182,6 +185,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otvorenie odkazu ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Pripojenie aplikácií a zariadení"
+      ],
+      "Connect to video conferencing": [
+        "Pripojiť sa k videokonferencii"
       ],
       "Contact group": [
         "Skupina kontaktov"
@@ -259,7 +268,7 @@
         "Zmazať ${ selectedCount } kontakty",
         "Zmazať ${ selectedCount } kontakty",
         "Zmazať ${ selectedCount } kontakty",
-        "Zmazať ${ selectedCount } kontakty"
+        "Vymazať ${ selectedCount } kontaktov"
       ],
       "Delete ${ selectedCount } contact group": [
         "Zmazať ${ selectedCount } skupinu kontaktov",
@@ -293,6 +302,9 @@
       ],
       "Download": [
         "Stiahnuť"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
       ],
       "Download anyway": [
         "Napriek tomu stiahnuť"
@@ -351,6 +363,9 @@
       "Get in touch": [
         "Skontaktovať sa"
       ],
+      "Get the apps": [
+        "Stiahnť aplikácie"
+      ],
       "Get verification code": [
         "Odoslať overovací kód"
       ],
@@ -399,6 +414,9 @@
       "Import emails": [
         "Importovať emaily"
       ],
+      "Import emails, calendars, contacts": [
+        "Importovať emaily, kalendáre a kontakty"
+      ],
       "Import from .csv or vCard": [
         "Importovať z .csv alebo vCard"
       ],
@@ -432,6 +450,9 @@
       "Make a copy": [
         "Vytvoriť kópiu"
       ],
+      "Manage advanced account protections": [
+        "Spravovať pokročilé ochrany účtu"
+      ],
       "Manage folders": [
         "Spravovať priečinky"
       ],
@@ -440,6 +461,9 @@
       ],
       "Manage labels": [
         "Spravovať štítky"
+      ],
+      "Manage users/addresses": [
+        "Spravovať používateľov/adresy"
       ],
       "Mark as resolved": [
         "Označiť ako vyriešené"
@@ -479,6 +503,9 @@
       ],
       "New message": [
         "Nová správa"
+      ],
+      "New sheet": [
+        "Nový hárok"
       ],
       "Next": [
         "Ďalej"
@@ -567,6 +594,9 @@
       "Remove bonuses": [
         "Odstrániť bonusy"
       ],
+      "Remove button": [
+        "Odstrániť tlačidlo"
+      ],
       "Remove gift code": [
         "Odstrániť darčekový kód"
       ],
@@ -651,17 +681,29 @@
       "Select country": [
         "Vyberte krajinu"
       ],
+      "Set recovery methods": [
+        "Nastaviť spôsoby obnovenia"
+      ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
       "Set up 2FA": [
         "Nastaviť 2FA"
       ],
+      "Set up a custom domain": [
+        "Nastavte vlastnú doménu"
+      ],
+      "Set up email forwarding": [
+        "Nastavenie preposielania emailov"
+      ],
       "Settings": [
         "Nastavenia"
       ],
       "Share": [
         "Zdieľať"
+      ],
+      "Share your calendar with your team": [
+        "Zdieľajte svoj kalendár so svojím tímom"
       ],
       "Show advanced PGP settings": [
         "Zobraziť pokročilé nastavenia PGO"
@@ -723,6 +765,9 @@
       "Try another method": [
         "Skúsiť inú metódu"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Vrátiť späť"
       ],
@@ -750,6 +795,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšiť na ${ BRAND_NAME } Unlimited"
       ],
+      "Upload and share files": [
+        "Nahrávanie a zdieľanie súborov"
+      ],
       "Upload anyway": [
         "Napriek tomu nahrať"
       ],
@@ -758,6 +806,12 @@
       ],
       "Use ${ label } theme": [
         "Použiť motív ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Použite ${ PASS_APP_NAME } Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
       "Use a different card": [
         "Použiť inú kartu"
@@ -2302,15 +2356,38 @@
         "Faktúra po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
+      ]
+    },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožňuje spolupracovať s ostatnými v zabezpečenom, šifrovanom prostredí."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Pridajte priečinky a súbory do ${ DRIVE_APP_NAME } a pozvite členov tímu na prezeranie alebo úpravu."
+      ],
       "Also included": [
         "Zahŕňa aj"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Automaticky pre posielajte prichádzajúce emaily na inú emailovú adresu."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Najprv nakonfigurujte túto možnosť, aby ste aktivovali svoju organizáciu a prispôsobili svoju emailovú adresu."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Pripojte svoj CRM, webovú stránku, tlačiarne a ďalšie."
+      ],
+      "Create groups you can email with a single address.": [
+        "Vytvorte skupiny, ktorým môžete posielať emaily pomocou jednej adresy."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrovanie kontaktov… Táto akcia môže trvať niekoľko minút. Akonáhle bude proces ukončený, budete si môcť stiahnuť súbor s vašimi exportovanými kontaktmi."
@@ -2321,8 +2398,29 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Určené pre používateľov, ktorí hľadajú zvýšenú ochranu svojich účtov."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Získajte jednoduchý prístup k svojmu emailu a kalendáru v počítači aj v mobile."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Jednoducho synchronizujte súbory do cloudu z počítača a pristupujte k nim z mobilného zariadenia."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Podporujte používanie dvojstupňového overenia vo vašej organizácii pre vyššiu bezpečnosť."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Poskytnite bezpečný prístup k údajom organizácie, aj keď je váš tím vzdialený alebo používa verejné Wi-Fi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zabezpečte špičkové zabezpečenie pre svoj účet pomocou programu ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Uistite sa, že máte stále prístup k svojmu účtu a údajom, aj keď stratíte heslo pre službu ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Ak chcete plynule prejsť na ${ BRAND_NAME }, importujte svoje údaje z aplikácií Google, Outlook a ďalších."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
@@ -2330,8 +2428,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Pomôžte svojmu tímu bezpečne ukladať heslá k citlivým obchodným a klientskym informáciám."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Umožňuje okamžite pridávať odkazy na schôdze do vašich pozvánok na udalosti."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Zlučovanie kontaktov... Tento proces môže trvať niekoľko minút. Po dokončení môžete okno zavrieť."
@@ -2345,6 +2449,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavte metódu obnovenia, aby ste predišli strate prístupu k vášmu účtu."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Nastavte účty pre všetkých používateľov a pozvite ich, aby sa pripojili k službe ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Zjednodušte si synchronizáciu a plánovanie pomocou zdieľaných kalendárov."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ak chcete zabezpečiť čo najvyššiu bezpečnosť svojho účtu, nastavte frázu na obnovenie."
       ],
@@ -2354,6 +2464,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Začnite tým, že zadáte názov svojej organizácie."
+      ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
         "Upgradujte na ${ BRAND_NAME } ${ planName } pre zachovanie zdieľania súborov s oprávnením na úpravu"
       ],
@@ -2362,6 +2475,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Pomocou skupín kontaktov môžete posielať emaily všetkým členom skupiny jedným kliknutím."
@@ -2380,11 +2496,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3007,7 +3118,7 @@
         "Skúste používať iba písmená, číslice a _.-"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Nie je možné načítať nástenku VPN. Skontrolujte svoje pripojenie a skúste to znova, prosím."
+        "Nie je možné načítať VPN nástenku. Skontrolujte vaše pripojenie a skúste to znova, prosím."
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
@@ -3931,9 +4042,9 @@
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } člen",
-        "${ contactEmailsLength } Členovia",
-        "${ contactEmailsLength } Členov",
-        "${ contactEmailsLength } Členov"
+        "${ contactEmailsLength } členovia",
+        "${ contactEmailsLength } členov",
+        "${ contactEmailsLength } členov"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } obsahuje viacero emailových adries."
@@ -4080,7 +4191,7 @@
         "VPN šifruje vaše pripojenie a skrýva vašu IP adresu, takže je oveľa ťažšie sledovať alebo monitorovať vaše prehliadanie."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPN skryje vašu IP adresu a zašifruje vašu aktivitu pri surfovaní, takže webové stránky, inzerenti a poskytovatelia internetových služieb vás nebudú môcť dlhodobo sledovať."
+        "VPN skrýva vašu IP adresu a šifruje vašu aktivitu pri surfovaní, takže webové stránky, inzerenti a poskytovatelia internetových služieb budú mať sťažené dlhodobé sledovanie."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je bezpečný tunel medzi vaším zariadením a internetom. Skrýva vašu polohu a aktivity pred poskytovateľom internetových služieb (ISP) a navštívenými webovými stránkami."
@@ -4548,7 +4659,7 @@
         "Vyzerá to, že ste sa nedávno pokúsili načítať ${ uploadName }. Ak načítanie zlyhalo, prosím, ${ replaceFile }. Ak načítanie stále prebieha, jeho nahradenie zruší prebiehajúce načítanie."
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Najlepšie je používať VPN za každých okolností. Ale tu môžu byť najväčšie kybernetické bezpečnostné hrozby:"
+        "Najlepšie je vždy používať VPN sieť. Tu však môžu byť hrozby kybernetickej bezpečnosti najvyššie:"
       ],
       "JCB logo": [
         "JCB logo"
@@ -4639,9 +4750,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Správy zo všetkých vašich emailových adries budú chodiť do vašej schránky."
-      ],
-      "MM/YY": [
-        "MM/RR"
       ],
       "Monitor accounts": [
         "Monitorujte účty"
@@ -4759,6 +4867,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exportujte kópiu aktuálnych zmien z hlavnej ponuky a znovu načítajte stránku."
+      ],
+      "Please fill in all required fields.": [
+        "Vyplňte všetky povinné polia, prosím."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Prosím, vezmite na vedomie, že adresy priradené k týmto skupinám NEBUDÚ vymazané."
@@ -4920,7 +5031,7 @@
         "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Niektoré webové lokality a streamovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
+        "Niektoré webové lokality a stravovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
@@ -4929,7 +5040,7 @@
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Udržujte pripojenie bez námahy povolením nasledujúcich nastavení siete VPN:"
+        "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
@@ -5163,7 +5274,7 @@
         "Visa Secure logo"
       ],
       "VPN IP": [
-        "IP VPN"
+        "VPN IP"
       ],
       "Warning": [
         "Varovanie"
@@ -5592,9 +5703,6 @@
       "Beta Access": [
         "Beta prístup"
       ],
-      "Billing address": [
-        "Fakturačná adresa"
-      ],
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
@@ -5723,9 +5831,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Vymazať tento odkaz a odstrániť všetkých s prístupom"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Skončenie platnosti (${ patternExpiration })"
       ],
       "Expires": [
         "Exspiruje"
@@ -5910,9 +6015,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
-      "Security code (${ codeName })": [
-        "Bezpečnostný kód (${ codeName })"
-      ],
       "Set expiration date": [
         "Nastaviť koniec platnosti"
       ],
@@ -6064,8 +6166,53 @@
       "click here": [
         "kliknite sem"
       ],
+      "Enforcing 2FA for organizations": [
+        "Vynútenie 2FA pre organizácie"
+      ],
+      "How to add users": [
+        "Ako pridať používateľov"
+      ],
+      "How to add Zoom links": [
+        "Ako pridať Zoom odkazy"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Ako spolupracovať v ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Ako povoliť ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Ako migrovať do ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Ako platiť Bitcoinom?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Ako nastaviť ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Ako nastaviť vlastnú doménu"
+      ],
+      "How to set up SMTP": [
+        "Ako nastaviť SMTP"
+      ],
+      "How to share a calendar": [
+        "Ako zdieľať kalendár"
+      ],
+      "How to share via email": [
+        "Ako zdieľať prostredníctvom emailu"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Ako používať ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Ako používať ${ PASS_APP_NAME } Business"
+      ],
+      "How to use email forwarding": [
+        "Ako používať preposielanie emailov"
+      ],
+      "How to use Groups": [
+        "Ako používať skupiny"
       ],
       "if your data is leaked": [
         "ak dôjde k úniku vašich údajov"
@@ -6084,6 +6231,9 @@
       ],
       "settings": [
         "nastavenia"
+      ],
+      "Types of recovery methods": [
+        "Typy spôsobov obnovenia"
       ],
       "What’s this?": [
         "Čo je to?"
@@ -7670,6 +7820,9 @@
       "Public link update access failed ": [
         "Aktualizácia verejného odkazu zlyhala "
       ],
+      "Recent documents updated": [
+        "Nedávne dokumenty boli aktualizované"
+      ],
       "Root folder failed to be loaded": [
         "Nepodarilo sa načítať koreňový priečinok"
       ],
@@ -8032,10 +8185,10 @@
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
@@ -8159,6 +8312,9 @@
       "Name or email address": [
         "Meno alebo emailová adresa"
       ],
+      "Organization name": [
+        "Názov organizácie"
+      ],
       "Password": [
         "Heslo"
       ],
@@ -8191,6 +8347,9 @@
       ],
       "Start typing an email address": [
         "Začnite písať emailovú adresu"
+      ],
+      "Your organization name": [
+        "Názov vašej organizácie"
       ]
     },
     "Placeholder for contact group name": {
@@ -8323,6 +8482,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Registrácia nebola úspešne dokončená."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Nastavenie organizácie a zabezpečenie účtu"
       ]
     },
     "Security Center": {
@@ -9022,9 +9186,9 @@
       ],
       "VPN connection for ${ n } devices per user": [
         "VPN pripojenie pre ${ n } zariadenie na používateľa",
-        "VPN pripojenia pre ${ n } zariadenia na používateľa",
-        "VPN pripojení pre ${ n } zariadení na používateľa",
-        "VPN pripojení pre ${ n } zariadení na používateľa"
+        "VPN pripojenie pre ${ n } zariadenia na používateľa",
+        "VPN pripojenie pre ${ n } zariadení na používateľa",
+        "VPN pripojenie pre ${ n } zariadení na používateľa"
       ]
     },
     "Subscription change warning": {
@@ -9153,11 +9317,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Ušetríte"
       ]
     },
     "Success": {
@@ -9641,6 +9800,9 @@
       "Enable 2FA": [
         "Povoliť 2FA"
       ],
+      "Enable advanced account protection": [
+        "Povoliť pokročilú ochranu účtu"
+      ],
       "End-to-end encrypted": [
         "End-to-end šifrované"
       ],
@@ -9776,6 +9938,12 @@
       "Open actions dropdown": [
         "Otvoriť rozbaľovaciu ponuku"
       ],
+      "Org setup": [
+        "Nastavenie organizácie"
+      ],
+      "Organization setup": [
+        "Nastavenie organizácie"
+      ],
       "Other information": [
         "Ďalšie informácie"
       ],
@@ -9877,6 +10045,12 @@
       ],
       "Sign out": [
         "Odhlásiť sa"
+      ],
+      "Simplify email distribution": [
+        "Zjednodušte distribúciu emailov"
+      ],
+      "Simplify password management": [
+        "Zjednodušte správu hesiel"
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
