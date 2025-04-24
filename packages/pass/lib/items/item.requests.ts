@@ -1,4 +1,4 @@
-import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_MAX_BATCH_PER_REQUEST, MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -19,27 +19,51 @@ import type {
     ItemMoveMultipleToShareRequest,
     ItemRevision,
     ItemRevisionContentsResponse,
+    ItemRevisionID,
     ItemRevisionsIntent,
     ItemType,
     ItemUpdateFlagsRequest,
     Maybe,
     SelectedItem,
     SelectedRevision,
+    UniqueItem,
 } from '@proton/pass/types';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import chunk from '@proton/utils/chunk';
 import identity from '@proton/utils/identity';
 
 import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
-import { batchByShareId, intoRevisionID } from './item.utils';
 
 export const getItemKeys = async (shareId: string, itemId: string): Promise<EncodedItemKeyRotation[]> => {
     const { Keys: result } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key`, method: 'get' });
     return result.Keys;
 };
+
+/** Converts an item revision to a revision request payload  */
+export const intoRevisionID = <T extends SelectedRevision>(item: T): ItemRevisionID => ({
+    ItemID: item.itemId,
+    Revision: item.revision,
+});
+
+/** Batches a list of items by shareId : each individual share
+ * batch is in turn batched according to the provided `batchSize` */
+export const batchByShareId = <T extends UniqueItem, R>(
+    items: T[],
+    mapTo: (item: T) => R,
+    batchSize: number = MAX_MAX_BATCH_PER_REQUEST
+): { shareId: string; items: R[] }[] =>
+    groupByKey(items, 'shareId').flatMap((shareTrashedItems) => {
+        const batches = chunk(shareTrashedItems, batchSize);
+        return batches.map((batch) => ({
+            shareId: batch[0].shareId,
+            items: batch.map(mapTo),
+        }));
+    });
 
 /* Item creation API request for all items
  * except for alias items */
