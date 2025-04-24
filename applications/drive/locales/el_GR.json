@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
+      "Failed to save photo to your Drive": [
+        "Αποτυχία αποθήκευσης της φωτογραφίας στο Drive σας"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Η διαδικασία πληρωμής δεν υποστηρίζεται"
+      ],
+      "Photo saved to your Drive": [
+        "Η φωτογραφία αποθηκεύτηκε στο Drive σας"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Η μεταφόρτωση φωτογραφιών είναι προσωρινά απενεργοποιημένη. Προσπαθήστε ξανά αργότερα"
@@ -5131,9 +5137,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
       ],
-      "MM/YY": [
-        "ΜΜ/ΧΧ"
-      ],
       "Monitor accounts": [
         "Παρακολούθηση λογαριασμών"
       ],
@@ -5287,6 +5290,9 @@
       "Please enter the password to decrypt and view content.": [
         "Εισαγάγετε τον κωδικό πρόσβασης για να αποκρυπτογραφήσετε και να προβάλετε περιεχόμενο."
       ],
+      "Please fill in all required fields.": [
+        "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
       ],
@@ -5336,9 +5342,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Παρακαλούμε περιμένετε όσο ενημερώνουμε τα δεδομένα σας, μπορεί να χρειαστούν λίγα δευτερόλεπτα."
       ],
       "Preparing link to file": [
         "Προετοιμασία συνδέσμου προς το αρχείο"
@@ -5477,6 +5480,9 @@
       ],
       "Setting up ${ feature }…": [
         "Ρύθμιση ${ feature }…"
+      ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Ρύθμιση Άλμπουμ και Φίλτρων. Αυτό μπορεί να πάρει μερικά λεπτά."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
@@ -6309,9 +6315,6 @@
       "Beta Access": [
         "Πρόσβαση Beta"
       ],
-      "Billing address": [
-        "Διεύθυνση χρέωσης"
-      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -6468,9 +6471,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Διαγραφή αυτού του συνδέσμου και κατάργηση όλων των ατόμων με πρόσβαση"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Λήξη (${ patternExpiration })"
       ],
       "Expired": [
         "Έχει λήξει"
@@ -6681,9 +6681,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
-      ],
-      "Security code (${ codeName })": [
-        "Κωδικός ασφαλείας (${ codeName })"
       ],
       "Select type of abuse": [
         "Επιλογή τύπου κατάχρησης"
@@ -8731,11 +8728,11 @@
       "Invite members": [
         "Προσκαλέστε μέλη"
       ],
-      "Maybe Later": [
-        "Ίσως Αργότερα"
-      ],
       "Maybe later": [
         "Ίσως αργότερα"
+      ],
+      "Maybe Later": [
+        "Ίσως Αργότερα"
       ],
       "Select theme": [
         "Επιλογή θέματος"
@@ -10345,8 +10342,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Αποθήκευση"
+      "Save ${ priceString }": [
+        "Εξοικονομίστε ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11356,11 +11353,11 @@
       "Untitled document ${ date }": [
         "Έγγραφο χωρίς τίτλο ${ date }"
       ],
-      "Updating your photos": [
-        "Πραγματοποιείται ενημέρωση των φωτογραφιών σας"
-      ],
       "Upgrade complete!": [
         "Η αναβάθμιση ολοκληρώθηκε!"
+      ],
+      "Upgrading your Photos experience": [
+        "Αναβάθμιση της εμπειρίας σας στις Φωτογραφίες"
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"

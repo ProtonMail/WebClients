@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
       ],
+      "Failed to save photo to your Drive": [
+        "Impossibile salvare la foto nel tuo Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Processo di pagamento non supportato"
+      ],
+      "Photo saved to your Drive": [
+        "Foto salvata nel tuo Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi."
@@ -5131,9 +5137,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitora gli account"
       ],
@@ -5287,6 +5290,9 @@
       "Please enter the password to decrypt and view content.": [
         "Inserisci la password per decrittografare e visualizzare il contenuto."
       ],
+      "Please fill in all required fields.": [
+        "Compila tutti i campi obbligatori."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tieni presente che gli indirizzi assegnati a questi gruppi NON verranno eliminati."
       ],
@@ -5336,9 +5342,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Attendi mentre cerchiamo contatti che contengono dati crittografati con la chiave inattiva."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Attendi mentre aggiorniamo i tuoi dati. L'operazione potrebbe richiedere qualche secondo."
       ],
       "Preparing link to file": [
         "Preparazione del link al file"
@@ -5477,6 +5480,9 @@
       ],
       "Setting up ${ feature }…": [
         "Configurazione di ${ feature }…"
+      ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Configurazione di Album e Filtri. Questa operazione potrebbe richiedere alcuni minuti."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
@@ -6312,9 +6318,6 @@
       "Beta Access": [
         "Accesso beta"
       ],
-      "Billing address": [
-        "Indirizzo di fatturazione"
-      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -6471,9 +6474,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Elimina questo link e rimuovi chiunque abbia l'accesso"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Scadenza (${ patternExpiration })"
       ],
       "Expired": [
         "Scaduto"
@@ -6684,9 +6684,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Codice di sicurezza (${ codeName })"
       ],
       "Select type of abuse": [
         "Selezione tipo di abuso"
@@ -8787,10 +8784,10 @@
       "Invite members": [
         "Invita membri"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Forse più tardi"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Forse più tardi"
       ],
       "Select theme": [
@@ -10401,8 +10398,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Risparmia"
+      "Save ${ priceString }": [
+        "Risparmia ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11412,11 +11409,11 @@
       "Untitled document ${ date }": [
         "Documento senza titolo ${ date }"
       ],
-      "Updating your photos": [
-        "Aggiornamento delle tue foto"
-      ],
       "Upgrade complete!": [
         "Aggiornamento completato!"
+      ],
+      "Upgrading your Photos experience": [
+        "Migliora la tua esperienza di Foto"
       ],
       "Upload and share files": [
         "Carica e condividi file"

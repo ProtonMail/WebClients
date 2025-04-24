@@ -354,7 +354,7 @@
         "Last ned"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download (${ count })": [
         "Last ned (${ count })"
@@ -2592,7 +2592,7 @@
     },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
-        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert, kryptert miljø."
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
+      "Failed to save photo to your Drive": [
+        "Kunne ikke lagre bildet på din Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fil \"${ item.name }\" kunne ikke lastes opp på grunn av \"${ error }\" feilmelding"
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Betalingsprosess støttes ikke"
+      ],
+      "Photo saved to your Drive": [
+        "Bildet er lagret på din Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Opplasting av bilder er midlertidig deaktivert, prøv igjen senere."
@@ -4374,10 +4380,6 @@
         "${ pausedCount } satt på pause",
         "${ pausedCount } satt på pause"
       ],
-      "${ photoCount } item": [
-        "${ photoCount } element",
-        "${ photoCount } elementer"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
@@ -5131,9 +5133,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
@@ -5287,6 +5286,9 @@
       "Please enter the password to decrypt and view content.": [
         "Skriv inn passordet for å dekryptere og vise innhold."
       ],
+      "Please fill in all required fields.": [
+        "Fyll ut alle obligatoriske felt."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Legg merke til at adressene tildelt disse gruppene IKKE vil bli slettet."
       ],
@@ -5336,9 +5338,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Vent mens vi oppdaterer dataene dine. Dette kan ta noen sekunder."
       ],
       "Preparing link to file": [
         "Forbereder kobling til fil"
@@ -6309,9 +6308,6 @@
       "Beta Access": [
         "Beta-tilgang"
       ],
-      "Billing address": [
-        "Fakturaadresse"
-      ],
       "Billing cycle": [
         "Faktureringssyklus"
       ],
@@ -6468,9 +6464,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Slett denne koblingen og fjern alle med tilgang"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Utløpstid (${ patternExpiration })"
       ],
       "Expired": [
         "Utløpt"
@@ -6681,9 +6674,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Sikkerhetskode (${ codeName })"
       ],
       "Select type of abuse": [
         "Velg type misbruk"
@@ -6908,7 +6898,7 @@
         "Utkast"
       ],
       "Enforcing 2FA for organizations": [
-        "Håndheve 2FA for organisasjoner"
+        "Anvendelse av A2F for organisasjoner"
       ],
       "How to add users": [
         "Hvordan legge til brukere"
@@ -6923,7 +6913,7 @@
         "Hvordan aktivere ${ PROTON_SENTINEL_NAME }"
       ],
       "How to migrate to ${ BRAND_NAME }": [
-        "Slik migrerer du til ${ BRAND_NAME }"
+        "Hvordan migrere til ${ BRAND_NAME }"
       ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
@@ -6950,7 +6940,7 @@
         "Hvordan bruke ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Hvordan bruke postvideresending"
+        "Hvordan bruke videresending av e-post"
       ],
       "How to use Groups": [
         "Hvordan bruke grupper"
@@ -8788,10 +8778,10 @@
       "Invite members": [
         "Inviter medlemmer"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanskje senere"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanskje senere"
       ],
       "Select theme": [
@@ -10401,11 +10391,6 @@
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Spar"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Album som er delt med deg, vises her"
@@ -10946,7 +10931,7 @@
         "Nedlasting ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Last ned ${ DRIVE_APP_NAME }-apper"
+        "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download the app": [
         "Last ned appen"
@@ -11321,7 +11306,7 @@
         "Angi gjenopprettingsfrase"
       ],
       "Set up email forwarding": [
-        "Sett opp videresending av e-post"
+        "Konfigurer videresending av e-post"
       ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
@@ -11412,9 +11397,6 @@
       ],
       "Untitled document ${ date }": [
         "Dokument uten tittel ${ date }"
-      ],
-      "Updating your photos": [
-        "Oppdaterer bildene dine"
       ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
