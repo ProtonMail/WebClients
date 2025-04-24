@@ -1,7 +1,6 @@
 import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
@@ -67,22 +66,20 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     /* set initial `aliasPrefix` to an empty string to avoid a
      * form error state if `aliasOptions` have not loaded yet */
-    const [initialValues, initialErrors] = useMemo<[NewAliasFormValues, FormikErrors<NewAliasFormValues>]>(() => {
-        const initial: NewAliasFormValues = {
+    const initialValues = useMemo<NewAliasFormValues>(
+        () => ({
             shareId,
             aliasPrefix: '',
             aliasSuffix: undefined,
             files: filesFormInitializer(),
             mailboxes: [],
             ...defaults,
-        };
-
-        return [initial, validateNewAliasForm(initial)];
-    }, []);
+        }),
+        []
+    );
 
     const form = useFormik<NewAliasFormValues>({
         initialValues,
-        initialErrors,
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes, files }) => {
             if (needsUpgrade) return;
 
@@ -112,7 +109,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         },
         validate: validateNewAliasForm,
         validateOnChange: true,
-        validateOnMount: false,
+        validateOnMount: true,
     });
 
     const draft = useItemDraft<NewAliasFormValues>(form, {
@@ -136,7 +133,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             const draftAlias = draft ? reconciliateAliasFromDraft(formValues, options, defaultAlias) : null;
 
             const values = { ...formValues, ...(draftAlias ?? defaultAlias) };
-            const errors = validateNewAliasForm(values);
+            const errors = await validateNewAliasForm(values);
 
             if (draft) {
                 await form.setValues(values, true);
