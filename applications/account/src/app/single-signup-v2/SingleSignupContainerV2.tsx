@@ -30,8 +30,8 @@ import {
     DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
-    getPlansMap,
     getPlanNameFromIDs,
+    getPlansMap,
 } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -49,7 +49,7 @@ import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/helpers/url';
@@ -78,6 +78,7 @@ import type {
 import { getPlanIDsFromParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import { sendSignupAccountCreationTelemetry, sendSignupLoadTelemetry } from '../signup/signupTelemetry';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
@@ -570,6 +571,14 @@ const SingleSignupContainerV2 = ({
             const coupon = modifiedSignupParameters.coupon;
 
             const plansMap = getPlansMap(plans, currency, false);
+
+            sendSignupLoadTelemetry({
+                plan: getPlanFromPlanIDs(plansMap, planParameters.planIDs)?.Name || PLANS.FREE,
+                flowId: 'single-page-signup',
+                productIntent: toApp,
+                currency,
+                cycle,
+            });
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
@@ -1515,6 +1524,15 @@ const SingleSignupContainerV2 = ({
                                         }
                                     }
 
+                                    sendSignupAccountCreationTelemetry({
+                                        plan: getPlanNameFromIDs(cache.subscriptionData.planIDs) || PLANS.FREE,
+                                        flowId: 'single-page-signup',
+                                        productIntent: toApp,
+                                        currency: cache.subscriptionData.currency,
+                                        cycle: cache.subscriptionData.cycle,
+                                        signupType: cache.type === 'signup' ? cache.accountData.signupType : undefined,
+                                        amount: cache.subscriptionData.checkResult.AmountDue,
+                                    });
                                     metrics.core_single_signup_setup_total.increment({
                                         status: 'success',
                                     });
