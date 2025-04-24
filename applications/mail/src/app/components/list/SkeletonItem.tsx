@@ -1,6 +1,5 @@
 import { memo } from 'react';
 
-import type { Breakpoints } from '@proton/components';
 import { ItemCheckbox } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
@@ -16,19 +15,9 @@ interface Props {
     columnLayout: boolean;
     element: Element;
     index: number;
-    breakpoints: Breakpoints;
 }
 
-const SkeletonItem = ({
-    labelID,
-    conversationMode,
-    isCompactView,
-    loading,
-    element,
-    columnLayout,
-    index,
-    breakpoints,
-}: Props) => {
+const SkeletonItem = ({ labelID, conversationMode, isCompactView, loading, element, columnLayout, index }: Props) => {
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
 
     return (
@@ -66,7 +55,6 @@ const SkeletonItem = ({
                     conversationMode={conversationMode}
                     showIcon={false}
                     unread={false}
-                    breakpoints={breakpoints}
                     isSelected={false}
                 />
             </div>

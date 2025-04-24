@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { ContactEditProps } from '@proton/components';
+import { type ContactEditProps } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
@@ -22,7 +22,6 @@ interface Props {
     isLoading: boolean;
     signingPublicKey?: PublicKeyReference;
     attachedPublicKey?: PublicKeyReference;
-    isSmallViewport?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
     hideAddress?: boolean;
@@ -42,7 +41,6 @@ const RecipientItem = ({
     isLoading,
     signingPublicKey,
     attachedPublicKey,
-    isSmallViewport,
     showDropdown,
     isOutside = false,
     hideAddress,
@@ -84,7 +82,6 @@ const RecipientItem = ({
                     globalIcon={globalIcon}
                     signingPublicKey={signingPublicKey}
                     attachedPublicKey={attachedPublicKey}
-                    isSmallViewport={isSmallViewport}
                     showDropdown={showDropdown}
                     isOutside={isOutside}
                     hideAddress={hideAddress}

@@ -191,7 +191,6 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                 onCheck={handleCheck}
                 onClick={handleElement}
                 isSearch={isSearching}
-                breakpoints={breakpoints}
                 page={page}
                 total={total}
                 onPage={handlePage}
