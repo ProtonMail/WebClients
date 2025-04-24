@@ -287,7 +287,7 @@
         "Conectar aplicaciones y dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar a la videoconferencia"
+        "Conectarte a la videoconferencia"
       ],
       "Connected": [
         "Conectado"
@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Reenviar a"
       ],
-      "Or": [
-        "O"
-      ],
       "or": [
         "o"
+      ],
+      "Or": [
+        "O"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -7445,6 +7445,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** no es compatible con tu organización **${ organizationName }**."
       ],
+      "**${ appName }** is not supported**.": [
+        "**${ appName }** no es compatible.**"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Consigue una dirección de ${ BRAND_NAME }** para usar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8756,9 +8759,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -9024,6 +9024,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
+      ],
+      "Please fill in all required fields.": [
+        "Rellena todos los campos obligatorios."
       ],
       "Please fill out this field.": [
         "Rellena este campo."
@@ -11027,10 +11030,10 @@
       "Allow sharing outside the organization": [
         "Permitir compartir fuera de la organización"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11042,10 +11045,10 @@
       "Amount due": [
         "Importe a pagar"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
       "and": [
@@ -11113,9 +11116,6 @@
       ],
       "Beta": [
         "Versión beta"
-      ],
-      "Billing address": [
-        "Dirección de facturación"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -11417,9 +11417,6 @@
       "Exclude Spam/Trash from All mail": [
         "Excluir Spam/Papelera de Todos los mensajes"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -11474,11 +11471,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -11681,13 +11678,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Organization name": [
@@ -11818,9 +11815,6 @@
       ],
       "Second password": [
         "Segunda contraseña"
-      ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
       ],
       "Send auto-reply": [
         "Enviar respuesta automática"
@@ -18008,8 +18002,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorra un ${ priceString }"
       ]
     },
     "Subscription status": {
