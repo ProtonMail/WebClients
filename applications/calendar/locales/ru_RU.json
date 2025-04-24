@@ -740,10 +740,10 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Улучшить сейчас"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Улучшить сейчас"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5036,9 +5036,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
       ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
       "Monitor accounts": [
         "Отслеживать аккаунты"
       ],
@@ -5853,9 +5850,6 @@
       "Beta Access": [
         "Бета доступ"
       ],
-      "Billing address": [
-        "Адрес для выставления счета"
-      ],
       "Billing cycle": [
         "Платежный цикл"
       ],
@@ -5990,9 +5984,6 @@
       ],
       "Every": [
         "Каждый"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Срок действия (${ patternExpiration })"
       ],
       "Expires": [
         "Срок действия"
@@ -6170,9 +6161,6 @@
       ],
       "Secondary time zone": [
         "Дополнительный часовой пояс"
-      ],
-      "Security code (${ codeName })": [
-        "Код безопасности (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Показывать другим, когда я занят"
@@ -6773,6 +6761,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6794,26 +6802,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9725,11 +9713,6 @@
         "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Сэкономьте"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } контакт выглядит одинаково.",
@@ -11288,9 +11271,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Присоединиться к встрече в Zoom"
-      ],
       "Meeting ID:": [
         "ID встречи:"
       ],

@@ -803,10 +803,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5278,9 +5278,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
       ],
-      "MM/YY": [
-        "MM/RR"
-      ],
       "Monitor accounts": [
         "Monitoring kont"
       ],
@@ -6191,9 +6188,6 @@
       "Beta Access": [
         "Dostęp beta"
       ],
-      "Billing address": [
-        "Adres rozliczeniowy"
-      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -6331,9 +6325,6 @@
       ],
       "Every": [
         "Co"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Data wygaśnięcia (${ patternExpiration })"
       ],
       "Expires": [
         "Wygasa"
@@ -6514,9 +6505,6 @@
       ],
       "Secondary time zone": [
         "Dodatkowa strefa czasowa"
-      ],
-      "Security code (${ codeName })": [
-        "Kod zabezpieczający (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Pokaż, kiedy jestem zajęty"
@@ -7180,6 +7168,26 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -7201,26 +7209,6 @@
       ],
       "Switch plan": [
         "Zmień plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10231,11 +10219,6 @@
         "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Zaoszczędź"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt wygląda identycznie.",
@@ -11914,9 +11897,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Dołącz do spotkania Zoom"
-      ],
       "Meeting ID:": [
         "Identyfikator spotkania:"
       ],

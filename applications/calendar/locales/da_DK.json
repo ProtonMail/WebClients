@@ -743,11 +743,11 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade Now": [
-        "Opgradere nu"
-      ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade Now": [
+        "Opgradere nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Opgrader til ${ BRAND_NAME } Unlimited"
@@ -4897,9 +4897,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Beskeder til alle dine e-mailadresser ender i din indbakke."
       ],
-      "MM/YY": [
-        "MM/ÅÅ"
-      ],
       "Monitor accounts": [
         "Overvåg konti"
       ],
@@ -5693,9 +5690,6 @@
       "Beta Access": [
         "Beta-adgang"
       ],
-      "Billing address": [
-        "Faktureringsadresse"
-      ],
       "Billing cycle": [
         "Faktureringsperiode"
       ],
@@ -5830,9 +5824,6 @@
       ],
       "Every": [
         "Hver"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Udløb (${ patternExpiration })"
       ],
       "Expires": [
         "Udløber"
@@ -6005,9 +5996,6 @@
       ],
       "Secondary time zone": [
         "Sekundær tidszone"
-      ],
-      "Security code (${ codeName })": [
-        "Sikkerhedskode (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Vis andre, når jeg er optaget"
@@ -6586,6 +6574,23 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6607,23 +6612,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9298,11 +9286,6 @@
         "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden slutningen af faktureringsperioden. Vi kan ikke automatisk nedgradere dig, for hvis du har overskredet lagerpladsen for det gratis abonnement eller bruger andre betalte funktioner, kan vi ikke automatisk slette filer, e-mails eller andre data for dig. Hvis du deaktiverer automatisk betaling, skal du huske at betale din næste abonnementsfakture inden forfaldsdatoen for at forhindre suspendering af kontoen."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Spar"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ud.",
@@ -10737,9 +10720,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Deltag i Zoom-møde"
-      ],
       "Meeting ID:": [
         "Møde-ID:"
       ],

@@ -770,10 +770,10 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Päivitä tilaus nyt"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5008,9 +5008,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
       ],
-      "MM/YY": [
-        "KK/VV"
-      ],
       "Monitor accounts": [
         "Valvo tilejä"
       ],
@@ -5877,9 +5874,6 @@
       "Beta Access": [
         "Käytä beetaversiota"
       ],
-      "Billing address": [
-        "Laskutusosoite"
-      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -6017,9 +6011,6 @@
       ],
       "Every": [
         "Joka"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Voimassaolon päättymisaika (${ patternExpiration })"
       ],
       "Expires": [
         "Erääntyy"
@@ -6195,9 +6186,6 @@
       ],
       "Secondary time zone": [
         "Toissijainen aikavyöhyke"
-      ],
-      "Security code (${ codeName })": [
-        "Turvakoodi (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Näytä muille koska olen varattu"
@@ -6806,6 +6794,26 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -6827,26 +6835,6 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9612,11 +9600,6 @@
         "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Tilaustasi ei voida alentaa automaattisesti, koska emme voi poistaa tiedostoja, viestejä tai muita tietoja puolestasi, jos olet ylittänyt ilmaistilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia. Jos poistat automaattiveloituksen käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin jäädyttämisen."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Säästä"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
@@ -11130,9 +11113,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Liity Zoomiin"
-      ],
       "Meeting ID:": [
         "Kokouksen ID:"
       ],

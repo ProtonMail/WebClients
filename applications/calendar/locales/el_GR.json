@@ -797,11 +797,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
@@ -5130,9 +5130,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
       ],
-      "MM/YY": [
-        "ΜΜ/ΧΧ"
-      ],
       "Monitor accounts": [
         "Παρακολούθηση λογαριασμών"
       ],
@@ -5228,6 +5225,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Επαληθεύστε την πληρωμή σας στην καρτέλα επαλήθευσης."
+      ],
+      "Please fill in all required fields.": [
+        "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
@@ -6017,9 +6017,6 @@
       "Beta Access": [
         "Πρόσβαση Beta"
       ],
-      "Billing address": [
-        "Διεύθυνση χρέωσης"
-      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -6157,9 +6154,6 @@
       ],
       "Every": [
         "Κάθε"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Λήξη (${ patternExpiration })"
       ],
       "Expires": [
         "Λήγει"
@@ -6341,9 +6335,6 @@
       ],
       "Secondary time zone": [
         "Δευτερεύουσα ζώνη ώρας"
-      ],
-      "Security code (${ codeName })": [
-        "Κωδικός ασφαλείας (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Εμφάνιση σε άλλους όταν είμαι απασχολημένος"
@@ -6991,6 +6982,26 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7012,26 +7023,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9104,6 +9095,11 @@
         "Υπογράψτε"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Συμμετοχή σε ομαδική συνομιλία στο Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Πιο γρήγορα στην εφαρμογή"
@@ -9863,8 +9859,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Αποθήκευση"
+      "Save ${ priceString }": [
+        "Εξοικονομίστε ${ priceString }"
       ]
     },
     "Success": {
@@ -10146,6 +10142,11 @@
       ],
       "vCard field": [
         "πεδίο vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Συνδεθείτε στη σύσκεψη Teams"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11419,6 +11420,11 @@
         "Ετησίως, ${ untilString }"
       ]
     },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Συνδεθείτε στη σύσκεψη Zoom"
+      ]
+    },
     "Zoom integration": {
       "Add Zoom meeting": [
         "Προσθήκη τηλεδιάσκεψης Zoom"
@@ -11431,9 +11437,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Συνδεθείτε στη σύσκεψη Zoom"
-      ],
       "Meeting ID:": [
         "ID συνάντησης:"
       ],

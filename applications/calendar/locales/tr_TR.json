@@ -797,10 +797,10 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Şimdi yükselt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Şimdi yükselt"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5130,9 +5130,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
       ],
-      "MM/YY": [
-        "AA/YY"
-      ],
       "Monitor accounts": [
         "Hesapları izle"
       ],
@@ -5228,6 +5225,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Lütfen doğrulama sekmesinden ödemenizi doğrulayın."
+      ],
+      "Please fill in all required fields.": [
+        "Lütfen gerekli tüm alanları doldurun."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
@@ -6017,9 +6017,6 @@
       "Beta Access": [
         "Beta erişimi"
       ],
-      "Billing address": [
-        "Fatura adresi"
-      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -6157,9 +6154,6 @@
       ],
       "Every": [
         "Her"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Geçerlilik süresi (${ patternExpiration })"
       ],
       "Expires": [
         "Geçerlilik sonu"
@@ -6341,9 +6335,6 @@
       ],
       "Secondary time zone": [
         "İkincil saat dilimi"
-      ],
-      "Security code (${ codeName })": [
-        "Güvenlik kodu (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Meşgul olduğum zamanlar başkalarına görüntülensin"
@@ -6991,6 +6982,26 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7012,26 +7023,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -9862,11 +9853,6 @@
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Kazancınız"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kişi aynı görünüyor.",
@@ -11431,9 +11417,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Zoom görüşmesine katıl"
-      ],
       "Meeting ID:": [
         "Görüşme kimliği:"
       ],

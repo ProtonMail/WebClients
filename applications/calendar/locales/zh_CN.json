@@ -794,10 +794,10 @@
       "Upgrade": [
         "升级账户"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "立即升级账户"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "立即升级账户"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5056,9 +5056,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
-      "MM/YY": [
-        "月/年"
-      ],
       "Monitor accounts": [
         "监控账户"
       ],
@@ -5154,6 +5151,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "请在验证页面确认支付。"
+      ],
+      "Please fill in all required fields.": [
+        "请填写所有必填项。"
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "请注意，分配给这些组的地址不会被删除。"
@@ -5930,9 +5930,6 @@
       "Beta Access": [
         "测试版功能"
       ],
-      "Billing address": [
-        "账单地址"
-      ],
       "Billing cycle": [
         "计费周期"
       ],
@@ -6070,9 +6067,6 @@
       ],
       "Every": [
         "每个"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "到期 (${ patternExpiration })"
       ],
       "Expires": [
         "有效期至"
@@ -6253,9 +6247,6 @@
       ],
       "Secondary time zone": [
         "第二时区"
-      ],
-      "Security code (${ codeName })": [
-        "安全码 (${ codeName })"
       ],
       "Show others when I'm busy": [
         "向他人展示我忙碌的时间"
@@ -6895,6 +6886,26 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6916,26 +6927,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9676,11 +9667,6 @@
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "节省"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 位联系人信息似乎完全相同。"
@@ -11185,9 +11171,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "加入 Zoom 会议"
-      ],
       "Meeting ID:": [
         "会议 ID："
       ],
