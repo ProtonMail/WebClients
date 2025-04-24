@@ -34,6 +34,7 @@ interface ToolbarProps {
     onShowDetails: () => void;
     onRemoveAlbumPhotos: () => Promise<void>;
     onSavePhoto: () => Promise<void>;
+    onStartUpload: () => void;
 }
 
 export const Toolbar = ({
@@ -62,6 +63,7 @@ export const Toolbar = ({
     onShowDetails,
     onRemoveAlbumPhotos,
     onSavePhoto,
+    onStartUpload,
 }: ToolbarProps) => {
     switch (currentPageType) {
         case AlbumsPageTypes.ALBUMS:
@@ -84,6 +86,8 @@ export const Toolbar = ({
                     linkId={uploadLinkId}
                     selectedCount={selectedCount}
                     onAddAlbumPhotos={onAddAlbumPhotos}
+                    onStartUpload={onStartUpload}
+                    onFileUpload={onFileUpload}
                 />
             );
         default:
