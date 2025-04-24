@@ -2638,7 +2638,7 @@
         "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
       ],
       "Configure this first to activate your organization and customize your email address.": [
-        "Спачатку сканфігурыруйце гэту функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
+        "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
@@ -3093,6 +3093,9 @@
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
+      "Failed to save photo to your Drive": [
+        "Не ўдалося захаваць фатаграфію на ваш Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" немагчыма запампаваць па прычыне памылкі \"${ error }\""
       ],
@@ -3230,6 +3233,9 @@
       ],
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
+      ],
+      "Photo saved to your Drive": [
+        "Фатаграфія захавана на ваш Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Запампоўванне фатаграфій часова адключана. Паспрабуйце яшчэ раз пазней"
@@ -5291,9 +5297,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
       ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
@@ -5447,6 +5450,9 @@
       "Please enter the password to decrypt and view content.": [
         "Увядзіце пароль для расшыфроўкі і прагляду змесціва."
       ],
+      "Please fill in all required fields.": [
+        "Запоўніце ўсе абавязковыя палі."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
       ],
@@ -5500,9 +5506,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Пачакайце, пакуль мы абновім вашы даныя. Гэта можа заняць некалькі секунд."
       ],
       "Preparing link to file": [
         "Падрыхтоўка спасылкі на файл"
@@ -5694,7 +5697,7 @@
         "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да вашых файлаў. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незаваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
+        "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
@@ -6021,7 +6024,7 @@
         "Так трымаць! Мы толькі што павялічылі ваша сховішча да 5 ГБ!"
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "У нас узніклі тэхнічныя праблемы. Усе дзеянні, якія звязаны з альбамамі, часова адключаны."
+        "У нас узніклі тэхнічныя праблемы. Часова адключаны ўсе дзеянні, якія звязаны з альбомамі."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "У нас узніклі тэхнічныя праблемы. Запампоўванне новых фатаграфій часова адключана."
@@ -6501,9 +6504,6 @@
       "Beta Access": [
         "Бэта-доступ"
       ],
-      "Billing address": [
-        "Адрас для аплаты"
-      ],
       "Billing cycle": [
         "Перыяд аплаты"
       ],
@@ -6662,9 +6662,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Сцерці гэту спасылку і выдаліць доступ для ўсіх"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Тэрмін дзеяння (${ patternExpiration })"
       ],
       "Expired": [
         "Пратэрмінавана"
@@ -6875,9 +6872,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
-      ],
-      "Security code (${ codeName })": [
-        "Код бяспекі (${ codeName })"
       ],
       "Select type of abuse": [
         "Выберыце тып парушэння"
@@ -9074,10 +9068,10 @@
       "Invite members": [
         "Запрасіць удзельнікаў"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Магчыма пазней"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Магчыма пазней"
       ],
       "Select theme": [
@@ -10764,8 +10758,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Захаваць"
+      "Save ${ priceString }": [
+        "Эканомія ${ priceString }"
       ]
     },
     "Subtitle": {
@@ -11725,7 +11719,7 @@
         "Задаць фразу аднаўлення"
       ],
       "Set up email forwarding": [
-        "Наладжванне перысылкі лістоў"
+        "Наладжванне перасылкі лістоў"
       ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
@@ -11816,9 +11810,6 @@
       ],
       "Untitled document ${ date }": [
         "Дакумент без назвы ад ${ date }"
-      ],
-      "Updating your photos": [
-        "Абнаўленне вашых фатаграфій"
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"

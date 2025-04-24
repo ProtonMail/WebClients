@@ -3061,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
+      "Failed to save photo to your Drive": [
+        "Kan de foto niet opslaan in uw Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
       ],
@@ -3192,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
+      ],
+      "Photo saved to your Drive": [
+        "Foto opgeslagen in uw Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Foto-upload is tijdelijk uitgeschakeld. Probeer het later opnieuw"
@@ -4374,10 +4380,6 @@
         "${ pausedCount } onderbroken",
         "${ pausedCount } onderbroken"
       ],
-      "${ photoCount } item": [
-        "${ photoCount } item",
-        "${ photoCount } items"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
@@ -5131,9 +5133,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
-      "MM/YY": [
-        "MM/JJ"
-      ],
       "Monitor accounts": [
         "Accounts monitoren"
       ],
@@ -5287,6 +5286,9 @@
       "Please enter the password to decrypt and view content.": [
         "Voer een wachtwoord in om de content te ontsleutelen en te bekijken."
       ],
+      "Please fill in all required fields.": [
+        "Vul alle verplichte velden in."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
       ],
@@ -5336,9 +5338,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Even geduld terwijl we uw gegevens bijwerken. Dit kan enkele seconden duren."
       ],
       "Preparing link to file": [
         "Link naar bestand wordt voorbereid"
@@ -5477,6 +5476,9 @@
       ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
+      ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Albums en filters instellen. Dit kan enkele minuten duren."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
@@ -6309,9 +6311,6 @@
       "Beta Access": [
         "Bèta toegang"
       ],
-      "Billing address": [
-        "Facturatie adres"
-      ],
       "Billing cycle": [
         "Facturatieperiode"
       ],
@@ -6468,9 +6467,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Wis deze link en verwijder iedereen met toegang"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Verloopdatum (${ patternExpiration })"
       ],
       "Expired": [
         "Verlopen"
@@ -6681,9 +6677,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
-      ],
-      "Security code (${ codeName })": [
-        "Beveiligingscode (${ codeName })"
       ],
       "Select type of abuse": [
         "Selecteer soort misbruik"
@@ -8731,10 +8724,10 @@
       "Invite members": [
         "Nodig leden uit"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Misschien later"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Misschien later"
       ],
       "Select theme": [
@@ -10344,11 +10337,6 @@
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Bespaar"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Albums met u gedeeld zullen hier weergegeven worden"
@@ -11356,11 +11344,11 @@
       "Untitled document ${ date }": [
         "Naamloos document ${ date }"
       ],
-      "Updating your photos": [
-        "Uw foto's bijwerken"
-      ],
       "Upgrade complete!": [
         "Upgrade voltooid!"
+      ],
+      "Upgrading your Photos experience": [
+        "Uw Foto's-ervaring upgraden"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"

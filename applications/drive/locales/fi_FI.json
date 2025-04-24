@@ -4252,10 +4252,6 @@
         "${ pausedCount } pysäytetty",
         "${ pausedCount } pysäytettyä"
       ],
-      "${ photoCount } item": [
-        "${ photoCount } kohde",
-        "${ photoCount } kohdetta"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
@@ -4993,9 +4989,6 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
-      ],
-      "MM/YY": [
-        "KK/VV"
       ],
       "Monitor accounts": [
         "Valvo tilejä"
@@ -6114,9 +6107,6 @@
       "Beta Access": [
         "Käytä beetaversiota"
       ],
-      "Billing address": [
-        "Laskutusosoite"
-      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -6273,9 +6263,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Poista tämä linkki ja kaikki myönnetyt käyttöoikeudet"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Voimassaolon päättymisaika (${ patternExpiration })"
       ],
       "Expired": [
         "Erääntynyt"
@@ -6486,9 +6473,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
-      "Security code (${ codeName })": [
-        "Turvakoodi (${ codeName })"
       ],
       "Select type of abuse": [
         "Valitse väärinkäytön tyyppi"
@@ -8474,10 +8458,10 @@
       "Invite members": [
         "Kutsu jäseniä"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Ehkä myöhemmin"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Ehkä myöhemmin"
       ],
       "Select theme": [
@@ -10049,11 +10033,6 @@
         "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Tilaustasi ei voida alentaa automaattisesti, koska emme voi poistaa tiedostoja, viestejä tai muita tietoja puolestasi, jos olet ylittänyt ilmaistilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia. Jos poistat automaattiveloituksen käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin jäädyttämisen."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Säästä"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Sinulle jaetut albumit näkyvät tässä"
@@ -11024,9 +11003,6 @@
       ],
       "Untitled document ${ date }": [
         "Nimetön dokumentti ${ date }"
-      ],
-      "Updating your photos": [
-        "Kuviasi päivitetään"
       ],
       "Upgrade complete!": [
         "Päivitys valmis!"

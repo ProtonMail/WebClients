@@ -210,6 +210,9 @@
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
       ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
+      ],
       "Contact group": [
         "Grupo de contactos"
       ],
@@ -727,6 +730,9 @@
       ],
       "Remove bonuses": [
         "Remover bónus"
+      ],
+      "Remove button": [
+        "Remover o botão"
       ],
       "Remove device": [
         "Remover o dispositivo"
@@ -3055,6 +3061,9 @@
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
+      "Failed to save photo to your Drive": [
+        "Erro ao guardar a foto no seu Drive"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "O ficheiro \"${ item.name }\" não pode ser enviado devido ao erro \"${ error }\"."
       ],
@@ -3186,6 +3195,9 @@
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
+      ],
+      "Photo saved to your Drive": [
+        "Foto guardada no seu Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
@@ -5125,9 +5137,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para a sua caixa de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitor de contas"
       ],
@@ -5281,6 +5290,9 @@
       "Please enter the password to decrypt and view content.": [
         "Introduza a palavra-passe para desencriptar e ver o conteúdo."
       ],
+      "Please fill in all required fields.": [
+        "Preencha todos os campos obrigatórios."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Note que os endereços atribuídos a estes grupos NÃO serão eliminados."
       ],
@@ -5330,9 +5342,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto pesquisamos contactos que contenham dados encriptados com a chave inativa."
-      ],
-      "Please wait while we update your data this may take a few seconds.": [
-        "Aguarde enquanto atualizamos os seus dados. Esta ação pode demorar alguns segundos."
       ],
       "Preparing link to file": [
         "A preparar ligação ao ficheiro"
@@ -5522,6 +5531,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns dos seus ficheiros já não estão acessíveis. Restaure o acesso aos ficheiros. ${ StartRecoveryButton }"
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Algumas fotos deste álbum não estão guardadas na sua cronologia. Eliminar este álbum eliminará essas fotos permanentemente."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alguns sítios web e serviços de streaming bloqueiam os conteúdos por região. Uma VPN permite ignorar estas restrições e aceder à internet livremente."
@@ -6300,9 +6312,6 @@
       "Beta Access": [
         "Acesso Beta"
       ],
-      "Billing address": [
-        "Endereço de faturação"
-      ],
       "Billing cycle": [
         "Ciclo de faturação"
       ],
@@ -6459,9 +6468,6 @@
       ],
       "Erase this link and remove everyone with access": [
         "Apagar esta ligação e remover todos os que têm acesso"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiração (${ patternExpiration })"
       ],
       "Expired": [
         "Expirado"
@@ -6672,9 +6678,6 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genebra"
-      ],
-      "Security code (${ codeName })": [
-        "Código de segurança (${ codeName })"
       ],
       "Select type of abuse": [
         "Selecione o tipo de abuso"
@@ -6897,6 +6900,9 @@
       ],
       "Drafts": [
         "Rascunhos"
+      ],
+      "Enforcing 2FA for organizations": [
+        "Aplicação da A2F para as organizações"
       ],
       "How to add users": [
         "Como adicionar utilizadores"
@@ -8719,10 +8725,10 @@
       "Invite members": [
         "Convidar membros"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talvez mais tarde"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talvez mais tarde"
       ],
       "Select theme": [
@@ -10332,11 +10338,6 @@
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
-    "Subscription saving": {
-      "Save": [
-        "Poupe"
-      ]
-    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Os álbuns partilhados consigo aparecerão aqui."
@@ -10771,6 +10772,9 @@
       ],
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
+      ],
+      "Connect to video conferencing": [
+        "Ligar à videoconferência"
       ],
       "Connect your custom domain": [
         "Ligue o seu domínio personalizado"
@@ -11340,9 +11344,6 @@
       ],
       "Untitled document ${ date }": [
         "Documento sem título ${ date }"
-      ],
-      "Updating your photos": [
-        "Atualização das suas fotos"
       ],
       "Upgrade complete!": [
         "A subscrição foi atualizada."
