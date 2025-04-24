@@ -126,7 +126,10 @@ function useAppState() {
 // outer container
 // ---------------
 
-const HIDDEN_NOTIFICATIONS = ['Requested data does not exist or you do not have permission to access it']
+const HIDDEN_NOTIFICATIONS = [
+  'Requested data does not exist or you do not have permission to access it',
+  'Shared drive not found',
+]
 
 type OuterContainerProps = {
   store: DocsStore

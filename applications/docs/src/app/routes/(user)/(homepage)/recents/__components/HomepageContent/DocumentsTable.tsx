@@ -40,14 +40,14 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   return (
     <>
       <ContentSheet isBottom className="shrink-0 grow pb-4">
-        <table className="mb-0 w-full table-fixed text-[14px]">
+        <Table.Table>
           {itemsSections.map(({ id, items }, sectionIndex) => (
             <Fragment key={id}>
               <Head variant={variant} sectionId={id} isSecondary={sectionIndex > 0} />
               <Body variant={variant} items={items} />
             </Fragment>
           ))}
-        </table>
+        </Table.Table>
       </ContentSheet>
       <DocContextMenu
         currentDocument={contextMenu.currentDocument}
@@ -82,7 +82,7 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
 
   return (
     <Table.Head>
-      <Table.Header colSpan={!isSecondary ? undefined : 4}>
+      <Table.Header>
         <div className="flex items-center justify-between">
           <span className="flex flex-nowrap items-center gap-[.375rem]">
             <span>{getSectionLabel(sectionId)}</span>
@@ -186,11 +186,11 @@ type BodyProps = { items: RecentDocumentsItem[]; variant: TableVariant }
 
 function Body({ items, variant }: BodyProps) {
   return (
-    <tbody className="overflow-scroll">
+    <Table.Body>
       {items.map((recentDocument) => (
         <Row variant={variant} key={recentDocument.uniqueId()} document={recentDocument} />
       ))}
-    </tbody>
+    </Table.Body>
   )
 }
 

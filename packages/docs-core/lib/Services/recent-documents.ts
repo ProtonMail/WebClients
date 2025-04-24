@@ -253,6 +253,9 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       recentDocument.parentLinkId,
     )
 
+    this.snapshot.delete(recentDocument.uniqueId())
+    this.#sortRecents()
+
     this.state.setProperty('state', 'done')
   }
 }

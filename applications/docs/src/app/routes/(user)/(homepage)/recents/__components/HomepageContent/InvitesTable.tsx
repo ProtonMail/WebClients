@@ -52,7 +52,7 @@ export function InvitesTable(props: InvitesTableProps) {
       {...props}
       className={clsx('shrink-0', props.className)}
     >
-      <table className="mb-0 w-full table-fixed text-[14px]" data-testid="invites-table">
+      <Table.Table data-testid="invites-table">
         <Table.Head>
           <Table.Header data-testid="invite-column-name">
             <div className="flex items-center justify-between">
@@ -74,7 +74,7 @@ export function InvitesTable(props: InvitesTableProps) {
             </div>
           </Table.Header>
         </Table.Head>
-        <tbody>
+        <Table.Body>
           {visibleInvites.map((invite) => {
             if (recentlyAcceptedInvites.includes(invite)) {
               return null
@@ -169,8 +169,8 @@ export function InvitesTable(props: InvitesTableProps) {
               </Table.Row>
             )
           })}
-        </tbody>
-      </table>
+        </Table.Body>
+      </Table.Table>
       {collapseResolved && (
         <button
           onClick={() => setCollapsed(false)}
