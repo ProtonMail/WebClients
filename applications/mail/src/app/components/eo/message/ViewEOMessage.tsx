@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
-import { useActiveBreakpoint } from '@proton/components';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 
 import type { EOUrlParams } from '../../../helpers/eo/eoUrl';
@@ -20,7 +19,6 @@ interface Props {
 }
 
 const ViewEOMessage = ({ setSessionStorage }: Props) => {
-    const breakpoints = useActiveBreakpoint();
     const elementRef = useRef<HTMLDivElement>(null);
 
     const [originalMessageMode, setOriginalMessageMode] = useState(false);
@@ -63,7 +61,6 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
                             messageLoaded={messageLoaded}
                             onLoadRemoteImages={loadRemoteImages}
                             onLoadEmbeddedImages={loadEmbeddedImages}
-                            breakpoints={breakpoints}
                             parentMessageRef={elementRef}
                         />
                         <EOMessageBody

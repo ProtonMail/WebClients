@@ -9,7 +9,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { DateInput, Label, Option, PrimaryButton, SelectTwo } from '@proton/components';
+import { DateInput, Label, Option, PrimaryButton, SelectTwo, useActiveBreakpoint } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
@@ -106,7 +106,6 @@ const getKeyword = ({
 };
 
 interface Props {
-    isSmallViewport: boolean;
     showEncryptedSearch: boolean;
     onClose: () => void;
     esIndexingProgressState: ESIndexingState;
@@ -117,7 +116,6 @@ interface Props {
 }
 
 const AdvancedSearch = ({
-    isSmallViewport,
     showEncryptedSearch,
     onClose,
     esIndexingProgressState,
@@ -129,6 +127,9 @@ const AdvancedSearch = ({
     const searchInputRef = useRef<HTMLInputElement>(null);
     const history = useHistory();
     const [addresses = []] = useAddresses();
+
+    const breakpoints = useActiveBreakpoint();
+    const isSmallViewport = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
 
     const { sendClearSearchFieldsReport } = useSearchTelemetry();
     const { AlmostAllMail } = useMailModel('MailSettings');

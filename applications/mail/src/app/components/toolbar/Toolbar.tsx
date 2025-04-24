@@ -1,7 +1,7 @@
 import type { Ref } from 'react';
 import { memo } from 'react';
 
-import type { Breakpoints } from '@proton/components';
+import { useActiveBreakpoint } from '@proton/components';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -29,7 +29,6 @@ export interface Props extends ListSettingsProps {
     elementIDs: string[];
     columnMode: boolean;
     conversationMode: boolean;
-    breakpoints: Breakpoints;
     page: number;
     total: number | undefined;
     isSearch: boolean;
@@ -56,7 +55,9 @@ type Variant =
     | undefined;
 
 const Toolbar = (props: Props) => {
-    const { elementID, columnMode, breakpoints, selectedIDs = defaultSelectedIDs, toolbarInHeader } = props;
+    const { elementID, columnMode, selectedIDs = defaultSelectedIDs, toolbarInHeader } = props;
+    const breakpoints = useActiveBreakpoint();
+
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
     const listInView = columnMode || !elementID;
 

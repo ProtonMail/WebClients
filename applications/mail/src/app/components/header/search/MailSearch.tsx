@@ -4,8 +4,13 @@ import type { Location } from 'history';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { Breakpoints } from '@proton/components';
-import { TopNavbarListItemSearchButton, usePopperAnchor, useProgressiveRollout, useToggle } from '@proton/components';
+import {
+    TopNavbarListItemSearchButton,
+    useActiveBreakpoint,
+    usePopperAnchor,
+    useProgressiveRollout,
+    useToggle,
+} from '@proton/components';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { FeatureCode } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail';
@@ -23,13 +28,12 @@ import SearchOverlay from './SearchOverlay';
 import './Search.scss';
 
 interface Props {
-    breakpoints: Breakpoints;
     labelID: string;
     location: Location;
     columnMode: boolean;
 }
 
-const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
+const MailSearch = ({ labelID, location, columnMode }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const isESUserInterfaceAvailable = useProgressiveRollout(FeatureCode.ESUserInterface);
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
@@ -44,6 +48,8 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
+
+    const breakpoints = useActiveBreakpoint();
 
     const { sendClearSearchFieldsReport } = useSearchTelemetry();
 
@@ -115,7 +121,6 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
             )}
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
-                    isSmallViewport={breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium}
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esIndexingProgressState={esIndexingProgressState}

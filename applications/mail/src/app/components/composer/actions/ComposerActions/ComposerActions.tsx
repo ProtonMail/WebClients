@@ -315,7 +315,6 @@ const ComposerActions = ({
                             editorActionsRef={editorActionsRef}
                             editorMetadata={editorMetadata}
                             onChange={onChange}
-                            isSmallViewport={isSmallViewport}
                             isPassword={isPassword}
                             onPassword={onPassword}
                             onRemoveOutsideEncryption={handleRemoveOutsideEncryption}

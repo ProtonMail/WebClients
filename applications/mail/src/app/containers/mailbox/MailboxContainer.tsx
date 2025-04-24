@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import type { Breakpoints, CommanderItemInterface } from '@proton/components';
+import type { CommanderItemInterface } from '@proton/components';
 import {
     Commander,
     DrawerSidebar,
@@ -12,6 +12,7 @@ import {
     ErrorBoundary,
     InboxQuickSettingsAppButton,
     PrivateMainArea,
+    useActiveBreakpoint,
     useItemsSelection,
     useModalState,
 } from '@proton/components';
@@ -74,19 +75,11 @@ interface Props {
     labelID: string;
     mailSettings: MailSettings;
     userSettings: UserSettings;
-    breakpoints: Breakpoints;
     elementID?: string;
     messageID?: string;
 }
 
-const MailboxContainer = ({
-    labelID: inputLabelID,
-    mailSettings,
-    userSettings,
-    breakpoints,
-    elementID,
-    messageID,
-}: Props) => {
+const MailboxContainer = ({ labelID: inputLabelID, mailSettings, userSettings, elementID, messageID }: Props) => {
     const location = useLocation();
     const history = useHistory();
     const [labels] = useLabels();
@@ -96,6 +89,7 @@ const MailboxContainer = ({
     const { markAs, selectAllMarkModal } = useMarkAs();
     const listRef = useRef<HTMLDivElement>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
+    const breakpoints = useActiveBreakpoint();
     const forceRowMode =
         breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || breakpoints.viewportWidth.large;
     const columnModeSetting = isColumnMode(mailSettings);
@@ -412,7 +406,6 @@ const MailboxContainer = ({
                 elementIDs={elementIDs}
                 columnMode={columnMode}
                 conversationMode={conversationMode}
-                breakpoints={breakpoints}
                 onCheck={handleCheck}
                 page={page}
                 total={total}
@@ -559,7 +552,6 @@ const MailboxContainer = ({
                 data-testid="mailbox"
             >
                 <MailHeader
-                    breakpoints={breakpoints}
                     elementID={elementID}
                     selectedIDs={selectedIDs}
                     labelID={labelID}
@@ -591,7 +583,6 @@ const MailboxContainer = ({
                         onCheck={handleCheck}
                         onClick={handleElement}
                         isSearch={isSearch}
-                        breakpoints={breakpoints}
                         page={page}
                         total={total}
                         onPage={handlePage}
@@ -637,7 +628,6 @@ const MailboxContainer = ({
                                         mailSettings={mailSettings}
                                         conversationID={elementID as string}
                                         onBack={handleBack}
-                                        breakpoints={breakpoints}
                                         onMessageReady={onMessageReady}
                                         columnLayout={columnLayout}
                                         isComposerOpened={isComposerOpened}
@@ -650,7 +640,6 @@ const MailboxContainer = ({
                                         mailSettings={mailSettings}
                                         messageID={elementID as string}
                                         onBack={handleBack}
-                                        breakpoints={breakpoints}
                                         onMessageReady={onMessageReady}
                                         columnLayout={columnLayout}
                                         isComposerOpened={isComposerOpened}
