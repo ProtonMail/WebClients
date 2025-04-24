@@ -149,7 +149,6 @@ const HeaderExpanded = ({
             isLoading={!messageLoaded}
             signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
             attachedPublicKey={showPinPublicKey ? message.verification?.attachedPublicKeys?.[0] : undefined}
-            isSmallViewport={viewportWidth['<=small']}
             globalIcon={messageViewIcons.globalIcon}
             onContactDetails={onContactDetails}
             onContactEdit={onContactEdit}

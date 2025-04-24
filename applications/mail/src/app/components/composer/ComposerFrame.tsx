@@ -2,8 +2,7 @@ import type { DragEvent, MouseEventHandler } from 'react';
 import { useCallback, useMemo } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import { ErrorBoundary, useHandler, useWindowSize } from '@proton/components';
-import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
+import { ErrorBoundary, useActiveBreakpoint, useHandler, useWindowSize } from '@proton/components';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
@@ -25,23 +24,13 @@ interface Props {
     index: number;
     count: number;
     focus: boolean;
-    breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
     composerID: ComposerID;
     drawerOffset: number;
 }
 
-const ComposerFrame = ({
-    index,
-    count,
-    focus,
-    breakpoints,
-    onFocus,
-    onClose: inputOnClose,
-    composerID,
-    drawerOffset,
-}: Props) => {
+const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, composerID, drawerOffset }: Props) => {
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
     // Ref to focus minimize button, otherwise focus is still on Composer, and it's still possible to edit fields
@@ -50,6 +39,7 @@ const ComposerFrame = ({
     const [, windowHeight] = useWindowSize();
     const dispatch = useMailDispatch();
     const { isMaximized, isMinimized } = useMailSelector((store) => selectComposer(store, composerID));
+    const breakpoints = useActiveBreakpoint();
 
     const toggleMinimizeComposer = useCallback(() => {
         dispatch(composerActions.toggleMinimizeComposer(composerID));

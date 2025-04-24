@@ -3,8 +3,7 @@ import { Fragment, forwardRef, memo, useEffect, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { Breakpoints } from '@proton/components';
-import { useItemsDraggable } from '@proton/components';
+import { useActiveBreakpoint, useItemsDraggable } from '@proton/components';
 import { useLabels } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { useMessageCounts } from '@proton/mail/counts/messageCounts';
@@ -64,7 +63,6 @@ interface Props {
     onFocus: (elementID: string) => void;
     conversationMode: boolean;
     isSearch: boolean;
-    breakpoints: Breakpoints;
     page: number;
     total: number | undefined;
     onPage: (page: number) => void;
@@ -99,7 +97,6 @@ const List = (
         onClick,
         conversationMode,
         isSearch,
-        breakpoints,
         page: inputPage,
         total: inputTotal,
         onPage,
@@ -136,6 +133,8 @@ const List = (
             {} as { [ID: string]: boolean }
         );
     }, [checkedIDs]);
+
+    const breakpoints = useActiveBreakpoint();
 
     // Override compactness of the list view to accommodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
@@ -314,7 +313,6 @@ const List = (
                                                         columnLayout={columnLayout}
                                                         element={element}
                                                         index={index}
-                                                        breakpoints={breakpoints}
                                                     />
                                                 ) : (
                                                     <Item
@@ -333,7 +331,6 @@ const List = (
                                                         onDragEnd={handleDragEnd}
                                                         dragged={!!draggedIDsMap[element.ID || '']}
                                                         index={index}
-                                                        breakpoints={breakpoints}
                                                         onFocus={onFocus}
                                                         onBack={onBack}
                                                         userSettings={userSettings}
