@@ -12,7 +12,7 @@ export interface HttpsProtonMeDriveUploadSuccessRateTotalV2SchemaJson {
   Labels: {
     status: "success" | "failure";
     retry: "true" | "false";
-    shareType: "main" | "device" | "photo" | "shared" | "shared_public";
+    shareType: "main" | "device" | "photo" | "shared" | "shared_public" | "shared_photo";
     initiator: "background" | "explicit";
   };
   Value: number;
