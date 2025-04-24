@@ -23,36 +23,32 @@ const FIREFOX_EXPECTED_HEADERS: (keyof FirefoxItem)[] = [
 export const readFirefoxData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
+    const items: ItemImportIntent[] = [];
 
     try {
         const data = await file.text();
-        const result = await readCSV<FirefoxItem>({
+        const parsed = await readCSV<FirefoxItem>({
             data,
             headers: FIREFOX_EXPECTED_HEADERS,
             onError: (error) => warnings.push(error),
         });
 
+        for (const item of parsed.items) {
+            if (item.url === 'chrome://FirefoxAccounts') continue;
+
+            items.push(
+                importLoginItem({
+                    ...(await getEmailOrUsername(item.username)),
+                    password: item.password,
+                    urls: [item.url],
+                    createTime: item.timeCreated ? msToEpoch(Number(item.timeCreated)) : undefined,
+                    modifyTime: item.timePasswordChanged ? msToEpoch(Number(item.timePasswordChanged)) : undefined,
+                })
+            );
+        }
+
         return {
-            vaults: [
-                {
-                    name: getImportedVaultName(),
-                    shareId: null,
-                    items: result.items
-                        .filter((item) => item.url !== 'chrome://FirefoxAccounts')
-                        .map(
-                            (item): ItemImportIntent<'login'> =>
-                                importLoginItem({
-                                    ...getEmailOrUsername(item.username),
-                                    password: item.password,
-                                    urls: [item.url],
-                                    createTime: item.timeCreated ? msToEpoch(Number(item.timeCreated)) : undefined,
-                                    modifyTime: item.timePasswordChanged
-                                        ? msToEpoch(Number(item.timePasswordChanged))
-                                        : undefined,
-                                })
-                        ),
-                },
-            ],
+            vaults: [{ name: getImportedVaultName(), shareId: null, items }],
             ignored,
             warnings,
         };

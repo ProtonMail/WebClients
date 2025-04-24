@@ -19,33 +19,31 @@ const SAFARI_EXPECTED_HEADERS: (keyof SafariItem)[] = ['Title', 'Username', 'Pas
 export const readSafariData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
+    const items: ItemImportIntent[] = [];
 
     try {
         const data = await file.text();
-        const result = await readCSV<SafariItem>({
+        const parsed = await readCSV<SafariItem>({
             data,
             headers: SAFARI_EXPECTED_HEADERS,
             onError: (error) => warnings.push(error),
         });
 
+        for (const item of parsed.items) {
+            items.push(
+                importLoginItem({
+                    name: item.Title,
+                    note: item.Notes,
+                    password: item.Password,
+                    urls: [item.URL],
+                    totp: item.OTPAuth,
+                    ...(await getEmailOrUsername(item.Username)),
+                })
+            );
+        }
+
         return {
-            vaults: [
-                {
-                    name: getImportedVaultName(),
-                    shareId: null,
-                    items: result.items.map(
-                        (item): ItemImportIntent<'login'> =>
-                            importLoginItem({
-                                name: item.Title,
-                                note: item.Notes,
-                                ...getEmailOrUsername(item.Username),
-                                password: item.Password,
-                                urls: [item.URL],
-                                totp: item.OTPAuth,
-                            })
-                    ),
-                },
-            ],
+            vaults: [{ name: getImportedVaultName(), shareId: null, items }],
             ignored,
             warnings,
         };

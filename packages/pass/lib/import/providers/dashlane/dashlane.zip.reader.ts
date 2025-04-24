@@ -4,6 +4,7 @@ import { getImportedVaultName } from '@proton/pass/lib/import/helpers/transforme
 import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { Maybe } from '@proton/pass/types';
+import { seq } from '@proton/pass/utils/fp/promises';
 import { unary } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -53,13 +54,14 @@ export const readDashlaneDataZIP = async (file: File): Promise<ImportReaderResul
         const fileReader = await readZIP(file);
 
         /* logins */
-        const loginItems = (
+        const loginItems = await seq(
             await parseDashlaneCSV<DashlaneLoginItem>({
                 data: await fileReader.getFile('credentials.csv').then((blob) => blob?.text()),
                 headers: DASHLANE_LOGINS_EXPECTED_HEADERS,
                 warnings,
-            })
-        ).map((item) => processDashlaneLogin(item));
+            }),
+            (item) => processDashlaneLogin(item)
+        );
 
         /* notes */
         const noteItems = (

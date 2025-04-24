@@ -14,7 +14,7 @@ import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { extractFirst } from '@proton/pass/utils/array/extract-first';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
 import {
@@ -41,9 +41,9 @@ const processNoteItem = (
         trashed: item.state === OnePassState.ARCHIVED,
     });
 
-const processLoginItem = (
+const processLoginItem = async (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
-): ItemImportIntent<'login'> => {
+): Promise<ItemImportIntent<'login'>> => {
     const [totp, extraFields] = extractFirst(
         extract1PasswordExtraFields(item),
         (extraField): extraField is DeobfuscatedItemExtraField<'totp'> => extraField.type === 'totp'
@@ -52,7 +52,6 @@ const processLoginItem = (
     return importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
-        ...getEmailOrUsername(extract1PasswordLoginField(item, OnePassLoginDesignation.USERNAME)),
         password: extract1PasswordLoginField(item, OnePassLoginDesignation.PASSWORD),
         urls: extract1PasswordURLs(item),
         totp: totp?.data.totpUri,
@@ -60,6 +59,7 @@ const processLoginItem = (
         trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
+        ...(await getEmailOrUsername(extract1PasswordLoginField(item, OnePassLoginDesignation.USERNAME))),
     });
 };
 
@@ -125,64 +125,57 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
 
         if (!content) throw new Error('Unprocessable content');
 
-        const parsedData = JSON.parse(content) as OnePass1PuxData;
+        const parsed = JSON.parse(content) as OnePass1PuxData;
         const ignored: string[] = [];
+        const vaults: ImportVault[] = [];
 
-        const vaults = parsedData.accounts.flatMap((account) =>
-            account.vaults.map(
-                (vault): ImportVault => ({
-                    name: getImportedVaultName(vault.attrs.name),
-                    shareId: null,
-                    items: vault.items
-                        .filter((item) => item.state !== OnePassState.TRASHED)
-                        .map((item): Maybe<ItemImportIntent> => {
-                            const category = item?.categoryUuid;
-                            const type = (category ? OnePasswordTypeMap[category] : null) ?? c('Label').t`Unknown`;
-                            const title = item?.overview?.title ?? item?.overview?.subtitle ?? '';
-                            const files = intoFilesFrom1PasswordItem(item.details.sections);
+        for (const vault of parsed.accounts.flatMap(prop('vaults'))) {
+            const name = getImportedVaultName(vault.attrs.name);
+            const items: ItemImportIntent[] = [];
 
-                            try {
-                                switch (item.categoryUuid) {
-                                    case OnePassCategory.LOGIN:
-                                        return attachFilesToItem(processLoginItem(item), files);
-                                    case OnePassCategory.NOTE:
-                                        return attachFilesToItem(processNoteItem(item), files);
-                                    case OnePassCategory.CREDIT_CARD:
-                                        return attachFilesToItem(processCreditCardItem(item), files);
-                                    case OnePassCategory.PASSWORD:
-                                        const passwordItem = processPasswordItem(item);
-                                        return passwordItem ? attachFilesToItem(passwordItem, files) : passwordItem;
-                                    case OnePassCategory.IDENTITY:
-                                        const identityItem = processIdentityItem(item);
-                                        return identityItem ? attachFilesToItem(identityItem, files) : identityItem;
+            for (const item of vault.items) {
+                const category = item?.categoryUuid;
+                const type = (category ? OnePasswordTypeMap[category] : null) ?? c('Label').t`Unknown`;
+                const title = item?.overview?.title ?? item?.overview?.subtitle ?? '';
+                const files = intoFilesFrom1PasswordItem(item.details.sections);
 
-                                    default:
-                                        try {
-                                            const unknownItem = item as OnePassBaseItem & { details: any };
-                                            return 'loginFields' in unknownItem.details &&
-                                                unknownItem.details.loginFields.length > 0
-                                                ? attachFilesToItem(processLoginItem(unknownItem as any), files)
-                                                : attachFilesToItem(processNoteItem(unknownItem as any), files);
-                                        } catch {
-                                            ignored.push(`[${type}] ${title}`);
-                                        }
-                                }
-                            } catch (err) {
-                                ignored.push(`[${type}] ${title}`);
-                                logger.warn('[Importer::1Password::1pux]', err);
-                            }
-                        })
-                        .filter(truthy),
-                })
-            )
-        );
+                try {
+                    const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
+                        switch (item.categoryUuid) {
+                            case OnePassCategory.LOGIN:
+                                return attachFilesToItem(await processLoginItem(item), files);
+                            case OnePassCategory.NOTE:
+                                return attachFilesToItem(processNoteItem(item), files);
+                            case OnePassCategory.CREDIT_CARD:
+                                return attachFilesToItem(processCreditCardItem(item), files);
+                            case OnePassCategory.PASSWORD:
+                                const passwordItem = processPasswordItem(item);
+                                return passwordItem ? attachFilesToItem(passwordItem, files) : passwordItem;
+                            case OnePassCategory.IDENTITY:
+                                const identityItem = processIdentityItem(item);
+                                return identityItem ? attachFilesToItem(identityItem, files) : identityItem;
 
-        return {
-            vaults,
-            ignored,
-            warnings: [],
-            fileReader,
-        };
+                            default:
+                                const unknownItem = item as OnePassBaseItem & { details: any };
+                                return 'loginFields' in unknownItem.details &&
+                                    unknownItem.details.loginFields.length > 0
+                                    ? attachFilesToItem(await processLoginItem(unknownItem as any), files)
+                                    : attachFilesToItem(processNoteItem(unknownItem as any), files);
+                        }
+                    })();
+
+                    if (!value) ignored.push(`[${type}] ${title}`);
+                    else items.push(value);
+                } catch (err) {
+                    ignored.push(`[${type}] ${title}`);
+                    logger.warn('[Importer::1Password::1pux]', err);
+                }
+            }
+
+            vaults.push({ name, shareId: null, items });
+        }
+
+        return { vaults, ignored, warnings: [], fileReader };
     } catch (e) {
         logger.warn('[Importer::1Password::1pux]', e);
         throw new ImportProviderError('1Password', e);
