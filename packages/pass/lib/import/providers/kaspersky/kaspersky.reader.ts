@@ -63,48 +63,45 @@ const processLine = (state: LineReaderState, line: string): LineReaderState => {
 };
 
 export const readKasperskyData = async (file: File): Promise<ImportReaderResult> => {
-    type KasperskyReaderResult = { items: ItemImportIntent[]; warnings: string[]; ignored: string[] };
+    const ignored: string[] = [];
+    const warnings: string[] = [];
+    const items: ItemImportIntent[] = [];
 
     try {
         const data = await file.text();
 
-        const reader = data
+        const parsed = data
             .replace(/\n*---\n*/g, '\n---\n') // Normalize separators
             .replace(/\n*---\n*$/, '') // Remove trailing separator
             .split('\n')
             .reduce<LineReaderState>(processLine, { items: [], current: null, property: null });
 
-        const { items, ignored, warnings } = reader.items.reduce<KasperskyReaderResult>(
-            (result, item) => {
-                if (KasperskyItemKey.LOGIN in item) {
-                    const nameKey = LOGIN_NAME_KEYS.find((key) => key in item && item[key]);
-                    const name = nameKey ? item[nameKey] : '';
-                    const app = item[KasperskyItemKey.APPLICATION];
-                    const note = item[KasperskyItemKey.COMMENT];
-                    const email = item[KasperskyItemKey.LOGIN];
-                    const password = item[KasperskyItemKey.PASSWORD];
-                    const urls = [item[KasperskyItemKey.WEBSITE_URL] ?? []].flat();
+        for (const item of parsed.items) {
+            if (KasperskyItemKey.LOGIN in item) {
+                const nameKey = LOGIN_NAME_KEYS.find((key) => key in item && item[key]);
+                const name = nameKey ? item[nameKey] : '';
+                const app = item[KasperskyItemKey.APPLICATION];
+                const note = item[KasperskyItemKey.COMMENT];
+                const email = item[KasperskyItemKey.LOGIN];
+                const password = item[KasperskyItemKey.PASSWORD];
+                const urls = [item[KasperskyItemKey.WEBSITE_URL] ?? []].flat();
 
-                    result.items.push(
-                        importLoginItem({
-                            ...getEmailOrUsername(email),
-                            name: app ? `${app} ${name}`.trim() : name,
-                            note,
-                            password,
-                            urls,
-                        })
-                    );
-                } else if (KasperskyItemKey.TEXT in item) {
-                    const name = item[KasperskyItemKey.NAME];
-                    const note = item[KasperskyItemKey.TEXT];
+                items.push(
+                    importLoginItem({
+                        ...(await getEmailOrUsername(email)),
+                        name: app ? `${app} ${name}`.trim() : name,
+                        note,
+                        password,
+                        urls,
+                    })
+                );
+            } else if (KasperskyItemKey.TEXT in item) {
+                const name = item[KasperskyItemKey.NAME];
+                const note = item[KasperskyItemKey.TEXT];
 
-                    result.items.push(importNoteItem({ name, note }));
-                } else result.ignored.push(Object.values(item).join('|').substring(0, 50));
-
-                return result;
-            },
-            { items: [], ignored: [], warnings: [] }
-        );
+                items.push(importNoteItem({ name, note }));
+            } else ignored.push(Object.values(item).join('|').substring(0, 50));
+        }
 
         return {
             vaults: [{ name: getImportedVaultName(), shareId: null, items }],
