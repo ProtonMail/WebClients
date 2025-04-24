@@ -34,3 +34,4 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
 }));
 
 jest.mock('loglevel');
+jest.mock('@proton/pass/lib/core/ui.proxy');
