@@ -175,7 +175,7 @@
         "Conectar aplicaciones y dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar a la videoconferencia"
+        "Conectarte a la videoconferencia"
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -797,11 +797,11 @@
       "Upgrade": [
         "Cambiar de plan"
       ],
-      "Upgrade Now": [
-        "Mejorar ahora"
-      ],
       "Upgrade now": [
         "Cambiar de plan"
+      ],
+      "Upgrade Now": [
+        "Mejorar ahora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Mejora a ${ BRAND_NAME } Unlimited"
@@ -5130,9 +5130,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -5228,6 +5225,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentica tu pago en la pestaña de verificación."
+      ],
+      "Please fill in all required fields.": [
+        "Rellena todos los campos obligatorios."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -6020,9 +6020,6 @@
       "Beta Access": [
         "Acceso beta"
       ],
-      "Billing address": [
-        "Dirección de facturación"
-      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -6160,9 +6157,6 @@
       ],
       "Every": [
         "Cada"
-      ],
-      "Expiration (${ patternExpiration })": [
-        "Expiración (${ patternExpiration })"
       ],
       "Expires": [
         "Expira"
@@ -6344,9 +6338,6 @@
       ],
       "Secondary time zone": [
         "Zona horaria secundaria"
-      ],
-      "Security code (${ codeName })": [
-        "Código de seguridad (${ codeName })"
       ],
       "Show others when I'm busy": [
         "Mostrar a otros cuando estoy ocupado"
@@ -6994,6 +6985,26 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -7015,26 +7026,6 @@
       ],
       "Switch plan": [
         "Cambiar plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9107,6 +9098,11 @@
         "Firmar"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Unirte a la reunión de Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Más rápido en la aplicación"
@@ -9866,8 +9862,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Ahorra"
+      "Save ${ priceString }": [
+        "Ahorra un ${ priceString }"
       ]
     },
     "Success": {
@@ -10149,6 +10145,11 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Unirte a la reunión de Teams"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11422,6 +11423,11 @@
         "Cada año hasta ${ untilString }"
       ]
     },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Unirte a la reunión de Zoom"
+      ]
+    },
     "Zoom integration": {
       "Add Zoom meeting": [
         "Añadir una reunión de Zoom"
@@ -11434,9 +11440,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom meeting": [
-        "Unirte a la reunión de Zoom"
-      ],
       "Meeting ID:": [
         "Identificador de la reunión:"
       ],
