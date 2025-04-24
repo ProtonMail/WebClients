@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Inoltra a"
       ],
-      "Or": [
-        "O"
-      ],
       "or": [
         "o"
+      ],
+      "Or": [
+        "O"
       ],
       "With attachment": [
         "Con allegato"
@@ -7442,6 +7442,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** non è supportato nella tua organizzazione **${ organizationName }**."
       ],
+      "**${ appName }** is not supported**.": [
+        "**${ appName }** non è supportato**."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Ottieni un indirizzo ${ BRAND_NAME }** per usare tutti i servizi ${ BRAND_NAME_TWO } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8753,9 +8756,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
       ],
-      "MM/YY": [
-        "MM/AA"
-      ],
       "Monitor accounts": [
         "Monitora gli account"
       ],
@@ -9024,6 +9024,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
+      ],
+      "Please fill in all required fields.": [
+        "Compila tutti i campi obbligatori."
       ],
       "Please fill out this field.": [
         "Prego, compilare questo campo."
@@ -11027,10 +11030,10 @@
       "Allow sharing outside the organization": [
         "Consenti la condivisione all'esterno dell'organizzazione"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio autorizzato"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio autorizzato"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11042,10 +11045,10 @@
       "Amount due": [
         "Importo da pagare"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
       "and": [
@@ -11113,9 +11116,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billing address": [
-        "Indirizzo di fatturazione"
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
@@ -11417,9 +11417,6 @@
       "Exclude Spam/Trash from All mail": [
         "Escludi le cartelle Spam e Cestino da Tutta la posta"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Scadenza (${ patternExpiration })"
-      ],
       "Expires": [
         "Scadenza"
       ],
@@ -11474,11 +11471,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Se"
-      ],
       "IF": [
         "SE"
+      ],
+      "If": [
+        "Se"
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
@@ -11681,13 +11678,13 @@
       "Optional": [
         "Facoltativo"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Organization name": [
@@ -11818,9 +11815,6 @@
       ],
       "Second password": [
         "Seconda password"
-      ],
-      "Security code (${ codeName })": [
-        "Codice di sicurezza (${ codeName })"
       ],
       "Send auto-reply": [
         "Invia risposta automatica"
@@ -18032,8 +18026,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Risparmia"
+      "Save ${ priceString }": [
+        "Risparmia ${ priceString }"
       ]
     },
     "Subscription status": {

@@ -4723,11 +4723,11 @@
       "Forward to": [
         "Προώθηση σε"
       ],
-      "Or": [
-        "Ή"
-      ],
       "or": [
         "ή"
+      ],
+      "Or": [
+        "Ή"
       ],
       "With attachment": [
         "Με συνημμένα"
@@ -7442,6 +7442,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Το **${ appName }** δεν υποστηρίζεται στον οργανισμό σας **${ organizationName }**."
       ],
+      "**${ appName }** is not supported**.": [
+        "**${ appName }** δεν υποστηρίζεται**."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένων των ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8753,9 +8756,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
       ],
-      "MM/YY": [
-        "ΜΜ/ΧΧ"
-      ],
       "Monitor accounts": [
         "Παρακολούθηση λογαριασμών"
       ],
@@ -9021,6 +9021,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
+      ],
+      "Please fill in all required fields.": [
+        "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
       ],
       "Please fill out this field.": [
         "Παρακαλώ συμπληρώστε αυτό το πεδίο."
@@ -11024,11 +11027,11 @@
       "Allow sharing outside the organization": [
         "Να επιτρέπεται η κοινή χρήση εκτός του οργανισμού"
       ],
-      "Allowed Domain": [
-        "Επιτρεπόμενος Τομέας"
-      ],
       "Allowed domain": [
         "Επιτρεπόμενος τομέας"
+      ],
+      "Allowed Domain": [
+        "Επιτρεπόμενος Τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -11039,11 +11042,11 @@
       "Amount due": [
         "Οφειλόμενο ποσό"
       ],
-      "And": [
-        "Και"
-      ],
       "AND": [
         "ΚΑΙ"
+      ],
+      "And": [
+        "Και"
       ],
       "and": [
         "και"
@@ -11110,9 +11113,6 @@
       ],
       "Beta": [
         "Beta (Δοκιμαστική)"
-      ],
-      "Billing address": [
-        "Διεύθυνση χρέωσης"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -11414,9 +11414,6 @@
       "Exclude Spam/Trash from All mail": [
         "Εξαίρεση Ανεπιθύμητης αλληλογραφίας/Κάδου απορριμμάτων από Όλα τα Μηνύματα"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Λήξη (${ patternExpiration })"
-      ],
       "Expires": [
         "Λήγει"
       ],
@@ -11471,11 +11468,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Αν"
-      ],
       "IF": [
         "ΑΝ"
+      ],
+      "If": [
+        "Αν"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -11678,14 +11675,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
+      "OR": [
+        "'Η"
+      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
-      ],
-      "OR": [
-        "'Η"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -11815,9 +11812,6 @@
       ],
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
-      ],
-      "Security code (${ codeName })": [
-        "Κωδικός ασφαλείας (${ codeName })"
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -18002,8 +17996,8 @@
       ]
     },
     "Subscription saving": {
-      "Save": [
-        "Αποθήκευση"
+      "Save ${ priceString }": [
+        "Εξοικονομίστε ${ priceString }"
       ]
     },
     "Subscription status": {

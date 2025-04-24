@@ -4536,11 +4536,11 @@
       "Forward to": [
         "Ohjaa osoitteeseen"
       ],
-      "Or": [
-        "Tai"
-      ],
       "or": [
         "tai"
+      ],
+      "Or": [
+        "Tai"
       ],
       "With attachment": [
         "Sisällytä liitteet"
@@ -8483,9 +8483,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
       ],
-      "MM/YY": [
-        "KK/VV"
-      ],
       "Monitor accounts": [
         "Valvo tilejä"
       ],
@@ -10695,10 +10692,10 @@
       "Allow sharing outside the organization": [
         "Salli organisaation ulkopuolinen jakaminen"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10710,11 +10707,11 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
-      "And": [
-        "Ja"
-      ],
       "AND": [
         "JA"
+      ],
+      "And": [
+        "Ja"
       ],
       "and": [
         "ja"
@@ -10781,9 +10778,6 @@
       ],
       "Beta": [
         "Beeta"
-      ],
-      "Billing address": [
-        "Laskutusosoite"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -11085,9 +11079,6 @@
       "Exclude Spam/Trash from All mail": [
         "Älä sisällytä roskapostia ja roskakoria kaikkiin viesteihin"
       ],
-      "Expiration (${ patternExpiration })": [
-        "Voimassaolon päättymisaika (${ patternExpiration })"
-      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -11139,11 +11130,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Jos"
-      ],
       "IF": [
         "JOS"
+      ],
+      "If": [
+        "Jos"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -11343,14 +11334,14 @@
       "Optional": [
         "Valinnainen"
       ],
+      "OR": [
+        "TAI"
+      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
-      ],
-      "OR": [
-        "TAI"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11480,9 +11471,6 @@
       ],
       "Second password": [
         "Toinen salasana"
-      ],
-      "Security code (${ codeName })": [
-        "Turvakoodi (${ codeName })"
       ],
       "Send auto-reply": [
         "Lähetä automaattivastaus"
@@ -17538,11 +17526,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Tilaustasi ei voida alentaa automaattisesti, koska emme voi poistaa tiedostoja, viestejä tai muita tietoja puolestasi, jos olet ylittänyt ilmaistilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia. Jos poistat automaattiveloituksen käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin jäädyttämisen."
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "Säästä"
       ]
     },
     "Subscription status": {

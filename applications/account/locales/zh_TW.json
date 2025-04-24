@@ -4118,10 +4118,10 @@
       "Forward to": [
         "轉寄至"
       ],
-      "Or": [
+      "or": [
         "或"
       ],
-      "or": [
+      "Or": [
         "或"
       ],
       "With attachment": [
@@ -7778,9 +7778,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
       ],
-      "MM/YY": [
-        "月月/年年"
-      ],
       "Monitor accounts": [
         "監控帳號"
       ],
@@ -9834,11 +9831,11 @@
       "Allow recovery using a trusted device": [
         "允許復原時使用信任的裝置"
       ],
-      "Allowed Domain": [
-        "網域白名單"
-      ],
       "Allowed domain": [
         "已允許網域"
+      ],
+      "Allowed Domain": [
+        "網域白名單"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -9849,10 +9846,10 @@
       "Amount due": [
         "應付金額"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
       "and": [
@@ -9914,9 +9911,6 @@
       ],
       "Beta": [
         "測試版"
-      ],
-      "Billing address": [
-        "帳單位址"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -10212,9 +10206,6 @@
       "Exclude Spam/Trash from All mail": [
         "排除所有信件裡的垃圾郵件"
       ],
-      "Expiration (${ patternExpiration })": [
-        "到期日(${ patternExpiration })"
-      ],
       "Expires": [
         "有效期限"
       ],
@@ -10263,10 +10254,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
       "Import all messages": [
@@ -10464,13 +10455,13 @@
       "Optional": [
         "自由列席"
       ],
+      "OR": [
+        "或"
+      ],
       "or": [
         "或"
       ],
       "Or": [
-        "或"
-      ],
-      "OR": [
         "或"
       ],
       "Organization name": [
@@ -10598,9 +10589,6 @@
       ],
       "Second password": [
         "第二密碼"
-      ],
-      "Security code (${ codeName })": [
-        "安全驗證代碼(${ codeName })"
       ],
       "Send auto-reply": [
         "發送自動回覆"
@@ -15815,11 +15803,6 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        "省下"
       ]
     },
     "Subscription status": {
