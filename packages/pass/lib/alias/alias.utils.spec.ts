@@ -1,4 +1,4 @@
-import { deriveAliasPrefix } from './alias';
+import { deriveAliasPrefix } from './alias.utils';
 
 describe('alias utils', () => {
     describe('deriveAliasPrefix', () => {
