@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/index';
 import { Icon, Toolbar } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 
-import type { OnFileUploadSuccessCallbackData } from '../../../store';
+import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData } from '../../../store';
 import { PhotosUploadButton } from './PhotosUploadButton';
 
 export interface PhotosAddAlbumPhotosToolbarProps {
@@ -14,6 +14,7 @@ export interface PhotosAddAlbumPhotosToolbarProps {
     onAddAlbumPhotos: () => Promise<void>;
     onStartUpload: () => void;
     onFileUpload: ((file: OnFileUploadSuccessCallbackData) => void) | undefined;
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
 }
 
 export const PhotosAddAlbumPhotosToolbar = ({
@@ -23,6 +24,7 @@ export const PhotosAddAlbumPhotosToolbar = ({
     onAddAlbumPhotos,
     onStartUpload,
     onFileUpload,
+    onFileSkipped,
 }: PhotosAddAlbumPhotosToolbarProps) => {
     const [isLoading, withLoading] = useLoading();
     return (
@@ -31,6 +33,7 @@ export const PhotosAddAlbumPhotosToolbar = ({
                 <PhotosUploadButton
                     onStartUpload={onStartUpload}
                     onFileUpload={onFileUpload}
+                    onFileSkipped={onFileSkipped}
                     shareId={shareId}
                     linkId={linkId}
                     type="toolbar"

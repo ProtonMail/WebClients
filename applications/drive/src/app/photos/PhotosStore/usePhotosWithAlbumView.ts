@@ -83,6 +83,7 @@ export const usePhotosWithAlbumsView = () => {
         favoritePhoto,
         userAddressEmail,
         updatePhotoFavoriteFromCache,
+        addNewAlbumPhotoToCache,
         removeTagsFromPhoto,
         clearAlbumPhotos,
     } = usePhotosWithAlbums();
@@ -525,6 +526,7 @@ export const usePhotosWithAlbumsView = () => {
         isPhotosEmpty,
         favoritePhoto,
         updatePhotoFavoriteFromCache,
+        addNewAlbumPhotoToCache,
         removeTagsFromPhoto,
     };
 };
