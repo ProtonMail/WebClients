@@ -302,14 +302,14 @@ export function useLinkInner(
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
 
-            const privateKeys: PrivateKeyReference[] = [];
+            let privateKey: PrivateKeyReference | undefined;
 
             try {
                 const parentPrivateKey = encryptedLink.parentLinkId
                     ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
                       await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
                     : await getSharePrivateKey(abortSignal, shareId);
-                privateKeys.push(parentPrivateKey);
+                privateKey = parentPrivateKey;
             } catch (e) {
                 // ignore failures but still report them to Sentry
                 sendErrorReport(e, {
@@ -319,12 +319,12 @@ export function useLinkInner(
                 });
             }
 
-            if (encryptedLink.photoProperties?.albums.length) {
+            if (encryptedLink.photoProperties?.albums.length && !encryptedLink.parentLinkId) {
                 for (const album of encryptedLink.photoProperties.albums) {
                     try {
                         // eslint-disable-next-line @typescript-eslint/no-use-before-define
                         const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
-                        privateKeys.push(albumPrivateKey);
+                        privateKey = albumPrivateKey;
                         // we can break at first album since it's enough to decrypt / for optimization
                         break;
                     } catch (e) {
@@ -338,6 +338,11 @@ export function useLinkInner(
                 }
             }
 
+            if (!privateKey) {
+                // This should never happen. If you see this error in Sentry something is wrong
+                throw new Error('No private key was found during getLinkPassphraseAndSessionKey');
+            }
+
             const addressPublicKey = encryptedLink.signatureEmail
                 ? await getVerificationKey(encryptedLink.signatureEmail)
                 : [];
@@ -345,7 +350,7 @@ export function useLinkInner(
             try {
                 // Fallback to parent NodeKey in case if we don't have addressPublicKey (Anonymous upload)
                 const publicKeysCallbackList: VerificationKeysCallback[] = [
-                    async () => (encryptedLink.signatureEmail ? addressPublicKey : privateKeys),
+                    async () => (encryptedLink.signatureEmail ? addressPublicKey : [privateKey]),
                 ];
 
                 const {
@@ -355,7 +360,7 @@ export function useLinkInner(
                 } = await decryptPassphrase({
                     armoredPassphrase: encryptedLink.nodePassphrase,
                     armoredSignature: encryptedLink.nodePassphraseSignature,
-                    privateKeys: privateKeys,
+                    privateKeys: [privateKey],
                     publicKeysCallbackList,
                 });
 
@@ -395,7 +400,6 @@ export function useLinkInner(
             // getLinkPassphraseAndSessionKey already call getEncryptedLink, prevent to call fetchLink twice
             let { passphrase, encryptedLink } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId);
             encryptedLink = encryptedLink || (await getEncryptedLink(abortSignal, shareId, linkId));
-
             try {
                 privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
             } catch (e) {
@@ -565,14 +569,14 @@ export function useLinkInner(
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
-                const privateKeys: PrivateKeyReference[] = [];
+                let privateKey: PrivateKeyReference | undefined;
 
                 try {
                     const parentPrivateKey: PrivateKeyReference = encryptedLink.parentLinkId
                         ? await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
                         : await getSharePrivateKey(abortSignal, shareId);
 
-                    privateKeys.push(parentPrivateKey);
+                    privateKey = parentPrivateKey;
                 } catch (e) {
                     // ignore failures but still report them to Sentry
                     sendErrorReport(e, {
@@ -582,11 +586,11 @@ export function useLinkInner(
                     });
                 }
 
-                if (encryptedLink.photoProperties?.albums.length) {
+                if (encryptedLink.photoProperties?.albums.length && !encryptedLink.parentLinkId) {
                     for (const album of encryptedLink.photoProperties.albums) {
                         try {
                             const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
-                            privateKeys.push(albumPrivateKey);
+                            privateKey = albumPrivateKey;
                             // we can break at first album since it's enough to decrypt / for optimization
                             break;
                         } catch (e) {
@@ -600,14 +604,18 @@ export function useLinkInner(
                     }
                 }
 
+                if (!privateKey) {
+                    // This should never happen. If you see this error in Sentry something is wrong
+                    throw new Error('No private key was found during getLinkPassphraseAndSessionKey');
+                }
                 const namePromise = new Promise<{ name: string; nameVerified: VERIFICATION_STATUS }>(
                     async (resolve, reject) => {
                         try {
                             const signatureEmail = encryptedLink.nameSignatureEmail || encryptedLink.signatureEmail;
-                            const publicKey = signatureEmail ? await getVerificationKey(signatureEmail) : privateKeys;
+                            const publicKey = signatureEmail ? await getVerificationKey(signatureEmail) : [privateKey];
                             const { data, verificationStatus } = await decryptSigned({
                                 armoredMessage: encryptedLink.name,
-                                privateKey: privateKeys,
+                                privateKey,
                                 // nameSignatureEmail is missing for some old files.
                                 // Fallback to signatureEmail might result in failed
                                 // signature check, but no one reported it so far so
