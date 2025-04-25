@@ -125,7 +125,7 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
                 event.stopPropagation();
-                if (passwordPolicyError || !onFormSubmit()) {
+                if (!onFormSubmit() || passwordPolicyError) {
                     return;
                 }
                 withLoading(handleSubmit()).catch(errorHandler);
