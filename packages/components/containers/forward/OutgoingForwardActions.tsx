@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
@@ -14,6 +14,7 @@ import {
     pauseForwarding,
     resendForwardingInvitation,
     resumeForwarding,
+    updateForwarding,
 } from '@proton/shared/lib/api/forwardings';
 import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
@@ -22,75 +23,111 @@ import isTruthy from '@proton/utils/isTruthy';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';
-import { enableForwarding, isLastOutgoingNonE2EEForwarding } from './helpers';
+import { getInternalParametersPrivate } from './helpers';
 
 interface Props {
-    forward: OutgoingAddressForwarding;
+    existingForwardingConfig: OutgoingAddressForwarding;
     user: UserModel;
-    forwardings: OutgoingAddressForwarding[];
     addresses: Address[];
+    isLastOutgoingNonE2EEForwarding: boolean;
 }
 
-const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props) => {
-    const isPending = forward.State === ForwardingState.Pending;
-    const isActive = forward.State === ForwardingState.Active;
-    const isPaused = forward.State === ForwardingState.Paused;
-    const isOutdated = forward.State === ForwardingState.Outdated;
-    const isRejected = forward.State === ForwardingState.Rejected;
-    const sentSuccessMessage = c('email_forwarding_2023: Success').t`Email sent to ${forward.ForwardeeEmail}`;
-    const isInternal = forward.Type === ForwardingType.InternalEncrypted;
-    const isExternal = forward.Type === ForwardingType.ExternalUnencrypted;
-    const address = addresses.find((address) => address.ID === forward.ForwarderAddressID) as Address;
-    const isLast = isLastOutgoingNonE2EEForwarding(forward, forwardings);
+const OutgoingForwardActions = ({
+    user,
+    existingForwardingConfig,
+    addresses,
+    isLastOutgoingNonE2EEForwarding,
+}: Props) => {
+    const isPending = existingForwardingConfig.State === ForwardingState.Pending;
+    const isActive = existingForwardingConfig.State === ForwardingState.Active;
+    const isPaused = existingForwardingConfig.State === ForwardingState.Paused;
+    const isOutdated = existingForwardingConfig.State === ForwardingState.Outdated;
+    const isRejected = existingForwardingConfig.State === ForwardingState.Rejected;
+    const sentSuccessMessage = c('email_forwarding_2023: Success')
+        .t`Email sent to ${existingForwardingConfig.ForwardeeEmail}`;
+    const isInternal = existingForwardingConfig.Type === ForwardingType.InternalEncrypted;
+    const isExternal = existingForwardingConfig.Type === ForwardingType.ExternalUnencrypted;
+    const address = addresses.find((address) => address.ID === existingForwardingConfig.ForwarderAddressID) as Address;
     const pointToProton = address?.ProtonMX === true; // the domain's record point to Proton servers
-    const reActivateE2EE = pointToProton && isLast;
+    const reActivateE2EE = pointToProton && isLastOutgoingNonE2EEForwarding;
 
     const api = useApi();
     const addressFlags = useAddressFlags(address);
     const getPublicKeysForInbox = useGetPublicKeysForInbox();
-    const getAddressKeys = useGetAddressKeys();
+    const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
-    const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
+    const [confirmDeleteModalProps, setConfirmDeleteModalOpen, renderConfirmDeleteModal] = useModalState();
 
     const handleDeleteForwarding = async () => {
-        await api(deleteForwarding(forward.ID));
+        await api(deleteForwarding(existingForwardingConfig.ID));
 
         // Re-enable E2EE for this address if deleting last outgoing forwarding
         if (reActivateE2EE && addressFlags && addressFlags.encryptionDisabled) {
-            await addressFlags.handleSetAddressFlags(false, addressFlags.expectSignatureDisabled);
+            await addressFlags.handleSetAddressFlags({
+                encryptionDisabled: false,
+                expectSignatureDisabled: addressFlags.expectSignatureDisabled,
+            });
         }
 
         await call();
-        setConfirmModalOpen(false);
+        setConfirmDeleteModalOpen(false);
         createNotification({ text: 'Forwarding deleted' });
     };
 
     const list = [
-        user.hasPaidMail && {
-            text: c('email_forwarding_2023: Action').t`Edit conditions`,
-            onClick: () => {
-                showForwardModal({ forward });
+        user.hasPaidMail &&
+            (isActive || isPending) && {
+                text: c('email_forwarding_2023: Action').t`Edit conditions`,
+                onClick: () => {
+                    showForwardModal({ existingForwardingConfig });
+                },
             },
-        },
         user.hasPaidMail &&
             isInternal &&
-            (isOutdated || isRejected) && {
-                text: isOutdated
-                    ? c('email_forwarding_2023: Action').t`Re-enable`
-                    : c('email_forwarding_2023: Action').t`Request confirmation`,
+            isOutdated && {
+                text: c('email_forwarding_2023: Action').t`Re-enable`,
                 onClick: async () => {
-                    const [forwarderAddressKeys, forwardeePublicKeys] = await Promise.all([
-                        getAddressKeys(forward.ForwarderAddressID),
-                        getPublicKeysForInbox({ email: forward.ForwardeeEmail, lifetime: 0 }),
+                    // the primary keys might need fixing up, same as during initial forwarding setup
+                    showForwardModal({ existingForwardingConfig });
+                },
+            },
+        user.hasPaidMail &&
+            isInternal &&
+            isRejected && {
+                text: c('email_forwarding_2023: Action').t`Request confirmation`,
+                onClick: async () => {
+                    const [forwarderAddressKeysByUsage, forwardeePublicKeys] = await Promise.all([
+                        getAddressKeysByUsage({
+                            AddressID: existingForwardingConfig.ForwarderAddressID,
+                            // a primary v4 is expected here, but as sanity check
+                            // we want the v6 key to be returned is present, so that
+                            // the forwarding key generation will fail already client-side,
+                            // instead of on the BE
+                            withV6Support: true,
+                        }),
+                        getPublicKeysForInbox({ email: existingForwardingConfig.ForwardeeEmail, lifetime: 0 }),
                     ]);
-                    await enableForwarding({
-                        api,
-                        forwarderAddressKeys,
-                        forwardeePublicKeys,
-                        forward,
-                    });
+                    const forwardeePrimaryPublicKey = forwardeePublicKeys.publicKeys[0].publicKey;
+                    const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
+                        forwarderAddressKeysByUsage.encryptionKey,
+                        [
+                            {
+                                email: existingForwardingConfig.ForwardeeEmail,
+                                name: existingForwardingConfig.ForwardeeEmail,
+                            },
+                        ],
+                        forwardeePrimaryPublicKey
+                    );
+                    await api(
+                        updateForwarding({
+                            ID: existingForwardingConfig.ID,
+                            ForwardeePrivateKey: forwardeeKey,
+                            ActivationToken: activationToken,
+                            ProxyInstances: proxyInstances,
+                        })
+                    );
                     await call();
                     createNotification({ text: sentSuccessMessage });
                 },
@@ -100,7 +137,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
             isRejected && {
                 text: c('email_forwarding_2023: Action').t`Request confirmation`,
                 onClick: async () => {
-                    await api(resendForwardingInvitation(forward.ID));
+                    await api(resendForwardingInvitation(existingForwardingConfig.ID));
                     await call();
                     createNotification({ text: sentSuccessMessage });
                 },
@@ -110,7 +147,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
             isPending && {
                 text: c('email_forwarding_2023: Action').t`Re-send confirmation email`,
                 onClick: async () => {
-                    await api(resendForwardingInvitation(forward.ID));
+                    await api(resendForwardingInvitation(existingForwardingConfig.ID));
                     await call();
                     createNotification({ text: sentSuccessMessage });
                 },
@@ -119,7 +156,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
             isActive && {
                 text: c('email_forwarding_2023: Action').t`Pause`,
                 onClick: async () => {
-                    await api(pauseForwarding(forward.ID));
+                    await api(pauseForwarding(existingForwardingConfig.ID));
                     await call();
                     createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding paused` });
                 },
@@ -128,7 +165,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
             isPaused && {
                 text: c('email_forwarding_2023: Action').t`Resume`,
                 onClick: async () => {
-                    await api(resumeForwarding(forward.ID));
+                    await api(resumeForwarding(existingForwardingConfig.ID));
                     await call();
                     createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding resumed` });
                 },
@@ -136,7 +173,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
         {
             text: c('email_forwarding_2023: Action').t`Delete`,
             onClick: () => {
-                setConfirmModalOpen(true);
+                setConfirmDeleteModalOpen(true);
             },
         },
     ].filter(isTruthy);
@@ -152,11 +189,11 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
                 shape="ghost"
             />
             {forwardModal}
-            {renderConfirmModal ? (
+            {renderConfirmDeleteModal ? (
                 <ConfirmDeleteForwarding
-                    modalProps={confirmModalProps}
+                    modalProps={confirmDeleteModalProps}
                     onDelete={handleDeleteForwarding}
-                    onClose={() => setConfirmModalOpen(false)}
+                    onClose={() => setConfirmDeleteModalOpen(false)}
                     reActivateE2EE={reActivateE2EE}
                 />
             ) : null}
