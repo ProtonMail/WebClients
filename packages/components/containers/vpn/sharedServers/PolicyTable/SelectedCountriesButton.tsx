@@ -43,14 +43,14 @@ const SelectedCountriesButton = ({
     const [tabIndex, setTabIndex] = useState(0);
 
     const isDeleted = policy.localStatus === 'deleted';
-    const locationsCount = policy.Locations.length;
+    const countriesCount = policy.Locations.reduce((acc, { Country }) => acc.add(Country), new Set()).size;
     const locationText =
-        locationsCount === 0
+        countriesCount === 0
             ? c('Info').t`No countries enabled`
             : c('Info').ngettext(
-                  msgid`${locationsCount} country enabled`,
-                  `${locationsCount} countries enabled`,
-                  locationsCount
+                  msgid`${countriesCount} country enabled`,
+                  `${countriesCount} countries enabled`,
+                  countriesCount
               );
 
     const policyCountries = policy.Locations.map(({ Country }) => Country);
