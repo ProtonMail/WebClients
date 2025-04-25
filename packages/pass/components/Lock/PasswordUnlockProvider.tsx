@@ -10,6 +10,7 @@ import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import { selectExtraPasswordEnabled, selectHasTwoPasswordMode, selectIsSSO } from '@proton/pass/store/selectors';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
@@ -74,7 +75,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
             default: {
                 label: c('Label').t`Password`,
                 message: c('Info').t`Please confirm your password`,
-                title: c('Title').t`Enter your password`,
+                title: c('Title').t`Enter your ${BRAND_NAME} password`,
             },
         });
 
