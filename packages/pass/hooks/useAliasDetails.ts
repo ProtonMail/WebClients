@@ -6,7 +6,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '@proton/pass/store/actions';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import type { AliasMailbox, Maybe } from '@proton/pass/types';
+import type { AliasMailbox, Maybe, Result } from '@proton/pass/types';
 
 import { useActionRequest } from './useRequest';
 
@@ -14,15 +14,10 @@ type UseAliasDetailsConfig = {
     aliasEmail: string;
     itemId: string;
     shareId: string;
-    onAliasMailboxesLoaded?: (mailboxes: Maybe<AliasMailbox[]>) => void;
+    onAliasMailboxes?: (mailboxes: Result<{ mailboxes: AliasMailbox[] }>) => void;
 };
 
-export const useAliasDetails = ({
-    aliasEmail,
-    itemId,
-    shareId,
-    onAliasMailboxesLoaded: onAliasDetailsLoaded,
-}: UseAliasDetailsConfig) => {
+export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasMailboxes }: UseAliasDetailsConfig) => {
     const { createNotification } = useNotifications();
     const [mailboxes, setMailboxes] = useState<Maybe<AliasMailbox[]>>();
 
@@ -34,9 +29,10 @@ export const useAliasDetails = ({
         requestId: aliasDetailsRequest(aliasEmail),
         onSuccess: ({ mailboxes }) => {
             setMailboxes(mailboxes);
-            onAliasDetailsLoaded?.(mailboxes);
+            onAliasMailboxes?.({ ok: true, mailboxes });
         },
         onFailure: () => {
+            onAliasMailboxes?.({ ok: false });
             createNotification({
                 type: 'warning',
                 text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
