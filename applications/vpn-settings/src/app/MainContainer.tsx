@@ -355,8 +355,8 @@ const MainContainer: FunctionComponent = () => {
                             <Route path={vpnRoutes.downloads.to}>
                                 <PrivateMainSettingsArea config={vpnRoutes.downloads}>
                                     <ProtonVPNClientsSection />
-                                    <OpenVPNConfigurationSection />
                                     <WireGuardConfigurationSection />
+                                    <OpenVPNConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={anyOrganizationAppRoute}>
