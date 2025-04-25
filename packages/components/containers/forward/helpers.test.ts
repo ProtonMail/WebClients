@@ -1,42 +1,42 @@
 import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
 
-import { isLastOutgoingNonE2EEForwarding } from './helpers';
+import { getIsLastOutgoingNonE2EEForwarding } from './helpers';
 
-describe('isLastOutgoingNonE2EEForwarding', () => {
-    describe('when forward is encrypted', () => {
+describe('getIsLastOutgoingNonE2EEForwarding', () => {
+    describe('when the forwarding is e2ee', () => {
         it('should return false', () => {
-            const forward = { Type: ForwardingType.InternalEncrypted } as OutgoingAddressForwarding;
-            const forwarding = [forward];
-            const result = isLastOutgoingNonE2EEForwarding(forward, forwarding);
+            const forwardingConfig = { Type: ForwardingType.InternalEncrypted } as OutgoingAddressForwarding;
+            const allOutgoingForwardingConfigs = [forwardingConfig];
+            const result = getIsLastOutgoingNonE2EEForwarding(forwardingConfig, allOutgoingForwardingConfigs);
             expect(result).toBeFalsy();
         });
     });
 
-    describe('when there is multiple external outgoing setup', () => {
+    describe('when there are additional outgoing external forwardings', () => {
         it('should return false', () => {
-            const forward = {
+            const forwardingConfig = {
                 ForwarderAddressID: 'ForwarderAddressID',
                 Type: ForwardingType.ExternalUnencrypted,
             } as OutgoingAddressForwarding;
-            const forwarding = [forward, forward];
-            const result = isLastOutgoingNonE2EEForwarding(forward, forwarding);
+            const allOutgoingForwardingConfigs = [forwardingConfig, forwardingConfig];
+            const result = getIsLastOutgoingNonE2EEForwarding(forwardingConfig, allOutgoingForwardingConfigs);
             expect(result).toBeFalsy();
         });
     });
 
-    describe('when it is the latest external outgoing setup', () => {
+    describe('when it is the last outgoing external forwarding', () => {
         it('should return true', () => {
-            const forward = {
+            const forwardingConfig = {
                 ForwarderAddressID: 'ForwarderAddressID',
                 Type: ForwardingType.ExternalUnencrypted,
             } as OutgoingAddressForwarding;
-            const internalForwarding = {
+            const internalE2EEForwardingConfig = {
                 ForwarderAddressID: 'ForwarderAddressID',
-                Type: ForwardingType.ExternalEncrypted,
+                Type: ForwardingType.InternalEncrypted,
             } as OutgoingAddressForwarding;
-            const forwarding = [forward, internalForwarding];
-            const result = isLastOutgoingNonE2EEForwarding(forward, forwarding);
+            const allOutgoingForwardingConfigs = [forwardingConfig, internalE2EEForwardingConfig];
+            const result = getIsLastOutgoingNonE2EEForwarding(forwardingConfig, allOutgoingForwardingConfigs);
             expect(result).toBeTruthy();
         });
     });

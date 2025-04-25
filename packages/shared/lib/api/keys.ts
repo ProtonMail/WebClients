@@ -207,6 +207,7 @@ export const reactivateUserKeyRouteV2 = ({ ID, ...data }: ReactivateUserKeyPaylo
 interface SetKeyPrimaryPayload {
     ID: string;
     SignedKeyList: SignedKeyList;
+    Primary?: 0 | 1;
 }
 
 export const setKeyPrimaryRoute = ({ ID, ...data }: SetKeyPrimaryPayload) => ({
