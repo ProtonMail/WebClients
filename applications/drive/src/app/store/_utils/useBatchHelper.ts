@@ -34,6 +34,7 @@ export const useBatchHelper = () => {
      *   @param {number} [options.batchRequestSize] - Maximum number of links per batch
      *   @param {Function} [options.request] - Custom request function to use instead of the default (used for public request)
      *   @param {number[]} [options.allowedCodes] - Array of response codes to consider as successful besides 1000
+     *   @param {number[]} [options.ignoredCodes] - Array of response codes to ignore (not considered neither as error nor success)
      *   @returns {Promise<{responses: Array, successes: string[], failures: Object}>}
      */
     const batchAPIHelper = useCallback(
@@ -46,6 +47,7 @@ export const useBatchHelper = () => {
                 batchRequestSize = BATCH_REQUEST_SIZE,
                 request = debouncedRequest,
                 allowedCodes = [],
+                ignoredCodes = [],
             }: {
                 linkIds: string[];
                 query: (batchLinkIds: string[]) => Promise<object> | object;
@@ -53,6 +55,7 @@ export const useBatchHelper = () => {
                 batchRequestSize?: number;
                 request?: <T>(args: object, abortSignal?: AbortSignal) => Promise<T>;
                 allowedCodes?: number[];
+                ignoredCodes?: number[];
             }
         ) => {
             const responses: { batchLinkIds: string[]; response: T }[] = [];
@@ -68,6 +71,9 @@ export const useBatchHelper = () => {
                             .then((response) => {
                                 responses.push({ batchLinkIds, response });
                                 response.Responses.forEach(({ LinkID, Response }) => {
+                                    if (ignoredCodes.includes(Response.Code)) {
+                                        return;
+                                    }
                                     if (
                                         Response.Code === API_CODES.SINGLE_SUCCESS ||
                                         allowedCodes.includes(Response.Code)
