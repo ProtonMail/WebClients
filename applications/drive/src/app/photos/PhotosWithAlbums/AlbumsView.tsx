@@ -89,16 +89,20 @@ export const AlbumsView: FC = () => {
         [incrementItemRenderedCounter, loadPhotoLink, albums, shareId]
     );
 
-    const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-        if (shareId) {
+    const handleItemRenderLoadedLink = useCallback(
+        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
             const album = albums.find((album) => album.linkId === itemLinkId);
-            if (album && album.rootShareId) {
+
+            if (album && album.rootShareId && album.hasThumbnail) {
                 thumbnails.addToDownloadQueue(album.rootShareId, itemLinkId, undefined, domRef);
-            } else {
-                thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
             }
-        }
-    };
+
+            if (album && album.cover && album.cover.hasThumbnail) {
+                thumbnails.addToDownloadQueue(album.cover.rootShareId, album.cover.linkId, undefined, domRef);
+            }
+        },
+        [albums, thumbnails]
+    );
 
     const onRenameAlbum = useCallback(
         async (name: string) => {
@@ -185,14 +189,14 @@ export const AlbumsView: FC = () => {
     );
 
     const isAlbumsEmpty = albums.length === 0;
-    const filteredAlbums = filterAlbums(albums, selectedTags[0]);
+    // the sorting is just so we maintain some ordering
+    const filteredAlbums = filterAlbums(albums, selectedTags[0]).sort((a, b) => (a.createTime < b.createTime ? -1 : 1));
 
     if (!shareId || !linkId || (isAlbumsLoading && !albums) || (isAlbumsLoading && albums.length === 0)) {
         return <Loader />;
     }
 
     const isSelectedTagEmtpy = !isAlbumsEmpty && filteredAlbums.length === 0;
-
     return (
         <>
             {!isAlbumsEmpty && !isAlbumsWithSharingDisabled && (

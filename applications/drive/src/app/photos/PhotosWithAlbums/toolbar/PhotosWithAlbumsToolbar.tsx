@@ -250,7 +250,7 @@ interface ToolbarRightActionsGalleryProps {
 }
 
 interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGalleryProps {
-    requestDownload: (linkIds: string[]) => Promise<void>;
+    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
     data: PhotoGridItem[];
     album: DecryptedAlbum;
     onDeleteAlbum: () => void;
@@ -308,14 +308,14 @@ const ToolbarRightActionsAlbumGallery = ({
                 <ToolbarButton
                     onClick={() => {
                         // TODO: avoid the data loop and just execute callback
-                        const linkIds: string[] = data
+                        const linkIds: { linkId: string; shareId: string }[] = data
                             .map((d) => {
                                 if (!isPhotoGroup(d)) {
-                                    return d.linkId;
+                                    return { linkId: d.linkId, shareId: d.rootShareId };
                                 }
-                                return '';
+                                return { linkId: '', shareId: '' };
                             })
-                            .filter(Boolean);
+                            .filter((d) => d.linkId && d.shareId);
                         void requestDownload(linkIds);
                     }}
                     data-testid="toolbar-download-album"
@@ -391,7 +391,7 @@ interface PhotosWithAlbumToolbarProps {
     selectedItems: PhotoLink[];
     data: PhotoGridItem[];
     onPreview?: () => void;
-    requestDownload: (linkIds: string[]) => Promise<void>;
+    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
     uploadDisabled: boolean;
     tabSelection: AlbumsPageTypes;
     createAlbumModal: ModalStateReturnObj;
