@@ -19,6 +19,7 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@sentry/browser": "^7.120.4",
         "@vitest/browser-playwright": "^4.1.1",
         "eslint": "^9.39.4",
         "eslint-plugin-chai-friendly": "^1.1.1",

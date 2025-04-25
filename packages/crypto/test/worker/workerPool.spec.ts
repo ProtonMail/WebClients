@@ -12,7 +12,7 @@ import { CryptoWorkerPool } from '../../lib/worker/workerPool';
 describe('Worker Pool', () => {
     const poolSize = 2;
     beforeAll(async () => {
-        await CryptoWorkerPool.init({ poolSize });
+        await CryptoWorkerPool.init({ poolSize, sentryLogger: null });
     });
 
     afterEach(async () => {

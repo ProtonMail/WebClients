@@ -1,17 +1,18 @@
 import { CryptoProxy } from '@proton/crypto';
-import type { WorkerPoolInitOptions as CryptoWorkerOptions } from '@proton/crypto/lib/worker/workerPool';
-import { CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
+import { CryptoWorkerPool, type WorkerPoolInitOptions } from '@proton/crypto/lib/worker/workerPool';
 
 import { hasModulesSupport } from './browser';
 import { captureMessage } from './sentry';
 
 let promise: undefined | Promise<void>;
 
+export type CryptoWorkerOptions = Omit<WorkerPoolInitOptions, 'sentryLogger'>;
+
 /**
  * Initialize worker pool and set it as CryptoProxy endpoint.
  * If workers are not supported by the current browser, the pmcrypto API is imported instead.
  */
-const init = async (options?: CryptoWorkerOptions) => {
+const init = async (options: CryptoWorkerOptions = {}) => {
     const isWorker = typeof window === 'undefined' || typeof document === 'undefined';
     const isCompat = isWorker || !hasModulesSupport();
 
@@ -23,6 +24,7 @@ const init = async (options?: CryptoWorkerOptions) => {
         );
         CryptoApi.init(options?.openpgpConfigOptions || {});
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+        CryptoProxy.setSentryLogger(captureMessage);
     } else {
         await CryptoWorkerPool.init({
             awaitOnFirstUseErrorCallback: options?.awaitOnFirstUse
@@ -33,8 +35,10 @@ const init = async (options?: CryptoWorkerOptions) => {
                       })
                 : undefined,
             ...options,
+            sentryLogger: captureMessage,
         });
         CryptoProxy.setEndpoint(CryptoWorkerPool, (endpoint) => endpoint.destroy());
+        CryptoProxy.setSentryLogger(captureMessage);
     }
 };
 
@@ -59,5 +63,3 @@ export const destroyCryptoWorker = () => {
 
     return CryptoProxy.releaseEndpoint();
 };
-
-export type { CryptoWorkerOptions };

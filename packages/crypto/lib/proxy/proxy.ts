@@ -4,11 +4,10 @@ import {
     VERIFICATION_STATUS,
 } from 'pmcrypto/lib/constants';
 
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-
 import { serverTime } from '../serverTime';
 import type { ApiInterface } from '../worker/api';
 import type { WorkerVerifyOptions } from '../worker/api.models';
+import type { SentryLogger } from '../worker/sentry';
 
 export type CryptoApiInterface = ApiInterface;
 
@@ -21,6 +20,7 @@ const assertNotNull = (value: CryptoApiInterface | null): CryptoApiInterface => 
 
 let endpoint: CryptoApiInterface | null = null;
 let onEndpointRelease: (endpoint?: any) => Promise<void> = async () => {};
+let sentryLogger: SentryLogger | null = null;
 
 interface CryptoProxyInterface extends CryptoApiInterface {
     /**
@@ -38,6 +38,8 @@ interface CryptoProxyInterface extends CryptoApiInterface {
      * Any endpoint-specific clean up logic should be done inside the `onRelease` callback.
      */
     releaseEndpoint(): Promise<void>;
+
+    setSentryLogger(logger: SentryLogger | null): void;
 }
 
 /**
@@ -66,7 +68,7 @@ async function verifyMessageWithFallback<
         });
 
         if (fallbackverificationResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            captureMessage('Fallback verification needed', {
+            sentryLogger?.('Fallback verification needed', {
                 level: 'info',
             });
             return fallbackverificationResult;
@@ -85,7 +87,7 @@ async function verifyMessageWithFallback<
         };
 
         if (textData !== legacyRemoveTrailingSpaces(textData)) {
-            captureMessage('Fallback verification insufficient', {
+            sentryLogger?.('Fallback verification insufficient', {
                 level: 'info',
             });
         }
@@ -113,6 +115,10 @@ export const CryptoProxy: CryptoProxyInterface = {
         const tmp = endpoint;
         endpoint = null;
         return onEndpointRelease(assertNotNull(tmp));
+    },
+
+    setSentryLogger(logger: SentryLogger | null) {
+        sentryLogger = logger;
     },
 
     encryptMessage: async ({ date = serverTime(), ...opts }) =>

@@ -1,11 +1,9 @@
 import type { Remote } from 'comlink';
 import { releaseProxy, transferHandlers, wrap } from 'comlink';
 
-import { getIsNetworkError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-
 import type { Api as CryptoApi, ApiInterface as CryptoApiInterface } from './api';
 import type { InitOptions } from './api.models';
+import type { SentryLogger } from './sentry';
 import { mainThreadTransferHandlers } from './transferHandlers';
 
 export interface WorkerInitOptions extends InitOptions {}
@@ -26,6 +24,7 @@ export interface WorkerPoolInitOptions {
     awaitOnFirstUseErrorCallback?: (err: Error) => void;
     poolSize?: number;
     openpgpConfigOptions?: WorkerInitOptions;
+    sentryLogger: SentryLogger | null;
 }
 
 export interface WorkerPoolInterface extends CryptoApiInterface {
@@ -34,7 +33,7 @@ export interface WorkerPoolInterface extends CryptoApiInterface {
      * create and start workers, and initializes internal Crypto API (incl. pmcrypto and OpenPGP.js)
      * @param options.poolSize - number of workers to start; defaults to `Navigator.hardwareConcurrency()` if available, otherwise to 1.
      */
-    init(options?: WorkerPoolInitOptions): Promise<void>;
+    init(options: WorkerPoolInitOptions): Promise<void>;
 
     /**
      * Close all workers, after clearing their internal key store.
@@ -43,21 +42,11 @@ export interface WorkerPoolInterface extends CryptoApiInterface {
     destroy(): Promise<void>;
 }
 
-const errorReporter = (err: Error) => {
-    if (getIsNetworkError(err)) {
-        captureMessage('Network error in crypto worker', {
-            level: 'info',
-            extra: { message: err.message },
-        });
-    }
-
-    throw err;
-};
-
 // Singleton worker pool.
 export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     let workerPoolPromise: Promise<Remote<CryptoApi>[]> | null = null;
     let i = -1;
+    let sentryLogger: SentryLogger | null = null;
 
     const initWorker = async (openpgpConfigOptions: WorkerInitOptions) => {
         // Webpack static analyser is not especially powerful at detecting web workers that require bundling,
@@ -112,16 +101,30 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         return workerPool as any as CryptoApi[];
     };
 
+    const errorReporter = (err: Error) => {
+        if (err.name === 'NetworkError' || err.message?.toLowerCase() === 'network error') {
+            sentryLogger?.('Network error in crypto worker', {
+                level: 'info',
+                extra: { message: err.message },
+            });
+        }
+
+        throw err;
+    };
+
     return {
         init: async ({
             awaitOnFirstUse = false,
             awaitOnFirstUseErrorCallback = () => {},
             poolSize = navigator.hardwareConcurrency || 1,
             openpgpConfigOptions = {},
-        } = {}) => {
+            sentryLogger: logger,
+        }) => {
             if (workerPoolPromise !== null) {
                 throw new Error('worker pool already initialised');
             }
+            sentryLogger = logger;
+
             workerPoolPromise = (async () => {
                 // We load one worker early to ensure the browser serves the cached resources to the rest of the pool
                 let workerPool = [await initWorker(openpgpConfigOptions)];
