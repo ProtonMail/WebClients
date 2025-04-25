@@ -1,0 +1,52 @@
+{
+    "name": "@proton/storybook",
+    "description": "",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "scripts": {
+        "build-storybook": "storybook build",
+        "storybook": "storybook dev -p 6007"
+    },
+    "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/i18n": "workspace:^",
+        "@proton/icons": "workspace:^",
+        "@proton/pack": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "iconv-lite": "^0.6.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "tinycolor2": "^1.6.0",
+        "ttag": "^1.8.7"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.26.10",
+        "@babel/plugin-transform-runtime": "^7.26.10",
+        "@babel/preset-env": "^7.26.9",
+        "@babel/preset-react": "^7.26.3",
+        "@babel/preset-typescript": "^7.27.0",
+        "@storybook/addon-essentials": "^8.6.12",
+        "@storybook/addon-interactions": "^8.6.12",
+        "@storybook/addon-links": "^8.6.12",
+        "@storybook/addon-webpack5-compiler-babel": "^3.0.6",
+        "@storybook/blocks": "^8.6.12",
+        "@storybook/manager-api": "^8.6.12",
+        "@storybook/react": "^8.6.12",
+        "@storybook/react-webpack5": "^8.6.12",
+        "@storybook/source-loader": "^8.6.12",
+        "@storybook/test": "^8.6.12",
+        "@storybook/theming": "^8.6.12",
+        "@types/node": "^22.14.0",
+        "@types/react": "^18.3.20",
+        "@types/react-dom": "^18.3.6",
+        "@types/tinycolor2": "^1.4.6",
+        "babel-loader": "^10.0.0",
+        "storybook": "^8.6.12",
+        "ts-loader": "^9.5.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3",
+        "webpack": "^5.99.5"
+    },
+    "packageManager": "yarn@4.9.0"
+}
