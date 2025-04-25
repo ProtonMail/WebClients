@@ -683,11 +683,7 @@ export const PhotosLayout = () => {
 
             {/** Modals that are necessary on all views */}
             {linkSharingModal}
-
-            {/** Modals that are necessary only on gallery and album gallery views */}
-            {(currentPageType === AlbumsPageTypes.GALLERY || currentPageType === AlbumsPageTypes.ALBUMSGALLERY) && (
-                <>{detailsModal}</>
-            )}
+            {detailsModal}
 
             {/** Modals that are necessary only on album and album gallery view */}
             {(currentPageType === AlbumsPageTypes.ALBUMS || currentPageType === AlbumsPageTypes.ALBUMSGALLERY) && (
