@@ -22,12 +22,7 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import type {
-    Address,
-    GroupMembershipReturn,
-    OrganizationWithSettings,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import type { Address, GroupMembershipReturn, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -62,7 +57,7 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled: boolean;
     isQRCodeSignInEnabled: boolean;
     recoveryNotification?: ThemeColor;
-    organization?: OrganizationWithSettings;
+    organization?: OrganizationExtended;
     isBreachesAccountDashboardEnabled: boolean;
     showVPNDashboard: boolean;
     showThemeSelection: boolean;

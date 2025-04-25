@@ -1,7 +1,13 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Address, Api, DecryptedKey, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Api,
+    DecryptedKey,
+    KeyTransparencyActivation,
+    PasswordPolicies,
+} from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from '../login/interface';
 
@@ -26,6 +32,7 @@ export interface ValidateResetTokenResponse {
     Addresses: Address[];
     ToMigrate: 0 | 1;
     SupportPgpV6Keys: 0 | 1;
+    PasswordPolicies: PasswordPolicies;
 }
 
 interface MnemonicData {

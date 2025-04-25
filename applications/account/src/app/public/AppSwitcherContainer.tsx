@@ -16,7 +16,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
 import ExploreAppsList, { getExploreApps } from '../signup/ExploreAppsList';
@@ -28,7 +28,7 @@ import PublicUserItem from './PublicUserItem';
 
 interface EnhancedAuthSession extends OnLoginCallbackArguments {
     data: OnLoginCallbackArguments['data'] & {
-        Organization: OrganizationWithSettings | undefined;
+        Organization: OrganizationExtended | undefined;
     };
 }
 
@@ -59,7 +59,7 @@ const Disabled = ({ children }: { children: ReactElement }) => {
     );
 };
 
-const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: OrganizationWithSettings }) => {
+const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: OrganizationExtended }) => {
     const appName = getAppName(app);
     const organizationName = organization?.Name || '';
     return (

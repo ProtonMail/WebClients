@@ -299,16 +299,20 @@ export const getSSOSetupData = async ({
     };
 };
 
-export const getSSOSetPasswordData = ({
+export const getSSOSetPasswordData = async ({
     deviceSecretUser,
+    api,
 }: {
     deviceSecretUser: DeviceSecretUser;
-}): SSOSetPasswordData => {
+    api: Api;
+}): Promise<SSOSetPasswordData> => {
+    const organizationData = await getOrganizationData({ api });
     return {
         type: 'set-password',
         keyPassword: deviceSecretUser.keyPassword,
         authDevices: [],
         deviceSecretData: deviceSecretUser.deviceSecretData,
+        organizationData: organizationData,
         intent: {
             capabilities: new Set([SSOLoginCapabilites.NEW_BACKUP_PASSWORD]),
             step: SSOLoginCapabilites.NEW_BACKUP_PASSWORD,
@@ -489,7 +493,7 @@ export const handlePrepareSSOData = async ({ cache }: { cache: AuthCacheResult }
     try {
         const deviceSecretUser = await getAuthDeviceDataByUser({ user, api: cache.api });
         if (user.Flags['has-temporary-password']) {
-            cache.data.ssoData = getSSOSetPasswordData({ deviceSecretUser });
+            cache.data.ssoData = await getSSOSetPasswordData({ deviceSecretUser, api: cache.api });
             return {
                 cache,
                 to: AuthStep.SSO,

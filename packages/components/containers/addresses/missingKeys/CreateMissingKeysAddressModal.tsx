@@ -4,28 +4,24 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { createMissingKeys } from '@proton/account/addresses/actions';
+import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
+import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import {
-    confirmPasswordValidator,
-    passwordLengthValidator,
-    requiredValidator,
-} from '@proton/shared/lib/helpers/formValidators';
 import type { Address, Member } from '@proton/shared/lib/interfaces';
 import { getShouldSetupMemberKeys } from '@proton/shared/lib/keys';
 
@@ -70,7 +66,7 @@ export const updateAddress = (oldAddresses: AddressState, ID: string, diff: Stat
 const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }: Props) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const { validator, onFormSubmit } = useFormErrors();
+    const formErrors = useFormErrors();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
@@ -78,6 +74,8 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
     const [, setFormattedAddresses] = useState<AddressState>({});
 
     const shouldSetupMemberKeys = getShouldSetupMemberKeys(member);
+    const passwordPolicyValidation = usePasswordPolicyValidation(password, usePasswordPolicies());
+    const passwordPolicyError = shouldSetupMemberKeys && !passwordPolicyValidation.valid;
 
     const handleSubmit = async () => {
         const handleUpdate = (addressID: string, event: { status: 'loading' | 'ok' | 'error'; result?: string }) => {
@@ -101,7 +99,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
                 event.stopPropagation();
-                if (!onFormSubmit()) {
+                if (!formErrors.onFormSubmit() || passwordPolicyError) {
                     return;
                 }
                 withLoading(handleSubmit()).catch(handleError);
@@ -120,30 +118,17 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                 </p>
                 {shouldSetupMemberKeys && (
                     <>
-                        <InputFieldTwo
-                            autoFocus
-                            id="password"
-                            as={PasswordInputTwo}
-                            value={password}
-                            error={validator([requiredValidator(password), passwordLengthValidator(password)])}
-                            onValue={setPassword}
-                            label={c('Label').t`Password`}
-                            placeholder={c('Placeholder').t`Password`}
-                            autoComplete="new-password"
-                        />
-                        <InputFieldTwo
-                            id="confirmPassword"
-                            as={PasswordInputTwo}
-                            label={c('Label').t`Confirm password`}
-                            placeholder={c('Placeholder').t`Confirm`}
-                            value={confirmPassword}
-                            onValue={setConfirmPassword}
-                            error={validator([
-                                requiredValidator(confirmPassword),
-                                passwordLengthValidator(confirmPassword),
-                                confirmPasswordValidator(confirmPassword, password),
-                            ])}
-                            autoComplete="new-password"
+                        <PasswordWithPolicyInputs
+                            loading={loading}
+                            passwordPolicyValidation={passwordPolicyValidation}
+                            passwordState={[password, setPassword]}
+                            confirmPasswordState={[confirmPassword, setConfirmPassword]}
+                            formErrors={formErrors}
+                            formLabels={{
+                                password: c('Label').t`Password`,
+                                confirmPassword: c('Label').t`Confirm password`,
+                            }}
+                            isAboveModal={true}
                         />
                     </>
                 )}
