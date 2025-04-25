@@ -1,3 +1,5 @@
+import type { VpnLocationFilterPolicy } from './useSharedServers';
+
 export enum PolicyType {
     /**
      * An ACTIVE NONE policy means that no users of the org can access any location.
@@ -21,3 +23,12 @@ export enum PolicyState {
 }
 
 export type LocalStatus = 'created' | 'edited' | 'deleted' | 'unchanged';
+
+export type Location = {
+    Country: string;
+    localizedCountryName: string;
+};
+
+export interface VpnLocationFilterPolicyLocal extends VpnLocationFilterPolicy {
+    localStatus?: LocalStatus;
+}

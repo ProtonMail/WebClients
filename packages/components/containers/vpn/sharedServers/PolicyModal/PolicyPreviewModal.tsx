@@ -5,8 +5,6 @@ import { c, msgid } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -23,14 +21,14 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { CountryFlagAndName } from '../../gateways/CountryFlagAndName';
+import EditPolicyDropdownMenu from '../EditPolicyDropdownMenu';
 import { buildSelectedCitiesFromLocations } from '../buildSelectedCitiesFromLocations';
 import type { GroupedLocations } from './getGroupedLocations';
 import { getGroupedLocations } from './getGroupedLocations';
-import { POLICY_STEP } from './modalPolicyStepEnum';
 
 interface SharedServersModalProps extends ModalProps {
     policy: VpnLocationFilterPolicy;
-    handleEditPolicy: (policy: VpnLocationFilterPolicy, initialStep: number, onSuccess?: () => void) => void;
+    handleEditPolicy: (policy: VpnLocationFilterPolicy, step: number, onSuccess?: () => void) => void;
     handleDeletePolicy: (policy: VpnLocationFilterPolicy, onSuccess?: () => void) => void;
     onSuccess: (policy: VpnLocationFilterPolicy) => void;
 }
@@ -124,6 +122,7 @@ const PolicyPreviewModal = ({
                         {isGroupBasedPolicy &&
                             policy.Groups.map((group) => (
                                 <EntityRow
+                                    key={group.GroupID}
                                     avatar={<Icon name="users-filled"></Icon>}
                                     name={group.Name}
                                     description={c('Label').ngettext(
@@ -137,6 +136,7 @@ const PolicyPreviewModal = ({
                         {!isGroupBasedPolicy &&
                             policy.Users.map((user) => (
                                 <EntityRow
+                                    key={user.UserID}
                                     avatar={getInitials(user.Name || '')}
                                     name={user.Name}
                                     description={user.Email}
@@ -181,49 +181,12 @@ const PolicyPreviewModal = ({
             </ModalTwoFooter>
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">
-                <DropdownMenu>
-                    <DropdownMenuButton
-                        className="text-left"
-                        onClick={() => {
-                            rest.onClose?.();
-                            handleEditPolicy(policy, POLICY_STEP.NAME, () => {});
-                        }}
-                    >
-                        <Icon name="pen" size={4} /> {c('Action').t`Edit name`}
-                    </DropdownMenuButton>
-
-                    <DropdownMenuButton
-                        className="text-left"
-                        onClick={() => {
-                            rest.onClose?.();
-                            handleEditPolicy(policy, POLICY_STEP.MEMBERS, () => {});
-                        }}
-                    >
-                        <Icon name="users" size={4} /> {c('Action').t`Edit users`}
-                    </DropdownMenuButton>
-
-                    <DropdownMenuButton
-                        className="text-left"
-                        onClick={() => {
-                            rest.onClose?.();
-                            handleEditPolicy(policy, POLICY_STEP.COUNTRIES, () => {});
-                        }}
-                    >
-                        <Icon name="earth" size={4} /> {c('Action').t`Edit countries`}
-                    </DropdownMenuButton>
-
-                    <hr className="mt-2 mb-0" />
-
-                    <DropdownMenuButton
-                        className="text-left color-danger"
-                        onClick={() => {
-                            rest.onClose?.();
-                            handleDeletePolicy(policy, () => {});
-                        }}
-                    >
-                        <Icon name="trash" size={4} /> {c('Action').t`Delete`}
-                    </DropdownMenuButton>
-                </DropdownMenu>
+                <EditPolicyDropdownMenu
+                    policy={policy}
+                    handleEditPolicy={handleEditPolicy}
+                    handleDeletePolicy={handleDeletePolicy}
+                    onClose={rest.onClose}
+                />
             </Dropdown>
         </ModalTwo>
     );

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Prompt } from 'react-router';
+import { useHistory } from 'react-router';
 
 import { c, msgid } from 'ttag';
 
@@ -11,9 +11,8 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import DeleteModal from '@proton/components/containers/vpn/sharedServers/PolicyModal/DeleteModal';
@@ -24,7 +23,6 @@ import type {
     FilterPolicyRequest,
 } from '@proton/components/containers/vpn/sharedServers/api';
 import { createLocationFilter } from '@proton/components/containers/vpn/sharedServers/api';
-import type { LocalStatus } from '@proton/components/containers/vpn/sharedServers/constants';
 import { PolicyState, PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
 import { mapPoliciesToFilterRequest } from '@proton/components/containers/vpn/sharedServers/mapPoliciesToFilterRequest';
 import { sortLocationsByLocalizedCountryName } from '@proton/components/containers/vpn/sharedServers/sortLocationsByLocalizedCountryName';
@@ -36,19 +34,21 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { getCountryOptions } from '@proton/payments';
 import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 import PolicyPreviewModal from './PolicyModal/PolicyPreviewModal';
-import { POLICY_STEP } from './PolicyModal/modalPolicyStepEnum';
+import UnpublishedChangesModal from './PolicyModal/UnpublishedChangesModal';
+import PolicyEditButton from './PolicyTable/PolicyEditButton';
+import PolicyUsersGroupsList from './PolicyTable/PolicyUsersGroupsList';
+import SelectedCountriesButton from './PolicyTable/SelectedCountriesButton';
+import type { LocalStatus, VpnLocationFilterPolicyLocal } from './constants';
+import { useCustomPrompt } from './useCustomPrompt';
 
 import './SharedServersSection.scss';
 
-interface VpnLocationFilterPolicyLocal extends VpnLocationFilterPolicy {
-    localStatus?: LocalStatus;
-}
-
-const OrangeDot: React.FC = () => (
+const OrangeDot = () => (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_10876_154544)">
+        <g clipPath="url(#clip0_10876_154544)">
             <circle cx="8" cy="8" r="4" fill="#FF9900" />
             <circle opacity="0.4" cx="8" cy="8" r="8" fill="#FF9900" />
         </g>
@@ -64,6 +64,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { loading, locations, policies, refresh, users, countUsersNotInAnyPolicy } = useSharedServers(maxAge);
+    const history = useHistory();
 
     const [originalPolicies, setOriginalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
     const [localPolicies, setLocalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
@@ -75,6 +76,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const [createModal, showCreateModal] = useModalTwoStatic(Modal);
     const [deleteModal, showDeleteModal] = useModalTwoStatic(DeleteModal);
     const [policyPreviewModal, showPolicyPreviewModal] = useModalTwoStatic(PolicyPreviewModal);
+    const [unpublishedChangesModal, showUnpublishedChangesModal] = useModalTwoStatic(UnpublishedChangesModal);
 
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
@@ -83,6 +85,16 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const customPolicies = useMemo(() => {
         return localPolicies.filter((policy) => policy.Type === PolicyType.Custom);
     }, [localPolicies]);
+
+    useCustomPrompt(hasUnsavedChanges, (path: string) => {
+        showUnpublishedChangesModal({
+            onDiscard: () => {
+                const unblock = history.block(() => {});
+                unblock();
+                history.push(path);
+            },
+        });
+    });
 
     const addPolicy = useCallback(() => {
         showCreateModal({
@@ -99,11 +111,11 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     }, [showCreateModal]);
 
     const handleEditPolicy = useCallback(
-        (policyToEdit: VpnLocationFilterPolicyLocal, initialStep: number, onSuccess?: () => void) => {
+        (policyToEdit: VpnLocationFilterPolicyLocal, step: number, onSuccess?: () => void) => {
             showCreateModal({
                 policy: policyToEdit,
                 isEditing: true,
-                initialStep: initialStep,
+                soloStep: step,
                 onSuccess: (updatedPolicy: VpnLocationFilterPolicy) => {
                     setLocalPolicies((currentPolicies) =>
                         currentPolicies.map((p) =>
@@ -266,7 +278,6 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
 
     return (
         <SettingsSectionWide>
-            <Prompt when={hasUnsavedChanges} message={() => 'The unpublished changes you made will be lost.'} />
             <div className="flex items-center gap-1 color-weak">
                 {getBoldFormattedText(
                     c('Info')
@@ -278,7 +289,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
             </div>
 
             <div
-                className={`publishBanner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2`}
+                className={`publish-banner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2`}
             >
                 <p className="ml-4 m-0 color-weak">
                     {
@@ -364,82 +375,79 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                         </Button>
                     </div>
 
-                    <Table className="mt-2" responsive="cards">
-                        <TableHeader>
-                            <TableRow>
-                                <TableHeaderCell>{c('Header').t`Policy Name`}</TableHeaderCell>
-                                <TableHeaderCell>{c('Header').t`Groups`}</TableHeaderCell>
-                                <TableHeaderCell>{c('Header').t`Enabled Countries`}</TableHeaderCell>
-                                <TableHeaderCell>{c('Header').t`Status`}</TableHeaderCell>
-                                <TableHeaderCell>{c('Header').t`Actions`}</TableHeaderCell>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {customPolicies.map((customPolicy) => {
-                                const locationsCount = customPolicy.Locations.length;
-                                const locationText =
-                                    locationsCount === 0
-                                        ? c('Info').t`No countries enabled`
-                                        : c('Info').ngettext(
-                                              msgid`${locationsCount} country enabled`,
-                                              `${locationsCount} countries enabled`,
-                                              locationsCount
-                                          );
+                    <div className="flex flex-column mt-4 gap-2">
+                        {customPolicies.map((customPolicy) => {
+                            const isDeleted = customPolicy.localStatus === 'deleted';
 
-                                return (
-                                    <TableRow
-                                        key={customPolicy.LocationFilterPolicyID}
-                                        onClick={() => handleShowPolicyPreviewModal(customPolicy)}
+                            return (
+                                <div
+                                    key={customPolicy.LocationFilterPolicyID}
+                                    onClick={({ target }) => {
+                                        if (
+                                            target instanceof HTMLElement &&
+                                            target.closest('.not-clickable-with-parent')
+                                        ) {
+                                            return;
+                                        }
+
+                                        handleShowPolicyPreviewModal(customPolicy);
+                                    }}
+                                    className={clsx(
+                                        {
+                                            'border border-weak color-disabled policy-row-disabled': isDeleted,
+                                            'bg-weak': !isDeleted,
+                                        },
+                                        `flex md:items-center min-h-custom rounded-xl p-6 gap-2`
+                                    )}
+                                    style={{ '--min-h-custom': '76px' }}
+                                >
+                                    <div className="flex flex-column md:flex-row md:items-center flex-1 gap-2">
+                                        <div
+                                            className="text-lg text-semibold w-custom overflow-hidden"
+                                            style={{ '--w-custom': '200px' }}
+                                        >
+                                            {customPolicy.Name}
+                                        </div>
+                                        <div className="md:flex-1" style={{ flexBasis: 'min-content' }}>
+                                            <PolicyUsersGroupsList policy={customPolicy} />
+                                        </div>
+                                        <SelectedCountriesButton
+                                            policy={customPolicy}
+                                            sortedLocations={sortedLocations}
+                                        />
+                                    </div>
+                                    <div
+                                        className="flex gap-1 items-center justify-end w-custom"
+                                        style={{ '--w-custom': '76px' }}
                                     >
-                                        <TableCell>{customPolicy.Name}</TableCell>
-                                        <TableCell>{customPolicy.Groups.map((g) => g.Name).join(', ')}</TableCell>
-                                        <TableCell>{locationText}</TableCell>
-                                        <TableCell>
-                                            {customPolicy.localStatus === 'created' &&
-                                                c('Info').t`Created (not published)`}
-                                            {customPolicy.localStatus === 'edited' &&
-                                                c('Info').t`Edited (not published)`}
-                                            {customPolicy.localStatus === 'deleted' &&
-                                                c('Info').t`Deleted (not published)`}
-                                            {!customPolicy.localStatus || customPolicy.localStatus === 'unchanged'
-                                                ? c('Info').t`Unchanged`
-                                                : null}
-                                        </TableCell>
-                                        <TableCell>
-                                            {customPolicy.localStatus !== 'deleted' && (
-                                                <>
-                                                    <Button
-                                                        size="small"
-                                                        color="norm"
-                                                        onClick={() => handleEditPolicy(customPolicy, POLICY_STEP.NAME)}
-                                                        className="mr-2"
-                                                    >
-                                                        {c('Action').t`Edit`}
-                                                    </Button>
-                                                    <Button
-                                                        size="small"
-                                                        color="norm"
-                                                        onClick={() => handleDeletePolicy(customPolicy)}
-                                                    >
-                                                        {c('Action').t`Delete`}
-                                                    </Button>
-                                                </>
-                                            )}
-                                            {customPolicy.localStatus === 'deleted' && (
-                                                <span className="opacity-50">{c('Info').t`Pending removal`}</span>
-                                            )}
-                                        </TableCell>
-                                    </TableRow>
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
+                                        {!isDeleted && (
+                                            <PolicyEditButton
+                                                policy={customPolicy}
+                                                handleEditPolicy={handleEditPolicy}
+                                                handleDeletePolicy={handleDeletePolicy}
+                                            />
+                                        )}
+
+                                        <Toggle
+                                            id={`custom-policy-status-${customPolicy.LocationFilterPolicyID}`}
+                                            checked={!isDeleted}
+                                            onChange={() => handleDeletePolicy(customPolicy)}
+                                            disabled={isDeleted}
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="not-clickable-with-parent"
+                                        />
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </>
             )}
 
             {policyPreviewModal}
             {createModal}
             {deleteModal}
+            {unpublishedChangesModal}
         </SettingsSectionWide>
     );
 };
