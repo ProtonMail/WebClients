@@ -1,7 +1,7 @@
 import * as useOrganizationModule from '@proton/account/organization/hooks';
-import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
-export const mockUseGetOrganization = (value: Partial<OrganizationWithSettings> = {}) => {
+export const mockUseGetOrganization = (value: Partial<OrganizationExtended> = {}) => {
     const spy = vi.spyOn(useOrganizationModule, 'useGetOrganization');
     spy.mockReturnValue(
         vi.fn(
@@ -49,7 +49,7 @@ export const mockUseGetOrganization = (value: Partial<OrganizationWithSettings> 
                         LogoID: null,
                     },
                     ...value,
-                }) as OrganizationWithSettings
+                }) as OrganizationExtended
         )
     );
     return spy;

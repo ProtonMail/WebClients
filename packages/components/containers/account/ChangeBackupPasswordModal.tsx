@@ -93,7 +93,6 @@ const ChangeBackupPasswordModal = ({ ...rest }: Props) => {
                     label={c('sso').t`Confirm backup password`}
                     error={validator([
                         requiredValidator(confirmBackupPassword),
-                        passwordLengthValidator(confirmBackupPassword),
                         confirmPasswordValidator(newBackupPassword, confirmBackupPassword),
                     ])}
                     as={PasswordInputTwo}

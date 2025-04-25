@@ -25,6 +25,7 @@ import {
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
     passwordLengthValidator,
+    requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
@@ -238,7 +239,10 @@ const Step3 = ({
                                     bigger
                                     label={c('Label').t`Password`}
                                     assistiveText={getMinPasswordLengthMessage()}
-                                    error={validator([passwordLengthValidator(newPassword)])}
+                                    error={validator([
+                                        requiredValidator(newPassword),
+                                        passwordLengthValidator(newPassword),
+                                    ])}
                                     disableChange={loading}
                                     autoFocus
                                     value={newPassword}
@@ -250,7 +254,7 @@ const Step3 = ({
                                     bigger
                                     label={c('Label').t`Confirm password`}
                                     error={validator([
-                                        passwordLengthValidator(confirmNewPassword),
+                                        requiredValidator(confirmNewPassword),
                                         confirmPasswordValidator(confirmNewPassword, newPassword),
                                     ])}
                                     disableChange={loading}

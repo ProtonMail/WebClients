@@ -66,6 +66,7 @@ enum AccountFlag {
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
     QRCodeSignIn = 'QRCodeSignIn',
+    PasswordPolicy = 'PasswordPolicy',
 }
 
 enum PaymentsFlag {

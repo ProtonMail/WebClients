@@ -13,7 +13,7 @@ import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
-import type { OrganizationWithSettings, UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
 import { InboxDesktopAppSwitcher } from '../desktop/InboxDesktopAppSwitcher';
@@ -24,7 +24,7 @@ interface AppsDropdownProps {
     onDropdownClick?: () => void;
     app?: APP_NAMES;
     user?: UserModel;
-    organization?: OrganizationWithSettings;
+    organization?: OrganizationExtended;
     title?: string;
     reloadDocument?: AppLinkProps['reloadDocument'];
 }

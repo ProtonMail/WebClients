@@ -17,8 +17,8 @@ const SSOAdminDeviceConfirmation = ({ onConfirmAskAdmin, onUseBackupPassword, ss
     const [loading, withLoading] = useLoading();
     const safeSsoData = ssoData && ssoData.type !== 'set-password' ? ssoData : null;
     const organizationData = safeSsoData?.organizationData;
-    const organizationLogoUrl = organizationData?.organizationLogo?.url;
-    const organizationIdentityAddress = organizationData?.organizationIdentity.FingerprintSignatureAddress || '';
+    const organizationLogoUrl = organizationData?.logo?.url;
+    const organizationIdentityAddress = organizationData?.identity.FingerprintSignatureAddress || '';
 
     return (
         <div>

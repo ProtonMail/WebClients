@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
@@ -14,8 +15,8 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
+import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -31,11 +32,6 @@ import { consumeSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import {
-    confirmPasswordValidator,
-    passwordLengthValidator,
-    requiredValidator,
-} from '@proton/shared/lib/helpers/formValidators';
 import { generateKeySaltAndPassphrase, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -64,13 +60,17 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
     const getAddresses = useGetAddresses();
 
     const [loading, setLoading] = useState(false);
-    const { validator, onFormSubmit } = useFormErrors();
+    const formErrors = useFormErrors();
+    const { onFormSubmit } = formErrors;
     const errorHandler = useErrorHandler();
     const { createNotification } = useNotifications();
     const authentication = useAuthentication();
 
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const passwordPolicyValidation = usePasswordPolicyValidation(newPassword, usePasswordPolicies());
+    const passwordPolicyError = !passwordPolicyValidation.valid;
 
     const [step, setStep] = useState(skipInfoStep ? STEP.PASSWORD : STEP.INFO);
 
@@ -246,7 +246,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
 
         if (step === STEP.PASSWORD) {
             const handleSubmit = async () => {
-                if (!onFormSubmit()) {
+                if (passwordPolicyError || !onFormSubmit()) {
                     return;
                 }
                 setLoading(true);
@@ -348,30 +348,18 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                                     .jt`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`
                             }
                         </div>
-                        <InputFieldTwo
-                            id="newPassword"
-                            label={c('Label').t`New password`}
-                            error={validator([requiredValidator(newPassword), passwordLengthValidator(newPassword)])}
-                            as={PasswordInputTwo}
-                            autoFocus
-                            autoComplete="new-password"
-                            value={newPassword}
-                            onValue={(value: string) => setNewPassword(value)}
-                            disabled={loading}
-                        />
-                        <InputFieldTwo
-                            id="confirmPassword"
-                            label={c('Label').t`Confirm password`}
-                            error={validator([
-                                requiredValidator(confirmPassword),
-                                passwordLengthValidator(confirmPassword),
-                                confirmPasswordValidator(newPassword, confirmPassword),
-                            ])}
-                            as={PasswordInputTwo}
-                            autoComplete="new-password"
-                            value={confirmPassword}
-                            onValue={(value: string) => setConfirmPassword(value)}
-                            disabled={loading}
+                        <PasswordWithPolicyInputs
+                            loading={loading}
+                            passwordPolicyValidation={passwordPolicyValidation}
+                            passwordState={[newPassword, setNewPassword]}
+                            confirmPasswordState={[confirmPassword, setConfirmPassword]}
+                            formErrors={formErrors}
+                            formLabels={{
+                                password: c('Label').t`New password`,
+                                confirmPassword: c('Label').t`Confirm password`,
+                            }}
+                            isAboveModal={true}
+                            autoFocus={true}
                         />
                     </>
                 ),
@@ -386,7 +374,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                                 {c('Action').t`Back`}
                             </Button>
                         )}
-                        <Button color="norm" loading={loading} type="submit">
+                        <Button color="norm" loading={loading} disabled={passwordPolicyError} type="submit">
                             {c('Action').t`Save`}
                         </Button>
                     </>

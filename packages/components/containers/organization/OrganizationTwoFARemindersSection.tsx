@@ -10,6 +10,7 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import OrganizationTwoFAHeader from '@proton/components/containers/organization/OrganizationTwoFAHeader';
 import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -53,6 +54,9 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
             >
                 {c('Info').t`Send emails to encourage your members to protect their accounts with 2FA.`}
             </SettingsParagraph>
+            <div className="mb-4">
+                <OrganizationTwoFAHeader organization={organization} />
+            </div>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold flex items-center">
