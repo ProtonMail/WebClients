@@ -30,7 +30,7 @@ const ZoomUpsellModal = ({ modalProps }: Props) => {
 
     return (
         <NewUpsellModal
-            titleModal={c('Title').t`Get Zooming faster`}
+            titleModal={c('Title').t`Schedule meetings in one click`}
             description={c('Description')
                 .t`Create a Zoom meeting and add joining details to your event with one click.`}
             modalProps={modalProps}
