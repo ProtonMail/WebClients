@@ -302,19 +302,50 @@ export function useLinkInner(
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
 
-            const parentPrivateKeyPromise = encryptedLink.parentLinkId
-                ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                  getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
-                : getSharePrivateKey(abortSignal, shareId);
-            const [parentPrivateKey, addressPublicKey] = await Promise.all([
-                parentPrivateKeyPromise,
-                encryptedLink.signatureEmail ? getVerificationKey(encryptedLink.signatureEmail) : [],
-            ]);
+            const privateKeys: PrivateKeyReference[] = [];
+
+            try {
+                const parentPrivateKey = encryptedLink.parentLinkId
+                    ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                      await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
+                    : await getSharePrivateKey(abortSignal, shareId);
+                privateKeys.push(parentPrivateKey);
+            } catch (e) {
+                // ignore failures but still report them to Sentry
+                sendErrorReport(e, {
+                    extra: {
+                        message: 'getLinkPassphraseAndSessionKey() - Failed to get parentPrivateKey',
+                    },
+                });
+            }
+
+            if (encryptedLink.photoProperties?.albums.length) {
+                for (const album of encryptedLink.photoProperties.albums) {
+                    try {
+                        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                        const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
+                        privateKeys.push(albumPrivateKey);
+                        // we can break at first album since it's enough to decrypt / for optimization
+                        break;
+                    } catch (e) {
+                        // ignore failures but still report them to Sentry
+                        sendErrorReport(e, {
+                            extra: {
+                                message: 'getLinkPassphraseAndSessionKey() - Failed to get albumPrivateKey',
+                            },
+                        });
+                    }
+                }
+            }
+
+            const addressPublicKey = encryptedLink.signatureEmail
+                ? await getVerificationKey(encryptedLink.signatureEmail)
+                : [];
 
             try {
                 // Fallback to parent NodeKey in case if we don't have addressPublicKey (Anonymous upload)
                 const publicKeysCallbackList: VerificationKeysCallback[] = [
-                    async () => (encryptedLink.signatureEmail ? addressPublicKey : [parentPrivateKey]),
+                    async () => (encryptedLink.signatureEmail ? addressPublicKey : privateKeys),
                 ];
 
                 const {
@@ -324,7 +355,7 @@ export function useLinkInner(
                 } = await decryptPassphrase({
                     armoredPassphrase: encryptedLink.nodePassphrase,
                     armoredSignature: encryptedLink.nodePassphraseSignature,
-                    privateKeys: [parentPrivateKey],
+                    privateKeys: privateKeys,
                     publicKeysCallbackList,
                 });
 
@@ -400,6 +431,7 @@ export function useLinkInner(
             }
 
             const privateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
+
             const blockKeys = base64StringToUint8Array(encryptedLink.contentKeyPacket);
 
             try {
@@ -533,32 +565,49 @@ export function useLinkInner(
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
+                const privateKeys: PrivateKeyReference[] = [];
+
+                try {
+                    const parentPrivateKey: PrivateKeyReference = encryptedLink.parentLinkId
+                        ? await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
+                        : await getSharePrivateKey(abortSignal, shareId);
+
+                    privateKeys.push(parentPrivateKey);
+                } catch (e) {
+                    // ignore failures but still report them to Sentry
+                    sendErrorReport(e, {
+                        extra: {
+                            message: 'decryptLink() - Failed to get parentPrivateKey',
+                        },
+                    });
+                }
+
+                if (encryptedLink.photoProperties?.albums.length) {
+                    for (const album of encryptedLink.photoProperties.albums) {
+                        try {
+                            const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
+                            privateKeys.push(albumPrivateKey);
+                            // we can break at first album since it's enough to decrypt / for optimization
+                            break;
+                        } catch (e) {
+                            // ignore failures but still report them to Sentry
+                            sendErrorReport(e, {
+                                extra: {
+                                    message: 'decryptLink() - Failed to get albumPrivateKey',
+                                },
+                            });
+                        }
+                    }
+                }
+
                 const namePromise = new Promise<{ name: string; nameVerified: VERIFICATION_STATUS }>(
                     async (resolve, reject) => {
                         try {
-                            const privateKey = !encryptedLink.parentLinkId
-                                ? await getSharePrivateKey(abortSignal, shareId)
-                                : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId);
-
-                            // This is required for photos inside albums
-                            // It may change in the future
-                            const additionalKeys: PrivateKeyReference[] = [];
-                            if (encryptedLink.photoProperties?.albums.length) {
-                                for (const album of encryptedLink.photoProperties.albums) {
-                                    try {
-                                        const key = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
-                                        additionalKeys.push(key);
-                                    } catch (e) {
-                                        // ignore failures but still report them to Sentry
-                                        sendErrorReport(e);
-                                    }
-                                }
-                            }
                             const signatureEmail = encryptedLink.nameSignatureEmail || encryptedLink.signatureEmail;
-                            const publicKey = signatureEmail ? await getVerificationKey(signatureEmail) : privateKey;
+                            const publicKey = signatureEmail ? await getVerificationKey(signatureEmail) : privateKeys;
                             const { data, verificationStatus } = await decryptSigned({
                                 armoredMessage: encryptedLink.name,
-                                privateKey: [privateKey].concat(additionalKeys),
+                                privateKey: privateKeys,
                                 // nameSignatureEmail is missing for some old files.
                                 // Fallback to signatureEmail might result in failed
                                 // signature check, but no one reported it so far so
@@ -584,6 +633,7 @@ export function useLinkInner(
                 const signatureEmail = encryptedLink.isFile
                     ? revision?.signatureEmail || encryptedLink.activeRevision?.signatureEmail
                     : encryptedLink.signatureEmail;
+
                 const xattrPromise = !encryptedLink.xAttr
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
@@ -828,6 +878,7 @@ export function useLinkInner(
         if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {
             return link.cachedThumbnailUrl;
         }
+
         let downloadInfo = {
             isFresh: false,
             downloadUrl: link.activeRevision.thumbnail?.bareUrl,
