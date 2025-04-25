@@ -18,7 +18,7 @@ import { AuthDeviceInvalidError, type DeviceSecretUser } from '@proton/shared/li
 import Text from '../../public/Text';
 import type { Render } from '../LoginRender';
 import SetBackupPasswordForm from '../SetBackupPasswordForm';
-import SetPasswordForm from '../SetPasswordForm';
+import SetPasswordWithPolicyForm from '../SetPasswordWithPolicyForm';
 import SSOAdminDeviceConfirmation1 from './SSOAdminDeviceConfirmation1';
 import SSOAdminDeviceConfirmation2 from './SSOAdminDeviceConfirmation2';
 import SSOBackupPasswordForm from './SSOBackupPasswordForm';
@@ -53,9 +53,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
 
     const handleError = onError;
     const handleCancel = () => {
-        if ('organizationData' in ssoData) {
-            ssoData.organizationData.logo?.cleanup();
-        }
+        ssoData.organizationData.logo?.cleanup();
         onCancel?.();
     };
 
@@ -146,7 +144,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                         <SetBackupPasswordForm
                             userData={cache.data.user}
                             ssoSetupData={ssoData.type === 'setup' ? ssoData : null}
-                            onSubmit={async (newPassword) => {
+                            onSubmit={async ({ password }) => {
                                 try {
                                     if (ssoData.type !== 'setup') {
                                         throw new Error('Missing SSO setup data');
@@ -154,7 +152,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                                     const validateFlow = createFlow();
                                     const result = await handleSetupSSOUserKeys({
                                         cache,
-                                        newPassword,
+                                        newPassword: password,
                                         deviceData: ssoData.deviceData,
                                     });
                                     if (validateFlow()) {
@@ -314,8 +312,9 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                                 {c('sso')
                                     .t`It’s the only way to fully restore your account, so make sure to keep it somewhere safe.`}
                             </Text>
-                            <SetPasswordForm
-                                onSubmit={async (newPassword) => {
+                            <SetPasswordWithPolicyForm
+                                passwordPolicies={ssoData.organizationData.passwordPolicies}
+                                onSubmit={async ({ password }) => {
                                     try {
                                         const { keyPassword, deviceSecretData } = (() => {
                                             if (ssoData?.type === 'set-password') {
@@ -336,7 +335,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                                         const validateFlow = createFlow();
                                         const result = await handleChangeSSOUserKeysPassword({
                                             oldKeyPassword: keyPassword,
-                                            newBackupPassword: newPassword,
+                                            newBackupPassword: password,
                                             deviceSecretData,
                                             cache,
                                         });
