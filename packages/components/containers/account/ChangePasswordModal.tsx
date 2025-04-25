@@ -557,8 +557,6 @@ const ChangePasswordModal = ({
 
     const handleClose = loading ? noop : lockAndClose;
 
-    const saveButtonDisabled = passwordPolicyError;
-
     return (
         <Modal
             size={passwordStrengthIndicator.supported ? 'xlarge' : undefined}
@@ -640,7 +638,7 @@ const ChangePasswordModal = ({
                         <Button onClick={handleClose} disabled={loading}>
                             {close || c('Action').t`Cancel`}
                         </Button>
-                        <Button loading={loading} type="submit" color="norm" disabled={saveButtonDisabled}>
+                        <Button loading={loading} type="submit" color="norm">
                             {submit || c('Action').t`Save`}
                         </Button>
                     </ModalFooter>

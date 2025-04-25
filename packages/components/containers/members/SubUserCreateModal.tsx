@@ -165,7 +165,6 @@ const SubUserCreateModal = ({
 
     const passwordPolicyValidation = usePasswordPolicyValidation(model.password, usePasswordPolicies());
     const passwordPolicyError = model.mode === CreateMemberMode.Password && !passwordPolicyValidation.valid;
-    const saveButtonDisabled = passwordPolicyError;
 
     const domainOptions = verifiedDomains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
@@ -328,7 +327,7 @@ const SubUserCreateModal = ({
             onSubmit={(event: FormEvent<HTMLFormElement>) => {
                 event.preventDefault();
                 event.stopPropagation();
-                if (passwordPolicyError || !onFormSubmit(event.currentTarget)) {
+                if (!onFormSubmit(event.currentTarget) || passwordPolicyError) {
                     return;
                 }
                 void withLoading(handleSubmit()).catch(errorHandler);
@@ -556,7 +555,7 @@ const SubUserCreateModal = ({
                         {c('user_modal').t`Cancel`}
                     </Button>
                 )}
-                <Button loading={submitting} type="submit" color="norm" disabled={saveButtonDisabled}>
+                <Button loading={submitting} type="submit" color="norm">
                     {c('user_modal').t`Create user`}
                 </Button>
             </ModalFooter>

@@ -246,7 +246,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
 
         if (step === STEP.PASSWORD) {
             const handleSubmit = async () => {
-                if (passwordPolicyError || !onFormSubmit()) {
+                if (!onFormSubmit() || passwordPolicyError) {
                     return;
                 }
                 setLoading(true);
@@ -374,7 +374,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                                 {c('Action').t`Back`}
                             </Button>
                         )}
-                        <Button color="norm" loading={loading} disabled={passwordPolicyError} type="submit">
+                        <Button color="norm" loading={loading} type="submit">
                             {c('Action').t`Save`}
                         </Button>
                     </>
