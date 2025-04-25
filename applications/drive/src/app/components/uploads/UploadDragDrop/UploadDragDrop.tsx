@@ -24,6 +24,7 @@ interface UploadDragDropProps {
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
+    onDrop?: () => void;
 }
 
 const UploadDragDrop = ({
@@ -35,6 +36,7 @@ const UploadDragDrop = ({
     onFileUpload,
     onFileSkipped,
     onFolderUpload,
+    onDrop,
     isForPhotos = false,
 }: UploadDragDropProps) => {
     const { handleDrop } = useFileDrop({
@@ -86,6 +88,7 @@ const UploadDragDrop = ({
                     onDrop={(e) => {
                         setOverlayIsVisible(false);
                         void handleDrop(e);
+                        void onDrop?.();
                     }}
                 >
                     <section className="upload-drag-drop-infobox p-14 pt-11">
