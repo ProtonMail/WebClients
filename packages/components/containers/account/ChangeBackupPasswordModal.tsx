@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { changeSSOUserBackupPassword } from '@proton/account/sso/passwordActions';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
@@ -10,31 +11,30 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
+import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import {
-    confirmPasswordValidator,
-    passwordLengthValidator,
-    requiredValidator,
-} from '@proton/shared/lib/helpers/formValidators';
 import { AuthDeviceNonExistingError } from '@proton/shared/lib/keys/device';
 
 interface Props extends ModalProps {}
 
 const ChangeBackupPasswordModal = ({ ...rest }: Props) => {
     const dispatch = useDispatch();
-    const { validator, onFormSubmit } = useFormErrors();
+    const formErrors = useFormErrors();
+    const { onFormSubmit } = formErrors;
     const [loading, withLoading] = useLoading();
-    const [newBackupPassword, setNewPassword] = useState('');
-    const [confirmBackupPassword, setConfirmBackupPassword] = useState('');
+    const newBackupPasswordState = useState('');
+    const [newBackupPassword] = newBackupPasswordState;
+    const confirmPasswordState = useState('');
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
+    const passwordPolicyValidation = usePasswordPolicyValidation(newBackupPassword, usePasswordPolicies());
+    const passwordPolicyError = !passwordPolicyValidation.valid;
 
     return (
         <ModalTwo
@@ -42,7 +42,7 @@ const ChangeBackupPasswordModal = ({ ...rest }: Props) => {
             onClose={rest.onClose}
             {...rest}
             onSubmit={() => {
-                if (!onFormSubmit()) {
+                if (!onFormSubmit() || passwordPolicyError) {
                     return;
                 }
                 withLoading(
@@ -73,33 +73,18 @@ const ChangeBackupPasswordModal = ({ ...rest }: Props) => {
                     {c('sso')
                         .t`Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.`}
                 </div>
-                <InputFieldTwo
-                    id="newPassword"
-                    label={c('sso').t`New backup password`}
-                    error={validator([
-                        requiredValidator(newBackupPassword),
-                        passwordLengthValidator(newBackupPassword),
-                    ])}
-                    as={PasswordInputTwo}
-                    autoFocus
-                    autoComplete="new-password"
-                    value={newBackupPassword}
-                    onValue={setNewPassword}
-                    disabled={loading}
-                />
-
-                <InputFieldTwo
-                    id="confirmPassword"
-                    label={c('sso').t`Confirm backup password`}
-                    error={validator([
-                        requiredValidator(confirmBackupPassword),
-                        confirmPasswordValidator(newBackupPassword, confirmBackupPassword),
-                    ])}
-                    as={PasswordInputTwo}
-                    autoComplete="new-password"
-                    value={confirmBackupPassword}
-                    onValue={setConfirmBackupPassword}
-                    disabled={loading}
+                <PasswordWithPolicyInputs
+                    passwordState={newBackupPasswordState}
+                    confirmPasswordState={confirmPasswordState}
+                    passwordPolicyValidation={passwordPolicyValidation}
+                    formErrors={formErrors}
+                    formLabels={{
+                        password: c('sso').t`New backup password`,
+                        confirmPassword: c('sso').t`Confirm backup password`,
+                    }}
+                    loading={loading}
+                    isAboveModal={true}
+                    autoFocus={true}
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
