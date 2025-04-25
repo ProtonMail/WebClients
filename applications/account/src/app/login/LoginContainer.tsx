@@ -40,7 +40,7 @@ import { useMetaTags } from '../useMetaTags';
 import type { LoginFormRef } from './LoginForm';
 import LoginForm from './LoginForm';
 import { type Render, type RenderProps, defaultElectronPassLoginRender, defaultLoginRender } from './LoginRender';
-import SetPasswordForm from './SetPasswordForm';
+import SetPasswordWithPolicyForm from './SetPasswordWithPolicyForm';
 import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
@@ -431,13 +431,14 @@ const LoginContainer = ({
                                     {c('Info')
                                         .t`This will replace your temporary password. You will use it to access your ${BRAND_NAME} Account in the future.`}
                                 </Text>
-                                <SetPasswordForm
-                                    onSubmit={async (newPassword) => {
+                                <SetPasswordWithPolicyForm
+                                    passwordPolicies={cache.data.passwordPolicies ?? []}
+                                    onSubmit={async ({ password }) => {
                                         try {
                                             const validateFlow = createFlow();
                                             const result = await handleSetupPassword({
                                                 cache,
-                                                newPassword,
+                                                newPassword: password,
                                             });
                                             if (validateFlow()) {
                                                 return await handleResult(result);

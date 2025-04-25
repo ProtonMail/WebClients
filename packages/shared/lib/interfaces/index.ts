@@ -19,6 +19,7 @@ export * from './KeyTransparency';
 export * from './Label';
 export * from './MailSettings';
 export * from './Member';
+export * from './PasswordPolicy';
 export * from './Organization';
 export * from './OrganizationKey';
 export * from './PendingInvitation';

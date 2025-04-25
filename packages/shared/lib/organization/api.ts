@@ -2,7 +2,7 @@ import {
     getOrganization as getOrganizationConfig,
     getOrganizationSettings as getOrganizationSettingsConfig,
 } from '@proton/shared/lib/api/organization';
-import type { Api, Organization, OrganizationSettings, OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import type { Api, Organization, OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces';
 
 export const getOrganization = ({ api }: { api: Api }) => {
     return api<{
@@ -33,13 +33,13 @@ export const getOrganizationSettings = ({ api }: { api: Api }) => {
         });
 };
 
-export const getOrganizationWithSettings = async ({
+export const getOrganizationExtended = async ({
     api,
     defaultSettings,
 }: {
     api: Api;
     defaultSettings?: boolean; // Avoid fetching organization settings in case this is true (most likely it is missing required scopes)
-}): Promise<OrganizationWithSettings> => {
+}): Promise<OrganizationExtended> => {
     const [Organization, OrganizationSettings] = await Promise.all([
         getOrganization({ api }),
         defaultSettings ? getDefaultOrganizationSettings() : getOrganizationSettings({ api }),

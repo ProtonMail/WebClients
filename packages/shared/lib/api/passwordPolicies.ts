@@ -1,76 +1,21 @@
-import type { Api } from '../interfaces';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 
-export const AllPasswordPolicies = [
-    'AtLeastXCharacters',
-    'AtLeastOneNumber',
-    'AtLeastOneSpecialCharacter',
-    'AtLeastOneUpperCaseAndOneLowercase',
-    'DisallowSequences',
-    'DisallowCommonPasswords',
-] as const;
+import type { Api, PasswordPolicies, User } from '../interfaces';
 
-export enum PasswordPolicyState {
-    ENABLED = 1,
-    OPTIONAL = 2,
-}
+// Only doing password policies for users in an org as of 25.04.2025
+export const getShouldUsePasswordPolicies = (user: User) => {
+    return isPaid(user);
+};
 
-export interface PasswordPolicy {
-    PolicyName: string;
-    State: PasswordPolicyState;
-    RequirementMessage: string;
-    ErrorMessage: string;
-    Regex: string;
-}
-
-export interface PasswordPolicies {
-    PasswordPolicies: PasswordPolicy[];
-}
-
-export const getPasswordPolicies = () => ({
-    method: 'get',
-    url: `auth/v4/password-policies`,
-});
-
-export const getAllPasswordPolicies = async (api: Api): Promise<PasswordPolicy[]> => {
+export const getPasswordPolicies = async ({ api }: { api: Api }): Promise<PasswordPolicies> => {
     try {
-        const { PasswordPolicies } = await api<PasswordPolicies>({
+        const { PasswordPolicies } = await api<{ PasswordPolicies: PasswordPolicies }>({
             silence: true,
-            ...getPasswordPolicies(),
+            method: 'get',
+            url: `auth/v4/password-policies`,
         });
         return PasswordPolicies;
     } catch {
         return [];
     }
-};
-
-export type AllPasswordPolicyKeys = (typeof AllPasswordPolicies)[number];
-
-export type PolicyStateType = {
-    [K in AllPasswordPolicyKeys]: K extends 'AtLeastXCharacters' ? string : PasswordPolicyState;
-};
-
-export type SerializedPolicy = {
-    PolicyName: keyof PolicyStateType;
-    State: PasswordPolicyState;
-    Parameters: Record<string, any> | null;
-};
-
-export const serializePolicyState = (state: PolicyStateType): SerializedPolicy[] => {
-    return Object.entries(state).map(([key, value]) => {
-        if (key === 'AtLeastXCharacters') {
-            return {
-                PolicyName: key,
-                State: PasswordPolicyState.ENABLED,
-                Parameters: {
-                    MinimumCharacters: Number(value),
-                },
-            };
-        }
-
-        return {
-            PolicyName: key as keyof PolicyStateType,
-            State: value as PasswordPolicyState,
-            Parameters: null,
-        };
-    });
 };

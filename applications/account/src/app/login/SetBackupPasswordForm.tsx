@@ -17,9 +17,9 @@ const SetBackupPasswordForm = ({ onSubmit, ssoSetupData, userData }: Props) => {
     const username = ssoSetupData?.unprivatizationContextData.addresses[0]?.Email || userData?.Email || userData?.Name;
 
     const organizationData = ssoSetupData?.organizationData;
-    const organizationLogoUrl = organizationData?.organizationLogo?.url;
+    const organizationLogoUrl = organizationData?.logo?.url;
     const organizationName = organizationData?.organization.Name || '';
-    const organizationIdentityAddress = organizationData?.organizationIdentity.FingerprintSignatureAddress || '';
+    const organizationIdentityAddress = organizationData?.identity.FingerprintSignatureAddress || '';
 
     const parsedUnprivatizationData = ssoSetupData?.parsedUnprivatizationData;
     const adminEmail =

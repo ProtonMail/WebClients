@@ -54,3 +54,4 @@ export * from './paymentMethods';
 export * from './paymentStatus';
 export * from './subscription';
 export * from './plans';
+export * from './passwordPolicies';

@@ -37,7 +37,7 @@ import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/ur
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import SetPasswordForm from '../login/SetPasswordForm';
+import SetPasswordWithPolicyForm from '../login/SetPasswordWithPolicyForm';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Layout from '../public/Layout';
@@ -489,8 +489,9 @@ const ResetPasswordContainer = ({
                 <>
                     <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
                     <Content>
-                        <SetPasswordForm
-                            onSubmit={async (newPassword: string) => {
+                        <SetPasswordWithPolicyForm
+                            passwordPolicies={cache.resetResponse?.PasswordPolicies ?? []}
+                            onSubmit={async ({ password }) => {
                                 createNotification({
                                     text: c('Info')
                                         .t`This can take a few seconds or a few minutes depending on your device`,
@@ -501,7 +502,7 @@ const ResetPasswordContainer = ({
                                     try {
                                         const validateFlow = createFlow();
                                         const result = await handleNewPasswordMnemonic({
-                                            password: newPassword,
+                                            password,
                                             cache,
                                         });
                                         if (validateFlow()) {
@@ -516,7 +517,7 @@ const ResetPasswordContainer = ({
                                 try {
                                     const validateFlow = createFlow();
                                     const result = await handleNewPassword({
-                                        password: newPassword,
+                                        password,
                                         api: silentApi,
                                         cache,
                                     });

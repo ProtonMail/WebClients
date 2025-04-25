@@ -1,7 +1,7 @@
 import { type FreePlanDefault, PLANS, PLAN_TYPES, type Plan, type Subscription } from '@proton/payments';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type {
-    OrganizationWithSettings,
+    OrganizationExtended,
     PendingInvitation,
     User,
     UserSettings,
@@ -604,7 +604,7 @@ export const organization = {
     MaxMembers: 5,
     Settings: {},
     State: ORGANIZATION_STATE.ACTIVE,
-} as OrganizationWithSettings;
+} as OrganizationExtended;
 
 export const vpnServersCount = {
     free: {

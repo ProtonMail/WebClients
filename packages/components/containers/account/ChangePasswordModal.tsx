@@ -6,6 +6,7 @@ import { signoutAction } from '@proton/account';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Scroll } from '@proton/atoms';
@@ -16,10 +17,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import {
-    OrganizationPasswordPolicies,
-    useOrganizationPasswordPolicyValidation,
-} from '@proton/components/components/organizationPasswordPolicies/OrganizationPasswordPolicies';
+import { PasswordPolicy, usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
@@ -152,17 +150,15 @@ const ChangePasswordModal = ({
     const resetErrors = () => setErrors(DEFAULT_ERRORS);
 
     const newPasswordError = passwordLengthValidator(inputs.newPassword);
-    const confirmPasswordError =
-        passwordLengthValidator(inputs.confirmPassword) ||
-        confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword);
+    const confirmPasswordError = confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword);
+    const passwordPolicyValidation = usePasswordPolicyValidation(inputs.newPassword, usePasswordPolicies());
+    const passwordPolicyError = !passwordPolicyValidation.valid;
 
     const validateNewPasswords = () => {
-        if (newPasswordError || confirmPasswordError) {
+        if (newPasswordError || confirmPasswordError || passwordPolicyError) {
             throw new Error('Password error');
         }
     };
-
-    const organizationPasswordPolicies = useOrganizationPasswordPolicyValidation(inputs.newPassword, api);
 
     const checkLoginError = ({ data: { Code, Error } = { Code: 0, Error: '' } }) => {
         if (Code === PASSWORD_WRONG_ERROR) {
@@ -561,8 +557,7 @@ const ChangePasswordModal = ({
 
     const handleClose = loading ? noop : lockAndClose;
 
-    const saveButtonDisabled =
-        organizationPasswordPolicies.displayed && !organizationPasswordPolicies.passwordRequirementsMatched;
+    const saveButtonDisabled = passwordPolicyError;
 
     return (
         <Modal
@@ -611,7 +606,7 @@ const ChangePasswordModal = ({
                             disabled={loading}
                         />
 
-                        {passwordStrengthIndicator.supported && !organizationPasswordPolicies.displayed && (
+                        {passwordStrengthIndicator.supported && !passwordPolicyValidation.enabled && (
                             <PasswordStrengthIndicator
                                 service={passwordStrengthIndicator.service}
                                 password={inputs.newPassword}
@@ -619,12 +614,9 @@ const ChangePasswordModal = ({
                             />
                         )}
 
-                        {organizationPasswordPolicies.displayed && (
+                        {passwordPolicyValidation.enabled && (
                             <div className="block md:hidden w-full mb-4">
-                                <OrganizationPasswordPolicies
-                                    password={inputs.newPassword}
-                                    wrapper={organizationPasswordPolicies}
-                                />
+                                <PasswordPolicy password={inputs.newPassword} wrapper={passwordPolicyValidation} />
                             </div>
                         )}
 
@@ -635,7 +627,6 @@ const ChangePasswordModal = ({
                             placeholder={c('Placeholder').t`Confirm`}
                             error={validator([
                                 requiredValidator(inputs.confirmPassword),
-                                passwordLengthValidator(inputs.confirmPassword),
                                 confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword),
                             ])}
                             as={PasswordInputTwo}
@@ -654,7 +645,7 @@ const ChangePasswordModal = ({
                         </Button>
                     </ModalFooter>
                 </div>
-                {passwordStrengthIndicator.supported && !organizationPasswordPolicies.displayed && (
+                {passwordStrengthIndicator.supported && !passwordPolicyValidation.enabled && (
                     <div className="hidden md:flex w-2/5 border-left">
                         <Scroll>
                             <PasswordStrengthIndicator
@@ -668,12 +659,12 @@ const ChangePasswordModal = ({
                         </Scroll>
                     </div>
                 )}
-                {organizationPasswordPolicies.displayed && (
+                {passwordPolicyValidation.enabled && (
                     <div className="hidden md:flex w-2/5 border-left">
                         <Scroll>
-                            <OrganizationPasswordPolicies
+                            <PasswordPolicy
                                 password={inputs.newPassword}
-                                wrapper={organizationPasswordPolicies}
+                                wrapper={passwordPolicyValidation}
                                 variant="large"
                             />
                         </Scroll>

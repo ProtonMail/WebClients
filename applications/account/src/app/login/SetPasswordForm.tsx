@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-import { c } from 'ttag';
-
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -10,32 +8,17 @@ import {
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
     passwordLengthValidator,
+    requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
+
+import { getBackupPasswordFormLabels, getPasswordFormLabels } from './passwordFormHelper';
 
 interface Props {
     onSubmit: (newPassword: string) => Promise<void>;
     children?: ReactNode;
     type?: 'backup';
 }
-
-const getPasswordData = () => {
-    return {
-        formName: 'setPasswordForm',
-        passwordLabel: c('Label').t`New password`,
-        confirmPasswordLabel: c('Label').t`Confirm password`,
-        cta: c('Action').t`Confirm`,
-    };
-};
-
-const getBackupPasswordData = () => {
-    return {
-        formName: 'setBackupPasswordForm',
-        passwordLabel: c('Label').t`Backup password`,
-        confirmPasswordLabel: c('Label').t`Repeat backup password`,
-        cta: c('Action').t`Continue`,
-    };
-};
 
 const SetPasswordForm = ({ onSubmit, children, type }: Props) => {
     const [loading, withLoading] = useLoading();
@@ -44,11 +27,11 @@ const SetPasswordForm = ({ onSubmit, children, type }: Props) => {
 
     const { validator, onFormSubmit } = useFormErrors();
 
-    const data = type === 'backup' ? getBackupPasswordData() : getPasswordData();
+    const formLabels = type === 'backup' ? getBackupPasswordFormLabels() : getPasswordFormLabels();
 
     return (
         <form
-            name={data.formName}
+            name={formLabels.formName}
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading || !onFormSubmit()) {
@@ -63,9 +46,9 @@ const SetPasswordForm = ({ onSubmit, children, type }: Props) => {
                 as={PasswordInputTwo}
                 id="password"
                 bigger
-                label={data.passwordLabel}
+                label={formLabels.passwordLabel}
                 assistiveText={getMinPasswordLengthMessage()}
-                error={validator([passwordLengthValidator(newPassword)])}
+                error={validator([requiredValidator(newPassword), passwordLengthValidator(newPassword)])}
                 disableChange={loading}
                 autoFocus
                 autoComplete="new-password"
@@ -77,9 +60,9 @@ const SetPasswordForm = ({ onSubmit, children, type }: Props) => {
                 as={PasswordInputTwo}
                 id="password-repeat"
                 bigger
-                label={data.confirmPasswordLabel}
+                label={formLabels.confirmPasswordLabel}
                 error={validator([
-                    passwordLengthValidator(confirmNewPassword),
+                    requiredValidator(confirmNewPassword),
                     confirmPasswordValidator(confirmNewPassword, newPassword),
                 ])}
                 disableChange={loading}
@@ -88,7 +71,7 @@ const SetPasswordForm = ({ onSubmit, children, type }: Props) => {
                 onValue={setConfirmNewPassword}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
-                {data.cta}
+                {formLabels.cta}
             </Button>
         </form>
     );
