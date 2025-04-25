@@ -1,5 +1,4 @@
-import type { ADDON_NAMES, PLANS } from '@proton/payments';
-import { type Plan, getPlansMap } from '@proton/payments';
+import { type ADDON_NAMES, type PLANS, type Plan, getPlansMap } from '@proton/payments';
 
 export const cachedPlans: Plan[] = [
     {
@@ -25,23 +24,13 @@ export const cachedPlans: Plan[] = [
             '1': 100,
         },
         PeriodEnd: {
-            '1': 1735148146,
+            '1': 1748170100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 100,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'Lab5ug5wsnIedm7-pe5hB6nZ-vVDyoznnMHbCSNoyAIiuMiSSATtyyR-BBMaqIdUiNrYiVMfy1Zmh9L-q74Lng==',
@@ -70,25 +59,15 @@ export const cachedPlans: Plan[] = [
             '24': 8376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 499,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'vXOiCO533JxXlqJsrhvREDwaFhGOXXV7NYjsz06VDJGSnes72blaG8hA9547xU1NLrMsDbA3lywhjPZ7oNYNcA==',
@@ -117,25 +96,15 @@ export const cachedPlans: Plan[] = [
             '24': 8376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 499,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'cX2Ji0VckbvBzZTf87sxq0_-n10qjuIiAy62NJb0Wz8-sdTbwzdRFrFrD17lk93Knk6sCfpI353FpPA7q0GQTQ==',
@@ -146,7 +115,7 @@ export const cachedPlans: Plan[] = [
         MaxDomains: 0,
         MaxAddresses: 0,
         MaxCalendars: 0,
-        MaxSpace: 0,
+        MaxSpace: 10737418240,
         MaxMembers: 0,
         MaxVPN: 0,
         MaxTier: 0,
@@ -164,25 +133,15 @@ export const cachedPlans: Plan[] = [
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 499,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'Oq5v73PN6q3DjnWTp4UwxDBKAfSt3cDgVVLjzrp9r9yCA8IuQJiIZKX8ZDQctXWOEFMO1ROxffMjoqwYwg_xLg==',
@@ -202,34 +161,24 @@ export const cachedPlans: Plan[] = [
         State: 1,
         Pricing: {
             '1': 499,
-            '12': 4788,
+            '12': 2388,
             '24': 8376,
         },
         DefaultPricing: {
             '1': 499,
-            '12': 4788,
+            '12': 2388,
             '24': 8376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 499,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'CZLsVy9MkpYlmTELt96UJFIcgcNQFPxqEFIkjt2sGRWF3lnZNRWuIFM-sUTzdXnx4f6zUBUNQxd6-l3CuEkvMQ==',
@@ -237,10 +186,10 @@ export const cachedPlans: Plan[] = [
         Type: 1,
         Name: 'passbiz2024' as PLANS | ADDON_NAMES,
         Title: 'Pass Professional',
-        MaxDomains: 1,
+        MaxDomains: 5,
         MaxAddresses: 1,
         MaxCalendars: 0,
-        MaxSpace: 0,
+        MaxSpace: 10737418240,
         MaxMembers: 1,
         MaxVPN: 0,
         MaxTier: 0,
@@ -249,34 +198,24 @@ export const cachedPlans: Plan[] = [
         State: 1,
         Pricing: {
             '1': 699,
-            '12': 7188,
+            '12': 5388,
             '24': 11976,
         },
         DefaultPricing: {
             '1': 699,
-            '12': 7188,
+            '12': 5388,
             '24': 11976,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 699,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'T0cX6TLun8zhYK5a6Qkr-Kg3cEuYc8aLTpNVgPEslZYOLxGFCsxoYoDk3TQTt57c_40KR5Wn1D4pQwNeoWfWwg==',
@@ -287,7 +226,7 @@ export const cachedPlans: Plan[] = [
         MaxDomains: 0,
         MaxAddresses: 0,
         MaxCalendars: 0,
-        MaxSpace: 16106127360,
+        MaxSpace: 53687091200,
         MaxMembers: 6,
         MaxVPN: 0,
         MaxTier: 0,
@@ -303,24 +242,14 @@ export const cachedPlans: Plan[] = [
             '12': 5988,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 699,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'Vk-7HUMELOxtoLNAoxS1uCv_XT2jAQOAj-t2BCVOIkr_opyC6FmmVHrvoH4N-54gWpEnQVPcpe6o7dLbV0IgBw==',
@@ -349,25 +278,15 @@ export const cachedPlans: Plan[] = [
             '24': 15576,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 799,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'YXhWTAQJs4oqlZqErcsNsKUpfw6LAiG-KYCgPOH8BY1JxM3aCAbqDJhK3x0evmPTI2_2oysemGTz_w-fJsQdYw==',
@@ -394,24 +313,14 @@ export const cachedPlans: Plan[] = [
             '12': 9588,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'MYGJp20LzzFI8UabkCdSxV-InEpmDQTNT8MT_0hqLvCS2f8B48-osHgPOAJGM0bgpJA1hG8neJPue8wBraqBLA==',
@@ -431,40 +340,39 @@ export const cachedPlans: Plan[] = [
         State: 1,
         Pricing: {
             '1': 999,
-            '12': 7188,
+            '3': 2397,
+            '6': 4194,
+            '12': 7995,
             '15': 14985,
+            '18': 8982,
             '24': 11976,
             '30': 29970,
         },
         DefaultPricing: {
             '1': 999,
-            '12': 7188,
+            '3': 2397,
+            '6': 4194,
+            '12': 7995,
             '15': 14985,
+            '18': 8982,
             '24': 11976,
             '30': 29970,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '15': 1772040946,
-            '24': 1795628146,
-            '30': 1811266546,
+            '1': 1748170100,
+            '3': 1753440500,
+            '6': 1761389300,
+            '12': 1777114100,
+            '15': 1784976500,
+            '18': 1792925300,
+            '24': 1808650100,
+            '30': 1824461300,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'KV8mjImpquR4tux9teokTx9bRB3GDgJYgDV2r1PCaCVD9o8InZs99CZr_q2G0qyP8QES4FZyxdO5gU1K-2Jv7Q==',
@@ -503,30 +411,20 @@ export const cachedPlans: Plan[] = [
             '30': 29970,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '3': 1740504946,
-            '6': 1756139032,
-            '12': 1764092146,
-            '15': 1772040946,
-            '18': 1779730546,
-            '24': 1795628146,
-            '30': 1811266546,
+            '1': 1748170100,
+            '3': 1753440500,
+            '6': 1761389300,
+            '12': 1777114100,
+            '15': 1784976500,
+            '18': 1792925300,
+            '24': 1808650100,
+            '30': 1824461300,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'Uc0Z4tdf4clwVr4eDSPY0bWjH9kIzvLeQ-qudaHD-WJKY21IfFV2t73civ-hnJN7dtbGpV5eUfX5DOKE_nWWcQ==',
@@ -553,24 +451,14 @@ export const cachedPlans: Plan[] = [
             '12': 11988,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1099,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'yu50U8Rf9dhPHDcG3KTX6Nx3Euupk4uskAj9V9YVCFSB3oQk8_pTGfWwRFkRPYziGL5EsEx42ZyRHdcZxpO8CA==',
@@ -581,7 +469,7 @@ export const cachedPlans: Plan[] = [
         MaxDomains: 0,
         MaxAddresses: 0,
         MaxCalendars: 0,
-        MaxSpace: 0,
+        MaxSpace: 10737418240,
         MaxMembers: 0,
         MaxVPN: 10,
         MaxTier: 2,
@@ -603,27 +491,17 @@ export const cachedPlans: Plan[] = [
             '30': 17970,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '15': 1772040946,
-            '24': 1795628146,
-            '30': 1811266546,
+            '1': 1748170100,
+            '12': 1777114100,
+            '15': 1784976500,
+            '24': 1808650100,
+            '30': 1824461300,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1099,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'tHdKCeJlgD7mv_W13BqEZeelMiptPIK6r8arzZFcQcLvBLNiogdGOGVyYOldyhzcnSzCPkvkWj-VtyDwSjIncg==',
@@ -638,39 +516,32 @@ export const cachedPlans: Plan[] = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
-        Services: 15,
+        Services: 31,
         Features: 1,
         State: 1,
         Pricing: {
             '1': 1299,
+            '6': 5994,
             '12': 11988,
             '24': 19176,
         },
         DefaultPricing: {
             '1': 1299,
+            '6': 5994,
             '12': 11988,
             '24': 19176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '6': 1761389300,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1299,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'lVJ7pFH-QRoQAcjkhfPKt9LJnWblD-bXg41QYWUZAUGwGYkUakaAB79u94pvaKb7SqBgqCbyxoaTOP3Smgm0ww==',
@@ -685,7 +556,7 @@ export const cachedPlans: Plan[] = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
-        Services: 15,
+        Services: 31,
         Features: 1,
         State: 1,
         Pricing: {
@@ -699,25 +570,15 @@ export const cachedPlans: Plan[] = [
             '24': 23976,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1299,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'qh_qQPwjLZU-Uzx2oXLq5Bl3eS-gjhYm7mxO5rCBzGMa7oLhNMfshPmpP9QWj7d52NOT3X_UVLujhrnHigo3-w==',
@@ -732,7 +593,7 @@ export const cachedPlans: Plan[] = [
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
-        Services: 15,
+        Services: 31,
         Features: 1,
         State: 1,
         Pricing: {
@@ -744,24 +605,14 @@ export const cachedPlans: Plan[] = [
             '12': 15588,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1499,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 's4Suo5gVNLE9UPt320KF3QleE1Zj07AYKG1O6SJ7FUIL9_3Kr73-5pDGZLvVBPotI9po-coIP_S-faG1FcOjlA==',
@@ -790,25 +641,15 @@ export const cachedPlans: Plan[] = [
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1599,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'v8A0xW5bt0IXa_IIqsZxLgZ4HQaIleiiyKhbdu1OBvlBZfLxN3rdegjGH9y65Jg3u88_wpjoj30yiuUo2Ci1Sw==',
@@ -837,25 +678,15 @@ export const cachedPlans: Plan[] = [
             '24': 28752,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1798,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'QTWXZRCtm3JEJq3YEbBC4fO4AAuhu-nU3v09RcMq0TP4SADobZBqKUnnEPYVUn9KIxCXbvmZS7yiEyh3RCNFUQ==',
@@ -870,7 +701,7 @@ export const cachedPlans: Plan[] = [
         MaxMembers: 2,
         MaxVPN: 20,
         MaxTier: 2,
-        Services: 15,
+        Services: 31,
         Features: 1,
         State: 1,
         Pricing: {
@@ -884,25 +715,15 @@ export const cachedPlans: Plan[] = [
             '24': 28776,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: '1SDBH_1L_zUuNzXzQa6JKox3qZTINidjF-5fk4SM2uzZ7UkvA2Dz_Cv1-p-X3toVYzHMwcrVKEjRqIdotiMdFw==',
@@ -917,7 +738,7 @@ export const cachedPlans: Plan[] = [
         MaxMembers: 6,
         MaxVPN: 60,
         MaxTier: 2,
-        Services: 15,
+        Services: 31,
         Features: 1,
         State: 1,
         Pricing: {
@@ -931,25 +752,15 @@ export const cachedPlans: Plan[] = [
             '24': 47976,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 2999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: '6opBd5UdUtY_RtEzWLQNN128C-nG87siCoSoDAwgyGLXDNe6fKrFE9XUqmz68E-BAf1wzwipuPU4sbt2hvOrYA==',
@@ -964,7 +775,7 @@ export const cachedPlans: Plan[] = [
         MaxMembers: 6,
         MaxVPN: 60,
         MaxTier: 2,
-        Services: 15,
+        Services: 31,
         Features: 1,
         State: 1,
         Pricing: {
@@ -978,25 +789,15 @@ export const cachedPlans: Plan[] = [
             '24': 67176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 3999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'jUjNWfdzq7X-CMrR3LyX2y7o_D6y4FIGmsuTkfdNOI4QtPyaed-kVyFcOw9XLiRpwRDKnyKtHxhrIBW7nPVZdQ==',
@@ -1004,7 +805,7 @@ export const cachedPlans: Plan[] = [
         Type: 1,
         Name: 'vpnbiz2023' as PLANS | ADDON_NAMES,
         Title: 'VPN Professional',
-        MaxDomains: 1,
+        MaxDomains: 5,
         MaxAddresses: 2,
         MaxCalendars: 0,
         MaxSpace: 0,
@@ -1025,25 +826,15 @@ export const cachedPlans: Plan[] = [
             '24': 129528,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 7379,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'f1MbE4ydZBpVns9Wz8mA5x0nqqadqF0a61PZXR0CkYEnsBQyiGHvw7-Co6bJ_Wl0bKQJFBCh_ppRvup_P8VPiw==',
@@ -1072,25 +863,15 @@ export const cachedPlans: Plan[] = [
             '24': 3120,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 150,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'ktqlKw3s-JEjT2s6BDWeuHqOtqmrUPsDcztLoG6l5Ik3CPQzFgpLcRAs0u2qmtEFO3tKZMWtoAUbRsWTKNV5vw==',
@@ -1117,24 +898,14 @@ export const cachedPlans: Plan[] = [
             '12': 1680,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 150,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'JgyK70RpusE8ci9eooA4H7pEabexo1mQoYm4TSv7Z643gHTD-taJMSrbC4qIOGAN3VGvuvKAr9Y2cU6A5X789A==',
@@ -1163,25 +934,15 @@ export const cachedPlans: Plan[] = [
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 399,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'A67wsII4qAC7ttBVyOh_1yBrNxEKa4KKhzfbOmA9DxJ-EmwzdpCSC68QYF7V1n3jBJnkxDYrffs5_pJHPI9q_w==',
@@ -1210,25 +971,15 @@ export const cachedPlans: Plan[] = [
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 399,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'NEXN7M46GQlROog4NYwPp4QIeGUmDG7qv4rzp2SqlncVEs5cXPWa7qnYMOxEIP19btBTk4deiaOk5yyThZknCg==',
@@ -1257,25 +1008,15 @@ export const cachedPlans: Plan[] = [
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 399,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'Qb2ngNPehlUDEcIOH6T82V8CMDaqN9S_n7V6esTo78tNeJTm3cAzEUXTtGazQgsvpC3MR8yuvOZ0eEnkbK5yfQ==',
@@ -1302,24 +1043,14 @@ export const cachedPlans: Plan[] = [
             '12': 3588,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 399,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'I1vS9wAKew6h5oqAR3Vbo7p6WosmP-AtnHcZcOpDw22pdyqG3efbMJdSRtzOBrSEBgyaoOK9Ogr3wUaB9ccjxQ==',
@@ -1348,25 +1079,15 @@ export const cachedPlans: Plan[] = [
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 399,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'igpLl8Gtj7Ve_fVnsnvFp_gUne1iq2gZVj87kxaEeoW7WqFAy_f8ys1KktlqPpa0fE_yGaWzuqOKQtRqaLMs3Q==',
@@ -1386,45 +1107,35 @@ export const cachedPlans: Plan[] = [
         State: 1,
         Pricing: {
             '1': 499,
-            '12': 4788,
+            '12': 2388,
             '24': 8376,
         },
         DefaultPricing: {
             '1': 499,
-            '12': 4788,
+            '12': 2388,
             '24': 8376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 499,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'bEte7pTqqDbmna--bKxM_rxlaRux8l7-E6tZ2IsYuakn5ZSJ8t-aQapwueG3HAnTRcPfR9bCkczgZGRf4ZsioA==',
         ParentMetaPlanID: 'CZLsVy9MkpYlmTELt96UJFIcgcNQFPxqEFIkjt2sGRWF3lnZNRWuIFM-sUTzdXnx4f6zUBUNQxd6-l3CuEkvMQ==',
         Type: 0,
         Name: '1member-passbiz2024' as PLANS | ADDON_NAMES,
-        Title: '+1 User',
+        Title: '+1 User Pass Professional',
         MaxDomains: 0,
         MaxAddresses: 1,
         MaxCalendars: 0,
-        MaxSpace: 0,
+        MaxSpace: 10737418240,
         MaxMembers: 1,
         MaxVPN: 0,
         MaxTier: 0,
@@ -1433,34 +1144,24 @@ export const cachedPlans: Plan[] = [
         State: 1,
         Pricing: {
             '1': 699,
-            '12': 7188,
+            '12': 5388,
             '24': 11976,
         },
         DefaultPricing: {
             '1': 699,
-            '12': 7188,
+            '12': 5388,
             '24': 11976,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 699,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'tmkbY5-BgxYUahTwB0ngjgcWIWQpCw6Q7DVSLN5PCjiss4-kp-xLRoylmJ0mSPzgyEXDHUCa26gmgNesiG4brA==',
@@ -1489,25 +1190,15 @@ export const cachedPlans: Plan[] = [
             '24': 15576,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 799,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'I5iXhAkT2kFuWSdowKPodYnpVBeKqZwoZFXTp9VDTknWpxvsqtFcyHsTwFccYnBo3mD-XsQ1KqveTyl6geQzxQ==',
@@ -1536,25 +1227,15 @@ export const cachedPlans: Plan[] = [
             '24': 14376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 899,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'Yx-DYR0GKN7lKTrGumfuHTDfzUNt9noyh-KMZP0vwmkrzXh2L9F7c9M8xx7-WVPnjTFNu8wF6xV8K83P1rMGEA==',
@@ -1581,24 +1262,14 @@ export const cachedPlans: Plan[] = [
             '12': 9588,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'CaioC57NM0BfA3WDRAG8LApascUxftg9U2rl4nU8OrqWfQfm_xO1A03EJR7XBYwGlx81IylQrK5DHhXsPt7MtQ==',
@@ -1625,31 +1296,21 @@ export const cachedPlans: Plan[] = [
             '12': 11988,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1099,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'WErNQRoJ-NaSvs5N1NnpRHvobabt5btZXBsmPuqLd5MvTJnefHSZgOigRXjdmfklxa5TSA20uJesCu9TetKupw==',
         ParentMetaPlanID: 'jUjNWfdzq7X-CMrR3LyX2y7o_D6y4FIGmsuTkfdNOI4QtPyaed-kVyFcOw9XLiRpwRDKnyKtHxhrIBW7nPVZdQ==',
         Type: 0,
         Name: '1member-vpnbiz2023' as PLANS | ADDON_NAMES,
-        Title: '+1 User',
+        Title: '+1 User VPN Professional',
         MaxDomains: 0,
         MaxAddresses: 1,
         MaxCalendars: 0,
@@ -1671,25 +1332,15 @@ export const cachedPlans: Plan[] = [
             '24': 21576,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1199,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'AbDzcisHq0YHVi-3B4-H2_tjuY_WJemx3NX3zAgJ9KMbGWx_yWV08Ms8s0dng_Qt_DvMYfxLOWL2Yw1JgFREeg==',
@@ -1718,25 +1369,15 @@ export const cachedPlans: Plan[] = [
             '24': 23976,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1299,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'q_HAaTGgl4Q3uPTsMITYS6qRKOkqnJ5jbOSXGDc5TR-s-CZymLWQcD3j1AbOjTMEYE6dRSjWDEuJdP9N1mYaCQ==',
@@ -1763,24 +1404,14 @@ export const cachedPlans: Plan[] = [
             '12': 15588,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1499,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'XYbCWMJRuiILpmb8syJD4mtPyGNe2xrVAcRNmzJRx6lCmWJ_T4r6Mlc3xKqBhnoZdvtf1VXQiNQN8idDy5BWZA==',
@@ -1809,25 +1440,15 @@ export const cachedPlans: Plan[] = [
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1599,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'SKhICvkxYLs-TqZBpvHn9feBblFYXw1LpwJ0LXHRm9lFvrYds7OjJostTsR-PpMQEyYz9QAgEcxaOS9HF7Av2g==',
@@ -1856,25 +1477,15 @@ export const cachedPlans: Plan[] = [
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1599,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'E2QUmfoZFQ6UYGPheMhcKsrQy8z3gKNN2-Kktd6AyFHoryoJPEfxZJRQObsvpyYRI5FtJvd-eF-DR2dZ6Uq-Tg==',
@@ -1903,25 +1514,15 @@ export const cachedPlans: Plan[] = [
             '24': 86376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 4999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: '_O4OvZH6gYw77rrYMbHMOiZ6XGR-gZbUb9KkA4C_8Gm01NmV1lNy4Jdt45Ld29Io2Z9oJQnm9WrRHwYHRSw78w==',
@@ -1950,32 +1551,22 @@ export const cachedPlans: Plan[] = [
             '24': 86376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 4999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: '9-EXVm5ajoie4Fl8qMhD2qpdHkgnFppxB0DjvUhhK5fqJz1pW3fiW2ajv9qkeN73GK_QnEptA69w1RRKvkt4Kg==',
         ParentMetaPlanID: 'jUjNWfdzq7X-CMrR3LyX2y7o_D6y4FIGmsuTkfdNOI4QtPyaed-kVyFcOw9XLiRpwRDKnyKtHxhrIBW7nPVZdQ==',
         Type: 0,
         Name: '1ip-vpnbiz2023' as PLANS | ADDON_NAMES,
-        Title: '+1 Ip',
+        Title: '+1 IP VPN Professional',
         MaxDomains: 0,
         MaxAddresses: 0,
         MaxCalendars: 0,
@@ -1997,25 +1588,15 @@ export const cachedPlans: Plan[] = [
             '24': 86376,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 4999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'ziWi-ZOb28XR4sCGFCEpqQbd1FITVWYfTfKYUmV_wKKR3GsveN4HZCh9er5dhelYylEp-fhjBbUPDMHGU699fw==',
@@ -2044,25 +1625,15 @@ export const cachedPlans: Plan[] = [
             '24': 7900,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 500,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'cjGMPrkCYMsx5VTzPkfOLwbrShoj9NnLt3518AH-DQLYcvsJwwjGOkS8u3AcnX4mVSP6DX2c6Uco99USShaigQ==',
@@ -2091,25 +1662,15 @@ export const cachedPlans: Plan[] = [
             '24': 7900,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 500,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'j_hMLdlh76xys5eR2S3OM9vlAgYylGQBiEzDeXLw1H-huHy2jwjwVqcKAPcdd6z2cXoklLuQTegkr3gnJXCB9w==',
@@ -2138,25 +1699,15 @@ export const cachedPlans: Plan[] = [
             '24': 12900,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 800,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'ARy95iNxhniEgYJrRrGvagmzRdnmvxCmjArhv3oZhlevziltNm07euTTWeyGQF49RxFpMqWE_ZGDXEvGV2CEkA==',
@@ -2183,24 +1734,14 @@ export const cachedPlans: Plan[] = [
             '12': 9600,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
+            '1': 1748170100,
+            '12': 1777114100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1000,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'S6oNe_lxq3GNMIMFQdAwOOk5wNYpZwGjBHFr5mTNp9aoMUaCRNsefrQt35mIg55iefE3fTq8BnyM4znqoVrAyA==',
@@ -2229,25 +1770,15 @@ export const cachedPlans: Plan[] = [
             '24': 15900,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 1000,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'm-dPNuHcP8N4xfv6iapVg2wHifktAD1A1pFDU95qo5f14Vaw8I9gEHq-3GACk6ef3O12C3piRviy_D43Wh7xxQ==',
@@ -2276,25 +1807,15 @@ export const cachedPlans: Plan[] = [
             '24': 47900,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 3000,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'vUZGQHCgdhbDi3qBKxtnuuagOsgaa08Wpu0WLdaqVIKGI5FM7KwIrDB4IprPbhThXJ_5Pb90bkGlHM1ARMYYrQ==',
@@ -2323,25 +1844,15 @@ export const cachedPlans: Plan[] = [
             '24': 1600,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 100,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'BzHqSTaqcpjIY9SncE5s7FpjBrPjiGOucCyJmwA6x4nTNqlElfKvCQFr9xUa2KgQxAiHv4oQQmAkcA56s3ZiGQ==',
@@ -2370,25 +1881,15 @@ export const cachedPlans: Plan[] = [
             '24': 1600,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 100,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'Xz2wY0Wq9cg1LKwchjWR05vF62QUPZ3h3Znku2ramprCLWOr_5kB8mcDFxY23lf7QspHOWWflejL6kl04f-a-Q==',
@@ -2417,25 +1918,15 @@ export const cachedPlans: Plan[] = [
             '24': 3200,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 200,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: 'OYB-3pMQQA2Z2Qnp5s5nIvTVO2alU6h82EGLXYHn1mpbsRvE7UfyAHbt0_EilRjxhx9DCAUM9uXfM2ZUFjzPXw==',
@@ -2464,25 +1955,15 @@ export const cachedPlans: Plan[] = [
             '24': 3200,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 200,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: '1H8EGg3J1QpSDL6K8hGsTvwmHXdtQvnxplUMePE7Hruen5JsRXvaQ75-sXptu03f0TCO-he3ymk0uhrHx6nnGQ==',
@@ -2511,25 +1992,15 @@ export const cachedPlans: Plan[] = [
             '24': 12900,
         },
         PeriodEnd: {
-            '1': 1735148146,
-            '12': 1764092146,
-            '24': 1795628146,
+            '1': 1748170100,
+            '12': 1777114100,
+            '24': 1808650100,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
         Amount: 800,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_a6ZjmXhxsOSi-yE7rTcH',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
     },
     {
         ID: '0',
@@ -2554,43 +2025,13 @@ export const cachedPlans: Plan[] = [
             '12': 19900,
         },
         PeriodEnd: {
-            '12': 8589934592,
+            '12': 22589347879075700,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 12,
         Amount: 19900,
-        Vendors: [],
-    },
-    {
-        ID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
-        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
-        Type: 1,
-        Name: 'lumo2024' as PLANS | ADDON_NAMES,
-        Title: 'Lumo Plus',
-        MaxDomains: 0,
-        MaxAddresses: 0,
-        MaxCalendars: 0,
-        MaxSpace: 0,
-        MaxMembers: 0,
-        MaxVPN: 0,
-        MaxTier: 0,
-        Services: 64,
-        Features: 0,
-        State: 1,
-        Pricing: {},
-        DefaultPricing: {},
-        PeriodEnd: {
-            '1': 1736074694,
-            '12': 1764932294,
-        },
-        Currency: 'CHF',
-        Quantity: 1,
-        Offers: [],
-        Cycle: 1,
-        Amount: 0,
-        Vendors: {},
     },
 ];
 
