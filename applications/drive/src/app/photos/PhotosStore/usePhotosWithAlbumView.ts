@@ -292,7 +292,12 @@ export const usePhotosWithAlbumsView = () => {
         }
         const abortController = new AbortController();
 
-        if (albumShareId && albumLinkId && currentPageType !== AlbumsPageTypes.ALBUMSADDPHOTOS) {
+        if (
+            albumShareId &&
+            albumLinkId &&
+            currentPageType &&
+            [AlbumsPageTypes.ALBUMSGALLERY, AlbumsPageTypes.ALBUMS].includes(currentPageType)
+        ) {
             setIsAlbumsLoading(true);
             void Promise.all([
                 loadSharedWithMeAlbums(abortController.signal),
@@ -464,7 +469,7 @@ export const usePhotosWithAlbumsView = () => {
             if (!albumLinkId) {
                 throw new Error('Failed to add a photo to an album');
             }
-            return addAlbumPhotos(abortSignal, albumShareId, albumLinkId, [linkId]);
+            return addAlbumPhotos(abortSignal, albumShareId, albumLinkId, [linkId], true);
         },
         [albumLinkId, addAlbumPhotos]
     );
