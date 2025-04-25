@@ -19,13 +19,13 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
-import type { Group, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Group, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
 interface Props {
     app: APP_NAMES;
     user: UserModel;
-    organization?: Organization;
+    organization?: OrganizationExtended;
     subscription?: Subscription;
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
@@ -34,6 +34,7 @@ interface Props {
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
+    isPasswordPolicyEnabled: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -50,6 +51,7 @@ export const getOrganizationAppRoutes = ({
     isScribeEnabled,
     isZoomIntegrationEnabled,
     isSharedServerFeatureEnabled,
+    isPasswordPolicyEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -275,7 +277,9 @@ export const getOrganizationAppRoutes = ({
                         organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED),
                 subsections: [
                     {
-                        id: 'two-factor-authentication-users',
+                        text: c('Title').t`${BRAND_NAME} Account password rules`,
+                        id: 'proton-account-password-rules',
+                        available: isPasswordPolicyEnabled,
                     },
                     {
                         text: c('Title').t`Two-factor authentication reminders`,

@@ -5,6 +5,7 @@ import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '@proton/k
 import { auth2FA, getInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getPasswordPolicies, getShouldUsePasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
@@ -238,6 +239,9 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
 
     if (user.Keys.length === 0) {
         if (authResponse.TemporaryPassword) {
+            if (getShouldUsePasswordPolicies(user)) {
+                cache.data.passwordPolicies = await getPasswordPolicies({ api: cache.api });
+            }
             return { cache, to: AuthStep.NEW_PASSWORD };
         }
         if (getRequiresPasswordSetup(user, cache.setupVPN)) {

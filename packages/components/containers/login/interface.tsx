@@ -13,7 +13,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import type { AddressGenerationSetup, ClaimableAddress, ParsedUnprivatizationData } from '@proton/shared/lib/keys';
 import type { AuthDeviceOutput, DeviceData, DeviceSecretData, DeviceSecretUser } from '@proton/shared/lib/keys/device';
-import type { UnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
+import type { OrganizationData, UnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 export interface AddressGeneration {
     externalEmailAddress: Address | undefined;
@@ -63,6 +63,7 @@ export interface SSOSetPasswordData {
     keyPassword: string;
     authDevices: AuthDeviceOutput[];
     deviceSecretData: DeviceSecretData;
+    organizationData: UnprivatizationContextData['organizationData'];
     intent: {
         capabilities: Set<SSOLoginCapabilites>;
         step: SSOLoginCapabilites;
@@ -117,6 +118,7 @@ export interface AuthCacheResult {
         salts?: tsKeySalt[];
         addresses?: Address[];
         ssoData?: SSOSetupData | SSOUnlockData | SSOInactiveData | SSOSetPasswordData;
+        passwordPolicies?: OrganizationData['passwordPolicies'];
     };
     authTypes: AuthTypes;
     username: string;

@@ -1,6 +1,6 @@
 import { APPS, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronMail } from '../helpers/desktop';
-import type { OrganizationWithSettings, User } from '../interfaces';
+import type { OrganizationExtended, User } from '../interfaces';
 import { getIsGlobalSSOAccount, getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 import {
     deserializeAllowedProducts,
@@ -38,7 +38,7 @@ const allAppsSet: Set<APP_NAMES> = new Set(allApps);
 
 interface GetOrganizationAllowedProductsArguments {
     user?: User;
-    organization?: { Settings: { AllowedProducts: OrganizationWithSettings['Settings']['AllowedProducts'] } };
+    organization?: { Settings: { AllowedProducts: OrganizationExtended['Settings']['AllowedProducts'] } };
 }
 
 const getAvailableAppsByOrganization = ({ user, organization }: GetOrganizationAllowedProductsArguments): AppSet => {

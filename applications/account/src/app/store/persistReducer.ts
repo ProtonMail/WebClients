@@ -6,6 +6,7 @@ import type { AccountState } from './rootReducer';
 
 const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
     ...sharedPersistReducer,
+    passwordPolicies: selectPersistModel,
     paymentMethods: selectPersistModel,
     members: selectPersistModel,
     filters: selectPersistModel,
