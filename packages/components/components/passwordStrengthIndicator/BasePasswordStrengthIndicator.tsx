@@ -49,6 +49,7 @@ const getLayout = (type: PasswordScore, emptyPassword: boolean) => {
     if (emptyPassword) {
         return {
             valueShort: '',
+            valueMedium: c('Label').t`Password strength`,
             valueLong: c('Label').t`Must have at least ${MIN_PASSWORD_LENGTH} characters`,
             iconSmall: <></>,
             iconLarge: <img src={empty} alt="" />,
@@ -58,6 +59,7 @@ const getLayout = (type: PasswordScore, emptyPassword: boolean) => {
     if (type === 'Strong') {
         return {
             valueShort: c('Label').t`Strong`,
+            valueMedium: c('Label').t`Strong password`,
             valueLong: c('Label').t`Strong password`,
             iconSmall: <IcPassShieldFillSuccess className="shrink-0" />,
             iconLarge: <img src={strong} alt="" />,
@@ -67,6 +69,7 @@ const getLayout = (type: PasswordScore, emptyPassword: boolean) => {
     if (type === 'Weak') {
         return {
             valueShort: c('Label').t`Weak`,
+            valueMedium: c('Label').t`Weak password`,
             valueLong: c('Label').t`Weak password`,
             iconSmall: <IcPassShieldFillWarning className="shrink-0" />,
             iconLarge: <img src={weak} alt="" />,
@@ -75,6 +78,7 @@ const getLayout = (type: PasswordScore, emptyPassword: boolean) => {
     }
     return {
         valueShort: c('Label').t`Vulnerable`,
+        valueMedium: c('Label').t`Vulnerable password`,
         valueLong: c('Label').t`Vulnerable password`,
         iconSmall: <IcPassShieldFillDanger className="shrink-0" />,
         iconLarge: <img src={vulnerable} alt="" />,
@@ -201,11 +205,12 @@ const BasePasswordStrengthIndicator = ({
     showIllustration,
     showGeneratePasswordButton,
 }: PasswordStrengthIndicatorProps) => {
-    const { className, iconSmall, iconLarge, valueShort, valueLong } = getLayout(score, !password);
+    const { className, iconSmall, iconLarge, valueShort, valueMedium, valueLong } = getLayout(score, !password);
     const unmetPenalties = consolidatePenalties(password, penalties);
 
     const isCompact = variant === 'compact';
     const isLarge = variant === 'large';
+    const isStrengthOnly = variant === 'strengthOnly';
 
     return (
         <div className={clsx('password-strength-indicator w-full', isLarge && 'flex items-center', rootClassName)}>
@@ -214,6 +219,7 @@ const BasePasswordStrengthIndicator = ({
                     'w-full flex flex-nowrap mb-1',
                     isCompact && 'gap-2 mb-2',
                     isLarge && 'flex-column mb-4',
+                    isStrengthOnly && 'flex-column mb-4 gap-1',
                     className
                 )}
             >
@@ -228,6 +234,19 @@ const BasePasswordStrengthIndicator = ({
                     </>
                 )}
 
+                {isStrengthOnly && (
+                    <>
+                        {showIllustration && (
+                            <div className="flex">
+                                <span className="mx-auto mt-8 mb-6">{iconLarge}</span>
+                            </div>
+                        )}
+                        <span className="flex flex-nowrap gap-1 items-center w-full text-sm text-bold">
+                            {valueMedium}
+                        </span>
+                    </>
+                )}
+
                 <IndicatorBars />
 
                 {isCompact && (
@@ -237,38 +256,42 @@ const BasePasswordStrengthIndicator = ({
                     </span>
                 )}
             </div>
-            <div>
-                <h4 className={clsx('mt-0 mb-1', isCompact && 'text-sm', isLarge && 'text-rg')}>
-                    {c('Info').t`It's better to have:`}
-                </h4>
-                <ul className={clsx('unstyled flex flex-column gap-1 m-0', isCompact && 'text-sm')}>
-                    {allPenalties.map((penalty) => {
-                        const isPassed = !unmetPenalties.has(penalty);
+            {!isStrengthOnly && (
+                <div>
+                    <h4 className={clsx('mt-0 mb-1', isCompact && 'text-sm', isLarge && 'text-rg')}>
+                        {c('Info').t`It's better to have:`}
+                    </h4>
+                    <ul className={clsx('unstyled flex flex-column gap-1 m-0', isCompact && 'text-sm')}>
+                        {allPenalties.map((penalty) => {
+                            const isPassed = !unmetPenalties.has(penalty);
 
-                        return (
-                            <li
-                                key={penalty}
-                                className={clsx('flex flex-nowrap gap-2', isPassed && 'text-strike color-hint')}
-                            >
-                                <span className={clsx('w-4 p-px shrink-0', isLarge && 'mt-0.5')}>
-                                    <span
-                                        className={clsx(
-                                            'flex items-center justify-center border rounded-full ratio-square password-strength-indicator-checkmark',
-                                            isPassed && 'border-primary'
-                                        )}
-                                    >
-                                        {isPassed && (
-                                            <IcCheckmark className="shrink-0 color-primary scale-fade-in" size={3} />
-                                        )}
+                            return (
+                                <li
+                                    key={penalty}
+                                    className={clsx('flex flex-nowrap gap-2', isPassed && 'text-strike color-hint')}
+                                >
+                                    <span className={clsx('w-4 p-px shrink-0', isLarge && 'mt-0.5')}>
+                                        <span
+                                            className={clsx(
+                                                'flex items-center justify-center border rounded-full ratio-square password-strength-indicator-checkmark',
+                                                isPassed && 'border-primary'
+                                            )}
+                                        >
+                                            {isPassed && (
+                                                <IcCheckmark
+                                                    className="shrink-0 color-primary scale-fade-in"
+                                                    size={3}
+                                                />
+                                            )}
+                                        </span>
                                     </span>
-                                </span>
-                                <span>{getPenaltyDescription(penalty)}</span>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
-
+                                    <span>{getPenaltyDescription(penalty)}</span>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            )}
             {showGeneratePasswordButton && onGeneratePassword && (
                 <GeneratePassword onGeneratePassword={onGeneratePassword} generatedPassword={generatedPassword} />
             )}

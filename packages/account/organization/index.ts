@@ -13,16 +13,14 @@ import {
 } from '@proton/redux-utilities';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
-import { UserLockedFlags } from '@proton/shared/lib/interfaces';
-import { getOrganizationWithSettings } from '@proton/shared/lib/organization/api';
-import { isPaid } from '@proton/shared/lib/user/helpers';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import { getOrganizationExtended } from '@proton/shared/lib/organization/api';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
+import { canFetchOrganization } from './helper';
 
 const name = 'organization' as const;
 
@@ -32,7 +30,7 @@ enum ValueType {
 }
 
 export interface OrganizationState extends UserState {
-    [name]: ModelState<OrganizationWithSettings> & { meta: { type: ValueType } };
+    [name]: ModelState<OrganizationExtended> & { meta: { type: ValueType } };
 }
 
 type SliceState = OrganizationState[typeof name];
@@ -40,17 +38,7 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectOrganization = (state: OrganizationState) => state[name];
 
-const canFetch = (user: User) => {
-    /*
-    After auto-downgrade admin user is downgraded to a free user, organization state is set to `Delinquent`
-    and the user gets into a locked state if they have members in their organizaion and .
-    In that case we want to refetch the organization to avoid getting FREE_ORGANIZATION object.
-    */
-    const isOrgAdminUserInLockedState = hasBit(user.LockedFlags, UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN);
-    return isPaid(user) || isOrgAdminUserInLockedState;
-};
-
-const freeOrganization = { Settings: {} } as unknown as OrganizationWithSettings;
+const freeOrganization = { Settings: {} } as unknown as OrganizationExtended;
 
 const initialState: SliceState = {
     value: undefined,
@@ -79,7 +67,7 @@ const slice = createSlice({
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
         },
-        update: (state, action: PayloadAction<{ Organization: Partial<OrganizationWithSettings> }>) => {
+        update: (state, action: PayloadAction<{ Organization: Partial<OrganizationExtended> }>) => {
             if (!state.value) {
                 return;
             }
@@ -87,7 +75,7 @@ const slice = createSlice({
         },
         updateOrganizationSettings: (
             state,
-            action: PayloadAction<{ value: Partial<OrganizationWithSettings['Settings']> }>
+            action: PayloadAction<{ value: Partial<OrganizationExtended['Settings']> }>
         ) => {
             if (!state.value) {
                 return;
@@ -112,14 +100,14 @@ const slice = createSlice({
             } else {
                 const isFreeOrganization = original(state)?.meta.type === ValueType.dummy;
 
-                if (!isFreeOrganization && action.payload.User && !canFetch(action.payload.User)) {
+                if (!isFreeOrganization && action.payload.User && !canFetchOrganization(action.payload.User)) {
                     // Do not get any organization update when user becomes unsubscribed.
                     state.value = freeOrganization;
                     state.error = undefined;
                     state.meta.type = ValueType.dummy;
                 }
 
-                if (isFreeOrganization && action.payload.User && canFetch(action.payload.User)) {
+                if (isFreeOrganization && action.payload.User && canFetchOrganization(action.payload.User)) {
                     state.value = undefined;
                     state.error = undefined;
                     state.meta.type = ValueType.complete;
@@ -145,12 +133,12 @@ const modelThunk = (options?: {
                 value: freeOrganization,
                 type: ValueType.dummy,
             };
-            if (!canFetch(user)) {
+            if (!canFetchOrganization(user)) {
                 return defaultValue;
             }
 
             try {
-                const value = await getOrganizationWithSettings({
+                const value = await getOrganizationExtended({
                     api: extraArgument.api,
                     defaultSettings: extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE,
                 });

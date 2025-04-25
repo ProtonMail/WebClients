@@ -21,7 +21,11 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+import {
+    confirmPasswordValidator,
+    passwordLengthValidator,
+    requiredValidator,
+} from '@proton/shared/lib/helpers/formValidators';
 import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -108,7 +112,7 @@ const ChangeOrganizationKeysModal = ({ onClose, mode, hasOtherAdmins, organizati
                             placeholder={c('Placeholder').t`Password`}
                             value={newPassword}
                             onValue={setNewPassword}
-                            error={validator([passwordLengthValidator(newPassword)])}
+                            error={validator([requiredValidator(newPassword), passwordLengthValidator(newPassword)])}
                             autoComplete="new-password"
                             autoFocus
                         />
@@ -121,8 +125,8 @@ const ChangeOrganizationKeysModal = ({ onClose, mode, hasOtherAdmins, organizati
                             value={confirmPassword}
                             onValue={setConfirmPassword}
                             error={validator([
-                                passwordLengthValidator(newPassword),
-                                confirmPasswordValidator(newPassword, confirmPassword),
+                                requiredValidator(confirmPassword),
+                                confirmPasswordValidator(confirmPassword, newPassword),
                             ])}
                             autoComplete="new-password"
                         />

@@ -12,4 +12,4 @@ export type PasswordPenalties =
 
 export type ConsolidatedPasswordPenalties = 'Short' | 'NoLowercaseOrUppercase' | 'NoNumbers' | 'NoSymbols';
 
-export type PasswordStrengthIndicatorVariant = 'compact' | 'large';
+export type PasswordStrengthIndicatorVariant = 'compact' | 'large' | 'strengthOnly';

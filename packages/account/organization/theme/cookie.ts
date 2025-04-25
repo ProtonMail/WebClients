@@ -2,7 +2,7 @@ import { decodeUtf8, encodeUtf8 } from '@proton/crypto/lib/utils';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 export const COOKIE_NAME = 'OrgTheme';
 
@@ -23,7 +23,7 @@ export interface OrgThemeCookie {
     LocalID: number;
 }
 
-export const serializeOrgTheme = (organization: OrganizationWithSettings | undefined, localID: number) => {
+export const serializeOrgTheme = (organization: OrganizationExtended | undefined, localID: number) => {
     const settings = organization?.Settings;
     if (!settings || !settings.LogoID) {
         return undefined;

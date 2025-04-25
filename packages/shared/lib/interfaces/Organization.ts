@@ -2,6 +2,8 @@ import { type PLANS } from '@proton/payments';
 import type { Product } from '@proton/shared/lib/ProductEnum';
 import type { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 
+import type { PasswordPolicySettings } from './PasswordPolicy';
+
 export interface Organization {
     ID: string;
     Name: string;
@@ -71,8 +73,10 @@ export interface OrganizationSettings {
     ShowScribeWritingAssistant: boolean;
     VideoConferencingEnabled: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
+    // Settings for admin
+    PasswordPolicies: PasswordPolicySettings;
 }
 
-export interface OrganizationWithSettings extends Organization {
+export interface OrganizationExtended extends Organization {
     Settings: OrganizationSettings;
 }

@@ -2,20 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
-import {
-    GenericError,
-    InputFieldTwo,
-    PasswordInputTwo,
-    useConfig,
-    useErrorHandler,
-    useFormErrors,
-    useNotifications,
-} from '@proton/components';
+import { GenericError, InputFieldTwo, useConfig, useErrorHandler, useNotifications } from '@proton/components';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
-import useLoading from '@proton/hooks/useLoading';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -26,12 +17,7 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import {
-    confirmPasswordValidator,
-    getMinPasswordLengthMessage,
-    passwordLengthValidator,
-} from '@proton/shared/lib/helpers/formValidators';
-import type { Address, Api, KeyTransparencyActivation, Organization, User } from '@proton/shared/lib/interfaces';
+import type { Address, Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/shared/lib/keys';
 import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys/unprivatization';
 import {
@@ -43,6 +29,7 @@ import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/h
 import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
+import SetPasswordWithPolicyForm from '../login/SetPasswordWithPolicyForm';
 import { getTerms } from '../signup/terms';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import ExpiredError from './ExpiredError';
@@ -81,21 +68,16 @@ const JoinMagicLinkContainer = ({
 }: Props) => {
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const { APP_NAME: appName } = useConfig();
-    const { validator, onFormSubmit } = useFormErrors();
     const handleError = useErrorHandler();
     const dataRef = useRef<{
         user: User;
-        organization: Organization;
-        organizationLogo: OrganizationData['organizationLogo'];
+        organizationData: OrganizationData;
         authApi: Api;
         addresses: Address[];
         parsedUnprivatizationData: ParsedUnprivatizationData;
         ktActivation: KeyTransparencyActivation;
     } | null>(null);
     const [loading, setLoading] = useState(true);
-    const [submitting, withSubmitting] = useLoading();
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmNewPassword, setConfirmNewPassword] = useState('');
     const { createNotification } = useNotifications();
     const getKtActivation = useGetAccountKTActivation();
 
@@ -121,14 +103,10 @@ const JoinMagicLinkContainer = ({
             await onPreSubmit?.();
 
             const prepareData = async () => {
-                const [
-                    user,
-                    {
-                        organizationData: { organization, organizationLogo },
-                        addresses,
-                        data: unprivatizationData,
-                    },
-                ] = await Promise.all([getUser(authApi), getUnprivatizationContextData({ api: authApi })]);
+                const [user, { organizationData, addresses, data: unprivatizationData }] = await Promise.all([
+                    getUser(authApi),
+                    getUnprivatizationContextData({ api: authApi }),
+                ]);
                 const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
                 const ktActivation = await getKtActivation();
                 await validateUnprivatizationData({
@@ -147,8 +125,7 @@ const JoinMagicLinkContainer = ({
                 });
                 dataRef.current = {
                     user,
-                    organization,
-                    organizationLogo,
+                    organizationData,
                     addresses,
                     parsedUnprivatizationData,
                     authApi,
@@ -182,18 +159,18 @@ const JoinMagicLinkContainer = ({
 
     useEffect(() => {
         return () => {
-            dataRef.current?.organizationLogo?.cleanup();
+            dataRef.current?.organizationData.logo?.cleanup();
         };
     }, []);
 
-    const handleSetup = async () => {
+    const handleSetup = async ({ password }: { password: string }) => {
         if (!dataRef.current) {
             throw new Error('missing data');
         }
         const { user, authApi, addresses, parsedUnprivatizationData, ktActivation } = dataRef.current;
         const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation);
 
-        const { passphrase, salt } = await generateKeySaltAndPassphrase(newPassword);
+        const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
         const { onSKLPublishSuccess, ...resetPayload } = await getResetAddressesKeysV2({
             addresses,
             passphrase,
@@ -206,7 +183,7 @@ const JoinMagicLinkContainer = ({
 
         await setupKeysWithUnprivatization({
             api: authApi,
-            password: newPassword,
+            password,
             parsedUnprivatizationData,
             payload: {
                 ...resetPayload,
@@ -219,7 +196,7 @@ const JoinMagicLinkContainer = ({
         const username = addresses?.[0]?.Email;
         const data = {
             username,
-            password: newPassword,
+            password,
             persistent: false,
         };
         await unauthenticatedApi.startUnAuthFlow();
@@ -295,7 +272,11 @@ const JoinMagicLinkContainer = ({
             };
         }
 
-        const { addresses, parsedUnprivatizationData, organization } = data;
+        const {
+            addresses,
+            parsedUnprivatizationData,
+            organizationData: { organization },
+        } = data;
         return {
             type: parsedUnprivatizationData.type,
             adminEmail: parsedUnprivatizationData.payload.unprivatizationData.AdminEmail,
@@ -308,19 +289,17 @@ const JoinMagicLinkContainer = ({
         <Layout hasDecoration={true} toApp={toApp}>
             <Main>
                 <JoinOrganizationAdminItem
-                    organizationLogoUrl={data?.organizationLogo?.url}
+                    organizationLogoUrl={data?.organizationData.logo?.url}
                     organizationName={organizationName}
                     adminEmail={adminEmail}
                 />
                 <hr className="my-6 border-bottom border-weak" />
-                <form
-                    name="loginForm"
-                    onSubmit={(event) => {
-                        event.preventDefault();
-                        if (!onFormSubmit()) {
-                            return;
-                        }
-                        withSubmitting(handleSetup()).catch((error) => {
+                <SetPasswordWithPolicyForm
+                    passwordPolicies={data?.organizationData.passwordPolicies ?? []}
+                    onSubmit={async ({ password }) => {
+                        try {
+                            await handleSetup({ password });
+                        } catch (error) {
                             const { status } = getApiError(error);
                             // Session expired.
                             if (status === HTTP_STATUS_CODE.UNAUTHORIZED) {
@@ -331,9 +310,8 @@ const JoinMagicLinkContainer = ({
                                 return;
                             }
                             handleError(error);
-                        });
+                        }
                     }}
-                    method="post"
                 >
                     <InputFieldTwo
                         id="username"
@@ -343,40 +321,8 @@ const JoinMagicLinkContainer = ({
                         disableChange={true}
                         value={username}
                     />
-                    <InputFieldTwo
-                        as={PasswordInputTwo}
-                        id="password"
-                        bigger
-                        label={c('Label').t`New password`}
-                        assistiveText={getMinPasswordLengthMessage()}
-                        error={validator([passwordLengthValidator(newPassword)])}
-                        disableChange={loading}
-                        autoFocus
-                        autoComplete="new-password"
-                        value={newPassword}
-                        onValue={setNewPassword}
-                    />
-                    <InputFieldTwo
-                        as={PasswordInputTwo}
-                        id="password-repeat"
-                        bigger
-                        label={c('Label').t`Confirm password`}
-                        error={validator([
-                            passwordLengthValidator(confirmNewPassword),
-                            confirmPasswordValidator(confirmNewPassword, newPassword),
-                        ])}
-                        disableChange={loading}
-                        autoComplete="new-password"
-                        value={confirmNewPassword}
-                        onValue={setConfirmNewPassword}
-                        rootClassName="mt-2"
-                    />
-
-                    <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-4">
-                        {c('Action').t`Continue`}
-                    </Button>
-                    <div className="color-weak text-sm text-center mt-4">{getTerms(toApp || APPS.PROTONACCOUNT)}</div>
-                </form>
+                </SetPasswordWithPolicyForm>
+                <div className="color-weak text-sm text-center mt-4">{getTerms(toApp || APPS.PROTONACCOUNT)}</div>
             </Main>
         </Layout>
     );
