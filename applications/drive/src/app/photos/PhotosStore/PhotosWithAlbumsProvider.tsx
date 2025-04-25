@@ -21,7 +21,7 @@ import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/p
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { PhotoDataForAddToAlbumPayload, PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -81,7 +81,8 @@ export const PhotosWithAlbumsContext = createContext<{
         abortSignal: AbortSignal,
         albumShareId: string,
         albumLinkId: string,
-        LinkIDs: string[]
+        LinkIDs: string[],
+        fromUpload?: boolean
     ) => Promise<void>;
     addPhotoAsCover: (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => void;
     loadAlbumPhotos: (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string) => Promise<void>;
@@ -489,106 +490,159 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         };
     }, [loadSharedWithMeAlbums, driveEventManager.eventHandlers]);
 
-    const addAlbumPhotos = useCallback(
-        async (
-            abortSignal: AbortSignal,
-            albumShareId: string,
-            albumLinkId: string,
-            LinkIDs: string[]
-        ): Promise<void> => {
-            if (!shareId || !volumeId) {
-                throw new Error('Photo volume or share not found');
-            }
-
-            const { name: albumName } = await getLink(abortSignal, albumShareId, albumLinkId);
-
-            // Preload links in queue to prevent doing queue in batches
+    const getPayloadDataAndPreloadPhotoLinks = useCallback(
+        async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, linkIDs: string[]) => {
             const linksInfoForAlbum = new Map<
                 string,
                 {
-                    LinkID: string;
-                    Hash: string;
-                    Name: string;
-                    NodePassphrase: string;
-                    NodePassphraseSignature: string;
-                    NameSignatureEmail?: string;
-                    SignatureEmail?: string;
-                    ContentHash?: string;
+                    payload: PhotoDataForAddToAlbumPayload;
+                    albumPhoto: AlbumPhoto | undefined;
                 }
             >();
 
-            const setPhotoLinksInfoForAlbum = async (link: DecryptedLink) => {
+            const updateMainPhotoWithRelatedInfo = (mainPhotoLinkId: string, relatedLink: DecryptedLink) => {
+                const mainPhotoInfo = linksInfoForAlbum.get(mainPhotoLinkId);
+                if (mainPhotoInfo && relatedLink.activeRevision?.photo) {
+                    const relatedPhotoInfo = {
+                        linkId: relatedLink.linkId,
+                        captureTime: relatedLink.activeRevision.photo.captureTime,
+                        hash: relatedLink.activeRevision.photo.hash,
+                        contentHash: relatedLink.activeRevision.photo.contentHash,
+                    };
+
+                    linksInfoForAlbum.set(mainPhotoLinkId, {
+                        payload: mainPhotoInfo.payload,
+                        albumPhoto: mainPhotoInfo.albumPhoto
+                            ? {
+                                  ...mainPhotoInfo.albumPhoto,
+                                  relatedPhotos: [...(mainPhotoInfo.albumPhoto?.relatedPhotos || []), relatedPhotoInfo],
+                              }
+                            : undefined,
+                    });
+                }
+            };
+
+            const createAlbumPhotoObject = (link: DecryptedLink, mainPhotoLinkId?: string) => {
+                if (mainPhotoLinkId || !link.activeRevision?.photo) {
+                    return undefined;
+                }
+
+                return {
+                    linkId: link.linkId,
+                    captureTime: link.activeRevision.photo.captureTime,
+                    hash: link.activeRevision.photo.hash,
+                    contentHash: link.activeRevision.photo.contentHash,
+                    tags: link.photoProperties?.tags || [],
+                    relatedPhotos: [],
+                    parentLinkId: link.parentLinkId,
+                    rootShareId: link.rootShareId,
+                    volumeId: link.volumeId,
+                };
+            };
+
+            const addPhotoToInfoMap = async (link: DecryptedLink, mainPhotoLinkId?: string) => {
                 const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
                     abortSignal,
                     albumShareId,
                     albumLinkId,
                     link.linkId
                 );
+
+                if (mainPhotoLinkId && link.activeRevision?.photo) {
+                    updateMainPhotoWithRelatedInfo(mainPhotoLinkId, link);
+                }
+
                 linksInfoForAlbum.set(link.linkId, {
-                    LinkID: link.linkId,
-                    Hash,
-                    Name,
-                    NodePassphrase,
-                    NodePassphraseSignature,
-                    NameSignatureEmail: link.nameSignatureEmail,
-                    SignatureEmail: link.signatureEmail,
-                    ContentHash: link.activeRevision?.photo?.contentHash,
+                    payload: {
+                        LinkID: link.linkId,
+                        Hash,
+                        Name,
+                        NodePassphrase,
+                        NodePassphraseSignature,
+                        NameSignatureEmail: link.nameSignatureEmail,
+                        SignatureEmail: link.signatureEmail,
+                        ContentHash: link.activeRevision?.photo?.contentHash,
+                    },
+                    albumPhoto: createAlbumPhotoObject(link, mainPhotoLinkId),
                 });
             };
+            const processPhotoLink = async (linkId: string) => {
+                const link = await getLink(abortSignal, albumShareId, linkId);
+                await addPhotoToInfoMap(link);
 
-            const queue = LinkIDs.map((linkId) => async () => {
+                if (link.activeRevision?.photo?.relatedPhotosLinkIds?.length) {
+                    const relatedPhotosQueue = link.activeRevision.photo.relatedPhotosLinkIds.map(
+                        (relatedPhotoLinkId) => async () => {
+                            const relatedPhotoLink = await getLink(abortSignal, albumShareId, relatedPhotoLinkId);
+                            await addPhotoToInfoMap(relatedPhotoLink, link.linkId);
+                        }
+                    );
+                    await runInQueue(relatedPhotosQueue, MAX_THREADS_PER_REQUEST);
+                }
+            };
+
+            const queue = linkIDs.map((linkId) => async () => {
                 if (abortSignal.aborted) {
                     return;
                 }
-
-                const link = await getLink(abortSignal, albumShareId, linkId);
-                await setPhotoLinksInfoForAlbum(link);
-                if (!link.activeRevision?.photo?.relatedPhotosLinkIds?.length) {
-                    return;
-                }
-                const relatedPhotosQueue = link.activeRevision.photo.relatedPhotosLinkIds.map(
-                    (relatedPhotoLinkId) => async () => {
-                        const relatedPhotoLink = await getLink(abortSignal, albumShareId, relatedPhotoLinkId);
-                        await setPhotoLinksInfoForAlbum(relatedPhotoLink);
-                    }
-                );
-                await runInQueue(relatedPhotosQueue, MAX_THREADS_PER_REQUEST);
+                await processPhotoLink(linkId);
             });
-            await runInQueue(queue, MAX_THREADS_PER_REQUEST);
 
-            const result = await batchAPIHelper(abortSignal, {
+            await runInQueue(queue, MAX_THREADS_PER_REQUEST);
+            return linksInfoForAlbum;
+        },
+        [getLink, getPhotoCloneForAlbum]
+    );
+
+    const addPhotosToAlbumInBatches = useCallback(
+        async (
+            abortSignal: AbortSignal,
+            volumeId: string,
+            albumLinkId: string,
+            linksInfoForAlbum: Map<string, any>
+        ) => {
+            return batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
                 query: async (batchLinkIds) => {
-                    const links = await Promise.all(batchLinkIds.map(async (linkId) => linksInfoForAlbum.get(linkId)));
+                    const links = await Promise.all(
+                        batchLinkIds.map(async (linkId) => linksInfoForAlbum.get(linkId)?.payload)
+                    );
 
                     return queryAddAlbumPhotos(volumeId, albumLinkId, {
                         AlbumData: links.filter(isTruthy),
                     });
                 },
             });
+        },
+        [batchAPIHelper]
+    );
 
-            // refreshing the album is only needed after adding photos for the first time to an album
-            if (albumPhotos.length === 0) {
-                void loadAlbums(abortSignal);
-            }
-            void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
-
+    const showNotifications = useCallback(
+        (
+            result: { successes: string[]; failures: Record<string, any> },
+            albumName: string,
+            // Prevent showing notification and call loadAlbumPhotos per upload when uploading directly
+            fromUpload: boolean = false
+        ) => {
             const nbFailures = Object.keys(result.failures).length;
             const nbSuccesses = result.successes.length;
+
             if (nbFailures) {
                 createNotification({
                     type: 'error',
                     text: c('Notification').t`⁠Some photo(s) could not be added to "${albumName}"`,
                 });
             }
-            if (nbSuccesses) {
+
+            if (nbSuccesses && !fromUpload) {
                 createNotification({
                     type: 'success',
                     text: c('Notification').t`Your photo(s) have been added to "${albumName}"`,
                 });
             }
+
             if (!nbFailures && !nbSuccesses) {
                 createNotification({
                     type: 'info',
@@ -596,16 +650,71 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 });
             }
         },
+        [createNotification]
+    );
+
+    const handleAddAlbumPhotos = useCallback(
+        async (
+            abortSignal: AbortSignal,
+
+            albumShareId: string,
+            albumLinkId: string,
+            linkIds: string[],
+            fromUpload: boolean = false
+        ): Promise<void> => {
+            if (!shareId || !volumeId) {
+                throw new Error('Photo volume or share not found');
+            }
+
+            const { name: albumName } = await getLink(abortSignal, albumShareId, albumLinkId);
+
+            const linksInfoForAlbum = await getPayloadDataAndPreloadPhotoLinks(
+                abortSignal,
+                albumShareId,
+                albumLinkId,
+                linkIds
+            );
+
+            const result = await addPhotosToAlbumInBatches(abortSignal, volumeId, albumLinkId, linksInfoForAlbum);
+
+            const allNewAlbumPhotos = result.successes
+                .map((linkId) => linksInfoForAlbum.get(linkId)?.albumPhoto)
+                .filter(isTruthy);
+
+            setAlbums((currentAlbums) => {
+                const newAlbums = new Map(currentAlbums);
+                const album = newAlbums.get(albumLinkId);
+                if (!album) {
+                    return newAlbums;
+                }
+                album.photoCount = album.photoCount + allNewAlbumPhotos.length;
+                return newAlbums;
+            });
+
+            // In case of directUpload we can skip loadAlbumsPhotos as photos will already be decrypted.
+            // We just need to add them to the list
+            //
+            // For other cases, it's safer to loadAlbumPhotos (request to API) to prevent new photos loading issues
+            if (fromUpload) {
+                setAlbumPhotos((currentAlbumPhotos) => [...currentAlbumPhotos, ...allNewAlbumPhotos]);
+            } else {
+                void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
+            }
+            if (albumPhotos.length === 0) {
+                void loadAlbums(abortSignal);
+            }
+            showNotifications(result, albumName, fromUpload);
+        },
         [
+            shareId,
+            volumeId,
+            getLink,
+            getPayloadDataAndPreloadPhotoLinks,
+            addPhotosToAlbumInBatches,
+            albumPhotos.length,
+            showNotifications,
             loadAlbumPhotos,
             loadAlbums,
-            getLink,
-            getPhotoCloneForAlbum,
-            volumeId,
-            shareId,
-            albumPhotos,
-            batchAPIHelper,
-            createNotification,
         ]
     );
 
@@ -882,7 +991,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 photos,
                 albums,
                 albumPhotos,
-                addAlbumPhotos,
+                addAlbumPhotos: handleAddAlbumPhotos,
                 addPhotoAsCover,
                 loadAlbumPhotos,
                 loadAlbums,
