@@ -108,7 +108,8 @@ export const usePasswordPolicyValidation = (
     return {
         enabled,
         result,
-        valid,
+        // Only care about the valid value if it's enabled. Otherwise it's always valid.
+        valid: enabled ? valid : true,
         spotlight: viewportWidth.xlarge || viewportWidth['2xlarge'],
         handlers: {
             onInputFocus: useCallback(() => setInputFocus(true), []),
