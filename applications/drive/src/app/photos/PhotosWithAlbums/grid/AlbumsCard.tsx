@@ -123,21 +123,21 @@ export const AlbumsCard: FC<Props> = ({
     const isDecrypted = isDecryptedLink(album);
     const isCoverDecrypted = isDecryptedLink(album.cover);
 
-    useEffect(() => {
-        const hasName = album.name;
-        if (!hasName) {
-            onRender(album.linkId, ref);
-        } else {
-            onRenderLoadedLink(album.cover?.linkId || album.linkId, ref);
-        }
-    }, [album, onRender, onRenderLoadedLink]);
-
     const thumbUrl =
         (isCoverDecrypted && album.cover?.cachedThumbnailUrl) || (isDecrypted && album.cachedThumbnailUrl) || undefined;
 
     const isThumbnailLoading =
         !isDecrypted || (album.hasThumbnail && !imageReady) || (album.cover?.hasThumbnail && !imageReady);
     const isLoaded = !isThumbnailLoading && isDecrypted;
+
+    useEffect(() => {
+        const hasName = album.name;
+        if (!hasName) {
+            onRender(album.linkId, ref);
+        } else if (!thumbUrl) {
+            onRenderLoadedLink(album.linkId, ref);
+        }
+    }, [album, onRender, onRenderLoadedLink]);
 
     useEffect(() => {
         if (thumbUrl) {
@@ -174,7 +174,7 @@ export const AlbumsCard: FC<Props> = ({
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
                 'relative albums-card p-0 rounded shadow-lifted',
-                isThumbnailLoading && 'albums-card--loading'
+                !isLoaded && 'albums-card--loading'
             )}
             data-testid="albums-card"
             onClick={onClick}
