@@ -157,8 +157,6 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         </b>
     );
 
-    const saveButtonDisabled = passwordPolicyError;
-
     return (
         <Modal as={Form} onClose={handleClose} {...rest} onSubmit={onSubmit}>
             <ModalHeader title={c('Title').t`Change password`} />
@@ -186,7 +184,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
                 <Button onClick={handleClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button loading={loading} type="submit" color="norm" disabled={saveButtonDisabled}>
+                <Button loading={loading} type="submit" color="norm">
                     {c('Action').t`Change password`}
                 </Button>
             </ModalFooter>

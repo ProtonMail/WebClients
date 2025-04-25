@@ -99,7 +99,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
                 event.stopPropagation();
-                if (passwordPolicyError || !formErrors.onFormSubmit()) {
+                if (!formErrors.onFormSubmit() || passwordPolicyError) {
                     return;
                 }
                 withLoading(handleSubmit()).catch(handleError);
