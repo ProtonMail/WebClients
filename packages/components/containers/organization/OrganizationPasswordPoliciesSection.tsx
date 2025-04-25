@@ -58,7 +58,7 @@ const serializePolicyState = (state: PasswordPoliciesState): PasswordPolicySetti
 const defaultLabel = <span className="color-hint ml-0.5">{c('Info').t`(default)`}</span>;
 
 const MIN_CHARS = MIN_PASSWORD_LENGTH;
-const MAX_CHARS = 100;
+const MAX_CHARS = 70;
 
 interface RadioSetting {
     key: Exclude<PasswordPolicyName, 'AtLeastXCharacters'>;
