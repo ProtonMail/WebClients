@@ -49,7 +49,7 @@ describe('OutgoingForwardTable', () => {
         ] as Address[];
         const chainedEmails = [''];
         const user = {} as UserModel;
-        const forwardings = [
+        const outgoingAddressForwardings = [
             {
                 ID: 'id',
                 ForwarderAddressID: 'addressID',
@@ -63,7 +63,7 @@ describe('OutgoingForwardTable', () => {
         const utils = renderWithProviders(
             <OutgoingForwardTableContext
                 user={user}
-                forwardings={forwardings}
+                outgoingAddressForwardings={outgoingAddressForwardings}
                 addresses={addresses}
                 chainedEmails={chainedEmails}
             />

@@ -127,7 +127,7 @@ const ForwardSection = () => {
                             content: (
                                 <OutgoingForwardTable
                                     addresses={addresses}
-                                    forwardings={outgoingAddressForwardings}
+                                    outgoingAddressForwardings={outgoingAddressForwardings}
                                     chainedEmails={chainedEmails}
                                     loading={loadingAddresses && loadingIncomingAddressForwardings}
                                     user={user}
