@@ -21,7 +21,7 @@ const SSOAdminDeviceConfirmation2 = ({ ssoData, onUseBackupPassword }: Props) =>
         }
 
         const email = ssoData.address.Email;
-        const adminEmail = ssoData.organizationData.organizationIdentity.FingerprintSignatureAddress || '';
+        const adminEmail = ssoData.organizationData.identity.FingerprintSignatureAddress || '';
 
         return getBoldFormattedText(
             c('sso')

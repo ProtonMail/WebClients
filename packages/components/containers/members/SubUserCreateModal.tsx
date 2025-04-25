@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,6 +12,7 @@ import {
     getPrivateText,
 } from '@proton/account';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
@@ -23,15 +24,12 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
-import {
-    OrganizationPasswordPolicies,
-    useOrganizationPasswordPolicyValidation,
-} from '@proton/components/components/organizationPasswordPolicies/OrganizationPasswordPolicies';
+import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
+import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import useApi from '@proton/components/hooks/useApi';
@@ -52,12 +50,7 @@ import {
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
-import {
-    confirmPasswordValidator,
-    emailValidator,
-    passwordLengthValidator,
-    requiredValidator,
-} from '@proton/shared/lib/helpers/formValidators';
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
@@ -167,16 +160,12 @@ const SubUserCreateModal = ({
 
     const [submitting, withLoading] = useLoading();
 
-    const { validator, onFormSubmit } = useFormErrors();
+    const formErrors = useFormErrors();
+    const { validator, onFormSubmit } = formErrors;
 
-    const passwordContainerRef = useRef<HTMLDivElement | null>(null);
-
-    const organizationPasswordPolicies = useOrganizationPasswordPolicyValidation(model.password, normalApi);
-
-    const saveButtonDisabled =
-        model.mode === CreateMemberMode.Password &&
-        organizationPasswordPolicies.displayed &&
-        !organizationPasswordPolicies.passwordRequirementsMatched;
+    const passwordPolicyValidation = usePasswordPolicyValidation(model.password, usePasswordPolicies());
+    const passwordPolicyError = model.mode === CreateMemberMode.Password && !passwordPolicyValidation.valid;
+    const saveButtonDisabled = passwordPolicyError;
 
     const domainOptions = verifiedDomains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
@@ -337,16 +326,9 @@ const SubUserCreateModal = ({
             {...rest}
             onClose={handleClose}
             onSubmit={(event: FormEvent<HTMLFormElement>) => {
-                if (
-                    model.mode === CreateMemberMode.Password &&
-                    organizationPasswordPolicies.displayed &&
-                    !organizationPasswordPolicies.passwordRequirementsMatched
-                ) {
-                    return;
-                }
                 event.preventDefault();
                 event.stopPropagation();
-                if (!onFormSubmit(event.currentTarget)) {
+                if (passwordPolicyError || !onFormSubmit(event.currentTarget)) {
                     return;
                 }
                 void withLoading(handleSubmit()).catch(errorHandler);
@@ -374,38 +356,17 @@ const SubUserCreateModal = ({
                             suffix={useEmail ? undefined : addressSuffix}
                         />
 
-                        <InputFieldTwo
-                            id="password"
-                            as={PasswordInputTwo}
-                            value={model.password}
-                            error={validator([
-                                requiredValidator(model.password),
-                                passwordLengthValidator(model.password),
-                            ])}
-                            onValue={handleChange('password')}
-                            label={c('user_modal').t`Create password`}
-                            containerRef={passwordContainerRef}
-                        />
-
-                        {organizationPasswordPolicies.displayed && (
-                            <div className="mb-4">
-                                <OrganizationPasswordPolicies
-                                    password={model.password}
-                                    wrapper={organizationPasswordPolicies}
-                                />
-                            </div>
-                        )}
-
-                        <InputFieldTwo
-                            id="confirm-password"
-                            as={PasswordInputTwo}
-                            value={model.confirm}
-                            error={validator([
-                                requiredValidator(model.confirm),
-                                confirmPasswordValidator(model.password, model.confirm),
-                            ])}
-                            onValue={handleChange('confirm')}
-                            label={c('user_modal').t`Confirm password`}
+                        <PasswordWithPolicyInputs
+                            passwordPolicyValidation={passwordPolicyValidation}
+                            passwordState={[model.password, handleChange('password')]}
+                            confirmPasswordState={[model.confirm, handleChange('confirm')]}
+                            formErrors={formErrors}
+                            formLabels={{
+                                password: c('user_modal').t`Create password`,
+                                confirmPassword: c('user_modal').t`Confirm password`,
+                            }}
+                            isAboveModal={true}
+                            autoFocus={undefined}
                         />
 
                         {isMagicLinkEnabled && (

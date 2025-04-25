@@ -392,7 +392,6 @@ const AccountStep = ({
                         label={c('Label').t`Repeat password`}
                         error={validator([
                             requiredValidator(password),
-                            passwordLengthValidator(confirmPassword),
                             confirmPasswordValidator(confirmPassword, password),
                         ])}
                         bigger

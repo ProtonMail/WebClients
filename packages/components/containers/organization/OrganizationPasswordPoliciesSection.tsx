@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,18 +8,24 @@ import { Button } from '@proton/atoms/index';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import type { AllPasswordPolicyKeys, PolicyStateType } from '@proton/shared/lib/api/passwordPolicies';
-import { PasswordPolicyState, serializePolicyState } from '@proton/shared/lib/api/passwordPolicies';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import '@proton/shared/lib/api/passwordPolicies';
+import { BRAND_NAME, MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
-import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import {
+    type OrganizationExtended,
+    type PasswordPoliciesState,
+    type PasswordPolicyName,
+    type PasswordPolicySetting,
+    type PasswordPolicySettings,
+    PasswordPolicyState,
+} from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import SettingsLayout from '../account/SettingsLayout';
@@ -27,32 +33,39 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 
+const serializePolicyState = (state: PasswordPoliciesState): PasswordPolicySetting[] => {
+    return Object.entries(state).map(([_key, value]): PasswordPolicySetting => {
+        const key = _key as keyof typeof state;
+
+        if (key === 'AtLeastXCharacters') {
+            return {
+                PolicyName: key,
+                State: PasswordPolicyState.ENABLED,
+                Parameters: {
+                    MinimumCharacters: Number(value),
+                },
+            };
+        }
+
+        return {
+            PolicyName: key,
+            State: value as PasswordPolicyState,
+            Parameters: null,
+        };
+    });
+};
+
 const defaultLabel = <span className="color-hint ml-0.5">{c('Info').t`(default)`}</span>;
 
-const optionsOptionalLabel = [
-    {
-        value: PasswordPolicyState.OPTIONAL,
-        label: c('Option').jt`Optional ${defaultLabel}`,
-    },
-    {
-        value: PasswordPolicyState.ENABLED,
-        label: c('Option').t`Required`,
-    },
-];
-
-const optionsAllowedLabel = [
-    {
-        value: PasswordPolicyState.OPTIONAL,
-        label: c('Option').jt`Allowed ${defaultLabel}`,
-    },
-    {
-        value: PasswordPolicyState.ENABLED,
-        label: c('Option').t`Not allowed`,
-    },
-];
-
-const MIN_CHARS = 16;
+const MIN_CHARS = MIN_PASSWORD_LENGTH;
 const MAX_CHARS = 100;
+
+interface RadioSetting {
+    key: Exclude<PasswordPolicyName, 'AtLeastXCharacters'>;
+    label: string;
+    options: { value: PasswordPolicyState; label: ReactNode }[];
+    tooltip?: ReactNode;
+}
 
 const SettingsField = ({
     key,
@@ -65,10 +78,10 @@ const SettingsField = ({
 }: {
     key: string;
     label: string;
-    tooltip: string | ReactNode;
+    tooltip: ReactNode;
     name: string;
     value: PasswordPolicyState;
-    options: typeof optionsOptionalLabel | typeof optionsAllowedLabel;
+    options: RadioSetting['options'];
     onChange: (v: PasswordPolicyState) => void;
 }) => (
     <SettingsLayout key={key}>
@@ -92,90 +105,95 @@ const SettingsField = ({
 );
 
 interface OrganizationProtonAccountPasswordRulesProps {
-    organization?: OrganizationWithSettings;
+    organization?: OrganizationExtended;
 }
 
-const OrganizationProtonAccountPasswordRules = ({ organization }: OrganizationProtonAccountPasswordRulesProps) => {
-    const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
-    const api = useApi();
-    const [loading, withLoading] = useLoading();
-    const { validator, onFormSubmit } = useFormErrors();
-
-    const [defaultPolicyState, setDefaultPolicyState] = useState<PolicyStateType>({
+const getDefaultPolicyState = (policies: PasswordPolicySettings = []): PasswordPoliciesState => {
+    const defaultPolicyState: PasswordPoliciesState = {
         AtLeastXCharacters: String(MIN_CHARS),
         AtLeastOneNumber: PasswordPolicyState.OPTIONAL,
         AtLeastOneSpecialCharacter: PasswordPolicyState.OPTIONAL,
         AtLeastOneUpperCaseAndOneLowercase: PasswordPolicyState.OPTIONAL,
         DisallowSequences: PasswordPolicyState.OPTIONAL,
         DisallowCommonPasswords: PasswordPolicyState.OPTIONAL,
-    });
-    const [policyState, setPolicyState] = useState<PolicyStateType>(defaultPolicyState);
-
-    useEffect(() => {
-        const policies = organization?.Settings?.PasswordPolicies ?? [];
-        const updated: Partial<PolicyStateType> = {};
-
-        for (const policy of policies) {
-            if (policy.PolicyName in defaultPolicyState) {
-                const key = policy.PolicyName as keyof PolicyStateType;
-
-                if (key === 'AtLeastXCharacters') {
-                    const min = policy.Parameters?.MinimumCharacters;
-                    if (min != null) {
-                        updated[key] = String(min);
-                    }
-                } else {
-                    updated[key] = policy.State;
-                }
-            }
-        }
-
-        setPolicyState((prev) => ({
-            ...prev,
-            ...updated,
-        }));
-
-        setDefaultPolicyState((prev) => ({
-            ...prev,
-            ...updated,
-        }));
-    }, [organization]);
-
-    const updatePolicyState = <K extends keyof PolicyStateType>(key: K, value: PolicyStateType[K]) => {
-        setPolicyState((prev) => ({
-            ...prev,
-            [key]: value,
-        }));
     };
 
-    const charCount = Number(policyState.AtLeastXCharacters);
+    for (const policy of policies) {
+        const key = policy.PolicyName as keyof PasswordPoliciesState;
 
-    const isModified = useMemo(() => {
-        return Object.entries(defaultPolicyState).some(([key, defaultValue]) => {
-            return policyState[key as keyof PolicyStateType] !== defaultValue;
+        if (key in defaultPolicyState) {
+            if (key === 'AtLeastXCharacters') {
+                const min = policy.Parameters?.MinimumCharacters;
+                if (min != null) {
+                    defaultPolicyState[key] = String(min);
+                }
+            } else {
+                defaultPolicyState[key] = policy.State;
+            }
+        }
+    }
+
+    return defaultPolicyState;
+};
+
+const OrganizationPasswordPoliciesSection = ({ organization }: OrganizationProtonAccountPasswordRulesProps) => {
+    const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
+
+    const defaultPolicyState = getDefaultPolicyState(organization?.Settings?.PasswordPolicies);
+    const [policyState, setPolicyState] = useState<Partial<PasswordPoliciesState>>({});
+
+    const updatePolicyState = <K extends keyof PasswordPoliciesState>(key: K, value: PasswordPoliciesState[K]) => {
+        setPolicyState((prev) => {
+            if (defaultPolicyState[key] === value) {
+                return omit(prev, [key]);
+            }
+            return {
+                ...prev,
+                [key]: value,
+            };
         });
-    }, [policyState]);
+    };
 
-    const canSave = useMemo(() => {
-        return isModified && charCount >= MIN_CHARS && charCount < MAX_CHARS;
-    }, [isModified, policyState.AtLeastXCharacters]);
+    const getValue = <Key extends keyof typeof defaultPolicyState>(key: Key) =>
+        policyState[key] ?? defaultPolicyState[key];
+
+    const charCount = Number(getValue('AtLeastXCharacters'));
+    const isModified = Object.keys(policyState).length > 0;
+    const canSave = isModified && charCount >= MIN_CHARS && charCount < MAX_CHARS;
 
     const handleMinCharacterLengthChange = (value: string) => {
         const parsed = Number(value);
-        if (!isNaN(parsed)) {
-            updatePolicyState('AtLeastXCharacters', String(parsed));
+        if (!isNaN(parsed) || value === '') {
+            updatePolicyState('AtLeastXCharacters', value === '' ? value : String(parsed));
         }
     };
 
-    type Setting = {
-        key: AllPasswordPolicyKeys;
-        label: string;
-        options: typeof optionsOptionalLabel;
-        tooltip?: ReactNode;
-    };
+    const optionsOptionalLabel = [
+        {
+            value: PasswordPolicyState.OPTIONAL,
+            label: c('Option').jt`Optional ${defaultLabel}`,
+        },
+        {
+            value: PasswordPolicyState.ENABLED,
+            label: c('Option').t`Required`,
+        },
+    ];
 
-    const settings: Setting[] = [
+    const optionsAllowedLabel = [
+        {
+            value: PasswordPolicyState.OPTIONAL,
+            label: c('Option').jt`Allowed ${defaultLabel}`,
+        },
+        {
+            value: PasswordPolicyState.ENABLED,
+            label: c('Option').t`Not allowed`,
+        },
+    ];
+
+    const radioSettings: RadioSetting[] = [
         {
             key: 'AtLeastOneNumber',
             label: c('Label').t`Numbers`,
@@ -206,15 +224,17 @@ const OrganizationProtonAccountPasswordRules = ({ organization }: OrganizationPr
     ];
 
     const handleSave = async () => {
-        const serializedPolicies = serializePolicyState(policyState);
+        const serializedPolicies = serializePolicyState({ ...defaultPolicyState, ...policyState });
 
         try {
             dispatch(
                 organizationActions.updateOrganizationSettings({ value: { PasswordPolicies: serializedPolicies } })
             );
+            setPolicyState({});
             await api(updateOrganizationSettings({ PasswordPolicies: serializedPolicies }));
             createNotification({ text: c('Info').t`Preference saved` });
         } catch (error) {
+            setPolicyState(policyState);
             // Revert change on 403 cancellation
             dispatch(
                 organizationActions.updateOrganizationSettings({
@@ -239,10 +259,10 @@ const OrganizationProtonAccountPasswordRules = ({ organization }: OrganizationPr
                 name="org-password-policies"
                 onSubmit={async (e) => {
                     e.preventDefault();
-                    if (!canSave || !onFormSubmit()) {
+                    if (!canSave) {
                         return;
                     }
-                    void withLoading(handleSave()).catch(noop);
+                    withLoading(handleSave()).catch(noop);
                 }}
             >
                 <SettingsLayout>
@@ -256,33 +276,34 @@ const OrganizationProtonAccountPasswordRules = ({ organization }: OrganizationPr
                             type="number"
                             id="min-character-length"
                             aria-labelledby="min-character-length-label"
-                            value={policyState.AtLeastXCharacters}
+                            value={getValue('AtLeastXCharacters')}
                             onChange={(e) => handleMinCharacterLengthChange(e.target.value)}
                             suffix={charCount === MIN_CHARS ? defaultLabel : undefined}
                             min={MIN_CHARS}
                             max={MAX_CHARS}
-                            error={validator([
-                                charCount < MIN_CHARS ? c('Label').t`Minimum number of characters is ${MIN_CHARS}` : '',
-                                charCount >= MAX_CHARS
-                                    ? c('Label').t`Maximum number of characters is ${MAX_CHARS}`
-                                    : '',
-                            ])}
+                            error={(() => {
+                                if (charCount < MIN_CHARS) {
+                                    return c('Label').t`Minimum number of characters is ${MIN_CHARS}`;
+                                }
+                                if (charCount >= MAX_CHARS) {
+                                    return c('Label').t`Maximum number of characters is ${MAX_CHARS}`;
+                                }
+                                return undefined;
+                            })()}
                             assistContainerClassName="empty:hidden"
                         />
                     </SettingsLayoutRight>
                 </SettingsLayout>
 
-                {settings.map(({ key, label, tooltip, options }) => (
+                {radioSettings.map(({ key, label, tooltip, options }) => (
                     <SettingsField
                         key={key}
                         name={key}
                         label={label}
                         tooltip={tooltip}
-                        value={policyState[key as keyof PolicyStateType] as PasswordPolicyState}
+                        value={getValue(key)}
                         options={options}
-                        onChange={(value: PasswordPolicyState) =>
-                            updatePolicyState(key as keyof PolicyStateType, value)
-                        }
+                        onChange={(value) => updatePolicyState(key, value)}
                     />
                 ))}
 
@@ -294,4 +315,4 @@ const OrganizationProtonAccountPasswordRules = ({ organization }: OrganizationPr
     );
 };
 
-export default OrganizationProtonAccountPasswordRules;
+export default OrganizationPasswordPoliciesSection;

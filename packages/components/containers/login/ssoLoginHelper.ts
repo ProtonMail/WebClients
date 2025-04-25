@@ -406,7 +406,7 @@ export const getSSOInactiveData = async ({
     const [user, addresses, organizationData] = await Promise.all([
         cache.data.user || syncUser(cache),
         cache.data.addresses || syncAddresses(cache),
-        getOrganizationData({ api }),
+        getOrganizationData({ api, getPasswordPolicies: false }),
     ]);
 
     const address = addresses.find(({ ID }) => ID === authDeviceSelf.ActivationAddressID);
@@ -434,7 +434,7 @@ export const getSSOUnlockData = async ({ cache }: { cache: AuthCacheResult }): P
     let [user, addresses, organizationData] = await Promise.all([
         cache.data.user || syncUser(cache),
         cache.data.addresses || syncAddresses(cache),
-        getOrganizationData({ api }),
+        getOrganizationData({ api, getPasswordPolicies: false }),
     ]);
 
     // Creating a new device

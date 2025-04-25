@@ -1,3 +1,5 @@
+import { getPasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
+
 import { getAllAddresses } from '../../api/addresses';
 import { queryMemberUnprivatizationInfo } from '../../api/members';
 import { getOrganizationIdentity, getOrganizationLogo } from '../../api/organization';
@@ -7,13 +9,15 @@ import type {
     MemberUnprivatizationOutput,
     Organization,
     OrganizationIdentityOutput,
+    PasswordPolicies,
 } from '../../interfaces';
 import { getOrganization, getOrganizationSettings } from '../../organization/api';
 
 export interface OrganizationData {
     organization: Organization;
-    organizationIdentity: OrganizationIdentityOutput;
-    organizationLogo: { url: string; cleanup: () => void } | null;
+    identity: OrganizationIdentityOutput;
+    logo: { url: string; cleanup: () => void } | null;
+    passwordPolicies: PasswordPolicies;
 }
 
 export interface UnprivatizationContextData {
@@ -22,8 +26,14 @@ export interface UnprivatizationContextData {
     data: MemberUnprivatizationOutput;
 }
 
-export const getOrganizationData = async ({ api }: { api: Api }): Promise<OrganizationData> => {
-    const [organization, organizationIdentity, organizationLogo] = await Promise.all([
+export const getOrganizationData = async ({
+    api,
+    getPasswordPolicies: shouldGetPasswordPolicies,
+}: {
+    api: Api;
+    getPasswordPolicies: boolean;
+}): Promise<OrganizationData> => {
+    const [organization, identity, logo, passwordPolicies] = await Promise.all([
         getOrganization({ api }),
         api<OrganizationIdentityOutput>(getOrganizationIdentity())
             .then((output) => output)
@@ -35,7 +45,7 @@ export const getOrganizationData = async ({ api }: { api: Api }): Promise<Organi
                 };
             }),
         getOrganizationSettings({ api })
-            .then(async ({ LogoID }): Promise<OrganizationData['organizationLogo']> => {
+            .then(async ({ LogoID }): Promise<OrganizationData['logo']> => {
                 if (!LogoID) {
                     return null;
                 }
@@ -49,18 +59,20 @@ export const getOrganizationData = async ({ api }: { api: Api }): Promise<Organi
             .catch(() => {
                 return null;
             }),
+        shouldGetPasswordPolicies ? getPasswordPolicies({ api }) : [],
     ]);
 
     return {
         organization,
-        organizationIdentity,
-        organizationLogo,
+        identity,
+        logo,
+        passwordPolicies,
     };
 };
 
 export const getUnprivatizationContextData = async ({ api }: { api: Api }): Promise<UnprivatizationContextData> => {
     const [organizationData, addresses, data] = await Promise.all([
-        getOrganizationData({ api }),
+        getOrganizationData({ api, getPasswordPolicies: true }),
         getAllAddresses(api),
         api<MemberUnprivatizationOutput>(queryMemberUnprivatizationInfo()),
     ]);
