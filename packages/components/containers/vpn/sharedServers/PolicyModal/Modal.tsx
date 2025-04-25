@@ -32,14 +32,14 @@ import { POLICY_STEP } from './modalPolicyStepEnum';
 interface SharedServersModalProps extends ModalProps {
     onSuccess: (policy: VpnLocationFilterPolicy) => void;
     policy?: VpnLocationFilterPolicy;
-    initialStep?: POLICY_STEP;
     isEditing?: boolean;
+    soloStep?: POLICY_STEP;
 }
 
 const SharedServersModal = ({
     policy,
     isEditing = false,
-    initialStep = POLICY_STEP.NAME,
+    soloStep,
     onSuccess,
     ...rest
 }: SharedServersModalProps) => {
@@ -48,7 +48,7 @@ const SharedServersModal = ({
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
 
-    const [step, setStep] = useState<POLICY_STEP>(initialStep);
+    const [step, setStep] = useState<POLICY_STEP>(soloStep ?? POLICY_STEP.NAME);
     const [policyName, setPolicyName] = useState('');
     const [selectedUsers, setSelectedUsers] = useState<SharedServerUser[]>([]);
     const [selectedGroups, setSelectedGroups] = useState<SharedServerGroup[]>([]);
@@ -89,6 +89,10 @@ const SharedServersModal = ({
         }
         setStep((currentStep) => currentStep - 1);
     }, [step]);
+
+    const handleCancel = useCallback(() => {
+        rest.onClose?.();
+    }, [rest]);
 
     const handleSubmit = useCallback(async () => {
         const updatedPolicy: VpnLocationFilterPolicy = {
@@ -147,9 +151,12 @@ const SharedServersModal = ({
 
                 return;
             }
+        }
 
-            // Submit in this step
+        // Submit in this step
+        if (step === POLICY_STEP.COUNTRIES || soloStep != undefined) {
             handleSubmit().catch(noop);
+
             return;
         }
 
@@ -271,10 +278,19 @@ const SharedServersModal = ({
                 )}
             </ModalTwoContent>
 
-            <ModalTwoFooter className={`flex ${step !== POLICY_STEP.NAME ? 'justify-between' : 'justify-end'}`}>
-                {step !== POLICY_STEP.NAME && <Button type="button" onClick={handleBack}>{c('Action').t`Back`}</Button>}
+            <ModalTwoFooter
+                className={`flex ${soloStep !== undefined || step !== POLICY_STEP.NAME ? 'justify-between' : 'justify-end'}`}
+            >
+                {soloStep !== undefined && (
+                    <Button type="button" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
+                )}
+                {soloStep === undefined && step !== POLICY_STEP.NAME && (
+                    <Button type="button" onClick={handleBack}>{c('Action').t`Back`}</Button>
+                )}
                 <Button color="norm" type="button" onClick={handleNext}>
-                    {step === POLICY_STEP.COUNTRIES ? c('Action').t`Save` : c('Action').t`Continue`}
+                    {soloStep !== undefined || step === POLICY_STEP.COUNTRIES
+                        ? c('Action').t`Save`
+                        : c('Action').t`Continue`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
