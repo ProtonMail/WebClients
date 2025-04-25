@@ -12,7 +12,7 @@ export const getPasswordFormLabels = (): PasswordFormLabels => {
         formName: 'setPasswordForm',
         passwordLabel: c('Label').t`New password`,
         confirmPasswordLabel: c('Label').t`Confirm password`,
-        cta: c('Action').t`Confirm`,
+        cta: c('Action').t`Continue`,
     };
 };
 
