@@ -21,6 +21,7 @@ import PortalPreview from '../../../components/PortalPreview';
 import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
+import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import {
     type OnFileUploadSuccessCallbackData,
@@ -82,6 +83,7 @@ export const PhotosLayout = () => {
         setPhotoAsCover,
 
         refreshSharedWithMeAlbums,
+        addNewAlbumPhotoToCache,
 
         userAddressEmail,
         isAlbumsLoading,
@@ -412,7 +414,7 @@ export const PhotosLayout = () => {
 
     const onPhotoUploadedToAlbum = useCallback(
         async (file: OnFileUploadSuccessCallbackData) => {
-            if (!file || !album || !albumShareId) {
+            if (!file || !album || !albumShareId || !albumLinkId) {
                 return;
             }
             const abortSignal = new AbortController().signal;
@@ -426,6 +428,8 @@ export const PhotosLayout = () => {
                 );
                 if (album.permissions.isOwner && !isAlreadyInAlbum) {
                     await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
+                } else if (!isAlreadyInAlbum) {
+                    void addNewAlbumPhotoToCache(abortSignal, albumShareId, albumLinkId, file.fileId);
                 }
             } catch (e) {
                 if (e instanceof Error && e.message) {
@@ -434,7 +438,7 @@ export const PhotosLayout = () => {
                 sendErrorReport(e);
             }
         },
-        [createNotification, addAlbumPhoto, albumShareId, album, albumPhotos]
+        [album, albumShareId, albumPhotos, addAlbumPhoto, addNewAlbumPhotoToCache, albumLinkId, createNotification]
     );
 
     const openAddPhotosToAlbumModal = useCallback(() => {
@@ -585,12 +589,29 @@ export const PhotosLayout = () => {
         };
     }, [pathname, setPageType, clearSelection, handleSelectTag]);
 
-    if (!previewShareId || !uploadLinkId || !currentPageType) {
+    if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId) {
         return <Loader />;
     }
 
     return (
-        <>
+        <UploadDragDrop
+            disabled={isUploadDisabled}
+            isForPhotos={true}
+            shareId={albumShareId || shareId}
+            parentLinkId={uploadLinkId}
+            onFileUpload={
+                [AlbumsPageTypes.ALBUMSADDPHOTOS, AlbumsPageTypes.ALBUMSGALLERY].includes(currentPageType)
+                    ? onPhotoUploadedToAlbum
+                    : undefined
+            }
+            onFileSkipped={
+                [AlbumsPageTypes.ALBUMSADDPHOTOS, AlbumsPageTypes.ALBUMSGALLERY].includes(currentPageType)
+                    ? onPhotoUploadedToAlbum
+                    : undefined
+            }
+            onDrop={currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? handleRedirectToAlbum : undefined}
+            className="flex flex-column flex-nowrap flex-1"
+        >
             {driveAlbumsDisabled && (
                 <TopBanner className="bg-warning">{c('Info')
                     .t`We are experiencing technical issues. Any albums related actions are temporarily disabled.`}</TopBanner>
@@ -672,6 +693,11 @@ export const PhotosLayout = () => {
                         openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
                         openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
                         onFileUpload={onPhotoUploadedToAlbum}
+                        // In ALBUMSADDPHOTOS we are still in gallery logic,
+                        // but if file is skiped it still needs to be added into album if missing
+                        onFileSkipped={
+                            currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? onPhotoUploadedToAlbum : undefined
+                        }
                         onPreview={handleToolbarPreview}
                         onSelectCover={onSelectCoverToolbar}
                         onDeleteAlbum={onDeleteAlbum}
@@ -725,6 +751,6 @@ export const PhotosLayout = () => {
                     {removeAlbumPhotosModal}
                 </>
             )}
-        </>
+        </UploadDragDrop>
     );
 };
