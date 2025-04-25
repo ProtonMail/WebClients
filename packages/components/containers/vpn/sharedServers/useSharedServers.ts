@@ -31,6 +31,7 @@ export interface SharedServerGroup {
     GroupID: number;
     Name: string;
     UserCount: number;
+    Users: SharedServerUser[];
 }
 
 interface ApiResponse {
