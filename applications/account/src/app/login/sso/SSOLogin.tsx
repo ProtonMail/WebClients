@@ -54,7 +54,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
     const handleError = onError;
     const handleCancel = () => {
         if ('organizationData' in ssoData) {
-            ssoData.organizationData.organizationLogo?.cleanup();
+            ssoData.organizationData.logo?.cleanup();
         }
         onCancel?.();
     };

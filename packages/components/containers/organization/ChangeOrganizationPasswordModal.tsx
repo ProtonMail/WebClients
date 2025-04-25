@@ -20,7 +20,11 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
-import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+import {
+    confirmPasswordValidator,
+    passwordLengthValidator,
+    requiredValidator,
+} from '@proton/shared/lib/helpers/formValidators';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -100,7 +104,7 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
                         placeholder={c('Placeholder').t`Password`}
                         value={newPassword}
                         onValue={setNewPassword}
-                        error={validator([passwordLengthValidator(newPassword)])}
+                        error={validator([requiredValidator(newPassword), passwordLengthValidator(newPassword)])}
                         autoComplete="new-password"
                         autoFocus
                     />
@@ -113,8 +117,8 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
                         value={confirmPassword}
                         onValue={setConfirmPassword}
                         error={validator([
-                            passwordLengthValidator(newPassword),
-                            confirmPasswordValidator(newPassword, confirmPassword),
+                            requiredValidator(confirmPassword),
+                            confirmPasswordValidator(confirmPassword, newPassword),
                         ])}
                         autoComplete="new-password"
                     />

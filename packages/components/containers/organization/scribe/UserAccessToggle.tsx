@@ -7,14 +7,14 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import useLoading from '@proton/hooks/useLoading';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 
 interface Props {
-    organization?: OrganizationWithSettings;
+    organization?: OrganizationExtended;
 }
 
 const UserAccessToggle = ({ organization }: Props) => {
