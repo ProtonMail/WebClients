@@ -22,7 +22,7 @@ interface ToolbarProps {
     selectedItems: PhotoLink[];
 
     createAlbumModal: ModalStateReturnObj;
-    requestDownload: (linkIds: string[]) => Promise<void>;
+    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
     onAddAlbumPhotos: () => Promise<void>;
     openAddPhotosToAlbumModal: () => void;
     openSharePhotosIntoAnAlbumModal: () => void;
