@@ -299,16 +299,20 @@ export const getSSOSetupData = async ({
     };
 };
 
-export const getSSOSetPasswordData = ({
+export const getSSOSetPasswordData = async ({
     deviceSecretUser,
+    api,
 }: {
     deviceSecretUser: DeviceSecretUser;
-}): SSOSetPasswordData => {
+    api: Api;
+}): Promise<SSOSetPasswordData> => {
+    const organizationData = await getOrganizationData({ api });
     return {
         type: 'set-password',
         keyPassword: deviceSecretUser.keyPassword,
         authDevices: [],
         deviceSecretData: deviceSecretUser.deviceSecretData,
+        organizationData: organizationData,
         intent: {
             capabilities: new Set([SSOLoginCapabilites.NEW_BACKUP_PASSWORD]),
             step: SSOLoginCapabilites.NEW_BACKUP_PASSWORD,
@@ -406,7 +410,7 @@ export const getSSOInactiveData = async ({
     const [user, addresses, organizationData] = await Promise.all([
         cache.data.user || syncUser(cache),
         cache.data.addresses || syncAddresses(cache),
-        getOrganizationData({ api, getPasswordPolicies: false }),
+        getOrganizationData({ api }),
     ]);
 
     const address = addresses.find(({ ID }) => ID === authDeviceSelf.ActivationAddressID);
@@ -434,7 +438,7 @@ export const getSSOUnlockData = async ({ cache }: { cache: AuthCacheResult }): P
     let [user, addresses, organizationData] = await Promise.all([
         cache.data.user || syncUser(cache),
         cache.data.addresses || syncAddresses(cache),
-        getOrganizationData({ api, getPasswordPolicies: false }),
+        getOrganizationData({ api }),
     ]);
 
     // Creating a new device
@@ -489,7 +493,7 @@ export const handlePrepareSSOData = async ({ cache }: { cache: AuthCacheResult }
     try {
         const deviceSecretUser = await getAuthDeviceDataByUser({ user, api: cache.api });
         if (user.Flags['has-temporary-password']) {
-            cache.data.ssoData = getSSOSetPasswordData({ deviceSecretUser });
+            cache.data.ssoData = await getSSOSetPasswordData({ deviceSecretUser, api: cache.api });
             return {
                 cache,
                 to: AuthStep.SSO,

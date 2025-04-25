@@ -63,6 +63,7 @@ export interface SSOSetPasswordData {
     keyPassword: string;
     authDevices: AuthDeviceOutput[];
     deviceSecretData: DeviceSecretData;
+    organizationData: UnprivatizationContextData['organizationData'];
     intent: {
         capabilities: Set<SSOLoginCapabilites>;
         step: SSOLoginCapabilites;
