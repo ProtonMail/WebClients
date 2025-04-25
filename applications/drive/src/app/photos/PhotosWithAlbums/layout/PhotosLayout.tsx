@@ -536,10 +536,17 @@ export const PhotosLayout = () => {
             return;
         }
         const abortSignal = new AbortController().signal;
-        const photoLinkId = selectedItems[0].linkId;
         try {
-            await copyLinkToVolume(abortSignal, shareId, photoLinkId, volumeId, linkId);
-            createNotification({ text: c('Error').t`Photo saved to your Drive` });
+            await copyLinkToVolume(
+                abortSignal,
+                selectedItems[0].rootShareId,
+                selectedItems[0].linkId,
+                volumeId,
+                shareId,
+                linkId
+            );
+            createNotification({ text: c('Info').t`Photo saved to your Drive` });
+            clearSelection();
         } catch (e) {
             createNotification({ text: c('Error').t`Failed to save photo to your Drive`, type: 'error' });
             sendErrorReport(e);

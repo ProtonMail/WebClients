@@ -1,4 +1,5 @@
 import { usePreventLeave } from '@proton/components';
+import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import {
     queryDeleteChildrenLinks,
@@ -6,7 +7,7 @@ import {
     queryRestoreLinks,
     queryTrashLinks,
 } from '@proton/shared/lib/api/drive/link';
-import type { RelatedPhotos } from '@proton/shared/lib/api/drive/photos';
+import type { FavoriteData, RelatedPhotos } from '@proton/shared/lib/api/drive/photos';
 import { queryAddPhotoToFavorite } from '@proton/shared/lib/api/drive/photos';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
 import {
@@ -22,6 +23,7 @@ import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/d
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import groupWith from '@proton/utils/groupWith';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
@@ -61,7 +63,7 @@ export function useLinksActions({
     const { lockLinks, lockTrash, unlockLinks } = useLinksState();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
 
-    const { getShareCreatorKeys, getShare } = useShare();
+    const { getShareCreatorKeys, getShare, getSharePrivateKey } = useShare();
     const volumeState = useVolumesState();
 
     const { batchAPIHelper, batchPromiseHelper } = useBatchHelper();
@@ -476,18 +478,22 @@ export function useLinksActions({
         abortSignal: AbortSignal,
         {
             shareId,
-            newParentLinkId,
             linkId,
-            newShareId = shareId,
+            newShareId,
+            newParentLinkId,
             silence = false,
         }: {
+            // current photo link
             shareId: string;
-            newParentLinkId: string;
             linkId: string;
-            newShareId?: string;
+
+            // where it has to be copied too
+            newShareId: string;
+            newParentLinkId: string;
+
             silence?: boolean;
         }
-    ) => {
+    ): Promise<{ LinkID: string; shouldNotififyCopy: boolean }> => {
         const [
             link,
             { passphrase, passphraseSessionKey },
@@ -495,6 +501,7 @@ export function useLinksActions({
             newParentHashKey,
             { privateKey: addressKey, address },
             newShare,
+            oldShare,
         ] = await Promise.all([
             getLink(abortSignal, shareId, linkId),
             getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
@@ -502,6 +509,7 @@ export function useLinksActions({
             getLinkHashKey(abortSignal, newShareId, newParentLinkId),
             getShareCreatorKeys(abortSignal, newShareId),
             getShare(abortSignal, newShareId),
+            getShare(abortSignal, shareId),
         ]);
 
         if (link.corruptedLink) {
@@ -515,12 +523,15 @@ export function useLinksActions({
         }
         // PhotoData in body is included in the case the photo needs to be copied to the photo gallery
         const includePhotoData = link.parentLinkId !== newShare.rootLinkId;
-        let body = {};
+
+        let body: FavoriteData = {};
         if (includePhotoData) {
             const getLinkMovedParameters = async (link: DecryptedLink) => {
                 const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
                     await Promise.all([
-                        getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+                        link.parentLinkId
+                            ? getLinkPrivateKey(abortSignal, shareId, link.parentLinkId)
+                            : getSharePrivateKey(abortSignal, shareId),
                         generateLookupHash(link.name, newParentHashKey).catch((e) =>
                             Promise.reject(
                                 new EnrichedError('Failed to generate lookup hash during move', {
@@ -565,9 +576,28 @@ export function useLinksActions({
                         ),
                     ]);
 
+                const privateKeys: PrivateKeyReference[] = [currentParentPrivateKey];
+                if (link.photoProperties?.albums.length) {
+                    for (const album of link.photoProperties.albums) {
+                        try {
+                            const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
+                            privateKeys.push(albumPrivateKey);
+                            // we can break at first album since it's enough to decrypt / for optimization
+                            break;
+                        } catch (e) {
+                            // ignore failures but still report them to Sentry
+                            sendErrorReport(e, {
+                                extra: {
+                                    message: 'getLinkMovedParameters() - Failed to get albumPrivateKey',
+                                },
+                            });
+                        }
+                    }
+                }
+
                 const sessionKeyName = await getDecryptedSessionKey({
                     data: link.encryptedName,
-                    privateKeys: currentParentPrivateKey,
+                    privateKeys: privateKeys,
                 }).catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to decrypt link name session key during move', {
@@ -623,9 +653,7 @@ export function useLinksActions({
             };
 
             const data = await getLinkMovedParameters(link);
-
             // TODO [DRVWEB-4651]:
-
             /*
                 New content hash is computed from sha1 located in extended attributes. This digest is set by clients and cannot be trusted. It can be wrong, set by malicious user, or missing entirely.
                 The only truly safe method would be to download the whole content and compute sha1 again [DRVWEB-4651]. That is not great UX and we decided to ignore this fact as the only consequence is that:
@@ -683,11 +711,11 @@ export function useLinksActions({
             };
         }
 
-        const { LinkID } = await debouncedRequest<{
+        const { LinkID, Code } = await debouncedRequest<{
             LinkID: string;
             Code: number;
         }>({
-            ...queryAddPhotoToFavorite(newShare.volumeId, linkId, body),
+            ...queryAddPhotoToFavorite(oldShare.volumeId, linkId, body),
             silence,
         }).catch((err) => {
             if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
@@ -696,7 +724,12 @@ export function useLinksActions({
             throw err;
         });
 
-        return LinkID;
+        return {
+            LinkID,
+            // This is special case that produce a copy to photo stream
+            // We don't show the heart filled but we show a notification with the success and explaining the situation
+            shouldNotififyCopy: Boolean(Code === 1000 && body.PhotoData),
+        };
     };
 
     const batchHelperMultipleVolumes = async (

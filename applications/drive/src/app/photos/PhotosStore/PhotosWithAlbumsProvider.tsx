@@ -100,7 +100,11 @@ export const PhotosWithAlbumsContext = createContext<{
         LinkIDs: string[]
     ) => Promise<void>;
     deleteAlbum: (abortSignal: AbortSignal, albumLinkId: string, force: boolean) => Promise<void>;
-    favoritePhoto: (abortSignal: AbortSignal, linkId: string) => Promise<void>;
+    favoritePhoto: (
+        abortSignal: AbortSignal,
+        linkId: string,
+        shareId: string
+    ) => Promise<{ LinkID: string; shouldNotififyCopy: boolean }>;
     removeTagsFromPhoto: (abortSignal: AbortSignal, linkId: string, tags: PhotoTag[]) => Promise<void>;
     migrationStatus: 'unknown' | 'migrating' | 'migrated' | 'no-share';
     startPhotosMigration: () => void;
@@ -544,6 +548,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
                     abortSignal,
                     albumShareId,
+                    link.rootShareId,
                     albumLinkId,
                     link.linkId
                 );
@@ -719,14 +724,17 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     );
 
     const favoritePhoto = useCallback(
-        async (abortSignal: AbortSignal, linkId: string) => {
+        async (
+            abortSignal: AbortSignal,
+            linkId: string,
+            shareId: string
+        ): Promise<{ LinkID: string; shouldNotififyCopy: boolean }> => {
             if (!photosShare || !photosShare.shareId) {
                 throw new Error('Photo share not found');
             }
-            const album = albums.get(currentAlbumLinkId || '');
 
-            await favoritePhotoLink(abortSignal, {
-                shareId: album?.rootShareId || photosShare.shareId,
+            return favoritePhotoLink(abortSignal, {
+                shareId,
                 linkId,
                 newShareId: photosShare.shareId,
                 newParentLinkId: photosShare.rootLinkId,
