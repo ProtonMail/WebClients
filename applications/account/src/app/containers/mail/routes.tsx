@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import type { SidebarConfig } from '@proton/components';
+import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -40,12 +41,13 @@ export const getMailAppRoutes = ({
     const learnMoreLink = (
         <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>
     );
+    const mailRouteTitles = getMailRouteTitles();
     return {
         available: app === APPS.PROTONMAIL,
         header: MAIL_APP_NAME,
         routes: {
             desktop: {
-                text: c('Title').t`Get the apps`,
+                text: mailRouteTitles.desktop,
                 to: '/get-the-apps',
                 icon: 'arrow-down-line',
                 subsections: [
@@ -54,7 +56,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             general: {
-                text: c('Title').t`Messages and composing`,
+                text: mailRouteTitles.general,
                 to: '/general',
                 icon: 'envelope',
                 subsections: [
@@ -81,13 +83,13 @@ export const getMailAppRoutes = ({
                 ],
             },
             privacy: {
-                text: c('Title').t`Email privacy`,
+                text: mailRouteTitles.privacy,
                 to: '/email-privacy',
                 icon: 'shield',
                 subsections: [{ id: 'email-privacy' }],
             },
             identity: {
-                text: c('Title').t`Identity and addresses`,
+                text: mailRouteTitles.identity,
                 to: '/identity-addresses',
                 icon: 'card-identity',
                 subsections: [
@@ -110,7 +112,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             folder: {
-                text: c('Title').t`Folders and labels`,
+                text: mailRouteTitles.folder,
                 to: '/folders-labels',
                 icon: 'tags',
                 description: c('Settings description')
@@ -127,7 +129,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             filter: {
-                text: c('Title').t`Filters`,
+                text: mailRouteTitles.filter,
                 to: '/filters',
                 icon: 'filter',
                 subsections: [
@@ -142,7 +144,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             autoReply: {
-                text: c('Title').t`Forward and auto-reply`,
+                text: mailRouteTitles.autoReply,
                 to: '/auto-reply',
                 icon: 'envelope-arrow-up-and-right',
                 subsections: [
@@ -151,7 +153,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             domainNames: {
-                text: c('Title').t`Domain names`,
+                text: mailRouteTitles.domainNames,
                 to: '/domain-names',
                 icon: 'globe',
                 // NOTE: This configuration is tied with the organization/routes.tsx domains availability
@@ -165,7 +167,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             keys: {
-                text: c('Title').t`Encryption and keys`,
+                text: mailRouteTitles.keys,
                 to: '/encryption-keys',
                 icon: 'lock',
                 subsections: [
@@ -188,7 +190,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             imap: {
-                text: c('Title').t`IMAP/SMTP`,
+                text: mailRouteTitles.imap,
                 to: '/imap-smtp',
                 icon: 'servers',
                 subsections: [
@@ -203,7 +205,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             backup: {
-                text: c('Title').t`Backup and export`,
+                text: mailRouteTitles.backup,
                 to: '/backup-export',
                 icon: 'arrow-up-from-square',
                 available: !user.isFree,
