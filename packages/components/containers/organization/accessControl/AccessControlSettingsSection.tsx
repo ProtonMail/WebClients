@@ -3,8 +3,10 @@ import { type ChangeEventHandler, type ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
+import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import Logo from '@proton/components/components/logo/Logo';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
@@ -12,6 +14,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
+import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
     BRAND_NAME,
@@ -57,11 +60,13 @@ const AccessControlItem = ({
     description,
     logo,
     targetProducts,
+    showSSOBadge = false,
 }: {
     title: string;
     description: string;
     logo: ReactNode;
     targetProducts: OrganizationSettingsAllowedProduct[];
+    showSSOBadge?: boolean;
 }) => {
     const [loading, setLoading] = useState(false);
 
@@ -95,12 +100,25 @@ const AccessControlItem = ({
         }
     };
 
+    const NoSSOBadge = () => {
+        return (
+            <Tooltip title={c('Info').t`This service is not available to users signing in with single sign-on.`}>
+                <span className="inline-block rounded-sm text-semibold bg-strong color-weak text-sm px-1 py-0.5">{c(
+                    'Info'
+                ).t`No single sign-on`}</span>
+            </Tooltip>
+        );
+    };
+
     return (
         <div className="flex flex-nowrap pb-2 gap-2 border-bottom border-weak">
             <div className="shrink-0">{logo}</div>
             <div className="flex-1 flex flex-column">
-                <div className="flex">
-                    <div className="flex-1 text-ellipsis text-bold ">{title}</div>
+                <div className="flex flex-nowrap items-start gap-1 w-full">
+                    <div className="flex flex-1 gap-1">
+                        <span className="block text-ellipsis text-bold">{title}</span>
+                        {showSSOBadge && <NoSSOBadge />}
+                    </div>
                     <Toggle
                         id={targetProducts.join(':')}
                         loading={loading}
@@ -119,6 +137,9 @@ const AccessControlItem = ({
 };
 
 const AccessControlSettingsSection = () => {
+    const [samlSSO] = useSamlSSO();
+    const hasSsoConfig = samlSSO && samlSSO.configs.length > 0;
+
     return (
         <SettingsSectionWide>
             <SettingsParagraph className="mb-4">
@@ -134,6 +155,7 @@ const AccessControlSettingsSection = () => {
                     description={c('Info').t`Email and calendar, integrated with ${CONTACTS_APP_NAME}`}
                     logo={<MailCalendarIcon size={8} />}
                     targetProducts={[Product.Mail, Product.Calendar]}
+                    showSSOBadge={!appSupportsSSO(APPS.PROTONMAIL) && hasSsoConfig}
                 />
 
                 <AccessControlItem
@@ -141,6 +163,7 @@ const AccessControlSettingsSection = () => {
                     description={c('Info').t`Cloud storage, integrated with ${DOCS_APP_NAME}`}
                     logo={<Logo appName={APPS.PROTONDRIVE} variant="glyph-only" size={8} />}
                     targetProducts={[Product.Drive]}
+                    showSSOBadge={!appSupportsSSO(APPS.PROTONDRIVE) && hasSsoConfig}
                 />
 
                 <AccessControlItem
@@ -148,6 +171,7 @@ const AccessControlSettingsSection = () => {
                     description={c('Info').t`VPN with dedicated servers and IP addresses`}
                     logo={<Logo appName={APPS.PROTONVPN_SETTINGS} variant="glyph-only" size={8} />}
                     targetProducts={[Product.VPN]}
+                    showSSOBadge={!appSupportsSSO(APPS.PROTONVPN_SETTINGS) && hasSsoConfig}
                 />
 
                 <AccessControlItem
@@ -155,6 +179,7 @@ const AccessControlSettingsSection = () => {
                     description={c('Info').t`Password manager with extra account security`}
                     logo={<Logo appName={APPS.PROTONPASS} variant="glyph-only" size={8} />}
                     targetProducts={[Product.Pass]}
+                    showSSOBadge={!appSupportsSSO(APPS.PROTONPASS) && hasSsoConfig}
                 />
 
                 <AccessControlItem
@@ -162,6 +187,7 @@ const AccessControlSettingsSection = () => {
                     description={c('Info').t`Self-custodial crypto wallet`}
                     logo={<Logo appName={APPS.PROTONWALLET} variant="glyph-only" size={8} />}
                     targetProducts={[Product.Wallet]}
+                    showSSOBadge={!appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig}
                 />
             </div>
         </SettingsSectionWide>
