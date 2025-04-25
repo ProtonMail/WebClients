@@ -24,6 +24,17 @@ export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
                     },
                 ],
             },
+            wireguard: <SectionConfig>{
+                text: c('Title').t`WireGuard`,
+                to: '/WireGuard',
+                icon: 'brand-wireguard',
+                subsections: [
+                    {
+                        text: c('Title').t`WireGuard configuration`,
+                        id: 'wireguard-configuration',
+                    },
+                ],
+            },
             openvpn: <SectionConfig>{
                 text: c('Title').t`OpenVPN / IKEv2`,
                 to: '/OpenVpnIKEv2',
@@ -36,17 +47,6 @@ export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
                     {
                         text: c('Title').t`OpenVPN configuration files`,
                         id: 'openvpn-configuration-files',
-                    },
-                ],
-            },
-            wireguard: <SectionConfig>{
-                text: c('Title').t`WireGuard`,
-                to: '/WireGuard',
-                icon: 'brand-wireguard',
-                subsections: [
-                    {
-                        text: c('Title').t`WireGuard configuration`,
-                        id: 'wireguard-configuration',
                     },
                 ],
             },
