@@ -591,7 +591,7 @@ const ChangePasswordModal = ({
                         ) : null}
 
                         <InputFieldTwo
-                            id="newPassword"
+                            id="password"
                             label={labels.newPassword}
                             placeholder={c('Placeholder').t`Password`}
                             error={validator([
@@ -625,7 +625,7 @@ const ChangePasswordModal = ({
 
                         <InputFieldTwo
                             key={`${isSecondPhase}${labels.confirmPassword}`}
-                            id="confirmPassword"
+                            id="password-repeat"
                             label={labels.confirmPassword}
                             placeholder={c('Placeholder').t`Confirm`}
                             error={validator([
