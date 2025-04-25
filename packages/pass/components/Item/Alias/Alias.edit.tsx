@@ -1,4 +1,4 @@
-import { type FC, useRef } from 'react';
+import { type FC, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -45,8 +45,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
      * ensure that the sequence is maintained correctly. */
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<EditAliasFormValues>>());
     const { current: aliasDetailsLoaded } = useRef(awaiter<void>());
-    const reconciled = useRef(false);
 
+    const [reconciled, setReconciled] = useState(false);
     const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
     const aliasOwner = aliasDetails?.modify ?? false;
 
@@ -90,23 +90,29 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
     const aliasOptions = useAliasOptions({
         shareId,
         lazy: true,
-        onAliasOptionsLoaded: async ({ mailboxes }) => {
-            await aliasDetailsLoaded;
+        onAliasOptions: async (res) => {
+            try {
+                await aliasDetailsLoaded;
+                if (!res.ok) return;
 
-            const draft = await draftHydrated;
-            const formValues = draft ?? form.values;
-            const prevMailboxes = draft?.mailboxes ?? mailboxesForAlias.current;
-            const sanitizedMailboxes = mailboxes.filter((mailbox) => prevMailboxes.some(({ id }) => id === mailbox.id));
+                const { mailboxes } = res.aliasOptions;
+                const draft = await draftHydrated;
+                const formValues = draft ?? form.values;
+                const prevMailboxes = draft?.mailboxes ?? mailboxesForAlias.current;
+                const sanitizedMailboxes = mailboxes.filter((mailbox) =>
+                    prevMailboxes.some(({ id }) => id === mailbox.id)
+                );
 
-            const values = { ...formValues, mailboxes: sanitizedMailboxes };
-            const errors = validateEditAliasForm(values);
+                const values = { ...formValues, mailboxes: sanitizedMailboxes };
+                const errors = validateEditAliasForm(values);
 
-            if (draft) {
-                await form.setValues(values);
-                form.setErrors(errors);
-            } else form.resetForm({ values, errors });
-
-            reconciled.current = true;
+                if (draft) {
+                    await form.setValues(values);
+                    form.setErrors(errors);
+                } else form.resetForm({ values, errors });
+            } finally {
+                setReconciled(true);
+            }
         },
     });
 
@@ -114,8 +120,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
         aliasEmail,
         itemId,
         shareId,
-        onAliasMailboxesLoaded: (mailboxes) => {
-            mailboxesForAlias.current = mailboxes ?? [];
+        onAliasMailboxes: (res) => {
+            mailboxesForAlias.current = res.ok ? res.mailboxes : [];
             aliasOptions.request();
             aliasDetailsLoaded.resolve();
         },
@@ -135,16 +141,13 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
     /* check for length in case request gets revalidated in the background */
     const detailsLoading = aliasDetailsMailboxes.loading && aliasDetailsMailboxes.mailboxes.length === 0;
     const optionsLoading = aliasOptions.loading;
-    const loading = !reconciled.current || detailsLoading || optionsLoading;
+    const loading = !reconciled || detailsLoading || optionsLoading;
+
+    const { isValid, dirty, status } = form;
+    const valid = !(aliasOwner && loading) && isValid && dirty && !status?.isBusy;
 
     return (
-        <ItemEditPanel
-            type="alias"
-            formId={FORM_ID}
-            valid={!(aliasOwner && loading) && form.isValid && form.dirty && !form.status?.isBusy}
-            discardable={!form.dirty}
-            handleCancelClick={onCancel}
-        >
+        <ItemEditPanel type="alias" formId={FORM_ID} valid={valid} discardable={!dirty} handleCancelClick={onCancel}>
             {() => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
@@ -156,6 +159,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                 placeholder={c('Label').t`Untitled`}
                                 component={TitleField}
                                 maxLength={MAX_ITEM_NAME_LENGTH}
+                                disabled={loading}
                             />
                         </FieldsetCluster>
 
