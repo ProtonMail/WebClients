@@ -106,10 +106,11 @@ const AccountSessionsSwitcher = ({
                                 );
                             })}
                         </ul>
-                        {addAccountButton}
                     </Scroll>
                 </div>
             </div>
+
+            {addAccountButton}
         </div>
     );
 };
