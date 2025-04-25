@@ -87,8 +87,8 @@ export const PhotosWithAlbumsView = () => {
     );
 
     const addOrRemovePhotoToFavorite = useCallback(
-        async (linkId: string, isFavorite: boolean) => {
-            void favoritePhotoToggle(linkId, isFavorite);
+        async (linkId: string, shareId: string, isFavorite: boolean) => {
+            void favoritePhotoToggle(linkId, shareId, isFavorite);
         },
         [favoritePhotoToggle]
     );
