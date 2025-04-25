@@ -99,7 +99,12 @@ export const AddAlbumPhotosModal = ({
     const { modalProps, openModal, render } = addAlbumPhotosModal;
     const createAlbumModal = useModalStateObject();
 
-    const sortedAlbums = albums.sort((a, b) => b.createTime - a.createTime);
+    const sortedAlbums = albums
+        .filter((album) => {
+            // Add this moment we do not support copy to shared albums.
+            return !!album.parentLinkId;
+        })
+        .sort((a, b) => b.createTime - a.createTime);
     const [latestAlbum, secondLatestAlbum, ...otherAlbums] = sortedAlbums;
 
     const sharedAlbums = sortedAlbums.filter((album) => album.isShared);
