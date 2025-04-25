@@ -13,7 +13,7 @@
         "test:ci": "yarn test"
     },
     "dependencies": {
-        "@noble/ed25519": "1.7.3",
+        "@noble/ed25519": "1.7.5",
         "@proton/cross-storage": "workspace:^",
         "@proton/crypto": "workspace:^",
         "@proton/shared": "workspace:^",
@@ -34,6 +34,6 @@
         "playwright": "^1.51.1",
         "ts-loader": "^9.5.2",
         "typescript": "^5.8.3",
-        "webpack": "^5.99.5"
+        "webpack": "^5.99.6"
     }
 }
