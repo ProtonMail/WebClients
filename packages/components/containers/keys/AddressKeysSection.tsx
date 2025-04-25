@@ -409,12 +409,26 @@ const AddressKeysSection = () => {
         );
     })();
 
+    const hasOutgoingE2EEForwardings = !loadingOutgoingAddressForwardings && outgoingAddressForwardings.length > 0;
+
     return (
         <>
             {renderAddKey && (
-                <AddKeyModal type="address" existingAlgorithms={existingAlgorithms} onAdd={onAdd} {...addKeyProps} />
+                <AddKeyModal
+                    type="address"
+                    existingAlgorithms={existingAlgorithms}
+                    onAdd={onAdd}
+                    hasOutgoingE2EEForwardings={hasOutgoingE2EEForwardings}
+                    {...addKeyProps}
+                />
             )}
-            {renderImportKey && <ImportKeyModal onProcess={onProcessImport} {...importKeyProps} />}
+            {renderImportKey && (
+                <ImportKeyModal
+                    onProcess={onProcessImport}
+                    hasOutgoingE2EEForwardings={hasOutgoingE2EEForwardings}
+                    {...importKeyProps}
+                />
+            )}
             {renderReactivateKey && (
                 <ReactivateKeysModal
                     userKeys={userKeys || []}
