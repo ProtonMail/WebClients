@@ -18,7 +18,6 @@ export interface ForwardModalState {
     isExternal?: boolean;
     isInternal?: boolean;
     forwardeeEmail: string;
-    keyErrors?: string[];
     statement: FilterStatement;
     conditions: Condition[];
     encryptionFixupDetails?: { setup: ReactNode; success: ReactNode } | null;
