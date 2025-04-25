@@ -92,7 +92,7 @@ const getEncryptionFixupDetails = (
 ) => {
     if (isExternalRecipient) {
         const learnMoreLink = (
-            <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link')
+            <Href href={getKnowledgeBaseUrl('/email-forwarding')} key="learn-more">{c('email_forwarding_2023: Link')
                 .t`Learn more`}</Href>
         );
 
@@ -410,12 +410,14 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                             <img src={forwardingSetupIllustration} alt="" />
                             <p>{c('email_forwarding_2023: Info')
                                 .jt`A confirmation email will be sent to ${boldForwardeeEmail}`}</p>
-                            <p>{c('email_forwarding_2023: Info')
-                                .t`Forwarding to this address will become active once the recipient accepts the forwarding.`}</p>
+                            {model.encryptionFixupDetails ? null /* hide this info to make the fixup details below more visible */ : (
+                                <p>{c('email_forwarding_2023: Info')
+                                    .t`Forwarding to this address will become active once the recipient accepts the forwarding.`}</p>
+                            )}
                         </div>
                         {model.encryptionFixupDetails ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
-                                <Icon name="exclamation-circle" className="shrink-0 color-danger" />
+                                <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {model.encryptionFixupDetails.setup}
                                 </p>
