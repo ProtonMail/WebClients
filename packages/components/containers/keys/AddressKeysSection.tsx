@@ -21,8 +21,9 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
 import type { AlgorithmInfo } from '@proton/crypto';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
+import { useOutgoingAddressForwardings } from '@proton/mail/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
+import { ForwardingType, type KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
     addAddressKeysProcess,
@@ -38,6 +39,7 @@ import noop from '@proton/utils/noop';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
+import ChangePrimaryKeyForwardingNoticeModal from './changePrimaryKeyForwardingNotice/ChangePrimaryKeyForwardingNoticeModal';
 import DeleteKeyModal from './deleteKey/DeleteKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
@@ -63,6 +65,7 @@ const AddressKeysSection = () => {
     const createKTVerifier = useKTVerifier();
     const keyReactivationRequests = useInactiveKeys();
     const dispatch = useDispatch();
+    const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
@@ -93,39 +96,59 @@ const AddressKeysSection = () => {
     const isLoadingKey = loadingKeyID !== '';
 
     const handleSetPrimaryKey = async (ID: string) => {
-        if (isLoadingKey || !addressKeys || !userKeys) {
+        if (isLoadingKey || !addressKeys || !userKeys || loadingOutgoingAddressForwardings) {
             return;
         }
         const addressKey = getKeyByID(addressKeys, ID);
+
         if (!addressKey || !Address) {
             throw new Error('Key not found');
         }
 
-        try {
-            setLoadingKeyID(ID);
-            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-            const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(
-                api,
-                Address,
-                addressKeys,
-                ID,
-                keyTransparencyVerify
-            );
-            await Promise.all([
-                resignSKLWithPrimaryKey({
+        const onSetPrimaryKey = async (ID: string) => {
+            try {
+                setLoadingKeyID(ID);
+                const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
+                const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(
                     api,
-                    ktActivation: dispatch(getKTActivation()),
-                    address: Address,
-                    newPrimaryKeys: getPrimaryAddressKeysForSigning(newActiveKeys, true),
-                    formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
-                    userKeys,
-                }),
-                keyTransparencyCommit(User, userKeys),
-            ]);
-            await call();
-        } finally {
-            setLoadingKeyID('');
+                    Address,
+                    addressKeys,
+                    ID,
+                    keyTransparencyVerify
+                );
+                await Promise.all([
+                    resignSKLWithPrimaryKey({
+                        api,
+                        ktActivation: dispatch(getKTActivation()),
+                        address: Address,
+                        newPrimaryKeys: getPrimaryAddressKeysForSigning(newActiveKeys, true),
+                        formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
+                        userKeys,
+                    }),
+                    keyTransparencyCommit(User, userKeys),
+                ]);
+                await call();
+            } finally {
+                setLoadingKeyID('');
+            }
+        };
+
+        const outgoingE2EEForwardings = outgoingAddressForwardings.filter(
+            ({ Type }) => Type === ForwardingType.InternalEncrypted
+        );
+
+        if (outgoingE2EEForwardings.length === 0) {
+            return onSetPrimaryKey(ID);
         }
+
+        // any outgoing e2ee forwardings will be paused if the primary key changes;
+        // hence we ask for user confirmation
+        createModal(
+            <ChangePrimaryKeyForwardingNoticeModal
+                onMakeKeyPrimary={async () => onSetPrimaryKey(ID)}
+                fingerprint={addressKey.publicKey.getFingerprint()}
+            />
+        );
     };
 
     const handleSetFlag = async (ID: string, flagAction: FlagAction) => {
