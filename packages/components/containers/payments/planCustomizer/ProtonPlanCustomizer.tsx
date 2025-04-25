@@ -258,7 +258,7 @@ const AddonCustomizer = ({
                 onChangePlanIDs(newPlanIDs);
             }
         }
-    }, [planTotalMembers]);
+    }, [planTotalMembers, enforcePassOrgSizeLimit]);
 
     if (isMemberAddon(addonNameKey)) {
         if (isDriveOrgSizeAddon(addonNameKey)) {
