@@ -1,6 +1,7 @@
 import { PHOTOS_PAGE_SIZE } from '../../drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import type { PhotoTag } from '../../interfaces/drive/file';
+import type { PhotoDataForAddToAlbumPayload } from '../../interfaces/drive/photos';
 
 export const queryPhotos = (
     volumeId: string,
@@ -120,16 +121,7 @@ export const queryAddAlbumPhotos = (
     volumeId: string,
     albumLinkId: string,
     data: {
-        AlbumData: {
-            LinkID: string;
-            Name: string;
-            Hash: string;
-            NodePassphrase: string;
-            NodePassphraseSignature: string;
-            SignatureEmail?: string;
-            NameSignatureEmail?: string;
-            ContentHash?: string;
-        }[];
+        AlbumData: PhotoDataForAddToAlbumPayload[];
     }
 ) => ({
     method: 'POST',
