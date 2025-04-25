@@ -93,6 +93,12 @@ export const PhotosWithAlbumsContext = createContext<{
     updateAlbumsFromCache: (linkIds: string[]) => void;
     deletePhotosShare: () => Promise<void>;
     updatePhotoFavoriteFromCache: (linkId: string, isFavorite: boolean) => void;
+    addNewAlbumPhotoToCache: (
+        abortSignal: AbortSignal,
+        albumShareId: string,
+        albumLinkId: string,
+        linkId: string
+    ) => Promise<void>;
     removeAlbumPhotos: (
         abortSignal: AbortSignal,
         albumShareId: string,
@@ -494,6 +500,24 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         };
     }, [loadSharedWithMeAlbums, driveEventManager.eventHandlers]);
 
+    const getAlbumPhotoFromLink = (link: DecryptedLink) => {
+        if (!link.activeRevision?.photo) {
+            return undefined;
+        }
+
+        return {
+            linkId: link.linkId,
+            captureTime: link.activeRevision.photo.captureTime,
+            hash: link.activeRevision.photo.hash,
+            contentHash: link.activeRevision.photo.contentHash,
+            tags: link.photoProperties?.tags || [],
+            relatedPhotos: [],
+            parentLinkId: link.parentLinkId,
+            rootShareId: link.rootShareId,
+            volumeId: link.volumeId,
+        };
+    };
+
     const getPayloadDataAndPreloadPhotoLinks = useCallback(
         async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, linkIDs: string[]) => {
             const linksInfoForAlbum = new Map<
@@ -526,24 +550,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
             };
 
-            const createAlbumPhotoObject = (link: DecryptedLink, mainPhotoLinkId?: string) => {
-                if (mainPhotoLinkId || !link.activeRevision?.photo) {
-                    return undefined;
-                }
-
-                return {
-                    linkId: link.linkId,
-                    captureTime: link.activeRevision.photo.captureTime,
-                    hash: link.activeRevision.photo.hash,
-                    contentHash: link.activeRevision.photo.contentHash,
-                    tags: link.photoProperties?.tags || [],
-                    relatedPhotos: [],
-                    parentLinkId: link.parentLinkId,
-                    rootShareId: link.rootShareId,
-                    volumeId: link.volumeId,
-                };
-            };
-
             const addPhotoToInfoMap = async (link: DecryptedLink, mainPhotoLinkId?: string) => {
                 const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
                     abortSignal,
@@ -568,7 +574,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         SignatureEmail: link.signatureEmail,
                         ContentHash: link.activeRevision?.photo?.contentHash,
                     },
-                    albumPhoto: createAlbumPhotoObject(link, mainPhotoLinkId),
+                    albumPhoto: !mainPhotoLinkId ? getAlbumPhotoFromLink(link) : undefined,
                 });
             };
             const processPhotoLink = async (linkId: string) => {
@@ -648,7 +654,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 });
             }
 
-            if (!nbFailures && !nbSuccesses) {
+            if (!nbFailures && !nbSuccesses && !fromUpload) {
                 createNotification({
                     type: 'info',
                     text: c('Notification').t`Selected photo(s) already in "${albumName}"`,
@@ -656,6 +662,27 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             }
         },
         [createNotification]
+    );
+
+    const addNewAlbumPhotoToCache = useCallback(
+        async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, linkId: string) => {
+            const photoLink = await getLink(abortSignal, albumShareId, linkId);
+            const albumPhoto = getAlbumPhotoFromLink(photoLink);
+            if (!albumPhoto) {
+                return;
+            }
+            setAlbumPhotos((currentAlbumPhotos) => [...currentAlbumPhotos, albumPhoto]);
+            setAlbums((currentAlbums) => {
+                const newAlbums = new Map(currentAlbums);
+                const album = newAlbums.get(albumLinkId);
+                if (!album) {
+                    return newAlbums;
+                }
+                album.photoCount = album.photoCount + 1;
+                return newAlbums;
+            });
+        },
+        [getLink]
     );
 
     const handleAddAlbumPhotos = useCallback(
@@ -1006,6 +1033,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 loadSharedWithMeAlbums,
                 loadPhotos,
                 removeAlbumsFromCache,
+                addNewAlbumPhotoToCache,
                 updatePhotoFavoriteFromCache,
                 removePhotosFromCache,
                 updateAlbumsFromCache,

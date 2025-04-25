@@ -1,6 +1,11 @@
 import type { ModalStateReturnObj } from '@proton/components';
 
-import type { OnFileUploadSuccessCallbackData, PhotoGridItem, PhotoLink } from '../../../store';
+import type {
+    OnFileSkippedSuccessCallbackData,
+    OnFileUploadSuccessCallbackData,
+    PhotoGridItem,
+    PhotoLink,
+} from '../../../store';
 import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosToolbar } from './PhotosAddAlbumPhotosToolbar';
@@ -27,6 +32,7 @@ interface ToolbarProps {
     openAddPhotosToAlbumModal: () => void;
     openSharePhotosIntoAnAlbumModal: () => void;
     onFileUpload: ((file: OnFileUploadSuccessCallbackData) => void) | undefined;
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onPreview: () => void;
     onSelectCover: () => Promise<void>;
     onDeleteAlbum: () => void;
@@ -56,6 +62,7 @@ export const Toolbar = ({
     openAddPhotosToAlbumModal,
     openSharePhotosIntoAnAlbumModal,
     onFileUpload,
+    onFileSkipped,
     onPreview,
     onSelectCover,
     onDeleteAlbum,
@@ -88,6 +95,7 @@ export const Toolbar = ({
                     onAddAlbumPhotos={onAddAlbumPhotos}
                     onStartUpload={onStartUpload}
                     onFileUpload={onFileUpload}
+                    onFileSkipped={onFileSkipped}
                 />
             );
         default:
@@ -104,7 +112,6 @@ export const Toolbar = ({
                     tabSelection={currentPageType}
                     createAlbumModal={createAlbumModal}
                     onFileUpload={onFileUpload}
-                    onFileSkipped={onFileUpload}
                     removeAlbumPhotos={canRemoveSelectedPhotos ? onRemoveAlbumPhotos : undefined}
                     onSelectCover={onSelectCover}
                     onDeleteAlbum={onDeleteAlbum}
