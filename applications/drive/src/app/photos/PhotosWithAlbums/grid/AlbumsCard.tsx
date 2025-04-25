@@ -183,9 +183,9 @@ export const AlbumsCard: FC<Props> = ({
             role="button"
             aria-busy={!isLoaded}
         >
-            {isLoaded ? (
+            {isDecrypted ? (
                 <>
-                    <div className="w-full h-full relative">
+                    <div className={clsx('w-full h-full relative', isThumbnailLoading && 'hidden')}>
                         {thumbUrl ? (
                             <img
                                 data-testid="albums-card-thumbnail"

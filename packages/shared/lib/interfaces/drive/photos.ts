@@ -42,3 +42,14 @@ export interface PhotoMigrationPayload {
     OldVolumeID: string;
     NewVolumeID: string | null;
 }
+
+export interface PhotoDataForAddToAlbumPayload {
+    LinkID: string;
+    Name: string;
+    Hash: string;
+    NodePassphrase: string;
+    NodePassphraseSignature: string;
+    SignatureEmail?: string;
+    NameSignatureEmail?: string;
+    ContentHash?: string;
+}
