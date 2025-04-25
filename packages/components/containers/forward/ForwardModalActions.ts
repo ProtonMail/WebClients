@@ -76,7 +76,7 @@ export const initForwardingSetup = ({
 }): ThunkAction<
     Promise<{
         keyState: ForwardModalKeyState;
-        modelState: Pick<ForwardModalState, 'isExternal' | 'isInternal' | 'keyErrors' | 'forwardeeEmail'>;
+        modelState: Pick<ForwardModalState, 'isExternal' | 'isInternal' | 'forwardeeEmail'>;
     }>,
     AddressKeysState,
     ProtonThunkArguments,
@@ -143,7 +143,6 @@ export const initForwardingSetup = ({
                 forwardeePublicKey,
             },
             modelState: {
-                keyErrors: forwardeeKeysConfig.Errors,
                 forwardeeEmail: forwardeeEmailFromPublicKey || email,
                 isExternal,
                 isInternal,
