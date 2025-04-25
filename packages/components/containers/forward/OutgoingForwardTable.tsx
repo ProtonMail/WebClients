@@ -11,18 +11,19 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import ForwardStatus from './ForwardStatus';
 import OutgoingForwardActions from './OutgoingForwardActions';
 import WarningChainedForwarding from './WarningChainedForwarding';
+import { getIsLastOutgoingNonE2EEForwarding } from './helpers';
 
 interface Props {
     addresses: Address[];
     loading?: boolean;
-    forwardings: OutgoingAddressForwarding[];
+    outgoingAddressForwardings: OutgoingAddressForwarding[];
     user: UserModel;
     chainedEmails: string[];
 }
 
-const OutgoingForwardTable = ({ addresses, loading, forwardings, chainedEmails, user }: Props) => {
+const OutgoingForwardTable = ({ addresses, loading, outgoingAddressForwardings, chainedEmails, user }: Props) => {
     return (
-        <Table responsive="cards" hasActions={!!forwardings.length}>
+        <Table responsive="cards" hasActions={outgoingAddressForwardings.length > 0}>
             <TableHeader>
                 <TableRow>
                     <TableHeaderCell>{c('email_forwarding_2023: Header').t`From`}</TableHeaderCell>
@@ -36,15 +37,15 @@ const OutgoingForwardTable = ({ addresses, loading, forwardings, chainedEmails, 
                 </TableRow>
             </TableHeader>
             <TableBody loading={loading} colSpan={4}>
-                {forwardings.length === 0 && (
+                {outgoingAddressForwardings.length === 0 && (
                     <TableRow>
                         <TableCell colSpan={4} className="text-center">{c('email_forwarding_2023: Info')
                             .t`No outgoing forwarding rules`}</TableCell>
                     </TableRow>
                 )}
-                {forwardings.map((forward) => {
-                    const to = forward.ForwardeeEmail;
-                    const fromAddress = addresses.find(({ ID }) => ID === forward.ForwarderAddressID);
+                {outgoingAddressForwardings.map((forwardingConfig) => {
+                    const to = forwardingConfig.ForwardeeEmail;
+                    const fromAddress = addresses.find(({ ID }) => ID === forwardingConfig.ForwarderAddressID);
 
                     if (fromAddress === undefined) {
                         return null;
@@ -53,7 +54,7 @@ const OutgoingForwardTable = ({ addresses, loading, forwardings, chainedEmails, 
                     const from = fromAddress.Email;
 
                     return (
-                        <TableRow key={forward.ID}>
+                        <TableRow key={forwardingConfig.ID}>
                             <TableCell label={c('email_forwarding_2023: Header').t`From`}>
                                 <div className="text-ellipsis">
                                     <WarningChainedForwarding chainedEmails={chainedEmails} forwardEmail={from} />
@@ -66,14 +67,17 @@ const OutgoingForwardTable = ({ addresses, loading, forwardings, chainedEmails, 
                                 </div>
                             </TableCell>
                             <TableCell label={c('email_forwarding_2023: Header').t`Status`}>
-                                <ForwardStatus forward={forward} />
+                                <ForwardStatus forwardingConfig={forwardingConfig} />
                             </TableCell>
                             <TableCell>
                                 <OutgoingForwardActions
                                     addresses={addresses}
                                     user={user}
-                                    forward={forward}
-                                    forwardings={forwardings}
+                                    existingForwardingConfig={forwardingConfig}
+                                    isLastOutgoingNonE2EEForwarding={getIsLastOutgoingNonE2EEForwarding(
+                                        forwardingConfig,
+                                        outgoingAddressForwardings
+                                    )}
                                 />
                             </TableCell>
                         </TableRow>

@@ -1,14 +1,12 @@
-import { useMemo, useState } from 'react';
+import { type ReactNode, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -18,98 +16,153 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import { FilterStatement } from '@proton/components/containers/filters/interfaces';
+import {
+    editFilter,
+    finalizeForwardingSetup,
+    fixupPrimaryKeyV6,
+    fixupUnsupportedPrimaryKeyV4,
+    initForwardingSetup,
+} from '@proton/components/containers/forward/ForwardModalActions';
+import {
+    type ForwardModalKeyState,
+    type ForwardModalState,
+    ForwardModalStep,
+} from '@proton/components/containers/forward/ForwardModalInterface';
+import { getSieveParameters } from '@proton/components/containers/forward/helpers';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
-import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
-import type { SetupForwardingParameters } from '@proton/shared/lib/api/forwardings';
-import { setupForwarding, updateForwardingFilter } from '@proton/shared/lib/api/forwardings';
-import { ADDRESS_RECEIVE, KEYGEN_CONFIGS, KEYGEN_TYPES, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { ADDRESS_RECEIVE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, DecryptedAddressKey, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { ForwardingType } from '@proton/shared/lib/interfaces';
+import type { Address, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { ForwardingState } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
-import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
+import forwardingSetupIllustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
+import forwardingSuccessIllustration from '@proton/styles/assets/img/illustrations/forward-success-confirmation.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import useAddressFlags from '../../hooks/useAddressFlags';
-import type { Condition } from '../filters/interfaces';
-import { FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';
-import { getInternalParametersPrivate, getSieveParameters, getSieveTree } from './helpers';
 
 interface Props extends ModalProps {
-    forward?: OutgoingAddressForwarding;
+    existingForwardingConfig?: OutgoingAddressForwarding;
 }
 
-enum Step {
-    Setup,
-    Verification,
-}
-
-interface Model {
-    step: Step;
-    loading?: boolean;
-    edit?: boolean;
-    addressID: string;
-    isExternal?: boolean;
-    isInternal?: boolean;
-    forwardeeEmail: string;
-    forwardeePublicKey?: PublicKeyReference;
-    forwarderKey?: PrivateKeyReference;
-    forwarderAddressKeys?: DecryptedAddressKey[];
-    keySupportE2EEForwarding?: boolean;
-    keyErrors?: string[];
-    statement: FilterStatement;
-    conditions: Condition[];
-}
-
-const getTitle = (model: Model) => {
-    const { step } = model;
-
-    if (step === Step.Setup) {
-        return c('email_forwarding_2023: Title').t`Set up forwarding`;
-    }
-
-    if (step === Step.Verification) {
-        return c('email_forwarding_2023: Title').t`Request confirmation`;
-    }
-
-    return '';
-};
-
-const getDefaultModel = ({ forward, addresses }: { addresses: Address[]; forward?: OutgoingAddressForwarding }) => {
-    const isEditing = !!forward;
-    const { statement, conditions } = isEditing
-        ? getSieveParameters(forward.Filter?.Tree || [])
+const getDefaultForwardModalState = ({
+    existingForwardingConfig,
+    addresses,
+}: {
+    addresses: Address[];
+    existingForwardingConfig?: OutgoingAddressForwarding;
+}): ForwardModalState => {
+    const { statement, conditions } = existingForwardingConfig
+        ? getSieveParameters(existingForwardingConfig.Filter?.Tree || [])
         : { statement: FilterStatement.ALL, conditions: [] };
 
-    const [firstAddress] = addresses;
+    const [primaryAddress] = addresses;
+    if (!primaryAddress) {
+        throw new Error('Missing primary address');
+    }
     return {
-        step: Step.Setup,
-        addressID: isEditing ? forward.ForwarderAddressID : firstAddress?.ID || '',
-        forwardeeEmail: isEditing ? forward.ForwardeeEmail : '',
+        step: ForwardModalStep.Setup,
+        addressID: existingForwardingConfig ? existingForwardingConfig.ForwarderAddressID : primaryAddress.ID,
+        forwardeeEmail: existingForwardingConfig ? existingForwardingConfig.ForwardeeEmail : '',
         statement,
         conditions,
     };
+};
+
+const getForwarderAddress = (addresses: Address[], addressID: string) => {
+    const address = addresses.find(({ ID }) => ID === addressID);
+    if (!address) {
+        throw new Error('Missing forwarder address');
+    }
+    return address;
+};
+
+const getEncryptionFixupDetails = (
+    isExternalRecipient: boolean | undefined,
+    forwarderPrimaryKeysInfo: ForwardModalKeyState['forwarderPrimaryKeysInfo'] | undefined,
+    boldForwarderEmail: ReactNode
+) => {
+    if (isExternalRecipient) {
+        const learnMoreLink = (
+            <Href href={getKnowledgeBaseUrl('/email-forwarding')} key="learn-more">{c('email_forwarding_2023: Link')
+                .t`Learn more`}</Href>
+        );
+
+        return {
+            setup: c('email_forwarding_2023: Info')
+                .jt`Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`,
+            success: c('email_forwarding_2023: Info')
+                .jt`End-to-end encryption has been disabled for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`,
+        };
+    }
+
+    if (!forwarderPrimaryKeysInfo) {
+        return null;
+    }
+
+    if (forwarderPrimaryKeysInfo.v4.supportsE2EEForwarding) {
+        return forwarderPrimaryKeysInfo?.v6
+            ? {
+                  setup: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption will be disabled for ${boldForwarderEmail}.`,
+                  success: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption has been disabled for ${boldForwarderEmail}.`,
+              }
+            : null;
+    } else {
+        return forwarderPrimaryKeysInfo?.v6
+            ? {
+                  setup: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${boldForwarderEmail}.`,
+                  success: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${boldForwarderEmail}.`,
+              }
+            : {
+                  setup: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, a new encryption key will be generated for ${boldForwarderEmail}.`,
+                  success: c('email_forwarding_2023: Info')
+                      .jt`For compatibility, a new encryption key has been generated for ${boldForwarderEmail}.`,
+              };
+    }
+};
+
+const getTitle = (model: ForwardModalState) => {
+    if (model.step === ForwardModalStep.Setup) {
+        return c('email_forwarding_2023: Title').t`Set up forwarding`;
+    }
+
+    if (model.step === ForwardModalStep.UserConfirmation) {
+        return c('email_forwarding_2023: Title').t`Request confirmation?`;
+    }
+
+    if (model.step === ForwardModalStep.FixupPrimaryKeys || model.step === ForwardModalStep.FinalizeForwardingSetup) {
+        return c('email_forwarding_2023: Title').t`Requesting confirmation`;
+    }
+
+    if (model.step === ForwardModalStep.SuccessNotification) {
+        return c('email_forwarding_2023: Title').t`Request sent`;
+    }
+
+    return '';
 };
 
 const compareContactEmailByEmail = (a: ContactEmail, b: ContactEmail) => {
     return a.Email.localeCompare(b.Email);
 };
 
-const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
-
-const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
-    const isEditing = !!forward;
+const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => {
+    const isEditingFilters =
+        existingForwardingConfig?.State === ForwardingState.Active ||
+        existingForwardingConfig?.State === ForwardingState.Pending;
+    const isReEnablingForwarding = existingForwardingConfig?.State === ForwardingState.Outdated;
     const [addresses = []] = useAddresses();
     const [contactEmails = []] = useContactEmails();
     const contactEmailsSorted = useMemo(() => {
@@ -117,188 +170,140 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
         const sortedEmails = [...uniqueEmails].sort(compareContactEmailByEmail);
         return sortedEmails;
     }, [contactEmails]);
-    const api = useApi();
-    const getUser = useGetUser();
-    const createKtVerifier = useKTVerifier();
-    const authentication = useAuthentication();
     const getPublicKeysForInbox = useGetPublicKeysForInbox();
-    const getAddressKeys = useGetAddressKeys();
-    const getUserKeys = useGetUserKeys();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
-    const filteredAddresses = addresses.filter(({ Receive }) => Receive === ADDRESS_RECEIVE.RECEIVE_YES);
-    const [model, setModel] = useState<Model>(getDefaultModel({ forward, addresses: filteredAddresses }));
-    const inputsDisabled = model.loading || isEditing;
-    const forwarderAddress = addresses.find(({ ID }) => ID === model.addressID);
-    const forwarderEmail = forwarderAddress?.Email || '';
-    const addressFlags = useAddressFlags(forwarderAddress);
+    const filterAddresses = (addresses: Address[]) =>
+        addresses.filter(({ Receive }) => Receive === ADDRESS_RECEIVE.RECEIVE_YES);
+    const [model, setModel] = useState<ForwardModalState>(
+        getDefaultForwardModalState({ existingForwardingConfig, addresses: filterAddresses(addresses) })
+    );
+    const handleError = useErrorHandler();
+    const keyStateRef = useRef<ForwardModalKeyState | null>(null);
+
+    const inputsDisabled = model.loading || isEditingFilters || isReEnablingForwarding;
+    const initialForwarderAddress = getForwarderAddress(addresses, model.addressID);
+    const dispatch = useDispatch();
+
+    const forwarderEmail = initialForwarderAddress?.Email || '';
+    const addressFlags = useAddressFlags(initialForwarderAddress);
+
     const boldForwardeeEmail = <strong key="forwardee-email">{model.forwardeeEmail}</strong>;
     const boldForwarderEmail = <strong key="forwarder-email">{forwarderEmail}</strong>;
-    const learnMoreLink = (
-        <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link').t`Learn more`}</Href>
-    );
-
-    const generateNewKey = async () => {
-        if (!forwarderAddress) {
-            throw new Error('No address');
-        }
-
-        if (!model.forwarderAddressKeys) {
-            throw new Error('No forwarder address keys');
-        }
-
-        const userKeys = await getUserKeys();
-        const { keyTransparencyVerify, keyTransparencyCommit } = await createKtVerifier();
-        const [newKey] = await addAddressKeysProcess({
-            api,
-            userKeys,
-            keyGenConfig,
-            addresses,
-            address: forwarderAddress,
-            addressKeys: model.forwarderAddressKeys,
-            keyPassword: authentication.getPassword(),
-            keyTransparencyVerify,
-        });
-        const { privateKey: forwarderKey } = newKey;
-        const [forwarderAddressKeys] = await Promise.all([
-            getAddressKeys(model.addressID),
-            keyTransparencyCommit(await getUser(), userKeys),
-        ]);
-
-        return {
-            forwarderKey,
-            forwarderAddressKeys,
-        };
-    };
 
     const handleEdit = async () => {
-        if (isEditing) {
-            await api(
-                updateForwardingFilter(
-                    forward.ID,
-                    getSieveTree({
-                        conditions: model.conditions,
-                        statement: model.statement,
-                        email: model.forwardeeEmail,
-                    }),
-                    forward.Filter?.Version || 2
-                )
-            );
-            await call();
-            onClose?.();
-            createNotification({ text: c('email_forwarding_2023: Success').t`Changes saved` });
+        if (!existingForwardingConfig) {
+            throw new Error('Invalid state');
         }
+        await dispatch(
+            editFilter({
+                filterID: existingForwardingConfig.ID,
+                filter: {
+                    conditions: model.conditions,
+                    statement: model.statement,
+                    email: model.forwardeeEmail,
+                    version: existingForwardingConfig.Filter?.Version,
+                },
+            })
+        );
+        onClose?.();
+        createNotification({ text: c('email_forwarding_2023: Success').t`Changes saved` });
     };
 
     const handleSetup = async () => {
-        const [forwarderAddressKeys, forwardeeKeysConfig] = await Promise.all([
-            getAddressKeys(model.addressID),
-            getPublicKeysForInbox({ email: model.forwardeeEmail, lifetime: 0 }),
-        ]);
+        const { keyState, modelState } = await dispatch(
+            initForwardingSetup({
+                forwarderAddressID: model.addressID,
+                email: model.forwardeeEmail,
+                getPublicKeysForInbox,
+            })
+        );
 
-        // Abort the setup if e.g. the given address is internal but does not exist
-        const apiErrors = forwardeeKeysConfig.Errors || [];
-        if (apiErrors.length > 0) {
-            apiErrors.forEach((error: string) => {
-                createNotification({ text: error, type: 'error' });
-            });
-            return;
-        }
-
-        const isInternal = forwardeeKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
-        const isExternal = forwardeeKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_EXTERNAL;
-        const { privateKeys } = splitKeys(forwarderAddressKeys);
-        const [forwarderKey] = privateKeys;
-        const keySupportE2EEForwarding = await CryptoProxy.doesKeySupportE2EEForwarding({ forwarderKey });
-        let forwardeePublicKey: PublicKeyReference | undefined;
-        let forwardeeEmailFromPublicKey: string | undefined;
-
-        if (isInternal) {
-            // While forwarding could be setup with generic catch-all addresses, we disallow this as the catch-all address case is triggered
-            // if the forwardee is a private subuser who has yet to login (i.e.has missing keys).
-            // In such case, the admin public keys are temporarily returned instead, meaning that E2EE forwarding will be (permanently) setup with the admin, rather
-            // than the subuser, which is undesirable.
-            if (forwardeeKeysConfig.isCatchAll) {
-                createNotification({ text: 'This address cannot be used as forwarding recipient', type: 'error' });
-                return;
-            }
-            const [primaryForwardeeKey] = forwardeeKeysConfig.publicKeys;
-            forwardeePublicKey = await CryptoProxy.importPublicKey({
-                armoredKey: primaryForwardeeKey.armoredKey,
-            });
-            forwardeeEmailFromPublicKey = getEmailFromKey(forwardeePublicKey);
-        }
+        keyStateRef.current = keyState;
 
         setModel({
             ...model,
-            forwarderAddressKeys,
-            keySupportE2EEForwarding,
-            keyErrors: forwardeeKeysConfig.Errors,
-            forwarderKey,
-            forwardeePublicKey,
-            forwardeeEmail: forwardeeEmailFromPublicKey || model.forwardeeEmail,
-            isExternal,
-            isInternal,
-            step: Step.Verification,
+            ...modelState,
+            encryptionFixupDetails: getEncryptionFixupDetails(
+                modelState.isExternal,
+                keyState.forwarderPrimaryKeysInfo,
+                boldForwarderEmail
+            ),
+            step: ForwardModalStep.UserConfirmation,
         });
     };
 
-    const handleVerification = async () => {
-        // Disable encryption if the email is external
-        if (model.isExternal && addressFlags?.encryptionDisabled === false) {
-            await addressFlags?.handleSetAddressFlags(true, addressFlags?.expectSignatureDisabled);
+    const handleFinalizeSetup = async () => {
+        if (!keyStateRef.current) {
+            throw new Error('Invalid state');
         }
 
-        const params: SetupForwardingParameters = {
-            ForwarderAddressID: model.addressID,
-            ForwardeeEmail: model.forwardeeEmail,
-            Type: model.isInternal ? ForwardingType.InternalEncrypted : ForwardingType.ExternalUnencrypted,
-            Tree: getSieveTree({
-                conditions: model.conditions,
-                statement: model.statement,
-                email: model.forwardeeEmail,
-            }),
-            Version: forward?.Filter?.Version || 2,
-        };
-        let requireNewKey = false;
-        if (model.isInternal && forwarderAddress?.Keys && model.forwardeePublicKey && model.forwarderKey) {
-            let forwarderKey = model.forwarderKey;
+        const email = model.forwardeeEmail;
 
-            if (!model.keySupportE2EEForwarding) {
-                // The forwarding material generation will fail if the address key is e.g. RSA instead of ECC 25519
-                // So we generate automatically a new ECC 25519 key for the address
-                const newProperties = await generateNewKey();
-                // Save the new key in case something goes wrong later
-                setModel({
-                    ...model,
-                    ...newProperties,
-                });
-                forwarderKey = newProperties.forwarderKey;
-            }
+        await dispatch(
+            finalizeForwardingSetup({
+                forwarderAddressID: model.addressID,
+                filterID: existingForwardingConfig?.ID,
+                filter: {
+                    email,
+                    conditions: model.conditions,
+                    statement: model.statement,
+                    version: existingForwardingConfig?.Filter?.Version,
+                },
+                keyState: keyStateRef.current,
+                isInternal: model.isInternal,
+                isExternal: model.isExternal,
+                isReEnablingForwarding,
+                addressFlags,
+            })
+        );
 
-            const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
-                forwarderKey,
-                [{ email: model.forwardeeEmail, name: model.forwardeeEmail }],
-                model.forwardeePublicKey
+        setModel({ ...model, step: ForwardModalStep.SuccessNotification });
+    };
+
+    const handleUserConfirmation = async () => {
+        const keyState = keyStateRef.current;
+
+        const isE2EEForwarding = !!(
+            model.isInternal &&
+            keyState &&
+            keyState.forwardeePublicKey &&
+            keyState.forwarderPrimaryKeysInfo
+        );
+
+        if (isE2EEForwarding && keyState.forwarderPrimaryKeysInfo?.v6) {
+            setModel({ ...model, step: ForwardModalStep.FixupPrimaryKeys });
+
+            const result = await dispatch(
+                fixupPrimaryKeyV6({
+                    forwarderAddressID: model.addressID,
+                    keyState,
+                })
             );
-            params.ForwardeePrivateKey = forwardeeKey;
-            params.ActivationToken = activationToken;
-            params.ProxyInstances = proxyInstances;
+            keyStateRef.current = result.keyState;
+            return handleUserConfirmation();
         }
 
-        await api(setupForwarding(params));
-        await call();
-        onClose?.();
-        createNotification({ text: c('email_forwarding_2023: Success').t`Email sent to ${model.forwardeeEmail}.` });
+        if (isE2EEForwarding && !keyState.forwarderPrimaryKeysInfo.v4.supportsE2EEForwarding) {
+            setModel({ ...model, step: ForwardModalStep.FixupPrimaryKeys });
 
-        if (requireNewKey) {
-            createNotification({
-                text: c('email_forwarding_2023: Success')
-                    .t`A new encryption key has been generated for ${forwarderEmail}.`,
-            });
+            const result = await dispatch(
+                fixupUnsupportedPrimaryKeyV4({
+                    forwarderAddressID: model.addressID,
+                    keyState,
+                })
+            );
+            keyStateRef.current = result.keyState;
+            return handleUserConfirmation();
         }
+
+        setModel({ ...model, step: ForwardModalStep.FinalizeForwardingSetup });
+        return handleFinalizeSetup();
+    };
+
+    const handleBack = () => {
+        setModel((prev) => ({ ...prev, step: ForwardModalStep.Setup }));
     };
 
     const handleSubmit = async () => {
@@ -306,36 +311,39 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
             return;
         }
 
-        if (isEditing) {
+        if (isEditingFilters) {
             return handleEdit();
         }
 
-        if (model.step === Step.Setup) {
+        if (model.step === ForwardModalStep.Setup) {
             return handleSetup();
         }
 
-        if (model.step === Step.Verification) {
-            return handleVerification();
+        if (model.step === ForwardModalStep.UserConfirmation) {
+            return handleUserConfirmation().catch((e) => {
+                handleBack();
+                throw e;
+            });
         }
-    };
-
-    const handleBack = () => {
-        setModel({ ...model, step: Step.Setup });
     };
 
     return (
         <ModalTwo
             as={Form}
+            size={model.step === ForwardModalStep.SuccessNotification ? 'xsmall' : undefined}
             onClose={onClose}
-            onSubmit={() => withLoading(handleSubmit())}
+            onSubmit={() => withLoading(handleSubmit().catch(handleError))}
             onReset={() => {
                 onClose?.();
             }}
             {...rest}
         >
-            <ModalTwoHeader title={getTitle(model)} />
+            <ModalTwoHeader
+                title={getTitle(model)}
+                hasClose={model.step === ForwardModalStep.Setup || model.step === ForwardModalStep.UserConfirmation}
+            />
             <ModalTwoContent>
-                {model.step === Step.Setup && (
+                {model.step === ForwardModalStep.Setup && (
                     <>
                         <InputFieldTwo
                             id="from-select"
@@ -347,16 +355,18 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             disabledOnlyField={inputsDisabled}
                             autoFocus
                         >
-                            {(isEditing ? addresses : filteredAddresses).map(({ ID, Email, Receive }) => (
-                                <Option
-                                    title={Email}
-                                    key={ID}
-                                    value={ID}
-                                    disabled={Receive !== ADDRESS_RECEIVE.RECEIVE_YES}
-                                >
-                                    {Email}
-                                </Option>
-                            ))}
+                            {(isEditingFilters ? addresses : filterAddresses(addresses)).map(
+                                ({ ID, Email, Receive }) => (
+                                    <Option
+                                        title={Email}
+                                        key={ID}
+                                        value={ID}
+                                        disabled={Receive !== ADDRESS_RECEIVE.RECEIVE_YES}
+                                    >
+                                        {Email}
+                                    </Option>
+                                )
+                            )}
                         </InputFieldTwo>
                         <InputFieldTwo
                             id="to-input"
@@ -364,7 +374,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             placeholder={c('email_forwarding_2023: Placeholder').t`Enter email address`}
                             disabled={inputsDisabled}
                             disabledOnlyField={inputsDisabled}
-                            readOnly={isEditing}
+                            readOnly={isEditingFilters || isReEnablingForwarding}
                             list="contact-emails"
                             type="email"
                             error={validator([
@@ -394,59 +404,85 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                         />
                     </>
                 )}
-                {model.step === Step.Verification && (
+                {model.step === ForwardModalStep.UserConfirmation && (
                     <>
                         <div className="text-center">
-                            <img src={illustration} alt="" />
+                            <img src={forwardingSetupIllustration} alt="" />
                             <p>{c('email_forwarding_2023: Info')
                                 .jt`A confirmation email will be sent to ${boldForwardeeEmail}`}</p>
-                            <p>{c('email_forwarding_2023: Info')
-                                .t`Forwarding to this address will become active once the recipient accepts the forwarding.`}</p>
+                            {model.encryptionFixupDetails ? null /* hide this info to make the fixup details below more visible */ : (
+                                <p>{c('email_forwarding_2023: Info')
+                                    .t`Forwarding to this address will become active once the recipient accepts the forwarding.`}</p>
+                            )}
                         </div>
-                        {model.isExternal ? (
+                        {model.encryptionFixupDetails ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
-                                <Icon name="exclamation-circle" className="shrink-0 color-danger" />
+                                <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
-                                    {c('email_forwarding_2023: Info')
-                                        .jt`Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`}
+                                    {model.encryptionFixupDetails.setup}
                                 </p>
-                            </div>
-                        ) : null}
-                        {model.isExternal || model.keySupportE2EEForwarding ? null : (
-                            <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
-                                <Icon name="exclamation-circle" className="shrink-0 color-danger" />
-                                <p className="text-sm color-weak flex-1 pl-4 my-0">
-                                    {c('email_forwarding_2023: Info')
-                                        .jt`A new encryption key will be generated for ${boldForwarderEmail}.`}
-                                </p>
-                            </div>
-                        )}
-                        {model?.keyErrors?.length ? (
-                            <div className="border rounded-lg p-4 flex flex-nowrap items-center">
-                                <Icon name="exclamation-circle" className="shrink-0 color-danger" />
-                                <p className="text-sm color-weak flex-1 pl-4 my-0">{model.keyErrors.join(' ')}</p>
                             </div>
                         ) : null}
                     </>
                 )}
+                {(model.step === ForwardModalStep.FixupPrimaryKeys ||
+                    model.step === ForwardModalStep.FinalizeForwardingSetup) && (
+                    <>
+                        <div className="text-center">
+                            <img src={forwardingSetupIllustration} alt="" />
+                            <div className="text-center" role="alert">
+                                <div className="inline-block">
+                                    <LoadingTextStepper
+                                        steps={[
+                                            c('email_forwarding_2023: Progress status').t`Setting up forwarding`,
+                                            c('email_forwarding_2023: Progress status').t`Sending confirmation email`,
+                                        ]}
+                                        stepIndex={model.step === ForwardModalStep.FixupPrimaryKeys ? 0 : 1}
+                                        hideFutureSteps={false}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )}
+                {model.step === ForwardModalStep.SuccessNotification && (
+                    <>
+                        <div className="text-center">
+                            <img src={forwardingSuccessIllustration} alt="" />
+                            <p>
+                                {c('email_forwarding_2023: Info')
+                                    .jt`Forwarding to ${boldForwardeeEmail} will become active once the recipient accepts the request.`}
+                            </p>
+                            {model.encryptionFixupDetails ? <p>{model.encryptionFixupDetails.success}</p> : null}
+                        </div>
+                    </>
+                )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                {model.step === Step.Setup && (
+                {model.step === ForwardModalStep.Setup && (
                     <>
                         <Button disabled={loading} type="reset">{c('email_forwarding_2023: Action').t`Cancel`}</Button>
                         <Button loading={loading} color="norm" type="submit">
-                            {isEditing
+                            {isEditingFilters
                                 ? c('email_forwarding_2023: Action').t`Save`
                                 : c('email_forwarding_2023: Action').t`Next`}
                         </Button>
                     </>
                 )}
-                {model.step === Step.Verification && (
+                {model.step === ForwardModalStep.UserConfirmation && (
                     <>
-                        <Button onClick={handleBack}>{c('email_forwarding_2023: Action').t`Back`}</Button>
-                        <Button loading={loading} color="norm" type="submit">{c('email_forwarding_2023: Action')
-                            .t`Send confirmation email`}</Button>
+                        <Button onClick={handleBack} disabled={loading}>
+                            {c('email_forwarding_2023: Action').t`Back`}
+                        </Button>
+                        <Button loading={loading} color="norm" type="submit">
+                            {c('email_forwarding_2023: Action').t`Send confirmation email`}
+                        </Button>
                     </>
+                )}
+                {model.step === ForwardModalStep.SuccessNotification && (
+                    <Button onClick={onClose} fullWidth={true}>
+                        {c('email_forwarding_2023: Action').t`Got it`}
+                    </Button>
                 )}
             </ModalTwoFooter>
         </ModalTwo>
