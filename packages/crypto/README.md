@@ -164,7 +164,7 @@ This package implements a worker pool `CryptoWorkerPool` that the apps can use a
 import { CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
 
 async function setupCryptoWorker() {
-    await CryptoWorkerPool.init(); // CryptoWorkerPool is a singleton
+    await CryptoWorkerPool.init({ sentryLogger: ... }); // CryptoWorkerPool is a singleton
     CryptoProxy.setEndpoint(
         CryptoWorkerPool,
         (endpoint) => endpoint.destroy() // destroy the CryptoWorkerPool when the CryptoProxy endpoint is released

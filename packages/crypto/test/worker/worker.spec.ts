@@ -6,7 +6,7 @@ import { runApiTests } from './apiTests';
 
 describe('Worker API and Worker Pool Integration (behind CryptoProxy)', () => {
     beforeAll(async () => {
-        await CryptoWorker.init({ poolSize: 1 });
+        await CryptoWorker.init({ poolSize: 1, sentryLogger: null });
         CryptoProxy.setEndpoint(CryptoWorker, () => CryptoWorker.clearKeyStore());
 
         // set server time in the future to spot functions that use local time unexpectedly
@@ -24,7 +24,7 @@ describe('Worker API and Worker Pool Integration (behind CryptoProxy)', () => {
     });
 
     it('init - should throw if already initialised', async () => {
-        await expect(CryptoWorker.init()).rejects.toThrow(/already initialised/);
+        await expect(CryptoWorker.init({ sentryLogger: null })).rejects.toThrow(/already initialised/);
     });
 
     runApiTests(CryptoProxy);
