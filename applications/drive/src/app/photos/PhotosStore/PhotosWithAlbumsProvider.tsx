@@ -649,45 +649,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [request, volumeId]
     );
 
-    const addPhotoAsCover = useCallback(
-        async (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => {
-            if (!volumeId) {
-                throw new Error('Photo volume not found');
-            }
-            if (!shareId) {
-                throw new Error('Photo share not found');
-            }
-            const addPhotoAsCoverCall = async () => {
-                const response = await request<{
-                    Code: number;
-                }>(
-                    queryUpdateAlbumCover(volumeId, albumLinkId, {
-                        CoverLinkID: coverLinkId,
-                    }),
-                    abortSignal
-                );
-                if (response.Code !== 1000) {
-                    throw new Error('Failed to set album cover');
-                }
-            };
-            await addPhotoAsCoverCall();
-            // Optimistic: change the cover manually in memory
-            const newCover = await getLink(abortSignal, shareId, coverLinkId);
-            setAlbums((currentAlbums) => {
-                const newAlbums = new Map(currentAlbums);
-                const album = newAlbums.get(albumLinkId);
-                if (album) {
-                    newAlbums.set(albumLinkId, {
-                        ...album,
-                        cover: newCover,
-                    });
-                }
-                return newAlbums;
-            });
-        },
-        [request, volumeId]
-    );
-
     const updateAlbumsFromCache = useCallback(
         async (linkIds: string[]) => {
             if (!shareId) {
@@ -754,6 +715,34 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             });
         },
         [shareId, getLink, getSharePermissions]
+    );
+
+    const addPhotoAsCover = useCallback(
+        async (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => {
+            if (!volumeId) {
+                throw new Error('Photo volume not found');
+            }
+            if (!shareId) {
+                throw new Error('Photo share not found');
+            }
+            const addPhotoAsCoverCall = async () => {
+                const response = await request<{
+                    Code: number;
+                }>(
+                    queryUpdateAlbumCover(volumeId, albumLinkId, {
+                        CoverLinkID: coverLinkId,
+                    }),
+                    abortSignal
+                );
+                if (response.Code !== 1000) {
+                    throw new Error('Failed to set album cover');
+                }
+            };
+            await addPhotoAsCoverCall();
+            // Optimistic: change the cover manually in memory
+            void updateAlbumsFromCache([albumLinkId]);
+        },
+        [request, volumeId]
     );
 
     const removePhotosFromCache = useCallback((linkIds: string[]) => {
