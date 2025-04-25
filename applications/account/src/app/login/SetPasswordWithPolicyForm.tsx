@@ -28,7 +28,6 @@ const SetPasswordWithPolicyForm = ({ type, onSubmit, children, passwordPolicies 
     const passwordPolicyValidation = usePasswordPolicyValidation(password, passwordPolicies);
 
     const passwordPolicyError = !passwordPolicyValidation.valid;
-    const continueButtonDisabled = passwordPolicyError;
 
     const formLabels = type === 'backup' ? getBackupPasswordFormLabels() : getPasswordFormLabels();
 
@@ -37,7 +36,7 @@ const SetPasswordWithPolicyForm = ({ type, onSubmit, children, passwordPolicies 
             name="loginForm"
             onSubmit={(event) => {
                 event.preventDefault();
-                if (passwordPolicyError || !formErrors.onFormSubmit()) {
+                if (!formErrors.onFormSubmit() || passwordPolicyError) {
                     return;
                 }
                 withLoading(onSubmit({ password })).catch(noop);
@@ -55,15 +54,7 @@ const SetPasswordWithPolicyForm = ({ type, onSubmit, children, passwordPolicies 
                 confirmRootClassName="mt-2"
                 autoFocus={true}
             />
-            <Button
-                size="large"
-                color="norm"
-                type="submit"
-                fullWidth
-                loading={loading}
-                className="mt-6"
-                disabled={continueButtonDisabled}
-            >
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {formLabels.cta}
             </Button>
         </form>
