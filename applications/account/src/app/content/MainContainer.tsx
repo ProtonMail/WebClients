@@ -150,6 +150,7 @@ const MainContainer = () => {
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isQRCodeSignInEnabled = useFlag('QRCodeSignIn');
+    const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
@@ -213,6 +214,7 @@ const MainContainer = () => {
         isSharedServerFeatureEnabled,
         isCalendarHotkeysEnabled,
         isQRCodeSignInEnabled,
+        isPasswordPolicyEnabled,
     });
 
     useEffect(() => {

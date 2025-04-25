@@ -4,8 +4,8 @@ import { Product } from '@proton/shared/lib/ProductEnum';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { APPS, type APP_NAMES, USER_ROLES } from '@proton/shared/lib/constants';
 import {
+    type OrganizationExtended,
     type OrganizationSettingsAllowedProduct,
-    type OrganizationWithSettings,
     type User,
     UserType,
 } from '@proton/shared/lib/interfaces';
@@ -75,7 +75,7 @@ const getAllowedProducts = (products: OrganizationSettingsAllowedProduct[]) => {
         Settings: {
             AllowedProducts: [...new Set(products)],
         },
-    } as OrganizationWithSettings;
+    } as OrganizationExtended;
 };
 
 const defaultOptions: Parameters<typeof getAvailableApps>[0] = {

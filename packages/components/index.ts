@@ -741,6 +741,7 @@ export { default as OrganizationSpamFiltersSection } from './containers/organiza
 export { default as OrganizationTwoFAEnforcementSection } from './containers/organization/OrganizationTwoFAEnforcementSection';
 export { default as OrganizationTwoFAHeader } from './containers/organization/OrganizationTwoFAHeader';
 export { default as OrganizationTwoFARemindersSection } from './containers/organization/OrganizationTwoFARemindersSection';
+export { default as OrganizationPasswordPoliciesSection } from './containers/organization/OrganizationPasswordPoliciesSection';
 export { default as PassPolicies } from './containers/organization/PassPolicies';
 export { default as SsoPage } from './containers/organization/sso/SsoPage';
 export { OtherMailPreferencesSection } from './containers/otherMailPreferences/OtherMailPreferencesSection';

@@ -7,7 +7,7 @@ import metrics from '@proton/metrics';
 import { type PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
 import Content from '../public/Content';
@@ -19,7 +19,7 @@ import { getSignupApplication } from './helper';
 interface Props {
     onExplore: (app: APP_NAMES) => Promise<void>;
     user?: User;
-    organization?: OrganizationWithSettings;
+    organization?: OrganizationExtended;
     plan?: PLANS;
 }
 

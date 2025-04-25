@@ -2,13 +2,13 @@ import AddMoreScribeSeat from '@proton/components/containers/organization/scribe
 import UserAccessToggle from '@proton/components/containers/organization/scribe/UserAccessToggle';
 import { getScribeUpsellText } from '@proton/components/containers/payments/subscription/assistant/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 
 interface Props {
-    organization?: OrganizationWithSettings;
+    organization?: OrganizationExtended;
 }
 
 const OrganizationScribeSection = ({ organization }: Props) => {
