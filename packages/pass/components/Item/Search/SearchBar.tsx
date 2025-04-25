@@ -121,6 +121,7 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
                 )
             }
             value={search}
+            name="search"
         />
     );
 });
