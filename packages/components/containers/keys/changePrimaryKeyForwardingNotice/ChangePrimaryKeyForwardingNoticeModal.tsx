@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
+
+import getPausedForwardingNotice from './getPausedForwardingNotice';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onMakeKeyPrimary: () => Promise<void>;
@@ -30,15 +31,14 @@ const ChangePrimaryKeyForwardingNotice = ({ onClose, onMakeKeyPrimary, fingerpri
         }
     };
 
+    const pausedForwardingNotice = getPausedForwardingNotice();
+
     return (
         <Prompt
             title={c('Title').t`Change primary key?`}
             children={
                 <>
-                    <div className="mb-4">
-                        {c('Info')
-                            .t`Existing end-to-end encrypted forwardings towards other users will be paused. You can manually resume them under the '${getMailRouteTitles().autoReply}' settings.`}
-                    </div>
+                    <div className="mb-4">{pausedForwardingNotice}</div>
                 </>
             }
             buttons={[
