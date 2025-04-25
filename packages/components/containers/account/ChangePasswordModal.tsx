@@ -557,6 +557,8 @@ const ChangePasswordModal = ({
 
     const handleClose = loading ? noop : lockAndClose;
 
+    const firstError = passwordPolicyValidation.result.find((result) => !result.valid)?.errorMessage || '';
+
     return (
         <Modal
             size={passwordStrengthIndicator.supported ? 'xlarge' : undefined}
@@ -594,7 +596,10 @@ const ChangePasswordModal = ({
                             placeholder={c('Placeholder').t`Password`}
                             error={validator([
                                 requiredValidator(inputs.newPassword),
-                                passwordLengthValidator(inputs.newPassword),
+                                // Don't display the password length error when the password policy validation is active
+                                passwordPolicyValidation.enabled
+                                    ? firstError
+                                    : passwordLengthValidator(inputs.newPassword),
                             ])}
                             as={PasswordInputTwo}
                             autoFocus
