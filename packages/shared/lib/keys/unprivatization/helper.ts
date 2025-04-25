@@ -26,13 +26,7 @@ export interface UnprivatizationContextData {
     data: MemberUnprivatizationOutput;
 }
 
-export const getOrganizationData = async ({
-    api,
-    getPasswordPolicies: shouldGetPasswordPolicies,
-}: {
-    api: Api;
-    getPasswordPolicies: boolean;
-}): Promise<OrganizationData> => {
+export const getOrganizationData = async ({ api }: { api: Api }): Promise<OrganizationData> => {
     const [organization, identity, logo, passwordPolicies] = await Promise.all([
         getOrganization({ api }),
         api<OrganizationIdentityOutput>(getOrganizationIdentity())
@@ -59,7 +53,7 @@ export const getOrganizationData = async ({
             .catch(() => {
                 return null;
             }),
-        shouldGetPasswordPolicies ? getPasswordPolicies({ api }) : [],
+        getPasswordPolicies({ api }),
     ]);
 
     return {
@@ -72,7 +66,7 @@ export const getOrganizationData = async ({
 
 export const getUnprivatizationContextData = async ({ api }: { api: Api }): Promise<UnprivatizationContextData> => {
     const [organizationData, addresses, data] = await Promise.all([
-        getOrganizationData({ api, getPasswordPolicies: true }),
+        getOrganizationData({ api }),
         getAllAddresses(api),
         api<MemberUnprivatizationOutput>(queryMemberUnprivatizationInfo()),
     ]);
