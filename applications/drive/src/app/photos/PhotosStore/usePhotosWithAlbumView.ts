@@ -12,6 +12,7 @@ import { useDownloadProvider } from '../../store/_downloads';
 import type { DriveEvent, DriveEvents } from '../../store/_events';
 import { useDriveEventManager } from '../../store/_events';
 import { type DecryptedLink, useLinksListing, useLinksQueue } from '../../store/_links';
+import useLinksState from '../../store/_links/useLinksState';
 import { isPhotoGroup, sortWithCategories } from '../../store/_photos';
 import type { PhotoGridItem, PhotoLink } from '../../store/_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from '../../store/_views/utils';
@@ -58,7 +59,8 @@ export function updateByEvents(
 export const usePhotosWithAlbumsView = () => {
     let { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
     const eventsManager = useDriveEventManager();
-    const { getCachedChildren, loadLinksMeta, getCachedLinksWithoutMeta } = useLinksListing();
+    const { getCachedChildren, loadLinksMeta } = useLinksListing();
+    const linkState = useLinksState();
     const {
         shareId,
         linkId,
@@ -73,7 +75,6 @@ export const usePhotosWithAlbumsView = () => {
         loadSharedWithMeAlbums,
         addAlbumPhotos,
         loadAlbumPhotos,
-        removeAlbumsFromCache,
         removePhotosFromCache,
         updateAlbumsFromCache,
         addPhotoAsCover,
@@ -102,73 +103,7 @@ export const usePhotosWithAlbumsView = () => {
         return shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
     }, [shareId, linkId, abortSignal, getCachedChildren]);
 
-    // Note: this is only for own albums for now.
-    const isAlbumsReloadNeeded = useRef(false);
-    if (shareId && linkId && !isAlbumsReloadNeeded.current && !isAlbumsLoading) {
-        // Last parameter is to return only folders.
-        // Drive codebase doesn't understand well concept of photo or album.
-        // But isFile on Link object is always false for albums, because
-        // it is true specifically if the node is type of file, which album
-        // isn't.
-        // share and link ids are photo share and phoro root link ids.
-        // Thus, we are getting all cached folders (albums) in the photo share.
-        // Albums are not nested, thus this simple logic works.
-        const cachedFolders = getCachedChildren(abortSignal, shareId, linkId, true);
-
-        // If there are some albums that are being decrypted, we skip the
-        // operation and wait for next render, to avoid race-condition to
-        // access cache and cause double decryption.
-        if (!cachedFolders.isDecrypting) {
-            const cachedFolderIds = new Set(cachedFolders.links.map(({ linkId }) => linkId));
-            const ownAlbumIds = new Set(
-                albums
-                    .values()
-                    .filter((album) => {
-                        // Albums map has all albums, including shared ones.
-                        // We need to compare only own albums, as that are the only
-                        // ones that we can get event for and we can compare against
-                        // the cached folders (parent is root of photo volume).
-                        return !!album.parentLinkId;
-                    })
-                    .map(({ linkId }) => linkId)
-            );
-
-            // If there are more albums in the cache than in the loaded
-            // albums set, that means some other client has created albums
-            // and it was added by events. Now we need to re-load albums
-            // to display them in the UI.
-            // Easier would be to just re-load one album, or use the cached
-            // folders, but that doesn't include cover etc. and there is no
-            // way to fetch only one album.
-            // Not perfect, but this is not happening often, thus good enough
-            // for now.
-            const extraCachedFolderIds = cachedFolderIds.difference(ownAlbumIds);
-            if (extraCachedFolderIds.size > 0) {
-                isAlbumsReloadNeeded.current = true;
-                void loadAlbums(new AbortController().signal).finally(() => {
-                    isAlbumsReloadNeeded.current = false;
-                });
-            }
-
-            const deletedFolderIds = ownAlbumIds.difference(cachedFolderIds);
-            if (deletedFolderIds.size > 0) {
-                removeAlbumsFromCache(deletedFolderIds);
-            }
-        }
-    }
-
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
-    const cachedAlbums =
-        shareId && linkId
-            ? getCachedLinksWithoutMeta(
-                  abortSignal,
-                  shareId,
-                  Array.from(albums.values()).map((album) => album.cover?.linkId || '')
-              )
-            : undefined;
-    const cachedAlbumsCover = useMemoArrayNoMatterTheOrder(cachedAlbums?.links || []);
-    const cacheAlbumPhotos =
-        shareId && linkId && albumLinkId ? getCachedChildren(abortSignal, shareId, albumLinkId) : undefined;
 
     // We have to concat cachedLinks since for albums
     // some photos are children of root (photo-stream) while some others are children of the album (shared album where upload are done by not the owner)
@@ -180,9 +115,6 @@ export const usePhotosWithAlbumsView = () => {
             cachedOwnerAlbumPhotosLinks.push(link);
         }
     });
-    const cachedAlbumPhotosLinks = useMemoArrayNoMatterTheOrder(
-        (cacheAlbumPhotos?.links || []).concat(cachedOwnerAlbumPhotosLinks)
-    );
 
     useEffect(() => {
         if (currentPageType === AlbumsPageTypes.GALLERY || currentPageType === AlbumsPageTypes.ALBUMS) {
@@ -293,32 +225,21 @@ export const usePhotosWithAlbumsView = () => {
         const result: Record<string, PhotoLink> = {};
 
         // We create "fake" links to avoid complicating the rest of the code
+        // We merge the link from state afterwards
         albumPhotos.forEach((photo) => {
-            result[photo.linkId] = {
-                linkId: photo.linkId,
-                rootShareId: photo.rootShareId,
-                parentLinkId: photo.parentLinkId,
-                volumeId: photo.volumeId,
-                isFile: true,
-                activeRevision: {
-                    photo,
+            result[photo.linkId] = Object.assign(
+                {
+                    linkId: photo.linkId,
+                    rootShareId: photo.rootShareId,
+                    parentLinkId: photo.parentLinkId,
+                    volumeId: photo.volumeId,
+                    isFile: true,
+                    activeRevision: {
+                        photo,
+                    },
                 },
-            };
-        });
-
-        // Add data from cache
-        cachedAlbumPhotosLinks.forEach((link) => {
-            // If this link is not a photo, ignore it
-            if (!link.activeRevision?.photo) {
-                return;
-            }
-
-            // Related photos are not supported by the web client for now
-            if (link.activeRevision.photo.mainPhotoLinkId) {
-                return;
-            }
-
-            result[link.linkId] = link;
+                linkState.getLink(photo.rootShareId, photo.linkId)?.decrypted || {}
+            );
         });
 
         const albumPhotosViewData = sortWithCategories(Object.values(result));
@@ -344,21 +265,26 @@ export const usePhotosWithAlbumsView = () => {
             albumPhotosLinkIdToIndexMap,
             albumPhotosLinkIds,
         };
-    }, [albumPhotos, cachedAlbumPhotosLinks, linkId, shareId]);
+    }, [linkState, albumPhotos, linkId, shareId]);
 
     const albumsView = useMemo(() => {
-        if (!shareId || !linkId || !cachedAlbumsCover) {
+        if (!albums || !albums.size) {
             return Array.from(albums.values());
         }
         const albumsView = Array.from(albums.values()).map((album) => {
-            const cachedAlbumCover = cachedAlbumsCover.find((link) => album.cover?.linkId === link.linkId);
+            const cachedAlbum = linkState.getLink(album.rootShareId, album.linkId);
+            const coverLinkId = album.albumProperties?.coverLinkId || album.cover?.linkId || album.linkId;
+            const cachedAlbumCover = album.cover?.linkId
+                ? linkState.getLink(album.rootShareId, coverLinkId)
+                : cachedAlbum;
             return {
                 ...album,
-                ...(cachedAlbumCover && { cover: cachedAlbumCover }),
+                ...cachedAlbum?.decrypted,
+                ...(cachedAlbumCover?.decrypted && { cover: cachedAlbumCover.decrypted }),
             };
         });
         return albumsView;
-    }, [albums, cachedAlbumsCover, linkId, shareId]);
+    }, [albums, linkState]);
 
     useEffect(() => {
         if (!volumeId || !shareId) {
@@ -450,55 +376,72 @@ export const usePhotosWithAlbumsView = () => {
      * @param linkIds List of Link IDs to preload
      */
     const requestDownload = useCallback(
-        async (linkIds: string[]) => {
-            if (!shareId) {
-                return;
-            }
-
+        async (linkIds: { linkId: string; shareId: string }[]) => {
             const ac = new AbortController();
-            const meta = await loadLinksMeta(ac.signal, 'photos-download', shareId, linkIds);
 
-            if (meta.links.length === 0) {
-                return;
+            const result: { [key: string]: string[] } = {};
+            for (const item of linkIds) {
+                const { linkId, shareId: itemShareId } = item;
+                if (!result[itemShareId]) {
+                    result[itemShareId] = [];
+                }
+                result[itemShareId].push(linkId);
             }
 
-            if (meta.errors.length > 0) {
-                sendErrorReport(
-                    new EnrichedError('Failed to load links meta for download', {
-                        tags: {
-                            shareId,
-                        },
-                        extra: {
-                            linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
-                            errors: meta.errors,
-                        },
-                    })
+            const metaLinks: DecryptedLink[] = [];
+            const relatedMetaLinks: DecryptedLink[] = [];
+
+            for (const shareId of Object.keys(result)) {
+                const meta = await loadLinksMeta(ac.signal, 'photos-download', shareId, result[shareId]);
+
+                if (meta.links.length === 0) {
+                    continue;
+                }
+
+                if (meta.errors.length > 0) {
+                    sendErrorReport(
+                        new EnrichedError('Failed to load links meta for download', {
+                            tags: {
+                                shareId,
+                            },
+                            extra: {
+                                linkIds: linkIds,
+                                errors: meta.errors,
+                            },
+                        })
+                    );
+
+                    return;
+                }
+
+                metaLinks.push(...meta.links);
+
+                const relatedLinkIds = metaLinks.flatMap(
+                    (link) => link.activeRevision?.photo?.relatedPhotosLinkIds || []
                 );
 
-                return;
+                const relatedMeta = await loadLinksMeta(ac.signal, 'photos-related-download', shareId, relatedLinkIds);
+
+                if (relatedMeta.errors.length > 0) {
+                    sendErrorReport(
+                        new EnrichedError('Failed to load related links meta for download', {
+                            tags: {
+                                shareId,
+                            },
+                            extra: {
+                                linkIds: linkIds,
+                                errors: relatedMeta.errors,
+                            },
+                        })
+                    );
+
+                    return;
+                }
+
+                relatedMetaLinks.push(...relatedMeta.links);
             }
 
-            const relatedLinkIds = meta.links.flatMap((link) => link.activeRevision?.photo?.relatedPhotosLinkIds || []);
-
-            const relatedMeta = await loadLinksMeta(ac.signal, 'photos-related-download', shareId, relatedLinkIds);
-
-            if (relatedMeta.errors.length > 0) {
-                sendErrorReport(
-                    new EnrichedError('Failed to load links meta for download', {
-                        tags: {
-                            shareId,
-                        },
-                        extra: {
-                            linkIds: linkIds.filter((id) => !relatedMeta.links.find((link) => link.linkId === id)),
-                            errors: relatedMeta.errors,
-                        },
-                    })
-                );
-
-                return;
-            }
-
-            const links: LinkDownload[] = [...meta.links, ...relatedMeta.links].map(
+            const links: LinkDownload[] = [...metaLinks, ...relatedMetaLinks].map(
                 (link) =>
                     ({
                         ...link,

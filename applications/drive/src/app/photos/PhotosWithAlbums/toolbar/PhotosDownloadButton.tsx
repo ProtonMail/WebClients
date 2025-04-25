@@ -11,7 +11,7 @@ import type { PhotoLink } from '../../../store';
 
 interface Props {
     selectedLinks: PhotoLink[];
-    requestDownload: (linkIds: string[]) => Promise<void>;
+    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
     showIconOnly: boolean;
 }
 
@@ -19,7 +19,7 @@ export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks
     const [loading, withLoading] = useLoading();
 
     const onClick = () => {
-        const linkIds = selectedLinks.map((link) => link.linkId);
+        const linkIds = selectedLinks.map((link) => ({ linkId: link.linkId, shareId: link.rootShareId }));
 
         withLoading(requestDownload(linkIds)).catch(noop);
     };

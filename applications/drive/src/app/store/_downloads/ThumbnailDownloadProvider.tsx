@@ -102,7 +102,9 @@ export const ThumbnailsDownloadProvider = ({
         return loadLinkThumbnail(ac.signal, shareId, linkId, async (downloadUrl: string, downloadToken: string) => {
             return downloadThumbnail(ac.signal, shareId, linkId, downloadUrl, downloadToken, activeRevisionId);
         })
-            .catch(logError)
+            .catch((e) => {
+                logError(e);
+            })
             .finally(() => {
                 delete controls.current[downloadId];
             });
