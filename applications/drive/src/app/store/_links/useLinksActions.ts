@@ -576,12 +576,12 @@ export function useLinksActions({
                         ),
                     ]);
 
-                const privateKeys: PrivateKeyReference[] = [currentParentPrivateKey];
-                if (link.photoProperties?.albums.length) {
+                let privateKey: PrivateKeyReference = currentParentPrivateKey;
+                if (link.photoProperties?.albums.length && !link.parentLinkId) {
                     for (const album of link.photoProperties.albums) {
                         try {
                             const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
-                            privateKeys.push(albumPrivateKey);
+                            privateKey = albumPrivateKey;
                             // we can break at first album since it's enough to decrypt / for optimization
                             break;
                         } catch (e) {
@@ -597,7 +597,7 @@ export function useLinksActions({
 
                 const sessionKeyName = await getDecryptedSessionKey({
                     data: link.encryptedName,
-                    privateKeys: privateKeys,
+                    privateKeys: privateKey,
                 }).catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to decrypt link name session key during move', {
