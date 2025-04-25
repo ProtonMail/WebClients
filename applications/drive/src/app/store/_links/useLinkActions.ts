@@ -1,4 +1,5 @@
 import { usePreventLeave } from '@proton/components';
+import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { queryCreateFolder } from '@proton/shared/lib/api/drive/folder';
 import { queryRenameLink } from '@proton/shared/lib/api/drive/share';
@@ -14,6 +15,7 @@ import {
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
@@ -229,6 +231,7 @@ export default function useLinkActions() {
     // See RFC [0048] for details
     const getPhotoCloneForAlbum = async (
         abortSignal: AbortSignal,
+        parentShareId: string,
         shareId: string,
         parentLinkId: string,
         linkId: string
@@ -241,8 +244,8 @@ export default function useLinkActions() {
             { privateKey: addressKey, address },
         ] = await Promise.all([
             getLink(abortSignal, shareId, linkId),
-            getLinkPrivateKey(abortSignal, shareId, parentLinkId),
-            getLinkHashKey(abortSignal, shareId, parentLinkId),
+            getLinkPrivateKey(abortSignal, parentShareId, parentLinkId),
+            getLinkHashKey(abortSignal, parentShareId, parentLinkId),
             getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
             getShareCreatorKeys(abortSignal, shareId),
         ]);
@@ -253,8 +256,10 @@ export default function useLinkActions() {
                     Promise.reject(
                         new EnrichedError('Failed to generate photo link lookup hash during photo clone creation', {
                             tags: {
+                                parentShareId,
                                 shareId,
                                 parentLinkId,
+                                linkId,
                             },
                             extra: { e },
                         })
@@ -264,6 +269,7 @@ export default function useLinkActions() {
                     Promise.reject(
                         new EnrichedError('Failed to encrypt link passphrase during clone', {
                             tags: {
+                                parentShareId,
                                 shareId,
                                 parentLinkId,
                                 linkId,
@@ -277,24 +283,47 @@ export default function useLinkActions() {
                           Promise.reject(
                               new EnrichedError('Failed to generate content hash during clone', {
                                   tags: {
+                                      parentShareId,
                                       shareId,
                                       parentLinkId,
+                                      linkId,
                                   },
                                   extra: { e },
                               })
                           )
                       )
                     : undefined,
-                getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+                link.parentLinkId
+                    ? getLinkPrivateKey(abortSignal, shareId, link.parentLinkId)
+                    : getSharePrivateKey(abortSignal, shareId),
             ]);
 
+        const privateKeys: PrivateKeyReference[] = [currentParentPrivateKey];
+        if (link.photoProperties?.albums.length) {
+            for (const album of link.photoProperties.albums) {
+                try {
+                    const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
+                    privateKeys.push(albumPrivateKey);
+                    // we can break at first album since it's enough to decrypt / for optimization
+                    break;
+                } catch (e) {
+                    // ignore failures but still report them to Sentry
+                    sendErrorReport(e, {
+                        extra: {
+                            message: 'getPhotoCloneForAlbum() - Failed to get albumPrivateKey',
+                        },
+                    });
+                }
+            }
+        }
         const sessionKeyName = await getDecryptedSessionKey({
             data: link.encryptedName,
-            privateKeys: currentParentPrivateKey,
+            privateKeys: privateKeys,
         }).catch((e) =>
             Promise.reject(
                 new EnrichedError('Failed to decrypt link name session key during clone', {
                     tags: {
+                        parentShareId,
                         shareId,
                         parentLinkId,
                         linkId,
@@ -314,6 +343,7 @@ export default function useLinkActions() {
             Promise.reject(
                 new EnrichedError('Failed to encrypt link name during clone', {
                     tags: {
+                        parentShareId,
                         shareId,
                         parentLinkId,
                         linkId,
@@ -338,10 +368,17 @@ export default function useLinkActions() {
         shareId: string,
         linkId: string,
         targetVolumeId: string,
+        targetParentShareId: string,
         targetParentLinkId: string
     ) => {
         const link = await getLink(abortSignal, shareId, linkId);
-        const clone = await getPhotoCloneForAlbum(abortSignal, shareId, targetParentLinkId, linkId);
+        const clone = await getPhotoCloneForAlbum(
+            abortSignal,
+            targetParentShareId,
+            shareId,
+            targetParentLinkId,
+            linkId
+        );
         const photos: CopyRelatedPhotos[] = [];
         if (link.photoProperties && link.activeRevision?.photo?.relatedPhotosLinkIds) {
             const photosData = await batchPromiseHelper(
@@ -349,6 +386,7 @@ export default function useLinkActions() {
                 async (photoLinkId) => {
                     const photoClone = await getPhotoCloneForAlbum(
                         abortSignal,
+                        targetParentShareId,
                         shareId,
                         targetParentLinkId,
                         photoLinkId

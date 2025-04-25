@@ -84,22 +84,20 @@ export interface RelatedPhotos {
     SignatureEmail?: string; // Required when moving an anonymous Node. Email address used for the NodePassphraseSignature.
 }
 
-export const queryAddPhotoToFavorite = (
-    volumeId: string,
-    linkId: string,
-    data: {
-        PhotoData?: {
-            Hash: string;
-            Name: string;
-            NameSignatureEmail: string;
-            NodePassphrase: string;
-            ContentHash: string;
-            NodePassphraseSignature?: string; // Required when moving an anonymous Node. It must be signed by the SignatureEmail address.
-            SignatureEmail?: string; // Required when moving an anonymous Node. Email address used for the NodePassphraseSignature.
-            RelatedPhotos: RelatedPhotos[];
-        };
-    }
-) => ({
+export interface FavoriteData {
+    PhotoData?: {
+        Hash: string;
+        Name: string;
+        NameSignatureEmail: string;
+        NodePassphrase: string;
+        ContentHash?: string;
+        NodePassphraseSignature?: string; // Required when moving an anonymous Node. It must be signed by the SignatureEmail address.
+        SignatureEmail?: string; // Required when moving an anonymous Node. Email address used for the NodePassphraseSignature.
+        RelatedPhotos: RelatedPhotos[];
+    };
+}
+
+export const queryAddPhotoToFavorite = (volumeId: string, linkId: string, data: FavoriteData) => ({
     method: 'POST',
     url: `drive/photos/volumes/${volumeId}/links/${linkId}/favorite`,
     data,
