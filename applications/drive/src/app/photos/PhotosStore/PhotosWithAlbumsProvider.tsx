@@ -559,7 +559,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             const result = await batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
-                allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
+                ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
                 query: async (batchLinkIds) => {
                     const links = await Promise.all(batchLinkIds.map(async (linkId) => linksInfoForAlbum.get(linkId)));
 
@@ -587,6 +587,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 createNotification({
                     type: 'success',
                     text: c('Notification').t`Your photo(s) have been added to "${albumName}"`,
+                });
+            }
+            if (!nbFailures && !nbSuccesses) {
+                createNotification({
+                    type: 'info',
+                    text: c('Notification').t`Selected photo(s) already in "${albumName}"`,
                 });
             }
         },
@@ -790,7 +796,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             const result = await batchAPIHelper(abortSignal, {
                 linkIds: LinkIDs,
                 batchRequestSize: MAX_REMOVE_ALBUM_PHOTOS_BATCH,
-                allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
                 query: (batchLinkIds) =>
                     queryRemoveAlbumPhotos(albumLink.volumeId, albumLinkId, {
                         LinkIDs: batchLinkIds,
