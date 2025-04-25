@@ -10,7 +10,6 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import useFlag from '@proton/unleash/useFlag';
 
-import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
@@ -49,7 +48,6 @@ const useAppTitleUpdate = () => {
 
 export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
-    const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const updateTitle = useAppTitleUpdate();
     let [searchParams, setSearchParams] = useSearchParams();
@@ -77,6 +75,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         albumPhotosLinkIdToIndexMap,
         photoLinkIdToIndexMap,
         photos,
+        addNewAlbumPhotoToCache,
     } = useOutletContext<PhotosLayoutOutletContext>();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isAlbumsLoading);
@@ -118,7 +117,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
     const onPhotoUploadedToAlbum = useCallback(
         async (file: OnFileUploadSuccessCallbackData) => {
-            if (!file || !album || !albumShareId) {
+            if (!file || !album || !albumShareId || !albumLinkId) {
                 return;
             }
             const abortSignal = new AbortController().signal;
@@ -132,6 +131,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 );
                 if (album.permissions.isOwner && !isAlreadyInAlbum) {
                     await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
+                } else if (!isAlreadyInAlbum) {
+                    void addNewAlbumPhotoToCache(abortSignal, albumShareId, albumLinkId, file.fileId);
                 }
             } catch (e) {
                 if (e instanceof Error && e.message) {
@@ -140,7 +141,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 sendErrorReport(e);
             }
         },
-        [createNotification, addAlbumPhoto, albumShareId, album, albumPhotos]
+        [album, albumShareId, albumLinkId, albumPhotos, addAlbumPhoto, addNewAlbumPhotoToCache, createNotification]
     );
 
     const addOrRemovePhotoToFavorite = useCallback(
@@ -185,10 +186,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         return album?.permissions.isOwner ? linkId : albumLinkId || linkId;
     }, [album?.permissions.isOwner, linkId, albumLinkId]);
 
-    const viewOnly = useMemo(() => {
-        return isUploadDisabled || !album?.permissions.isEditor || driveAlbumsDisabled;
-    }, [isUploadDisabled, album?.permissions.isEditor, driveAlbumsDisabled]);
-
     useEffect(() => {
         if (isAlbumsLoading === false && isAlbumPhotosLoading === false) {
             setIsInitialized(true);
@@ -203,65 +200,55 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     // TODO: Album not found view [DRVWEB-4615]
     return (
         <>
-            <UploadDragDrop
-                disabled={viewOnly}
-                isForPhotos={true}
-                shareId={albumShareId}
-                parentLinkId={uploadLinkId}
-                onFileUpload={onPhotoUploadedToAlbum}
-                onFileSkipped={onPhotoUploadedToAlbum}
-                className="flex flex-column flex-nowrap flex-1"
-            >
-                {isAlbumPhotosEmpty ? (
-                    <div className="flex flex-column flex-nowrap p-4 w-full h-full">
-                        <AlbumCoverHeader
-                            shareId={albumShareId}
-                            uploadLinkId={uploadLinkId}
-                            linkId={album.linkId}
-                            onFileUpload={onPhotoUploadedToAlbum}
-                            onFileSkipped={onPhotoUploadedToAlbum}
-                            album={album}
-                            photoCount={photoCount}
-                            onShare={onShare}
-                            onAddAlbumPhotos={() => {
-                                navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
-                            }}
-                        />
-                    </div>
-                ) : (
-                    <PhotosInsideAlbumsGrid
-                        data={albumPhotos}
-                        onItemRender={handleItemRender}
-                        onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                        isLoading={isAlbumsLoading}
-                        onItemClick={setPreviewLinkId}
-                        selectedItems={selectedItems}
-                        onSelectChange={(i, isSelected) =>
-                            handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
-                        }
-                        isGroupSelected={isGroupSelected}
-                        isItemSelected={isItemSelected}
-                        onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
-                        rootLinkId={linkId}
-                    >
-                        <AlbumCoverHeader
-                            shareId={albumShareId}
-                            uploadLinkId={uploadLinkId}
-                            linkId={album.linkId}
-                            album={album}
-                            photoCount={photoCount}
-                            onFileUpload={onPhotoUploadedToAlbum}
-                            onFileSkipped={onPhotoUploadedToAlbum}
-                            onShare={() => {
-                                modals.linkSharing?.({ shareId: albumShareId, linkId: album.linkId });
-                            }}
-                            onAddAlbumPhotos={() => {
-                                navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
-                            }}
-                        />
-                    </PhotosInsideAlbumsGrid>
-                )}
-            </UploadDragDrop>
+            {isAlbumPhotosEmpty ? (
+                <div className="flex flex-column flex-nowrap p-4 w-full h-full">
+                    <AlbumCoverHeader
+                        shareId={albumShareId}
+                        uploadLinkId={uploadLinkId}
+                        linkId={album.linkId}
+                        onFileUpload={onPhotoUploadedToAlbum}
+                        onFileSkipped={onPhotoUploadedToAlbum}
+                        album={album}
+                        photoCount={photoCount}
+                        onShare={onShare}
+                        onAddAlbumPhotos={() => {
+                            navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
+                        }}
+                    />
+                </div>
+            ) : (
+                <PhotosInsideAlbumsGrid
+                    data={albumPhotos}
+                    onItemRender={handleItemRender}
+                    onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                    isLoading={isAlbumsLoading}
+                    onItemClick={setPreviewLinkId}
+                    selectedItems={selectedItems}
+                    onSelectChange={(i, isSelected) =>
+                        handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
+                    }
+                    isGroupSelected={isGroupSelected}
+                    isItemSelected={isItemSelected}
+                    onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
+                    rootLinkId={linkId}
+                >
+                    <AlbumCoverHeader
+                        shareId={albumShareId}
+                        uploadLinkId={uploadLinkId}
+                        linkId={album.linkId}
+                        album={album}
+                        photoCount={photoCount}
+                        onFileUpload={onPhotoUploadedToAlbum}
+                        onFileSkipped={onPhotoUploadedToAlbum}
+                        onShare={() => {
+                            modals.linkSharing?.({ shareId: albumShareId, linkId: album.linkId });
+                        }}
+                        onAddAlbumPhotos={() => {
+                            navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
+                        }}
+                    />
+                </PhotosInsideAlbumsGrid>
+            )}
         </>
     );
 };
