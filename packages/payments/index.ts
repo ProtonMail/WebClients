@@ -279,7 +279,6 @@ export {
     PASS_LAUNCH_OFFER,
     PLANS_WITH_AI_INCLUDED,
     allCycles,
-    appSupportsSSO,
     canCheckItemGetStarted,
     canCheckItemPaidChecklist,
     customCycles,

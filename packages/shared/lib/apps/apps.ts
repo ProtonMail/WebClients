@@ -98,3 +98,7 @@ export const getAvailableApps = (
         return !removeApps.has(app) && availableAppsByUser.has(app) && availableAppsByOrganization.has(app);
     });
 };
+
+export const appSupportsSSO = (appName?: APP_NAMES) => {
+    return appName && [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].some((ssoPlanName) => ssoPlanName === appName);
+};
