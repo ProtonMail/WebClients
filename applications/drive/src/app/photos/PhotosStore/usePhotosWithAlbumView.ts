@@ -102,6 +102,7 @@ export const usePhotosWithAlbumsView = () => {
         return shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
     }, [shareId, linkId, abortSignal, getCachedChildren]);
 
+    // Note: this is only for own albums for now.
     const isAlbumsReloadNeeded = useRef(false);
     if (shareId && linkId && !isAlbumsReloadNeeded.current && !isAlbumsLoading) {
         // Last parameter is to return only folders.
@@ -119,7 +120,18 @@ export const usePhotosWithAlbumsView = () => {
         // access cache and cause double decryption.
         if (!cachedFolders.isDecrypting) {
             const cachedFolderIds = new Set(cachedFolders.links.map(({ linkId }) => linkId));
-            const albumIds = new Set(albums.keys());
+            const ownAlbumIds = new Set(
+                albums
+                    .values()
+                    .filter((album) => {
+                        // Albums map has all albums, including shared ones.
+                        // We need to compare only own albums, as that are the only
+                        // ones that we can get event for and we can compare against
+                        // the cached folders (parent is root of photo volume).
+                        return !!album.parentLinkId;
+                    })
+                    .map(({ linkId }) => linkId)
+            );
 
             // If there are more albums in the cache than in the loaded
             // albums set, that means some other client has created albums
@@ -130,7 +142,7 @@ export const usePhotosWithAlbumsView = () => {
             // way to fetch only one album.
             // Not perfect, but this is not happening often, thus good enough
             // for now.
-            const extraCachedFolderIds = cachedFolderIds.difference(albumIds);
+            const extraCachedFolderIds = cachedFolderIds.difference(ownAlbumIds);
             if (extraCachedFolderIds.size > 0) {
                 isAlbumsReloadNeeded.current = true;
                 void loadAlbums(new AbortController().signal).finally(() => {
@@ -138,7 +150,7 @@ export const usePhotosWithAlbumsView = () => {
                 });
             }
 
-            const deletedFolderIds = albumIds.difference(cachedFolderIds);
+            const deletedFolderIds = ownAlbumIds.difference(cachedFolderIds);
             if (deletedFolderIds.size > 0) {
                 removeAlbumsFromCache(deletedFolderIds);
             }
