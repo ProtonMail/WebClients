@@ -1,7 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { type ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import {
@@ -426,10 +426,6 @@ export const getIsB2BAudienceFromSubscription = (subscription: Subscription | un
 
 export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
-};
-
-export const appSupportsSSO = (appName?: APP_NAMES) => {
-    return appName && [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].some((ssoPlanName) => ssoPlanName === appName);
 };
 
 export const planSupportsSSO = (planName?: PLANS) => {
