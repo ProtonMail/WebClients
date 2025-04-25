@@ -288,7 +288,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
             </div>
 
             <div
-                className={`publish-banner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2`}
+                className={`publish-banner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2 flex-nowrap gap-4`}
             >
                 <p className="ml-4 m-0 color-weak">
                     {
@@ -301,10 +301,12 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     }
                 </p>
                 {hasUnsavedChanges && (
-                    <div className="flex items-center">
-                        <OrangeDot />
-                        <span className="ml-2" style={{ fontWeight: 'var(--font-weight-bold)' }}>{c('Info')
+                    <div className="unpublished-cta flex items-center shrink-0">
+                        <span className="text-right">
+                            <OrangeDot />
+                            <span className="ml-2" style={{ fontWeight: 'var(--font-weight-bold)' }}>{c('Info')
                             .t`You have unpublished changes`}</span>
+                        </span>
                         <Button color="norm" type="button" className="ml-8" onClick={handlePublishChanges}>
                             {c('Action').t`Publish changes`}
                         </Button>
@@ -380,7 +382,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
 
                             return (
                                 <div
-                                    key={customPolicy.LocationFilterPolicyID}
+                                    key={customPolicy.Name + customPolicy.LocationFilterPolicyID}
                                     onClick={({ target }) => {
                                         if (
                                             target instanceof HTMLElement &&
@@ -417,8 +419,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                         />
                                     </div>
                                     <div
-                                        className="flex gap-1 items-center justify-end w-custom"
-                                        style={{ '--w-custom': '76px' }}
+                                        className="flex gap-1 items-center justify-end"
                                     >
                                         {!isDeleted && (
                                             <PolicyEditButton
