@@ -112,6 +112,9 @@ private extension PaymentsManager {
         case let .apiMightBeBlocked(message, originalError: error):
             printIfDebug("\(message), error \(error)")
             completion(.failure(error))
+        case let .planAlreadyPurchased(error: error):
+            printIfDebug("Purchase failed with error \(error)")
+            completion(.failure(error))
         }
     }
 
