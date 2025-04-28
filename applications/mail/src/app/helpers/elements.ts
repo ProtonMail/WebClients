@@ -214,6 +214,14 @@ export const getRecipients = (element: Element) => {
     return (element as Conversation).Recipients || [];
 };
 
+export const getAddressID = (element: Element) => {
+    if (isMessage(element)) {
+        return (element as Message).AddressID;
+    }
+    // Default to empty string for conversations
+    return '';
+};
+
 export const getFirstSenderAddress = (element: Element) => {
     const senders = getSenders(element);
     const [sender] = senders;
@@ -257,13 +265,12 @@ export const matchEnd = (element: Element, labelID: string, end: number) => {
     return getDate(element, labelID) <= fromUnixTime(end);
 };
 
-export const matchEmailAddress = (element: Element, emailAddress: string) => {
-    return matchFrom(element, emailAddress) || matchTo(element, emailAddress);
+export const matchAddressID = (element: Element, addressID: string) => {
+    return getAddressID(element) === addressID;
 };
 
 export const filterElementsInState = ({
     elements,
-    addresses,
     bypassFilter,
     labelID,
     filter,
@@ -279,7 +286,6 @@ export const filterElementsInState = ({
     search: SearchParameters;
 }) => {
     const bypassFilterSet = new Set(bypassFilter);
-    const address = search.address ? addresses?.find((address) => address.ID === search.address) : undefined;
     return elements.filter((element) => {
         // Check ID and label first (cheapest operations)
 
@@ -314,7 +320,7 @@ export const filterElementsInState = ({
         if (search.to && !matchTo(element, search.to)) {
             return false;
         }
-        if (address && !matchEmailAddress(element, address.Email)) {
+        if (search.address && !matchAddressID(element, search.address)) {
             return false;
         }
 
