@@ -6,7 +6,8 @@ import { selectSubscription } from '@proton/account/subscription';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import useApi from '@proton/components/hooks/useApi';
-import { type OnChargeable, useCurrencies } from '@proton/components/payments/client-extensions';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import { type OnChargeable, useAutomaticCurrency, useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import {
@@ -35,7 +36,6 @@ import type { FreePlanDefault, Plan, PlansMap } from '../../core/plan/interface'
 import { FREE_PLAN } from '../../core/subscription/freePlans';
 import { isSubscriptionUnchanged } from '../../core/subscription/helpers';
 import { type FullPlansMap, type Subscription } from '../../core/subscription/interface';
-import { getPlansMap } from '../../core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 
@@ -172,9 +172,12 @@ export const PaymentsContextProvider = ({
     const hasEssentialData = plans.length > 0 && paymentsStatus !== undefined && subscription !== undefined;
 
     const initialPlanIDs = { [PLANS.MAIL]: 1 };
+
+    const [autoCurrency] = useAutomaticCurrency();
+
     const [planToCheck, setPlanToCheck] = useState<PlanToCheck>({
         cycle: CYCLE.MONTHLY,
-        currency: 'USD',
+        currency: autoCurrency,
         planIDs: initialPlanIDs,
         coupon: undefined,
     });
@@ -184,7 +187,7 @@ export const PaymentsContextProvider = ({
     // todo: implement currency selector
     // const [availableCurrencies, setAvailableCurrencies] = useState<readonly Currency[]>(mainCurrencies);
 
-    const plansMap = getPlansMap(plans, planToCheck.currency, false);
+    const { plansMap } = usePreferredPlansMap(false);
 
     const [checkResult, setCheckResult] = useState<EnrichedCheckResponse>(
         getOptimisticCheckResult({
