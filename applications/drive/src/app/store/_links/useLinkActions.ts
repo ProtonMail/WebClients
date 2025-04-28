@@ -409,7 +409,7 @@ export default function useLinkActions() {
                 abortSignal
             );
 
-            photos.concat(photosData);
+            photos.push(...photosData);
         }
 
         const ContentHash = clone.ContentHash || link.activeRevision?.photo?.contentHash;
