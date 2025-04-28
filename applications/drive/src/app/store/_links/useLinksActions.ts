@@ -378,8 +378,8 @@ export function useLinksActions({
             newParentLinkId: string;
             newShareId: string;
             silence?: boolean;
-        },        
-        action: 'remove_photos_from_album' | 'delete_album' | 'recovery',
+        },
+        action: 'remove_photos_from_album' | 'delete_album' | 'recovery'
     ) => {
         return withLinkLock({
             shareId,
@@ -409,24 +409,22 @@ export function useLinksActions({
                         debouncedRequest<MultipleMoveResponse>(
                             action === 'recovery'
                                 ? {
-                                    ...queryRecoverPhotoLinks(volumeId, {
-                                        NewShareId: newShareId,
-                                        ParentLinkID: newParentLinkId,
-                                        Links,
-                                        NameSignatureEmail: address.Email,
-                                        SignatureEmail: address.Email,
-                                    }),
-                                    silence,
-                                }
+                                      ...queryRecoverPhotoLinks(volumeId, {
+                                          NewShareId: newShareId,
+                                          ParentLinkID: newParentLinkId,
+                                          Links,
+                                          NameSignatureEmail: address.Email,
+                                      }),
+                                      silence,
+                                  }
                                 : {
-                                    ...queryTransferPhotoLinks(volumeId, {
-                                        ParentLinkID: newParentLinkId,
-                                        Links,
-                                        NameSignatureEmail: address.Email,
-                                        SignatureEmail: address.Email,
-                                    }),
-                                    silence,
-                                }
+                                      ...queryTransferPhotoLinks(volumeId, {
+                                          ParentLinkID: newParentLinkId,
+                                          Links,
+                                          NameSignatureEmail: address.Email,
+                                      }),
+                                      silence,
+                                  }
                         ).catch((err) => {
                             if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
                                 throw new ValidationError(err.data.Error);
@@ -486,7 +484,7 @@ export function useLinksActions({
                 newShareId,
                 silence,
             },
-            'recovery',
+            'recovery'
         );
     };
 
@@ -568,18 +566,18 @@ export function useLinksActions({
                             ),
                             link.digests?.sha1
                                 ? generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
-                                    Promise.reject(
-                                        new EnrichedError('Failed to generate content hash during move', {
-                                            tags: {
-                                                shareId,
-                                                newParentLinkId,
-                                                newShareId: newShareId === shareId ? undefined : newShareId,
-                                                linkId,
-                                            },
-                                            extra: { e, errorType: 'decrypton' },
-                                        })
-                                    )
-                                )
+                                      Promise.reject(
+                                          new EnrichedError('Failed to generate content hash during move', {
+                                              tags: {
+                                                  shareId,
+                                                  newParentLinkId,
+                                                  newShareId: newShareId === shareId ? undefined : newShareId,
+                                                  linkId,
+                                              },
+                                              extra: { e, errorType: 'decrypton' },
+                                          })
+                                      )
+                                  )
                                 : undefined,
                             encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch(
                                 (e) =>
@@ -601,7 +599,11 @@ export function useLinksActions({
                     if (link.photoProperties?.albums.length && !link.parentLinkId) {
                         for (const album of link.photoProperties.albums) {
                             try {
-                                const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
+                                const albumPrivateKey = await getLinkPrivateKey(
+                                    abortSignal,
+                                    shareId,
+                                    album.albumLinkId
+                                );
                                 privateKey = albumPrivateKey;
                                 // we can break at first album since it's enough to decrypt / for optimization
                                 break;
