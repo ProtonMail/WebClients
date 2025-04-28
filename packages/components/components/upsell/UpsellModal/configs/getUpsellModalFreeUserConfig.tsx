@@ -17,17 +17,6 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
     // Free users got 1$ promo displayed
     const coupon = COUPON_CODES.TRYMAILPLUS0724;
 
-    const couponMonthlyPrice = isMainCurrency(currency)
-        ? ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE
-        : await getUpsellPlanMonthlyPrice({
-              currency,
-              cycle,
-              paymentsApi,
-              planIDs,
-              plans,
-              coupon,
-          });
-
     const offerMonthlyPrice = await getUpsellPlanMonthlyPrice({
         currency,
         cycle,
@@ -36,6 +25,11 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
         plans,
         coupon,
     });
+
+    // In order to avoid fetching coupon price for 1$ promo we hardcode it
+    // Alternatively: We could compute discounted price by doing `monthly price - discountedPrice`
+    // This way no need to hardcode anything.
+    const couponMonthlyPrice = isMainCurrency(currency) ? ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE : offerMonthlyPrice;
 
     const footerText = (() => {
         const priceLine = (
