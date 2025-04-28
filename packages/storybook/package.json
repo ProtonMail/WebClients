@@ -4,8 +4,14 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "scripts": {
-        "build-storybook": "storybook build",
-        "storybook": "storybook dev -p 6007"
+        "docker:build": "docker build -f Dockerfile -t storybook-atoms ../../",
+        "docker:run": "docker run -it -p 3000:3000 -v .:/clients/packages/storybook --name storybook-atoms storybook-atoms:latest",
+        "playwright:test": "playwright test --config=playwright.config.ts",
+        "storybook:build": "storybook build",
+        "storybook:build:serve": "http-server ./storybook-static --cors --port 3000 --silent",
+        "storybook:build:wait": "wait-on http://localhost:3000",
+        "storybook:dev": "storybook dev -p 6007",
+        "storybook:test:visual": "yarn storybook:build:wait && yarn playwright:test"
     },
     "dependencies": {
         "@proton/atoms": "workspace:^",
@@ -14,11 +20,13 @@
         "@proton/pack": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
+        "http-server": "^14.1.1",
         "iconv-lite": "^0.6.3",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "tinycolor2": "^1.6.0",
-        "ttag": "^1.8.7"
+        "ttag": "^1.8.7",
+        "wait-on": "^8.0.3"
     },
     "devDependencies": {
         "@babel/core": "^7.26.10",
@@ -26,6 +34,7 @@
         "@babel/preset-env": "^7.26.9",
         "@babel/preset-react": "^7.26.3",
         "@babel/preset-typescript": "^7.27.0",
+        "@playwright/test": "^1.52.0",
         "@storybook/addon-essentials": "^8.6.12",
         "@storybook/addon-interactions": "^8.6.12",
         "@storybook/addon-links": "^8.6.12",
