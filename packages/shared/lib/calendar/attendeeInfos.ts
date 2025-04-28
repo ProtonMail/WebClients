@@ -12,6 +12,10 @@ import type { Api } from '../interfaces';
  * @param page - The page number. Default to 1 as page 0 is already fetched with the getEvent call.
  */
 export const fetchPaginatedAttendeesInfo = async (api: Api, Event: CalendarEvent, page = 1) => {
+    if (Event.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.NO) {
+        return;
+    }
+
     const { Attendees, MoreAttendees } = await api<{
         Attendees: CalendarEvent['AttendeesInfo']['Attendees'];
         MoreAttendees: CalendarEvent['AttendeesInfo']['MoreAttendees'];
