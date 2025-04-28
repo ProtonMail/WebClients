@@ -42,7 +42,8 @@ export const SpotlightGradient: FC<Props> = ({
                 className,
                 'pass-spotlight-gradient flex items-center gap-4 p-4 pr-6 rounded relative mt-2',
                 backgroundImage && 'pass-spotlight-gradient--image',
-                withArrow && 'pass-spotlight-gradient--with-arrow'
+                withArrow && 'pass-spotlight-gradient--with-arrow',
+                BUILD_TARGET === 'safari' && 'pass-spotlight-gradient--safari-ext'
             )}
             style={
                 backgroundImage
