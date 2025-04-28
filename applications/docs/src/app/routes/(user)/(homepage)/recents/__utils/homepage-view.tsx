@@ -1,10 +1,6 @@
 import { RecentDocumentsItem } from '@proton/docs-core'
 import { useHistory, useRouteMatch } from 'react-router'
-import {
-  HOMEPAGE_RECENTS_PATH,
-  HOMEPAGE_FAVORITES_PATH,
-  HOMEPAGE_TRASHED_PATH,
-} from '../../../__components/AppContainer'
+import { HOMEPAGE_RECENTS_PATH, HOMEPAGE_FAVORITES_PATH, HOMEPAGE_TRASH_PATH } from '../../../__components/AppContainer'
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
@@ -53,10 +49,10 @@ export type HomepageViewState =
   | { view: 'favorites-loading' }
   | { view: 'favorites-empty' }
   | { view: 'favorites'; itemSections: ItemsSection[] }
-  // Trashed.
-  | { view: 'trashed-empty' }
-  | { view: 'trashed-loading' }
-  | { view: 'trashed'; itemSections: ItemsSection[] }
+  // Trash.
+  | { view: 'trash-empty' }
+  | { view: 'trash-loading' }
+  | { view: 'trash'; itemSections: ItemsSection[] }
 
 // context
 // -------
@@ -81,7 +77,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
 
   const isRecentsRoute = Boolean(useRouteMatch(HOMEPAGE_RECENTS_PATH))
   const isFavoritesRoute = Boolean(useRouteMatch(HOMEPAGE_FAVORITES_PATH))
-  const isTrashedRoute = Boolean(useRouteMatch(HOMEPAGE_TRASHED_PATH))
+  const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
 
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
@@ -99,7 +95,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   const state = useHomepageViewState({
     isRecentsRoute,
     isFavoritesRoute,
-    isTrashedRoute,
+    isTrashRoute,
     search,
     recentsSort,
     recentDocuments,
@@ -137,7 +133,7 @@ export function useHomepageView() {
 type HomepageViewStateOptions = {
   isRecentsRoute: boolean
   isFavoritesRoute: boolean
-  isTrashedRoute: boolean
+  isTrashRoute: boolean
   search: string | undefined
   recentsSort: RecentsSort
   recentDocuments: RecentDocumentsItem[]
@@ -150,7 +146,7 @@ type HomepageViewStateOptions = {
 function useHomepageViewState({
   isRecentsRoute,
   isFavoritesRoute,
-  isTrashedRoute,
+  isTrashRoute,
   search,
   recentsSort,
   recentDocuments,
@@ -190,14 +186,14 @@ function useHomepageViewState({
       // Favorites.
     } else if (isFavoritesRoute) {
       outputState = { view: 'favorites-empty' }
-      // Trashed.
-    } else if (isTrashedRoute) {
+      // Trash.
+    } else if (isTrashRoute) {
       if (isTrashedLoading) {
-        outputState = { view: 'trashed-loading' }
+        outputState = { view: 'trash-loading' }
       } else if (trashedDocuments.length === 0) {
-        outputState = { view: 'trashed-empty' }
+        outputState = { view: 'trash-empty' }
       } else {
-        outputState = { view: 'trashed', itemSections: [] }
+        outputState = { view: 'trash', itemSections: [] }
       }
     }
 
@@ -208,7 +204,7 @@ function useHomepageViewState({
     isRecentsLoading,
     isRecentsRoute,
     isTrashedLoading,
-    isTrashedRoute,
+    isTrashRoute,
     recentDocuments.length,
     recentsSort,
     search,
@@ -234,7 +230,7 @@ function useHomepageViewState({
       }
     } else if (outputState.view === 'search') {
       outputState.itemSections = splitIntoSectionsByName(recentDocuments, { isSearchResults: true })
-    } else if (outputState.view === 'trashed') {
+    } else if (outputState.view === 'trash') {
       outputState.itemSections = splitIntoSectionsByName(trashedDocuments)
     }
     return outputState
@@ -367,7 +363,7 @@ function isTrashedDocument(item: DecryptedLink): item is DecryptedLink & { trash
 /**
  * This is a pile of hacks. It reuses the "trash" view from Drive (drive.proton.me/trash), and since
  * we depend on the shape of "RecentDocumentsItem", we just do a rough conversion so that we can
- * display it in the table for the "Trashed" view, which is temporary anyway.
+ * display it in the table for the "Trash" view, which is temporary anyway.
  *
  * When we unwind this temporary implementation, we should make sure to generalize the "RecentDocuments"
  * concept to cover these use cases in a clean way.

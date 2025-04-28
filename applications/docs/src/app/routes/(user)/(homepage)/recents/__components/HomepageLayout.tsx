@@ -43,8 +43,10 @@ import { useEvent, useIsSheetsEnabled } from '~/utils/misc'
 import clsx from '@proton/utils/clsx'
 import { IS_REFRESH_ENABLED, IS_FAVORITES_ENABLED } from '../__utils/features'
 
+const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
+
 const USER_DROPDOWN_OVERRIDES =
-  '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2]'
+  '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2] [&_.user-initials]:!leading-[1.0714rem]'
 
 // layout
 // ------
@@ -86,7 +88,7 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
   const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
 
   return (
-    <div className="homepage-header shrink-0 items-center justify-center small:pe-8">
+    <div className="homepage-header shrink-0 items-center justify-center small:pe-[.625rem]">
       <PrivateHeader
         className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
         app={APPS.PROTONDRIVE}
@@ -231,7 +233,8 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
         color="norm"
         size="large"
         shape="solid"
-        className="flex items-center justify-center gap-2 !bg-[--docs-blue-color] small:mx-[.375rem]"
+        onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
+        className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
       >
         {c('Action').t`New document`}
       </ButtonLike>
@@ -245,7 +248,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
             color="norm"
             size="large"
             shape="solid"
-            className="flex items-center justify-center gap-2 !bg-[--docs-blue-color] small:mx-[.375rem]"
+            className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
           >
             {c('Action').t`New sheet`}
           </ButtonLike>
@@ -269,7 +272,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
       version={<AppVersion appVersion={appVersion.split('+')[0]} fullVersion={appVersion} />}
     >
       <div className="px-3 pb-3 pt-2 small:hidden">{newDocumentButton}</div>
-      <SidebarNav className="small:px-[.375rem]">
+      <SidebarNav>
         <SidebarList>
           <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink
@@ -327,10 +330,10 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
             </SidebarListItem>
           )}
           <SidebarListItem onClick={() => setExpanded(false)}>
-            <SidebarListItemLink to="/trashed" exact={true} activeClassName="!font-semibold">
+            <SidebarListItemLink to="/trash" exact={true} activeClassName="!font-semibold">
               <span className="flex items-center gap-2">
                 <Icon name="trash" />
-                <span>{c('Info').t`Trashed`}</span>
+                <span>{c('Info').t`Trash`}</span>
               </span>
             </SidebarListItemLink>
           </SidebarListItem>
@@ -376,10 +379,10 @@ function titleByViewState(state: HomepageViewState): string {
     case 'favorites-loading':
     case 'favorites':
       return c('Page title').t`Favorites`
-    case 'trashed-loading':
-    case 'trashed-empty':
-    case 'trashed':
-      return c('Page title').t`Trashed`
+    case 'trash-loading':
+    case 'trash-empty':
+    case 'trash':
+      return c('Page title').t`Trash`
     case 'unknown':
       return ''
   }
