@@ -15,9 +15,9 @@ const incomingDefaultsSlice = createSlice({
     initialState: incomingDefaultsInitialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(actions.load.pending, reducer.loadPending);
-        builder.addCase(actions.load.fulfilled, reducer.loadFulfilled);
-        builder.addCase(actions.load.rejected, reducer.loadRejected);
+        builder.addCase(actions.loadIncomingDefaults.pending, reducer.loadPending);
+        builder.addCase(actions.loadIncomingDefaults.fulfilled, reducer.loadFulfilled);
+        builder.addCase(actions.loadIncomingDefaults.rejected, reducer.loadRejected);
 
         builder.addCase(actions.event, reducer.event);
 
