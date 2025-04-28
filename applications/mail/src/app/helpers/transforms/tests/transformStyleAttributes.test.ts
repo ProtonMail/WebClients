@@ -1,4 +1,8 @@
-import { transformStyleAttributes } from '../transformStyleAttributes';
+import {
+    handleNegativeMarginRemoval,
+    handleTopLeftPropertiesRemoval,
+    transformStyleAttributes,
+} from '../transformStyleAttributes';
 
 describe('transformStyleAttributes', () => {
     const setup = () => {
@@ -7,16 +11,16 @@ describe('transformStyleAttributes', () => {
         return doc;
     };
 
-    describe('Transform `vh` height property', () => {
+    describe('replaceViewportHeightUnit', () => {
         it('Should remove VH from style attributes with height containing vh unit', () => {
             const document = setup();
-            document.write(`
+            document.body.innerHTML = `
                 <div id="a" style="margin: 0; width: 100vh; height: 100vh;">
                     <div id="b" style="margin: 0; width: 100px; height: 100px;">
                         <span id="c" style="margin: 0; width: 100px; height: 100vh;"></span>
                     </div>
                 </div>
-            `);
+            `;
 
             let a = document.getElementById('a');
             let b = document.getElementById('b');
@@ -32,7 +36,7 @@ describe('transformStyleAttributes', () => {
             expect(c?.style.width).toBe('100px');
             expect(c?.style.margin).toBe('0px');
 
-            transformStyleAttributes(document as unknown as Element);
+            transformStyleAttributes(document.body as unknown as Element);
 
             expect(a?.style.height).toBe('auto');
             expect(a?.style.width).toBe('100vh');
@@ -43,6 +47,79 @@ describe('transformStyleAttributes', () => {
             expect(c?.style.height).toBe('auto');
             expect(c?.style.width).toBe('100px');
             expect(c?.style.margin).toBe('0px');
+        });
+    });
+
+    // had to extract the method for testing, because of a crazy issue of JSDOM - see after
+    describe('handleTopLeftPropertiesRemoval', () => {
+        it('Should remove top and left from style attributes', () => {
+            const a = handleTopLeftPropertiesRemoval({ top: '12px', left: '4ex' });
+
+            expect(a.keys()).toContain('top');
+            expect(a.keys()).toContain('left');
+            a.forEach((value) => {
+                expect(value).toBe('unset');
+            });
+        });
+    });
+
+    describe('replaceLeftTopProperties', () => {
+        it('Should remove width/height = 1px if left is present', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="position: relative; left: 0; width: 1px; height: 1px;">
+                </div>
+            `;
+
+            transformStyleAttributes(document.body as unknown as Element);
+
+            let a = document.getElementById('a');
+            expect(a?.style.height).toBe('auto');
+            expect(a?.style.width).toBe('auto');
+        });
+    });
+
+    // had to extract the method, because of a crazy issue
+    // expect(a?.style.left).toBe('unset'); don't work because JSDOM does not support unset: https://github.com/jsdom/jsdom/issues/3833
+    describe('handleNegativeMarginRemoval', () => {
+        it('Should remove negative values for margin from style attributes', () => {
+            const a = handleNegativeMarginRemoval({
+                marginLeft: '-12px',
+                marginRight: '-4ex',
+                marginTop: '-1mm',
+                marginBottom: '-1em',
+                marginInlineStart: '-1pt',
+                marginInlineEnd: '-1pc',
+                marginBlockStart: '-1%',
+                marginBlockEnd: '-1vh',
+            });
+
+            expect(a.keys()).toContain('marginLeft');
+            expect(a.keys()).toContain('marginRight');
+            expect(a.keys()).toContain('marginTop');
+            expect(a.keys()).toContain('marginBottom');
+            expect(a.keys()).toContain('marginInlineStart');
+            expect(a.keys()).toContain('marginInlineEnd');
+            expect(a.keys()).toContain('marginBlockStart');
+            expect(a.keys()).toContain('marginBlockEnd');
+            a.forEach((value) => {
+                expect(value).toBe('unset');
+            });
+
+            const b = handleNegativeMarginRemoval({
+                marginLeft: '1px',
+                marginRight: '1px',
+                marginTop: '1px',
+                marginBottom: '1px',
+                marginInlineStart: '1px',
+                marginInlineEnd: '1px',
+                marginBlockStart: '1px',
+                marginBlockEnd: '1px',
+            });
+
+            b.forEach((value) => {
+                expect(value).toBe('1px');
+            });
         });
     });
 });
