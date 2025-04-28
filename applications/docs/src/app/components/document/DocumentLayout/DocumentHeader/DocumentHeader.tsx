@@ -1,4 +1,4 @@
-import { AppsDropdown, Icon, Logo, useActiveBreakpoint, UserDropdown } from '@proton/components'
+import { AppsDropdown, Icon, Logo, MimeIcon, useActiveBreakpoint, UserDropdown } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 import { DocumentTitleDropdown } from './DocumentTitleDropdown/DocumentTitleDropdown'
 import { DocumentActiveUsers } from './DocumentActiveUsers'
@@ -22,6 +22,8 @@ import type {
 } from '@proton/docs-core'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import useFlag from '@proton/unleash/useFlag'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -138,10 +140,21 @@ function DocsHeaderForDocument({
 }: DocsHeaderForDocumentProps) {
   const { publicContext } = useDocsContext()
   const role = useMemo(() => documentState.getProperty('userRole'), [documentState])
+  const isHomepageEnabled = useFlag('DocsHomepageEnabled')
+
+  const icon = (
+    <MimeIcon
+      name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'}
+      size={5}
+      className="ml-[.4375rem] mr-[.0625rem] shrink-0"
+    />
+  )
 
   return (
     <div className="flex flex-nowrap items-center gap-2 px-3 py-2" data-testid="docs-header">
       <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
+        {isHomepageEnabled ? <a href={getAppHref('/', APPS.PROTONDOCS)}>{icon}</a> : icon}
+
         <DocumentTitleDropdown
           documentType={documentType}
           action={action}

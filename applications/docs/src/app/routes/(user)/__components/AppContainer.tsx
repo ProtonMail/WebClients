@@ -88,22 +88,18 @@ function useApplication({ driveCompat }: ApplicationOptions) {
 // routes
 // ------
 
-function useHomepageFeatureFlag() {
-  return useFlag('DriveDocsLandingPageEnabled')
-}
-
 const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
 
 export const HOMEPAGE_RECENTS_PATH = '/recents'
 export const HOMEPAGE_FAVORITES_PATH = '/favorites'
-export const HOMEPAGE_TRASHED_PATH = '/trashed'
-export const HOMEPAGE_PATHS = [HOMEPAGE_RECENTS_PATH, HOMEPAGE_FAVORITES_PATH, HOMEPAGE_TRASHED_PATH]
+export const HOMEPAGE_TRASH_PATH = '/trash'
+export const HOMEPAGE_PATHS = [HOMEPAGE_RECENTS_PATH, HOMEPAGE_FAVORITES_PATH, HOMEPAGE_TRASH_PATH]
 
 type AppRoutesProps = { driveCompat: DriveCompat }
 
 function AppRoutes({ driveCompat }: AppRoutesProps) {
-  const isHomepageEnabled = useHomepageFeatureFlag()
+  const isHomepageEnabled = useFlag('DocsHomepageEnabled')
 
   const documentPage = (
     <Suspense>

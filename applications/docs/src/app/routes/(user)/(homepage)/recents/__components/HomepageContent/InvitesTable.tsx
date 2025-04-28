@@ -53,8 +53,8 @@ export function InvitesTable(props: InvitesTableProps) {
       className={clsx('shrink-0', props.className)}
     >
       <Table.Table data-testid="invites-table">
-        <Table.Head>
-          <Table.Header data-testid="invite-column-name">
+        <Table.Head className="border-weak border-b">
+          <Table.Header isTitle data-testid="invite-column-name">
             <div className="flex items-center justify-between">
               <span className="flex flex-nowrap items-center gap-[.375rem]">
                 <span className="shrink-0">{c('Info').t`Pending invitations`}</span>
@@ -74,7 +74,7 @@ export function InvitesTable(props: InvitesTableProps) {
             </div>
           </Table.Header>
         </Table.Head>
-        <Table.Body>
+        <Table.Body className="divide-weak divide-y">
           {visibleInvites.map((invite) => {
             if (recentlyAcceptedInvites.includes(invite)) {
               return null
@@ -124,7 +124,7 @@ export function InvitesTable(props: InvitesTableProps) {
                   >
                     <span className="flex flex-nowrap items-center gap-3">
                       <Icon name="brand-proton-docs" size={5} className="shrink-0 text-[#34B8EE]" />
-                      <span className="text-pre text-ellipsis font-medium" data-testid="invite-document-name">
+                      <span className="text-pre text-ellipsis" data-testid="invite-document-name">
                         {invite.decryptedLinkName}
                       </span>
                     </span>
@@ -145,7 +145,7 @@ export function InvitesTable(props: InvitesTableProps) {
                   <span className="flex flex-nowrap items-center gap-2">
                     <Avatar
                       color="weak"
-                      className="min-w-custom max-w-custom max-h-custom bg-[#38BDF8]/10"
+                      className="min-w-custom max-w-custom max-h-custom bg-[--interaction-default-hover]"
                       style={{
                         '--min-w-custom': '28px',
                         '--max-w-custom': '28px',

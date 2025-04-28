@@ -151,7 +151,7 @@ function OuterContainer({ store, showDrawerSidebar, initialUser, children }: Out
                     {/* TODO: fix typo globally */}
                     <DrawerProvider defaultShowDrawerSidear={showDrawerSidebar}>
                       <ErrorBoundary big component={<StandardErrorPage big />}>
-                        {/* TODO: remove this once the temporary "Trashed" homepage view implementation is cleaned up */}
+                        {/* TODO: remove this once the temporary "Trash" homepage view implementation is cleaned up */}
                         <UserSettingsProvider
                           initialUser={initialUser}
                           initialDriveUserSettings={{

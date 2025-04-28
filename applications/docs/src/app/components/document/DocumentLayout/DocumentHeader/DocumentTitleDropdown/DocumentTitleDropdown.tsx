@@ -11,7 +11,6 @@ import {
   DropdownMenuButton,
   DropdownSizeUnit,
   Icon,
-  MimeIcon,
   SimpleDropdown,
   Toggle,
   useAppTitle,
@@ -235,8 +234,7 @@ export function DocumentTitleDropdown({
 
   if (isRenaming) {
     return (
-      <div className="flex items-center px-1.5">
-        <MimeIcon name="proton-doc" size={5} className="mr-0.5" />
+      <div className="flex items-center px-1.5 pl-1">
         <AutoGrowingInput
           inputClassName="px-1 py-1.5"
           ref={focusInputOnMount}
@@ -271,7 +269,6 @@ export function DocumentTitleDropdown({
         className="w-fit whitespace-nowrap px-1.5 py-1.5"
         data-testid="document-name-dropdown"
       >
-        <MimeIcon name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'} size={5} className="mr-2 shrink-0" />
         <span className="text-ellipsis text-left head-480-749:!max-w-[215px]">{title}</span>
       </DropdownButton>
       <Dropdown
