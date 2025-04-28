@@ -132,12 +132,17 @@ export const AlbumsView: FC = () => {
             }
             try {
                 if (missingPhotosIds?.length && !force) {
-                    await transferPhotoLinks(abortSignal, volumeId, {
-                        shareId: album.rootShareId,
-                        linkIds: missingPhotosIds,
-                        newShareId: shareId,
-                        newParentLinkId: linkId,
-                    });
+                    await transferPhotoLinks(
+                        abortSignal,
+                        volumeId,
+                        {
+                            shareId: album.rootShareId,
+                            linkIds: missingPhotosIds,
+                            newShareId: shareId,
+                            newParentLinkId: linkId,
+                        },
+                        'delete_album'
+                    );
                 }
                 await deleteAlbum(abortSignal, album.linkId, force);
                 const albumName = album.name;

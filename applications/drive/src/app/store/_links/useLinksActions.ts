@@ -1,6 +1,8 @@
 import { usePreventLeave } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
+import metrics from '@proton/metrics';
+import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from '@proton/metrics/types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import {
     queryDeleteChildrenLinks,
     queryDeleteTrashedLinks,
@@ -15,6 +17,7 @@ import {
     queryTransferPhotoLinks,
     queryVolumeEmptyTrash,
 } from '@proton/shared/lib/api/drive/volume';
+import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -26,6 +29,7 @@ import groupWith from '@proton/utils/groupWith';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { is4xx, is5xx } from '../../utils/errorHandling/apiErrors';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
 import { ShareType, useDefaultShare, useShare } from '../_shares';
@@ -374,71 +378,83 @@ export function useLinksActions({
             newParentLinkId: string;
             newShareId: string;
             silence?: boolean;
-        },
-        recovery?: boolean
+        },        
+        action: 'remove_photos_from_album' | 'delete_album' | 'recovery',
     ) => {
         return withLinkLock({
             shareId,
             linkIds,
             callback: async () => {
-                const originalParentIds: { [linkId: string]: string } = {};
-                const { address } = await getShareCreatorKeys(abortSignal, newShareId);
-                const Links: MovePhotoLink[] = [];
-                for (const linkId of linkIds) {
-                    const { data, link } = await preventLeave(
-                        getMoveLinkData(abortSignal, {
-                            shareId,
-                            newParentLinkId,
-                            linkId,
-                            newShareId,
-                            silence,
+                try {
+                    const originalParentIds: { [linkId: string]: string } = {};
+                    const { address } = await getShareCreatorKeys(abortSignal, newShareId);
+                    const Links: MovePhotoLink[] = [];
+                    for (const linkId of linkIds) {
+                        const { data, link } = await preventLeave(
+                            getMoveLinkData(abortSignal, {
+                                shareId,
+                                newParentLinkId,
+                                linkId,
+                                newShareId,
+                                silence,
+                            })
+                        );
+
+                        originalParentIds[linkId] = link.parentLinkId;
+                        Links.push({ ...data, OriginalHash: link.hash, LinkID: link.linkId });
+                    }
+                    const successes: string[] = [];
+                    const failures: { [linkId: string]: any } = {};
+                    const { Responses } = await preventLeave(
+                        debouncedRequest<MultipleMoveResponse>(
+                            action === 'recovery'
+                                ? {
+                                    ...queryRecoverPhotoLinks(volumeId, {
+                                        NewShareId: newShareId,
+                                        ParentLinkID: newParentLinkId,
+                                        Links,
+                                        NameSignatureEmail: address.Email,
+                                        SignatureEmail: address.Email,
+                                    }),
+                                    silence,
+                                }
+                                : {
+                                    ...queryTransferPhotoLinks(volumeId, {
+                                        ParentLinkID: newParentLinkId,
+                                        Links,
+                                        NameSignatureEmail: address.Email,
+                                        SignatureEmail: address.Email,
+                                    }),
+                                    silence,
+                                }
+                        ).catch((err) => {
+                            if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
+                                throw new ValidationError(err.data.Error);
+                            }
+                            throw err;
                         })
                     );
 
-                    originalParentIds[linkId] = link.parentLinkId;
-                    Links.push({ ...data, OriginalHash: link.hash, LinkID: link.linkId });
-                }
-                const successes: string[] = [];
-                const failures: { [linkId: string]: any } = {};
-                const { Responses } = await preventLeave(
-                    debouncedRequest<MultipleMoveResponse>(
-                        recovery
-                            ? {
-                                  ...queryRecoverPhotoLinks(volumeId, {
-                                      NewShareId: newShareId,
-                                      ParentLinkID: newParentLinkId,
-                                      Links,
-                                      NameSignatureEmail: address.Email,
-                                      SignatureEmail: address.Email,
-                                  }),
-                                  silence,
-                              }
-                            : {
-                                  ...queryTransferPhotoLinks(volumeId, {
-                                      ParentLinkID: newParentLinkId,
-                                      Links,
-                                      NameSignatureEmail: address.Email,
-                                      SignatureEmail: address.Email,
-                                  }),
-                                  silence,
-                              }
-                    ).catch((err) => {
-                        if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
-                            throw new ValidationError(err.data.Error);
+                    for (const response of Responses) {
+                        if (response.Response.Code === 1000) {
+                            successes.push(response.LinkID);
+                        } else {
+                            failures[response.LinkID] = response.Response.Error;
                         }
-                        throw err;
-                    })
-                );
-
-                for (const response of Responses) {
-                    if (response.Response.Code === 1000) {
-                        successes.push(response.LinkID);
-                    } else {
-                        failures[response.LinkID] = response.Response.Error;
                     }
-                }
 
-                return { successes, failures, originalParentIds };
+                    if (action !== 'recovery') {
+                        const error = Object.keys(failures).length ? failures : undefined;
+                        logPhotoTransfersMetric(action, linkIds.length, error);
+                    }
+
+                    return { successes, failures, originalParentIds };
+                } catch (error: any) {
+                    if (action !== 'recovery') {
+                        logPhotoTransfersMetric(action, linkIds.length, error);
+                    }
+                    throw error;
+                }
             },
         });
     };
@@ -470,7 +486,7 @@ export function useLinksActions({
                 newShareId,
                 silence,
             },
-            true
+            'recovery',
         );
     };
 
@@ -494,242 +510,253 @@ export function useLinksActions({
             silence?: boolean;
         }
     ): Promise<{ LinkID: string; shouldNotififyCopy: boolean }> => {
-        const [
-            link,
-            { passphrase, passphraseSessionKey },
-            newParentPrivateKey,
-            newParentHashKey,
-            { privateKey: addressKey, address },
-            newShare,
-            oldShare,
-        ] = await Promise.all([
-            getLink(abortSignal, shareId, linkId),
-            getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
-            getLinkPrivateKey(abortSignal, newShareId, newParentLinkId),
-            getLinkHashKey(abortSignal, newShareId, newParentLinkId),
-            getShareCreatorKeys(abortSignal, newShareId),
-            getShare(abortSignal, newShareId),
-            getShare(abortSignal, shareId),
-        ]);
+        let numberOfPhotos = 0;
 
-        if (link.corruptedLink) {
-            throw new Error('Cannot move corrupted file');
-        }
+        try {
+            const [
+                link,
+                { passphrase, passphraseSessionKey },
+                newParentPrivateKey,
+                newParentHashKey,
+                { privateKey: addressKey, address },
+                newShare,
+                oldShare,
+            ] = await Promise.all([
+                getLink(abortSignal, shareId, linkId),
+                getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
+                getLinkPrivateKey(abortSignal, newShareId, newParentLinkId),
+                getLinkHashKey(abortSignal, newShareId, newParentLinkId),
+                getShareCreatorKeys(abortSignal, newShareId),
+                getShare(abortSignal, newShareId),
+                getShare(abortSignal, shareId),
+            ]);
 
-        const isPhotosShare = newShare.type === ShareType.photos;
+            if (link.corruptedLink) {
+                throw new Error('Cannot move corrupted file');
+            }
 
-        if (!isPhotosShare) {
-            throw new Error('You can only favorite photos');
-        }
-        // PhotoData in body is included in the case the photo needs to be copied to the photo gallery
-        const includePhotoData = link.parentLinkId !== newShare.rootLinkId;
+            const isPhotosShare = newShare.type === ShareType.photos;
 
-        let body: FavoriteData = {};
-        if (includePhotoData) {
-            const getLinkMovedParameters = async (link: DecryptedLink) => {
-                const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
-                    await Promise.all([
-                        link.parentLinkId
-                            ? getLinkPrivateKey(abortSignal, shareId, link.parentLinkId)
-                            : getSharePrivateKey(abortSignal, shareId),
-                        generateLookupHash(link.name, newParentHashKey).catch((e) =>
-                            Promise.reject(
-                                new EnrichedError('Failed to generate lookup hash during move', {
-                                    tags: {
-                                        shareId,
-                                        newParentLinkId,
-                                        newShareId: newShareId === shareId ? undefined : newShareId,
-                                        linkId,
-                                    },
-                                    extra: { e },
-                                })
-                            )
-                        ),
-                        link.digests?.sha1
-                            ? generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
-                                  Promise.reject(
-                                      new EnrichedError('Failed to generate content hash during move', {
-                                          tags: {
-                                              shareId,
-                                              newParentLinkId,
-                                              newShareId: newShareId === shareId ? undefined : newShareId,
-                                              linkId,
-                                          },
-                                          extra: { e },
-                                      })
-                                  )
-                              )
-                            : undefined,
-                        encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch(
-                            (e) =>
+            if (!isPhotosShare) {
+                throw new Error('You can only favorite photos');
+            }
+            // PhotoData in body is included in the case the photo needs to be copied to the photo gallery
+            const includePhotoData = link.parentLinkId !== newShare.rootLinkId;
+
+            let body: FavoriteData = {};
+            if (includePhotoData) {
+                numberOfPhotos = (link.activeRevision?.photo?.relatedPhotosLinkIds?.length || 0) + 1;
+
+                const getLinkMovedParameters = async (link: DecryptedLink) => {
+                    const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
+                        await Promise.all([
+                            link.parentLinkId
+                                ? getLinkPrivateKey(abortSignal, shareId, link.parentLinkId)
+                                : getSharePrivateKey(abortSignal, shareId),
+                            generateLookupHash(link.name, newParentHashKey).catch((e) =>
                                 Promise.reject(
-                                    new EnrichedError('Failed to encrypt link passphrase during move', {
+                                    new EnrichedError('Failed to generate lookup hash during move', {
                                         tags: {
                                             shareId,
                                             newParentLinkId,
                                             newShareId: newShareId === shareId ? undefined : newShareId,
                                             linkId,
                                         },
-                                        extra: { e },
+                                        extra: { e, errorType: 'decrypton' },
                                     })
                                 )
-                        ),
-                    ]);
+                            ),
+                            link.digests?.sha1
+                                ? generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+                                    Promise.reject(
+                                        new EnrichedError('Failed to generate content hash during move', {
+                                            tags: {
+                                                shareId,
+                                                newParentLinkId,
+                                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                                linkId,
+                                            },
+                                            extra: { e, errorType: 'decrypton' },
+                                        })
+                                    )
+                                )
+                                : undefined,
+                            encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch(
+                                (e) =>
+                                    Promise.reject(
+                                        new EnrichedError('Failed to encrypt link passphrase during move', {
+                                            tags: {
+                                                shareId,
+                                                newParentLinkId,
+                                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                                linkId,
+                                            },
+                                            extra: { e, errorType: 'encryption' },
+                                        })
+                                    )
+                            ),
+                        ]);
 
-                let privateKey: PrivateKeyReference = currentParentPrivateKey;
-                if (link.photoProperties?.albums.length && !link.parentLinkId) {
-                    for (const album of link.photoProperties.albums) {
-                        try {
-                            const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
-                            privateKey = albumPrivateKey;
-                            // we can break at first album since it's enough to decrypt / for optimization
-                            break;
-                        } catch (e) {
-                            // ignore failures but still report them to Sentry
-                            sendErrorReport(e, {
-                                extra: {
-                                    message: 'getLinkMovedParameters() - Failed to get albumPrivateKey',
-                                },
-                            });
+                    let privateKey: PrivateKeyReference = currentParentPrivateKey;
+                    if (link.photoProperties?.albums.length && !link.parentLinkId) {
+                        for (const album of link.photoProperties.albums) {
+                            try {
+                                const albumPrivateKey = await getLinkPrivateKey(abortSignal, shareId, album.albumLinkId);
+                                privateKey = albumPrivateKey;
+                                // we can break at first album since it's enough to decrypt / for optimization
+                                break;
+                            } catch (e) {
+                                // ignore failures but still report them to Sentry
+                                sendErrorReport(e, {
+                                    extra: {
+                                        message: 'getLinkMovedParameters() - Failed to get albumPrivateKey',
+                                    },
+                                });
+                            }
                         }
                     }
+
+                    const sessionKeyName = await getDecryptedSessionKey({
+                        data: link.encryptedName,
+                        privateKeys: privateKey,
+                    }).catch((e) =>
+                        Promise.reject(
+                            new EnrichedError('Failed to decrypt link name session key during move', {
+                                tags: {
+                                    shareId,
+                                    newParentLinkId,
+                                    newShareId: newShareId === shareId ? undefined : newShareId,
+                                    linkId,
+                                },
+                                extra: { e, errorType: 'decrypton' },
+                            })
+                        )
+                    );
+
+                    const { message: encryptedName } = await CryptoProxy.encryptMessage({
+                        textData: link.name,
+                        stripTrailingSpaces: true,
+                        sessionKey: sessionKeyName,
+                        encryptionKeys: newParentPrivateKey,
+                        signingKeys: addressKey,
+                    }).catch((e) =>
+                        Promise.reject(
+                            new EnrichedError('Failed to encrypt link name during move', {
+                                tags: {
+                                    shareId,
+                                    newParentLinkId,
+                                    newShareId: newShareId === shareId ? undefined : newShareId,
+                                    linkId,
+                                },
+                                extra: { e, errorType: 'encryption' },
+                            })
+                        )
+                    );
+
+                    return {
+                        Name: encryptedName,
+                        Hash,
+                        ContentHash: ContentHash || link.activeRevision?.photo?.contentHash, // we fallback to current ContentHash if available
+                        NameSignatureEmail: address.Email,
+                        NodePassphrase,
+                        ...(!!link.nameSignatureEmail &&
+                            !link.signatureEmail && {
+                                NodePassphraseSignature,
+                                SignatureEmail: address.Email,
+                            }),
+                        ...(!link.nameSignatureEmail &&
+                            !link.signatureEmail && {
+                                NodePassphraseSignature,
+                                SignatureEmail: address.Email,
+                                NameSignatureEmail: address.Email,
+                            }),
+                    };
+                };
+
+                const data = await getLinkMovedParameters(link);
+                // TODO [DRVWEB-4651]:
+                /*
+                    New content hash is computed from sha1 located in extended attributes. This digest is set by clients and cannot be trusted. It can be wrong, set by malicious user, or missing entirely.
+                    The only truly safe method would be to download the whole content and compute sha1 again [DRVWEB-4651]. That is not great UX and we decided to ignore this fact as the only consequence is that:
+                        * user will be able to upload the same photo again (de-duplication protection will not work),
+                        * or some other photo matching malicious hash will be rejected as duplicate (de-duplication will reject).
+
+                */
+                if (!data.ContentHash) {
+                    throw new Error('ContentHash could not be computed');
                 }
 
-                const sessionKeyName = await getDecryptedSessionKey({
-                    data: link.encryptedName,
-                    privateKeys: privateKey,
-                }).catch((e) =>
-                    Promise.reject(
-                        new EnrichedError('Failed to decrypt link name session key during move', {
-                            tags: {
-                                shareId,
-                                newParentLinkId,
-                                newShareId: newShareId === shareId ? undefined : newShareId,
-                                linkId,
-                            },
-                            extra: { e },
-                        })
-                    )
-                );
+                let RelatedPhotosData: RelatedPhotos[] = [];
 
-                const { message: encryptedName } = await CryptoProxy.encryptMessage({
-                    textData: link.name,
-                    stripTrailingSpaces: true,
-                    sessionKey: sessionKeyName,
-                    encryptionKeys: newParentPrivateKey,
-                    signingKeys: addressKey,
-                }).catch((e) =>
-                    Promise.reject(
-                        new EnrichedError('Failed to encrypt link name during move', {
-                            tags: {
-                                shareId,
-                                newParentLinkId,
-                                newShareId: newShareId === shareId ? undefined : newShareId,
-                                linkId,
-                            },
-                            extra: { e },
-                        })
-                    )
-                );
+                if (link.activeRevision?.photo?.relatedPhotosLinkIds) {
+                    const processRelatedPhotos = async (
+                        link: DecryptedLink,
+                        abortSignal: AbortSignal,
+                        shareId: string
+                    ): Promise<RelatedPhotos[]> => {
+                        const relatedIds = link.activeRevision?.photo?.relatedPhotosLinkIds;
 
-                return {
-                    Name: encryptedName,
-                    Hash,
-                    ContentHash: ContentHash || link.activeRevision?.photo?.contentHash, // we fallback to current ContentHash if available
-                    NameSignatureEmail: address.Email,
-                    NodePassphrase,
-                    ...(!!link.nameSignatureEmail &&
-                        !link.signatureEmail && {
-                            NodePassphraseSignature,
-                            SignatureEmail: address.Email,
-                        }),
-                    ...(!link.nameSignatureEmail &&
-                        !link.signatureEmail && {
-                            NodePassphraseSignature,
-                            SignatureEmail: address.Email,
-                            NameSignatureEmail: address.Email,
-                        }),
+                        if (!relatedIds) {
+                            return [];
+                        }
+
+                        return batchPromiseHelper(
+                            relatedIds,
+                            async (id: string) => {
+                                const link = await getLink(abortSignal, shareId, id);
+                                const data = await getLinkMovedParameters(link);
+
+                                if (!data.ContentHash) {
+                                    throw new Error('ContentHash could not be computed');
+                                }
+
+                                return {
+                                    ...data,
+                                    LinkID: id,
+                                    ContentHash: data.ContentHash,
+                                };
+                            },
+                            10,
+                            abortSignal
+                        );
+                    };
+
+                    RelatedPhotosData = await processRelatedPhotos(link, abortSignal, shareId);
+                }
+
+                body = {
+                    PhotoData: {
+                        ...data,
+                        RelatedPhotos: RelatedPhotosData,
+                    },
                 };
-            };
-
-            const data = await getLinkMovedParameters(link);
-            // TODO [DRVWEB-4651]:
-            /*
-                New content hash is computed from sha1 located in extended attributes. This digest is set by clients and cannot be trusted. It can be wrong, set by malicious user, or missing entirely.
-                The only truly safe method would be to download the whole content and compute sha1 again [DRVWEB-4651]. That is not great UX and we decided to ignore this fact as the only consequence is that:
-                    * user will be able to upload the same photo again (de-duplication protection will not work),
-                    * or some other photo matching malicious hash will be rejected as duplicate (de-duplication will reject).
-
-            */
-            if (!data.ContentHash) {
-                throw new Error('ContentHash could not be computed');
             }
 
-            let RelatedPhotosData: RelatedPhotos[] = [];
+            const { LinkID, Code } = await debouncedRequest<{
+                LinkID: string;
+                Code: number;
+            }>({
+                ...queryAddPhotoToFavorite(oldShare.volumeId, linkId, body),
+                silence,
+            }).catch((err) => {
+                if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
+                    throw new ValidationError(err.data.Error);
+                }
+                throw err;
+            });
 
-            if (link.activeRevision?.photo?.relatedPhotosLinkIds) {
-                const processRelatedPhotos = async (
-                    link: DecryptedLink,
-                    abortSignal: AbortSignal,
-                    shareId: string
-                ): Promise<RelatedPhotos[]> => {
-                    const relatedIds = link.activeRevision?.photo?.relatedPhotosLinkIds;
+            logPhotoTransfersMetric('favorite_photos', numberOfPhotos);
 
-                    if (!relatedIds) {
-                        return [];
-                    }
-
-                    return batchPromiseHelper(
-                        relatedIds,
-                        async (id: string) => {
-                            const link = await getLink(abortSignal, shareId, id);
-                            const data = await getLinkMovedParameters(link);
-
-                            if (!data.ContentHash) {
-                                throw new Error('ContentHash could not be computed');
-                            }
-
-                            return {
-                                ...data,
-                                LinkID: id,
-                                ContentHash: data.ContentHash,
-                            };
-                        },
-                        10,
-                        abortSignal
-                    );
-                };
-
-                RelatedPhotosData = await processRelatedPhotos(link, abortSignal, shareId);
-            }
-
-            body = {
-                PhotoData: {
-                    ...data,
-                    RelatedPhotos: RelatedPhotosData,
-                },
+            return {
+                LinkID,
+                // This is special case that produce a copy to photo stream
+                // We don't show the heart filled but we show a notification with the success and explaining the situation
+                shouldNotififyCopy: Boolean(Code === 1000 && body.PhotoData),
             };
+        } catch (error) {
+            logPhotoTransfersMetric('favorite_photos', numberOfPhotos, error);
+            throw error;
         }
-
-        const { LinkID, Code } = await debouncedRequest<{
-            LinkID: string;
-            Code: number;
-        }>({
-            ...queryAddPhotoToFavorite(oldShare.volumeId, linkId, body),
-            silence,
-        }).catch((err) => {
-            if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
-                throw new ValidationError(err.data.Error);
-            }
-            throw err;
-        });
-
-        return {
-            LinkID,
-            // This is special case that produce a copy to photo stream
-            // We don't show the heart filled but we show a notification with the success and explaining the situation
-            shouldNotififyCopy: Boolean(Code === 1000 && body.PhotoData),
-        };
     };
 
     const batchHelperMultipleVolumes = async (
@@ -905,4 +932,42 @@ function accumulateResults<T>(results: Result<T>[]): Result<T> {
             failures: {},
         }
     );
+}
+
+function logPhotoTransfersMetric(
+    action: HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson['Labels']['action'],
+    numberOfPhotos: number,
+    error?: any
+) {
+    if (numberOfPhotos === 0 || getIsOfflineError(error) || error?.statusCode === 429) {
+        return;
+    }
+
+    let status = error
+        ? 'unknown'
+        : ('success' as HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson['Labels']['status']);
+
+    if (error instanceof EnrichedError) {
+        if (error.context?.extra?.errorType === 'decrypton') {
+            status = 'decryption_error';
+        }
+        if (error.context?.extra?.errorType === 'encryption') {
+            status = 'encryption_error';
+        }
+    }
+    if (error?.statusCode) {
+        if (is4xx(error)) {
+            status = '4xx';
+        } else if (is5xx(error)) {
+            status = '5xx';
+        }
+    }
+
+    metrics.drive_photos_transfer_to_photo_stream_histogram.observe({
+        Value: numberOfPhotos,
+        Labels: {
+            status,
+            action,
+        },
+    });
 }
