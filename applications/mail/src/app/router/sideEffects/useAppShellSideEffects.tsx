@@ -4,7 +4,6 @@ import { useContactsListener } from 'proton-mail/hooks/contact/useContactsListen
 import { useConversationsEvent } from 'proton-mail/hooks/events/useConversationsEvents';
 import { useMessagesEvents } from 'proton-mail/hooks/events/useMessagesEvents';
 import useIncomingDefaultsEvents from 'proton-mail/hooks/incomingDefaults/useIncomingDefaultsEvents';
-import useIncomingDefaultsLoad from 'proton-mail/hooks/incomingDefaults/useIncomingDefaultsLoad';
 import { usePageHotkeys } from 'proton-mail/hooks/mailbox/usePageHotkeys';
 import useComposerEvent from 'proton-mail/hooks/useComposerEvent';
 import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
@@ -32,7 +31,6 @@ export const useAppShellSideEffects = ({ openShortcutsModal }: Props) => {
      * - cache loading
      * - events subscription
      */
-    useIncomingDefaultsLoad();
     useIncomingDefaultsEvents();
 
     useComposerEvent();

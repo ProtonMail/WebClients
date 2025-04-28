@@ -16,7 +16,7 @@ import {
     render,
     waitForNotification,
 } from '../../../../helpers/test/helper';
-import { load } from '../../../../store/incomingDefaults/incomingDefaultsActions';
+import { loadIncomingDefaults } from '../../../../store/incomingDefaults/incomingDefaultsActions';
 import type { MessageState } from '../../../../store/messages/messagesTypes';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
@@ -102,7 +102,7 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
 
     // Load manually incoming defaults
     await act(async () => {
-        await view.store.dispatch(load());
+        await view.store.dispatch(loadIncomingDefaults());
     });
 
     const dropdown = await openDropdown(sender);
