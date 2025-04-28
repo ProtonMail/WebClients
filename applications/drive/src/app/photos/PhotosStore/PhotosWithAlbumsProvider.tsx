@@ -128,7 +128,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const volumeId = photosShare?.volumeId;
 
     const { getDefaultPhotosShare } = useDefaultShare();
-    const { getPhotoCloneForAlbum } = useLinkActions();
+    const { getPhotoCloneForAlbum, copyLinksToVolume } = useLinkActions();
     const { favoritePhotoLink } = useLinksActions();
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const request = useDebouncedRequest();
@@ -519,7 +519,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     };
 
     const getPayloadDataAndPreloadPhotoLinks = useCallback(
-        async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, linkIDs: string[]) => {
+        async (
+            abortSignal: AbortSignal,
+            albumShareId: string,
+            albumLinkId: string,
+            shareId: string,
+            linkIDs: string[]
+        ) => {
             const linksInfoForAlbum = new Map<
                 string,
                 {
@@ -578,13 +584,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 });
             };
             const processPhotoLink = async (linkId: string) => {
-                const link = await getLink(abortSignal, albumShareId, linkId);
+                const link = await getLink(abortSignal, shareId, linkId);
                 await addPhotoToInfoMap(link);
-
                 if (link.activeRevision?.photo?.relatedPhotosLinkIds?.length) {
                     const relatedPhotosQueue = link.activeRevision.photo.relatedPhotosLinkIds.map(
                         (relatedPhotoLinkId) => async () => {
-                            const relatedPhotoLink = await getLink(abortSignal, albumShareId, relatedPhotoLinkId);
+                            const relatedPhotoLink = await getLink(abortSignal, shareId, relatedPhotoLinkId);
                             await addPhotoToInfoMap(relatedPhotoLink, link.linkId);
                         }
                     );
@@ -612,7 +617,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             albumLinkId: string,
             linksInfoForAlbum: Map<string, any>
         ) => {
-            return batchAPIHelper(abortSignal, {
+            const result = await batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
@@ -626,6 +631,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     });
                 },
             });
+
+            return {
+                successes: result.successes,
+                failures: result.failures,
+            };
         },
         [batchAPIHelper]
     );
@@ -685,10 +695,9 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [getLink]
     );
 
-    const handleAddAlbumPhotos = useCallback(
+    const addAlbumPhotos = useCallback(
         async (
             abortSignal: AbortSignal,
-
             albumShareId: string,
             albumLinkId: string,
             linkIds: string[],
@@ -698,20 +707,50 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 throw new Error('Photo volume or share not found');
             }
 
-            const { name: albumName } = await getLink(abortSignal, albumShareId, albumLinkId);
+            const link = await getLink(abortSignal, albumShareId, albumLinkId);
+            const { name: albumName } = link;
 
+            // If we add into own album, we use add-multiple
+            const shouldAdd = link.volumeId === volumeId;
+            // If we add into shared album we must use copy
+            const shouldCopy = !shouldAdd;
+
+            const allNewAlbumPhotos: AlbumPhoto[] = [];
             const linksInfoForAlbum = await getPayloadDataAndPreloadPhotoLinks(
                 abortSignal,
                 albumShareId,
                 albumLinkId,
+                shareId,
                 linkIds
             );
 
-            const result = await addPhotosToAlbumInBatches(abortSignal, volumeId, albumLinkId, linksInfoForAlbum);
+            if (!linksInfoForAlbum) {
+                throw new Error('Photo share not found');
+            }
 
-            const allNewAlbumPhotos = result.successes
-                .map((linkId) => linksInfoForAlbum.get(linkId)?.albumPhoto)
-                .filter(isTruthy);
+            let result: { successes: string[]; failures: { [linkId: string]: string | undefined } } = {
+                successes: [],
+                failures: {},
+            };
+
+            if (shouldCopy) {
+                result = await copyLinksToVolume(
+                    abortSignal,
+                    shareId,
+                    linkIds,
+                    link.volumeId,
+                    albumShareId,
+                    albumLinkId
+                );
+            } else {
+                // TODO: Move this an action too, like copyLinksToVolume
+                // This action add photos from same volume to an album using add-multiple endpoint
+                result = await addPhotosToAlbumInBatches(abortSignal, link.volumeId, albumLinkId, linksInfoForAlbum);
+            }
+
+            allNewAlbumPhotos.push(
+                ...result.successes.map((linkId) => linksInfoForAlbum.get(linkId)?.albumPhoto).filter(isTruthy)
+            );
 
             setAlbums((currentAlbums) => {
                 const newAlbums = new Map(currentAlbums);
@@ -725,7 +764,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             // In case of directUpload we can skip loadAlbumsPhotos as photos will already be decrypted.
             // We just need to add them to the list
-            //
             // For other cases, it's safer to loadAlbumPhotos (request to API) to prevent new photos loading issues
             if (fromUpload) {
                 setAlbumPhotos((currentAlbumPhotos) => [...currentAlbumPhotos, ...allNewAlbumPhotos]);
@@ -1026,7 +1064,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 photos,
                 albums,
                 albumPhotos,
-                addAlbumPhotos: handleAddAlbumPhotos,
+                addAlbumPhotos,
                 addPhotoAsCover,
                 loadAlbumPhotos,
                 loadAlbums,

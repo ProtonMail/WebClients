@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { usePreventLeave } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
@@ -440,9 +442,49 @@ export default function useLinkActions() {
         if (Code !== 1000) {
             throw new Error('Saving photo failed');
         }
-        // For debug purposes
-        // const newLink = await getLink(abortSignal, shareId, LinkID)
         return LinkID;
+    };
+
+    const copyLinksToVolume = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkIds: string[],
+        targetVolumeId: string,
+        targetParentShareId: string,
+        targetParentLinkId: string
+    ) => {
+        const failures: { [linkId: string]: string | undefined } = {};
+        const successes: string[] = [];
+
+        await batchPromiseHelper(linkIds, async (linkId: string) => {
+            try {
+                const result = await copyLinkToVolume(
+                    abortSignal,
+                    shareId,
+                    linkId,
+                    targetVolumeId,
+                    targetParentShareId,
+                    targetParentLinkId
+                );
+
+                if (result) {
+                    successes.push(result);
+                }
+            } catch (error) {
+                sendErrorReport(error, {
+                    extra: {
+                        message: 'copyLinksToVolume() - Failed to copy a link',
+                    },
+                });
+                failures[linkId] = error instanceof Error ? error.message : c('Error').t`Failed to copy photo to album`;
+                return undefined;
+            }
+        });
+
+        return {
+            successes,
+            failures,
+        };
     };
 
     return {
@@ -450,5 +492,6 @@ export default function useLinkActions() {
         renameLink,
         getPhotoCloneForAlbum,
         copyLinkToVolume,
+        copyLinksToVolume,
     };
 }
