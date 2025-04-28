@@ -11,6 +11,33 @@ import notificationIcon from '../../../assets/notification.png';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { setParamsInLocation } from '../../../helpers/mailboxUrl';
 
+export const prepareNotificationData = ({
+    message,
+    history,
+    mailSettings,
+    notifier,
+}: {
+    message: Message;
+    history: History<unknown>;
+    mailSettings: any;
+    notifier: any;
+}) => {
+    const { Subject, Sender, ID, ConversationID, LabelIDs } = message;
+    const sender = Sender.Name || Sender.Address;
+    const title = c('Desktop notification title').t`New email received`;
+    const body = c('Desktop notification body').t`From: ${sender} - ${Subject}`;
+    const labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
+
+    // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
+    const cleanHistoryLocation = { ...history.location, hash: '' };
+    const conversationMode = isConversationMode(labelID, mailSettings, cleanHistoryLocation);
+    const elementID = conversationMode ? ConversationID : ID;
+    const messageID = conversationMode ? ID : undefined;
+    const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID, messageID });
+
+    return { title, body, location, ID, labelID, elementID, messageID };
+};
+
 export const displayNotification = ({
     message,
     history,
@@ -24,19 +51,17 @@ export const displayNotification = ({
     notifier: any;
     onOpenElement: () => void;
 }) => {
-    const { Subject, Sender, ID, ConversationID, LabelIDs } = message;
-    const sender = Sender.Name || Sender.Address;
-    const title = c('Desktop notification title').t`New email received`;
-    const body = c('Desktop notification body').t`From: ${sender} - ${Subject}`;
-    const labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
+    const notificationData = prepareNotificationData({
+        message,
+        history,
+        mailSettings,
+        notifier,
+    });
 
-    // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
-    const cleanHistoryLocation = { ...history.location, hash: '' };
-    const elementID = isConversationMode(labelID, mailSettings, cleanHistoryLocation) ? ConversationID : ID;
-    const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID });
+    const { title, body, location, ID } = notificationData;
 
     if (isElectronMail) {
-        return createElectronNotification({ title, body, app: 'mail', labelID, elementID });
+        return createElectronNotification({ app: 'mail', ...notificationData });
     }
 
     return create(title, {
