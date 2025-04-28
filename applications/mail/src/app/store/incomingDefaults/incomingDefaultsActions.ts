@@ -21,7 +21,7 @@ interface ApiResult {
 }
 
 const LOAD_BY_CHUNKS_SIZE = 100;
-export const load = createAsyncThunk<LoadResults, undefined, MailThunkExtra>(
+export const loadIncomingDefaults = createAsyncThunk<LoadResults, undefined, MailThunkExtra>(
     'incomingDefaults/load',
     async (_, thunkApi) => {
         const list: IncomingDefault[] = [];
@@ -39,7 +39,7 @@ export const load = createAsyncThunk<LoadResults, undefined, MailThunkExtra>(
                         Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
                     })
                 );
-                list.push(...result.IncomingDefaults);
+                list.push(...(result.IncomingDefaults || []));
                 count = result.Total;
                 page += 1;
             } catch (error: any | undefined) {
