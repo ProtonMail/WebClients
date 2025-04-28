@@ -212,7 +212,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                             size={isUpgradeOrThanks ? 'xsmall' : 'large'}
                             onSubmit={onSubmit}
                         >
-                            {!isUpgradeOrThanks && <ModalTwoHeader title={title} hasClose={hasClose} />}
+                            {isUpgradeOrThanks ? null : <ModalTwoHeader title={title} hasClose={hasClose} />}
                             {isUpgradeOrThanks ? content : <ModalTwoContent>{content}</ModalTwoContent>}
                             {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
                         </ModalTwo>
