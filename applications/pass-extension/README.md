@@ -28,6 +28,7 @@ The extension supports different browser targets:
 | `REDUX_DEVTOOLS_PORT` | Port for Redux DevTools to connect on                                     |
 | `RESUME_FALLBACK`     | Bypasses Chromium limitation when session resuming on staging             |
 | `HOT_MANIFEST_UPDATE` | Bumps manifest version dynamically on hot-reload for testing update flows |
+| `HTTP_DEBUGGER`       | Logger will report to debugger server                                     |
 
 ### Development Commands
 
@@ -75,6 +76,8 @@ yarn build:extension:all
 BUILD_TARGET=safari yarn build:extension
 cd safari && ruby ./tools/reference_dist_directory.rb
 ```
+
+> Debugging extension components in Safari is challenging due to dev-tools limitations. For troubleshooting, build your project with the `HTTP_DEBUGGER=true` flag and launch the debugger interface using `yarn start http:debugger`. This configuration will route all extension logs and error messages to stdout.
 
 Open the `Proton Pass.xcodeproj` project and run it
 
