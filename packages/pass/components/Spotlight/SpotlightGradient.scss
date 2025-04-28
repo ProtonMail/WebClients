@@ -14,6 +14,12 @@
 	border: 1px solid rgb(255 255 255 / 0.1);
 	background: var(--spotlight-gradient-layers);
 
+	&--safari-ext {
+		// Safari extension workaround for a graphics context regression
+		// introduced in 18.4 with gradients & borders [FB17409034]
+		border: 0 !important;
+	}
+
 	&--image {
 		background: var(--spotlight-gradient-image, ''), var(--spotlight-gradient-layers);
 		background-size: contain;
