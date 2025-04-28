@@ -17,7 +17,12 @@ export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
         shape="outline"
         as="span"
         {...props}
-        className={clsx('pass-promo--button', className, 'flex items-center shrink-0')}
+        className={clsx(
+            'pass-promo-btn',
+            className,
+            'flex items-center shrink-0',
+            BUILD_TARGET === 'safari' && 'pass-promo-btn--safari-ext'
+        )}
         iconSize={3.5}
         style={{
             ...props.style,
