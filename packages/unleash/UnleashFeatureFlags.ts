@@ -6,6 +6,9 @@ enum CommonFeatureFlag {
     ColorPerEventWeb = 'ColorPerEventWeb',
     AutoReloadPage = 'AutoReloadPage',
     DisableElectronMail = 'DisableElectronMail',
+    // Whether to show Docs in the app switcher. NOT whether the docs homepage is enabled (that's `DocsHomepageEnabled` instead).
+    // We'll clean up the naming of this flag in the future, if we don't remove it before then.
+    DriveDocsLandingPageEnabled = 'DriveDocsLandingPageEnabled',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
@@ -129,8 +132,8 @@ enum DocsFeatureFlag {
     DocsPublicEditing = 'DocsPublicEditing',
     // Comments
     DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
-    // Landing page
-    DriveDocsLandingPageEnabled = 'DriveDocsLandingPageEnabled',
+    // Homepage
+    DocsHomepageEnabled = 'DocsHomepageEnabled',
     // Public sharing
     DriveDocsPublicSharing = 'DriveDocsPublicSharing',
     DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
