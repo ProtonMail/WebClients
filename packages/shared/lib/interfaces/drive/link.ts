@@ -153,7 +153,6 @@ export interface MoveLink {
     Hash: string;
     ParentLinkID: string;
     NodePassphrase: string;
-    NodePassphraseSignature?: string;
     NameSignatureEmail: string;
     NewShareID?: string;
     ContentHash?: string;
@@ -168,7 +167,6 @@ export interface RecoverPhotoLinks {
     ParentLinkID: string;
     Links: MoveLink[];
     NameSignatureEmail: string;
-    SignatureEmail: string;
     NewShareId: string;
 }
 
