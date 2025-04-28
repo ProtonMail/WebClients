@@ -290,12 +290,14 @@ const ToolbarRightActionsAlbumGallery = ({
     const showIconOnly = !viewportWidth['>=large'];
     const showUploadButton = !album.permissions.isOwner && !uploadDisabled;
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
+    const showAddAlbumsButton =
+        (album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor) && !driveAlbumsDisabled;
     return (
         <>
-            {!showIconOnly && album.permissions.isOwner && !driveAlbumsDisabled && (
+            {!showIconOnly && showAddAlbumsButton && (
                 <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} type="toolbar" />
             )}
-            {!showIconOnly && showUploadButton && (
+            {!showIconOnly && !showAddAlbumsButton && showUploadButton && (
                 <PhotosUploadButton
                     shareId={shareId}
                     linkId={linkId}
@@ -349,8 +351,8 @@ const ToolbarRightActionsAlbumGallery = ({
                 onAddAlbumPhotos={onAddAlbumPhotos}
                 shareId={shareId}
                 linkId={linkId}
-                showUploadButton={showIconOnly && showUploadButton}
-                showAddAlbumPhotosButton={showIconOnly && album.permissions.isOwner && !driveAlbumsDisabled}
+                showUploadButton={showIconOnly && !showAddAlbumsButton && showUploadButton}
+                showAddAlbumPhotosButton={showIconOnly && showAddAlbumsButton}
                 showDeleteAlbumButton={album.permissions.isAdmin && !driveAlbumsDisabled}
                 showLeaveAlbumButton={!album.permissions.isOwner && !driveAlbumsDisabled}
             />
