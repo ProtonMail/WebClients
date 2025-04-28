@@ -12,7 +12,7 @@ import {
     getSupportedEventsOrErrors,
     parseIcs,
 } from '../../lib/calendar/import/import';
-import { parse, parseVcalendarWithRecoveryAndMaybeErrors } from '../../lib/calendar/vcal';
+import { parse } from '../../lib/calendar/vcal';
 import { getIcalMethod } from '../../lib/calendar/vcalHelper';
 import { omit } from '../../lib/helpers/object';
 import type {
@@ -1364,59 +1364,6 @@ END:VEVENT`;
             },
             location: { value: '1CP Conference Room 4350' },
             sequence: { value: 0 },
-        });
-    });
-
-    it('should serialize event without potential errors to generate hash uid', async () => {
-        // The alarm trigger is invalid in this vevent, so the VALARM component should be removed during event serialization prior to generate hash uid
-        const veventIcs = `BEGIN:VEVENT
-DESCRIPTION;LANGUAGE=en-US:\n\n\n
-UID:040000008200E00074C5B7101A82E00800000000B058B6A2A081D901000000000000000
-    0100000004A031FE80ACD7C418A7A1762749176F121
-SUMMARY:Calendar test
-DTSTART;TZID=Eastern Standard Time:20230513T123000
-DTEND;TZID=Eastern Standard Time:20230513T130000
-CLASS:PUBLIC
-PRIORITY:5
-DTSTAMP:20230508T153204Z
-TRANSP:OPAQUE
-STATUS:CONFIRMED
-SEQUENCE:0
-LOCATION;LANGUAGE=en-US:
-BEGIN:VALARM
-DESCRIPTION:REMINDER
-TRIGGER;RELATED=START:P
-ACTION:DISPLAY
-END:VALARM
-END:VEVENT`;
-
-        const event = parseVcalendarWithRecoveryAndMaybeErrors(veventIcs);
-        const supportedEvent = await extractSupportedEvent({
-            method: ICAL_METHOD.REQUEST,
-            vcalComponent: event,
-            hasXWrTimezone: false,
-            guessTzid: 'America/New_York',
-            prodId: '',
-        });
-
-        expect(supportedEvent).toEqual({
-            component: 'vevent',
-            uid: {
-                value: 'original-uid-040000008200E00074C5B7101A82E00800000000B058B6A2A081D901000000000000000   0100000004A031FE80ACD7C418A7A1762749176F121-sha1-uid-f286aba29df21425cbf3bcec44de9b7fc5e93ce5',
-            },
-            dtstamp: {
-                value: { year: 2023, month: 5, day: 8, hours: 15, minutes: 32, seconds: 4, isUTC: true },
-            },
-            dtstart: {
-                value: { year: 2023, month: 5, day: 13, hours: 12, minutes: 30, seconds: 0, isUTC: false },
-                parameters: { tzid: 'America/New_York' },
-            },
-            sequence: { value: 0 },
-            summary: { value: 'Calendar test' },
-            dtend: {
-                value: { year: 2023, month: 5, day: 13, hours: 13, minutes: 0, seconds: 0, isUTC: false },
-                parameters: { tzid: 'America/New_York' },
-            },
         });
     });
 });

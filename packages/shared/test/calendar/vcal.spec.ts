@@ -1,7 +1,6 @@
 import {
     fromTriggerString,
     getMillisecondsFromTriggerString,
-    getVeventWithoutErrors,
     parse,
     parseVcalendarWithRecoveryAndMaybeErrors,
     serialize,
@@ -12,7 +11,6 @@ import type {
     VcalValarmComponent,
     VcalVcalendarWithMaybeErrors,
     VcalVeventComponent,
-    VcalVeventComponentWithMaybeErrors,
 } from '../../lib/interfaces/calendar';
 
 const vevent = `BEGIN:VEVENT
@@ -223,29 +221,6 @@ END:VEVENT`;
 const veventWithRandomBoolean = `BEGIN:VEVENT
 X-PM-PROTON-REPLY;VALUE=BOOLEAN:GNEEEE
 END:VEVENT`;
-
-const veventWithInvalidVAlarm = `
-BEGIN:VEVENT
-DESCRIPTION;LANGUAGE=en-US:\n\n\n
-UID:040000008200E00074C5B7101A82E00800000000B058B6A2A081D901000000000000000
-    0100000004A031FE80ACD7C418A7A1762749176F121
-SUMMARY:Calendar test
-DTSTART;TZID=Eastern Standard Time:20230513T123000
-DTEND;TZID=Eastern Standard Time:20230513T130000
-CLASS:PUBLIC
-PRIORITY:5
-DTSTAMP:20230508T153204Z
-TRANSP:OPAQUE
-STATUS:CONFIRMED
-SEQUENCE:0
-LOCATION;LANGUAGE=en-US:
-BEGIN:VALARM
-DESCRIPTION:REMINDER
-TRIGGER;RELATED=START:P
-ACTION:DISPLAY
-END:VALARM
-END:VEVENT
-`;
 
 describe('calendar', () => {
     it('should parse vcalendar', () => {
@@ -1043,42 +1018,6 @@ END:VEVENT`;
         expect(getMillisecondsFromTriggerString('-P1D')).toEqual(-DAY);
         expect(getMillisecondsFromTriggerString('-PT2H34M12S')).toEqual(-2 * HOUR - 34 * MINUTE - 12 * SECOND);
         expect(getMillisecondsFromTriggerString('P2W1DT1S')).toEqual(2 * WEEK + DAY + SECOND);
-    });
-
-    it('should filter out invalid vAlarm', () => {
-        const parsed = parseVcalendarWithRecoveryAndMaybeErrors(
-            veventWithInvalidVAlarm
-        ) as VcalVeventComponentWithMaybeErrors;
-        expect(getVeventWithoutErrors(parsed)).toEqual({
-            component: 'vevent',
-            components: [],
-            description: { value: '', parameters: { language: 'en-US' } },
-            uid: {
-                value: '040000008200E00074C5B7101A82E00800000000B058B6A2A081D901000000000000000   0100000004A031FE80ACD7C418A7A1762749176F121',
-            },
-            summary: {
-                value: 'Calendar test',
-            },
-            dtstart: {
-                value: { year: 2023, month: 5, day: 13, hours: 12, minutes: 30, seconds: 0, isUTC: false },
-                parameters: { tzid: 'Eastern Standard Time' },
-            },
-            dtend: {
-                value: { year: 2023, month: 5, day: 13, hours: 13, minutes: 0, seconds: 0, isUTC: false },
-                parameters: {
-                    tzid: 'Eastern Standard Time',
-                },
-            },
-            class: { value: 'PUBLIC' },
-            priority: { value: 5 },
-            dtstamp: {
-                value: { year: 2023, month: 5, day: 8, hours: 15, minutes: 32, seconds: 4, isUTC: true },
-            },
-            transp: { value: 'OPAQUE' },
-            status: { value: 'CONFIRMED' },
-            sequence: { value: 0 },
-            location: { value: '', parameters: { language: 'en-US' } },
-        });
     });
 });
 

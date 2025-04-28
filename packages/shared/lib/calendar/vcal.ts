@@ -352,6 +352,7 @@ export const parseVcalendarWithRecoveryAndMaybeErrors = (
         retryEnclosing?: boolean;
         retryDateTimes?: boolean;
         retryOrganizer?: boolean;
+        retryDuration?: boolean;
     }
 ): VcalVcalendarWithMaybeErrors | VcalCalendarComponentWithMaybeErrors => {
     try {
