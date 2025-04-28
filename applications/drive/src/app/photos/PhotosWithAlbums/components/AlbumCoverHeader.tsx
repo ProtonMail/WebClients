@@ -7,11 +7,9 @@ import { Icon, Tooltip } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import useFlag from '@proton/unleash/useFlag';
 
-import { type OnFileSkippedSuccessCallbackData, type OnFileUploadSuccessCallbackData } from '../../../store';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
-import { PhotosUploadButton } from '../toolbar/PhotosUploadButton';
 import { AlbumMembers } from './AlbumMembers';
 
 interface AlbumCoverHeaderProps {
@@ -19,10 +17,7 @@ interface AlbumCoverHeaderProps {
     onShare: () => void;
     shareId: string;
     linkId: string;
-    uploadLinkId: string;
     photoCount: number;
-    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
-    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onAddAlbumPhotos: () => void;
 }
 
@@ -30,10 +25,7 @@ export const AlbumCoverHeader = ({
     album,
     shareId,
     linkId,
-    uploadLinkId,
     photoCount,
-    onFileUpload,
-    onFileSkipped,
     onShare,
     onAddAlbumPhotos,
 }: AlbumCoverHeaderProps) => {
@@ -44,7 +36,7 @@ export const AlbumCoverHeader = ({
     const [user] = useUser();
     const displayName = user.DisplayName || user.Name;
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
-
+    const showAddToAlbumButton = album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor;
     return (
         <div
             className="flex shrink-0 flex-row gap-4 md:flex-nowrap items-center"
@@ -108,20 +100,7 @@ export const AlbumCoverHeader = ({
                     )}
 
                     {photoCount === 0 && !driveAlbumsDisabled && (
-                        <>
-                            {album.permissions.isAdmin && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}
-                            {!album.permissions.isAdmin && album.permissions.isEditor && (
-                                <PhotosUploadButton
-                                    type="norm"
-                                    shareId={shareId}
-                                    linkId={uploadLinkId}
-                                    onFileUpload={onFileUpload}
-                                    onFileSkipped={onFileSkipped}
-                                    data-testid="upload-photos"
-                                    isAlbumUpload
-                                />
-                            )}
-                        </>
+                        <>{showAddToAlbumButton && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}</>
                     )}
                 </div>
             </div>

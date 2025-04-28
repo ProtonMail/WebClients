@@ -5,7 +5,7 @@ import { useOutletContext, useParams, useSearchParams } from 'react-router-dom-v
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Loader, useAppTitle, useConfig, useNotifications } from '@proton/components';
+import { Loader, useAppTitle, useConfig } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import useFlag from '@proton/unleash/useFlag';
@@ -13,9 +13,7 @@ import useFlag from '@proton/unleash/useFlag';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
-import type { OnFileUploadSuccessCallbackData } from '../../store';
 import { useThumbnailsDownload } from '../../store';
-import { sendErrorReport } from '../../utils/errorHandling';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { useFavoritePhotoToggle } from '../PhotosActions/Albums';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
@@ -51,7 +49,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const updateTitle = useAppTitleUpdate();
     let [searchParams, setSearchParams] = useSearchParams();
-    const { createNotification } = useNotifications();
     const favoritePhotoToggle = useFavoritePhotoToggle();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { setPreviewLinkId, modals } = usePhotoLayoutStore(
@@ -67,7 +64,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         loadPhotoLink,
 
         albumPhotos,
-        addAlbumPhoto,
 
         isAlbumsLoading,
         isAlbumPhotosLoading,
@@ -75,7 +71,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         albumPhotosLinkIdToIndexMap,
         photoLinkIdToIndexMap,
         photos,
-        addNewAlbumPhotoToCache,
     } = useOutletContext<PhotosLayoutOutletContext>();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isAlbumsLoading);
@@ -114,35 +109,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
         return albums.find((album) => album.linkId === albumLinkId);
     }, [albums, albumLinkId]);
-
-    const onPhotoUploadedToAlbum = useCallback(
-        async (file: OnFileUploadSuccessCallbackData) => {
-            if (!file || !album || !albumShareId || !albumLinkId) {
-                return;
-            }
-            const abortSignal = new AbortController().signal;
-            try {
-                // If you're not the owner of the album
-                // you just upload directly in the album
-                // so you don't add afterwards to add the photo to the album
-                // Additionally if the file is skipped AND already in the album, no need to call backend to re-add
-                const isAlreadyInAlbum = albumPhotos.some(
-                    (photo) => typeof photo === 'object' && photo.linkId === file.fileId
-                );
-                if (album.permissions.isOwner && !isAlreadyInAlbum) {
-                    await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
-                } else if (!isAlreadyInAlbum) {
-                    void addNewAlbumPhotoToCache(abortSignal, albumShareId, albumLinkId, file.fileId);
-                }
-            } catch (e) {
-                if (e instanceof Error && e.message) {
-                    createNotification({ text: e.message, type: 'error' });
-                }
-                sendErrorReport(e);
-            }
-        },
-        [album, albumShareId, albumLinkId, albumPhotos, addAlbumPhoto, addNewAlbumPhotoToCache, createNotification]
-    );
 
     const addOrRemovePhotoToFavorite = useCallback(
         async (linkId: string, shareId: string, isFavorite: boolean) => {
@@ -204,10 +170,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 <div className="flex flex-column flex-nowrap p-4 w-full h-full">
                     <AlbumCoverHeader
                         shareId={albumShareId}
-                        uploadLinkId={uploadLinkId}
                         linkId={album.linkId}
-                        onFileUpload={onPhotoUploadedToAlbum}
-                        onFileSkipped={onPhotoUploadedToAlbum}
                         album={album}
                         photoCount={photoCount}
                         onShare={onShare}
@@ -234,12 +197,9 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 >
                     <AlbumCoverHeader
                         shareId={albumShareId}
-                        uploadLinkId={uploadLinkId}
                         linkId={album.linkId}
                         album={album}
                         photoCount={photoCount}
-                        onFileUpload={onPhotoUploadedToAlbum}
-                        onFileSkipped={onPhotoUploadedToAlbum}
                         onShare={() => {
                             modals.linkSharing?.({ shareId: albumShareId, linkId: album.linkId });
                         }}
