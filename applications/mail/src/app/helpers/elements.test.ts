@@ -8,14 +8,15 @@ import type { Element } from 'proton-mail/models/element';
 import type { Conversation, ConversationLabel } from '../models/conversation';
 import {
     filterElementsInState,
+    getAddressID,
     getCounterMap,
     getDate,
     getLocationElementsCount,
     isConversation,
     isMessage,
     isUnread,
+    matchAddressID,
     matchBegin,
-    matchEmailAddress,
     matchEnd,
     matchFrom,
     matchTo,
@@ -28,6 +29,7 @@ const toAddress = 'recipient@protonmail.com';
 const message = {
     ID: 'message1',
     ConversationID: 'conversationID',
+    AddressID: 'addressID',
     Sender: {
         Name: 'Sender',
         Address: senderAddress,
@@ -139,6 +141,16 @@ describe('elements', () => {
             expect(result[MAILBOX_LABEL_IDS.INBOX]?.Unread).toBe(inboxCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.SENT]?.Unread).toBe(sentMessageCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.STARRED]).toBeUndefined();
+        });
+    });
+
+    describe('getAddressID', () => {
+        it('should return the addressID of a message', () => {
+            expect(getAddressID(message)).toBe('addressID');
+        });
+
+        it('should return an empty string for a conversation', () => {
+            expect(getAddressID(conversation)).toBe('');
         });
     });
 
@@ -332,23 +344,15 @@ describe('elements', () => {
         });
     });
 
-    describe('matchEmailAddress', () => {
+    describe('matchAddressID', () => {
         it('should match address', () => {
-            const addresses = [toAddress, senderAddress];
-
-            addresses.forEach((address) => {
-                expect(matchEmailAddress(message, address)).toBeTruthy();
-                expect(matchEmailAddress(conversation, address)).toBeTruthy();
-            });
+            expect(matchAddressID(message, 'addressID')).toBeTruthy();
+            expect(matchAddressID(conversation, '')).toBeTruthy();
         });
 
         it('should not match address', () => {
-            const addresses = ['recipient@otherdomain.com', 'sender@otherdomain.com'];
-
-            addresses.forEach((address) => {
-                expect(matchTo(message, address)).toBeFalsy();
-                expect(matchTo(conversation, address)).toBeFalsy();
-            });
+            expect(matchAddressID(message, 'otherAddressID')).toBeFalsy();
+            expect(matchAddressID(conversation, 'otherAddressID')).toBeFalsy();
         });
     });
 
