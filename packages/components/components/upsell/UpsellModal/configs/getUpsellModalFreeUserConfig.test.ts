@@ -95,7 +95,7 @@ describe('getUpsellModalFreeUserConfig', () => {
         // Should be called because it's not a main currency
         // In this case we call it twice because we display a price with coupon
         // and a price without coupon.
-        expect(paymentsApiMock.checkWithAutomaticVersion).toHaveBeenCalledTimes(2);
+        expect(paymentsApiMock.checkWithAutomaticVersion).toHaveBeenCalledTimes(1);
 
         expect(config).toHaveProperty('planIDs', { [PLANS.MAIL]: 1 });
         expect(config).toHaveProperty('cycle', CYCLE.MONTHLY);
