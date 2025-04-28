@@ -190,6 +190,11 @@ export const PhotosLayout = () => {
     const previewShareId = albumShareId || shareId;
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const isAlbumsWithCopyEnabled = unleashVanillaStore.getState().isEnabled('DriveWebAlbumsPhotoCopy');
+    const isGalleryOrAdmin =
+        currentPageType === AlbumsPageTypes.GALLERY ||
+        (currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album?.permissions.isAdmin);
+    const canChangeAlbumCoverInPreview = isGalleryOrAdmin;
+    const canChangeSharePhotoInPreview = isGalleryOrAdmin;
     /*
         Callbacks
     */
@@ -642,12 +647,15 @@ export const PhotosLayout = () => {
                         (isDecryptedLink(previewItem) ? previewItem.createTime : undefined)
                     }
                     onShare={
-                        (isDecryptedLink(previewItem) && previewItem?.trashed) || isAlbumsWithSharingDisabled
+                        (isDecryptedLink(previewItem) && previewItem?.trashed) ||
+                        isAlbumsWithSharingDisabled ||
+                        !canChangeSharePhotoInPreview
                             ? undefined
                             : () => showLinkSharingModal({ shareId: previewShareId, linkId: previewItem.linkId })
                     }
                     onDetails={onShowDetails}
                     onSelectCover={
+                        canChangeAlbumCoverInPreview &&
                         !driveAlbumsDisabled &&
                         currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
                         album?.cover?.linkId !== previewItem.linkId
