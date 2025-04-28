@@ -64,6 +64,9 @@ export const readKeeperData = async (file: File): Promise<ImportReaderResult> =>
                 try {
                     const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
                         switch (item.$type) {
+                            /* If $type is undefined, then it's a "General" item type
+                             * which was the type for login items on older Keeper versions */
+                            case undefined:
                             case 'login':
                                 return importLoginItem({
                                     name: title,
