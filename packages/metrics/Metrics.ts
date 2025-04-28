@@ -48,6 +48,7 @@ import type { HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJso
 import type { HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson } from './types/drive_integrity_decryption_errors_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson } from './types/drive_integrity_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_verification_errors_total_v1.schema';
+import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from './types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import type { HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson } from './types/drive_sync_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson } from './types/drive_sync_errors_total_v1.schema';
 import type { HttpsProtonMeDriveSyncEventTotalV2SchemaJson } from './types/drive_sync_event_total_v2.schema';
@@ -230,6 +231,8 @@ class Metrics extends MetricsBase {
     public drive_integrity_erroring_users_total: Counter<HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson>;
 
     public drive_integrity_verification_errors_total: Counter<HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson>;
+
+    public drive_photos_transfer_to_photo_stream_histogram: Histogram<HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson>;
 
     public drive_sync_erroring_users_total: Counter<HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson>;
 
@@ -648,6 +651,12 @@ class Metrics extends MetricsBase {
         this.drive_integrity_verification_errors_total =
             new Counter<HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson>(
                 { name: 'drive_integrity_verification_errors_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_photos_transfer_to_photo_stream_histogram =
+            new Histogram<HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson>(
+                { name: 'drive_photos_transfer_to_photo_stream_histogram', version: 1 },
                 this.requestService
             );
 
