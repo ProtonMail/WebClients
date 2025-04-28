@@ -30,17 +30,22 @@ import { ContentSheet } from './shared'
 // table
 // -----
 
-export type TableVariant = 'recents-name' | 'recents-viewed' | 'recents-modified' | 'trashed' | 'search'
+export type TableVariant = 'recents-name' | 'recents-viewed' | 'recents-modified' | 'trash' | 'search'
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
   const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
+  const isRecents = variant.startsWith('recents')
 
   return (
     <>
       <ContentSheet isBottom className="shrink-0 grow pb-4">
         <Table.Table>
+          <div className="border-weak hidden h-11 items-center justify-between border-b pe-2 ps-5 text-[1rem] font-semibold small:!flex">
+            {isRecents ? c('Info').t`Recents` : c('Info').t`Trash`}
+            {isRecents && <SortSelect />}
+          </div>
           {itemsSections.map(({ id, items }, sectionIndex) => (
             <Fragment key={id}>
               <Head variant={variant} sectionId={id} isSecondary={sectionIndex > 0} />
@@ -67,18 +72,16 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
 type HeadProps = { sectionId: ItemsSectionId; isSecondary?: boolean; variant: TableVariant }
 
 function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
-  const firstHeaderShowArrow = !isSecondary && (variant === 'recents-name' || variant === 'trashed')
+  const firstHeaderShowArrow = !isSecondary && (variant === 'recents-name' || variant === 'trash')
 
   let secondHeaderLabel = c('Recent documents table header').t`Viewed`
   if (variant === 'recents-modified') {
     secondHeaderLabel = c('Recent documents table header').t`Modified`
   }
-  if (variant === 'trashed') {
+  if (variant === 'trash') {
     secondHeaderLabel = c('Recent documents table header').t`Deleted`
   }
   const secondHeaderShowArrow = variant === 'recents-viewed' || variant === 'recents-modified'
-
-  const isRecents = variant.startsWith('recents')
 
   return (
     <Table.Head>
@@ -88,7 +91,6 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
             <span>{getSectionLabel(sectionId)}</span>
             {firstHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
           </span>
-          <span className="-me-3 medium:hidden">{isRecents && !isSecondary ? <SortSelect /> : null}</span>
         </div>
       </Table.Header>
       {!isSecondary ? (
@@ -103,11 +105,19 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
           <Table.Header target="medium">
             <div className="flex flex-nowrap items-center justify-between">
               <span>{c('Recent documents table header').t`Location`}</span>
-              {isRecents ? <SortSelect /> : null}
             </div>
           </Table.Header>
         </>
-      ) : null}
+      ) : (
+        // This could probably be achieved in a cleaner way, but due to time constraints, we
+        // resort to this hack to ensure proper sizing of the main column header, so that other
+        // previously stickied column headers are not obscured by it.
+        <>
+          <Table.DataCell className="pointer-events-none opacity-0"></Table.DataCell>
+          <Table.DataCell className="pointer-events-none opacity-0"></Table.DataCell>
+          <Table.DataCell className="pointer-events-none opacity-0"></Table.DataCell>
+        </>
+      )}
     </Table.Head>
   )
 }
@@ -186,7 +196,7 @@ type BodyProps = { items: RecentDocumentsItem[]; variant: TableVariant }
 
 function Body({ items, variant }: BodyProps) {
   return (
-    <Table.Body>
+    <Table.Body className="divide-weak divide-y">
       {items.map((recentDocument) => (
         <Row variant={variant} key={recentDocument.uniqueId()} document={recentDocument} />
       ))}
@@ -223,7 +233,7 @@ function Row({ document, variant }: RowProps) {
 
   let locationIcon: IconName
   let locationLabel: string
-  if (variant === 'trashed') {
+  if (variant === 'trash') {
     locationIcon = 'trash'
     locationLabel = c('Label').t`Trash`
   } else if (location?.type === 'shared-with-me') {
@@ -241,7 +251,7 @@ function Row({ document, variant }: RowProps) {
     <Button
       onClick={(event) => {
         event.stopPropagation()
-        if (variant === 'trashed') {
+        if (variant === 'trash') {
           window.open(getAppHref('/trash', APPS.PROTONDRIVE, getLocalID()))
         } else {
           documentActions.openParent(document)
@@ -277,13 +287,13 @@ function Row({ document, variant }: RowProps) {
 
   return (
     <Table.Row
-      className="cursor-pointer hover:bg-[--interaction-default-hover]"
+      className="cursor-pointer hover:bg-[--optional-background-lowered]"
       onClick={(event) => {
         event.stopPropagation()
         documentActions.open(document)
       }}
       onContextMenu={(event) => {
-        if (variant === 'trashed') {
+        if (variant === 'trash') {
           return
         }
         event.stopPropagation()
@@ -323,7 +333,7 @@ function Row({ document, variant }: RowProps) {
               }}
             />
           ) : (
-            <span className="text-pre text-ellipsis font-medium">{document.name}</span>
+            <span className="text-pre text-ellipsis">{document.name}</span>
           )}
           {/* {
             recentDocument.whatever || recentDocument.isFavorite ? (
@@ -346,7 +356,7 @@ function Row({ document, variant }: RowProps) {
         <span className="flex flex-nowrap items-center gap-2" title={displayName}>
           <Avatar
             color="weak"
-            className="min-w-custom max-w-custom max-h-custom bg-[#38BDF8]/10"
+            className="min-w-custom max-w-custom max-h-custom bg-[--interaction-default-hover]"
             style={{
               '--min-w-custom': '28px',
               '--max-w-custom': '28px',
