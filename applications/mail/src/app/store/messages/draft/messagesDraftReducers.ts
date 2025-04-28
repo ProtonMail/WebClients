@@ -32,6 +32,9 @@ export const openDraft = (
     if (messageState) {
         // Drafts have a different sanitization as mail content
         // So we have to restart the sanitization process on a cached draft
+        messageState.messageDocument = undefined;
+        messageState.messageImages = undefined;
+
         if (!messageState.draftFlags) {
             messageState.draftFlags = {};
         }
