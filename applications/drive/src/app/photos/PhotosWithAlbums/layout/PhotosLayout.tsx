@@ -258,12 +258,17 @@ export const PhotosLayout = () => {
             }
             try {
                 if (missingPhotosIds?.length && !force) {
-                    await transferPhotoLinks(abortSignal, volumeId, {
-                        shareId: albumShareId,
-                        linkIds: missingPhotosIds,
-                        newShareId: shareId,
-                        newParentLinkId: linkId,
-                    });
+                    await transferPhotoLinks(
+                        abortSignal,
+                        volumeId,
+                        {
+                            shareId: albumShareId,
+                            linkIds: missingPhotosIds,
+                            newShareId: shareId,
+                            newParentLinkId: linkId,
+                        },
+                        'delete_album'
+                    );
                 }
                 await deleteAlbum(abortSignal, albumLinkId, force);
                 createNotification({
@@ -357,12 +362,17 @@ export const PhotosLayout = () => {
             }
             try {
                 if (missingPhotosIds) {
-                    await transferPhotoLinks(abortSignal, volumeId, {
-                        shareId: albumShareId,
-                        linkIds: missingPhotosIds,
-                        newShareId: albumShareId,
-                        newParentLinkId: linkId,
-                    });
+                    await transferPhotoLinks(
+                        abortSignal,
+                        volumeId,
+                        {
+                            shareId: albumShareId,
+                            linkIds: missingPhotosIds,
+                            newShareId: albumShareId,
+                            newParentLinkId: linkId,
+                        },
+                        'remove_photos_from_album'
+                    );
                 }
                 await removeAlbumPhotos(abortSignal, albumShareId, albumLinkId, selectedPhotosIds);
             } catch (e) {
