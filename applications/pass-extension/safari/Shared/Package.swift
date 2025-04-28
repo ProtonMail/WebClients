@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(name: "Shared",
-                      platforms: [.iOS(.v15)],
+                      platforms: [.iOS(.v16), .macCatalyst(.v16)],
                       products: [.library(name: "Shared", targets: ["Shared"])],
                       dependencies: [
                           .package(url: "https://github.com/lukacs-m/SimpleKeychain", exact: "0.1.2"),
-                          .package(url: "https://github.com/ProtonMail/protoncore_ios", exact: "26.1.2")
+                          .package(url: "https://github.com/ProtonMail/protoncore_ios", exact: "32.0.0")
                       ],
                       targets: [
                           .target(name: "Shared",
