@@ -1,7 +1,11 @@
 import {
+    getTriggerValue,
+    isValidTriggerDuration,
     parseWithRecovery,
     reformatDateTimes,
     reformatLineBreaks,
+    removeAlarm,
+    replaceTrigger,
     unfoldLines,
 } from '../../lib/calendar/icsSurgery/ics';
 
@@ -79,6 +83,88 @@ X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
 X-MS-OLK-CONFTYPE:0
 END:VEVENT
 END:VCALENDAR`);
+    });
+});
+
+describe('isValidTriggerDuration()', () => {
+    it('returns true for a valid trigger duration', () => {
+        expect(isValidTriggerDuration('-PT10M')).toBe(true);
+        expect(isValidTriggerDuration('P1D')).toBe(true);
+        expect(isValidTriggerDuration('PT15M')).toBe(true);
+    });
+
+    it('returns false for an invalid trigger duration', () => {
+        expect(isValidTriggerDuration('P')).toBe(false);
+        expect(isValidTriggerDuration('10M')).toBe(false);
+        expect(isValidTriggerDuration('-PT10X')).toBe(false);
+    });
+});
+
+describe('getTriggerValue()', () => {
+    it('returns the trigger value from the vcal string', () => {
+        expect(getTriggerValue('BEGIN:VALARM\nTRIGGER:-PT10M\nEND:VALARM')).toBe('-PT10M');
+    });
+});
+
+describe('replaceTrigger()', () => {
+    it('replaces the trigger value with PT0S', () => {
+        expect(replaceTrigger('BEGIN:VALARM\nTRIGGER;RELATED=START:P\nEND:VALARM')).toBe(
+            'BEGIN:VALARM\nTRIGGER;RELATED=START:PT0S\nEND:VALARM'
+        );
+    });
+
+    it('returns the original vcal if no trigger value is found', () => {
+        expect(replaceTrigger('BEGIN:VALARM\nEND:VALARM')).toBe('BEGIN:VALARM\nEND:VALARM');
+    });
+});
+
+describe('removeAlarm()', () => {
+    it('removes the alarm from the vcal string', () => {
+        const vcal = `BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:UTC
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T000000
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN=Paula Bennett:mailto:calendar1with1longer1name1.long@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=calendarUser@p
+ m.me:mailto:calendarUser@pm.me
+DESCRIPTION;LANGUAGE=en-GB:\n
+RRULE:FREQ=DAILY;UNTIL=20240923T000000Z;INTERVAL=1
+UID:myUID
+SUMMARY;LANGUAGE=en-GB:Same time
+DTSTART;VALUE=DATE:20240919
+DTEND;VALUE=DATE:20240920
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20240324T091502Z
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:6
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:P
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+        const result = removeAlarm(vcal);
+        expect(result).toContain(`BEGIN:VCALENDAR`);
+        expect(result).not.toContain(`BEGIN:VALARM`);
+        expect(result).not.toContain(`END:VALARM`);
+        expect(result).not.toContain(`TRIGGER`);
     });
 });
 

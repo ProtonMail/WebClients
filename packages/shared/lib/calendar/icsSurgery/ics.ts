@@ -59,12 +59,16 @@ export const unfoldLines = (vcal = '', separator = '\r\n') => {
     }, '');
 };
 
+export const getLineSeparator = (vcal = '') => {
+    return vcal.includes('\r\n') ? '\r\n' : '\n';
+};
+
 /**
  * Naively try to reformat badly formatted line breaks in a vcalendar string
  */
 export const reformatLineBreaks = (vcal = '') => {
     // try to guess the line separator of the ics (some providers use '\n' instead of the RFC-compliant '\r\n')
-    const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
+    const separator = getLineSeparator(vcal);
     const lines = getNaiveLines(vcal, separator);
     return lines.reduce((acc, line) => {
         const field = getNaiveField(line);
@@ -96,7 +100,7 @@ export const reformatLineBreaks = (vcal = '') => {
  * * Remove duplicate Zulu markers
  */
 export const reformatDateTimes = (vcal = '') => {
-    const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
+    const separator = getLineSeparator(vcal);
     const unfoldedVcal = unfoldLines(vcal, separator);
     const unfoldedLines = unfoldedVcal.split(separator);
 
@@ -162,13 +166,79 @@ export const reformatDateTimes = (vcal = '') => {
 };
 
 export const pruneOrganizer = (vcal = '') => {
-    const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
+    const separator = getLineSeparator(vcal);
     const unfoldedVcal = unfoldLines(vcal, separator);
     const unfoldedLines = unfoldedVcal.split(separator);
 
     const withPrunedOrganizer = unfoldedLines.filter((line) => !line.startsWith('ORGANIZER')).join(separator);
 
     return withPrunedOrganizer;
+};
+
+export const getTriggerValue = (vcal = ''): string => {
+    const unfoldedVcal = unfoldLines(vcal, '\n');
+    const unfoldedLines = unfoldedVcal.split('\n');
+
+    // TRIGGER is only present in VALARM
+    const triggerLine = unfoldedLines.find((line) => line.includes('TRIGGER'));
+    return triggerLine ? triggerLine.split(':')[1].trim() : '';
+};
+
+// Set the trigger value to PT0S in vcal string
+export const replaceTrigger = (vcal = ''): string => {
+    const separator = getLineSeparator(vcal);
+    const unfoldedVcal = unfoldLines(vcal, separator);
+    const unfoldedLines = unfoldedVcal.split(separator);
+    const triggerLine = unfoldedLines.find((line) => line.includes('TRIGGER'));
+
+    if (!triggerLine) {
+        return vcal;
+    }
+
+    const [prefix] = triggerLine.split(':');
+    const newTriggerLine = `${prefix}:PT0S`;
+
+    return unfoldedLines.map((line) => (line === triggerLine ? newTriggerLine : line)).join(separator);
+};
+
+export const isValidTriggerDuration = (trigger: string): boolean => {
+    // ISO 8601 Duration pattern used in iCalendar TRIGGER
+    const iso8601DurationRegex = /^-?P(?=\d|T\d)(\d+D)?(T(\d+H)?(\d+M)?(\d+S)?)?$/;
+    return iso8601DurationRegex.test(trigger);
+};
+
+export const removeAlarm = (vcal = ''): string => {
+    const separator = getLineSeparator(vcal);
+    const unfoldedVcal = unfoldLines(vcal, separator);
+
+    if (!unfoldedVcal.includes('BEGIN:VALARM')) {
+        return vcal;
+    }
+
+    const unfoldedLines = unfoldedVcal.split(separator);
+    const result: string[] = [];
+    let skipLine = false;
+
+    for (let i = 0; i < unfoldedLines.length; i++) {
+        const line = unfoldedLines[i];
+
+        if (line.includes('BEGIN:VALARM')) {
+            skipLine = true;
+            continue;
+        }
+
+        if (line.includes('END:VALARM')) {
+            skipLine = false;
+            continue;
+        }
+
+        // Only add the line if we're not skipping
+        if (!skipLine) {
+            result.push(line);
+        }
+    }
+
+    return result.join(separator);
 };
 
 /**
@@ -181,10 +251,17 @@ export const parseWithRecovery = (
         retryEnclosing?: boolean;
         retryDateTimes?: boolean;
         retryOrganizer?: boolean;
-    } = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true, retryOrganizer: true },
+        retryDuration?: boolean;
+    } = {
+        retryLineBreaks: true,
+        retryEnclosing: true,
+        retryDateTimes: true,
+        retryOrganizer: true,
+        retryDuration: true,
+    },
     reportToSentryData?: { calendarID: string; eventID: string }
 ): VcalCalendarComponent => {
-    const { retryLineBreaks, retryEnclosing, retryDateTimes, retryOrganizer } = retry;
+    const { retryLineBreaks, retryEnclosing, retryDateTimes, retryOrganizer, retryDuration } = retry;
     try {
         return parse(vcal);
     } catch (e: any) {
@@ -229,6 +306,14 @@ export const parseWithRecovery = (
             reportIfNeeded('Unparseable event due badly formatted organizer', message);
             const reformattedVcal = pruneOrganizer(vcal);
             return parseWithRecovery(reformattedVcal, { ...retry, retryOrganizer: false });
+        }
+
+        const triggerValue = getTriggerValue(vcal);
+        const couldBeDurationError = triggerValue && !isValidTriggerDuration(triggerValue);
+        if (couldBeDurationError && retryDuration) {
+            reportIfNeeded('Unparseable event due to badly formatted alarm trigger value', message);
+            const reformattedVcal = replaceTrigger(vcal);
+            return parseWithRecovery(reformattedVcal, { ...retry, retryDuration: false });
         }
 
         throw e;
