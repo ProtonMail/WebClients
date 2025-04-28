@@ -303,6 +303,7 @@ export function useLinkInner(
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
 
             let privateKey: PrivateKeyReference | undefined;
+            let privateKeyError;
 
             try {
                 const parentPrivateKey = encryptedLink.parentLinkId
@@ -311,6 +312,7 @@ export function useLinkInner(
                     : await getSharePrivateKey(abortSignal, shareId);
                 privateKey = parentPrivateKey;
             } catch (e) {
+                privateKeyError = e;
                 // ignore failures but still report them to Sentry
                 sendErrorReport(e, {
                     extra: {
@@ -339,8 +341,17 @@ export function useLinkInner(
             }
 
             if (!privateKey) {
+                if (abortSignal.aborted) {
+                    throw privateKeyError;
+                }
                 // This should never happen. If you see this error in Sentry something is wrong
-                throw new Error('No private key was found during getLinkPassphraseAndSessionKey');
+                throw new EnrichedError('No private key was found during getLinkPassphraseAndSessionKey', {
+                    tags: {
+                        shareId,
+                        linkId,
+                    },
+                    extra: { e: privateKeyError, crypto: true },
+                });
             }
 
             const addressPublicKey = encryptedLink.signatureEmail
@@ -570,6 +581,7 @@ export function useLinkInner(
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
                 let privateKey: PrivateKeyReference | undefined;
+                let privateKeyError;
 
                 try {
                     const parentPrivateKey: PrivateKeyReference = encryptedLink.parentLinkId
@@ -578,6 +590,7 @@ export function useLinkInner(
 
                     privateKey = parentPrivateKey;
                 } catch (e) {
+                    privateKeyError = e;
                     // ignore failures but still report them to Sentry
                     sendErrorReport(e, {
                         extra: {
@@ -605,8 +618,17 @@ export function useLinkInner(
                 }
 
                 if (!privateKey) {
+                    if (abortSignal.aborted) {
+                        throw privateKeyError;
+                    }
                     // This should never happen. If you see this error in Sentry something is wrong
-                    throw new Error('No private key was found during getLinkPassphraseAndSessionKey');
+                    throw new EnrichedError('No private key was found during decryptLink', {
+                        tags: {
+                            shareId,
+                            linkId: encryptedLink.linkId,
+                        },
+                        extra: { e: privateKeyError, crypto: true },
+                    });
                 }
                 const namePromise = new Promise<{ name: string; nameVerified: VERIFICATION_STATUS }>(
                     async (resolve, reject) => {
