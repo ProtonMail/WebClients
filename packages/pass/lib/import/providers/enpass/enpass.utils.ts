@@ -38,6 +38,7 @@ const ENPASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
 export const ENPASS_FIELD_TYPES = {
     login: ['username', 'email', 'totp', 'password', 'url'],
     creditCard: ['ccName', 'ccType', 'ccNumber', 'ccCvc', 'ccPin', 'ccExpiry'],
+    custom: [],
     ignored: ['section'],
 } as const;
 
@@ -69,6 +70,7 @@ export const extractEnpassFactory = <K extends string>(keys: readonly K[]) => {
 
 export const extractEnpassLogin = extractEnpassFactory(ENPASS_FIELD_TYPES.login);
 export const extractEnpassCC = extractEnpassFactory(ENPASS_FIELD_TYPES.creditCard);
+export const extractEnpassCustom = extractEnpassFactory(ENPASS_FIELD_TYPES.custom);
 
 export const extractEnpassExtraFields = (fields: EnpassField[]): DeobfuscatedItemExtraField[] =>
     fields.map(({ value, label, sensitive }) => ({
