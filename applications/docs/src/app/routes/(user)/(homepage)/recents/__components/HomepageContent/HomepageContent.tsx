@@ -13,6 +13,8 @@ import { useEffect } from 'react'
 import { ContentSheet } from './shared'
 import { useIsSheetsEnabled } from '~/utils/misc'
 
+const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
+
 export function HomepageContent() {
   return (
     <ContextMenuProvider>
@@ -37,7 +39,7 @@ function useRenderHomepageView(): JSX.Element | null {
     case 'search-loading':
     case 'recents-loading':
     case 'favorites-loading':
-    case 'trashed-loading':
+    case 'trash-loading':
       return (
         <div className="flex h-full items-center justify-center">
           <CircleLoader size="large" />
@@ -56,8 +58,8 @@ function useRenderHomepageView(): JSX.Element | null {
     case 'favorites-empty':
       // TODO: implement favorites
       return null
-    case 'trashed-empty':
-      return <EmptyState variant="trashed" />
+    case 'trash-empty':
+      return <EmptyState variant="trash" />
     // Document lists.
     case 'search':
       return <DocumentsTable itemsSections={state.itemSections} variant="search" />
@@ -83,8 +85,8 @@ function useRenderHomepageView(): JSX.Element | null {
     case 'favorites':
       // TODO: implement favorites
       return null
-    case 'trashed':
-      return <DocumentsTable itemsSections={state.itemSections} variant="trashed" />
+    case 'trash':
+      return <DocumentsTable itemsSections={state.itemSections} variant="trash" />
     // This won't happen, it's only here for type safety.
     case 'unknown':
       return null
@@ -92,14 +94,14 @@ function useRenderHomepageView(): JSX.Element | null {
   }
 }
 
-type EmptyStateVariant = 'recents' | 'trashed' | 'search'
+type EmptyStateVariant = 'recents' | 'trash' | 'search'
 
 type EmptyStateProps = { variant: EmptyStateVariant }
 function getEmptyStateText(variant: EmptyStateVariant): string {
   switch (variant) {
     case 'recents':
       return c('Info').t`Create an encrypted document.`
-    case 'trashed':
+    case 'trash':
       return c('Info').t`There are no documents in the trash.`
     case 'search':
       return c('Info').t`No recent documents match your search.`
@@ -109,6 +111,7 @@ function getEmptyStateText(variant: EmptyStateVariant): string {
 function EmptyState({ variant }: EmptyStateProps) {
   const { getLocalID } = useAuthentication()
   const isSheetsEnabled = useIsSheetsEnabled()
+  const { updateRecentDocuments } = useHomepageView()
 
   return (
     <ContentSheet isBottom className="flex grow items-center justify-center">
@@ -129,6 +132,7 @@ function EmptyState({ variant }: EmptyStateProps) {
               color="norm"
               size="large"
               shape="solid"
+              onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
               style={{ backgroundColor: 'var(--docs-blue-color)' }}
               className="flex items-center justify-center gap-2"
             >

@@ -3,17 +3,17 @@ import clsx from '@proton/utils/clsx'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 const POSITIONAL_CELL_CLASSES = [
-  '[&:nth-child(1)]:grow [&:nth-child(1)]:px-6 [&:nth-child(1)]:basis-0',
+  '[&:nth-child(1)]:grow [&:nth-child(1)]:px-5 [&:nth-child(1)]:basis-0',
   '[&:nth-child(2)]:w-[9rem] xlarge:[&:nth-child(2)]:w-[12rem] xxlarge:[&:nth-child(2)]:w-[18rem] [&:nth-child(2)]:px-2',
   '[&:nth-child(3)]:w-[14rem] large:[&:nth-child(3)]:w-[16rem] xlarge:[&:nth-child(3)]:w-[20rem] xxlarge:[&:nth-child(3)]:w-[26rem] [&:nth-child(3)]:px-2',
-  '[&:nth-child(4)]:w-[13rem] large:[&:nth-child(4)]:w-[14rem] xlarge:[&:nth-child(4)]:w-[16rem] xxlarge:[&:nth-child(4)]:w-[22rem] [&:nth-child(4)]:pe-5 [&:nth-child(4)]:ps-2',
+  '[&:nth-child(4)]:w-[13rem] large:[&:nth-child(4)]:w-[14rem] xlarge:[&:nth-child(4)]:w-[16rem] xxlarge:[&:nth-child(4)]:w-[22rem] [&:nth-child(4)]:pe-2 [&:nth-child(4)]:ps-2',
 ]
 
 type Target = 'all' | 'medium' | 'large'
 const TARGET_CLASSES: Record<Target, string | undefined> = {
   all: undefined,
-  medium: 'hidden medium:!table-cell',
-  large: 'hidden large:!table-cell',
+  medium: 'hidden medium:!flex',
+  large: 'hidden large:!flex',
 }
 
 export interface TableProps extends ComponentPropsWithoutRef<'div'> {}
@@ -29,7 +29,7 @@ export interface HeadProps extends ComponentPropsWithoutRef<'div'> {
 export function Head({ children, ...props }: HeadProps) {
   return (
     <div role="rowgroup" {...props} className={clsx('sticky left-0 top-0', props.className)}>
-      <div role="row" className="flex h-[3.75rem] items-center text-left">
+      <div role="row" className="flex h-[2.75rem] items-center text-left">
         {children}
       </div>
     </div>
@@ -38,15 +38,17 @@ export function Head({ children, ...props }: HeadProps) {
 
 export interface HeaderProps extends ComponentPropsWithoutRef<'div'> {
   target?: Target
+  isTitle?: boolean
 }
 
-export function Header({ target = 'all', ...props }: HeaderProps) {
+export function Header({ target = 'all', isTitle, ...props }: HeaderProps) {
   return (
     <div
       role="columnheader"
       {...props}
       className={clsx(
-        'whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] [&:nth-child(1)]:text-[1rem]',
+        'relative flex h-full items-center whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff]',
+        isTitle && '[&:nth-child(1)]:text-[1rem]',
         ...POSITIONAL_CELL_CLASSES,
         TARGET_CLASSES[target],
         props.className,
