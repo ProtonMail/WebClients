@@ -26,9 +26,13 @@ const findDeepLink = (argv: string[], action: DeepLinkActions): string | undefin
     );
 };
 
-const parseOpenMailParams = (url: string): { labelID: string | undefined; elementID: string | undefined } => {
+const parseOpenMailParams = (url: string): { labelID?: string; elementID?: string; messageID?: string } => {
     const params = parseURLParams(url);
-    return { labelID: params?.get("labelID") ?? undefined, elementID: params?.get("elementID") ?? undefined };
+    return {
+        labelID: params?.get("labelID") ?? undefined,
+        elementID: params?.get("elementID") ?? undefined,
+        messageID: params?.get("messageID") ?? undefined,
+    };
 };
 
 const handleOpenMail = (argv: string[]) => {
@@ -54,9 +58,9 @@ const handleOpenMail = (argv: string[]) => {
         }
     }
 
-    const { labelID, elementID } = parseOpenMailParams(url);
+    const { labelID, elementID, messageID } = parseOpenMailParams(url);
 
-    openMail(labelID, elementID);
+    openMail(labelID, elementID, messageID);
 };
 
 const handleOpenCalendar = (argv: string[]) => {
@@ -91,9 +95,15 @@ const openCalendarArgs = new OneTimeArgument();
 export const handleStartupDeepLink = () => {
     const urlMail = findDeepLink(process.argv, DeepLinkActions.OpenMail);
     if (urlMail) {
-        const { labelID, elementID } = parseOpenMailParams(urlMail);
+        const { labelID, elementID, messageID } = parseOpenMailParams(urlMail);
         if (labelID && labelID !== "" && elementID && elementID !== "") {
-            openMailArgs.setOnce(`labelID=${encodeURIComponent(labelID)}&elementID=${encodeURIComponent(elementID)}`);
+            openMailArgs.setOnce(
+                new URLSearchParams({
+                    labelID,
+                    elementID,
+                    ...(messageID ? { messageID } : {}),
+                }).toString(),
+            );
         }
     }
 
