@@ -6,6 +6,9 @@ import { getJsLoaders } from '@proton/pack/webpack/js.loader';
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
+    core: {
+        disableTelemetry: true,
+    },
     stories: ['../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     staticDirs: [],
     addons: ['@storybook/addon-webpack5-compiler-babel', '@storybook/addon-links', '@storybook/addon-essentials'],
