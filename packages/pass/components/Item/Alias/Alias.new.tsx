@@ -1,7 +1,6 @@
 import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
@@ -25,8 +24,9 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
+import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
+import { reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
@@ -44,8 +44,8 @@ const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
     const { ParentPortal, openPortal } = usePortal();
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
-    const reconciled = useRef(false);
 
+    const [reconciled, setReconciled] = useState(false);
     const [showAdvanced, setShowAdvanced] = useState(false);
     const customizeAliasDiscovery = useSpotlightFor(SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE);
 
@@ -67,22 +67,20 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     /* set initial `aliasPrefix` to an empty string to avoid a
      * form error state if `aliasOptions` have not loaded yet */
-    const [initialValues, initialErrors] = useMemo<[NewAliasFormValues, FormikErrors<NewAliasFormValues>]>(() => {
-        const initial: NewAliasFormValues = {
+    const initialValues = useMemo<NewAliasFormValues>(
+        () => ({
             shareId,
             aliasPrefix: '',
             aliasSuffix: undefined,
             files: filesFormInitializer(),
             mailboxes: [],
             ...defaults,
-        };
-
-        return [initial, validateNewAliasForm(initial)];
-    }, []);
+        }),
+        []
+    );
 
     const form = useFormik<NewAliasFormValues>({
         initialValues,
-        initialErrors,
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes, files }) => {
             if (needsUpgrade) return;
 
@@ -112,7 +110,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         },
         validate: validateNewAliasForm,
         validateOnChange: true,
-        validateOnMount: false,
+        validateOnMount: true,
     });
 
     const draft = useItemDraft<NewAliasFormValues>(form, {
@@ -123,40 +121,47 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     const aliasOptions = useAliasOptions({
         shareId,
-        onAliasOptionsLoaded: async (options) => {
-            const draft = await draftHydrated;
-            const formValues = draft ?? form.values;
+        onAliasOptions: async (res) => {
+            try {
+                if (!res.ok) return;
 
-            const firstSuffix = options.suffixes[0];
-            const firstMailBox = options.mailboxes[0];
-            const prefixFromURL = !isEmptyString(defaultAliasPrefix);
-            const aliasPrefix = prefixFromURL ? defaultAliasPrefix : deriveAliasPrefix(formValues.name);
+                const options = res.aliasOptions;
+                const draft = await draftHydrated;
+                const formValues = draft ?? form.values;
 
-            const defaultAlias = { aliasPrefix, aliasSuffix: firstSuffix, mailboxes: [firstMailBox] };
-            const draftAlias = draft ? reconciliateAliasFromDraft(formValues, options, defaultAlias) : null;
+                const firstSuffix = options.suffixes[0];
+                const firstMailBox = options.mailboxes[0];
+                const prefixFromURL = !isEmptyString(defaultAliasPrefix);
+                const aliasPrefix = prefixFromURL ? defaultAliasPrefix : deriveAliasPrefix(formValues.name);
 
-            const values = { ...formValues, ...(draftAlias ?? defaultAlias) };
-            const errors = validateNewAliasForm(values);
+                const defaultAlias = { aliasPrefix, aliasSuffix: firstSuffix, mailboxes: [firstMailBox] };
+                const draftAlias = draft ? reconciliateAliasFromDraft(formValues, options, defaultAlias) : null;
 
-            if (draft) {
-                await form.setValues(values, true);
-                await form.setTouched({ aliasPrefix: deriveAliasPrefix(draft.name) !== draft.aliasPrefix });
-                form.setErrors(errors);
-            } else form.resetForm({ values, errors, touched: {} });
+                const values = { ...formValues, ...(draftAlias ?? defaultAlias) };
+                const errors = await validateNewAliasForm(values);
 
-            reconciled.current = true;
+                if (draft) {
+                    await form.setTouched({ aliasPrefix: deriveAliasPrefix(draft.name) !== draft.aliasPrefix }, false);
+                    await form.setValues(values, true);
+                    form.setErrors(errors);
+                } else form.resetForm({ values, errors, touched: {} });
+            } finally {
+                setReconciled(true);
+            }
         },
     });
 
-    const { values, touched, setFieldValue } = form;
+    const { values, touched, isValid, status, errors, setFieldValue } = form;
     const { name, aliasPrefix, aliasSuffix } = values;
-    const ready = !aliasOptions.loading;
-    const { unverified } = aliasOptions;
+    const { unverified, loading } = aliasOptions;
+
+    const canCreate = !(unverified || needsUpgrade);
+    const valid = canCreate && !loading && isValid && !status?.isBusy;
 
     const gearIcon = <Icon name="cog-wheel" key="alias-customize-icon" />;
 
     useEffect(() => {
-        if (reconciled.current) {
+        if (reconciled) {
             const allowPrefixDerivation = !touched.aliasPrefix;
             if (allowPrefixDerivation) void setFieldValue('aliasPrefix', deriveAliasPrefix(name));
         }
@@ -169,7 +174,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             handleCancelClick={onCancel}
             submitButton={needsUpgrade && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} />}
             type="alias"
-            valid={ready && form.isValid && !unverified && !needsUpgrade && !form.status?.isBusy}
+            valid={valid}
             actions={ParentPortal}
         >
             {({ didEnter }) => (
@@ -200,10 +205,10 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={!draft && didEnter && ready && !needsUpgrade}
-                                    key={`alias-name-${didEnter}-${ready}`}
+                                    autoFocus={!draft && didEnter && !loading && !needsUpgrade}
+                                    key={`alias-name-${didEnter}-${loading}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
-                                    disabled={unverified || !ready}
+                                    disabled={unverified || loading}
                                 />
                             </FieldsetCluster>
 
@@ -211,10 +216,10 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                 <ValueControl
                                     icon="alias"
                                     label={c('Label').t`You are about to create`}
-                                    loading={!ready}
+                                    loading={loading}
                                     error={Boolean(
                                         Object.keys(form.touched).length > 0 &&
-                                            (form.errors.aliasPrefix || form.errors.aliasSuffix)
+                                            (errors.aliasPrefix || errors.aliasSuffix)
                                     )}
                                     actions={
                                         <Button
@@ -245,7 +250,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
                             <AliasForm
                                 aliasOptions={aliasOptions.value}
-                                loading={!ready}
+                                loading={loading}
                                 form={form}
                                 showAdvanced={showAdvanced}
                             />

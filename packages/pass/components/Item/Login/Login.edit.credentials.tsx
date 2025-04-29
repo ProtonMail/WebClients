@@ -13,8 +13,8 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -36,11 +36,11 @@ export const LoginEditCredentials: FC<Props> = ({ form }) => {
 
     /** When enabling the username field set the `itemEmail` as
      * the `itemUsername` only if it's a non-valid email */
-    const handleAddUsernameClick = () =>
+    const handleAddUsernameClick = async () =>
         form.setValues(
             withMerge<LoginItemFormValues>({
                 withUsername: true,
-                ...(!PassUI.is_email_valid(itemEmail)
+                ...(!(await PassUI.is_email_valid(itemEmail))
                     ? {
                           itemEmail: '',
                           itemUsername: itemEmail,

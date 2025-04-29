@@ -1,4 +1,4 @@
 import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
-import { createPassCoreWorkerService } from '@proton/pass/lib/core/core.worker.service';
+import { PassCoreWorkerService } from '@proton/pass/lib/core/core.worker.service';
 
-export const core = createPassCoreProxy(createPassCoreWorkerService());
+export const core = createPassCoreProxy(PassCoreWorkerService);

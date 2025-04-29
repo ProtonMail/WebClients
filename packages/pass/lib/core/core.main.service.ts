@@ -13,7 +13,7 @@ export const createPassCoreMainThreadService = (): PassCoreService => {
             wasmPromise ??
             import(/* webpackChunkName: "pass-core.main" */ '@protontech/pass-rust-core/worker')
                 .then((value) => {
-                    logger.debug(`[PassCoreUI] Module v${value.library_version()} loaded`);
+                    logger.debug(`[PassCore] Module v${value.library_version()} loaded`);
                     return value;
                 })
                 .catch(() => {

@@ -11,9 +11,8 @@ import {
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';
 import lastItem from '@proton/utils/lastItem';
@@ -26,14 +25,14 @@ import {
     formatLastPassCCExpirationDate,
 } from './lastpass.utils';
 
-const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> =>
+const processLoginItem = async (item: LastPassItem): Promise<ItemImportIntent<'login'>> =>
     importLoginItem({
         name: item.name,
         note: item.extra,
-        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: item.totp,
+        ...(await getEmailOrUsername(item.username)),
     });
 
 const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> =>
@@ -62,6 +61,7 @@ const processIdentityItem = (item: LastPassItem): ItemImportIntent<'identity'> =
 export const readLastPassData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
+    const vaults: ImportVault[] = [];
 
     try {
         const data = await file.text();
@@ -85,34 +85,38 @@ export const readLastPassData = async (file: File): Promise<ImportReaderResult> 
             'grouping'
         );
 
-        const vaults: ImportVault[] = groupedByVault
-            .filter(({ length }) => length > 0)
-            .map((items) => {
-                return {
-                    name: getImportedVaultName(items?.[0].grouping),
-                    shareId: null,
-                    items: items
-                        .map((item) => {
-                            const noteType = extractLastPassFieldValue(item?.extra, 'NoteType');
-                            const type = capitalize(noteType ?? c('Label').t`Unknown`);
-                            const title = item?.name ?? '';
+        for (const vaultItems of groupedByVault) {
+            if (vaultItems.length === 0) continue;
+            const items: ItemImportIntent[] = [];
 
-                            try {
-                                const isNote = item.url === 'http://sn';
-                                if (!isNote) return processLoginItem(item);
-                                if (!noteType) return processNoteItem(item);
-                                if (type === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
-                                if (type === LastPassNoteType.ADDRESS) return processIdentityItem(item);
+            for (const item of vaultItems) {
+                const noteType = extractLastPassFieldValue(item?.extra, 'NoteType');
+                const type = capitalize(noteType ?? c('Label').t`Unknown`);
+                const title = item?.name ?? '';
 
-                                ignored.push(`[${type}] ${title}`);
-                            } catch (err) {
-                                ignored.push(`[${type}] ${title}`);
-                                logger.warn('[Importer::LastPass]', err);
-                            }
-                        })
-                        .filter(truthy),
-                };
+                try {
+                    const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
+                        const isNote = item.url === 'http://sn';
+                        if (!isNote) return processLoginItem(item);
+                        if (!noteType) return processNoteItem(item);
+                        if (type === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
+                        if (type === LastPassNoteType.ADDRESS) return processIdentityItem(item);
+                    })();
+
+                    if (!value) ignored.push(`[${type}] ${title}`);
+                    else items.push(value);
+                } catch (err) {
+                    ignored.push(`[${type}] ${title}`);
+                    logger.warn('[Importer::LastPass]', err);
+                }
+            }
+
+            vaults.push({
+                name: getImportedVaultName(vaultItems?.[0].grouping),
+                shareId: null,
+                items,
             });
+        }
 
         return { vaults, ignored, warnings };
     } catch (e) {
