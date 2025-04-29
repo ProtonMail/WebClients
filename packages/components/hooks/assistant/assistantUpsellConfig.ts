@@ -1,6 +1,5 @@
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import type { SelectedPlan } from '@proton/payments';
-import { CYCLE, type PlanIDs, getScribeAddonNameByPlan } from '@proton/payments';
+import { CYCLE, type SelectedPlan } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
@@ -21,38 +20,25 @@ export const getAssistantUpsellConfigPlanAndCycle = (
     }
 
     if (isOrgAdmin) {
-        const addonName = getScribeAddonNameByPlan(selectedPlan.name);
         // if we already have scribe addons, then we will use the current number of scribes as starting addon number
         // in the upsell
         // if we don't, then we will use the number of members as starting number for scribe addons
         const addonsValue = selectedPlan.getTotalScribes() || selectedPlan.getTotalUsers();
 
-        const planIDs: PlanIDs = {
-            ...selectedPlan.planIDs,
-        };
-
-        if (addonName) {
-            planIDs[addonName] = addonsValue;
-        }
+        // Update the selected plan with the new scribe count
+        const updatedSelectedPlan = selectedPlan.setScribeCount(addonsValue);
 
         return {
-            planIDs,
+            planIDs: updatedSelectedPlan.planIDs,
             ...cycles,
         };
     }
 
     if (user.isPaid) {
-        const addonName = getScribeAddonNameByPlan(selectedPlan.name);
-        const planIDs: PlanIDs = {
-            [selectedPlan.name]: 1,
-        };
-
-        if (addonName) {
-            planIDs[addonName] = 1;
-        }
+        const updatedSelectedPlan = selectedPlan.setScribeCount(1);
 
         return {
-            planIDs,
+            planIDs: updatedSelectedPlan.planIDs,
             ...cycles,
         };
     }
