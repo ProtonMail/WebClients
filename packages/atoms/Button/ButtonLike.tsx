@@ -1,6 +1,7 @@
 import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
+import { ThemeColor } from '@proton/colors';
 import type { ThemeColorUnion } from '@proton/colors';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
@@ -9,9 +10,22 @@ import CircleLoader from '../CircleLoader/CircleLoader';
 
 import './ButtonLike.scss';
 
-export type ButtonLikeShape = 'solid' | 'outline' | 'ghost' | 'underline';
+export enum ButtonLikeShapeEnum {
+    Solid = 'solid',
+    Outline = 'outline',
+    Ghost = 'ghost',
+    Underline = 'underline',
+}
 
-export type ButtonLikeSize = 'small' | 'medium' | 'large';
+export type ButtonLikeShape = `${ButtonLikeShapeEnum}`;
+
+export enum ButtonLikeSizeEnum {
+    Small = 'small',
+    Medium = 'medium',
+    Large = 'large',
+}
+
+export type ButtonLikeSize = `${ButtonLikeSizeEnum}`;
 
 export interface ButtonLikeOwnProps {
     /**
@@ -82,8 +96,8 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         tabIndex,
         children,
         shape: shapeProp,
-        color = 'weak',
-        size = 'medium',
+        color = ThemeColor.Weak,
+        size = ButtonLikeSizeEnum.Medium,
         fullWidth,
         pill,
         icon,
@@ -98,9 +112,9 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
 ) => {
     const isDisabled = loading || disabled;
 
-    const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
+    const shape = shapeProp || (color === ThemeColor.Weak ? 'outline' : 'solid');
 
-    const isUnderlineShape = shape === 'underline';
+    const isUnderlineShape = shape === ButtonLikeShapeEnum.Underline;
     const Element: ElementType = as || defaultElement;
 
     const buttonClassName = clsx(
