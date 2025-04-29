@@ -53,6 +53,9 @@ const decryptMimeMessage = async (
             decryptionKeys: privateKeys,
             verificationKeys: [],
             format: 'binary',
+            config: {
+                allowForwardedMessages: isAutoForwardee(message),
+            },
         });
 
         const decryptedStringData = binaryToString(decryption.data);
