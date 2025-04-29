@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Copier le lien d'invitation"
       ],
+      "Copy password": [
+        "Copier le mot de passe"
+      ],
       "Copy version number to clipboard": [
         "Copier le numéro de version dans le presse-papiers"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Créer un nouveau dossier"
+      ],
+      "Create new password": [
+        "Créer un nouveau mot de passe"
       ],
       "Current plan": [
         "Abonnement actuel"
@@ -348,6 +354,9 @@
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
       ],
+      "Generate password": [
+        "Générer un mot de passe"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
@@ -358,7 +367,7 @@
         "Nous contacter"
       ],
       "Get the apps": [
-        "Téléchargez les applications"
+        "Obtenir les applications"
       ],
       "Get verification code": [
         "Obtenir un code de vérification"
@@ -752,6 +761,9 @@
       ],
       "Take out of trash": [
         "Retirer de la corbeille"
+      ],
+      "Trashing...": [
+        "Envoi vers la corbeille..."
       ],
       "Trust": [
         "Faire confiance"
@@ -2335,11 +2347,6 @@
         "Facture impayée"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } dans ${ DRIVE_APP_NAME } vous permet de travailler avec d'autres personnes dans un environnement chiffré et sécurisé."
@@ -2475,6 +2482,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4174,6 +4186,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Voulez-vous vraiment définitivement supprimer les éléments sélectionnés du dossier Corbeille ?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Au moins ${ BETTER_PASSWORD_LENGTH } caractères"
+      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -4399,7 +4414,7 @@
         "Erreur lors de la conversion du document : ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "Erreur lors du chargement du document : ${ errorDetail }"
+        "Erreur lors du chargement du document ${ errorDetail }"
       ],
       "Error Syncing": [
         "Erreur de synchronisation"
@@ -4543,6 +4558,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Il semble que vous ayez récemment essayé de charger ${ uploadName }. Si le chargement n'a pas abouti, nous vous invitons à ${ replaceFile }. Si le chargement est toujours en cours, remplacer le fichier annulera le chargement en cours."
       ],
+      "It's better to have:": [
+        "Il est préférable d'avoir :"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Il est préférable d'utiliser un VPN en permanence. Mais voici les cas où les menaces à la cybersécurité peuvent être les plus importantes :"
       ],
@@ -4685,6 +4703,9 @@
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
       ],
+      "Numbers": [
+        "Chiffres"
+      ],
       "Offline": [
         "Hors ligne"
       ],
@@ -4723,6 +4744,12 @@
       ],
       "password": [
         "mot de passe"
+      ],
+      "Password copied to clipboard": [
+        "Le mot de passe a été copié dans le presse-papiers."
+      ],
+      "Password must have:": [
+        "Le mot de passe doit comprendre :"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
@@ -4949,6 +4976,9 @@
       "Surveillance": [
         "Surveillance"
       ],
+      "Symbols (#$&)": [
+        "Symboles (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
@@ -4980,7 +5010,7 @@
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "L' URL que vous avez saisie semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué de l’URL."
+        "L'URL que vous avez saisie semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué de l’URL."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
@@ -5105,9 +5135,6 @@
       "Trash": [
         "Corbeille"
       ],
-      "Trashed": [
-        "Dans la corbeille"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
@@ -5125,6 +5152,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Le téléchargement de centaines de fichiers en même temps peut réduire les performances."
+      ],
+      "Uppercase and lowercase letters": [
+        "Lettres majuscules et minuscules"
       ],
       "User activated": [
         "L'utilisateur a été activé."
@@ -5803,6 +5833,9 @@
       "Move to Inbox": [
         "Déplacer dans le dossier Boite de réception"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Il doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
       "My files": [
         "Mes fichiers"
       ],
@@ -5829,6 +5862,9 @@
       ],
       "Password": [
         "Mot de passe"
+      ],
+      "Password strength": [
+        "Niveau de sécurité du mot de passe"
       ],
       "Payer": [
         "Payeur"
@@ -5911,6 +5947,12 @@
       "Street address": [
         "Adresse postale"
       ],
+      "Strong": [
+        "Fort"
+      ],
+      "Strong password": [
+        "Mot de passe sécurisé"
+      ],
       "Subscription options": [
         "Options de l'abonnement"
       ],
@@ -5946,6 +5988,18 @@
       ],
       "Viewer": [
         "Lecteur"
+      ],
+      "Vulnerable": [
+        "Vulnérable"
+      ],
+      "Vulnerable password": [
+        "Mot de passe vulnérable"
+      ],
+      "Weak": [
+        "Faible"
+      ],
+      "Weak password": [
+        "Mot de passe peu sécurisé"
       ],
       "What happened?": [
         "Que s'est-il passé ?"
@@ -7841,8 +7895,8 @@
       "Searching": [
         "Recherche"
       ],
-      "Trashed": [
-        "Supprimés"
+      "Trash": [
+        "Corbeille"
       ]
     },
     "Participant name": {

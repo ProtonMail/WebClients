@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Kopiera inbjudningslänk"
       ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
       "Copy version number to clipboard": [
         "Kopiera versionsnummer till urklipp"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Skapa ny mapp"
+      ],
+      "Create new password": [
+        "Skapa nytt lösenord"
       ],
       "Current plan": [
         "Nuvarande paket"
@@ -344,6 +350,9 @@
       ],
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
+      ],
+      "Generate password": [
+        "Generera lösenord"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaffa ${ planName } för ${ priceCoupon }"
@@ -743,6 +752,9 @@
       ],
       "Take out of trash": [
         "Töm papperskorg"
+      ],
+      "Trashing...": [
+        "Kastar …"
       ],
       "Trust": [
         "Lita på"
@@ -2326,11 +2338,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
@@ -2463,6 +2470,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4154,6 +4166,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Är du säker på att du vill ta bort markerade objekt permanent från papperskorgen?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -4379,7 +4394,7 @@
         "Fel vid konvertering av dokument: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "Fel vid laddning av dokument${ errorDetail }"
+        "Fel vid laddning av dokument ${ errorDetail }"
       ],
       "Error Syncing": [
         "Fel vid synkronisering"
@@ -4523,6 +4538,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det verkar som att du nyligen försökte ladda upp ${ uploadName }. Om uppladdningen misslyckades, ${ replaceFile }. Om uppladdningen fortfarande pågår kommer den pågående uppladdningen att avbrytas om den ersätts."
       ],
+      "It's better to have:": [
+        "Det är bättre att ha:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det är bäst att alltid använda ett VPN. Men här är när cybersäkerhetshoten kan vara som störst:"
       ],
@@ -4665,6 +4683,9 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
+      "Numbers": [
+        "Siffror"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4703,6 +4724,12 @@
       ],
       "password": [
         "lösenord"
+      ],
+      "Password copied to clipboard": [
+        "Lösenord kopierat till urklipp"
+      ],
+      "Password must have:": [
+        "Lösenord måste innehålla:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
@@ -4925,6 +4952,9 @@
       "Surveillance": [
         "Övervakning"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -5078,9 +5108,6 @@
       "Trash": [
         "Papperskorg"
       ],
-      "Trashed": [
-        "Kastade"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -5098,6 +5125,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Att ladda upp hundratals filer på samma gång kan påverka prestandan."
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "User activated": [
         "Användare aktiverad"
@@ -5768,6 +5798,9 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
       "My files": [
         "Mina filer"
       ],
@@ -5794,6 +5827,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Password strength": [
+        "Lösenordsstyrka"
       ],
       "Payer": [
         "Betalare"
@@ -5876,6 +5912,12 @@
       "Street address": [
         "Gatuadress"
       ],
+      "Strong": [
+        "Starkt"
+      ],
+      "Strong password": [
+        "Starkt Lösenord"
+      ],
       "Subscription options": [
         "Prenumerationsalternativ"
       ],
@@ -5911,6 +5953,18 @@
       ],
       "Viewer": [
         "Visare"
+      ],
+      "Vulnerable": [
+        "Sårbart"
+      ],
+      "Vulnerable password": [
+        "Sårbart lösenord"
+      ],
+      "Weak": [
+        "Svagt"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
       ],
       "What happened?": [
         "Vad hände?"
@@ -7130,6 +7184,11 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7142,11 +7201,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7804,9 +7858,6 @@
       ],
       "Searching": [
         "Söker"
-      ],
-      "Trashed": [
-        "Kastade"
       ]
     },
     "Participant name": {

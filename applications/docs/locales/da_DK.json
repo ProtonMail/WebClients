@@ -309,6 +309,9 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
+      "Generate password": [
+        "Generér adgangskode"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Få ${ planName } til ${ priceCoupon }"
       ],
@@ -581,9 +584,6 @@
       ],
       "Save changes": [
         "Gem ændringer"
-      ],
-      "Save preferences": [
-        "Gem præferencer"
       ],
       "Search": [
         "Søg"
@@ -2197,11 +2197,6 @@
         "Forfalden faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2280,6 +2275,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4405,6 +4405,9 @@
       "password": [
         "adgangskode"
       ],
+      "Password copied to clipboard": [
+        "Adgangskode kopieret til udklipsholder"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
@@ -5459,6 +5462,9 @@
       "Street address": [
         "Adresse"
       ],
+      "Strong": [
+        "Stærk"
+      ],
       "Subscription options": [
         "Abonnementsmuligheder"
       ],
@@ -5494,6 +5500,12 @@
       ],
       "Viewer": [
         "Seer"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Weak": [
+        "Svag"
       ],
       "What happened?": [
         "Hvad skete der?"
