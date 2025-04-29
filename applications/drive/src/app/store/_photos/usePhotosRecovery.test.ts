@@ -2,6 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { useSharesStore } from '../../zustand/share/shares.store';
@@ -15,6 +16,7 @@ function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
     return {
         encryptedName: 'name',
         name: 'name',
+        type: LinkType.FILE,
         linkId,
         createTime: 323212,
         digests: { sha1: '' },

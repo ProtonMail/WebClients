@@ -4,6 +4,7 @@ import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { Loader } from '@proton/components';
 import { isProtonDocument, isProtonSheet } from '@proton/shared/lib/helpers/mimetype';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useDocumentActions } from '../store/_documents';
@@ -16,7 +17,8 @@ export const VolumeLinkContainer: FC = () => {
     const invitationId = searchParams.get('invitation');
     const externalInvitationId = searchParams.get('externalInvitationID');
     const { handleRedirectOrAcceptInvitation, handleConvertExternalInvitation } = useVolumeLinkView();
-    const { navigateToSharedWithMe, navigateToSharedByMe, navigateToLink, navigateToNoAccess } = useDriveNavigation();
+    const { navigateToSharedWithMe, navigateToSharedByMe, navigateToLink, navigateToNoAccess, navigateToAlbum } =
+        useDriveNavigation();
     const { openDocument } = useDocumentActions();
 
     useEffect(() => {
@@ -44,6 +46,8 @@ export const VolumeLinkContainer: FC = () => {
                         linkId: linkInfo.linkId,
                         openBehavior: 'redirect',
                     });
+                } else if (linkInfo?.type === LinkType.ALBUM) {
+                    navigateToAlbum(linkInfo.shareId, linkInfo.linkId);
                 } else if (linkInfo?.shareId) {
                     navigateToLink(linkInfo.shareId, linkInfo.linkId, linkInfo.isFile, '/shared-with-me');
                 } else {
