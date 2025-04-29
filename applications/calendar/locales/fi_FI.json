@@ -204,6 +204,9 @@
       "Copy link": [
         "Kopioi linkki"
       ],
+      "Copy password": [
+        "Kopioi salasana"
+      ],
       "Copy version number to clipboard": [
         "Kopioi versionumero leikepöydälle"
       ],
@@ -227,6 +230,9 @@
       ],
       "Create new contact": [
         "Luo uusi yhteystieto"
+      ],
+      "Create new password": [
+        "Luo uusi salasana"
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -328,6 +334,9 @@
       ],
       "Forward as attachment": [
         "Välitä liitteenä"
+      ],
+      "Generate password": [
+        "Luo salasana"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Hanki ${ planName } hintaan ${ priceCoupon }"
@@ -4631,6 +4640,9 @@
       "Are you sure you want to discard your import?": [
         "Haluatko varmasti hylätä tuontisi?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -4939,6 +4951,9 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "It's better to have:": [
+        "On parempi olla:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
       ],
@@ -5053,6 +5068,9 @@
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
+      "Numbers": [
+        "Numerot"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Järjestäjän aiemmin päivittämät tapahtumakerrat säilytetään, mutta osa vastauksistasi menetetään."
       ],
@@ -5085,6 +5103,9 @@
       ],
       "password": [
         "salasana"
+      ],
+      "Password copied to clipboard": [
+        "Salasana kopioitiin leikepöydälle"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
@@ -5252,6 +5273,9 @@
       "Surveillance": [
         "Tarkkailu"
       ],
+      "Symbols (#$&)": [
+        "Symbolit (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -5362,6 +5386,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "Uppercase and lowercase letters": [
+        "Isot ja pienet kirjaimet"
       ],
       "User activated": [
         "Käyttäjä aktivoitiin"
@@ -6205,6 +6232,12 @@
       "Street address": [
         "Katuosoite"
       ],
+      "Strong": [
+        "Vahva"
+      ],
+      "Strong password": [
+        "Vahva salasana"
+      ],
       "Subscription options": [
         "Tilausvaihtoehdot"
       ],
@@ -6243,6 +6276,18 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "Vulnerable": [
+        "Haavoittuvainen"
+      ],
+      "Vulnerable password": [
+        "Haavoittuva salasana"
+      ],
+      "Weak": [
+        "Heikko"
+      ],
+      "Weak password": [
+        "Heikko salasana"
       ],
       "Week start": [
         "Viikon aloituspäivä"
@@ -6794,26 +6839,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -6835,6 +6860,26 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10197,9 +10242,6 @@
       ],
       "Get the apps": [
         "Hanki sovellukset"
-      ],
-      "Get Zooming faster": [
-        "Aloita Zoomaus nopeammin"
       ],
       "Gift": [
         "Lahja"

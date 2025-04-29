@@ -209,6 +209,9 @@
       "Copy link": [
         "Kopírovat odkaz"
       ],
+      "Copy password": [
+        "Kopírovat heslo"
+      ],
       "Copy version number to clipboard": [
         "Zkopírovat číslo verze do schránky"
       ],
@@ -232,6 +235,9 @@
       ],
       "Create new contact": [
         "Vytvořit nový kontakt"
+      ],
+      "Create new password": [
+        "Vytvořit nové heslo"
       ],
       "Current plan": [
         "Aktuální tarif"
@@ -337,6 +343,9 @@
       ],
       "Forward as attachment": [
         "Přeposlat jako přílohu"
+      ],
+      "Generate password": [
+        "Generovat heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získat ${ planName } za ${ priceCoupon }"
@@ -2817,7 +2826,7 @@
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Podporujte používání dvoufaktorového ověřování ve vaší organizaci pro zvýšení bezpečnosti."
+        "Podporujte používání dvoufázového ověření ve vaší organizaci pro zvýšení bezpečnosti."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
@@ -4882,6 +4891,9 @@
       "Are you sure you want to discard your import?": [
         "Jste si jistí, že chcete zahodit váš import?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -5206,6 +5218,9 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "It's better to have:": [
+        "Je lepší mít:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Nejlepší je vždy používat VPN. Nejvyšší kybernetické riziko je:"
       ],
@@ -5323,6 +5338,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
+      "Numbers": [
+        "Číslice"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Výskyty dříve aktualizované organizátorem budou zachovány, ale některé vaše odpovědi budou ztraceny."
       ],
@@ -5358,6 +5376,12 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bylo zkopírováno do schránky"
+      ],
+      "Password must have:": [
+        "Heslo musí obsahovat:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -5539,6 +5563,9 @@
       "Surveillance": [
         "Sledování"
       ],
+      "Symbols (#$&)": [
+        "Symboly (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
@@ -5655,6 +5682,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Uppercase and lowercase letters": [
+        "Velká a malá písmena"
       ],
       "User activated": [
         "Uživatel aktivován"
@@ -6416,6 +6446,9 @@
       "Move to Inbox": [
         "Přesunout do Doručené pošty"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí mít alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
       "Name": [
         "Jméno"
       ],
@@ -6463,6 +6496,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password strength": [
+        "Síla hesla"
       ],
       "Payer": [
         "Plátce"
@@ -6530,6 +6566,12 @@
       "Street address": [
         "Ulice a č. p."
       ],
+      "Strong": [
+        "Silné"
+      ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti předplatného"
       ],
@@ -6568,6 +6610,18 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Vulnerable": [
+        "Zranitelné"
+      ],
+      "Vulnerable password": [
+        "Zranitelné heslo"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "Week start": [
         "Týden začíná"
@@ -7174,26 +7228,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7215,6 +7249,26 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10873,9 +10927,6 @@
       "Get the apps": [
         "Získat aplikace"
       ],
-      "Get Zooming faster": [
-        "Získejte rychlejší Zoom"
-      ],
       "Gift": [
         "Dárek"
       ],
@@ -11043,6 +11094,9 @@
       ],
       "Save changes": [
         "Uložit změny"
+      ],
+      "Schedule meetings in one click": [
+        "Plánování schůzek jedním kliknutím"
       ],
       "Security center": [
         "Bezpečnostní centrum"

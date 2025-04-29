@@ -207,6 +207,9 @@
       "Copy link": [
         "Copia l'enllaç"
       ],
+      "Copy password": [
+        "Copia la contrasenya"
+      ],
       "Copy version number to clipboard": [
         "Copia el número de versió al porta-retalls"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Crea un nou contacte"
+      ],
+      "Create new password": [
+        "Crea una contrasenya nova"
       ],
       "Current plan": [
         "Pla actual"
@@ -285,7 +291,7 @@
         "Baixa"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
       "Download now": [
         "Descarrega"
@@ -331,6 +337,9 @@
       ],
       "Forward as attachment": [
         "Reenvia com a adjunt"
+      ],
+      "Generate password": [
+        "Genera la contrasenya"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obteniu ${ planName } per ${ priceCoupon }."
@@ -4744,6 +4753,9 @@
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
+      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -5058,6 +5070,9 @@
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
       ],
+      "It's better to have:": [
+        "És millor tenir:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser més altes:"
       ],
@@ -5175,6 +5190,9 @@
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Les ocurrències prèviament actualitzades per l'organitzador es mantindran, però es perdran algunes de les vostres respostes."
       ],
@@ -5210,6 +5228,12 @@
       ],
       "password": [
         "contrasenya"
+      ],
+      "Password copied to clipboard": [
+        "La contrasenya s'ha copiat al porta-retalls"
+      ],
+      "Password must have:": [
+        "La contrasenya ha de tenir:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
@@ -5383,6 +5407,9 @@
       "Surveillance": [
         "Vigilància"
       ],
+      "Symbols (#$&)": [
+        "Símbols (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
@@ -5499,6 +5526,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
+      ],
+      "Uppercase and lowercase letters": [
+        "Lletres majúscules i minúscules"
       ],
       "User activated": [
         "S'ha activat l'usuari."
@@ -6245,6 +6275,9 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "Name": [
         "Nom"
       ],
@@ -6290,6 +6323,9 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password strength": [
+        "Solidesa de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -6357,6 +6393,12 @@
       "Street address": [
         "Adreça de carrer"
       ],
+      "Strong": [
+        "Forta"
+      ],
+      "Strong password": [
+        "Contrasenya forta"
+      ],
       "Subscription options": [
         "Opcions de subscripció"
       ],
@@ -6395,6 +6437,18 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contrasenya vulnerable"
+      ],
+      "Weak": [
+        "Feble"
+      ],
+      "Weak password": [
+        "Contrasenya feble."
       ],
       "Week start": [
         "Inici de setmana"
@@ -6985,26 +7039,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -7026,6 +7060,26 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10478,9 +10532,6 @@
       "Get the apps": [
         "Aconseguiu les aplicacions"
       ],
-      "Get Zooming faster": [
-        "Obteniu Zoom més ràpidament"
-      ],
       "Gift": [
         "Regal"
       ],
@@ -10646,6 +10697,9 @@
       ],
       "Save changes": [
         "Desa els canvis"
+      ],
+      "Schedule meetings in one click": [
+        "Programeu reunions amb un sol clic"
       ],
       "Security center": [
         "Centre de seguretat"
