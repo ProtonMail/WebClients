@@ -3,8 +3,16 @@ import { AllNodes } from '../../../AllNodes'
 import type { TableNode, TableRowNode } from '@lexical/table'
 import { $createTableNode, $createTableRowNode } from '@lexical/table'
 import { $createTableNodeWithDimensions } from '@lexical/table'
-import { $getRoot } from 'lexical'
+import {
+  $createParagraphNode,
+  $getRoot,
+  $getSelection,
+  $isParagraphNode,
+  $isRangeSelection,
+  $isRootNode,
+} from 'lexical'
 import { $cleanupTableIfEmpty } from './cleanupTableIfEmpty'
+import { assertCondition } from '../../Suggestions/TestUtils'
 
 describe('cleanupTableIfEmpty', () => {
   const editor = createHeadlessEditor({
@@ -92,6 +100,73 @@ describe('cleanupTableIfEmpty', () => {
     testEditorState('table should be cleaned up', () => {
       const root = $getRoot()
       expect(root.getChildrenSize()).toBe(0)
+    })
+  })
+
+  describe('selection after cleaning up', () => {
+    test('has prev sibling', () => {
+      let paragraphKey: string | undefined
+      editor.update(
+        () => {
+          const table = $createTableNode()
+          const paragraph = $createParagraphNode()
+          paragraphKey = paragraph.__key
+          $getRoot().append(paragraph, table)
+          $cleanupTableIfEmpty(table)
+        },
+        { discrete: true },
+      )
+      editor.read(() => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(1)
+        const selection = $getSelection()
+        assertCondition($isRangeSelection(selection))
+        const focusNode = selection.focus.getNode()
+        assertCondition($isParagraphNode(focusNode))
+        expect(focusNode.__key).toBe(paragraphKey)
+      })
+    })
+
+    test('has next sibling', () => {
+      let paragraphKey: string | undefined
+      editor.update(
+        () => {
+          const table = $createTableNode()
+          const paragraph = $createParagraphNode()
+          paragraphKey = paragraph.__key
+          $getRoot().append(table, paragraph)
+          $cleanupTableIfEmpty(table)
+        },
+        { discrete: true },
+      )
+      editor.read(() => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(1)
+        const selection = $getSelection()
+        assertCondition($isRangeSelection(selection))
+        const focusNode = selection.focus.getNode()
+        assertCondition($isParagraphNode(focusNode))
+        expect(focusNode.__key).toBe(paragraphKey)
+      })
+    })
+
+    test('has neither sibling', () => {
+      editor.update(
+        () => {
+          const table = $createTableNode()
+          $getRoot().append(table)
+          $cleanupTableIfEmpty(table)
+        },
+        { discrete: true },
+      )
+      editor.read(() => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(0)
+        const selection = $getSelection()
+        assertCondition($isRangeSelection(selection))
+        const focusNode = selection.focus.getNode()
+        assertCondition($isRootNode(focusNode))
+      })
     })
   })
 })
