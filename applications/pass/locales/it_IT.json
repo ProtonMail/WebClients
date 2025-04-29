@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Sposta in un'altra cassaforte"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Sposta nel cestino"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Sposta nel cestino"
       ],
       "Multiple select": [
@@ -1810,6 +1810,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3820,14 +3824,14 @@
       "Enter coupon code": [
         "Inserisci il codice del coupon"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Inserisci la tua password di ${ BRAND_NAME }"
+      ],
       "Enter your backup password": [
         "Inserisci la tua password di backup"
       ],
       "Enter your extra password": [
         "Inserisci la password aggiuntiva"
-      ],
-      "Enter your password": [
-        "Inserisci la tua password"
       ],
       "Enter your PIN": [
         "Inserisci il tuo PIN"

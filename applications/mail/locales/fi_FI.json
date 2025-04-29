@@ -295,6 +295,9 @@
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
       ],
+      "Copy password": [
+        "Kopioi salasana"
+      ],
       "Copy password to clipboard": [
         "Kopioi salasana leikepöydälle"
       ],
@@ -327,6 +330,9 @@
       ],
       "Create new message": [
         "Luo uusi viesti"
+      ],
+      "Create new password": [
+        "Luo uusi salasana"
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -530,6 +536,9 @@
       ],
       "Forward as attachment": [
         "Välitä liitteenä"
+      ],
+      "Generate password": [
+        "Luo salasana"
       ],
       "Generate text": [
         "Luo tekstiä"
@@ -1120,10 +1129,10 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Valitse kaikki"
       ],
-      "Select all": [
+      "Select All": [
         "Valitse kaikki"
       ],
       "Select all messages": [
@@ -1329,6 +1338,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -6247,6 +6260,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Haluatko varmasti poistaa viestin pysyvästi?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
+      ],
       "Attach public key": [
         "Liitä julkinen avain"
       ],
@@ -6742,8 +6758,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -6759,6 +6774,9 @@
       ],
       "Invite family members and get everything up and running.": [
         "Kutsu perheenjäseniä ja aloita käyttö."
+      ],
+      "It's better to have:": [
+        "On parempi olla:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
@@ -6828,9 +6846,6 @@
       ],
       "Low Priority": [
         "Alhainen tärkeys"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Tee ${ MAIL_APP_NAME }ista oletussähköpostisovelluksesi."
       ],
       "Manage your folders": [
         "Hallitse kansioitasi"
@@ -6970,6 +6985,9 @@
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
+      "Numbers": [
+        "Numerot"
+      ],
       "of": [
         "/"
       ],
@@ -7002,6 +7020,9 @@
       ],
       "password": [
         "salasana"
+      ],
+      "Password copied to clipboard": [
+        "Salasana kopioitiin leikepöydälle"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
@@ -7349,6 +7370,9 @@
       "Surveillance": [
         "Tarkkailu"
       ],
+      "Symbols (#$&)": [
+        "Symbolit (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronoi ja hallitse tiedostoja ${ DRIVE_APP_NAME }-sovelluksella. Luo ja jaa dokumentit ${ DOCS_APP_NAME }-sovelluksessa, sekä säilytä niitä turvallisesti. Saatavilla ${ ios }, ${ android } ja ${ desktop }."
       ],
@@ -7675,6 +7699,9 @@
       ],
       "Upload picture": [
         "Lataa kuva"
+      ],
+      "Uppercase and lowercase letters": [
+        "Isot ja pienet kirjaimet"
       ],
       "URL link": [
         "URL-linkki"
@@ -8384,11 +8411,11 @@
       "Always move sender's emails": [
         "Siirrä lähettäjän viestit aina"
       ],
-      "AND": [
-        "JA"
-      ],
       "And": [
         "Ja"
+      ],
+      "AND": [
+        "JA"
       ],
       "and": [
         "ja"
@@ -8612,11 +8639,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JOS"
-      ],
       "If": [
         "Jos"
+      ],
+      "IF": [
+        "JOS"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -8726,14 +8753,14 @@
       "Optional": [
         "Valinnainen"
       ],
-      "OR": [
-        "TAI"
-      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
+      ],
+      "OR": [
+        "TAI"
       ],
       "Original link": [
         "Alkuperäinen linkki"
@@ -8828,6 +8855,12 @@
       "Street address": [
         "Katuosoite"
       ],
+      "Strong": [
+        "Vahva"
+      ],
+      "Strong password": [
+        "Vahva salasana"
+      ],
       "Subscription options": [
         "Tilausvaihtoehdot"
       ],
@@ -8875,6 +8908,18 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "Vulnerable": [
+        "Haavoittuvainen"
+      ],
+      "Vulnerable password": [
+        "Haavoittuva salasana"
+      ],
+      "Weak": [
+        "Heikko"
+      ],
+      "Weak password": [
+        "Heikko salasana"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -9551,29 +9596,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Hanki ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -9595,6 +9617,29 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Hanki ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {

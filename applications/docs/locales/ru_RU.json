@@ -186,6 +186,9 @@
       "Copy invite link": [
         "Скопировать ссылку-приглашение"
       ],
+      "Copy password": [
+        "Скопировать пароль"
+      ],
       "Copy version number to clipboard": [
         "Скопировать номер версии в буфер обмена"
       ],
@@ -206,6 +209,9 @@
       ],
       "Create new folder": [
         "Создать новую папку"
+      ],
+      "Create new password": [
+        "Создать новый пароль"
       ],
       "Current plan": [
         "Текущий тариф"
@@ -311,6 +317,9 @@
       ],
       "Forward as attachment": [
         "Переслать как вложение"
+      ],
+      "Generate password": [
+        "Создать пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Получить ${ planName } за ${ priceCoupon }"
@@ -2197,11 +2206,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2277,6 +2281,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4006,6 +4015,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "По крайней мере ${ BETTER_PASSWORD_LENGTH } символов"
+      ],
       "Attention required": [
         "Требуется внимание"
       ],
@@ -4336,6 +4348,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Похоже, что вы недавно пытались загрузить ${ uploadName }. Если загрузка не удалась, ${ replaceFile }. Если загрузка ещё продолжается, замена файла отменит текущую загрузку."
       ],
+      "It's better to have:": [
+        "Лучше иметь:"
+      ],
       "JCB logo": [
         "Логотип JCB"
       ],
@@ -4459,6 +4474,9 @@
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
+      "Numbers": [
+        "Цифры"
+      ],
       "Offline": [
         "Офлайн"
       ],
@@ -4488,6 +4506,9 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопирован в буфер обмена"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
@@ -4675,6 +4696,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "Символы (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -4821,6 +4845,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Одновременная загрузка сотен файлов может повлиять на производительность."
+      ],
+      "Uppercase and lowercase letters": [
+        "Заглавные и строчные буквы"
       ],
       "User activated": [
         "Пользователь активирован"
@@ -5435,6 +5462,9 @@
       "Move to Inbox": [
         "Переместить во Входящие"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Должно содержать не менее ${ MIN_PASSWORD_LENGTH } символов"
+      ],
       "Navigation": [
         "Навигация"
       ],
@@ -5540,6 +5570,12 @@
       "Street address": [
         "Адрес"
       ],
+      "Strong": [
+        "Надежный"
+      ],
+      "Strong password": [
+        "Надежный пароль"
+      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -5575,6 +5611,18 @@
       ],
       "Viewer": [
         "Читатель"
+      ],
+      "Vulnerable": [
+        "Уязвимый"
+      ],
+      "Vulnerable password": [
+        "Уязвимый пароль"
+      ],
+      "Weak": [
+        "Слабый"
+      ],
+      "Weak password": [
+        "Слабый пароль"
       ],
       "What happened?": [
         "Что случилось?"

@@ -463,6 +463,9 @@
       "Discard changes": [
         "Адхіліць змены"
       ],
+      "Discard Changes": [
+        "Адхіліць змены"
+      ],
       "Discover ${ planName }": [
         "Знаёмства з ${ planName }"
       ],
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "Пакінуць"
+      ],
+      "Keep Editing": [
+        "Працягнуць рэдагаванне"
       ],
       "Keep logo": [
         "Пакінуць лагатып"
@@ -1126,11 +1132,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "select file": [
-        "выбраць файл"
-      ],
       "Select file": [
         "Выбраць файл"
+      ],
+      "select file": [
+        "выбраць файл"
       ],
       "Select files": [
         "Выбраць файлы"
@@ -4633,6 +4639,9 @@
       "Edit conditions": [
         "Рэдагаваць умовы"
       ],
+      "Got it": [
+        "Зразумела"
+      ],
       "Next": [
         "Далей"
       ],
@@ -4705,17 +4714,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Ліст з пацвярджэннем будзе адпраўлены на ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Новы ключ шыфравання будзе згенерыраваны для ${ boldForwarderEmail }"
-      ],
       "Automatically forward emails to another email address.": [
         "Аўтаматычна перасылаць лісты на іншы адрас электроннай пошты."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Скразное шыфраванне адключана для вашага адраса ${ boldForwarderEmail }, але шыфраванне нулявога доступу засталося ўключаным. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Для сумяшчальнасці быў створаны новы ключ шыфравання для ${ boldForwarderEmail }."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Для сумяшчальнасці будзе згенерыраваны новы ключ шыфравання для ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Для сумяшчальнасці постквантавае шыфраванне было адключана, а новыя ключы шыфравання будуць згенерыраваны для ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "Для сумяшчальнасці постквантавае шыфраванне было адключана для ${ boldForwarderEmail }"
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "Для сумяшчальнасці постквантавае шыфраванне будзе адключана для ${ boldForwarderEmail }"
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Для сумяшчальнасці постквантавае шыфраванне будзе адключана, а новыя ключы шыфравання будуць згенерыраваны для ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Атрымальнік перасылкі запрошаны і неабходна прыняць/адхіліць запрашэнне або абнавіць"
       ],
       "Forwarding is active": [
         "Перасылка актыўная"
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "Перасылка на ${ boldForwardeeEmail } стане актыўнай пасля таго, як атрымальнік прыме запыт."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Перасылка на адрас без скразнога шыфравання прывядзе да адключэння скразнога шыфравання для вашага адраса ${ boldForwarderEmail }, але шыфраванне нулявога доступу застанецца ўключаным.${ learnMoreLink }"
@@ -4792,6 +4822,14 @@
         "Увядзіце тэкст або ключавое слова для гэтай умовы:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Адпраўка пацвярджэння па электроннай пошце"
+      ],
+      "Setting up forwarding": [
+        "Наладжванне перасылкі"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Скразное шыфраванне будзе паўторна ўключана для адраса адпраўніка."
@@ -4818,17 +4856,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Новы ключ шыфравання згенерыраваны для ${ forwarderEmail }"
-      ],
       "Changes saved": [
         "Змены захаваны"
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Ліст адпраўлены на ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Ліст адпраўлены на ${ model.forwardeeEmail }."
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "Ліст адпраўлены на ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
         "Перасылка прынята"
@@ -4856,8 +4888,14 @@
       "Forwarding activated": [
         "Перасылка актывавана"
       ],
-      "Request confirmation": [
-        "Запытаць пацвярджэнне"
+      "Request confirmation?": [
+        "Запытаць пацвярджэнне?"
+      ],
+      "Request sent": [
+        "Запыт адпраўлены"
+      ],
+      "Requesting confirmation": [
+        "Запытваецца пацвярджэнне"
       ],
       "Set up forwarding": [
         "Наладзіць перасылку"
@@ -6717,9 +6755,6 @@
       "Device": [
         "Прылада"
       ],
-      "Enabled Countries": [
-        "Уключаныя краіны"
-      ],
       "Enter your email address": [
         "Увядзіце адрас сваёй электроннай пошты"
       ],
@@ -6728,9 +6763,6 @@
       ],
       "Folders": [
         "Папкі"
-      ],
-      "Groups": [
-        "Групы"
       ],
       "IP address": [
         "IP-адрас"
@@ -6758,9 +6790,6 @@
       ],
       "Permissions": [
         "Дазволы"
-      ],
-      "Policy Name": [
-        "Назва палітыкі"
       ],
       "Protection": [
         "Абарона"
@@ -7568,6 +7597,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/месяц)"
       ],
+      "(default)": [
+        "(прадвызначана)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтраваць, калі ЎСЕ з наступных умоў выкананы)"
       ],
@@ -7580,11 +7612,17 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** не падтрымліваецца ў вашай арганізацыі **${ organizationName }**."
       ],
-      "**${ appName }** is not supported**.": [
-        "**${ appName }** не падтрымліваецца**."
+      "**${ appName }** is not supported.": [
+        "**${ appName }** не падтрымліваецца."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ яшчэ ${ invisibleCount }",
+        "+ яшчэ ${ invisibleCount }",
+        "+ яшчэ ${ invisibleCount }",
+        "+ яшчэ ${ invisibleCount }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -8069,9 +8107,6 @@
       "Create your first Gateway": [
         "Стварыце свой першы шлюз"
       ],
-      "Created (not published)": [
-        "Створана (не апублікавана)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
@@ -8146,9 +8181,6 @@
       ],
       "Delete link?": [
         "Выдаліць спасылку?"
-      ],
-      "Deleted (not published)": [
-        "Выдалена (не апублікавана)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Выдаленне ${ deletedServerCount } сервера шлюза",
@@ -8275,9 +8307,6 @@
       ],
       "Edit link": [
         "Рэдагаваць спасылку"
-      ],
-      "Edited (not published)": [
-        "Адрэдагавана (не апублікавана)"
       ],
       "eduGAIN configuration saved": [
         "Канфігурацыя eduGAIN захавана"
@@ -9008,6 +9037,9 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
+      "No single sign-on": [
+        "Няма адзінага ўваходу"
+      ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
@@ -9143,14 +9175,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Мінімальная даўжыня пароля складае наступную колькасць сімвалаў або больш: ${ MIN_PASSWORD_LENGTH }"
       ],
+      "Password must have:": [
+        "Пароль павінен змяшчаць:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Узнагарода \"Выбар рэдакцыі PC Magazine\" з рэйтынгам 5 з 5 зорак"
-      ],
-      "Pending removal": [
-        "Чакаюць выдалення"
       ],
       "per month": [
         "ў месяц"
@@ -9701,6 +9733,9 @@
       "The securest way to browse, stream, and be online.": [
         "Самы бяспечны спосаб для прагляду старонак у інтэрнэце і трансляцый."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Змены, якія вы зрабілі і не апублікавалі, будуць страчаны."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
@@ -9775,6 +9810,9 @@
       ],
       "This promotion link has expired.": [
         "Спасылка гэтай рэкламнай акцыі пратэрмінавана."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Гэты сэрвіс недаступны для карыстальнікаў, якія ўваходзяць з дапамогай адзінага ўваходу."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Гэты токен не будзе даступны пасля закрыцця гэтага акна і валодаць ім павінны толькі вы."
@@ -9956,9 +9994,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Немагчыма праверыць файл аднаўлення подпісу. Звярніцеся ў службу падтрымкі."
       ],
-      "Unchanged": [
-        "Нязменны"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
       ],
@@ -10049,11 +10084,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -10348,6 +10383,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Вы можаце ўключыць раздзел Фатаграфіі ў інтэрфейсе з дапамогай пераключальніка, які размяшчаецца ніжэй."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Вы можаце прымусова забяспечыць выкананне правіл для пароляў, якія будуць выкарыстоўваць удзельнікі вашай арганізацыі пры стварэнні або скіданні пароля да свайго ўліковага запісу ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Вы можаце атрымаць усе прэміяльны сэрвісы прыватнасці ўсяго за **${ priceString }/месяц** адным камплектам."
@@ -11257,10 +11295,10 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11272,10 +11310,10 @@
       "Amount due": [
         "Да аплаты"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
       "and": [
@@ -11415,6 +11453,9 @@
       ],
       "Colors": [
         "Колеры"
+      ],
+      "Common passwords": [
+        "Агульныя паролі"
       ],
       "Company": [
         "Кампанія"
@@ -11602,6 +11643,9 @@
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
+      "Enabled": [
+        "Уключана"
+      ],
       "End date": [
         "Дата завяршэння"
       ],
@@ -11698,11 +11742,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "КАЛІ"
-      ],
       "If": [
         "Калі"
+      ],
+      "IF": [
+        "КАЛІ"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -11800,6 +11844,9 @@
       "Maximum number of characters": [
         "Максімальная колькасць сімвалаў"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Максімальная колькасць сімвалаў: ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Максімальная колькасць слоў"
       ],
@@ -11823,6 +11870,9 @@
       ],
       "Minimum number of characters": [
         "Мінімальная колькасць сімвалаў"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Мінімальная колькасць сімвалаў: ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Мінімальная колькасць слоў"
@@ -11905,14 +11955,14 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -11928,6 +11978,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password strength": [
+        "Надзейнасць пароля"
       ],
       "Payer": [
         "Плацельшчык"
@@ -12051,6 +12104,9 @@
       ],
       "Send in": [
         "Адправіць у"
+      ],
+      "Sequences": [
+        "Паслядоўнасці"
       ],
       "Show ${ n } administrator": [
         "Паказаць ${ n } адміністратара",
@@ -12192,6 +12248,9 @@
       ],
       "Uppercase": [
         "Верхні рэгістр"
+      ],
+      "Uppercase and lowercase letters": [
+        "Вялікія і маленькія літары"
       ],
       "URL": [
         "URL-адрас"
@@ -12526,6 +12585,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Як супрацоўнічаць у ${ DOCS_SHORT_APP_NAME }"
       ],
+      "How to create strong passwords": [
+        "Як ствараць надзейныя паролі"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Як уключыць ${ PROTON_SENTINEL_NAME }"
       ],
@@ -12589,11 +12651,11 @@
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
       ],
-      "privacy policy": [
-        "палітыкай прыватнасці"
-      ],
       "Privacy policy": [
         "Палітыка прыватнасці"
+      ],
+      "privacy policy": [
+        "палітыкай прыватнасці"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -14031,6 +14093,14 @@
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -14049,14 +14119,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -14708,6 +14770,17 @@
         "Працоўны стол"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10-ае чысло месяца"
@@ -14805,6 +14878,9 @@
       "Add to existing group": [
         "Дадаць у існуючую групу"
       ],
+      "Allowed ${ defaultLabel }": [
+        "Дазволена ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "Дазволена (прадвызначана)"
       ],
@@ -14880,6 +14956,9 @@
       "On": [
         "Уключана"
       ],
+      "Optional ${ defaultLabel }": [
+        "Неабавязкова ${ defaultLabel }"
+      ],
       "Organization only": [
         "Толькі арганізацыі"
       ],
@@ -14936,17 +15015,6 @@
       ],
       "Trash": [
         "Сметніца"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
       ]
     },
     "Option delay send seconds": {
@@ -18921,6 +18989,9 @@
       "${ appName } keyboard shortcuts": [
         "Спалучэнні клавіш ${ appName }"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Правілы для пароля ўліковага запісу ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -19158,10 +19229,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -19665,9 +19736,6 @@
       "Get the apps": [
         "Атрымаць праграмы"
       ],
-      "Get Zooming faster": [
-        "Паскорыць Zoom"
-      ],
       "Gift": [
         "Падарунак"
       ],
@@ -20048,6 +20116,9 @@
       ],
       "Save time with email filters": [
         "Эканомія часу з паштовымі фільтрамі"
+      ],
+      "Schedule meetings in one click": [
+        "Плануйце сустрэчы адным націскам мышы"
       ],
       "Schedule send:": [
         "Запланаваць адпраўку:"
@@ -20594,6 +20665,12 @@
       ],
       "Feature in early access": [
         "Функцыю можна паспрабаваць у раннім доступе"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Напрыклад, **12345, abcde** і г.д."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Напрыклад, **password, qwerty** і г.д."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Атрымаць парады па прадукцыйнасці і бяспецы, якія дапамогуць вам атрымаць максімум ад ${ MAIL_APP_NAME } і не толькі."

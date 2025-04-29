@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
+      "Copy password": [
+        "Copiar senha"
+      ],
       "Copy password to clipboard": [
         "Copiar senha para a área de transferência"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Criar uma mensagem"
+      ],
+      "Create new password": [
+        "Criar nova senha"
       ],
       "Current plan": [
         "Plano atual"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate password": [
+        "Gerar senha"
       ],
       "Generate text": [
         "Gerar texto"
@@ -1135,11 +1144,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select All": [
-        "Selecionar todos"
-      ],
       "Select all": [
         "Selecionar tudo"
+      ],
+      "Select All": [
+        "Selecionar todos"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1355,7 +1364,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -6363,6 +6373,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Você tem certeza de que deseja excluir permanentemente esta mensagem?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Pelo menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attach public key": [
         "Anexar chave pública"
       ],
@@ -6867,8 +6880,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -6887,6 +6899,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Convide seu parceiro, amigo ou qualquer pessoa com quem você esteja compartilhando seu plano ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "É melhor ter:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "É melhor usar uma VPN o tempo todo. Mas é aqui que as ameaças à segurança cibernética podem ser maiores:"
@@ -6961,7 +6976,7 @@
         "Baixa prioridade"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
+        "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
       ],
       "Manage your folders": [
         "Gerenciar suas pastas"
@@ -7101,6 +7116,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "of": [
         "de"
       ],
@@ -7136,6 +7154,12 @@
       ],
       "password": [
         "senha"
+      ],
+      "Password copied to clipboard": [
+        "Senha copiada para a área de transferências"
+      ],
+      "Password must have:": [
+        "A senha deve conter:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
@@ -7492,6 +7516,9 @@
       "Surveillance": [
         "Vigilância"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronize e gerencie arquivos com o aplicativo ${ DRIVE_APP_NAME }. Crie e compartilhe documentos no ${ DOCS_APP_NAME } e armazene-os com segurança. Tudo no ${ ios }, ${ android } e ${ desktop }."
       ],
@@ -7824,6 +7851,9 @@
       ],
       "Upload picture": [
         "Carregar imagem"
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas:"
       ],
       "URL link": [
         "URL do link"
@@ -8542,10 +8572,10 @@
       "Always move sender's emails": [
         "Sempre mover os e-mails do remetente"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
       "and": [
@@ -8770,11 +8800,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SE"
-      ],
       "If": [
         "Se"
+      ],
+      "IF": [
+        "SE"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -8851,6 +8881,9 @@
       "Move to Inbox": [
         "Mover para Caixa de Entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Name": [
         "Nome"
       ],
@@ -8887,14 +8920,14 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "OU"
-      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
+      ],
+      "OR": [
+        "OU"
       ],
       "Original link": [
         "Link original"
@@ -8907,6 +8940,9 @@
       ],
       "Password hint": [
         "Dica da senha"
+      ],
+      "Password strength": [
+        "Força da senha"
       ],
       "Payer": [
         "Pagador"
@@ -8989,6 +9025,12 @@
       "Street address": [
         "Endereço"
       ],
+      "Strong": [
+        "Forte"
+      ],
+      "Strong password": [
+        "Senha forte"
+      ],
       "Subscription options": [
         "Opções de assinatura"
       ],
@@ -9036,6 +9078,18 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Vulnerable password": [
+        "Senha vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
+      ],
+      "Weak password": [
+        "Senha fraca"
       ],
       "What happened?": [
         "O que aconteceu?"
@@ -9751,29 +9805,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtenha ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Faça upgrade para ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -9795,6 +9826,29 @@
       ],
       "Switch plan": [
         "Mudar de plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtenha ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10388,6 +10442,11 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -10400,11 +10459,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {

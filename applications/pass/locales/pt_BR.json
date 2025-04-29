@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to trash": [
-        "Mover para a lixeira"
-      ],
       "Move to Trash": [
         "Mover para a Lixeira"
+      ],
+      "Move to trash": [
+        "Mover para a lixeira"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -1810,6 +1810,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -3820,14 +3824,14 @@
       "Enter coupon code": [
         "Digite o código do cupão"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Insira sua senha da ${ BRAND_NAME }"
+      ],
       "Enter your backup password": [
         "Digite sua senha de backup"
       ],
       "Enter your extra password": [
         "Digite sua senha adicional"
-      ],
-      "Enter your password": [
-        "Digite sua senha"
       ],
       "Enter your PIN": [
         "Digite o seu PIN"

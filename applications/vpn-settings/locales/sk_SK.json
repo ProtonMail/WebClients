@@ -364,6 +364,9 @@
       "Fit to window": [
         "Prispôsobiť oknu"
       ],
+      "Forgot password?": [
+        "Zabudnuté heslo?"
+      ],
       "Forgot recovery method?": [
         "Zabudli ste metódu obnovenia?"
       ],
@@ -550,11 +553,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Remove": [
         "Vymazať"
@@ -670,11 +673,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "select file": [
-        "vybrať súbor"
-      ],
       "Select file": [
         "Vyberte súbor"
+      ],
+      "select file": [
+        "vybrať súbor"
       ],
       "Send code": [
         "Odoslať kód"
@@ -3891,9 +3894,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Akcie"
-      ],
       "App version": [
         "Verzia aplikácie"
       ],
@@ -3909,17 +3909,11 @@
       "Device": [
         "Zariadenie"
       ],
-      "Enabled Countries": [
-        "Povolené krajiny"
-      ],
       "Enter your email address": [
         "Zadajte vašu emailovú adresu"
       ],
       "Event": [
         "Udalosť"
-      ],
-      "Groups": [
-        "Skupiny"
       ],
       "IP address": [
         "IP adresa"
@@ -3938,9 +3932,6 @@
       ],
       "Organization key fingerprint": [
         "Odtlačok kľúča organizácie"
-      ],
-      "Policy Name": [
-        "Názov pravidla"
       ],
       "Protection": [
         "Ochrana"
@@ -4506,9 +4497,6 @@
       "Create your first Gateway": [
         "Vytvorte vašu prvá bránu"
       ],
-      "Created (not published)": [
-        "Vytvorené (nepublikované)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Vytváranie servera brány: ${ serverNumber } / ${ total }",
         "Vytváranie serverov brány: ${ serverNumber } / ${ total }",
@@ -4556,9 +4544,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstráňte všetky ostatné MX záznamy, alebo sa uistite, že priorita ${ MAIL_APP_NAME } má najnižšie číslo."
-      ],
-      "Deleted (not published)": [
-        "Vymazané (nepublikované)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Odstraňovanie ${ deletedServerCount } servera brány",
@@ -4656,9 +4641,6 @@
       "Edit email address": [
         "Upraviť emailovú adresu"
       ],
-      "Edited (not published)": [
-        "Upravené (nepublikované)"
-      ],
       "eduGAIN configuration saved": [
         "konfigurácia eduGAIN uložená"
       ],
@@ -4745,6 +4727,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadajte emailovú adresu alebo používateľské meno vášho ${ BRAND_NAME } účtu."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadajte vlastné heslo (ako správca organizácie)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Zadajte vašu emailovú adresu na obnovenie a my vám pošleme vaše používateľské meno alebo emailovú adresu."
@@ -5186,9 +5171,6 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Výber redakcie časopisu PC Magazine s hodnotením 5 z 5 hviezdičiek"
-      ],
-      "Pending removal": [
-        "Čakajúce odstránenie"
       ],
       "per month": [
         "mesačne"
@@ -5697,9 +5679,6 @@
       "Unable to check gateways monitoring current status.": [
         "Nie je možné skontrolovať aktuálny stav monitorovania brán."
       ],
-      "Unchanged": [
-        "Nezmenené"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Pre tento účet, bohužiaľ, nie je uložená žiadna metóda obnovy."
       ],
@@ -5748,11 +5727,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "Username": [
-        "Používateľské meno"
-      ],
       "username": [
         "používateľské meno"
+      ],
+      "Username": [
+        "Používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -6329,10 +6308,10 @@
       "Allow recovery by phone": [
         "Povoliť obnovenie telefónom"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6488,6 +6467,9 @@
       "Digits": [
         "Číslice"
       ],
+      "Disabled": [
+        "Vypnutý"
+      ],
       "Display name": [
         "Zobrazované meno"
       ],
@@ -6602,6 +6584,9 @@
       "Method for importing metadata": [
         "Spôsob importu metadát"
       ],
+      "Minimum number of characters": [
+        "Minimálny počet znakov"
+      ],
       "Moderate NAT": [
         "Moderate NAT"
       ],
@@ -6646,6 +6631,9 @@
       ],
       "Notification": [
         "Notifikácia"
+      ],
+      "Numbers": [
+        "Čísla"
       ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
@@ -6773,6 +6761,9 @@
       "Spam": [
         "Spam"
       ],
+      "Special characters": [
+        "Špeciálne znaky"
+      ],
       "Start date": [
         "Dátum začiatku"
       ],
@@ -6868,6 +6859,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Áno, chcem trvale zmazať tento účet a všetky údaje s ním spojené."
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (admin)"
       ],
       "ZIP code": [
         "PSČ"
@@ -7330,6 +7324,29 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Zmazať účet"
+      ],
+      "Downgrade account": [
+        "Znížiť účet"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získať ${ BRAND_NAME } zadarmo"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechať ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechať účet"
+      ],
+      "Switch plan": [
+        "Zmeniť plán"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
@@ -7354,29 +7371,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšiť na ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Zmazať účet"
-      ],
-      "Downgrade account": [
-        "Znížiť účet"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získať ${ BRAND_NAME } zadarmo"
-      ],
-      "Get ${ planName }": [
-        "Získať ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechať ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechať účet"
-      ],
-      "Switch plan": [
-        "Zmeniť plán"
       ]
     },
     "new_plans: feature": {
@@ -8624,6 +8618,17 @@
         "Víta vás ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Konfigurácia krajiny"
@@ -8655,11 +8660,17 @@
       "No permission": [
         "Žiadne oprávnenie"
       ],
+      "Not allowed": [
+        "Zakázané"
+      ],
       "Organization only": [
         "Len z organizácie"
       ],
       "Receive from all": [
         "Prijímať od všetkých"
+      ],
+      "Required": [
+        "Povinné"
       ],
       "Router": [
         "Router"
@@ -8681,17 +8692,6 @@
       ],
       "The whole organization": [
         "Celá organizácia"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
       ]
     },
     "Organization capacity error": {
@@ -10314,6 +10314,9 @@
       "Share the confirmation code with your administrator": [
         "Zdieľať potvrdzovací kód s vašim správcom"
       ],
+      "Sign in": [
+        "Prihlásiť sa"
+      ],
       "Sign in to your organization": [
         "Prihláste sa do svojej organizácie"
       ],
@@ -10358,6 +10361,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Ak chcete pridať nových používateľov do svojej organizácie, budete ich musieť vytvoriť ručne."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Presmerujeme vás na poskytovateľa SSO tretej strany."
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
@@ -11023,6 +11029,11 @@
         "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Ušetrite ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Aktívne"
@@ -11495,10 +11506,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -11744,6 +11755,9 @@
       "Enhance security with 2FA": [
         "Zvýšte zabezpečenie pomocou 2FA"
       ],
+      "Enter 2FA code": [
+        "Zadajte 2FA kód"
+      ],
       "Enter endpoints into your identity provider": [
         "Zadajte koncové body do vášho poskytovateľa identity"
       ],
@@ -11752,6 +11766,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadajte údaje svojho ${ BRAND_NAME } účtu pre vstup do ${ app } beta programu."
+      ],
+      "Enter your password": [
+        "Zadajte Vaše heslo"
       ],
       "Error": [
         "Chyba"
@@ -12136,6 +12153,9 @@
       ],
       "Video conferencing": [
         "Videokonferencie"
+      ],
+      "Warning": [
+        "Upozornenie"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vašu novú adresu vám pošleme email s pokynmi na dokončenie zmeny."

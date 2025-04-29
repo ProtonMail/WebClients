@@ -288,6 +288,9 @@
       "Copy email to clipboard": [
         "클립보드에 이메일 복사"
       ],
+      "Copy password": [
+        "비밀번호 복사"
+      ],
       "Copy password to clipboard": [
         "클립보드에 비밀번호 복사"
       ],
@@ -320,6 +323,9 @@
       ],
       "Create new message": [
         "새 메시지 작성"
+      ],
+      "Create new password": [
+        "새로운 비밀번호 생성"
       ],
       "Current plan": [
         "현재 플랜"
@@ -518,6 +524,9 @@
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
+      ],
+      "Generate password": [
+        "비밀번호 생성"
       ],
       "Generate text": [
         "텍스트 생성"
@@ -1104,11 +1113,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select All": [
-        "모두 선택"
-      ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select All": [
+        "모두 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -1310,6 +1319,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -5897,7 +5909,7 @@
         "${ PASS_APP_NAME }을 이용하면 신뢰할 수 없는 타사 사이트에서 자신이 주로 사용하는 이메일을 숨길때 사용할 수 있습니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -6144,6 +6156,9 @@
       ],
       "Are you sure you want to permanently delete this message?": [
         "이 메시지를 영구적으로 삭제하시겠습니까?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
       "Attach public key": [
         "공개 키 첨부"
@@ -6658,6 +6673,9 @@
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "같이 ${ protonDuoPlanName } 플랜을 공유할 동료, 친구 등 초대하세요."
       ],
+      "It's better to have:": [
+        "포함되면 더 좋습니다:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "대부분의 상황에서 VPN을 사용하는 것이 권장됩니다. 그러나 사이버 보안 위협이 가장 높을 수 있는 경우는 다음과 같습니다:"
       ],
@@ -6729,9 +6747,6 @@
       ],
       "Low Priority": [
         "중요도 낮음"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 메일 어플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -6871,6 +6886,9 @@
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
+      "Numbers": [
+        "숫자"
+      ],
       "of": [
         "/"
       ],
@@ -6903,6 +6921,9 @@
       ],
       "password": [
         "비밀번호"
+      ],
+      "Password copied to clipboard": [
+        "비밀번호 복사됨"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
@@ -7249,6 +7270,9 @@
       "Surveillance": [
         "감시"
       ],
+      "Symbols (#$&)": [
+        "기호 (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME } 앱으로 파일을 동기화하고 관리하세요. ${ DOCS_APP_NAME }에서 문서를 만들고 공유하고 안전하게 저장하세요. ${ ios }, ${ android } 및 ${ desktop }에서 모두 사용 가능합니다."
       ],
@@ -7575,6 +7599,9 @@
       ],
       "Upload picture": [
         "사진 업로드"
+      ],
+      "Uppercase and lowercase letters": [
+        "대소문자"
       ],
       "URL link": [
         "URL 링크"
@@ -8267,11 +8294,11 @@
       "Always move sender's emails": [
         "항상 보낸 사람 이메일 이동"
       ],
-      "AND": [
-        "및"
-      ],
       "And": [
         "그리고"
+      ],
+      "AND": [
+        "및"
       ],
       "and": [
         "그리고"
@@ -8495,10 +8522,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
       "Import all messages": [
@@ -8576,6 +8603,9 @@
       "Move to Inbox": [
         "받은 편지함으로 이동"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
+      ],
       "Name": [
         "이름"
       ],
@@ -8612,13 +8642,13 @@
       "Optional": [
         "선택 사항"
       ],
-      "OR": [
-        "또는"
-      ],
       "or": [
         "또는"
       ],
       "Or": [
+        "또는"
+      ],
+      "OR": [
         "또는"
       ],
       "Original link": [
@@ -8714,6 +8744,12 @@
       "Street address": [
         "도로명 주소"
       ],
+      "Strong": [
+        "강함"
+      ],
+      "Strong password": [
+        "강력한 비밀번호"
+      ],
       "Subscription options": [
         "구독 옵션"
       ],
@@ -8761,6 +8797,18 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Vulnerable": [
+        "취약함"
+      ],
+      "Vulnerable password": [
+        "취약한 비밀번호"
+      ],
+      "Weak": [
+        "약함"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "What happened?": [
         "무슨 일인가요?"
@@ -9432,29 +9480,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }로 계속하기"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -9476,6 +9501,29 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }로 계속하기"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {

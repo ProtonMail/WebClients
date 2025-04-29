@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Αντιγραφή συνδέσμου πρόσκλησης"
       ],
+      "Copy password": [
+        "Αντιγραφή κωδικού πρόσβασης"
+      ],
       "Copy version number to clipboard": [
         "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Δημιουργία νέου φακέλου"
+      ],
+      "Create new password": [
+        "Δημιουργία νέου κωδικού πρόσβασης"
       ],
       "Current plan": [
         "Τρέχον πρόγραμμα"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
+      ],
+      "Generate password": [
+        "Παραγωγή τυχαίου κωδικού πρόσβασης"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Λάβετε το ${ planName } για ${ priceCoupon }"
@@ -749,6 +758,9 @@
       ],
       "Take out of trash": [
         "Αδειάστε τα διαγραμμένα"
+      ],
+      "Trashing...": [
+        "Μετακίνηση στον κάδο απορριμμάτων..."
       ],
       "Trust": [
         "Αξιόπιστο"
@@ -2332,11 +2344,6 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
@@ -2472,6 +2479,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4171,6 +4183,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά τα επιλεγμένα στοιχεία από τα Διαγραμμένα;"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -4540,6 +4555,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Φαίνεται ότι πρόσφατα προσπαθήσατε να ανεβάσετε το ${ uploadName }. Εάν η μεταφόρτωση απέτυχε, παρακαλούμε ${ replaceFile }. Αν η μεταφόρτωση βρίσκεται ακόμη σε εξέλιξη, η αντικατάστασή της θα ακυρώσει τη μεταφόρτωση που βρίσκεται σε εξέλιξη."
       ],
+      "It's better to have:": [
+        "Είναι καλύτερα να έχετε:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Είναι καλύτερο να χρησιμοποιείτε ένα VPN ανά πάσα στιγμή. Αλλά εδώ είναι όπου οι απειλές στον κυβερνοχώρο μπορεί να είναι οι υψηλότερες:"
       ],
@@ -4682,6 +4700,9 @@
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
+      "Numbers": [
+        "Αριθμοί"
+      ],
       "Offline": [
         "Εκτός σύνδεσης"
       ],
@@ -4720,6 +4741,12 @@
       ],
       "password": [
         "κωδικός πρόσβασης"
+      ],
+      "Password copied to clipboard": [
+        "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Password must have:": [
+        "Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
@@ -4946,6 +4973,9 @@
       "Surveillance": [
         "Παρακολούθηση"
       ],
+      "Symbols (#$&)": [
+        "Σύμβολα (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -5102,9 +5132,6 @@
       "Trash": [
         "Διαγραμμένα"
       ],
-      "Trashed": [
-        "Διαγράφηκε"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -5122,6 +5149,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
+      ],
+      "Uppercase and lowercase letters": [
+        "Κεφαλαία και πεζά γράμματα"
       ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
@@ -5797,6 +5827,9 @@
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "My files": [
         "Τα Αρχεία μου"
       ],
@@ -5823,6 +5856,9 @@
       ],
       "Password": [
         "Κωδικός πρόσβασης"
+      ],
+      "Password strength": [
+        "Ισχύς Κωδικού Πρόσβασης"
       ],
       "Payer": [
         "Πληρωτής"
@@ -5905,6 +5941,12 @@
       "Street address": [
         "Οδός"
       ],
+      "Strong": [
+        "Δυνατό"
+      ],
+      "Strong password": [
+        "Δυνατός κωδικός πρόσβασης"
+      ],
       "Subscription options": [
         "Επιλογές συνδρομής"
       ],
@@ -5940,6 +5982,18 @@
       ],
       "Viewer": [
         "Θεατής"
+      ],
+      "Vulnerable": [
+        "Ευάλωτο"
+      ],
+      "Vulnerable password": [
+        "Ευάλωτος κωδικός πρόσβασης"
+      ],
+      "Weak": [
+        "Αδύναμο"
+      ],
+      "Weak password": [
+        "Αδύναμος κωδικός πρόσβασης"
       ],
       "What happened?": [
         "Τι συνέβη;"
@@ -7778,8 +7832,8 @@
       "Searching": [
         "Γίνεται αναζήτηση"
       ],
-      "Trashed": [
-        "Διαγραμμένα"
+      "Trash": [
+        "Κάδος απορριμμάτων"
       ]
     },
     "Participant name": {

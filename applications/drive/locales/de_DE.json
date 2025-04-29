@@ -246,6 +246,9 @@
       "Copy link": [
         "Link kopieren"
       ],
+      "Copy password": [
+        "Passwort kopieren"
+      ],
       "Copy version number to clipboard": [
         "Versionsnummer in die Zwischenablage kopieren"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Neuen Ordner erstellen"
+      ],
+      "Create new password": [
+        "Neues Passwort erstellen"
       ],
       "Create new text file": [
         "Neue Textdatei erstellen"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
+      ],
+      "Generate password": [
+        "Passwort generieren"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Hol dir ${ planName } für ${ priceCoupon }"
@@ -3058,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Externe Einladungen sind vorübergehend deaktiviert. Bitte versuche es später erneut."
       ],
+      "Failed to copy photo to album": [
+        "Das Kopieren des Fotos in das Album ist fehlgeschlagen"
+      ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
       ],
@@ -3195,9 +3207,6 @@
       ],
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
-      ],
-      "Photo saved to your Drive": [
-        "Foto in deinem Drive gespeichert"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Das Hochladen von Fotos ist vorübergehend deaktiviert. Bitte versuche es später erneut."
@@ -4594,6 +4603,9 @@
       "Are you sure you want to proceed?": [
         "Möchtest du dich wirklich fortfahren?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -5040,6 +5052,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Es sieht so aus, als hättest du kürzlich versucht, ${ uploadName } hochzuladen. Falls der Upload fehlgeschlagen hat, ersetze bitte ${ replaceFile }. Wenn der Upload noch im Gange ist, bricht das Ersetzen der Datei den laufenden Upload ab."
       ],
+      "It's better to have:": [
+        "Es ist besser so:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elemente im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden."
       ],
@@ -5203,6 +5218,9 @@
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
+      "Numbers": [
+        "Zahlen"
+      ],
       "of": [
         "von"
       ],
@@ -5251,6 +5269,12 @@
       "password": [
         "Passwort"
       ],
+      "Password copied to clipboard": [
+        "Passwort in die Zwischenablage kopiert"
+      ],
+      "Password must have:": [
+        "Passwort muss enthalten:"
+      ],
       "Paused": [
         "Angehalten"
       ],
@@ -5274,6 +5298,12 @@
       ],
       "Photo is set as album cover": [
         "Foto ist als Album-Titelbild gesetzt"
+      ],
+      "Photo saved to your Drive": [
+        "Foto in deinem Drive gespeichert"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Foto wurde in den Stream kopiert und dort als Favorit markiert."
       ],
       "Photos have been successfully recovered.": [
         "Die Fotos wurden erfolgreich wiederhergestellt."
@@ -5578,6 +5608,9 @@
       "Surveillance": [
         "Überwachung"
       ],
+      "Symbols (#$&)": [
+        "Symbole (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
@@ -5815,6 +5848,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Das gleichzeitige Hochladen von Hunderten von Dateien kann sich negativ auf die Leistung auswirken."
+      ],
+      "Uppercase and lowercase letters": [
+        "Groß- und Kleinbuchstaben."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
@@ -6589,6 +6625,9 @@
       "Move to Inbox": [
         "In Posteingang verschieben"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten"
+      ],
       "My Albums": [
         "Meine Alben"
       ],
@@ -6624,6 +6663,9 @@
       ],
       "Password": [
         "Passwort"
+      ],
+      "Password strength": [
+        "Passwortstärke"
       ],
       "Payer": [
         "Zahlungsleistender"
@@ -6742,6 +6784,12 @@
       "Street address": [
         "Straße und Hausnummer"
       ],
+      "Strong": [
+        "Stark"
+      ],
+      "Strong password": [
+        "Starkes Passwort"
+      ],
       "Subscription options": [
         "Abonnement-Optionen"
       ],
@@ -6798,6 +6846,18 @@
       ],
       "Viewer": [
         "Betrachter"
+      ],
+      "Vulnerable": [
+        "Verwundbar"
+      ],
+      "Vulnerable password": [
+        "Gefährdetes Passwort"
+      ],
+      "Weak": [
+        "Schwach"
+      ],
+      "Weak password": [
+        "Schwaches Passwort"
       ],
       "What happened?": [
         "Problembeschreibung"
@@ -7433,29 +7493,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements ab ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -7477,6 +7514,29 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements ab ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8582,6 +8642,9 @@
       ],
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Die ausgewählten Fotos befinden sich bereits in „${ albumName }“"
       ],
       "Share invitation accepted successfully": [
         "Einladung zur gemeinsamen Nutzung erfolgreich angenommen"

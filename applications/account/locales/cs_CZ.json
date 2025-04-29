@@ -463,6 +463,9 @@
       "Discard changes": [
         "Zahodit změny"
       ],
+      "Discard Changes": [
+        "Zahodit změny"
+      ],
       "Discover ${ planName }": [
         "Objevit ${ planName }"
       ],
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "Zachovat"
+      ],
+      "Keep Editing": [
+        "Pokračovat v úpravách"
       ],
       "Keep logo": [
         "Ponechat logo"
@@ -1126,11 +1132,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -3927,7 +3933,7 @@
         "Povolením podrobných událostí získáte přístup k těmto funkcím"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Podporujte používání dvoufaktorového ověřování ve vaší organizaci pro zvýšení bezpečnosti."
+        "Podporujte používání dvoufázového ověření ve vaší organizaci pro zvýšení bezpečnosti."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
@@ -4404,7 +4410,7 @@
         "Naskenujte QR kód na svém mobilním zařízení a přihlaste se"
       ],
       "Scan the code to sign in": [
-        "Naskenujte kód a přihlaste se"
+        "Pro přihlášení naskenujte kód"
       ],
       "Security tips": [
         "Bezpečnostní tipy"
@@ -4413,7 +4419,7 @@
         "Vyberte **Přihlásit se na jiném zařízení → Skenovat QR kód**"
       ],
       "Sign in on another device": [
-        "Přihlaste se na jiném zařízení"
+        "Přihlásit se na jiném zařízení"
       ],
       "Sign in with QR code": [
         "Přihlaste se pomocí QR kódu"
@@ -4633,6 +4639,9 @@
       "Edit conditions": [
         "Upravit podmínky"
       ],
+      "Got it": [
+        "Rozumím"
+      ],
       "Next": [
         "Další"
       ],
@@ -4705,17 +4714,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Potvrzovací e-mail bude odeslán na ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Pro ${ boldForwarderEmail } bude vygenerován nový šifrovací klíč."
-      ],
       "Automatically forward emails to another email address.": [
         "Automatické přeposílání e-mailů na jinou e-mailovou adresu."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Koncové šifrování bylo pro vaši adresu ${ boldForwarderEmail } deaktivováno, ale šifrování s nulovým přístupem zůstává aktivní. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Kvůli kompatibilitě byl pro ${ boldForwarderEmail } vygenerován nový šifrovací klíč."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Kvůli kompatibilitě bude pro ${ boldForwarderEmail } vygenerován nový šifrovací klíč."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Kvůli kompatibilitě bylo deaktivováno postkvantové šifrování a pro ${ boldForwarderEmail } byl vygenerován nový šifrovací klíč."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "Z důvodu kompatibility bylo pro ${ boldForwarderEmail } vypnuto postkvantové šifrování."
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "Z důvodu kompatibility bude pro ${ boldForwarderEmail } vypnuto postkvantové šifrování."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Kvůli kompatibilitě bude deaktivováno postkvantové šifrování a pro ${ boldForwarderEmail } bude vygenerován nový šifrovací klíč."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Příjemce přeposílání byl pozván a nyní musí přijmout/odmítnout pozvánku nebo aktualizaci"
       ],
       "Forwarding is active": [
         "Přeposílání je aktivní"
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "Přeposílání na ${ boldForwardeeEmail } bude aktivní, jakmile příjemce požadavek přijme."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Přeposílání na adresu bez koncového šifrování deaktivuje koncové šifrování pro vaši adresu ${ boldForwarderEmail }, ale šifrování s nulovým přístupem zůstane zapnuté. ${ learnMoreLink }"
@@ -4792,6 +4822,14 @@
         "Zadejte text nebo klíčové slovo pro tuto podmínku:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Odesílání potvrzovacího e-mailu"
+      ],
+      "Setting up forwarding": [
+        "Nastavování přeposílání"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Pro adresu odesílatele bude znovu povoleno koncové šifrování."
@@ -4818,17 +4856,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Pro ${ forwarderEmail } byl vygenerován nový šifrovací klíč."
-      ],
       "Changes saved": [
         "Změny uloženy"
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "E-mail odeslán na ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "E-mail odeslán na ${ model.forwardeeEmail }."
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "E-mail odeslán na ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
         "Přeposílání bylo přijato"
@@ -4856,8 +4888,14 @@
       "Forwarding activated": [
         "Přeposílání je aktivováno"
       ],
-      "Request confirmation": [
-        "Požádat o potvrzení"
+      "Request confirmation?": [
+        "Požádat o potvrzení?"
+      ],
+      "Request sent": [
+        "Požadavek odeslán"
+      ],
+      "Requesting confirmation": [
+        "Požadovat potvrzení"
       ],
       "Set up forwarding": [
         "Nastavit přeposílání"
@@ -6717,9 +6755,6 @@
       "Device": [
         "Zařízení"
       ],
-      "Enabled Countries": [
-        "Povolené země"
-      ],
       "Enter your email address": [
         "Zadejte svou e-mailovou adresu"
       ],
@@ -6728,9 +6763,6 @@
       ],
       "Folders": [
         "Složky"
-      ],
-      "Groups": [
-        "Skupiny"
       ],
       "IP address": [
         "IP adresa"
@@ -6758,9 +6790,6 @@
       ],
       "Permissions": [
         "Oprávnění"
-      ],
-      "Policy Name": [
-        "Název zásady"
       ],
       "Protection": [
         "Ochrana"
@@ -7568,6 +7597,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/měsíc)"
       ],
+      "(default)": [
+        "(výchozí)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrování pokud jsou splněny všechny následující podmínky)"
       ],
@@ -7580,11 +7612,17 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Aplikace **${ appName }** není podporována ve vaší organizaci **${ organizationName }**."
       ],
-      "**${ appName }** is not supported**.": [
-        "Aplikace **${ appName }** není podporována**."
+      "**${ appName }** is not supported.": [
+        "Aplikace **${ appName }** není podporována."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získejte adresu ${ BRAND_NAME }** pro používání všech služeb ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } další",
+        "+ ${ invisibleCount } další",
+        "+ ${ invisibleCount } dalších",
+        "+ ${ invisibleCount } dalších"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -8069,9 +8107,6 @@
       "Create your first Gateway": [
         "Vytvořte svou první bránu"
       ],
-      "Created (not published)": [
-        "Vytvořeno (nezveřejněno)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Vytváření serveru brány: ${ serverNumber } / ${ total }",
         "Vytváření serverů brány: ${ serverNumber } / ${ total }",
@@ -8146,9 +8181,6 @@
       ],
       "Delete link?": [
         "Smazat odkaz?"
-      ],
-      "Deleted (not published)": [
-        "Smazáno (nezveřejněno)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Mazání ${ deletedServerCount } serveru brány",
@@ -8275,9 +8307,6 @@
       ],
       "Edit link": [
         "Upravit odkaz"
-      ],
-      "Edited (not published)": [
-        "Upraveno (nezveřejněno)"
       ],
       "eduGAIN configuration saved": [
         "Nastavení eduGain uloženo"
@@ -9008,6 +9037,9 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
+      "No single sign-on": [
+        "Žádné jednotné přihlášení"
+      ],
       "Not a valid URL": [
         "Neplatný odkaz"
       ],
@@ -9146,14 +9178,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Délka hesla musí být minimálně ${ MIN_PASSWORD_LENGTH } znaků."
       ],
+      "Password must have:": [
+        "Heslo musí obsahovat:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Cena redakce PC Magazine s hodnocením 5 z 5 hvězd"
-      ],
-      "Pending removal": [
-        "Čeká na odebrání"
       ],
       "per month": [
         "měsíčně"
@@ -9704,6 +9736,9 @@
       "The securest way to browse, stream, and be online.": [
         "Nejbezpečnější způsob, jak procházet, streamovat a být online."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Nezveřejněné změny, které jste provedli, budou ztraceny."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
@@ -9778,6 +9813,9 @@
       ],
       "This promotion link has expired.": [
         "Tento odkaz na propagační akci vypršel."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Tato služba není dostupná uživatelům, kteří se přihlašují pomocí jednotného přihlášení."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Tento token nebude po zavření tohoto okna k dispozici a neměli byste jej s nikým sdílet."
@@ -9959,9 +9997,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Nelze ověřit podpis souboru pro obnovení. Kontaktujte podporu."
       ],
-      "Unchanged": [
-        "Nezměněno"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Bohužel neexistuje žádná metoda obnovení uložená pro tento účet."
       ],
@@ -10052,11 +10087,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -10351,6 +10386,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Sekci Fotografie můžete povolit v rozhraní pomocí přepínače níže."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Můžete závést pravidla pro hesla, která budou členové vaší organizace používat při vytváření nebo obnovování hesla ke svému účzu ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Všechny naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
@@ -11260,10 +11298,10 @@
       "Allow sharing outside the organization": [
         "Povolit sdílení mimo organizaci"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11275,10 +11313,10 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -11418,6 +11456,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Common passwords": [
+        "Běžná hesla"
       ],
       "Company": [
         "Společnost"
@@ -11605,6 +11646,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Enabled": [
+        "Povoleno"
+      ],
       "End date": [
         "Datum ukončení"
       ],
@@ -11701,11 +11745,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "POKUD"
-      ],
       "If": [
         "Pokud"
+      ],
+      "IF": [
+        "POKUD"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -11803,6 +11847,9 @@
       "Maximum number of characters": [
         "Maximální počet znaků"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Maximální počet znaků je ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Maximální počet slov"
       ],
@@ -11826,6 +11873,9 @@
       ],
       "Minimum number of characters": [
         "Minimální počet znaků"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Minimální počet znaků je ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Minimální počet slov"
@@ -11908,14 +11958,14 @@
       "Optional": [
         "Volitelné"
       ],
-      "OR": [
-        "NEBO"
-      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
+      ],
+      "OR": [
+        "NEBO"
       ],
       "Organization name": [
         "Název organizace"
@@ -11931,6 +11981,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password strength": [
+        "Síla hesla"
       ],
       "Payer": [
         "Plátce"
@@ -12054,6 +12107,9 @@
       ],
       "Send in": [
         "Odeslat v jazyce"
+      ],
+      "Sequences": [
+        "Sekvence"
       ],
       "Show ${ n } administrator": [
         "Zobrazit ${ n } správce",
@@ -12195,6 +12251,9 @@
       ],
       "Uppercase": [
         "Velká písmena"
+      ],
+      "Uppercase and lowercase letters": [
+        "Velká a malá písmena"
       ],
       "URL": [
         "URL"
@@ -12532,6 +12591,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Jak spolupracovat v ${ DOCS_SHORT_APP_NAME }"
       ],
+      "How to create strong passwords": [
+        "Jak vytvářet silná hesla"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Jak povolit ${ PROTON_SENTINEL_NAME }"
       ],
@@ -12595,11 +12657,11 @@
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
       ],
-      "privacy policy": [
-        "zásadami ochrany osobních údajů"
-      ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
+      ],
+      "privacy policy": [
+        "zásadami ochrany osobních údajů"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -14037,6 +14099,14 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -14055,14 +14125,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14714,6 +14776,17 @@
         "Desktop"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. den v měsíci"
@@ -14811,6 +14884,9 @@
       "Add to existing group": [
         "Přidat do existující skupiny"
       ],
+      "Allowed ${ defaultLabel }": [
+        "Povoleno ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "Povoleno (výchozí)"
       ],
@@ -14898,6 +14974,9 @@
       "On": [
         "Zapnuto"
       ],
+      "Optional ${ defaultLabel }": [
+        "Volitelné ${ defaultLabel }"
+      ],
       "Organization only": [
         "Pouze organizace"
       ],
@@ -14963,17 +15042,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
       ]
     },
     "Option delay send seconds": {
@@ -18948,6 +19016,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } klávesové zkratky"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Pravidla pro heslo účtu ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -19185,10 +19256,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -19692,9 +19763,6 @@
       "Get the apps": [
         "Získat aplikace"
       ],
-      "Get Zooming faster": [
-        "Získejte rychlejší Zoom"
-      ],
       "Gift": [
         "Dárek"
       ],
@@ -20075,6 +20143,9 @@
       ],
       "Save time with email filters": [
         "Šetřete čas s e-mailovými filtry"
+      ],
+      "Schedule meetings in one click": [
+        "Plánování schůzek jedním kliknutím"
       ],
       "Schedule send:": [
         "Naplánovat odeslání:"
@@ -20621,6 +20692,12 @@
       ],
       "Feature in early access": [
         "Funkce v předběžném přístupu"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Například **12345, abcde** atd."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Například **heslo, qwerty** atd."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Získejte tipy pro zvýšení produktivity a zabezpečení, které vám pomohou co nejlépe využít ${ MAIL_APP_NAME } a další."

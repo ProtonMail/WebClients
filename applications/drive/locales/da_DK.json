@@ -415,6 +415,9 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
+      "Generate password": [
+        "Generér adgangskode"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Få ${ planName } til ${ priceCoupon }"
       ],
@@ -4957,6 +4960,9 @@
       "password": [
         "adgangskode"
       ],
+      "Password copied to clipboard": [
+        "Adgangskode kopieret til udklipsholder"
+      ],
       "Paused": [
         "Sat på pause"
       ],
@@ -6345,6 +6351,9 @@
       "Street address": [
         "Adresse"
       ],
+      "Strong": [
+        "Stærk"
+      ],
       "Subscription options": [
         "Abonnementsmuligheder"
       ],
@@ -6401,6 +6410,12 @@
       ],
       "Viewer": [
         "Seer"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Weak": [
+        "Svag"
       ],
       "What happened?": [
         "Hvad skete der?"
@@ -6916,26 +6931,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnementer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6957,6 +6952,26 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnementer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {

@@ -262,6 +262,9 @@
       "Discard changes": [
         "Απόρριψη αλλαγών"
       ],
+      "Discard Changes": [
+        "Απόρριψη Αλλαγών"
+      ],
       "Discover ${ planName }": [
         "Ανακαλύψτε το ${ planName }"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
       ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Πρόσκληση χρήστη"
+      ],
+      "Keep Editing": [
+        "Συνεχίστε την Επεξεργασία"
       ],
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "select file": [
-        "επιλέξτε αρχείο"
-      ],
       "Select file": [
         "Επιλέξτε αρχείο"
+      ],
+      "select file": [
+        "επιλέξτε αρχείο"
       ],
       "Send code": [
         "Αποστολή κωδικού"
@@ -3841,9 +3850,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Ενέργειες"
-      ],
       "App version": [
         "Έκδοση εφαρμογής"
       ],
@@ -3859,17 +3865,11 @@
       "Device": [
         "Συσκευή"
       ],
-      "Enabled Countries": [
-        "Ενεργοποιημένες Χώρες"
-      ],
       "Enter your email address": [
         "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Event": [
         "Γεγονός"
-      ],
-      "Groups": [
-        "Ομάδες"
       ],
       "IP address": [
         "Διεύθυνση IP"
@@ -3888,9 +3888,6 @@
       ],
       "Organization key fingerprint": [
         "Αποτύπωμα κλειδιού οργανισμού"
-      ],
-      "Policy Name": [
-        "Όνομα Πολιτικής"
       ],
       "Protection": [
         "Προστασία"
@@ -4149,8 +4146,15 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/μήνα)"
       ],
+      "(default)": [
+        "(προεπιλογή)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένων των ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Περισσότερο",
+        "+ ${ invisibleCount } Περισσότερα"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
@@ -4410,9 +4414,6 @@
       "Create your first Gateway": [
         "Δημιουργήστε την πρώτη Πύλη σας"
       ],
-      "Created (not published)": [
-        "Δημιουργήθηκε (δε δημοσιεύτηκε)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Δημιουργία διακομιστή πύλης: ${ serverNumber } / ${ total }",
         "Δημιουργία διακομιστών πύλης: ${ serverNumber } / ${ total }"
@@ -4458,9 +4459,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
-      ],
-      "Deleted (not published)": [
-        "Διαγράφηκε (δε δημοσιεύτηκε)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
@@ -4554,9 +4552,6 @@
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
-      "Edited (not published)": [
-        "Επεξεργάστηκε (δε δημοσιεύτηκε)"
-      ],
       "eduGAIN configuration saved": [
         "Αποθηκεύτηκε η διαμόρφωση eduGAIN"
       ],
@@ -4643,6 +4638,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Εισάγετε την ηλ. διεύθυνση ή το όνομα χρήστη του λογαριασμού σας ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -4998,6 +4996,9 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
+      "No single sign-on": [
+        "Χωρίς καθολική σύνδεση"
+      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
@@ -5075,14 +5076,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Ο κωδικός πρόσβασης πρέπει να είναι ${ MIN_PASSWORD_LENGTH } χαρακτήρες ή περισσότεροι."
       ],
+      "Password must have:": [
+        "Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Βραβείο επιλογής συντακτών PC Magazine με βαθμολογία 5 στα 5 αστέρια"
-      ],
-      "Pending removal": [
-        "Αναμονή για αφαίρεση"
       ],
       "per month": [
         "ανά μήνα"
@@ -5411,6 +5412,9 @@
       "The securest way to browse, stream, and be online.": [
         "Ο πιο ασφαλής τρόπος περιήγησης, streaming και να είσαι online"
       ],
+      "The unpublished changes you made will be lost.": [
+        "Οι μη δημοσιευμένες αλλαγές που κάνατε θα χαθούν."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
@@ -5449,6 +5453,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Αυτό το μήνυμα δε θα φτάσει στην ομάδα υποστήριξης, εάν έχετε κάποιο πρόβλημα με την υπηρεσία μας ή χρειάζεστε περαιτέρω ενέργειες από την πλευρά μας ${ supportLink }."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Αυτή η υπηρεσία δεν είναι διαθέσιμη στους χρήστες που συνδέονται με καθολική σύνδεση."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
@@ -5573,9 +5580,6 @@
       "Unable to check gateways monitoring current status.": [
         "Δεν είναι δυνατός ο έλεγχος των πυλών παρακολούθησης της τρέχουσας κατάστασης."
       ],
-      "Unchanged": [
-        "Αμετάβλητο"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
       ],
@@ -5624,11 +5628,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "Username": [
-        "Όνομα Χρήστη"
-      ],
       "username": [
         "όνομα χρήστη"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -5822,6 +5826,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Μπορείτε να επιβάλετε τους κανόνες κωδικού που θα χρησιμοποιούν τα μέλη του οργανισμού σας όταν δημιουργούν ή κάνουν επαναφορά του κωδικού πρόσβασης για τον ${ BRAND_NAME } λογαριασμό τους."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Μπορείτε να λάβετε όλες τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—με μόνο **${ priceString }/μήνα**"
@@ -6177,11 +6184,11 @@
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
-      "Allowed domain": [
-        "Επιτρεπόμενος τομέας"
-      ],
       "Allowed Domain": [
         "Επιτρεπόμενος Τομέας"
+      ],
+      "Allowed domain": [
+        "Επιτρεπόμενος τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -6267,6 +6274,9 @@
       "Colors": [
         "Χρώματα"
       ],
+      "Common passwords": [
+        "Κοινοί κωδικοί πρόσβασης"
+      ],
       "Company": [
         "Εταιρεια"
       ],
@@ -6336,6 +6346,9 @@
       "Digits": [
         "Ψηφία"
       ],
+      "Disabled": [
+        "Απενεργοποιημένο"
+      ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
@@ -6359,6 +6372,9 @@
       ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
+      ],
+      "Enabled": [
+        "Ενεργοποιημένο"
       ],
       "Enter the code displayed on your TV": [
         "Εισάγετε τον κωδικό που εμφανίζεται στην τηλεόρασή σας"
@@ -6438,6 +6454,9 @@
       "Main": [
         "Κύριο"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Ο μέγιστος αριθμός χαρακτήρων είναι ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Μέλη δίχως 2FA"
       ],
@@ -6449,6 +6468,12 @@
       ],
       "Method for importing metadata": [
         "Μέθοδος εισαγωγής μεταδεδομένων"
+      ],
+      "Minimum number of characters": [
+        "Ελάχιστος αριθμός χαρακτήρων"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Ο ελάχιστος αριθμός χαρακτήρων είναι ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "Μέτριο NAT"
@@ -6495,6 +6520,9 @@
       "Notification": [
         "Ειδοποίηση"
       ],
+      "Numbers": [
+        "Αριθμοί"
+      ],
       "OpenVPN / IKEv2 password": [
         "Κωδικός πρόσβασης OpenVPN / IKEv2"
       ],
@@ -6524,6 +6552,9 @@
       ],
       "Password": [
         "Κωδικός πρόσβασης"
+      ],
+      "Password strength": [
+        "Ισχύς Κωδικού Πρόσβασης"
       ],
       "Payer": [
         "Πληρωτής"
@@ -6606,6 +6637,9 @@
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
       ],
+      "Sequences": [
+        "Ακολουθίες"
+      ],
       "Show ${ n } administrator": [
         "Εμφάνιση ${ n } διαχειριστή",
         "Εμφάνιση ${ n } διαχειριστών"
@@ -6618,6 +6652,9 @@
       ],
       "Spam": [
         "Ενοχλητικό"
+      ],
+      "Special characters": [
+        "Ειδικοί χαρακτήρες"
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
@@ -6654,6 +6691,9 @@
       ],
       "Type": [
         "Τύπος"
+      ],
+      "Uppercase and lowercase letters": [
+        "Κεφαλαία και πεζά γράμματα"
       ],
       "User": [
         "Χρήστης"
@@ -6714,6 +6754,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
       ],
       "ZIP code": [
         "Τ.Κ."
@@ -6857,6 +6900,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Πώς να συνεργαστείτε στο ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to create strong passwords": [
+        "Πώς να δημιουργήσετε ισχυρούς κωδικούς πρόσβασης"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Πώς να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
@@ -7176,6 +7222,29 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Διαγραφή λογαριασμού"
+      ],
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Απόκτηση ${ BRAND_NAME } δωρεάν"
+      ],
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Διατήρηση ${ plan }"
+      ],
+      "Keep account": [
+        "Διατήρηση λογαριασμού"
+      ],
+      "Switch plan": [
+        "Αλλαγή προγράμματος"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
@@ -7200,29 +7269,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Διαγραφή λογαριασμού"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Απόκτηση ${ BRAND_NAME } δωρεάν"
-      ],
-      "Get ${ planName }": [
-        "Απόκτηση ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Διατήρηση ${ plan }"
-      ],
-      "Keep account": [
-        "Διατήρηση λογαριασμού"
-      ],
-      "Switch plan": [
-        "Αλλαγή προγράμματος"
       ]
     },
     "new_plans: feature": {
@@ -8416,7 +8462,21 @@
         "Καλώς ήρθατε στο ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "Επιτρέπεται ${ defaultLabel }"
+      ],
       "Country configs": [
         "Διαμορφώσεις χώρας"
       ],
@@ -8447,11 +8507,20 @@
       "No permission": [
         "Χωρίς δικαίωμα"
       ],
+      "Not allowed": [
+        "Δεν επιτρέπεται"
+      ],
+      "Optional ${ defaultLabel }": [
+        "Προαιρετικό ${ defaultLabel }"
+      ],
       "Organization only": [
         "Μόνο στον Οργανισμό"
       ],
       "Receive from all": [
         "Λήψη από όλους"
+      ],
+      "Required": [
+        "Απαιτείται"
       ],
       "Router": [
         "Ρούτερ"
@@ -8473,17 +8542,6 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
       ]
     },
     "Organization capacity error": {
@@ -10030,6 +10088,9 @@
       "Share the confirmation code with your administrator": [
         "Μοιραστείτε τον κωδικό επιβεβαίωσης με τον διαχειριστή σας"
       ],
+      "Sign in": [
+        "Σύνδεση"
+      ],
       "Sign in to your organization": [
         "Συνδεθήτε στον οργανισμό σας"
       ],
@@ -10074,6 +10135,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Για να προσθέσετε νέους χρήστες στον οργανισμό σας, θα πρέπει να τους δημιουργήσετε χειροκίνητα."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
@@ -11010,6 +11074,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Account password rules": [
+        "Κανόνες κωδικού ${ BRAND_NAME } Λογαριασμού"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11167,10 +11234,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -11412,6 +11479,9 @@
       "Enhance security with 2FA": [
         "Ενισχύστε την ασφάλεια με την πιστοποίηση δύο παραγόντων (2FA)"
       ],
+      "Enter 2FA code": [
+        "Εισαγωγή κωδικού 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Εισαγάγετε τα URL τελικού σημείου στον πάροχο ταυτότητάς σας"
       ],
@@ -11420,6 +11490,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό σας"
       ],
       "Error": [
         "Σφάλμα"
@@ -11801,6 +11874,9 @@
       "Video conferencing": [
         "Τηλεδιάσκεψη"
       ],
+      "Warning": [
+        "Προειδοποίηση"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Θα στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
       ],
@@ -11931,6 +12007,12 @@
       ],
       "Feature in early access": [
         "Δυνατότητα σε πρώιμη πρόσβαση"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Για παράδειγμα, **12345, abcde**, κτλ."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Για παράδειγμα, **password, qwerty**, κτλ"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Λάβετε τον κατακερματισμό πιστοποιητικού από την υπηρεσία παροχής ταυτότητάς σας."

@@ -262,6 +262,9 @@
       "Discard changes": [
         "Anulare modificări"
       ],
+      "Discard Changes": [
+        "Ignorare modificări"
+      ],
       "Discover ${ planName }": [
         "Descoperiți ${ planName }"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Potrivire la fereastră"
       ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Invitare utilizator"
+      ],
+      "Keep Editing": [
+        "Continuare editare"
       ],
       "Keep logo": [
         "Păstrare logo"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Remove": [
         "Eliminare"
@@ -564,6 +573,9 @@
       ],
       "Remove bonuses": [
         "Anulare bonusuri"
+      ],
+      "Remove button": [
+        "Buton eliminare"
       ],
       "Remove domain": [
         "Ștergere domeniu"
@@ -667,11 +679,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "select file": [
-        "selectați fișierul"
-      ],
       "Select file": [
         "Selectare fișier"
+      ],
+      "select file": [
+        "selectați fișierul"
       ],
       "Send code": [
         "Trimitere cod"
@@ -825,6 +837,12 @@
       ],
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utilizați ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
       "Use a different card": [
         "Folosire alt card"
@@ -2513,14 +2531,53 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } în ${ DRIVE_APP_NAME } vă permite să lucrați împreună cu alte persoane într-un mediu sigur și criptat."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Adăugați foldere și fișiere în ${ DRIVE_APP_NAME } și invitați membrii echipei să le vadă sau să le editeze."
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
+      ],
+      "Create groups you can email with a single address.": [
+        "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Asigurați accesarea securizată la datele organizației, chiar dacă echipa este la distanță sau utilizează o rețea Wi-Fi publică."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Asigurați o securitate de top pentru cont cu programul ${ PROTON_SENTINEL_NAME }."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Oricine din organizație se poate conecta la serverele partajate din toate țările."
       ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
       ],
       "If disabled, only admins will have access.": [
         "Dacă e dezactivată, doar administratorii vor avea acces."
@@ -2528,11 +2585,26 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Păstrați diferite părți ale vieții separate și contul de e-mail organizat cu adrese suplimentare."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nu se poate conecta nimeni din organizație la serverele partajate."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplificați sincronizarea și programarea cu calendare partajate."
+      ],
+      "To start, give your organization a name.": [
+        "Pentru a începe, dați un nume organizației."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
       ]
     },
     "Disable address prompt": {
@@ -2757,6 +2829,21 @@
       ]
     },
     "edm": {
+      "${ BRAND_NAME } will never ask you to scan a QR code that’s not from ${ domain } or an official ${ BRAND_NAME } app.": [
+        "${ BRAND_NAME } nu vă va cere niciodată să scanați un cod QR care nu provine de la ${ domain } sau dintr-o aplicație oficială ${ BRAND_NAME }."
+      ],
+      "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
+        "${ BRAND_NAME } nu vă va contacta niciodată în mod neașteptat, solicitându-vă să vă conectați cu un cod QR."
+      ],
+      "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
+        "**Cum funcționează**: Introduceți în acest dispozitiv codul afișat pe dispozitivul de pe care doriți să vă conectați. Veți fi conectat ca **${ email }**. Ambele dispozitive vor rămâne active."
+      ],
+      "Allow QR code sign‒in": [
+        "Permitere conectare cu cod QR"
+      ],
+      "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
+        "Aveți grijă la mesajele care au coduri QR. Scanați un cod doar dacă aveți încredere în sursă."
+      ],
       "Code from the other device": [
         "Cod de pe celălalt dispozitiv"
       ],
@@ -2771,6 +2858,12 @@
       ],
       "Scan QR code on your mobile device to sign in": [
         "Scanați codul QR pe dispozitivul mobil pentru a vă conecta"
+      ],
+      "Security tips": [
+        "Sfaturi de securitate"
+      ],
+      "Sign in on another device": [
+        "Conectați-vă de pe alt dispozitiv"
       ],
       "Sign in with QR code": [
         "Conectare cu cod QR"
@@ -3779,9 +3872,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Acțiuni"
-      ],
       "App version": [
         "Versiune aplicație"
       ],
@@ -3797,17 +3887,11 @@
       "Device": [
         "Dispozitiv"
       ],
-      "Enabled Countries": [
-        "Țări activate"
-      ],
       "Enter your email address": [
         "Introduceți adresa de e-mail"
       ],
       "Event": [
         "Eveniment"
-      ],
-      "Groups": [
-        "Grupuri"
       ],
       "IP address": [
         "Adresa IP"
@@ -3826,9 +3910,6 @@
       ],
       "Organization key fingerprint": [
         "Amprentă cheie organizație"
-      ],
-      "Policy Name": [
-        "Nume regulă"
       ],
       "Protection": [
         "Protecție"
@@ -4104,8 +4185,16 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/lună)"
       ],
+      "(default)": [
+        "(implicit)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obțineți o adresă ${ BRAND_NAME }** pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Mai multe",
+        "+ ${ invisibleCount } Mai multe",
+        "+ ${ invisibleCount } Mai multe"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
@@ -4371,9 +4460,6 @@
       "Create your first Gateway": [
         "Creați prima poartă de acces"
       ],
-      "Created (not published)": [
-        "Creat (nepublicat)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Creare server poartă de acces: ${ serverNumber }/${ total }",
         "Creare server poartă de acces: ${ serverNumber }/${ total }",
@@ -4420,9 +4506,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ștergeți orice alte înregistrări MX sau asigurați-vă că prioritatea pentru ${ MAIL_APP_NAME } are cel mai mic număr."
-      ],
-      "Deleted (not published)": [
-        "Șters (nepublicat)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Se șterge ${ deletedServerCount } server poartă de acces",
@@ -4518,9 +4601,6 @@
       "Edit email address": [
         "Editare adresă de e-mail"
       ],
-      "Edited (not published)": [
-        "Editat (nepublicat)"
-      ],
       "eduGAIN configuration saved": [
         "Configurația eduGAIN s-a salvat."
       ],
@@ -4607,6 +4687,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
@@ -4962,6 +5045,9 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
+      "No single sign-on": [
+        "Fără conectare unică"
+      ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
@@ -5044,14 +5130,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola trebuie să conțină ${ MIN_PASSWORD_LENGTH } caractere sau mai mult."
       ],
+      "Password must have:": [
+        "Parola trebuie să conțină:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Premiul pentru alegerea editorilor PC Magazine cu o evaluare de 5 din 5 stele"
-      ],
-      "Pending removal": [
-        "Ștergere în așteptare"
       ],
       "per month": [
         "pe lună"
@@ -5389,6 +5475,9 @@
       "The securest way to browse, stream, and be online.": [
         "Cea mai sigură cale de navigare, redare în flux și de a fi online."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Modificările nepublicate pe care le-ați făcut se vor pierde."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Procesul de verificare va deschide o nouă filă. Dezactivați orice modul de blocare ferestre flotante."
       ],
@@ -5427,6 +5516,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Acest mesaj nu va ajunge la echipa de asistență. Dacă aveți o problemă cu serviciul nostru sau aveți nevoie de acțiuni suplimentare din partea noastră ${ supportLink }."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Acest serviciu nu este disponibil pentru utilizatorii care se conectează cu ajutorul funcției de conectare unică."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
@@ -5551,9 +5643,6 @@
       "Unable to check gateways monitoring current status.": [
         "Imposibil de verificat starea curentă de monitorizare a porților de acces."
       ],
-      "Unchanged": [
-        "Nemodificat"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
       ],
@@ -5602,11 +5691,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "Username": [
-        "Nume de utilizator"
-      ],
       "username": [
         "utilizator"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -5804,6 +5893,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Puteți impune reguli pentru parolele membrilor organizației atunci când aceștia își creează sau resetează parolele contului ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Puteți obține toate serviciile noastre de confidențialitate premium într-un singur pachet – și costă doar **${ priceString }/lună**."
@@ -6169,10 +6261,10 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6259,6 +6351,9 @@
       "Colors": [
         "Culori"
       ],
+      "Common passwords": [
+        "Parole comune"
+      ],
       "Company": [
         "Compania"
       ],
@@ -6328,6 +6423,9 @@
       "Digits": [
         "Cifre"
       ],
+      "Disabled": [
+        "Dezactivat"
+      ],
       "Display name": [
         "Nume afișat"
       ],
@@ -6351,6 +6449,9 @@
       ],
       "Email or username": [
         "E-mail sau utilizator"
+      ],
+      "Enabled": [
+        "Activă"
       ],
       "Enter the code displayed on your TV": [
         "Introduceți codul afișat pe TV"
@@ -6430,6 +6531,9 @@
       "Main": [
         "Principală"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Numărul maxim de caractere este ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Membri fără A2F"
       ],
@@ -6441,6 +6545,12 @@
       ],
       "Method for importing metadata": [
         "Metoda de importare a metadatelor"
+      ],
+      "Minimum number of characters": [
+        "Număr minim de caractere"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Numărul minim de caractere este ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -6487,6 +6597,9 @@
       "Notification": [
         "Notificare"
       ],
+      "Numbers": [
+        "Cifre"
+      ],
       "OpenVPN / IKEv2 password": [
         "Parola OpenVPN/IKEv2"
       ],
@@ -6516,6 +6629,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password strength": [
+        "Dificultatea parolei"
       ],
       "Payer": [
         "Plătitor"
@@ -6598,6 +6714,9 @@
       "Second password": [
         "Parola secundară"
       ],
+      "Sequences": [
+        "Secvențe"
+      ],
       "Show ${ n } administrator": [
         "Afișare ${ n } administrator",
         "Afișare ${ n } administratori",
@@ -6611,6 +6730,9 @@
       ],
       "Spam": [
         "Nedorite"
+      ],
+      "Special characters": [
+        "Caractere speciale"
       ],
       "Start date": [
         "Dată început"
@@ -6647,6 +6769,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Uppercase and lowercase letters": [
+        "Litere mari și litere mici"
       ],
       "User": [
         "Utilizator"
@@ -6710,6 +6835,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
       ],
       "ZIP code": [
         "Cod poștal"
@@ -6853,6 +6981,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Cum să colaborați în ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to create strong passwords": [
+        "Cum să creați parole puternice"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Cum se activează ${ PROTON_SENTINEL_NAME }"
@@ -7172,6 +7303,29 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Ștergere cont"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Păstrare ${ plan }"
+      ],
+      "Keep account": [
+        "Păstrare cont"
+      ],
+      "Switch plan": [
+        "Schimbare plan"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
@@ -7196,29 +7350,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Trecere la ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
       ]
     },
     "new_plans: feature": {
@@ -8439,7 +8570,21 @@
         "Bun venit la ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "${ defaultLabel } permis"
+      ],
       "Android": [
         "Android"
       ],
@@ -8482,11 +8627,20 @@
       "No permission": [
         "Fără permisiune"
       ],
+      "Not allowed": [
+        "Nepermis"
+      ],
+      "Optional ${ defaultLabel }": [
+        "${ defaultLabel } opțional"
+      ],
       "Organization only": [
         "Doar de la organizație"
       ],
       "Receive from all": [
         "Primire de la toți"
+      ],
+      "Required": [
+        "Necesar"
       ],
       "Router": [
         "Ruter"
@@ -8517,17 +8671,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tuturor"
-      ],
-      "Group members": [
-        "Membrii grup"
-      ],
-      "No one": [
-        "Nimeni"
       ]
     },
     "Organization capacity error": {
@@ -9012,6 +9155,9 @@
       "Main street 12": [
         "Strada Principală nr. 12"
       ],
+      "Organization name": [
+        "Nume organizație"
+      ],
       "Other": [
         "Altele"
       ],
@@ -9059,6 +9205,9 @@
       ],
       "VAT number": [
         "Valoare TVA"
+      ],
+      "Your organization name": [
+        "Numele organizației"
       ],
       "yourdomain.com": [
         "domeniuldvs.com"
@@ -9364,6 +9513,11 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Adresa URL a conectorului SCIM către care agentul dvs. de aprovizionare IdP transmite datele SCIM."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Setare organizație și securitate cont"
       ]
     },
     "Security Center - Info": {
@@ -10101,6 +10255,9 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
+      "Sign in": [
+        "Conectare"
+      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -10145,6 +10302,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
@@ -10788,6 +10948,11 @@
         "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Economisiți ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Activ"
@@ -11101,6 +11266,9 @@
       "${ appName } Free": [
         "${ appName } gratuit"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Reguli parolă cont ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11199,6 +11367,9 @@
       "Add to spam list": [
         "Adăugare la lista de nedorite"
       ],
+      "Add user": [
+        "Adăugare utilizator"
+      ],
       "Add user accounts": [
         "Adăugare conturi utilizatori"
       ],
@@ -11256,10 +11427,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -11289,6 +11460,9 @@
       "Close": [
         "Închidere"
       ],
+      "Collaborate on documents": [
+        "Colaborați la documente"
+      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -11304,11 +11478,20 @@
       "Confirm phone number": [
         "Confirmați numărul de telefon"
       ],
+      "Connect apps and devices": [
+        "Conectați aplicații și dispozitive"
+      ],
       "Connect organization": [
         "Conectare organizație"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
         "Conectați-vă la ${ VPN_CONNECTIONS } dispozitive simultan cu ${ vpnPlus }. ${ upgradeButton }"
+      ],
+      "Connect to video conferencing": [
+        "Conectați-vă la conferințe video"
+      ],
+      "Connect your custom domain": [
+        "Conectați-vă domeniul personal"
       ],
       "Contact us": [
         "Contactați-ne"
@@ -11425,6 +11608,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Retrogradare la ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
       ],
@@ -11479,8 +11665,17 @@
       "Email subscriptions": [
         "Abonamente pe e-mail"
       ],
+      "Enable advanced account protection": [
+        "Activare protecție avansată cont"
+      ],
       "Enable for all users": [
         "Activare pentru toți utilizatorii"
+      ],
+      "Enhance security with 2FA": [
+        "Îmbunătățiți securitatea cu A2F"
+      ],
+      "Enter 2FA code": [
+        "Introduceți codul de A2F"
       ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
@@ -11490,6 +11685,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
       ],
       "Error": [
         "Eroare"
@@ -11565,6 +11763,9 @@
       "Human verification": [
         "Verificare persoană"
       ],
+      "Import emails, calendars, contacts": [
+        "Importați e-mailuri, calendare, contacte"
+      ],
       "Increase your privacy with more addresses": [
         "Măriți-vă intimitatea cu adrese mai multe"
       ],
@@ -11607,6 +11808,9 @@
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"
       ],
+      "Org setup": [
+        "Setare organizație"
+      ],
       "Organization filters": [
         "Filtre organizație"
       ],
@@ -11615,6 +11819,9 @@
       ],
       "Organization name": [
         "Nume organizație"
+      ],
+      "Organization setup": [
+        "Setare organizație"
       ],
       "Origin": [
         "Origine"
@@ -11721,8 +11928,17 @@
       "Set organization name": [
         "Setare nume organizație"
       ],
+      "Set recovery methods": [
+        "Setați metodele de recuperare"
+      ],
+      "Set up email forwarding": [
+        "Setare redirecționare mesaje"
+      ],
       "Set up two-factor authentication": [
         "Setare autentificare cu doi factori"
+      ],
+      "Set up your organization": [
+        "Setați organizația"
       ],
       "Set your password": [
         "Setare parolă"
@@ -11732,6 +11948,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Setați servere dedicate trecând la panul Business"
+      ],
+      "Share your calendar with your team": [
+        "Partajați-vă calendarul cu echipa proprie"
       ],
       "Shared servers": [
         "Servere partajate"
@@ -11747,6 +11966,12 @@
       ],
       "Signed in to member account": [
         "Conectat în cont de membru"
+      ],
+      "Simplify email distribution": [
+        "Simplificați distribuirea mesajelor"
+      ],
+      "Simplify password management": [
+        "Simplificați gestionarea parolelor"
       ],
       "Single sign-on": [
         "Autentificare unică"
@@ -11780,6 +12005,9 @@
       "There are no groups": [
         "Nu există grupuri"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activare ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "TV sign in": [
         "Autentificare TV"
       ],
@@ -11807,11 +12035,17 @@
       "Upgrade your privacy": [
         "Îmbunătățiți-vă confidențialitatea"
       ],
+      "Upload and share files": [
+        "Încărcați și partajați fișiere"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Încărcare fișier CSV pentru a crea conturi multiple"
       ],
       "Upload your organization’s logo": [
         "Încărcați logoul organizației"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
       "User": [
         "Utilizator"
@@ -11837,8 +12071,14 @@
       "Video conferencing": [
         "Conferință video"
       ],
+      "Warning": [
+        "Avertizare"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Veți primi un mesaj pe e-mail la noua adresă cu instrucțiuni pentru finalizarea modificării."
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Bun venit la ${ BRAND_NAME } for Business"
       ],
       "WireGuard configuration": [
         "Configurare WireGuard"
@@ -11964,6 +12204,12 @@
       ],
       "Feature in early access": [
         "Funcție disponibilă în acces timpuriu."
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "De exemplu, **12345, abcde** etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "De exemplu, **parola, qwerty** etc."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Cheia publică a furnizorului de identitate pentru a semna declarațiile de autentificare. Obțineți hash-ul certificatului de la furnizorul propriu de identitate."

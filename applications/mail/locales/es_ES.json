@@ -245,7 +245,7 @@
         "Cerrar este banner"
       ],
       "Collaborate on documents": [
-        "Colaborar con documentos"
+        "Colabora en documentos"
       ],
       "Collapse navigation bar": [
         "Minimizar la barra de navegación"
@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
+      "Copy password": [
+        "Copiar la contraseña"
+      ],
       "Copy password to clipboard": [
         "Copiar contraseña al portapapeles"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Crear un mensaje nuevo"
+      ],
+      "Create new password": [
+        "Crear una contraseña nueva"
       ],
       "Current plan": [
         "Plan actual"
@@ -415,7 +421,7 @@
         "Descargar ${ attachmentName }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Descargar las apps de ${ DRIVE_APP_NAME }"
+        "Descargar las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
       "Download now": [
         "Descargar ahora"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
+      ],
+      "Generate password": [
+        "Generar contraseña"
       ],
       "Generate text": [
         "Generar texto"
@@ -761,7 +770,7 @@
         "Administrar carpetas"
       ],
       "Manage groups": [
-        "Administrar grupos"
+        "Administrar los grupos"
       ],
       "Manage labels": [
         "Administrar etiquetas"
@@ -1022,7 +1031,7 @@
         "Eliminar los beneficios"
       ],
       "Remove button": [
-        "Eliminar botón"
+        "Eliminar el botón"
       ],
       "Remove encryption": [
         "Eliminar el cifrado"
@@ -1135,10 +1144,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -1193,7 +1202,7 @@
         "Establecer tiempo de expiración"
       ],
       "Set recovery methods": [
-        "Establecer métodos de recuperación"
+        "Establecer los métodos de recuperación"
       ],
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
@@ -1354,6 +1363,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar clave",
+        "Confiar claves"
+      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -1424,7 +1437,7 @@
         "Mejora a ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
-        "Subir y compartir archivos"
+        "Cargar y compartir archivos"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -1436,10 +1449,10 @@
         "Usa ${ PASS_APP_NAME }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Usar ${ PASS_APP_NAME } para Business"
+        "Usar ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
-        "Usar ${ VPN_SHORT_APP_NAME } para privacidad de datos"
+        "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
       "Use a different card": [
         "Utilizar una tarjeta diferente"
@@ -1596,8 +1609,8 @@
         "${ price } por usuario"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } asiento del asistente de escritura",
-        "${ seats } asientos del asistente de escritura"
+        "${ seats } licencia del asistente de escritura",
+        "${ seats } licencias del asistente de escritura"
       ],
       "${ users } user": [
         "${ users } usuario",
@@ -6360,6 +6373,9 @@
       "Are you sure you want to permanently delete this message?": [
         "¿Estás seguro de que quieres eliminar permanentemente este mensaje?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attach public key": [
         "Adjuntar clave pública"
       ],
@@ -6864,8 +6880,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -6884,6 +6899,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Invita a tu pareja, amigos o a quien sea con quien estés compartiendo tu plan de ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "Es mejor tener:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es mejor usar una VPN en todo momento. Pero estos son los casos en que las amenazas de ciberseguridad pueden ser mayores:"
@@ -6958,7 +6976,7 @@
         "Prioridad baja"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establece ${ MAIL_APP_NAME } como aplicación de correo por defecto."
+        "Establece ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto."
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -7098,6 +7116,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "of": [
         "de"
       ],
@@ -7133,6 +7154,12 @@
       ],
       "password": [
         "contraseña"
+      ],
+      "Password copied to clipboard": [
+        "Contraseña copiada en el portapapeles"
+      ],
+      "Password must have:": [
+        "La contraseña debe tener:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
@@ -7489,6 +7516,9 @@
       "Surveillance": [
         "Vigilancia"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincroniza y gestiona archivos con la aplicación ${ DRIVE_APP_NAME }. Crea y comparte documentos en ${ DOCS_APP_NAME } y guárdalos de forma segura. Todo en ${ ios }, ${ android } y ${ desktop }."
       ],
@@ -7821,6 +7851,9 @@
       ],
       "Upload picture": [
         "Cargar imagen"
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras mayúsculas y minúsculas"
       ],
       "URL link": [
         "Enlace del URL"
@@ -8539,10 +8572,10 @@
       "Always move sender's emails": [
         "Mover siempre los correos de remitentes"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
       "and": [
@@ -8767,11 +8800,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -8848,6 +8881,9 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Name": [
         "Nombre"
       ],
@@ -8884,13 +8920,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Original link": [
@@ -8904,6 +8940,9 @@
       ],
       "Password hint": [
         "Pista de contraseña"
+      ],
+      "Password strength": [
+        "Nivel de seguridad de la contraseña"
       ],
       "Payer": [
         "Emisor del pago"
@@ -8986,6 +9025,12 @@
       "Street address": [
         "Nombre de la calle"
       ],
+      "Strong": [
+        "Segura"
+      ],
+      "Strong password": [
+        "Contraseña segura"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -9033,6 +9078,18 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contraseña vulnerable"
+      ],
+      "Weak": [
+        "Poco segura"
+      ],
+      "Weak password": [
+        "Contraseña poco segura"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -9251,7 +9308,7 @@
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Cómo usar ${ PASS_APP_NAME } para Business"
+        "Cómo usar ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
         "Cómo usar el reenvío de correo electrónico"
@@ -9748,29 +9805,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtén ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -9792,6 +9826,29 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtén ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9960,7 +10017,7 @@
         "Disponible en todas las plataformas"
       ],
       "Calendar sharing": [
-        "Compartir calendario"
+        "Calendarios compartidos"
       ],
       "Catch-all": [
         "Catch-all"
@@ -13406,7 +13463,7 @@
         "Añadir a ${ groupName }"
       ],
       "Add user": [
-        "Añadir usuario"
+        "Añadir un usuario"
       ],
       "Addresses": [
         "Direcciones"
@@ -14090,7 +14147,7 @@
         "Enviando mensaje original"
       ],
       "Set recovery methods": [
-        "Establecer métodos de recuperación"
+        "Establecer los métodos de recuperación"
       ],
       "Set recovery phrase": [
         "Crear una frase de recuperación"
@@ -14236,7 +14293,7 @@
         "Te damos la bienvenida ${ userName }"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Te damos la bienvenida a ${ BRAND_NAME } para Business"
+        "Te damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "¿De qué te puede proteger una VPN?"
