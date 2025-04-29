@@ -209,6 +209,9 @@
       "Copy link": [
         "Kopírovať odkaz"
       ],
+      "Copy password": [
+        "Kopírovať heslo"
+      ],
       "Copy version number to clipboard": [
         "Skopírovať číslo verzie do schránky"
       ],
@@ -232,6 +235,9 @@
       ],
       "Create new contact": [
         "Vytvoriť nový kontakt"
+      ],
+      "Create new password": [
+        "Vytvoriť nové heslo"
       ],
       "Current plan": [
         "Aktuálny plán"
@@ -337,6 +343,9 @@
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
+      ],
+      "Generate password": [
+        "Vygenerovať heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získať ${ planName } za ${ priceCoupon }"
@@ -4882,6 +4891,9 @@
       "Are you sure you want to discard your import?": [
         "Naozaj chcete zahodiť váš import?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
+      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -5206,6 +5218,9 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
+      "It's better to have:": [
+        "Je lepšie, ak máte:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najlepšie je vždy používať VPN sieť. Tu však môžu byť hrozby kybernetickej bezpečnosti najvyššie:"
       ],
@@ -5323,6 +5338,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
+      "Numbers": [
+        "Čísla"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Výskyty predtým aktualizované organizátorom budú zachované, ale niektoré vaše odpovede budú stratené."
       ],
@@ -5358,6 +5376,9 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bolo skopírované do schránky"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
@@ -5539,6 +5560,9 @@
       "Surveillance": [
         "Monitorovanie"
       ],
+      "Symbols (#$&)": [
+        "Znaky (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
       ],
@@ -5655,6 +5679,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "Uppercase and lowercase letters": [
+        "Veľké a malé písmená"
       ],
       "User activated": [
         "Používateľ aktivovaný"
@@ -6416,6 +6443,9 @@
       "Move to Inbox": [
         "Presunúť do Doručených"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "Name": [
         "Meno"
       ],
@@ -6530,6 +6560,12 @@
       "Street address": [
         "Ulica a č."
       ],
+      "Strong": [
+        "Silné"
+      ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti predplatného"
       ],
@@ -6568,6 +6604,18 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "Vulnerable": [
+        "Zraniteľné"
+      ],
+      "Vulnerable password": [
+        "Zraniteľné heslo"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "Week start": [
         "Týždeň začína v"
@@ -7174,26 +7222,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7215,6 +7243,26 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9429,6 +9477,11 @@
         "Podpísať"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Pripojiť sa k hromadnej konverzácii Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Rýchlejší v aplikácii"
@@ -10225,6 +10278,11 @@
         "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Ušetrite ${ priceString }"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt vyzerá rovnako.",
@@ -10510,6 +10568,11 @@
       ],
       "vCard field": [
         "vCard položka"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Pripojiť sa k stretnutiu cez Teams"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10857,9 +10920,6 @@
       ],
       "Get the apps": [
         "Získajte aplikácie"
-      ],
-      "Get Zooming faster": [
-        "Zoomujte rýchlejšie"
       ],
       "Gift": [
         "Dar"
@@ -11895,6 +11955,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Pripojiť sa k stretnutiu na Zoome"
       ]
     },
     "Zoom integration": {

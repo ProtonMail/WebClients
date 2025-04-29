@@ -197,6 +197,9 @@
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Copy password": [
+        "Скопировать пароль"
+      ],
       "Copy version number to clipboard": [
         "Скопировать номер версии в буфер обмена"
       ],
@@ -220,6 +223,9 @@
       ],
       "Create new contact": [
         "Создать новый контакт"
+      ],
+      "Create new password": [
+        "Создать новый пароль"
       ],
       "Current plan": [
         "Текущий тариф"
@@ -322,6 +328,9 @@
       ],
       "Forward as attachment": [
         "Переслать как вложение"
+      ],
+      "Generate password": [
+        "Создать пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Получить ${ planName } за ${ priceCoupon }"
@@ -4661,6 +4670,9 @@
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "По крайней мере ${ BETTER_PASSWORD_LENGTH } символов"
+      ],
       "Attention required": [
         "Требуется внимание"
       ],
@@ -4970,6 +4982,9 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
+      "It's better to have:": [
+        "Лучше иметь:"
+      ],
       "JCB logo": [
         "Логотип JCB"
       ],
@@ -5075,6 +5090,9 @@
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
+      "Numbers": [
+        "Цифры"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "События, ранее обновленные организатором, будут сохранены, но некоторые ваши ответы будут потеряны."
       ],
@@ -5101,6 +5119,9 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопирован в буфер обмена"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
@@ -5252,6 +5273,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "Символы (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -5353,6 +5377,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
+      "Uppercase and lowercase letters": [
+        "Заглавные и строчные буквы"
       ],
       "User activated": [
         "Пользователь активирован"
@@ -6069,6 +6096,9 @@
       "Move to Inbox": [
         "Переместить во Входящие"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Должно содержать не менее ${ MIN_PASSWORD_LENGTH } символов"
+      ],
       "Name": [
         "Имя"
       ],
@@ -6180,6 +6210,12 @@
       "Street address": [
         "Адрес"
       ],
+      "Strong": [
+        "Надежный"
+      ],
+      "Strong password": [
+        "Надежный пароль"
+      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -6218,6 +6254,18 @@
       ],
       "Verification code": [
         "Код подтверждения"
+      ],
+      "Vulnerable": [
+        "Уязвимый"
+      ],
+      "Vulnerable password": [
+        "Уязвимый пароль"
+      ],
+      "Weak": [
+        "Слабый"
+      ],
+      "Weak password": [
+        "Слабый пароль"
       ],
       "Week start": [
         "Начало недели"
@@ -6761,26 +6809,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6802,6 +6830,26 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10312,9 +10360,6 @@
       ],
       "Get the apps": [
         "Получить приложения"
-      ],
-      "Get Zooming faster": [
-        "Ускорить Zoom"
       ],
       "Gift": [
         "Подарок"

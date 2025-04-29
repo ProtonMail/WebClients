@@ -207,6 +207,9 @@
       "Copy link": [
         "Hivatkozás másolása"
       ],
+      "Copy password": [
+        "Jelszó másolása"
+      ],
       "Copy version number to clipboard": [
         "A verziószám másolása a vágólapra"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Új névjegy létrehozása"
+      ],
+      "Create new password": [
+        "Új jelszó készítése"
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -331,6 +337,9 @@
       ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
+      ],
+      "Generate password": [
+        "Jelszó létrehozása"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } csomag beszerzése ${ priceCoupon } áron"
@@ -4673,6 +4682,9 @@
       "Are you sure you want to discard your import?": [
         "Biztos, hogy elveti az importálást?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
       "Attention required": [
         "Figyelem szükséges"
       ],
@@ -4987,6 +4999,9 @@
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
       ],
+      "It's better to have:": [
+        "Jobb, ha van:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "A legjobb, ha mindig VPN-t használ. Amikor a kiberbiztonsági fenyegetések a legnagyobbak lehetnek:"
       ],
@@ -5104,6 +5119,9 @@
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
       ],
+      "Numbers": [
+        "Számok"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "A szervező által korábban frissített alkalmak megmaradnak, de az ön által küldött egyes válaszok elvesznek."
       ],
@@ -5136,6 +5154,9 @@
       ],
       "password": [
         "jelszó"
+      ],
+      "Password copied to clipboard": [
+        "Jelszó a vágólapra másolva"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
@@ -5303,6 +5324,9 @@
       "Surveillance": [
         "Megfigyelés"
       ],
+      "Symbols (#$&)": [
+        "Szimbólumok (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
@@ -5416,6 +5440,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
+      ],
+      "Uppercase and lowercase letters": [
+        "Kis- és nagybetűk"
       ],
       "User activated": [
         "Felhasználó aktiválva"
@@ -6112,7 +6139,7 @@
         "Importálás ide:"
       ],
       "Integrated 2FA authenticator": [
-        "Beépített kétlépcsős hitelesítés"
+        "Beépített kétfaktoros (2FA) hitelesítés"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Gyorsbillentyű: ${ shortcut }"
@@ -6158,6 +6185,9 @@
       ],
       "Move to Inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Legalább ${ MIN_PASSWORD_LENGTH } karakterrel kell rendelkeznie."
       ],
       "Name": [
         "Név"
@@ -6271,6 +6301,12 @@
       "Street address": [
         "Utca, házszám"
       ],
+      "Strong": [
+        "Erős"
+      ],
+      "Strong password": [
+        "Erős jelszó"
+      ],
       "Subscription options": [
         "Előfizetés lehetőségei"
       ],
@@ -6309,6 +6345,18 @@
       ],
       "Verification code": [
         "Ellenőrző kód"
+      ],
+      "Vulnerable": [
+        "Sebezhető"
+      ],
+      "Vulnerable password": [
+        "Sérülékeny jelszó"
+      ],
+      "Weak": [
+        "Gyenge"
+      ],
+      "Weak password": [
+        "Gyenge jelszó"
       ],
       "Week start": [
         "Hét kezdőnapja"
@@ -6863,26 +6911,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6904,6 +6932,26 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kezdje el a használatot ${ priceCoupon } áron"
+      ],
+      "Starting from ${ pricing }": [
+        "Kezdőár: ${ pricing }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
       ]
     },
     "new_plans: feature": {
@@ -10317,9 +10365,6 @@
       ],
       "Get the apps": [
         "Alkalmazások letöltése"
-      ],
-      "Get Zooming faster": [
-        "Gyorsabb Zoomolás"
       ],
       "Gift": [
         "Ajándék"
