@@ -206,6 +206,9 @@
       "Copy link": [
         "复制链接"
       ],
+      "Copy password": [
+        "复制密码"
+      ],
       "Copy version number to clipboard": [
         "复制版本号"
       ],
@@ -229,6 +232,9 @@
       ],
       "Create new contact": [
         "新建联系人"
+      ],
+      "Create new password": [
+        "创建新密码"
       ],
       "Current plan": [
         "当前等级"
@@ -328,6 +334,9 @@
       ],
       "Forward as attachment": [
         "作为附件转发"
+      ],
+      "Generate password": [
+        "生成密码"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "以 ${ priceCoupon } 价格获取 ${ planName }"
@@ -4675,6 +4684,9 @@
       "Are you sure you want to discard your import?": [
         "确定要放弃导入吗？"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
+      ],
       "Attention required": [
         "需要关注"
       ],
@@ -4984,6 +4996,9 @@
       "Internet connection restored.": [
         "网络连接已恢复。"
       ],
+      "It's better to have:": [
+        "最好是有："
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "建议您始终使用VPN，但在以下情况下，网络安全威胁可能最为严重："
       ],
@@ -5101,6 +5116,9 @@
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
+      "Numbers": [
+        "数字"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "组织者先前更新的事件将予保留，但您的一些答复将会丢失"
       ],
@@ -5136,6 +5154,12 @@
       ],
       "password": [
         "密码"
+      ],
+      "Password copied to clipboard": [
+        "密码已复制到剪贴板"
+      ],
+      "Password must have:": [
+        "密码必须具有："
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
@@ -5305,6 +5329,9 @@
       "Surveillance": [
         "监控"
       ],
+      "Symbols (#$&)": [
+        "符号 (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
       ],
@@ -5421,6 +5448,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Uppercase and lowercase letters": [
+        "大写字母和小写字母"
       ],
       "User activated": [
         "用户已激活"
@@ -6155,6 +6185,9 @@
       "Move to Inbox": [
         "移至收件箱"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
       "Name": [
         "名称"
       ],
@@ -6199,6 +6232,9 @@
       ],
       "Password": [
         "密码"
+      ],
+      "Password strength": [
+        "密码强度"
       ],
       "Payer": [
         "付款人"
@@ -6266,6 +6302,12 @@
       "Street address": [
         "街道地址"
       ],
+      "Strong": [
+        "强"
+      ],
+      "Strong password": [
+        "强密码"
+      ],
       "Subscription options": [
         "计费方式"
       ],
@@ -6304,6 +6346,18 @@
       ],
       "Verification code": [
         "验证码"
+      ],
+      "Vulnerable": [
+        "易受攻击"
+      ],
+      "Vulnerable password": [
+        "易受攻击的密码"
+      ],
+      "Weak": [
+        "弱"
+      ],
+      "Weak password": [
+        "弱密码"
       ],
       "Week start": [
         "每周第一天"
@@ -6886,26 +6940,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6927,6 +6961,26 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8928,6 +8982,11 @@
         "数字签名"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "加入 Slack 群组"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "在应用程序上运行更快"
@@ -9667,6 +9726,11 @@
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "节省 ${ priceString }"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 位联系人信息似乎完全相同。"
@@ -9943,6 +10007,11 @@
       ],
       "vCard field": [
         "vCard 字段"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "加入 Teams 会议"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10261,9 +10330,6 @@
       "Get the apps": [
         "下载应用"
       ],
-      "Get Zooming faster": [
-        "Zoom 速度更快"
-      ],
       "Gift": [
         "礼品码"
       ],
@@ -10428,6 +10494,9 @@
       ],
       "Save changes": [
         "保存更改"
+      ],
+      "Schedule meetings in one click": [
+        "一键安排会议"
       ],
       "Security center": [
         "安全中心"
@@ -11157,6 +11226,11 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "加入 Zoom 会议"
       ]
     },
     "Zoom integration": {

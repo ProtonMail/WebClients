@@ -343,6 +343,9 @@
       "Fit to window": [
         "विंडो में फिट करें"
       ],
+      "Forgot password?": [
+        "पासवर्ड भूल गए?"
+      ],
       "Forgot recovery method?": [
         "रिकवरी विधि भूल गए?"
       ],
@@ -502,11 +505,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Remove": [
         "हटाएं"
@@ -619,11 +622,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "select file": [
-        "फ़ाइल चुनें"
-      ],
       "Select file": [
         "फाइल चुनें"
+      ],
+      "select file": [
+        "फ़ाइल चुनें"
       ],
       "Send code": [
         "कोड भेजें"
@@ -3604,9 +3607,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "एक्शन"
-      ],
       "App version": [
         "ऐप संस्करण"
       ],
@@ -3622,17 +3622,11 @@
       "Device": [
         "डिवाइस"
       ],
-      "Enabled Countries": [
-        "सक्रिय देश"
-      ],
       "Enter your email address": [
         "अपना ईमेल पता डालें"
       ],
       "Event": [
         "इवेंट"
-      ],
-      "Groups": [
-        "ग्रुप"
       ],
       "IP address": [
         "IP पता"
@@ -3651,9 +3645,6 @@
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
-      ],
-      "Policy Name": [
-        "नीति का नाम"
       ],
       "Protection": [
         "सुरक्षा"
@@ -4360,6 +4351,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "अपने ${ BRAND_NAME } खाते का ईमेल पता या यूज़रनेम डालें।"
+      ],
+      "Enter your own password (as organization admin).": [
+        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
@@ -5289,10 +5283,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -5818,10 +5812,10 @@
       "Allow recovery by phone": [
         "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -5974,6 +5968,9 @@
       "Digits": [
         "अंक"
       ],
+      "Disabled": [
+        "अक्षम किया"
+      ],
       "Display name": [
         "डिस्प्ले नाम"
       ],
@@ -6088,6 +6085,9 @@
       "Method for importing metadata": [
         "मेटाडाटा आयात करने की विधि"
       ],
+      "Minimum number of characters": [
+        "न्यूनतम अक्षरों की संख्या"
+      ],
       "Moderate NAT": [
         "मध्यम एनएटी"
       ],
@@ -6132,6 +6132,9 @@
       ],
       "Notification": [
         "सूचना"
+      ],
+      "Numbers": [
+        "नंबर"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 पासवर्ड"
@@ -6257,6 +6260,9 @@
       "Spam": [
         "स्पैम"
       ],
+      "Special characters": [
+        "विशेष वर्ण"
+      ],
       "Start date": [
         "आरंभ करने की तिथि"
       ],
@@ -6352,6 +6358,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "हां, मैं इस खाते और इसके सभी डेटा को स्थायी रूप से हटाना चाहता हूं।"
+      ],
+      "Your password (admin)": [
+        "आपका पासवर्ड (व्यवस्थापक)"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -6763,6 +6772,29 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "खाता हटा दो"
+      ],
+      "Downgrade account": [
+        "खाते को डाउनग्रेड करें"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME } पाएं मुफ्त में"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } रखे"
+      ],
+      "Keep account": [
+        "खाता रखें"
+      ],
+      "Switch plan": [
+        "प्लान बदले"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
@@ -6787,29 +6819,6 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "खाता हटा दो"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } पाएं मुफ्त में"
-      ],
-      "Get ${ planName }": [
-        "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखे"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदले"
       ]
     },
     "new_plans: feature": {
@@ -7985,6 +7994,17 @@
         "${ appName } में आपका स्वागत है"
       ]
     },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
+      ]
+    },
     "Option": {
       "Country configs": [
         "देश विन्यास"
@@ -8016,11 +8036,17 @@
       "No permission": [
         "कोई अनुमति नहीं"
       ],
+      "Not allowed": [
+        "अनुमत नहीं"
+      ],
       "Organization only": [
         "केवल संगठन से"
       ],
       "Receive from all": [
         "सभी से प्राप्त करें"
+      ],
+      "Required": [
+        "आवश्यक"
       ],
       "Router": [
         "राऊटर"
@@ -8042,17 +8068,6 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
       ]
     },
     "Organization capacity error": {
@@ -9548,6 +9563,9 @@
       "Share the confirmation code with your administrator": [
         "पुष्टीकरण कोड अपने एडमिनिस्ट्रेटर के साथ साझा करें"
       ],
+      "Sign in": [
+        "साइनइन करें"
+      ],
       "Sign in to your organization": [
         "अपने संगठन में साइन इन करें"
       ],
@@ -9592,6 +9610,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "आपको उन्हें अपने संगठन में जोड़ने के लिए नए उपयोगकर्ता मैन्युअल रूप से बनाना होगा।"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "आपको आपके तीसरें-पार्टी SSO प्रदाता पर रीडायरेक्ट कर दिया जाएगा।"
       ],
       "Your SSO configuration will be deleted.": [
         "आपकी SSO संरचना हटा दी जाएगी।"
@@ -10664,10 +10685,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -10888,6 +10909,9 @@
       "Enable for all users": [
         "सभी उपयोगकर्ताओं के लिए सक्षम करें"
       ],
+      "Enter 2FA code": [
+        "2-एफए कोड डालें"
+      ],
       "Enter endpoints into your identity provider": [
         "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
       ],
@@ -10896,6 +10920,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } बीटा कार्यक्रम में शामिल होने के लिए अपनी ${ BRAND_NAME } खाता जानकारी दर्ज करें"
+      ],
+      "Enter your password": [
+        "आपका पासवर्ड डालें"
       ],
       "Error": [
         "गड़बड़"
@@ -11237,6 +11264,9 @@
       ],
       "Video conferencing": [
         "वीडियो कॉन्फ्रेंसिंग"
+      ],
+      "Warning": [
+        "चेतावनी"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "हम आपके नए पते पर एक ईमेल भेजेंगे जिसमें परिवर्तन को पूरा करने के निर्देश होंगे।"

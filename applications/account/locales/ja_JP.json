@@ -1126,10 +1126,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
       "Select files": [
@@ -4657,9 +4657,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "確認メールが ${ boldForwardeeEmail } に送信されます"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "${ boldForwarderEmail } に対して新しい暗号化キーが生成されます。"
-      ],
       "Automatically forward emails to another email address.": [
         "メールを別のメールアドレスに自動的に転送します。"
       ],
@@ -4770,17 +4767,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "${ forwarderEmail } 用に新しい暗号化キーが生成されました。"
-      ],
       "Changes saved": [
         "変更が保存されました"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "${ forward.ForwardeeEmail } にメールが送信されました"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "${ model.forwardeeEmail } にメールが送信されました."
       ],
       "Forwarding accepted": [
         "転送を受け付けました"
@@ -4807,9 +4795,6 @@
       ],
       "Forwarding activated": [
         "転送が有効化されました"
-      ],
-      "Request confirmation": [
-        "確認のリクエスト"
       ],
       "Set up forwarding": [
         "転送の設定"
@@ -6606,9 +6591,6 @@
       "Device": [
         "デバイス"
       ],
-      "Enabled Countries": [
-        "有効な国"
-      ],
       "Enter your email address": [
         "メールアドレスを入力してください"
       ],
@@ -6617,9 +6599,6 @@
       ],
       "Folders": [
         "フォルダー"
-      ],
-      "Groups": [
-        "グループ"
       ],
       "IP address": [
         "IPアドレス"
@@ -6647,9 +6626,6 @@
       ],
       "Permissions": [
         "権限"
-      ],
-      "Policy Name": [
-        "ポリシー名"
       ],
       "Protection": [
         "保護"
@@ -7829,9 +7805,6 @@
       "Create your first Gateway": [
         "最初のゲートウェイを作成する"
       ],
-      "Created (not published)": [
-        "作成されました (非公開)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "ゲートウェイ サーバーの作成: ${ serverNumber } / ${ total }"
       ],
@@ -7903,9 +7876,6 @@
       ],
       "Delete link?": [
         "リンクを削除しますか?"
-      ],
-      "Deleted (not published)": [
-        "削除（非公開）"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
@@ -8026,9 +7996,6 @@
       ],
       "Edit link": [
         "リンクを編集"
-      ],
-      "Edited (not published)": [
-        "編集済み (非公開)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN構成が保存されました"
@@ -8885,9 +8852,6 @@
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine editors賞で星 5 つ中の星 5 の評価"
       ],
-      "Pending removal": [
-        "保留中の削除"
-      ],
       "per month": [
         "月あたり"
       ],
@@ -9665,9 +9629,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "回復用ファイルの署名の検証ができませんでした。サポートにお問い合わせください。"
       ],
-      "Unchanged": [
-        "未変更"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "残念ながら、このアカウントに回復手段は設定されていません。"
       ],
@@ -9758,11 +9719,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -10909,10 +10870,10 @@
       "Allow sharing outside the organization": [
         "組織外の共有を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10924,11 +10885,11 @@
       "Amount due": [
         "支払い総額"
       ],
-      "AND": [
-        "かつ"
-      ],
       "And": [
         "と"
+      ],
+      "AND": [
+        "かつ"
       ],
       "and": [
         "と"
@@ -11350,10 +11311,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
       "Import all messages": [
@@ -11557,13 +11518,13 @@
       "Optional": [
         "任意"
       ],
-      "OR": [
-        "または"
-      ],
       "or": [
         "または"
       ],
       "Or": [
+        "または"
+      ],
+      "OR": [
         "または"
       ],
       "Organization name": [
@@ -12238,10 +12199,10 @@
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "プライバシーポリシー"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "プライバシーポリシー"
       ],
       "Reactivate now": [
@@ -13575,6 +13536,14 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -13593,14 +13562,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -14231,6 +14192,17 @@
         "デスクトップ"
       ]
     },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "毎月 10 日"
@@ -14459,17 +14431,6 @@
       ],
       "Trash": [
         "ごみ箱"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
       ]
     },
     "Option delay send seconds": {
@@ -18472,10 +18433,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -18969,9 +18930,6 @@
       ],
       "Get the apps": [
         "アプリを入手"
-      ],
-      "Get Zooming faster": [
-        "ズームの速度を上げる。"
       ],
       "Gift": [
         "ギフト"

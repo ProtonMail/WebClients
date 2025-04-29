@@ -809,10 +809,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -925,6 +925,11 @@
       ],
       "Trust": [
         "Vjeruj"
+      ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -4129,6 +4134,9 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
+      "Insert image": [
+        "Umetni sliku"
+      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -4865,10 +4873,10 @@
       "Also archive": [
         "Također i arhivu"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -5027,11 +5035,11 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5123,14 +5131,14 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Participants": [
         "Sudionici"
@@ -5694,14 +5702,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5711,6 +5711,14 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {

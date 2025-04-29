@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
       ],
+      "Copy password": [
+        "პაროლის კოპირება"
+      ],
       "Copy password to clipboard": [
         "პაროლის კოპირება ბაფერში"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "ახალი შეტყობინების შექმნა"
+      ],
+      "Create new password": [
+        "ახალი პაროლის შექმნა"
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
+      ],
+      "Generate password": [
+        "პაროლის გენერირება"
       ],
       "Generate text": [
         "ტექსტის გენერაცია"
@@ -1135,10 +1144,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -1353,6 +1362,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -6288,6 +6301,9 @@
       "Are you sure you want to permanently delete this message?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ ეს შეტყობინება?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
+      ],
       "Attach public key": [
         "საჯარო გასაღების მიმაგრება"
       ],
@@ -6789,7 +6805,6 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -6809,6 +6824,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "მოიწვიეთ თქვენი პარტნიორი, მეგობარი, ან ვისაც ${ protonDuoPlanName } ტარიფს უზიარებთ."
+      ],
+      "It's better to have:": [
+        "უკეთესია, გქონდეთ:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "საუკეთესო გზაა, VPN ყოველთვის გამოიყენოთ. მაგრამ ეს ადგილებია, სადაც კიბერუსაფრთხოების საფრთხეები ყველაზე დიდია:"
@@ -6881,9 +6899,6 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
       ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
@@ -7020,6 +7035,9 @@
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
+      "Numbers": [
+        "რიცხვები"
+      ],
       "of": [
         "-დან"
       ],
@@ -7055,6 +7073,9 @@
       ],
       "password": [
         "პაროლი"
+      ],
+      "Password copied to clipboard": [
+        "პაროლი დაკოპირდა გაცვლის ბაფერში"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
@@ -7396,6 +7417,9 @@
       "Surveillance": [
         "დაზვერვა"
       ],
+      "Symbols (#$&)": [
+        "სიმბოლოები (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -7713,6 +7737,9 @@
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
+      ],
+      "Uppercase and lowercase letters": [
+        "დიდი და პატარა ასოები"
       ],
       "URL link": [
         "URL ბმული"
@@ -8425,10 +8452,10 @@
       "Always move sender's emails": [
         "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
       "and": [
@@ -8653,10 +8680,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
       "Import all messages": [
@@ -8734,6 +8761,9 @@
       "Move to Inbox": [
         "შემომავლებში გადატანა"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
       "Name": [
         "სახელი"
       ],
@@ -8770,13 +8800,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
-      "OR": [
-        "ან"
-      ],
       "or": [
         "ან"
       ],
       "Or": [
+        "ან"
+      ],
+      "OR": [
         "ან"
       ],
       "Original link": [
@@ -8872,6 +8902,12 @@
       "Street address": [
         "ქუჩის მისამართი"
       ],
+      "Strong": [
+        "ძლიერი"
+      ],
+      "Strong password": [
+        "ძლიერი პაროლი"
+      ],
       "Subscription options": [
         "გამოწერის პარამეტრები"
       ],
@@ -8919,6 +8955,18 @@
       ],
       "Verification code": [
         "შემოწმების კოდი"
+      ],
+      "Vulnerable": [
+        "მოწყვლადი"
+      ],
+      "Vulnerable password": [
+        "მოწყვლადი პაროლი"
+      ],
+      "Weak": [
+        "სუსტი"
+      ],
+      "Weak password": [
+        "სუსტი პაროლი"
       ],
       "What happened?": [
         "რა მოხდა?"
@@ -9634,29 +9682,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }-ის მიღება"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "დაწყება ${ priceCoupon }-დან"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ planName }": [
-        "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -9678,6 +9703,29 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }-ის მიღება"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
       ]
     },
     "new_plans: feature": {

@@ -93,9 +93,6 @@
       "Apply": [
         "Toteuta"
       ],
-      "Ask me next time": [
-        "Kysy seuraavalla kerralla"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -214,6 +211,9 @@
       "Copy invite link": [
         "Kopioi kutsulinkki"
       ],
+      "Copy password": [
+        "Kopioi salasana"
+      ],
       "Copy version number to clipboard": [
         "Kopioi versionumero leikepöydälle"
       ],
@@ -234,6 +234,9 @@
       ],
       "Create new folder": [
         "Luo uusi kansio"
+      ],
+      "Create new password": [
+        "Luo uusi salasana"
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -344,6 +347,9 @@
       ],
       "Forward as attachment": [
         "Välitä liitteenä"
+      ],
+      "Generate password": [
+        "Luo salasana"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Hanki ${ planName } hintaan ${ priceCoupon }"
@@ -626,9 +632,6 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
-      ],
-      "Save preferences": [
-        "Tallenna asetukset"
       ],
       "Search": [
         "Hae"
@@ -2296,11 +2299,6 @@
         "Erääntynyt lasku"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2379,6 +2377,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4052,6 +4055,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Haluatko varmasti poistaa valitut kohteet roskakorista pysyvästi?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -4106,9 +4112,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Muunnetaan dokumenttia..."
-      ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
       ],
@@ -4152,9 +4155,6 @@
       ],
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
-      ],
-      "Creating new document...": [
-        "Luodaan uutta dokumenttia..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
@@ -4272,9 +4272,6 @@
       ],
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
-      ],
-      "Error converting document: ${ errorMessage }": [
-        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
       ],
       "Error Syncing": [
         "Synkronointivirhe"
@@ -4409,6 +4406,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
       ],
+      "It's better to have:": [
+        "On parempi olla:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
       ],
@@ -4471,9 +4471,6 @@
       ],
       "Low Priority": [
         "Alhainen tärkeys"
-      ],
-      "Making a copy...": [
-        "Luodaan kopiota..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -4542,6 +4539,9 @@
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
+      "Numbers": [
+        "Numerot"
+      ],
       "Offline": [
         "Ei yhteyttä"
       ],
@@ -4577,6 +4577,9 @@
       ],
       "password": [
         "salasana"
+      ],
+      "Password copied to clipboard": [
+        "Salasana kopioitiin leikepöydälle"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
@@ -4797,6 +4800,9 @@
       "Surveillance": [
         "Tarkkailu"
       ],
+      "Symbols (#$&)": [
+        "Symbolit (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -4929,9 +4935,6 @@
       "Trash": [
         "Roskakori"
       ],
-      "Trashed": [
-        "Roskakorissa"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
@@ -4946,6 +4949,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Satojen tiedostojen samanaikainen tallennus voi vaikuttaa suorituskykyyn."
+      ],
+      "Uppercase and lowercase letters": [
+        "Isot ja pienet kirjaimet"
       ],
       "User activated": [
         "Käyttäjä aktivoitiin"
@@ -5483,9 +5489,6 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
-      "Enable email notifications": [
-        "Ota sähköposti-ilmoitukset käyttöön"
-      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -5536,9 +5539,6 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
-      ],
-      "Include document name in notification": [
-        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -5705,6 +5705,12 @@
       "Street address": [
         "Katuosoite"
       ],
+      "Strong": [
+        "Vahva"
+      ],
+      "Strong password": [
+        "Vahva salasana"
+      ],
       "Subscription options": [
         "Tilausvaihtoehdot"
       ],
@@ -5740,6 +5746,18 @@
       ],
       "Viewer": [
         "Tarkastelu"
+      ],
+      "Vulnerable": [
+        "Haavoittuvainen"
+      ],
+      "Vulnerable password": [
+        "Haavoittuva salasana"
+      ],
+      "Weak": [
+        "Heikko"
+      ],
+      "Weak password": [
+        "Heikko salasana"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -7521,9 +7539,6 @@
       ],
       "Searching": [
         "Haetaan"
-      ],
-      "Trashed": [
-        "Roskakorissa"
       ]
     },
     "Participant name": {

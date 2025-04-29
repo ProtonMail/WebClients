@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Copia il link di invito"
       ],
+      "Copy password": [
+        "Copia la password"
+      ],
       "Copy version number to clipboard": [
         "Copia il numero di versione negli appunti"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Crea nuova cartella"
+      ],
+      "Create new password": [
+        "Crea una nuova password"
       ],
       "Current plan": [
         "Piano attuale"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Inoltra come allegato"
+      ],
+      "Generate password": [
+        "Genera password"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Ottieni ${ planName } per ${ priceCoupon }"
@@ -749,6 +758,9 @@
       ],
       "Take out of trash": [
         "Ripristina dal cestino"
+      ],
+      "Trashing...": [
+        "Spostamento nel cestino..."
       ],
       "Trust": [
         "Considera attendibile"
@@ -2332,11 +2344,6 @@
         "Fattura scaduta"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
@@ -2472,6 +2479,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4171,6 +4183,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Almeno ${ BETTER_PASSWORD_LENGTH } caratteri"
+      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -4393,10 +4408,10 @@
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Impossibile convertire il documento: ${ errorMessage }"
+        "Errore durante la conversione del documento: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "Impossibile caricare il documento: ${ errorDetail }"
+        "Errore durante il caricamento del documento ${ errorDetail }"
       ],
       "Error Syncing": [
         "Errore nella sincronizzazione"
@@ -4540,6 +4555,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sembra che tu abbia recentemente provato a caricare ${ uploadName }. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
       ],
+      "It's better to have:": [
+        "È meglio avere:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "È meglio usare una VPN in ogni momento. Ma ecco quando le minacce alla sicurezza informatica possono essere più elevate:"
       ],
@@ -4682,6 +4700,9 @@
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
       ],
+      "Numbers": [
+        "Numeri"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4720,6 +4741,12 @@
       ],
       "password": [
         "password"
+      ],
+      "Password copied to clipboard": [
+        "Password copiata negli appunti"
+      ],
+      "Password must have:": [
+        "La password deve contenere:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -4946,6 +4973,9 @@
       "Surveillance": [
         "Sorveglianza"
       ],
+      "Symbols (#$&)": [
+        "Simboli (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
@@ -5102,9 +5132,6 @@
       "Trash": [
         "Cestino"
       ],
-      "Trashed": [
-        "Nel cestino"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
@@ -5122,6 +5149,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Caricare centinaia di file in una sola volta può avere un impatto sulle prestazioni."
+      ],
+      "Uppercase and lowercase letters": [
+        "Lettere maiuscole e minuscole"
       ],
       "User activated": [
         "Utente attivato"
@@ -5800,6 +5830,9 @@
       "Move to Inbox": [
         "Sposta nella posta in arrivo"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
+      ],
       "My files": [
         "I miei file"
       ],
@@ -5826,6 +5859,9 @@
       ],
       "Password": [
         "Password"
+      ],
+      "Password strength": [
+        "Sicurezza della password"
       ],
       "Payer": [
         "Pagante"
@@ -5908,6 +5944,12 @@
       "Street address": [
         "Indirizzo"
       ],
+      "Strong": [
+        "Sicura"
+      ],
+      "Strong password": [
+        "Password complessa"
+      ],
       "Subscription options": [
         "Opzioni di abbonamento"
       ],
@@ -5943,6 +5985,18 @@
       ],
       "Viewer": [
         "Visualizzatore"
+      ],
+      "Vulnerable": [
+        "Vulnerabile"
+      ],
+      "Vulnerable password": [
+        "Password vulnerabile"
+      ],
+      "Weak": [
+        "Debole"
+      ],
+      "Weak password": [
+        "Password debole"
       ],
       "What happened?": [
         "Cos'è successo?"
@@ -7156,6 +7210,11 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7168,11 +7227,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7834,8 +7888,8 @@
       "Searching": [
         "Ricerca in corso"
       ],
-      "Trashed": [
-        "Nel cestino"
+      "Trash": [
+        "Cestino"
       ]
     },
     "Participant name": {

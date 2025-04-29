@@ -367,6 +367,9 @@
       "Make editor": [
         "Jadikan penyunting"
       ],
+      "Make manager": [
+        "Jadikan pengelola"
+      ],
       "Make viewer": [
         "Jadikan pengamat"
       ],
@@ -400,11 +403,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to trash": [
-        "Pindahkan ke sampah"
-      ],
       "Move to Trash": [
         "Pindahkan ke Sampah"
+      ],
+      "Move to trash": [
+        "Pindahkan ke sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -849,6 +852,9 @@
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Autentikasi gagal. Konfirmasi kata sandi tambahan Anda untuk melanjutkan ekspor"
       ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Autentikasi gagal. Konfirmasikan kata sandi kedua Anda untuk melanjutkan ekspor"
+      ],
       "Biometric authentication failed": [
         "Autentikasi biometrik gagal"
       ],
@@ -1061,6 +1067,9 @@
       ],
       "File does not match expected format": [
         "Berkas tidak cocok dengan format yang diharapkan"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+        "Impor untuk brankas \"${ vaultData.name }\" gagal : ${ errorMessage }"
       ],
       "Importing items failed": [
         "Item gagal diimpor"
@@ -1387,6 +1396,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi tambahan Anda."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi kedua Anda."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
@@ -1802,6 +1814,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Manager": [
+        "Pengelola"
+      ],
       "me": [
         "saya"
       ],
@@ -1917,7 +1932,7 @@
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengaktifkan mode offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
+        "Silakan konfirmasikan kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
       ],
       "Please confirm your backup password": [
         "Silakan konfirmasi kata sandi cadangan Anda"
@@ -1983,10 +1998,34 @@
         "Silakan konfirmasi kata sandi Anda untuk memperbarui waktu penguncian otomatis."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Silakan konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
+        "Silakan konfirmasikan kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Mohon konfirmasi kode PIN Anda untuk menyunting pengaturan ini."
+      ],
+      "Please confirm your second password": [
+        "Silakan konfirmasi kata sandi kedua Anda"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi kedua Anda untuk mengunci aplikasi secara otomatis dengan kunci biometrik."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Silakan konfirmasikan kata sandi kedua Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
+      ],
+      "Please confirm your second password in order to disable offline mode": [
+        "Silakan konfirmasikan kata sandi kedua Anda untuk menonaktifkan mode offline"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Silakan konfirmasikan kata sandi kedua Anda untuk mengaktifkan mode offline"
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Silakan konfirmasi kata sandi kedua Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Silakan konfirmasi kata sandi kedua Anda untuk menonaktifkan kunci Anda saat ini."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Silakan konfirmasikan kata sandi kedua Anda untuk memperbarui waktu penguncian otomatis."
       ],
       "Please consider leaving a review.": [
         "Mohon pertimbangkan untuk memberikan ulasan."
@@ -2242,6 +2281,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi tambahan Anda"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi kedua Anda"
       ],
       "Unlock with biometrics": [
         "Buka dengan biometrik"
@@ -2883,6 +2925,9 @@
       ],
       "Make all editors": [
         "Jadikan seluruh anggota sebagai penyunting"
+      ],
+      "Make all managers": [
+        "Jadikan semua sebagai pengelola"
       ],
       "Make all viewers": [
         "Jadikan seluruh anggota sebagai pengamat"
@@ -3883,17 +3928,20 @@
       "Enter coupon code": [
         "Masukkan kode kupon"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Masukkan kata sandi ${ BRAND_NAME } Anda"
+      ],
       "Enter your backup password": [
         "Masukkan kata sandi cadangan Anda"
       ],
       "Enter your extra password": [
         "Masukkan kata sandi tambahan Anda"
       ],
-      "Enter your password": [
-        "Masukkan kata sandi Anda"
-      ],
       "Enter your PIN": [
         "Masukkan PIN Anda"
+      ],
+      "Enter your second password": [
+        "Masukkan kata sandi kedua Anda"
       ],
       "Excluded items": [
         "Item yang dikecualikan"

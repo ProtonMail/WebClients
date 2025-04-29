@@ -197,6 +197,9 @@
       "Copy link": [
         "링크 복사"
       ],
+      "Copy password": [
+        "비밀번호 복사"
+      ],
       "Copy version number to clipboard": [
         "버전 넘버를 클립보드에 복사하기"
       ],
@@ -220,6 +223,9 @@
       ],
       "Create new contact": [
         "새 연락처 추가"
+      ],
+      "Create new password": [
+        "새로운 비밀번호 생성"
       ],
       "Current plan": [
         "현재 플랜"
@@ -316,6 +322,9 @@
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
+      ],
+      "Generate password": [
+        "비밀번호 생성"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName }을(를) ${ priceCoupon }로 구매하기"
@@ -4389,7 +4398,7 @@
         "${ groupCounts } 그룹 찾음"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -4555,6 +4564,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "정말로 불러오기를 취소하시겠어요?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
       "Attention required": [
         "주의 필요"
@@ -4865,6 +4877,9 @@
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
       ],
+      "It's better to have:": [
+        "포함되면 더 좋습니다:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "대부분의 상황에서 VPN을 사용하는 것이 권장됩니다. 그러나 사이버 보안 위협이 가장 높을 수 있는 경우는 다음과 같습니다:"
       ],
@@ -4982,6 +4997,9 @@
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
+      "Numbers": [
+        "숫자"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "주최자가 이전에 업데이트한 일정은 유지되지만, 당신의 답변은 손실됩니다."
       ],
@@ -5014,6 +5032,9 @@
       ],
       "password": [
         "비밀번호"
+      ],
+      "Password copied to clipboard": [
+        "비밀번호 복사됨"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
@@ -5177,6 +5198,9 @@
       "Surveillance": [
         "감시"
       ],
+      "Symbols (#$&)": [
+        "기호 (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
@@ -5290,6 +5314,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "Uppercase and lowercase letters": [
+        "대소문자"
       ],
       "User activated": [
         "사용자 활성화됨"
@@ -6021,6 +6048,9 @@
       "Move to Inbox": [
         "받은 편지함으로 이동"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
+      ],
       "Name": [
         "이름"
       ],
@@ -6132,6 +6162,12 @@
       "Street address": [
         "도로명 주소"
       ],
+      "Strong": [
+        "강함"
+      ],
+      "Strong password": [
+        "강력한 비밀번호"
+      ],
       "Subscription options": [
         "구독 옵션"
       ],
@@ -6170,6 +6206,18 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Vulnerable": [
+        "취약함"
+      ],
+      "Vulnerable password": [
+        "취약한 비밀번호"
+      ],
+      "Weak": [
+        "약함"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "Week start": [
         "한 주의 시작"
@@ -6716,26 +6764,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6757,6 +6785,26 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -10045,9 +10093,6 @@
       ],
       "Get the apps": [
         "앱 다운로드"
-      ],
-      "Get Zooming faster": [
-        "더 빠르게 Zoom 참가하기"
       ],
       "Gift": [
         "선물"

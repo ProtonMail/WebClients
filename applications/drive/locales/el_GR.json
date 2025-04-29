@@ -246,6 +246,9 @@
       "Copy link": [
         "Αντιγραφή συνδέσμου"
       ],
+      "Copy password": [
+        "Αντιγραφή κωδικού πρόσβασης"
+      ],
       "Copy version number to clipboard": [
         "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Δημιουργία νέου φακέλου"
+      ],
+      "Create new password": [
+        "Δημιουργία νέου κωδικού πρόσβασης"
       ],
       "Create new text file": [
         "Δημιουργία νέου αρχείου κειμένου"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
+      ],
+      "Generate password": [
+        "Παραγωγή τυχαίου κωδικού πρόσβασης"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Λάβετε το ${ planName } για ${ priceCoupon }"
@@ -3058,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες. Παρακαλούμε προσπαθήστε ξανά αργότερα"
       ],
+      "Failed to copy photo to album": [
+        "Αποτυχία αντιγραφής της φωτογραφίας στο άλμπουμ"
+      ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
@@ -3195,9 +3207,6 @@
       ],
       "Payment process not supported": [
         "Η διαδικασία πληρωμής δεν υποστηρίζεται"
-      ],
-      "Photo saved to your Drive": [
-        "Η φωτογραφία αποθηκεύτηκε στο Drive σας"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Η μεταφόρτωση φωτογραφιών είναι προσωρινά απενεργοποιημένη. Προσπαθήστε ξανά αργότερα"
@@ -4594,6 +4603,9 @@
       "Are you sure you want to proceed?": [
         "Θέλετε σίγουρα να συνεχίσετε;"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -5040,6 +5052,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Φαίνεται ότι πρόσφατα προσπαθήσατε να ανεβάσετε το ${ uploadName }. Εάν η μεταφόρτωση απέτυχε, παρακαλούμε ${ replaceFile }. Αν η μεταφόρτωση βρίσκεται ακόμη σε εξέλιξη, η αντικατάστασή της θα ακυρώσει τη μεταφόρτωση που βρίσκεται σε εξέλιξη."
       ],
+      "It's better to have:": [
+        "Είναι καλύτερα να έχετε:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Τα στοιχεία στα Διαγραμμένα θα παραμείνουν εδώ μέχρι να τα διαγράψετε οριστικά"
       ],
@@ -5203,6 +5218,9 @@
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
+      "Numbers": [
+        "Αριθμοί"
+      ],
       "of": [
         "από"
       ],
@@ -5251,6 +5269,12 @@
       "password": [
         "κωδικός πρόσβασης"
       ],
+      "Password copied to clipboard": [
+        "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Password must have:": [
+        "Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει:"
+      ],
       "Paused": [
         "Σε παύση"
       ],
@@ -5274,6 +5298,12 @@
       ],
       "Photo is set as album cover": [
         "Η φωτογραφία έχει οριστεί ως εξώφυλλο άλμπουμ"
+      ],
+      "Photo saved to your Drive": [
+        "Η φωτογραφία αποθηκεύτηκε στο Drive σας"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Η φωτογραφία αντιγράφηκε στη ροή και σημειώθηκε ως αγαπημένη εκεί."
       ],
       "Photos have been successfully recovered.": [
         "Οι φωτογραφίες έχουν ανακτηθεί με επιτυχία."
@@ -5578,6 +5608,9 @@
       "Surveillance": [
         "Παρακολούθηση"
       ],
+      "Symbols (#$&)": [
+        "Σύμβολα (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -5815,6 +5848,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
+      ],
+      "Uppercase and lowercase letters": [
+        "Κεφαλαία και πεζά γράμματα"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Χρησιμοποιήστε αυτή τη φόρμα για να μας ενημερώσετε για ακατάλληλες, παράνομες,\nή άλλως κακόβουλα κοινόχρηστα αρχεία. Πρόκειται να αναφέρετε:"
@@ -6589,6 +6625,9 @@
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "My Albums": [
         "Τα Άλμπουμ μου"
       ],
@@ -6624,6 +6663,9 @@
       ],
       "Password": [
         "Κωδικός πρόσβασης"
+      ],
+      "Password strength": [
+        "Ισχύς Κωδικού Πρόσβασης"
       ],
       "Payer": [
         "Πληρωτής"
@@ -6742,6 +6784,12 @@
       "Street address": [
         "Οδός"
       ],
+      "Strong": [
+        "Δυνατό"
+      ],
+      "Strong password": [
+        "Δυνατός κωδικός πρόσβασης"
+      ],
       "Subscription options": [
         "Επιλογές συνδρομής"
       ],
@@ -6798,6 +6846,18 @@
       ],
       "Viewer": [
         "Θεατής"
+      ],
+      "Vulnerable": [
+        "Ευάλωτο"
+      ],
+      "Vulnerable password": [
+        "Ευάλωτος κωδικός πρόσβασης"
+      ],
+      "Weak": [
+        "Αδύναμο"
+      ],
+      "Weak password": [
+        "Αδύναμος κωδικός πρόσβασης"
       ],
       "What happened?": [
         "Τι συνέβη;"
@@ -7376,29 +7436,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7420,6 +7457,29 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8525,6 +8585,9 @@
       ],
       "Root folder failed to be loaded": [
         "Απέτυχε η φόρτωση του ριζικού φακέλου"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Οι επιλεγμένες φωτογραφίες υπάρχουν ήδη στο \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Η πρόσκληση κοινής χρήσης έγινε αποδεκτή"

@@ -331,6 +331,9 @@
       "Fit to window": [
         "Вписать в окно"
       ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
       ],
@@ -490,11 +493,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -607,11 +610,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "select file": [
-        "выбрать файл"
-      ],
       "Select file": [
         "Выбрать файл"
+      ],
+      "select file": [
+        "выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -3467,9 +3470,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Действия"
-      ],
       "App version": [
         "Версия приложения"
       ],
@@ -3485,17 +3485,11 @@
       "Device": [
         "Устройство"
       ],
-      "Enabled Countries": [
-        "Включенные страны"
-      ],
       "Enter your email address": [
         "Введите адрес вашей электронной почты"
       ],
       "Event": [
         "Событие"
-      ],
-      "Groups": [
-        "Группы"
       ],
       "IP address": [
         "IP-адрес"
@@ -3514,9 +3508,6 @@
       ],
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
-      ],
-      "Policy Name": [
-        "Название политики"
       ],
       "Protection": [
         "Защита"
@@ -4231,6 +4222,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите собственный пароль (как администратор организации)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты, и мы отправим вам ваше имя пользователя или адрес электронной почты."
@@ -5177,11 +5171,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
       "username": [
         "имя пользователя"
+      ],
+      "Username": [
+        "Имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -5722,11 +5716,11 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allowed domain": [
-        "Разрешённый домен"
-      ],
       "Allowed Domain": [
         "Разрешённый Домен"
+      ],
+      "Allowed domain": [
+        "Разрешённый домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -5878,6 +5872,9 @@
       "Digits": [
         "Цифры"
       ],
+      "Disabled": [
+        "Отключено"
+      ],
       "Display name": [
         "Отображаемое имя"
       ],
@@ -5992,6 +5989,9 @@
       "Method for importing metadata": [
         "Метод импорта метаданных"
       ],
+      "Minimum number of characters": [
+        "Минимальное количество символов"
+      ],
       "Moderate NAT": [
         "Умеренный NAT"
       ],
@@ -6036,6 +6036,9 @@
       ],
       "Notification": [
         "Уведомление"
+      ],
+      "Numbers": [
+        "Цифры"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -6163,6 +6166,9 @@
       "Spam": [
         "Спам"
       ],
+      "Special characters": [
+        "Специальные символы"
+      ],
       "Start date": [
         "Дата начала"
       ],
@@ -6258,6 +6264,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить этот аккаунт и все его данные."
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
       ],
       "ZIP code": [
         "Почтовый индекс"
@@ -6669,6 +6678,29 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Downgrade account": [
+        "Перейти на более дешевую версию аккаунта"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Получить ${ BRAND_NAME } бесплатно"
+      ],
+      "Get ${ planName }": [
+        "Получить ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Сохранить ${ plan }"
+      ],
+      "Keep account": [
+        "Сохранить аккаунт"
+      ],
+      "Switch plan": [
+        "Сменить тариф"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
@@ -6693,29 +6725,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Улучшить на ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Удалить аккаунт"
-      ],
-      "Downgrade account": [
-        "Перейти на более дешевую версию аккаунта"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Получить ${ BRAND_NAME } бесплатно"
-      ],
-      "Get ${ planName }": [
-        "Получить ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Сохранить ${ plan }"
-      ],
-      "Keep account": [
-        "Сохранить аккаунт"
-      ],
-      "Switch plan": [
-        "Сменить тариф"
       ]
     },
     "new_plans: feature": {
@@ -7945,6 +7954,17 @@
         "Добро пожаловать в ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Конфигурации стран"
@@ -7976,11 +7996,17 @@
       "No permission": [
         "Нет разрешения"
       ],
+      "Not allowed": [
+        "Не разрешено"
+      ],
       "Organization only": [
         "Только организация"
       ],
       "Receive from all": [
         "Получать от всех"
+      ],
+      "Required": [
+        "Требуется"
       ],
       "Router": [
         "Маршрутизатор"
@@ -8002,17 +8028,6 @@
       ],
       "The whole organization": [
         "Вся организация"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
       ]
     },
     "Organization capacity error": {
@@ -9545,6 +9560,9 @@
       "Share the confirmation code with your administrator": [
         "Сообщите код подтверждения своему администратору"
       ],
+      "Sign in": [
+        "Войти"
+      ],
       "Sign in to your organization": [
         "Войдите в свою организацию"
       ],
@@ -9589,6 +9607,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вы должны будете создать новых пользователей вручную, чтобы добавить их в вашу организацию."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша конфигурация SSO будет удалена."
@@ -10705,10 +10726,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -10927,6 +10948,9 @@
       "Enable for all users": [
         "Включить для всех пользователей"
       ],
+      "Enter 2FA code": [
+        "Введите код двухфакторной аутентификации"
+      ],
       "Enter endpoints into your identity provider": [
         "Введите конечные точки в провайдер личных данных"
       ],
@@ -10935,6 +10959,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
+      ],
+      "Enter your password": [
+        "Введите свой пароль"
       ],
       "Error": [
         "Ошибка"
@@ -11265,6 +11292,9 @@
       ],
       "Video conferencing": [
         "Видеоконференции"
+      ],
+      "Warning": [
+        "Предупреждение"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы отправим электронное письмо на ваш новый адрес с инструкцией для завершения изменения."

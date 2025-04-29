@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
+      "Copy password": [
+        "Jelszó másolása"
+      ],
       "Copy password to clipboard": [
         "Jelszó másolása a vágólapra"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Új üzenet létrehozása"
+      ],
+      "Create new password": [
+        "Új jelszó készítése"
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
+      ],
+      "Generate password": [
+        "Jelszó létrehozása"
       ],
       "Generate text": [
         "Szöveg létrehozása"
@@ -1135,10 +1144,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
-      "Select All": [
+      "Select all": [
         "Összes kijelölése"
       ],
-      "Select all": [
+      "Select All": [
         "Összes kijelölése"
       ],
       "Select all messages": [
@@ -1353,6 +1362,10 @@
       ],
       "Trust": [
         "Megbízható"
+      ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -6289,6 +6302,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Biztos, hogy véglegesen törli ezt az üzenetet?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
       "Attach public key": [
         "Nyilvános kulcs csatolása"
       ],
@@ -6793,7 +6809,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -6813,6 +6828,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Hívja meg partnerét, egy barátját, vagy bárkit, akivel megosztja a ${ protonDuoPlanName } csomagját."
+      ],
+      "It's better to have:": [
+        "Jobb, ha van:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "A legjobb, ha mindig VPN-t használ. Amikor a kiberbiztonsági fenyegetések a legnagyobbak lehetnek:"
@@ -6885,9 +6903,6 @@
       ],
       "Low Priority": [
         "Alacsony prioritású"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Tegye a ${ MAIL_APP_NAME }-t az alapértelmezett levelező programjává."
       ],
       "Manage your folders": [
         "Mappák kezelése"
@@ -7027,6 +7042,9 @@
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
       ],
+      "Numbers": [
+        "Számok"
+      ],
       "of": [
         "/"
       ],
@@ -7059,6 +7077,9 @@
       ],
       "password": [
         "jelszó"
+      ],
+      "Password copied to clipboard": [
+        "Jelszó a vágólapra másolva"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
@@ -7409,6 +7430,9 @@
       "Surveillance": [
         "Megfigyelés"
       ],
+      "Symbols (#$&)": [
+        "Szimbólumok (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Fájlok szinkronizálása és kezelése a ${ DRIVE_APP_NAME } alkalmazással. Hozzon létre és osszon meg dokumentumokat a ${ DOCS_APP_NAME } alkalmazásban, és tárolja azokat biztonságosan. Mindezt ${ ios }, ${ android } és ${ desktop } platformokon."
       ],
@@ -7735,6 +7759,9 @@
       ],
       "Upload picture": [
         "Kép feltöltése"
+      ],
+      "Uppercase and lowercase letters": [
+        "Kis- és nagybetűk"
       ],
       "URL link": [
         "URL hivatkozás"
@@ -8447,11 +8474,11 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze mappába"
       ],
-      "AND": [
-        "ÉS"
-      ],
       "And": [
         "És"
+      ],
+      "AND": [
+        "ÉS"
       ],
       "and": [
         "és"
@@ -8675,11 +8702,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "IF": [
-        "HA"
-      ],
       "If": [
         "Ha"
+      ],
+      "IF": [
+        "HA"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -8694,7 +8721,7 @@
         "Importálás ide:"
       ],
       "Integrated 2FA authenticator": [
-        "Beépített kétlépcsős hitelesítés"
+        "Beépített kétfaktoros (2FA) hitelesítés"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Gyorsbillentyű: ${ shortcut }"
@@ -8756,6 +8783,9 @@
       "Move to Inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Legalább ${ MIN_PASSWORD_LENGTH } karakterrel kell rendelkeznie."
+      ],
       "Name": [
         "Név"
       ],
@@ -8792,14 +8822,14 @@
       "Optional": [
         "Választható"
       ],
-      "OR": [
-        "VAGY"
-      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
+      ],
+      "OR": [
+        "VAGY"
       ],
       "Original link": [
         "Eredeti hivatkozás"
@@ -8894,6 +8924,12 @@
       "Street address": [
         "Utca, házszám"
       ],
+      "Strong": [
+        "Erős"
+      ],
+      "Strong password": [
+        "Erős jelszó"
+      ],
       "Subscription options": [
         "Előfizetés lehetőségei"
       ],
@@ -8941,6 +8977,18 @@
       ],
       "Verification code": [
         "Ellenőrző kód"
+      ],
+      "Vulnerable": [
+        "Sebezhető"
+      ],
+      "Vulnerable password": [
+        "Sérülékeny jelszó"
+      ],
+      "Weak": [
+        "Gyenge"
+      ],
+      "Weak password": [
+        "Gyenge jelszó"
       ],
       "What happened?": [
         "Mi történt?"
@@ -9620,29 +9668,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } beszerzése"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -9664,6 +9689,29 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kezdje el a használatot ${ priceCoupon } áron"
+      ],
+      "Starting from ${ pricing }": [
+        "Kezdőár: ${ pricing }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
       ]
     },
     "new_plans: feature": {

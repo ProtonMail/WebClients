@@ -463,6 +463,9 @@
       "Discard changes": [
         "Odrzuć zmiany"
       ],
+      "Discard Changes": [
+        "Odrzuć zmiany"
+      ],
       "Discover ${ planName }": [
         "Poznaj plan ${ planName }"
       ],
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "Zachowaj"
+      ],
+      "Keep Editing": [
+        "Kontynuuj edytowanie"
       ],
       "Keep logo": [
         "Zachowaj logo"
@@ -1126,11 +1132,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "select file": [
-        "wybierz plik"
-      ],
       "Select file": [
         "Wybierz plik"
+      ],
+      "select file": [
+        "wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -4633,6 +4639,9 @@
       "Edit conditions": [
         "Edytuj warunki"
       ],
+      "Got it": [
+        "Ok"
+      ],
       "Next": [
         "Dalej"
       ],
@@ -4705,17 +4714,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Prośba o zatwierdzenie zostanie wysłana na adres ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Nowy klucz szyfrowania zostanie wygenerowany dla adresu ${ boldForwarderEmail }."
-      ],
       "Automatically forward emails to another email address.": [
         "Automatyczne przekierowanie wiadomości na inny adres e-mail."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Szyfrowanie end-to-end zostało wyłączone dla twojego adresu ${ boldForwarderEmail }, ale szyfrowanie po stronie klienta pozostaje włączone. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Ze względu na kompatybilność wygenerowano nowy klucz szyfrowania dla ${ boldForwarderEmail }."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Ze względu na kompatybilność zostanie wygenerowany nowy klucz szyfrowania dla ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Ze względu na kompatybilność wyłączono szyfrowanie postkwantowe i wygenerowano nowy klucz szyfrowania dla ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "Ze względu na kompatybilność, szyfrowanie postkwantowe zostało wyłączone dla ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "Ze względu na kompatybilność, szyfrowanie postkwantowe zostanie wyłączone dla ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Ze względu na kompatybilność szyfrowanie postkwantowe zostanie wyłączone, a nowy klucz szyfrowania zostanie wygenerowany dla ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Odbiorca został zaproszony i musi zaakceptować lub odrzucić przekierowanie"
       ],
       "Forwarding is active": [
         "Przekierowywanie jest włączone"
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "Przekierowanie na adres ${ boldForwardeeEmail } będzie aktywne, gdy odbiorca zaakceptuje żądanie."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Przekierowanie na adres bez szyfrowania wyłączy szyfrowanie end-to-end dla adresu ${ boldForwarderEmail }, ale szyfrowanie po stronie klienta pozostanie włączone. ${ learnMoreLink }"
@@ -4792,6 +4822,14 @@
         "Wpisz tekst lub słowo kluczowe:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Wysyłanie wiadomości z potwierdzeniem"
+      ],
+      "Setting up forwarding": [
+        "Konfigurowanie przekierowania"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Szyfrowanie end-to-end zostanie ponownie włączone dla tego nadawcy."
@@ -4818,17 +4856,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Nowy klucz szyfrowania zostanie wygenerowany dla adresu ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Zmiany zostały zapisane"
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Wiadomość została wysłana do ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Wiadomość została wysłana do ${ model.forwardeeEmail }."
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "Wiadomość została wysłana na adres ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
         "Przekierowanie zostało zaakceptowane"
@@ -4856,8 +4888,14 @@
       "Forwarding activated": [
         "Przekierowanie zostało włączone"
       ],
-      "Request confirmation": [
-        "Poproś o zatwierdzenie"
+      "Request confirmation?": [
+        "Poproś o zatwierdzenie?"
+      ],
+      "Request sent": [
+        "Żądanie zostało wysłane"
+      ],
+      "Requesting confirmation": [
+        "Oczekiwanie na potwierdzenie"
       ],
       "Set up forwarding": [
         "Ustaw przekierowanie"
@@ -6717,9 +6755,6 @@
       "Device": [
         "Urządzenie"
       ],
-      "Enabled Countries": [
-        "Włączone kraje"
-      ],
       "Enter your email address": [
         "Wpisz adres e-mail"
       ],
@@ -6728,9 +6763,6 @@
       ],
       "Folders": [
         "Foldery"
-      ],
-      "Groups": [
-        "Grupy"
       ],
       "IP address": [
         "Adres IP"
@@ -6758,9 +6790,6 @@
       ],
       "Permissions": [
         "Uprawnienia"
-      ],
-      "Policy Name": [
-        "Nazwa zasady"
       ],
       "Protection": [
         "Ochrona"
@@ -7568,6 +7597,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice } / miesiąc)"
       ],
+      "(default)": [
+        "(domyślne)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtruj, jeśli WSZYSTKIE warunki są spełnione)"
       ],
@@ -7579,6 +7611,9 @@
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Usługa **${ appName }** nie jest obsługiwana w organizacji **${ organizationName }**."
+      ],
+      "**${ appName }** is not supported.": [
+        "Aplikacja **${ appName }** nie jest obsługiwana."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "** Uzyskaj adres ${ BRAND_NAME } **, aby używać usług ${ BRAND_NAME_TWO }, tym ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
@@ -8066,9 +8101,6 @@
       "Create your first Gateway": [
         "Utwórz pierwszą bramę"
       ],
-      "Created (not published)": [
-        "Utworzono (nie opublikowano)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Tworzenie serwerów bramy: ${ serverNumber } / ${ total }",
         "Tworzenie serwerów bramy: ${ serverNumber } / ${ total }",
@@ -8143,9 +8175,6 @@
       ],
       "Delete link?": [
         "Usunąć link?"
-      ],
-      "Deleted (not published)": [
-        "Usunięto (nie opublikowano)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Usuwanie ${ deletedServerCount } serwera bramy",
@@ -8272,9 +8301,6 @@
       ],
       "Edit link": [
         "Edytuj link"
-      ],
-      "Edited (not published)": [
-        "Edytowano (nie opublikowano)"
       ],
       "eduGAIN configuration saved": [
         "Konfiguracja eduGAIN została zapisana"
@@ -9005,6 +9031,9 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No single sign-on": [
+        "Brak logowania SSO"
+      ],
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
       ],
@@ -9140,14 +9169,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Hasło musi składać się z co najmniej ${ MIN_PASSWORD_LENGTH } znaków."
       ],
+      "Password must have:": [
+        "Hasło musi zawierać:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Nagroda redaktorów PC Magazine z oceną 5 na 5 gwiazdek"
-      ],
-      "Pending removal": [
-        "Oczekuje na usunięcie"
       ],
       "per month": [
         "miesięcznie"
@@ -9197,8 +9226,11 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Wpisz hasło odzyskiwania (składające się z 12 słów) powiązane z tym kontem."
       ],
+      "Please fill in all required fields.": [
+        "Uzupełnij wszystkie wymagane pola."
+      ],
       "Please fill out this field.": [
-        "Wypełnij pole."
+        "Uzupełnij pole."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Zachowaj to hasło. Jeśli zresetujesz hasło, będziesz go potrzebować do odzyskania dostępu do konta i odszyfrowania danych."
@@ -9695,6 +9727,9 @@
       "The securest way to browse, stream, and be online.": [
         "Najbezpieczniejszy sposób przeglądania i przebywania w Internecie."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Niezapisane zmiany zostaną utracone."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
       ],
@@ -9769,6 +9804,9 @@
       ],
       "This promotion link has expired.": [
         "Link promocji wygasł."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Usługa nie jest dostępna dla użytkowników SSO."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Token nie będzie dostępny po zamknięciu okna. Nie udostępniaj go nikomu."
@@ -9950,9 +9988,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie można zweryfikować podpisu pliku odzyskiwania. Skontaktuj się ze wsparciem technicznym."
       ],
-      "Unchanged": [
-        "Bez zmian"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Brak zapisanych metod odzyskiwania dla tego konta."
       ],
@@ -10043,11 +10078,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "Username": [
-        "Nazwa użytkownika"
-      ],
       "username": [
         "nazwa użytkownika"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -11251,10 +11286,10 @@
       "Allow sharing outside the organization": [
         "Zezwalaj na udostępnianie poza organizacją"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11266,11 +11301,11 @@
       "Amount due": [
         "Do zapłaty"
       ],
-      "AND": [
-        "ORAZ"
-      ],
       "And": [
         "oraz"
+      ],
+      "AND": [
+        "ORAZ"
       ],
       "and": [
         "i"
@@ -11409,6 +11444,9 @@
       ],
       "Colors": [
         "Kolory"
+      ],
+      "Common passwords": [
+        "Popularne hasła"
       ],
       "Company": [
         "Firma"
@@ -11596,6 +11634,9 @@
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
       ],
+      "Enabled": [
+        "Włączone"
+      ],
       "End date": [
         "Data zakończenia"
       ],
@@ -11692,11 +11733,11 @@
       "IBAN": [
         "Numer IBAN"
       ],
-      "IF": [
-        "JEŚLI"
-      ],
       "If": [
         "Jeśli"
+      ],
+      "IF": [
+        "JEŚLI"
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
@@ -11794,6 +11835,9 @@
       "Maximum number of characters": [
         "Maksymalna liczba znaków"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Maksymalna liczba znaków to ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Maksymalna liczba słów"
       ],
@@ -11817,6 +11861,9 @@
       ],
       "Minimum number of characters": [
         "Minimalna liczba znaków"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Minimalna liczba znaków to ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Minimalna liczba słów"
@@ -11899,14 +11946,14 @@
       "Optional": [
         "Opcjonalnie"
       ],
-      "OR": [
-        "LUB"
-      ],
       "or": [
         "lub"
       ],
       "Or": [
         "lub"
+      ],
+      "OR": [
+        "LUB"
       ],
       "Organization name": [
         "Nazwa organizacji"
@@ -11922,6 +11969,9 @@
       ],
       "Password": [
         "Hasło"
+      ],
+      "Password strength": [
+        "Siła hasła"
       ],
       "Payer": [
         "Płatnik"
@@ -12045,6 +12095,9 @@
       ],
       "Send in": [
         "Język zaproszenia"
+      ],
+      "Sequences": [
+        "Sekwencje"
       ],
       "Show ${ n } administrator": [
         "Pokaż ${ n } administratora",
@@ -12186,6 +12239,9 @@
       ],
       "Uppercase": [
         "Wielkie litery"
+      ],
+      "Uppercase and lowercase letters": [
+        "Wielkie i małe litery"
       ],
       "URL": [
         "Adres URL"
@@ -12520,6 +12576,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Jak współpracować w ${ DOCS_SHORT_APP_NAME }"
       ],
+      "How to create strong passwords": [
+        "Jak tworzyć silne hasła"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Jak włączyć ${ PROTON_SENTINEL_NAME }"
       ],
@@ -12583,11 +12642,11 @@
       "perform a password reset from your active session": [
         "zresetować hasło z aktywnej sesji"
       ],
-      "privacy policy": [
-        "politykę prywatności"
-      ],
       "Privacy policy": [
         "Polityka prywatności"
+      ],
+      "privacy policy": [
+        "politykę prywatności"
       ],
       "Reactivate now": [
         "Reaktywuj"
@@ -14025,6 +14084,14 @@
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -14043,14 +14110,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -14702,6 +14761,17 @@
         "komputerach stacjonarnych"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Wszyscy"
+      ],
+      "Group members": [
+        "Użytkownicy grupy"
+      ],
+      "No one": [
+        "Nikt"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. dnia miesiąca"
@@ -14799,6 +14869,9 @@
       "Add to existing group": [
         "Dodaj do istniejącej grupy"
       ],
+      "Allowed ${ defaultLabel }": [
+        "Dozwolone ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "Dozwolone (domyślnie)"
       ],
@@ -14874,6 +14947,9 @@
       "On": [
         "Włączone"
       ],
+      "Optional ${ defaultLabel }": [
+        "Opcjonalne ${ defaultLabel }"
+      ],
       "Organization only": [
         "Tylko w organizacji"
       ],
@@ -14930,17 +15006,6 @@
       ],
       "Trash": [
         "Przenieś do kosza"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Wszyscy"
-      ],
-      "Group members": [
-        "Użytkownicy grupy"
-      ],
-      "No one": [
-        "Nikt"
       ]
     },
     "Option delay send seconds": {
@@ -18427,6 +18492,11 @@
         "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Zaoszczędź ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Aktywna"
@@ -18910,6 +18980,9 @@
       "${ appName } keyboard shortcuts": [
         "Skróty klawiszowe ${ appName }"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Zasady dotyczące hasła konta ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -19147,10 +19220,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -19654,9 +19727,6 @@
       "Get the apps": [
         "Pobierz aplikacje"
       ],
-      "Get Zooming faster": [
-        "Szybsze spotkania na Zoom"
-      ],
       "Gift": [
         "Prezent"
       ],
@@ -20037,6 +20107,9 @@
       ],
       "Save time with email filters": [
         "Zaoszczędź czas dzięki filtrom"
+      ],
+      "Schedule meetings in one click": [
+        "Planuj spotkania jednym kliknięciem"
       ],
       "Schedule send:": [
         "Zaplanuj wysłanie:"
@@ -20583,6 +20656,12 @@
       ],
       "Feature in early access": [
         "Funkcja dostępna we wcześniejszym dostępie"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Na przykład: **12345, abcde** itp."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Na przykład: **hasło, qwerty** itp."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Uzyskaj wskazówki dotyczące produktywności i bezpieczeństwa, które pomogą Ci wykorzystać ${ MAIL_APP_NAME } i nie tylko."

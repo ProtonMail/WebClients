@@ -313,6 +313,9 @@
       "Fit to window": [
         "Припасувати до вікна"
       ],
+      "Forgot password?": [
+        "Забули пароль?"
+      ],
       "Forgot recovery method?": [
         "Забули спосіб відновлення?"
       ],
@@ -466,11 +469,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "Refresh the page": [
-        "Оновити сторінку"
-      ],
       "refresh the page": [
         "оновити сторінку"
+      ],
+      "Refresh the page": [
+        "Оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -577,11 +580,11 @@
       "Select country": [
         "Виберіть країну"
       ],
-      "select file": [
-        "виберіть файл"
-      ],
       "Select file": [
         "Вибрати файл"
+      ],
+      "select file": [
+        "виберіть файл"
       ],
       "Send code": [
         "Надіслати код"
@@ -3379,9 +3382,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Дії"
-      ],
       "App version": [
         "Версія програми"
       ],
@@ -4065,6 +4065,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Уведіть свою адресу е-пошти ${ BRAND_NAME } або ім'я користувача."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введіть свою адресу резервної електронної пошти і ми надішлемо ваше ім'я користувача або адресу електронної пошти."
@@ -4966,11 +4969,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "Username": [
-        "Ім’я користувача"
-      ],
       "username": [
         "ім'я користувача"
+      ],
+      "Username": [
+        "Ім’я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -5489,10 +5492,10 @@
       "Allow recovery by phone": [
         "Дозволити відновлення за телефоном"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -5639,6 +5642,9 @@
       "Digits": [
         "Цифри"
       ],
+      "Disabled": [
+        "Вимкнено"
+      ],
       "Display name": [
         "Показувати як"
       ],
@@ -5741,6 +5747,9 @@
       "Method for importing metadata": [
         "Спосіб імпортування метаданих"
       ],
+      "Minimum number of characters": [
+        "Мінімальна кількість символів"
+      ],
       "Moderate NAT": [
         "Помірна NAT"
       ],
@@ -5782,6 +5791,9 @@
       ],
       "Notification": [
         "Сповіщення"
+      ],
+      "Numbers": [
+        "Числа"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -5906,6 +5918,9 @@
       "Spam": [
         "Спам"
       ],
+      "Special characters": [
+        "Спеціальні символи"
+      ],
       "Start date": [
         "Дата початку"
       ],
@@ -5980,6 +5995,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хочу остаточно видалити цей обліковий запис та всі пов'язані дані."
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ]
     },
     "label": {
@@ -6382,26 +6400,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6423,6 +6421,26 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -7526,6 +7544,17 @@
         "Вітаємо у ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
+      "Group members": [
+        "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Конфігурації країн"
@@ -7554,11 +7583,17 @@
       "No permission": [
         "Немає дозволу"
       ],
+      "Not allowed": [
+        "Не дозволено"
+      ],
       "Organization only": [
         "Тільки організації"
       ],
       "Receive from all": [
         "Отримувати від усіх"
+      ],
+      "Required": [
+        "Необхідно"
       ],
       "Router": [
         "Маршрутизатор"
@@ -7580,17 +7615,6 @@
       ],
       "The whole organization": [
         "Вся організація"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Будь-хто"
-      ],
-      "Group members": [
-        "Учасники групи"
-      ],
-      "No one": [
-        "Ніхто"
       ]
     },
     "Organization capacity error": {
@@ -9080,6 +9104,9 @@
       "Share the confirmation code with your administrator": [
         "Поділитися кодом підтвердження з адміністратором"
       ],
+      "Sign in": [
+        "Увійти"
+      ],
       "Sign in to your organization": [
         "Увійти до своєї організації"
       ],
@@ -9115,6 +9142,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам доведеться створювати нових користувачів вручну, щоб додати їх до вашої організації."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вас буде перенаправлено до вашого стороннього провайдера SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша конфігурація SSO буде видалена."
@@ -10219,11 +10249,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -10423,6 +10453,9 @@
       "Enable for all users": [
         "Увімкнути для всіх користувачів"
       ],
+      "Enter 2FA code": [
+        "Введіть код 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Введіть кінцеві точки у вашого провайдера ідентифікації"
       ],
@@ -10431,6 +10464,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до програми бета-тестування ${ app }"
+      ],
+      "Enter your password": [
+        "Введіть свій пароль"
       ],
       "Error": [
         "Помилка"
@@ -10758,6 +10794,9 @@
       ],
       "Video conferencing": [
         "Відеоконференція"
+      ],
+      "Warning": [
+        "Попередження"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Ми надішлемо лист на вашу нову адресу з інструкцією для завершення зміни."

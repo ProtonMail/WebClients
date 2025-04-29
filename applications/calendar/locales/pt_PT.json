@@ -207,6 +207,9 @@
       "Copy link": [
         "Copiar ligação"
       ],
+      "Copy password": [
+        "Copiar a palavra-passe"
+      ],
       "Copy version number to clipboard": [
         "Copiar o número da versão para a área de transferência"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Criar um contacto"
+      ],
+      "Create new password": [
+        "Criar uma palavra-passe"
       ],
       "Current plan": [
         "Plano atual"
@@ -331,6 +337,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate password": [
+        "Gerar uma palavra-passe"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenha o ${ planName } por ${ priceCoupon }"
@@ -4744,6 +4753,9 @@
       "Are you sure you want to discard your import?": [
         "Tem a certeza de que deseja descartar a importação?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
+      ],
       "Attention required": [
         "Atenção Requerida"
       ],
@@ -5058,6 +5070,9 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "It's better to have:": [
+        "É melhor ter:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "É melhor utilizar uma VPN sempre. Mas é aqui que as ameaças à cibersegurança podem ser maiores:"
       ],
@@ -5175,6 +5190,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "As ocorrências previamente atualizadas pelo organizador serão mantidas, mas algumas das suas respostas serão perdidas."
       ],
@@ -5210,6 +5228,12 @@
       ],
       "password": [
         "palavra-passe"
+      ],
+      "Password copied to clipboard": [
+        "Palavra-passe copiada para a área de transferência"
+      ],
+      "Password must have:": [
+        "A palavra-passe deve ter:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
@@ -5383,6 +5407,9 @@
       "Surveillance": [
         "Vigilância"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -5499,6 +5526,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas"
       ],
       "User activated": [
         "O utilizador foi ativado."
@@ -6242,6 +6272,9 @@
       "Move to Inbox": [
         "Mover para Caixa de entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres"
+      ],
       "Name": [
         "Nome"
       ],
@@ -6287,6 +6320,9 @@
       ],
       "Password": [
         "Palavra-passe"
+      ],
+      "Password strength": [
+        "Força da palavra-passe"
       ],
       "Payer": [
         "Pagante"
@@ -6354,6 +6390,12 @@
       "Street address": [
         "Endereço postal"
       ],
+      "Strong": [
+        "Forte"
+      ],
+      "Strong password": [
+        "Palavra-passe segura"
+      ],
       "Subscription options": [
         "Opções da subscrição"
       ],
@@ -6392,6 +6434,18 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Vulnerable password": [
+        "Palavra-passe vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
+      ],
+      "Weak password": [
+        "Palavra-passe fraca"
       ],
       "Week start": [
         "Início da semana"
@@ -6982,26 +7036,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -7023,6 +7057,26 @@
       ],
       "Switch plan": [
         "Alterar o plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9858,6 +9912,11 @@
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Poupe ${ priceString }"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacto parece idêntico.",
@@ -10470,9 +10529,6 @@
       "Get the apps": [
         "Obter as aplicações"
       ],
-      "Get Zooming faster": [
-        "Obtenha o Zoom mais rápido"
-      ],
       "Gift": [
         "Presente"
       ],
@@ -10638,6 +10694,9 @@
       ],
       "Save changes": [
         "Guardar alterações"
+      ],
+      "Schedule meetings in one click": [
+        "Agende reuniões com um clique"
       ],
       "Security center": [
         "Centro de segurança"

@@ -246,6 +246,9 @@
       "Copy link": [
         "Kopier kobling"
       ],
+      "Copy password": [
+        "Kopier passord"
+      ],
       "Copy version number to clipboard": [
         "Kopier versjonsnummeret til utklippstavlen"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Opprett ny mappe"
+      ],
+      "Create new password": [
+        "Opprett nytt passord"
       ],
       "Create new text file": [
         "Opprett ny tekstfil"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Videresend som vedlegg"
+      ],
+      "Generate password": [
+        "Generer passord"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaff deg ${ planName } for ${ priceCoupon }"
@@ -3196,9 +3205,6 @@
       "Payment process not supported": [
         "Betalingsprosess støttes ikke"
       ],
-      "Photo saved to your Drive": [
-        "Bildet er lagret på din Drive"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Opplasting av bilder er midlertidig deaktivert, prøv igjen senere."
       ],
@@ -4380,6 +4386,10 @@
         "${ pausedCount } satt på pause",
         "${ pausedCount } satt på pause"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } element",
+        "${ photoCount } elementer"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
@@ -4589,6 +4599,9 @@
       ],
       "Are you sure you want to proceed?": [
         "Er du sikker på at du vil fortsette?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
       ],
       "Attention required": [
         "Oppmerksomhet kreves"
@@ -5036,6 +5049,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det virker som du nylig prøvde å laste opp ${ uploadName }. Hvis opplastingen mislyktes, ${ replaceFile }. Hvis opplastingen fremdeles pågår, avbrytes den pågående opplastingen hvis du erstatter den."
       ],
+      "It's better to have:": [
+        "Det er bedre å ha:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elementer i papirkurven vil forbli der inntil du sletter dem permanent."
       ],
@@ -5199,6 +5215,9 @@
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
+      "Numbers": [
+        "Tall"
+      ],
       "of": [
         "av"
       ],
@@ -5247,6 +5266,12 @@
       "password": [
         "passord"
       ],
+      "Password copied to clipboard": [
+        "Passord kopiert til utklippstavlen"
+      ],
+      "Password must have:": [
+        "Passordet må ha:"
+      ],
       "Paused": [
         "Satt på pause"
       ],
@@ -5270,6 +5295,12 @@
       ],
       "Photo is set as album cover": [
         "Bildet er angitt som albumomslag"
+      ],
+      "Photo saved to your Drive": [
+        "Bilde lagret på din Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Bildet er kopiert til nyhetsstrømmen og merket som favoritt."
       ],
       "Photos have been successfully recovered.": [
         "Bildene er gjenopprettet."
@@ -5477,6 +5508,9 @@
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Konfigurerer album og filtre. Dette kan ta noen minutter."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
@@ -5570,6 +5604,9 @@
       ],
       "Surveillance": [
         "Overvåking"
+      ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
@@ -5808,6 +5845,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Opplasting av hundrevis av filer samtidig kan ha innvirkning på ytelsen."
+      ],
+      "Uppercase and lowercase letters": [
+        "Store og små bokstaver"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bruk dette skjemaet til å varsle oss om upassende, ulovlige,\neller på annen måte ondsinnede delte filer. Du er i ferd med å rapportere:"
@@ -6582,6 +6622,9 @@
       "Move to Inbox": [
         "Flytt til innboks"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "My Albums": [
         "Mine album"
       ],
@@ -6617,6 +6660,9 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "Password strength": [
+        "Passordstyrke"
       ],
       "Payer": [
         "Betaler"
@@ -6735,6 +6781,12 @@
       "Street address": [
         "Gateadresse"
       ],
+      "Strong": [
+        "Sterk"
+      ],
+      "Strong password": [
+        "Sterkt passord"
+      ],
       "Subscription options": [
         "Abonnementalternativer"
       ],
@@ -6791,6 +6843,18 @@
       ],
       "Viewer": [
         "Leser"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Vulnerable password": [
+        "Sårbart passord"
+      ],
+      "Weak": [
+        "Svak"
+      ],
+      "Weak password": [
+        "Svakt passord"
       ],
       "What happened?": [
         "Hva skjedde?"
@@ -7426,29 +7490,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planer starter fra ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7470,6 +7511,29 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planer starter fra ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8575,6 +8639,9 @@
       ],
       "Root folder failed to be loaded": [
         "Rotmappen kunne ikke lastes inn"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Valgte bilder allerede i \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"
@@ -10391,6 +10458,11 @@
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Spar ${ priceString }"
+      ]
+    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Album som er delt med deg, vises her"
@@ -11400,6 +11472,9 @@
       ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
+      ],
+      "Upgrading your Photos experience": [
+        "Tar bildene dine til neste nivå"
       ],
       "Upload and share files": [
         "Last opp og del filer"

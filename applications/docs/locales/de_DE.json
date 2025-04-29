@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Einladungslink kopieren"
       ],
+      "Copy password": [
+        "Passwort kopieren"
+      ],
       "Copy version number to clipboard": [
         "Versionsnummer in die Zwischenablage kopieren"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Neuen Ordner erstellen"
+      ],
+      "Create new password": [
+        "Neues Passwort erstellen"
       ],
       "Current plan": [
         "Aktuelles Abonnement"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
+      ],
+      "Generate password": [
+        "Passwort generieren"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Hol dir ${ planName } für ${ priceCoupon }"
@@ -749,6 +758,9 @@
       ],
       "Take out of trash": [
         "Aus dem Papierkorb holen"
+      ],
+      "Trashing...": [
+        "Wird in den Papierkorb verschoben..."
       ],
       "Trust": [
         "Vertrauen"
@@ -2332,11 +2344,6 @@
         "Überfällige Rechnung"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ermöglicht es dir, mit anderen in einer sicheren, verschlüsselten Umgebung zusammenzuarbeiten."
@@ -2472,6 +2479,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4171,6 +4183,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -4226,7 +4241,7 @@
         "Kontakt von Gruppe ${ contactGroupName } entfernt"
       ],
       "Converting document...": [
-        "Dokument umwandeln..."
+        "Dokument wird umgewandelt…"
       ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
@@ -4273,7 +4288,7 @@
         "Link zum Ordner wird erstellt"
       ],
       "Creating new document...": [
-        "Neues Dokument erstellen..."
+        "Neues Dokument wird erstellt..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -4540,6 +4555,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Es sieht so aus, als hättest du kürzlich versucht, ${ uploadName } hochzuladen. Falls der Upload fehlgeschlagen hat, ersetze bitte ${ replaceFile }. Wenn der Upload noch im Gange ist, bricht das Ersetzen der Datei den laufenden Upload ab."
       ],
+      "It's better to have:": [
+        "Es ist besser so:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es ist am besten, immer ein VPN zu verwenden. Aber hier können die Bedrohungen für die Cybersicherheit am größten sein:"
       ],
@@ -4607,7 +4625,7 @@
         "Niedrige Priorität"
       ],
       "Making a copy...": [
-        "Kopie erstellen..."
+        "Kopie wird erstellt..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -4682,6 +4700,9 @@
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
+      "Numbers": [
+        "Zahlen"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4720,6 +4741,12 @@
       ],
       "password": [
         "Passwort"
+      ],
+      "Password copied to clipboard": [
+        "Passwort in die Zwischenablage kopiert"
+      ],
+      "Password must have:": [
+        "Passwort muss enthalten:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -4946,6 +4973,9 @@
       "Surveillance": [
         "Überwachung"
       ],
+      "Symbols (#$&)": [
+        "Symbole (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
@@ -5102,9 +5132,6 @@
       "Trash": [
         "Papierkorb"
       ],
-      "Trashed": [
-        "Gelöscht"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
@@ -5122,6 +5149,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Das gleichzeitige Hochladen von Hunderten von Dateien kann sich negativ auf die Leistung auswirken."
+      ],
+      "Uppercase and lowercase letters": [
+        "Groß- und Kleinbuchstaben."
       ],
       "User activated": [
         "Benutzer aktiviert"
@@ -5797,6 +5827,9 @@
       "Move to Inbox": [
         "In Posteingang verschieben"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten"
+      ],
       "My files": [
         "Meine Dateien"
       ],
@@ -5823,6 +5856,9 @@
       ],
       "Password": [
         "Passwort"
+      ],
+      "Password strength": [
+        "Passwortstärke"
       ],
       "Payer": [
         "Zahlungsleistender"
@@ -5905,6 +5941,12 @@
       "Street address": [
         "Straße und Hausnummer"
       ],
+      "Strong": [
+        "Stark"
+      ],
+      "Strong password": [
+        "Starkes Passwort"
+      ],
       "Subscription options": [
         "Abonnement-Optionen"
       ],
@@ -5940,6 +5982,18 @@
       ],
       "Viewer": [
         "Betrachter"
+      ],
+      "Vulnerable": [
+        "Verwundbar"
+      ],
+      "Vulnerable password": [
+        "Gefährdetes Passwort"
+      ],
+      "Weak": [
+        "Schwach"
+      ],
+      "Weak password": [
+        "Schwaches Passwort"
       ],
       "What happened?": [
         "Problembeschreibung"
@@ -7835,8 +7889,8 @@
       "Searching": [
         "Suche"
       ],
-      "Trashed": [
-        "Gelöscht"
+      "Trash": [
+        "Papierkorb"
       ]
     },
     "Participant name": {

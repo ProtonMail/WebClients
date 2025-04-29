@@ -262,6 +262,9 @@
       "Discard changes": [
         "Адхіліць змены"
       ],
+      "Discard Changes": [
+        "Адхіліць змены"
+      ],
       "Discover ${ planName }": [
         "Знаёмства з ${ planName }"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Па памеры акна"
       ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
       "Forgot recovery method?": [
         "Забылі спосаб аднаўлення?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Запрасіць карыстальніка"
+      ],
+      "Keep Editing": [
+        "Працягнуць рэдагаванне"
       ],
       "Keep logo": [
         "Пакінуць лагатып"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Remove": [
         "Выдаліць"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "select file": [
-        "выбраць файл"
-      ],
       "Select file": [
         "Выбраць файл"
+      ],
+      "select file": [
+        "выбраць файл"
       ],
       "Send code": [
         "Адправіць код"
@@ -3891,9 +3900,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Дзеянні"
-      ],
       "App version": [
         "Версія праграмы"
       ],
@@ -3909,17 +3915,11 @@
       "Device": [
         "Прылада"
       ],
-      "Enabled Countries": [
-        "Уключаныя краіны"
-      ],
       "Enter your email address": [
         "Увядзіце адрас сваёй электроннай пошты"
       ],
       "Event": [
         "Падзея"
-      ],
-      "Groups": [
-        "Групы"
       ],
       "IP address": [
         "IP-адрас"
@@ -3938,9 +3938,6 @@
       ],
       "Organization key fingerprint": [
         "Адбітак ключа арганізацыі"
-      ],
-      "Policy Name": [
-        "Назва палітыкі"
       ],
       "Protection": [
         "Абарона"
@@ -4233,8 +4230,17 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/месяц)"
       ],
+      "(default)": [
+        "(прадвызначана)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ яшчэ ${ invisibleCount }",
+        "+ яшчэ ${ invisibleCount }",
+        "+ яшчэ ${ invisibleCount }",
+        "+ яшчэ ${ invisibleCount }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -4506,9 +4512,6 @@
       "Create your first Gateway": [
         "Стварыце свой першы шлюз"
       ],
-      "Created (not published)": [
-        "Створана (не апублікавана)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
@@ -4556,9 +4559,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
-      ],
-      "Deleted (not published)": [
-        "Выдалена (не апублікавана)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Выдаленне ${ deletedServerCount } сервера шлюза",
@@ -4656,9 +4656,6 @@
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
-      "Edited (not published)": [
-        "Адрэдагавана (не апублікавана)"
-      ],
       "eduGAIN configuration saved": [
         "Канфігурацыя eduGAIN захавана"
       ],
@@ -4745,6 +4742,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Увядзіце ваш уліковы запіс электроннай пошты ${ BRAND_NAME } або імя карыстальніка."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Увядзіце свой пароль (адміністратара арганізацыі)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
@@ -5100,6 +5100,9 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
+      "No single sign-on": [
+        "Няма адзінага ўваходу"
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
@@ -5181,14 +5184,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Мінімальная даўжыня пароля складае наступную колькасць сімвалаў або больш: ${ MIN_PASSWORD_LENGTH }"
       ],
+      "Password must have:": [
+        "Пароль павінен змяшчаць:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Узнагарода \"Выбар рэдакцыі PC Magazine\" з рэйтынгам 5 з 5 зорак"
-      ],
-      "Pending removal": [
-        "Чакаюць выдалення"
       ],
       "per month": [
         "ў месяц"
@@ -5535,6 +5538,9 @@
       "The securest way to browse, stream, and be online.": [
         "Самы бяспечны спосаб для прагляду старонак у інтэрнэце і трансляцый."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Змены, якія вы зрабілі і не апублікавалі, будуць страчаны."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
@@ -5573,6 +5579,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Гэта паведамленне не трапіць у службу падтрымкі, калі ў вас праблемы з нашым сэрвісам або неабходны нейкія дзеянні з нашага боку ${ supportLink }"
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Гэты сэрвіс недаступны для карыстальнікаў, якія ўваходзяць з дапамогай адзінага ўваходу."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
@@ -5697,9 +5706,6 @@
       "Unable to check gateways monitoring current status.": [
         "Немагчыма праверыць бягучы статус назірання за шлюзамі."
       ],
-      "Unchanged": [
-        "Нязменны"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
       ],
@@ -5748,11 +5754,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -5954,6 +5960,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Вы можаце прымусова забяспечыць выкананне правіл для пароляў, якія будуць выкарыстоўваць удзельнікі вашай арганізацыі пры стварэнні або скіданні пароля да свайго ўліковага запісу ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Вы можаце атрымаць усе прэміяльны сэрвісы прыватнасці ўсяго за **${ priceString }/месяц** адным камплектам."
@@ -6329,10 +6338,10 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6419,6 +6428,9 @@
       "Colors": [
         "Колеры"
       ],
+      "Common passwords": [
+        "Агульныя паролі"
+      ],
       "Company": [
         "Кампанія"
       ],
@@ -6488,6 +6500,9 @@
       "Digits": [
         "Лічбы"
       ],
+      "Disabled": [
+        "Адключана"
+      ],
       "Display name": [
         "Бачнае імя"
       ],
@@ -6511,6 +6526,9 @@
       ],
       "Email or username": [
         "Электронная пошта або імя карыстальніка"
+      ],
+      "Enabled": [
+        "Уключана"
       ],
       "Enter the code displayed on your TV": [
         "Увядзіце код, які вы бачыце на сваім тэлевізары"
@@ -6590,6 +6608,9 @@
       "Main": [
         "Галоўная"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Максімальная колькасць сімвалаў: ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Удзельнікі без 2ФА"
       ],
@@ -6601,6 +6622,12 @@
       ],
       "Method for importing metadata": [
         "Спосаб для імпартавання метаданых"
+      ],
+      "Minimum number of characters": [
+        "Мінімальная колькасць сімвалаў"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Мінімальная колькасць сімвалаў: ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "Умераны NAT"
@@ -6647,6 +6674,9 @@
       "Notification": [
         "Апавяшчэнне"
       ],
+      "Numbers": [
+        "Лічбы"
+      ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
       ],
@@ -6676,6 +6706,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password strength": [
+        "Надзейнасць пароля"
       ],
       "Payer": [
         "Плацельшчык"
@@ -6758,6 +6791,9 @@
       "Second password": [
         "Другі пароль"
       ],
+      "Sequences": [
+        "Паслядоўнасці"
+      ],
       "Show ${ n } administrator": [
         "Паказаць ${ n } адміністратара",
         "Паказаць ${ n } адміністратары",
@@ -6772,6 +6808,9 @@
       ],
       "Spam": [
         "Спам"
+      ],
+      "Special characters": [
+        "Спецыяльныя сімвалы"
       ],
       "Start date": [
         "Дата пачатку"
@@ -6808,6 +6847,9 @@
       ],
       "Type": [
         "Тып"
+      ],
+      "Uppercase and lowercase letters": [
+        "Вялікія і маленькія літары"
       ],
       "User": [
         "Карыстальнік"
@@ -6868,6 +6910,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
       ],
       "ZIP code": [
         "Паштовы індэкс"
@@ -7011,6 +7056,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Як супрацоўнічаць у ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to create strong passwords": [
+        "Як ствараць надзейныя паролі"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Як уключыць ${ PROTON_SENTINEL_NAME }"
@@ -7330,6 +7378,29 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Downgrade account": [
+        "Панізіць уліковы запіс"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Пакінуць ${ plan }"
+      ],
+      "Keep account": [
+        "Пакінуць уліковы запіс"
+      ],
+      "Switch plan": [
+        "Змяніць тарыфны план"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
@@ -7354,29 +7425,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
       ]
     },
     "new_plans: feature": {
@@ -8624,7 +8672,21 @@
         "Вітаем у ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Кожнаму"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "No one": [
+        "Нікому"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "Дазволена ${ defaultLabel }"
+      ],
       "Country configs": [
         "Канфігурацыі краіны"
       ],
@@ -8655,11 +8717,20 @@
       "No permission": [
         "Няма дазволу"
       ],
+      "Not allowed": [
+        "Забаронена"
+      ],
+      "Optional ${ defaultLabel }": [
+        "Неабавязкова ${ defaultLabel }"
+      ],
       "Organization only": [
         "Толькі арганізацыі"
       ],
       "Receive from all": [
         "Атрымліваць ад усіх"
+      ],
+      "Required": [
+        "Патрабуецца"
       ],
       "Router": [
         "Маршрутызатар"
@@ -8681,17 +8752,6 @@
       ],
       "The whole organization": [
         "Уся арганізацыя"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Кожнаму"
-      ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
-      "No one": [
-        "Нікому"
       ]
     },
     "Organization capacity error": {
@@ -10314,6 +10374,9 @@
       "Share the confirmation code with your administrator": [
         "Абагуліць код пацвярджэння з вашым адміністратарам"
       ],
+      "Sign in": [
+        "Уваход"
+      ],
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
@@ -10358,6 +10421,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
@@ -11341,6 +11407,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Правілы для пароля ўліковага запісу ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11500,10 +11569,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -11749,6 +11818,9 @@
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
+      "Enter 2FA code": [
+        "Увядзіце код 2ФА"
+      ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
       ],
@@ -11757,6 +11829,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
+      ],
+      "Enter your password": [
+        "Увядзіце пароль"
       ],
       "Error": [
         "Памылка"
@@ -12142,6 +12217,9 @@
       "Video conferencing": [
         "Відэаканферэнцыя"
       ],
+      "Warning": [
+        "Папярэджанне"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы адправілі ліст з інструкцыямі пра завяршэнне змены на ваш новы адрас."
       ],
@@ -12272,6 +12350,12 @@
       ],
       "Feature in early access": [
         "Функцыю можна паспрабаваць у раннім доступе"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Напрыклад, **12345, abcde** і г.д."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Напрыклад, **password, qwerty** і г.д."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."

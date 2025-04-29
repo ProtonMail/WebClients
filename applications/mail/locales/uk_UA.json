@@ -513,6 +513,9 @@
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
+      "Generate password": [
+        "Згенерувати пароль"
+      ],
       "Generate text": [
         "Згенерувати текст"
       ],
@@ -1062,10 +1065,10 @@
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Вибрати все"
       ],
-      "Select all": [
+      "Select All": [
         "Вибрати все"
       ],
       "Select all messages": [
@@ -1256,6 +1259,12 @@
       ],
       "Trust": [
         "Довіряти"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -6699,9 +6708,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -6781,9 +6787,6 @@
       ],
       "Low Priority": [
         "Низький пріоритет"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Зробити ${ MAIL_APP_NAME } типовим поштовим застосунком."
       ],
       "Manage your folders": [
         "Керуйте своїми теками"
@@ -6931,6 +6934,9 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопійовано до буфера обміну"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
@@ -8269,11 +8275,11 @@
       "Always move sender's emails": [
         "Завжди переміщувати е-пошту відправника"
       ],
-      "AND": [
-        "ТА"
-      ],
       "And": [
         "Та"
+      ],
+      "AND": [
+        "ТА"
       ],
       "and": [
         "та"
@@ -8491,11 +8497,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЯКЩО"
-      ],
       "If": [
         "Якщо"
+      ],
+      "IF": [
+        "ЯКЩО"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -8605,14 +8611,14 @@
       "Optional": [
         "Необов'язково"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Original link": [
         "Оригінальне посилання"
@@ -8704,6 +8710,9 @@
       "Street address": [
         "Вулиця"
       ],
+      "Strong": [
+        "Надійний"
+      ],
       "Subscription options": [
         "Опції передплати"
       ],
@@ -8751,6 +8760,12 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "Vulnerable": [
+        "Вразливий"
+      ],
+      "Weak": [
+        "Слабкий"
       ],
       "What happened?": [
         "Що сталося?"
@@ -9413,23 +9428,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Отримати ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -9451,6 +9449,23 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {

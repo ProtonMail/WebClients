@@ -246,6 +246,9 @@
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
+      "Copy password": [
+        "Parolayı kopyala"
+      ],
       "Copy version number to clipboard": [
         "Sürüm numarasını kopyala"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Yeni klasör ekle"
+      ],
+      "Create new password": [
+        "Yeni parola oluştur"
       ],
       "Create new text file": [
         "Yeni bir metin dosyası oluştur"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
+      ],
+      "Generate password": [
+        "Parola üret"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ priceCoupon } ödeyerek ${ planName } alın"
@@ -3196,9 +3205,6 @@
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
       ],
-      "Photo saved to your Drive": [
-        "Fotoğraf Drive'ınıza kaydedildi"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Fotoğraf yükleme özelliği geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -4380,6 +4386,10 @@
         "${ pausedCount } duraklatıldı",
         "${ pausedCount } duraklatıldı"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } öğe",
+        "${ photoCount } öğe"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
@@ -4589,6 +4599,9 @@
       ],
       "Are you sure you want to proceed?": [
         "İlerlemek istediğinize emin misiniz?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
@@ -5036,6 +5049,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
       ],
+      "It's better to have:": [
+        "Şöyle olması daha iyidir:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Çöp kutusundaki ögeler siz onları kalıcı olarak silene kadar tutulur"
       ],
@@ -5199,6 +5215,9 @@
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
       ],
+      "Numbers": [
+        "Rakamlar"
+      ],
       "of": [
         "/"
       ],
@@ -5247,6 +5266,12 @@
       "password": [
         "parola"
       ],
+      "Password copied to clipboard": [
+        "Parola panoya kopyalandı"
+      ],
+      "Password must have:": [
+        "Parola şunları içermelidir:"
+      ],
       "Paused": [
         "Duraklatıldı"
       ],
@@ -5270,6 +5295,12 @@
       ],
       "Photo is set as album cover": [
         "Fotoğraf albüm kapağı olarak ayarlandı"
+      ],
+      "Photo saved to your Drive": [
+        "Fotoğraf Drive'ınıza kaydedildi"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Fotoğraf akışa kopyalandı ve orada favorilere eklendi."
       ],
       "Photos have been successfully recovered.": [
         "Fotoğraflar geri yüklendi."
@@ -5477,6 +5508,9 @@
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Albümler ve Filtreler'i ayarlama. Bu işlem birkaç dakika sürebilir."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
@@ -5570,6 +5604,9 @@
       ],
       "Surveillance": [
         "Gözetleme"
+      ],
+      "Symbols (#$&)": [
+        "Simgeler (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -5808,6 +5845,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Yüzlerce dosyanın aynı anda yüklenmesi başarımı etkileyebilir."
+      ],
+      "Uppercase and lowercase letters": [
+        "Büyük ve küçük harfler"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bu formu kullanarak bize uygunsuz, yasadışı\nya da başka türlü kötü amaçla paylaşılmış dosyaları bildirin. Şunu şikayet ediyorsunuz:"
@@ -6582,6 +6622,9 @@
       "Move to Inbox": [
         "Gelen kutusuna taşı"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
+      ],
       "My Albums": [
         "Albümlerim"
       ],
@@ -6617,6 +6660,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password strength": [
+        "Parola gücü"
       ],
       "Payer": [
         "Ödeyen"
@@ -6735,6 +6781,12 @@
       "Street address": [
         "Sokak adresi"
       ],
+      "Strong": [
+        "Güçlü"
+      ],
+      "Strong password": [
+        "Güçlü parola"
+      ],
       "Subscription options": [
         "Abonelik seçenekleri"
       ],
@@ -6791,6 +6843,18 @@
       ],
       "Viewer": [
         "Görüntüleyici"
+      ],
+      "Vulnerable": [
+        "Çok zayıf"
+      ],
+      "Vulnerable password": [
+        "Güvenlik açığı bulunan parola"
+      ],
+      "Weak": [
+        "Zayıf"
+      ],
+      "Weak password": [
+        "Zayıf parola"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -7369,29 +7433,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus } tutarından başlayan tarifeler"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7413,6 +7454,29 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus } tutarından başlayan tarifeler"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -8518,6 +8582,9 @@
       ],
       "Root folder failed to be loaded": [
         "Kök klasör yüklenemedi"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Seçilen fotoğraf(lar) zaten “${ albumName }” albümünde bulunmaktadır."
       ],
       "Share invitation accepted successfully": [
         "Paylaşma daveti kabul edildi"
@@ -10334,6 +10401,11 @@
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } tasarruf edin"
+      ]
+    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Sizinle paylaşılan albümler burada görünecek"
@@ -11343,6 +11415,9 @@
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
+      ],
+      "Upgrading your Photos experience": [
+        "Photos deneyiminizi yükseltiyoruz"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"

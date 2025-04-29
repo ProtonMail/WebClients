@@ -463,6 +463,9 @@
       "Discard changes": [
         "Kasta ändringar"
       ],
+      "Discard Changes": [
+        "Kasta ändringar"
+      ],
       "Discover ${ planName }": [
         "Upptäck ${ planName }"
       ],
@@ -768,6 +771,9 @@
       ],
       "Keep": [
         "Behåll"
+      ],
+      "Keep Editing": [
+        "Fortsätt redigera"
       ],
       "Keep logo": [
         "Behåll logga"
@@ -1123,11 +1129,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "select file": [
-        "välj fil"
-      ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Select files": [
         "Välj filer"
@@ -4581,6 +4587,9 @@
       "Edit conditions": [
         "Redigera villkor"
       ],
+      "Got it": [
+        "Jag förstår"
+      ],
       "Next": [
         "Nästa"
       ],
@@ -4652,9 +4661,6 @@
     "email_forwarding_2023: Info": {
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "En e-postbekräftelse kommer att skickas till ${ boldForwardeeEmail }"
-      ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "En ny krypteringsnyckel kommer att genereras för ${ boldForwarderEmail }."
       ],
       "Automatically forward emails to another email address.": [
         "Vidarebefordra automatiskt e-post till annan e-postadress."
@@ -4740,6 +4746,14 @@
         "Skriv text eller nyckelord för detta villkor:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Skickar e-postbekräftelse"
+      ],
+      "Setting up forwarding": [
+        "Ställer in vidarebefordran"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "End-to-end-kryptering kommer att återaktiveras för avsändaradressen."
@@ -4766,17 +4780,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "En ny krypteringsnyckel har genererats för ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Ändringar sparade"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "E-post skickas till ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "E-post skickas till ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Vidarebefordran accepterad"
@@ -4804,7 +4809,13 @@
       "Forwarding activated": [
         "Vidarebefordran aktiverad"
       ],
-      "Request confirmation": [
+      "Request confirmation?": [
+        "Begär bekräftelse?"
+      ],
+      "Request sent": [
+        "Begäran skickad"
+      ],
+      "Requesting confirmation": [
         "Begär bekräftelse"
       ],
       "Set up forwarding": [
@@ -6626,9 +6637,6 @@
       "Device": [
         "Enhet"
       ],
-      "Enabled Countries": [
-        "Aktiverade länder"
-      ],
       "Enter your email address": [
         "Ange din e-postadress"
       ],
@@ -6637,9 +6645,6 @@
       ],
       "Folders": [
         "Mappar"
-      ],
-      "Groups": [
-        "Grupper"
       ],
       "IP address": [
         "IP-adress"
@@ -6667,9 +6672,6 @@
       ],
       "Permissions": [
         "Behörigheter"
-      ],
-      "Policy Name": [
-        "Policynamn"
       ],
       "Protection": [
         "Skydd"
@@ -7407,6 +7409,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/månad)"
       ],
+      "(default)": [
+        "(standard)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrera om ALLA av följande villkor är uppfyllda)"
       ],
@@ -7418,6 +7423,9 @@
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** stöds inte i din organisation **${ organizationName }**."
+      ],
+      "**${ appName }** is not supported.": [
+        "**${ appName }** stöds inte."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
@@ -7882,9 +7890,6 @@
       "Create your first Gateway": [
         "Skapa din första gateway"
       ],
-      "Created (not published)": [
-        "Skapad (inte publicerad)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Skapar gatewayserver: ${ serverNumber }/${ total }",
         "Skapar gatewayservrar: ${ serverNumber }/${ total }"
@@ -7957,9 +7962,6 @@
       ],
       "Delete link?": [
         "Ta bort länk?"
-      ],
-      "Deleted (not published)": [
-        "Borttagen (inte publicerad)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Tar bort ${ deletedServerCount } gatewayserver",
@@ -8082,9 +8084,6 @@
       ],
       "Edit link": [
         "Redigera länk"
-      ],
-      "Edited (not published)": [
-        "Redigerad (inte publicerad)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfiguration sparad"
@@ -8925,11 +8924,11 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
       ],
+      "Password must have:": [
+        "Lösenord måste innehålla:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
-      ],
-      "Pending removal": [
-        "Väntande borttagning"
       ],
       "per month": [
         "per månad"
@@ -9454,6 +9453,9 @@
       "The securest way to browse, stream, and be online.": [
         "Det säkraste sättet att surfa, streama och vara online."
       ],
+      "The unpublished changes you made will be lost.": [
+        "De opublicerade ändringar du gjort kommer att gå förlorade."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
@@ -9709,9 +9711,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Det gick inte att verifiera återställningsfilens signatur. Kontakta support."
       ],
-      "Unchanged": [
-        "Oförändrad"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
@@ -9802,11 +9801,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "Username": [
-        "Användarnamn"
-      ],
       "username": [
         "användarnamn"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "Users": [
         "Användare"
@@ -10955,10 +10954,10 @@
       "Allow sharing outside the organization": [
         "Tillåt delning utanför organisationen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10970,11 +10969,11 @@
       "Amount due": [
         "Att betala"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -11113,6 +11112,9 @@
       ],
       "Colors": [
         "Färger"
+      ],
+      "Common passwords": [
+        "Vanliga lösenord"
       ],
       "Company": [
         "Företag"
@@ -11300,6 +11302,9 @@
       "Emails (last month)": [
         "E-post (senaste månaden)"
       ],
+      "Enabled": [
+        "Aktiverat"
+      ],
       "End date": [
         "Slutdatum"
       ],
@@ -11396,11 +11401,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -11498,6 +11503,9 @@
       "Maximum number of characters": [
         "Maximalt antal tecken"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Maximalt antal tecken är ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Maximalt antal ord"
       ],
@@ -11521,6 +11529,9 @@
       ],
       "Minimum number of characters": [
         "Minst antal tecken"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Minsta antalet tecken är ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Minst antal ord"
@@ -11603,14 +11614,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -11626,6 +11637,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Password strength": [
+        "Lösenordsstyrka"
       ],
       "Payer": [
         "Betalare"
@@ -11749,6 +11763,9 @@
       ],
       "Send in": [
         "Skicka på"
+      ],
+      "Sequences": [
+        "Sekvenser"
       ],
       "Show ${ n } administrator": [
         "Visa ${ n } administratör",
@@ -11888,6 +11905,9 @@
       ],
       "Uppercase": [
         "Versaler"
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "URL": [
         "URL"
@@ -12222,6 +12242,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Hur man samarbetar i ${ DOCS_SHORT_APP_NAME }"
       ],
+      "How to create strong passwords": [
+        "Hur man skapar starka lösenord"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Hur man aktiverar ${ PROTON_SENTINEL_NAME }"
       ],
@@ -12285,11 +12308,11 @@
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
       ],
-      "privacy policy": [
-        "integritetspolicy"
-      ],
       "Privacy policy": [
         "Integritetspolicy"
+      ],
+      "privacy policy": [
+        "integritetspolicy"
       ],
       "Reactivate now": [
         "Återaktivera nu"
@@ -13657,6 +13680,17 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -13675,17 +13709,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -14323,6 +14346,17 @@
         "Stationär dator"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10:e dagen i månaden"
@@ -14420,6 +14454,9 @@
       "Add to existing group": [
         "Lägg till i befintlig grupp"
       ],
+      "Allowed ${ defaultLabel }": [
+        "Tillåtet ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "Tillåtet (standard)"
       ],
@@ -14507,6 +14544,9 @@
       "On": [
         "På"
       ],
+      "Optional ${ defaultLabel }": [
+        "Valfri ${ defaultLabel }"
+      ],
       "Organization only": [
         "Endast organisation"
       ],
@@ -14572,17 +14612,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -18636,10 +18665,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -19134,9 +19163,6 @@
       "Get the apps": [
         "Skaffa appen"
       ],
-      "Get Zooming faster": [
-        "Börja Zooma snabbare"
-      ],
       "Gift": [
         "Gåva"
       ],
@@ -19521,6 +19547,9 @@
       ],
       "Save time with email filters": [
         "Spara tid med e-postfilter"
+      ],
+      "Schedule meetings in one click": [
+        "Schemalägg möten med ett klick"
       ],
       "Schedule send:": [
         "Schemalägg sändning:"
@@ -20065,6 +20094,12 @@
       ],
       "Feature in early access": [
         "Funktion i förhandstillgång"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Till exempel, **12345, abcde**, etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Till exempel, **lösenord, qwerty**, etc."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Få produktivitets- och säkerhetstips som hjälper dig att få ut det mesta av ${ MAIL_APP_NAME } och mer."

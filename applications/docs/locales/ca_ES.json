@@ -94,7 +94,7 @@
         "Aplica"
       ],
       "Ask me next time": [
-        "Pregunta'm la pròxima vegada"
+        "Pregunta'm-ho la pròxima vegada"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Copia l'enllaç d'invitació"
       ],
+      "Copy password": [
+        "Copia la contrasenya"
+      ],
       "Copy version number to clipboard": [
         "Copia el número de versió al porta-retalls"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Crea una carpeta"
+      ],
+      "Create new password": [
+        "Crea una contrasenya nova"
       ],
       "Current plan": [
         "Pla actual"
@@ -298,7 +304,7 @@
         "Baixa"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
       "Download anyway": [
         "Baixa igualment"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Reenvia com a adjunt"
+      ],
+      "Generate password": [
+        "Genera la contrasenya"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obteniu ${ planName } per ${ priceCoupon }."
@@ -752,6 +761,9 @@
       ],
       "Take out of trash": [
         "Recupera de la paperera"
+      ],
+      "Trashing...": [
+        "S'està enviant a la paperera..."
       ],
       "Trust": [
         "De confiança"
@@ -2335,11 +2347,6 @@
         "Factura vençuda"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } al ${ DRIVE_APP_NAME } us permet treballar amb altres persones en un entorn segur i xifrat."
@@ -2475,6 +2482,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4174,6 +4186,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
+      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -4276,7 +4291,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant el document..."
+        "S'està creant un document nou..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció del pla anterior"
@@ -4399,7 +4414,7 @@
         "Error en convertir el document: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "S'ha produït un error en carregar el document${ errorDetail }"
+        "S'ha produït un error en carregar el document ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error de sincronització"
@@ -4462,7 +4477,7 @@
         "Geobloqueig"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu electrònic de comentaris i suggeriments afegits als vostres documents."
+        "Rebeu actualitzacions per correu de comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
         "Rebeu notificacions sobre els comentaris"
@@ -4542,6 +4557,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sembla que recentment heu intentat carregar ${ uploadName }. Si no es va poder carregar, ${ replaceFile }. Si la càrrega és encara en progrés, reemplaçar el fitxer cancel·larà la càrrega en curs."
+      ],
+      "It's better to have:": [
+        "És millor tenir:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser més altes:"
@@ -4685,6 +4703,9 @@
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "Offline": [
         "Fora de línia"
       ],
@@ -4723,6 +4744,12 @@
       ],
       "password": [
         "contrasenya"
+      ],
+      "Password copied to clipboard": [
+        "La contrasenya s'ha copiat al porta-retalls"
+      ],
+      "Password must have:": [
+        "La contrasenya ha de tenir:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
@@ -4949,6 +4976,9 @@
       "Surveillance": [
         "Vigilància"
       ],
+      "Symbols (#$&)": [
+        "Símbols (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
@@ -4980,7 +5010,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "Sembla que l'adreça URL que heu introduït s'ha copiat de Slack de manera incorrecta. Quan copieu enllaços llargs des de Slack, feu clic amb el botó dret a l'enllaç i, a continuació, trieu «Copia l'enllaç» en comptes de copiar directament el text de l'adreça URL truncada."
+        "Sembla que l'URL que heu introduït s'ha copiat de l'Slack incorrectament. Quan copieu enllaços llargs de l'Slack, feu clic amb el botó dret a l'enllaç i, a continuació, trieu «Copia l'enllaç» en lloc de copiar directament el text de l'URL truncat."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
@@ -5105,9 +5135,6 @@
       "Trash": [
         "Paperera"
       ],
-      "Trashed": [
-        "Mogut a la paperera"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
@@ -5125,6 +5152,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
+      ],
+      "Uppercase and lowercase letters": [
+        "Lletres majúscules i minúscules"
       ],
       "User activated": [
         "S'ha activat l'usuari."
@@ -5690,7 +5720,7 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Activa les notificacions per correu electrònic"
+        "Activa les notificacions per correu"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -5803,6 +5833,9 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "My files": [
         "Els meus fitxers"
       ],
@@ -5829,6 +5862,9 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password strength": [
+        "Solidesa de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -5911,6 +5947,12 @@
       "Street address": [
         "Adreça de carrer"
       ],
+      "Strong": [
+        "Forta"
+      ],
+      "Strong password": [
+        "Contrasenya forta"
+      ],
       "Subscription options": [
         "Opcions de subscripció"
       ],
@@ -5946,6 +5988,18 @@
       ],
       "Viewer": [
         "Visualitzador"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contrasenya vulnerable"
+      ],
+      "Weak": [
+        "Feble"
+      ],
+      "Weak password": [
+        "Contrasenya feble."
       ],
       "What happened?": [
         "Què ha passat?"
@@ -7841,8 +7895,8 @@
       "Searching": [
         "S'està cercant"
       ],
-      "Trashed": [
-        "Mogut a la paperera"
+      "Trash": [
+        "Paperera"
       ]
     },
     "Participant name": {

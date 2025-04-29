@@ -45,6 +45,11 @@
       "Add": [
         "Adăugare"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Adăugare fotografii în album nou: ${ photoCount }",
+        "Adăugare fotografii în album nou: ${ photoCount }",
+        "Adăugare fotografii în album nou: ${ photoCount }"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -244,6 +249,9 @@
       "Copy link": [
         "Copiere legătură web"
       ],
+      "Copy password": [
+        "Copiere parolă"
+      ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
       ],
@@ -267,6 +275,9 @@
       ],
       "Create new folder": [
         "Creare folder"
+      ],
+      "Create new password": [
+        "Creare parolă"
       ],
       "Create new text file": [
         "Creare fișier text"
@@ -430,6 +441,9 @@
       ],
       "Forward as attachment": [
         "Redirecționare ca atașament"
+      ],
+      "Generate password": [
+        "Generare parolă"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Luați ${ planName } cu ${ priceCoupon }"
@@ -730,6 +744,9 @@
       ],
       "Remove bonuses": [
         "Anulare bonusuri"
+      ],
+      "Remove button": [
+        "Buton eliminare"
       ],
       "Remove device": [
         "Eliminare dispozitiv"
@@ -1048,6 +1065,12 @@
       ],
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utilizați ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
       "Use a different card": [
         "Folosire alt card"
@@ -2591,14 +2614,32 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } în ${ DRIVE_APP_NAME } vă permite să lucrați împreună cu alte persoane într-un mediu sigur și criptat."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Adăugați foldere și fișiere în ${ DRIVE_APP_NAME } și invitați membrii echipei să le vadă sau să le editeze."
+      ],
       "Also included": [
         "De asemenea, inclus"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
+      ],
+      "Create groups you can email with a single address.": [
+        "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
@@ -2609,8 +2650,26 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Conceput pentru utilizatorii care doresc o protecție sporită pentru conturile lor."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Asigurați accesarea securizată la datele organizației, chiar dacă echipa este la distanță sau utilizează o rețea Wi-Fi publică."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Asigurați o securitate de top pentru cont cu programul ${ PROTON_SENTINEL_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
@@ -2618,8 +2677,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obțineți aliasuri nelimitate și 500 GIB spațiu de stocare cu ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -2633,6 +2698,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Setați o metodă de recuperare pentru a preveni pierderea accesului la cont."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplificați sincronizarea și programarea cu calendare partajate."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
       ],
@@ -2642,6 +2713,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Pentru a începe, dați un nume organizației."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Treceți la ${ planName } pentru a putea continua să partajați fișiere cu drept de editare."
       ],
@@ -2650,6 +2724,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Cu grupurile de contacte, puteți trimite mesaje tuturor celor din grup cu un singur clic."
@@ -2778,6 +2855,11 @@
         "Asistență prioritară"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTĂ:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIERE:\n${ eventDescription }"
@@ -2789,6 +2871,12 @@
       ],
       "All events in this series were updated.": [
         "Toate evenimentele din serie au fost modificate."
+      ],
+      "Here's what changed:": [
+        "Iată ce s-a schimbat:"
+      ],
+      "NOTE:": [
+        "NOTĂ:"
       ],
       "This event occurrence was canceled.": [
         "Acest eveniment a fost anulat."
@@ -2992,8 +3080,14 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Invitațiile externe sunt dezactivate temporar. Reîncercați mai târziu."
       ],
+      "Failed to copy photo to album": [
+        "Fotografia nu s-a putut copia în album."
+      ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
+      ],
+      "Failed to save photo to your Drive": [
+        "Nu s-a putut salva fotografia în Drive."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
@@ -3854,6 +3948,11 @@
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "Adăugare ${ photoCount } fotografie în",
+        "Adăugare ${ photoCount } fotografii în",
+        "Adăugare ${ photoCount } de fotografii în"
+      ],
       "Add to shared album": [
         "Adăugare la album partajat"
       ],
@@ -3862,6 +3961,11 @@
       ],
       "Recent": [
         "Recente"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Partajare ${ photoCount } fotografie via",
+        "Partajare ${ photoCount } fotografii via",
+        "Partajare ${ photoCount } de fotografii via"
       ]
     },
     "Hint": {
@@ -3978,7 +4082,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosind adresa dvs. de e-mail din ${ BRAND_NAME }."
+        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosindu-vă adresa de e-mail din ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Acest fișier conține o invitație la un eveniment:",
@@ -4340,6 +4444,11 @@
         "${ pausedCount } suspendate",
         "${ pausedCount } suspendate"
       ],
+      "${ photoCount } item": [
+        "Articole: ${ photoCount }",
+        "Articole: ${ photoCount }",
+        "Articole: ${ photoCount }"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
@@ -4564,6 +4673,9 @@
       ],
       "Are you sure you want to proceed?": [
         "Sigur doriți să continuați?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
       "Attention required": [
         "Necesită atenție"
@@ -5016,6 +5128,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Se pare că ați încercat recent să încărcați ${ uploadName }. Dacă încărcarea a eșuat, ${ replaceFile }. Dacă încă este în desfășurare, înlocuirea va anula încărcarea în desfășurare."
       ],
+      "It's better to have:": [
+        "Este bine să aveți:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Articolele din gunoi vor sta aici până când le veți șterge permanent."
       ],
@@ -5180,6 +5295,9 @@
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
+      "Numbers": [
+        "Cifre"
+      ],
       "of": [
         "din"
       ],
@@ -5228,6 +5346,12 @@
       "password": [
         "parola"
       ],
+      "Password copied to clipboard": [
+        "Parola a fost copiată în memorie."
+      ],
+      "Password must have:": [
+        "Parola trebuie să conțină:"
+      ],
       "Paused": [
         "Suspendat"
       ],
@@ -5251,6 +5375,12 @@
       ],
       "Photo is set as album cover": [
         "Fotografia este setată ca și copertă de album"
+      ],
+      "Photo saved to your Drive": [
+        "Fotografia a fost salvată în Drive."
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Fotografia a fost copiată în fluxul foto și marcată ca favorită acolo."
       ],
       "Photos have been successfully recovered.": [
         "Fotografiile au fost recuperate."
@@ -5460,6 +5590,9 @@
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Se configurează albumele și filtrele. Acest lucru poate dura câteva minute."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
@@ -5511,6 +5644,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Unele dintre fișiere nu mai sunt accesibile. Restaurați accesul la fișiere. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Unele fotografii din acest album nu sunt salvate în cronologi. Ștergerea acestui album va șterge definitiv acele fotografii."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
       ],
@@ -5551,6 +5687,9 @@
       ],
       "Surveillance": [
         "Supraveghere"
+      ],
+      "Symbols (#$&)": [
+        "Simboluri (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -5791,6 +5930,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
       ],
+      "Uppercase and lowercase letters": [
+        "Litere mari și mici"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
       ],
@@ -5832,6 +5974,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bun, tocmai v-ați mărit spațiul de stocare la 5 GiB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Avem probleme tehnice. Orice acțiuni legate de albume sunt dezactivate temporar."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Avem probleme tehnice. Încărcarea de fotografii noi este temporar dezactivată."
@@ -6574,6 +6719,9 @@
       "Move to Inbox": [
         "Mutare în «Primite»"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
+      ],
       "My Albums": [
         "Albumele mele"
       ],
@@ -6609,6 +6757,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password strength": [
+        "Dificultatea parolei"
       ],
       "Payer": [
         "Plătitor"
@@ -6727,6 +6878,12 @@
       "Street address": [
         "Strada"
       ],
+      "Strong": [
+        "Puternică"
+      ],
+      "Strong password": [
+        "Parolă puternică"
+      ],
       "Subscription options": [
         "Opțiuni abonament"
       ],
@@ -6783,6 +6940,18 @@
       ],
       "Viewer": [
         "Utilizator"
+      ],
+      "Vulnerable": [
+        "Vulnerabilă"
+      ],
+      "Vulnerable password": [
+        "Parolă vulnerabilă"
+      ],
+      "Weak": [
+        "Slabă"
+      ],
+      "Weak password": [
+        "Parolă slabă"
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
@@ -7366,29 +7535,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planuri începând de la ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -7410,6 +7556,29 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planuri începând de la ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8557,6 +8726,9 @@
       "Root folder failed to be loaded": [
         "Folderul rădăcină nu s-a putut încărca."
       ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Pozele selectate sunt deja salvate în „${ albumName }”."
+      ],
       "Share invitation accepted successfully": [
         "Invitația partajată a fost acceptată"
       ],
@@ -8608,11 +8780,23 @@
       "Your old files will be deleted in 72 hours": [
         "Fișierele vechi vor fi șterse în 72 de ore."
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Fotografiile au fost adăugate în „${ albumName }”."
+      ],
       "Your settings failed to be saved": [
         "Setările nu au putut fi salvate."
       ],
       "Your settings have been changed successfully": [
         "Setările au fost modificate cu succes."
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "Unele fotografii nu au putut fi adăugate în „${ albumName }”."
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Unele fotografii nu au putut fi eliminate din ${ albumLink.name }."
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Fotografiile au fost eliminate din „${ albumLink.name }”."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9204,6 +9388,9 @@
       "New name": [
         "Nume nou"
       ],
+      "Organization name": [
+        "Nume organizație"
+      ],
       "Password": [
         "Parola"
       ],
@@ -9236,6 +9423,9 @@
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
+      ],
+      "Your organization name": [
+        "Numele organizației"
       ]
     },
     "Placeholder for contact group name": {
@@ -9327,6 +9517,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Înscrierea nu o fost finalizată corect."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Setare organizație și securitate cont"
       ]
     },
     "Security Center": {
@@ -10390,6 +10585,11 @@
         "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Economisiți ${ priceString }"
+      ]
+    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Albumele care vi s-au partajat vor apărea aici"
@@ -10740,6 +10940,9 @@
       "Add to ${ groupName }": [
         "Adăugare în ${ groupName }"
       ],
+      "Add user": [
+        "Adăugare utilizator"
+      ],
       "Addresses": [
         "Adrese"
       ],
@@ -10817,6 +11020,9 @@
       "Clearing data": [
         "Ştergere date"
       ],
+      "Collaborate on documents": [
+        "Colaborați la documente"
+      ],
       "Completed": [
         "Finalizate"
       ],
@@ -10831,6 +11037,15 @@
       ],
       "Confirmation required": [
         "Necesită confirmare"
+      ],
+      "Connect apps and devices": [
+        "Conectați aplicații și dispozitive"
+      ],
+      "Connect to video conferencing": [
+        "Conectați-vă la conferințe video"
+      ],
+      "Connect your custom domain": [
+        "Conectați-vă domeniul personal"
       ],
       "Contact Details": [
         "Detalii contact"
@@ -10932,6 +11147,9 @@
       "Download ${ date }": [
         "Descărcare ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Descărcați aplicația"
       ],
@@ -10980,8 +11198,14 @@
       "Enable 2FA": [
         "Activare A2F"
       ],
+      "Enable advanced account protection": [
+        "Activare protecție avansată cont"
+      ],
       "Enable drive search": [
         "Activare căutare în unitate"
+      ],
+      "Enhance security with 2FA": [
+        "Îmbunătățiți securitatea cu A2F"
       ],
       "Enter 2FA code": [
         "Introduceți codul de A2F"
@@ -11052,6 +11276,9 @@
       ],
       "Import contacts": [
         "Importare contacte"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importați e-mailuri, calendare, contacte"
       ],
       "Import events": [
         "Importare evenimente"
@@ -11176,6 +11403,12 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
+      "Org setup": [
+        "Setare organizație"
+      ],
+      "Organization setup": [
+        "Setare organizație"
+      ],
       "Original size": [
         "Dimensiune originală"
       ],
@@ -11286,14 +11519,26 @@
       "Select link expiration time": [
         "Selectați ora expirării legăturii web"
       ],
+      "Set recovery methods": [
+        "Setați metodele de recuperare"
+      ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Set up email forwarding": [
+        "Setare redirecționare mesaje"
+      ],
+      "Set up your organization": [
+        "Setați organizația"
       ],
       "Settings": [
         "Setări"
       ],
       "Share ${ name }": [
         "Partajare ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Partajați-vă calendarul cu echipa proprie"
       ],
       "Shared": [
         "Partajat"
@@ -11309,6 +11554,12 @@
       ],
       "Sign out": [
         "Deconectare"
+      ],
+      "Simplify email distribution": [
+        "Simplificați distribuirea mesajelor"
+      ],
+      "Simplify password management": [
+        "Simplificați gestionarea parolelor"
       ],
       "Size": [
         "Mărime"
@@ -11355,6 +11606,9 @@
       "Trash": [
         "Gunoi"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activare ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Tip"
       ],
@@ -11367,6 +11621,12 @@
       "Upgrade complete!": [
         "Modificare finalizată!"
       ],
+      "Upgrading your Photos experience": [
+        "Se îmbunătățește experiența cu fotografiile"
+      ],
+      "Upload and share files": [
+        "Încărcați și partajați fișiere"
+      ],
       "Uploaded": [
         "Încărcat"
       ],
@@ -11375,6 +11635,9 @@
       ],
       "Uploading a large file or folder": [
         "Se încarcă un fișier sau folder mare"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
       "Verification failed": [
         "Verificarea a eșuat"
@@ -11399,6 +11662,9 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Bun venit la ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "De ce te poate proteja un VPN?"
