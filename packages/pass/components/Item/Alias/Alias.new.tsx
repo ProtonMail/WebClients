@@ -14,11 +14,11 @@ import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField'
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGradient';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';

@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Icon } from '@proton/components';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
