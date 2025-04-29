@@ -1,5 +1,6 @@
 import type { VERIFICATION_STATUS } from '@proton/crypto';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import type { DriveFileRevision } from '../_revisions';
 
@@ -10,6 +11,7 @@ import type { DriveFileRevision } from '../_revisions';
 interface Link {
     linkId: string;
     parentLinkId: string;
+    type: LinkType;
     isFile: boolean;
     name: string;
     mimeType: string;

@@ -144,6 +144,15 @@ export enum SharedURLFlags {
     GeneratedPasswordWithCustom = 3,
 }
 
+export enum ShareTargetType {
+    Root = 0,
+    Folder = 1,
+    File = 2,
+    Album = 3,
+    Photo = 4,
+    ProtonVendor = 5,
+}
+
 export interface AbuseReportPayload {
     ShareURL: string;
     Password?: string;
@@ -192,6 +201,7 @@ export interface ListDrivePendingInvitationsPayload {
         VolumeID: string;
         ShareID: string;
         InvitationID: string;
+        ShareTargetType: ShareTargetType | null;
     }[];
     AnchorID: string;
     More: boolean;
