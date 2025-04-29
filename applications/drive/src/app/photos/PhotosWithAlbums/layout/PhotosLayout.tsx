@@ -190,7 +190,6 @@ export const PhotosLayout = () => {
     const hasPreview = !!previewItem && currentPageType !== AlbumsPageTypes.ALBUMS;
     const previewShareId = albumShareId || shareId;
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
-    const isAlbumsWithCopyEnabled = unleashVanillaStore.getState().isEnabled('DriveWebAlbumsPhotoCopy');
     const isGalleryOrAdmin =
         currentPageType === AlbumsPageTypes.GALLERY ||
         (currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album?.permissions.isAdmin);
@@ -749,7 +748,7 @@ export const PhotosLayout = () => {
                         onLeaveAlbum={onLeaveAlbum}
                         onShowDetails={onShowDetails}
                         onRemoveAlbumPhotos={onRemoveAlbumPhotos}
-                        onSavePhoto={isAlbumsWithCopyEnabled ? onSavePhoto : undefined}
+                        onSavePhoto={onSavePhoto}
                         onStartUpload={handleRedirectToAlbum}
                     />
                 }
