@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import monitorSVG from '@proton/pass/assets/monitor/upgrade.svg';
 import onboardingSVG from '@proton/pass/assets/onboarding.svg';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { type AdapativeModalProps, AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { type UpsellRef } from '@proton/pass/constants';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 

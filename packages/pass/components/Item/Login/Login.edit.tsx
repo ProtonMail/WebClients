@@ -16,8 +16,8 @@ import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField'
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '@proton/pass/components/Form/Field/UrlGroupField';
 import { LoginEditCredentials } from '@proton/pass/components/Item/Login/Login.edit.credentials';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
