@@ -216,6 +216,9 @@ module.exports = ({
 
         logical && new PostCssLogicalWebpackPlugin(),
 
-        analyze && new BundleAnalyzerPlugin(),
+        analyze &&
+            new BundleAnalyzerPlugin({
+                excludeAssets: `assets/static/locales`,
+            }),
     ].filter(Boolean);
 };
