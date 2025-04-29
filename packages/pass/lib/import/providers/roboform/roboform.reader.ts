@@ -9,9 +9,8 @@ import {
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
@@ -32,6 +31,7 @@ const formatOtpAuthUri = (item: RoboformItem): Maybe<string> => {
 export const readRoboformData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
+    const vaults: ImportVault[] = [];
 
     try {
         const data = await file.text();
@@ -40,10 +40,8 @@ export const readRoboformData = async (file: File): Promise<ImportReaderResult> 
             onError: (error) => warnings.push(error),
         });
 
-        /*
-         * Skips the first row (headers) and maps results to an array of RoboformItem's.
-         */
-        const items: RoboformItem[] = result.items
+        /** Skips the first row (headers) and maps results to an array of RoboformItem's. */
+        const parsed: RoboformItem[] = result.items
             .slice(1)
             .map(([Name, Url, MatchUrl, Login, Pwd, Note, Folder, ...RfFieldsV2]) => ({
                 Name,
@@ -56,13 +54,12 @@ export const readRoboformData = async (file: File): Promise<ImportReaderResult> 
                 RfFieldsV2,
             }));
 
-        const groupedByVault = groupByKey(items, 'Folder');
+        for (const vaultItems of groupByKey(parsed, 'Folder')) {
+            const vaultName = vaultItems[0].Folder;
+            const items: ItemImportIntent[] = [];
 
-        const vaults: ImportVault[] = groupedByVault.map((roboformItems) => {
-            const vaultName = roboformItems[0].Folder;
-
-            const items = roboformItems
-                .map((item) => {
+            for (const item of vaultItems) {
+                const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
                     try {
                         /* Bookmark */
                         if (item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
@@ -86,24 +83,26 @@ export const readRoboformData = async (file: File): Promise<ImportReaderResult> 
                             name: item.Name,
                             urls: [item.MatchUrl],
                             note: item.Note,
-                            ...getEmailOrUsername(item.Login),
                             password: item.Pwd,
                             totp: formatOtpAuthUri(item),
+                            ...(await getEmailOrUsername(item.Login)),
                         });
                     } catch (err) {
                         const title = item?.Name ?? '';
                         ignored.push(`[${c('Label').t`Unknown`}] ${title}`);
                         logger.warn('[Importer::Roboform]', err);
                     }
-                })
-                .filter(truthy);
+                })();
 
-            return {
+                if (value) items.push(value);
+            }
+
+            vaults.push({
                 shareId: null,
                 name: getImportedVaultName(vaultName),
                 items,
-            };
-        });
+            });
+        }
 
         return { vaults, ignored, warnings };
     } catch (e) {

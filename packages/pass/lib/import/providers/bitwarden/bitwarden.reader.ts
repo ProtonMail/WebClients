@@ -13,7 +13,6 @@ import {
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 import { type BitwardenData, type BitwardenItem, BitwardenType } from './bitwarden.types';
@@ -45,11 +44,13 @@ export const readBitwardenData = async (file: File): Promise<ImportReaderResult>
         const data = await file.text();
         const parsedData = JSON.parse(data) as BitwardenData;
         const { items, encrypted, folders = [], collections = [] } = parsedData;
+
         if (encrypted) throw new ImportReaderError(c('Error').t`Encrypted JSON not supported`);
         if (!Array.isArray(items) || !Array.isArray(folders) || !Array.isArray(collections)) {
             throw new ImportReaderError(c('Error').t`Importing items failed`);
         }
 
+        const vaults: ImportVault[] = [];
         const ignored: string[] = [];
 
         // Collections and folders are mutually exclusive ** after exporting **,
@@ -59,25 +60,25 @@ export const readBitwardenData = async (file: File): Promise<ImportReaderResult>
         const folderMap = keyBy(isB2B ? collections : folders, 'id');
         const mappedItems = isB2B ? items.map((i) => ({ ...i, folderId: i.collectionIds?.at(0) || null })) : items;
 
-        const groupedItems = groupBy(mappedItems, 'folderId');
-        const vaults: ImportVault[] = Object.entries(groupedItems).map(([folderId, items]) => ({
-            name: getImportedVaultName(folderMap[folderId ?? '']?.name),
-            shareId: null,
-            items: items
-                .map((item): Maybe<ItemImportIntent> => {
-                    try {
+        for (const [folderId, vaultItems] of Object.entries(groupBy(mappedItems, 'folderId'))) {
+            const name = getImportedVaultName(folderMap[folderId ?? '']?.name);
+            const items: ItemImportIntent[] = [];
+
+            for (const item of vaultItems) {
+                try {
+                    const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
                         switch (item.type) {
                             case BitwardenType.LOGIN:
                                 const urls = extractBitwardenUrls(item);
                                 return importLoginItem({
                                     name: item.name,
                                     note: item.notes,
-                                    ...getEmailOrUsername(item.login.username),
                                     password: item.login.password,
                                     urls: urls.web,
                                     totp: item.login.totp,
                                     appIds: urls.android,
                                     extraFields: extractBitwardenExtraFields(item.fields),
+                                    ...(await getEmailOrUsername(item.login.username)),
                                 });
                             case BitwardenType.NOTE:
                                 addCustomFieldsWarning(ignored, item);
@@ -103,13 +104,18 @@ export const readBitwardenData = async (file: File): Promise<ImportReaderResult>
                                     ...extractBitwardenIdentity(item),
                                 });
                         }
-                    } catch (err) {
-                        ignored.push(c('Error').t`[Error] an item could not be parsed`);
-                        logger.warn('[Importer::Bitwarden]', err);
-                    }
-                })
-                .filter(truthy),
-        }));
+                    })();
+
+                    if (!value) ignored.push(`[${item.type}] ${item.name}`);
+                    else items.push(value);
+                } catch (err) {
+                    ignored.push(`[${item.type}] ${item.name}`);
+                    logger.warn('[Importer::Bitwarden]', err);
+                }
+            }
+
+            vaults.push({ name, shareId: null, items });
+        }
 
         return { vaults, ignored, warnings: [] };
     } catch (e) {
