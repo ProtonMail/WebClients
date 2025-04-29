@@ -41,6 +41,7 @@ import { useDeleteAlbumModal } from '../../PhotosModals/DeleteAlbumModal';
 import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosModal';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
+import { TempPhotosRecoveryWarningBanner } from '../components/PhotosRecoveryBanner/TempPhotosRecoveryWarningBanner';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
 import { TitleArea } from '../toolbar/TitleArea';
 import { Toolbar } from '../toolbar/Toolbar';
@@ -649,6 +650,9 @@ export const PhotosLayout = () => {
             )}
 
             <PhotosRecoveryBanner />
+
+            {/* TODO: Temporary until we handle photos recovery */}
+            <TempPhotosRecoveryWarningBanner />
 
             {hasPreview && (
                 <PortalPreview
