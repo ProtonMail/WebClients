@@ -128,7 +128,7 @@
         "Cancelar tu suscripción"
       ],
       "Change sort order": [
-        "Cambiar orden"
+        "Cambiar el orden"
       ],
       "characters": [
         "caracteres"
@@ -164,7 +164,7 @@
         "Cerrar este banner"
       ],
       "Collaborate on documents": [
-        "Colaborar con documentos"
+        "Colabora en documentos"
       ],
       "Collapse": [
         "Minimizar"
@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Copiar el enlace de invitación"
       ],
+      "Copy password": [
+        "Copiar la contraseña"
+      ],
       "Copy version number to clipboard": [
         "Copiar el número de versión en el portapapeles"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Crear una nueva carpeta"
+      ],
+      "Create new password": [
+        "Crear una contraseña nueva"
       ],
       "Current plan": [
         "Plan actual"
@@ -298,7 +304,7 @@
         "Descargar"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Descargar las apps de ${ DRIVE_APP_NAME }"
+        "Descargar las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
       "Download anyway": [
         "Descargar de todos modos"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
+      ],
+      "Generate password": [
+        "Generar contraseña"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtén ${ planName } por ${ priceCoupon }"
@@ -451,7 +460,7 @@
         "Administrar carpetas"
       ],
       "Manage groups": [
-        "Administrar grupos"
+        "Administrar los grupos"
       ],
       "Manage labels": [
         "Administrar etiquetas"
@@ -592,7 +601,7 @@
         "Eliminar los beneficios"
       ],
       "Remove button": [
-        "Eliminar botón"
+        "Eliminar el botón"
       ],
       "Remove gift code": [
         "Eliminar el código de regalo"
@@ -679,7 +688,7 @@
         "Seleccionar un país"
       ],
       "Set recovery methods": [
-        "Establecer métodos de recuperación"
+        "Establecer los métodos de recuperación"
       ],
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
@@ -753,6 +762,9 @@
       "Take out of trash": [
         "Restaurar de la papelera"
       ],
+      "Trashing...": [
+        "Eliminando..."
+      ],
       "Trust": [
         "Confiar"
       ],
@@ -793,7 +805,7 @@
         "Mejora a ${ BRAND_NAME } Unlimited"
       ],
       "Upload and share files": [
-        "Subir y compartir archivos"
+        "Cargar y compartir archivos"
       ],
       "Upload anyway": [
         "Cargar de todos modos"
@@ -805,10 +817,10 @@
         "Utilizar tema ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Usar ${ PASS_APP_NAME } para Business"
+        "Usar ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
-        "Usar ${ VPN_SHORT_APP_NAME } para privacidad de datos"
+        "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
       "Use a different card": [
         "Utilizar una tarjeta diferente"
@@ -910,8 +922,8 @@
         "${ price } por usuario"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } asiento del asistente de escritura",
-        "${ seats } asientos del asistente de escritura"
+        "${ seats } licencia del asistente de escritura",
+        "${ seats } licencias del asistente de escritura"
       ],
       "${ users } user": [
         "${ users } usuario",
@@ -2335,11 +2347,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } te permite trabajar con otros en un entorno seguro y cifrado."
@@ -2475,6 +2482,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4174,6 +4186,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -4399,7 +4414,7 @@
         "Error al convertir el documento: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "Error al cargar el documento: ${ errorDetail }"
+        "Error al cargar el documento ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error al sincronizar"
@@ -4543,6 +4558,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carga está en proceso, reemplazarla cancela la carga en curso."
       ],
+      "It's better to have:": [
+        "Es mejor tener:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es mejor usar una VPN en todo momento. Pero estos son los casos en que las amenazas de ciberseguridad pueden ser mayores:"
       ],
@@ -4685,6 +4703,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "Offline": [
         "Sin conexión"
       ],
@@ -4723,6 +4744,12 @@
       ],
       "password": [
         "contraseña"
+      ],
+      "Password copied to clipboard": [
+        "Contraseña copiada en el portapapeles"
+      ],
+      "Password must have:": [
+        "La contraseña debe tener:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
@@ -4949,6 +4976,9 @@
       "Surveillance": [
         "Vigilancia"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -5105,9 +5135,6 @@
       "Trash": [
         "Papelera"
       ],
-      "Trashed": [
-        "En la papelera"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
@@ -5125,6 +5152,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede reducir el rendimiento."
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras mayúsculas y minúsculas"
       ],
       "User activated": [
         "Se ha activado el usuario."
@@ -5803,6 +5833,9 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "My files": [
         "Mis archivos"
       ],
@@ -5829,6 +5862,9 @@
       ],
       "Password": [
         "Contraseña"
+      ],
+      "Password strength": [
+        "Nivel de seguridad de la contraseña"
       ],
       "Payer": [
         "Emisor del pago"
@@ -5911,6 +5947,12 @@
       "Street address": [
         "Nombre de la calle"
       ],
+      "Strong": [
+        "Segura"
+      ],
+      "Strong password": [
+        "Contraseña segura"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -5946,6 +5988,18 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contraseña vulnerable"
+      ],
+      "Weak": [
+        "Poco segura"
+      ],
+      "Weak password": [
+        "Contraseña poco segura"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -6072,7 +6126,7 @@
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Cómo usar ${ PASS_APP_NAME } para Business"
+        "Cómo usar ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
         "Cómo usar el reenvío de correo electrónico"
@@ -6743,7 +6797,7 @@
         "Disponible en todas las plataformas"
       ],
       "Calendar sharing": [
-        "Compartir calendario"
+        "Calendarios compartidos"
       ],
       "Catch-all": [
         "Catch-all"
@@ -7841,8 +7895,8 @@
       "Searching": [
         "Buscando"
       ],
-      "Trashed": [
-        "En la papelera"
+      "Trash": [
+        "Papelera"
       ]
     },
     "Participant name": {
@@ -9326,7 +9380,7 @@
         "Añadir a ${ groupName }"
       ],
       "Add user": [
-        "Añadir usuario"
+        "Añadir un usuario"
       ],
       "Addresses": [
         "Direcciones"
@@ -9758,7 +9812,7 @@
         "Selecciona la hora de expiración del enlace."
       ],
       "Set recovery methods": [
-        "Establecer métodos de recuperación"
+        "Establecer los métodos de recuperación"
       ],
       "Set recovery phrase": [
         "Crear una frase de recuperación"
@@ -9857,7 +9911,7 @@
         "Advertencia: sospecha de sitio web falso"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Te damos la bienvenida a ${ BRAND_NAME } para Business"
+        "Te damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "¿De qué te puede proteger una VPN?"

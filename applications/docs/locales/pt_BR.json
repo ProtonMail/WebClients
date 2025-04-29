@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Copiar link de convite"
       ],
+      "Copy password": [
+        "Copiar senha"
+      ],
       "Copy version number to clipboard": [
         "Copiar número da versão para a área de transferência"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Criar uma pasta"
+      ],
+      "Create new password": [
+        "Criar nova senha"
       ],
       "Current plan": [
         "Plano atual"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate password": [
+        "Gerar senha"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenha o ${ planName } por ${ priceCoupon }"
@@ -752,6 +761,9 @@
       ],
       "Take out of trash": [
         "Retirar da lixeira"
+      ],
+      "Trashing...": [
+        "Enviando para a lixeira..."
       ],
       "Trust": [
         "Confiar"
@@ -2335,11 +2347,6 @@
         "Fatura vencida"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
@@ -2475,6 +2482,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4174,6 +4186,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Você tem certeza de que deseja excluir permanentemente os itens selecionados da lixeira?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Pelo menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attention required": [
         "Atenção necessária"
       ],
@@ -4543,6 +4558,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece que você tentou enviar ${ uploadName } recentemente. Em caso de erros de envio, ${ replaceFile }. Se o envio ainda estiver em andamento, substituí-lo cancelará o envio em andamento."
       ],
+      "It's better to have:": [
+        "É melhor ter:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "É melhor usar uma VPN o tempo todo. Mas é aqui que as ameaças à segurança cibernética podem ser maiores:"
       ],
@@ -4685,6 +4703,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "Offline": [
         "Off-line"
       ],
@@ -4723,6 +4744,12 @@
       ],
       "password": [
         "senha"
+      ],
+      "Password copied to clipboard": [
+        "Senha copiada para a área de transferências"
+      ],
+      "Password must have:": [
+        "A senha deve conter:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
@@ -4949,6 +4976,9 @@
       "Surveillance": [
         "Vigilância"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -5105,9 +5135,6 @@
       "Trash": [
         "Lixeira"
       ],
-      "Trashed": [
-        "Lixeira"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
       ],
@@ -5125,6 +5152,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de arquivos de uma só vez pode ter impacto no desempenho."
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas:"
       ],
       "User activated": [
         "Usuário ativado"
@@ -5803,6 +5833,9 @@
       "Move to Inbox": [
         "Mover para Caixa de Entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "My files": [
         "Meus arquivos"
       ],
@@ -5829,6 +5862,9 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "Password strength": [
+        "Força da senha"
       ],
       "Payer": [
         "Pagador"
@@ -5911,6 +5947,12 @@
       "Street address": [
         "Endereço"
       ],
+      "Strong": [
+        "Forte"
+      ],
+      "Strong password": [
+        "Senha forte"
+      ],
       "Subscription options": [
         "Opções de assinatura"
       ],
@@ -5946,6 +5988,18 @@
       ],
       "Viewer": [
         "Visualizador"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Vulnerable password": [
+        "Senha vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
+      ],
+      "Weak password": [
+        "Senha fraca"
       ],
       "What happened?": [
         "O que aconteceu?"
@@ -7162,6 +7216,11 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7174,11 +7233,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7840,7 +7894,7 @@
       "Searching": [
         "Pesquisando"
       ],
-      "Trashed": [
+      "Trash": [
         "Lixeira"
       ]
     },
