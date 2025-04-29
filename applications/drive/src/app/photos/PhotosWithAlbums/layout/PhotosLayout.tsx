@@ -483,6 +483,12 @@ export const PhotosLayout = () => {
         addAlbumPhotosModal.openModal(true);
     }, [addAlbumPhotosModal]);
 
+    const openSharePhotoModal = useCallback(() => {
+        const link = selectedItems[0];
+
+        showLinkSharingModal({ shareId: link.rootShareId, linkId: link.linkId });
+    }, [showLinkSharingModal, selectedItems]);
+
     const onAddAlbumPhotos = useCallback(
         async (albumLinkId: string, linkIds: string[]) => {
             if (!shareId || !linkId || !volumeId) {
@@ -730,6 +736,7 @@ export const PhotosLayout = () => {
                         onAddAlbumPhotos={onAddAlbumPhotosToolbar}
                         openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
                         openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
+                        openSharePhotoModal={openSharePhotoModal}
                         onFileUpload={onPhotoUploadedToAlbum}
                         // In ALBUMSADDPHOTOS we are still in gallery logic,
                         // but if file is skiped it still needs to be added into album if missing

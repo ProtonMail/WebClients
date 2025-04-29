@@ -4,26 +4,23 @@ import { CircleLoader } from '@proton/atoms';
 import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import type { PhotoLink } from '../../../store';
 import { isDecryptedLink } from '../../../store/_photos/utils/isDecryptedLink';
 import { getSharedStatus } from '../../../utils/share';
 
 interface Props {
-    selectedLinks: PhotoLink[];
+    selectedLink: PhotoLink | undefined;
     showIconOnly: boolean;
     dropDownMenuButton?: boolean;
+    onClick: () => void;
 }
 
-const PhotosShareLinkButton = ({ selectedLinks, showIconOnly, dropDownMenuButton = false }: Props) => {
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const link = selectedLinks[0];
-
-    if (!link) {
+const PhotosShareLinkButton = ({ selectedLink, showIconOnly, onClick, dropDownMenuButton = false }: Props) => {
+    if (!selectedLink) {
         return null;
     }
 
-    if (!isDecryptedLink(link)) {
+    if (!isDecryptedLink(selectedLink)) {
         return (
             <ToolbarButton
                 title={c('Action').t`Loading link`}
@@ -34,8 +31,8 @@ const PhotosShareLinkButton = ({ selectedLinks, showIconOnly, dropDownMenuButton
         );
     }
 
-    const sharedStatus = getSharedStatus(link);
-    const hasSharedLink = !!link.shareUrl;
+    const sharedStatus = getSharedStatus(selectedLink);
+    const hasSharedLink = !!selectedLink.shareUrl;
     const iconName = sharedStatus === 'shared' ? 'users' : 'user-plus';
     const ButtonComp = dropDownMenuButton ? DropdownMenuButton : ToolbarButton;
 
@@ -43,7 +40,7 @@ const PhotosShareLinkButton = ({ selectedLinks, showIconOnly, dropDownMenuButton
         <>
             <ButtonComp
                 title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
-                onClick={() => showLinkSharingModal({ shareId: link.rootShareId, linkId: link.linkId })}
+                onClick={() => onClick()}
                 data-testid={hasSharedLink ? 'toolbar-manage-link' : 'toolbar-share-link'}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
@@ -52,7 +49,6 @@ const PhotosShareLinkButton = ({ selectedLinks, showIconOnly, dropDownMenuButton
                     {hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Share`}
                 </span>
             </ButtonComp>
-            {linkSharingModal}
         </>
     );
 };
