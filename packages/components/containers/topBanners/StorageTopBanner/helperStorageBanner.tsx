@@ -13,8 +13,6 @@ import {
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
 
-import { APP_NAME } from 'proton-mail/config';
-
 const getStr = (percentage: number, storage: ReactNode, cta: ReactNode) => {
     if (percentage >= 100) {
         // Translator: Your Drive storage is full. To upload or sync files, free up space or upgrade for more storage.
@@ -61,9 +59,9 @@ export const getStorageFull = ({
     }
 };
 
-export const getStorageUpsell = (app?: APP_NAMES) => {
+export const getStorageUpsell = (app: APP_NAMES) => {
     return getUpsellRefFromApp({
-        app: APP_NAME,
+        app,
         feature: SHARED_UPSELL_PATHS.STORAGE_PERCENTAGE,
         component: UPSELL_COMPONENT.MODAL,
         fromApp: app,
