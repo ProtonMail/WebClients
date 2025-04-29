@@ -50,6 +50,7 @@ const FAILING_FETCH_BACKOFF_MS = 10 * 60 * 1000; // 10 minutes.
 const generateCorruptDecryptedLink = (encryptedLink: EncryptedLink, name: string): DecryptedLink => ({
     encryptedName: encryptedLink.name,
     name,
+    type: encryptedLink.type,
     linkId: encryptedLink.linkId,
     createTime: encryptedLink.createTime,
     corruptedLink: true,
