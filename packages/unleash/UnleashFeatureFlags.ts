@@ -113,13 +113,10 @@ enum DriveFeatureFlag {
     DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
     // Experiment
     DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
-    DriveWebSafariSearch = 'DriveWebSafariSearch',
-    DriveWebIWADSupport = 'DriveWebIWADSupport',
     // Albums
     DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
     DriveAlbumsTempDisabledOnRelease = 'DriveAlbumsTempDisabledOnRelease',
-    DriveWebAlbumsPhotoCopy = 'DriveWebAlbumsPhotoCopy',
     // One-dollar offer
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
