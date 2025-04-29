@@ -1,5 +1,3 @@
-ARG PLAYWRIGHT_VERSION="v1.51.1"
-
 FROM node:22.14.0-alpine AS build
 
 WORKDIR /clients
@@ -13,7 +11,7 @@ WORKDIR /clients/packages/storybook
 
 RUN yarn storybook:build
 
-FROM harbor.protontech.ch/mcr.microsoft.com/playwright:${PLAYWRIGHT_VERSION}-noble AS tests
+FROM harbor.protontech.ch/mcr.microsoft.com/playwright:v1.52.0-noble AS tests
 
 # TODO: Only copy what's needed for Storybook
 COPY --from=build /clients /clients

@@ -7,11 +7,13 @@
         "docker:build": "docker build -f Dockerfile -t storybook-atoms ../../",
         "docker:run": "docker run -it -p 3000:3000 -v .:/clients/packages/storybook --name storybook-atoms storybook-atoms:latest",
         "playwright:test": "playwright test --config=playwright.config.ts",
+        "playwright:test:update": "yarn run playwright:test -u",
         "storybook:build": "storybook build",
         "storybook:build:serve": "http-server ./storybook-static --cors --port 3000 --silent",
         "storybook:build:wait": "wait-on http://localhost:3000",
         "storybook:dev": "storybook dev -p 6007",
-        "storybook:test:visual": "yarn storybook:build:wait && yarn playwright:test"
+        "storybook:test:visual": "yarn storybook:build:wait && yarn playwright:test",
+        "storybook:test:visual:update": "yarn storybook:build:wait && yarn playwright:test:update"
     },
     "dependencies": {
         "@proton/atoms": "workspace:^",
