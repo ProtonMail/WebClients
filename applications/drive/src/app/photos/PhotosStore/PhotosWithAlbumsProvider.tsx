@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react';
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -140,7 +140,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
     const [migrationStatus, setMigrationStatus] = useState<MIGRATION_STATUS>(MIGRATION_STATUS.UNKNOWN);
-    const [currentAlbumLinkId, setCurrentAlbumLinkId] = useState<string>();
+    const currentAlbumLinkId = useRef<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
     const { getShareWithKey, getShare, getShareCreatorKeys } = useShare();
     const { getSharePermissions } = useDirectSharingInfo();
@@ -271,8 +271,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 );
                 if (Code === 1000) {
                     const photosData = Photos.map(photoPayloadToPhotos);
-                    if (!currentAlbumLinkId || currentAlbumLinkId !== albumLinkId) {
-                        setCurrentAlbumLinkId(albumLinkId);
+                    if (!currentAlbumLinkId.current || currentAlbumLinkId.current !== albumLinkId) {
+                        currentAlbumLinkId.current = albumLinkId;
                         // We swapped album, so we remove previous ones from state
                         setAlbumPhotos(
                             photosData.map((photo) => {
@@ -312,7 +312,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             setIsAlbumPhotosLoading(true);
             void albumPhotosCall();
         },
-        [request, currentAlbumLinkId, volumeId, shareId, getShare]
+        [request, volumeId, shareId, getShare]
     );
 
     // TODO: this is not working - not called in the right place + not cleaning properly as it should
@@ -766,14 +766,21 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             // We just need to add them to the list
             // For other cases, it's safer to loadAlbumPhotos (request to API) to prevent new photos loading issues
             if (fromUpload) {
-                setAlbumPhotos((currentAlbumPhotos) => [...currentAlbumPhotos, ...allNewAlbumPhotos]);
+                if (currentAlbumLinkId.current === albumLinkId) {
+                    setAlbumPhotos((currentAlbumPhotos) => [...currentAlbumPhotos, ...allNewAlbumPhotos]);
+                    // Reload albums to reload cover of current album - first photo is automatically set as cover.
+                    if (albumPhotos.length === 0) {
+                        void loadAlbums(abortSignal);
+                    }
+                }
             } else {
                 void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
+                showNotifications(result, albumName, fromUpload);
+                // Reload albums to reload cover of current album - first photo is automatically set as cover.
+                if (albumPhotos.length === 0) {
+                    void loadAlbums(abortSignal);
+                }
             }
-            if (albumPhotos.length === 0) {
-                void loadAlbums(abortSignal);
-            }
-            showNotifications(result, albumName, fromUpload);
         },
         [
             shareId,
@@ -805,7 +812,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 newParentLinkId: photosShare.rootLinkId,
             });
         },
-        [albums, currentAlbumLinkId, favoritePhotoLink, photosShare]
+        [albums, favoritePhotoLink, photosShare]
     );
 
     const removeTagsFromPhoto = useCallback(
