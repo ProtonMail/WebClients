@@ -152,10 +152,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -1776,10 +1776,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -3750,14 +3746,14 @@
       "Enter coupon code": [
         "Ange kupongkod"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Ange ditt lösenord för ${ BRAND_NAME }"
+      ],
       "Enter your backup password": [
         "Ange ditt reservlösenord"
       ],
       "Enter your extra password": [
         "Ange ditt extralösenord"
-      ],
-      "Enter your password": [
-        "Ange ditt lösenord"
       ],
       "Enter your PIN": [
         "Ange din PIN-kod"

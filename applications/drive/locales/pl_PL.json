@@ -252,6 +252,9 @@
       "Copy link": [
         "Kopiuj link"
       ],
+      "Copy password": [
+        "Kopiuj hasło"
+      ],
       "Copy version number to clipboard": [
         "Kopiuj numer wersji do schowka"
       ],
@@ -275,6 +278,9 @@
       ],
       "Create new folder": [
         "Utwórz nowy folder"
+      ],
+      "Create new password": [
+        "Utwórz nowe hasło"
       ],
       "Create new text file": [
         "Utwórz nowy plik tekstowy"
@@ -440,6 +446,9 @@
       ],
       "Forward as attachment": [
         "Przekaż jako załącznik"
+      ],
+      "Generate password": [
+        "Generuj hasło"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Wybierz plan ${ planName } za ${ priceCoupon }"
@@ -3090,6 +3099,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Zewnętrzne zaproszenia są tymczasowo wyłączone. Spróbuj ponownie później"
       ],
+      "Failed to copy photo to album": [
+        "Nie udało się skopiować zdjęcia do albumu"
+      ],
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
       ],
@@ -3233,9 +3245,6 @@
       ],
       "Payment process not supported": [
         "Przetwarzanie płatności nie jest obsługiwane"
-      ],
-      "Photo saved to your Drive": [
-        "Zdjęcie zostało zapisane na dysku"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Przesyłanie zdjęć jest tymczasowo wyłączone. Spróbuj ponownie później"
@@ -4496,6 +4505,12 @@
         "Transfer ${ pausedCount } plików został wstrzymany",
         "Transfer ${ pausedCount } plików został wstrzymany"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } element",
+        "${ photoCount } elementy",
+        "${ photoCount } elementów",
+        "${ photoCount } elementów"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -4735,6 +4750,9 @@
       ],
       "Are you sure you want to proceed?": [
         "Czy na pewno chcesz kontynuować?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minimum ${ BETTER_PASSWORD_LENGTH } znaków"
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -5192,6 +5210,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Próbujesz przesłać plik ${ uploadName }. ${ replaceFile }, jeśli przesyłanie nie powiodło się. Jeśli przesyłanie jest w toku, zastąpienie pliku spowoduje anulowanie przesyłania."
       ],
+      "It's better to have:": [
+        "Lepiej mieć:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elementy w koszu pozostaną tutaj, dopóki nie zostaną trwale usunięte"
       ],
@@ -5357,6 +5378,9 @@
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
+      "Numbers": [
+        "Cyfry"
+      ],
       "of": [
         "z"
       ],
@@ -5405,6 +5429,12 @@
       "password": [
         "hasło"
       ],
+      "Password copied to clipboard": [
+        "Hasło zostało skopiowane do schowka"
+      ],
+      "Password must have:": [
+        "Hasło musi zawierać:"
+      ],
       "Paused": [
         "Wstrzymano"
       ],
@@ -5429,6 +5459,12 @@
       "Photo is set as album cover": [
         "Zdjęcie jest ustawione jako okładka albumu"
       ],
+      "Photo saved to your Drive": [
+        "Zdjęcie zostało zapisane na dysku"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Zdjęcie zostało skopiowane do osi czasu i dodane do ulubionych."
+      ],
       "Photos have been successfully recovered.": [
         "Zdjęcia zostały odzyskane."
       ],
@@ -5443,6 +5479,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Wpisz hasło, aby odszyfrować zawartość."
+      ],
+      "Please fill in all required fields.": [
+        "Uzupełnij wszystkie wymagane pola."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tych grup NIE zostaną usunięte."
@@ -5636,6 +5675,9 @@
       "Setting up ${ feature }…": [
         "Konfigurowanie ${ feature }…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Konfigurowanie albumów i filtrów. Proces może potrwać kilka minut."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
       ],
@@ -5731,6 +5773,9 @@
       ],
       "Surveillance": [
         "Inwigilacja"
+      ],
+      "Symbols (#$&)": [
+        "Znaki specjalne (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -5971,6 +6016,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
+      ],
+      "Uppercase and lowercase letters": [
+        "Wielkie i małe litery"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Użyj tego formularza, aby powiadomić nas o nieodpowiednich, nielegalnych lub złośliwych plikach. Zamierzasz zgłosić:"
@@ -6771,6 +6819,9 @@
       "Move to Inbox": [
         "Przenieś do Odebranych"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Minimum ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
       "My Albums": [
         "Moje albumy"
       ],
@@ -6806,6 +6857,9 @@
       ],
       "Password": [
         "Hasło"
+      ],
+      "Password strength": [
+        "Siła hasła"
       ],
       "Payer": [
         "Płatnik"
@@ -6924,6 +6978,12 @@
       "Street address": [
         "Ulica"
       ],
+      "Strong": [
+        "Silne"
+      ],
+      "Strong password": [
+        "Silne hasło"
+      ],
       "Subscription options": [
         "Opcje subskrypcji"
       ],
@@ -6980,6 +7040,18 @@
       ],
       "Viewer": [
         "Odczyt"
+      ],
+      "Vulnerable": [
+        "Bardzo słabe"
+      ],
+      "Vulnerable password": [
+        "Słabe hasło"
+      ],
+      "Weak": [
+        "Słabe"
+      ],
+      "Weak password": [
+        "Słabe hasło"
       ],
       "What happened?": [
         "Co się stało?"
@@ -7625,29 +7697,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Od ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -7669,6 +7718,29 @@
       ],
       "Switch plan": [
         "Zmień plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8857,6 +8929,9 @@
       "Root folder failed to be loaded": [
         "Załadowanie głównego folderu nie powiodło się"
       ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Wybrane zdjęcia znajdują się już w albumie „${ albumName }”"
+      ],
       "Share invitation accepted successfully": [
         "Zaproszenie zostało zaakceptowane"
       ],
@@ -8911,11 +8986,23 @@
       "Your old files will be deleted in 72 hours": [
         "Stare pliki zostaną usunięte w ciągu 72 godzin"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Twoje zdjęcia zostały dodane do albumu „${ albumName }”"
+      ],
       "Your settings failed to be saved": [
         "Zapisywanie ustawień nie powiodło się"
       ],
       "Your settings have been changed successfully": [
         "Ustawienia zostały zmienione"
+      ],
+      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
+        "Nie udało się dodać niektórych zdjęć do albumu „${ albumName }”"
+      ],
+      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Nie udało się usunąć niektórych zdjęć z ${ albumLink.name }"
+      ],
+      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
+        "Twoje zdjęcia zostały usunięte z ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10742,6 +10829,11 @@
         "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Zaoszczędź ${ priceString }"
+      ]
+    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Albumy udostępnione Ci pojawią się tutaj"
@@ -11793,6 +11885,9 @@
       ],
       "Upgrade complete!": [
         "Ulepszenie zakończone!"
+      ],
+      "Upgrading your Photos experience": [
+        "Ulepszanie funkcji zdjęć"
       ],
       "Upload and share files": [
         "Prześlij i udostępnij pliki"

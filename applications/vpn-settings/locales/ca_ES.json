@@ -262,6 +262,9 @@
       "Discard changes": [
         "Descarta els canvis"
       ],
+      "Discard Changes": [
+        "Descarta els canvis"
+      ],
       "Discover ${ planName }": [
         "Descobriu ${ planName }"
       ],
@@ -281,7 +284,7 @@
         "Baixa"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
       "Download CSV sample": [
         "Descarrega una mostra de CSV"
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Ajusta a la finestra"
       ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
+      ],
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Convida l'usuari"
+      ],
+      "Keep Editing": [
+        "Continua editant"
       ],
       "Keep logo": [
         "Manté el logo"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Remove": [
         "Esborra"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "select file": [
-        "selecciona un fitxer"
-      ],
       "Select file": [
         "Selecciona un fitxer"
+      ],
+      "select file": [
+        "selecciona un fitxer"
       ],
       "Send code": [
         "Enviar codi"
@@ -3841,9 +3850,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Accions"
-      ],
       "App version": [
         "Versió de l'aplicació"
       ],
@@ -3859,17 +3865,11 @@
       "Device": [
         "Dispositiu"
       ],
-      "Enabled Countries": [
-        "Països activats"
-      ],
       "Enter your email address": [
         "Introduïu la vostra adreça de correu electrònic"
       ],
       "Event": [
         "Esdeveniment"
-      ],
-      "Groups": [
-        "Grups"
       ],
       "IP address": [
         "Adreça IP"
@@ -3888,9 +3888,6 @@
       ],
       "Organization key fingerprint": [
         "Clau d'identificació de la clau d'organització"
-      ],
-      "Policy Name": [
-        "Nom de la política"
       ],
       "Protection": [
         "Protecció"
@@ -4149,8 +4146,15 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mes)"
       ],
+      "(default)": [
+        "(per defecte)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obteniu una adreça de ${ BRAND_NAME }** per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } més",
+        "+ ${ invisibleCount } més"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -4410,9 +4414,6 @@
       "Create your first Gateway": [
         "Creeu la vostra primera passarel·la"
       ],
-      "Created (not published)": [
-        "Creat (no publicat)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "S'està creant un servidor de passarel·la: ${ serverNumber } / ${ total }",
         "S'estan creant servidors de passarel·la: ${ serverNumber } / ${ total }"
@@ -4458,9 +4459,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
-      ],
-      "Deleted (not published)": [
-        "Eliminat (no publicat)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
@@ -4554,9 +4552,6 @@
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
-      "Edited (not published)": [
-        "Editat (no publicat)"
-      ],
       "eduGAIN configuration saved": [
         "S'ha desat la configuració d'EduGain."
       ],
@@ -4643,6 +4638,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduïu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduïu la vostra contrasenya (com a administrador d'organització)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduïu la vostra adreça de correu electrònic de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
@@ -4998,6 +4996,9 @@
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
+      "No single sign-on": [
+        "Sense inici de sessió únic"
+      ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
@@ -5075,14 +5076,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters."
       ],
+      "Password must have:": [
+        "La contrasenya ha de tenir:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Premi Editors' Choice de PC Magazine amb una puntuació de 5 sobre 5 estrelles"
-      ],
-      "Pending removal": [
-        "L'eliminació està pendent."
       ],
       "per month": [
         "al mes"
@@ -5411,6 +5412,9 @@
       "The securest way to browse, stream, and be online.": [
         "La manera més segura de navegar, reproduir i estar en línia."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Els canvis no publicats que heu fet es perdran."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
       ],
@@ -5449,6 +5453,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Aquest missatge no arribarà a l'equip de suport. Si teniu un problema amb el nostre servei o necessiteu més assistència per part nostra, ${ supportLink }"
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Aquest servei no està disponible per als usuaris que inicien la sessió amb l’inici de sessió únic."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Actualment, aquest usuari és responsable dels pagaments de la vostra organització. Degradant aquest membre, sereu responsable dels pagaments de la vostra organització."
@@ -5573,9 +5580,6 @@
       "Unable to check gateways monitoring current status.": [
         "No es pot comprovar l'estat actual de la supervisió de les passarel·les."
       ],
-      "Unchanged": [
-        "Sense canvis"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
       ],
@@ -5624,11 +5628,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "Username": [
-        "Nom d'usuari"
-      ],
       "username": [
         "nom d'usuari"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -5822,6 +5826,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Podeu aplicar les regles de contrasenya que els membres de la vostra organització utilitzaran quan creïn o restableixin la contrasenya del seu compte de ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Podeu obtenir tots els nostres serveis de privadesa prèmium en un sol paquet—i només costa **${ priceString }/mes**."
@@ -6177,10 +6184,10 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6267,6 +6274,9 @@
       "Colors": [
         "Colors"
       ],
+      "Common passwords": [
+        "Contrasenyes comunes"
+      ],
       "Company": [
         "Empresa"
       ],
@@ -6336,6 +6346,9 @@
       "Digits": [
         "Xifres"
       ],
+      "Disabled": [
+        "Desactivada"
+      ],
       "Display name": [
         "Nom a mostrar"
       ],
@@ -6359,6 +6372,9 @@
       ],
       "Email or username": [
         "Correu electrònic o nom d'usuari"
+      ],
+      "Enabled": [
+        "Habilitat"
       ],
       "Enter the code displayed on your TV": [
         "Introduïu el codi que es mostra al televisor"
@@ -6438,6 +6454,9 @@
       "Main": [
         "Principal"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "El nombre màxim de caràcters és ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Membres sense 2FA"
       ],
@@ -6449,6 +6468,12 @@
       ],
       "Method for importing metadata": [
         "Mètode per a importar metadades"
+      ],
+      "Minimum number of characters": [
+        "Nombre mínim de caràcters"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "El nombre mínim de caràcters és ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -6495,6 +6520,9 @@
       "Notification": [
         "Notificació"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "OpenVPN / IKEv2 password": [
         "Contrasenya OpenVPN / IKEv2"
       ],
@@ -6524,6 +6552,9 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password strength": [
+        "Solidesa de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -6606,6 +6637,9 @@
       "Second password": [
         "Segona contrasenya"
       ],
+      "Sequences": [
+        "Seqüències"
+      ],
       "Show ${ n } administrator": [
         "Mostra ${ n } administrador",
         "Mostra ${ n } administradors"
@@ -6618,6 +6652,9 @@
       ],
       "Spam": [
         "Correu brossa"
+      ],
+      "Special characters": [
+        "Caràcters especials"
       ],
       "Start date": [
         "Data d'inici"
@@ -6654,6 +6691,9 @@
       ],
       "Type": [
         "Tipus"
+      ],
+      "Uppercase and lowercase letters": [
+        "Majúscules i minúscules"
       ],
       "User": [
         "Usuari"
@@ -6714,6 +6754,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
+      ],
+      "Your password (admin)": [
+        "La seva contrasenya (admin)"
       ],
       "ZIP code": [
         "Codi postal"
@@ -6857,6 +6900,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Com col·laborar al ${ DOCS_SHORT_APP_NAME }?"
+      ],
+      "How to create strong passwords": [
+        "Com crear contrasenyes fortes?"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Com habilitar ${ PROTON_SENTINEL_NAME }?"
@@ -7176,6 +7222,29 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Elimina el compte"
+      ],
+      "Downgrade account": [
+        "Passa a un pla inferior"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obtén ${ BRAND_NAME } gratuïtament"
+      ],
+      "Get ${ planName }": [
+        "Obteniu ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Segueix amb ${ plan }"
+      ],
+      "Keep account": [
+        "Conserva el compte"
+      ],
+      "Switch plan": [
+        "Canvia de pla"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
@@ -7200,29 +7269,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Elimina el compte"
-      ],
-      "Downgrade account": [
-        "Passa a un pla inferior"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtén ${ BRAND_NAME } gratuïtament"
-      ],
-      "Get ${ planName }": [
-        "Obteniu ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Segueix amb ${ plan }"
-      ],
-      "Keep account": [
-        "Conserva el compte"
-      ],
-      "Switch plan": [
-        "Canvia de pla"
       ]
     },
     "new_plans: feature": {
@@ -8416,7 +8462,21 @@
         "Us donem la benvinguda a ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "${ defaultLabel } permès"
+      ],
       "Country configs": [
         "Configuracions de país"
       ],
@@ -8447,11 +8507,20 @@
       "No permission": [
         "Sense permís"
       ],
+      "Not allowed": [
+        "No permès"
+      ],
+      "Optional ${ defaultLabel }": [
+        "${ defaultLabel } opcional"
+      ],
       "Organization only": [
         "Només l'organització"
       ],
       "Receive from all": [
         "Rep de tots"
+      ],
+      "Required": [
+        "Requerit"
       ],
       "Router": [
         "Rúter"
@@ -8473,17 +8542,6 @@
       ],
       "The whole organization": [
         "Tota l'organització"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
       ]
     },
     "Organization capacity error": {
@@ -10030,6 +10088,9 @@
       "Share the confirmation code with your administrator": [
         "Compartiu el codi de confirmació amb l'administrador"
       ],
+      "Sign in": [
+        "Inicia la sessió"
+      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ],
@@ -10074,6 +10135,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Haureu de crear nous usuaris manualment per afegir-los a la vostra organització."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
@@ -11013,6 +11077,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Regles de contrasenya del compte de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11170,10 +11237,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -11415,6 +11482,9 @@
       "Enhance security with 2FA": [
         "Millora la seguretat amb 2FA"
       ],
+      "Enter 2FA code": [
+        "Introduïu el codi 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
       ],
@@ -11423,6 +11493,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
+      ],
+      "Enter your password": [
+        "Introduïu la vostra contrasenya"
       ],
       "Error": [
         "Error"
@@ -11804,6 +11877,9 @@
       "Video conferencing": [
         "Videoconferència"
       ],
+      "Warning": [
+        "Advertència"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviarem un correu electrònic a la vostra nova adreça amb instruccions per completar el canvi."
       ],
@@ -11934,6 +12010,12 @@
       ],
       "Feature in early access": [
         "Característica en accés anticipat"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Per exemple, **12345, abcde**, etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Per exemple, **contrasenya, qwerty**, etc."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu l'empremta electrònica del certificat del proveïdor d'identitat."

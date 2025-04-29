@@ -222,6 +222,9 @@
       "Copy link": [
         "複製連結"
       ],
+      "Copy password": [
+        "複製密碼"
+      ],
       "Copy version number to clipboard": [
         "複製版本號碼至剪貼簿"
       ],
@@ -245,6 +248,9 @@
       ],
       "Create new folder": [
         "創建新資料夾"
+      ],
+      "Create new password": [
+        "建立新密碼"
       ],
       "Create new text file": [
         "創建新文字檔案"
@@ -401,6 +407,9 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
+      ],
+      "Generate password": [
+        "生成密碼"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "盡快為${ priceCoupon }取得${ planName }。"
@@ -4228,6 +4237,9 @@
       "Are you sure you want to proceed?": [
         "您確定要繼續嗎？"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "至少 ${ BETTER_PASSWORD_LENGTH } 個字元"
+      ],
       "Attention required": [
         "需要您的處理"
       ],
@@ -4651,6 +4663,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "您最近似乎嘗試上傳 ${ uploadName }。若上傳失敗，請 ${ replaceFile }。若上傳仍在進行中，取代它將會取消進行中的上傳。"
       ],
+      "It's better to have:": [
+        "更好擁有:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "垃圾桶中的項目都將保留在此處，直到您將它們永久刪除為止"
       ],
@@ -4801,6 +4816,9 @@
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
+      "Numbers": [
+        "數字"
+      ],
       "of": [
         "/"
       ],
@@ -4833,6 +4851,9 @@
       ],
       "password": [
         "密碼"
+      ],
+      "Password copied to clipboard": [
+        "密碼已複製至剪貼簿"
       ],
       "Paused": [
         "已暫停"
@@ -5125,6 +5146,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "符號(#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -5337,6 +5361,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "同一時間上載數以百計的檔案或會有礙效能。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大寫及小寫字母"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用此表格通知我們不適當、非法，或其它惡意分享的檔案。您即將報告："
@@ -6194,6 +6221,12 @@
       "Street address": [
         "街道位址"
       ],
+      "Strong": [
+        "強"
+      ],
+      "Strong password": [
+        "高強度密碼"
+      ],
       "Subscription options": [
         "訂購授權選項"
       ],
@@ -6250,6 +6283,18 @@
       ],
       "Viewer": [
         "檢視者"
+      ],
+      "Vulnerable": [
+        "具有風險"
+      ],
+      "Vulnerable password": [
+        "有安全隱患的密碼"
+      ],
+      "Weak": [
+        "弱"
+      ],
+      "Weak password": [
+        "脆弱密碼"
       ],
       "What happened?": [
         "發生了甚麼問題？"
@@ -6757,29 +6802,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "方案從${ priceDrivePlus }起"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6801,6 +6823,29 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "方案從${ priceDrivePlus }起"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {

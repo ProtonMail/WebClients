@@ -246,6 +246,9 @@
       "Copy link": [
         "Kopiera länk"
       ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
       "Copy version number to clipboard": [
         "Kopiera versionsnummer till urklipp"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Skapa ny mapp"
+      ],
+      "Create new password": [
+        "Skapa nytt lösenord"
       ],
       "Create new text file": [
         "Skapa ny textfil"
@@ -427,6 +433,9 @@
       ],
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
+      ],
+      "Generate password": [
+        "Generera lösenord"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaffa ${ planName } för ${ priceCoupon }"
@@ -3182,9 +3191,6 @@
       "Payment process not supported": [
         "Betalningsprocessen stöds inte"
       ],
-      "Photo saved to your Drive": [
-        "Foto sparat till din Drive"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Fotouppladdning är tillfälligt inaktiverad. Försök igen senare"
       ],
@@ -4580,6 +4586,9 @@
       "Are you sure you want to proceed?": [
         "Är du säker på att du vill fortsätta?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -5026,6 +5035,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det verkar som att du nyligen försökte ladda upp ${ uploadName }. Om uppladdningen misslyckades, ${ replaceFile }. Om uppladdningen fortfarande pågår kommer den pågående uppladdningen att avbrytas om den ersätts."
       ],
+      "It's better to have:": [
+        "Det är bättre att ha:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
       ],
@@ -5189,6 +5201,9 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
+      "Numbers": [
+        "Siffror"
+      ],
       "of": [
         "av"
       ],
@@ -5237,6 +5252,12 @@
       "password": [
         "lösenord"
       ],
+      "Password copied to clipboard": [
+        "Lösenord kopierat till urklipp"
+      ],
+      "Password must have:": [
+        "Lösenord måste innehålla:"
+      ],
       "Paused": [
         "Pausad"
       ],
@@ -5260,6 +5281,9 @@
       ],
       "Photo is set as album cover": [
         "Foto är inställt som albumomslag"
+      ],
+      "Photo saved to your Drive": [
+        "Foto sparat till din Drive"
       ],
       "Photos have been successfully recovered.": [
         "Foton har återställts."
@@ -5560,6 +5584,9 @@
       "Surveillance": [
         "Övervakning"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -5797,6 +5824,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Att ladda upp hundratals filer på samma gång kan påverka prestandan."
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Använd detta formulär för att meddela oss om olämpliga, olagliga,\n eller på annat sätt skadliga delade filer. Du är på väg att rapportera:"
@@ -6566,6 +6596,9 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
       "My Albums": [
         "Mina album"
       ],
@@ -6601,6 +6634,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Password strength": [
+        "Lösenordsstyrka"
       ],
       "Payer": [
         "Betalare"
@@ -6719,6 +6755,12 @@
       "Street address": [
         "Gatuadress"
       ],
+      "Strong": [
+        "Starkt"
+      ],
+      "Strong password": [
+        "Starkt Lösenord"
+      ],
       "Subscription options": [
         "Prenumerationsalternativ"
       ],
@@ -6775,6 +6817,18 @@
       ],
       "Viewer": [
         "Visare"
+      ],
+      "Vulnerable": [
+        "Sårbart"
+      ],
+      "Vulnerable password": [
+        "Sårbart lösenord"
+      ],
+      "Weak": [
+        "Svagt"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
       ],
       "What happened?": [
         "Vad hände?"
@@ -7407,29 +7461,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Paket startar från ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7451,6 +7482,29 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paket startar från ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8044,6 +8098,11 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -8056,11 +8115,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {

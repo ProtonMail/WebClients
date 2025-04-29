@@ -191,6 +191,9 @@
       "Copy link": [
         "複製連結"
       ],
+      "Copy password": [
+        "複製密碼"
+      ],
       "Copy version number to clipboard": [
         "複製版本號碼至剪貼簿"
       ],
@@ -214,6 +217,9 @@
       ],
       "Create new contact": [
         "創建新聯絡人"
+      ],
+      "Create new password": [
+        "建立新密碼"
       ],
       "Current plan": [
         "現行方案"
@@ -310,6 +316,9 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
+      ],
+      "Generate password": [
+        "生成密碼"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "盡快為${ priceCoupon }取得${ planName }。"
@@ -4451,6 +4460,9 @@
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "至少 ${ BETTER_PASSWORD_LENGTH } 個字元"
+      ],
       "Attention required": [
         "需要您的處理"
       ],
@@ -4745,6 +4757,9 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "It's better to have:": [
+        "更好擁有:"
+      ],
       "JCB logo": [
         "JCB 符號"
       ],
@@ -4850,6 +4865,9 @@
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
+      "Numbers": [
+        "數字"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "召集人先前更新的事件將會保留，但您的某些回答將會遺失。"
       ],
@@ -4876,6 +4894,9 @@
       ],
       "password": [
         "密碼"
+      ],
+      "Password copied to clipboard": [
+        "密碼已複製至剪貼簿"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
@@ -5018,6 +5039,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "符號(#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -5119,6 +5143,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大寫及小寫字母"
       ],
       "User activated": [
         "使用者已啟用"
@@ -5922,6 +5949,12 @@
       "Street address": [
         "街道位址"
       ],
+      "Strong": [
+        "強"
+      ],
+      "Strong password": [
+        "高強度密碼"
+      ],
       "Subscription options": [
         "訂購授權選項"
       ],
@@ -5960,6 +5993,18 @@
       ],
       "Verification code": [
         "驗證碼"
+      ],
+      "Vulnerable": [
+        "具有風險"
+      ],
+      "Vulnerable password": [
+        "有安全隱患的密碼"
+      ],
+      "Weak": [
+        "弱"
+      ],
+      "Weak password": [
+        "脆弱密碼"
       ],
       "Week start": [
         "一週的起始日"
@@ -6479,26 +6524,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6520,6 +6545,26 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9680,9 +9725,6 @@
       ],
       "Get the apps": [
         "取得應用程式"
-      ],
-      "Get Zooming faster": [
-        "更快速取得 Zoom"
       ],
       "Gift": [
         "禮物"

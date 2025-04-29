@@ -246,6 +246,9 @@
       "Copy link": [
         "Copia l'enllaç"
       ],
+      "Copy password": [
+        "Copia la contrasenya"
+      ],
       "Copy version number to clipboard": [
         "Copia el número de versió al porta-retalls"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Crea una carpeta"
+      ],
+      "Create new password": [
+        "Crea una contrasenya nova"
       ],
       "Create new text file": [
         "Crea un fitxer de text"
@@ -354,7 +360,7 @@
         "Baixa"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
       "Download (${ count })": [
         "Baixa'n (${ count })"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Reenvia com a adjunt"
+      ],
+      "Generate password": [
+        "Genera la contrasenya"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obteniu ${ planName } per ${ priceCoupon }."
@@ -3058,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Les invitacions externes estan desactivades temporalment. Torneu a intentar-ho més tard"
       ],
+      "Failed to copy photo to album": [
+        "No s'ha pogut copiar la foto a l'àlbum."
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
@@ -3195,9 +3207,6 @@
       ],
       "Payment process not supported": [
         "Procés de pagament no soportat"
-      ],
-      "Photo saved to your Drive": [
-        "La foto s'ha desat al vostre Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "La càrrega de fotos està temporalment desactivada. Torneu a provar més tard."
@@ -4594,6 +4603,9 @@
       "Are you sure you want to proceed?": [
         "Esteu segur que voleu procedir?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
+      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -5040,6 +5052,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sembla que recentment heu intentat carregar ${ uploadName }. Si no es va poder carregar, ${ replaceFile }. Si la càrrega és encara en progrés, reemplaçar el fitxer cancel·larà la càrrega en curs."
       ],
+      "It's better to have:": [
+        "És millor tenir:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Els elements a la paperera hi restaran fins que els elimineu de manera permanent"
       ],
@@ -5203,6 +5218,9 @@
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "of": [
         "de"
       ],
@@ -5251,6 +5269,12 @@
       "password": [
         "contrasenya"
       ],
+      "Password copied to clipboard": [
+        "La contrasenya s'ha copiat al porta-retalls"
+      ],
+      "Password must have:": [
+        "La contrasenya ha de tenir:"
+      ],
       "Paused": [
         "Pausat"
       ],
@@ -5274,6 +5298,12 @@
       ],
       "Photo is set as album cover": [
         "La foto s'ha establert com a portada de l'àlbum."
+      ],
+      "Photo saved to your Drive": [
+        "La foto s'ha desat al vostre Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "La foto s’ha copiat al flux i s’hi ha marcat com a preferida."
       ],
       "Photos have been successfully recovered.": [
         "S'han recuperat les fotos."
@@ -5578,6 +5608,9 @@
       "Surveillance": [
         "Vigilància"
       ],
+      "Symbols (#$&)": [
+        "Símbols (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
@@ -5815,6 +5848,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
+      ],
+      "Uppercase and lowercase letters": [
+        "Lletres majúscules i minúscules"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilitzeu aquest formulari per a notificar-nos de fitxers compartits inapropiats, il·legals o maliciosos. Esteu a punt d'informar:"
@@ -6595,6 +6631,9 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "My Albums": [
         "Els meus àlbums"
       ],
@@ -6630,6 +6669,9 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password strength": [
+        "Solidesa de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -6748,6 +6790,12 @@
       "Street address": [
         "Adreça de carrer"
       ],
+      "Strong": [
+        "Forta"
+      ],
+      "Strong password": [
+        "Contrasenya forta"
+      ],
       "Subscription options": [
         "Opcions de subscripció"
       ],
@@ -6804,6 +6852,18 @@
       ],
       "Viewer": [
         "Visualitzador"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contrasenya vulnerable"
+      ],
+      "Weak": [
+        "Feble"
+      ],
+      "Weak password": [
+        "Contrasenya feble."
       ],
       "What happened?": [
         "Què ha passat?"
@@ -7439,29 +7499,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plans a partir de ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -7483,6 +7520,29 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plans a partir de ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8588,6 +8648,9 @@
       ],
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Les fotos seleccionades ja són a «${ albumName }»."
       ],
       "Share invitation accepted successfully": [
         "S'ha acceptat la invitació per a compartir."

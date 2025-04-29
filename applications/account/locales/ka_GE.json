@@ -1126,10 +1126,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
       "Select files": [
@@ -4515,6 +4515,9 @@
       "Edit conditions": [
         "პირობების ჩასწორება"
       ],
+      "Got it": [
+        "გავიგე"
+      ],
       "Next": [
         "შემდეგი"
       ],
@@ -4586,9 +4589,6 @@
     "email_forwarding_2023: Info": {
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "დადასტურების ელფოსტა გაიგზავნება მისამართზე ${ boldForwardeeEmail }"
-      ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "ახალი დაშიფვრის გასაღები დაგენერირდება ${ boldForwarderEmail }-სთვის"
       ],
       "Automatically forward emails to another email address.": [
         "ელფოსტის ავტომატური გადაგზავნა სხვა ელფოსტის მისამართზე."
@@ -4700,17 +4700,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "გენერირებულია ახალი დაშიფვრის გასაღები ${ forwarderEmail }-სთვის"
-      ],
       "Changes saved": [
         "ცვლილებები შენახულია"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "ელფოსტა გაიგზავნა მისამართზე ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "ელფოსტა გაიგზავნა მისამართზე ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "გადაგზავნა დადასტურებულია"
@@ -4737,9 +4728,6 @@
       ],
       "Forwarding activated": [
         "გადაგზავნა გააქტიურდა"
-      ],
-      "Request confirmation": [
-        "დადასტურების მოთხოვნა"
       ],
       "Set up forwarding": [
         "გადაგზავნის მორგება"
@@ -6554,9 +6542,6 @@
       "Device": [
         "მოწყობილობა"
       ],
-      "Enabled Countries": [
-        "ჩართული ქვეყნები"
-      ],
       "Enter your email address": [
         "შეიყვანეთ თქვენი ელფოსტის მისამართი"
       ],
@@ -6565,9 +6550,6 @@
       ],
       "Folders": [
         "საქაღალდეები"
-      ],
-      "Groups": [
-        "ჯგუფები"
       ],
       "IP address": [
         "IP მისამართი"
@@ -6595,9 +6577,6 @@
       ],
       "Permissions": [
         "წვდომები"
-      ],
-      "Policy Name": [
-        "პოლიტიკის სახელი"
       ],
       "Protection": [
         "დაცვა"
@@ -7324,6 +7303,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /თვეში)"
       ],
+      "(default)": [
+        "(ნაგულისხმევი)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(ფილტრაცია, თუ ყველა შემდეგი პირობა სრულდება)"
       ],
@@ -7799,9 +7781,6 @@
       "Create your first Gateway": [
         "შექმენით თქვენი პირველი რაუტერი"
       ],
-      "Created (not published)": [
-        "შექმნილია (გამოცემული არაა)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }",
         "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }"
@@ -7874,9 +7853,6 @@
       ],
       "Delete link?": [
         "წავშალო ბმული?"
-      ],
-      "Deleted (not published)": [
-        "წაშლილია (გამოცემული არაა)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
@@ -7999,9 +7975,6 @@
       ],
       "Edit link": [
         "ბმულის ჩასწორება"
-      ],
-      "Edited (not published)": [
-        "ჩასწორებულია (გამოცემული არაა)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-ის კონფიგურაცია შენახულია"
@@ -8854,9 +8827,6 @@
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine-ის რედაქტორების არჩევნის ჯილდო 5 რეიტინგიტ 5-დან"
       ],
-      "Pending removal": [
-        "წაშლის მოლოდინში"
-      ],
       "per month": [
         "თვეში"
       ],
@@ -9625,9 +9595,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "ფაილის ხელმოწერის შემოწმების შეცდომა. დაუკავშირდით მხარდაჭერის გუნდს."
       ],
-      "Unchanged": [
-        "უცვლელი"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "ამ ანგარიშისთვის აღდგენის მეთოდი დაყენებული არაა."
       ],
@@ -9718,10 +9685,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -10871,10 +10838,10 @@
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10886,10 +10853,10 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
-      "AND": [
+      "And": [
         "და"
       ],
-      "And": [
+      "AND": [
         "და"
       ],
       "and": [
@@ -11216,6 +11183,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enabled": [
+        "ჩართულია"
+      ],
       "End date": [
         "დასასრულის დრო"
       ],
@@ -11309,10 +11279,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
       "Import all messages": [
@@ -11516,13 +11486,13 @@
       "Optional": [
         "არასავალდებულო"
       ],
-      "OR": [
-        "ან"
-      ],
       "or": [
         "ან"
       ],
       "Or": [
+        "ან"
+      ],
+      "OR": [
         "ან"
       ],
       "Organization name": [
@@ -11662,6 +11632,9 @@
       ],
       "Send in": [
         "გაგზავნა"
+      ],
+      "Sequences": [
+        "მიმდევრობები"
       ],
       "Show ${ n } administrator": [
         "${ n } ადმინისტრატორის ჩვენება",
@@ -12198,11 +12171,11 @@
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
       ],
-      "privacy policy": [
-        "კონფიდენციალობის პოლიტიკა"
-      ],
       "Privacy policy": [
         "პირადულობის დაცვა"
+      ],
+      "privacy policy": [
+        "კონფიდენციალობის პოლიტიკა"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
@@ -13570,6 +13543,14 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -13588,14 +13569,6 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -14233,6 +14206,17 @@
         "სამუშაო მაგიდა"
       ]
     },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "თვის მეათე დღე"
@@ -14461,17 +14445,6 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
       ]
     },
     "Option delay send seconds": {
@@ -18517,10 +18490,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -19017,9 +18990,6 @@
       ],
       "Get the apps": [
         "აპების გადმოწერა"
-      ],
-      "Get Zooming faster": [
-        "Zoom-ის გასწრაფება"
       ],
       "Gift": [
         "საჩუქარი"

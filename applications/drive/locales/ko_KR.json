@@ -231,6 +231,9 @@
       "Copy link": [
         "링크 복사"
       ],
+      "Copy password": [
+        "비밀번호 복사"
+      ],
       "Copy version number to clipboard": [
         "버전 넘버를 클립보드에 복사하기"
       ],
@@ -254,6 +257,9 @@
       ],
       "Create new folder": [
         "새 폴더 만들기"
+      ],
+      "Create new password": [
+        "새로운 비밀번호 생성"
       ],
       "Create new text file": [
         "새 텍스트 파일 만들기"
@@ -410,6 +416,9 @@
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
+      ],
+      "Generate password": [
+        "비밀번호 생성"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName }을(를) ${ priceCoupon }로 구매하기"
@@ -4177,7 +4186,7 @@
         "${ invitations.length }개 대기 중인 초대"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -4379,6 +4388,9 @@
       ],
       "Are you sure you want to proceed?": [
         "계속 진행하겠습니까?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
       "Attention required": [
         "주의 필요"
@@ -4821,6 +4833,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
       ],
+      "It's better to have:": [
+        "포함되면 더 좋습니다:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "휴지통의 항목은 영구적으로 삭제하기 전까지 여기에 보관됩니다."
       ],
@@ -4983,6 +4998,9 @@
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
+      "Numbers": [
+        "숫자"
+      ],
       "of": [
         "/"
       ],
@@ -5027,6 +5045,9 @@
       ],
       "password": [
         "비밀번호"
+      ],
+      "Password copied to clipboard": [
+        "비밀번호 복사됨"
       ],
       "Paused": [
         "일시 정지됨"
@@ -5340,6 +5361,9 @@
       "Surveillance": [
         "감시"
       ],
+      "Symbols (#$&)": [
+        "기호 (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
@@ -5573,6 +5597,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "한 번에 수백 개의 파일을 업로드하면 성능에 영향을 미칠 수 있습니다."
+      ],
+      "Uppercase and lowercase letters": [
+        "대소문자"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "이 양식을 사용하여 부적절하고 불법적이거나 \n악의적인 공유 파일을 알려주세요. 이를 보고하려 합니다:"
@@ -6331,6 +6358,9 @@
       "Move to Inbox": [
         "받은 편지함으로 이동"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
+      ],
       "My Albums": [
         "나의 앨범"
       ],
@@ -6484,6 +6514,12 @@
       "Street address": [
         "도로명 주소"
       ],
+      "Strong": [
+        "강함"
+      ],
+      "Strong password": [
+        "강력한 비밀번호"
+      ],
       "Subscription options": [
         "구독 옵션"
       ],
@@ -6540,6 +6576,18 @@
       ],
       "Viewer": [
         "뷰어"
+      ],
+      "Vulnerable": [
+        "취약함"
+      ],
+      "Vulnerable password": [
+        "취약한 비밀번호"
+      ],
+      "Weak": [
+        "약함"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "What happened?": [
         "무슨 일인가요?"
@@ -7077,29 +7125,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }부터 시작"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -7121,6 +7146,29 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }부터 시작"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {

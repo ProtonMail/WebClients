@@ -252,6 +252,9 @@
       "Copy link": [
         "Капіяваць спасылку"
       ],
+      "Copy password": [
+        "Скапіяваць пароль"
+      ],
       "Copy version number to clipboard": [
         "Скапіяваць нумар версіі ў буфер абмену"
       ],
@@ -275,6 +278,9 @@
       ],
       "Create new folder": [
         "Стварыць новую папку"
+      ],
+      "Create new password": [
+        "Стварыць новы пароль"
       ],
       "Create new text file": [
         "Стварыць новы тэкставы файл"
@@ -440,6 +446,9 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
+      ],
+      "Generate password": [
+        "Згенерыраваць пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -3090,6 +3099,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Знешнія запрашэнні часова адключаны. Паспрабуйце яшчэ раз пазней."
       ],
+      "Failed to copy photo to album": [
+        "Не ўдалося скапіяваць фатаграфію ў альбом"
+      ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
@@ -3233,9 +3245,6 @@
       ],
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
-      ],
-      "Photo saved to your Drive": [
-        "Фатаграфія захавана на ваш Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Запампоўванне фатаграфій часова адключана. Паспрабуйце яшчэ раз пазней"
@@ -4742,6 +4751,9 @@
       "Are you sure you want to proceed?": [
         "Вы сапраўды хочаце працягнуць?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
+      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -5198,6 +5210,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
       ],
+      "It's better to have:": [
+        "Лепш за ўсё, каб у вас было:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будуць заставацца ў сметніцы, пакуль вы не выдаліце іх незваротна"
       ],
@@ -5363,6 +5378,9 @@
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
+      "Numbers": [
+        "Лічбы"
+      ],
       "of": [
         "з"
       ],
@@ -5411,6 +5429,12 @@
       "password": [
         "пароль"
       ],
+      "Password copied to clipboard": [
+        "Пароль скапіяваны ў буфер абмену"
+      ],
+      "Password must have:": [
+        "Пароль павінен змяшчаць:"
+      ],
       "Paused": [
         "Прыпынена"
       ],
@@ -5434,6 +5458,12 @@
       ],
       "Photo is set as album cover": [
         "Фатаграфія зададзена ў якасці вокладкі альбома"
+      ],
+      "Photo saved to your Drive": [
+        "Фатаграфія захавана ў ваш Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Фатаграфія была скапіявана ў плынь і пазначана ў якасці абранай."
       ],
       "Photos have been successfully recovered.": [
         "Фатаграфіі былі паспяхова адноўлены."
@@ -5645,6 +5675,9 @@
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Адбываецца наладжванне альбомаў і фільтраў. Гэта можа заняць некалькі хвілін."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
       ],
@@ -5740,6 +5773,9 @@
       ],
       "Surveillance": [
         "Назіранне"
+      ],
+      "Symbols (#$&)": [
+        "Сімвалы (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -5980,6 +6016,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Запампоўванне сотняў файлаў адначасова можа паўплываць на прадукцыйнасць."
+      ],
+      "Uppercase and lowercase letters": [
+        "Маленькія і вялікія літары"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Выкарыстоўвайце гэту форму, каб апавясціць нас пра непрымальны, недапушчальны або іншы падазроны абагулены файл. Вы збіраецеся паскардзіцца:"
@@ -6780,6 +6819,9 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
+      ],
       "My Albums": [
         "Мае альбомы"
       ],
@@ -6815,6 +6857,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password strength": [
+        "Надзейнасць пароля"
       ],
       "Payer": [
         "Плацельшчык"
@@ -6933,6 +6978,12 @@
       "Street address": [
         "Вуліца"
       ],
+      "Strong": [
+        "Надзейны"
+      ],
+      "Strong password": [
+        "Надзейны пароль"
+      ],
       "Subscription options": [
         "Параметры падпіскі"
       ],
@@ -6989,6 +7040,18 @@
       ],
       "Viewer": [
         "Праглядальнік"
+      ],
+      "Vulnerable": [
+        "Уразлівы"
+      ],
+      "Vulnerable password": [
+        "Уразлівы пароль"
+      ],
+      "Weak": [
+        "Ненадзейны"
+      ],
+      "Weak password": [
+        "Ненадзейны пароль"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -7628,29 +7691,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7672,6 +7712,29 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8859,6 +8922,9 @@
       ],
       "Root folder failed to be loaded": [
         "Не ўдалося загрузіць каранёвую папку"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Выбраныя фатаграфіі ўжо знаходзяцца ў \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Абагуленае запрашэнне паспяхова прынята"
@@ -11813,6 +11879,9 @@
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"
+      ],
+      "Upgrading your Photos experience": [
+        "Паляпшэнне вашага вопыту працы з фатаграфіямі"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"

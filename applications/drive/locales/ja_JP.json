@@ -243,6 +243,9 @@
       "Copy link": [
         "リンクをコピー"
       ],
+      "Copy password": [
+        "パスワードをコピー"
+      ],
       "Copy version number to clipboard": [
         "バージョン番号をクリップボードにコピー"
       ],
@@ -266,6 +269,9 @@
       ],
       "Create new folder": [
         "新規フォルダーを作成"
+      ],
+      "Create new password": [
+        "新しいパスワードを作成する"
       ],
       "Create new text file": [
         "新規テキストファイルを作成"
@@ -425,6 +431,9 @@
       ],
       "Forward as attachment": [
         "添付ファイルとして転送"
+      ],
+      "Generate password": [
+        "パスワードを生成"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } を ${ priceCoupon }で入手"
@@ -3177,9 +3186,6 @@
       "Payment process not supported": [
         "支払い処理がサポートされていません"
       ],
-      "Photo saved to your Drive": [
-        "写真をドライブに保存しました"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "写真のアップロードは一時的に無効になっています。 後でもう一度試してください"
       ],
@@ -4517,6 +4523,9 @@
       "Are you sure you want to proceed?": [
         "本当に続行しますか？"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
+      ],
       "Attention required": [
         "注意が必要です"
       ],
@@ -4958,6 +4967,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "最近、${ uploadName } のアップロードを試みたようです。アップロードが失敗した場合、${ replaceFile } してください。アップロードが進行中の場合、置き換えると進行中のアップロードがキャンセルされます。"
       ],
+      "It's better to have:": [
+        "以下の方が良いでしょう:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "完全に削除しない限り、アイテムはごみ箱に残ります"
       ],
@@ -5120,6 +5132,9 @@
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
+      "Numbers": [
+        "数字"
+      ],
       "of": [
         " / "
       ],
@@ -5167,6 +5182,9 @@
       ],
       "password": [
         "パスワード"
+      ],
+      "Password copied to clipboard": [
+        "クリップボードにコピーされたパスワード"
       ],
       "Paused": [
         "一時停止"
@@ -5489,6 +5507,9 @@
       "Surveillance": [
         "監視"
       ],
+      "Symbols (#$&)": [
+        "記号 (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
       ],
@@ -5725,6 +5746,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "同時にたくさんのファイルをアップロードすると、動作が遅くなる可能性があります。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大文字と小文字"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "このフォームを使うことで、不適切であったり違法である共有ファイル、およびその他の悪意ある共有ファイルを報告することができます。レポートする内容:"
@@ -6486,6 +6510,9 @@
       "Move to Inbox": [
         "受信トレイに移動"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"
+      ],
       "My Albums": [
         "アルバム"
       ],
@@ -6639,6 +6666,12 @@
       "Street address": [
         "番地"
       ],
+      "Strong": [
+        "強い"
+      ],
+      "Strong password": [
+        "強力なパスワード"
+      ],
       "Subscription options": [
         "サブスクリプションのオプション"
       ],
@@ -6695,6 +6728,18 @@
       ],
       "Viewer": [
         "閲覧者"
+      ],
+      "Vulnerable": [
+        "脆弱"
+      ],
+      "Vulnerable password": [
+        "脆弱なパスワード"
+      ],
+      "Weak": [
+        "弱い"
+      ],
+      "Weak password": [
+        "弱いパスワード"
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
@@ -7268,29 +7313,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "プランは${ priceDrivePlus }から始まります"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -7312,6 +7334,29 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "プランは${ priceDrivePlus }から始まります"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {

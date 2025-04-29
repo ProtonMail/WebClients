@@ -463,6 +463,9 @@
       "Discard changes": [
         "Değişiklileri yok say"
       ],
+      "Discard Changes": [
+        "Değişiklikleri At"
+      ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
       ],
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "Tut"
+      ],
+      "Keep Editing": [
+        "Düzenlemeye Devam Et"
       ],
       "Keep logo": [
         "Logoyu tut"
@@ -1126,11 +1132,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "select file": [
-        "dosya seçin"
-      ],
       "Select file": [
         "Dosya seçin"
+      ],
+      "select file": [
+        "dosya seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -4601,6 +4607,9 @@
       "Edit conditions": [
         "Koşulları düzenle"
       ],
+      "Got it": [
+        "Tamam"
+      ],
       "Next": [
         "Sonraki"
       ],
@@ -4673,17 +4682,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "${ boldForwardeeEmail } adresine bir onaylama e-postası gönderildi"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulacak."
-      ],
       "Automatically forward emails to another email address.": [
         "E-postaları otomatik olarak başka e-posta adreslerine iletin."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "${ boldForwarderEmail } adresiniz için uçtan uca şifreleme devre dışı bırakılmıştır, ancak sıfır erişim şifreleme etkin olmaya devam etmektedir. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Uyumluluk için, ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulmuştur."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Uyumluluk için, ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulacaktır."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Uyumluluk için, kuantum sonrası şifreleme devre dışı bırakılmış ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulmuştur."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "Uyumluluk nedeniyle, ${ boldForwarderEmail } için kuantum sonrası şifreleme devre dışı bırakılmıştır."
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "Uyumluluk için, ${ boldForwarderEmail } için kuantum sonrası şifreleme devre dışı bırakılacaktır."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Uyumluluk için, kuantum sonrası şifreleme devre dışı bırakılacak ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulacaktır."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "İletinin alıcısı davet edildi. Daveti kabul ya da red etmesi ya da güncellemesi gerekiyor"
       ],
       "Forwarding is active": [
         "İletici etkin"
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "Alıcı isteği kabul ettiğinde, ${ boldForwardeeEmail } adresine iletme işlemi etkin hale gelir."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Uçtan uca şifreleme kullanmayan bir adrese iletmek, ${ boldForwarderEmail } adresiniz için uçtan uca şifrelemeyi kapatır ancak sıfır erişim şifrelemesi açık kalır. ${ learnMoreLink }"
@@ -4760,6 +4790,14 @@
         "Bu koşulun metnini ya da anahtar sözcüğünü yazın:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Onay e-postası gönderiliyor"
+      ],
+      "Setting up forwarding": [
+        "Yönlendirme ayarlanıyor"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Gönderici adresi için uçtan uca şifreleme yeniden açılacak."
@@ -4786,17 +4824,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "${ forwarderEmail } için yeni bir şifreleme anahtarı oluşturuldu."
-      ],
       "Changes saved": [
         "Değişiklikler kaydedildi"
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "E-posta ${ forward.ForwardeeEmail } adresine gönderildi"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "E-posta ${ model.forwardeeEmail } adresine gönderildi."
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "E-posta ${ existingForwardingConfig.ForwardeeEmail } adresine gönderildi."
       ],
       "Forwarding accepted": [
         "İletici kabul edildi"
@@ -4824,8 +4856,14 @@
       "Forwarding activated": [
         "İletici kullanıma alındı"
       ],
-      "Request confirmation": [
-        "Onay isteğinde bulun"
+      "Request confirmation?": [
+        "Onay isteyecek misiniz?"
+      ],
+      "Request sent": [
+        "İstek gönderildi"
+      ],
+      "Requesting confirmation": [
+        "Onay isteniyor"
       ],
       "Set up forwarding": [
         "İletici kur"
@@ -6643,9 +6681,6 @@
       "Device": [
         "Aygıt"
       ],
-      "Enabled Countries": [
-        "Kullanıma alınmış ülkeler"
-      ],
       "Enter your email address": [
         "E-posta adresinizi yazın"
       ],
@@ -6654,9 +6689,6 @@
       ],
       "Folders": [
         "Klasörler"
-      ],
-      "Groups": [
-        "Gruplar"
       ],
       "IP address": [
         "IP adresi"
@@ -6684,9 +6716,6 @@
       ],
       "Permissions": [
         "İzinler"
-      ],
-      "Policy Name": [
-        "İlke adı"
       ],
       "Protection": [
         "Koruma"
@@ -7430,6 +7459,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
       ],
+      "(default)": [
+        "(varsayılan)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülür)"
       ],
@@ -7442,8 +7474,15 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ organizationName }** kuruluşunuzda **${ appName }** desteklenmiyor."
       ],
+      "**${ appName }** is not supported.": [
+        "**${ appName }** desteklenmiyor."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için **bir ${ BRAND_NAME } adresi edinin**."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Daha fazla",
+        "+ ${ invisibleCount } Daha fazla"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -7908,9 +7947,6 @@
       "Create your first Gateway": [
         "İlk ağ geçidinizi oluşturun"
       ],
-      "Created (not published)": [
-        "Oluşturulmuş (yayınlanmamış)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }",
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }"
@@ -7983,9 +8019,6 @@
       ],
       "Delete link?": [
         "Bağlantı silinsin mi?"
-      ],
-      "Deleted (not published)": [
-        "Silinmiş (yayınlanmamış)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
@@ -8108,9 +8141,6 @@
       ],
       "Edit link": [
         "Bağlantıyı düzenle"
-      ],
-      "Edited (not published)": [
-        "Düzenlenmiş (yayınlanmamış)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN yapılandırması kaydedildi"
@@ -8837,6 +8867,9 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "No single sign-on": [
+        "Tek oturum açma yok"
+      ],
       "Not a valid URL": [
         "Adres geçersiz"
       ],
@@ -8966,14 +8999,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır."
       ],
+      "Password must have:": [
+        "Parola şunları içermelidir:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine Editörün Seçimi ödülünü 5 üzerinden 5 puanla kazandı"
-      ],
-      "Pending removal": [
-        "Kaldırılmayı bekliyor"
       ],
       "per month": [
         "aylık"
@@ -9506,6 +9539,9 @@
       "The securest way to browse, stream, and be online.": [
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Yayınlanmamış değişiklikleriniz kaybolacaktır."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
@@ -9580,6 +9616,9 @@
       ],
       "This promotion link has expired.": [
         "Bu fırsat bağlantısının süresi dolmuş."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Bu hizmet, tek oturum açma ile giriş yapan kullanıcılar tarafından kullanılamaz."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Bu pencereyi kapattığınızda bu kod yeniden görülemeyecek ve artık kimse ile paylaşamayacaksınız."
@@ -9761,9 +9800,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Kurtarma dosyası imzası doğrulanamadı. Lütfen destek ekibi ile görüşün."
       ],
-      "Unchanged": [
-        "Değiştirilmemiş"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
       ],
@@ -9854,11 +9890,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "Username": [
-        "Kullanıcı adı"
-      ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -10145,6 +10181,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Arayüzde aşağıdaki anahtarı kullanarak Fotoğraflar bölümünü açabilirsiniz."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Organizasyonunuzun üyeleri, ${ BRAND_NAME } Hesaplarının şifresini oluştururken veya sıfırlarken kullanacakları şifre kurallarını uygulayabilirsiniz."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Tüm ücretli gizlilik hizmetlerimizi tek bir pakette alabilirsiniz. Yalnızca **${ priceString }/ay**."
@@ -11024,10 +11063,10 @@
       "Allow sharing outside the organization": [
         "Kuruluş dışına paylaşım yapılabilsin"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11039,11 +11078,11 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -11182,6 +11221,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Common passwords": [
+        "Yaygın parolalar"
       ],
       "Company": [
         "Kuruluş"
@@ -11369,6 +11411,9 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
+      "Enabled": [
+        "Etkin"
+      ],
       "End date": [
         "Bitiş tarihi"
       ],
@@ -11465,11 +11510,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -11567,6 +11612,9 @@
       "Maximum number of characters": [
         "En fazla karakter sayısı"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "En fazla karakter sayısı ${ MAX_CHARS }'dır."
+      ],
       "Maximum number of words": [
         "En fazla sözcük sayısı"
       ],
@@ -11590,6 +11638,9 @@
       ],
       "Minimum number of characters": [
         "En az karakter sayısı"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "En az karakter sayısı ${ MIN_CHARS }'dir."
       ],
       "Minimum number of words": [
         "En az sözcük sayısı"
@@ -11672,14 +11723,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -11695,6 +11746,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password strength": [
+        "Parola gücü"
       ],
       "Payer": [
         "Ödeyen"
@@ -11818,6 +11872,9 @@
       ],
       "Send in": [
         "Şu zamanda gönderilsin"
+      ],
+      "Sequences": [
+        "Diziler"
       ],
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
@@ -11957,6 +12014,9 @@
       ],
       "Uppercase": [
         "Büyük harf"
+      ],
+      "Uppercase and lowercase letters": [
+        "Büyük ve küçük harfler"
       ],
       "URL": [
         "İnternet adresi"
@@ -12291,6 +12351,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "${ DOCS_SHORT_APP_NAME } üzerinde işbirliği nasıl yapılır"
       ],
+      "How to create strong passwords": [
+        "Güçlü parolalar nasıl oluşturulur"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } ürünü nasıl kullanıma alınır"
       ],
@@ -12354,11 +12417,11 @@
       "perform a password reset from your active session": [
         "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
       ],
-      "privacy policy": [
-        "gizlilik ilkesi"
-      ],
       "Privacy policy": [
         "Gizlilik ilkesi"
+      ],
+      "privacy policy": [
+        "gizlilik ilkesi"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
@@ -13726,6 +13789,14 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -13744,14 +13815,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -14389,6 +14452,17 @@
         "Bilgisayar"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "Ayın 10. günü"
@@ -14486,6 +14560,9 @@
       "Add to existing group": [
         "Var olan gruba ekle"
       ],
+      "Allowed ${ defaultLabel }": [
+        "İzin verilen ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "İzin veriliyor (varsayılan)"
       ],
@@ -14561,6 +14638,9 @@
       "On": [
         "Açık"
       ],
+      "Optional ${ defaultLabel }": [
+        "İsteğe bağlı ${ defaultLabel }"
+      ],
       "Organization only": [
         "Yalnızca kuruluş"
       ],
@@ -14617,17 +14697,6 @@
       ],
       "Trash": [
         "Çöpe at"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
       ]
     },
     "Option delay send seconds": {
@@ -17992,6 +18061,11 @@
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } tasarruf edin"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Etkin"
@@ -18463,6 +18537,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } klavye kısayolları"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "${ BRAND_NAME } Hesap parolası kuralları"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -18698,10 +18775,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -19199,9 +19276,6 @@
       "Get the apps": [
         "Uygulamaları indirme"
       ],
-      "Get Zooming faster": [
-        "Daha hızlı Zoom görüşmeleri yapın"
-      ],
       "Gift": [
         "Hediye"
       ],
@@ -19580,6 +19654,9 @@
       ],
       "Save time with email filters": [
         "E-posta süzgeçleri ile zaman kazanın"
+      ],
+      "Schedule meetings in one click": [
+        "Tek tıklamayla toplantılar planlayın"
       ],
       "Schedule send:": [
         "Gönderimi zamanla:"
@@ -20124,6 +20201,12 @@
       ],
       "Feature in early access": [
         "Erken erişim özelliği"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Örneğin, **12345, abcde** vb."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Örneğin, **parola, qwerty** vb."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "${ MAIL_APP_NAME } ve diğer uygulamalardan en iyi şekilde yararlanmanızı sağlayacak üretkenlik ve güvenlik ipuçları alın."

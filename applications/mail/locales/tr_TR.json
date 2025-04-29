@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
+      "Copy password": [
+        "Parolayı kopyala"
+      ],
       "Copy password to clipboard": [
         "Parolayı panoya kopyala"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Yeni ileti oluştur"
+      ],
+      "Create new password": [
+        "Yeni parola oluştur"
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
+      ],
+      "Generate password": [
+        "Parola üret"
       ],
       "Generate text": [
         "Metin oluştur"
@@ -1135,10 +1144,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1355,7 +1364,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -6363,6 +6373,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Bu iletiyi kalıcı olarak silmek istediğinize emin misiniz?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "En az ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
       "Attach public key": [
         "Herkese açık anahtar eklensin"
       ],
@@ -6867,8 +6880,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -6887,6 +6899,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "${ protonDuoPlanName } tarifenizi paylaşmak istediğiniz eşinizi, arkadaşınızı veya istediğiniz herhangi birini davet edin."
+      ],
+      "It's better to have:": [
+        "Şöyle olması daha iyidir:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Her zaman bir VPN kullanmak en iyisidir. Ancak siber güvenlik tehditlerinin en yüksek olabileceği zamanlar şunlardır:"
@@ -6961,7 +6976,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
+        "${ MAIL_APP_NAME } 'i varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -7101,6 +7116,9 @@
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
       ],
+      "Numbers": [
+        "Rakamlar"
+      ],
       "of": [
         "/"
       ],
@@ -7136,6 +7154,12 @@
       ],
       "password": [
         "parola"
+      ],
+      "Password copied to clipboard": [
+        "Parola panoya kopyalandı"
+      ],
+      "Password must have:": [
+        "Parola şunları içermelidir:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -7492,6 +7516,9 @@
       "Surveillance": [
         "Gözetleme"
       ],
+      "Symbols (#$&)": [
+        "Simgeler (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
       ],
@@ -7824,6 +7851,9 @@
       ],
       "Upload picture": [
         "Görsel yükle"
+      ],
+      "Uppercase and lowercase letters": [
+        "Büyük ve küçük harfler"
       ],
       "URL link": [
         "Adres bağlantısı"
@@ -8539,11 +8569,11 @@
       "Always move sender's emails": [
         "Göndericinin e-postaları şuraya taşınsın"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -8767,11 +8797,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -8848,6 +8878,9 @@
       "Move to Inbox": [
         "Gelen kutusuna taşı"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
+      ],
       "Name": [
         "Ad"
       ],
@@ -8884,14 +8917,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Original link": [
         "Özgün bağlantı"
@@ -8904,6 +8937,9 @@
       ],
       "Password hint": [
         "Parola ipucu"
+      ],
+      "Password strength": [
+        "Parola gücü"
       ],
       "Payer": [
         "Ödeyen"
@@ -8986,6 +9022,12 @@
       "Street address": [
         "Sokak adresi"
       ],
+      "Strong": [
+        "Güçlü"
+      ],
+      "Strong password": [
+        "Güçlü parola"
+      ],
       "Subscription options": [
         "Abonelik seçenekleri"
       ],
@@ -9033,6 +9075,18 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Vulnerable": [
+        "Çok zayıf"
+      ],
+      "Vulnerable password": [
+        "Güvenlik açığı bulunan parola"
+      ],
+      "Weak": [
+        "Zayıf"
+      ],
+      "Weak password": [
+        "Zayıf parola"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -9748,29 +9802,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } edinin"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -9792,6 +9823,29 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } edinin"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -12023,6 +12077,11 @@
         "Görüntülenecek ad"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Slack toplantısına katıl"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Uygulamada daha hızlı"
@@ -12850,6 +12909,11 @@
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } tasarruf edin"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } yazışma silindi",
@@ -13253,6 +13317,11 @@
       ],
       "vCard field": [
         "vCard alanı"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Teams toplantısına katıl"
       ]
     },
     "Time": {
@@ -14872,6 +14941,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Zoom toplantısına katıl"
       ]
     },
     "Zoom Meeting": {

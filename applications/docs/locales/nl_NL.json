@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Uitnodigingslink kopiëren"
       ],
+      "Copy password": [
+        "Wachtwoord kopiëren"
+      ],
       "Copy version number to clipboard": [
         "Kopieer versienummer naar klembord"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Nieuwe map aanmaken"
+      ],
+      "Create new password": [
+        "Nieuw wachtwoord instellen"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
+      ],
+      "Generate password": [
+        "Wachtwoord genereren"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Neem ${ planName } voor ${ priceCoupon }"
@@ -749,6 +758,9 @@
       ],
       "Take out of trash": [
         "Haal uit de prullenbak"
+      ],
+      "Trashing...": [
+        "Verplaatsen naar de prullenbak..."
       ],
       "Trust": [
         "Vertrouwen"
@@ -2332,11 +2344,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
@@ -2381,7 +2388,7 @@
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Moedig het gebruik van tweestapsverificatie in je organisatie aan voor extra beveiliging."
+        "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
@@ -2472,6 +2479,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4171,6 +4183,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -4396,7 +4411,7 @@
         "Fout bij het converteren van document: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
-        "Fout bij laden document ${ errorDetail }"
+        "Fout bij het laden van document${ errorDetail }"
       ],
       "Error Syncing": [
         "Synchronisatiefout"
@@ -4540,6 +4555,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
       ],
+      "It's better to have:": [
+        "Het is beter om:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Het is het beste om op elk moment een VPN te gebruiken. Maar hier is wanneer cyberbeveiligingsbedreigingen de grootste kunnen zijn:"
       ],
@@ -4647,7 +4665,7 @@
         "Nog geen contactpersonen toegevoegd"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Geen document meegegeven in URL. Keer terug naar ${ DRIVE_APP_NAME } en selecteer een document."
+        "Er is geen document meegegeven in de URL. Ga terug naar ${ DRIVE_APP_NAME } en selecteer een document."
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -4681,6 +4699,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
+      ],
+      "Numbers": [
+        "Nummers"
       ],
       "Offline": [
         "Offline"
@@ -4720,6 +4741,12 @@
       ],
       "password": [
         "wachtwoord"
+      ],
+      "Password copied to clipboard": [
+        "Wachtwoord gekopieerd naar klembord"
+      ],
+      "Password must have:": [
+        "Het wachtwoord moet hebben:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
@@ -4946,6 +4973,9 @@
       "Surveillance": [
         "Surveillance"
       ],
+      "Symbols (#$&)": [
+        "Symbolen (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -5102,9 +5132,6 @@
       "Trash": [
         "Prullenbak"
       ],
-      "Trashed": [
-        "Verwijderd"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -5122,6 +5149,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
+      ],
+      "Uppercase and lowercase letters": [
+        "Hoofdletters en kleine letters"
       ],
       "User activated": [
         "Gebruiker geactiveerd"
@@ -5797,6 +5827,9 @@
       "Move to Inbox": [
         "Verplaats naar inbox"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
+      ],
       "My files": [
         "Mijn bestanden"
       ],
@@ -5823,6 +5856,9 @@
       ],
       "Password": [
         "Wachtwoord"
+      ],
+      "Password strength": [
+        "Wachtwoordsterkte"
       ],
       "Payer": [
         "Betaler"
@@ -5905,6 +5941,12 @@
       "Street address": [
         "Adres"
       ],
+      "Strong": [
+        "Sterk"
+      ],
+      "Strong password": [
+        "Sterk wachtwoord"
+      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -5940,6 +5982,18 @@
       ],
       "Viewer": [
         "Kijker"
+      ],
+      "Vulnerable": [
+        "Kwetsbaar"
+      ],
+      "Vulnerable password": [
+        "Kwetsbaar wachtwoord"
+      ],
+      "Weak": [
+        "Zwak"
+      ],
+      "Weak password": [
+        "Zwak wachtwoord"
       ],
       "What happened?": [
         "Wat is er gebeurd?"
@@ -6072,7 +6126,7 @@
         "E-mail doorsturen instellen"
       ],
       "How to use Groups": [
-        "Hoe gebruik je Groepen"
+        "Hoe gebruikt u Groepen"
       ],
       "if your data is leaked": [
         "als uw gegevens zijn gelekt"
@@ -7778,8 +7832,8 @@
       "Searching": [
         "Bezig met zoeken"
       ],
-      "Trashed": [
-        "Verwijderd"
+      "Trash": [
+        "Prullenbak"
       ]
     },
     "Participant name": {
@@ -9015,6 +9069,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Bespaar ${ priceString }"
       ]
     },
     "Success": {

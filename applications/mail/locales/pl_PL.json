@@ -300,6 +300,9 @@
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
       ],
+      "Copy password": [
+        "Kopiuj hasło"
+      ],
       "Copy password to clipboard": [
         "Kopiuj hasło do schowka"
       ],
@@ -332,6 +335,9 @@
       ],
       "Create new message": [
         "Utwórz nową wiadomość"
+      ],
+      "Create new password": [
+        "Utwórz nowe hasło"
       ],
       "Current plan": [
         "Obecny plan"
@@ -539,6 +545,9 @@
       ],
       "Forward as attachment": [
         "Przekaż jako załącznik"
+      ],
+      "Generate password": [
+        "Generuj hasło"
       ],
       "Generate text": [
         "Generuj tekst"
@@ -1143,10 +1152,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1363,7 +1372,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -6561,6 +6573,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Czy na pewno chcesz trwale usunąć tę wiadomość?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minimum ${ BETTER_PASSWORD_LENGTH } znaków"
+      ],
       "Attach public key": [
         "Dołącz klucz publiczny"
       ],
@@ -7087,10 +7102,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7109,6 +7121,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Zaproś swojego partnera, znajomego lub kogokolwiek, komu udostępniasz swój plan ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "Lepiej mieć:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najlepiej jest korzystać z połączenie VPN przez cały czas. Ale właśnie wtedy cyfrowe zagrożenia mogą być największe:"
@@ -7323,6 +7338,9 @@
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
+      "Numbers": [
+        "Cyfry"
+      ],
       "of": [
         "z"
       ],
@@ -7359,6 +7377,12 @@
       "password": [
         "hasło"
       ],
+      "Password copied to clipboard": [
+        "Hasło zostało skopiowane do schowka"
+      ],
+      "Password must have:": [
+        "Hasło musi zawierać:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
       ],
@@ -7386,8 +7410,11 @@
       "Please authenticate your payment in the verification tab.": [
         "Potwierdź płatność w nowej karcie."
       ],
+      "Please fill in all required fields.": [
+        "Uzupełnij wszystkie wymagane pola."
+      ],
       "Please fill out this field.": [
-        "Wypełnij pole."
+        "Uzupełnij pole."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tych grup NIE zostaną usunięte."
@@ -7718,6 +7745,9 @@
       ],
       "Surveillance": [
         "Inwigilacja"
+      ],
+      "Symbols (#$&)": [
+        "Znaki specjalne (#$&)"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i przechowuj je bezpiecznie. To wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
@@ -8057,6 +8087,9 @@
       ],
       "Upload picture": [
         "Prześlij obraz"
+      ],
+      "Uppercase and lowercase letters": [
+        "Wielkie i małe litery"
       ],
       "URL link": [
         "Adres URL"
@@ -8818,11 +8851,11 @@
       "Always move sender's emails": [
         "Zawsze przenieś wiadomości nadawców"
       ],
-      "AND": [
-        "ORAZ"
-      ],
       "And": [
         "oraz"
+      ],
+      "AND": [
+        "ORAZ"
       ],
       "and": [
         "i"
@@ -9046,11 +9079,11 @@
       "IBAN": [
         "Numer IBAN"
       ],
-      "IF": [
-        "JEŚLI"
-      ],
       "If": [
         "Jeśli"
+      ],
+      "IF": [
+        "JEŚLI"
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
@@ -9127,6 +9160,9 @@
       "Move to Inbox": [
         "Przenieś do Odebranych"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Minimum ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
       "Name": [
         "Nazwa"
       ],
@@ -9163,14 +9199,14 @@
       "Optional": [
         "Opcjonalnie"
       ],
-      "OR": [
-        "LUB"
-      ],
       "or": [
         "lub"
       ],
       "Or": [
         "lub"
+      ],
+      "OR": [
+        "LUB"
       ],
       "Original link": [
         "Oryginalny link"
@@ -9183,6 +9219,9 @@
       ],
       "Password hint": [
         "Podpowiedź do hasła"
+      ],
+      "Password strength": [
+        "Siła hasła"
       ],
       "Payer": [
         "Płatnik"
@@ -9265,6 +9304,12 @@
       "Street address": [
         "Ulica"
       ],
+      "Strong": [
+        "Silne"
+      ],
+      "Strong password": [
+        "Silne hasło"
+      ],
       "Subscription options": [
         "Opcje subskrypcji"
       ],
@@ -9312,6 +9357,18 @@
       ],
       "Verification code": [
         "Kod weryfikacyjny"
+      ],
+      "Vulnerable": [
+        "Bardzo słabe"
+      ],
+      "Vulnerable password": [
+        "Słabe hasło"
+      ],
+      "Weak": [
+        "Słabe"
+      ],
+      "Weak password": [
+        "Słabe hasło"
       ],
       "What happened?": [
         "Co się stało?"
@@ -10043,29 +10100,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Wybierz plan ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -10087,6 +10121,29 @@
       ],
       "Switch plan": [
         "Zmień plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Wybierz plan ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12422,6 +12479,11 @@
         "Nazwa wyświetlana"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Dołącz do spotkania Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Szybciej w aplikacji"
@@ -13287,6 +13349,11 @@
         "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Zaoszczędź ${ priceString }"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "Wątek został usunięty",
@@ -13742,6 +13809,11 @@
       ],
       "vCard field": [
         "Pole vCard"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Dołącz do spotkania Teams"
       ]
     },
     "Time": {
@@ -15483,6 +15555,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Dołącz do spotkania Zoom"
       ]
     },
     "Zoom Meeting": {
