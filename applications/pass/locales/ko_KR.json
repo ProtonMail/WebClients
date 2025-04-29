@@ -397,10 +397,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -1771,6 +1771,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -3727,9 +3730,6 @@
       ],
       "Enter your extra password": [
         "추가 비밀번호를 입력하세요"
-      ],
-      "Enter your password": [
-        "비밀번호를 입력하세요"
       ],
       "Enter your PIN": [
         "PIN을 입력해 주세요."
