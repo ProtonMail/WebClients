@@ -246,6 +246,9 @@
       "Copy link": [
         "Hivatkozás másolása"
       ],
+      "Copy password": [
+        "Jelszó másolása"
+      ],
       "Copy version number to clipboard": [
         "A verziószám másolása a vágólapra"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Új mappa létrehozása"
+      ],
+      "Create new password": [
+        "Új jelszó készítése"
       ],
       "Create new text file": [
         "Új szövegfájl létrehozása"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
+      ],
+      "Generate password": [
+        "Jelszó létrehozása"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } csomag beszerzése ${ priceCoupon } áron"
@@ -4505,6 +4514,9 @@
       "Are you sure you want to proceed?": [
         "Biztosan folytatja?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
       "Attention required": [
         "Figyelem szükséges"
       ],
@@ -4951,6 +4963,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Úgy tűnik, hogy nemrég megpróbálta feltölteni ezt a fájlt: ${ uploadName }. Ha feltöltés nem sikerült, ${ replaceFile }. Ha a feltöltés még folyamatban van, lecserélése törölni fogja a folyamatban lévő feltöltést."
       ],
+      "It's better to have:": [
+        "Jobb, ha van:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "A lomtárban addig maradnak az elemek, amíg véglegesen nem törli azokat."
       ],
@@ -5114,6 +5129,9 @@
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
       ],
+      "Numbers": [
+        "Számok"
+      ],
       "of": [
         "/"
       ],
@@ -5158,6 +5176,9 @@
       ],
       "password": [
         "jelszó"
+      ],
+      "Password copied to clipboard": [
+        "Jelszó a vágólapra másolva"
       ],
       "Paused": [
         "Felfüggesztve"
@@ -5474,6 +5495,9 @@
       "Surveillance": [
         "Megfigyelés"
       ],
+      "Symbols (#$&)": [
+        "Szimbólumok (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
@@ -5708,6 +5732,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
+      ],
+      "Uppercase and lowercase letters": [
+        "Kis- és nagybetűk"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Használja ezt az adatlapot, hogy tájékoztasson minket nem megfelelő, illegális vagy egyéb módon kártékony megosztott fájlokról. A következőt készül megosztani:"
@@ -6423,7 +6450,7 @@
         "Üzenet és fájl név beleírása a meghívó e-mailbe"
       ],
       "Integrated 2FA authenticator": [
-        "Beépített kétlépcsős hitelesítés"
+        "Beépített kétfaktoros (2FA) hitelesítés"
       ],
       "Keep both": [
         "Mindkettő megtartása"
@@ -6481,6 +6508,9 @@
       ],
       "Move to Inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Legalább ${ MIN_PASSWORD_LENGTH } karakterrel kell rendelkeznie."
       ],
       "My Albums": [
         "Saját albumok"
@@ -6635,6 +6665,12 @@
       "Street address": [
         "Utca, házszám"
       ],
+      "Strong": [
+        "Erős"
+      ],
+      "Strong password": [
+        "Erős jelszó"
+      ],
       "Subscription options": [
         "Előfizetés lehetőségei"
       ],
@@ -6691,6 +6727,18 @@
       ],
       "Viewer": [
         "Megtekintésre jogosult"
+      ],
+      "Vulnerable": [
+        "Sebezhető"
+      ],
+      "Vulnerable password": [
+        "Sérülékeny jelszó"
+      ],
+      "Weak": [
+        "Gyenge"
+      ],
+      "Weak password": [
+        "Gyenge jelszó"
       ],
       "What happened?": [
         "Mi történt?"
@@ -7233,29 +7281,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kezdje el a használatot ${ priceCoupon } áron"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Csomagok ${ priceDrivePlus } ártól"
-      ],
-      "Starting from ${ pricing }": [
-        "Kezdőár: ${ pricing }"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -7277,6 +7302,29 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kezdje el a használatot ${ priceCoupon } áron"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Csomagok ${ priceDrivePlus } ártól"
+      ],
+      "Starting from ${ pricing }": [
+        "Kezdőár: ${ pricing }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
       ]
     },
     "new_plans: feature": {

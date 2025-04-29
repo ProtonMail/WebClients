@@ -243,6 +243,9 @@
       "Copy link": [
         "复制链接"
       ],
+      "Copy password": [
+        "复制密码"
+      ],
       "Copy version number to clipboard": [
         "复制版本号"
       ],
@@ -266,6 +269,9 @@
       ],
       "Create new folder": [
         "创建文件夹"
+      ],
+      "Create new password": [
+        "创建新密码"
       ],
       "Create new text file": [
         "新建文本文件"
@@ -425,6 +431,9 @@
       ],
       "Forward as attachment": [
         "作为附件转发"
+      ],
+      "Generate password": [
+        "生成密码"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "以 ${ priceCoupon } 价格获取 ${ planName }"
@@ -3177,9 +3186,6 @@
       "Payment process not supported": [
         "不支持此支付流程"
       ],
-      "Photo saved to your Drive": [
-        "照片已保存至 Proton Drive"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "照片上传暂时被禁用。请稍后再试"
       ],
@@ -4322,6 +4328,9 @@
       "${ pausedCount } paused": [
         "${ pausedCount } 项已暂停"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } 项"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
       ],
@@ -4516,6 +4525,9 @@
       ],
       "Are you sure you want to proceed?": [
         "您确定要继续吗？"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
       ],
       "Attention required": [
         "需要关注"
@@ -4958,6 +4970,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "您最近似乎曾尝试上传 ${ uploadName }，如果上传失败，请${ replaceFile }。如果上传仍在进行中，替换文件将导致上传中止。"
       ],
+      "It's better to have:": [
+        "最好是有："
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "若不手动删除，回收站中的文件将一直保留"
       ],
@@ -5120,6 +5135,9 @@
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
+      "Numbers": [
+        "数字"
+      ],
       "of": [
         "，共"
       ],
@@ -5168,6 +5186,12 @@
       "password": [
         "密码"
       ],
+      "Password copied to clipboard": [
+        "密码已复制到剪贴板"
+      ],
+      "Password must have:": [
+        "密码必须具有："
+      ],
       "Paused": [
         "已暂停"
       ],
@@ -5191,6 +5215,12 @@
       ],
       "Photo is set as album cover": [
         "照片被设为相册封面"
+      ],
+      "Photo saved to your Drive": [
+        "照片已保存至 Proton Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "照片被复制到流中并被标记为收藏。"
       ],
       "Photos have been successfully recovered.": [
         "照片已成功恢复。"
@@ -5396,6 +5426,9 @@
       "Setting up ${ feature }…": [
         "正在设置 ${ feature }…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "我们需要几分钟时间来为您设置相册和过滤器。"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
@@ -5488,6 +5521,9 @@
       ],
       "Surveillance": [
         "监控"
+      ],
+      "Symbols (#$&)": [
+        "符号 (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
@@ -5725,6 +5761,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "一次上传数百个文件可能会影响性能。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大写字母和小写字母"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用这张表单通知我们有不合适、非法或恶意分享的文件，您将要举报以下行为："
@@ -6486,6 +6525,9 @@
       "Move to Inbox": [
         "移至收件箱"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
       "My Albums": [
         "我的图库"
       ],
@@ -6521,6 +6563,9 @@
       ],
       "Password": [
         "密码"
+      ],
+      "Password strength": [
+        "密码强度"
       ],
       "Payer": [
         "付款人"
@@ -6639,6 +6684,12 @@
       "Street address": [
         "街道地址"
       ],
+      "Strong": [
+        "强"
+      ],
+      "Strong password": [
+        "强密码"
+      ],
       "Subscription options": [
         "计费方式"
       ],
@@ -6695,6 +6746,18 @@
       ],
       "Viewer": [
         "查看者"
+      ],
+      "Vulnerable": [
+        "易受攻击"
+      ],
+      "Vulnerable password": [
+        "易受攻击的密码"
+      ],
+      "Weak": [
+        "弱"
+      ],
+      "Weak password": [
+        "弱密码"
       ],
       "What happened?": [
         "发生了什么？"
@@ -7268,29 +7331,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "以 ${ priceDrivePlus } 价格开始计划"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -7312,6 +7352,29 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "以 ${ priceDrivePlus } 价格开始计划"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8376,6 +8439,9 @@
       ],
       "Root folder failed to be loaded": [
         "加载根目录失败"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "所选照片已在“${ albumName }”中"
       ],
       "Share invitation accepted successfully": [
         "已成功接受共享邀请"
@@ -10151,6 +10217,11 @@
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "节省 ${ priceString }"
+      ]
+    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "与您分享的相册将在此处显示"
@@ -11139,6 +11210,9 @@
       ],
       "Upgrade complete!": [
         "升级完成！"
+      ],
+      "Upgrading your Photos experience": [
+        "正在升级您的照片体验"
       ],
       "Upload and share files": [
         "上传并分享文件"

@@ -239,6 +239,9 @@
       "Copy link": [
         "Kopioi linkki"
       ],
+      "Copy password": [
+        "Kopioi salasana"
+      ],
       "Copy version number to clipboard": [
         "Kopioi versionumero leikepöydälle"
       ],
@@ -262,6 +265,9 @@
       ],
       "Create new folder": [
         "Luo uusi kansio"
+      ],
+      "Create new password": [
+        "Luo uusi salasana"
       ],
       "Create new text file": [
         "Luo uusi tekstitiedosto"
@@ -423,6 +429,9 @@
       ],
       "Forward as attachment": [
         "Välitä liitteenä"
+      ],
+      "Generate password": [
+        "Luo salasana"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Hanki ${ planName } hintaan ${ priceCoupon }"
@@ -4453,6 +4462,9 @@
       "Are you sure you want to proceed?": [
         "Haluatko varmasti jatkaa?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -4896,6 +4908,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
       ],
+      "It's better to have:": [
+        "On parempi olla:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Roskakorissa olevat kohteet säilyvät siellä kunnes poistat ne pysyvästi"
       ],
@@ -5056,6 +5071,9 @@
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
+      "Numbers": [
+        "Numerot"
+      ],
       "of": [
         "/"
       ],
@@ -5094,6 +5112,9 @@
       ],
       "password": [
         "salasana"
+      ],
+      "Password copied to clipboard": [
+        "Salasana kopioitiin leikepöydälle"
       ],
       "Paused": [
         "Pysäytetty"
@@ -5410,6 +5431,9 @@
       "Surveillance": [
         "Tarkkailu"
       ],
+      "Symbols (#$&)": [
+        "Symbolit (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -5631,6 +5655,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Satojen tiedostojen samanaikainen tallennus voi vaikuttaa suorituskykyyn."
+      ],
+      "Uppercase and lowercase letters": [
+        "Isot ja pienet kirjaimet"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Tällä lomakkeella voit ilmoittaa meille sopimattomista, laittomista tai muuten haitallisista tiedostoista. Olet ilmoittamassa:"
@@ -6534,6 +6561,12 @@
       "Street address": [
         "Katuosoite"
       ],
+      "Strong": [
+        "Vahva"
+      ],
+      "Strong password": [
+        "Vahva salasana"
+      ],
       "Subscription options": [
         "Tilausvaihtoehdot"
       ],
@@ -6590,6 +6623,18 @@
       ],
       "Viewer": [
         "Tarkastelu"
+      ],
+      "Vulnerable": [
+        "Haavoittuvainen"
+      ],
+      "Vulnerable password": [
+        "Haavoittuva salasana"
+      ],
+      "Weak": [
+        "Heikko"
+      ],
+      "Weak password": [
+        "Heikko salasana"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -7132,29 +7177,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -7176,6 +7198,29 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {
