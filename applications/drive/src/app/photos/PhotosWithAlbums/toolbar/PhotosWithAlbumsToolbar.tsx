@@ -399,6 +399,7 @@ interface PhotosWithAlbumToolbarProps {
     createAlbumModal: ModalStateReturnObj;
     openAddPhotosToAlbumModal?: () => void;
     openSharePhotosIntoAnAlbumModal?: () => void;
+    openSharePhotoModal?: () => void;
     removeAlbumPhotos?: () => Promise<void>;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
@@ -423,6 +424,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     createAlbumModal,
     openAddPhotosToAlbumModal,
     openSharePhotosIntoAnAlbumModal,
+    openSharePhotoModal,
     removeAlbumPhotos,
     onFileUpload,
     onFileSkipped,
@@ -462,7 +464,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
     const isAlbumsWithSharingDisabled = unleashVanillaStore.getState().isEnabled('DriveAlbumsTempDisabledOnRelease');
     const canShare = Boolean(
-        (!hasMultipleSelected && !album) || (!hasMultipleSelected && album && album.permissions.isAdmin)
+        (openSharePhotoModal && !hasMultipleSelected && !album) ||
+            (!hasMultipleSelected && album && album.permissions.isAdmin)
     );
     const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
     const canAddPhotosFromGallery = Boolean(
@@ -517,7 +520,11 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover!} />
                         )}
                         {!isAlbumsWithSharingDisabled && canShare && (
-                            <PhotosShareLinkButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
+                            <PhotosShareLinkButton
+                                showIconOnly={showIconOnly}
+                                selectedLink={selectedItems[0]}
+                                onClick={openSharePhotoModal!}
+                            />
                         )}
                         {!isAlbumsWithSharingDisabled && canShareMultiple && (
                             <PhotosShareMultipleLinkButton
@@ -561,7 +568,15 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 <PhotosShareLinkButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
-                                    selectedLinks={selectedItems}
+                                    selectedLink={selectedItems[0]}
+                                    onClick={openSharePhotoModal!}
+                                />
+                            )}
+                            {!isAlbumsWithSharingDisabled && canShareMultiple && (
+                                <PhotosShareMultipleLinkButton
+                                    dropDownMenuButton={true}
+                                    showIconOnly={false}
+                                    onClick={openSharePhotosIntoAnAlbumModal!}
                                 />
                             )}
                             <PhotosDetailsButton
