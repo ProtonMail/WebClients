@@ -80,6 +80,7 @@ const SidebarFolder = ({
             id={id}
             onFocus={onFocus}
             isOptionDropdownOpened={isOptionDropdownOpened}
+            className="navigation-item--folder"
             content={
                 <div className="flex flex-nowrap items-center gap-2" data-level={level}>
                     {folder.subfolders?.length ? (
