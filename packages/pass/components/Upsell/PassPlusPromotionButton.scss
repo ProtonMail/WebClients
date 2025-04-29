@@ -1,9 +1,45 @@
-.pass-promo--button {
+.pass-promo-btn {
 	padding-block: 0.2rem !important;
 	padding-inline: 0.3rem !important;
 	block-size: auto !important;
 
 	> span {
 		gap: 0.125rem !important;
+	}
+
+	// Safari extension workaround for a graphics context regression
+	// introduced in 18.4 with gradients & borders [FB17409034]
+	&--safari-ext {
+		border: 0 !important;
+		background: none !important;
+		isolation: isolate;
+
+		&:not([class*='ghost']),
+		&.button-for-icon:hover,
+		&.button-for-icon:focus-visible {
+			position: relative;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				border-radius: inherit;
+			}
+
+			&::after {
+				inline-size: 100%;
+				block-size: 100%;
+				background:
+					linear-gradient(var(--upgrade-background-color), var(--upgrade-background-color)) padding-box,
+					linear-gradient(var(--background-norm), var(--background-norm)) padding-box;
+			}
+
+			&::before {
+				z-index: -1;
+				inline-size: calc(100% + 2px);
+				block-size: calc(100% + 2px);
+				background: linear-gradient(to right, var(--upgrade-color-stop-1), var(--upgrade-color-stop-2));
+			}
+		}
 	}
 }
