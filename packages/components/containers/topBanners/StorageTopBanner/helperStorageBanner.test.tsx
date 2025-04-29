@@ -1,3 +1,5 @@
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+
 import { getStorageFull } from './helperStorageBanner';
 
 describe('getStorageFull', () => {
@@ -45,7 +47,7 @@ describe('getStorageFull', () => {
             });
 
             expect((string as string[]).join('')).toBe(
-                `Your Mail storage is full. To send or receive emails, free up space or ${cta}.`
+                `Your Mail storage is full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`
             );
         });
 
@@ -60,7 +62,7 @@ describe('getStorageFull', () => {
             });
 
             expect((string as string[]).join('')).toBe(
-                `Your Mail storage is 90% full. To send or receive emails, free up space or ${cta}.`
+                `Your Mail storage is 90% full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`
             );
         });
     });
@@ -137,7 +139,7 @@ describe('getStorageFull', () => {
             });
 
             expect((string as string[]).join('')).toBe(
-                `Your Mail storage is full. To send or receive emails, free up space or ${cta}.`
+                `Your Mail storage is full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`
             );
         });
 
@@ -152,7 +154,7 @@ describe('getStorageFull', () => {
             });
 
             expect((string as string[]).join('')).toBe(
-                `Your Mail storage is 90% full. To send or receive emails, free up space or ${cta}.`
+                `Your Mail storage is 90% full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`
             );
         });
 
@@ -167,7 +169,7 @@ describe('getStorageFull', () => {
             });
 
             expect((string as string[]).join('')).toBe(
-                `Your Mail storage is full. To send or receive emails, free up space or ${cta}.`
+                `Your Mail storage is full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`
             );
         });
 
@@ -182,7 +184,7 @@ describe('getStorageFull', () => {
             });
 
             expect((string as string[]).join('')).toBe(
-                `Your Mail storage is 90% full. To send or receive emails, free up space or ${cta}.`
+                `Your Mail storage is 90% full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`
             );
         });
     });
