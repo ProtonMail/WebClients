@@ -2,6 +2,8 @@ import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
 import { forwardRef } from 'react'
 import clsx from '@proton/utils/clsx'
 import ToolbarTooltip from './ToolbarTooltip'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { fixEmptyRoot } from '../Utils/fixEmptyRoot'
 
 interface ToolbarButtonProps extends ComponentPropsWithoutRef<'button'> {
   label: React.ReactNode
@@ -9,9 +11,11 @@ interface ToolbarButtonProps extends ComponentPropsWithoutRef<'button'> {
 }
 
 export const ToolbarButton = forwardRef(function ToolbarButton(
-  { label, active, children, className, ...rest }: ToolbarButtonProps,
+  { label, active, children, className, onClick, ...rest }: ToolbarButtonProps,
   ref: ForwardedRef<HTMLButtonElement>,
 ) {
+  const [editor] = useLexicalComposerContext()
+
   return (
     <ToolbarTooltip title={label}>
       <button
@@ -22,6 +26,10 @@ export const ToolbarButton = forwardRef(function ToolbarButton(
           className,
         ])}
         ref={ref}
+        onClick={(event) => {
+          fixEmptyRoot(editor)
+          onClick?.(event)
+        }}
         {...rest}
       >
         {children}

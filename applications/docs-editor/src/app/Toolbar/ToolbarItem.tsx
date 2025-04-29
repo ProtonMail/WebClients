@@ -4,8 +4,12 @@ import type { ToolbarItemInterface } from './ToolbarItemInterface'
 import ToolbarTooltip from './ToolbarTooltip'
 import { ToolbarButton } from './ToolbarButton'
 import { SimpleDropdown } from '@proton/components'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { fixEmptyRoot } from '../Utils/fixEmptyRoot'
 
 export function ToolbarItem({ item }: { item: ToolbarItemInterface }) {
+  const [editor] = useLexicalComposerContext()
+
   if (item.type === 'button') {
     return (
       <ToolbarButton
@@ -33,6 +37,9 @@ export function ToolbarItem({ item }: { item: ToolbarItemInterface }) {
       active={item.active}
       data-testid={item.id}
       hasCaret={item.hasCaret}
+      onClick={() => {
+        fixEmptyRoot(editor)
+      }}
     >
       {item.menu}
     </SimpleDropdown>
