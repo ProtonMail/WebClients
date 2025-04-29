@@ -466,13 +466,10 @@ export const usePhotosWithAlbumsView = () => {
     );
 
     const addAlbumPhoto = useCallback(
-        (abortSignal: AbortSignal, albumShareId: string, linkId: string) => {
-            if (!albumLinkId) {
-                throw new Error('Failed to add a photo to an album');
-            }
+        (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, linkId: string) => {
             return addAlbumPhotos(abortSignal, albumShareId, albumLinkId, [linkId], true);
         },
-        [albumLinkId, addAlbumPhotos]
+        [addAlbumPhotos]
     );
 
     const setPhotoAsCover = useCallback(
