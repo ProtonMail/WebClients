@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -11,13 +13,16 @@ import { useDebouncedRequest } from '../_api';
 import { EXTERNAL_INVITATIONS_ERROR_NAMES, useInvitations } from '../_invitations';
 import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
-import { type ShareInvitationDetails } from '../_shares';
+import { useUserSettings } from '../_settings';
+import { type ShareInvitationDetails, useDefaultShare } from '../_shares';
 import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {
     const { getInvitationDetails, convertExternalInvitation } = useInvitations();
     const { acceptInvitation } = useInvitationsActions();
     const debouncedRequest = useDebouncedRequest();
+    const { photosWithAlbumsEnabled } = useUserSettings();
+    const { getDefaultPhotosShare } = useDefaultShare();
     const { getLink } = useLink();
 
     const { createNotification } = useNotifications();
@@ -45,7 +50,7 @@ export const useVolumeLinkView = () => {
             volumeId: string;
             linkId: string;
         }
-    ): Promise<{ linkId: string; shareId: string; isFile: boolean; mimeType: string } | undefined> => {
+    ): Promise<{ linkId: string; shareId: string; isFile: boolean; mimeType: string; type?: LinkType } | undefined> => {
         try {
             const invitationDetails: ShareInvitationDetails | undefined = await getInvitationDetails(abortSignal, {
                 invitationId,
@@ -57,6 +62,20 @@ export const useVolumeLinkView = () => {
                 }
                 throw error;
             });
+            // TODO: Remove that after full rollout of photos
+            if (
+                invitationDetails?.link.type === LinkType.ALBUM &&
+                !photosWithAlbumsEnabled &&
+                (await getDefaultPhotosShare().then((photosShare) => photosShare?.volumeType !== VolumeType.Photos))
+            ) {
+                createNotification({
+                    type: 'info',
+                    text: c('Notification')
+                        .t`The Albums feature is on its way! We’re rolling it out gradually — please try again soon`,
+                    expiration: 10000,
+                });
+                return;
+            }
 
             if (!invitationDetails) {
                 const link: DecryptedLink | undefined = await getContextShareLinkDetails(abortSignal, {
@@ -75,6 +94,7 @@ export const useVolumeLinkView = () => {
                         shareId: link.shareId,
                         isFile: link.isFile,
                         mimeType: link.mimeType,
+                        type: link.type,
                     };
                 }
                 // This will happen if we can't find the invite and the file/folder does not exist
@@ -89,6 +109,7 @@ export const useVolumeLinkView = () => {
                 shareId: invitationDetails.share.shareId,
                 isFile: invitationDetails.link.isFile,
                 mimeType: invitationDetails.link.mimeType,
+                type: invitationDetails.link.type,
             };
         } catch (error) {
             // This is to make TS work with error typing
