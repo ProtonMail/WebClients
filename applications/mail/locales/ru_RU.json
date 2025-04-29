@@ -288,6 +288,9 @@
       "Copy email to clipboard": [
         "Скопировать адрес электронной почты в буфер обмена"
       ],
+      "Copy password": [
+        "Скопировать пароль"
+      ],
       "Copy password to clipboard": [
         "Скопировать пароль в буфер обмена"
       ],
@@ -320,6 +323,9 @@
       ],
       "Create new message": [
         "Создать новое сообщение"
+      ],
+      "Create new password": [
+        "Создать новый пароль"
       ],
       "Current plan": [
         "Текущий тариф"
@@ -521,6 +527,9 @@
       ],
       "Forward as attachment": [
         "Переслать как вложение"
+      ],
+      "Generate password": [
+        "Создать пароль"
       ],
       "Generate text": [
         "Сгенерировать текст"
@@ -1095,11 +1104,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select All": [
-        "Выбрать все"
-      ],
       "Select all": [
         "Выделить все"
+      ],
+      "Select All": [
+        "Выбрать все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1295,6 +1304,12 @@
       ],
       "Trust": [
         "Доверять"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -6328,6 +6343,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Вы уверены, что хотите безвозвратно удалить это сообщение?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "По крайней мере ${ BETTER_PASSWORD_LENGTH } символов"
+      ],
       "Attach public key": [
         "Присоединить открытый ключ"
       ],
@@ -6835,6 +6853,9 @@
       "Initializing…": [
         "Инициализация…"
       ],
+      "Insert image": [
+        "Вставить изображение"
+      ],
       "Insert link": [
         "Вставить ссылку"
       ],
@@ -6852,6 +6873,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Пригласите своего партнёра, друга или того, с кем вы делитесь тарифом ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "Лучше иметь:"
       ],
       "JCB logo": [
         "Логотип JCB"
@@ -6918,9 +6942,6 @@
       ],
       "Low Priority": [
         "Низкий приоритет"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Установите ${ MAIL_APP_NAME } в качестве приложения по умолчанию для электронной почты."
       ],
       "Manage your folders": [
         "Управляйте своими папками"
@@ -7054,6 +7075,9 @@
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
+      "Numbers": [
+        "Цифры"
+      ],
       "of": [
         "из"
       ],
@@ -7074,6 +7098,9 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопирован в буфер обмена"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
@@ -7405,6 +7432,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "Символы (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Синхронизируйте и управляйте файлами с приложением ${ DRIVE_APP_NAME }. Создавайте и делитесь документами в ${ DOCS_APP_NAME } и безопасно храните их. Все на ${ ios }, ${ android } и ${ desktop }."
       ],
@@ -7728,6 +7758,9 @@
       ],
       "Upload picture": [
         "Загрузить картинку"
+      ],
+      "Uppercase and lowercase letters": [
+        "Заглавные и строчные буквы"
       ],
       "URL link": [
         "URL ссылка"
@@ -8450,10 +8483,10 @@
       "Always move sender's emails": [
         "Всегда перемещать сообщения отправителя"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -8675,11 +8708,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -8756,6 +8789,9 @@
       "Move to Inbox": [
         "Переместить во Входящие"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Должно содержать не менее ${ MIN_PASSWORD_LENGTH } символов"
+      ],
       "Name": [
         "Имя"
       ],
@@ -8789,14 +8825,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Original link": [
         "Оригинальная ссылка"
@@ -8891,6 +8927,12 @@
       "Street address": [
         "Адрес"
       ],
+      "Strong": [
+        "Надежный"
+      ],
+      "Strong password": [
+        "Надежный пароль"
+      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -8938,6 +8980,18 @@
       ],
       "Verification code": [
         "Код подтверждения"
+      ],
+      "Vulnerable": [
+        "Уязвимый"
+      ],
+      "Vulnerable password": [
+        "Уязвимый пароль"
+      ],
+      "Weak": [
+        "Слабый"
+      ],
+      "Weak password": [
+        "Слабый пароль"
       ],
       "What happened?": [
         "Что случилось?"
@@ -9606,29 +9660,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Перейти на тариф ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -9650,6 +9681,29 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Перейти на тариф ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
