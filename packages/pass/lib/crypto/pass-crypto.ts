@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
 import { FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { authStore } from '@proton/pass/lib/auth/store';
+import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { serializeShareManagers } from '@proton/pass/lib/crypto/utils/seralize';
 import type {
@@ -50,7 +51,7 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
 export const intoFileUniqueID = (shareId: string, fileID: FileID, pending?: boolean) =>
     `${shareId}::${fileID}` + (pending ? '::pending' : '');
 
-export const createPassCrypto = (): PassCryptoWorker => {
+export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
     const context: PassCryptoManagerContext = {
         user: undefined,
         userKeys: [],
@@ -375,12 +376,16 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async createNewUserInvite({ shareId, email, role, itemId }) {
             assertHydrated(context);
 
+            if (!core) throw new PassCryptoError('`PassCoreProxy` not initialized');
+
             const manager = getShareManager(shareId);
             const share = manager.getShare();
             const sharedItem = itemId && share.targetType === ShareType.Item;
             const rotation = manager.getLatestRotation();
 
-            const signature = await processes.createNewUserSignature({
+            const createNewUserSignature = processes.createNewUserSignatureFactory(core);
+
+            const signature = await createNewUserSignature({
                 inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
                 invitedEmail: email,
                 shareKey: sharedItem ? manager.getItemShareKey(rotation) : manager.getVaultShareKey(rotation),
