@@ -102,7 +102,7 @@ export const PhotosLayout = () => {
     );
 
     const { transferPhotoLinks } = useLinksActions();
-    const { copyLinkToVolume } = useLinkActions();
+    const { copyLinkToVolume, copyLinksToVolume } = useLinkActions();
     const { selectedItems, clearSelection } = usePhotosSelection({
         photos,
         albumPhotos,
@@ -362,22 +362,29 @@ export const PhotosLayout = () => {
                 missingPhotosIds?: string[];
             }
         ) => {
-            if (!albumShareId || !linkId || !albumLinkId || !volumeId) {
+            if (!albumShareId || !linkId || !albumLinkId || !volumeId || !album || !shareId) {
                 return;
             }
             try {
-                if (missingPhotosIds) {
-                    await transferPhotoLinks(
-                        abortSignal,
-                        volumeId,
-                        {
-                            shareId: albumShareId,
-                            linkIds: missingPhotosIds,
-                            newShareId: albumShareId,
-                            newParentLinkId: linkId,
-                        },
-                        'remove_photos_from_album'
-                    );
+                if (missingPhotosIds && missingPhotosIds.length > 0) {
+                    // Transfer (aka move) is same volume only
+                    // We use copy otherwise
+                    const shouldTransfer = album.volumeId === volumeId;
+                    if (shouldTransfer) {
+                        await transferPhotoLinks(
+                            abortSignal,
+                            volumeId,
+                            {
+                                shareId: albumShareId,
+                                linkIds: missingPhotosIds,
+                                newShareId: albumShareId,
+                                newParentLinkId: linkId,
+                            },
+                            'remove_photos_from_album'
+                        );
+                    } else {
+                        await copyLinksToVolume(abortSignal, albumShareId, missingPhotosIds, volumeId, shareId, linkId);
+                    }
                 }
                 await removeAlbumPhotos(abortSignal, albumShareId, albumLinkId, selectedPhotosIds);
             } catch (e) {
@@ -387,7 +394,16 @@ export const PhotosLayout = () => {
                 sendErrorReport(e);
             }
         },
-        [albumShareId, linkId, albumLinkId, volumeId, removeAlbumPhotos, createNotification, transferPhotoLinks]
+        [
+            albumShareId,
+            linkId,
+            albumLinkId,
+            volumeId,
+            shareId,
+            removeAlbumPhotos,
+            createNotification,
+            transferPhotoLinks,
+        ]
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
