@@ -2,12 +2,18 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { PLANS, Subscription } from '@proton/payments';
-import { APPS, type APP_NAMES, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import {
+    APPS,
+    type APP_NAMES,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    SHARED_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
+
+import { APP_NAME } from 'proton-mail/config';
 
 const getStr = (percentage: number, storage: ReactNode, cta: ReactNode) => {
     if (percentage >= 100) {
@@ -28,38 +34,16 @@ const getStrFull = (percentage: number, storage: ReactNode, cta: ReactNode) => {
 };
 
 export const getStorageFull = ({
-    user,
-    subscription,
     percentage,
     mode,
-    upsellRef,
-    plan,
     app,
+    upgrade,
 }: {
-    user: UserModel;
-    subscription: Subscription | undefined;
     percentage: number;
     mode: 'mail' | 'drive' | 'both';
     app?: APP_NAMES;
-    upsellRef: string | undefined;
-    plan: PLANS;
+    upgrade: ReactNode;
 }): ReactNode => {
-    const upgrade = user.canPay ? (
-        <SettingsLink
-            key="storage-link"
-            className="color-inherit"
-            path={addUpsellPath(getUpgradePath({ user, plan, subscription }), upsellRef)}
-        >
-            {
-                // Translator: To upload or sync files, free up space or upgrade for more storage
-                c('storage_split: info').t`upgrade for more storage`
-            }
-        </SettingsLink>
-    ) : (
-        // Translator: To upload or sync files, contact your administrator
-        c('storage_split: info').t`contact your administrator`
-    );
-
     const driveCta = c('storage_split: info').jt`To upload or sync files, free up space or ${upgrade}`;
     const mailCta = c('storage_split: info').jt`To send or receive emails, free up space or ${upgrade}`;
 
@@ -75,4 +59,13 @@ export const getStorageFull = ({
         }
         return getStrFull(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), mailCta);
     }
+};
+
+export const getStorageUpsell = (app?: APP_NAMES) => {
+    return getUpsellRefFromApp({
+        app: APP_NAME,
+        feature: SHARED_UPSELL_PATHS.STORAGE_PERCENTAGE,
+        component: UPSELL_COMPONENT.MODAL,
+        fromApp: app,
+    });
 };
