@@ -50,12 +50,9 @@ const CountriesStep = ({
         );
     }, [groupedLocations, searchQuery]);
 
-    const allCitiesCount = useMemo(
-        () => groupedLocations.reduce((prev, cur) => prev + cur.cities.length, 0),
-        [groupedLocations]
-    );
-    const selectedCitiesCount = useMemo(
-        () => Object.keys(selectedCities).reduce((prev, cur) => prev + selectedCities[cur].length, 0),
+    const allCitiesCount = useMemo(() => groupedLocations.reduce((p, c) => p + c.cities.length, 0), [groupedLocations]);
+    const selectedCountriesCount = useMemo(
+        () => Object.keys(selectedCities).reduce((p, c) => p + Number(selectedCities[c].length > 0), 0),
         [selectedCities]
     );
 
@@ -85,16 +82,16 @@ const CountriesStep = ({
                         <TableCell>
                             <div className="flex gap-4 w-full items-center">
                                 <Checkbox
-                                    checked={allCitiesCount <= selectedCitiesCount}
+                                    checked={allCitiesCount <= selectedCountriesCount}
                                     onChange={onSelectAllCities}
                                 />
                                 <span className="text-bold">{c('Label').t`Countries`}</span>
-                                {selectedCitiesCount > 0 && (
+                                {selectedCountriesCount > 0 && (
                                     <span className="text-sm color-weak">
                                         {c('CountriesStep:Info').ngettext(
-                                            msgid`${selectedCitiesCount} selected`,
-                                            `${selectedCitiesCount} selected`,
-                                            selectedCitiesCount
+                                            msgid`${selectedCountriesCount} selected`,
+                                            `${selectedCountriesCount} selected`,
+                                            selectedCountriesCount
                                         )}
                                     </span>
                                 )}
