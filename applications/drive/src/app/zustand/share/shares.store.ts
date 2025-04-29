@@ -50,6 +50,11 @@ export const useSharesStore = create<SharesState>()(
                     ),
                 }));
         },
+        // TODO: Temporary until recovery is handle for albums
+        haveLockedPhotosShare: () => {
+            const { shares } = get();
+            return Object.values(shares).some((share) => share.isLocked && share.type === ShareType.photos);
+        },
         getDefaultShareId: () => {
             const { shares } = get();
             return findDefaultShareId(Object.values(shares));
