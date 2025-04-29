@@ -463,6 +463,9 @@
       "Discard changes": [
         "Abandonner les modifications"
       ],
+      "Discard Changes": [
+        "Abandonner les changements"
+      ],
       "Discover ${ planName }": [
         "Découvrez ${ planName }"
       ],
@@ -677,7 +680,7 @@
         "Téléchargez l'application"
       ],
       "Get the apps": [
-        "Téléchargez les applications"
+        "Obtenir les applications"
       ],
       "Get the browser extension": [
         "Téléchargez l'extension de navigateur"
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "Conserver"
+      ],
+      "Keep Editing": [
+        "Poursuivre les modifications"
       ],
       "Keep logo": [
         "Conserver le logo"
@@ -1126,11 +1132,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "select file": [
-        "sélectionnez un fichier."
-      ],
       "Select file": [
         "Sélectionner un fichier"
+      ],
+      "select file": [
+        "sélectionnez un fichier."
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -4601,6 +4607,9 @@
       "Edit conditions": [
         "Modifier les conditions"
       ],
+      "Got it": [
+        "J'ai compris"
+      ],
       "Next": [
         "Suivant"
       ],
@@ -4673,17 +4682,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Un message de confirmation sera envoyé à ${ boldForwardeeEmail }."
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Une nouvelle clé de chiffrement sera générée pour ${ boldForwarderEmail }."
-      ],
       "Automatically forward emails to another email address.": [
         "Transférez automatiquement les messages vers une autre adresse électronique."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Le chiffrement de bout en bout a été désactivé pour votre adresse ${ boldForwarderEmail }, mais le chiffrement zéro accès reste activé. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Pour des raisons de compatibilité, une nouvelle clé de chiffrement a été générée pour ${ boldForwarderEmail }."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Pour des raisons de compatibilité, une nouvelle clé de chiffrement sera générée pour ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Pour des raisons de compatibilité, le chiffrement post-quantique a été désactivé et une nouvelle clé de chiffrement a été générée pour ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "Pour des raisons de compatibilité, le chiffrement post-quantique a été désactivé pour ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "Pour des raisons de compatibilité, le chiffrement post-quantique sera désactivé pour ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Pour des raisons de compatibilité, le chiffrement post-quantique sera désactivé et une nouvelle clé de chiffrement sera générée pour ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Le destinataire est invité et doit accepter/refuser l'invitation ou la mise à jour."
       ],
       "Forwarding is active": [
         "Le transfert est activé."
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "Le transfert vers ${ boldForwardeeEmail } sera opérationnel dès que le destinataire aura accepté la demande."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Transférer à une adresse sans chiffrement de bout en bout désactivera le chiffrement de bout en bout pour votre adresse ${ boldForwarderEmail }, mais le chiffrement zéro accès restera activé. ${ learnMoreLink }"
@@ -4760,6 +4790,14 @@
         "Saisissez un texte ou un mot-clé pour cette condition :"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Envoi de l'e-mail de confirmation"
+      ],
+      "Setting up forwarding": [
+        "Configuration du transfert"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Le chiffrement de bout en bout sera réactivé pour l'adresse de l'expéditeur."
@@ -4786,17 +4824,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Une nouvelle clé de chiffrement a été générée pour ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Les modifications ont été enregistrées."
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Le message a été envoyé à ${ forward.ForwardeeEmail }."
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Le message a été envoyé à ${ model.forwardeeEmail }."
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "Le message a été envoyé à ${ existingForwardingConfig.ForwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Le transfert a été accepté."
@@ -4824,7 +4856,13 @@
       "Forwarding activated": [
         "Transfert activé"
       ],
-      "Request confirmation": [
+      "Request confirmation?": [
+        "Demander une confirmation ?"
+      ],
+      "Request sent": [
+        "La demande a été envoyée."
+      ],
+      "Requesting confirmation": [
         "Demande de confirmation"
       ],
       "Set up forwarding": [
@@ -6646,9 +6684,6 @@
       "Device": [
         "Appareil"
       ],
-      "Enabled Countries": [
-        "Pays activés"
-      ],
       "Enter your email address": [
         "Saisissez votre adresse e-mail."
       ],
@@ -6657,9 +6692,6 @@
       ],
       "Folders": [
         "Dossiers"
-      ],
-      "Groups": [
-        "Groupes"
       ],
       "IP address": [
         "Adresse IP"
@@ -6687,9 +6719,6 @@
       ],
       "Permissions": [
         "Autorisations"
-      ],
-      "Policy Name": [
-        "Nom de la politique"
       ],
       "Protection": [
         "Protection"
@@ -7433,6 +7462,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mois)"
       ],
+      "(default)": [
+        "(par défaut)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(filtrer si TOUTES les conditions suivantes sont remplies)"
       ],
@@ -7445,8 +7477,15 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** n'est pas pris en charge dans votre organisation **${ organizationName }**."
       ],
+      "**${ appName }** is not supported.": [
+        "**${ appName }** n'est pas pris en charge."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenez une adresse ${ BRAND_NAME }** pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "${ invisibleCount } de plus",
+        "${ invisibleCount } de plus"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -7911,9 +7950,6 @@
       "Create your first Gateway": [
         "Créez votre première Passerelle"
       ],
-      "Created (not published)": [
-        "Créé (non publié)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Création d'un serveur de passerelle : ${ serverNumber } sur ${ total }",
         "Création de serveurs de passerelle : ${ serverNumber } sur ${ total }"
@@ -7986,9 +8022,6 @@
       ],
       "Delete link?": [
         "Supprimer le lien ?"
-      ],
-      "Deleted (not published)": [
-        "Supprimé (non publié)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
@@ -8111,9 +8144,6 @@
       ],
       "Edit link": [
         "Modifier le lien"
-      ],
-      "Edited (not published)": [
-        "Édité (non publié)"
       ],
       "eduGAIN configuration saved": [
         "La configuration EduGain a été enregistrée."
@@ -8840,6 +8870,9 @@
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
+      "No single sign-on": [
+        "Pas d’authentification unique"
+      ],
       "Not a valid URL": [
         "L'URL n'est pas valide."
       ],
@@ -8969,14 +9002,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Le mot de passe doit être de ${ MIN_PASSWORD_LENGTH } ou plus."
       ],
+      "Password must have:": [
+        "Le mot de passe doit comprendre :"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Prix Editors' Choice de PC Magazine avec une note de 5 sur 5 étoiles"
-      ],
-      "Pending removal": [
-        "En attente de suppression"
       ],
       "per month": [
         "par mois"
@@ -9509,6 +9542,9 @@
       "The securest way to browse, stream, and be online.": [
         "Le moyen le plus sûr de naviguer, de faire du streaming et d'être en ligne."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Les modifications non publiées que vous avez apportées seront perdues."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
@@ -9583,6 +9619,9 @@
       ],
       "This promotion link has expired.": [
         "Ce lien promotionnel a expiré."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Ce service n’est pas accessible aux utilisateurs qui se connectent avec l’authentification unique."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Ce jeton ne sera plus disponible une fois que vous aurez fermé cette fenêtre. Nous vous recommandons de ne le partager avec personne."
@@ -9764,9 +9803,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "La signature du fichier de récupération ne peut pas être vérifiée. Nous vous invitons à contacter le support."
       ],
-      "Unchanged": [
-        "Non modifié"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
       ],
@@ -9857,11 +9893,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "Username": [
-        "Nom d'utilisateur"
-      ],
       "username": [
         "nom d'utilisateur"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -10148,6 +10184,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Vous pouvez activer la section Photos depuis l'interface en utilisant le commutateur ci-dessous."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Vous pouvez appliquer les règles de mot de passe que les membres de votre organisation utiliseront lorsqu’ils créeront ou réinitialiseront le mot de passe de leur compte ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Vous pouvez bénéficier de tous nos services de confidentialité premium dans un seul et même forfait, et ce pour seulement **${ priceString }/mois**."
@@ -11027,10 +11066,10 @@
       "Allow sharing outside the organization": [
         "Autoriser le partage en dehors de l'organisation"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11042,11 +11081,11 @@
       "Amount due": [
         "Montant à payer"
       ],
-      "AND": [
-        "ET"
-      ],
       "And": [
         "Et"
+      ],
+      "AND": [
+        "ET"
       ],
       "and": [
         "et"
@@ -11185,6 +11224,9 @@
       ],
       "Colors": [
         "Couleurs"
+      ],
+      "Common passwords": [
+        "Mots de passe communs"
       ],
       "Company": [
         "Entreprise"
@@ -11372,6 +11414,9 @@
       "Emails (last month)": [
         "Messages (mois dernier)"
       ],
+      "Enabled": [
+        "Activé"
+      ],
       "End date": [
         "Date de fin"
       ],
@@ -11468,11 +11513,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -11570,6 +11615,9 @@
       "Maximum number of characters": [
         "Nombre maximum de caractères"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Le nombre maximum de caractères est de ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Nombre maximum de mots"
       ],
@@ -11593,6 +11641,9 @@
       ],
       "Minimum number of characters": [
         "Nombre minimum de caractères"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Le nombre minimum de caractères est de ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Nombre minimum de mots"
@@ -11675,14 +11726,14 @@
       "Optional": [
         "Facultatif"
       ],
-      "OR": [
-        "OU"
-      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
+      ],
+      "OR": [
+        "OU"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -11698,6 +11749,9 @@
       ],
       "Password": [
         "Mot de passe"
+      ],
+      "Password strength": [
+        "Niveau de sécurité du mot de passe"
       ],
       "Payer": [
         "Payeur"
@@ -11821,6 +11875,9 @@
       ],
       "Send in": [
         "Envoyer en"
+      ],
+      "Sequences": [
+        "Séquences"
       ],
       "Show ${ n } administrator": [
         "Afficher ${ n } administrateur",
@@ -11960,6 +12017,9 @@
       ],
       "Uppercase": [
         "Majuscules"
+      ],
+      "Uppercase and lowercase letters": [
+        "Lettres majuscules et minuscules"
       ],
       "URL": [
         "URL"
@@ -12294,6 +12354,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Comment collaborer dans ${ DOCS_SHORT_APP_NAME } ?"
       ],
+      "How to create strong passwords": [
+        "Comment créer des mots de passe forts"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Comment activer ${ PROTON_SENTINEL_NAME } ?"
       ],
@@ -12357,11 +12420,11 @@
       "perform a password reset from your active session": [
         "réinitialiser le mot de passe depuis votre session active"
       ],
-      "privacy policy": [
-        "politique de confidentialité"
-      ],
       "Privacy policy": [
         "Politique de confidentialité"
+      ],
+      "privacy policy": [
+        "politique de confidentialité"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -13729,6 +13792,14 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -13747,14 +13818,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14392,6 +14455,17 @@
         "Bureau"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tout le monde"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "No one": [
+        "Personne"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10 du mois"
@@ -14489,6 +14563,9 @@
       "Add to existing group": [
         "Ajouter à un groupe existant"
       ],
+      "Allowed ${ defaultLabel }": [
+        "${ defaultLabel } autorisé"
+      ],
       "Allowed (default)": [
         "Autorisé (par défaut)"
       ],
@@ -14564,6 +14641,9 @@
       "On": [
         "Activé"
       ],
+      "Optional ${ defaultLabel }": [
+        "${ defaultLabel } facultatif"
+      ],
       "Organization only": [
         "Organisation seulement"
       ],
@@ -14620,17 +14700,6 @@
       ],
       "Trash": [
         "Déplacer dans le dossier Corbeille"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tout le monde"
-      ],
-      "Group members": [
-        "Membres du groupe"
-      ],
-      "No one": [
-        "Personne"
       ]
     },
     "Option delay send seconds": {
@@ -18474,6 +18543,9 @@
       "${ appName } keyboard shortcuts": [
         "Raccourcis clavier ${ appName }"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Règles de mot de passe du compte ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -18709,10 +18781,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -19210,9 +19282,6 @@
       "Get the apps": [
         "Obtenir les applications"
       ],
-      "Get Zooming faster": [
-        "Obtenez Zoom plus rapidement"
-      ],
       "Gift": [
         "Cadeau"
       ],
@@ -19591,6 +19660,9 @@
       ],
       "Save time with email filters": [
         "Gagnez du temps avec les filtres de messagerie"
+      ],
+      "Schedule meetings in one click": [
+        "Programmez des réunions en un clic"
       ],
       "Schedule send:": [
         "Programmez l'envoi :"
@@ -20135,6 +20207,12 @@
       ],
       "Feature in early access": [
         "Fonctionnalité en avant-première"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Par exemple, **12345, abcde**, etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Par exemple, **mot de passe, azerty**, etc."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Obtenez des conseils de productivité et de sécurité pour vous aider à tirer le meilleur parti de ${ MAIL_APP_NAME } et bien plus encore."

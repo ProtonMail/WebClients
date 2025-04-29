@@ -1099,10 +1099,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -4514,9 +4514,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "확인 이메일이 ${ boldForwardeeEmail }으로 전송됩니다."
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "새 암호화된 키가 ${ boldForwarderEmail }에 생성됩니다."
-      ],
       "Automatically forward emails to another email address.": [
         "다른 이메일 주소로 이메일을 자동으로 가져오세요."
       ],
@@ -4627,17 +4624,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "새 암호화된 키가 ${ forwarderEmail }에 생성되었습니다."
-      ],
       "Changes saved": [
         "변경 사항 저장됨"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "이메일을 ${ forward.ForwardeeEmail }(으)로 전송했습니다."
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "이메일이 ${ model.forwardeeEmail }(으)로 전송되었습니다."
       ],
       "Forwarding accepted": [
         "가져오기 수락됨"
@@ -4664,9 +4652,6 @@
       ],
       "Forwarding activated": [
         "가져오기를 활성화 했습니다."
-      ],
-      "Request confirmation": [
-        "확인 요청"
       ],
       "Set up forwarding": [
         "가져오기 설정"
@@ -6463,9 +6448,6 @@
       "Device": [
         "기기"
       ],
-      "Enabled Countries": [
-        "활성화된 국가"
-      ],
       "Enter your email address": [
         "이메일 주소를 입력하세요"
       ],
@@ -6474,9 +6456,6 @@
       ],
       "Folders": [
         "폴더"
-      ],
-      "Groups": [
-        "그룹"
       ],
       "IP address": [
         "IP 주소"
@@ -6504,9 +6483,6 @@
       ],
       "Permissions": [
         "권한"
-      ],
-      "Policy Name": [
-        "정책 이름"
       ],
       "Protection": [
         "보호"
@@ -7042,7 +7018,7 @@
         "${ boldName }이(가) 기본 일정으로 설정됩니다."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없습니다."
+        "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없게 됩니다."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME }은 당신이 신뢰할 수 있는 프라이버시 보호, 강력한 암호화 보장, 오픈 소스 코드, 스위스 법률로 보호됩니다. 우리는 아무도 당신의 데이터를 악용해서는 안 된다고 믿습니다. 우리 기술과 사업은 근본적으로 더 강력한 프라이버시 보호에 기초를 두고 있죠."
@@ -7135,7 +7111,7 @@
         "${ PASS_APP_NAME }는 쉬운 사용과 생산성을 위해 설계된 차세대 비밀번호 관리자입니다. 오픈소스이며, SimpleLogin과 ${ BRAND_NAME }간 공동 개발되었습니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -7686,9 +7662,6 @@
       "Create your first Gateway": [
         "첫 게이트웨이를 생성하세요"
       ],
-      "Created (not published)": [
-        "생성됨 (미게시됨)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "게이트웨이 서버 생성 중: ${ serverNumber } / ${ total }"
       ],
@@ -7760,9 +7733,6 @@
       ],
       "Delete link?": [
         "링크를 삭제할까요?"
-      ],
-      "Deleted (not published)": [
-        "삭제됨 (미게시됨)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
@@ -7883,9 +7853,6 @@
       ],
       "Edit link": [
         "링크 편집"
-      ],
-      "Edited (not published)": [
-        "편집됨 (미게시됨)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN 설정 저장됨"
@@ -8173,7 +8140,7 @@
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "다른 어딘가에 로그인했었다면 ${ signedInPasswordResetLink } 할수도 있습니다."
+        "다른 어딘가에서 로그인하셨다면 ${ signedInPasswordResetLink }"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
@@ -8741,9 +8708,6 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "5점 중 5점 평가의 PC Magazine 에디터 초이스 어워드"
-      ],
-      "Pending removal": [
-        "삭제 대기중"
       ],
       "per month": [
         "매월"
@@ -9397,7 +9361,7 @@
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "이는 활성 세션에서 로그아웃하고 2단계 인증을 비활성화하게 됩니다."
+        "이 작업은 활성 세션에서 로그아웃하며 2단계 인증을 비활성화하게 됩니다."
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "이 작업은 **(${ date }에 생성된) 기기 ${ name }**을(를) 내 ${ BRAND_NAME } 계정에서 연결 해제합니다."
@@ -9513,9 +9477,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "복구 파일의 서명을 검증할 수 없습니다. 고객지원으로 문의해 주십시오."
       ],
-      "Unchanged": [
-        "변경 안 됨"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "이 계정에는 저장된 복구 방법이 없습니다."
       ],
@@ -9606,10 +9567,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -10754,10 +10715,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10769,11 +10730,11 @@
       "Amount due": [
         "지불할 금액"
       ],
-      "AND": [
-        "및"
-      ],
       "And": [
         "그리고"
+      ],
+      "AND": [
+        "및"
       ],
       "and": [
         "그리고"
@@ -11195,10 +11156,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "만약"
       ],
-      "If": [
+      "IF": [
         "만약"
       ],
       "Import all messages": [
@@ -11402,13 +11363,13 @@
       "Optional": [
         "선택 사항"
       ],
-      "OR": [
-        "또는"
-      ],
       "or": [
         "또는"
       ],
       "Or": [
+        "또는"
+      ],
+      "OR": [
         "또는"
       ],
       "Organization name": [
@@ -12054,13 +12015,13 @@
         "신용 카드 없는 PayPal"
       ],
       "perform a password reset from your active session": [
-        "활성 세션에서 비밀번호 재설정을 수행하세요"
-      ],
-      "privacy policy": [
-        "개인정보 취급방침"
+        "활성 상태의 세션에서 비밀번호를 재설정하시기 바랍니다."
       ],
       "Privacy policy": [
         "개인 정보 정책"
+      ],
+      "privacy policy": [
+        "개인정보 취급방침"
       ],
       "Reactivate now": [
         "지금 재활성화"
@@ -13384,6 +13345,14 @@
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -13402,14 +13371,6 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -14040,6 +14001,17 @@
         "데스크탑"
       ]
     },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "매월 10일"
@@ -14289,17 +14261,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
       ]
     },
     "Option delay send seconds": {
@@ -18285,11 +18246,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -18712,7 +18673,7 @@
         "Windows용"
       ],
       "Forgot recovery method": [
-        "복구 방법을 잊었습니다"
+        "복구 방법 분실"
       ],
       "Forward and auto-reply": [
         "전달 및 자동 회신"
@@ -18761,9 +18722,6 @@
       ],
       "Get the apps": [
         "앱 다운로드"
-      ],
-      "Get Zooming faster": [
-        "더 빠르게 Zoom 참가하기"
       ],
       "Gift": [
         "선물"
