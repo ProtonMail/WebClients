@@ -12,7 +12,6 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import DeleteModal from '@proton/components/containers/vpn/sharedServers/PolicyModal/DeleteModal';
@@ -289,7 +288,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
             </div>
 
             <div
-                className={`publish-banner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2`}
+                className={`publish-banner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2 flex-nowrap gap-4`}
             >
                 <p className="ml-4 m-0 color-weak">
                     {
@@ -302,10 +301,12 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     }
                 </p>
                 {hasUnsavedChanges && (
-                    <div className="flex items-center">
-                        <OrangeDot />
-                        <span className="ml-2" style={{ fontWeight: 'var(--font-weight-bold)' }}>{c('Info')
+                    <div className="unpublished-cta flex items-center shrink-0">
+                        <span className="text-right">
+                            <OrangeDot />
+                            <span className="ml-2" style={{ fontWeight: 'var(--font-weight-bold)' }}>{c('Info')
                             .t`You have unpublished changes`}</span>
+                        </span>
                         <Button color="norm" type="button" className="ml-8" onClick={handlePublishChanges}>
                             {c('Action').t`Publish changes`}
                         </Button>
@@ -381,7 +382,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
 
                             return (
                                 <div
-                                    key={customPolicy.LocationFilterPolicyID}
+                                    key={customPolicy.Name + customPolicy.LocationFilterPolicyID}
                                     onClick={({ target }) => {
                                         if (
                                             target instanceof HTMLElement &&
@@ -403,10 +404,11 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                 >
                                     <div className="flex flex-column md:flex-row md:items-center flex-1 gap-2">
                                         <div
-                                            className="text-lg text-semibold w-custom overflow-hidden"
+                                            className="flex gap-1 items-center text-lg text-semibold w-custom overflow-hidden"
                                             style={{ '--w-custom': '200px' }}
                                         >
                                             {customPolicy.Name}
+                                            {customPolicy.localStatus !== 'unchanged' && <OrangeDot />}
                                         </div>
                                         <div className="md:flex-1" style={{ flexBasis: 'min-content' }}>
                                             <PolicyUsersGroupsList policy={customPolicy} />
@@ -417,8 +419,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                         />
                                     </div>
                                     <div
-                                        className="flex gap-1 items-center justify-end w-custom"
-                                        style={{ '--w-custom': '76px' }}
+                                        className="flex gap-1 items-center justify-end"
                                     >
                                         {!isDeleted && (
                                             <PolicyEditButton
@@ -427,15 +428,6 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                                 handleDeletePolicy={handleDeletePolicy}
                                             />
                                         )}
-
-                                        <Toggle
-                                            id={`custom-policy-status-${customPolicy.LocationFilterPolicyID}`}
-                                            checked={!isDeleted}
-                                            onChange={() => handleDeletePolicy(customPolicy)}
-                                            disabled={isDeleted}
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="not-clickable-with-parent"
-                                        />
                                     </div>
                                 </div>
                             );
