@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Mover a otra bóveda"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
@@ -1810,6 +1810,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -3820,14 +3824,14 @@
       "Enter coupon code": [
         "Ingresa el código del cupón"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Ingrese su contraseña de ${ BRAND_NAME }"
+      ],
       "Enter your backup password": [
         "Ingrese la contraseña de respaldo."
       ],
       "Enter your extra password": [
         "Ingrese su contraseña adicional"
-      ],
-      "Enter your password": [
-        "Ingrese la contraseña"
       ],
       "Enter your PIN": [
         "Ingrese el código PIN"
