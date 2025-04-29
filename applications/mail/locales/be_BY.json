@@ -300,6 +300,9 @@
       "Copy email to clipboard": [
         "Капіяваць ліст у буфер абмену"
       ],
+      "Copy password": [
+        "Скапіяваць пароль"
+      ],
       "Copy password to clipboard": [
         "Капіяваць пароль у буфер абмену"
       ],
@@ -332,6 +335,9 @@
       ],
       "Create new message": [
         "Стварыць новае паведамленне"
+      ],
+      "Create new password": [
+        "Стварыць новы пароль"
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -539,6 +545,9 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
+      ],
+      "Generate password": [
+        "Згенерыраваць пароль"
       ],
       "Generate text": [
         "Згенерыраваць тэкст"
@@ -1143,10 +1152,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1361,6 +1370,12 @@
       ],
       "Trust": [
         "Давяраць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -6558,6 +6573,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Вы сапраўды хочаце незваротна выдаліць гэта паведамленне?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
+      ],
       "Attach public key": [
         "Далучыць публічны ключ"
       ],
@@ -7084,10 +7102,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7106,6 +7121,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Запрасіце свайго партнёра, сябра або тую асобу з якой вы абагульваеце тарыфны план ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "Лепш за ўсё, каб у вас было:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Лепш за ўсё выкарыстоўваць VPN пастаянна, але ў гэтых выпадках пагрозы кібербяспекі могуць быць самымі высокімі:"
@@ -7320,6 +7338,9 @@
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
+      "Numbers": [
+        "Лічбы"
+      ],
       "of": [
         "з"
       ],
@@ -7355,6 +7376,12 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скапіяваны ў буфер абмену"
+      ],
+      "Password must have:": [
+        "Пароль павінен змяшчаць:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
@@ -7719,6 +7746,9 @@
       "Surveillance": [
         "Назіранне"
       ],
+      "Symbols (#$&)": [
+        "Сімвалы (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Сінхранізуйце і кіруйце файламі з дапамогай праграмы ${ DRIVE_APP_NAME }. Стварайце і абагульвайце дакументы ў ${ DOCS_APP_NAME }, а потым бяспечна захоўвайце іх. Праграмы даступны для ${ ios }, ${ android } і ${ desktop }."
       ],
@@ -8057,6 +8087,9 @@
       ],
       "Upload picture": [
         "Запампаваць малюнак"
+      ],
+      "Uppercase and lowercase letters": [
+        "Маленькія і вялікія літары"
       ],
       "URL link": [
         "URL-спасылка"
@@ -8818,10 +8851,10 @@
       "Always move sender's emails": [
         "Заўсёды перамяшчаць лісты адпраўніка"
       ],
-      "AND": [
+      "And": [
         "І"
       ],
-      "And": [
+      "AND": [
         "І"
       ],
       "and": [
@@ -9046,11 +9079,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "КАЛІ"
-      ],
       "If": [
         "Калі"
+      ],
+      "IF": [
+        "КАЛІ"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -9127,6 +9160,9 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
+      ],
       "Name": [
         "Назва"
       ],
@@ -9163,14 +9199,14 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Original link": [
         "Арыгінальная спасылка"
@@ -9183,6 +9219,9 @@
       ],
       "Password hint": [
         "Падказка да пароля"
+      ],
+      "Password strength": [
+        "Надзейнасць пароля"
       ],
       "Payer": [
         "Плацельшчык"
@@ -9265,6 +9304,12 @@
       "Street address": [
         "Вуліца"
       ],
+      "Strong": [
+        "Надзейны"
+      ],
+      "Strong password": [
+        "Надзейны пароль"
+      ],
       "Subscription options": [
         "Параметры падпіскі"
       ],
@@ -9312,6 +9357,18 @@
       ],
       "Verification code": [
         "Праверачны код"
+      ],
+      "Vulnerable": [
+        "Уразлівы"
+      ],
+      "Vulnerable password": [
+        "Уразлівы пароль"
+      ],
+      "Weak": [
+        "Ненадзейны"
+      ],
+      "Weak password": [
+        "Ненадзейны пароль"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -10043,29 +10100,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Атрымаць тарыфны план ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -10087,6 +10121,29 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Атрымаць тарыфны план ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {

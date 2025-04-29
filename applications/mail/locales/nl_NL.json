@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
+      "Copy password": [
+        "Wachtwoord kopiëren"
+      ],
       "Copy password to clipboard": [
         "Wachtwoord kopiëren naar klembord"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Nieuw bericht maken"
+      ],
+      "Create new password": [
+        "Nieuw wachtwoord instellen"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
+      ],
+      "Generate password": [
+        "Wachtwoord genereren"
       ],
       "Generate text": [
         "Genereer tekst"
@@ -1135,10 +1144,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -1355,7 +1364,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -3749,7 +3759,7 @@
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Moedig het gebruik van tweestapsverificatie in je organisatie aan voor extra beveiliging."
+        "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
@@ -6363,6 +6373,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Weet u zeker dat u dit bericht permanent wilt wissen?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
+      ],
       "Attach public key": [
         "Openbare sleutel bijvoegen"
       ],
@@ -6867,8 +6880,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -6887,6 +6899,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Nodig uw partner, een vriend, of degene die uw ${ protonDuoPlanName } abonnement deelt uit."
+      ],
+      "It's better to have:": [
+        "Het is beter om:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Het is het beste om op elk moment een VPN te gebruiken. Maar hier is wanneer cyberbeveiligingsbedreigingen de grootste kunnen zijn:"
@@ -6961,7 +6976,7 @@
         "Lage Prioriteit"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
+        "Maak van ${ MAIL_APP_NAME } uw standaard e-mailtoepassing."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -7101,6 +7116,9 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
+      "Numbers": [
+        "Nummers"
+      ],
       "of": [
         "van"
       ],
@@ -7136,6 +7154,12 @@
       ],
       "password": [
         "wachtwoord"
+      ],
+      "Password copied to clipboard": [
+        "Wachtwoord gekopieerd naar klembord"
+      ],
+      "Password must have:": [
+        "Het wachtwoord moet hebben:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
@@ -7492,6 +7516,9 @@
       "Surveillance": [
         "Surveillance"
       ],
+      "Symbols (#$&)": [
+        "Symbolen (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchroniseer en beheer bestanden met de ${ DRIVE_APP_NAME } app. Maak en deel documenten in ${ DOCS_APP_NAME } en sla ze veilig op. Alles op ${ ios }, ${ android } en ${ desktop }."
       ],
@@ -7824,6 +7851,9 @@
       ],
       "Upload picture": [
         "Afbeelding uploaden"
+      ],
+      "Uppercase and lowercase letters": [
+        "Hoofdletters en kleine letters"
       ],
       "URL link": [
         "Website (URL)"
@@ -8539,11 +8569,11 @@
       "Always move sender's emails": [
         "Verplaats altijd mails van afzenders"
       ],
-      "AND": [
-        "EN"
-      ],
       "And": [
         "En"
+      ],
+      "AND": [
+        "EN"
       ],
       "and": [
         "en"
@@ -8767,11 +8797,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ALS"
-      ],
       "If": [
         "Als"
+      ],
+      "IF": [
+        "ALS"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -8848,6 +8878,9 @@
       "Move to Inbox": [
         "Verplaats naar inbox"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
+      ],
       "Name": [
         "Naam"
       ],
@@ -8884,14 +8917,14 @@
       "Optional": [
         "Optioneel"
       ],
-      "OR": [
-        "OF"
-      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
+      ],
+      "OR": [
+        "OF"
       ],
       "Original link": [
         "Originele link"
@@ -8904,6 +8937,9 @@
       ],
       "Password hint": [
         "Wachtwoord hint"
+      ],
+      "Password strength": [
+        "Wachtwoordsterkte"
       ],
       "Payer": [
         "Betaler"
@@ -8986,6 +9022,12 @@
       "Street address": [
         "Adres"
       ],
+      "Strong": [
+        "Sterk"
+      ],
+      "Strong password": [
+        "Sterk wachtwoord"
+      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -9033,6 +9075,18 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Vulnerable": [
+        "Kwetsbaar"
+      ],
+      "Vulnerable password": [
+        "Kwetsbaar wachtwoord"
+      ],
+      "Weak": [
+        "Zwak"
+      ],
+      "Weak password": [
+        "Zwak wachtwoord"
       ],
       "What happened?": [
         "Wat is er gebeurd?"
@@ -9257,7 +9311,7 @@
         "E-mail doorsturen instellen"
       ],
       "How to use Groups": [
-        "Hoe gebruik je Groepen"
+        "Hoe gebruikt u Groepen"
       ],
       "if your data is leaked": [
         "als uw gegevens zijn gelekt"
@@ -9748,29 +9802,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Neem ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -9792,6 +9823,29 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Neem ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12023,6 +12077,11 @@
         "Weergavenaam"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Deelnemen aan Slack huddle"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Sneller in de app"
@@ -12850,6 +12909,11 @@
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Bespaar ${ priceString }"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } gesprek verwijderd",
@@ -13253,6 +13317,11 @@
       ],
       "vCard field": [
         "vCard-veld"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Deelnemen aan Teams vergadering"
       ]
     },
     "Time": {
@@ -14872,6 +14941,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Deelnemen aan Zoom vergadering"
       ]
     },
     "Zoom Meeting": {
