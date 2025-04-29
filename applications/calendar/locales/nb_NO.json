@@ -207,6 +207,9 @@
       "Copy link": [
         "Kopier kobling"
       ],
+      "Copy password": [
+        "Kopier passord"
+      ],
       "Copy version number to clipboard": [
         "Kopier versjonsnummeret til utklippstavlen"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Opprett ny kontakt"
+      ],
+      "Create new password": [
+        "Opprett nytt passord"
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -331,6 +337,9 @@
       ],
       "Forward as attachment": [
         "Videresend som vedlegg"
+      ],
+      "Generate password": [
+        "Generer passord"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaff deg ${ planName } for ${ priceCoupon }"
@@ -4744,6 +4753,9 @@
       "Are you sure you want to discard your import?": [
         "Er du sikker på at du vil forkaste importen din?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
+      ],
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
@@ -5058,6 +5070,9 @@
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
       ],
+      "It's better to have:": [
+        "Det er bedre å ha:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
@@ -5175,6 +5190,9 @@
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
+      "Numbers": [
+        "Tall"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Forekomster som tidligere er oppdatert av arrangøren vil bli beholdt, men noen av svarene dine vil gå tapt."
       ],
@@ -5210,6 +5228,12 @@
       ],
       "password": [
         "passord"
+      ],
+      "Password copied to clipboard": [
+        "Passord kopiert til utklippstavlen"
+      ],
+      "Password must have:": [
+        "Passordet må ha:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
@@ -5383,6 +5407,9 @@
       "Surveillance": [
         "Overvåking"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
@@ -5499,6 +5526,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
+      ],
+      "Uppercase and lowercase letters": [
+        "Store og små bokstaver"
       ],
       "User activated": [
         "Bruker aktivert"
@@ -6242,6 +6272,9 @@
       "Move to Inbox": [
         "Flytt til innboks"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Name": [
         "Navn"
       ],
@@ -6287,6 +6320,9 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "Password strength": [
+        "Passordstyrke"
       ],
       "Payer": [
         "Betaler"
@@ -6354,6 +6390,12 @@
       "Street address": [
         "Gateadresse"
       ],
+      "Strong": [
+        "Sterk"
+      ],
+      "Strong password": [
+        "Sterkt passord"
+      ],
       "Subscription options": [
         "Abonnementalternativer"
       ],
@@ -6392,6 +6434,18 @@
       ],
       "Verification code": [
         "Verifiseringskode"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Vulnerable password": [
+        "Sårbart passord"
+      ],
+      "Weak": [
+        "Svak"
+      ],
+      "Weak password": [
+        "Svakt passord"
       ],
       "Week start": [
         "Ukestart"
@@ -6982,26 +7036,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7023,6 +7057,26 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9095,6 +9149,11 @@
         "Signér"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Bli med på det umiddelbare Slack-møtet"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Raskere på appen"
@@ -9853,6 +9912,11 @@
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Spar ${ priceString }"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ut.",
@@ -10132,6 +10196,11 @@
       ],
       "vCard field": [
         "vCard-felt"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Bli med på Teams-møte"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10460,9 +10529,6 @@
       "Get the apps": [
         "Skaff deg appene"
       ],
-      "Get Zooming faster": [
-        "Skaff deg Zoom raskere"
-      ],
       "Gift": [
         "Gave"
       ],
@@ -10628,6 +10694,9 @@
       ],
       "Save changes": [
         "Lagre endringer"
+      ],
+      "Schedule meetings in one click": [
+        "Planlegg møter med ett klikk"
       ],
       "Security center": [
         "Sikkerhetssenter"
@@ -11403,6 +11472,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Bli med på Zoom-møte"
       ]
     },
     "Zoom integration": {

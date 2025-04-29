@@ -209,6 +209,9 @@
       "Copy link": [
         "Капіяваць спасылку"
       ],
+      "Copy password": [
+        "Скапіяваць пароль"
+      ],
       "Copy version number to clipboard": [
         "Скапіяваць нумар версіі ў буфер абмену"
       ],
@@ -232,6 +235,9 @@
       ],
       "Create new contact": [
         "Стварыць новы кантакт"
+      ],
+      "Create new password": [
+        "Стварыць новы пароль"
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -337,6 +343,9 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
+      ],
+      "Generate password": [
+        "Згенерыраваць пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -4882,6 +4891,9 @@
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
+      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -5206,6 +5218,9 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
+      "It's better to have:": [
+        "Лепш за ўсё, каб у вас было:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Лепш за ўсё выкарыстоўваць VPN пастаянна, але ў гэтых выпадках пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
@@ -5323,6 +5338,9 @@
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
+      "Numbers": [
+        "Лічбы"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Паўтарэнні, якія былі раней абноўлены арганізатарам будуць захаваны, але некаторыя з вашых адказаў будуць страчаны."
       ],
@@ -5358,6 +5376,12 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скапіяваны ў буфер абмену"
+      ],
+      "Password must have:": [
+        "Пароль павінен змяшчаць:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
@@ -5539,6 +5563,9 @@
       "Surveillance": [
         "Назіранне"
       ],
+      "Symbols (#$&)": [
+        "Сімвалы (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
       ],
@@ -5655,6 +5682,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
+      ],
+      "Uppercase and lowercase letters": [
+        "Маленькія і вялікія літары"
       ],
       "User activated": [
         "Карыстальнік актываваны"
@@ -6416,6 +6446,9 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
+      ],
       "Name": [
         "Назва"
       ],
@@ -6463,6 +6496,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password strength": [
+        "Надзейнасць пароля"
       ],
       "Payer": [
         "Плацельшчык"
@@ -6530,6 +6566,12 @@
       "Street address": [
         "Вуліца"
       ],
+      "Strong": [
+        "Надзейны"
+      ],
+      "Strong password": [
+        "Надзейны пароль"
+      ],
       "Subscription options": [
         "Параметры падпіскі"
       ],
@@ -6568,6 +6610,18 @@
       ],
       "Verification code": [
         "Праверачны код"
+      ],
+      "Vulnerable": [
+        "Уразлівы"
+      ],
+      "Vulnerable password": [
+        "Уразлівы пароль"
+      ],
+      "Weak": [
+        "Ненадзейны"
+      ],
+      "Weak password": [
+        "Ненадзейны пароль"
       ],
       "Week start": [
         "Пачатак тыдня"
@@ -7174,26 +7228,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7215,6 +7249,26 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10873,9 +10927,6 @@
       "Get the apps": [
         "Атрымаць праграмы"
       ],
-      "Get Zooming faster": [
-        "Паскорыць Zoom"
-      ],
       "Gift": [
         "Падарунак"
       ],
@@ -11043,6 +11094,9 @@
       ],
       "Save changes": [
         "Захаваць змены"
+      ],
+      "Schedule meetings in one click": [
+        "Плануйце сустрэчы адным націскам мышы"
       ],
       "Security center": [
         "Цэнтр бяспекі"

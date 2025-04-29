@@ -207,6 +207,9 @@
       "Copy link": [
         "Kopiera länk"
       ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
       "Copy version number to clipboard": [
         "Kopiera versionsnummer till urklipp"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Skapa ny kontakt"
+      ],
+      "Create new password": [
+        "Skapa nytt lösenord"
       ],
       "Current plan": [
         "Nuvarande paket"
@@ -328,6 +334,9 @@
       ],
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
+      ],
+      "Generate password": [
+        "Generera lösenord"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaffa ${ planName } för ${ priceCoupon }"
@@ -4730,6 +4739,9 @@
       "Are you sure you want to discard your import?": [
         "Är du säker på att du vill kasta din import?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -5044,6 +5056,9 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "It's better to have:": [
+        "Det är bättre att ha:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det är bäst att alltid använda ett VPN. Men här är när cybersäkerhetshoten kan vara som störst:"
       ],
@@ -5161,6 +5176,9 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
+      "Numbers": [
+        "Siffror"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Förekomster som tidigare uppdaterats av arrangören kommer att behållas, men några av dina svar kommer att gå förlorade."
       ],
@@ -5196,6 +5214,12 @@
       ],
       "password": [
         "lösenord"
+      ],
+      "Password copied to clipboard": [
+        "Lösenord kopierat till urklipp"
+      ],
+      "Password must have:": [
+        "Lösenord måste innehålla:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
@@ -5365,6 +5389,9 @@
       "Surveillance": [
         "Övervakning"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -5481,6 +5508,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "User activated": [
         "Användare aktiverad"
@@ -6219,6 +6249,9 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
       "Name": [
         "Namn"
       ],
@@ -6264,6 +6297,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Password strength": [
+        "Lösenordsstyrka"
       ],
       "Payer": [
         "Betalare"
@@ -6331,6 +6367,12 @@
       "Street address": [
         "Gatuadress"
       ],
+      "Strong": [
+        "Starkt"
+      ],
+      "Strong password": [
+        "Starkt Lösenord"
+      ],
       "Subscription options": [
         "Prenumerationsalternativ"
       ],
@@ -6369,6 +6411,18 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Vulnerable": [
+        "Sårbart"
+      ],
+      "Vulnerable password": [
+        "Sårbart lösenord"
+      ],
+      "Weak": [
+        "Svagt"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
       ],
       "Week start": [
         "Veckostart"
@@ -6956,26 +7010,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -6997,6 +7031,26 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7590,6 +7644,11 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7602,11 +7661,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10429,9 +10483,6 @@
       "Get the apps": [
         "Skaffa appen"
       ],
-      "Get Zooming faster": [
-        "Börja Zooma snabbare"
-      ],
       "Gift": [
         "Gåva"
       ],
@@ -10597,6 +10648,9 @@
       ],
       "Save changes": [
         "Spara ändringar"
+      ],
+      "Schedule meetings in one click": [
+        "Schemalägg möten med ett klick"
       ],
       "Security center": [
         "Säkerhetscenter"
