@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Tentang ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Ukuran Asli"
       ],
@@ -14,17 +17,44 @@
       "Clear application data": [
         "Bersihkan data aplilkasi"
       ],
+      "Close Window": [
+        "Tutup Jendela"
+      ],
+      "Copy": [
+        "Salin"
+      ],
+      "Cut": [
+        "Potong"
+      ],
       "Delete": [
         "Hapus"
       ],
       "Force Reload": [
         "Paksa Muat Ulang"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Sembunyikan ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Sembunyikan Yang Lain"
+      ],
       "Minimize": [
         "Minimalkan"
       ],
+      "Paste": [
+        "Tempel"
+      ],
       "Paste and Match Style": [
         "Tempel dan Samakan Gaya Tulisan"
+      ],
+      "Quit": [
+        "Keluar"
+      ],
+      "Quit ${ MAIL_APP_NAME }l": [
+        "Keluar dari ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Batal Urungkan"
       ],
       "Reload": [
         "Muat Ulang"
@@ -32,14 +62,32 @@
       "Select All": [
         "Pilih Semua"
       ],
+      "Show All": [
+        "Tampilkan Semua"
+      ],
       "Show logs": [
         "Tampilkan log"
       ],
       "Speech": [
         "Suara"
       ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Mulai ${ MAIL_APP_NAME } saat masuk"
+      ],
+      "Start Speaking": [
+        "Mulai Berbicara"
+      ],
+      "Stop Speaking": [
+        "Berhenti Berbicara"
+      ],
       "Toggle Full Screen": [
         "Beralih ke Layar Penuh"
+      ],
+      "Undo": [
+        "Urungkan"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Copot pemasangan ${ MAIL_APP_NAME }"
       ],
       "Zoom": [
         "Perbesar"
