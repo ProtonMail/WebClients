@@ -1126,11 +1126,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "select file": [
-        "fájl kiválasztása"
-      ],
       "Select file": [
         "Fájl kiválasztása"
+      ],
+      "select file": [
+        "fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -4602,9 +4602,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Egy jóváhagyási e-mailt fog kapni a ${ boldForwardeeEmail } címre"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Egy új titkosítási kulcs kerül létrehozásra a címhez: ${ boldForwarderEmail }."
-      ],
       "Automatically forward emails to another email address.": [
         "E-mailek automatikus továbbítása másik e-mail címre."
       ],
@@ -4715,17 +4712,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Egy új titkosítási kulcs lett létrehozva ehhez: ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Változtatások mentve"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Email elküldve ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Email elküldve ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Továbbítás elfogadva"
@@ -4752,9 +4740,6 @@
       ],
       "Forwarding activated": [
         "Továbbítás bekapcsolva"
-      ],
-      "Request confirmation": [
-        "Megerősítés kérése"
       ],
       "Set up forwarding": [
         "Továbbítás beállítása"
@@ -6572,9 +6557,6 @@
       "Device": [
         "Eszköz"
       ],
-      "Enabled Countries": [
-        "Engedélyezett országok"
-      ],
       "Enter your email address": [
         "Adja meg az e-mail címét"
       ],
@@ -6583,9 +6565,6 @@
       ],
       "Folders": [
         "Mappák"
-      ],
-      "Groups": [
-        "Csoportok"
       ],
       "IP address": [
         "IP-cím"
@@ -6613,9 +6592,6 @@
       ],
       "Permissions": [
         "Engedélyek"
-      ],
-      "Policy Name": [
-        "Házirend neve"
       ],
       "Protection": [
         "Védelem"
@@ -7837,9 +7813,6 @@
       "Create your first Gateway": [
         "Az első átjáró létrehozása"
       ],
-      "Created (not published)": [
-        "Létrehozva (nem közzétéve)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Átjárókiszolgáló létrehozása: ${ serverNumber } / ${ total }",
         "Átjárókiszolgáló létrehozása: ${ serverNumber } / ${ total }"
@@ -7912,9 +7885,6 @@
       ],
       "Delete link?": [
         "Hivatkozás törlése?"
-      ],
-      "Deleted (not published)": [
-        "Törölve (nem közzétéve)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } átjárószerver törlése",
@@ -8037,9 +8007,6 @@
       ],
       "Edit link": [
         "Hivatkozás szerkesztése"
-      ],
-      "Edited (not published)": [
-        "Szerkesztve (nem közzétéve)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN konfiguráció mentve"
@@ -8898,9 +8865,6 @@
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "A PC Magazine szerkesztők által odaítélt díj, az 5-ből 5 csillaggal értékelve"
       ],
-      "Pending removal": [
-        "Eltávolításra vár"
-      ],
       "per month": [
         "havonta"
       ],
@@ -9678,9 +9642,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Nem sikerült a helyreállítási fájl aláírásának ellenőrzése. Kérjük, lépjen kapcsolatba velünk."
       ],
-      "Unchanged": [
-        "Változatlan"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sajnos, nincs helyreállítási módszer beállítva ehhez a fiókhoz."
       ],
@@ -9771,11 +9732,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "Username": [
-        "Felhasználónév"
-      ],
       "username": [
         "felhasználónév"
+      ],
+      "Username": [
+        "Felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -10938,10 +10899,10 @@
       "Allow sharing outside the organization": [
         "A szervezeten kívüli megosztás engedélyezése"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10953,11 +10914,11 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "AND": [
-        "ÉS"
-      ],
       "And": [
         "És"
+      ],
+      "AND": [
+        "ÉS"
       ],
       "and": [
         "és"
@@ -11379,11 +11340,11 @@
       "IBAN": [
         "IBAN szám"
       ],
-      "IF": [
-        "HA"
-      ],
       "If": [
         "Ha"
+      ],
+      "IF": [
+        "HA"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -11404,7 +11365,7 @@
         "Szín öröklése a tartalmazó mappáról"
       ],
       "Integrated 2FA authenticator": [
-        "Beépített kétlépcsős hitelesítés"
+        "Beépített kétfaktoros (2FA) hitelesítés"
       ],
       "Interval": [
         "Intervallum"
@@ -11586,14 +11547,14 @@
       "Optional": [
         "Választható"
       ],
-      "OR": [
-        "VAGY"
-      ],
       "or": [
         "vagy"
       ],
       "Or": [
         "Vagy"
+      ],
+      "OR": [
+        "VAGY"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -12232,11 +12193,11 @@
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
-      "privacy policy": [
-        "adatvédelmi irányelvek"
-      ],
       "Privacy policy": [
         "Adatvédelmi irányelvek"
+      ],
+      "privacy policy": [
+        "adatvédelmi irányelvek"
       ],
       "Reactivate now": [
         "Újraaktiválás most"
@@ -13604,6 +13565,14 @@
         "Oldja fel az összes ${ BRAND_NAME } prémium terméket és funkciót mindössze ${ priceLine }-ért. Bármikor lemondható."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -13622,14 +13591,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -14267,6 +14228,17 @@
         "Asztali számítógép"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "a hónap 10-ik napja"
@@ -14495,17 +14467,6 @@
       ],
       "Trash": [
         "Lomtár"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
       ]
     },
     "Option delay send seconds": {
@@ -18559,10 +18520,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -19050,9 +19011,6 @@
       ],
       "Get the apps": [
         "Alkalmazások letöltése"
-      ],
-      "Get Zooming faster": [
-        "Gyorsabb Zoomolás"
       ],
       "Gift": [
         "Ajándék"

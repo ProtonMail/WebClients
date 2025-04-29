@@ -1027,11 +1027,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "select file": [
-        "vælg fil"
-      ],
       "Select file": [
         "Vælg fil"
+      ],
+      "select file": [
+        "vælg fil"
       ],
       "Select files": [
         "Vælg filer"
@@ -4148,9 +4148,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "En bekræftelsesmail vil blive sendt til ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "En ny krypteringsnøgle vil blive genereret for ${ boldForwarderEmail }."
-      ],
       "Automatically forward emails to another email address.": [
         "Videresend automatisk e-mails til en anden e-mailadresse."
       ],
@@ -4261,17 +4258,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "En ny krypteringsnøgle er blevet genereret for ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Ændringer gemt"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "E-mail sendt til ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "E-mail sendt til ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Videresending godkendt"
@@ -4298,9 +4286,6 @@
       ],
       "Forwarding activated": [
         "Videresending aktiveret"
-      ],
-      "Request confirmation": [
-        "Anmod om bekræftelse"
       ],
       "Set up forwarding": [
         "Indstil videresendelse"
@@ -8835,11 +8820,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "Username": [
-        "Brugernavn"
-      ],
       "username": [
         "brugernavn"
+      ],
+      "Username": [
+        "Brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -9898,10 +9883,10 @@
       "Allow recovery using a trusted device": [
         "Tillad gendannelse ved hjælp af en betroet enhed"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tilladt domæne"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tilladt domæne"
       ],
       "Amount": [
@@ -9910,11 +9895,11 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
-      "AND": [
-        "OG"
-      ],
       "And": [
         "Og"
+      ],
+      "AND": [
+        "OG"
       ],
       "and": [
         "og"
@@ -10312,11 +10297,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -10501,14 +10486,14 @@
       "Optional": [
         "Valgfrit"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -12404,6 +12389,14 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12422,14 +12415,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -13025,6 +13010,17 @@
         "Desktop"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "Månedligt d. 10."
@@ -13238,17 +13234,6 @@
       ],
       "Trash": [
         "Papirkurv"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -16912,11 +16897,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -17331,9 +17316,6 @@
       ],
       "Get the apps": [
         "Hent appsene"
-      ],
-      "Get Zooming faster": [
-        "Kom hurtigt videre til Zoom"
       ],
       "Gift": [
         "Gave"

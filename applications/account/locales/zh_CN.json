@@ -463,6 +463,9 @@
       "Discard changes": [
         "放弃修改"
       ],
+      "Discard Changes": [
+        "放弃更改"
+      ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
       ],
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "保留"
+      ],
+      "Keep Editing": [
+        "继续编辑"
       ],
       "Keep logo": [
         "保留徽标"
@@ -1126,10 +1132,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
       "Select files": [
@@ -4585,6 +4591,9 @@
       "Edit conditions": [
         "编辑条件"
       ],
+      "Got it": [
+        "了解"
+      ],
       "Next": [
         "下一步"
       ],
@@ -4657,17 +4666,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "一封确认邮件将发送到 ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "将为 ${ boldForwarderEmail } 生成一个新的加密密钥。"
-      ],
       "Automatically forward emails to another email address.": [
         "自动将收到的邮件转发至另一邮箱地址。"
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "您的 ${ boldForwarderEmail } 地址的端到端加密已被禁用，但零访问加密仍然启用。${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "为了兼容性，已为 ${ boldForwarderEmail } 生成了新的加密密钥。"
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "为了兼容性，将为 ${ boldForwarderEmail } 生成一个新的加密密钥。"
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "为了兼容性，后量子加密已被禁用，并且为 ${ boldForwarderEmail } 生成了新的加密密钥。"
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "为了兼容性，${ boldForwarderEmail } 已禁用后量子加密。"
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "为了兼容性，${ boldForwarderEmail } 将禁用加密。"
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "为了兼容性，后量子加密将被禁用，并且将为 ${ boldForwarderEmail } 生成新的加密密钥。"
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "被转发者已收到邀请，需要接受/拒绝邀请或进行更新"
       ],
       "Forwarding is active": [
         "转发已激活"
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "一旦收件人接受请求，转发至 ${ boldForwardeeEmail } 将生效。"
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "转发到没有端到端加密的地址将禁用您的 ${ boldForwarderEmail } 地址的端到端加密，但零访问加密仍然启用。 ${ learnMoreLink }"
@@ -4744,6 +4774,14 @@
         "为此条件输入文本或关键字："
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "发送确认电子邮件"
+      ],
+      "Setting up forwarding": [
+        "设置转发"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "发件人地址将重新启用端到端加密。"
@@ -4770,17 +4808,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "已为 ${ forwarderEmail } 生成了一个新的加密密钥。"
-      ],
       "Changes saved": [
         "更改已保存"
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "电子邮件已发送至 ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "电子邮件已发送至 ${ model.forwardeeEmail }。"
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "电子邮件已发送至 ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
         "转发已接受"
@@ -4808,7 +4840,13 @@
       "Forwarding activated": [
         "转发已激活"
       ],
-      "Request confirmation": [
+      "Request confirmation?": [
+        "请求确认？"
+      ],
+      "Request sent": [
+        "请求已发送"
+      ],
+      "Requesting confirmation": [
         "请求确认"
       ],
       "Set up forwarding": [
@@ -6606,9 +6644,6 @@
       "Device": [
         "设备"
       ],
-      "Enabled Countries": [
-        "已启用的国家"
-      ],
       "Enter your email address": [
         "输入邮箱地址"
       ],
@@ -6617,9 +6652,6 @@
       ],
       "Folders": [
         "文件夹"
-      ],
-      "Groups": [
-        "群组"
       ],
       "IP address": [
         "IP 地址"
@@ -6647,9 +6679,6 @@
       ],
       "Permissions": [
         "权限"
-      ],
-      "Policy Name": [
-        "策略名称"
       ],
       "Protection": [
         "防护措施"
@@ -7361,6 +7390,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/月)"
       ],
+      "(default)": [
+        "(默认)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "（满足下列所有条件）"
       ],
@@ -7373,8 +7405,14 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "您的组织 **${ organizationName }** 不支持 **${ appName }**。"
       ],
+      "**${ appName }** is not supported.": [
+        "不支持**${ appName }**。"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**获取 ${ BRAND_NAME } 地址**以使用所有 ${ BRAND_NAME_TWO } 服务，包括 ${ MAIL_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }。"
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } 更多"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
@@ -7829,9 +7867,6 @@
       "Create your first Gateway": [
         "创建您的第一个网关"
       ],
-      "Created (not published)": [
-        "已创建 (未发布)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "创建网关服务器：${ serverNumber } / ${ total }"
       ],
@@ -7903,9 +7938,6 @@
       ],
       "Delete link?": [
         "删除链接？"
-      ],
-      "Deleted (not published)": [
-        "已删除 (未发布)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "正在删除 ${ deletedServerCount } 台网关服务器"
@@ -8026,9 +8058,6 @@
       ],
       "Edit link": [
         "修改链接"
-      ],
-      "Edited (not published)": [
-        "已编辑 (未发布)"
       ],
       "eduGAIN configuration saved": [
         "已保存 eduGAIN 配置"
@@ -8753,6 +8782,9 @@
       "No results found": [
         "未找到结果"
       ],
+      "No single sign-on": [
+        "无单点登录"
+      ],
       "Not a valid URL": [
         "URL 无效"
       ],
@@ -8879,14 +8911,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "密码长度至少为${ MIN_PASSWORD_LENGTH }字符"
       ],
+      "Password must have:": [
+        "密码必须具有："
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine 编辑选择奖，评分 5 星（满分 5 星）"
-      ],
-      "Pending removal": [
-        "待移除"
       ],
       "per month": [
         "每月"
@@ -9410,6 +9442,9 @@
       "The securest way to browse, stream, and be online.": [
         "最安全的浏览、串流和冲浪方式。"
       ],
+      "The unpublished changes you made will be lost.": [
+        "你所做的未发布更改将会丢失。"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "验证过程将在新页面进行，请先关闭弹出窗口屏蔽插件。"
       ],
@@ -9484,6 +9519,9 @@
       ],
       "This promotion link has expired.": [
         "促销链接已过期"
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "使用单点登录的用户无法使用此服务。"
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "关闭此窗口后该密码将不再允许查看，您也不应将此密码透露给他人。"
@@ -9665,9 +9703,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "无法验证恢复文件签名，请联系支持人员。"
       ],
-      "Unchanged": [
-        "未更改"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很不幸，此账户没有设置恢复密码的方式。"
       ],
@@ -9758,10 +9793,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
       "Users": [
@@ -10045,6 +10080,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "您可以使用下面的切换键在界面上启用照片部分。"
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "您可以强制执行组织成员在创建或重置其 ${ BRAND_NAME } 帐户密码时使用的密码规则。"
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "您可以一次性获得我们所有的高级隐私服务，而且仅需 **${ priceString }/月**。"
@@ -10909,10 +10947,10 @@
       "Allow sharing outside the organization": [
         "允许组织外部共享"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10924,10 +10962,10 @@
       "Amount due": [
         "应付金额"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -11067,6 +11105,9 @@
       ],
       "Colors": [
         "颜色"
+      ],
+      "Common passwords": [
+        "常见密码"
       ],
       "Company": [
         "公司"
@@ -11254,6 +11295,9 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
+      "Enabled": [
+        "已启用"
+      ],
       "End date": [
         "结束日期"
       ],
@@ -11350,10 +11394,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
       "Import all messages": [
@@ -11452,6 +11496,9 @@
       "Maximum number of characters": [
         "最多字符单位"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "最少字符数是 ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "最多单词数"
       ],
@@ -11475,6 +11522,9 @@
       ],
       "Minimum number of characters": [
         "最少字符单位"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "最少字符数是 ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "最少单词数"
@@ -11557,13 +11607,13 @@
       "Optional": [
         "非必填"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11580,6 +11630,9 @@
       ],
       "Password": [
         "密码"
+      ],
+      "Password strength": [
+        "密码强度"
       ],
       "Payer": [
         "付款人"
@@ -11703,6 +11756,9 @@
       ],
       "Send in": [
         "信函语种"
+      ],
+      "Sequences": [
+        "序列"
       ],
       "Show ${ n } administrator": [
         "显示 ${ n } 位管理员"
@@ -11841,6 +11897,9 @@
       ],
       "Uppercase": [
         "大写"
+      ],
+      "Uppercase and lowercase letters": [
+        "大写字母和小写字母"
       ],
       "URL": [
         "网址"
@@ -12175,6 +12234,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "如何在 ${ DOCS_SHORT_APP_NAME } 中进行协作"
       ],
+      "How to create strong passwords": [
+        "如何创建强大的密码"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "如何启用 ${ PROTON_SENTINEL_NAME }"
       ],
@@ -12238,10 +12300,10 @@
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隐私政策"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隐私政策"
       ],
       "Reactivate now": [
@@ -13575,6 +13637,14 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -13593,14 +13663,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -14231,6 +14293,17 @@
         "电脑版"
       ]
     },
+    "option": {
+      "Everyone": [
+        "所有人"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "No one": [
+        "没有人"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月 10 日"
@@ -14328,6 +14401,9 @@
       "Add to existing group": [
         "添加到已有队列"
       ],
+      "Allowed ${ defaultLabel }": [
+        "允许 ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "允许（默认）"
       ],
@@ -14403,6 +14479,9 @@
       "On": [
         "已开启"
       ],
+      "Optional ${ defaultLabel }": [
+        "可选的 ${ defaultLabel }"
+      ],
       "Organization only": [
         "仅组织"
       ],
@@ -14459,17 +14538,6 @@
       ],
       "Trash": [
         "回收站"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "所有人"
-      ],
-      "Group members": [
-        "群组成员"
-      ],
-      "No one": [
-        "没有人"
       ]
     },
     "Option delay send seconds": {
@@ -17773,6 +17841,11 @@
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "节省 ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "已激活"
@@ -18235,6 +18308,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } 快捷键"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "${ BRAND_NAME } 帐户密码规则"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -18469,10 +18545,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -18967,9 +19043,6 @@
       "Get the apps": [
         "下载应用"
       ],
-      "Get Zooming faster": [
-        "Zoom 速度更快"
-      ],
       "Gift": [
         "礼品码"
       ],
@@ -19347,6 +19420,9 @@
       ],
       "Save time with email filters": [
         "将琐事交给筛选规则"
+      ],
+      "Schedule meetings in one click": [
+        "一键安排会议"
       ],
       "Schedule send:": [
         "定时发送："
@@ -19890,6 +19966,12 @@
       ],
       "Feature in early access": [
         "测试中的功能"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "例如，**12345、abcde** 等。"
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "例如，**password、qwerty** 等。"
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "获取工作效率和安全提示，帮助您充分利用 ${ MAIL_APP_NAME } 及其他时间。"

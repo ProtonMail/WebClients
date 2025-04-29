@@ -463,6 +463,9 @@
       "Discard changes": [
         "Απόρριψη αλλαγών"
       ],
+      "Discard Changes": [
+        "Απόρριψη Αλλαγών"
+      ],
       "Discover ${ planName }": [
         "Ανακαλύψτε το ${ planName }"
       ],
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "Διατήρηση"
+      ],
+      "Keep Editing": [
+        "Συνεχίστε την Επεξεργασία"
       ],
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
@@ -1126,11 +1132,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "select file": [
-        "επιλέξτε αρχείο"
-      ],
       "Select file": [
         "Επιλέξτε αρχείο"
+      ],
+      "select file": [
+        "επιλέξτε αρχείο"
       ],
       "Select files": [
         "Επιλέξτε αρχεία"
@@ -4601,6 +4607,9 @@
       "Edit conditions": [
         "Επεξεργασία προϋποθέσεων"
       ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
       "Next": [
         "Επόμενο"
       ],
@@ -4673,17 +4682,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Ένα μήνυμα επιβεβαίωσης θα σταλεί στο ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Ένα νέο κλειδί κρυπτογράφησης θα δημιουργηθεί για το ${ boldForwarderEmail }."
-      ],
       "Automatically forward emails to another email address.": [
         "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου σε μια άλλη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Η διατερματική κρυπτογράφηση έχει απενεργοποιηθεί για τη διεύθυνση ${ boldForwarderEmail }, αλλά η κρυπτογράφηση μηδενικής πρόσβασης παραμένει ενεργοποιημένη. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Για λόγους συμβατότητας, δημιουργήθηκε ένα νέο κλειδί κρυπτογράφησης για το ${ boldForwarderEmail }."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Για λόγους συμβατότητας, θα δημιουργηθεί ένα νέο κλειδί κρυπτογράφησης για το ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Για λόγους συμβατότητας, η μετα-κβαντική κρυπτογράφηση θα τεθεί σε απενεργοποίηση και θα δημιουργηθεί ένα νέο κλειδί κρυπτογράφησης για το ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "Για λόγους συμβατότητας, η μετα-κβαντική κρυπτογράφηση έχει απενεργοποιηθεί για το ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "Για λόγους συμβατότητας, η μετακβαντική κρυπτογράφηση θα απενεργοποιηθεί για το ${ boldForwarderEmail } σας."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Για λόγους συμβατότητας, η μετα-κβαντική κρυπτογράφηση θα τεθεί σε απενεργοποίηση και θα δημιουργηθεί ένα νέο κλειδί κρυπτογράφησης για το ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Ο Προωθούμενος έχει προσκληθεί και πρέπει να αποδεχτεί/απορρίψει την πρόσκληση ή την ενημέρωση"
       ],
       "Forwarding is active": [
         "Η προώθηση είναι ενεργοποιημένη"
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "Η προώθηση στο ${ boldForwardeeEmail } θα ενεργοποιηθεί μόλις ο παραλήπτης αποδεχτεί την αίτηση."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Η προώθηση σε μια διεύθυνση χωρίς διατερματική κρυπτογράφηση θα απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο για τη διεύθυνση ${ boldForwarderEmail }, αλλά η κρυπτογράφηση μηδενικής πρόσβασης παραμένει ενεργοποιημένη. ${ learnMoreLink }"
@@ -4760,6 +4790,14 @@
         "Πληκτρολογήστε κείμενο ή λέξη-κλειδί για αυτήν την προϋπόθεση:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Αποστολή μηνύματος επιβεβαίωσης"
+      ],
+      "Setting up forwarding": [
+        "Ρύθμιση παραμέτρων προώθησης"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Η κρυπτογράφηση από άκρο σε άκρο θα ενεργοποιηθεί ξανά για τη διεύθυνση αποστολέα."
@@ -4786,17 +4824,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Δημιουργήθηκε ένα νέο κλειδί κρυπτογράφησης για το ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Έχουν αποθηκευτεί οι αλλαγές"
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Το Μήνυμα στάλθηκε στο ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Το Μήνυμα στάλθηκε στο ${ model.forwardeeEmail }."
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "Το Μήνυμα στάλθηκε στο ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
         "Η προώθηση έγινε δεκτή"
@@ -4824,8 +4856,14 @@
       "Forwarding activated": [
         "Η προώθηση ενεργοποιήθηκε"
       ],
-      "Request confirmation": [
-        "Αίτηση επιβεβαίωσης"
+      "Request confirmation?": [
+        "Αίτηση επιβεβαίωσης;"
+      ],
+      "Request sent": [
+        "Το αίτημα εστάλη"
+      ],
+      "Requesting confirmation": [
+        "Γίνεται αίτηση επιβεβαίωσης"
       ],
       "Set up forwarding": [
         "Ρύθμιση προώθησης"
@@ -6643,9 +6681,6 @@
       "Device": [
         "Συσκευή"
       ],
-      "Enabled Countries": [
-        "Ενεργοποιημένες Χώρες"
-      ],
       "Enter your email address": [
         "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -6654,9 +6689,6 @@
       ],
       "Folders": [
         "Φάκελοι"
-      ],
-      "Groups": [
-        "Ομάδες"
       ],
       "IP address": [
         "Διεύθυνση IP"
@@ -6684,9 +6716,6 @@
       ],
       "Permissions": [
         "Δικαιώματα"
-      ],
-      "Policy Name": [
-        "Όνομα Πολιτικής"
       ],
       "Protection": [
         "Προστασία"
@@ -7430,6 +7459,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/μήνα)"
       ],
+      "(default)": [
+        "(προεπιλογή)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΛΕΣ οι ακόλουθες συνθήκες)"
       ],
@@ -7442,11 +7474,15 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Το **${ appName }** δεν υποστηρίζεται στον οργανισμό σας **${ organizationName }**."
       ],
-      "**${ appName }** is not supported**.": [
-        "**${ appName }** δεν υποστηρίζεται**."
+      "**${ appName }** is not supported.": [
+        "**${ appName }** δεν υποστηρίζεται."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένων των ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Περισσότερο",
+        "+ ${ invisibleCount } Περισσότερα"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
@@ -7911,9 +7947,6 @@
       "Create your first Gateway": [
         "Δημιουργήστε την πρώτη Πύλη σας"
       ],
-      "Created (not published)": [
-        "Δημιουργήθηκε (δε δημοσιεύτηκε)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Δημιουργία διακομιστή πύλης: ${ serverNumber } / ${ total }",
         "Δημιουργία διακομιστών πύλης: ${ serverNumber } / ${ total }"
@@ -7986,9 +8019,6 @@
       ],
       "Delete link?": [
         "Διαγραφή συνδέσμου;"
-      ],
-      "Deleted (not published)": [
-        "Διαγράφηκε (δε δημοσιεύτηκε)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
@@ -8111,9 +8141,6 @@
       ],
       "Edit link": [
         "Επεξεργασία συνδέσμου"
-      ],
-      "Edited (not published)": [
-        "Επεξεργάστηκε (δε δημοσιεύτηκε)"
       ],
       "eduGAIN configuration saved": [
         "Αποθηκεύτηκε η διαμόρφωση eduGAIN"
@@ -8840,6 +8867,9 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
+      "No single sign-on": [
+        "Χωρίς καθολική σύνδεση"
+      ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
@@ -8969,14 +8999,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Ο κωδικός πρόσβασης πρέπει να είναι ${ MIN_PASSWORD_LENGTH } χαρακτήρες ή περισσότεροι."
       ],
+      "Password must have:": [
+        "Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Βραβείο επιλογής συντακτών PC Magazine με βαθμολογία 5 στα 5 αστέρια"
-      ],
-      "Pending removal": [
-        "Αναμονή για αφαίρεση"
       ],
       "per month": [
         "ανά μήνα"
@@ -9509,6 +9539,9 @@
       "The securest way to browse, stream, and be online.": [
         "Ο πιο ασφαλής τρόπος περιήγησης, streaming και να είσαι online"
       ],
+      "The unpublished changes you made will be lost.": [
+        "Οι μη δημοσιευμένες αλλαγές που κάνατε θα χαθούν."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
@@ -9583,6 +9616,9 @@
       ],
       "This promotion link has expired.": [
         "Αυτός ο σύνδεσμος προσφοράς έχει λήξει."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Αυτή η υπηρεσία δεν είναι διαθέσιμη στους χρήστες που συνδέονται με καθολική σύνδεση."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Αυτό το διακριτικό δεν θα είναι διαθέσιμο όταν κλείσετε αυτό το παράθυρο και δεν θα πρέπει να το μοιραστείτε με κανέναν."
@@ -9764,9 +9800,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Αδυναμία επαλήθευσης υπογραφής αρχείου ανάκτησης. Παρακαλούμε επικοινωνήστε με την υποστήριξη."
       ],
-      "Unchanged": [
-        "Αμετάβλητο"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
       ],
@@ -9857,11 +9890,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "Username": [
-        "Όνομα Χρήστη"
-      ],
       "username": [
         "όνομα χρήστη"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -10148,6 +10181,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Μπορείτε να ενεργοποιήσετε την ενότητα Φωτογραφίες από τη διεπαφή με τον παρακάτω διακόπτη."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Μπορείτε να επιβάλετε τους κανόνες κωδικού που θα χρησιμοποιούν τα μέλη του οργανισμού σας όταν δημιουργούν ή κάνουν επαναφορά του κωδικού πρόσβασης για τον ${ BRAND_NAME } λογαριασμό τους."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Μπορείτε να λάβετε όλες τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—με μόνο **${ priceString }/μήνα**"
@@ -11027,11 +11063,11 @@
       "Allow sharing outside the organization": [
         "Να επιτρέπεται η κοινή χρήση εκτός του οργανισμού"
       ],
-      "Allowed domain": [
-        "Επιτρεπόμενος τομέας"
-      ],
       "Allowed Domain": [
         "Επιτρεπόμενος Τομέας"
+      ],
+      "Allowed domain": [
+        "Επιτρεπόμενος τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -11042,11 +11078,11 @@
       "Amount due": [
         "Οφειλόμενο ποσό"
       ],
-      "AND": [
-        "ΚΑΙ"
-      ],
       "And": [
         "Και"
+      ],
+      "AND": [
+        "ΚΑΙ"
       ],
       "and": [
         "και"
@@ -11185,6 +11221,9 @@
       ],
       "Colors": [
         "Χρώματα"
+      ],
+      "Common passwords": [
+        "Κοινοί κωδικοί πρόσβασης"
       ],
       "Company": [
         "Εταιρεια"
@@ -11372,6 +11411,9 @@
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
+      "Enabled": [
+        "Ενεργοποιημένο"
+      ],
       "End date": [
         "Ημερομηνία λήξης"
       ],
@@ -11468,11 +11510,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ΑΝ"
-      ],
       "If": [
         "Αν"
+      ],
+      "IF": [
+        "ΑΝ"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -11570,6 +11612,9 @@
       "Maximum number of characters": [
         "Μέγιστος αριθμός χαρακτήρων"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Ο μέγιστος αριθμός χαρακτήρων είναι ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Μέγιστος αριθμός λέξεων"
       ],
@@ -11593,6 +11638,9 @@
       ],
       "Minimum number of characters": [
         "Ελάχιστος αριθμός χαρακτήρων"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Ο ελάχιστος αριθμός χαρακτήρων είναι ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Ελάχιστος αριθμός λέξεων"
@@ -11675,14 +11723,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
-      "OR": [
-        "'Η"
-      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
+      ],
+      "OR": [
+        "'Η"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -11698,6 +11746,9 @@
       ],
       "Password": [
         "Κωδικός πρόσβασης"
+      ],
+      "Password strength": [
+        "Ισχύς Κωδικού Πρόσβασης"
       ],
       "Payer": [
         "Πληρωτής"
@@ -11821,6 +11872,9 @@
       ],
       "Send in": [
         "Αποστολή στα"
+      ],
+      "Sequences": [
+        "Ακολουθίες"
       ],
       "Show ${ n } administrator": [
         "Εμφάνιση ${ n } διαχειριστή",
@@ -11960,6 +12014,9 @@
       ],
       "Uppercase": [
         "Κεφαλαία"
+      ],
+      "Uppercase and lowercase letters": [
+        "Κεφαλαία και πεζά γράμματα"
       ],
       "URL": [
         "Διεύθυνση URL"
@@ -12294,6 +12351,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Πώς να συνεργαστείτε στο ${ DOCS_SHORT_APP_NAME }"
       ],
+      "How to create strong passwords": [
+        "Πώς να δημιουργήσετε ισχυρούς κωδικούς πρόσβασης"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Πώς να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
       ],
@@ -12357,11 +12417,11 @@
       "perform a password reset from your active session": [
         "εκτελέστε επαναφορά κωδικού πρόσβασης από την ενεργή περίοδο λειτουργίας σας"
       ],
-      "privacy policy": [
-        "πολιτική απορρήτου"
-      ],
       "Privacy policy": [
         "Πολιτική απορρήτου"
+      ],
+      "privacy policy": [
+        "πολιτική απορρήτου"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -13729,6 +13789,14 @@
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -13747,14 +13815,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium δυνατότητες με αναβάθμιση"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -14392,6 +14452,17 @@
         "Υπολογιστής"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10η του μήνα"
@@ -14489,6 +14560,9 @@
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
       ],
+      "Allowed ${ defaultLabel }": [
+        "Επιτρέπεται ${ defaultLabel }"
+      ],
       "Allowed (default)": [
         "Επιτρέπεται (προεπιλογή)"
       ],
@@ -14564,6 +14638,9 @@
       "On": [
         "Ενεργό"
       ],
+      "Optional ${ defaultLabel }": [
+        "Προαιρετικό ${ defaultLabel }"
+      ],
       "Organization only": [
         "Μόνο στον Οργανισμό"
       ],
@@ -14620,17 +14697,6 @@
       ],
       "Trash": [
         "Διαγραμμένα"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Όλοι"
-      ],
-      "Group members": [
-        "Μέλη ομάδας"
-      ],
-      "No one": [
-        "Κανένας"
       ]
     },
     "Option delay send seconds": {
@@ -18468,6 +18534,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } συντομεύσεις πληκτρολογίου"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Κανόνες κωδικού ${ BRAND_NAME } Λογαριασμού"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -18703,10 +18772,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -19204,9 +19273,6 @@
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
-      "Get Zooming faster": [
-        "Αρχίστε να Ζουμάρετε πιο γρήγορα"
-      ],
       "Gift": [
         "Δώρο"
       ],
@@ -19585,6 +19651,9 @@
       ],
       "Save time with email filters": [
         "Εξοικονομήστε χρόνο με φίλτρα email"
+      ],
+      "Schedule meetings in one click": [
+        "Προγραμματίστε συναντήσεις με ένα κλικ"
       ],
       "Schedule send:": [
         "Προγραμματισμός αποστολής:"
@@ -20129,6 +20198,12 @@
       ],
       "Feature in early access": [
         "Δυνατότητα σε πρώιμη πρόσβαση"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Για παράδειγμα, **12345, abcde**, κτλ."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Για παράδειγμα, **password, qwerty**, κτλ"
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Λάβετε συμβουλές παραγωγικότητας και ασφάλειας που θα σας βοηθήσουν να αξιοποιήσετε στο έπακρο το ${ MAIL_APP_NAME } και όχι μόνο."

@@ -1126,11 +1126,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "select file": [
-        "vybrať súbor"
-      ],
       "Select file": [
         "Vyberte súbor"
+      ],
+      "select file": [
+        "vybrať súbor"
       ],
       "Select files": [
         "Vybrať súbory"
@@ -4705,9 +4705,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Potvrdzujúci email bude odoslaný na adresu ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Pre ${ boldForwarderEmail } bude vygenerovaný nový šifrovací kľúč."
-      ],
       "Automatically forward emails to another email address.": [
         "Automaticky preposiela emaily na iné emailové adresy."
       ],
@@ -4818,17 +4815,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Pre ${ forwarderEmail } bol vygenerovaný nový šifrovací kľúč."
-      ],
       "Changes saved": [
         "Zmeny boli uložené"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Email bol odoslaný na ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Email bol odoslaný na ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Preposielanie bolo prijaté"
@@ -4855,9 +4843,6 @@
       ],
       "Forwarding activated": [
         "Preposielanie je aktivované"
-      ],
-      "Request confirmation": [
-        "Žiadosť o potvrdenie"
       ],
       "Set up forwarding": [
         "Nastaviť preposielanie"
@@ -6717,9 +6702,6 @@
       "Device": [
         "Zariadenie"
       ],
-      "Enabled Countries": [
-        "Povolené krajiny"
-      ],
       "Enter your email address": [
         "Zadajte vašu emailovú adresu"
       ],
@@ -6728,9 +6710,6 @@
       ],
       "Folders": [
         "Priečinky"
-      ],
-      "Groups": [
-        "Skupiny"
       ],
       "IP address": [
         "IP adresa"
@@ -6758,9 +6737,6 @@
       ],
       "Permissions": [
         "Oprávnenia"
-      ],
-      "Policy Name": [
-        "Názov pravidla"
       ],
       "Protection": [
         "Ochrana"
@@ -7580,6 +7556,9 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** nie je vo vašej organizácii **${ organizationName }** podporovaný."
       ],
+      "**${ appName }** is not supported.": [
+        "Aplikácia **${ appName }** nie je podporovaná."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získajte ${ BRAND_NAME }** adresu, ak chcete využívať všetky služby ${ BRAND_NAME_TWO } vrátane služieb ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8066,9 +8045,6 @@
       "Create your first Gateway": [
         "Vytvorte vašu prvá bránu"
       ],
-      "Created (not published)": [
-        "Vytvorené (nepublikované)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Vytváranie servera brány: ${ serverNumber } / ${ total }",
         "Vytváranie serverov brány: ${ serverNumber } / ${ total }",
@@ -8143,9 +8119,6 @@
       ],
       "Delete link?": [
         "Zmazať odkaz?"
-      ],
-      "Deleted (not published)": [
-        "Vymazané (nepublikované)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Odstraňovanie ${ deletedServerCount } servera brány",
@@ -8272,9 +8245,6 @@
       ],
       "Edit link": [
         "Upraviť odkaz"
-      ],
-      "Edited (not published)": [
-        "Upravené (nepublikované)"
       ],
       "eduGAIN configuration saved": [
         "konfigurácia eduGAIN uložená"
@@ -9146,9 +9116,6 @@
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Výber redakcie časopisu PC Magazine s hodnotením 5 z 5 hviezdičiek"
       ],
-      "Pending removal": [
-        "Čakajúce odstránenie"
-      ],
       "per month": [
         "mesačne"
       ],
@@ -9953,9 +9920,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie je možné overiť podpis súboru pre obnovenie. Kontaktujte podporu."
       ],
-      "Unchanged": [
-        "Nezmenené"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Pre tento účet, bohužiaľ, nie je uložená žiadna metóda obnovy."
       ],
@@ -10046,11 +10010,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "Username": [
-        "Používateľské meno"
-      ],
       "username": [
         "používateľské meno"
+      ],
+      "Username": [
+        "Používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -11254,10 +11218,10 @@
       "Allow sharing outside the organization": [
         "Umožniť zdieľanie mimo organizácie"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11269,10 +11233,10 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -11695,11 +11659,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11902,14 +11866,14 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -12586,11 +12550,11 @@
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
       ],
-      "privacy policy": [
-        "zásadami ochrany osobných údajov"
-      ],
       "Privacy policy": [
         "Ochrana osobných údajov"
+      ],
+      "privacy policy": [
+        "zásadami ochrany osobných údajov"
       ],
       "Reactivate now": [
         "Znovu aktivovať teraz"
@@ -14028,6 +13992,14 @@
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -14046,14 +14018,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14705,6 +14669,17 @@
         "Počítač"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. deň v mesiaci"
@@ -14933,17 +14908,6 @@
       ],
       "Trash": [
         "Kôš"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všetci"
-      ],
-      "Group members": [
-        "Členovia skupiny"
-      ],
-      "No one": [
-        "Nikto"
       ]
     },
     "Option delay send seconds": {
@@ -18430,6 +18394,11 @@
         "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Ušetrite ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Aktívne"
@@ -19150,10 +19119,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -19656,9 +19625,6 @@
       ],
       "Get the apps": [
         "Získajte aplikácie"
-      ],
-      "Get Zooming faster": [
-        "Zoomujte rýchlejšie"
       ],
       "Gift": [
         "Dar"
