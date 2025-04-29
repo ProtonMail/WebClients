@@ -387,6 +387,9 @@
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
+      "Generate password": [
+        "Згенерувати пароль"
+      ],
       "Get in touch": [
         "Зв'яжіться з нами"
       ],
@@ -4916,6 +4919,9 @@
       "password": [
         "пароль"
       ],
+      "Password copied to clipboard": [
+        "Пароль скопійовано до буфера обміну"
+      ],
       "Paused": [
         "Зупинено"
       ],
@@ -6247,6 +6253,9 @@
       "Street address": [
         "Вулиця"
       ],
+      "Strong": [
+        "Надійний"
+      ],
       "Subscription options": [
         "Опції передплати"
       ],
@@ -6303,6 +6312,12 @@
       ],
       "Viewer": [
         "Користувач"
+      ],
+      "Vulnerable": [
+        "Вразливий"
+      ],
+      "Weak": [
+        "Слабкий"
       ],
       "What happened?": [
         "Що сталося?"
@@ -6822,20 +6837,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6857,6 +6858,20 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {

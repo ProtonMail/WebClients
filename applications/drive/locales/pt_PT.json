@@ -246,6 +246,9 @@
       "Copy link": [
         "Copiar ligação"
       ],
+      "Copy password": [
+        "Copiar a palavra-passe"
+      ],
       "Copy version number to clipboard": [
         "Copiar o número da versão para a área de transferência"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Criar uma pasta"
+      ],
+      "Create new password": [
+        "Criar uma palavra-passe"
       ],
       "Create new text file": [
         "Criar um ficheiro de texto"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate password": [
+        "Gerar uma palavra-passe"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenha o ${ planName } por ${ priceCoupon }"
@@ -3058,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Os convites externos estão temporariamente desativados. Tente novamente mais tarde."
       ],
+      "Failed to copy photo to album": [
+        "Erro ao copiar a foto para o álbum"
+      ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
@@ -3195,9 +3207,6 @@
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
-      ],
-      "Photo saved to your Drive": [
-        "Foto guardada no seu Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
@@ -4594,6 +4603,9 @@
       "Are you sure you want to proceed?": [
         "Tem a certeza de que pretende prosseguir?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
+      ],
       "Attention required": [
         "Atenção Requerida"
       ],
@@ -5040,6 +5052,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece que tentou recentemente enviar ${ uploadName }. Se o envio falhou, ${ replaceFile }. Se o envio ainda estiver em curso, a substituição do ficheiro cancelará o envio em curso."
       ],
+      "It's better to have:": [
+        "É melhor ter:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Os itens no lixo permanecerão aqui até serem eliminados permanentemente."
       ],
@@ -5203,6 +5218,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "of": [
         "de"
       ],
@@ -5251,6 +5269,12 @@
       "password": [
         "palavra-passe"
       ],
+      "Password copied to clipboard": [
+        "Palavra-passe copiada para a área de transferência"
+      ],
+      "Password must have:": [
+        "A palavra-passe deve ter:"
+      ],
       "Paused": [
         "Em pausa"
       ],
@@ -5274,6 +5298,12 @@
       ],
       "Photo is set as album cover": [
         "A foto está configurada como uma capa do álbum."
+      ],
+      "Photo saved to your Drive": [
+        "A foto foi guardada no seu Drive."
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "A foto foi copiada para o fluxo e marcada como favorita lá."
       ],
       "Photos have been successfully recovered.": [
         "As fotos foram recuperadas."
@@ -5481,6 +5511,9 @@
       "Setting up ${ feature }…": [
         "A configurar ${ feature }…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "A configurar álbuns e filtros. Isto pode demorar alguns minutos."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A configuração do PGP permite o envio de e-mails encriptados de ponta a ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
@@ -5574,6 +5607,9 @@
       ],
       "Surveillance": [
         "Vigilância"
+      ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -5812,6 +5848,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de ficheiros de uma só vez pode ter impacto no desempenho."
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilize este formulário para nos notificar de ficheiros partilhados inadequados, ilegais,\nou ficheiros partilhados maliciosos. Está prestes a denunciar:"
@@ -6586,6 +6625,9 @@
       "Move to Inbox": [
         "Mover para Caixa de entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres"
+      ],
       "My Albums": [
         "Os meus álbuns"
       ],
@@ -6621,6 +6663,9 @@
       ],
       "Password": [
         "Palavra-passe"
+      ],
+      "Password strength": [
+        "Força da palavra-passe"
       ],
       "Payer": [
         "Pagante"
@@ -6739,6 +6784,12 @@
       "Street address": [
         "Endereço postal"
       ],
+      "Strong": [
+        "Forte"
+      ],
+      "Strong password": [
+        "Palavra-passe segura"
+      ],
       "Subscription options": [
         "Opções da subscrição"
       ],
@@ -6795,6 +6846,18 @@
       ],
       "Viewer": [
         "Visualizador"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Vulnerable password": [
+        "Palavra-passe vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
+      ],
+      "Weak password": [
+        "Palavra-passe fraca"
       ],
       "What happened?": [
         "O que é que aconteceu?"
@@ -7373,29 +7436,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planos a partir de ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -7417,6 +7457,29 @@
       ],
       "Switch plan": [
         "Alterar o plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planos a partir de ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8522,6 +8585,9 @@
       ],
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta principal"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "As fotos selecionadas já estão em «${ albumName }»."
       ],
       "Share invitation accepted successfully": [
         "O convite de partilha foi aceite."
@@ -10338,6 +10404,11 @@
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Poupe ${ priceString }"
+      ]
+    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Os álbuns partilhados consigo aparecerão aqui."
@@ -11347,6 +11418,9 @@
       ],
       "Upgrade complete!": [
         "A subscrição foi atualizada."
+      ],
+      "Upgrading your Photos experience": [
+        "Leve as suas fotos para o próximo nível"
       ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
