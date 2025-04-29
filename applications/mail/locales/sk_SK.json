@@ -300,6 +300,9 @@
       "Copy email to clipboard": [
         "Skopírovať email do schránky"
       ],
+      "Copy password": [
+        "Kopírovať heslo"
+      ],
       "Copy password to clipboard": [
         "Skopírovať heslo do schránky"
       ],
@@ -332,6 +335,9 @@
       ],
       "Create new message": [
         "Vytvoriť novú správu"
+      ],
+      "Create new password": [
+        "Vytvoriť nové heslo"
       ],
       "Current plan": [
         "Aktuálny plán"
@@ -540,6 +546,9 @@
       "Forward as attachment": [
         "Preposlať ako prílohu"
       ],
+      "Generate password": [
+        "Vygenerovať heslo"
+      ],
       "Generate text": [
         "Generovať text"
       ],
@@ -692,9 +701,9 @@
       ],
       "Insert ${ totalChecked } contact": [
         "Vložiť ${ totalChecked } kontakt",
-        "Vložiť ${ totalChecked } kontakt",
         "Vložiť ${ totalChecked } kontakty",
-        "Vložiť ${ totalChecked } kontakt"
+        "Vložiť ${ totalChecked } kontaktov",
+        "Vložiť ${ totalChecked } kontaktov"
       ],
       "Insert contact": [
         "Vložiť kontakt"
@@ -1143,10 +1152,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -1361,6 +1370,12 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -6558,6 +6573,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Naozaj chcete natrvalo vymazať túto správu?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
+      ],
       "Attach public key": [
         "Pripojiť verejný kľúč"
       ],
@@ -7084,10 +7102,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7106,6 +7121,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Pozvite svojho partnera, priateľa alebo kohokoľvek, s kým zdieľate svoj plán ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "Je lepšie, ak máte:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najlepšie je vždy používať VPN sieť. Tu však môžu byť hrozby kybernetickej bezpečnosti najvyššie:"
@@ -7178,9 +7196,6 @@
       ],
       "Low Priority": [
         "Nízka priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } ako predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -7320,6 +7335,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
+      "Numbers": [
+        "Čísla"
+      ],
       "of": [
         "z"
       ],
@@ -7355,6 +7373,9 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bolo skopírované do schránky"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
@@ -7719,6 +7740,9 @@
       "Surveillance": [
         "Monitorovanie"
       ],
+      "Symbols (#$&)": [
+        "Znaky (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizujte a spravujte súbory pomocou aplikácie ${ DRIVE_APP_NAME }. Vytvárajte a zdieľajte dokumenty v aplikácii ${ DOCS_APP_NAME } a bezpečne ich ukladajte. Všetko v aplikáciách pre ${ ios }, ${ android } a ${ desktop }."
       ],
@@ -8057,6 +8081,9 @@
       ],
       "Upload picture": [
         "Nahrať obrázok"
+      ],
+      "Uppercase and lowercase letters": [
+        "Veľké a malé písmená"
       ],
       "URL link": [
         "URL odkaz"
@@ -8818,10 +8845,10 @@
       "Always move sender's emails": [
         "Vždy presunúť emaily odosielateľa"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
       "and": [
@@ -9046,11 +9073,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -9127,6 +9154,9 @@
       "Move to Inbox": [
         "Presunúť do Doručených"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "Name": [
         "Meno"
       ],
@@ -9163,14 +9193,14 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
       ],
       "Or": [
         "Alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Original link": [
         "Pôvodný odkaz"
@@ -9265,6 +9295,12 @@
       "Street address": [
         "Ulica a č."
       ],
+      "Strong": [
+        "Silné"
+      ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti predplatného"
       ],
@@ -9312,6 +9348,18 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "Vulnerable": [
+        "Zraniteľné"
+      ],
+      "Vulnerable password": [
+        "Zraniteľné heslo"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "What happened?": [
         "Čo sa stalo?"
@@ -10043,29 +10091,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Získať ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -10087,6 +10112,29 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Získať ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12422,6 +12470,11 @@
         "Zobrazované meno"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Pripojiť sa k hromadnej konverzácii Slack"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Rýchlejší v aplikácii"
@@ -13287,6 +13340,11 @@
         "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Ušetrite ${ priceString }"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } konverzácia bola odstránená",
@@ -13742,6 +13800,11 @@
       ],
       "vCard field": [
         "vCard položka"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Pripojiť sa k stretnutiu cez Teams"
       ]
     },
     "Time": {
@@ -15489,6 +15552,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Pripojiť sa k stretnutiu na Zoome"
       ]
     },
     "Zoom Meeting": {

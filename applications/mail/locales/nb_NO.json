@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "Kopier e-post til utklippstavlen"
       ],
+      "Copy password": [
+        "Kopier passord"
+      ],
       "Copy password to clipboard": [
         "Kopier passord til utklippstavlen"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Opprett ny melding"
+      ],
+      "Create new password": [
+        "Opprett nytt passord"
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Videresend som vedlegg"
+      ],
+      "Generate password": [
+        "Generer passord"
       ],
       "Generate text": [
         "Generer tekst"
@@ -1135,10 +1144,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -1353,6 +1362,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -6360,6 +6373,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Er du sikker på at du vil slette denne meldingen permanent?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
+      ],
       "Attach public key": [
         "Legg ved offentlig nøkkel"
       ],
@@ -6864,8 +6880,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -6884,6 +6899,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Inviter partneren, en venn eller den du deler ${ protonDuoPlanName }-planen din med."
+      ],
+      "It's better to have:": [
+        "Det er bedre å ha:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
@@ -7098,6 +7116,9 @@
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
+      "Numbers": [
+        "Tall"
+      ],
       "of": [
         "av"
       ],
@@ -7133,6 +7154,12 @@
       ],
       "password": [
         "passord"
+      ],
+      "Password copied to clipboard": [
+        "Passord kopiert til utklippstavlen"
+      ],
+      "Password must have:": [
+        "Passordet må ha:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
@@ -7489,6 +7516,9 @@
       "Surveillance": [
         "Overvåking"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opprett og del dokumenter i ${ DOCS_APP_NAME } og oppbevar dem sikkert. Alt på ${ ios }, ${ android } og ${ desktop }."
       ],
@@ -7821,6 +7851,9 @@
       ],
       "Upload picture": [
         "Last opp bilde"
+      ],
+      "Uppercase and lowercase letters": [
+        "Store og små bokstaver"
       ],
       "URL link": [
         "Kobling til nettadresse"
@@ -8536,11 +8569,11 @@
       "Always move sender's emails": [
         "Alltid flytt avsenderens e-poster"
       ],
-      "AND": [
-        "OG"
-      ],
       "And": [
         "Og"
+      ],
+      "AND": [
+        "OG"
       ],
       "and": [
         "og"
@@ -8764,11 +8797,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -8845,6 +8878,9 @@
       "Move to Inbox": [
         "Flytt til innboks"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Name": [
         "Navn"
       ],
@@ -8881,14 +8917,14 @@
       "Optional": [
         "Valgfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Original link": [
         "Opprinnelig kobling"
@@ -8901,6 +8937,9 @@
       ],
       "Password hint": [
         "Passordhint"
+      ],
+      "Password strength": [
+        "Passordstyrke"
       ],
       "Payer": [
         "Betaler"
@@ -8983,6 +9022,12 @@
       "Street address": [
         "Gateadresse"
       ],
+      "Strong": [
+        "Sterk"
+      ],
+      "Strong password": [
+        "Sterkt passord"
+      ],
       "Subscription options": [
         "Abonnementalternativer"
       ],
@@ -9030,6 +9075,18 @@
       ],
       "Verification code": [
         "Verifiseringskode"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Vulnerable password": [
+        "Sårbart passord"
+      ],
+      "Weak": [
+        "Svak"
+      ],
+      "Weak password": [
+        "Svakt passord"
       ],
       "What happened?": [
         "Hva skjedde?"
@@ -9745,29 +9802,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaff deg ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Starter fra ${ pricing }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ planName }": [
-        "Oppgrader til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -9789,6 +9823,29 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaff deg ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12020,6 +12077,11 @@
         "Visningsnavn"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Bli med på det umiddelbare Slack-møtet"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Raskere på appen"
@@ -12847,6 +12909,11 @@
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Spar ${ priceString }"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } samtale slettet",
@@ -13250,6 +13317,11 @@
       ],
       "vCard field": [
         "vCard-felt"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Bli med på Teams-møte"
       ]
     },
     "Time": {
@@ -14869,6 +14941,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Bli med på Zoom-møte"
       ]
     },
     "Zoom Meeting": {
