@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import {
     APPS,
     type APP_NAMES,
+    BRAND_NAME,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     SHARED_UPSELL_PATHS,
@@ -43,7 +44,7 @@ export const getStorageFull = ({
     upgrade: ReactNode;
 }): ReactNode => {
     const driveCta = c('storage_split: info').jt`To upload or sync files, free up space or ${upgrade}`;
-    const mailCta = c('storage_split: info').jt`To send or receive emails, free up space or ${upgrade}`;
+    const mailCta = c('storage_split: info').jt`To continue using ${BRAND_NAME} products, free up space or ${upgrade}`;
 
     if (mode === 'drive') {
         return getStr(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCta);
