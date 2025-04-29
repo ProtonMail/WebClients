@@ -180,10 +180,6 @@ export const getAutoCoupon = ({
     cycle: CYCLE;
     coupon?: string | null;
 }) => {
-    if (!coupon && [PLANS.PASS_BUSINESS, PLANS.PASS_PRO].some((plan) => planIDs?.[plan])) {
-        return COUPON_CODES.PASS_B2B_INTRO;
-    }
-
     if (!coupon && [PLANS.DRIVE_BUSINESS].some((plan) => planIDs?.[plan])) {
         return COUPON_CODES.DRIVEB2BINTRO2024;
     }
