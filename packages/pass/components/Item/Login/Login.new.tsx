@@ -78,8 +78,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
 
     const form = useFormik<LoginItemFormValues>({
         initialValues,
-        initialErrors: validateLoginForm({ values: initialValues }),
-        onSubmit: ({
+        onSubmit: async ({
             name,
             note,
             itemEmail,
@@ -130,7 +129,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                 issuer: name || undefined,
             });
 
-            const { email, username } = getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+            const { email, username } = await getSanitizedUserIdentifiers({ itemEmail, itemUsername });
 
             onSubmit({
                 type: 'login',
@@ -170,6 +169,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
         },
         validate: (values) => validateLoginForm({ values }),
         validateOnBlur: true,
+        validateOnMount: true,
     });
 
     const { aliasOptions } = useAliasForLoginModal(form);

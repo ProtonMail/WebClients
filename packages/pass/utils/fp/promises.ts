@@ -1,4 +1,4 @@
-import type { AsyncCallback } from '@proton/pass/types';
+import type { AsyncCallback, MaybePromise } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export type UnwrapPromise<T> = T extends any[]
@@ -107,7 +107,7 @@ export const cancelable = <T>(promise: Promise<T>, canceled: boolean = false) =>
 };
 
 /** Processes array items sequentially through an async function */
-export const seq = async <T, R>(items: T[], job: (item: T) => Promise<R>): Promise<R[]> => {
+export const seq = async <T, R>(items: T[], job: (item: T) => MaybePromise<R>): Promise<R[]> => {
     const results: R[] = [];
 
     for (const item of items) {

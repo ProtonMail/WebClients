@@ -32,6 +32,7 @@ final class UserDefaultsServicePlanDataStorage: ServicePlanDataStorage {
         case credits = "Payments.credits"
         case paymentMethods = "Payments.paymentMethods"
         case paymentsBackendStatusAcceptsIAP = "Payments.paymentsBackendStatusAcceptsIAP"
+        case iapSupportStatus = "Payments.iapSupportStatus"
     }
 
     var servicePlansDetails: [Plan]? {
@@ -62,6 +63,14 @@ final class UserDefaultsServicePlanDataStorage: ServicePlanDataStorage {
     var paymentsBackendStatusAcceptsIAP: Bool {
         get { storageHelper.getter(Bool.self, key: .paymentsBackendStatusAcceptsIAP) ?? false }
         set { storageHelper.setter(value: newValue, key: .paymentsBackendStatusAcceptsIAP) }
+    }
+
+    var iapSupportStatus: IAPSupportStatus {
+        get {
+            storageHelper.getter(IAPSupportStatus.self, key: .iapSupportStatus) ?? IAPSupportStatus
+                .disabled(localizedReason: "IAP not available")
+        }
+        set { storageHelper.setter(value: newValue, key: .iapSupportStatus) }
     }
 
     private let storageHelper: StorageHelper<StorageKeys>

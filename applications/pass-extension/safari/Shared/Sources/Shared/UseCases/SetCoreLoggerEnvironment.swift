@@ -36,6 +36,6 @@ public final class SetCoreLoggerEnvironment: SetCoreLoggerEnvironmentUseCase {
     public init() {}
 
     public func execute(_ environment: PassEnvironment) {
-        PMLog.setEnvironment(environment: environment.name)
+        PMLog.setExternalLoggerHost(environment.name)
     }
 }

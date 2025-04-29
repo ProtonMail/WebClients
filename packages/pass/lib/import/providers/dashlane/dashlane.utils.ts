@@ -19,6 +19,7 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import type {
     DashlaneIdItem,
+    DashlaneItemAsyncParser,
     DashlaneItemParser,
     DashlaneLoginItem,
     DashlaneNoteItem,
@@ -191,11 +192,10 @@ export const extractDashlaneIdentity = (
     return item.data.content;
 };
 
-export const processDashlaneLogin: DashlaneItemParser<DashlaneLoginItem> = (item): ItemImportIntent<'login'> =>
+export const processDashlaneLogin: DashlaneItemAsyncParser<DashlaneLoginItem> = async (item) =>
     importLoginItem({
         name: item.title,
         note: item.note,
-        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: item.otpUrl ?? item.otpSecret,
@@ -204,6 +204,7 @@ export const processDashlaneLogin: DashlaneItemParser<DashlaneLoginItem> = (item
             type: 'text',
             data: { content: username ?? '' },
         })),
+        ...(await getEmailOrUsername(item.username)),
     });
 
 export const processDashlaneNote: DashlaneItemParser<DashlaneNoteItem> = (item): ItemImportIntent<'note'> =>

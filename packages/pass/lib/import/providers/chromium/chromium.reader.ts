@@ -17,32 +17,30 @@ const CHROME_EXPECTED_HEADERS: (keyof ChromiumItem)[] = ['name', 'url', 'usernam
 export const readChromiumData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
+    const items: ItemImportIntent[] = [];
 
     try {
         const data = await file.text();
-        const result = await readCSV<ChromiumItem>({
+        const parsed = await readCSV<ChromiumItem>({
             data,
             headers: CHROME_EXPECTED_HEADERS,
             onError: (error) => warnings.push(error),
         });
 
+        for (const item of parsed.items) {
+            items.push(
+                importLoginItem({
+                    name: item.name,
+                    note: item.note,
+                    password: item.password,
+                    urls: [item.url],
+                    ...(await getEmailOrUsername(item.username)),
+                })
+            );
+        }
+
         return {
-            vaults: [
-                {
-                    name: getImportedVaultName(),
-                    shareId: null,
-                    items: result.items.map(
-                        (item): ItemImportIntent<'login'> =>
-                            importLoginItem({
-                                name: item.name,
-                                note: item.note,
-                                ...getEmailOrUsername(item.username),
-                                password: item.password,
-                                urls: [item.url],
-                            })
-                    ),
-                },
-            ],
+            vaults: [{ name: getImportedVaultName(), shareId: null, items }],
             ignored,
             warnings,
         };

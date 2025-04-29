@@ -18,7 +18,7 @@ import InputField from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
+import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
