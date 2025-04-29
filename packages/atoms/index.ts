@@ -1,6 +1,6 @@
 export { default as Avatar } from './Avatar/Avatar';
 export type { AvatarProps } from './Avatar/Avatar';
-export { default as Banner } from './Banner/Banner';
+export { default as Banner, BannerVariants } from './Banner/Banner';
 export { Button } from './Button/Button';
 export type { ButtonProps } from './Button/Button';
 export { default as ButtonLike } from './Button/ButtonLike';
