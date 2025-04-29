@@ -519,6 +519,9 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
+      "Generate password": [
+        "Generér adgangskode"
+      ],
       "Generate text": [
         "Generer tekst"
       ],
@@ -1096,10 +1099,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1293,6 +1296,10 @@
       ],
       "Trust": [
         "Hav tillid til"
+      ],
+      "Trust key": [
+        "Stol på nøgle",
+        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -6611,8 +6618,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -6697,9 +6703,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -6862,6 +6865,9 @@
       ],
       "password": [
         "adgangskode"
+      ],
+      "Password copied to clipboard": [
+        "Adgangskode kopieret til udklipsholder"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
@@ -8183,11 +8189,11 @@
       "Always move sender's emails": [
         "Flyt altid afsenders e-mails"
       ],
-      "AND": [
-        "OG"
-      ],
       "And": [
         "Og"
+      ],
+      "AND": [
+        "OG"
       ],
       "and": [
         "og"
@@ -8408,11 +8414,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -8522,14 +8528,14 @@
       "Optional": [
         "Valgfrit"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Original link": [
         "Oprindeligt link"
@@ -8621,6 +8627,9 @@
       "Street address": [
         "Adresse"
       ],
+      "Strong": [
+        "Stærk"
+      ],
       "Subscription options": [
         "Abonnementsmuligheder"
       ],
@@ -8668,6 +8677,12 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Weak": [
+        "Svag"
       ],
       "What happened?": [
         "Hvad skete der?"
@@ -9317,26 +9332,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Få ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -9358,6 +9353,26 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {

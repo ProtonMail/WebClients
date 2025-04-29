@@ -429,6 +429,9 @@
       "Forward as attachment": [
         "Welleh am umedday"
       ],
+      "Generate password": [
+        "Sirew awal uffir"
+      ],
       "Get in touch": [
         "Nermes-aɣ-d"
       ],
@@ -892,11 +895,11 @@
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select All": [
-        "Fren kullec"
-      ],
       "Select all": [
         "Fren akk"
+      ],
+      "Select All": [
+        "Fren kullec"
       ],
       "Select all messages": [
         "Fren akk iznan"
@@ -1044,6 +1047,10 @@
       ],
       "Trust": [
         "Amen"
+      ],
+      "Trust key": [
+        "Tasarut yettwamanen",
+        "Tisura yettwamanen"
       ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
@@ -4920,8 +4927,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5093,6 +5099,9 @@
       ],
       "password": [
         "awal uffir"
+      ],
+      "Password copied to clipboard": [
+        "Awal uffir yettwanɣel ɣer tecfawt"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Lexlaṣ yemmesten s TLS akked leqwanen n tbaḍnit n Swis."
@@ -5933,11 +5942,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6134,11 +6143,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6242,14 +6251,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6920,17 +6929,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6949,6 +6947,17 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {

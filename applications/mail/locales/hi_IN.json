@@ -286,6 +286,9 @@
       "Copy email to clipboard": [
         "ईमेल क्लिपबोर्ड पे कॉपी करें"
       ],
+      "Copy password": [
+        "पासवर्ड कॉपी करें"
+      ],
       "Copy password to clipboard": [
         "पासवर्ड को क्लिपबोर्ड पर कॉपी करें"
       ],
@@ -318,6 +321,9 @@
       ],
       "Create new message": [
         "नया संदेश बनाएं"
+      ],
+      "Create new password": [
+        "नया पासवर्ड बनाएं"
       ],
       "Current plan": [
         "वर्तमान योजना"
@@ -515,6 +521,9 @@
       ],
       "Forward as attachment": [
         "अटैचमेंट जैसे फॉरवर्ड करें"
+      ],
+      "Generate password": [
+        "पासवर्ड उत्पन्न करें"
       ],
       "Generate text": [
         "टेक्स्ट जनरेट करें"
@@ -1087,10 +1096,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1289,7 +1298,8 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "विश्वसनीय चाबी"
+        "ट्रस्ट कुंजी",
+        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -6136,6 +6146,9 @@
       "Are you sure you want to permanently delete this message?": [
         "क्या आप वाकई इस संदेश को स्थायी रूप से हटाना चाहते हैं?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "कम से कम ${ BETTER_PASSWORD_LENGTH } अक्षर"
+      ],
       "Attach public key": [
         "सार्वजनिक कुंजी संलग्न करें"
       ],
@@ -6622,8 +6635,7 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें",
-        "तस्वीरें डालें"
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -6642,6 +6654,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "अपने ${ protonDuoPlanName } प्लैन को साझा करने के लिए अपने साथी, मित्र, या जिसे भी आप आमंत्रित करना चाहें, उन्हें आमंत्रित करें।"
+      ],
+      "It's better to have:": [
+        "यह बेहतर है कि:"
       ],
       "JCB logo": [
         "JCB लोगो"
@@ -6708,9 +6723,6 @@
       ],
       "Low Priority": [
         "निम्न प्राथमिकता"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "अपने ${ MAIL_APP_NAME } को अपना डिफ़ॉल्ट ईमेल एप्लीकेशन बनाएं।"
       ],
       "Manage your folders": [
         "अपने फ़ोल्डर प्रबंधित करें"
@@ -6844,6 +6856,9 @@
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
       ],
+      "Numbers": [
+        "नंबर"
+      ],
       "of": [
         "का"
       ],
@@ -6864,6 +6879,9 @@
       ],
       "password": [
         "पासवर्ड"
+      ],
+      "Password copied to clipboard": [
+        "पासवर्ड क्लिपबोर्ड पे कॉपी किया"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "भुगतान टीएलएस एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं"
@@ -7189,6 +7207,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "सदस्यता समाप्त हो रही है: अपने ${ planName } फायदे बनाए रखने के लिए ${ byDate } तक पुनः सक्रिय करें। ${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "प्रतीक (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME } ऐप के साथ फाइलों को सिंक करें और संभाले। ${ DOCS_APP_NAME } में दस्तावेज़ बनाएं और साझा करें, और उन्हें सुरक्षित रूप से स्टोर करें। यह ${ ios }, ${ android } और ${ desktop } पर उपलब्ध है।"
       ],
@@ -7506,6 +7527,9 @@
       ],
       "Upload picture": [
         "तसवीर डालें"
+      ],
+      "Uppercase and lowercase letters": [
+        "बड़े और छोटे अक्षर"
       ],
       "URL link": [
         "यूआरएल लिंक"
@@ -8186,10 +8210,10 @@
       "Always move sender's emails": [
         "भेजनेवाले के ईमेल हमेशा ले जाएं"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
       "and": [
@@ -8411,10 +8435,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
       "Import all messages": [
@@ -8492,6 +8516,9 @@
       "Move to Inbox": [
         "इनबॉक्स में ले जाएँ"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "कम से कम ${ MIN_PASSWORD_LENGTH } अक्षर होने चाहिए"
+      ],
       "Name": [
         "नाम"
       ],
@@ -8525,13 +8552,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
-      "OR": [
-        "या"
-      ],
       "or": [
         "या"
       ],
       "Or": [
+        "या"
+      ],
+      "OR": [
         "या"
       ],
       "Original link": [
@@ -8627,6 +8654,12 @@
       "Street address": [
         "राज्य / प्रांत की आवश्यकता है"
       ],
+      "Strong": [
+        "मजबूत"
+      ],
+      "Strong password": [
+        "मजबूत पासवर्ड"
+      ],
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
@@ -8674,6 +8707,18 @@
       ],
       "Verification code": [
         "पुष्टि संख्या"
+      ],
+      "Vulnerable": [
+        "कमज़ोर"
+      ],
+      "Vulnerable password": [
+        "असुरक्षित पासवर्ड"
+      ],
+      "Weak": [
+        "कमज़ोर"
+      ],
+      "Weak password": [
+        "कमज़ोर पासवर्ड"
       ],
       "What happened?": [
         "क्या हुआ?"
@@ -9326,29 +9371,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } लें"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -9370,6 +9392,29 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } लें"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "शुरू करें ${ priceCoupon } के लिए"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {

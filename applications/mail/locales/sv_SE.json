@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
       ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
       "Copy password to clipboard": [
         "Kopiera lösenord till urklipp"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Skapa nytt meddelande"
+      ],
+      "Create new password": [
+        "Skapa nytt lösenord"
       ],
       "Current plan": [
         "Nuvarande paket"
@@ -530,6 +536,9 @@
       ],
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
+      ],
+      "Generate password": [
+        "Generera lösenord"
       ],
       "Generate text": [
         "Generera text"
@@ -1132,11 +1141,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select All": [
-        "Välj alla"
-      ],
       "Select all": [
         "Markera alla"
+      ],
+      "Select All": [
+        "Välj alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -1350,6 +1359,10 @@
       ],
       "Trust": [
         "Lita på"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -6346,6 +6359,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Är du säker på att du vill ta bort detta meddelande permanent?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
+      ],
       "Attach public key": [
         "Bifoga offentlig nyckel"
       ],
@@ -6850,8 +6866,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -6870,6 +6885,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Bjud in din partner, en vän eller vem du än delar ditt ${ protonDuoPlanName }-paket med."
+      ],
+      "It's better to have:": [
+        "Det är bättre att ha:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det är bäst att alltid använda ett VPN. Men här är när cybersäkerhetshoten kan vara som störst:"
@@ -7084,6 +7102,9 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
+      "Numbers": [
+        "Siffror"
+      ],
       "of": [
         "av"
       ],
@@ -7119,6 +7140,12 @@
       ],
       "password": [
         "lösenord"
+      ],
+      "Password copied to clipboard": [
+        "Lösenord kopierat till urklipp"
+      ],
+      "Password must have:": [
+        "Lösenord måste innehålla:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
@@ -7471,6 +7498,9 @@
       "Surveillance": [
         "Övervakning"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronisera och hantera filer med ${ DRIVE_APP_NAME }-appen. Skapa och dela dokument i ${ DOCS_APP_NAME } och lagra dem säkert. Allt på ${ ios }, ${ android } och ${ desktop }."
       ],
@@ -7803,6 +7833,9 @@
       ],
       "Upload picture": [
         "Ladda upp bild"
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "URL link": [
         "URL-länk"
@@ -8513,11 +8546,11 @@
       "Always move sender's emails": [
         "Flytta alltid avsändarens e-postmeddelanden"
       ],
-      "AND": [
-        "OCH"
-      ],
       "And": [
         "Och"
+      ],
+      "AND": [
+        "OCH"
       ],
       "and": [
         "och"
@@ -8741,11 +8774,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "OM"
-      ],
       "If": [
         "Om"
+      ],
+      "IF": [
+        "OM"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -8822,6 +8855,9 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
       "Name": [
         "Namn"
       ],
@@ -8858,14 +8894,14 @@
       "Optional": [
         "Valfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Original link": [
         "Originallänk"
@@ -8878,6 +8914,9 @@
       ],
       "Password hint": [
         "Lösenordsledtråd"
+      ],
+      "Password strength": [
+        "Lösenordsstyrka"
       ],
       "Payer": [
         "Betalare"
@@ -8960,6 +8999,12 @@
       "Street address": [
         "Gatuadress"
       ],
+      "Strong": [
+        "Starkt"
+      ],
+      "Strong password": [
+        "Starkt Lösenord"
+      ],
       "Subscription options": [
         "Prenumerationsalternativ"
       ],
@@ -9007,6 +9052,18 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Vulnerable": [
+        "Sårbart"
+      ],
+      "Vulnerable password": [
+        "Sårbart lösenord"
+      ],
+      "Weak": [
+        "Svagt"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
       ],
       "What happened?": [
         "Vad hände?"
@@ -9719,29 +9776,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaffa ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -9763,6 +9797,29 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10356,6 +10413,11 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -10368,11 +10430,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {

@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
+      "Copy password": [
+        "Copiar a palavra-passe"
+      ],
       "Copy password to clipboard": [
         "Copiar palavra-passe para a área de transferência"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Criar uma mensagem"
+      ],
+      "Create new password": [
+        "Criar uma palavra-passe"
       ],
       "Current plan": [
         "Plano atual"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate password": [
+        "Gerar uma palavra-passe"
       ],
       "Generate text": [
         "Gerar texto"
@@ -1135,11 +1144,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select All": [
-        "Selecionar tudo"
-      ],
       "Select all": [
         "Seleccionar tudo"
+      ],
+      "Select All": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1353,6 +1362,10 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -6360,6 +6373,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Tem a certeza de que pretende eliminar permanentemente esta mensagem?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
+      ],
       "Attach public key": [
         "Anexar chave pública"
       ],
@@ -6864,8 +6880,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -6884,6 +6899,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Convide o seu parceiro, amigo ou qualquer pessoa com quem esteja a partilhar o seu plano ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "É melhor ter:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "É melhor utilizar uma VPN sempre. Mas é aqui que as ameaças à cibersegurança podem ser maiores:"
@@ -7098,6 +7116,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "of": [
         "de"
       ],
@@ -7133,6 +7154,12 @@
       ],
       "password": [
         "palavra-passe"
+      ],
+      "Password copied to clipboard": [
+        "Palavra-passe copiada para a área de transferência"
+      ],
+      "Password must have:": [
+        "A palavra-passe deve ter:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
@@ -7489,6 +7516,9 @@
       "Surveillance": [
         "Vigilância"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronize e gire ficheiros com a aplicação ${ DRIVE_APP_NAME }. Crie e partilhe documentos no ${ DOCS_APP_NAME }e armazene-os de forma segura. Tudo em ${ ios }, ${ android } e ${ desktop }."
       ],
@@ -7821,6 +7851,9 @@
       ],
       "Upload picture": [
         "Enviar imagem"
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas"
       ],
       "URL link": [
         "Hiperligação do URL"
@@ -8536,10 +8569,10 @@
       "Always move sender's emails": [
         "Mover sempre os e-mails do remetente"
       ],
-      "AND": [
+      "And": [
         "E"
       ],
-      "And": [
+      "AND": [
         "E"
       ],
       "and": [
@@ -8764,11 +8797,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SE"
-      ],
       "If": [
         "Se"
+      ],
+      "IF": [
+        "SE"
       ],
       "Import all messages": [
         "Importar todas as mensagens"
@@ -8845,6 +8878,9 @@
       "Move to Inbox": [
         "Mover para Caixa de entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres"
+      ],
       "Name": [
         "Nome"
       ],
@@ -8881,14 +8917,14 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "OU"
-      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
+      ],
+      "OR": [
+        "OU"
       ],
       "Original link": [
         "Ligação original"
@@ -8901,6 +8937,9 @@
       ],
       "Password hint": [
         "Dica da palavra-passe"
+      ],
+      "Password strength": [
+        "Força da palavra-passe"
       ],
       "Payer": [
         "Pagante"
@@ -8983,6 +9022,12 @@
       "Street address": [
         "Endereço postal"
       ],
+      "Strong": [
+        "Forte"
+      ],
+      "Strong password": [
+        "Palavra-passe segura"
+      ],
       "Subscription options": [
         "Opções da subscrição"
       ],
@@ -9030,6 +9075,18 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Vulnerable password": [
+        "Palavra-passe vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
+      ],
+      "Weak password": [
+        "Palavra-passe fraca"
       ],
       "What happened?": [
         "O que é que aconteceu?"
@@ -9745,29 +9802,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtenha o ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -9789,6 +9823,29 @@
       ],
       "Switch plan": [
         "Alterar o plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtenha o ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12850,6 +12907,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Poupe ${ priceString }"
       ]
     },
     "Success": {

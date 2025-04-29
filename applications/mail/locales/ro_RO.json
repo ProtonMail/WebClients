@@ -299,6 +299,9 @@
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
+      "Copy password": [
+        "Copiere parolă"
+      ],
       "Copy password to clipboard": [
         "Copiere parolă în memorie"
       ],
@@ -331,6 +334,9 @@
       ],
       "Create new message": [
         "Creare mesaj"
+      ],
+      "Create new password": [
+        "Creare parolă"
       ],
       "Current plan": [
         "Plan actual"
@@ -536,6 +542,9 @@
       ],
       "Forward as attachment": [
         "Redirecționare ca atașament"
+      ],
+      "Generate password": [
+        "Generare parolă"
       ],
       "Generate text": [
         "Generare text"
@@ -1025,6 +1034,9 @@
       "Remove bonuses": [
         "Anulare bonusuri"
       ],
+      "Remove button": [
+        "Buton eliminare"
+      ],
       "Remove encryption": [
         "Eliminare criptare"
       ],
@@ -1136,10 +1148,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -1355,6 +1367,11 @@
       "Trust": [
         "Aprobare"
       ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
+      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1435,6 +1452,12 @@
       ],
       "Use ${ PASS_APP_NAME }": [
         "Utilizați ${ PASS_APP_NAME }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Utilizați ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
       "Use a different card": [
         "Folosire alt card"
@@ -3693,6 +3716,9 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } în ${ DRIVE_APP_NAME } vă permite să lucrați împreună cu alte persoane într-un mediu sigur și criptat."
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } în setări."
       ],
@@ -3701,6 +3727,9 @@
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Adăugați foldere și fișiere în ${ DRIVE_APP_NAME } și invitați membrii echipei să le vadă sau să le editeze."
       ],
       "Also included": [
         "De asemenea, inclus"
@@ -3711,11 +3740,23 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Ștergeți automat mesajele mutate în folderul «Gunoi» și «Nedorite» în urmă cu mai bine de 30 de zile."
       ],
+      "Automatically forward incoming email to another email address.": [
+        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creați câte etichete sau foldere aveți nevoie pentru a vă menține contul ordonat."
+      ],
+      "Create groups you can email with a single address.": [
+        "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
@@ -3729,8 +3770,26 @@
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Nu doriți să trimiteți mesajul chiar acum? Programați-l exact la momentul potrivit."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Asigurați accesarea securizată la datele organizației, chiar dacă echipa este la distanță sau utilizează o rețea Wi-Fi publică."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Asigurați o securitate de top pentru cont cu programul ${ PROTON_SENTINEL_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Pentru acces nelimitat la asistentul de scriere și nu numai, achiziționați ${ BRAND_NAME } Duo."
@@ -3741,8 +3800,14 @@
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obțineți aliasuri nelimitate și 500 GIB spațiu de stocare cu ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -3773,6 +3838,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Setați o metodă de recuperare pentru a preveni pierderea accesului la cont."
       ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Simplificați sincronizarea și programarea cu calendare partajate."
+      ],
       "Starting from ${ price }": [
         "Începând de la ${ price }"
       ],
@@ -3790,6 +3861,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
+      ],
+      "To start, give your organization a name.": [
+        "Pentru a începe, dați un nume organizației."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activați protecția împotriva monitorizării prin e-mail pentru a împiedica agenții de publicitate și alții să vă urmărească locul și activitatea online."
@@ -3820,6 +3894,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nu am găsit instrumente de urmărire și adrese URL cunoscute în acest e-mail."
@@ -3961,6 +4038,11 @@
         "Asistență prioritară"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTĂ:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIERE:\n${ eventDescription }"
@@ -3972,6 +4054,12 @@
       ],
       "All events in this series were updated.": [
         "Toate evenimentele din serie au fost modificate."
+      ],
+      "Here's what changed:": [
+        "Iată ce s-a schimbat:"
+      ],
+      "NOTE:": [
+        "NOTĂ:"
       ],
       "This event occurrence was canceled.": [
         "Acest eveniment a fost anulat."
@@ -5674,7 +5762,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosind adresa dvs. de e-mail din ${ BRAND_NAME }."
+        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosindu-vă adresa de e-mail din ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Acest fișier conține o invitație la un eveniment:",
@@ -6382,6 +6470,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Sigur doriți să ștergeți definitiv acest mesaj?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
+      ],
       "Attach public key": [
         "Atașare cheie publică"
       ],
@@ -6897,9 +6988,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -6918,6 +7007,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Invitați-vă partenerul, un prieten sau cu cine partajați planul ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "Este bine să aveți:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Este bine să folosiți un VPN tot timpul. Dar amenințările cibernetice pot fi maxime în aceste situații:"
@@ -7132,6 +7224,9 @@
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
+      "Numbers": [
+        "Cifre"
+      ],
       "of": [
         "din"
       ],
@@ -7167,6 +7262,12 @@
       ],
       "password": [
         "parola"
+      ],
+      "Password copied to clipboard": [
+        "Parola a fost copiată în memorie."
+      ],
+      "Password must have:": [
+        "Parola trebuie să conțină:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -7527,6 +7628,9 @@
       "Surveillance": [
         "Supraveghere"
       ],
+      "Symbols (#$&)": [
+        "Simboluri (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
       ],
@@ -7862,6 +7966,9 @@
       ],
       "Upload picture": [
         "Încărcare imagine"
+      ],
+      "Uppercase and lowercase letters": [
+        "Litere mari și mici"
       ],
       "URL link": [
         "URL legătură web"
@@ -8600,11 +8707,11 @@
       "Always move sender's emails": [
         "Mutare întotdeauna mesajele expeditorului"
       ],
-      "AND": [
-        "ȘI"
-      ],
       "And": [
         "Şi"
+      ],
+      "AND": [
+        "ȘI"
       ],
       "and": [
         "și"
@@ -8828,11 +8935,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "DACĂ"
-      ],
       "If": [
         "Dacă"
+      ],
+      "IF": [
+        "DACĂ"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -8909,6 +9016,9 @@
       "Move to Inbox": [
         "Mutare în «Primite»"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
+      ],
       "Name": [
         "Nume"
       ],
@@ -8945,14 +9055,14 @@
       "Optional": [
         "Opțional"
       ],
-      "OR": [
-        "SAU"
-      ],
       "or": [
         "sau"
       ],
       "Or": [
         "Sau"
+      ],
+      "OR": [
+        "SAU"
       ],
       "Original link": [
         "Legătura originală"
@@ -8965,6 +9075,9 @@
       ],
       "Password hint": [
         "Indiciu parolă"
+      ],
+      "Password strength": [
+        "Dificultatea parolei"
       ],
       "Payer": [
         "Plătitor"
@@ -9047,6 +9160,12 @@
       "Street address": [
         "Strada"
       ],
+      "Strong": [
+        "Puternică"
+      ],
+      "Strong password": [
+        "Parolă puternică"
+      ],
       "Subscription options": [
         "Opțiuni abonament"
       ],
@@ -9094,6 +9213,18 @@
       ],
       "Verification code": [
         "Cod de verificare"
+      ],
+      "Vulnerable": [
+        "Vulnerabilă"
+      ],
+      "Vulnerable password": [
+        "Parolă vulnerabilă"
+      ],
+      "Weak": [
+        "Slabă"
+      ],
+      "Weak password": [
+        "Parolă slabă"
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
@@ -9817,29 +9948,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Luați ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -9861,6 +9969,29 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Luați ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -11466,6 +11597,9 @@
       "Name or email address": [
         "Nume utilizator/adresa de e-mail"
       ],
+      "Organization name": [
+        "Nume organizație"
+      ],
       "Password": [
         "Parola"
       ],
@@ -11546,6 +11680,9 @@
       ],
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
+      ],
+      "Your organization name": [
+        "Numele organizației"
       ]
     },
     "Placeholder for contact group name": {
@@ -11719,6 +11856,11 @@
       ],
       "No unread messages found": [
         "Nu au fost găsite mesaje necitite"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Setare organizație și securitate cont"
       ]
     },
     "Security Center": {
@@ -12131,6 +12273,11 @@
     "Signup label": {
       "Display name": [
         "Nume afișat"
+      ]
+    },
+    "Slack": {
+      "Join Slack huddle": [
+        "Accesați grupuri Slack"
       ]
     },
     "SmartBanner": {
@@ -12979,6 +13126,11 @@
         "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Economisiți ${ priceString }"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "S-a șters o conversație.",
@@ -13410,6 +13562,11 @@
         "Câmp vCard"
       ]
     },
+    "Teams": {
+      "Join Teams meeting": [
+        "Accesați conferințe Teams"
+      ]
+    },
     "Time": {
       "Yesterday": [
         "Ieri"
@@ -13548,6 +13705,9 @@
       "Add to ${ groupName }": [
         "Adăugare în ${ groupName }"
       ],
+      "Add user": [
+        "Adăugare utilizator"
+      ],
       "Addresses": [
         "Adrese"
       ],
@@ -13629,6 +13789,9 @@
       "Clearing data": [
         "Ştergere date"
       ],
+      "Collaborate on documents": [
+        "Colaborați la documente"
+      ],
       "Confirm downgrade": [
         "Confirmare modificare la plan inferior"
       ],
@@ -13637,6 +13800,15 @@
       ],
       "Confirm recipient address?": [
         "Confirmați adresa destinatarului?"
+      ],
+      "Connect apps and devices": [
+        "Conectați aplicații și dispozitive"
+      ],
+      "Connect to video conferencing": [
+        "Conectați-vă la conferințe video"
+      ],
+      "Connect your custom domain": [
+        "Conectați-vă domeniul personal"
       ],
       "Contact Details": [
         "Detalii contact"
@@ -13765,6 +13937,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Retrogradare la ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Descărcați aplicația"
       ],
@@ -13801,8 +13976,14 @@
       "Enable 2FA": [
         "Activare A2F"
       ],
+      "Enable advanced account protection": [
+        "Activare protecție avansată cont"
+      ],
       "Enable message content search": [
         "Activați căutarea conținutului mesajului"
+      ],
+      "Enhance security with 2FA": [
+        "Îmbunătățiți securitatea cu A2F"
       ],
       "Enter 2FA code": [
         "Introduceți codul de A2F"
@@ -13883,6 +14064,9 @@
       ],
       "Import contacts": [
         "Importare contacte"
+      ],
+      "Import emails, calendars, contacts": [
+        "Importați e-mailuri, calendare, contacte"
       ],
       "Import events": [
         "Importare evenimente"
@@ -14064,6 +14248,12 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
+      "Org setup": [
+        "Setare organizație"
+      ],
+      "Organization setup": [
+        "Setare organizație"
+      ],
       "Other features included in your plan": [
         "Alte funcții incluse în plan"
       ],
@@ -14205,14 +14395,23 @@
       "Sending original message": [
         "Se trimite mesajul original"
       ],
+      "Set recovery methods": [
+        "Setați metodele de recuperare"
+      ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Setare ${ protonDuoPlanName }"
       ],
+      "Set up email forwarding": [
+        "Setare redirecționare mesaje"
+      ],
       "Set up your family account": [
         "Configurare cont de familie"
+      ],
+      "Set up your organization": [
+        "Setați organizația"
       ],
       "Set your own schedule": [
         "Setare programare"
@@ -14220,11 +14419,20 @@
       "Settings": [
         "Setări"
       ],
+      "Share your calendar with your team": [
+        "Partajați-vă calendarul cu echipa proprie"
+      ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
       ],
       "Sign out": [
         "Deconectare"
+      ],
+      "Simplify email distribution": [
+        "Simplificați distribuirea mesajelor"
+      ],
+      "Simplify password management": [
+        "Simplificați gestionarea parolelor"
       ],
       "Snooze": [
         "Amânare"
@@ -14279,6 +14487,9 @@
       "Trust public key?": [
         "Cheie publică de încredere?"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Activare ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Unlock contacts groups": [
         "Deblocare grupuri de contacte"
       ],
@@ -14290,6 +14501,12 @@
       ],
       "Upgrade complete!": [
         "Modificare finalizată!"
+      ],
+      "Upload and share files": [
+        "Încărcați și partajați fișiere"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
       "Verification error": [
         "Eroare verificare"
@@ -14325,6 +14542,9 @@
       ],
       "Welcome ${ userName }": [
         "Bun venit, ${ userName }"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Bun venit la ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "De ce te poate proteja un VPN?"
@@ -15028,6 +15248,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Accesare conferință Zoom"
       ]
     },
     "Zoom Meeting": {
