@@ -34,7 +34,7 @@ const formatOtpAuthUriFromLegacyTotpDefinition = (item: KeePassItem): Maybe<stri
 const formatOtpAuthUri = (item: KeePassItem): Maybe<string> =>
     isLegacyTotpDefinition(item) ? formatOtpAuthUriFromLegacyTotpDefinition(item) : item.otpauth;
 
-const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
+const entryToItem = async (entry: KeePassEntry): Promise<ItemImportIntent<'login'>> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
     const item = entryString.reduce<KeePassItem>(
         (acc, { Key, Value }) => {
@@ -83,36 +83,43 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     return importLoginItem({
         name: item.name,
         note: item.note,
-        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: formatOtpAuthUri(item),
         extraFields: item.customFields,
+        ...(await getEmailOrUsername(item.username)),
     });
 };
 
-const groupToVault = (group: KeePassGroup): MaybeNull<ImportVault> => {
-    const entry = get(group, 'Entry');
-    if (!entry) return null;
+const groupToVault = async (group: KeePassGroup): Promise<MaybeNull<ImportVault>> => {
+    const entries = get(group, 'Entry');
+    if (!entries) return null;
 
-    return {
-        name: getImportedVaultName(group.Name),
-        shareId: null,
-        items: Array.isArray(entry) ? entry.map((entry) => entryToItem(entry)) : [entryToItem(entry)],
-    };
+    const name = getImportedVaultName(group.Name);
+    const items: ItemImportIntent[] = [];
+
+    for (const entry of Array.isArray(entries) ? entries : [entries]) {
+        items.push(await entryToItem(entry));
+    }
+
+    return { name, shareId: null, items };
 };
 
-const extractVaults = (group: KeePassGroup, vaults: ImportVault[] = []): ImportVault[] => {
-    const vault = groupToVault(group);
+const extractVaults = async (group: KeePassGroup): Promise<ImportVault[]> => {
+    const vaults: ImportVault[] = [];
+
+    const vault = await groupToVault(group);
     if (vault) vaults.push(vault);
 
     const nestedGroup = get(group, 'Group');
-
     if (!nestedGroup) return vaults;
 
-    return Array.isArray(nestedGroup)
-        ? nestedGroup.reduce((acc, cur) => acc.concat(extractVaults(cur, [])), vaults)
-        : extractVaults(nestedGroup, vaults);
+    for (const group of Array.isArray(nestedGroup) ? nestedGroup : [nestedGroup]) {
+        const nested = await extractVaults(group);
+        vaults.push(...nested);
+    }
+
+    return vaults;
 };
 
 export const readKeePassData = async (file: File): Promise<ImportReaderResult> => {
@@ -121,13 +128,9 @@ export const readKeePassData = async (file: File): Promise<ImportReaderResult> =
         const X2JS = (await import('x2js')).default;
         const parser = new X2JS({ stripWhitespaces: false });
         const importXml: KeePassFile = parser.xml2js(data);
-        const vaults = extractVaults(importXml.KeePassFile.Root as KeePassGroup, []);
+        const vaults = await extractVaults(importXml.KeePassFile.Root as KeePassGroup);
 
-        return {
-            vaults,
-            ignored: [],
-            warnings: [],
-        };
+        return { vaults, ignored: [], warnings: [] };
     } catch (e) {
         logger.warn('[Importer::KeePass]', e);
         throw new ImportProviderError('KeePass', e);

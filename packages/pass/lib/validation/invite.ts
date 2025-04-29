@@ -25,40 +25,32 @@ type ValidateShareInviteOptions = {
 
 export const validateInvite =
     ({ emailField, emailValidationResults, store }: ValidateShareInviteOptions) =>
-    (values: InviteFormValues) => {
+    async (values: InviteFormValues) => {
         let errors: FormikErrors<InviteFormValues> = {};
 
         if (values.step === 'members') {
             const { shareId } = values;
             const itemId = values.target === AccessTarget.Item ? values.itemId : undefined;
             const excluded = selectAccessMembers(shareId, itemId)(store.getState());
+            const emails = { errors: [] as string[], pass: true, seen: new Set<string>() };
 
-            const emails = values.members.reduce<{
-                errors: string[];
-                pass: boolean;
-                seen: Set<string>;
-            }>(
-                (acc, { value }) => {
-                    if (acc.seen.has(value.email)) {
-                        acc.errors.push(InviteEmailsError.DUPLICATE);
-                        acc.pass = false;
-                    } else if (!PassUI.is_email_valid(value.email)) {
-                        acc.pass = false;
-                        acc.errors.push(InviteEmailsError.INVALID_EMAIL);
-                    } else if (emailValidationResults?.current.get(value.email) === false) {
-                        acc.errors.push(InviteEmailsError.INVALID_ORG);
-                        acc.pass = false;
-                    } else if (excluded.has(value.email)) {
-                        acc.errors.push(InviteEmailsError.EXCLUDED);
-                        acc.pass = false;
-                    } else acc.errors.push('');
+            for (const { value } of values.members) {
+                if (emails.seen.has(value.email)) {
+                    emails.errors.push(InviteEmailsError.DUPLICATE);
+                    emails.pass = false;
+                } else if (!(await PassUI.is_email_valid(value.email))) {
+                    emails.pass = false;
+                    emails.errors.push(InviteEmailsError.INVALID_EMAIL);
+                } else if (emailValidationResults?.current.get(value.email) === false) {
+                    emails.errors.push(InviteEmailsError.INVALID_ORG);
+                    emails.pass = false;
+                } else if (excluded.has(value.email)) {
+                    emails.errors.push(InviteEmailsError.EXCLUDED);
+                    emails.pass = false;
+                } else emails.errors.push('');
 
-                    acc.seen.add(value.email);
-
-                    return acc;
-                },
-                { errors: [], pass: true, seen: new Set() }
-            );
+                emails.seen.add(value.email);
+            }
 
             errors.members = emails.errors;
 
@@ -70,7 +62,7 @@ export const validateInvite =
             const trailingFocused = emailField.current === document.activeElement;
             const trailingValue = emailField.current?.value?.trim() ?? '';
             const trailingEmpty = trailingValue.length === 0;
-            const trailingValid = !trailingEmpty && PassUI.is_email_valid(trailingValue);
+            const trailingValid = !trailingEmpty && (await PassUI.is_email_valid(trailingValue));
 
             /* If the trailing input is focused, trigger errors if the trailing
              * value is not a valid email address. If it's not focused, flag errors

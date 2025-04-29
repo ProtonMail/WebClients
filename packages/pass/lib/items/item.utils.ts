@@ -1,6 +1,5 @@
 import { c, msgid } from 'ttag';
 
-import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
@@ -8,7 +7,6 @@ import type {
     DeobfuscatedItem,
     IdentityItemPreview,
     ItemRevision,
-    ItemRevisionID,
     ItemSortFilter,
     ItemType,
     LoginItem,
@@ -18,12 +16,10 @@ import type {
     SelectedRevision,
     UniqueItem,
 } from '@proton/pass/types';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import chunk from '@proton/utils/chunk';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
 
@@ -146,27 +142,6 @@ export const matchDraftsForShare = (drafts: Draft[], shareId: string, itemIds?: 
         return false;
     });
 
-/** Batches a list of items by shareId : each individual share
- * batch is in turn batched according to the provided `batchSize` */
-export const batchByShareId = <T extends UniqueItem, R>(
-    items: T[],
-    mapTo: (item: T) => R,
-    batchSize: number = MAX_MAX_BATCH_PER_REQUEST
-): { shareId: string; items: R[] }[] =>
-    groupByKey(items, 'shareId').flatMap((shareTrashedItems) => {
-        const batches = chunk(shareTrashedItems, batchSize);
-        return batches.map((batch) => ({
-            shareId: batch[0].shareId,
-            items: batch.map(mapTo),
-        }));
-    });
-
-/** Converts an item revision to a revision request payload  */
-export const intoRevisionID = <T extends SelectedRevision>(item: T): ItemRevisionID => ({
-    ItemID: item.itemId,
-    Revision: item.revision,
-});
-
 /** Returns the username in priority if not empty, otherwise the email. This priority matters for autofill. */
 export const intoUserIdentifier = (item: ItemRevision<'login'>): string =>
     deobfuscate(item.data.content.itemUsername) || deobfuscate(item.data.content.itemEmail);
@@ -186,12 +161,15 @@ export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): Identit
     fullName: item.data.content.fullName,
 });
 
-export const getSanitizedUserIdentifiers = ({
+export const getSanitizedUserIdentifiers = async ({
     itemEmail,
     itemUsername,
-}: Pick<DeobfuscatedItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
-    const validEmail = PassUI.is_email_valid(itemEmail);
-    const emailUsername = PassUI.is_email_valid(itemUsername);
+}: Pick<DeobfuscatedItem<'login'>['content'], 'itemEmail' | 'itemUsername'>): Promise<{
+    email: string;
+    username: string;
+}> => {
+    const validEmail = await PassUI.is_email_valid(itemEmail);
+    const emailUsername = await PassUI.is_email_valid(itemUsername);
 
     if (itemUsername) {
         /* `itemEmail` is empty and `itemUsername` is a valid email: Move username to email field */

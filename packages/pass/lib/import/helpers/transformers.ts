@@ -29,11 +29,18 @@ export const getImportedVaultName = (vaultName?: string) => {
     return vaultName;
 };
 
-export const getEmailOrUsername = (userIdentifier?: MaybeNull<string>): { email: string; username: string } => {
+export const getEmailOrUsername = async (
+    userIdentifier?: MaybeNull<string>
+): Promise<{ email: string; username: string }> => {
     if (!userIdentifier) return { email: '', username: '' };
-    return PassUI.is_email_valid(userIdentifier)
-        ? { email: userIdentifier, username: '' }
-        : { email: '', username: userIdentifier };
+
+    try {
+        return (await PassUI.is_email_valid(userIdentifier))
+            ? { email: userIdentifier, username: '' }
+            : { email: '', username: userIdentifier };
+    } catch {
+        return { email: userIdentifier, username: '' };
+    }
 };
 
 export const importLoginItem = (options: {
