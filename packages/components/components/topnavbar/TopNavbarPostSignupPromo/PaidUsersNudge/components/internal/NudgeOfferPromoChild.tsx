@@ -14,7 +14,7 @@ export const NudgeOfferPromoChild = ({ prices }: Props) => {
 
     return prices?.savedAmount ? (
         <Price currency={currency} prefix={c('Offer').t`Save`} isDisplayedInSentence>
-            {prices.savedAmount}
+            {Math.floor(prices.savedAmount / 100).toString()}
         </Price>
     ) : (
         c('Offer').t`Get the deal`
