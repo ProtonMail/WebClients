@@ -33,9 +33,24 @@ test.describe('visual tests', () => {
         test(testName, async ({ page }) => {
             await page.goto(`/iframe.html?viewMode=docs&id=${id}`);
 
+            await page.waitForLoadState('domcontentloaded');
+
             await expect(page).toHaveScreenshot({
+                animations: 'disabled',
                 fullPage: true,
             });
         });
     }
+
+    // TODO: remove this once done with the migration (it's used to take screenshots of the old stories)
+    // const id = 'components-NAME--basic';
+    // test(id.replaceAll('-', '_'), async ({ page }) => {
+    //     await page.goto(`http://localhost:6006/iframe.html?viewMode=docs&id=${id}`);
+
+    //     await page.waitForLoadState('domcontentloaded');
+
+    //     await expect(page).toHaveScreenshot({
+    //         fullPage: true,
+    //     });
+    // });
 });
