@@ -262,6 +262,9 @@
       "Discard changes": [
         "Zahodit změny"
       ],
+      "Discard Changes": [
+        "Zahodit změny"
+      ],
       "Discover ${ planName }": [
         "Objevit ${ planName }"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Přizpůsobit oknu"
       ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
+      ],
       "Forgot recovery method?": [
         "Zapomněli jste metodu obnovení?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Pozvat uživatele"
+      ],
+      "Keep Editing": [
+        "Pokračovat v úpravách"
       ],
       "Keep logo": [
         "Ponechat logo"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -2561,7 +2570,7 @@
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Podporujte používání dvoufaktorového ověřování ve vaší organizaci pro zvýšení bezpečnosti."
+        "Podporujte používání dvoufázového ověření ve vaší organizaci pro zvýšení bezpečnosti."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zajistěte bezpečný přístup k datům organizace, i když je váš tým vzdálený nebo používá veřejnou Wi-Fi."
@@ -2868,7 +2877,7 @@
         "Bezpečnostní tipy"
       ],
       "Sign in on another device": [
-        "Přihlaste se na jiném zařízení"
+        "Přihlásit se na jiném zařízení"
       ],
       "Sign in with QR code": [
         "Přihlaste se pomocí QR kódu"
@@ -3891,9 +3900,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Akce"
-      ],
       "App version": [
         "Verze aplikace"
       ],
@@ -3909,17 +3915,11 @@
       "Device": [
         "Zařízení"
       ],
-      "Enabled Countries": [
-        "Povolené země"
-      ],
       "Enter your email address": [
         "Zadejte svou e-mailovou adresu"
       ],
       "Event": [
         "Událost"
-      ],
-      "Groups": [
-        "Skupiny"
       ],
       "IP address": [
         "IP adresa"
@@ -3938,9 +3938,6 @@
       ],
       "Organization key fingerprint": [
         "Otisk klíče organizace"
-      ],
-      "Policy Name": [
-        "Název zásady"
       ],
       "Protection": [
         "Ochrana"
@@ -4233,8 +4230,17 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/měsíc)"
       ],
+      "(default)": [
+        "(výchozí)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získejte adresu ${ BRAND_NAME }** pro používání všech služeb ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } další",
+        "+ ${ invisibleCount } další",
+        "+ ${ invisibleCount } dalších",
+        "+ ${ invisibleCount } dalších"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -4506,9 +4512,6 @@
       "Create your first Gateway": [
         "Vytvořte svou první bránu"
       ],
-      "Created (not published)": [
-        "Vytvořeno (nezveřejněno)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Vytváření serveru brány: ${ serverNumber } / ${ total }",
         "Vytváření serverů brány: ${ serverNumber } / ${ total }",
@@ -4556,9 +4559,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
-      ],
-      "Deleted (not published)": [
-        "Smazáno (nezveřejněno)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Mazání ${ deletedServerCount } serveru brány",
@@ -4656,9 +4656,6 @@
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
-      "Edited (not published)": [
-        "Upraveno (nezveřejněno)"
-      ],
       "eduGAIN configuration saved": [
         "Nastavení eduGain uloženo"
       ],
@@ -4745,6 +4742,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadejte svou e-mailovou adresu nebo uživatelské jméno účtu ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Zadejte vaši obnovovací e-mailovou adresu a my Vám pošleme Vaše uživatelské jméno nebo e-mailovou adresu."
@@ -5100,6 +5100,9 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
+      "No single sign-on": [
+        "Žádné jednotné přihlášení"
+      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
@@ -5184,14 +5187,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Délka hesla musí být minimálně ${ MIN_PASSWORD_LENGTH } znaků."
       ],
+      "Password must have:": [
+        "Heslo musí obsahovat:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Cena redakce PC Magazine s hodnocením 5 z 5 hvězd"
-      ],
-      "Pending removal": [
-        "Čeká na odebrání"
       ],
       "per month": [
         "měsíčně"
@@ -5538,6 +5541,9 @@
       "The securest way to browse, stream, and be online.": [
         "Nejbezpečnější způsob, jak procházet, streamovat a být online."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Nezveřejněné změny, které jste provedli, budou ztraceny."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
@@ -5576,6 +5582,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Tato zpráva se nedostane k týmu podpory, pokud máte problém s naší službou nebo potřebujete další kroky z naší strany ${ supportLink }."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Tato služba není dostupná uživatelům, kteří se přihlašují pomocí jednotného přihlášení."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
@@ -5700,9 +5709,6 @@
       "Unable to check gateways monitoring current status.": [
         "Nelze zkontrolovat brány sledující aktuální stav."
       ],
-      "Unchanged": [
-        "Nezměněno"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Bohužel neexistuje žádná metoda obnovení uložená pro tento účet."
       ],
@@ -5751,11 +5757,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -5957,6 +5963,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "K zajištění správné e-mailové adresy pro ověření můžete tento údaj jednou upravit."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Můžete závést pravidla pro hesla, která budou členové vaší organizace používat při vytváření nebo obnovování hesla ke svému účzu ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Všechny naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
@@ -6332,10 +6341,10 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6422,6 +6431,9 @@
       "Colors": [
         "Barvy"
       ],
+      "Common passwords": [
+        "Běžná hesla"
+      ],
       "Company": [
         "Společnost"
       ],
@@ -6491,6 +6503,9 @@
       "Digits": [
         "Číslice"
       ],
+      "Disabled": [
+        "Deaktivovaný"
+      ],
       "Display name": [
         "Zobrazované jméno"
       ],
@@ -6514,6 +6529,9 @@
       ],
       "Email or username": [
         "E-mail nebo uživatelské jméno"
+      ],
+      "Enabled": [
+        "Povoleno"
       ],
       "Enter the code displayed on your TV": [
         "Zadejte kód zobrazený na vašem televizoru"
@@ -6593,6 +6611,9 @@
       "Main": [
         "Hlavní"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Maximální počet znaků je ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Členové bez 2FA"
       ],
@@ -6604,6 +6625,12 @@
       ],
       "Method for importing metadata": [
         "Metoda pro import metadat"
+      ],
+      "Minimum number of characters": [
+        "Minimální počet znaků"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Minimální počet znaků je ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "Moderate NAT"
@@ -6650,6 +6677,9 @@
       "Notification": [
         "Oznámení"
       ],
+      "Numbers": [
+        "Číslice"
+      ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
       ],
@@ -6679,6 +6709,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password strength": [
+        "Síla hesla"
       ],
       "Payer": [
         "Plátce"
@@ -6761,6 +6794,9 @@
       "Second password": [
         "Druhé heslo"
       ],
+      "Sequences": [
+        "Sekvence"
+      ],
       "Show ${ n } administrator": [
         "Zobrazit ${ n } správce",
         "Zobrazit ${ n } správce",
@@ -6775,6 +6811,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Speciální znaky"
       ],
       "Start date": [
         "Datum zahájení"
@@ -6811,6 +6850,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Uppercase and lowercase letters": [
+        "Velká a malá písmena"
       ],
       "User": [
         "Uživatel"
@@ -6874,6 +6916,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (admin)"
       ],
       "ZIP code": [
         "PSČ"
@@ -7017,6 +7062,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Jak spolupracovat v ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to create strong passwords": [
+        "Jak vytvářet silná hesla"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Jak povolit ${ PROTON_SENTINEL_NAME }"
@@ -7336,6 +7384,29 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Ponechat ${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch plan": [
+        "Změnit tarif"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
@@ -7360,29 +7431,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Smazat účet"
-      ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získat ${ BRAND_NAME } zdarma"
-      ],
-      "Get ${ planName }": [
-        "Získejte ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechat ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechat si svůj účet"
-      ],
-      "Switch plan": [
-        "Změnit tarif"
       ]
     },
     "new_plans: feature": {
@@ -8630,7 +8678,21 @@
         "Vítejte v ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "Povoleno ${ defaultLabel }"
+      ],
       "Android": [
         "Android"
       ],
@@ -8673,11 +8735,20 @@
       "No permission": [
         "Bez oprávnění"
       ],
+      "Not allowed": [
+        "Nepovoleno"
+      ],
+      "Optional ${ defaultLabel }": [
+        "Volitelné ${ defaultLabel }"
+      ],
       "Organization only": [
         "Pouze organizace"
       ],
       "Receive from all": [
         "Přijímat od všech"
+      ],
+      "Required": [
+        "Povinné"
       ],
       "Router": [
         "Router"
@@ -8708,17 +8779,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Všichni"
-      ],
-      "Group members": [
-        "Členové skupiny"
-      ],
-      "No one": [
-        "Nikdo"
       ]
     },
     "Organization capacity error": {
@@ -10341,6 +10401,9 @@
       "Share the confirmation code with your administrator": [
         "Sdílejte potvrzovací kód s vaším správcem"
       ],
+      "Sign in": [
+        "Přihlásit se"
+      ],
       "Sign in to your organization": [
         "Přihlaste se ke své organizaci"
       ],
@@ -10385,6 +10448,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Nové uživatele budete muset vytvořit ručně a přidat je do organizace."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavení SSO bude smazáno."
@@ -11368,6 +11434,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Pravidla pro heslo účtu ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11527,10 +11596,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -11776,6 +11845,9 @@
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
       ],
+      "Enter 2FA code": [
+        "Zadejte kód 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Zadejte endpointy do vašeho poskytovatele indetity"
       ],
@@ -11784,6 +11856,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
+      ],
+      "Enter your password": [
+        "Zadejte Vaše heslo"
       ],
       "Error": [
         "Chyba"
@@ -12169,6 +12244,9 @@
       "Video conferencing": [
         "Videokonference"
       ],
+      "Warning": [
+        "Varování"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vaši novou adresu vám zašleme e-mail s pokyny pro dokončení změny."
       ],
@@ -12299,6 +12377,12 @@
       ],
       "Feature in early access": [
         "Funkce v předběžném přístupu"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Například **12345, abcde** atd."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Například **heslo, qwerty** atd."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Veřejný klíč poskytovatele identity pro podepisování autentizace. Získejte hash certifikátu od poskytovatele identity."

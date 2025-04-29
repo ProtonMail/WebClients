@@ -262,6 +262,9 @@
       "Discard changes": [
         "Forkast endringer"
       ],
+      "Discard Changes": [
+        "Forkast endringer"
+      ],
       "Discover ${ planName }": [
         "Oppdag ${ planName }"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Tilpass til vindu"
       ],
+      "Forgot password?": [
+        "Glemt passord?"
+      ],
       "Forgot recovery method?": [
         "Glemt gjenopprettingsmetode?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Inviter bruker"
+      ],
+      "Keep Editing": [
+        "Fortsett å redigere"
       ],
       "Keep logo": [
         "Behold logo"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "Refresh the page": [
-        "Oppdater siden"
-      ],
       "refresh the page": [
         "oppdater siden"
+      ],
+      "Refresh the page": [
+        "Oppdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "select file": [
-        "velg fil"
-      ],
       "Select file": [
         "Velg fil"
+      ],
+      "select file": [
+        "velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -3841,9 +3850,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Handlinger"
-      ],
       "App version": [
         "App-versjon"
       ],
@@ -3859,17 +3865,11 @@
       "Device": [
         "Enhet"
       ],
-      "Enabled Countries": [
-        "Aktiverte land"
-      ],
       "Enter your email address": [
         "Skriv inn din e-postadresse"
       ],
       "Event": [
         "Hendelse"
-      ],
-      "Groups": [
-        "Grupper"
       ],
       "IP address": [
         "IP-adresse"
@@ -3888,9 +3888,6 @@
       ],
       "Organization key fingerprint": [
         "Organisasjonsnøkkelfingeravtrykk"
-      ],
-      "Policy Name": [
-        "Navn på retningslinje"
       ],
       "Protection": [
         "Beskyttelse"
@@ -4149,8 +4146,15 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
       ],
+      "(default)": [
+        "(standard)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Få en ${ BRAND_NAME }-adresse** for å bruke alle ${ BRAND_NAME_TWO }-tjenester inkludert ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } til",
+        "+ ${ invisibleCount } til"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -4410,9 +4414,6 @@
       "Create your first Gateway": [
         "Opprett din første porttjener"
       ],
-      "Created (not published)": [
-        "Opprettet (ikke publisert)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Oppretter porttjener: ${ serverNumber } / ${ total }",
         "Oppretter porttjenere: ${ serverNumber } / ${ total }"
@@ -4458,9 +4459,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
-      ],
-      "Deleted (not published)": [
-        "Slettet (ikke publisert)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } porttjener",
@@ -4554,9 +4552,6 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
-      "Edited (not published)": [
-        "Redigert (ikke publisert)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfigurasjon lagret"
       ],
@@ -4643,6 +4638,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Skriv inn din ${ BRAND_NAME }-konto e-postadresse eller brukernavn."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Skriv inn ditt eget passord (som organisasjonsadministrator)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Angi din gjenopprettings-e-postadresse og vi vil sende deg ditt brukernavn eller e-postadresse."
@@ -4998,6 +4996,9 @@
       "No results found": [
         "Ingen resultater funnet"
       ],
+      "No single sign-on": [
+        "Ingen enkel pålogging"
+      ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
@@ -5078,14 +5079,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Passordet må være ${ MIN_PASSWORD_LENGTH } tegn eller mer."
       ],
+      "Password must have:": [
+        "Passordet må ha:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine-redaktørens valgpris med en vurdering på 5 av 5 stjerner"
-      ],
-      "Pending removal": [
-        "Venter på fjerning"
       ],
       "per month": [
         "per måned"
@@ -5414,6 +5415,9 @@
       "The securest way to browse, stream, and be online.": [
         "Den tryggeste måten å surfe, strømme og være på nettet på."
       ],
+      "The unpublished changes you made will be lost.": [
+        "De upubliserte endringene du har gjort, vil gå tapt."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
@@ -5452,6 +5456,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Denne meldingen kommer ikke til brukerstøtteteamet, hvis du har et problem med tjenesten vår eller trenger ytterligere tiltak fra vår side ${ supportLink }."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Denne tjenesten er ikke tilgjengelig for brukere som logger på med enkel pålogging."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne brukeren er for øyeblikket ansvarlig for betalinger i organisasjonen din. Ved å degradere dette medlemmet, vil du bli ansvarlig for betalinger i organisasjonen din."
@@ -5576,9 +5583,6 @@
       "Unable to check gateways monitoring current status.": [
         "Kan ikke sjekke porttjenere som overvåker gjeldende status."
       ],
-      "Unchanged": [
-        "Uendret"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Dessverre er det ingen gjenopprettingsmetode lagret for denne kontoen."
       ],
@@ -5627,11 +5631,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "Username": [
-        "Brukernavn"
-      ],
       "username": [
         "brukernavn"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -5825,6 +5829,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Du kan håndheve passordreglene som medlemmer av organisasjonen din må bruke når de oppretter eller tilbakestiller passordet til deres ${ BRAND_NAME } konto."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kan få alle våre premium personverntjenester i én pakke – og det er bare **${ priceString }/måned**."
@@ -6180,10 +6187,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6270,6 +6277,9 @@
       "Colors": [
         "Farger"
       ],
+      "Common passwords": [
+        "Vanlige passord"
+      ],
       "Company": [
         "Firma"
       ],
@@ -6339,6 +6349,9 @@
       "Digits": [
         "Sifre"
       ],
+      "Disabled": [
+        "Deaktivert"
+      ],
       "Display name": [
         "Visningsnavn"
       ],
@@ -6362,6 +6375,9 @@
       ],
       "Email or username": [
         "E-post eller brukernavn"
+      ],
+      "Enabled": [
+        "Aktivert"
       ],
       "Enter the code displayed on your TV": [
         "Tast inn koden som vises på TV-en"
@@ -6441,6 +6457,9 @@
       "Main": [
         "Hjem"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Maksimalt antall tegn er ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Medlemmer uten 2FA"
       ],
@@ -6452,6 +6471,12 @@
       ],
       "Method for importing metadata": [
         "Metode for import av metadata"
+      ],
+      "Minimum number of characters": [
+        "Minimum antall tegn"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Minimum antall tegn er ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -6498,6 +6523,9 @@
       "Notification": [
         "Varsel"
       ],
+      "Numbers": [
+        "Tall"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-passord"
       ],
@@ -6527,6 +6555,9 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "Password strength": [
+        "Passordstyrke"
       ],
       "Payer": [
         "Betaler"
@@ -6609,6 +6640,9 @@
       "Second password": [
         "Andre passord"
       ],
+      "Sequences": [
+        "Sekvenser"
+      ],
       "Show ${ n } administrator": [
         "Vis ${ n } administrator",
         "Vis ${ n } administratorer"
@@ -6621,6 +6655,9 @@
       ],
       "Spam": [
         "Søppelpost"
+      ],
+      "Special characters": [
+        "Spesialtegn"
       ],
       "Start date": [
         "Startdato"
@@ -6657,6 +6694,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Uppercase and lowercase letters": [
+        "Store og små bokstaver"
       ],
       "User": [
         "Bruker"
@@ -6720,6 +6760,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker å slette denne kontoen og all dataen dens permanent."
+      ],
+      "Your password (admin)": [
+        "Ditt passord (admin)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -6863,6 +6906,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Hvordan samarbeide i ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to create strong passwords": [
+        "Hvordan opprette sterke passord"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Hvordan aktivere ${ PROTON_SENTINEL_NAME }"
@@ -7182,6 +7228,29 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Slett konto"
+      ],
+      "Downgrade account": [
+        "Nedgrader kontoen"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
+      "Switch plan": [
+        "Bytt plan"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
@@ -7206,29 +7275,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
       ]
     },
     "new_plans: feature": {
@@ -8422,7 +8468,21 @@
         "Velkommen til ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "Tillatt ${ defaultLabel }"
+      ],
       "Android": [
         "Android"
       ],
@@ -8465,11 +8525,20 @@
       "No permission": [
         "Ingen tillatelse"
       ],
+      "Not allowed": [
+        "Ikke tillatt"
+      ],
+      "Optional ${ defaultLabel }": [
+        "Valgfritt ${ defaultLabel }"
+      ],
       "Organization only": [
         "Kun organisasjon"
       ],
       "Receive from all": [
         "Motta fra alle"
+      ],
+      "Required": [
+        "Obligatorisk"
       ],
       "Router": [
         "Ruter"
@@ -8500,17 +8569,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -10057,6 +10115,9 @@
       "Share the confirmation code with your administrator": [
         "Del bekreftelseskoden med administratoren din"
       ],
+      "Sign in": [
+        "Logg på"
+      ],
       "Sign in to your organization": [
         "Logg på organisasjonen"
       ],
@@ -10101,6 +10162,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du må opprette nye brukere manuelt for å legge dem til i organisasjonen din."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-konfigurasjonen din vil bli slettet."
@@ -10722,6 +10786,11 @@
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Vi kan ikke automatisk nedgradere deg fordi hvis du er over gratis lagringskvote eller bruker andre betalte funksjoner, kan vi ikke automatisk slette filer, e-post eller andre data for deg. Hvis du deaktiverer automatisk betaling, må du huske å betale neste abonnementsfaktura før forfallsdatoen for å forhindre kontosuspensjon."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Spar ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Aktiv"
@@ -11032,6 +11101,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Account password rules": [
+        "Regler for kontopassord for ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11189,10 +11261,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -11434,6 +11506,9 @@
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
+      "Enter 2FA code": [
+        "Angi 2FA-kode"
+      ],
       "Enter endpoints into your identity provider": [
         "Angi endepunkter i identitetsleverandøren"
       ],
@@ -11442,6 +11517,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Angi din ${ BRAND_NAME }-kontoinformasjon for å bli med i ${ app }-testprogrammet"
+      ],
+      "Enter your password": [
+        "Skriv inn passord"
       ],
       "Error": [
         "Feil"
@@ -11823,6 +11901,9 @@
       "Video conferencing": [
         "Videokonferanse"
       ],
+      "Warning": [
+        "Advarsel"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi vil sende deg en e-post til din nye adresse med instruksjoner om hvordan du fullfører endringen."
       ],
@@ -11953,6 +12034,12 @@
       ],
       "Feature in early access": [
         "Funksjon i tidlig tilgang"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "For eksempel **12345, abcde** osv."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "For eksempel **passord, qwerty** osv."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Få sertifikathashen fra identitetsleverandøren."
