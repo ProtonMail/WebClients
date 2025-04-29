@@ -307,6 +307,9 @@
       "Fit to window": [
         "Tilpas til vinduet"
       ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
+      ],
       "Forgot recovery method?": [
         "Glemt gendannelsesmetoden?"
       ],
@@ -472,11 +475,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -580,11 +583,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "select file": [
-        "vælg fil"
-      ],
       "Select file": [
         "Vælg fil"
+      ],
+      "select file": [
+        "vælg fil"
       ],
       "Send code": [
         "Send kode"
@@ -3327,9 +3330,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Handlinger"
-      ],
       "App version": [
         "App-version"
       ],
@@ -3960,6 +3960,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Indtast e-mailadresse eller brugernavn for din ${ BRAND_NAME }-konto."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Indtast din e-mailadresse til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
@@ -4821,11 +4824,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "Username": [
-        "Brugernavn"
-      ],
       "username": [
         "brugernavn"
+      ],
+      "Username": [
+        "Brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -5311,10 +5314,10 @@
       "Allow recovery by phone": [
         "Tillad gendannelse via telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tilladt domæne"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tilladt domæne"
       ],
       "Amount": [
@@ -5458,6 +5461,9 @@
       "Digits": [
         "Cifre"
       ],
+      "Disabled": [
+        "Deaktiveret"
+      ],
       "Display name": [
         "Visningsnavn"
       ],
@@ -5599,6 +5605,9 @@
       "Notification": [
         "Notifikation"
       ],
+      "Numbers": [
+        "Tal"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-adgangskode"
       ],
@@ -5717,6 +5726,9 @@
       "Spam": [
         "Spam"
       ],
+      "Special characters": [
+        "Specielle tegn"
+      ],
       "Start date": [
         "Startdato"
       ],
@@ -5785,6 +5797,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
       ]
     },
     "label": {
@@ -6176,29 +6191,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6220,6 +6212,29 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7339,6 +7354,17 @@
         "Velkommen til ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Landeopsætninger"
@@ -7393,17 +7419,6 @@
       ],
       "The whole organization": [
         "Hele organisationen"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alle"
-      ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -8742,6 +8757,9 @@
       "Share the confirmation code with your administrator": [
         "Del bekræftelseskoden med din administrator"
       ],
+      "Sign in": [
+        "Log ind"
+      ],
       "Sign in to your organization": [
         "Log ind på din organisation"
       ],
@@ -8759,6 +8777,9 @@
       ],
       "User details:": [
         "Brugerdetaljer:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
       ]
     },
     "sso: auth device state": {
@@ -9788,11 +9809,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -9985,6 +10006,9 @@
       "Enable for all users": [
         "Aktiver for alle brugere"
       ],
+      "Enter 2FA code": [
+        "Indtast 2FA-kode"
+      ],
       "Enter endpoints into your identity provider": [
         "Angiv slutpunkter i din identitetsudbyder"
       ],
@@ -9993,6 +10017,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Indtast dine ${ BRAND_NAME } kontooplysninger for at deltage i ${ app } beta-programmet"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
       ],
       "Error": [
         "Fejl"
@@ -10304,6 +10331,9 @@
       ],
       "Verifying your payment...": [
         "Verificerer din betaling..."
+      ],
+      "Warning": [
+        "Advarsel"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi sender en e-mail til din nye adresse med instruktioner om, hvordan du gennemfører ændringen."

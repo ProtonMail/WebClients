@@ -364,6 +364,9 @@
       "Fit to window": [
         "Ablakhoz illesztés"
       ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
+      ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
       ],
@@ -550,11 +553,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Remove": [
         "Eltávolítás"
@@ -670,11 +673,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "select file": [
-        "fájl kiválasztása"
-      ],
       "Select file": [
         "Fájl kiválasztása"
+      ],
+      "select file": [
+        "fájl kiválasztása"
       ],
       "Send code": [
         "Kód küldése"
@@ -3781,9 +3784,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Műveletek"
-      ],
       "App version": [
         "Alkalmazás verzió"
       ],
@@ -3799,17 +3799,11 @@
       "Device": [
         "Eszköz"
       ],
-      "Enabled Countries": [
-        "Engedélyezett országok"
-      ],
       "Enter your email address": [
         "Adja meg az e-mail címét"
       ],
       "Event": [
         "Esemény"
-      ],
-      "Groups": [
-        "Csoportok"
       ],
       "IP address": [
         "IP-cím"
@@ -3828,9 +3822,6 @@
       ],
       "Organization key fingerprint": [
         "Szervezeti kulcs ujjlenyomata"
-      ],
-      "Policy Name": [
-        "Házirend neve"
       ],
       "Protection": [
         "Védelem"
@@ -4350,9 +4341,6 @@
       "Create your first Gateway": [
         "Az első átjáró létrehozása"
       ],
-      "Created (not published)": [
-        "Létrehozva (nem közzétéve)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Átjárókiszolgáló létrehozása: ${ serverNumber } / ${ total }",
         "Átjárókiszolgáló létrehozása: ${ serverNumber } / ${ total }"
@@ -4398,9 +4386,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
-      ],
-      "Deleted (not published)": [
-        "Törölve (nem közzétéve)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } átjárószerver törlése",
@@ -4494,9 +4479,6 @@
       "Edit email address": [
         "E-mail cím szerkesztése"
       ],
-      "Edited (not published)": [
-        "Szerkesztve (nem közzétéve)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN konfiguráció mentve"
       ],
@@ -4583,6 +4565,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
@@ -5017,9 +5002,6 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "A PC Magazine szerkesztők által odaítélt díj, az 5-ből 5 csillaggal értékelve"
-      ],
-      "Pending removal": [
-        "Eltávolításra vár"
       ],
       "per month": [
         "havonta"
@@ -5501,9 +5483,6 @@
       "Unable to check gateways monitoring current status.": [
         "Az aktuális állapotot figyelő átjárók ellenőrzése nem sikerült."
       ],
-      "Unchanged": [
-        "Változatlan"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sajnos, nincs helyreállítási módszer beállítva ehhez a fiókhoz."
       ],
@@ -5552,11 +5531,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "Username": [
-        "Felhasználónév"
-      ],
       "username": [
         "felhasználónév"
+      ],
+      "Username": [
+        "Felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -6105,10 +6084,10 @@
       "Allow recovery by phone": [
         "Helyreállítás engedélyezése telefonszámmal"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Engedélyezett domain"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Engedélyezett domain"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6264,6 +6243,9 @@
       "Digits": [
         "Számjegy"
       ],
+      "Disabled": [
+        "Kikapcsolva"
+      ],
       "Display name": [
         "Megjelenített név"
       ],
@@ -6340,7 +6322,7 @@
         "IBAN szám"
       ],
       "Integrated 2FA authenticator": [
-        "Beépített kétlépcsős hitelesítés"
+        "Beépített kétfaktoros (2FA) hitelesítés"
       ],
       "Interval": [
         "Intervallum"
@@ -6377,6 +6359,9 @@
       ],
       "Method for importing metadata": [
         "Metaadatok importálásának módszere"
+      ],
+      "Minimum number of characters": [
+        "Karakterek minimális száma"
       ],
       "Moderate NAT": [
         "Mérsékelt NAT"
@@ -6422,6 +6407,9 @@
       ],
       "Notification": [
         "Értesítés"
+      ],
+      "Numbers": [
+        "Számok"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 jelszó"
@@ -6547,6 +6535,9 @@
       "Spam": [
         "Levélszemét"
       ],
+      "Special characters": [
+        "Speciális karakterek"
+      ],
       "Start date": [
         "Kezdő dátum"
       ],
@@ -6642,6 +6633,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -7068,6 +7062,29 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Fiók törlése"
+      ],
+      "Downgrade account": [
+        "Váltás kisebb csomagra"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Legyen ${ BRAND_NAME }os ingyen"
+      ],
+      "Get ${ planName }": [
+        "${ planName } megszerzése"
+      ],
+      "Keep ${ plan }": [
+        "Maradjon ${ plan }"
+      ],
+      "Keep account": [
+        "Maradjon a fiók"
+      ],
+      "Switch plan": [
+        "Csomag váltása"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }"
@@ -7092,29 +7109,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Váltás ${ planName } csomagra"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Fiók törlése"
-      ],
-      "Downgrade account": [
-        "Váltás kisebb csomagra"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Legyen ${ BRAND_NAME }os ingyen"
-      ],
-      "Get ${ planName }": [
-        "${ planName } megszerzése"
-      ],
-      "Keep ${ plan }": [
-        "Maradjon ${ plan }"
-      ],
-      "Keep account": [
-        "Maradjon a fiók"
-      ],
-      "Switch plan": [
-        "Csomag váltása"
       ]
     },
     "new_plans: feature": {
@@ -8308,6 +8302,17 @@
         "Üdvözli a ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Mindenki"
+      ],
+      "Group members": [
+        "Csoporttagok"
+      ],
+      "No one": [
+        "Senki"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Ország konfigurációk"
@@ -8339,11 +8344,17 @@
       "No permission": [
         "Nincs engedélye"
       ],
+      "Not allowed": [
+        "Nem engedélyezett"
+      ],
       "Organization only": [
         "Kizárólag szervezeti"
       ],
       "Receive from all": [
         "Fogadás bárkitől"
+      ],
+      "Required": [
+        "Kötelező"
       ],
       "Router": [
         "Router"
@@ -8365,17 +8376,6 @@
       ],
       "The whole organization": [
         "A teljes szervezet"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Mindenki"
-      ],
-      "Group members": [
-        "Csoporttagok"
-      ],
-      "No one": [
-        "Senki"
       ]
     },
     "Organization capacity error": {
@@ -9911,6 +9911,9 @@
       "Share the confirmation code with your administrator": [
         "Ossza meg az ellenőrző kódot az adminisztrátorral."
       ],
+      "Sign in": [
+        "Bejelentkezés"
+      ],
       "Sign in to your organization": [
         "Jelentkezzen be a szervezetébe"
       ],
@@ -11043,10 +11046,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -11279,6 +11282,9 @@
       "Enhance security with 2FA": [
         "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
       ],
+      "Enter 2FA code": [
+        "Írja be a kétlépcsős hitelesítési kódot"
+      ],
       "Enter endpoints into your identity provider": [
         "Adja meg a végpontokat a személyazonosság-szolgáltatójának"
       ],
@@ -11287,6 +11293,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"
@@ -11664,6 +11673,9 @@
       ],
       "Video conferencing": [
         "Videokonferencia"
+      ],
+      "Warning": [
+        "Figyelem"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "E-mailt küldünk az új címére a megváltoztatás befejezéséhez szükséges útmutatóval."

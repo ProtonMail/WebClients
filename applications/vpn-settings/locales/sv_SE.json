@@ -262,6 +262,9 @@
       "Discard changes": [
         "Kasta ändringar"
       ],
+      "Discard Changes": [
+        "Kasta ändringar"
+      ],
       "Discover ${ planName }": [
         "Upptäck ${ planName }"
       ],
@@ -361,6 +364,9 @@
       "Fit to window": [
         "Passa till fönster"
       ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
       ],
@@ -435,6 +441,9 @@
       ],
       "Invite user": [
         "Bjud in användare"
+      ],
+      "Keep Editing": [
+        "Fortsätt redigera"
       ],
       "Keep logo": [
         "Behåll logga"
@@ -547,11 +556,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -667,11 +676,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "select file": [
-        "välj fil"
-      ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -3832,9 +3841,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Åtgärder"
-      ],
       "App version": [
         "Appversion"
       ],
@@ -3850,17 +3856,11 @@
       "Device": [
         "Enhet"
       ],
-      "Enabled Countries": [
-        "Aktiverade länder"
-      ],
       "Enter your email address": [
         "Ange din e-postadress"
       ],
       "Event": [
         "Händelse"
-      ],
-      "Groups": [
-        "Grupper"
       ],
       "IP address": [
         "IP-adress"
@@ -3879,9 +3879,6 @@
       ],
       "Organization key fingerprint": [
         "Organisations nyckelfingeravtryck"
-      ],
-      "Policy Name": [
-        "Policynamn"
       ],
       "Protection": [
         "Skydd"
@@ -4136,6 +4133,9 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/månad)"
+      ],
+      "(default)": [
+        "(standard)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
@@ -4395,9 +4395,6 @@
       "Create your first Gateway": [
         "Skapa din första gateway"
       ],
-      "Created (not published)": [
-        "Skapad (inte publicerad)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Skapar gatewayserver: ${ serverNumber }/${ total }",
         "Skapar gatewayservrar: ${ serverNumber }/${ total }"
@@ -4443,9 +4440,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ta bort andra MX-poster eller se till att ${ MAIL_APP_NAME }s prioritet är det lägsta numret."
-      ],
-      "Deleted (not published)": [
-        "Borttagen (inte publicerad)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Tar bort ${ deletedServerCount } gatewayserver",
@@ -4539,9 +4533,6 @@
       "Edit email address": [
         "Redigera e-postadress"
       ],
-      "Edited (not published)": [
-        "Redigerad (inte publicerad)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfiguration sparad"
       ],
@@ -4628,6 +4619,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
@@ -5063,11 +5057,11 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
       ],
+      "Password must have:": [
+        "Lösenord måste innehålla:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
-      ],
-      "Pending removal": [
-        "Väntande borttagning"
       ],
       "per month": [
         "per månad"
@@ -5388,6 +5382,9 @@
       "The securest way to browse, stream, and be online.": [
         "Det säkraste sättet att surfa, streama och vara online."
       ],
+      "The unpublished changes you made will be lost.": [
+        "De opublicerade ändringar du gjort kommer att gå förlorade."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
@@ -5550,9 +5547,6 @@
       "Unable to check gateways monitoring current status.": [
         "Kan inte kontrollera nuvarande övervakningsstatus av gateways."
       ],
-      "Unchanged": [
-        "Oförändrad"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
@@ -5601,11 +5595,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "Username": [
-        "Användarnamn"
-      ],
       "username": [
         "användarnamn"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "Users": [
         "Användare"
@@ -6140,10 +6134,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6230,6 +6224,9 @@
       "Colors": [
         "Färger"
       ],
+      "Common passwords": [
+        "Vanliga lösenord"
+      ],
       "Company": [
         "Företag"
       ],
@@ -6299,6 +6296,9 @@
       "Digits": [
         "Siffror"
       ],
+      "Disabled": [
+        "Inaktiverad"
+      ],
       "Display name": [
         "Visningsnamn"
       ],
@@ -6322,6 +6322,9 @@
       ],
       "Email or username": [
         "E-post eller användarnamn"
+      ],
+      "Enabled": [
+        "Aktiverat"
       ],
       "Enter the code displayed on your TV": [
         "Ange koden som visas på din TV"
@@ -6401,6 +6404,9 @@
       "Main": [
         "Huvud"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Maximalt antal tecken är ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Medlemmar utan 2FA"
       ],
@@ -6412,6 +6418,12 @@
       ],
       "Method for importing metadata": [
         "Metod för att importera metadata"
+      ],
+      "Minimum number of characters": [
+        "Minst antal tecken"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Minsta antalet tecken är ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "Måttlig NAT"
@@ -6458,6 +6470,9 @@
       "Notification": [
         "Avisering"
       ],
+      "Numbers": [
+        "Siffror"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN/IKEv2-lösenord"
       ],
@@ -6487,6 +6502,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Password strength": [
+        "Lösenordsstyrka"
       ],
       "Payer": [
         "Betalare"
@@ -6569,6 +6587,9 @@
       "Second password": [
         "Andra lösenord"
       ],
+      "Sequences": [
+        "Sekvenser"
+      ],
       "Show ${ n } administrator": [
         "Visa ${ n } administratör",
         "Visa ${ n } administratörer"
@@ -6581,6 +6602,9 @@
       ],
       "Spam": [
         "Skräppost"
+      ],
+      "Special characters": [
+        "Specialtecken"
       ],
       "Start date": [
         "Startdatum"
@@ -6617,6 +6641,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "User": [
         "Användare"
@@ -6680,6 +6707,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
+      ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -6820,6 +6850,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Hur man samarbetar i ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to create strong passwords": [
+        "Hur man skapar starka lösenord"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Hur man aktiverar ${ PROTON_SENTINEL_NAME }"
@@ -7139,6 +7172,29 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Ta bort konto"
+      ],
+      "Downgrade account": [
+        "Nedgradera konto"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Skaffa ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Behåll ${ plan }"
+      ],
+      "Keep account": [
+        "Behåll konto"
+      ],
+      "Switch plan": [
+        "Byt paket"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
@@ -7163,29 +7219,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Ta bort konto"
-      ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Skaffa ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behåll ${ plan }"
-      ],
-      "Keep account": [
-        "Behåll konto"
-      ],
-      "Switch plan": [
-        "Byt paket"
       ]
     },
     "new_plans: feature": {
@@ -8379,7 +8412,21 @@
         "Välkommen till ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "Tillåtet ${ defaultLabel }"
+      ],
       "Android": [
         "Android"
       ],
@@ -8422,11 +8469,20 @@
       "No permission": [
         "Ingen behörighet"
       ],
+      "Not allowed": [
+        "Inte tillåtet"
+      ],
+      "Optional ${ defaultLabel }": [
+        "Valfri ${ defaultLabel }"
+      ],
       "Organization only": [
         "Endast organisation"
       ],
       "Receive from all": [
         "Ta emot från alla"
+      ],
+      "Required": [
+        "Krävs"
       ],
       "Router": [
         "Router"
@@ -8457,17 +8513,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Alla"
-      ],
-      "Group members": [
-        "Gruppmedlemmar"
-      ],
-      "No one": [
-        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -9998,6 +10043,9 @@
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
       ],
+      "Sign in": [
+        "Logga in"
+      ],
       "Sign in to your organization": [
         "Logga in på din organisation"
       ],
@@ -10039,6 +10087,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
@@ -11135,10 +11186,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -11377,6 +11428,9 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
+      "Enter 2FA code": [
+        "Ange 2FA-kod"
+      ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter hos din identitetsleverantör"
       ],
@@ -11385,6 +11439,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
       ],
       "Error": [
         "Fel"
@@ -11766,6 +11823,9 @@
       "Video conferencing": [
         "Videokonferenser"
       ],
+      "Warning": [
+        "Varning"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
       ],
@@ -11893,6 +11953,12 @@
       ],
       "Feature in early access": [
         "Funktion i förhandstillgång"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Till exempel, **12345, abcde**, etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Till exempel, **lösenord, qwerty**, etc."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identitetsleverantörens offentliga nyckel används för att signera autentiseringspåståenden. Hämta certifikathashen från din identitetsleverantör."

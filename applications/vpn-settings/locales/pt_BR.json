@@ -262,6 +262,9 @@
       "Discard changes": [
         "Descartar alterações"
       ],
+      "Discard Changes": [
+        "Descartar alterações"
+      ],
       "Discover ${ planName }": [
         "Descubra o ${ planName }"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Ajustar na janela"
       ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
+      ],
       "Forgot recovery method?": [
         "Esqueceu um método de recuperação?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Convidar usuário"
+      ],
+      "Keep Editing": [
+        "Continuar editando"
       ],
       "Keep logo": [
         "Manter logotipo"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "select file": [
-        "selecionar arquivo"
-      ],
       "Select file": [
         "Selecionar arquivo"
+      ],
+      "select file": [
+        "selecionar arquivo"
       ],
       "Send code": [
         "Enviar um código"
@@ -3841,9 +3850,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Ações"
-      ],
       "App version": [
         "Versão do aplicativo"
       ],
@@ -3859,17 +3865,11 @@
       "Device": [
         "Dispositivo"
       ],
-      "Enabled Countries": [
-        "Países ativados"
-      ],
       "Enter your email address": [
         "Digite seu endereço de e-mail"
       ],
       "Event": [
         "Evento"
-      ],
-      "Groups": [
-        "Grupos"
       ],
       "IP address": [
         "Endereço IP"
@@ -3888,9 +3888,6 @@
       ],
       "Organization key fingerprint": [
         "Impressão digital da chave da organização"
-      ],
-      "Policy Name": [
-        "Nome da política"
       ],
       "Protection": [
         "Proteção"
@@ -4149,8 +4146,15 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mês)"
       ],
+      "(default)": [
+        "(padrão)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenha um endereço da ${ BRAND_NAME }** para usar todos os serviços da ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } mais",
+        "+ ${ invisibleCount } mais"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de armazenamento bônus"
@@ -4410,9 +4414,6 @@
       "Create your first Gateway": [
         "Crie seu primeiro gateway"
       ],
-      "Created (not published)": [
-        "Criado (não publicado)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Criando servidor gateway: ${ serverNumber } / ${ total }",
         "Criando servidores gateway: ${ serverNumber } / ${ total }"
@@ -4458,9 +4459,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Exclua quaisquer outros registros MX ou certifique-se de que a prioridade do ${ MAIL_APP_NAME } é o menor número."
-      ],
-      "Deleted (not published)": [
-        "Excluído (não publicado)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Deletando ${ deletedServerCount } servidor gateway",
@@ -4554,9 +4552,6 @@
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
-      "Edited (not published)": [
-        "Editado (não publicado)"
-      ],
       "eduGAIN configuration saved": [
         "Configuração do eduGAIN salva"
       ],
@@ -4643,6 +4638,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
@@ -4998,6 +4996,9 @@
       "No results found": [
         "Nenhum resultado encontrado"
       ],
+      "No single sign-on": [
+        "Sem autenticação única (SSO)"
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
@@ -5078,14 +5079,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "A senha deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
       ],
+      "Password must have:": [
+        "A senha deve conter:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine Editors' Choice Award com classificação de 5 de 5 estrelas"
-      ],
-      "Pending removal": [
-        "Aguardando remoção"
       ],
       "per month": [
         "por mês"
@@ -5414,6 +5415,9 @@
       "The securest way to browse, stream, and be online.": [
         "A maneira mais segura de navegar, transmitir e estar online."
       ],
+      "The unpublished changes you made will be lost.": [
+        "As alterações não publicadas que você fez serão perdidas."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
@@ -5452,6 +5456,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Esta mensagem não chegará à equipe de suporte, se você tiver um problema com nossos serviços ou precisar de maiores ações de nossa parte ${ supportLink }."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Este serviço não está disponível para usuários que iniciam sessão com o início de sessão único."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
@@ -5576,9 +5583,6 @@
       "Unable to check gateways monitoring current status.": [
         "Não foi possível verificar o estado atual de monitoramento dos gateways."
       ],
-      "Unchanged": [
-        "Inalterado"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há um método de recuperação salvo para esta conta."
       ],
@@ -5627,10 +5631,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -5825,6 +5829,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Você pode editar isso uma só vez para garantir o endereço de e-mail coreto para verificar."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Você pode aplicar as regras de senha que os membros da sua organização usarão quando criarem ou redefinirem a senha da sua conta da ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Você pode obter todos os nossos serviços de privacidade premium em um único pacote, por apenas **${ priceString }/mês**"
@@ -6180,10 +6187,10 @@
       "Allow recovery by phone": [
         "Permitir a recuperação por telefone"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6270,6 +6277,9 @@
       "Colors": [
         "Cores"
       ],
+      "Common passwords": [
+        "Senhas comuns"
+      ],
       "Company": [
         "Empresa"
       ],
@@ -6339,6 +6349,9 @@
       "Digits": [
         "Dígitos"
       ],
+      "Disabled": [
+        "Desativado"
+      ],
       "Display name": [
         "Nome de exibição"
       ],
@@ -6362,6 +6375,9 @@
       ],
       "Email or username": [
         "E-mail ou nome de usuário"
+      ],
+      "Enabled": [
+        "Ativado"
       ],
       "Enter the code displayed on your TV": [
         "Digite o código exibido na sua TV"
@@ -6441,6 +6457,9 @@
       "Main": [
         "Principal"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "O número máximo de caracteres é ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Membros sem A2F"
       ],
@@ -6452,6 +6471,12 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadados"
+      ],
+      "Minimum number of characters": [
+        "Número mínimo de caracteres"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "O número mínimo de caracteres é ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "NAT moderado"
@@ -6498,6 +6523,9 @@
       "Notification": [
         "Notificação"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN / IKEv2"
       ],
@@ -6527,6 +6555,9 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "Password strength": [
+        "Força da senha"
       ],
       "Payer": [
         "Pagador"
@@ -6609,6 +6640,9 @@
       "Second password": [
         "Segunda senha"
       ],
+      "Sequences": [
+        "Sequências"
+      ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
         "Mostrar ${ n } administradores"
@@ -6621,6 +6655,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Caracteres especiais"
       ],
       "Start date": [
         "Data de início"
@@ -6657,6 +6694,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas:"
       ],
       "User": [
         "Usuário"
@@ -6720,6 +6760,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
+      ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
       ],
       "ZIP code": [
         "CEP"
@@ -6863,6 +6906,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Como colaborar em ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to create strong passwords": [
+        "Como criar senhas fortes"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Como ativar o ${ PROTON_SENTINEL_NAME }"
@@ -7182,6 +7228,29 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Excluir conta"
+      ],
+      "Downgrade account": [
+        "Fazer downgrade da conta"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Obter ${ BRAND_NAME } gratuitamente"
+      ],
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Manter o ${ plan }"
+      ],
+      "Keep account": [
+        "Manter conta"
+      ],
+      "Switch plan": [
+        "Mudar de plano"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
@@ -7206,29 +7275,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Excluir conta"
-      ],
-      "Downgrade account": [
-        "Fazer downgrade da conta"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obter ${ BRAND_NAME } gratuitamente"
-      ],
-      "Get ${ planName }": [
-        "Obter o ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Manter o ${ plan }"
-      ],
-      "Keep account": [
-        "Manter conta"
-      ],
-      "Switch plan": [
-        "Mudar de plano"
       ]
     },
     "new_plans: feature": {
@@ -8425,7 +8471,21 @@
         "Bem-vindo ao ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "${ defaultLabel } permitido"
+      ],
       "Country configs": [
         "Configurações do país"
       ],
@@ -8459,11 +8519,20 @@
       "No permission": [
         "Sem permissão"
       ],
+      "Not allowed": [
+        "Não permitido"
+      ],
+      "Optional ${ defaultLabel }": [
+        "${ defaultLabel } opcional"
+      ],
       "Organization only": [
         "Apenas organização"
       ],
       "Receive from all": [
         "Receber de todos"
+      ],
+      "Required": [
+        "Obrigatório"
       ],
       "Router": [
         "Roteador"
@@ -8491,17 +8560,6 @@
       ],
       "UDP": [
         "UDP"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Todos"
-      ],
-      "Group members": [
-        "Membros do grupo"
-      ],
-      "No one": [
-        "Ninguém"
       ]
     },
     "Organization capacity error": {
@@ -10054,6 +10112,9 @@
       "Share the confirmation code with your administrator": [
         "Compartilhe o código de confirmação com seu administrador"
       ],
+      "Sign in": [
+        "Iniciar sessão"
+      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
       ],
@@ -10098,6 +10159,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Você terá que criar manualmente novos usuários para adicioná-los à sua organização."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
@@ -11037,6 +11101,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Regras de senha da conta da ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11194,11 +11261,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -11439,6 +11506,9 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com 2FA"
       ],
+      "Enter 2FA code": [
+        "Insira o código A2F"
+      ],
       "Enter endpoints into your identity provider": [
         "Insira endpoints em seu provedor de identidade"
       ],
@@ -11447,6 +11517,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Entre com sua conta da ${ BRAND_NAME } para participar do programa Beta do ${ app }"
+      ],
+      "Enter your password": [
+        "Digite sua senha"
       ],
       "Error": [
         "Erro"
@@ -11828,6 +11901,9 @@
       "Video conferencing": [
         "Videoconferência"
       ],
+      "Warning": [
+        "Aviso"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviamos um e-mail para o seu novo endereço com as instruções para completar a mudança."
       ],
@@ -11958,6 +12034,12 @@
       ],
       "Feature in early access": [
         "Recurso em acesso antecipado"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Por exemplo, **12345, abcde**, etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Por exemplo, **senha, qwerty**, etc."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Chave pública do provedor de identidade para assinar declarações de autenticação. Obtenha o hash do certificado do seu provedor de identidade."

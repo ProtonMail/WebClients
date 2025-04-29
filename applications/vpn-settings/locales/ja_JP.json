@@ -364,6 +364,9 @@
       "Fit to window": [
         "ウィンドウに合わせる"
       ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
+      ],
       "Forgot recovery method?": [
         "回復手順を忘れましたか？"
       ],
@@ -550,10 +553,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -670,10 +673,10 @@
       "Select country ${ country }": [
         "国 ${ country }を選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
       "Send code": [
@@ -3816,9 +3819,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "操作"
-      ],
       "App version": [
         "アプリのバージョン"
       ],
@@ -3834,17 +3834,11 @@
       "Device": [
         "デバイス"
       ],
-      "Enabled Countries": [
-        "有効な国"
-      ],
       "Enter your email address": [
         "メールアドレスを入力してください"
       ],
       "Event": [
         "イベント"
-      ],
-      "Groups": [
-        "グループ"
       ],
       "IP address": [
         "IPアドレス"
@@ -3863,9 +3857,6 @@
       ],
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
-      ],
-      "Policy Name": [
-        "ポリシー名"
       ],
       "Protection": [
         "保護"
@@ -4362,9 +4353,6 @@
       "Create your first Gateway": [
         "最初のゲートウェイを作成する"
       ],
-      "Created (not published)": [
-        "作成されました (非公開)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "ゲートウェイ サーバーの作成: ${ serverNumber } / ${ total }"
       ],
@@ -4409,9 +4397,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
-      ],
-      "Deleted (not published)": [
-        "削除（非公開）"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
@@ -4503,9 +4488,6 @@
       "Edit email address": [
         "メールアドレスを編集"
       ],
-      "Edited (not published)": [
-        "編集済み (非公開)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN構成が保存されました"
       ],
@@ -4592,6 +4574,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } アカウントのメールアドレスまたはユーザー名を入力してください。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "自分(組織管理者として)のパスワードを入力してください。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "回復用メールアドレスを入力してください。ユーザー名またはメールアドレスを送信します。"
@@ -5027,9 +5012,6 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine editors賞で星 5 つ中の星 5 の評価"
-      ],
-      "Pending removal": [
-        "保留中の削除"
       ],
       "per month": [
         "月あたり"
@@ -5511,9 +5493,6 @@
       "Unable to check gateways monitoring current status.": [
         "ゲートウェイモニタリングの現在の状態を確認できません。"
       ],
-      "Unchanged": [
-        "未変更"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "残念ながら、このアカウントに回復手段は設定されていません。"
       ],
@@ -5562,11 +5541,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -6101,10 +6080,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6260,6 +6239,9 @@
       "Digits": [
         "桁"
       ],
+      "Disabled": [
+        "無効"
+      ],
       "Display name": [
         "表示名"
       ],
@@ -6374,6 +6356,9 @@
       "Method for importing metadata": [
         "メタデータのインポート方法"
       ],
+      "Minimum number of characters": [
+        "最小文字数"
+      ],
       "Moderate NAT": [
         "モデレート NAT"
       ],
@@ -6418,6 +6403,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Numbers": [
+        "数字"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 パスワード"
@@ -6542,6 +6530,9 @@
       "Spam": [
         "迷惑メール"
       ],
+      "Special characters": [
+        "記号"
+      ],
       "Start date": [
         "開始日"
       ],
@@ -6637,6 +6628,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "このアカウントとすべてのデータを完全に削除することに同意します。"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
       ],
       "ZIP code": [
         "郵便番号"
@@ -7099,6 +7093,29 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "アカウントを削除"
+      ],
+      "Downgrade account": [
+        "アカウントをダウングレード"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "無料で ${ BRAND_NAME } を入手"
+      ],
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } を使い続ける"
+      ],
+      "Keep account": [
+        "アカウントを削除しない"
+      ],
+      "Switch plan": [
+        "プランを変更"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
@@ -7123,29 +7140,6 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "無料で ${ BRAND_NAME } を入手"
-      ],
-      "Get ${ planName }": [
-        "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
       ]
     },
     "new_plans: feature": {
@@ -8312,6 +8306,17 @@
         "${ appName } へようこそ"
       ]
     },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
+      ]
+    },
     "Option": {
       "Country configs": [
         "各国の設定ファイル"
@@ -8343,11 +8348,17 @@
       "No permission": [
         "権限がありません"
       ],
+      "Not allowed": [
+        "許可しない"
+      ],
       "Organization only": [
         "組織のみ"
       ],
       "Receive from all": [
         "全員から受け取る"
+      ],
+      "Required": [
+        "必須"
       ],
       "Router": [
         "ルーター"
@@ -8369,17 +8380,6 @@
       ],
       "The whole organization": [
         "組織全体"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "みんな"
-      ],
-      "Group members": [
-        "グループメンバー"
-      ],
-      "No one": [
-        "誰も"
       ]
     },
     "Organization capacity error": {
@@ -9888,6 +9888,9 @@
       "Share the confirmation code with your administrator": [
         "管理者に確認コードを共有してください"
       ],
+      "Sign in": [
+        "サインイン"
+      ],
       "Sign in to your organization": [
         "組織にサインインする"
       ],
@@ -9932,6 +9935,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "組織にユーザーを追加するためには、手動で新しいユーザーを作成する必要があります。"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "サードパーティのSSOプロバイダにリダイレクトされます"
       ],
       "Your SSO configuration will be deleted.": [
         "SSO構成が削除されます"
@@ -11000,10 +11006,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -11243,6 +11249,9 @@
       "Enhance security with 2FA": [
         "2要素認証でセキュリティを強化"
       ],
+      "Enter 2FA code": [
+        "2要素認証コードを入力"
+      ],
       "Enter endpoints into your identity provider": [
         "IDプロバイダーにエンドポイントを入力します"
       ],
@@ -11251,6 +11260,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ BRAND_NAME } アカウントの詳細を入力して ${ app } ベータ プログラムに参加してください"
+      ],
+      "Enter your password": [
+        "パスワードを入力"
       ],
       "Error": [
         "エラー"
@@ -11629,6 +11641,9 @@
       ],
       "Video conferencing": [
         "ビデオ会議"
+      ],
+      "Warning": [
+        "警告"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "新しいメールアドレスに、変更手続きに関するご案内メールをお送りします。"
