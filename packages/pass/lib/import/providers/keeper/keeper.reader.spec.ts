@@ -150,7 +150,7 @@ describe('Import Keeper JSON', () => {
 
     it('should correctly parse items from 4th vault', () => {
         const fourthVault = payload.vaults[3];
-        expect(fourthVault.items.length).toEqual(10);
+        expect(fourthVault.items.length).toEqual(12);
         const { items } = fourthVault;
 
         /* credit card item */
@@ -247,8 +247,19 @@ describe('Import Keeper JSON', () => {
         expect(contactItem.trashed).toEqual(false);
         expect(contactItem.extraFields).toEqual([]);
 
+        /* general item */
+        const generalItem = deobfuscateItem(items[3]) as unknown as ItemImportIntent<'login'>;
+        expect(generalItem.type).toEqual('login');
+        expect(generalItem.createTime).toBeUndefined();
+        expect(generalItem.modifyTime).toBeUndefined();
+        expect(generalItem.metadata.itemUuid).not.toBeUndefined();
+        expect(generalItem.metadata.name).toEqual('general item');
+        expect(generalItem.metadata.note).toEqual('');
+        expect(generalItem.trashed).toEqual(false);
+        expect(generalItem.extraFields).toEqual([]);
+
         /* login with 2FA */
-        const loginItem2FA = deobfuscateItem(items[3]) as unknown as ItemImportIntent<'login'>;
+        const loginItem2FA = deobfuscateItem(items[4]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2FA.type).toEqual('login');
         expect(loginItem2FA.createTime).toBeUndefined();
         expect(loginItem2FA.modifyTime).toBeUndefined();
@@ -268,7 +279,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItem2FA.extraFields).toEqual([]);
 
         /* login with broken url */
-        const loginItemBrokenUrl = deobfuscateItem(items[4]) as unknown as ItemImportIntent<'login'>;
+        const loginItemBrokenUrl = deobfuscateItem(items[5]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemBrokenUrl.type).toEqual('login');
         expect(loginItemBrokenUrl.createTime).toBeUndefined();
         expect(loginItemBrokenUrl.modifyTime).toBeUndefined();
@@ -287,7 +298,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItemBrokenUrl.extraFields).toEqual([]);
 
         /* login with comma, quotes */
-        const loginItemCommaQuotes = deobfuscateItem(items[5]) as unknown as ItemImportIntent<'login'>;
+        const loginItemCommaQuotes = deobfuscateItem(items[6]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCommaQuotes.type).toEqual('login');
         expect(loginItemCommaQuotes.createTime).toBeUndefined();
         expect(loginItemCommaQuotes.modifyTime).toBeUndefined();
@@ -306,7 +317,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItemCommaQuotes.extraFields).toEqual([]);
 
         /* login with custom fields */
-        const loginItemCustomFields = deobfuscateItem(items[6]) as unknown as ItemImportIntent<'login'>;
+        const loginItemCustomFields = deobfuscateItem(items[7]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCustomFields.type).toEqual('login');
         expect(loginItemCustomFields.createTime).toBeUndefined();
         expect(loginItemCustomFields.modifyTime).toBeUndefined();
@@ -396,7 +407,7 @@ describe('Import Keeper JSON', () => {
         ]);
 
         /* login with multiple lines */
-        const loginItemMultipleLines = deobfuscateItem(items[7]) as unknown as ItemImportIntent<'login'>;
+        const loginItemMultipleLines = deobfuscateItem(items[8]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleLines.type).toEqual('login');
         expect(loginItemMultipleLines.createTime).toBeUndefined();
         expect(loginItemMultipleLines.modifyTime).toBeUndefined();
@@ -415,7 +426,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItemMultipleLines.extraFields).toEqual([]);
 
         /* login with multiple urls */
-        const loginItemMultipleUrls = deobfuscateItem(items[8]) as unknown as ItemImportIntent<'login'>;
+        const loginItemMultipleUrls = deobfuscateItem(items[9]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleUrls.type).toEqual('login');
         expect(loginItemMultipleUrls.createTime).toBeUndefined();
         expect(loginItemMultipleUrls.modifyTime).toBeUndefined();
@@ -449,7 +460,7 @@ describe('Import Keeper JSON', () => {
         ]);
 
         /* login secure note */
-        const loginItemSecureNote = deobfuscateItem(items[9]) as unknown as ItemImportIntent<'note'>;
+        const loginItemSecureNote = deobfuscateItem(items[10]) as unknown as ItemImportIntent<'note'>;
         expect(loginItemSecureNote.type).toEqual('note');
         expect(loginItemSecureNote.createTime).toBeUndefined();
         expect(loginItemSecureNote.modifyTime).toBeUndefined();
@@ -459,14 +470,32 @@ describe('Import Keeper JSON', () => {
         expect(loginItemSecureNote.content).toEqual({});
         expect(loginItemSecureNote.trashed).toEqual(false);
         expect(loginItemSecureNote.extraFields).toEqual([]);
+
+        /* login as "general" item type */
+        const loginItemGeneral = deobfuscateItem(items[11]) as unknown as ItemImportIntent<'login'>;
+        expect(loginItemGeneral.type).toEqual('login');
+        expect(loginItemGeneral.createTime).toBeUndefined();
+        expect(loginItemGeneral.modifyTime).toBeUndefined();
+        expect(loginItemGeneral.metadata.itemUuid).not.toBeUndefined();
+        expect(loginItemGeneral.metadata.name).toEqual('general item login');
+        expect(loginItemGeneral.metadata.note).toEqual('');
+        expect(loginItemGeneral.content).toEqual({
+            passkeys: [],
+            password: 'password',
+            totpUri: '',
+            urls: [],
+            itemEmail: '',
+            itemUsername: 'john',
+        });
+        expect(loginItemGeneral.trashed).toEqual(false);
+        expect(loginItemGeneral.extraFields).toEqual([]);
     });
 
     test('should correctly hydrate ignored arrays', () => {
-        expect(payload.ignored.length).toEqual(5);
+        expect(payload.ignored.length).toEqual(4);
         expect(payload.ignored[0]).toEqual('[file] a file');
         expect(payload.ignored[1]).toEqual('[encryptedNotes] a note: item was imported without custom fields');
         expect(payload.ignored[2]).toEqual('[address] Address for bank card');
-        expect(payload.ignored[3]).toEqual('[Unknown] general item');
-        expect(payload.ignored[4]).toEqual('[sshKeys] ssh key item');
+        expect(payload.ignored[3]).toEqual('[sshKeys] ssh key item');
     });
 });
