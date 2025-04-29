@@ -26,7 +26,7 @@ import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
-import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
+import { decryptedLinkToPhotos, photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
 import { useLinksActions } from '../../store/_links';
 import useLinksState from '../../store/_links/useLinksState';
@@ -132,7 +132,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { favoritePhotoLink } = useLinksActions();
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const request = useDebouncedRequest();
-    const { batchAPIHelper } = useBatchHelper();
+    const { batchAPIHelper, batchPromiseHelper } = useBatchHelper();
     const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
@@ -1035,6 +1035,23 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 if (update) {
                     setPhotos(update);
                 }
+            } else {
+                // This is the cache when the photo is not in the cache already
+                // As uploaded directly to the stream
+                const signal = new AbortController().signal;
+                void getLink(signal, shareId, linkId).then(async (link) => {
+                    const relatedPhotos = await batchPromiseHelper(
+                        link?.activeRevision?.photo?.relatedPhotosLinkIds || [],
+                        async (relatedPhotoLinkId) => getLink(signal, shareId, relatedPhotoLinkId),
+                        10,
+                        signal
+                    );
+                    const photo = decryptedLinkToPhotos(link, relatedPhotos);
+                    const update = updateTagsForPhoto(photo, photos);
+                    if (update) {
+                        setPhotos(update);
+                    }
+                });
             }
 
             const albumPhoto = albumPhotos.find((photo) => photo.linkId === linkId);
