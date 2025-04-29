@@ -37,8 +37,10 @@ const formatOtpAuthUri = (item: KeePassItem): Maybe<string> =>
 const entryToItem = async (entry: KeePassEntry): Promise<ItemImportIntent<'login'>> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
     const item = entryString.reduce<KeePassItem>(
-        (acc, { Key, Value }) => {
-            if (!Key || !Value) return acc;
+        (acc, field) => {
+            if (!field?.Key || !field?.Value) return acc;
+
+            const { Key, Value } = field;
 
             switch (Key) {
                 case 'Title':

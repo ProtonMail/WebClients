@@ -1,8 +1,10 @@
-import type { DeobfuscatedItemExtraField, MaybeArray } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, Maybe, MaybeArray } from '@proton/pass/types';
 
 export type KeePassEntryValue = { _ProtectInMemory: string; __text: string } | string;
 
-export type KeePassCustomFields = { Key: string; Value: KeePassEntryValue }[];
+type KeePassField = Maybe<{ Key: string; Value: KeePassEntryValue }>;
+
+export type KeePassCustomFields = KeePassField[];
 
 export type KeePassEntry = {
     String:
@@ -15,7 +17,7 @@ export type KeePassEntry = {
               { Key: 'otp'; Value: KeePassEntryValue },
               ...KeePassCustomFields,
           ]
-        | { Key: string; Value: KeePassEntryValue };
+        | KeePassField;
 };
 
 export type KeePassGroup = {
