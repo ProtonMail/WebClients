@@ -206,6 +206,9 @@
       "Copy link": [
         "リンクをコピー"
       ],
+      "Copy password": [
+        "パスワードをコピー"
+      ],
       "Copy version number to clipboard": [
         "バージョン番号をクリップボードにコピー"
       ],
@@ -229,6 +232,9 @@
       ],
       "Create new contact": [
         "新しい連絡先を作成"
+      ],
+      "Create new password": [
+        "新しいパスワードを作成する"
       ],
       "Current plan": [
         "現在のプラン"
@@ -328,6 +334,9 @@
       ],
       "Forward as attachment": [
         "添付ファイルとして転送"
+      ],
+      "Generate password": [
+        "パスワードを生成"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } を ${ priceCoupon }で入手"
@@ -4675,6 +4684,9 @@
       "Are you sure you want to discard your import?": [
         "インポートを破棄してもよろしいですか?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
+      ],
       "Attention required": [
         "注意が必要です"
       ],
@@ -4984,6 +4996,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "It's better to have:": [
+        "以下の方が良いでしょう:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "VPNを常に使用することをお勧めします。しかし、サイバーセキュリティの脅威が最も高い可能性がある場合は以下の通りです。"
       ],
@@ -5101,6 +5116,9 @@
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
+      "Numbers": [
+        "数字"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "主催者が過去に更新した行事は残りますが、いくつかの入力した回答は失われます。"
       ],
@@ -5136,6 +5154,9 @@
       ],
       "password": [
         "パスワード"
+      ],
+      "Password copied to clipboard": [
+        "クリップボードにコピーされたパスワード"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
@@ -5305,6 +5326,9 @@
       "Surveillance": [
         "監視"
       ],
+      "Symbols (#$&)": [
+        "記号 (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
       ],
@@ -5421,6 +5445,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
+      ],
+      "Uppercase and lowercase letters": [
+        "大文字と小文字"
       ],
       "User activated": [
         "ユーザーがアクティブ化"
@@ -6155,6 +6182,9 @@
       "Move to Inbox": [
         "受信トレイに移動"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"
+      ],
       "Name": [
         "名前"
       ],
@@ -6266,6 +6296,12 @@
       "Street address": [
         "番地"
       ],
+      "Strong": [
+        "強い"
+      ],
+      "Strong password": [
+        "強力なパスワード"
+      ],
       "Subscription options": [
         "サブスクリプションのオプション"
       ],
@@ -6304,6 +6340,18 @@
       ],
       "Verification code": [
         "認証コード"
+      ],
+      "Vulnerable": [
+        "脆弱"
+      ],
+      "Vulnerable password": [
+        "脆弱なパスワード"
+      ],
+      "Weak": [
+        "弱い"
+      ],
+      "Weak password": [
+        "弱いパスワード"
       ],
       "Week start": [
         "週の開始曜日"
@@ -6886,26 +6934,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -6927,6 +6955,26 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -10260,9 +10308,6 @@
       ],
       "Get the apps": [
         "アプリを入手"
-      ],
-      "Get Zooming faster": [
-        "ズームの速度を上げる。"
       ],
       "Gift": [
         "ギフト"

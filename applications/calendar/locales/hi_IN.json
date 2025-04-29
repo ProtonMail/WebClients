@@ -195,6 +195,9 @@
       "Copy link": [
         "लिंक कॉपी करें"
       ],
+      "Copy password": [
+        "पासवर्ड कॉपी करें"
+      ],
       "Copy version number to clipboard": [
         "संस्करण संख्या क्लिपबोर्ड पर कॉपी करें"
       ],
@@ -218,6 +221,9 @@
       ],
       "Create new contact": [
         "नया संपर्क बनाएं"
+      ],
+      "Create new password": [
+        "नया पासवर्ड बनाएं"
       ],
       "Current plan": [
         "वर्तमान योजना"
@@ -316,6 +322,9 @@
       ],
       "Forward as attachment": [
         "अटैचमेंट जैसे फॉरवर्ड करें"
+      ],
+      "Generate password": [
+        "पासवर्ड उत्पन्न करें"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } पाएं ${ priceCoupon } के लिए"
@@ -4526,6 +4535,9 @@
       "Are you sure you want to discard your import?": [
         "क्या आप वाकई अपना आयात छोड़ना चाहते हैं?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "कम से कम ${ BETTER_PASSWORD_LENGTH } अक्षर"
+      ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
       ],
@@ -4825,6 +4837,9 @@
       "Internet connection restored.": [
         "इंटरनेट कनेक्शन बहाल"
       ],
+      "It's better to have:": [
+        "यह बेहतर है कि:"
+      ],
       "JCB logo": [
         "JCB लोगो"
       ],
@@ -4930,6 +4945,9 @@
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
       ],
+      "Numbers": [
+        "नंबर"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "आयोजक द्वारा पहले से अपडेट की गई घटनाएँ बनी रहेंगी, लेकिन आपके कुछ उत्तर खो जाएंगे।"
       ],
@@ -4956,6 +4974,9 @@
       ],
       "password": [
         "पासवर्ड"
+      ],
+      "Password copied to clipboard": [
+        "पासवर्ड क्लिपबोर्ड पे कॉपी किया"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "भुगतान टीएलएस एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं"
@@ -5101,6 +5122,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "सदस्यता समाप्त हो रही है: अपने ${ planName } फायदे बनाए रखने के लिए ${ byDate } तक पुनः सक्रिय करें। ${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "प्रतीक (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
@@ -5202,6 +5226,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
+      ],
+      "Uppercase and lowercase letters": [
+        "बड़े और छोटे अक्षर"
       ],
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
@@ -5904,6 +5931,9 @@
       "Move to Inbox": [
         "इनबॉक्स में ले जाएँ"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "कम से कम ${ MIN_PASSWORD_LENGTH } अक्षर होने चाहिए"
+      ],
       "Name": [
         "नाम"
       ],
@@ -6013,6 +6043,12 @@
       "Street address": [
         "राज्य / प्रांत की आवश्यकता है"
       ],
+      "Strong": [
+        "मजबूत"
+      ],
+      "Strong password": [
+        "मजबूत पासवर्ड"
+      ],
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
@@ -6051,6 +6087,18 @@
       ],
       "Verification code": [
         "पुष्टि संख्या"
+      ],
+      "Vulnerable": [
+        "कमज़ोर"
+      ],
+      "Vulnerable password": [
+        "असुरक्षित पासवर्ड"
+      ],
+      "Weak": [
+        "कमज़ोर"
+      ],
+      "Weak password": [
+        "कमज़ोर पासवर्ड"
       ],
       "Week start": [
         "सप्ताह की शुरुआत"
@@ -6578,26 +6626,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -6619,6 +6647,26 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "शुरू करें ${ priceCoupon } के लिए"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -9936,9 +9984,6 @@
       ],
       "Get the apps": [
         "ऐप प्राप्त करें"
-      ],
-      "Get Zooming faster": [
-        "जल्दी से ज़ूमिंग शुरू करें"
       ],
       "Gift": [
         "तोहफा"

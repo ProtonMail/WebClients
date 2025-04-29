@@ -207,6 +207,9 @@
       "Copy link": [
         "Αντιγραφή συνδέσμου"
       ],
+      "Copy password": [
+        "Αντιγραφή κωδικού πρόσβασης"
+      ],
       "Copy version number to clipboard": [
         "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Δημιουργία νέας επαφής"
+      ],
+      "Create new password": [
+        "Δημιουργία νέου κωδικού πρόσβασης"
       ],
       "Current plan": [
         "Τρέχον πρόγραμμα"
@@ -331,6 +337,9 @@
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
+      ],
+      "Generate password": [
+        "Παραγωγή τυχαίου κωδικού πρόσβασης"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Λάβετε το ${ planName } για ${ priceCoupon }"
@@ -4744,6 +4753,9 @@
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -5058,6 +5070,9 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
+      "It's better to have:": [
+        "Είναι καλύτερα να έχετε:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Είναι καλύτερο να χρησιμοποιείτε ένα VPN ανά πάσα στιγμή. Αλλά εδώ είναι όπου οι απειλές στον κυβερνοχώρο μπορεί να είναι οι υψηλότερες:"
       ],
@@ -5175,6 +5190,9 @@
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
+      "Numbers": [
+        "Αριθμοί"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν, αλλά μερικές από τις απαντήσεις σας θα χαθούν."
       ],
@@ -5210,6 +5228,12 @@
       ],
       "password": [
         "κωδικός πρόσβασης"
+      ],
+      "Password copied to clipboard": [
+        "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Password must have:": [
+        "Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
@@ -5383,6 +5407,9 @@
       "Surveillance": [
         "Παρακολούθηση"
       ],
+      "Symbols (#$&)": [
+        "Σύμβολα (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -5499,6 +5526,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
+      "Uppercase and lowercase letters": [
+        "Κεφαλαία και πεζά γράμματα"
       ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
@@ -6242,6 +6272,9 @@
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -6287,6 +6320,9 @@
       ],
       "Password": [
         "Κωδικός πρόσβασης"
+      ],
+      "Password strength": [
+        "Ισχύς Κωδικού Πρόσβασης"
       ],
       "Payer": [
         "Πληρωτής"
@@ -6354,6 +6390,12 @@
       "Street address": [
         "Οδός"
       ],
+      "Strong": [
+        "Δυνατό"
+      ],
+      "Strong password": [
+        "Δυνατός κωδικός πρόσβασης"
+      ],
       "Subscription options": [
         "Επιλογές συνδρομής"
       ],
@@ -6392,6 +6434,18 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "Vulnerable": [
+        "Ευάλωτο"
+      ],
+      "Vulnerable password": [
+        "Ευάλωτος κωδικός πρόσβασης"
+      ],
+      "Weak": [
+        "Αδύναμο"
+      ],
+      "Weak password": [
+        "Αδύναμος κωδικός πρόσβασης"
       ],
       "Week start": [
         "Έναρξη εβδομάδας"
@@ -6982,26 +7036,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -7023,6 +7057,26 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10475,9 +10529,6 @@
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
-      "Get Zooming faster": [
-        "Αρχίστε να Ζουμάρετε πιο γρήγορα"
-      ],
       "Gift": [
         "Δώρο"
       ],
@@ -10643,6 +10694,9 @@
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
+      ],
+      "Schedule meetings in one click": [
+        "Προγραμματίστε συναντήσεις με ένα κλικ"
       ],
       "Security center": [
         "Κέντρο ασφαλείας"

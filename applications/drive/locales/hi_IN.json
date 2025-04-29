@@ -226,6 +226,9 @@
       "Copy link": [
         "लिंक कॉपी करें"
       ],
+      "Copy password": [
+        "पासवर्ड कॉपी करें"
+      ],
       "Copy version number to clipboard": [
         "संस्करण संख्या क्लिपबोर्ड पर कॉपी करें"
       ],
@@ -249,6 +252,9 @@
       ],
       "Create new folder": [
         "नया फोल्डर बनाएं"
+      ],
+      "Create new password": [
+        "नया पासवर्ड बनाएं"
       ],
       "Create new text file": [
         "नया टेक्सट फाइल बनाएं"
@@ -407,6 +413,9 @@
       ],
       "Forward as attachment": [
         "अटैचमेंट जैसे फॉरवर्ड करें"
+      ],
+      "Generate password": [
+        "पासवर्ड उत्पन्न करें"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } पाएं ${ priceCoupon } के लिए"
@@ -4320,6 +4329,9 @@
       "Are you sure you want to proceed?": [
         "क्या आप वाकई आगे बढ़ना चाहते हैं?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "कम से कम ${ BETTER_PASSWORD_LENGTH } अक्षर"
+      ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
       ],
@@ -4754,6 +4766,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "ऐसा लगता है कि आपने हाल ही में ${ uploadName } को अपलोड करने की कोशिश की थी। अगर अपलोड विफल हो गया, तो कृपया ${ replaceFile } करें। अगर अपलोड अभी भी जारी है, तो इसे बदलने से चल रहा अपलोड रद्द हो जाएगा।"
       ],
+      "It's better to have:": [
+        "यह बेहतर है कि:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "कूड़ेदान में मौजूद चीज़ें तब तक यहीं रहेंगी जब तक आप उन्हें हमेशा के लिए नहीं हटा देते हैं"
       ],
@@ -4905,6 +4920,9 @@
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
       ],
+      "Numbers": [
+        "नंबर"
+      ],
       "of": [
         "का"
       ],
@@ -4943,6 +4961,9 @@
       ],
       "password": [
         "पासवर्ड"
+      ],
+      "Password copied to clipboard": [
+        "पासवर्ड क्लिपबोर्ड पे कॉपी किया"
       ],
       "Paused": [
         "रुका हुआ"
@@ -5237,6 +5258,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "सदस्यता समाप्त हो रही है: अपने ${ planName } फायदे बनाए रखने के लिए ${ byDate } तक पुनः सक्रिय करें। ${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "प्रतीक (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
@@ -5459,6 +5483,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "एक साथ सैकड़ों फ़ाइलें अपलोड करने से कार्यप्रदर्शन प्रभावित हो सकता है।"
+      ],
+      "Uppercase and lowercase letters": [
+        "बड़े और छोटे अक्षर"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "ये फॉर्म इस्तेमाल करें हमें अनुचित, गैर-कानूनी, या फिर खतरनाक शेयर किए गए फाइलों के बारे में सूचित करने के लिए। आप अभी रिपोर्ट करने जा रहे हैं:"
@@ -6186,6 +6213,9 @@
       "Move to Inbox": [
         "इनबॉक्स में ले जाएँ"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "कम से कम ${ MIN_PASSWORD_LENGTH } अक्षर होने चाहिए"
+      ],
       "My Albums": [
         "मेरे एल्बम"
       ],
@@ -6339,6 +6369,12 @@
       "Street address": [
         "राज्य / प्रांत की आवश्यकता है"
       ],
+      "Strong": [
+        "मजबूत"
+      ],
+      "Strong password": [
+        "मजबूत पासवर्ड"
+      ],
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
@@ -6395,6 +6431,18 @@
       ],
       "Viewer": [
         "दर्शक"
+      ],
+      "Vulnerable": [
+        "कमज़ोर"
+      ],
+      "Vulnerable password": [
+        "असुरक्षित पासवर्ड"
+      ],
+      "Weak": [
+        "कमज़ोर"
+      ],
+      "Weak password": [
+        "कमज़ोर पासवर्ड"
       ],
       "What happened?": [
         "क्या हुआ?"
@@ -6910,29 +6958,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "प्लैन ${ priceDrivePlus } से शुरू"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -6954,6 +6979,29 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "शुरू करें ${ priceCoupon } के लिए"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "प्लैन ${ priceDrivePlus } से शुरू"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } से शुरू"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {

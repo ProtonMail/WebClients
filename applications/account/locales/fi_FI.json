@@ -1105,11 +1105,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "select file": [
-        "valitse tiedosto"
-      ],
       "Select file": [
         "Valitse tiedosto"
+      ],
+      "select file": [
+        "valitse tiedosto"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -4486,9 +4486,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Osoitteeseen ${ boldForwardeeEmail } lähetetään vahvistusviesti."
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Osoitteelle ${ boldForwarderEmail } luodaan uusi salausavain."
-      ],
       "Automatically forward emails to another email address.": [
         "Ohjaa viestit automaattisesti toiseen sähköpostiosoitteeseen."
       ],
@@ -4599,17 +4596,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Osoitteelle ${ forwarderEmail } luotiin uusi salausavain."
-      ],
       "Changes saved": [
         "Muutokset tallennettiin"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Viesti lähetettiin osoitteeseen ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Viesti lähetettiin osoitteeseen ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Ohjaus hyväksyttiin"
@@ -4636,9 +4624,6 @@
       ],
       "Forwarding activated": [
         "Ohjaus otettiin käyttöön"
-      ],
-      "Request confirmation": [
-        "Pyydä vahvistus"
       ],
       "Set up forwarding": [
         "Määritä ohjaus"
@@ -6436,9 +6421,6 @@
       "Device": [
         "Laite"
       ],
-      "Enabled Countries": [
-        "Käytössä olevat maat"
-      ],
       "Enter your email address": [
         "Syötä sähköpostiosoitteesi"
       ],
@@ -6447,9 +6429,6 @@
       ],
       "Folders": [
         "Kansiot"
-      ],
-      "Groups": [
-        "Ryhmät"
       ],
       "IP address": [
         "IP-osoite"
@@ -6477,9 +6456,6 @@
       ],
       "Permissions": [
         "Käyttöoikeudet"
-      ],
-      "Policy Name": [
-        "Käytännön nimi"
       ],
       "Protection": [
         "Suojaus"
@@ -7665,9 +7641,6 @@
       "Create your first Gateway": [
         "Luo ensimmäinen yhdyskäytäväsi"
       ],
-      "Created (not published)": [
-        "Luotu (ei julkaistu)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Luodaan yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
         "Luodaan yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
@@ -7737,9 +7710,6 @@
       ],
       "Delete link?": [
         "Poista linkki?"
-      ],
-      "Deleted (not published)": [
-        "Poistettu (ei julkaistu)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
@@ -7862,9 +7832,6 @@
       ],
       "Edit link": [
         "Muokkaa linkkiä"
-      ],
-      "Edited (not published)": [
-        "Muokattu (ei julkaistu)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-määritys on tallennettu"
@@ -8690,9 +8657,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
-      "Pending removal": [
-        "Odottaa poistoa"
-      ],
       "per month": [
         "kuukaudessa"
       ],
@@ -9455,9 +9419,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Palautustiedoston allekirjoitusta ei voitu vahvistaa. Ota yhteyttä tukeen."
       ],
-      "Unchanged": [
-        "Muuttamaton"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Valitettavasti tilille ei ole määritetty palautustapoja."
       ],
@@ -9548,11 +9509,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "Username": [
-        "Käyttäjätunnus"
-      ],
       "username": [
         "käyttäjätunnus"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -10692,10 +10653,10 @@
       "Allow sharing outside the organization": [
         "Salli organisaation ulkopuolinen jakaminen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10707,11 +10668,11 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
-      "AND": [
-        "JA"
-      ],
       "And": [
         "Ja"
+      ],
+      "AND": [
+        "JA"
       ],
       "and": [
         "ja"
@@ -11130,11 +11091,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JOS"
-      ],
       "If": [
         "Jos"
+      ],
+      "IF": [
+        "JOS"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -11334,14 +11295,14 @@
       "Optional": [
         "Valinnainen"
       ],
-      "OR": [
-        "TAI"
-      ],
       "or": [
         "tai"
       ],
       "Or": [
         "Tai"
+      ],
+      "OR": [
+        "TAI"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11983,11 +11944,11 @@
       "perform a password reset from your active session": [
         "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
       ],
-      "privacy policy": [
-        "tietosuojakäytäntömme"
-      ],
       "Privacy policy": [
         "Tietosuojakäytäntö"
+      ],
+      "privacy policy": [
+        "tietosuojakäytäntömme"
       ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
@@ -13338,6 +13299,14 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -13356,14 +13325,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -13995,6 +13956,17 @@
         "Työpöytä"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "Kuukauden 10. päivä"
@@ -14223,17 +14195,6 @@
       ],
       "Trash": [
         "Poista"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
       ]
     },
     "Option delay send seconds": {
@@ -18228,10 +18189,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -18716,9 +18677,6 @@
       ],
       "Get the apps": [
         "Hanki sovellukset"
-      ],
-      "Get Zooming faster": [
-        "Aloita Zoomaus nopeammin"
       ],
       "Gift": [
         "Lahja"

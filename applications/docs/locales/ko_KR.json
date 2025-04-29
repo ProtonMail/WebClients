@@ -93,9 +93,6 @@
       "Apply": [
         "적용"
       ],
-      "Ask me next time": [
-        "다음에 내게 묻기"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
@@ -207,6 +204,9 @@
       "Copy invite link": [
         "초대 링크 복사"
       ],
+      "Copy password": [
+        "비밀번호 복사"
+      ],
       "Copy version number to clipboard": [
         "버전 넘버를 클립보드에 복사하기"
       ],
@@ -227,6 +227,9 @@
       ],
       "Create new folder": [
         "새 폴더 만들기"
+      ],
+      "Create new password": [
+        "새로운 비밀번호 생성"
       ],
       "Current plan": [
         "현재 플랜"
@@ -332,6 +335,9 @@
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
+      ],
+      "Generate password": [
+        "비밀번호 생성"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName }을(를) ${ priceCoupon }로 구매하기"
@@ -608,9 +614,6 @@
       ],
       "Save changes": [
         "변경 사항 저장"
-      ],
-      "Save preferences": [
-        "환경 설정 저장"
       ],
       "Search": [
         "검색"
@@ -2266,11 +2269,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2349,6 +2347,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3829,7 +3832,7 @@
         "${ groupCounts } 그룹 찾음"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -3996,6 +3999,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "정말 선택한 항목을 휴지통에서 영구적으로 삭제하시겠습니까?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "최소 ${ BETTER_PASSWORD_LENGTH }글자"
+      ],
       "Attention required": [
         "주의 필요"
       ],
@@ -4050,9 +4056,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
       ],
-      "Converting document...": [
-        "문서 변환 중..."
-      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -4094,9 +4097,6 @@
       ],
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
-      ],
-      "Creating new document...": [
-        "새로운 문서를 생성하는 중..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -4215,12 +4215,6 @@
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
-      "Error converting document: ${ errorMessage }": [
-        "문서 변환 오류: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "문서 불러오기 오류: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "동기화 오류"
       ],
@@ -4280,12 +4274,6 @@
       ],
       "Geoblocking": [
         "차단된 콘텐츠"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "문서에 추가된 댓글 및 제안 사항에 대한 이메일 업데이트를 받아보세요."
-      ],
-      "Get Notified About Comments": [
-        "댓글 알림 받기"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }로 이동"
@@ -4362,6 +4350,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
       ],
+      "It's better to have:": [
+        "포함되면 더 좋습니다:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "대부분의 상황에서 VPN을 사용하는 것이 권장됩니다. 그러나 사이버 보안 위협이 가장 높을 수 있는 경우는 다음과 같습니다:"
       ],
@@ -4428,9 +4419,6 @@
       "Low Priority": [
         "중요도 낮음"
       ],
-      "Making a copy...": [
-        "복사본 만드는 중..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
@@ -4467,9 +4455,6 @@
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
       ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL에 제공된 문서가 없습니다. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
-      ],
       "No email address": [
         "이메일 주소 없음"
       ],
@@ -4502,6 +4487,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
+      ],
+      "Numbers": [
+        "숫자"
       ],
       "Offline": [
         "오프라인"
@@ -4538,6 +4526,9 @@
       ],
       "password": [
         "비밀번호"
+      ],
+      "Password copied to clipboard": [
+        "비밀번호 복사됨"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
@@ -4755,6 +4746,9 @@
       "Surveillance": [
         "감시"
       ],
+      "Symbols (#$&)": [
+        "기호 (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
@@ -4784,9 +4778,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copy the truncated URL text directly.": [
-        "입력된 URL이 Slack에서 잘못 복사된 것으로 추정됩니다. Slack에서 긴 링크를 복사할 때 링크를 마우스 오른쪽 버튼으로 클릭한 다음 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
@@ -4908,9 +4899,6 @@
       "Trash": [
         "휴지통"
       ],
-      "Trashed": [
-        "휴지통 이동됨"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
@@ -4928,6 +4916,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "한 번에 수백 개의 파일을 업로드하면 성능에 영향을 미칠 수 있습니다."
+      ],
+      "Uppercase and lowercase letters": [
+        "대소문자"
       ],
       "User activated": [
         "사용자 활성화됨"
@@ -5482,9 +5473,6 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
-      "Enable email notifications": [
-        "이메일 알림 활성화"
-      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -5535,9 +5523,6 @@
       ],
       "Import to:": [
         "가져오기:"
-      ],
-      "Include document name in notification": [
-        "알림에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -5595,6 +5580,9 @@
       ],
       "Move to Inbox": [
         "받은 편지함으로 이동"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
       ],
       "My files": [
         "내 파일"
@@ -5704,6 +5692,12 @@
       "Street address": [
         "도로명 주소"
       ],
+      "Strong": [
+        "강함"
+      ],
+      "Strong password": [
+        "강력한 비밀번호"
+      ],
       "Subscription options": [
         "구독 옵션"
       ],
@@ -5739,6 +5733,18 @@
       ],
       "Viewer": [
         "뷰어"
+      ],
+      "Vulnerable": [
+        "취약함"
+      ],
+      "Vulnerable password": [
+        "취약한 비밀번호"
+      ],
+      "Weak": [
+        "약함"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "What happened?": [
         "무슨 일인가요?"
@@ -7490,9 +7496,6 @@
       ],
       "Searching": [
         "검색 중"
-      ],
-      "Trashed": [
-        "휴지통"
       ]
     },
     "Participant name": {

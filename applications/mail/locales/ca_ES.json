@@ -298,6 +298,9 @@
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
+      "Copy password": [
+        "Copia la contrasenya"
+      ],
       "Copy password to clipboard": [
         "Copia la contrasenya al porta-retalls"
       ],
@@ -330,6 +333,9 @@
       ],
       "Create new message": [
         "Crear un missatge nou"
+      ],
+      "Create new password": [
+        "Crea una contrasenya nova"
       ],
       "Current plan": [
         "Pla actual"
@@ -415,7 +421,7 @@
         "Descarregar ${ attachmentName }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
       "Download now": [
         "Descarrega"
@@ -533,6 +539,9 @@
       ],
       "Forward as attachment": [
         "Reenvia com a adjunt"
+      ],
+      "Generate password": [
+        "Genera la contrasenya"
       ],
       "Generate text": [
         "Genera text"
@@ -1135,10 +1144,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1353,6 +1362,10 @@
       ],
       "Trust": [
         "De confiança"
+      ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -6360,6 +6373,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Segur que voleu eliminar aquest missatge permanentment?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
+      ],
       "Attach public key": [
         "Adjunta la clau pública"
       ],
@@ -6864,8 +6880,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -6884,6 +6899,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Convideu la vostra parella, un amic o qui sigui amb qui estigueu compartint el vostre pla ${ protonDuoPlanName }."
+      ],
+      "It's better to have:": [
+        "És millor tenir:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser més altes:"
@@ -7098,6 +7116,9 @@
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "of": [
         "de"
       ],
@@ -7133,6 +7154,12 @@
       ],
       "password": [
         "contrasenya"
+      ],
+      "Password copied to clipboard": [
+        "La contrasenya s'ha copiat al porta-retalls"
+      ],
+      "Password must have:": [
+        "La contrasenya ha de tenir:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
@@ -7489,6 +7516,9 @@
       "Surveillance": [
         "Vigilància"
       ],
+      "Symbols (#$&)": [
+        "Símbols (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
       ],
@@ -7821,6 +7851,9 @@
       ],
       "Upload picture": [
         "Carrega la imatge"
+      ],
+      "Uppercase and lowercase letters": [
+        "Lletres majúscules i minúscules"
       ],
       "URL link": [
         "Enllaç de l'URL"
@@ -8539,10 +8572,10 @@
       "Always move sender's emails": [
         "Mou sempre els correus electrònics del remitent"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -8767,11 +8800,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -8848,6 +8881,9 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "Name": [
         "Nom"
       ],
@@ -8884,13 +8920,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Original link": [
@@ -8904,6 +8940,9 @@
       ],
       "Password hint": [
         "Pista de contrasenya"
+      ],
+      "Password strength": [
+        "Solidesa de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -8986,6 +9025,12 @@
       "Street address": [
         "Adreça de carrer"
       ],
+      "Strong": [
+        "Forta"
+      ],
+      "Strong password": [
+        "Contrasenya forta"
+      ],
       "Subscription options": [
         "Opcions de subscripció"
       ],
@@ -9033,6 +9078,18 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contrasenya vulnerable"
+      ],
+      "Weak": [
+        "Feble"
+      ],
+      "Weak password": [
+        "Contrasenya feble."
       ],
       "What happened?": [
         "Què ha passat?"
@@ -9748,29 +9805,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Obtingueu ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -9792,6 +9826,29 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Obtingueu ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {

@@ -219,6 +219,9 @@
       "Copy invite link": [
         "Kopírovat odkaz pozvánky"
       ],
+      "Copy password": [
+        "Kopírovat heslo"
+      ],
       "Copy version number to clipboard": [
         "Zkopírovat číslo verze do schránky"
       ],
@@ -239,6 +242,9 @@
       ],
       "Create new folder": [
         "Vytvořit novou složku"
+      ],
+      "Create new password": [
+        "Vytvořit nové heslo"
       ],
       "Current plan": [
         "Aktuální tarif"
@@ -353,6 +359,9 @@
       ],
       "Forward as attachment": [
         "Přeposlat jako přílohu"
+      ],
+      "Generate password": [
+        "Generovat heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získat ${ planName } za ${ priceCoupon }"
@@ -755,6 +764,9 @@
       ],
       "Take out of trash": [
         "Vybrat z koše"
+      ],
+      "Trashing...": [
+        "Přesouvám do koše..."
       ],
       "Trust": [
         "Důvěřovat"
@@ -2356,11 +2368,6 @@
         "Faktura po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
@@ -2405,7 +2412,7 @@
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Podporujte používání dvoufaktorového ověřování ve vaší organizaci pro zvýšení bezpečnosti."
+        "Podporujte používání dvoufázového ověření ve vaší organizaci pro zvýšení bezpečnosti."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
@@ -2496,6 +2503,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4283,6 +4295,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Opravdu chcete trvale smazat vybrané položky z koše?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -4658,6 +4673,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vypadá to, že jste se nedávno pokusili nahrát ${ uploadName }. Pokud se nahrávání nezdařilo, nahrajte prosím ${ replaceFile }. Pokud nahrávání stále probíhá, nahrazení zruší probíhající nahrávání."
       ],
+      "It's better to have:": [
+        "Je lepší mít:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Nejlepší je vždy používat VPN. Nejvyšší kybernetické riziko je:"
       ],
@@ -4802,6 +4820,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
+      "Numbers": [
+        "Číslice"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4840,6 +4861,12 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bylo zkopírováno do schránky"
+      ],
+      "Password must have:": [
+        "Heslo musí obsahovat:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -5072,6 +5099,9 @@
       "Surveillance": [
         "Sledování"
       ],
+      "Symbols (#$&)": [
+        "Symboly (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
@@ -5228,9 +5258,6 @@
       "Trash": [
         "Koš"
       ],
-      "Trashed": [
-        "V koši"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
@@ -5248,6 +5275,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
+      ],
+      "Uppercase and lowercase letters": [
+        "Velká a malá písmena"
       ],
       "User activated": [
         "Uživatel aktivován"
@@ -5937,6 +5967,9 @@
       "Move to Inbox": [
         "Přesunout do Doručené pošty"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí mít alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
       "My files": [
         "Moje soubory"
       ],
@@ -5963,6 +5996,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password strength": [
+        "Síla hesla"
       ],
       "Payer": [
         "Plátce"
@@ -6045,6 +6081,12 @@
       "Street address": [
         "Ulice a č. p."
       ],
+      "Strong": [
+        "Silné"
+      ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti předplatného"
       ],
@@ -6080,6 +6122,18 @@
       ],
       "Viewer": [
         "Prohlížející"
+      ],
+      "Vulnerable": [
+        "Zranitelné"
+      ],
+      "Vulnerable password": [
+        "Zranitelné heslo"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "What happened?": [
         "Co se stalo?"
@@ -8011,9 +8065,6 @@
       ],
       "Searching": [
         "Hledání"
-      ],
-      "Trashed": [
-        "V koši"
       ]
     },
     "Participant name": {

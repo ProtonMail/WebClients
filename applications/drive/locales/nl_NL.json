@@ -246,6 +246,9 @@
       "Copy link": [
         "Link kopiëren"
       ],
+      "Copy password": [
+        "Wachtwoord kopiëren"
+      ],
       "Copy version number to clipboard": [
         "Kopieer versienummer naar klembord"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Nieuwe map aanmaken"
+      ],
+      "Create new password": [
+        "Nieuw wachtwoord instellen"
       ],
       "Create new text file": [
         "Nieuw tekstbestand aanmaken"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
+      ],
+      "Generate password": [
+        "Wachtwoord genereren"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Neem ${ planName } voor ${ priceCoupon }"
@@ -2634,7 +2643,7 @@
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Moedig het gebruik van tweestapsverificatie in je organisatie aan voor extra beveiliging."
+        "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
@@ -3058,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Externe uitnodigingen zijn tijdelijk uitgeschakeld. Probeer het later opnieuw"
       ],
+      "Failed to copy photo to album": [
+        "Kopiëren van foto naar album is mislukt."
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
@@ -3195,9 +3207,6 @@
       ],
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
-      ],
-      "Photo saved to your Drive": [
-        "Foto opgeslagen in uw Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Foto-upload is tijdelijk uitgeschakeld. Probeer het later opnieuw"
@@ -4380,6 +4389,10 @@
         "${ pausedCount } onderbroken",
         "${ pausedCount } onderbroken"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } item",
+        "${ photoCount } items"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
@@ -4589,6 +4602,9 @@
       ],
       "Are you sure you want to proceed?": [
         "Weet u zeker dat u verder wilt gaan?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -5036,6 +5052,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
       ],
+      "It's better to have:": [
+        "Het is beter om:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Items in de prullenbak blijven daar tot u ze permanent verwijdert"
       ],
@@ -5199,6 +5218,9 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
+      "Numbers": [
+        "Nummers"
+      ],
       "of": [
         "van"
       ],
@@ -5247,6 +5269,12 @@
       "password": [
         "wachtwoord"
       ],
+      "Password copied to clipboard": [
+        "Wachtwoord gekopieerd naar klembord"
+      ],
+      "Password must have:": [
+        "Het wachtwoord moet hebben:"
+      ],
       "Paused": [
         "Gepauzeerd"
       ],
@@ -5270,6 +5298,12 @@
       ],
       "Photo is set as album cover": [
         "Foto is ingesteld als albumhoes"
+      ],
+      "Photo saved to your Drive": [
+        "Foto opgeslagen in uw Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Foto is gekopieerd naar de stream en daar als favoriet gemarkeerd."
       ],
       "Photos have been successfully recovered.": [
         "Foto's zijn succesvol hersteld."
@@ -5574,6 +5608,9 @@
       "Surveillance": [
         "Surveillance"
       ],
+      "Symbols (#$&)": [
+        "Symbolen (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -5811,6 +5848,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
+      ],
+      "Uppercase and lowercase letters": [
+        "Hoofdletters en kleine letters"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
@@ -6585,6 +6625,9 @@
       "Move to Inbox": [
         "Verplaats naar inbox"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
+      ],
       "My Albums": [
         "Mijn albums"
       ],
@@ -6620,6 +6663,9 @@
       ],
       "Password": [
         "Wachtwoord"
+      ],
+      "Password strength": [
+        "Wachtwoordsterkte"
       ],
       "Payer": [
         "Betaler"
@@ -6738,6 +6784,12 @@
       "Street address": [
         "Adres"
       ],
+      "Strong": [
+        "Sterk"
+      ],
+      "Strong password": [
+        "Sterk wachtwoord"
+      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -6794,6 +6846,18 @@
       ],
       "Viewer": [
         "Kijker"
+      ],
+      "Vulnerable": [
+        "Kwetsbaar"
+      ],
+      "Vulnerable password": [
+        "Kwetsbaar wachtwoord"
+      ],
+      "Weak": [
+        "Zwak"
+      ],
+      "Weak password": [
+        "Zwak wachtwoord"
       ],
       "What happened?": [
         "Wat is er gebeurd?"
@@ -6946,7 +7010,7 @@
         "E-mail doorsturen instellen"
       ],
       "How to use Groups": [
-        "Hoe gebruik je Groepen"
+        "Hoe gebruikt u Groepen"
       ],
       "if your data is leaked": [
         "als uw gegevens zijn gelekt"
@@ -7372,29 +7436,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plannen vanaf ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -7416,6 +7457,29 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plannen vanaf ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8521,6 +8585,9 @@
       ],
       "Root folder failed to be loaded": [
         "Hoofdmap kon niet geladen worden"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Geselecteerde foto('s) al in \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Uitnodiging met succes geaccepteerd"
@@ -10335,6 +10402,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Bespaar ${ priceString }"
       ]
     },
     "Subtitle": {

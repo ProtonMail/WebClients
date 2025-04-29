@@ -282,6 +282,9 @@
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
+      "Copy password": [
+        "複製密碼"
+      ],
       "Copy password to clipboard": [
         "密碼已複製到剪貼簿"
       ],
@@ -314,6 +317,9 @@
       ],
       "Create new message": [
         "創建新郵件訊息"
+      ],
+      "Create new password": [
+        "建立新密碼"
       ],
       "Current plan": [
         "現行方案"
@@ -509,6 +515,9 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
+      ],
+      "Generate password": [
+        "生成密碼"
       ],
       "Generate text": [
         "生成文本"
@@ -1080,11 +1089,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select All": [
-        "選擇全部"
-      ],
       "Select all": [
         "全選"
+      ],
+      "Select All": [
+        "選擇全部"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1280,6 +1289,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -6031,6 +6043,9 @@
       "Are you sure you want to permanently delete this message?": [
         "您確定要永久刪除此郵件嗎？"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "至少 ${ BETTER_PASSWORD_LENGTH } 個字元"
+      ],
       "Attach public key": [
         "附上公開金鑰"
       ],
@@ -6506,7 +6521,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -6525,6 +6540,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "邀請同伴,朋友或任何人共享${ protonDuoPlanName }方案。"
+      ],
+      "It's better to have:": [
+        "更好擁有:"
       ],
       "JCB logo": [
         "JCB 符號"
@@ -6591,9 +6609,6 @@
       ],
       "Low Priority": [
         "較低優先順序"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "設定${ MAIL_APP_NAME }為預設電子郵件應用程式."
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -6727,6 +6742,9 @@
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
+      "Numbers": [
+        "數字"
+      ],
       "of": [
         "/"
       ],
@@ -6747,6 +6765,9 @@
       ],
       "password": [
         "密碼"
+      ],
+      "Password copied to clipboard": [
+        "密碼已複製至剪貼簿"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
@@ -7069,6 +7090,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "符號(#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用${ DRIVE_APP_NAME }應用程式同步和管理檔案。於${ DOCS_APP_NAME }創建和共享文件，並安全存放。全部於${ ios },${ android }和${ desktop }。"
       ],
@@ -7383,6 +7407,9 @@
       ],
       "Upload picture": [
         "上載圖像"
+      ],
+      "Uppercase and lowercase letters": [
+        "大寫及小寫字母"
       ],
       "URL link": [
         "URL 連結"
@@ -8042,10 +8069,10 @@
       "Always move sender's emails": [
         "總是移動寄件者的電子郵件"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -8267,10 +8294,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
       "Import all messages": [
@@ -8381,13 +8408,13 @@
       "Optional": [
         "自由列席"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Original link": [
@@ -8483,6 +8510,12 @@
       "Street address": [
         "街道位址"
       ],
+      "Strong": [
+        "強"
+      ],
+      "Strong password": [
+        "高強度密碼"
+      ],
       "Subscription options": [
         "訂購授權選項"
       ],
@@ -8530,6 +8563,18 @@
       ],
       "Verification code": [
         "驗證碼"
+      ],
+      "Vulnerable": [
+        "具有風險"
+      ],
+      "Vulnerable password": [
+        "有安全隱患的密碼"
+      ],
+      "Weak": [
+        "弱"
+      ],
+      "Weak password": [
+        "脆弱密碼"
       ],
       "What happened?": [
         "發生了甚麼問題？"
@@ -9174,29 +9219,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "選用 ${ planTitle }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -9218,6 +9240,29 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "選用 ${ planTitle }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {

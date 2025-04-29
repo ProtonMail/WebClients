@@ -1045,10 +1045,10 @@
       "Select country": [
         "選擇國家"
       ],
-      "select file": [
+      "Select file": [
         "選取檔案"
       ],
-      "Select file": [
+      "select file": [
         "選取檔案"
       ],
       "Select files": [
@@ -4083,9 +4083,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "確認電子郵件將寄至${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "新的加密金鑰將替${ boldForwarderEmail }生成。"
-      ],
       "Automatically forward emails to another email address.": [
         "自動轉寄電子郵件到電郵地址。"
       ],
@@ -4181,17 +4178,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "新的加密金鑰已替${ forwarderEmail }生成。"
-      ],
       "Changes saved": [
         "更改已保存"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "電子郵件寄件至 ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "電子郵件寄件至 ${ model.forwardeeEmail }。"
       ],
       "Forwarding accepted": [
         "轉寄已接受"
@@ -4218,9 +4206,6 @@
       ],
       "Forwarding activated": [
         "轉寄已啟用"
-      ],
-      "Request confirmation": [
-        "需要確認"
       ],
       "Set up forwarding": [
         "設定郵件轉寄"
@@ -8780,10 +8765,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
       "Users": [
@@ -9831,11 +9816,11 @@
       "Allow recovery using a trusted device": [
         "允許復原時使用信任的裝置"
       ],
-      "Allowed domain": [
-        "已允許網域"
-      ],
       "Allowed Domain": [
         "網域白名單"
+      ],
+      "Allowed domain": [
+        "已允許網域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -9846,10 +9831,10 @@
       "Amount due": [
         "應付金額"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -10254,10 +10239,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
       "Import all messages": [
@@ -10455,13 +10440,13 @@
       "Optional": [
         "自由列席"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -11065,10 +11050,10 @@
       "perform a password reset from your active session": [
         "從您目前的作業階段採取密碼重設"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "隱私權政策"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "隱私權政策"
       ],
       "Reactivate now": [
@@ -12306,6 +12291,14 @@
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -12324,14 +12317,6 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -12864,6 +12849,11 @@
         "電腦版應用程式"
       ]
     },
+    "option": {
+      "Group members": [
+        "群組成員"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月10日"
@@ -13089,11 +13079,6 @@
       ],
       "Trash": [
         "垃圾"
-      ]
-    },
-    "option": {
-      "Group members": [
-        "群組成員"
       ]
     },
     "Option delay send seconds": {
@@ -16472,10 +16457,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -16927,9 +16912,6 @@
       ],
       "Get the apps": [
         "取得應用程式"
-      ],
-      "Get Zooming faster": [
-        "更快速取得 Zoom"
       ],
       "Gift": [
         "禮物"

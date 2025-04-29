@@ -219,6 +219,9 @@
       "Copy invite link": [
         "Скапіяваць запрашальную спасылку"
       ],
+      "Copy password": [
+        "Скапіяваць пароль"
+      ],
       "Copy version number to clipboard": [
         "Скапіяваць нумар версіі ў буфер абмену"
       ],
@@ -239,6 +242,9 @@
       ],
       "Create new folder": [
         "Стварыць новую папку"
+      ],
+      "Create new password": [
+        "Стварыць новы пароль"
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -353,6 +359,9 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
+      ],
+      "Generate password": [
+        "Згенерыраваць пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -758,6 +767,9 @@
       ],
       "Take out of trash": [
         "Выняць са сметніцы"
+      ],
+      "Trashing...": [
+        "Пярамяшчэнне ў сметніцу..."
       ],
       "Trust": [
         "Давяраць"
@@ -2359,11 +2371,6 @@
         "Пратэрмінаваны рахунак"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным зашыфраваным асяроддзі."
@@ -2499,6 +2506,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4286,6 +4298,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць выбраныя элементы са сметніцы?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
+      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -4661,6 +4676,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
       ],
+      "It's better to have:": [
+        "Лепш за ўсё, каб у вас было:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Лепш за ўсё выкарыстоўваць VPN пастаянна, але ў гэтых выпадках пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
@@ -4805,6 +4823,9 @@
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
+      "Numbers": [
+        "Лічбы"
+      ],
       "Offline": [
         "Па-за сеткай"
       ],
@@ -4843,6 +4864,12 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скапіяваны ў буфер абмену"
+      ],
+      "Password must have:": [
+        "Пароль павінен змяшчаць:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
@@ -5075,6 +5102,9 @@
       "Surveillance": [
         "Назіранне"
       ],
+      "Symbols (#$&)": [
+        "Сімвалы (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
       ],
@@ -5231,9 +5261,6 @@
       "Trash": [
         "Сметніца"
       ],
-      "Trashed": [
-        "У сметніцы"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
@@ -5251,6 +5278,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Запампоўванне сотняў файлаў адначасова можа паўплываць на прадукцыйнасць."
+      ],
+      "Uppercase and lowercase letters": [
+        "Маленькія і вялікія літары"
       ],
       "User activated": [
         "Карыстальнік актываваны"
@@ -5940,6 +5970,9 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
+      ],
       "My files": [
         "Мае файлы"
       ],
@@ -5966,6 +5999,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password strength": [
+        "Надзейнасць пароля"
       ],
       "Payer": [
         "Плацельшчык"
@@ -6048,6 +6084,12 @@
       "Street address": [
         "Вуліца"
       ],
+      "Strong": [
+        "Надзейны"
+      ],
+      "Strong password": [
+        "Надзейны пароль"
+      ],
       "Subscription options": [
         "Параметры падпіскі"
       ],
@@ -6083,6 +6125,18 @@
       ],
       "Viewer": [
         "Праглядальнік"
+      ],
+      "Vulnerable": [
+        "Уразлівы"
+      ],
+      "Vulnerable password": [
+        "Уразлівы пароль"
+      ],
+      "Weak": [
+        "Ненадзейны"
+      ],
+      "Weak password": [
+        "Ненадзейны пароль"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -8066,8 +8120,8 @@
       "Searching": [
         "Пошук"
       ],
-      "Trashed": [
-        "У сметніцы"
+      "Trash": [
+        "Сметніца"
       ]
     },
     "Participant name": {

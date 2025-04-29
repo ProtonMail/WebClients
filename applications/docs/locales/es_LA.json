@@ -217,6 +217,9 @@
       "Copy invite link": [
         "Copiar enlace de invitación"
       ],
+      "Copy password": [
+        "Copiar la contraseña"
+      ],
       "Copy version number to clipboard": [
         "Copiar el número de versión en el portapapeles"
       ],
@@ -237,6 +240,9 @@
       ],
       "Create new folder": [
         "Crear carpeta nueva"
+      ],
+      "Create new password": [
+        "Crear una contraseña nueva"
       ],
       "Current plan": [
         "Plan actual"
@@ -347,6 +353,9 @@
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
+      ],
+      "Generate password": [
+        "Generar contraseña"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenga ${ planName } por ${ priceCoupon }"
@@ -646,7 +655,7 @@
         "Guardar los cambios"
       ],
       "Save preferences": [
-        "Guardar las preferencias"
+        "Guardar preferencias"
       ],
       "Search": [
         "Buscar"
@@ -752,6 +761,9 @@
       ],
       "Take out of trash": [
         "Restaurar de la papelera"
+      ],
+      "Trashing...": [
+        "Enviando a la Papelera..."
       ],
       "Trust": [
         "Confiar"
@@ -2335,11 +2347,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } le permite trabajar juntos en un entorno seguro y cifrado."
@@ -2475,6 +2482,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4174,6 +4186,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Está seguro que quiere eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -4462,7 +4477,7 @@
         "Bloqueo geográfico"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Recibir actualizaciones por correo electrónico sobre comentarios y sugerencias agregados a sus documentos."
+        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios agregados a sus documentos."
       ],
       "Get Notified About Comments": [
         "Recibir notificaciones sobre los comentarios"
@@ -4542,6 +4557,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente ha intentado cargar ${ uploadName }. Si no se pudo cargar, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
+      ],
+      "It's better to have:": [
+        "Es mejor tener:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es mejor usar una VPN en todo momento. Pero estos son los casos en que las amenazas de ciberseguridad pueden ser mayores:"
@@ -4685,6 +4703,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "Offline": [
         "Sin conexión"
       ],
@@ -4723,6 +4744,12 @@
       ],
       "password": [
         "contraseña"
+      ],
+      "Password copied to clipboard": [
+        "Contraseña copiada al portapapeles"
+      ],
+      "Password must have:": [
+        "La contraseña debe tener:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y las leyes de privacidad suizas."
@@ -4949,6 +4976,9 @@
       "Surveillance": [
         "Vigilancia"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
       ],
@@ -5105,9 +5135,6 @@
       "Trash": [
         "Papelera"
       ],
-      "Trashed": [
-        "En la papelera"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
@@ -5125,6 +5152,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede tener un impacto en el rendimiento."
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras mayúsculas y minúsculas"
       ],
       "User activated": [
         "El usuario fue activado."
@@ -5690,7 +5720,7 @@
         "Correos (último mes)"
       ],
       "Enable email notifications": [
-        "Activar las notificaciones de correo electrónico"
+        "Activar notificaciones por correo electrónico"
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
@@ -5803,6 +5833,9 @@
       "Move to Inbox": [
         "Mover al buzón"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "My files": [
         "Mis archivos"
       ],
@@ -5829,6 +5862,9 @@
       ],
       "Password": [
         "Contraseña"
+      ],
+      "Password strength": [
+        "Nivel de seguridad de la contraseña"
       ],
       "Payer": [
         "Pagador"
@@ -5911,6 +5947,12 @@
       "Street address": [
         "Dirección de calle"
       ],
+      "Strong": [
+        "Fuerte"
+      ],
+      "Strong password": [
+        "Contraseña segura"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -5946,6 +5988,18 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contraseña vulnerable"
+      ],
+      "Weak": [
+        "Débil"
+      ],
+      "Weak password": [
+        "Contraseña poco segura"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -7841,8 +7895,8 @@
       "Searching": [
         "Buscando"
       ],
-      "Trashed": [
-        "En la papelera"
+      "Trash": [
+        "Papelera"
       ]
     },
     "Participant name": {
