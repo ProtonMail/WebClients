@@ -1,3 +1,28 @@
-[aria-current='page'].navigation-link .reload-spinner {
-	display: block;
+[aria-current='page'].navigation-link {
+	.reload-spinner {
+		display: block;
+	}
+}
+
+.navigation-item--folder,
+.navigation-item--label {
+	[aria-current='page'].navigation-link {
+		// Make dropdown always visible for folders/labels when selected
+		.navigation-more-dropdown {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+			margin-inline: var(--space-1) calc(var(--space-2) * -1);
+			inset-inline-end: var(--space-1);
+			position: relative;
+		}
+
+		.navigation-counter-item {
+			display: none;
+		}
+
+		.reload-spinner {
+			margin-inline-end: var(--space-1);
+		}
+	}
 }
