@@ -45,6 +45,7 @@ const SidebarLabel = ({
             onFocus={updateFocusItem}
             moveToFolder={moveToFolder}
             applyLabels={applyLabels}
+            className="navigation-item--label"
             itemOptions={
                 <SidebarLabelActions type={'label'} element={label} onToggleDropdown={setIsOptionDropdownOpened} />
             }

@@ -62,6 +62,7 @@ interface Props {
     collapsed?: boolean;
     moveToFolder: (params: MoveParams) => void;
     applyLabels: (params: ApplyLabelsParams) => void;
+    className?: string;
 }
 
 const SidebarItem = ({
@@ -86,6 +87,7 @@ const SidebarItem = ({
     collapsed = false,
     moveToFolder,
     applyLabels,
+    className,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -170,6 +172,7 @@ const SidebarItem = ({
             className={clsx([
                 dragOver && 'navigation__dragover',
                 'group-hover-hide-container group-hover-opacity-container',
+                className,
             ])}
             data-testid={`sidebar-label:${text}`}
         >
