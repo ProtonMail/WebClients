@@ -262,6 +262,9 @@
       "Discard changes": [
         "Değişiklileri yok say"
       ],
+      "Discard Changes": [
+        "Değişiklikleri At"
+      ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Pencereye sığdır"
       ],
+      "Forgot password?": [
+        "Parolanızı mı unuttunuz?"
+      ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Kullanıcı davet et"
+      ],
+      "Keep Editing": [
+        "Düzenlemeye Devam Et"
       ],
       "Keep logo": [
         "Logoyu tut"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "select file": [
-        "dosya seçin"
-      ],
       "Select file": [
         "Dosya seçin"
+      ],
+      "select file": [
+        "dosya seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -3841,9 +3850,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "İşlemler"
-      ],
       "App version": [
         "Uygulama sürümü"
       ],
@@ -3859,17 +3865,11 @@
       "Device": [
         "Aygıt"
       ],
-      "Enabled Countries": [
-        "Kullanıma alınmış ülkeler"
-      ],
       "Enter your email address": [
         "E-posta adresinizi yazın"
       ],
       "Event": [
         "Etkinlik"
-      ],
-      "Groups": [
-        "Gruplar"
       ],
       "IP address": [
         "IP adresi"
@@ -3888,9 +3888,6 @@
       ],
       "Organization key fingerprint": [
         "Kuruluş anahtarı parmak izi"
-      ],
-      "Policy Name": [
-        "İlke adı"
       ],
       "Protection": [
         "Koruma"
@@ -4149,8 +4146,15 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
       ],
+      "(default)": [
+        "(varsayılan)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için **bir ${ BRAND_NAME } adresi edinin**."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Daha fazla",
+        "+ ${ invisibleCount } Daha fazla"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -4410,9 +4414,6 @@
       "Create your first Gateway": [
         "İlk ağ geçidinizi oluşturun"
       ],
-      "Created (not published)": [
-        "Oluşturulmuş (yayınlanmamış)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }",
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }"
@@ -4458,9 +4459,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Diğer tüm MX kayıtlarını silin veya ${ MAIL_APP_NAME } kaydının Priority değerinin en küçüğü olduğundan emin olun."
-      ],
-      "Deleted (not published)": [
-        "Silinmiş (yayınlanmamış)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
@@ -4554,9 +4552,6 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
-      "Edited (not published)": [
-        "Düzenlenmiş (yayınlanmamış)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN yapılandırması kaydedildi"
       ],
@@ -4643,6 +4638,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
@@ -4998,6 +4996,9 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "No single sign-on": [
+        "Tek oturum açma yok"
+      ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
       ],
@@ -5075,14 +5076,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır."
       ],
+      "Password must have:": [
+        "Parola şunları içermelidir:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine Editörün Seçimi ödülünü 5 üzerinden 5 puanla kazandı"
-      ],
-      "Pending removal": [
-        "Kaldırılmayı bekliyor"
       ],
       "per month": [
         "aylık"
@@ -5411,6 +5412,9 @@
       "The securest way to browse, stream, and be online.": [
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Yayınlanmamış değişiklikleriniz kaybolacaktır."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
@@ -5449,6 +5453,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Hizmetimizle ilgili bir sorun yaşıyorsanız ya da tarafımızdan ek bir işlem yapılmasını istiyorsanız, bu ileti destek ekibimize ulaşmayacak ${ supportLink }."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Bu hizmet, tek oturum açma ile giriş yapan kullanıcılar tarafından kullanılamaz."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -5573,9 +5580,6 @@
       "Unable to check gateways monitoring current status.": [
         "Ağ geçitlerinin güncel izleme durumları yüklenemedi."
       ],
-      "Unchanged": [
-        "Değiştirilmemiş"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
       ],
@@ -5624,11 +5628,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "Username": [
-        "Kullanıcı adı"
-      ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -5822,6 +5826,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Organizasyonunuzun üyeleri, ${ BRAND_NAME } Hesaplarının şifresini oluştururken veya sıfırlarken kullanacakları şifre kurallarını uygulayabilirsiniz."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Tüm ücretli gizlilik hizmetlerimizi tek bir pakette alabilirsiniz. Yalnızca **${ priceString }/ay**."
@@ -6177,10 +6184,10 @@
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "İzin verilen etki alanı"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6267,6 +6274,9 @@
       "Colors": [
         "Renkler"
       ],
+      "Common passwords": [
+        "Yaygın parolalar"
+      ],
       "Company": [
         "Kuruluş"
       ],
@@ -6336,6 +6346,9 @@
       "Digits": [
         "Hane sayısı"
       ],
+      "Disabled": [
+        "Kapalı"
+      ],
       "Display name": [
         "Görüntülenecek ad"
       ],
@@ -6359,6 +6372,9 @@
       ],
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
+      ],
+      "Enabled": [
+        "Etkin"
       ],
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
@@ -6438,6 +6454,9 @@
       "Main": [
         "Ana"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "En fazla karakter sayısı ${ MAX_CHARS }'dır."
+      ],
       "Members without 2FA": [
         "İki adımlı doğrulama kullanmayan üyeler"
       ],
@@ -6449,6 +6468,12 @@
       ],
       "Method for importing metadata": [
         "Üst verileri içe aktarma yöntemi"
+      ],
+      "Minimum number of characters": [
+        "En az karakter sayısı"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "En az karakter sayısı ${ MIN_CHARS }'dir."
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
@@ -6495,6 +6520,9 @@
       "Notification": [
         "Bildirim"
       ],
+      "Numbers": [
+        "Rakamlar"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
       ],
@@ -6524,6 +6552,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password strength": [
+        "Parola gücü"
       ],
       "Payer": [
         "Ödeyen"
@@ -6606,6 +6637,9 @@
       "Second password": [
         "İkinci parola"
       ],
+      "Sequences": [
+        "Diziler"
+      ],
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
         "${ n } yöneticiyi görüntüle"
@@ -6618,6 +6652,9 @@
       ],
       "Spam": [
         "İstenmeyen e-posta"
+      ],
+      "Special characters": [
+        "Özel karakterler"
       ],
       "Start date": [
         "Başlangıç tarihi"
@@ -6654,6 +6691,9 @@
       ],
       "Type": [
         "Tür"
+      ],
+      "Uppercase and lowercase letters": [
+        "Büyük ve küçük harfler"
       ],
       "User": [
         "Kullanıcı"
@@ -6714,6 +6754,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -6857,6 +6900,9 @@
       ],
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "${ DOCS_SHORT_APP_NAME } üzerinde işbirliği nasıl yapılır"
+      ],
+      "How to create strong passwords": [
+        "Güçlü parolalar nasıl oluşturulur"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } ürünü nasıl kullanıma alınır"
@@ -7176,6 +7222,29 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Hesabı sil"
+      ],
+      "Downgrade account": [
+        "Hesap tarifesini düşür"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Ücretsiz ${ BRAND_NAME } edinin"
+      ],
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } tarifesinde kal"
+      ],
+      "Keep account": [
+        "Hesabı tut"
+      ],
+      "Switch plan": [
+        "Tarifeyi değiştir"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
@@ -7200,29 +7269,6 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } tarifesine yükselt"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Hesabı sil"
-      ],
-      "Downgrade account": [
-        "Hesap tarifesini düşür"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Ücretsiz ${ BRAND_NAME } edinin"
-      ],
-      "Get ${ planName }": [
-        "${ planName } alın"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } tarifesinde kal"
-      ],
-      "Keep account": [
-        "Hesabı tut"
-      ],
-      "Switch plan": [
-        "Tarifeyi değiştir"
       ]
     },
     "new_plans: feature": {
@@ -8416,7 +8462,21 @@
         "${ appName } hoş geldiniz"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "İzin verilen ${ defaultLabel }"
+      ],
       "Country configs": [
         "Ülke yapılandırmaları"
       ],
@@ -8447,11 +8507,20 @@
       "No permission": [
         "İzin verilmemiş"
       ],
+      "Not allowed": [
+        "İzin verilmiyor"
+      ],
+      "Optional ${ defaultLabel }": [
+        "İsteğe bağlı ${ defaultLabel }"
+      ],
       "Organization only": [
         "Yalnızca kuruluş"
       ],
       "Receive from all": [
         "Tümünden al"
+      ],
+      "Required": [
+        "Zorunlu"
       ],
       "Router": [
         "Yöneltici"
@@ -8473,17 +8542,6 @@
       ],
       "The whole organization": [
         "Tüm kuruluş"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Herkes"
-      ],
-      "Group members": [
-        "Grup üyeleri"
-      ],
-      "No one": [
-        "Hiç kimse"
       ]
     },
     "Organization capacity error": {
@@ -10030,6 +10088,9 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -10074,6 +10135,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
@@ -10695,6 +10759,11 @@
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } tasarruf edin"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Etkin"
@@ -11008,6 +11077,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "${ BRAND_NAME } Hesap parolası kuralları"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11165,10 +11237,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -11410,6 +11482,9 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
+      "Enter 2FA code": [
+        "İki adımlı doğrulama kodunu yazın"
+      ],
       "Enter endpoints into your identity provider": [
         "Kimlik hizmeti sağlayıcınızın uç noktalarını ekleyin"
       ],
@@ -11418,6 +11493,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
+      ],
+      "Enter your password": [
+        "Parolanızı yazın"
       ],
       "Error": [
         "Hata"
@@ -11799,6 +11877,9 @@
       "Video conferencing": [
         "Görüntülü görüşme"
       ],
+      "Warning": [
+        "Uyarı"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Değişikliği tamamlamak için yapmanız gereken işlemler e-postasını yeni adresinize göndereeceğiz."
       ],
@@ -11929,6 +12010,12 @@
       ],
       "Feature in early access": [
         "Erken erişim özelliği"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Örneğin, **12345, abcde** vb."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Örneğin, **parola, qwerty** vb."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Kimlik doğrulama hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamak için kullanacağı herkese açık anahtar. Kimlik hizmeti sağlayıcınızdan sertifika karmasını alın."
