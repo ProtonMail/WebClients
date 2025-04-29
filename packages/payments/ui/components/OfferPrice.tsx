@@ -7,7 +7,6 @@ import SkeletonLoader, {
 import noop from '@proton/utils/noop';
 
 import { getPlanNameFromIDs } from '../../core/plan/helpers';
-import { getPriceStartsFromPerMonth } from '../../core/price-helpers';
 import { type PlanToCheck, getPlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';
 
 export type Props = {
@@ -63,16 +62,7 @@ export const OfferPrice = ({
             return price.uiData.withDiscountOneMemberPerMonth;
         }
 
-        if (!planName) {
-            return 0;
-        }
-
-        const plan = payments.plansMap[planName];
-        if (!plan) {
-            return 0;
-        }
-
-        return getPriceStartsFromPerMonth(plan, planToCheck.cycle, payments.plansMap) ?? 0;
+        return payments.getFallbackPrice(planToCheck).uiData.withDiscountOneMemberPerMonth;
     })();
 
     const groupLoading = planToCheck.groupId ? payments.isGroupLoading(planToCheck.groupId) : false;
