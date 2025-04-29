@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Mover a otra caja fuerte"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
@@ -1811,6 +1811,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+      ],
       "Moving items": [
         "Moviendo elementos"
       ],
@@ -1821,7 +1825,7 @@
         "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
-        "Moviendo el elemento a la papelera"
+        "Moviendo los elementos a la papelera"
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "¿Necesitas enviar un correo electrónico a alguien pero no quieres que esa persona vea tu dirección de correo electrónico? Configura un alias de contacto."
@@ -1975,7 +1979,7 @@
         "Confirma tu segunda contraseña"
       ],
       "Please confirm your second password in order to auto-lock with biometrics.": [
-        "Confirma tu segunda contraseña para habilitar el bloqueo automático con datos biométricos."
+        "Confirma tu segunda contraseña para activar el bloqueo automático con datos biométricos."
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirma tu segunda contraseña para activar el bloqueo automático con tu contraseña."
@@ -3369,7 +3373,7 @@
         "Si está activado, todos tus archivos se descargarán al exportar. Esto puede tardar algún tiempo dependiendo de tu conexión a internet."
       ],
       "If your data contains file attachments, they will not be imported.": [
-        "Si sus datos contienen archivos adjuntos, estos no serán importados."
+        "Si tus datos contienen archivos adjuntos, estos no serán importados."
       ],
       "Include file attachments": [
         "Incluir archivos adjuntos"
@@ -3820,14 +3824,14 @@
       "Enter coupon code": [
         "Ingresa el código del cupón"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Ingresa tu contraseña de ${ BRAND_NAME }"
+      ],
       "Enter your backup password": [
         "Introduce la contraseña de respaldo."
       ],
       "Enter your extra password": [
         "Ingresa tu contraseña adicional."
-      ],
-      "Enter your password": [
-        "Introduce tu contraseña."
       ],
       "Enter your PIN": [
         "Ingresa el código PIN"
