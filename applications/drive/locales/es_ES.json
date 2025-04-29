@@ -187,7 +187,7 @@
         "Cerrar transferencias"
       ],
       "Collaborate on documents": [
-        "Colaborar con documentos"
+        "Colabora en documentos"
       ],
       "Collapse": [
         "Minimizar"
@@ -246,6 +246,9 @@
       "Copy link": [
         "Copiar enlace"
       ],
+      "Copy password": [
+        "Copiar la contraseña"
+      ],
       "Copy version number to clipboard": [
         "Copiar el número de versión en el portapapeles"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Crear una nueva carpeta"
+      ],
+      "Create new password": [
+        "Crear una contraseña nueva"
       ],
       "Create new text file": [
         "Crear un archivo de texto"
@@ -354,7 +360,7 @@
         "Descargar"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Descargar las apps de ${ DRIVE_APP_NAME }"
+        "Descargar las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
       "Download (${ count })": [
         "Descargar (${ count })"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
+      ],
+      "Generate password": [
+        "Generar contraseña"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtén ${ planName } por ${ priceCoupon }"
@@ -567,7 +576,7 @@
         "Administrar carpetas"
       ],
       "Manage groups": [
-        "Administrar grupos"
+        "Administrar los grupos"
       ],
       "Manage labels": [
         "Administrar etiquetas"
@@ -732,7 +741,7 @@
         "Eliminar los beneficios"
       ],
       "Remove button": [
-        "Eliminar botón"
+        "Eliminar el botón"
       ],
       "Remove device": [
         "Eliminar el dispositivo"
@@ -873,7 +882,7 @@
         "Establecer como portada"
       ],
       "Set recovery methods": [
-        "Establecer métodos de recuperación"
+        "Establecer los métodos de recuperación"
       ],
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
@@ -1026,7 +1035,7 @@
         "Cargar"
       ],
       "Upload and share files": [
-        "Subir y compartir archivos"
+        "Cargar y compartir archivos"
       ],
       "Upload anyway": [
         "Cargar de todos modos"
@@ -1053,10 +1062,10 @@
         "Utilizar tema ${ label }"
       ],
       "Use ${ PASS_APP_NAME } for Business": [
-        "Usar ${ PASS_APP_NAME } para Business"
+        "Usar ${ PASS_APP_NAME } for Business"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
-        "Usar ${ VPN_SHORT_APP_NAME } para privacidad de datos"
+        "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
       "Use a different card": [
         "Utilizar una tarjeta diferente"
@@ -1149,8 +1158,8 @@
         "${ price } por usuario"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } asiento del asistente de escritura",
-        "${ seats } asientos del asistente de escritura"
+        "${ seats } licencia del asistente de escritura",
+        "${ seats } licencias del asistente de escritura"
       ],
       "${ users } user": [
         "${ users } usuario",
@@ -3058,11 +3067,14 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Las invitaciones externas están desactivadas temporalmente. Inténtalo más tarde."
       ],
+      "Failed to copy photo to album": [
+        "Error al copiar la foto al álbum"
+      ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
       ],
       "Failed to save photo to your Drive": [
-        "No se pudo guardar la foto en tu Drive"
+        "No se ha podido guardar la foto en tu Drive."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no se puede cargar debido al error \"${ error }\"."
@@ -3195,9 +3207,6 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
-      ],
-      "Photo saved to your Drive": [
-        "Foto guardada en tu Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "La carga de fotos está temporalmente desactivada. Inténtalo de nuevo más tarde."
@@ -4594,6 +4603,9 @@
       "Are you sure you want to proceed?": [
         "¿Estás seguro de que quieres continuar?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -5040,6 +5052,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carga está en proceso, reemplazarla cancela la carga en curso."
       ],
+      "It's better to have:": [
+        "Es mejor tener:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borres permanentemente."
       ],
@@ -5203,6 +5218,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "of": [
         "de"
       ],
@@ -5251,6 +5269,12 @@
       "password": [
         "contraseña"
       ],
+      "Password copied to clipboard": [
+        "Contraseña copiada en el portapapeles"
+      ],
+      "Password must have:": [
+        "La contraseña debe tener:"
+      ],
       "Paused": [
         "En pausa"
       ],
@@ -5274,6 +5298,12 @@
       ],
       "Photo is set as album cover": [
         "Se ha establecido la foto como portada de álbum."
+      ],
+      "Photo saved to your Drive": [
+        "Foto guardada en tu Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "La foto se ha copiado al flujo y se ha marcado como favorita allí."
       ],
       "Photos have been successfully recovered.": [
         "Se han recuperado las fotos."
@@ -5578,6 +5608,9 @@
       "Surveillance": [
         "Vigilancia"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -5815,6 +5848,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede reducir el rendimiento."
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras mayúsculas y minúsculas"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Usa este formulario para notificarnos contenido inapropiado, ilegal\no malicioso en archivos compartidos. Vas a reportar:"
@@ -6595,6 +6631,9 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "My Albums": [
         "Mis álbumes"
       ],
@@ -6630,6 +6669,9 @@
       ],
       "Password": [
         "Contraseña"
+      ],
+      "Password strength": [
+        "Nivel de seguridad de la contraseña"
       ],
       "Payer": [
         "Emisor del pago"
@@ -6748,6 +6790,12 @@
       "Street address": [
         "Nombre de la calle"
       ],
+      "Strong": [
+        "Segura"
+      ],
+      "Strong password": [
+        "Contraseña segura"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -6804,6 +6852,18 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Vulnerable password": [
+        "Contraseña vulnerable"
+      ],
+      "Weak": [
+        "Poco segura"
+      ],
+      "Weak password": [
+        "Contraseña poco segura"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -6950,7 +7010,7 @@
         "Cómo usar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
-        "Cómo usar ${ PASS_APP_NAME } para Business"
+        "Cómo usar ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
         "Cómo usar el reenvío de correo electrónico"
@@ -7439,29 +7499,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenzar por ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planes desde ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Desde ${ pricing }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -7483,6 +7520,29 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planes desde ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7651,7 +7711,7 @@
         "Disponible en todas las plataformas"
       ],
       "Calendar sharing": [
-        "Compartir calendario"
+        "Calendarios compartidos"
       ],
       "Catch-all": [
         "Catch-all"
@@ -8588,6 +8648,9 @@
       ],
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Las fotos seleccionadas ya están en «${ albumName }»."
       ],
       "Share invitation accepted successfully": [
         "Se ha aceptado la invitación compartida."
@@ -10745,7 +10808,7 @@
         "Añadir a ${ groupName }"
       ],
       "Add user": [
-        "Añadir usuario"
+        "Añadir un usuario"
       ],
       "Addresses": [
         "Direcciones"
@@ -11318,7 +11381,7 @@
         "Selecciona la hora de expiración del enlace."
       ],
       "Set recovery methods": [
-        "Establecer métodos de recuperación"
+        "Establecer los métodos de recuperación"
       ],
       "Set recovery phrase": [
         "Crear una frase de recuperación"
@@ -11462,7 +11525,7 @@
         "Advertencia: sospecha de sitio web falso"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
-        "Te damos la bienvenida a ${ BRAND_NAME } para Business"
+        "Te damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "What can a VPN protect you from?": [
         "¿De qué te puede proteger una VPN?"

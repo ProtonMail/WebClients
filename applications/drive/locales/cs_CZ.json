@@ -252,6 +252,9 @@
       "Copy link": [
         "Kopírovat odkaz"
       ],
+      "Copy password": [
+        "Kopírovat heslo"
+      ],
       "Copy version number to clipboard": [
         "Zkopírovat číslo verze do schránky"
       ],
@@ -275,6 +278,9 @@
       ],
       "Create new folder": [
         "Vytvořit novou složku"
+      ],
+      "Create new password": [
+        "Vytvořit nové heslo"
       ],
       "Create new text file": [
         "Vytvořit nový textový soubor"
@@ -440,6 +446,9 @@
       ],
       "Forward as attachment": [
         "Přeposlat jako přílohu"
+      ],
+      "Generate password": [
+        "Generovat heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získat ${ planName } za ${ priceCoupon }"
@@ -2662,7 +2671,7 @@
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Podporujte používání dvoufaktorového ověřování ve vaší organizaci pro zvýšení bezpečnosti."
+        "Podporujte používání dvoufázového ověření ve vaší organizaci pro zvýšení bezpečnosti."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
@@ -3090,6 +3099,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Externí pozvánky jsou dočasně zakázány. Zkuste to prosím později"
       ],
+      "Failed to copy photo to album": [
+        "Kopírování fotky do alba selhalo"
+      ],
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
       ],
@@ -3233,9 +3245,6 @@
       ],
       "Payment process not supported": [
         "Platební proces není podporován"
-      ],
-      "Photo saved to your Drive": [
-        "Fotka uložena na váš Proton Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Nahrávání fotek je dočasně vypnuté. Zkuste to prosíme později."
@@ -4742,6 +4751,9 @@
       "Are you sure you want to proceed?": [
         "Jste si jisti, že chcete pokračovat?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -5198,6 +5210,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vypadá to, že jste se nedávno pokusili nahrát ${ uploadName }. Pokud se nahrávání nezdařilo, nahrajte prosím ${ replaceFile }. Pokud nahrávání stále probíhá, nahrazení zruší probíhající nahrávání."
       ],
+      "It's better to have:": [
+        "Je lepší mít:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Položky zůstanou v koši, dokud je trvale nesmažete"
       ],
@@ -5363,6 +5378,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
+      "Numbers": [
+        "Číslice"
+      ],
       "of": [
         "z"
       ],
@@ -5411,6 +5429,12 @@
       "password": [
         "heslo"
       ],
+      "Password copied to clipboard": [
+        "Heslo bylo zkopírováno do schránky"
+      ],
+      "Password must have:": [
+        "Heslo musí obsahovat:"
+      ],
       "Paused": [
         "Pozastaveno"
       ],
@@ -5434,6 +5458,12 @@
       ],
       "Photo is set as album cover": [
         "Fotka je nastavena jako obálka alba"
+      ],
+      "Photo saved to your Drive": [
+        "Fotka uložena na váš Proton Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Fotka byla zkopírována do streamu a tam označena jako oblíbená."
       ],
       "Photos have been successfully recovered.": [
         "Fotografie byly úspěšně obnoveny."
@@ -5645,6 +5675,9 @@
       "Setting up ${ feature }…": [
         "Nastavování ${ feature }…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Nastavování alb a filtrů. Může to trvat několik minut."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
@@ -5740,6 +5773,9 @@
       ],
       "Surveillance": [
         "Sledování"
+      ],
+      "Symbols (#$&)": [
+        "Symboly (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -5980,6 +6016,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
+      ],
+      "Uppercase and lowercase letters": [
+        "Velká a malá písmena"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Pomocí tohoto formuláře nás můžete upozornit na nevhodné, nezákonné,\nnebo jinak škodlivé sdílené soubory. Chystáte se nahlásit:"
@@ -6780,6 +6819,9 @@
       "Move to Inbox": [
         "Přesunout do Doručené pošty"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí mít alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
       "My Albums": [
         "Má alba"
       ],
@@ -6815,6 +6857,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password strength": [
+        "Síla hesla"
       ],
       "Payer": [
         "Plátce"
@@ -6933,6 +6978,12 @@
       "Street address": [
         "Ulice a č. p."
       ],
+      "Strong": [
+        "Silné"
+      ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti předplatného"
       ],
@@ -6989,6 +7040,18 @@
       ],
       "Viewer": [
         "Prohlížející"
+      ],
+      "Vulnerable": [
+        "Zranitelné"
+      ],
+      "Vulnerable password": [
+        "Zranitelné heslo"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "What happened?": [
         "Co se stalo?"
@@ -7577,29 +7640,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Tarify začínají od ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7621,6 +7661,29 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tarify začínají od ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8808,6 +8871,9 @@
       ],
       "Root folder failed to be loaded": [
         "Kořenovou složku se nepodařilo načíst"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Vybrané fotky jsou již v albu \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Pozvánka ke sdílení úspěšně přijata"
@@ -11762,6 +11828,9 @@
       ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"
+      ],
+      "Upgrading your Photos experience": [
+        "Vylepšování zážitků z fotek"
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
