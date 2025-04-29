@@ -1072,11 +1072,11 @@
       "Select country ${ country }": [
         "देश चुनें ${ country }"
       ],
-      "select file": [
-        "फ़ाइल चुनें"
-      ],
       "Select file": [
         "फाइल चुनें"
+      ],
+      "select file": [
+        "फ़ाइल चुनें"
       ],
       "Select files": [
         "फ़ाइल चुनें"
@@ -4383,9 +4383,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "एक सत्यापन ईमेल ${ boldForwardeeEmail } को भेजा जाएगा"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "एक नई एन्क्रिप्शन चाबी ${ boldForwarderEmail } के लिए उत्पन्न की जाएगी।"
-      ],
       "Automatically forward emails to another email address.": [
         "ईमेल को स्वचालित रूप से दूसरे ईमेल पते पर अग्रेषित करें।"
       ],
@@ -4496,17 +4493,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "${ forwarderEmail } के लिए एक नई एन्क्रिप्शन चाबी उत्पन्न की गई है।"
-      ],
       "Changes saved": [
         "बदलाव सहेजे गए"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "${ forward.ForwardeeEmail } को ईमेल भेजा गया"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "ईमेल ${ model.forwardeeEmail } को भेजा गया।"
       ],
       "Forwarding accepted": [
         "फॉरवर्डिंग स्वीकृत"
@@ -4533,9 +4521,6 @@
       ],
       "Forwarding activated": [
         "फॉरवर्ड सक्रिय"
-      ],
-      "Request confirmation": [
-        "पुष्टिकरण का अनुरोध करें"
       ],
       "Set up forwarding": [
         "फॉरवर्ड सेट करें"
@@ -6344,9 +6329,6 @@
       "Device": [
         "डिवाइस"
       ],
-      "Enabled Countries": [
-        "सक्रिय देश"
-      ],
       "Enter your email address": [
         "अपना ईमेल पता डालें"
       ],
@@ -6355,9 +6337,6 @@
       ],
       "Folders": [
         "फोल्डर"
-      ],
-      "Groups": [
-        "ग्रुप"
       ],
       "IP address": [
         "IP पता"
@@ -6385,9 +6364,6 @@
       ],
       "Permissions": [
         "इजाज़त"
-      ],
-      "Policy Name": [
-        "नीति का नाम"
       ],
       "Protection": [
         "सुरक्षा"
@@ -9413,10 +9389,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -10539,10 +10515,10 @@
       "Allow sharing outside the organization": [
         "संगठन के बाहर शेयर करने की अनुमति दें"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "अनुमत डोमेन"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "अनुमत डोमेन"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10554,10 +10530,10 @@
       "Amount due": [
         "देय राशि"
       ],
-      "AND": [
+      "And": [
         "और"
       ],
-      "And": [
+      "AND": [
         "और"
       ],
       "and": [
@@ -10977,10 +10953,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
       "Import all messages": [
@@ -11184,13 +11160,13 @@
       "Optional": [
         "वैकल्पिक"
       ],
-      "OR": [
-        "या"
-      ],
       "or": [
         "या"
       ],
       "Or": [
+        "या"
+      ],
+      "OR": [
         "या"
       ],
       "Organization name": [
@@ -11818,11 +11794,11 @@
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
       ],
-      "privacy policy": [
-        "निजता नीति"
-      ],
       "Privacy policy": [
         "गोपनीयता नीति"
+      ],
+      "privacy policy": [
+        "निजता नीति"
       ],
       "Reactivate now": [
         "अब पुनः सक्रिय करें"
@@ -13172,6 +13148,14 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -13190,14 +13174,6 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -13829,6 +13805,17 @@
         "डेस्कटॉप"
       ]
     },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "महीने की 10 तारीख"
@@ -14057,17 +14044,6 @@
       ],
       "Trash": [
         "कचरा"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
       ]
     },
     "Option delay send seconds": {
@@ -18039,10 +18015,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -18509,9 +18485,6 @@
       ],
       "Get the apps": [
         "ऐप प्राप्त करें"
-      ],
-      "Get Zooming faster": [
-        "जल्दी से ज़ूमिंग शुरू करें"
       ],
       "Gift": [
         "तोहफा"
