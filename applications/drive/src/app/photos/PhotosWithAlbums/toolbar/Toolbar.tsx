@@ -31,6 +31,7 @@ interface ToolbarProps {
     onAddAlbumPhotos: () => Promise<void>;
     openAddPhotosToAlbumModal: () => void;
     openSharePhotosIntoAnAlbumModal: () => void;
+    openSharePhotoModal: () => void;
     onFileUpload: ((file: OnFileUploadSuccessCallbackData) => void) | undefined;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onPreview: () => void;
@@ -61,6 +62,7 @@ export const Toolbar = ({
     onAddAlbumPhotos,
     openAddPhotosToAlbumModal,
     openSharePhotosIntoAnAlbumModal,
+    openSharePhotoModal,
     onFileUpload,
     onFileSkipped,
     onPreview,
@@ -120,6 +122,7 @@ export const Toolbar = ({
                     onAddAlbumPhotos={onAddAlbumPhotos}
                     openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
                     openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
+                    openSharePhotoModal={openSharePhotoModal}
                     onSavePhoto={onSavePhoto}
                     rootLinkId={rootLinkId}
                 />
