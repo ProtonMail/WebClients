@@ -309,6 +309,9 @@
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
+      "Generate password": [
+        "Згенерувати пароль"
+      ],
       "Get in touch": [
         "Зв'яжіться з нами"
       ],
@@ -2164,11 +2167,6 @@
         "Протермінований рахунок"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скористайтеся помічником з імпортування Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
@@ -2244,6 +2242,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4435,6 +4438,9 @@
       "password": [
         "пароль"
       ],
+      "Password copied to clipboard": [
+        "Пароль скопійовано до буфера обміну"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
       ],
@@ -5460,6 +5466,9 @@
       "Street address": [
         "Вулиця"
       ],
+      "Strong": [
+        "Надійний"
+      ],
       "Subscription options": [
         "Опції передплати"
       ],
@@ -5495,6 +5504,12 @@
       ],
       "Viewer": [
         "Користувач"
+      ],
+      "Vulnerable": [
+        "Вразливий"
+      ],
+      "Weak": [
+        "Слабкий"
       ],
       "What happened?": [
         "Що сталося?"
