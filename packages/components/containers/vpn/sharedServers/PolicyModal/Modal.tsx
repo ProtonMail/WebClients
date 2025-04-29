@@ -10,6 +10,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import CountriesStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/CountriesStep';
 import MembersStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/MembersStep';
 import NameStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/NameStep';
@@ -26,6 +27,7 @@ import { getCountryOptions } from '@proton/payments';
 import { MINUTE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import DiscardModal from './DiscardModal';
 import { getGroupedLocations } from './getGroupedLocations';
 import { POLICY_STEP } from './modalPolicyStepEnum';
 
@@ -36,17 +38,12 @@ interface SharedServersModalProps extends ModalProps {
     soloStep?: POLICY_STEP;
 }
 
-const SharedServersModal = ({
-    policy,
-    isEditing = false,
-    soloStep,
-    onSuccess,
-    ...rest
-}: SharedServersModalProps) => {
+const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ...rest }: SharedServersModalProps) => {
     const { createNotification } = useNotifications();
     const { locations, users, groups } = useSharedServers(10 * MINUTE);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
+    const [discardModal, showDiscardModal] = useModalTwoStatic(DiscardModal);
 
     const [step, setStep] = useState<POLICY_STEP>(soloStep ?? POLICY_STEP.NAME);
     const [policyName, setPolicyName] = useState('');
@@ -91,7 +88,11 @@ const SharedServersModal = ({
     }, [step]);
 
     const handleCancel = useCallback(() => {
-        rest.onClose?.();
+        showDiscardModal({
+            onSuccess: () => {
+                rest.onClose?.();
+            },
+        });
     }, [rest]);
 
     const handleSubmit = useCallback(async () => {
@@ -293,6 +294,7 @@ const SharedServersModal = ({
                         : c('Action').t`Continue`}
                 </Button>
             </ModalTwoFooter>
+            {discardModal}
         </ModalTwo>
     );
 };
