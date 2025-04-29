@@ -50,6 +50,9 @@
       "Back": [
         "Nazaj"
       ],
+      "Block contact": [
+        "Blokiraj stik"
+      ],
       "Bulk delete items from trash": [
         "Množično brisanje predmetov iz smetnjaka"
       ],
@@ -110,6 +113,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Continue offline": [
+        "Nadaljuj brez povezave"
+      ],
       "Continue without pinning": [
         "Nadaljujte brez pripenjanja"
       ],
@@ -125,11 +131,11 @@
       "Create": [
         "Ustvari"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Ustvarite račun ${ BRAND_NAME }."
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Ustvarite račun ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Ustvarite račun ${ BRAND_NAME }."
       ],
       "Create alias": [
         "Ustvari vzdevek"
@@ -275,6 +281,9 @@
       "Invite others": [
         "Povabi druge"
       ],
+      "Join our Reddit": [
+        "Pridružite se našemu kanalu Reddit"
+      ],
       "Join shared vault": [
         "Pridružite se skupnemu trezorju"
       ],
@@ -415,6 +424,9 @@
       ],
       "Reset": [
         "Ponastavi"
+      ],
+      "Reset history": [
+        "Ponastavi zgodovino"
       ],
       "Restore": [
         "Obnovi"
@@ -562,6 +574,12 @@
       ],
       "View older history": [
         "Prikaži starejšo zgodovino"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Z drugimi uporabniki ${ BRAND_NAME }"
+      ],
+      "Write us on X/Twitter": [
+        "Pišite nam na X/Twitter"
       ]
     },
     "Browser": {
@@ -1280,6 +1298,9 @@
       "Loading...": [
         "Nalaganje ..."
       ],
+      "Manager": [
+        "Vodja"
+      ],
       "me": [
         "jaz"
       ],
@@ -1742,10 +1763,13 @@
         "Samodejni predlog"
       ],
       "Backup password": [
-        "Varnostna kopija gesla"
+        "Varnostno geslo"
       ],
       "Birthdate": [
         "Rojstni datum"
+      ],
+      "Browser settings": [
+        "Nastavitve brskalnika"
       ],
       "Capital letters (A-Z)": [
         "Velike črke (A-Z)"
@@ -1894,6 +1918,9 @@
       "Floor, apartment, building": [
         "Nadstropje, stanovanje, stavba"
       ],
+      "For a one-off sharing": [
+        "Za enkratno deljenje"
+      ],
       "Forwards to": [
         "Posreduje na"
       ],
@@ -1920,6 +1947,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "ID Card": [
+        "Osebna izkaznica"
       ],
       "Identities": [
         "Identitete"
@@ -2134,6 +2164,9 @@
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Zaščitite ${ PASS_APP_NAME } z dodatnim geslom"
       ],
+      "Public domain": [
+        "Javna domena"
+      ],
       "Rate us": [
         "Ocenite nas"
       ],
@@ -2163,6 +2196,12 @@
       ],
       "Security code": [
         "Varnostna koda"
+      ],
+      "See member and permission overview": [
+        "Ogled članov in njihovih dovoljenj"
+      ],
+      "Select a domain": [
+        "Izberi domeno"
       ],
       "Select an email address": [
         "Izberite e-poštni naslov"
@@ -2215,6 +2254,12 @@
       "Support": [
         "Podpora"
       ],
+      "Target:": [
+        "Cilj:"
+      ],
+      "Tax number": [
+        "Davčna številka"
+      ],
       "Text": [
         "Besedilo"
       ],
@@ -2254,6 +2299,9 @@
       "Unnamed Credit Card": [
         "Neimenovana plačilna kartica"
       ],
+      "Unnamed identity": [
+        "Neimenovana identiteta"
+      ],
       "Unnamed item": [
         "Neimenovan predmet"
       ],
@@ -2265,6 +2313,9 @@
       ],
       "Update": [
         "Posodobi"
+      ],
+      "Useful for permanent sharing": [
+        "Uporabno za trajno skupno rabo"
       ],
       "Username": [
         "Uporabniško ime"
@@ -2313,6 +2364,9 @@
       ],
       "Your domain": [
         "Vaša domena"
+      ],
+      "ZIP": [
+        "ZIP datoteka"
       ],
       "ZIP or Postal code": [
         "Poštna številka"
@@ -2364,14 +2418,32 @@
       "Attachments": [
         "Priponke"
       ],
+      "Delete all files": [
+        "Izbriši vse datoteke"
+      ],
       "Download": [
         "Naloži"
+      ],
+      "Download file": [
+        "Naloži datoteko"
+      ],
+      "Exporting files": [
+        "Izvažanje datotek"
       ],
       "File": [
         "Datoteka"
       ],
+      "File attachments": [
+        "Priponke datotek"
+      ],
+      "Remove all files": [
+        "Odstrani vse datoteke"
+      ],
       "Rename": [
         "Preimenuj"
+      ],
+      "Restore": [
+        "Obnovi"
       ]
     },
     "Placeholder": {
@@ -2413,6 +2485,9 @@
       ],
       "MM/YY": [
         "MM/LL"
+      ],
+      "my-domain.com": [
+        "moj-domena.si"
       ],
       "Password": [
         "Geslo"
@@ -2466,6 +2541,9 @@
       "Inactive": [
         "Neaktivno"
       ],
+      "Rejected": [
+        "Zavrnjeno"
+      ],
       "Signed out": [
         "Odjavljeni ste"
       ],
@@ -2508,6 +2586,9 @@
       ],
       "Confirm extra password": [
         "Potrdite dodatno geslo"
+      ],
+      "Confirm identity": [
+        "Potrdi identiteto"
       ],
       "Confirm PIN code": [
         "Potrdi PIN kodo"
@@ -2557,11 +2638,11 @@
       "Email": [
         "E-pošta"
       ],
+      "Encrypted import": [
+        "Šifriran uvoz"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Uživate v ${ PASS_APP_NAME }?"
-      ],
-      "Enter your password": [
-        "Vnesite geslo"
       ],
       "Enter your PIN": [
         "Vnesite PIN"
@@ -2604,6 +2685,9 @@
       ],
       "Last modified": [
         "Zadnjič spremenjeno"
+      ],
+      "Leave this item?": [
+        "Zapustim ta predmet?"
       ],
       "Leave vault?": [
         "Zapuščate trezor?"
@@ -2676,6 +2760,9 @@
       ],
       "Share with": [
         "Deli z"
+      ],
+      "Shared via": [
+        "Deljeno preko"
       ],
       "SPF (Optional)": [
         "SPF (neobvezno)"
