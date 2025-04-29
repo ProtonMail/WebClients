@@ -252,6 +252,9 @@
       "Copy link": [
         "Kopírovať odkaz"
       ],
+      "Copy password": [
+        "Kopírovať heslo"
+      ],
       "Copy version number to clipboard": [
         "Skopírovať číslo verzie do schránky"
       ],
@@ -275,6 +278,9 @@
       ],
       "Create new folder": [
         "Vytvoriť nový priečinok"
+      ],
+      "Create new password": [
+        "Vytvoriť nové heslo"
       ],
       "Create new text file": [
         "Vytvoriť nový textový súbor"
@@ -440,6 +446,9 @@
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
+      ],
+      "Generate password": [
+        "Vygenerovať heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získať ${ planName } za ${ priceCoupon }"
@@ -3234,9 +3243,6 @@
       "Payment process not supported": [
         "Proces platby nie je podporovaný"
       ],
-      "Photo saved to your Drive": [
-        "Fotografia uložená na vašom Drive"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Nahrávanie fotografií je dočasne nedostupné. Skúste to prosím, neskôr."
       ],
@@ -4496,6 +4502,12 @@
         "${ pausedCount } pozastavených",
         "${ pausedCount } pozastavených"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } položka",
+        "${ photoCount } položky",
+        "${ photoCount } položiek",
+        "${ photoCount } položiek"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -4735,6 +4747,9 @@
       ],
       "Are you sure you want to proceed?": [
         "Naozaj chcete pokračovať?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
@@ -5192,6 +5207,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vyzerá to, že ste sa nedávno pokúsili načítať ${ uploadName }. Ak načítanie zlyhalo, prosím, ${ replaceFile }. Ak načítanie stále prebieha, jeho nahradenie zruší prebiehajúce načítanie."
       ],
+      "It's better to have:": [
+        "Je lepšie, ak máte:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Položky v koši zostanú, až kým ich natrvalo nevymažete"
       ],
@@ -5357,6 +5375,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
+      "Numbers": [
+        "Čísla"
+      ],
       "of": [
         "z"
       ],
@@ -5404,6 +5425,9 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bolo skopírované do schránky"
       ],
       "Paused": [
         "Pozastavené"
@@ -5639,6 +5663,9 @@
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
       ],
+      "Setting up Albums & Filters. This might take a few minutes.": [
+        "Nastavujú sa albumy a filtre. Môže to trvať niekoľko minút."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavenie PGP vám umožní odosielať end-to-end šifrované emaily používateľom, ktorí nemajú ${ BRAND_NAME } a používajú službu kompatibilnú s PGP."
       ],
@@ -5734,6 +5761,9 @@
       ],
       "Surveillance": [
         "Monitorovanie"
+      ],
+      "Symbols (#$&)": [
+        "Znaky (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -5974,6 +6004,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávanie stoviek súborov naraz môže znížiť výkonnosť."
+      ],
+      "Uppercase and lowercase letters": [
+        "Veľké a malé písmená"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Použite tento formulár, aby ste nás informovali o nevhodných, nelegálnych\nalebo inak škodlivých zdieľaných súboroch. Chystáte sa nahlásiť:"
@@ -6774,6 +6807,9 @@
       "Move to Inbox": [
         "Presunúť do Doručených"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "My Albums": [
         "Moje albumy"
       ],
@@ -6927,6 +6963,12 @@
       "Street address": [
         "Ulica a č."
       ],
+      "Strong": [
+        "Silné"
+      ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti predplatného"
       ],
@@ -6983,6 +7025,18 @@
       ],
       "Viewer": [
         "Čitateľ"
+      ],
+      "Vulnerable": [
+        "Zraniteľné"
+      ],
+      "Vulnerable password": [
+        "Zraniteľné heslo"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "What happened?": [
         "Čo sa stalo?"
@@ -7571,29 +7625,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Predplatné začína od ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšiť na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -7615,6 +7646,29 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Predplatné začína od ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -10700,6 +10754,11 @@
         "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Ušetrite ${ priceString }"
+      ]
+    },
     "Subtitle": {
       "Albums shared with you will appear here": [
         "Tu sa zobrazia vám zdieľané albumy"
@@ -11751,6 +11810,9 @@
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
+      ],
+      "Upgrading your Photos experience": [
+        "Vylepšovanie zážitkov z fotiek"
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"

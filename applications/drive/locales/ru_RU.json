@@ -228,6 +228,9 @@
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Copy password": [
+        "Скопировать пароль"
+      ],
       "Copy version number to clipboard": [
         "Скопировать номер версии в буфер обмена"
       ],
@@ -251,6 +254,9 @@
       ],
       "Create new folder": [
         "Создать новую папку"
+      ],
+      "Create new password": [
+        "Создать новый пароль"
       ],
       "Create new text file": [
         "Создать новый текстовый файл"
@@ -413,6 +419,9 @@
       ],
       "Forward as attachment": [
         "Переслать как вложение"
+      ],
+      "Generate password": [
+        "Создать пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Получить ${ planName } за ${ priceCoupon }"
@@ -4446,6 +4455,9 @@
       "Are you sure you want to proceed?": [
         "Вы уверены, что хотите продолжить?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "По крайней мере ${ BETTER_PASSWORD_LENGTH } символов"
+      ],
       "Attention required": [
         "Требуется внимание"
       ],
@@ -4890,6 +4902,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Похоже, что вы недавно пытались загрузить ${ uploadName }. Если загрузка не удалась, ${ replaceFile }. Если загрузка ещё продолжается, замена файла отменит текущую загрузку."
       ],
+      "It's better to have:": [
+        "Лучше иметь:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будут находиться в Корзине до тех пор, пока вы не удалите их окончательно"
       ],
@@ -5043,6 +5058,9 @@
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
+      "Numbers": [
+        "Цифры"
+      ],
       "of": [
         "из"
       ],
@@ -5081,6 +5099,9 @@
       ],
       "password": [
         "пароль"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопирован в буфер обмена"
       ],
       "Paused": [
         "Приостановлено"
@@ -5379,6 +5400,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
+      "Symbols (#$&)": [
+        "Символы (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -5591,6 +5615,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Одновременная загрузка сотен файлов может повлиять на производительность."
+      ],
+      "Uppercase and lowercase letters": [
+        "Заглавные и строчные буквы"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Используйте эту форму, чтобы уведомить нас о неприемлемых, незаконных,\nили других вредоносных файлах общего доступа. Вы собираетесь сообщить:"
@@ -6331,6 +6358,9 @@
       "Move to Inbox": [
         "Переместить во Входящие"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Должно содержать не менее ${ MIN_PASSWORD_LENGTH } символов"
+      ],
       "My Albums": [
         "Мои Альбомы"
       ],
@@ -6484,6 +6514,12 @@
       "Street address": [
         "Адрес"
       ],
+      "Strong": [
+        "Надежный"
+      ],
+      "Strong password": [
+        "Надежный пароль"
+      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -6540,6 +6576,18 @@
       ],
       "Viewer": [
         "Читатель"
+      ],
+      "Vulnerable": [
+        "Уязвимый"
+      ],
+      "Vulnerable password": [
+        "Уязвимый пароль"
+      ],
+      "Weak": [
+        "Слабый"
+      ],
+      "Weak password": [
+        "Слабый пароль"
       ],
       "What happened?": [
         "Что случилось?"
@@ -7065,26 +7113,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7106,6 +7134,26 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {

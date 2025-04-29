@@ -246,6 +246,9 @@
       "Copy link": [
         "Copia link"
       ],
+      "Copy password": [
+        "Copia la password"
+      ],
       "Copy version number to clipboard": [
         "Copia il numero di versione negli appunti"
       ],
@@ -269,6 +272,9 @@
       ],
       "Create new folder": [
         "Crea nuova cartella"
+      ],
+      "Create new password": [
+        "Crea una nuova password"
       ],
       "Create new text file": [
         "Crea un nuovo file di testo"
@@ -430,6 +436,9 @@
       ],
       "Forward as attachment": [
         "Inoltra come allegato"
+      ],
+      "Generate password": [
+        "Genera password"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Ottieni ${ planName } per ${ priceCoupon }"
@@ -3058,6 +3067,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Gli inviti esterni sono temporaneamente disabilitati. Riprova più tardi"
       ],
+      "Failed to copy photo to album": [
+        "Impossibile copiare la foto nell'album"
+      ],
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
       ],
@@ -3195,9 +3207,6 @@
       ],
       "Payment process not supported": [
         "Processo di pagamento non supportato"
-      ],
-      "Photo saved to your Drive": [
-        "Foto salvata nel tuo Drive"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi."
@@ -4594,6 +4603,9 @@
       "Are you sure you want to proceed?": [
         "Sei sicuro di voler procedere?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Almeno ${ BETTER_PASSWORD_LENGTH } caratteri"
+      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -5040,6 +5052,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sembra che tu abbia recentemente provato a caricare ${ uploadName }. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
       ],
+      "It's better to have:": [
+        "È meglio avere:"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Gli elementi eliminati rimarranno nel cestino finché non li elimini definitivamente"
       ],
@@ -5203,6 +5218,9 @@
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
       ],
+      "Numbers": [
+        "Numeri"
+      ],
       "of": [
         "di"
       ],
@@ -5251,6 +5269,12 @@
       "password": [
         "password"
       ],
+      "Password copied to clipboard": [
+        "Password copiata negli appunti"
+      ],
+      "Password must have:": [
+        "La password deve contenere:"
+      ],
       "Paused": [
         "In pausa"
       ],
@@ -5274,6 +5298,12 @@
       ],
       "Photo is set as album cover": [
         "La foto è impostata come copertina dell'album."
+      ],
+      "Photo saved to your Drive": [
+        "Foto salvata nel tuo Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "La foto è stata copiata nello stream ed è stata contrassegnata come preferita."
       ],
       "Photos have been successfully recovered.": [
         "Le foto sono state recuperate con successo."
@@ -5578,6 +5608,9 @@
       "Surveillance": [
         "Sorveglianza"
       ],
+      "Symbols (#$&)": [
+        "Simboli (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
@@ -5815,6 +5848,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Caricare centinaia di file in una sola volta può avere un impatto sulle prestazioni."
+      ],
+      "Uppercase and lowercase letters": [
+        "Lettere maiuscole e minuscole"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilizza questo modulo per informarci di contenuti inappropriati, illegali,\no altri file condivisi dannosi. Stai per segnalare:"
@@ -6592,6 +6628,9 @@
       "Move to Inbox": [
         "Sposta nella posta in arrivo"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
+      ],
       "My Albums": [
         "I miei album"
       ],
@@ -6627,6 +6666,9 @@
       ],
       "Password": [
         "Password"
+      ],
+      "Password strength": [
+        "Sicurezza della password"
       ],
       "Payer": [
         "Pagante"
@@ -6745,6 +6787,12 @@
       "Street address": [
         "Indirizzo"
       ],
+      "Strong": [
+        "Sicura"
+      ],
+      "Strong password": [
+        "Password complessa"
+      ],
       "Subscription options": [
         "Opzioni di abbonamento"
       ],
@@ -6801,6 +6849,18 @@
       ],
       "Viewer": [
         "Visualizzatore"
+      ],
+      "Vulnerable": [
+        "Vulnerabile"
+      ],
+      "Vulnerable password": [
+        "Password vulnerabile"
+      ],
+      "Weak": [
+        "Debole"
+      ],
+      "Weak password": [
+        "Password debole"
       ],
       "What happened?": [
         "Cos'è successo?"
@@ -7427,29 +7487,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Inizia per ${ priceCoupon }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Piani a partire da ${ priceDrivePlus }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partire da ${ pricing }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Effettua l'upgrade a ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -7471,6 +7508,29 @@
       ],
       "Switch plan": [
         "Cambia piano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Inizia per ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Piani a partire da ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partire da ${ pricing }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -8064,6 +8124,11 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -8076,11 +8141,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8581,6 +8641,9 @@
       ],
       "Root folder failed to be loaded": [
         "Caricamento della cartella principale non riuscito"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Le foto selezionate sono già presenti in \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Invito alla condivisione accettato con successo"
