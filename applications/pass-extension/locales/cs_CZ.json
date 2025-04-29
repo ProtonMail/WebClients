@@ -152,11 +152,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Vytvořit účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Vytvořit alias"
@@ -1831,12 +1831,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
-      ],
       "Moving items": [
         "Přesouvání položek"
       ],
@@ -1994,7 +1988,7 @@
         "Pro automatické zamykání vaším heslem prosím potvrďte své druhé heslo."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
-        "Potvrďte prosím své druhé heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }"
+        "Pro exportování vašich dat z ${ PASS_APP_NAME } prosím potvrďte své druhé heslo"
       ],
       "Please confirm your second password in order to unregister your current lock.": [
         "Pro zrušení stávajícího zámku prosím potvrďte své druhé heslo."
@@ -3865,14 +3859,14 @@
       "Enter coupon code": [
         "Zadejte kód kupónu"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Zadejte své ${ BRAND_NAME } heslo"
+      ],
       "Enter your backup password": [
         "Zadejte své záložní heslo"
       ],
       "Enter your extra password": [
         "Zadejte své dodatečné heslo"
-      ],
-      "Enter your password": [
-        "Zadejte Vaše heslo"
       ],
       "Enter your PIN": [
         "Zadejte svůj PIN"
