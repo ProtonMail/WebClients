@@ -32,9 +32,8 @@ const PolicyEditButton = ({
                 }}
                 shape="ghost"
                 size="small"
-                icon
             >
-                <Icon name="pencil" alt={c('Action').t`Edit`} />
+                {c('Action').t`Edit`} <Icon name="three-dots-vertical" alt={c('Action').t`Edit`} />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <EditPolicyDropdownMenu

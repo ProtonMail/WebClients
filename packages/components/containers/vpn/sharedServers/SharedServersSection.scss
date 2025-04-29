@@ -2,10 +2,17 @@
 
 .publish-banner {
 	justify-content: space-between;
-	block-size: 52px;
+	min-block-size: 52px;
 
 	&.unpublished {
 		background-color: color-mix(in srgb, var(--signal-warning) 15%, transparent);
+
+		@media (max-width: 1024px) {
+			.unpublished-cta {
+				flex-shrink: 1;
+				justify-content: end;
+			}
+		}
 	}
 
 	&:not(.unpublished) {
