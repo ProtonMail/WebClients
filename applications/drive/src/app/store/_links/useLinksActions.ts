@@ -389,20 +389,28 @@ export function useLinksActions({
                     const originalParentIds: { [linkId: string]: string } = {};
                     const { address } = await getShareCreatorKeys(abortSignal, newShareId);
                     const Links: MovePhotoLink[] = [];
-                    for (const linkId of linkIds) {
-                        const { data, link } = await preventLeave(
-                            getMoveLinkData(abortSignal, {
-                                shareId,
-                                newParentLinkId,
-                                linkId,
-                                newShareId,
-                                silence,
-                            })
-                        );
 
-                        originalParentIds[linkId] = link.parentLinkId;
+                    const datas = await preventLeave(
+                        batchPromiseHelper(
+                            linkIds,
+                            async (linkId) =>
+                                getMoveLinkData(abortSignal, {
+                                    shareId,
+                                    newParentLinkId,
+                                    linkId,
+                                    newShareId,
+                                    silence,
+                                }),
+                            10,
+                            abortSignal
+                        )
+                    );
+
+                    for (const { data, link } of datas) {
+                        originalParentIds[link.linkId] = link.parentLinkId;
                         Links.push({ ...data, OriginalHash: link.hash, LinkID: link.linkId });
                     }
+
                     const successes: string[] = [];
                     const failures: { [linkId: string]: any } = {};
                     const { Responses } = await preventLeave(
@@ -560,7 +568,7 @@ export function useLinksActions({
                                             newShareId: newShareId === shareId ? undefined : newShareId,
                                             linkId,
                                         },
-                                        extra: { e, errorType: 'decrypton' },
+                                        extra: { e, errorType: 'decryption' },
                                     })
                                 )
                             ),
@@ -574,7 +582,7 @@ export function useLinksActions({
                                                   newShareId: newShareId === shareId ? undefined : newShareId,
                                                   linkId,
                                               },
-                                              extra: { e, errorType: 'decrypton' },
+                                              extra: { e, errorType: 'decryption' },
                                           })
                                       )
                                   )
@@ -630,7 +638,7 @@ export function useLinksActions({
                                     newShareId: newShareId === shareId ? undefined : newShareId,
                                     linkId,
                                 },
-                                extra: { e, errorType: 'decrypton' },
+                                extra: { e, errorType: 'decryption' },
                             })
                         )
                     );
@@ -950,7 +958,7 @@ function logPhotoTransfersMetric(
         : ('success' as HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson['Labels']['status']);
 
     if (error instanceof EnrichedError) {
-        if (error.context?.extra?.errorType === 'decrypton') {
+        if (error.context?.extra?.errorType === 'decryption') {
             status = 'decryption_error';
         }
         if (error.context?.extra?.errorType === 'encryption') {

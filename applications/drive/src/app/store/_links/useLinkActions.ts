@@ -456,30 +456,38 @@ export default function useLinkActions() {
         const failures: { [linkId: string]: string | undefined } = {};
         const successes: string[] = [];
 
-        await batchPromiseHelper(linkIds, async (linkId: string) => {
-            try {
-                const result = await copyLinkToVolume(
-                    abortSignal,
-                    shareId,
-                    linkId,
-                    targetVolumeId,
-                    targetParentShareId,
-                    targetParentLinkId
-                );
+        await preventLeave(
+            batchPromiseHelper(
+                linkIds,
+                async (linkId: string) => {
+                    try {
+                        const result = await copyLinkToVolume(
+                            abortSignal,
+                            shareId,
+                            linkId,
+                            targetVolumeId,
+                            targetParentShareId,
+                            targetParentLinkId
+                        );
 
-                if (result) {
-                    successes.push(result);
-                }
-            } catch (error) {
-                sendErrorReport(error, {
-                    extra: {
-                        message: 'copyLinksToVolume() - Failed to copy a link',
-                    },
-                });
-                failures[linkId] = error instanceof Error ? error.message : c('Error').t`Failed to copy photo to album`;
-                return undefined;
-            }
-        });
+                        if (result) {
+                            successes.push(result);
+                        }
+                    } catch (error) {
+                        sendErrorReport(error, {
+                            extra: {
+                                message: 'copyLinksToVolume() - Failed to copy a link',
+                            },
+                        });
+                        failures[linkId] =
+                            error instanceof Error ? error.message : c('Error').t`Failed to copy photo to album`;
+                        return undefined;
+                    }
+                },
+                10,
+                abortSignal
+            )
+        );
 
         return {
             successes,
