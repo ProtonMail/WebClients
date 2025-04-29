@@ -20,7 +20,7 @@ import {
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { UpgradeButton } from '../Layout/Button/UpgradeButton';
+import { UpgradeButton } from '../Upsell/UpgradeButton';
 import { ImportVaultPickerOption } from './ImportVaultsPickerOption';
 
 type VaultPickerValue = ImportVault & { selected: boolean };
