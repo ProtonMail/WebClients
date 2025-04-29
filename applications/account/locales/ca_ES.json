@@ -463,6 +463,9 @@
       "Discard changes": [
         "Descarta els canvis"
       ],
+      "Discard Changes": [
+        "Descarta els canvis"
+      ],
       "Discover ${ planName }": [
         "Descobriu ${ planName }"
       ],
@@ -485,7 +488,7 @@
         "Baixa"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
-        "Baixa les aplicacions del ${ DRIVE_APP_NAME }"
+        "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
       "Download CSV sample": [
         "Descarrega una mostra de CSV"
@@ -771,6 +774,9 @@
       ],
       "Keep": [
         "Mantenir"
+      ],
+      "Keep Editing": [
+        "Continua editant"
       ],
       "Keep logo": [
         "Manté el logo"
@@ -1126,11 +1132,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "select file": [
-        "selecciona un fitxer"
-      ],
       "Select file": [
         "Selecciona un fitxer"
+      ],
+      "select file": [
+        "selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -4601,6 +4607,9 @@
       "Edit conditions": [
         "Edita les condicions"
       ],
+      "Got it": [
+        "D'acord"
+      ],
       "Next": [
         "Següent"
       ],
@@ -4673,17 +4682,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "S'enviarà un correu de confirmació a ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Es generarà una clau de xifratge nova per a ${ boldForwarderEmail }."
-      ],
       "Automatically forward emails to another email address.": [
         "Reenvieu automàticament els correus electrònics a una altra adreça de correu electrònic."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "El xifratge d'extrem a extrem s'ha desactivat per a la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero continua habilitat. ${ learnMoreLink }"
+      ],
+      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Per compatibilitat, s'ha generat una nova clau de xifratge per a ${ boldForwarderEmail }."
+      ],
+      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Per compatibilitat, es generarà una nova clau de xifratge per a ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Per compatibilitat, s'ha desactivat el xifratge postquàntic i s'ha generat una nova clau de xifratge per a ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "Per compatibilitat, s'ha desactivat el xifratge postquàntic per a ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
+        "Per compatibilitat, el xifratge postquàntic es desactivarà per a ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Per compatibilitat, el xifratge postquàntic es desactivarà i es generarà una nova clau de xifratge per a ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "El destinatari està convidat i ha d'acceptar/rebutjar la invitació o l'actualització"
       ],
       "Forwarding is active": [
         "El reenviament està actiu."
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "El reenviament a ${ boldForwardeeEmail } s'activarà un cop el destinatari accepti la sol·licitud."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "El reenviament a una adreça sense xifratge d'extrem a extrem desactivarà l'encriptació d'extrem a extrem per a la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero continua activat. ${ learnMoreLink }"
@@ -4760,6 +4790,14 @@
         "Introduïu text o una paraula clau per a aquesta condició:"
       ]
     },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "S'està enviant un correu de confirmació"
+      ],
+      "Setting up forwarding": [
+        "Configuració del reenviament"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Es tornarà a activar el xifratge d'extrem a extrem per a l'adreça del remitent."
@@ -4786,17 +4824,11 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "S'ha generat una clau de xifratge nova per a ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "S'han desat els canvis."
       ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "S'ha enviat el correu electrònic a ${ forward.ForwardeeEmail }."
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "S'ha enviat el correu electrònic a ${ model.forwardeeEmail }."
+      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
+        "S'ha enviat el correu a ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
         "S'ha acceptat el reenviament"
@@ -4824,8 +4856,14 @@
       "Forwarding activated": [
         "S'ha activat el reenviament."
       ],
-      "Request confirmation": [
-        "Sol·licita una confirmació"
+      "Request confirmation?": [
+        "Voleu sol·licitar confirmació?"
+      ],
+      "Request sent": [
+        "S'ha enviat la sol·licitud."
+      ],
+      "Requesting confirmation": [
+        "S'està sol·licitant la confirmació"
       ],
       "Set up forwarding": [
         "Configura el reenviament"
@@ -6643,9 +6681,6 @@
       "Device": [
         "Dispositiu"
       ],
-      "Enabled Countries": [
-        "Països activats"
-      ],
       "Enter your email address": [
         "Introduïu la vostra adreça de correu electrònic"
       ],
@@ -6654,9 +6689,6 @@
       ],
       "Folders": [
         "Carpetes"
-      ],
-      "Groups": [
-        "Grups"
       ],
       "IP address": [
         "Adreça IP"
@@ -6684,9 +6716,6 @@
       ],
       "Permissions": [
         "Permisos"
-      ],
-      "Policy Name": [
-        "Nom de la política"
       ],
       "Protection": [
         "Protecció"
@@ -7430,6 +7459,9 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mes)"
       ],
+      "(default)": [
+        "(per defecte)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtre si es compleixen totes les condicions següents)"
       ],
@@ -7442,11 +7474,15 @@
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** no s'admet a la vostra organització **${ organizationName }**."
       ],
-      "**${ appName }** is not supported**.": [
-        "**${ appName }** no és compatible**."
+      "**${ appName }** is not supported.": [
+        "**${ appName }** no és compatible."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obteniu una adreça de ${ BRAND_NAME }** per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } més",
+        "+ ${ invisibleCount } més"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -7911,9 +7947,6 @@
       "Create your first Gateway": [
         "Creeu la vostra primera passarel·la"
       ],
-      "Created (not published)": [
-        "Creat (no publicat)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "S'està creant un servidor de passarel·la: ${ serverNumber } / ${ total }",
         "S'estan creant servidors de passarel·la: ${ serverNumber } / ${ total }"
@@ -7986,9 +8019,6 @@
       ],
       "Delete link?": [
         "Voleu eliminar l'enllaç?"
-      ],
-      "Deleted (not published)": [
-        "Eliminat (no publicat)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
@@ -8111,9 +8141,6 @@
       ],
       "Edit link": [
         "Editar l'enllaç"
-      ],
-      "Edited (not published)": [
-        "Editat (no publicat)"
       ],
       "eduGAIN configuration saved": [
         "S'ha desat la configuració d'EduGain."
@@ -8840,6 +8867,9 @@
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
+      "No single sign-on": [
+        "Sense inici de sessió únic"
+      ],
       "Not a valid URL": [
         "No és un URL vàlid."
       ],
@@ -8969,14 +8999,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters."
       ],
+      "Password must have:": [
+        "La contrasenya ha de tenir:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Premi Editors' Choice de PC Magazine amb una puntuació de 5 sobre 5 estrelles"
-      ],
-      "Pending removal": [
-        "L'eliminació està pendent."
       ],
       "per month": [
         "al mes"
@@ -9509,6 +9539,9 @@
       "The securest way to browse, stream, and be online.": [
         "La manera més segura de navegar, reproduir i estar en línia."
       ],
+      "The unpublished changes you made will be lost.": [
+        "Els canvis no publicats que heu fet es perdran."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
       ],
@@ -9583,6 +9616,9 @@
       ],
       "This promotion link has expired.": [
         "L'enllaç de la promoció ha caducat."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Aquest servei no està disponible per als usuaris que inicien la sessió amb l’inici de sessió únic."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Aquest testimoni no estarà disponible després de tancar aquesta finestra i no l'heu de compartir amb ningú."
@@ -9764,9 +9800,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "No es pot verificar la signatura del fitxer de recuperació. Poseu-vos en contacte amb atenció al client."
       ],
-      "Unchanged": [
-        "Sense canvis"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
       ],
@@ -9857,11 +9890,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "Username": [
-        "Nom d'usuari"
-      ],
       "username": [
         "nom d'usuari"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -10148,6 +10181,9 @@
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Podeu activar la secció Fotos des de la interfície utilitzant el commutador següent."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "Podeu aplicar les regles de contrasenya que els membres de la vostra organització utilitzaran quan creïn o restableixin la contrasenya del seu compte de ${ BRAND_NAME }."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Podeu obtenir tots els nostres serveis de privadesa prèmium en un sol paquet—i només costa **${ priceString }/mes**."
@@ -11027,10 +11063,10 @@
       "Allow sharing outside the organization": [
         "Permet la compartició fora de l'organització"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -11042,10 +11078,10 @@
       "Amount due": [
         "Import a deure"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -11185,6 +11221,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Common passwords": [
+        "Contrasenyes comunes"
       ],
       "Company": [
         "Empresa"
@@ -11372,6 +11411,9 @@
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
+      "Enabled": [
+        "Habilitat"
+      ],
       "End date": [
         "Data de finalització"
       ],
@@ -11468,11 +11510,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -11570,6 +11612,9 @@
       "Maximum number of characters": [
         "Nombre màxim de caràcters"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "El nombre màxim de caràcters és ${ MAX_CHARS }"
+      ],
       "Maximum number of words": [
         "Nombre màxim de paraules"
       ],
@@ -11593,6 +11638,9 @@
       ],
       "Minimum number of characters": [
         "Nombre mínim de caràcters"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "El nombre mínim de caràcters és ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
         "Nombre mínim de paraules"
@@ -11675,13 +11723,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Organization name": [
@@ -11698,6 +11746,9 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password strength": [
+        "Solidesa de la contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -11821,6 +11872,9 @@
       ],
       "Send in": [
         "Envia en"
+      ],
+      "Sequences": [
+        "Seqüències"
       ],
       "Show ${ n } administrator": [
         "Mostra ${ n } administrador",
@@ -11960,6 +12014,9 @@
       ],
       "Uppercase": [
         "Majúscules"
+      ],
+      "Uppercase and lowercase letters": [
+        "Majúscules i minúscules"
       ],
       "URL": [
         "URL"
@@ -12294,6 +12351,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Com col·laborar al ${ DOCS_SHORT_APP_NAME }?"
       ],
+      "How to create strong passwords": [
+        "Com crear contrasenyes fortes?"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Com habilitar ${ PROTON_SENTINEL_NAME }?"
       ],
@@ -12357,11 +12417,11 @@
       "perform a password reset from your active session": [
         "realitzar un restabliment de contrasenya des de la vostra sessió activa"
       ],
-      "privacy policy": [
-        "política de privacitat"
-      ],
       "Privacy policy": [
         "Política de privacitat"
+      ],
+      "privacy policy": [
+        "política de privacitat"
       ],
       "Reactivate now": [
         "Reactiva ara"
@@ -13729,6 +13789,14 @@
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -13747,14 +13815,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14392,6 +14452,17 @@
         "Escriptori"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "No one": [
+        "Ningú"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10 del mes"
@@ -14489,6 +14560,9 @@
       "Add to existing group": [
         "Afegeix a un grup existent"
       ],
+      "Allowed ${ defaultLabel }": [
+        "${ defaultLabel } permès"
+      ],
       "Allowed (default)": [
         "Permès (per defecte)"
       ],
@@ -14564,6 +14638,9 @@
       "On": [
         "Activat"
       ],
+      "Optional ${ defaultLabel }": [
+        "${ defaultLabel } opcional"
+      ],
       "Organization only": [
         "Només l'organització"
       ],
@@ -14620,17 +14697,6 @@
       ],
       "Trash": [
         "Paperera"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Tothom"
-      ],
-      "Group members": [
-        "Membres del grup"
-      ],
-      "No one": [
-        "Ningú"
       ]
     },
     "Option delay send seconds": {
@@ -18474,6 +18540,9 @@
       "${ appName } keyboard shortcuts": [
         "Dreceres de teclat de ${ appName }"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Regles de contrasenya del compte de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -18709,10 +18778,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -19210,9 +19279,6 @@
       "Get the apps": [
         "Aconseguiu les aplicacions"
       ],
-      "Get Zooming faster": [
-        "Obteniu Zoom més ràpidament"
-      ],
       "Gift": [
         "Regal"
       ],
@@ -19591,6 +19657,9 @@
       ],
       "Save time with email filters": [
         "Estalvieu temps amb els filtres de correu electrònic"
+      ],
+      "Schedule meetings in one click": [
+        "Programeu reunions amb un sol clic"
       ],
       "Schedule send:": [
         "Programeu l'enviament:"
@@ -20135,6 +20204,12 @@
       ],
       "Feature in early access": [
         "Característica en accés anticipat"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Per exemple, **12345, abcde**, etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Per exemple, **contrasenya, qwerty**, etc."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Obteniu consells sobre productivitat i seguretat per ajudar-vos a treure el màxim profit de ${ MAIL_APP_NAME } i més."

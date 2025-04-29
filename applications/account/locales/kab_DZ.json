@@ -818,11 +818,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "select file": [
-        "fren afaylu"
-      ],
       "Select file": [
         "Fren afaylu"
+      ],
+      "select file": [
+        "fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -6517,11 +6517,11 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6850,11 +6850,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6997,14 +6997,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Organization name": [
         "Isem n tuddsa"
@@ -8150,6 +8150,14 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8159,14 +8167,6 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -10107,10 +10107,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [

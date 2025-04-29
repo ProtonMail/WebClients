@@ -1060,11 +1060,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "select file": [
-        "выбрать файл"
-      ],
       "Select file": [
         "Выбрать файл"
+      ],
+      "select file": [
+        "выбрать файл"
       ],
       "Select files": [
         "Выбрать файлы"
@@ -4253,9 +4253,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Письмо с подтверждением будет отослано на ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Для ${ boldForwarderEmail } будет сгенерирован новый ключ шифрования."
-      ],
       "Automatically forward emails to another email address.": [
         "Автоматическая пересылка электронных писем на другой адрес электронной почты."
       ],
@@ -4366,17 +4363,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Для ${ forwarderEmail } был сгенерирован новый ключ шифрования."
-      ],
       "Changes saved": [
         "Изменения сохранены"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Электронная почта отосланная на ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Электронное письмо отправлено на ${ model.forwardeeEmail }"
       ],
       "Forwarding accepted": [
         "Пересылка принята"
@@ -4403,9 +4391,6 @@
       ],
       "Forwarding activated": [
         "Переадресация активирована"
-      ],
-      "Request confirmation": [
-        "Запросить подтверждение"
       ],
       "Set up forwarding": [
         "Настроить пересылку"
@@ -6231,9 +6216,6 @@
       "Device": [
         "Устройство"
       ],
-      "Enabled Countries": [
-        "Включенные страны"
-      ],
       "Enter your email address": [
         "Введите адрес вашей электронной почты"
       ],
@@ -6242,9 +6224,6 @@
       ],
       "Folders": [
         "Папки"
-      ],
-      "Groups": [
-        "Группы"
       ],
       "IP address": [
         "IP-адрес"
@@ -6272,9 +6251,6 @@
       ],
       "Permissions": [
         "Разрешения"
-      ],
-      "Policy Name": [
-        "Название политики"
       ],
       "Protection": [
         "Защита"
@@ -9369,11 +9345,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
       "username": [
         "имя пользователя"
+      ],
+      "Username": [
+        "Имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -10521,11 +10497,11 @@
       "Allow sharing outside the organization": [
         "Разрешить совместное использование вне организации"
       ],
-      "Allowed domain": [
-        "Разрешённый домен"
-      ],
       "Allowed Domain": [
         "Разрешённый Домен"
+      ],
+      "Allowed domain": [
+        "Разрешённый домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
@@ -10536,10 +10512,10 @@
       "Amount due": [
         "К оплате"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -10959,11 +10935,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -11166,14 +11142,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Organization name": [
         "Название организации"
@@ -11802,11 +11778,11 @@
       "perform a password reset from your active session": [
         "выполнить сброс пароля из вашего активного сеанса"
       ],
-      "privacy policy": [
-        "политика конфиденциальности"
-      ],
       "Privacy policy": [
         "Политика конфиденциальности"
+      ],
+      "privacy policy": [
+        "политика конфиденциальности"
       ],
       "Reactivate now": [
         "Восстановить подписку"
@@ -13226,6 +13202,14 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -13244,14 +13228,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -13897,6 +13873,17 @@
         "Рабочий стол"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10-ое число месяца"
@@ -14125,17 +14112,6 @@
       ],
       "Trash": [
         "Корзина"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Все"
-      ],
-      "Group members": [
-        "Участники группы"
-      ],
-      "No one": [
-        "Никто"
       ]
     },
     "Option delay send seconds": {
@@ -18202,10 +18178,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -18663,9 +18639,6 @@
       ],
       "Get the apps": [
         "Получить приложения"
-      ],
-      "Get Zooming faster": [
-        "Ускорить Zoom"
       ],
       "Gift": [
         "Подарок"

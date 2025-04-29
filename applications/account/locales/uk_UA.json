@@ -1006,11 +1006,11 @@
       "Select country": [
         "Виберіть країну"
       ],
-      "select file": [
-        "виберіть файл"
-      ],
       "Select file": [
         "Вибрати файл"
+      ],
+      "select file": [
+        "виберіть файл"
       ],
       "Select files": [
         "Вибрати файли"
@@ -4152,9 +4152,6 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Підтвердження електронною поштою буде надіслано на ${ boldForwardeeEmail }"
       ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Для ${ boldForwarderEmail } буде згенеровано новий ключ шифрування."
-      ],
       "Automatically forward emails to another email address.": [
         "Автоматичне пересилання листів на іншу адресу."
       ],
@@ -4265,17 +4262,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Новий ключ шифрування згенеровано для ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Зміни збережено"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Повідомлення надіслано на ${ forward.ForwardeeEmail }"
-      ],
-      "Email sent to ${ model.forwardeeEmail }.": [
-        "Повідомлення надіслано на ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Пересилання схвалено"
@@ -4302,9 +4290,6 @@
       ],
       "Forwarding activated": [
         "Пересилання активовано"
-      ],
-      "Request confirmation": [
-        "Запит підтвердження"
       ],
       "Set up forwarding": [
         "Налаштувати пересилання"
@@ -9044,11 +9029,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "Username": [
-        "Ім’я користувача"
-      ],
       "username": [
         "ім'я користувача"
+      ],
+      "Username": [
+        "Ім’я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -10129,10 +10114,10 @@
       "Allow recovery using a trusted device": [
         "Дозволити відновлення за допомогою довіреного пристрою"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дозволений домен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дозволений домен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10144,11 +10129,11 @@
       "Amount due": [
         "До сплати"
       ],
-      "AND": [
-        "ТА"
-      ],
       "And": [
         "Та"
+      ],
+      "AND": [
+        "ТА"
       ],
       "and": [
         "та"
@@ -10552,11 +10537,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЯКЩО"
-      ],
       "If": [
         "Якщо"
+      ],
+      "IF": [
+        "ЯКЩО"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -10753,14 +10738,14 @@
       "Optional": [
         "Необов'язково"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
       ],
       "Or": [
         "Або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Organization name": [
         "Назва організації"
@@ -12730,6 +12715,14 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -12748,14 +12741,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -13305,6 +13290,17 @@
         "Вітаємо у ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
+      "Group members": [
+        "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10-е число місяця"
@@ -13527,17 +13523,6 @@
       ],
       "Trash": [
         "Смітник"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Будь-хто"
-      ],
-      "Group members": [
-        "Учасники групи"
-      ],
-      "No one": [
-        "Ніхто"
       ]
     },
     "Option delay send seconds": {
@@ -17521,11 +17506,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -17955,9 +17940,6 @@
       ],
       "Get the apps": [
         "Отримати програми"
-      ],
-      "Get Zooming faster": [
-        "Швидше приєднання до конференцій Zoom"
       ],
       "Gift": [
         "Подарунок"
