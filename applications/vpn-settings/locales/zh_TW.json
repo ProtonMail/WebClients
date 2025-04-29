@@ -325,6 +325,9 @@
       "Fit to window": [
         "貼齊視窗邊沿"
       ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
       "Forgot recovery method?": [
         "忘記復原方法?"
       ],
@@ -484,10 +487,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -595,10 +598,10 @@
       "Select country": [
         "選擇國家"
       ],
-      "select file": [
+      "Select file": [
         "選取檔案"
       ],
-      "Select file": [
+      "select file": [
         "選取檔案"
       ],
       "Send code": [
@@ -3310,9 +3313,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "動作"
-      ],
       "App version": [
         "應用程式版本"
       ],
@@ -3963,6 +3963,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
@@ -4858,10 +4861,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
       "Users": [
@@ -5353,11 +5356,11 @@
       "Allow recovery by phone": [
         "允許透過電話復原"
       ],
-      "Allowed domain": [
-        "已允許網域"
-      ],
       "Allowed Domain": [
         "網域白名單"
+      ],
+      "Allowed domain": [
+        "已允許網域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
@@ -5503,6 +5506,9 @@
       "Digits": [
         "位數"
       ],
+      "Disabled": [
+        "停用"
+      ],
       "Display name": [
         "顯示名稱"
       ],
@@ -5605,6 +5611,9 @@
       "Method for importing metadata": [
         "匯入後設資料方案"
       ],
+      "Minimum number of characters": [
+        "最低字元數"
+      ],
       "Moderate NAT": [
         "中等 NAT"
       ],
@@ -5646,6 +5655,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Numbers": [
+        "數字"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 密碼"
@@ -5767,6 +5779,9 @@
       "Spam": [
         "垃圾郵件"
       ],
+      "Special characters": [
+        "特殊字元"
+      ],
       "Start date": [
         "開始日期"
       ],
@@ -5850,6 +5865,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -6226,6 +6244,29 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
@@ -6250,29 +6291,6 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
       ]
     },
     "new_plans: feature": {
@@ -7314,6 +7332,11 @@
         "歡迎來到 ${ appName }"
       ]
     },
+    "option": {
+      "Group members": [
+        "群組成員"
+      ]
+    },
     "Option": {
       "Country configs": [
         "國家組態設定"
@@ -7342,11 +7365,17 @@
       "No permission": [
         "權限不足"
       ],
+      "Not allowed": [
+        "不允許"
+      ],
       "Organization only": [
         "僅限組織機構"
       ],
       "Receive from all": [
         "從全部接收"
+      ],
+      "Required": [
+        "必填"
       ],
       "Router": [
         "路由器"
@@ -7368,11 +7397,6 @@
       ],
       "The whole organization": [
         "整個組織"
-      ]
-    },
-    "option": {
-      "Group members": [
-        "群組成員"
       ]
     },
     "Organization capacity error": {
@@ -8595,6 +8619,9 @@
       "Share the confirmation code with your administrator": [
         "與您的管理員分享確認碼"
       ],
+      "Sign in": [
+        "登入"
+      ],
       "Sign in to your organization": [
         "登入您的組織"
       ],
@@ -8624,6 +8651,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您將需要手動建立新使用者以便重新加入至您的組織中。"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的單一登入配置將被刪除。"
@@ -9639,10 +9669,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -9855,6 +9885,9 @@
       "Enable for all users": [
         "為所有使用者啟用"
       ],
+      "Enter 2FA code": [
+        "輸入雙重驗證碼"
+      ],
       "Enter endpoints into your identity provider": [
         "請前往您的身分提供者輸入端點"
       ],
@@ -9863,6 +9896,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
+      ],
+      "Enter your password": [
+        "請輸入您的密碼"
       ],
       "Error": [
         "錯誤"
@@ -10196,6 +10232,9 @@
       ],
       "Video conferencing": [
         "視訊會議"
+      ],
+      "Warning": [
+        "警告"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "我們將向您的新位址寄送一封電子郵件，其中包含如何完成變更的說明。"

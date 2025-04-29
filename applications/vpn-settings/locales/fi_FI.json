@@ -355,6 +355,9 @@
       "Fit to window": [
         "Sovita ikkunaan"
       ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
+      ],
       "Forgot recovery method?": [
         "Unohditko palautustavan?"
       ],
@@ -532,10 +535,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Remove": [
@@ -649,11 +652,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "select file": [
-        "valitse tiedosto"
-      ],
       "Select file": [
         "Valitse tiedosto"
+      ],
+      "select file": [
+        "valitse tiedosto"
       ],
       "Send code": [
         "Lähetä koodi"
@@ -3666,9 +3669,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Toiminnot"
-      ],
       "App version": [
         "Sovellusversio"
       ],
@@ -3684,17 +3684,11 @@
       "Device": [
         "Laite"
       ],
-      "Enabled Countries": [
-        "Käytössä olevat maat"
-      ],
       "Enter your email address": [
         "Syötä sähköpostiosoitteesi"
       ],
       "Event": [
         "Tapahtuma"
-      ],
-      "Groups": [
-        "Ryhmät"
       ],
       "IP address": [
         "IP-osoite"
@@ -3713,9 +3707,6 @@
       ],
       "Organization key fingerprint": [
         "Organisaatioavaimen tunniste"
-      ],
-      "Policy Name": [
-        "Käytännön nimi"
       ],
       "Protection": [
         "Suojaus"
@@ -4213,9 +4204,6 @@
       "Create your first Gateway": [
         "Luo ensimmäinen yhdyskäytäväsi"
       ],
-      "Created (not published)": [
-        "Luotu (ei julkaistu)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Luodaan yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
         "Luodaan yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
@@ -4258,9 +4246,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
-      ],
-      "Deleted (not published)": [
-        "Poistettu (ei julkaistu)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
@@ -4354,9 +4339,6 @@
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
-      "Edited (not published)": [
-        "Muokattu (ei julkaistu)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN-määritys on tallennettu"
       ],
@@ -4440,6 +4422,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Syötä ${ BRAND_NAME }-tilisi sähköpostiosoite tai käyttäjätunnus."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Syötä palautusosoitteesi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
@@ -4868,9 +4853,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
-      ],
-      "Pending removal": [
-        "Odottaa poistoa"
       ],
       "per month": [
         "kuukaudessa"
@@ -5343,9 +5325,6 @@
       "Unable to check gateways monitoring current status.": [
         "Yhdyskäytävien valvonnan tilaa ei voida tarkistaa."
       ],
-      "Unchanged": [
-        "Muuttamaton"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Valitettavasti tilille ei ole määritetty palautustapoja."
       ],
@@ -5394,11 +5373,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "Username": [
-        "Käyttäjätunnus"
-      ],
       "username": [
         "käyttäjätunnus"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -5927,10 +5906,10 @@
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6086,6 +6065,9 @@
       "Digits": [
         "Numerot"
       ],
+      "Disabled": [
+        "Pois käytöstä"
+      ],
       "Display name": [
         "Näyttönimi"
       ],
@@ -6197,6 +6179,9 @@
       "Method for importing metadata": [
         "Metatietojen tuontitapa"
       ],
+      "Minimum number of characters": [
+        "Merkkien vähimmäismäärä"
+      ],
       "Moderate NAT": [
         "Keskitasoinen NAT"
       ],
@@ -6238,6 +6223,9 @@
       ],
       "Notification": [
         "Ilmoitus"
+      ],
+      "Numbers": [
+        "Numerot"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN/IKEv2-salasana"
@@ -6363,6 +6351,9 @@
       "Spam": [
         "Roskaposti"
       ],
+      "Special characters": [
+        "Erikoismerkit"
+      ],
       "Start date": [
         "Aloituspäivä"
       ],
@@ -6458,6 +6449,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
+      ],
+      "Your password (admin)": [
+        "Salasanasi (ylläpitäjä)"
       ],
       "ZIP code": [
         "Postinumero"
@@ -6887,6 +6881,29 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Poista tili"
+      ],
+      "Downgrade account": [
+        "Alenna tili"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Hanki ${ BRAND_NAME } ilmaiseksi"
+      ],
+      "Get ${ planName }": [
+        "Hanki ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "Säilytä ${ plan }"
+      ],
+      "Keep account": [
+        "Säilytä tili"
+      ],
+      "Switch plan": [
+        "Vaihda tilausta"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
@@ -6911,29 +6928,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Poista tili"
-      ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Hanki ${ BRAND_NAME } ilmaiseksi"
-      ],
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Säilytä ${ plan }"
-      ],
-      "Keep account": [
-        "Säilytä tili"
-      ],
-      "Switch plan": [
-        "Vaihda tilausta"
       ]
     },
     "new_plans: feature": {
@@ -8110,6 +8104,17 @@
         "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Maakohtaiset määritykset"
@@ -8141,11 +8146,17 @@
       "No permission": [
         "Ei käyttöoikeutta"
       ],
+      "Not allowed": [
+        "Ei sallittu"
+      ],
       "Organization only": [
         "Vain organisaatio"
       ],
       "Receive from all": [
         "Vastaanota kaikilta"
+      ],
+      "Required": [
+        "Vaaditaan"
       ],
       "Router": [
         "Reititin"
@@ -8167,17 +8178,6 @@
       ],
       "The whole organization": [
         "Koko organisaatio"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Kaikki"
-      ],
-      "Group members": [
-        "Ryhmän jäsenet"
-      ],
-      "No one": [
-        "Ei ketään"
       ]
     },
     "Organization capacity error": {
@@ -9674,6 +9674,9 @@
       "Share the confirmation code with your administrator": [
         "Jaa vahvistuskoodi ylläpidollesi"
       ],
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
       "Sign in to your organization": [
         "Kirjaudu sisään organisaatioosi"
       ],
@@ -9712,6 +9715,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Sinun on luotava uusia käyttäjiä manuaalisesti lisätäksesi niitä organisaatioosi."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-määrityksesi poistetaan."
@@ -10800,10 +10806,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -11036,6 +11042,9 @@
       "Enhance security with 2FA": [
         "Paranna tietoturvaa 2FA:lla"
       ],
+      "Enter 2FA code": [
+        "Syötä vahvistuskoodi"
+      ],
       "Enter endpoints into your identity provider": [
         "Syötä päätepisteet identiteetintarjoajaasi"
       ],
@@ -11044,6 +11053,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Liity sovelluksen ${ app } beetaohjelmaan syöttämällä ${ BRAND_NAME }-tilisi tiedot"
+      ],
+      "Enter your password": [
+        "Syötä salasanasi"
       ],
       "Error": [
         "Virhe"
@@ -11403,6 +11415,9 @@
       ],
       "Video conferencing": [
         "Videoneuvottelu"
+      ],
+      "Warning": [
+        "Varoitus"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."

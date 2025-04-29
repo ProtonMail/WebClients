@@ -352,6 +352,9 @@
       "Fit to window": [
         "창에 맞게"
       ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
+      ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
       ],
@@ -523,11 +526,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "Refresh the page": [
-        "페이지 새로 고침"
-      ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
       ],
       "Remove": [
         "삭제"
@@ -643,10 +646,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
       "Send code": [
@@ -3699,9 +3702,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "동작"
-      ],
       "App version": [
         "앱 버전"
       ],
@@ -3717,17 +3717,11 @@
       "Device": [
         "기기"
       ],
-      "Enabled Countries": [
-        "활성화된 국가"
-      ],
       "Enter your email address": [
         "이메일 주소를 입력하세요"
       ],
       "Event": [
         "이벤트"
-      ],
-      "Groups": [
-        "그룹"
       ],
       "IP address": [
         "IP 주소"
@@ -3746,9 +3740,6 @@
       ],
       "Organization key fingerprint": [
         "조직 키 지문"
-      ],
-      "Policy Name": [
-        "정책 이름"
       ],
       "Protection": [
         "보호"
@@ -3874,7 +3865,7 @@
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없습니다."
+        "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없게 됩니다."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
@@ -3925,7 +3916,7 @@
         "${ number }개 서버"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -4245,9 +4236,6 @@
       "Create your first Gateway": [
         "첫 게이트웨이를 생성하세요"
       ],
-      "Created (not published)": [
-        "생성됨 (미게시됨)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "게이트웨이 서버 생성 중: ${ serverNumber } / ${ total }"
       ],
@@ -4292,9 +4280,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "${ MAIL_APP_NAME }이 가장 낮은 숫자인지 확인하거나 아니면 다른 MX 기록을 삭제하세요."
-      ],
-      "Deleted (not published)": [
-        "삭제됨 (미게시됨)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
@@ -4386,9 +4371,6 @@
       "Edit email address": [
         "이메일 주소 변경"
       ],
-      "Edited (not published)": [
-        "편집됨 (미게시됨)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN 설정 저장됨"
       ],
@@ -4476,6 +4458,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하세요."
       ],
+      "Enter your own password (as organization admin).": [
+        "자신의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "복구 이메일 주소를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
       ],
@@ -4552,7 +4537,7 @@
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "다른 어딘가에 로그인했었다면 ${ signedInPasswordResetLink } 할수도 있습니다."
+        "다른 어딘가에서 로그인하셨다면 ${ signedInPasswordResetLink }"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
@@ -4910,9 +4895,6 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "5점 중 5점 평가의 PC Magazine 에디터 초이스 어워드"
-      ],
-      "Pending removal": [
-        "삭제 대기중"
       ],
       "per month": [
         "매월"
@@ -5305,7 +5287,7 @@
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "이는 활성 세션에서 로그아웃하고 2단계 인증을 비활성화하게 됩니다."
+        "이 작업은 활성 세션에서 로그아웃하며 2단계 인증을 비활성화하게 됩니다."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증 (2FA)을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
@@ -5385,9 +5367,6 @@
       "Unable to check gateways monitoring current status.": [
         "현재 게이트웨이 모니터링 상태 확인 불가."
       ],
-      "Unchanged": [
-        "변경 안 됨"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "이 계정에는 저장된 복구 방법이 없습니다."
       ],
@@ -5436,10 +5415,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -5975,10 +5954,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6134,6 +6113,9 @@
       "Digits": [
         "자리"
       ],
+      "Disabled": [
+        "비활성화됨"
+      ],
       "Display name": [
         "표시되는 이름"
       ],
@@ -6248,6 +6230,9 @@
       "Method for importing metadata": [
         "메타데이터를 불러올 방법"
       ],
+      "Minimum number of characters": [
+        "최소 문자 수"
+      ],
       "Moderate NAT": [
         "일반형 NAT"
       ],
@@ -6292,6 +6277,9 @@
       ],
       "Notification": [
         "알림"
+      ],
+      "Numbers": [
+        "숫자"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 비밀번호"
@@ -6416,6 +6404,9 @@
       "Spam": [
         "스팸"
       ],
+      "Special characters": [
+        "특수 문자"
+      ],
       "Start date": [
         "시작일"
       ],
@@ -6514,6 +6505,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
+      ],
+      "Your password (admin)": [
+        "사용자의 비밀번호 (관리자)"
       ],
       "ZIP code": [
         "우편번호"
@@ -6677,7 +6671,7 @@
         "신용 카드 없는 PayPal"
       ],
       "perform a password reset from your active session": [
-        "활성 세션에서 비밀번호 재설정을 수행하세요"
+        "활성 상태의 세션에서 비밀번호를 재설정하시기 바랍니다."
       ],
       "Privacy policy": [
         "개인 정보 정책"
@@ -6940,6 +6934,29 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "계정 삭제"
+      ],
+      "Downgrade account": [
+        "계정 다운그레이드"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "무료로 ${ BRAND_NAME } 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }  유지"
+      ],
+      "Keep account": [
+        "계정 유지"
+      ],
+      "Switch plan": [
+        "플랜 변경"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
@@ -6964,29 +6981,6 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName }(으)로 업그레이드"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "계정 삭제"
-      ],
-      "Downgrade account": [
-        "계정 다운그레이드"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "무료로 ${ BRAND_NAME } 받기"
-      ],
-      "Get ${ planName }": [
-        "${ planName } 받기"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }  유지"
-      ],
-      "Keep account": [
-        "계정 유지"
-      ],
-      "Switch plan": [
-        "플랜 변경"
       ]
     },
     "new_plans: feature": {
@@ -8150,6 +8144,17 @@
         "${ appName }에 오신 것을 환영합니다"
       ]
     },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
+      ]
+    },
     "Option": {
       "Android": [
         "Android"
@@ -8193,11 +8198,17 @@
       "No permission": [
         "권한 없음"
       ],
+      "Not allowed": [
+        "허용되지 않음"
+      ],
       "Organization only": [
         "조직 전용"
       ],
       "Receive from all": [
         "모두에게서 받기"
+      ],
+      "Required": [
+        "필수"
       ],
       "Router": [
         "라우터"
@@ -8228,17 +8239,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "모두"
-      ],
-      "Group members": [
-        "그룹 구성원"
-      ],
-      "No one": [
-        "아무도"
       ]
     },
     "Organization capacity error": {
@@ -9736,6 +9736,9 @@
       "Share the confirmation code with your administrator": [
         "관리자에게 확인 코드를 공유하세요"
       ],
+      "Sign in": [
+        "로그인"
+      ],
       "Sign in to your organization": [
         "조직에 로그인"
       ],
@@ -9780,6 +9783,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "새 사용자를 회원님의 조직에 추가하려면 직접 생성해야 합니다."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO 구성 또한 삭제됩니다."
@@ -10845,11 +10851,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -11070,6 +11076,9 @@
       "Enable for all users": [
         "모든 사용자에게 활성화"
       ],
+      "Enter 2FA code": [
+        "2단계 인증 코드 입력"
+      ],
       "Enter endpoints into your identity provider": [
         "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
       ],
@@ -11078,6 +11087,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
+      ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"
@@ -11092,7 +11104,7 @@
         "이메일 주소 또는 사용자 이름 찾기"
       ],
       "Forgot recovery method": [
-        "복구 방법을 잊었습니다"
+        "복구 방법 분실"
       ],
       "Gateway": [
         "게이트웨이"
@@ -11423,6 +11435,9 @@
       ],
       "Video conferencing": [
         "화상 회의"
+      ],
+      "Warning": [
+        "경고"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "주소 변경에 대한 지침과 함께 새 주소로 이메일을 보내드립니다."

@@ -262,6 +262,9 @@
       "Discard changes": [
         "Wijzigingen weggooien"
       ],
+      "Discard Changes": [
+        "Wijzigingen annuleren"
+      ],
       "Discover ${ planName }": [
         "Ontdek ${ planName }"
       ],
@@ -364,6 +367,9 @@
       "Fit to window": [
         "Passend in venster"
       ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
       "Forgot recovery method?": [
         "Herstelmethode vergeten?"
       ],
@@ -438,6 +444,9 @@
       ],
       "Invite user": [
         "Gebruiker uitnodigen"
+      ],
+      "Keep Editing": [
+        "Doorgaan met bewerken"
       ],
       "Keep logo": [
         "Logo behouden"
@@ -550,11 +559,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -670,11 +679,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "select file": [
-        "selecteer bestand"
-      ],
       "Select file": [
         "Selecteer bestand"
+      ],
+      "select file": [
+        "selecteer bestand"
       ],
       "Send code": [
         "Code versturen"
@@ -2539,7 +2548,7 @@
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
-        "Moedig het gebruik van tweestapsverificatie in je organisatie aan voor extra beveiliging."
+        "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
@@ -3841,9 +3850,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "Acties"
-      ],
       "App version": [
         "App versie"
       ],
@@ -3859,17 +3865,11 @@
       "Device": [
         "Apparaat"
       ],
-      "Enabled Countries": [
-        "Ingeschakelde landen"
-      ],
       "Enter your email address": [
         "Voer uw e-mailadres in"
       ],
       "Event": [
         "Gebeurtenis"
-      ],
-      "Groups": [
-        "Groepen"
       ],
       "IP address": [
         "IP-adres"
@@ -3888,9 +3888,6 @@
       ],
       "Organization key fingerprint": [
         "Vingerafdruk van organisatiesleutel"
-      ],
-      "Policy Name": [
-        "Policy naam"
       ],
       "Protection": [
         "Bescherming"
@@ -4149,8 +4146,15 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/maand)"
       ],
+      "(default)": [
+        "(standaard)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Kies een ${ BRAND_NAME } e-mailadres** om gebruik te maken van alle ${ BRAND_NAME_TWO } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Meer",
+        "+ ${ invisibleCount } Meer"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
@@ -4410,9 +4414,6 @@
       "Create your first Gateway": [
         "Uw eerste gateway instellen"
       ],
-      "Created (not published)": [
-        "Gemaakt (niet gepubliceerd)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
         "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
@@ -4458,9 +4459,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
-      ],
-      "Deleted (not published)": [
-        "Verwijderd (niet gepubliceerd)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } gatewayserver wordt verwijderd",
@@ -4554,9 +4552,6 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
-      "Edited (not published)": [
-        "Bewerkt (niet gepubliceerd)"
-      ],
       "eduGAIN configuration saved": [
         "eduGain-configuratie opgeslagen"
       ],
@@ -4643,6 +4638,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
@@ -4998,6 +4996,9 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
+      "No single sign-on": [
+        "Geen Single Sign-On"
+      ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
@@ -5075,14 +5076,14 @@
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Wachtwoord moet ${ MIN_PASSWORD_LENGTH } tekens of meer bevatten."
       ],
+      "Password must have:": [
+        "Het wachtwoord moet hebben:"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Pc Magazine editors keuze met een beoordeling van 5 op 5 sterren"
-      ],
-      "Pending removal": [
-        "In afwachting van verwijdering"
       ],
       "per month": [
         "maandelijks"
@@ -5411,6 +5412,9 @@
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
       ],
+      "The unpublished changes you made will be lost.": [
+        "De niet-gepubliceerde wijzigingen die u hebt aangebracht, gaan verloren."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
@@ -5449,6 +5453,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Dit bericht zal het supportteam niet bereiken. Als u een probleem heeft met onze dienst of als er vanuit onze kant actie ondernomen moet worden ${ supportLink }."
+      ],
+      "This service is not available to users signing in with single sign-on.": [
+        "Deze service is niet beschikbaar voor gebruikers die inloggen met Single Sign-On."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
@@ -5573,9 +5580,6 @@
       "Unable to check gateways monitoring current status.": [
         "Kan de huidige status van het monitoren van gateways niet controleren."
       ],
-      "Unchanged": [
-        "Ongewijzigd"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
       ],
@@ -5624,11 +5628,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "Username": [
-        "Gebruikersnaam"
-      ],
       "username": [
         "gebruikersnaam"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -5822,6 +5826,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
+      ],
+      "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
+        "U kunt de wachtwoordregels afdwingen die leden van uw organisatie gebruiken wanneer ze het wachtwoord voor hun ${ BRAND_NAME }-account aanmaken of resetten."
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "U kunt al onze premium privacy-diensten in één bundel krijgen en het is maar **${ priceString }/maand**."
@@ -6177,11 +6184,11 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
-      "Allowed domain": [
-        "Domein toegestaan"
-      ],
       "Allowed Domain": [
         "Toegestaan domein"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -6267,6 +6274,9 @@
       "Colors": [
         "Kleuren"
       ],
+      "Common passwords": [
+        "Veelvoorkomende wachtwoorden"
+      ],
       "Company": [
         "Bedrijf"
       ],
@@ -6336,6 +6346,9 @@
       "Digits": [
         "Cijfers"
       ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
       "Display name": [
         "Weergavenaam"
       ],
@@ -6359,6 +6372,9 @@
       ],
       "Email or username": [
         "E-mailadres of gebruikersnaam"
+      ],
+      "Enabled": [
+        "Ingeschakeld"
       ],
       "Enter the code displayed on your TV": [
         "Voer de op uw TV weergegeven code in"
@@ -6438,6 +6454,9 @@
       "Main": [
         "Primair"
       ],
+      "Maximum number of characters is ${ MAX_CHARS }": [
+        "Het maximum aantal tekens is ${ MAX_CHARS }"
+      ],
       "Members without 2FA": [
         "Leden zonder 2FA"
       ],
@@ -6449,6 +6468,12 @@
       ],
       "Method for importing metadata": [
         "Importeren metagegevens"
+      ],
+      "Minimum number of characters": [
+        "Minimaal aantal tekens"
+      ],
+      "Minimum number of characters is ${ MIN_CHARS }": [
+        "Het minimumaantal tekens is ${ MIN_CHARS }"
       ],
       "Moderate NAT": [
         "Gemiddelde NAT"
@@ -6495,6 +6520,9 @@
       "Notification": [
         "Notificatie"
       ],
+      "Numbers": [
+        "Getallen"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 wachtwoord"
       ],
@@ -6524,6 +6552,9 @@
       ],
       "Password": [
         "Wachtwoord"
+      ],
+      "Password strength": [
+        "Wachtwoordsterkte"
       ],
       "Payer": [
         "Betaler"
@@ -6606,6 +6637,9 @@
       "Second password": [
         "Tweede wachtwoord"
       ],
+      "Sequences": [
+        "Reeksen"
+      ],
       "Show ${ n } administrator": [
         "Toon ${ n } beheerder",
         "Toon ${ n } beheerders"
@@ -6618,6 +6652,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Speciale tekens"
       ],
       "Start date": [
         "Begindatum"
@@ -6654,6 +6691,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Uppercase and lowercase letters": [
+        "Hoofdletters en kleine letters"
       ],
       "User": [
         "Gebruiker"
@@ -6714,6 +6754,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (admin)"
       ],
       "ZIP code": [
         "Postcode"
@@ -6858,6 +6901,9 @@
       "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
         "Samenwerken in ${ DOCS_SHORT_APP_NAME }"
       ],
+      "How to create strong passwords": [
+        "Hoe maakt u sterke wachtwoorden"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Hoe schakelt u ${ PROTON_SENTINEL_NAME } in"
       ],
@@ -6892,7 +6938,7 @@
         "E-mail doorsturen instellen"
       ],
       "How to use Groups": [
-        "Hoe gebruik je Groepen"
+        "Hoe gebruikt u Groepen"
       ],
       "Learn more": [
         "Meer informatie"
@@ -7176,6 +7222,29 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Account verwijderen"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Gebruik ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behouden"
+      ],
+      "Keep account": [
+        "Account behouden"
+      ],
+      "Switch plan": [
+        "Van abonnement wisselen"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
@@ -7200,29 +7269,6 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "Account verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Gebruik ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Kies ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behouden"
-      ],
-      "Keep account": [
-        "Account behouden"
-      ],
-      "Switch plan": [
-        "Van abonnement wisselen"
       ]
     },
     "new_plans: feature": {
@@ -8416,7 +8462,21 @@
         "Welkom bij ${ appName }"
       ]
     },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
+      ]
+    },
     "Option": {
+      "Allowed ${ defaultLabel }": [
+        "Toegestaan ${ defaultLabel }"
+      ],
       "Country configs": [
         "Landconfiguraties"
       ],
@@ -8447,11 +8507,20 @@
       "No permission": [
         "Geen toestemming"
       ],
+      "Not allowed": [
+        "Niet toegestaan"
+      ],
+      "Optional ${ defaultLabel }": [
+        "Optioneel ${ defaultLabel }"
+      ],
       "Organization only": [
         "Alleen organisatie"
       ],
       "Receive from all": [
         "Ontvang van alle"
+      ],
+      "Required": [
+        "Vereist"
       ],
       "Router": [
         "Router"
@@ -8473,17 +8542,6 @@
       ],
       "The whole organization": [
         "De hele organisatie"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "Iedereen"
-      ],
-      "Group members": [
-        "Groepsleden"
-      ],
-      "No one": [
-        "Niemand"
       ]
     },
     "Organization capacity error": {
@@ -10030,6 +10088,9 @@
       "Share the confirmation code with your administrator": [
         "Deel de bevestigingscode met uw beheerder"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
       ],
@@ -10074,6 +10135,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "U moet handmatig nieuwe gebruikers aanmaken om ze toe te voegen aan uw organisatie."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ],
       "Your SSO configuration will be deleted.": [
         "Uw SSO-configuratie wordt verwijderd."
@@ -10695,6 +10759,11 @@
         "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Bespaar ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "Actief"
@@ -11008,6 +11077,9 @@
       "${ appName } Free": [
         "${ appName } Gratis"
       ],
+      "${ BRAND_NAME } Account password rules": [
+        "Wachtwoordregels voor ${ BRAND_NAME }-account"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -11165,11 +11237,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -11410,6 +11482,9 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
+      "Enter 2FA code": [
+        "Voer 2FA-code in"
+      ],
       "Enter endpoints into your identity provider": [
         "Voer eindpunten in bij uw identiteitsprovider"
       ],
@@ -11418,6 +11493,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
       ],
       "Error": [
         "Fout"
@@ -11799,6 +11877,9 @@
       "Video conferencing": [
         "Video conferentie"
       ],
+      "Warning": [
+        "Waarschuwing"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "We zullen een e-mail naar uw nieuwe e-mailadres sturen met instructies voor het voltooien van de wijziging."
       ],
@@ -11929,6 +12010,12 @@
       ],
       "Feature in early access": [
         "Functie in vroegtijdige toegang"
+      ],
+      "For example, **12345, abcde**, etc.": [
+        "Bijvoorbeeld, **12345, abcde**, etc."
+      ],
+      "For example, **password, qwerty**, etc.": [
+        "Bijvoorbeeld: **wachtwoord, qwerty**, etc."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Haal de certificaathash op van uw identiteitsprovider."

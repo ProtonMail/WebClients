@@ -364,6 +364,9 @@
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
       ],
@@ -550,10 +553,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Remove": [
@@ -670,10 +673,10 @@
       "Select country ${ country }": [
         "${ country } ქვეყნის არჩევა"
       ],
-      "select file": [
+      "Select file": [
         "აირჩიეთ ფაილი"
       ],
-      "Select file": [
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
       "Send code": [
@@ -3761,9 +3764,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "ქმედებები"
-      ],
       "App version": [
         "აპის ვერსია"
       ],
@@ -3779,17 +3779,11 @@
       "Device": [
         "მოწყობილობა"
       ],
-      "Enabled Countries": [
-        "ჩართული ქვეყნები"
-      ],
       "Enter your email address": [
         "შეიყვანეთ თქვენი ელფოსტის მისამართი"
       ],
       "Event": [
         "მოვლენა"
-      ],
-      "Groups": [
-        "ჯგუფები"
       ],
       "IP address": [
         "IP მისამართი"
@@ -3808,9 +3802,6 @@
       ],
       "Organization key fingerprint": [
         "ორგანიზაციის გასაღების ანაბეჭდი"
-      ],
-      "Policy Name": [
-        "პოლიტიკის სახელი"
       ],
       "Protection": [
         "დაცვა"
@@ -4057,6 +4048,9 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /თვეში)"
+      ],
+      "(default)": [
+        "(ნაგულისხმევი)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**მიიღეთ ${ BRAND_NAME }-ის მისამართი** ${ BRAND_NAME_TWO }-ის ყველა სერვისის, ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ჩათვლით, გამოსაყენებლად."
@@ -4319,9 +4313,6 @@
       "Create your first Gateway": [
         "შექმენით თქვენი პირველი რაუტერი"
       ],
-      "Created (not published)": [
-        "შექმნილია (გამოცემული არაა)"
-      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }",
         "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }"
@@ -4367,9 +4358,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
-      ],
-      "Deleted (not published)": [
-        "წაშლილია (გამოცემული არაა)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
@@ -4463,9 +4451,6 @@
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
-      "Edited (not published)": [
-        "ჩასწორებულია (გამოცემული არაა)"
-      ],
       "eduGAIN configuration saved": [
         "eduGAIN-ის კონფიგურაცია შენახულია"
       ],
@@ -4552,6 +4537,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "შეიყვანეთ ${ BRAND_NAME }-ის თქვენი ანგარიშის მისამართი ან მომხმარებლის სახელი."
+      ],
+      "Enter your own password (as organization admin).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "შეიყვანეთ აღდგენის ელფოსტის მისამართი და ჩვენ მომხმარებლის სახელსა და ელფოსტის მისამართს გამოგიგზავნით."
@@ -4986,9 +4974,6 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine-ის რედაქტორების არჩევნის ჯილდო 5 რეიტინგიტ 5-დან"
-      ],
-      "Pending removal": [
-        "წაშლის მოლოდინში"
       ],
       "per month": [
         "თვეში"
@@ -5467,9 +5452,6 @@
       "Unable to check gateways monitoring current status.": [
         "კარიბჭეების მონიტორინგის მიმდინარე სტატუსის შემოწმება შეუძლებელია."
       ],
-      "Unchanged": [
-        "უცვლელი"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "ამ ანგარიშისთვის აღდგენის მეთოდი დაყენებული არაა."
       ],
@@ -5518,10 +5500,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -6057,10 +6039,10 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "დაშვებული დომენი"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "დაშვებული დომენი"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6216,6 +6198,9 @@
       "Digits": [
         "ციფრები"
       ],
+      "Disabled": [
+        "გათიშული"
+      ],
       "Display name": [
         "საჩვენებელი სახელი"
       ],
@@ -6239,6 +6224,9 @@
       ],
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
+      ],
+      "Enabled": [
+        "ჩართულია"
       ],
       "Enter the code displayed on your TV": [
         "შეიყვანეთ თქვენს TV-ზე ნაჩვენები კოდი"
@@ -6327,6 +6315,9 @@
       "Method for importing metadata": [
         "მეტამონაცემების შემოტანის მეთოდი"
       ],
+      "Minimum number of characters": [
+        "სიმბოლოების მინიმალური რაოდენობა"
+      ],
       "Moderate NAT": [
         "საშუალო NAT-ი"
       ],
@@ -6371,6 +6362,9 @@
       ],
       "Notification": [
         "შეტყობინება"
+      ],
+      "Numbers": [
+        "რიცხვები"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 -ის პაროლი"
@@ -6483,6 +6477,9 @@
       "Second password": [
         "მეორე პაროლი"
       ],
+      "Sequences": [
+        "მიმდევრობები"
+      ],
       "Show ${ n } administrator": [
         "${ n } ადმინისტრატორის ჩვენება",
         "${ n } ადმინისტრატორის ჩვენება"
@@ -6495,6 +6492,9 @@
       ],
       "Spam": [
         "სპამი"
+      ],
+      "Special characters": [
+        "სპეცსიმბოლოები"
       ],
       "Start date": [
         "საწყისი თარიღი"
@@ -6591,6 +6591,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
+      ],
+      "Your password (admin)": [
+        "თქვენი პაროლი (admin)"
       ],
       "ZIP code": [
         "საფოსტო კოდი"
@@ -7053,6 +7056,29 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
+      "Downgrade account": [
+        "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }-ის დატოვება"
+      ],
+      "Keep account": [
+        "ანგარიშის დატოვება"
+      ],
+      "Switch plan": [
+        "სატარიფო გეგმის გადართვა"
+      ]
+    },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
@@ -7077,29 +7103,6 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
-      ]
-    },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
       ]
     },
     "new_plans: feature": {
@@ -8293,6 +8296,17 @@
         "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
+      ]
+    },
     "Option": {
       "Country configs": [
         "ქვეყნების მორგება"
@@ -8324,11 +8338,17 @@
       "No permission": [
         "წვდომის გარეშე"
       ],
+      "Not allowed": [
+        "დაშვებული არაა"
+      ],
       "Organization only": [
         "მხოლოდ ორგანიზაცია"
       ],
       "Receive from all": [
         "ყველასგან მიღება"
+      ],
+      "Required": [
+        "აუცილებელი"
       ],
       "Router": [
         "რაუტერი"
@@ -8350,17 +8370,6 @@
       ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
-      ]
-    },
-    "option": {
-      "Everyone": [
-        "ყველა"
-      ],
-      "Group members": [
-        "ჯგუფის წევრები"
-      ],
-      "No one": [
-        "არავინ"
       ]
     },
     "Organization capacity error": {
@@ -9897,6 +9906,9 @@
       "Share the confirmation code with your administrator": [
         "გაუზიარეთ დადასტურების კოდი თქვენს ადმინისტრატორს"
       ],
+      "Sign in": [
+        "შესვლა"
+      ],
       "Sign in to your organization": [
         "შედით თქვენს ორგანიზაციაში"
       ],
@@ -9935,6 +9947,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "თქვენს ორგანიზაციაშ დასამატებლად ახალი მომხმარებლების ხელით შექმნა მოგიწევთ."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ],
       "Your SSO configuration will be deleted.": [
         "თქვენი SSO-ის კონფიგურაცია წაიშლება."
@@ -11023,10 +11038,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -11268,6 +11283,9 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
+      "Enter 2FA code": [
+        "შეიყვანეთ 2FA კოდი"
+      ],
       "Enter endpoints into your identity provider": [
         "შეიყვანეთ ბოლოწერტილები თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
@@ -11276,6 +11294,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
+      ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
       ],
       "Error": [
         "შეცდომა"
@@ -11656,6 +11677,9 @@
       ],
       "Video conferencing": [
         "ვიდეოკონფერენცია"
+      ],
+      "Warning": [
+        "გაფრთხილება"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "ჩვენ გამოგიგზავნით ელფოსტას ახალ მისამართზე, ინსტრუქციებით, როგორ დაასრულოთ ცვლილება."
