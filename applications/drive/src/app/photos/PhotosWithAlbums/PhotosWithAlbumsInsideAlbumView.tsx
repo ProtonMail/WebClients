@@ -134,12 +134,9 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     }, [albumName, updateTitle]);
 
     useEffect(() => {
-        if (album && (albumShareId || album.shareId)) {
-            // album.shareId if album is shared already
-            // albumShareId otherwise
-            const validShareId = album.shareId || albumShareId;
-            if (searchParams.has('openShare') && typeof validShareId === 'string') {
-                modals.linkSharing?.({ shareId: validShareId, linkId: album.linkId });
+        if (album && albumShareId) {
+            if (searchParams.has('openShare')) {
+                modals.linkSharing?.({ shareId: albumShareId, linkId: album.linkId });
                 searchParams.delete('openShare');
                 setSearchParams(searchParams);
             }
