@@ -1,8 +1,6 @@
 import { getBrowser, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Version } from '@proton/shared/lib/helpers/version';
 
-import { unleashVanillaStore } from '../zustand/unleash/unleash.store';
-
 export default function isSearchFeatureEnabled() {
     // Old Safari (<17) has several issues.
     // One: it is throttling a lot. First tens of items are done fast but
@@ -16,8 +14,7 @@ export default function isSearchFeatureEnabled() {
     if (isSafari()) {
         const browser = getBrowser();
         if (browser && browser.version) {
-            const isSafariSearchEnabled = unleashVanillaStore.getState().isEnabled('DriveWebSafariSearch');
-            return isSafariSearchEnabled && new Version(browser.version).isGreaterThanOrEqual('17') && !isMobile();
+            return new Version(browser.version).isGreaterThanOrEqual('17') && !isMobile();
         }
         return false;
     }

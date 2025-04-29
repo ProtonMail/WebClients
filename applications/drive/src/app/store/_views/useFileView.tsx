@@ -16,7 +16,6 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { isIgnoredError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
-import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
 import { usePublicSession } from '../_api';
 import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
@@ -148,7 +147,6 @@ function useFileViewBase(
     const [contents, setContents] = useState<Uint8Array[]>();
     const [contentsMimeType, setContentsMimeType] = useState<string>();
     const [isFallbackContents, setIsFallbackContents] = useState<boolean>(false);
-    const isIWADEnabled = unleashVanillaStore.getState().isEnabled('DriveWebIWADSupport');
     const preloadFile = async (abortSignal: AbortSignal) => {
         const link = await getLink(abortSignal, shareId, linkId);
 
@@ -160,7 +158,7 @@ function useFileViewBase(
         setLink(link);
         setContentsMimeType(link.mimeType);
 
-        if (isPreviewAvailable(link.mimeType, link.size) || (isIWAD(link.mimeType) && isIWADEnabled)) {
+        if (isPreviewAvailable(link.mimeType, link.size) || isIWAD(link.mimeType)) {
             const { stream, controls } = downloadStream({
                 ...link,
                 shareId,
