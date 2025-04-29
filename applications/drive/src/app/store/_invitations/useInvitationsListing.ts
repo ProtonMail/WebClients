@@ -6,7 +6,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { queryInvitationDetails, queryListPendingInvitations } from '@proton/shared/lib/api/drive/invitation';
 import type { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
-import type { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import { type ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
