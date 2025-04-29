@@ -28,6 +28,8 @@ import type {
     ShareInvitationDetailsPayload,
     ShareInvitationPayload,
 } from '@proton/shared/lib/interfaces/drive/invitation';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
@@ -42,9 +44,11 @@ import {
 import { useDriveCrypto } from '../_crypto';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import { useLink } from '../_links';
+import { useUserSettings } from '../_settings';
 import {
     type ShareInvitationDetails,
     type ShareInvitationEmailDetails,
+    useDefaultShare,
     useDriveSharingFlags,
     useShare,
 } from '../_shares';
@@ -64,6 +68,8 @@ export const useInvitations = () => {
     const { getShareCreatorKeys, getShareSessionKey } = useShare();
     const { getLink, getLinkPrivateKey } = useLink();
     const invitationsState = useInvitationsState();
+    const { photosWithAlbumsEnabled } = useUserSettings();
+    const { getDefaultPhotosShare } = useDefaultShare();
 
     const decryptInvitationLinkName = async (
         invitation: ShareInvitationDetails,
@@ -344,6 +350,14 @@ export const useInvitations = () => {
                 Link,
             })
         );
+        // TODO: Remove that after full rollout of photos
+        if (
+            invitationDetails?.link.type === LinkType.ALBUM &&
+            !photosWithAlbumsEnabled &&
+            (await getDefaultPhotosShare().then((photosShare) => photosShare?.volumeType !== VolumeType.Photos))
+        ) {
+            return invitationDetails;
+        }
         invitationsState.setInvitations([invitationDetails]);
         return invitationDetails;
     };
