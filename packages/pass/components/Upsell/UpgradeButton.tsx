@@ -13,6 +13,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import './PassPlusPromotionButton';
+
 type UpgradeButtonProps = PromotionButtonProps<typeof ButtonLike> & {
     buttonSize?: ButtonLikeSize;
     className?: string;
@@ -39,7 +41,11 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
     upsellRef,
     ...rest
 }) => {
-    const ButtonComponent = inline ? ButtonLike : gradient ? PromotionButton : Button;
+    const ButtonComponent = (() => {
+        if (inline) return ButtonLike;
+        return gradient ? PromotionButton : Button;
+    })();
+
     const buttonProps = inline ? ({ as: 'a', shape: 'underline' } as const) : ({ pill: true, shape: 'solid' } as const);
 
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path });
@@ -57,6 +63,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
             className={clsx(
                 'items-center flex-nowrap shrink-0',
                 inline ? 'inline-flex link link-focus align-baseline text-left p-0' : 'flex',
+                gradient && BUILD_TARGET === 'safari' && 'pass-promo-btn--safari-ext',
                 className
             )}
             color="norm"

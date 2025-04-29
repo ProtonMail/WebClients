@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 
 export const AccessUpgrade: FC = () => (

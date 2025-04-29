@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { QuickActionsPlaceholder } from '@proton/pass/components/Item/List/Placeholder/QuickActionsPlaceholder';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { selectAllVaults, selectOwnReadOnlyVaults, selectVaultLimits } from '@proton/pass/store/selectors';
 import { prop } from '@proton/pass/utils/fp/lens';

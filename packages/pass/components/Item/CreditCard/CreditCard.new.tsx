@@ -17,9 +17,9 @@ import {
     cardNumberMask,
     expDateMask,
 } from '@proton/pass/components/Form/Field/masks/credit-card';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';

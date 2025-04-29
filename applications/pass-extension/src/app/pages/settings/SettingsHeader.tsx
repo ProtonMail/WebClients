@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
