@@ -39,6 +39,7 @@ import { AddAlbumPhotosModal } from '../../PhotosModals/AddAlbumPhotosModal';
 import { CreateAlbumModal } from '../../PhotosModals/CreateAlbumModal';
 import { useDeleteAlbumModal } from '../../PhotosModals/DeleteAlbumModal';
 import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosModal';
+import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { TempPhotosRecoveryWarningBanner } from '../components/PhotosRecoveryBanner/TempPhotosRecoveryWarningBanner';
@@ -444,8 +445,8 @@ export const PhotosLayout = () => {
     ]);
 
     const onPhotoUploadedToAlbum = useCallback(
-        async (file: OnFileUploadSuccessCallbackData) => {
-            if (!file || !album || !albumShareId || !albumLinkId) {
+        async (album: DecryptedAlbum | undefined, file: OnFileUploadSuccessCallbackData) => {
+            if (!album || !file) {
                 return;
             }
             const abortSignal = new AbortController().signal;
@@ -453,14 +454,10 @@ export const PhotosLayout = () => {
                 // If you're not the owner of the album
                 // you just upload directly in the album
                 // so you don't add afterwards to add the photo to the album
-                // Additionally if the file is skipped AND already in the album, no need to call backend to re-add
-                const isAlreadyInAlbum = albumPhotos.some(
-                    (photo) => typeof photo === 'object' && photo.linkId === file.fileId
-                );
-                if (album.permissions.isOwner && !isAlreadyInAlbum) {
-                    await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
-                } else if (!isAlreadyInAlbum) {
-                    void addNewAlbumPhotoToCache(abortSignal, albumShareId, albumLinkId, file.fileId);
+                if (album.permissions.isOwner) {
+                    await addAlbumPhoto(abortSignal, album.rootShareId, album.linkId, file.fileId);
+                } else {
+                    void addNewAlbumPhotoToCache(abortSignal, album.rootShareId, album.linkId, file.fileId);
                 }
             } catch (e) {
                 if (e instanceof Error && e.message) {
@@ -469,7 +466,7 @@ export const PhotosLayout = () => {
                 sendErrorReport(e);
             }
         },
-        [album, albumShareId, albumPhotos, addAlbumPhoto, addNewAlbumPhotoToCache, albumLinkId, createNotification]
+        [addAlbumPhoto, addNewAlbumPhotoToCache, createNotification]
     );
 
     const openAddPhotosToAlbumModal = useCallback(() => {
@@ -636,16 +633,8 @@ export const PhotosLayout = () => {
             isForPhotos={true}
             shareId={albumShareId || shareId}
             parentLinkId={uploadLinkId}
-            onFileUpload={
-                [AlbumsPageTypes.ALBUMSADDPHOTOS, AlbumsPageTypes.ALBUMSGALLERY].includes(currentPageType)
-                    ? onPhotoUploadedToAlbum
-                    : undefined
-            }
-            onFileSkipped={
-                [AlbumsPageTypes.ALBUMSADDPHOTOS, AlbumsPageTypes.ALBUMSGALLERY].includes(currentPageType)
-                    ? onPhotoUploadedToAlbum
-                    : undefined
-            }
+            onFileUpload={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
+            onFileSkipped={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
             onDrop={currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? handleRedirectToAlbum : undefined}
             className="flex flex-column flex-nowrap flex-1"
         >
@@ -736,12 +725,8 @@ export const PhotosLayout = () => {
                         openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
                         openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
                         openSharePhotoModal={openSharePhotoModal}
-                        onFileUpload={onPhotoUploadedToAlbum}
-                        // In ALBUMSADDPHOTOS we are still in gallery logic,
-                        // but if file is skiped it still needs to be added into album if missing
-                        onFileSkipped={
-                            currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? onPhotoUploadedToAlbum : undefined
-                        }
+                        onFileUpload={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
+                        onFileSkipped={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
                         onPreview={handleToolbarPreview}
                         onSelectCover={onSelectCoverToolbar}
                         onDeleteAlbum={onDeleteAlbum}

@@ -204,7 +204,7 @@ export const useFileDrop = ({
                 }
             });
         },
-        [isForPhotos, shareId, parentLinkId]
+        [isForPhotos, shareId, parentLinkId, onFileUpload, onFileSkipped, onFolderUpload]
     );
 
     return {
