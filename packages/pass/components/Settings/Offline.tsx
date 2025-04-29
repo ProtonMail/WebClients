@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';

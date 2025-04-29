@@ -11,8 +11,8 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { PasskeyContentModal } from '@proton/pass/components/Item/Passkey/Passkey.modal';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
