@@ -20,7 +20,7 @@ import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/inter
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
-import type { EncryptedLink } from '../_links';
+import type { DecryptedLink, EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
 import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
@@ -328,6 +328,22 @@ export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
             captureTime: relatedPhoto.CaptureTime,
             hash: relatedPhoto.Hash ?? undefined,
             contentHash: relatedPhoto.ContentHash ?? undefined,
+        })),
+    };
+};
+
+export const decryptedLinkToPhotos = (link: DecryptedLink, relatedPhotoLinks: DecryptedLink[]): Photo => {
+    return {
+        linkId: link.linkId,
+        captureTime: link?.activeRevision?.photo?.captureTime ?? link.createTime,
+        hash: link?.activeRevision?.photo?.hash ?? undefined,
+        contentHash: link?.activeRevision?.photo?.contentHash,
+        tags: link.photoProperties?.tags ?? [],
+        relatedPhotos: relatedPhotoLinks.map((relatedPhotoLink) => ({
+            linkId: relatedPhotoLink.linkId,
+            captureTime: relatedPhotoLink?.activeRevision?.photo?.captureTime ?? relatedPhotoLink.createTime,
+            hash: relatedPhotoLink?.activeRevision?.photo?.hash ?? undefined,
+            contentHash: relatedPhotoLink?.activeRevision?.photo?.contentHash,
         })),
     };
 };
