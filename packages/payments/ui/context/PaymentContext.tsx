@@ -91,6 +91,7 @@ interface PaymentsContextTypeInner {
      * Returns the cached version of the subscription response
      */
     getPrice: (planToCheck: PlanToCheck) => PricesResult | null;
+    getFallbackPrice: (planToCheck: PlanToCheck) => PricesResult;
     plans: Plan[];
     plansMap: PlansMap;
 
@@ -120,6 +121,7 @@ export type PaymentsContextType = Pick<
     | 'selectBillingAddress'
     | 'checkMultiplePlans'
     | 'getPrice'
+    | 'getFallbackPrice'
     | 'plans'
     | 'plansMap'
     | 'checkResult'
@@ -187,13 +189,13 @@ export const PaymentsContextProvider = ({
     // todo: implement currency selector
     // const [availableCurrencies, setAvailableCurrencies] = useState<readonly Currency[]>(mainCurrencies);
 
-    const { plansMap } = usePreferredPlansMap(false);
+    const { plansMap: defaultPlansMap, getPlansMap } = usePreferredPlansMap(false);
 
     const [checkResult, setCheckResult] = useState<EnrichedCheckResponse>(
         getOptimisticCheckResult({
             cycle: planToCheck.cycle,
             planIDs: planToCheck.planIDs,
-            plansMap,
+            plansMap: defaultPlansMap,
             currency: planToCheck.currency,
         })
     );
@@ -371,7 +373,13 @@ export const PaymentsContextProvider = ({
         let checkedIndex = 0;
         for (let index = 0; index < plansToCheck.length; index++) {
             if (indexesToExcludeFromCheck.includes(index)) {
-                normalizedResults.push(getOptimisticCheckResult({ plansMap, ...plansToCheck[index] }));
+                const planToCheck = plansToCheck[index];
+
+                const localizedPlansMap = getPlansMap({
+                    paramCurrency: planToCheck.currency,
+                }).plansMap;
+
+                normalizedResults.push(getOptimisticCheckResult({ plansMap: localizedPlansMap, ...planToCheck }));
             } else {
                 normalizedResults.push(results[checkedIndex]);
                 checkedIndex++;
@@ -384,11 +392,15 @@ export const PaymentsContextProvider = ({
     const getPrice = (planToCheck: PlanToCheck) => {
         const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck);
 
+        const localizedPlansMap = getPlansMap({
+            paramCurrency: planToCheck.currency,
+        }).plansMap;
+
         let result: EnrichedCheckResponse | undefined;
         if (planToCheck.coupon) {
             result = paymentsApi.getCachedCheck(subscriptionData);
         } else {
-            result = getOptimisticCheckResult({ plansMap, ...planToCheck });
+            result = getOptimisticCheckResult({ plansMap: localizedPlansMap, ...planToCheck });
         }
 
         /**
@@ -400,7 +412,20 @@ export const PaymentsContextProvider = ({
 
         return {
             checkResult: result,
-            uiData: getCheckout({ planIDs: planToCheck.planIDs, plansMap, checkResult: result }),
+            uiData: getCheckout({ planIDs: planToCheck.planIDs, plansMap: localizedPlansMap, checkResult: result }),
+        };
+    };
+
+    const getFallbackPrice = (planToCheck: PlanToCheck): PricesResult => {
+        const localizedPlansMap = getPlansMap({
+            paramCurrency: planToCheck.currency,
+        }).plansMap;
+
+        const checkResult = getOptimisticCheckResult({ plansMap: localizedPlansMap, ...planToCheck });
+
+        return {
+            checkResult,
+            uiData: getCheckout({ planIDs: planToCheck.planIDs, plansMap: localizedPlansMap, checkResult }),
         };
     };
 
@@ -418,13 +443,14 @@ export const PaymentsContextProvider = ({
         selectBillingAddress,
         checkMultiplePlans,
         plans,
-        plansMap,
+        plansMap: defaultPlansMap,
         getPrice,
+        getFallbackPrice,
         checkResult,
         // paymentFacade,
         billingAddress,
         uiData: {
-            checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap, checkResult }),
+            checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap: defaultPlansMap, checkResult }),
         },
         paymentsStatus,
         paymentsApi,
