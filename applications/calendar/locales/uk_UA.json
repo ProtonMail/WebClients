@@ -323,6 +323,9 @@
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
+      "Generate password": [
+        "Згенерувати пароль"
+      ],
       "Get in touch": [
         "Зв'яжіться з нами"
       ],
@@ -4999,6 +5002,9 @@
       "password": [
         "пароль"
       ],
+      "Password copied to clipboard": [
+        "Пароль скопійовано до буфера обміну"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
       ],
@@ -6021,6 +6027,9 @@
       "Street address": [
         "Вулиця"
       ],
+      "Strong": [
+        "Надійний"
+      ],
       "Subscription options": [
         "Опції передплати"
       ],
@@ -6059,6 +6068,12 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "Vulnerable": [
+        "Вразливий"
+      ],
+      "Weak": [
+        "Слабкий"
       ],
       "Week start": [
         "Початок тижня"
@@ -6596,20 +6611,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6631,6 +6632,20 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -9966,9 +9981,6 @@
       ],
       "Get the apps": [
         "Отримати програми"
-      ],
-      "Get Zooming faster": [
-        "Швидше приєднання до конференцій Zoom"
       ],
       "Gift": [
         "Подарунок"

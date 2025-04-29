@@ -207,6 +207,9 @@
       "Copy link": [
         "Copiar link"
       ],
+      "Copy password": [
+        "Copiar senha"
+      ],
       "Copy version number to clipboard": [
         "Copiar número da versão para a área de transferência"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Criar um contato"
+      ],
+      "Create new password": [
+        "Criar nova senha"
       ],
       "Current plan": [
         "Plano atual"
@@ -331,6 +337,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate password": [
+        "Gerar senha"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenha o ${ planName } por ${ priceCoupon }"
@@ -4744,6 +4753,9 @@
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Pelo menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attention required": [
         "Atenção necessária"
       ],
@@ -5058,6 +5070,9 @@
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
+      "It's better to have:": [
+        "É melhor ter:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "É melhor usar uma VPN o tempo todo. Mas é aqui que as ameaças à segurança cibernética podem ser maiores:"
       ],
@@ -5175,6 +5190,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Ocorrências atualizadas anteriormente pelo organizador serão mantidas, mas algumas das suas respostas serão perdidas."
       ],
@@ -5210,6 +5228,12 @@
       ],
       "password": [
         "senha"
+      ],
+      "Password copied to clipboard": [
+        "Senha copiada para a área de transferências"
+      ],
+      "Password must have:": [
+        "A senha deve conter:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
@@ -5383,6 +5407,9 @@
       "Surveillance": [
         "Vigilância"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -5499,6 +5526,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas:"
       ],
       "User activated": [
         "Usuário ativado"
@@ -6245,6 +6275,9 @@
       "Move to Inbox": [
         "Mover para Caixa de Entrada"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Name": [
         "Nome"
       ],
@@ -6290,6 +6323,9 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "Password strength": [
+        "Força da senha"
       ],
       "Payer": [
         "Pagador"
@@ -6357,6 +6393,12 @@
       "Street address": [
         "Endereço"
       ],
+      "Strong": [
+        "Forte"
+      ],
+      "Strong password": [
+        "Senha forte"
+      ],
       "Subscription options": [
         "Opções de assinatura"
       ],
@@ -6395,6 +6437,18 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Vulnerable password": [
+        "Senha vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
+      ],
+      "Weak password": [
+        "Senha fraca"
       ],
       "Week start": [
         "Início da semana"
@@ -6985,26 +7039,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Faça upgrade para ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Excluir conta"
@@ -7026,6 +7060,26 @@
       ],
       "Switch plan": [
         "Mudar de plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7619,6 +7673,11 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7631,11 +7690,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10489,9 +10543,6 @@
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
-      "Get Zooming faster": [
-        "Faça Zooming mais rápido"
-      ],
       "Gift": [
         "Presente"
       ],
@@ -10657,6 +10708,9 @@
       ],
       "Save changes": [
         "Salvar alterações"
+      ],
+      "Schedule meetings in one click": [
+        "Agende reuniões com um clique"
       ],
       "Security center": [
         "Central de segurança"

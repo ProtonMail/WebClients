@@ -207,6 +207,9 @@
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
+      "Copy password": [
+        "Parolayı kopyala"
+      ],
       "Copy version number to clipboard": [
         "Sürüm numarasını kopyala"
       ],
@@ -230,6 +233,9 @@
       ],
       "Create new contact": [
         "Yeni kişi ekle"
+      ],
+      "Create new password": [
+        "Yeni parola oluştur"
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -331,6 +337,9 @@
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
+      ],
+      "Generate password": [
+        "Parola üret"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ priceCoupon } ödeyerek ${ planName } alın"
@@ -4744,6 +4753,9 @@
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "En az ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -5058,6 +5070,9 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
+      "It's better to have:": [
+        "Şöyle olması daha iyidir:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Her zaman bir VPN kullanmak en iyisidir. Ancak siber güvenlik tehditlerinin en yüksek olabileceği zamanlar şunlardır:"
       ],
@@ -5175,6 +5190,9 @@
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
       ],
+      "Numbers": [
+        "Rakamlar"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Düzenleyici tarafından daha önce güncellenen etkinlikler tutulacak, ancak bazı yanıtlarınız kaybolacak."
       ],
@@ -5210,6 +5228,12 @@
       ],
       "password": [
         "parola"
+      ],
+      "Password copied to clipboard": [
+        "Parola panoya kopyalandı"
+      ],
+      "Password must have:": [
+        "Parola şunları içermelidir:"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -5383,6 +5407,9 @@
       "Surveillance": [
         "Gözetleme"
       ],
+      "Symbols (#$&)": [
+        "Simgeler (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
@@ -5499,6 +5526,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
+      "Uppercase and lowercase letters": [
+        "Büyük ve küçük harfler"
       ],
       "User activated": [
         "Kullanıcı ektinleştirildi"
@@ -6242,6 +6272,9 @@
       "Move to Inbox": [
         "Gelen kutusuna taşı"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
+      ],
       "Name": [
         "Ad"
       ],
@@ -6287,6 +6320,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password strength": [
+        "Parola gücü"
       ],
       "Payer": [
         "Ödeyen"
@@ -6354,6 +6390,12 @@
       "Street address": [
         "Sokak adresi"
       ],
+      "Strong": [
+        "Güçlü"
+      ],
+      "Strong password": [
+        "Güçlü parola"
+      ],
       "Subscription options": [
         "Abonelik seçenekleri"
       ],
@@ -6392,6 +6434,18 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Vulnerable": [
+        "Çok zayıf"
+      ],
+      "Vulnerable password": [
+        "Güvenlik açığı bulunan parola"
+      ],
+      "Weak": [
+        "Zayıf"
+      ],
+      "Weak password": [
+        "Zayıf parola"
       ],
       "Week start": [
         "Haftanın ilk günü"
@@ -6982,26 +7036,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -7023,6 +7057,26 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -9095,6 +9149,11 @@
         "İmzala"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Slack toplantısına katıl"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Uygulamada daha hızlı"
@@ -9853,6 +9912,11 @@
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } tasarruf edin"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kişi aynı görünüyor.",
@@ -10132,6 +10196,11 @@
       ],
       "vCard field": [
         "vCard alanı"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Teams toplantısına katıl"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10460,9 +10529,6 @@
       "Get the apps": [
         "Uygulamaları indirme"
       ],
-      "Get Zooming faster": [
-        "Daha hızlı Zoom görüşmeleri yapın"
-      ],
       "Gift": [
         "Hediye"
       ],
@@ -10628,6 +10694,9 @@
       ],
       "Save changes": [
         "Değişiklikleri kaydet"
+      ],
+      "Schedule meetings in one click": [
+        "Tek tıklamayla toplantılar planlayın"
       ],
       "Security center": [
         "Güvenlik merkezi"
@@ -11403,6 +11472,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Zoom toplantısına katıl"
       ]
     },
     "Zoom integration": {
