@@ -219,6 +219,9 @@
       "Copy invite link": [
         "Skopírovať pozývací odkaz"
       ],
+      "Copy password": [
+        "Kopírovať heslo"
+      ],
       "Copy version number to clipboard": [
         "Skopírovať číslo verzie do schránky"
       ],
@@ -239,6 +242,9 @@
       ],
       "Create new folder": [
         "Vytvoriť nový priečinok"
+      ],
+      "Create new password": [
+        "Vytvoriť nové heslo"
       ],
       "Current plan": [
         "Aktuálny plán"
@@ -353,6 +359,9 @@
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
+      ],
+      "Generate password": [
+        "Vygenerovať heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získať ${ planName } za ${ priceCoupon }"
@@ -649,7 +658,7 @@
         "Uložiť zmeny"
       ],
       "Save preferences": [
-        "Uložiť predvoľby"
+        "Uložiť preferencie"
       ],
       "Search": [
         "Hľadať"
@@ -755,6 +764,9 @@
       ],
       "Take out of trash": [
         "Vyprázdniť kôš"
+      ],
+      "Trashing...": [
+        "Presúva sa do koša..."
       ],
       "Trust": [
         "Dôverovať"
@@ -2356,11 +2368,6 @@
         "Faktúra po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožňuje spolupracovať s ostatnými v zabezpečenom, šifrovanom prostredí."
@@ -2496,6 +2503,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4283,6 +4295,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Naozaj chcete vybrané položky natrvalo vymazať z koša?"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
+      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -4658,6 +4673,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vyzerá to, že ste sa nedávno pokúsili načítať ${ uploadName }. Ak načítanie zlyhalo, prosím, ${ replaceFile }. Ak načítanie stále prebieha, jeho nahradenie zruší prebiehajúce načítanie."
       ],
+      "It's better to have:": [
+        "Je lepšie, ak máte:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najlepšie je vždy používať VPN sieť. Tu však môžu byť hrozby kybernetickej bezpečnosti najvyššie:"
       ],
@@ -4802,6 +4820,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
+      "Numbers": [
+        "Čísla"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4840,6 +4861,9 @@
       ],
       "password": [
         "heslo"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bolo skopírované do schránky"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
@@ -5072,6 +5096,9 @@
       "Surveillance": [
         "Monitorovanie"
       ],
+      "Symbols (#$&)": [
+        "Znaky (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
       ],
@@ -5228,9 +5255,6 @@
       "Trash": [
         "Kôš"
       ],
-      "Trashed": [
-        "Premiestnené do koša"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -5248,6 +5272,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávanie stoviek súborov naraz môže znížiť výkonnosť."
+      ],
+      "Uppercase and lowercase letters": [
+        "Veľké a malé písmená"
       ],
       "User activated": [
         "Používateľ aktivovaný"
@@ -5937,6 +5964,9 @@
       "Move to Inbox": [
         "Presunúť do Doručených"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "My files": [
         "Moje súbory"
       ],
@@ -6045,6 +6075,12 @@
       "Street address": [
         "Ulica a č."
       ],
+      "Strong": [
+        "Silné"
+      ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti predplatného"
       ],
@@ -6080,6 +6116,18 @@
       ],
       "Viewer": [
         "Čitateľ"
+      ],
+      "Vulnerable": [
+        "Zraniteľné"
+      ],
+      "Vulnerable password": [
+        "Zraniteľné heslo"
+      ],
+      "Weak": [
+        "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "What happened?": [
         "Čo sa stalo?"
@@ -8011,9 +8059,6 @@
       ],
       "Searching": [
         "Vyhľadávanie"
-      ],
-      "Trashed": [
-        "Premiestnené do koša"
       ]
     },
     "Participant name": {
@@ -9317,6 +9362,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Ušetrite ${ priceString }"
       ]
     },
     "Success": {
