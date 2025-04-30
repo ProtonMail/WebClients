@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
@@ -63,18 +63,22 @@ export const Tabs = ({
     const tabList = tabs || children || [];
     const value = clamp(unsafeValue, 0, tabList.length - 1);
     const content = tabList[value]?.content;
+    const rootRef = useRef<HTMLDivElement>(null);
+    const indicatortRef = useRef<HTMLLIElement>(null);
     const containerRef = useRef<HTMLUListElement>(null);
     const [selectedTabEl, setSelectedTabEl] = useState<HTMLLIElement | null>(null);
     const [selectedTabRect, setSelectedTabRect] = useState<DOMRect | undefined>(undefined);
     const [containerTabRect, setContainerTabRect] = useState<DOMRect | undefined>(undefined);
     const [isRTL] = useRightToLeft();
+    const [isReady, setReady] = useState(false); // for variables to be set before transition
 
-    const scale = (selectedTabRect?.width || 0) / (containerTabRect?.width || 1);
-    const width = `${selectedTabRect?.width || 0}px`;
-    const offset = (isRTL ? -1 : 1) * Math.abs((selectedTabRect?.x || 0) - (containerTabRect?.x || 0));
-    const translate = `${offset}px`;
+    const scale = selectedTabRect && containerTabRect && (selectedTabRect?.width || 0) / (containerTabRect?.width || 1);
+    const width = selectedTabRect && `${selectedTabRect?.width || 0}px`;
+    const offset =
+        selectedTabRect && (isRTL ? -1 : 1) * Math.abs((selectedTabRect?.x || 0) - (containerTabRect?.x || 0));
+    const translate = offset && `${offset}px`;
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const containerTabEl = containerRef.current;
         if (!containerTabEl || !selectedTabEl) {
             return;
@@ -100,6 +104,17 @@ export const Tabs = ({
         // tabs.title.join is meant to cover if the tabs would dynamically change
     }, [variant, containerRef.current, selectedTabEl, tabs?.map((tab) => tab.title).join('')]);
 
+    useEffect(() => {
+        // This prevents the indicator from jumping when the variables are set and makes it pleasant to the eye with the added opacity transition.
+        if (!isReady && translate !== undefined && scale !== undefined && width !== undefined) {
+            setReady(true);
+            setTimeout(() => {
+                rootRef.current?.classList.add('withTransition');
+                indicatortRef.current?.classList.remove('hides');
+            }, 300 /* same with transition duration in css */);
+        }
+    }, [translate, scale, width]);
+
     if (tabs?.length === 1) {
         return (
             <>
@@ -117,15 +132,15 @@ export const Tabs = ({
     const label = toKey(value, 'label_');
 
     return (
-        <div className={clsx(['tabs', 'tabs--' + variant, className])}>
-            <div className={clsx(['tabs-nav', navContainerClassName, stickyTabs && 'sticky top-0 bg-norm'])}>
+        <div ref={rootRef} className={clsx('tabs', 'tabs--' + variant, className)}>
+            <div className={clsx('tabs-nav', navContainerClassName, stickyTabs && 'sticky top-0 bg-norm')}>
                 <nav
-                    className={clsx([
+                    className={clsx(
                         'tabs-container',
                         variant === 'underline' && 'border-bottom border-weak',
                         !!contained && 'inline-flex',
-                        containerClassName,
-                    ])}
+                        containerClassName
+                    )}
                 >
                     <ul
                         className={clsx([
@@ -135,7 +150,11 @@ export const Tabs = ({
                         ])}
                         role="tablist"
                         ref={containerRef}
-                        style={{ '--translate': translate, '--scale': scale, '--width': width }}
+                        style={
+                            translate && scale && width
+                                ? { '--tabs_translate': translate, '--tabs_scale': scale, '--tabs_width': width }
+                                : {}
+                        }
                     >
                         {tabList.map(({ title, icon, iconPosition = 'trailing' }, index) => {
                             const key = toKey(index, 'key_');
@@ -194,7 +213,11 @@ export const Tabs = ({
                                 </li>
                             );
                         })}
-                        <li className="tabs-indicator" aria-hidden="true" />
+                        <li
+                            ref={indicatortRef}
+                            className={clsx('tabs-indicator hides', isReady || 'hide')}
+                            aria-hidden="true"
+                        />
                     </ul>
                 </nav>
             </div>
