@@ -4,7 +4,7 @@ module.exports = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|pmcrypto|openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@proton/telemetry|pmcrypto|openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui)/)',
     ],
     transform: { '^.+\\.(m?js|tsx?)$': 'babel-jest' },
     coverageReporters: ['text-summary', 'json'],
