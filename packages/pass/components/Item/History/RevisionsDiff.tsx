@@ -40,9 +40,8 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     alias: AliasContent,
     creditCard: CreditCardContent,
     identity: IdentityContent,
-    // TODO(@djankovic): FIXME
-    sshKey: CustomContent as any,
-    wifi: CustomContent as any,
+    sshKey: CustomContent,
+    wifi: CustomContent,
     custom: CustomContent,
 };
 

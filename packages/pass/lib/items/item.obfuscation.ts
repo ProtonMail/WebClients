@@ -41,45 +41,62 @@ export const obfuscateItem = <T extends ItemType = ItemType>(item: DeobfuscatedI
         extraFields: obfuscateExtraFields(item.extraFields),
     };
 
-    switch (item.type) {
-        case 'login':
-            return {
-                ...item,
-                ...base,
-                content: {
-                    ...item.content,
-                    itemEmail: obfuscate(item.content.itemEmail),
-                    itemUsername: obfuscate(item.content.itemUsername),
-                    password: obfuscate(item.content.password),
-                    totpUri: obfuscate(item.content.totpUri),
-                },
-            } satisfies Item<'login'> as Item<T>;
-        case 'creditCard':
-            return {
-                ...item,
-                ...base,
-                content: {
-                    ...item.content,
-                    number: obfuscate(item.content.number),
-                    verificationNumber: obfuscate(item.content.verificationNumber),
-                    pin: obfuscate(item.content.pin),
-                },
-            } satisfies Item<'creditCard'> as Item<T>;
+    const obfuscatedItem = ((): Item => {
+        switch (item.type) {
+            case 'login':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        itemEmail: obfuscate(item.content.itemEmail),
+                        itemUsername: obfuscate(item.content.itemUsername),
+                        password: obfuscate(item.content.password),
+                        totpUri: obfuscate(item.content.totpUri),
+                    },
+                } satisfies Item<'login'>;
+            case 'creditCard':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        number: obfuscate(item.content.number),
+                        verificationNumber: obfuscate(item.content.verificationNumber),
+                        pin: obfuscate(item.content.pin),
+                    },
+                } satisfies Item<'creditCard'>;
 
-        case 'note':
-            return { ...item, ...base } satisfies Item<'note'> as Item<T>;
-        case 'alias':
-            return { ...item, ...base } satisfies Item<'alias'> as Item<T>;
-        case 'identity':
-            return { ...item, ...base } satisfies Item<'identity'> as Item<T>;
-        // TODO(@djankovic): Unobfuscated
-        case 'sshKey':
-            return { ...item, ...base } satisfies Item<'sshKey'> as Item<T>;
-        case 'wifi':
-            return { ...item, ...base } satisfies Item<'wifi'> as Item<T>;
-        case 'custom':
-            return { ...item, ...base } satisfies Item<'custom'> as Item<T>;
-    }
+            case 'note':
+                return { ...item, ...base } satisfies Item<'note'>;
+            case 'alias':
+                return { ...item, ...base } satisfies Item<'alias'>;
+            case 'identity':
+                return { ...item, ...base } satisfies Item<'identity'>;
+            case 'sshKey':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        privateKey: obfuscate(item.content.privateKey),
+                    },
+                } satisfies Item<'sshKey'>;
+            case 'wifi':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        password: obfuscate(item.content.password),
+                    },
+                } satisfies Item<'wifi'>;
+            case 'custom':
+                return { ...item, ...base } satisfies Item<'custom'>;
+        }
+    })();
+
+    return obfuscatedItem as Item<T>;
 };
 
 export const deobfuscateItem = <T extends ItemType>(item: Item): DeobfuscatedItem<T> => {
@@ -88,44 +105,62 @@ export const deobfuscateItem = <T extends ItemType>(item: Item): DeobfuscatedIte
         extraFields: deobfuscateExtraFields(item.extraFields),
     };
 
-    switch (item.type) {
-        case 'login':
-            return {
-                ...item,
-                ...base,
-                content: {
-                    ...item.content,
-                    itemEmail: deobfuscate(item.content.itemEmail),
-                    itemUsername: deobfuscate(item.content.itemUsername),
-                    password: deobfuscate(item.content.password),
-                    totpUri: deobfuscate(item.content.totpUri),
-                },
-            } satisfies DeobfuscatedItem<'login'> as DeobfuscatedItem<T>;
-        case 'creditCard':
-            return {
-                ...item,
-                ...base,
-                content: {
-                    ...item.content,
-                    number: deobfuscate(item.content.number),
-                    verificationNumber: deobfuscate(item.content.verificationNumber),
-                    pin: deobfuscate(item.content.pin),
-                },
-            } satisfies DeobfuscatedItem<'creditCard'> as DeobfuscatedItem<T>;
+    const deobfuscatedItem = ((): DeobfuscatedItem => {
+        switch (item.type) {
+            case 'login':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        itemEmail: deobfuscate(item.content.itemEmail),
+                        itemUsername: deobfuscate(item.content.itemUsername),
+                        password: deobfuscate(item.content.password),
+                        totpUri: deobfuscate(item.content.totpUri),
+                    },
+                } satisfies DeobfuscatedItem<'login'>;
+            case 'creditCard':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        number: deobfuscate(item.content.number),
+                        verificationNumber: deobfuscate(item.content.verificationNumber),
+                        pin: deobfuscate(item.content.pin),
+                    },
+                } satisfies DeobfuscatedItem<'creditCard'>;
 
-        case 'note':
-            return { ...item, ...base } satisfies DeobfuscatedItem<'note'> as DeobfuscatedItem<T>;
-        case 'alias':
-            return { ...item, ...base } satisfies DeobfuscatedItem<'alias'> as DeobfuscatedItem<T>;
-        case 'identity':
-            return { ...item, ...base } satisfies DeobfuscatedItem<'identity'> as DeobfuscatedItem<T>;
-        case 'sshKey':
-            return { ...item, ...base } satisfies DeobfuscatedItem<'sshKey'> as DeobfuscatedItem<T>;
-        case 'wifi':
-            return { ...item, ...base } satisfies DeobfuscatedItem<'wifi'> as DeobfuscatedItem<T>;
-        case 'custom':
-            return { ...item, ...base } satisfies DeobfuscatedItem<'custom'> as DeobfuscatedItem<T>;
-    }
+            case 'note':
+                return { ...item, ...base } satisfies DeobfuscatedItem<'note'>;
+            case 'alias':
+                return { ...item, ...base } satisfies DeobfuscatedItem<'alias'>;
+            case 'identity':
+                return { ...item, ...base } satisfies DeobfuscatedItem<'identity'>;
+            case 'sshKey':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        privateKey: deobfuscate(item.content.privateKey),
+                    },
+                } satisfies DeobfuscatedItem<'sshKey'>;
+            case 'wifi':
+                return {
+                    ...item,
+                    ...base,
+                    content: {
+                        ...item.content,
+                        password: deobfuscate(item.content.password),
+                    },
+                } satisfies DeobfuscatedItem<'wifi'>;
+            case 'custom':
+                return { ...item, ...base } satisfies DeobfuscatedItem<'custom'>;
+        }
+    })();
+
+    return deobfuscatedItem as DeobfuscatedItem<T>;
 };
 
 export const deobfuscateItemPartial = <T extends ItemType, R = DeobfuscatedItem<T, DeobfuscateMode.AUTO>>(

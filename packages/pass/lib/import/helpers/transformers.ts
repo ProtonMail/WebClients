@@ -234,8 +234,7 @@ export const importSshKeyItem = (options: {
             itemUuid: uniqueId(),
         },
         content: {
-            // TODO(@djankovic): unobfuscated
-            privateKey: options.privateKey ?? '',
+            privateKey: obfuscate(options.privateKey ?? ''),
             publicKey: options.publicKey ?? '',
             sections: [],
         },
@@ -266,9 +265,8 @@ export const importWifiItem = (options: {
             itemUuid: uniqueId(),
         },
         content: {
-            // TODO(@djankovic): unobfuscated
             ssid: options.ssid ?? '',
-            password: options.password ?? '',
+            password: obfuscate(options.password ?? ''),
             security: options.security ?? WifiSecurity.UnspecifiedWifiSecurity,
             sections: [],
         },

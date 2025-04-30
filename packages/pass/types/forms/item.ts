@@ -7,7 +7,9 @@ import type {
 } from '@proton/pass/types/data';
 import type { ExtractKeysOfType } from '@proton/pass/types/utils';
 
-import type { ExtraFieldGroupValues, UrlGroupValues } from './fields';
+import type { ItemCustomType } from '@proton/pass/types/protobuf';
+import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
 export type BaseItemValues = { name: string; note: string; shareId: string } & FileAttachmentValues;
 export type NoteFormValues = BaseItemValues;
@@ -58,10 +60,14 @@ export type CreditCardItemFormValues = BaseItemValues & {
     note: string;
 };
 
-export type CustomItemFormValues = BaseItemValues &
-    ExtraFieldGroupValues &
-    (
-        | ({ type: 'wifi' } & ItemContent<'wifi'>)
-        | ({ type: 'sshKey' } & ItemContent<'sshKey'>)
-        | ({ type: 'custom' } & ItemContent<'custom'>)
-    );
+export type CustomItemFormValues<T extends ItemCustomType = ItemCustomType> = Extract<
+    BaseItemValues &
+        ExtraFieldGroupValues &
+        CustomSectionGroupValues &
+        (
+            | { type: 'wifi'; password: string; security: WifiSecurity; ssid: string }
+            | { type: 'sshKey'; privateKey: string; publicKey: string }
+            | { type: 'custom' }
+        ),
+    { type: T }
+>;
