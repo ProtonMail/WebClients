@@ -139,6 +139,8 @@ describe('HomepageContent', () => {
           isRenameSaving: false,
           move: jest.fn(),
           share: jest.fn(),
+          onTrashed: jest.fn(),
+          currentlyTrashingId: undefined,
         }}
       >
         {children}

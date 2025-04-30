@@ -3,7 +3,6 @@ import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
 import { InvitesTable } from './InvitesTable'
 import { ContextMenuProvider } from './DocContextMenu/context'
-import emptyStateImage from './empty-state.svg'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { Icon, useAuthentication } from '@proton/components'
@@ -12,13 +11,18 @@ import { useHomepageView } from '../../__utils/homepage-view'
 import { useEffect } from 'react'
 import { ContentSheet } from './shared'
 import { useIsSheetsEnabled } from '~/utils/misc'
+import emptyStateRecentsImage from './empty-state-recents.svg'
+import emptyStateImage from './empty-state.svg'
+import clsx from '@proton/utils/clsx'
+import { useApplication } from '~/utils/application-context'
+import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 
 const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
 
 export function HomepageContent() {
   return (
     <ContextMenuProvider>
-      <PreloadImages urls={[emptyStateImage]} />
+      <PreloadImages urls={[emptyStateImage, emptyStateRecentsImage]} />
       <div className="flex h-full w-full flex-col flex-nowrap gap-5 small:pr-2">{useRenderHomepageView()}</div>
     </ContextMenuProvider>
   )
@@ -109,6 +113,7 @@ function getEmptyStateText(variant: EmptyStateVariant): string {
 }
 
 function EmptyState({ variant }: EmptyStateProps) {
+  const application = useApplication()
   const { getLocalID } = useAuthentication()
   const isSheetsEnabled = useIsSheetsEnabled()
   const { updateRecentDocuments } = useHomepageView()
@@ -117,10 +122,10 @@ function EmptyState({ variant }: EmptyStateProps) {
     <ContentSheet isBottom className="flex grow items-center justify-center">
       <div className="flex flex-col items-center gap-6 p-8">
         <img
-          className="w-custom"
-          style={{ '--w-custom': '130px' }}
-          src={emptyStateImage}
-          alt={c('Info').t`No recent documents`}
+          className={clsx(variant === 'recents' ? 'w-[38.3125rem] scale-110 xsmall:scale-100' : 'w-[8.125rem]')}
+          aria-hidden="true"
+          src={variant === 'recents' ? emptyStateRecentsImage : emptyStateImage}
+          alt="Empty state illustration"
         />
         <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant)}</p>
         <div className="flex justify-center">
@@ -132,11 +137,14 @@ function EmptyState({ variant }: EmptyStateProps) {
               color="norm"
               size="large"
               shape="solid"
-              onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
+              onClick={() => {
+                application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
+                setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
+              }}
               style={{ backgroundColor: 'var(--docs-blue-color)' }}
               className="flex items-center justify-center gap-2"
             >
-              <Icon name="plus" />
+              <Icon name="brand-proton-docs" />
               {c('Action').t`New document`}
             </ButtonLike>
           ) : null}

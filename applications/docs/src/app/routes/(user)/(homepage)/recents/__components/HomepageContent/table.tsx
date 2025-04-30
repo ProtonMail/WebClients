@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/prefer-tag-over-role */
 import clsx from '@proton/utils/clsx'
-import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+import { type ComponentPropsWithoutRef, type ReactNode } from 'react'
 
 const POSITIONAL_CELL_CLASSES = [
   '[&:nth-child(1)]:grow [&:nth-child(1)]:px-5 [&:nth-child(1)]:basis-0',
@@ -22,13 +22,32 @@ export function Table(props: TableProps) {
   return <div role="table" {...props} className={clsx('text-[14px]', props.className)} />
 }
 
-export interface HeadProps extends ComponentPropsWithoutRef<'div'> {
-  children: ReactNode
+export interface TitleProps extends ComponentPropsWithoutRef<'div'> {}
+
+export function Title(props: TitleProps) {
+  return (
+    <div
+      {...props}
+      className={clsx(
+        'border-weak sticky top-0 hidden h-11 items-center justify-between border-b pe-2 ps-5 text-[1rem] font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] small:!flex',
+        props.className,
+      )}
+    />
+  )
 }
 
-export function Head({ children, ...props }: HeadProps) {
+export interface HeadProps extends ComponentPropsWithoutRef<'div'> {
+  children: ReactNode
+  secondarySticky?: boolean
+}
+
+export function Head({ children, secondarySticky, ...props }: HeadProps) {
   return (
-    <div role="rowgroup" {...props} className={clsx('sticky left-0 top-0', props.className)}>
+    <div
+      role="rowgroup"
+      {...props}
+      className={clsx('sticky left-0 top-0', secondarySticky && 'small:!top-11', props.className)}
+    >
       <div role="row" className="flex h-[2.75rem] items-center text-left">
         {children}
       </div>
