@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -17,6 +18,7 @@ import type { ArmoredKeyWithInfo, OnKeyImportCallback } from '@proton/shared/lib
 import getRandomString from '@proton/utils/getRandomString';
 
 import GenericError from '../../error/GenericError';
+import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 import ImportKeysList from './ImportKeysList';
@@ -44,9 +46,10 @@ enum STEPS {
 
 interface Props extends ModalProps {
     onProcess: (keys: ImportKey[], cb: OnKeyImportCallback) => Promise<void>;
+    hasOutgoingE2EEForwardings: boolean;
 }
 
-const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
+const ImportKeyModal = ({ onProcess, hasOutgoingE2EEForwardings, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const selectRef = useRef<HTMLInputElement>(null);
@@ -136,6 +139,7 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
 
     const { children, submit, onNext, loading } = (() => {
         if (step === STEPS.WARNING) {
+            const pausedForwardingNotice = getPausedForwardingNotice();
             return {
                 submit: c('Action').t`Import`,
                 loading: false,
@@ -143,12 +147,20 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
                     setStep(STEPS.SELECT_FILES);
                 },
                 children: (
-                    <div className="text-pre-wrap">
-                        {c('Import key')
-                            .t`Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.
+                    <>
+                        <div className="text-pre-wrap">
+                            {c('Import key')
+                                .t`Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.
 
 Please also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.`}
-                    </div>
+                        </div>
+                        {hasOutgoingE2EEForwardings ? (
+                            <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
+                                <Icon name="exclamation-circle" className="shrink-0 color-warning" />
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">{pausedForwardingNotice}</p>
+                            </div>
+                        ) : null}
+                    </>
                 ),
             };
         }
