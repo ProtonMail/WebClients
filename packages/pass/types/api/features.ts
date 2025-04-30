@@ -2,11 +2,8 @@ import type { MaybeNull } from '@proton/pass/types/utils';
 
 export enum PassFeature {
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
-    PassInAppMessages = 'PassInAppMessagesV1',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
-    PassItemSharingV1 = 'PassItemSharingV1',
     PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
-    PassSecureLinkCryptoChangeV1 = 'PassSecureLinkCryptoChangeV1',
     PassWebPrfUnlock = 'PassWebPrfUnlock',
     PassFileAttachments = 'PassFileAttachmentsV1',
     PassFileAttachmentEncryptionV2 = 'PassFileAttachmentEncryptionV2',
