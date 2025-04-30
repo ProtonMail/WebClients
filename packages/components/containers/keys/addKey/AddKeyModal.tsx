@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -14,16 +15,19 @@ import { getAlgorithmExists } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import useNotifications from '../../../hooks/useNotifications';
+import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
 
 interface Props extends ModalProps {
     type: 'user' | 'address';
     existingAlgorithms: AlgorithmInfo[];
     onAdd: (config: KeyGenConfig) => Promise<string>;
+    /** for `type='address'` onyl */
+    hasOutgoingE2EEForwardings?: boolean;
 }
 
 const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 
-const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
+const AddKeyModal = ({ existingAlgorithms, type, onAdd, hasOutgoingE2EEForwardings, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
@@ -65,6 +69,8 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                             );
                         }
 
+                        const pausedForwardingNotice = getPausedForwardingNotice();
+
                         return (
                             <>
                                 <div className="mb-2">
@@ -79,6 +85,12 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                                     <div className="text-bold">
                                         {c('Key generation')
                                             .t`Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.`}
+                                    </div>
+                                )}
+                                {hasOutgoingE2EEForwardings && (
+                                    <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
+                                        <Icon name="exclamation-circle" className="shrink-0 color-warning" />
+                                        <p className="text-sm color-weak flex-1 pl-4 my-0">{pausedForwardingNotice}</p>
                                     </div>
                                 )}
                             </>
