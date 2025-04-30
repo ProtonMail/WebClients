@@ -51,21 +51,28 @@ JknRI+Y5byS70CAWAGoFYHIDQGevwX6G4WSIscmKhb+4m9gNR8CkzBw5Dt6X
 -----END PGP PUBLIC KEY BLOCK-----`;
 
 describe('verifySKLSignature', () => {
-    it('should return signature timestamp when all primary keys are provided and verify the signature', async () => {
+    it('should return signature timestamp when any of the keys are provided and verify the signature', async () => {
         const v4PrimaryKey = await CryptoProxy.importPublicKey({ armoredKey: v4PrimaryArmoredKey });
         const v6PrimaryKey = await CryptoProxy.importPublicKey({ armoredKey: v6PrimaryArmoredKey });
-        const verificationTimestamp = await verifySKLSignature({
-            verificationKeys: [v4PrimaryKey, v6PrimaryKey],
+        const verificationTimestampV4 = await verifySKLSignature({
+            verificationKeys: [v4PrimaryKey],
             signedKeyListData: sklWithV6Key.Data,
             signedKeyListSignature: sklWithV6Key.Signature,
         });
-        expect(verificationTimestamp).not.toBeNull();
+        expect(verificationTimestampV4).not.toBeNull();
+
+        const verificationTimestampV6 = await verifySKLSignature({
+            verificationKeys: [v6PrimaryKey],
+            signedKeyListData: sklWithV6Key.Data,
+            signedKeyListSignature: sklWithV6Key.Signature,
+        });
+        expect(verificationTimestampV6).not.toBeNull();
     });
 
-    it('should return null when a primary key is not provided as verification key', async () => {
-        const v4PrimaryKey = await CryptoProxy.importPublicKey({ armoredKey: v4PrimaryArmoredKey });
+    it('should return null when the SKL signature cannot be verified', async () => {
+        const extraneousKey = await CryptoProxy.generateKey({ userIDs: { email: 'test@test.it' } });
         const verificationTimestamp = await verifySKLSignature({
-            verificationKeys: [v4PrimaryKey], // missing v6 primary key
+            verificationKeys: [extraneousKey],
             signedKeyListData: sklWithV6Key.Data,
             signedKeyListSignature: sklWithV6Key.Signature,
         });
