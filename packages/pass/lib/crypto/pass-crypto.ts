@@ -502,26 +502,9 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             return processes.openFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
-        async createSecureLink({ itemKey, shareId }) {
+        async createSecureLink({ itemKey }) {
             assertHydrated(context);
-
-            const shareKey = (() => {
-                if (!shareId) return itemKey;
-
-                const manager = getShareManager(shareId);
-                const rotation = manager.getLatestRotation();
-
-                return (() => {
-                    switch (manager.getType()) {
-                        case ShareType.Vault:
-                            return manager.getVaultShareKey(rotation);
-                        case ShareType.Item:
-                            return manager.getItemShareKey(rotation);
-                    }
-                })();
-            })();
-
-            return processes.createSecureLink({ itemKey, shareKey });
+            return processes.createSecureLink({ itemKey });
         },
 
         async openSecureLink({ linkKey, publicLinkContent }) {
@@ -560,7 +543,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
         async openLinkKey({ encryptedLinkKey, linkKeyShareKeyRotation, shareId, itemId, linkKeyEncryptedWithItemKey }) {
             assertHydrated(context);
 
-            const shareKey: CryptoKey = await (async () => {
+            const key: CryptoKey = await (async () => {
                 if (!linkKeyEncryptedWithItemKey) {
                     const vaultKey = getShareManager(shareId).getVaultShareKey(linkKeyShareKeyRotation);
                     return vaultKey.key;
@@ -570,7 +553,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                 return itemKey.key;
             })();
 
-            return processes.openLinkKey({ encryptedLinkKey, shareKey });
+            return processes.openLinkKey({ encryptedLinkKey, key });
         },
 
         async openItemKey({ encryptedItemKey, shareId }) {
