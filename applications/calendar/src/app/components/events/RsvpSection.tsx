@@ -275,6 +275,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         placeholder={c('Placeholder').t`Leave a note for all participants`}
                         value={rsvpState.Comment}
                         onValue={handleNote}
+                        characterCountClassName="text-monospace"
                         maxCharacterCount={128}
                         showCharacterCount={true}
                         counterPosition="bottom-left"
