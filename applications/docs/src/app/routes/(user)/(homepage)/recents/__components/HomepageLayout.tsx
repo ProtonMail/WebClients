@@ -42,6 +42,8 @@ import { HOMEPAGE_RECENTS_PATH } from '../../../__components/AppContainer'
 import { useEvent, useIsSheetsEnabled } from '~/utils/misc'
 import clsx from '@proton/utils/clsx'
 import { IS_REFRESH_ENABLED, IS_FAVORITES_ENABLED } from '../__utils/features'
+import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
+import { useApplication } from '~/utils/application-context'
 
 const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
 
@@ -215,6 +217,7 @@ function MobileSearch({ value, onChange, className }: SearchProps) {
 type SidebarProps = { expanded: boolean; onToggle: () => void; setExpanded: (value: boolean) => void }
 
 function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
+  const application = useApplication()
   const { getLocalID } = useAuthentication()
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
@@ -233,7 +236,10 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
         color="norm"
         size="large"
         shape="solid"
-        onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
+        onClick={() => {
+          application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
+          setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
+        }}
         className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
       >
         {c('Action').t`New document`}
