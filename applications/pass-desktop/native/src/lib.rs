@@ -21,13 +21,6 @@ pub mod biometric {
     }
 
     #[napi]
-    pub async fn get_decryption_key(challenge: Option<&str>) -> napi::Result<Vec<String>> {
-        Biometrics::get_decryption_key(challenge)
-            .map(|v| v.into())
-            .map_err(|e| napi::Error::from_reason(e.to_string()))
-    }
-
-    #[napi]
     pub async fn get_secret(key: String) -> napi::Result<Uint8Array> {
         let vec = Biometrics::get_secret(key).map_err(|e| napi::Error::from_reason(e.to_string()))?;
         Ok(Uint8Array::new(vec))
