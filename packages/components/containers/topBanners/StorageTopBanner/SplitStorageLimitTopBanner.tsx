@@ -3,7 +3,7 @@ import { SpaceState, getCompleteSpaceDetails, type getSpace } from '@proton/shar
 
 import TopBanner from '../TopBanner';
 import { StorageUpgradeCta } from './StorageUpgradeCta';
-import { getStorageFull } from './helperStorageBanner';
+import { generateStorageBannerText } from './helperStorageBanner';
 
 export const SplitStorageLimitTopBanner = ({
     app,
@@ -22,7 +22,7 @@ export const SplitStorageLimitTopBanner = ({
     if (details.base.type === SpaceState.Danger && details.drive.type === SpaceState.Danger) {
         return (
             <TopBanner className="bg-danger">
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: app === APPS.PROTONDRIVE ? details.drive.displayed : details.base.displayed,
                     mode: 'both',
                     app,
@@ -35,7 +35,7 @@ export const SplitStorageLimitTopBanner = ({
     if (details.base.type === SpaceState.Danger) {
         return (
             <TopBanner className="bg-danger">
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: details.base.displayed,
                     mode: 'mail',
                     upgrade,
@@ -47,7 +47,7 @@ export const SplitStorageLimitTopBanner = ({
     if (details.drive.type === SpaceState.Danger && app === APPS.PROTONDRIVE) {
         return (
             <TopBanner className="bg-danger">
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: details.drive.displayed,
                     mode: 'drive',
                     upgrade,
@@ -63,7 +63,7 @@ export const SplitStorageLimitTopBanner = ({
     if (details.drive.type === SpaceState.Warning && details.base.type === SpaceState.Warning) {
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: app === APPS.PROTONDRIVE ? details.drive.displayed : details.base.displayed,
                     mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
                     upgrade,
@@ -75,7 +75,7 @@ export const SplitStorageLimitTopBanner = ({
     if (details.drive.type === SpaceState.Warning && app === APPS.PROTONDRIVE) {
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: details.drive.displayed,
                     mode: 'drive',
                     upgrade,
@@ -87,7 +87,7 @@ export const SplitStorageLimitTopBanner = ({
     if (details.base.type === SpaceState.Warning) {
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: details.base.displayed,
                     mode: 'mail',
                     upgrade,

@@ -3,7 +3,7 @@ import { SpaceState, getCompleteSpaceDetails, type getSpace } from '@proton/shar
 
 import TopBanner from '../TopBanner';
 import { StorageUpgradeCta } from './StorageUpgradeCta';
-import { getStorageFull } from './helperStorageBanner';
+import { generateStorageBannerText } from './helperStorageBanner';
 
 export const PooledStorageLimitTopBanner = ({
     app,
@@ -22,7 +22,7 @@ export const PooledStorageLimitTopBanner = ({
     if (details.pooled.type === SpaceState.Danger) {
         return (
             <TopBanner className="bg-danger">
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: details.pooled.displayed,
                     mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
                     upgrade,
@@ -38,7 +38,7 @@ export const PooledStorageLimitTopBanner = ({
     if (details.pooled.type === SpaceState.Warning) {
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
-                {getStorageFull({
+                {generateStorageBannerText({
                     percentage: details.pooled.displayed,
                     mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
                     upgrade,
