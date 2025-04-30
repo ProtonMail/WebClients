@@ -138,7 +138,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         pending: boolean;
     }) => Promise<Uint8Array>;
 
-    createSecureLink: (data: { itemKey: ItemKey; shareId?: string }) => Promise<CreateSecureLinkData>;
+    createSecureLink: (data: { itemKey: ItemKey }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;
     openLinkKey: (data: {
         encryptedLinkKey: string;
