@@ -50,6 +50,7 @@ export enum TelemetryMeasurementGroups {
     b2bOnboarding = 'any.web.b2b_onboarding',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
+    docsHomepage = 'drive.docs.homepage',
 }
 
 export enum TelemetryMailOnboardingEvents {
@@ -272,6 +273,18 @@ export enum TelemetryDocsEvents {
     suggestion_commented = 'suggestion.comment',
 }
 
+export enum TelemetryDocsHomepageEvents {
+    document_opened = 'document.opened',
+    document_created = 'document.created',
+    document_shared = 'document.shared',
+    document_trashed = 'document.trashed',
+    document_renamed = 'document.renamed',
+    document_moved = 'document.moved',
+    document_source_opened = 'document.source.opened',
+    sorting_changed_to_name = 'sorting.changed.to_name',
+    sorting_changed_to_time = 'sorting.changed.to_time',
+}
+
 export enum TelemetryPostSubscriptionTourEvents {
     post_subscription_action = 'post_subscription_action',
     start_feature_tour = 'start_feature_tour',
@@ -353,6 +366,7 @@ export type TelemetryEvents =
     | TelemetryDesktopEvents
     | TelemetryInboxDestkopEvents
     | TelemetryDocsEvents
+    | TelemetryDocsHomepageEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents
     | TelemetryB2BOnboardingEvents
