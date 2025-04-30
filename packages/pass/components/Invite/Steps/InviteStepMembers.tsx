@@ -1,4 +1,4 @@
-import type { MutableRefObject, ReactNode } from 'react';
+import type { ClipboardEvent, MutableRefObject, ReactNode } from 'react';
 import { forwardRef, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -75,6 +75,20 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
             onUpdate(update);
         };
 
+        const handlePaste = (evt: ClipboardEvent<HTMLInputElement>) => {
+            evt.preventDefault();
+
+            const value = evt.clipboardData?.getData('text/plain') || '';
+
+            const emails = value
+                .split(/[,;\s\n\t]+/)
+                .map((email) => email.trim())
+                .filter((email) => email.length > 0)
+                .map(createMember);
+
+            onUpdate(members.concat(emails));
+        };
+
         return (
             <div className="anime-fade-in h-full flex flex-nowrap flex-column gap-y-3 *:shrink-0">
                 {heading}
@@ -95,6 +109,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                         onPush={createMember}
                         onReplace={(email, prev) => ({ ...prev, value: { ...prev.value, email } })}
                         placeholder={c('Placeholder').t`Email address`}
+                        onPaste={handlePaste}
                         renderError={(err) => {
                             const errors = err as string[];
 
