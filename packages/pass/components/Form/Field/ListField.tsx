@@ -56,6 +56,7 @@ export const ListField = <
     fieldValue,
     onAutocomplete,
     onBlur,
+    onPaste,
     onPush,
     onReplace,
     renderError,
@@ -209,6 +210,7 @@ export const ListField = <
                                         onChange={debouncedValidate}
                                         onKeyDown={onKeyDown}
                                         onValue={onAutocomplete}
+                                        onPaste={onPaste}
                                         placeholder={values.length === 0 ? placeholder : ''}
                                         ref={ref}
                                         unstyled
