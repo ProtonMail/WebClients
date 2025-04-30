@@ -1,13 +1,13 @@
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { getStorageFull } from './helperStorageBanner';
+import { generateStorageBannerText } from './helperStorageBanner';
 
-describe('getStorageFull', () => {
+describe('generateStorageBannerText', () => {
     describe('Mode drive', () => {
         it('Should return drive string for full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 110,
                 mode: 'drive',
                 app: 'proton-drive',
@@ -22,7 +22,7 @@ describe('getStorageFull', () => {
         it('Should return drive string for near full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 90,
                 mode: 'drive',
                 app: 'proton-drive',
@@ -39,7 +39,7 @@ describe('getStorageFull', () => {
         it('Should return mail string for full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 110,
                 mode: 'mail',
                 app: 'proton-mail',
@@ -54,7 +54,7 @@ describe('getStorageFull', () => {
         it('Should return mail string for near full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 90,
                 mode: 'mail',
                 app: 'proton-mail',
@@ -71,7 +71,7 @@ describe('getStorageFull', () => {
         it('Should return drive string for full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 110,
                 mode: 'drive',
                 app: 'proton-drive',
@@ -86,7 +86,7 @@ describe('getStorageFull', () => {
         it('Should return drive string for near full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 90,
                 mode: 'drive',
                 app: 'proton-drive',
@@ -101,7 +101,7 @@ describe('getStorageFull', () => {
         it('Should return drive string for full storage when on Mail app', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 110,
                 mode: 'drive',
                 app: 'proton-mail',
@@ -116,7 +116,7 @@ describe('getStorageFull', () => {
         it('Should return drive string for near full storage when on Mail app', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 90,
                 mode: 'drive',
                 app: 'proton-mail',
@@ -131,7 +131,7 @@ describe('getStorageFull', () => {
         it('Should return mail string for full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 110,
                 mode: 'mail',
                 app: 'proton-mail',
@@ -146,7 +146,7 @@ describe('getStorageFull', () => {
         it('Should return mail string for near full storage', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 90,
                 mode: 'mail',
                 app: 'proton-mail',
@@ -161,7 +161,7 @@ describe('getStorageFull', () => {
         it('Should return mail string for full storage when on Drive app', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 110,
                 mode: 'mail',
                 app: 'proton-drive',
@@ -176,7 +176,7 @@ describe('getStorageFull', () => {
         it('Should return drive string for near full storage when on Mail app', () => {
             const cta = 'Upgrade';
 
-            const string = getStorageFull({
+            const string = generateStorageBannerText({
                 percentage: 90,
                 mode: 'mail',
                 app: 'proton-drive',
