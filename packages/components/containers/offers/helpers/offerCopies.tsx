@@ -4,7 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
 import { getDesktopAppText, getOwnDomainText } from '@proton/components/containers/payments/features/mail';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs } from '@proton/payments';
+import { getRenewCycle } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -482,7 +483,8 @@ export const getRenewDescription = (
     cycle: CYCLE,
     discountedAmount: ReactElement,
     regularAmount: ReactElement,
-    discount: number
+    discount: number,
+    planIDs: PlanIDs
 ): string | string[] | null => {
     switch (cycle) {
         case CYCLE.MONTHLY:
@@ -491,8 +493,16 @@ export const getRenewDescription = (
             return c('specialoffer: Offers')
                 .jt`Renews after 1 year at a discounted price of ${discountedAmount} instead of ${regularAmount} (${discount}% discount)`;
         case CYCLE.TWO_YEARS:
-            return c('specialoffer: Offers')
-                .jt`Renews after 2 years at a discounted price of ${discountedAmount} instead of ${regularAmount} (${discount}% discount)`;
+            // using getRenewCycle is a placeholder. Ideally this part should be reworked if this component is ever used
+            // again during black friday or otherwise. Please contact the payments team for the help with implementation
+            // of the correct renewal noticed. I couldn't do it properly here because the component was unused at the
+            // time when I applied this change. I still did this change to have some sort of fallback - just in case.
+            if (getRenewCycle(planIDs, cycle) === CYCLE.TWO_YEARS) {
+                return c('specialoffer: Offers')
+                    .jt`Renews after 2 years at a discounted price of ${discountedAmount} instead of ${regularAmount} (${discount}% discount)`;
+            }
+
+            return c('specialoffer: Offers').jt`The special offer is valid for the first 2 years`;
         default:
             return null;
     }

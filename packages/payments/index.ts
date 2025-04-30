@@ -272,6 +272,7 @@ export {
     getPriceStartsFromPerMonth,
     isMultiUserPersonalPlan,
 } from './core/price-helpers';
+export { getRenewCycle } from './core/renewals';
 export { extractIBAN, formatPaymentMethod, formatPaymentMethods, type ExtendedExtractIBANResult } from './core/sepa';
 export { BillingPlatform, External, Renew } from './core/subscription/constants';
 export { FREE_PLAN, getFreeCheckResult } from './core/subscription/freePlans';

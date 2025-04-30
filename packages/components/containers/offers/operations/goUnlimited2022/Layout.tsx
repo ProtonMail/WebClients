@@ -24,7 +24,7 @@ const Layout = (props: OfferLayoutProps) => {
 
             <OfferFooter {...props}>
                 <p className="text-sm text-center mb-4 color-weak">{c('specialoffer: Footer')
-                    .t`This subscription will automatically renew every 2 years at the same rate until it is canceled.`}</p>
+                    .t`The special offer is valid for the first 2 years.`}</p>
             </OfferFooter>
         </OfferLayout>
     ) : (
