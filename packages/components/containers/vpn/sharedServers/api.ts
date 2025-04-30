@@ -23,7 +23,7 @@ export interface CreateLocationFilterPayload {
 }
 
 export const createLocationFilter = (payload: CreateLocationFilterPayload) => ({
-    url: '/vpn/v1/business/location-filter',
+    url: 'vpn/v1/business/location-filter',
     method: 'POST',
     data: payload,
 });
